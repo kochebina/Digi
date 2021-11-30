@@ -1,0 +1,55 @@
+\hypertarget{GateParameterisedCollimatorMessenger_8hh_source}{}\doxysection{Gate\+Parameterised\+Collimator\+Messenger.\+hh}
+\label{GateParameterisedCollimatorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParameterisedCollimatorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParameterisedCollimatorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateParameterisedCollimatorMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateParameterisedCollimatorMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVisAttributesMessenger}{GateVisAttributesMessenger}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParameterisedCollimatorMessenger}{GateParameterisedCollimatorMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateParameterisedCollimatorMessenger}{GateParameterisedCollimatorMessenger}}(\mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}}* itsInserter);}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateParameterisedCollimatorMessenger}{\string~GateParameterisedCollimatorMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}}* GetCollimatorInserter()}
+\DoxyCodeLine{30   \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}}*) GetVolumeCreator(); \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   G4String                    name\_Geometry;}
+\DoxyCodeLine{35   G4UIdirectory*              dir\_Geometry;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   G4UIcmdWithADoubleAndUnit*  CollimatorDimensionXCmd;}
+\DoxyCodeLine{39   G4UIcmdWithADoubleAndUnit*  CollimatorDimensionYCmd;}
+\DoxyCodeLine{40   G4UIcmdWithADoubleAndUnit*  CollimatorFocalDistanceXCmd;}
+\DoxyCodeLine{41   G4UIcmdWithADoubleAndUnit*  CollimatorFocalDistanceYCmd;}
+\DoxyCodeLine{42   G4UIcmdWithADoubleAndUnit*  CollimatorHeightCmd;}
+\DoxyCodeLine{43   G4UIcmdWithADoubleAndUnit*  CollimatorSeptalThicknessCmd;}
+\DoxyCodeLine{44   G4UIcmdWithADoubleAndUnit*  CollimatorInnerRadiusCmd;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classGateVisAttributesMessenger}{GateVisAttributesMessenger}}* visAttributesMessenger;}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

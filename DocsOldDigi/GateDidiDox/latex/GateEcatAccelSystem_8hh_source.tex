@@ -1,0 +1,51 @@
+\hypertarget{GateEcatAccelSystem_8hh_source}{}\doxysection{Gate\+Ecat\+Accel\+System.\+hh}
+\label{GateEcatAccelSystem_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEcatAccelSystem.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEcatAccelSystem.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateEcatAccelSystem\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateEcatAccelSystem\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVSystem.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToSinoAccel}{GateToSinoAccel}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }GateSinoAccelToEcat7;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEcatAccelSystem}{GateEcatAccelSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38   \mbox{\hyperlink{classGateEcatAccelSystem}{GateEcatAccelSystem}}(\textcolor{keyword}{const} G4String\& itsName);  }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEcatAccelSystem_a922eb9075fbb17181e9eedf1227540a7}{\string~GateEcatAccelSystem}}();                }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateToSinoAccel}{GateToSinoAccel}}* \mbox{\hyperlink{classGateEcatAccelSystem_a2d87a166c660b2fdac03d09041bc5619}{GetSinogramMaker}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{43 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} m\_gateToSinoAccel;\}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEcatAccelSystem_aed232a07e3ba697c692761000663dfe1}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEcatAccelSystem_a28975b166e800ac89d7f9ce701a2881f}{PrintToStream}}(std::ostream\& aStream,G4bool doPrintNumbers);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} G4double \mbox{\hyperlink{classGateEcatAccelSystem_a11c77f7758a3a7d2744b6d346ba20bb2}{ComputeInternalRadius}}();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{private}:}
+\DoxyCodeLine{67   \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}        *m\_messenger;   }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \mbox{\hyperlink{classGateToSinoAccel}{GateToSinoAccel}}                     *m\_gateToSinoAccel;}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#ifdef GATE\_USE\_ECAT7}}
+\DoxyCodeLine{71   GateSinoAccelToEcat7              *m\_gateSinoAccelToEcat7;}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

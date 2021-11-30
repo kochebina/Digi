@@ -1,0 +1,64 @@
+\hypertarget{GateVPulseProcessor_8hh_source}{}\doxysection{Gate\+VPulse\+Processor.\+hh}
+\label{GateVPulseProcessor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVPulseProcessor.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVPulseProcessor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVPulseProcessor\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVPulseProcessor\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{54 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{55 \{}
+\DoxyCodeLine{56   \textcolor{keyword}{public}:}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     }
+\DoxyCodeLine{62     \mbox{\hyperlink{classGateVPulseProcessor_aa225b6bcdd324867adcfd2c0505a53a3}{GateVPulseProcessor}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{63                         \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVPulseProcessor}{\string~GateVPulseProcessor}}() \{\}  }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     }
+\DoxyCodeLine{76     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{81     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList)=0;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84    }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88      \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* GetChain()}
+\DoxyCodeLine{89        \{ \textcolor{keywordflow}{return} m\_chain; \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{96      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVPulseProcessor_ab45af3d01123ea7966b4ef931c082ec6}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{97      }
+\DoxyCodeLine{99      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent=0) =0 ;}
+\DoxyCodeLine{100      }
+\DoxyCodeLine{101   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{102     \mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* m\_chain;}
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+
+\end{DoxyCode}

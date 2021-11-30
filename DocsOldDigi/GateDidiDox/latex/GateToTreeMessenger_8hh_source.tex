@@ -1,0 +1,62 @@
+\hypertarget{GateToTreeMessenger_8hh_source}{}\doxysection{Gate\+To\+Tree\+Messenger.\+hh}
+\label{GateToTreeMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToTreeMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToTreeMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//}}
+\DoxyCodeLine{11 \textcolor{comment}{// Created by mdupont on 17/05/19.}}
+\DoxyCodeLine{12 \textcolor{comment}{//}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATE\_GATETOTREEMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATE\_GATETOTREEMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToTree}{GateToTree}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToTreeMessenger}{GateToTreeMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateToTreeMessenger}{GateToTreeMessenger}}(\mbox{\hyperlink{classGateToTree}{GateToTree}} *m);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateToTreeMessenger}{\string~GateToTreeMessenger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand *icommand, G4String \textcolor{keywordtype}{string}) \textcolor{keyword}{override};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   G4UIcmdWithAString* m\_addFileNameCmd;}
+\DoxyCodeLine{38   G4UIcmdWithoutParameter *m\_enableHitsOutput;}
+\DoxyCodeLine{39   G4UIcmdWithoutParameter *m\_disableHitsOutput;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   G4UIcmdWithoutParameter *m\_enableOpticalDataOutput;}
+\DoxyCodeLine{42   G4UIcmdWithoutParameter *m\_disableOpticalDataOutput;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   G4UIcmdWithAString* m\_addCollectionCmd;}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateToTree}{GateToTree}} *m\_gateToTree;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   std::unordered\_map<G4UIcmdWithoutParameter*, G4String> m\_maphits\_cmdParameter\_toTreeParameter;}
+\DoxyCodeLine{48   std::unordered\_map<G4UIcmdWithoutParameter*, G4String> m\_mapoptical\_cmdParameter\_toTreeParameter;}
+\DoxyCodeLine{49   std::unordered\_map<G4UIcmdWithoutParameter*, G4String> m\_mapsingles\_cmdParameter\_toTreeParameter;}
+\DoxyCodeLine{50   std::unordered\_map<G4UIcmdWithoutParameter*, G4String> m\_mapscoincidences\_cmdParameter\_toTreeParameter;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//GATE\_GATETOTREEMESSENGER\_HH}}
+
+\end{DoxyCode}

@@ -1,0 +1,73 @@
+\hypertarget{GateMuMapActor_8hh_source}{}\doxysection{Gate\+Mu\+Map\+Actor.\+hh}
+\label{GateMuMapActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMuMapActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMuMapActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class GateMuMapActor}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author gsizeg@gmail.com}}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)brief Class GateMuMapActor : This actor produces voxelised images of the Mu Map.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEMUMAPACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEMUMAPACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMuMapActorMessenger}{GateMuMapActorMessenger}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMuMapActor}{GateMuMapActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{27   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMuMapActor_a200ef491ee92068af79de948cc8ae1c8}{\string~GateMuMapActor}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateMuMapActor}{GateMuMapActor}})}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{33   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMuMapActor_a630abd514c1516ebc491ff7a71e25bae}{Construct}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfRunAction(\textcolor{keyword}{const} G4Run*); \textcolor{comment}{// default action (save)}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMuMapActor_a4c4ad9dd32418bc7760e12005440518f}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Step* \textcolor{comment}{/*step*/});}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*track*/});}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{comment}{//  Saves the data collected to the file}}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMuMapActor_aa3201dc2fce73746791abe752c17a9a2}{SaveData}}();}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} SetEnergy(G4double energy);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} SetMuUnit(G4double unit);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \mbox{\hyperlink{classGateMuMapActor}{GateMuMapActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{53   \mbox{\hyperlink{classGateMuMapActorMessenger}{GateMuMapActorMessenger}} * pMessenger;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classGateImage}{GateImage}} mMuMapImage;}
+\DoxyCodeLine{56   \mbox{\hyperlink{classGateImageT}{GateImageInt}} mSourceMapImage;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   G4double  mEnergy;}
+\DoxyCodeLine{59   G4double  mMuUnit;}
+\DoxyCodeLine{60   G4String mMuMapFilename;}
+\DoxyCodeLine{61   G4String mSourceMapFilename;}
+\DoxyCodeLine{62   G4int    mCurrentEvent;}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 MAKE\_AUTO\_CREATOR\_ACTOR(MuMapActor,\mbox{\hyperlink{classGateMuMapActor}{GateMuMapActor}})}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEMUMAPACTOR\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

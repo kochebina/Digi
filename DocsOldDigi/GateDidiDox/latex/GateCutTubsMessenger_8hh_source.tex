@@ -1,0 +1,42 @@
+\hypertarget{GateCutTubsMessenger_8hh_source}{}\doxysection{Gate\+Cut\+Tubs\+Messenger.\+hh}
+\label{GateCutTubsMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCutTubsMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCutTubsMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateCutTubsMessenger.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATECUTTUBSMESSENGER\_HH\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATECUTTUBSMESSENGER\_HH\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCutTubs}{GateCutTubs}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCutTubsMessenger}{GateCutTubsMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19   \mbox{\hyperlink{classGateCutTubsMessenger}{GateCutTubsMessenger}}(\mbox{\hyperlink{classGateCutTubs}{GateCutTubs}}* itsCreator);}
+\DoxyCodeLine{20   \mbox{\hyperlink{classGateCutTubsMessenger}{\string~GateCutTubsMessenger}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCutTubs}{GateCutTubs}}* GetCutTubsCreator()}
+\DoxyCodeLine{24     \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCutTubs}{GateCutTubs}}*)GetVolumeCreator(); \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27   G4UIcmdWithADoubleAndUnit* CutTubsInnerRCmd;}
+\DoxyCodeLine{28   G4UIcmdWithADoubleAndUnit* CutTubsOuterRCmd;}
+\DoxyCodeLine{29   G4UIcmdWithADoubleAndUnit* CutTubsStartPhiCmd;}
+\DoxyCodeLine{30   G4UIcmdWithADoubleAndUnit* CutTubsDeltaPhiCmd;}
+\DoxyCodeLine{31   G4UIcmdWithADoubleAndUnit* CutTubsZLengthCmd;}
+\DoxyCodeLine{32   G4UIcmdWith3Vector* CutTubsNegNormCmd;}
+\DoxyCodeLine{33   G4UIcmdWith3Vector* CutTubsPosNormCmd;}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATECUTTUBSMESSENGER\_HH\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

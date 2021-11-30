@@ -1,0 +1,62 @@
+\hypertarget{GateMergedVolumeActor_8hh_source}{}\doxysection{Gate\+Merged\+Volume\+Actor.\+hh}
+\label{GateMergedVolumeActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMergedVolumeActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMergedVolumeActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATEMERGEDVOLUMEACTOR\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATEMERGEDVOLUMEACTOR\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMergedVolumeActorMessenger}{GateMergedVolumeActorMessenger}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMergedVolumeActor}{GateMergedVolumeActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25   \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMergedVolumeActor}{\string~GateMergedVolumeActor}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{30     \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{31     FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateMergedVolumeActor}{GateMergedVolumeActor}})}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{34     \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMergedVolumeActor_a7193cc7abd53b99de6755d3d7f9cd2f7}{Construct}}();}
+\DoxyCodeLine{36     \textcolor{comment}{//virtual void PostUserTrackingAction(const G4Track*);}}
+\DoxyCodeLine{37     \textcolor{comment}{//virtual void UserSteppingAction(const GateVVolume *, const G4Step*)\{\}}}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} clear()\{ ResetData(); \}}
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData() \{\}}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} G4bool ProcessHits(G4Step * step , G4TouchableHistory* th);}
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} ListOfVolumesToMerge( G4String\& );}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{47     \mbox{\hyperlink{classGateMergedVolumeActor}{GateMergedVolumeActor}}(G4String name, G4int depth);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \mbox{\hyperlink{classGateMergedVolumeActorMessenger}{GateMergedVolumeActorMessenger}}* pMergedVolumeActorMessenger;}
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}} * pActorMessenger;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{private}:}
+\DoxyCodeLine{53     std::vector<G4String>             mVolToMerge;}
+\DoxyCodeLine{54     std::vector<G4VSolid*>            mSolidVolToMerge;}
+\DoxyCodeLine{55     std::vector<G4VPhysicalVolume*>   mPhysicalVolToMerge;}
+\DoxyCodeLine{56     std::vector<G4LogicalVolume*>     mLogicalVolToMerge;}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 MAKE\_AUTO\_CREATOR\_ACTOR(MergedVolumeActor,\mbox{\hyperlink{classGateMergedVolumeActor}{GateMergedVolumeActor}})}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

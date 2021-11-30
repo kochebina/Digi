@@ -1,0 +1,47 @@
+\hypertarget{GatePositroniumDecayChannel_8hh_source}{}\doxysection{Gate\+Positronium\+Decay\+Channel.\+hh}
+\label{GatePositroniumDecayChannel_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePositroniumDecayChannel.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePositroniumDecayChannel.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef GatePositroniumDecayChannel\_hh}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define GatePositroniumDecayChannel\_hh}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4GeneralPhaseSpaceDecay.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePositroniumDecayChannel}{GatePositroniumDecayChannel}} : \textcolor{keyword}{public} G4GeneralPhaseSpaceDecay}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23  \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{25   \textcolor{comment}{//Describes for which positronium we need decay}}
+\DoxyCodeLine{26   \textcolor{keyword}{enum} PositroniumKind \{ NotDefined, ParaPositronium, OrthoPositronium \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \mbox{\hyperlink{classGatePositroniumDecayChannel_ab73f22f60c650d79749798bc7edf64f9}{GatePositroniumDecayChannel}}( \textcolor{keyword}{const} G4String\& theParentName, G4double theBR);}
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePositroniumDecayChannel}{\string~GatePositroniumDecayChannel}}();}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} G4DecayProducts* \mbox{\hyperlink{classGatePositroniumDecayChannel_a4eba77bd78cf94fa671e582a33ddb258}{DecayIt}}(G4double) \textcolor{keyword}{override};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{37   G4DecayProducts* \mbox{\hyperlink{classGatePositroniumDecayChannel_a6c841e2ae170a4e8d5f723f38a278af5}{DecayParaPositronium}}();}
+\DoxyCodeLine{40   G4DecayProducts* \mbox{\hyperlink{classGatePositroniumDecayChannel_ac111ecdef6f85ce98cbddcda7af5d0dc}{DecayOrthoPositronium}}();}
+\DoxyCodeLine{46   G4double \mbox{\hyperlink{classGatePositroniumDecayChannel_a44a68ce8bf8e22e08ec0454a84b69cb7}{GetOrthoPsM}}( \textcolor{keyword}{const} G4double w1, \textcolor{keyword}{const} G4double w2, \textcolor{keyword}{const} G4double w3 ) \textcolor{keyword}{const};}
+\DoxyCodeLine{49   G4ThreeVector \mbox{\hyperlink{classGatePositroniumDecayChannel_a480aa2a3799f7b7641bbebd69e635b37}{GetPolarization}}( \textcolor{keyword}{const} G4ThreeVector\& momentum ) \textcolor{keyword}{const};}
+\DoxyCodeLine{52   G4ThreeVector \mbox{\hyperlink{classGatePositroniumDecayChannel_a44a853de0f37b766e6482bb9eaf515fb}{GetPerpendicularVector}}(\textcolor{keyword}{const} G4ThreeVector\& v) \textcolor{keyword}{const};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55   \textcolor{comment}{//Decay constants}}
+\DoxyCodeLine{56   \textcolor{keyword}{const} G4String kParaPositroniumName = \textcolor{stringliteral}{"{}pPs"{}};}
+\DoxyCodeLine{57   \textcolor{keyword}{const} G4String kOrthoPositroniumName = \textcolor{stringliteral}{"{}oPs"{}};}
+\DoxyCodeLine{58   \textcolor{keyword}{const} G4String kDaughterName = \textcolor{stringliteral}{"{}gamma"{}};}
+\DoxyCodeLine{59   \textcolor{keyword}{const} G4int kParaPositroniumAnnihilationGammasNumber = 2;}
+\DoxyCodeLine{60   \textcolor{keyword}{const} G4int kOrthoPositroniumAnnihilationGammasNumber = 3;}
+\DoxyCodeLine{61   \textcolor{keyword}{const} G4double kPositroniumMass = 2.0 * electron\_mass\_c2;}
+\DoxyCodeLine{62   PositroniumKind fPositroniumKind = PositroniumKind::NotDefined;}
+\DoxyCodeLine{64   \textcolor{keyword}{const} G4double \mbox{\hyperlink{classGatePositroniumDecayChannel_a176406ed18c70793475604f8e82c5228}{kOrthoPsMMax}} = 7.65928;}
+\DoxyCodeLine{65   \textcolor{keyword}{const} G4double kElectronMass = electron\_mass\_c2; \textcolor{comment}{//[MeV]}}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

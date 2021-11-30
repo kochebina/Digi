@@ -1,0 +1,52 @@
+\hypertarget{GateSourceOfPromptGamma_8hh_source}{}\doxysection{Gate\+Source\+Of\+Prompt\+Gamma.\+hh}
+\label{GateSourceOfPromptGamma_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceOfPromptGamma.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceOfPromptGamma.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef GATESOURCEPROMPTGAMMAEMISSION\_HH}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define GATESOURCEPROMPTGAMMAEMISSION\_HH}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateSourceOfPromptGammaData.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateSourceOfPromptGammaMessenger.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceOfPromptGammaMessenger}{GateSourceOfPromptGammaMessenger}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceOfPromptGamma}{GateSourceOfPromptGamma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateSourceOfPromptGamma}{GateSourceOfPromptGamma}}(G4String name);}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateSourceOfPromptGamma}{\string~GateSourceOfPromptGamma}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   G4int GeneratePrimaries(G4Event* event);}
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} GenerateVertex(G4Event* );}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} SetFilename(G4String filename);}
+\DoxyCodeLine{40   }
+\DoxyCodeLine{41 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateSourceOfPromptGammaMessenger}{GateSourceOfPromptGammaMessenger}} * pMessenger;}
+\DoxyCodeLine{43   \textcolor{keywordtype}{bool} mIsInitializedFlag;}
+\DoxyCodeLine{44   \textcolor{keywordtype}{bool} mIsInitializedNumberOfPrimariesFlag;}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateSourceOfPromptGammaData}{GateSourceOfPromptGammaData}} * mData;}
+\DoxyCodeLine{46   G4String mFilename;}
+\DoxyCodeLine{47   \textcolor{keywordtype}{double} mEnergy; \textcolor{comment}{// because particle\_energy is private (FIXME will be changed)}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} Initialize();}
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} ng;}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} InitializeNumberOfPrimaries();}
+\DoxyCodeLine{52 \}; \textcolor{comment}{// end class}}
+\DoxyCodeLine{53 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESOURCEPROMPTGAMMAEMISSION */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

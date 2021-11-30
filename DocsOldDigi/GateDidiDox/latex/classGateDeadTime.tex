@@ -1,0 +1,106 @@
+\hypertarget{classGateDeadTime}{}\doxysection{Gate\+Dead\+Time Class Reference}
+\label{classGateDeadTime}\index{GateDeadTime@{GateDeadTime}}
+
+
+Pulse-\/processor modelling a simple dead time discriminator.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Dead\+Time.\+hh$>$}
+
+Inheritance diagram for Gate\+Dead\+Time\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateDeadTime}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateDeadTime_a54cfba804967751dde27e4d7d3bec24c}\label{classGateDeadTime_a54cfba804967751dde27e4d7d3bec24c}} 
+virtual {\bfseries $\sim$\+Gate\+Dead\+Time} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDeadTime_a1a6588d4c531ddd64ee466ac5a1b7547}\label{classGateDeadTime_a1a6588d4c531ddd64ee466ac5a1b7547}} 
+void {\bfseries Check\+Volume\+Name} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Check the validity of the volume name where the dead time will be applied. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDeadTime_ac39d1e2ebe460b619a66c45cd83f1503}\label{classGateDeadTime_ac39d1e2ebe460b619a66c45cd83f1503}} 
+{\bfseries Gate\+Dead\+Time} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new dead time attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDeadTime_ad16ac3fe595a63ec425c6aae001c1db5}\label{classGateDeadTime_ad16ac3fe595a63ec425c6aae001c1db5}} 
+unsigned long long int {\bfseries Get\+Dead\+Time} ()
+\begin{DoxyCompactList}\small\item\em Returns the dead\+Time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDeadTime_ac9f7bb8de2c1fe999c4b37028f316f22}\label{classGateDeadTime_ac9f7bb8de2c1fe999c4b37028f316f22}} 
+void {\bfseries Set\+Dead\+Time} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the dead\+Time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDeadTime_ac24acdb029721c796b98dc1b8acda231}\label{classGateDeadTime_ac24acdb029721c796b98dc1b8acda231}} 
+void {\bfseries Set\+Dead\+Time\+Mode} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Set the dead\+Time mode ; candidates \+: paralysable nonparalysable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDeadTime_a571141eef36a90dfc00fae40ce2668e4}\label{classGateDeadTime_a571141eef36a90dfc00fae40ce2668e4}} 
+void {\bfseries Set\+Buffer\+Mode} (G4int val)
+\begin{DoxyCompactList}\small\item\em Set the buffer mode ;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDeadTime_a109c0d9b27191f2cffa44ccedd856067}\label{classGateDeadTime_a109c0d9b27191f2cffa44ccedd856067}} 
+void {\bfseries Set\+Buffer\+Size} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the buffer mode ;. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateDeadTime_ac669987f4d3615ad751aa2a0ccecc5ad}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Set the buffer mode ;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateDeadTime_a8aed3cb562c9cf9cef0c1c360e8dca76}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\Hypertarget{classGateDeadTime_a2199b5d37b4c515d2d6b8fe9a8d2317f}\label{classGateDeadTime_a2199b5d37b4c515d2d6b8fe9a8d2317f}} 
+void {\bfseries Find\+Levels\+Params} (\mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} $\ast$an\+Inserter\+Store)
+\begin{DoxyCompactList}\small\item\em To summarize it finds the number of elements of the different scanner levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modelling a simple dead time discriminator. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateDeadTime}{Gate\+Dead\+Time}} -\/ by \href{mailto:Luc.Simon@iphe.unil.ch}{\texttt{ Luc.\+Simon@iphe.\+unil.\+ch}}
+\item The method Process\+One\+Pulse of this class models a simple dead\+Time discriminator. User chooses value of dead time, mode (paralysable or not) and geometric level of application (crystal, module,...)
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+
+\mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} 
+
+\mbox{\hyperlink{classGatePulseProcessorChainMessenger}{Gate\+Pulse\+Processor\+Chain\+Messenger}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateDeadTime_ac669987f4d3615ad751aa2a0ccecc5ad}\label{classGateDeadTime_ac669987f4d3615ad751aa2a0ccecc5ad}} 
+\index{GateDeadTime@{GateDeadTime}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateDeadTime@{GateDeadTime}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Dead\+Time\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the buffer mode ;. 
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the dead\+Time 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateDeadTime_a8aed3cb562c9cf9cef0c1c360e8dca76}\label{classGateDeadTime_a8aed3cb562c9cf9cef0c1c360e8dca76}} 
+\index{GateDeadTime@{GateDeadTime}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateDeadTime@{GateDeadTime}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Dead\+Time\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list This method manages the updating of the \char`\"{}rebirth time table\char`\"{}, the table of times when the detector volume will be alive again. 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Dead\+Time.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Dead\+Time.\+cc\end{DoxyCompactItemize}

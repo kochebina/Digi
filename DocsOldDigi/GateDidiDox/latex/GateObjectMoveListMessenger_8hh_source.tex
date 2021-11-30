@@ -1,0 +1,68 @@
+\hypertarget{GateObjectMoveListMessenger_8hh_source}{}\doxysection{Gate\+Object\+Move\+List\+Messenger.\+hh}
+\label{GateObjectMoveListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateObjectMoveListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateObjectMoveListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateObjectMoveListMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateObjectMoveListMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateListMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterList.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectMoveListMessenger}{GateObjectMoveListMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55   \mbox{\hyperlink{classGateObjectMoveListMessenger_a9d068b9786f3dcea1f09121446247257}{GateObjectMoveListMessenger}}(\mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* itsRepeaterList);}
+\DoxyCodeLine{57   \mbox{\hyperlink{classGateObjectMoveListMessenger_a7b6ea902095d45df800e8c901cd25026}{\string~GateObjectMoveListMessenger}}();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateObjectMoveListMessenger_a212ee3c7f0e27a6e08c4409b2f3ff22c}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetFlagMove(G4bool val)  \{ moveFlag = val; G4cout << \textcolor{stringliteral}{"{} MoveMess::SetFlagMove "{}} << val << Gateendl; \};}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4bool GetFlagMove()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} moveFlag; \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{comment}{//e    virtual inline void SetObjectMoveListMess(GateObjectMoveListMessenger* moveMess) \{ moveListMess = moveMess; \};}}
+\DoxyCodeLine{66   \textcolor{comment}{//e    virtual inline GateObjectMoveListMessenger* GetObjectMoveListMess() \{ return moveListMess; \};}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{private}:}
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& DumpMap();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListChoices();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DoInsertion(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* GetRepeaterList()}
+\DoxyCodeLine{83   \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}*) \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}();\}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* GetCreator()}
+\DoxyCodeLine{87   \{ \textcolor{keywordflow}{return} GetRepeaterList()-\/>GetCreator(); \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 private :}
+\DoxyCodeLine{90   G4bool moveFlag;}
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

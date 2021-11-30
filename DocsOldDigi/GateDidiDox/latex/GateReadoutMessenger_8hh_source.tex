@@ -1,0 +1,49 @@
+\hypertarget{GateReadoutMessenger_8hh_source}{}\doxysection{Gate\+Readout\+Messenger.\+hh}
+\label{GateReadoutMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateReadoutMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateReadoutMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateReadoutMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateReadoutMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateReadout}{GateReadout}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateReadoutMessenger}{GateReadoutMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{classGateReadoutMessenger}{GateReadoutMessenger}}(\mbox{\hyperlink{classGateReadout}{GateReadout}}* itsReadout);}
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateReadoutMessenger}{\string~GateReadoutMessenger}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateReadout}{GateReadout}}* GetReadout()}
+\DoxyCodeLine{43       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateReadout}{GateReadout}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{private}:}
+\DoxyCodeLine{46     G4UIcmdWithAnInteger*      SetDepthCmd;}
+\DoxyCodeLine{47     G4UIcmdWithAString*        SetPolicyCmd;}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

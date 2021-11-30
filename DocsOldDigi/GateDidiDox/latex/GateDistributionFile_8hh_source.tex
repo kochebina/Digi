@@ -1,0 +1,48 @@
+\hypertarget{GateDistributionFile_8hh_source}{}\doxysection{Gate\+Distribution\+File.\+hh}
+\label{GateDistributionFile_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionFile.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionFile.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDistributionFile\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDistributionFile\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVDistributionArray.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateDistributionFileMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionFileMessenger}{GateDistributionFileMessenger}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionFile}{GateDistributionFile}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVDistributionArray}{GateVDistributionArray}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19   \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22     \mbox{\hyperlink{classGateDistributionFile_a4cd5d853a2bec9a0bd019cee956f3de5}{GateDistributionFile}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDistributionFile_a3e9e730861770f5ac7c4ef8af9f545ff}{\string~GateDistributionFile}}() ;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDistributionFile_a8be396cbca331ce484b2cdbb213c218a}{SetFileName}}(\textcolor{keyword}{const} G4String\& fileName) \{m\_FileName=fileName;\}}
+\DoxyCodeLine{28     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetColumnX(G4int colX=0) \{m\_column\_for\_X=colX;\}}
+\DoxyCodeLine{29     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetColumnY(G4int colY=0) \{m\_column\_for\_Y=colY;\}}
+\DoxyCodeLine{31     \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateDistributionFile_a23dc464d4b1e4c5d6fc54d4464dc56a1}{GetFileName}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_FileName;\}}
+\DoxyCodeLine{32     \textcolor{keyword}{inline} G4int GetColumnX()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_column\_for\_X;\}}
+\DoxyCodeLine{33     \textcolor{keyword}{inline} G4int GetColumnY()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_column\_for\_Y;\}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} Read();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{38   \textcolor{keyword}{private}:}
+\DoxyCodeLine{40     G4String m\_FileName;}
+\DoxyCodeLine{41     G4int m\_column\_for\_X;}
+\DoxyCodeLine{42     G4int m\_column\_for\_Y;}
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateDistributionFileMessenger}{GateDistributionFileMessenger}}* m\_messenger;}
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

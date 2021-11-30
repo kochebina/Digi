@@ -1,0 +1,65 @@
+\hypertarget{GatePromptGammaAnalogActor_8hh_source}{}\doxysection{Gate\+Prompt\+Gamma\+Analog\+Actor.\+hh}
+\label{GatePromptGammaAnalogActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePromptGammaAnalogActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePromptGammaAnalogActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  GATE version name: gate\_v7}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GATEPROMPTGAMMAPRODUCTIONANALOGACTOR\_HH}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GATEPROMPTGAMMAPRODUCTIONANALOGACTOR\_HH}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GatePromptGammaAnalogActorMessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateImageOfHistograms.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GatePromptGammaData.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePromptGammaAnalogActor}{GatePromptGammaAnalogActor}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePromptGammaAnalogActor}{\string~GatePromptGammaAnalogActor}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGatePromptGammaAnalogActor}{GatePromptGammaAnalogActor}})}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePromptGammaAnalogActor_aedc24ba73e4146bb0c0db8a885e9fe8e}{Construct}}();}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePromptGammaAnalogActor_ad09e60e71c65fafad831852896d47e7c}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} SetInputDataFilename(std::string filename);}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} SetOutputCount(\textcolor{keywordtype}{bool} b) \{ mSetOutputCount = b; \}  \textcolor{comment}{//output counts instead of yield}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGatePromptGammaAnalogActor}{GatePromptGammaAnalogActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{43   \mbox{\hyperlink{classGatePromptGammaAnalogActorMessenger}{GatePromptGammaAnalogActorMessenger}} * pMessenger;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{comment}{//we'll not use it, but extract the bins and binsizes for the PG output.}}
+\DoxyCodeLine{46   std::string mInputDataFilename;}
+\DoxyCodeLine{47   \mbox{\hyperlink{classGatePromptGammaData}{GatePromptGammaData}} data;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keywordtype}{bool} mSetOutputCount;}
+\DoxyCodeLine{50   \textcolor{keywordtype}{bool} alreadyHere;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * mImageGamma;  \textcolor{comment}{//main output (yield)}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 MAKE\_AUTO\_CREATOR\_ACTOR(PromptGammaAnalogActor,\mbox{\hyperlink{classGatePromptGammaAnalogActor}{GatePromptGammaAnalogActor}})}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// end GATEPROMPTGAMMAPRODUCTIONANALOGACTOR}}
+
+\end{DoxyCode}

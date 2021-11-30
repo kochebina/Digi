@@ -1,0 +1,46 @@
+\hypertarget{GateCylindricalEdepActorMessenger_8hh_source}{}\doxysection{Gate\+Cylindrical\+Edep\+Actor\+Messenger.\+hh}
+\label{GateCylindricalEdepActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCylindricalEdepActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCylindricalEdepActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateCylindircalEdepActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  * based on GateDoseActorMessenger}}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)author A.Resch}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATECYLINDRICALEDEPACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATECYLINDRICALEDEPACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylindricalEdepActor}{GateCylindricalEdepActor}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylindricalEdepActorMessenger}{GateCylindricalEdepActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateCylindricalEdepActorMessenger}{GateCylindricalEdepActorMessenger}}(\mbox{\hyperlink{classGateCylindricalEdepActor}{GateCylindricalEdepActor}}* sensor);}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCylindricalEdepActorMessenger}{\string~GateCylindricalEdepActorMessenger}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylindricalEdepActorMessenger_ab7f44d1a91d8f6778c2857f8d8a73b79}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateCylindricalEdepActor}{GateCylindricalEdepActor}} * pCylindicalEdepActor;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   G4UIcmdWithABool * pEnableDoseCmd;}
+\DoxyCodeLine{36   G4UIcmdWithABool * pEnableEdepCmd;}
+\DoxyCodeLine{37   G4UIcmdWithABool * pEnableFluenceCmd;}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GateCylindricalEdepActorMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

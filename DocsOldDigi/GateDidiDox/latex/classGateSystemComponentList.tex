@@ -1,0 +1,80 @@
+\hypertarget{classGateSystemComponentList}{}\doxysection{Gate\+System\+Component\+List Class Reference}
+\label{classGateSystemComponentList}\index{GateSystemComponentList@{GateSystemComponentList}}
+Inheritance diagram for Gate\+System\+Component\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classGateSystemComponentList}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_adf4680ff4a77056f222c48687b34b46c}\label{classGateSystemComponentList_adf4680ff4a77056f222c48687b34b46c}} 
+{\bfseries Gate\+System\+Component\+List} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$its\+Mother, const G4\+String \&its\+Name)
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_abe6f64315bd54e5e2fce26c4306b9424}\label{classGateSystemComponentList_abe6f64315bd54e5e2fce26c4306b9424}} 
+virtual void {\bfseries Insert\+Child\+Component} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$new\+Child\+Component)
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a7a31bd82b64220059ce45c5251f41c28}\label{classGateSystemComponentList_a7a31bd82b64220059ce45c5251f41c28}} 
+virtual void {\bfseries Describe\+Child\+Components} (size\+\_\+t indent, G4bool recursive\+Describe=false)
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a6155384c23bc7203de055e80beba88a9}\label{classGateSystemComponentList_a6155384c23bc7203de055e80beba88a9}} 
+virtual void {\bfseries List\+Elements} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_ae9ae69119b3178c92b552a648db0211c}\label{classGateSystemComponentList_ae9ae69119b3178c92b552a648db0211c}} 
+virtual \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Find\+Child\+Component} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a9021943e41331b6e0d4a0bbb17a0e79c}\label{classGateSystemComponentList_a9021943e41331b6e0d4a0bbb17a0e79c}} 
+virtual \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Get\+Child\+Component} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_af62f8612c39c680bba176a435eccf6d5}\label{classGateSystemComponentList_af62f8612c39c680bba176a435eccf6d5}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Get\+Mother\+Component} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a266423985f73fd533cec0040872caf51}\label{classGateSystemComponentList_a266423985f73fd533cec0040872caf51}} 
+virtual size\+\_\+t {\bfseries Get\+Child\+Number} ()
+\item 
+G4bool \mbox{\hyperlink{classGateSystemComponentList_a83e01248c79dff1e72eb14db73078e7c}{Check\+Connection\+To\+Creator}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator)
+\begin{DoxyCompactList}\small\item\em Check whether an inserter is connected to the component tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a5b733ba62b9cfa77063d23d37d07168b}\label{classGateSystemComponentList_a5b733ba62b9cfa77063d23d37d07168b}} 
+size\+\_\+t {\bfseries Get\+Active\+Child\+Number} ()
+\begin{DoxyCompactList}\small\item\em Compute the number of active daughter-\/components (i.\+e. components that are linked to an inserter) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a1e58ecbafc586ca52a11780df5216437}\label{classGateSystemComponentList_a1e58ecbafc586ca52a11780df5216437}} 
+size\+\_\+t {\bfseries Get\+Max\+Child\+Tree\+Depth} ()
+\begin{DoxyCompactList}\small\item\em Compute the maximum depth of the child component trees. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a6c3a2b3aec5a8706f20bde515f5e5b6d}\label{classGateSystemComponentList_a6c3a2b3aec5a8706f20bde515f5e5b6d}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Find\+System\+Component} (const G4\+String \&component\+Name)
+\begin{DoxyCompactList}\small\item\em Finds a component from its name in the component tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponentList_a962189addfbd3e193936fae646584b63}\label{classGateSystemComponentList_a962189addfbd3e193936fae646584b63}} 
+\mbox{\hyperlink{classGateSystemComponentListMessenger}{Gate\+System\+Component\+List\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSystemComponentList_a83e01248c79dff1e72eb14db73078e7c}\label{classGateSystemComponentList_a83e01248c79dff1e72eb14db73078e7c}} 
+\index{GateSystemComponentList@{GateSystemComponentList}!CheckConnectionToCreator@{CheckConnectionToCreator}}
+\index{CheckConnectionToCreator@{CheckConnectionToCreator}!GateSystemComponentList@{GateSystemComponentList}}
+\doxysubsubsection{\texorpdfstring{CheckConnectionToCreator()}{CheckConnectionToCreator()}}
+{\footnotesize\ttfamily G4bool Gate\+System\+Component\+List\+::\+Check\+Connection\+To\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption})}
+
+
+
+Check whether an inserter is connected to the component tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+Creator} & the inserter we want to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the inserter is attached to one of the componentsS 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+System\+Component\+List.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+System\+Component\+List.\+cc\end{DoxyCompactItemize}

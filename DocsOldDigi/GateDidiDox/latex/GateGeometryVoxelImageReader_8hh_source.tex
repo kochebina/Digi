@@ -1,0 +1,48 @@
+\hypertarget{GateGeometryVoxelImageReader_8hh_source}{}\doxysection{Gate\+Geometry\+Voxel\+Image\+Reader.\+hh}
+\label{GateGeometryVoxelImageReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelImageReader.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelImageReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateGeometryVoxelImageReader\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateGeometryVoxelImageReader\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelImageReaderMessenger}{GateGeometryVoxelImageReaderMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelImageReader}{GateGeometryVoxelImageReader}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \mbox{\hyperlink{classGateGeometryVoxelImageReader}{GateGeometryVoxelImageReader}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* inserter);}
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGeometryVoxelImageReader}{\string~GateGeometryVoxelImageReader}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ReadFile(G4String fileName);}
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ReadRTFile(G4String header\_fileName, G4String fileName);}
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Describe(G4int level);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \mbox{\hyperlink{classGateGeometryVoxelImageReaderMessenger}{GateGeometryVoxelImageReaderMessenger}}* m\_messenger; }
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+
+\end{DoxyCode}

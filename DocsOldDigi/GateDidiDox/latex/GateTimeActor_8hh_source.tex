@@ -1,0 +1,92 @@
+\hypertarget{GateTimeActor_8hh_source}{}\doxysection{Gate\+Time\+Actor.\+hh}
+\label{GateTimeActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTimeActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTimeActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATETIMEACTOR\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATETIMEACTOR\_HH}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateTimeActorMessenger.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4Timer.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTimeActorMessenger}{GateTimeActorMessenger}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTimeActor}{GateTimeActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTimeActor_a7818ba0a55ccf62d07cf4cbf97bae7ab}{\string~GateTimeActor}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{31   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{32   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateTimeActor}{GateTimeActor}})}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTimeActor_a2f6b15c481b99c93a90423371ba6f67d}{Construct}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{39   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfRunAction(\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{50 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTimeActor_a3da1a88ffe6326837129703f306eaafe}{SaveData}}();}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} EnableDetailedStats(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{56   \mbox{\hyperlink{classGateTimeActor_a6805cf97fc40185750f1f1fe6e8c28ec}{GateTimeActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   G4Timer mCurrentRunTimer;}
+\DoxyCodeLine{59   G4Timer mCurrentEventTimer;}
+\DoxyCodeLine{60   G4Timer mCurrentTrackTimer;}
+\DoxyCodeLine{61   G4Timer mCurrentStepTimer;}
+\DoxyCodeLine{62   \textcolor{keywordtype}{double} mTotalEventUserTime;}
+\DoxyCodeLine{63   \textcolor{keywordtype}{double} mTotalTrackUserTime;}
+\DoxyCodeLine{64   \textcolor{keywordtype}{double} mTotalStepUserTime;}
+\DoxyCodeLine{65   \textcolor{keywordtype}{long} mNumberOfEvents;}
+\DoxyCodeLine{66   \textcolor{keywordtype}{long} mNumberOfTracks;}
+\DoxyCodeLine{67   \textcolor{keywordtype}{long} mNumberOfSteps;}
+\DoxyCodeLine{68   \textcolor{keywordtype}{bool} mDetailedStatFlag;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keyword}{typedef} std::map<G4String, double> MapType;}
+\DoxyCodeLine{71   MapType mTimePerParticle;}
+\DoxyCodeLine{72   MapType mTrackPerParticle;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   G4String mCurrentParticleName;}
+\DoxyCodeLine{75   MapType mNumberOfLimitingProcess;}
+\DoxyCodeLine{76   MapType mNumberOfAlongByProcess;}
+\DoxyCodeLine{77   \textcolor{comment}{//MapType mNumberOfPostByProcess;}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} UpdateCurrentTextOutput();}
+\DoxyCodeLine{80   std::string mCurrentTextOutput;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \mbox{\hyperlink{classGateTimeActorMessenger}{GateTimeActorMessenger}} * pMessenger;}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 MAKE\_AUTO\_CREATOR\_ACTOR(TimeActor,\mbox{\hyperlink{classGateTimeActor}{GateTimeActor}})}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESIMULATIONSTATISTICACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

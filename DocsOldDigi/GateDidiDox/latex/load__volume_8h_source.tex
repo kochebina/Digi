@@ -1,0 +1,484 @@
+\hypertarget{load__volume_8h_source}{}\doxysection{load\+\_\+volume.\+h}
+\label{load__volume_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/load\_volume.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/load\_volume.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef load\_volume\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define load\_volume\_h}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * The function}}
+\DoxyCodeLine{5 \textcolor{comment}{ * MatrixData *load\_volume(MatrixFile*, int frame, int cubic, int interp)}}
+\DoxyCodeLine{6 \textcolor{comment}{ * loads a frame from a MatrixFile. The frames slices may be stored as separate}}
+\DoxyCodeLine{7 \textcolor{comment}{ * matrices (ECAT V6x files) or as a single volume data.}}
+\DoxyCodeLine{8 \textcolor{comment}{ * if the cubic flag is non zero, the function returns a volume with cubic}}
+\DoxyCodeLine{9 \textcolor{comment}{ * voxel.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * if the interp is set cubic voxels are made by linear interpolation in the}}
+\DoxyCodeLine{11 \textcolor{comment}{ * z-\/direction and by nearest voxel pixel otherwise. This flag is not used}}
+\DoxyCodeLine{12 \textcolor{comment}{ * when the cubic flag is not set.}}
+\DoxyCodeLine{13 \textcolor{comment}{ * }}
+\DoxyCodeLine{14 \textcolor{comment}{ * THE FUNCTION IS WRITTEN AS AN INCLUDE FILE BECAUSE IT MAY CALL A C++}}
+\DoxyCodeLine{15 \textcolor{comment}{ * FUNCTION "{}display\_message"{}. THIS is the only way I found to call C++}}
+\DoxyCodeLine{16 \textcolor{comment}{ * code within C code.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * History :}}
+\DoxyCodeLine{19 \textcolor{comment}{ *     creation date :  06-\/DEC-\/1995}}
+\DoxyCodeLine{20 \textcolor{comment}{ *     last modification date : 19-\/JUL-\/1996}}
+\DoxyCodeLine{21 \textcolor{comment}{ */}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <malloc.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}matrix.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__Tslice}{\_Tslice}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} matnum;}
+\DoxyCodeLine{31     \textcolor{keywordtype}{float} zloc;}
+\DoxyCodeLine{32 \} \mbox{\hyperlink{struct__Tslice}{Tslice}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#if defined(\_\_STDC\_\_) || defined(\_\_cplusplus)}}
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} int (*qsort\_func)(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *);}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if defined(\_\_cplusplus)}}
+\DoxyCodeLine{38 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} display\_message(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define display\_message(s) }}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#if defined(\_\_STDC\_\_) || defined(\_\_cplusplus)}}
+\DoxyCodeLine{44 \textcolor{keyword}{static} \textcolor{keywordtype}{int} compare\_zloc(\textcolor{keyword}{const} \mbox{\hyperlink{struct__Tslice}{Tslice}} *a, \textcolor{keyword}{const} \mbox{\hyperlink{struct__Tslice}{Tslice}} *b) }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{46 \textcolor{keyword}{static} \textcolor{keywordtype}{int} compare\_zloc(a,b)}
+\DoxyCodeLine{47 \mbox{\hyperlink{struct__Tslice}{Tslice}} *a, *b;}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (a-\/>zloc < b-\/>zloc) \textcolor{keywordflow}{return}(-\/1);}
+\DoxyCodeLine{51     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (a-\/>zloc > b-\/>zloc) \textcolor{keywordflow}{return} (1);}
+\DoxyCodeLine{52     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} (0);}
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#if defined(\_\_STDC\_\_) || defined(\_\_cplusplus)}}
+\DoxyCodeLine{55 \textcolor{keyword}{static} \textcolor{keywordtype}{int} slice\_sort(\mbox{\hyperlink{struct__Tslice}{Tslice}} *slices, \textcolor{keywordtype}{int} count)}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57     qsort(slices, count, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct__Tslice}{Tslice}}), (qsort\_func)compare\_zloc);}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{61 \textcolor{keyword}{static} \textcolor{keywordtype}{int} slice\_sort(slices,count)}
+\DoxyCodeLine{62 \mbox{\hyperlink{struct__Tslice}{Tslice}} *slices;}
+\DoxyCodeLine{63 \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65     qsort(slices, count, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct__Tslice}{Tslice}}), compare\_zloc);}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{67 \}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#if defined(\_\_STDC\_\_) || defined(\_\_cplusplus)}}
+\DoxyCodeLine{71 \textcolor{keyword}{static} \textcolor{keywordtype}{int} load\_slices(\mbox{\hyperlink{structmatrix__file}{MatrixFile}} *\mbox{\hyperlink{structmatrix__file}{matrix\_file}}, \mbox{\hyperlink{structmatrixdata}{MatrixData}} *volume,}
+\DoxyCodeLine{72 \mbox{\hyperlink{struct__Tslice}{Tslice}} *slice, \textcolor{keywordtype}{int} nslices, \textcolor{keywordtype}{int} cubic, \textcolor{keywordtype}{int} interp)}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{74 \textcolor{keyword}{static} \textcolor{keywordtype}{int} load\_slices(\mbox{\hyperlink{structmatrix__file}{matrix\_file}},volume,slice,nslices, cubic, interp)}
+\DoxyCodeLine{75 \mbox{\hyperlink{structmatrix__file}{MatrixFile}} *\mbox{\hyperlink{structmatrix__file}{matrix\_file}};}
+\DoxyCodeLine{76 \mbox{\hyperlink{structmatrixdata}{MatrixData}} *volume;}
+\DoxyCodeLine{77 \mbox{\hyperlink{struct__Tslice}{Tslice}} *slice;}
+\DoxyCodeLine{78 \textcolor{keywordtype}{int} nslices, cubic, interp;}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} i, j, k, sz;}
+\DoxyCodeLine{82     \mbox{\hyperlink{structmatrixdata}{MatrixData}} *s1, *s2;}
+\DoxyCodeLine{83     \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}} *imh=NULL;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{float} fval;}
+\DoxyCodeLine{85     \textcolor{keywordtype}{int} ival;}
+\DoxyCodeLine{86     \textcolor{keywordtype}{short} *vp=NULL, *p1, *p2;}
+\DoxyCodeLine{87     u\_char *b\_vp=NULL, *b\_p1, *b\_p2;}
+\DoxyCodeLine{88     \textcolor{keywordtype}{int} npixels, nvoxels;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{char} cbufr[256];}
+\DoxyCodeLine{90     \textcolor{keywordtype}{float}  zsep,zloc, w1, w2, scalef = volume-\/>scale\_factor;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     zsep = \mbox{\hyperlink{structmatrix__file}{matrix\_file}}-\/>mhptr-\/>plane\_separation;}
+\DoxyCodeLine{94     slice\_sort( slice, nslices);}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} (cubic) sz = (int)(1+(0.5+slice[nslices-\/1].zloc/volume-\/>pixel\_size));}
+\DoxyCodeLine{96     \textcolor{keywordflow}{else} sz = nslices;}
+\DoxyCodeLine{97     volume-\/>zdim = sz;}
+\DoxyCodeLine{98     npixels = volume-\/>xdim*volume-\/>ydim;}
+\DoxyCodeLine{99     nvoxels = npixels*volume-\/>zdim;}
+\DoxyCodeLine{100     imh = (\mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}*)volume-\/>shptr;}
+\DoxyCodeLine{101     switch (volume-\/>data\_type) \{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{case} ByteData : }
+\DoxyCodeLine{103         volume-\/>data\_ptr = (caddr\_t)calloc(nvoxels,\textcolor{keyword}{sizeof}(u\_char));}
+\DoxyCodeLine{104         b\_vp = (u\_char*)volume-\/>data\_ptr;}
+\DoxyCodeLine{105         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{106     \textcolor{keywordflow}{case} VAX\_Ix2:}
+\DoxyCodeLine{107     \textcolor{keywordflow}{case} SunShort:}
+\DoxyCodeLine{108     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{109         volume-\/>data\_ptr = (caddr\_t)calloc(nvoxels,\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{short}));}
+\DoxyCodeLine{110         vp = (\textcolor{keywordtype}{short}*)volume-\/>data\_ptr;}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112                         \textcolor{comment}{/* set position to center */}}
+\DoxyCodeLine{113     \textcolor{keywordflow}{if} (!vp \&\& !b\_vp)}
+\DoxyCodeLine{114     \{}
+\DoxyCodeLine{115         sprintf( cbufr, \textcolor{stringliteral}{"{}malloc failure for \%d voxels...volume too large"{}},}
+\DoxyCodeLine{116          nvoxels);}
+\DoxyCodeLine{117         display\_message(cbufr);}
+\DoxyCodeLine{118         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120     \textcolor{keywordflow}{if} (!cubic) \{}
+\DoxyCodeLine{121         \textcolor{keywordflow}{for} (i=0; i<nslices; i++)}
+\DoxyCodeLine{122         \{}
+\DoxyCodeLine{123             s1 = matrix\_read( \mbox{\hyperlink{structmatrix__file}{matrix\_file}}, slice[i].matnum, UnknownMatDataType);}
+\DoxyCodeLine{124             \textcolor{keywordflow}{switch} (volume-\/>data\_type) \{}
+\DoxyCodeLine{125             \textcolor{keywordflow}{case} ByteData : }
+\DoxyCodeLine{126                 b\_p1 = (u\_char*) s1-\/>data\_ptr;}
+\DoxyCodeLine{127                 w1 = s1-\/>scale\_factor/scalef;}
+\DoxyCodeLine{128                 for (k=0; k<npixels; k++, b\_vp++ ) \{}
+\DoxyCodeLine{129                     ival = (int)(w1*(*b\_p1++));}
+\DoxyCodeLine{130                     \textcolor{keywordflow}{if} (ival < 0) *b\_vp = 0;}
+\DoxyCodeLine{131                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ival > 255) *b\_vp = 255;}
+\DoxyCodeLine{132                     \textcolor{keywordflow}{else} *b\_vp = (u\_char)(ival);}
+\DoxyCodeLine{133                 \}}
+\DoxyCodeLine{134                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{135             \textcolor{keywordflow}{case} VAX\_Ix2:}
+\DoxyCodeLine{136             \textcolor{keywordflow}{case} SunShort:}
+\DoxyCodeLine{137             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{138                 p1 = (\textcolor{keywordtype}{short} \textcolor{keywordtype}{int}*) s1-\/>data\_ptr;}
+\DoxyCodeLine{139                 w1 = s1-\/>scale\_factor/scalef;}
+\DoxyCodeLine{140                 for (k=0; k<npixels; k++, vp++) \{}
+\DoxyCodeLine{141                     ival = (int)(w1*(*p1++));}
+\DoxyCodeLine{142                     \textcolor{keywordflow}{if} (ival < -\/32768) *vp = -\/32768;}
+\DoxyCodeLine{143                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ival > 32767) *vp = 32767;}
+\DoxyCodeLine{144                     \textcolor{keywordflow}{else} *vp = (short)(ival);}
+\DoxyCodeLine{145                 \}}
+\DoxyCodeLine{146             \}}
+\DoxyCodeLine{147             free\_matrix\_data( s1);}
+\DoxyCodeLine{148         \}}
+\DoxyCodeLine{149         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151     j = 1;}
+\DoxyCodeLine{152     s1 = matrix\_read( \mbox{\hyperlink{structmatrix__file}{matrix\_file}}, slice[0].matnum, UnknownMatDataType);}
+\DoxyCodeLine{153     s2 = matrix\_read( \mbox{\hyperlink{structmatrix__file}{matrix\_file}}, slice[1].matnum, UnknownMatDataType);}
+\DoxyCodeLine{154     \textcolor{keywordflow}{for} (i=0; i<sz; i++)}
+\DoxyCodeLine{155     \{}
+\DoxyCodeLine{156         zloc = i*volume-\/>pixel\_size;}
+\DoxyCodeLine{157         sprintf( cbufr, \textcolor{stringliteral}{"{}Computing slice \%d...(\%0.2f cm)"{}}, i+1,zloc);}
+\DoxyCodeLine{158         display\_message(cbufr);}
+\DoxyCodeLine{159         \textcolor{keywordflow}{while} (zloc > slice[j].zloc)}
+\DoxyCodeLine{160         \{}
+\DoxyCodeLine{161             free\_matrix\_data( s1);}
+\DoxyCodeLine{162             s1 = s2;}
+\DoxyCodeLine{163             \textcolor{keywordflow}{if} (j < nslices-\/1)}
+\DoxyCodeLine{164                 s2 = matrix\_read(\mbox{\hyperlink{structmatrix__file}{matrix\_file}}, slice[++j].matnum,}
+\DoxyCodeLine{165                      UnknownMatDataType);}
+\DoxyCodeLine{166             \textcolor{keywordflow}{else} \{      \textcolor{comment}{/*  plane overflow */}}
+\DoxyCodeLine{167                 slice[j+1].zloc = slice[j].zloc+zsep;}
+\DoxyCodeLine{168                 j++;}
+\DoxyCodeLine{169                 s2 = NULL;}
+\DoxyCodeLine{170                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{171             \}}
+\DoxyCodeLine{172         \}}
+\DoxyCodeLine{173         \textcolor{keywordflow}{if} (!s2) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{174         w2 = (zloc-\/slice[j-\/1].zloc)/(slice[j].zloc-\/slice[j-\/1].zloc);}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} (!interp) w2 = (int)(w2+0.5);}
+\DoxyCodeLine{176 \textcolor{comment}{/* speed could be improved if not interp */}}
+\DoxyCodeLine{177         w1 = 1.0 -\/ w2;}
+\DoxyCodeLine{178         w1 = w1*s1-\/>scale\_factor;}
+\DoxyCodeLine{179         w2 = w2*s2-\/>scale\_factor;}
+\DoxyCodeLine{180         \textcolor{keywordflow}{switch} (volume-\/>data\_type) \{}
+\DoxyCodeLine{181         \textcolor{keywordflow}{case} ByteData : }
+\DoxyCodeLine{182              b\_p1 = (u\_char*)s1-\/>data\_ptr;}
+\DoxyCodeLine{183              b\_p2 = (u\_char*)s2-\/>data\_ptr;}
+\DoxyCodeLine{184             \textcolor{keywordflow}{for} (k=0; k<npixels; k++, b\_vp++) \{}
+\DoxyCodeLine{185                 fval = w1*(*b\_p1++)+w2*(*b\_p2++);}
+\DoxyCodeLine{186                 ival = (int)(fval/scalef);}
+\DoxyCodeLine{187                 \textcolor{keywordflow}{if} (ival < 0) *b\_vp = 0;}
+\DoxyCodeLine{188                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ival > 255) *b\_vp = 255;}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{else} *b\_vp = (u\_char)(ival);}
+\DoxyCodeLine{190             \}}
+\DoxyCodeLine{191             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{192         \textcolor{keywordflow}{case} VAX\_Ix2:}
+\DoxyCodeLine{193         \textcolor{keywordflow}{case} SunShort:}
+\DoxyCodeLine{194         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{195             p1 = (\textcolor{keywordtype}{short} \textcolor{keywordtype}{int}*) s1-\/>data\_ptr;}
+\DoxyCodeLine{196             p2 = (\textcolor{keywordtype}{short} \textcolor{keywordtype}{int}*) s2-\/>data\_ptr;}
+\DoxyCodeLine{197             \textcolor{keywordflow}{for} (k=0; k<npixels; k++, vp++) \{}
+\DoxyCodeLine{198                 fval = w1*(*p1++)+w2*(*p2++);}
+\DoxyCodeLine{199                 ival = (int)(fval/scalef);}
+\DoxyCodeLine{200                 \textcolor{keywordflow}{if} (ival < -\/32768) *vp = -\/32768;}
+\DoxyCodeLine{201                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ival > 32767) *vp = 32767;}
+\DoxyCodeLine{202                 \textcolor{keywordflow}{else} *vp = (short)(ival);}
+\DoxyCodeLine{203             \}}
+\DoxyCodeLine{204             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{205         \}}
+\DoxyCodeLine{206     \}}
+\DoxyCodeLine{207     free\_matrix\_data( s1);}
+\DoxyCodeLine{208     \textcolor{keywordflow}{if} (s2 \&\& s2 != s1) free\_matrix\_data(s2);}
+\DoxyCodeLine{209     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{210 \}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#if defined(\_\_STDC\_\_) || defined(\_\_cplusplus)}}
+\DoxyCodeLine{213 \textcolor{keyword}{static} \textcolor{keywordtype}{int} load\_v\_slices(\mbox{\hyperlink{structmatrix__file}{MatrixFile}} *\mbox{\hyperlink{structmatrix__file}{matrix\_file}}, \mbox{\hyperlink{structmatrixdata}{MatrixData}} *volume,}
+\DoxyCodeLine{214 \mbox{\hyperlink{struct__Tslice}{Tslice}} *slice, \textcolor{keywordtype}{int} interp) }
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{216 \textcolor{keyword}{static} \textcolor{keywordtype}{int} load\_v\_slices(\mbox{\hyperlink{structmatrix__file}{matrix\_file}}, volume, slice, interp) }
+\DoxyCodeLine{217 \mbox{\hyperlink{structmatrix__file}{MatrixFile}} *\mbox{\hyperlink{structmatrix__file}{matrix\_file}};}
+\DoxyCodeLine{218 \mbox{\hyperlink{structmatrixdata}{MatrixData}} *volume;}
+\DoxyCodeLine{219 \mbox{\hyperlink{struct__Tslice}{Tslice}} *slice; }
+\DoxyCodeLine{220 \textcolor{keywordtype}{int} interp;}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223     \mbox{\hyperlink{structmatrixdata}{MatrixData}} *v\_slices;}
+\DoxyCodeLine{224     \textcolor{keywordtype}{short} *vp, *s1\_data, *s2\_data, *s\_p1, *s\_p2;}
+\DoxyCodeLine{225     u\_char *b\_vp, *b1\_data, *b2\_data, *b\_p1, *b\_p2;}
+\DoxyCodeLine{226     \textcolor{keywordtype}{float} *f1\_data, *f2\_data, *f\_p1, *f\_p2;}
+\DoxyCodeLine{227     \textcolor{keywordtype}{float} fval;}
+\DoxyCodeLine{228     \textcolor{keywordtype}{float} zloc, w1, w2, zsep,scalef;}
+\DoxyCodeLine{229     uint i, j, k, sz;}
+\DoxyCodeLine{230     \textcolor{keywordtype}{int} npixels, nvoxels, nslices;}
+\DoxyCodeLine{231     \textcolor{keywordtype}{char} cbufr[256];}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233     v\_slices = matrix\_read( \mbox{\hyperlink{structmatrix__file}{matrix\_file}}, slice[0].matnum, UnknownMatDataType);}
+\DoxyCodeLine{234     nslices = v\_slices-\/>zdim;}
+\DoxyCodeLine{235                             \textcolor{comment}{/* update extrema */}}
+\DoxyCodeLine{236     volume-\/>scale\_factor = v\_slices-\/>scale\_factor;}
+\DoxyCodeLine{237     volume-\/>data\_max = v\_slices-\/>data\_max;}
+\DoxyCodeLine{238     volume-\/>data\_max = v\_slices-\/>data\_min;}
+\DoxyCodeLine{239     \textcolor{keywordflow}{if} (volume-\/>shptr != NULL) }
+\DoxyCodeLine{240         memcpy(volume-\/>shptr,v\_slices-\/>shptr,\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}));}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     zsep = volume-\/>z\_size;}
+\DoxyCodeLine{243     scalef = volume-\/>scale\_factor;}
+\DoxyCodeLine{244     \textcolor{keywordflow}{for} (j=1; j<nslices; j++) slice[j].zloc = slice[0].zloc+zsep*j;}
+\DoxyCodeLine{245     slice\_sort( slice, nslices);}
+\DoxyCodeLine{246     sz = volume-\/>zdim = (int)(1+(0.5+slice[nslices-\/1].zloc/volume-\/>pixel\_size));}
+\DoxyCodeLine{247                         \textcolor{comment}{/* set position to center */}}
+\DoxyCodeLine{248     npixels = volume-\/>xdim*volume-\/>ydim;}
+\DoxyCodeLine{249     nvoxels = npixels*sz;}
+\DoxyCodeLine{250     \textcolor{keywordflow}{if} (volume-\/>data\_type == ByteData) }
+\DoxyCodeLine{251         volume-\/>data\_ptr = (caddr\_t)calloc(nvoxels,1);}
+\DoxyCodeLine{252     \textcolor{keywordflow}{else} volume-\/>data\_ptr = (caddr\_t)calloc(nvoxels,\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{short}));}
+\DoxyCodeLine{253     \textcolor{keywordflow}{if} (!volume-\/>data\_ptr)}
+\DoxyCodeLine{254     \{}
+\DoxyCodeLine{255         sprintf( cbufr, \textcolor{stringliteral}{"{}malloc failure for \%d voxels...volume too large"{}},}
+\DoxyCodeLine{256          nvoxels);}
+\DoxyCodeLine{257         display\_message(cbufr);}
+\DoxyCodeLine{258         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{259     \}}
+\DoxyCodeLine{260     \textcolor{keywordflow}{switch}(v\_slices-\/>data\_type) \{}
+\DoxyCodeLine{261     \textcolor{keywordflow}{case} ByteData:}
+\DoxyCodeLine{262         b\_vp = (u\_char*)volume-\/>data\_ptr;}
+\DoxyCodeLine{263         j = 1;}
+\DoxyCodeLine{264         b1\_data = (u\_char*)v\_slices-\/>data\_ptr;}
+\DoxyCodeLine{265         b2\_data = (u\_char*)v\_slices-\/>data\_ptr+npixels;}
+\DoxyCodeLine{266         for (i=0; i<sz; i++)}
+\DoxyCodeLine{267         \{}
+\DoxyCodeLine{268             zloc = i*volume-\/>pixel\_size;}
+\DoxyCodeLine{269             sprintf( cbufr, \textcolor{stringliteral}{"{}Computing slice \%d... (\%g)"{}}, i+1,zloc);}
+\DoxyCodeLine{270             display\_message(cbufr);}
+\DoxyCodeLine{271             \textcolor{keywordflow}{while} (zloc > slice[j].zloc)}
+\DoxyCodeLine{272             \{}
+\DoxyCodeLine{273                 b1\_data = b2\_data;}
+\DoxyCodeLine{274                 \textcolor{keywordflow}{if} (j < nslices-\/1) \{}
+\DoxyCodeLine{275                     j++;}
+\DoxyCodeLine{276                     b2\_data = (u\_char*)v\_slices-\/>data\_ptr+npixels*j;}
+\DoxyCodeLine{277                 \} \textcolor{keywordflow}{else} \{    \textcolor{comment}{/*  plane overflow */}}
+\DoxyCodeLine{278                     slice[j+1].zloc = slice[j-\/1].zloc+zsep;}
+\DoxyCodeLine{279                     j++;}
+\DoxyCodeLine{280                     b2\_data = NULL;}
+\DoxyCodeLine{281                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{282                 \}}
+\DoxyCodeLine{283             \}}
+\DoxyCodeLine{284             \textcolor{keywordflow}{if} (!b2\_data) \textcolor{keywordflow}{break};        \textcolor{comment}{/* plane overflow */}}
+\DoxyCodeLine{285             w2 = (zloc-\/slice[j-\/1].zloc)/(slice[j].zloc-\/slice[j-\/1].zloc);}
+\DoxyCodeLine{286             \textcolor{keywordflow}{if} (!interp) w2 = (int)(w2+0.5);}
+\DoxyCodeLine{287             w1 = 1.0 -\/ w2;}
+\DoxyCodeLine{288             w1 *= scalef;}
+\DoxyCodeLine{289             w2 *= scalef;}
+\DoxyCodeLine{290             b\_p1 = b1\_data; b\_p2 = b2\_data;}
+\DoxyCodeLine{291             \textcolor{keywordflow}{for} (k=0; k<npixels; k++) \{}
+\DoxyCodeLine{292                 fval = w1*(*b\_p1++)+w2*(*b\_p2++);}
+\DoxyCodeLine{293                 *b\_vp++ = (u\_char)(fval/scalef);}
+\DoxyCodeLine{294             \}}
+\DoxyCodeLine{295         \}}
+\DoxyCodeLine{296         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298     \textcolor{keywordflow}{case} IeeeFloat:}
+\DoxyCodeLine{299         volume-\/>data\_max = v\_slices-\/>data\_max;}
+\DoxyCodeLine{300         volume-\/>scale\_factor = scalef = v\_slices-\/>data\_max/32768;}
+\DoxyCodeLine{301         vp = (\textcolor{keywordtype}{short}*)volume-\/>data\_ptr;}
+\DoxyCodeLine{302         j = 1;}
+\DoxyCodeLine{303         f1\_data = (\textcolor{keywordtype}{float}*)v\_slices-\/>data\_ptr;}
+\DoxyCodeLine{304         f2\_data = (\textcolor{keywordtype}{float}*)v\_slices-\/>data\_ptr+npixels;}
+\DoxyCodeLine{305         for (i=0; i<sz; i++) \{}
+\DoxyCodeLine{306             zloc = i*volume-\/>pixel\_size;}
+\DoxyCodeLine{307             sprintf( cbufr, \textcolor{stringliteral}{"{}Computing slice \%d(\%d)... (\%g)"{}}, i+1,j,zloc);}
+\DoxyCodeLine{308             display\_message(cbufr);}
+\DoxyCodeLine{309             \textcolor{keywordflow}{while} (zloc > slice[j].zloc) \{}
+\DoxyCodeLine{310                 f1\_data = f2\_data;}
+\DoxyCodeLine{311                 \textcolor{keywordflow}{if} (j < nslices-\/1) \{}
+\DoxyCodeLine{312                     j++;}
+\DoxyCodeLine{313                     f2\_data = (\textcolor{keywordtype}{float}*)v\_slices-\/>data\_ptr+npixels*j;}
+\DoxyCodeLine{314                 \} \textcolor{keywordflow}{else} \{    \textcolor{comment}{/*  plane overflow */}}
+\DoxyCodeLine{315                     slice[j+1].zloc = slice[j-\/1].zloc+zsep;}
+\DoxyCodeLine{316                     j++;}
+\DoxyCodeLine{317                     f2\_data = NULL;}
+\DoxyCodeLine{318                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{319                 \}}
+\DoxyCodeLine{320             \}}
+\DoxyCodeLine{321             \textcolor{keywordflow}{if} (!f2\_data) \textcolor{keywordflow}{break};        \textcolor{comment}{/* plane overflow */}}
+\DoxyCodeLine{322             w2 = (zloc-\/slice[j-\/1].zloc)/(slice[j].zloc-\/slice[j-\/1].zloc);}
+\DoxyCodeLine{323             \textcolor{keywordflow}{if} (!interp) w2 = (int)(w2+0.5);}
+\DoxyCodeLine{324             w1 = 1.0 -\/ w2;}
+\DoxyCodeLine{325             f\_p1 = f1\_data; f\_p2 = f2\_data;}
+\DoxyCodeLine{326             \textcolor{keywordflow}{for} (k=0; k<npixels; k++) \{}
+\DoxyCodeLine{327                 fval = w1*(*f\_p1++)+w2*(*f\_p2++);}
+\DoxyCodeLine{328                 *vp++ = (short)(fval/scalef);}
+\DoxyCodeLine{329             \}}
+\DoxyCodeLine{330         \}}
+\DoxyCodeLine{331         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{332     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{333         vp = (\textcolor{keywordtype}{short}*)volume-\/>data\_ptr;}
+\DoxyCodeLine{334         j = 1;}
+\DoxyCodeLine{335         s1\_data = (\textcolor{keywordtype}{short}*)v\_slices-\/>data\_ptr;}
+\DoxyCodeLine{336         s2\_data = (\textcolor{keywordtype}{short}*)v\_slices-\/>data\_ptr+npixels;}
+\DoxyCodeLine{337         for (i=0; i<sz; i++) \{}
+\DoxyCodeLine{338             zloc = i*volume-\/>pixel\_size;}
+\DoxyCodeLine{339             sprintf( cbufr, \textcolor{stringliteral}{"{}Computing slice \%d... (\%g)"{}}, i+1,zloc);}
+\DoxyCodeLine{340             display\_message(cbufr);}
+\DoxyCodeLine{341             \textcolor{keywordflow}{while} (zloc > slice[j].zloc) \{}
+\DoxyCodeLine{342                 s1\_data = s2\_data;}
+\DoxyCodeLine{343                 \textcolor{keywordflow}{if} (j < nslices-\/1) \{}
+\DoxyCodeLine{344                     j++;}
+\DoxyCodeLine{345                     s2\_data = (\textcolor{keywordtype}{short}*)v\_slices-\/>data\_ptr+npixels*j;}
+\DoxyCodeLine{346                 \} \textcolor{keywordflow}{else} \{    \textcolor{comment}{/*  plane overflow */}}
+\DoxyCodeLine{347                     slice[j+1].zloc = slice[j-\/1].zloc+zsep;}
+\DoxyCodeLine{348                     j++;}
+\DoxyCodeLine{349                     s2\_data = NULL;}
+\DoxyCodeLine{350                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{351                 \}}
+\DoxyCodeLine{352             \}}
+\DoxyCodeLine{353             \textcolor{keywordflow}{if} (!s2\_data) \textcolor{keywordflow}{break};        \textcolor{comment}{/* plane overflow */}}
+\DoxyCodeLine{354             w2 = (zloc-\/slice[j-\/1].zloc)/(slice[j].zloc-\/slice[j-\/1].zloc);}
+\DoxyCodeLine{355             \textcolor{keywordflow}{if} (!interp) w2 = (int)(w2+0.5);}
+\DoxyCodeLine{356             w1 = 1.0 -\/ w2;}
+\DoxyCodeLine{357             w1 *= scalef;}
+\DoxyCodeLine{358             w2 *= scalef;}
+\DoxyCodeLine{359             s\_p1 = s1\_data; s\_p2 = s2\_data;}
+\DoxyCodeLine{360             \textcolor{keywordflow}{for} (k=0; k<npixels; k++) \{}
+\DoxyCodeLine{361                 fval = w1*(*s\_p1++)+w2*(*s\_p2++);}
+\DoxyCodeLine{362                 *vp++ = (short)(fval/scalef);}
+\DoxyCodeLine{363             \}}
+\DoxyCodeLine{364         \}}
+\DoxyCodeLine{365         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{366     \}}
+\DoxyCodeLine{367     free\_matrix\_data( v\_slices);}
+\DoxyCodeLine{368     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{369 \}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#if  defined(\_\_cplusplus)}}
+\DoxyCodeLine{372 \textcolor{keyword}{static} \mbox{\hyperlink{structmatrixdata}{MatrixData}} *load\_volume(\mbox{\hyperlink{structmatrix__file}{MatrixFile}} *\mbox{\hyperlink{structmatrix__file}{matrix\_file}},\textcolor{keywordtype}{int} frame, \textcolor{keywordtype}{int} cubic,}
+\DoxyCodeLine{373 \textcolor{keywordtype}{int} interp)}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{375 \textcolor{keyword}{static} \mbox{\hyperlink{structmatrixdata}{MatrixData}} *load\_volume(\mbox{\hyperlink{structmatrix__file}{matrix\_file}},frame, cubic, interp)}
+\DoxyCodeLine{376 \mbox{\hyperlink{structmatrix__file}{MatrixFile}} *\mbox{\hyperlink{structmatrix__file}{matrix\_file}};}
+\DoxyCodeLine{377 \textcolor{keywordtype}{int} frame, cubic, interp;}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{379 \{}
+\DoxyCodeLine{380     \textcolor{keywordtype}{int} i=0, ret=0;}
+\DoxyCodeLine{381     \mbox{\hyperlink{structmatrixdata}{MatrixData}} *mat;}
+\DoxyCodeLine{382     \textcolor{keywordtype}{int} matnum;}
+\DoxyCodeLine{383     \textcolor{keywordtype}{float} zsep,maxval;}
+\DoxyCodeLine{384     \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *mh;}
+\DoxyCodeLine{385     \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}} *imh = NULL;}
+\DoxyCodeLine{386     \textcolor{keywordtype}{int} nmats, plane, bed, nslices=0;}
+\DoxyCodeLine{387     \textcolor{keywordtype}{float} bed\_pos[MAX\_BED\_POS];}
+\DoxyCodeLine{388     \mbox{\hyperlink{structmatdirnode}{MatDirNode}} *entry;}
+\DoxyCodeLine{389     \textcolor{keyword}{struct }\mbox{\hyperlink{structMatval}{Matval}} matval;}
+\DoxyCodeLine{390     \mbox{\hyperlink{struct__Tslice}{Tslice}} slice[MAX\_SLICES];}
+\DoxyCodeLine{391     \mbox{\hyperlink{structmatrixdata}{MatrixData}} *volume;}
+\DoxyCodeLine{392     \textcolor{keywordtype}{int} nvoxels;}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394     volume = (\mbox{\hyperlink{structmatrixdata}{MatrixData}}*)calloc(1,\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structmatrixdata}{MatrixData}}));}
+\DoxyCodeLine{395     mh = \mbox{\hyperlink{structmatrix__file}{matrix\_file}}-\/>mhptr;}
+\DoxyCodeLine{396     volume-\/>mat\_type = (DataSetType)mh-\/>file\_type;}
+\DoxyCodeLine{397     if (volume-\/>mat\_type != Short3dSinogram) }
+\DoxyCodeLine{398         imh = (\mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}*)calloc(1,\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}));}
+\DoxyCodeLine{399     memset(bed\_pos,0,MAX\_BED\_POS*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 \textcolor{comment}{/* BED OFFSETS CODING ERROR IN ECAT FILES, position 1 not filled */}}
+\DoxyCodeLine{402     \textcolor{keywordflow}{for} (i=2; i<mh-\/>num\_bed\_pos; i++)}
+\DoxyCodeLine{403         bed\_pos[i] = mh-\/>bed\_offset[i-\/2];}
+\DoxyCodeLine{404     if (mh-\/>num\_bed\_pos>2) bed\_pos[1] = bed\_pos[2]/2;}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406     zsep = mh-\/>plane\_separation;}
+\DoxyCodeLine{407     nmats = \mbox{\hyperlink{structmatrix__file}{matrix\_file}}-\/>dirlist-\/>nmats;}
+\DoxyCodeLine{408     entry = \mbox{\hyperlink{structmatrix__file}{matrix\_file}}-\/>dirlist-\/>first;}
+\DoxyCodeLine{409     maxval = 0.0;}
+\DoxyCodeLine{410     \textcolor{keywordflow}{for} (i=0; i<nmats; i++,entry=entry-\/>next)}
+\DoxyCodeLine{411     \{}
+\DoxyCodeLine{412         matnum = entry-\/>matnum;}
+\DoxyCodeLine{413         mat\_numdoc( matnum, \&matval);}
+\DoxyCodeLine{414         plane = matval.plane;}
+\DoxyCodeLine{415         bed = matval.bed;}
+\DoxyCodeLine{416         \textcolor{keywordflow}{if} (matval.frame != frame) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{417         mat = matrix\_read( \mbox{\hyperlink{structmatrix__file}{matrix\_file}}, matnum, MAT\_SUB\_HEADER);}
+\DoxyCodeLine{418         \textcolor{keywordflow}{if} (mat == NULL) matrix\_perror(\mbox{\hyperlink{structmatrix__file}{matrix\_file}}-\/>fname);}
+\DoxyCodeLine{419         memcpy(volume, mat, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structmatrixdata}{MatrixData}}));}
+\DoxyCodeLine{420         \textcolor{keywordflow}{if} (imh) memcpy(imh,mat-\/>shptr,\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}));}
+\DoxyCodeLine{421         slice[nslices].matnum = matnum;}
+\DoxyCodeLine{422         slice[nslices].zloc = bed\_pos[bed]+(plane-\/1)*zsep;}
+\DoxyCodeLine{423         \textcolor{keywordflow}{if} (volume-\/>data\_max > maxval) maxval = volume-\/>data\_max;}
+\DoxyCodeLine{424         nslices++;}
+\DoxyCodeLine{425         free\_matrix\_data(mat);}
+\DoxyCodeLine{426     \}}
+\DoxyCodeLine{427     \textcolor{keywordflow}{if} (nslices == 0)}
+\DoxyCodeLine{428     \{}
+\DoxyCodeLine{429         fprintf( stderr, \textcolor{stringliteral}{"{}ERROR...No slices selected\(\backslash\)n"{}});}
+\DoxyCodeLine{430         free\_matrix\_data(volume);}
+\DoxyCodeLine{431         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{432     \}}
+\DoxyCodeLine{433     volume-\/>data\_max = maxval;}
+\DoxyCodeLine{434     \textcolor{keywordflow}{if} (volume-\/>data\_type == ByteData) volume-\/>scale\_factor = maxval/256;}
+\DoxyCodeLine{435     \textcolor{keywordflow}{else} volume-\/>scale\_factor = maxval/32768;}
+\DoxyCodeLine{436     \textcolor{keywordflow}{if} (imh) imh-\/>scale\_factor = volume-\/>scale\_factor;}
+\DoxyCodeLine{437     \textcolor{keywordflow}{if} (imh) volume-\/>shptr = (caddr\_t)imh;}
+\DoxyCodeLine{438     \textcolor{keywordflow}{if} (nslices > 1) \{}
+\DoxyCodeLine{439         ret = load\_slices(\mbox{\hyperlink{structmatrix__file}{matrix\_file}},volume,slice,nslices, cubic, interp);}
+\DoxyCodeLine{440     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{441         \textcolor{keywordflow}{if} (cubic) ret = load\_v\_slices(\mbox{\hyperlink{structmatrix__file}{matrix\_file}},volume,slice, interp);}
+\DoxyCodeLine{442         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{443             free\_matrix\_data(volume);}
+\DoxyCodeLine{444             \textcolor{keywordflow}{return} matrix\_read(\mbox{\hyperlink{structmatrix__file}{matrix\_file}}, slice[0].matnum,UnknownMatDataType);}
+\DoxyCodeLine{445         \}}
+\DoxyCodeLine{446     \}}
+\DoxyCodeLine{447     \textcolor{keywordflow}{if} (!ret) \{}
+\DoxyCodeLine{448         free\_matrix\_data(volume);}
+\DoxyCodeLine{449         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{450     \}}
+\DoxyCodeLine{451     volume-\/>y\_size = volume-\/>pixel\_size;}
+\DoxyCodeLine{452     \textcolor{keywordflow}{if} (cubic) volume-\/>z\_size = volume-\/>pixel\_size;}
+\DoxyCodeLine{453     \textcolor{keywordflow}{else} volume-\/>z\_size = zsep;}
+\DoxyCodeLine{454     volume-\/>x\_origin = 0.5*volume-\/>xdim*volume-\/>pixel\_size;}
+\DoxyCodeLine{455     volume-\/>y\_origin = 0.5*volume-\/>ydim*volume-\/>y\_size;}
+\DoxyCodeLine{456     volume-\/>z\_origin = 0.5*volume-\/>zdim*volume-\/>z\_size;}
+\DoxyCodeLine{457     nvoxels = volume-\/>xdim*volume-\/>ydim*volume-\/>zdim;}
+\DoxyCodeLine{458     \textcolor{keywordflow}{if} (imh) \{}
+\DoxyCodeLine{459         imh-\/>num\_dimensions = 3;}
+\DoxyCodeLine{460         imh-\/>z\_dimension = volume-\/>zdim;}
+\DoxyCodeLine{461         imh-\/>y\_pixel\_size = volume-\/>y\_size;}
+\DoxyCodeLine{462         imh-\/>z\_pixel\_size = volume-\/>z\_size;}
+\DoxyCodeLine{463         \textcolor{keywordflow}{if} (volume-\/>data\_type == ByteData) \{}
+\DoxyCodeLine{464             imh-\/>image\_min = find\_bmin((u\_char*)volume-\/>data\_ptr,nvoxels);}
+\DoxyCodeLine{465             imh-\/>image\_max = find\_bmax((u\_char*)volume-\/>data\_ptr,nvoxels);}
+\DoxyCodeLine{466         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{467             imh-\/>image\_min = find\_smin((\textcolor{keywordtype}{short}*)volume-\/>data\_ptr,nvoxels);}
+\DoxyCodeLine{468             imh-\/>image\_max = find\_smax((\textcolor{keywordtype}{short}*)volume-\/>data\_ptr,nvoxels);}
+\DoxyCodeLine{469         \}}
+\DoxyCodeLine{470         volume-\/>data\_min = imh-\/>image\_min * volume-\/>scale\_factor;}
+\DoxyCodeLine{471         volume-\/>data\_max = imh-\/>image\_max * volume-\/>scale\_factor;}
+\DoxyCodeLine{472     \}}
+\DoxyCodeLine{473     volume-\/>data\_size = nvoxels;}
+\DoxyCodeLine{474     \textcolor{keywordflow}{if} (volume-\/>data\_type != ByteData) volume-\/>data\_size *= \textcolor{keyword}{sizeof}(short);}
+\DoxyCodeLine{475     volume-\/>matnum = slice[0].matnum;}
+\DoxyCodeLine{476     \textcolor{keywordflow}{return} volume;}
+\DoxyCodeLine{477 \}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

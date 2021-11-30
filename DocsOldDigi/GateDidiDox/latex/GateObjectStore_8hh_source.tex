@@ -1,0 +1,60 @@
+\hypertarget{GateObjectStore_8hh_source}{}\doxysection{Gate\+Object\+Store.\+hh}
+\label{GateObjectStore_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateObjectStore.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateObjectStore.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateObjectStore\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateObjectStore\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectStore}{GateObjectStore}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateMap}{GateMap}}<G4String,GateVVolume*>}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40     \textcolor{keyword}{static} \mbox{\hyperlink{classGateObjectStore}{GateObjectStore}}* \mbox{\hyperlink{classGateObjectStore_a868b491f637cbeb65f6f75ce8ac00b63}{GetInstance}}(); }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateObjectStore_aa65555a6a0e1f946c4d754ac2f22f5df}{\string~GateObjectStore}}(); }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{private}:}
+\DoxyCodeLine{45     \mbox{\hyperlink{classGateObjectStore}{GateObjectStore}}();   }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{public}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateObjectStore_a8fe1aed566154c0a5ed8c813ff4ac417}{RegisterCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* newCreator);   }
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateObjectStore_aeadf9c3992635f48aff8889f2d835a8f}{UnregisterCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* creator);    }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateObjectStore_ad25be00fedfb2747c1029ece099b2391}{ListCreators}}();                                    }
+\DoxyCodeLine{55         }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateObjectStore_a16d6d0266ea3d76862f13e1b9267242b}{FindCreator}}(\textcolor{keyword}{const} G4String\& name);                        }
+\DoxyCodeLine{59     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* FindVolumeCreator(\textcolor{keyword}{const} G4String\& volumeName);                  }
+\DoxyCodeLine{60     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* FindVolumeCreator(G4VPhysicalVolume* volume);           }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateObjectStore_aca50d4ef5309c34b9c84dfd076c2f457}{GetCreatorName}}(iterator iter) \{\textcolor{keywordflow}{return} iter-\/>first;\}       }
+\DoxyCodeLine{66     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateObjectStore_ae37b90cf5e59b0dfabfe0b6a7a4a2f11}{GetCreator}}(iterator iter) \{\textcolor{keywordflow}{return} iter-\/>second;\}      }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keyword}{private}:}
+\DoxyCodeLine{71     \textcolor{keyword}{static} \mbox{\hyperlink{classGateObjectStore}{GateObjectStore}}* theGateObjectStore;}
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+
+\end{DoxyCode}

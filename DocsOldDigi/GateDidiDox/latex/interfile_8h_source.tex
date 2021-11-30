@@ -1,0 +1,157 @@
+\hypertarget{interfile_8h_source}{}\doxysection{interfile.\+h}
+\label{interfile_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/interfile.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/interfile.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef interfile\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define interfile\_h}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}matrix.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifdef ultrix}}
+\DoxyCodeLine{6 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* strdup();}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/* }}
+\DoxyCodeLine{10 \textcolor{comment}{ *  sccsid = "{}@(\#)interfile.h   1.3  UCL-\/TOPO   96/05/29"{}}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ *  Copyright (C) 1995 University of Louvain, Louvain-\/la-\/Neuve, Belgium}}
+\DoxyCodeLine{13 \textcolor{comment}{ *}}
+\DoxyCodeLine{14 \textcolor{comment}{ *  Author : <Merence Sibomana> Sibomana@topo.ucl.ac.be}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ *    Positron Emission Tomography Laboratory}}
+\DoxyCodeLine{17 \textcolor{comment}{ *    Universite Catholique de Louvain}}
+\DoxyCodeLine{18 \textcolor{comment}{ *    Ch. du Cyclotron, 2}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    B-\/1348 Louvain-\/la-\/Neuve}}
+\DoxyCodeLine{20 \textcolor{comment}{ *        Belgium}}
+\DoxyCodeLine{21 \textcolor{comment}{ *}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  This program may be used free of charge by the members}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  of all academic and/or scientific institutions.}}
+\DoxyCodeLine{24 \textcolor{comment}{ *     ANY OTHER USE IS PROHIBITED.}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  It may also be included in any package}}
+\DoxyCodeLine{26 \textcolor{comment}{ *    -\/  provided that this text is not removed from}}
+\DoxyCodeLine{27 \textcolor{comment}{ *    the source code and that reference to this original}}
+\DoxyCodeLine{28 \textcolor{comment}{ *    work is done ;}}
+\DoxyCodeLine{29 \textcolor{comment}{ *    -\/ provided that this package is itself available}}
+\DoxyCodeLine{30 \textcolor{comment}{ *    for use, free of charge, to the members of all}}
+\DoxyCodeLine{31 \textcolor{comment}{ *    academic and/or scientific institutions.}}
+\DoxyCodeLine{32 \textcolor{comment}{ *  Nor the author, nor the Universite Catholique de Louvain, in any}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  way guarantee that this program will fullfill any particular}}
+\DoxyCodeLine{34 \textcolor{comment}{ *  requirement, nor even that its use will always be harmless.}}
+\DoxyCodeLine{35 \textcolor{comment}{ *}}
+\DoxyCodeLine{36 \textcolor{comment}{ *}}
+\DoxyCodeLine{37 \textcolor{comment}{ */}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/* only one energy window, static tomographic data supported */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{42     VERSION\_OF\_KEYS,}
+\DoxyCodeLine{43     IMAGE\_MODALITY,}
+\DoxyCodeLine{44     ORIGINAL\_INSTITUTION,}
+\DoxyCodeLine{45     ORIGINATING\_SYSTEM,}
+\DoxyCodeLine{46     NAME\_OF\_DATA\_FILE,}
+\DoxyCodeLine{47     DATA\_STARTING\_BLOCK,}
+\DoxyCodeLine{48     DATA\_OFFSET\_IN\_BYTES,}
+\DoxyCodeLine{49     PATIENT\_ID,}
+\DoxyCodeLine{50     PATIENT\_DOB,        \textcolor{comment}{/* date format is YYYY:MM:DD */}}
+\DoxyCodeLine{51     PATIENT\_SEX,}
+\DoxyCodeLine{52     STUDY\_ID,}
+\DoxyCodeLine{53     EXAM\_TYPE,}
+\DoxyCodeLine{54     DATA\_COMPRESSION,}
+\DoxyCodeLine{55     DATA\_ENCODE,}
+\DoxyCodeLine{56     TYPE\_OF\_DATA,}
+\DoxyCodeLine{57     TOTAL\_NUMBER\_OF\_IMAGES,}
+\DoxyCodeLine{58     STUDY\_DATE,}
+\DoxyCodeLine{59     STUDY\_TIME,     \textcolor{comment}{/* Time Format is hh:mm:ss */}}
+\DoxyCodeLine{60     IMAGEDATA\_BYTE\_ORDER,}
+\DoxyCodeLine{61     NUMBER\_OF\_WINDOWS,  \textcolor{comment}{/* Number of energy windows */}}
+\DoxyCodeLine{62     NUMBER\_OF\_IMAGES,   \textcolor{comment}{/* Number of images/energy window */}}
+\DoxyCodeLine{63     PROCESS\_STATUS,}
+\DoxyCodeLine{64     NUMBER\_OF\_DIMENSIONS,}
+\DoxyCodeLine{65     MATRIX\_SIZE\_1,}
+\DoxyCodeLine{66     MATRIX\_SIZE\_2,}
+\DoxyCodeLine{67     MATRIX\_SIZE\_3,}
+\DoxyCodeLine{68     NUMBER\_FORMAT,}
+\DoxyCodeLine{69     NUMBER\_OF\_BYTES\_PER\_PIXEL,}
+\DoxyCodeLine{70     SCALE\_FACTOR\_1,}
+\DoxyCodeLine{71     SCALE\_FACTOR\_2,}
+\DoxyCodeLine{72     SCALE\_FACTOR\_3,}
+\DoxyCodeLine{73     IMAGE\_DURATION,}
+\DoxyCodeLine{74     IMAGE\_START\_TIME,}
+\DoxyCodeLine{75     IMAGE\_NUMBER,}
+\DoxyCodeLine{76     LABEL,}
+\DoxyCodeLine{77     MAXIMUM\_PIXEL\_COUNT,}
+\DoxyCodeLine{78     TOTAL\_COUNTS,}
+\DoxyCodeLine{79 \textcolor{comment}{/*}}
+\DoxyCodeLine{80 \textcolor{comment}{ My Extensions}}
+\DoxyCodeLine{81 \textcolor{comment}{*/}}
+\DoxyCodeLine{82     QUANTIFICATION\_UNITS,   \textcolor{comment}{/* scale\_factor units; eg 10e-\/3 counts/seconds */}}
+\DoxyCodeLine{83     COLORTAB,}
+\DoxyCodeLine{84     DISPLAY\_RANGE,}
+\DoxyCodeLine{85     IMAGE\_EXTREMA,}
+\DoxyCodeLine{86     REAL\_EXTREMA,}
+\DoxyCodeLine{87     INTERPOLABILITY,}
+\DoxyCodeLine{88     MATRIX\_INITIAL\_ELEMENT\_1,}
+\DoxyCodeLine{89     MATRIX\_INITIAL\_ELEMENT\_2,}
+\DoxyCodeLine{90     MATRIX\_INITIAL\_ELEMENT\_3,}
+\DoxyCodeLine{91     ATLAS\_ORIGIN\_1,}
+\DoxyCodeLine{92     ATLAS\_ORIGIN\_2,}
+\DoxyCodeLine{93     ATLAS\_ORIGIN\_3,}
+\DoxyCodeLine{94     TRANSFORMER,}
+\DoxyCodeLine{95     END\_OF\_INTERFILE}
+\DoxyCodeLine{96 \} InterfileKeys;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{99     STATIC,}
+\DoxyCodeLine{100     DYNAMIC,}
+\DoxyCodeLine{101     GATED,}
+\DoxyCodeLine{102     TOMOGRAPHIC,}
+\DoxyCodeLine{103     CURVE,}
+\DoxyCodeLine{104     ROI,}
+\DoxyCodeLine{105     OTHER,}
+\DoxyCodeLine{106 \textcolor{comment}{/* My Externsion */}}
+\DoxyCodeLine{107     CLICHE          \textcolor{comment}{/* with a fixed colormap */}}
+\DoxyCodeLine{108 \}   TypeOfData;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{111     UNSIGNED\_INTEGER,}
+\DoxyCodeLine{112     SIGNED\_INTEGER,}
+\DoxyCodeLine{113     SHORT\_FLOAT,}
+\DoxyCodeLine{114     LONG\_FLOAT,}
+\DoxyCodeLine{115 \textcolor{comment}{/* My Externsion */}}
+\DoxyCodeLine{116     COLOR\_PIXEL}
+\DoxyCodeLine{117 \} NumberFormat;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__InterfileItem}{\_InterfileItem}} \{}
+\DoxyCodeLine{120     \textcolor{keywordtype}{int} key;}
+\DoxyCodeLine{121     \textcolor{keywordtype}{char}* value;}
+\DoxyCodeLine{122 \} \mbox{\hyperlink{struct__InterfileItem}{InterfileItem}};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keyword}{extern} \mbox{\hyperlink{struct__InterfileItem}{InterfileItem}} used\_keys[];}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#if defined(\_\_STDC\_\_) || defined(\_\_cplusplus)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#if defined(\_\_cplusplus)}}
+\DoxyCodeLine{128 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{129 \textcolor{comment}{/*}}
+\DoxyCodeLine{130 \textcolor{comment}{ * high level user functions}}
+\DoxyCodeLine{131 \textcolor{comment}{ */}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 \textcolor{keywordtype}{int} interfile\_write\_volume(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}* mptr, \textcolor{keywordtype}{char} *image\_name,\textcolor{keywordtype}{char} *header\_name,}
+\DoxyCodeLine{134         u\_char* data\_matrix, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{135 \textcolor{keywordtype}{char} *is\_interfile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{136 \textcolor{keywordtype}{int} interfile\_open(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*);}
+\DoxyCodeLine{137 \mbox{\hyperlink{structmatrixdata}{MatrixData}} *interfile\_read\_slice(FILE*, \textcolor{keywordtype}{char}** ifh, \mbox{\hyperlink{structmatrixdata}{MatrixData}}*, \textcolor{keywordtype}{int} slice,}
+\DoxyCodeLine{138     \textcolor{keywordtype}{int} u\_flag);}
+\DoxyCodeLine{139 \textcolor{keywordtype}{int} interfile\_read(\mbox{\hyperlink{structmatrix__file}{MatrixFile}} *mptr,\textcolor{keywordtype}{int} matnum, }
+\DoxyCodeLine{140     \mbox{\hyperlink{structmatrixdata}{MatrixData}}  *data, \textcolor{keywordtype}{int} dtype);}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#if defined(\_\_cplusplus)}}
+\DoxyCodeLine{142 \}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{145 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} *is\_interfile();}
+\DoxyCodeLine{146 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} interfile\_open();}
+\DoxyCodeLine{147 \textcolor{keyword}{extern} \mbox{\hyperlink{structmatrixdata}{MatrixData}} *interfile\_read\_slice();}
+\DoxyCodeLine{148 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} interfile\_read();}
+\DoxyCodeLine{149 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} interfile\_write\_volume();}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,172 @@
+\hypertarget{GenMatrix_8h_source}{}\doxysection{Gen\+Matrix.\+h}
+\label{GenMatrix_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/GenMatrix.h@{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/GenMatrix.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// -\/*-\/ C++ -\/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{// CLASSDOC OFF}}
+\DoxyCodeLine{3 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// CLASSDOC ON}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// This file is a part of the CLHEP -\/ a Class Library for High Energy Physics.}}
+\DoxyCodeLine{7 \textcolor{comment}{// }}
+\DoxyCodeLine{8 \textcolor{comment}{// This software written by Nobu Katayama and Mike Smyth, Cornell University.}}
+\DoxyCodeLine{9 \textcolor{comment}{// }}
+\DoxyCodeLine{10 \textcolor{comment}{// This is the definition of the HepGenMatrix, base class for HepMatrix,}}
+\DoxyCodeLine{11 \textcolor{comment}{// HepSymMatrix and HepDiagMatrix. This is an abstract cless.}}
+\DoxyCodeLine{12 \textcolor{comment}{// See definitions in Matrix.h, SymMatrix.h, DiagMatrix.h and Vector.h}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef \_GENMatrix\_H\_}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define \_GENMatrix\_H\_}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifdef GNUPRAGMA}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma interface}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/defs.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }CLHEP \{}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }HepGenMatrix\_row;}
+\DoxyCodeLine{29 \textcolor{keyword}{class }HepGenMatrix\_row\_const;}
+\DoxyCodeLine{30 \textcolor{keyword}{class }HepGenMatrix;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}} \{}
+\DoxyCodeLine{37  }
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39    \textcolor{keyword}{virtual} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{\string~HepGenMatrix}}() \{\}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef DISABLE\_ALLOC   }\textcolor{comment}{// disable this non-\/compliant allocator}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{44    \textcolor{keyword}{template} <\textcolor{keyword}{class} T, \textcolor{keywordtype}{size\_t} size> \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}} }
+\DoxyCodeLine{45    \{}
+\DoxyCodeLine{46  }
+\DoxyCodeLine{47    \textcolor{keyword}{public}:  }
+\DoxyCodeLine{48      \textcolor{keyword}{typedef} T value\_type;  }
+\DoxyCodeLine{49      \textcolor{keyword}{typedef} \textcolor{keywordtype}{size\_t} size\_type;  }
+\DoxyCodeLine{50      \textcolor{keyword}{typedef} ptrdiff\_t difference\_type;  }
+\DoxyCodeLine{51      \textcolor{keyword}{typedef} T* pointer;  }
+\DoxyCodeLine{52      \textcolor{keyword}{typedef} \textcolor{keyword}{const} T* const\_pointer;  }
+\DoxyCodeLine{53      \textcolor{keyword}{typedef} T\& reference;  }
+\DoxyCodeLine{54      \textcolor{keyword}{typedef} \textcolor{keyword}{const} T\& const\_reference;}
+\DoxyCodeLine{55  }
+\DoxyCodeLine{56      pointer address(reference r)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&r; \}  }
+\DoxyCodeLine{57      const\_pointer address(const\_reference r)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&r; \}  }
+\DoxyCodeLine{58      \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}}() \textcolor{keywordflow}{throw}() \{\}  }
+\DoxyCodeLine{59      \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc<T,size>}}\&) \textcolor{keywordflow}{throw}() \{\}   }
+\DoxyCodeLine{60      \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{\string~Alloc}}() \textcolor{keywordflow}{throw}() \{\}  }
+\DoxyCodeLine{61      pointer allocate(size\_type n, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* hint=0 ) \{ \textcolor{keywordflow}{if}( n <= size ) \textcolor{keywordflow}{return} pool; \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{new} T[n]; \}  }
+\DoxyCodeLine{62      \textcolor{keywordtype}{void} deallocate(pointer p, size\_type n) \{ \textcolor{keywordflow}{if} (p == pool ) \textcolor{keywordflow}{return}; \textcolor{keyword}{delete} [] p; \}  }
+\DoxyCodeLine{63      \textcolor{keywordtype}{void} construct(pointer p, \textcolor{keyword}{const} T\& val ) \{ \textcolor{keyword}{new}(p) T(val); \}  }
+\DoxyCodeLine{64      \textcolor{keywordtype}{void} destroy(pointer p) \{ p-\/>\string~T(); \}  }
+\DoxyCodeLine{65      size\_type max\_size() \textcolor{keyword}{const} \textcolor{keywordflow}{throw}() \{ size\_type c = (size\_type)(-\/1) /\textcolor{keyword}{sizeof}(T); \textcolor{keywordflow}{return} (0 < c ? c : 1); \}  }
+\DoxyCodeLine{66      \textcolor{keyword}{template}<\textcolor{keyword}{class} O> \textcolor{keyword}{struct }\mbox{\hyperlink{structCLHEP_1_1HepGenMatrix_1_1Alloc_1_1rebind}{rebind}} \{ \textcolor{keyword}{typedef} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc<O,size>}} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{other}}; \};}
+\DoxyCodeLine{67  }
+\DoxyCodeLine{68    \textcolor{keyword}{private}:  }
+\DoxyCodeLine{69      T pool[size];}
+\DoxyCodeLine{70    \};}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#ifdef DISABLE\_ALLOC}}
+\DoxyCodeLine{74    \textcolor{keyword}{typedef} std::vector<double >::iterator mIter;}
+\DoxyCodeLine{75    \textcolor{keyword}{typedef} std::vector<double >::const\_iterator mcIter;}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{77    \textcolor{keyword}{typedef} std::vector<double,Alloc<double,25> >::iterator mIter;}
+\DoxyCodeLine{78    \textcolor{keyword}{typedef} std::vector<double,Alloc<double,25> >::const\_iterator mcIter;}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} num\_row() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{82    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} num\_col() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84    \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const} =0;}
+\DoxyCodeLine{85    \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col) =0;}
+\DoxyCodeLine{86    \textcolor{comment}{// Read or write a matrix element. }}
+\DoxyCodeLine{87    \textcolor{comment}{// ** Note that the indexing starts from (1,1). **}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} invert(\textcolor{keywordtype}{int}\&) = 0;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91    \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row}{HepGenMatrix\_row}} \{}
+\DoxyCodeLine{92    \textcolor{keyword}{public}:}
+\DoxyCodeLine{93       \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row}{HepGenMatrix\_row}}(\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}}\&,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{94       \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int});}
+\DoxyCodeLine{95    \textcolor{keyword}{private}:}
+\DoxyCodeLine{96       \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}}\& \_a;}
+\DoxyCodeLine{97       \textcolor{keywordtype}{int} \_r;}
+\DoxyCodeLine{98    \};}
+\DoxyCodeLine{99    \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row__const}{HepGenMatrix\_row\_const}} \{}
+\DoxyCodeLine{100    \textcolor{keyword}{public}:}
+\DoxyCodeLine{101       \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row__const}{HepGenMatrix\_row\_const}} (\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}}\&,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{102       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int}) \textcolor{keyword}{const};}
+\DoxyCodeLine{103    \textcolor{keyword}{private}:}
+\DoxyCodeLine{104       \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}}\& \_a;}
+\DoxyCodeLine{105       \textcolor{keywordtype}{int} \_r;}
+\DoxyCodeLine{106    \};}
+\DoxyCodeLine{107    \textcolor{comment}{// helper classes to implement m[i][j]}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row}{HepGenMatrix\_row}} operator[] (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{110    \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row__const}{HepGenMatrix\_row\_const}} operator[] (\textcolor{keywordtype}{int}) \textcolor{keyword}{const};}
+\DoxyCodeLine{111    \textcolor{comment}{// Read or write a matrix element.}}
+\DoxyCodeLine{112    \textcolor{comment}{// While it may not look like it, you simply do m[i][j] to get an}}
+\DoxyCodeLine{113    \textcolor{comment}{// element. }}
+\DoxyCodeLine{114    \textcolor{comment}{// ** Note that the indexing starts from [0][0]. **}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116    \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} swap(\textcolor{keywordtype}{int}\&,\textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#ifdef DISABLE\_ALLOC}}
+\DoxyCodeLine{118    \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} swap(std::vector<double >\&, std::vector<double >\&);}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{120    \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} swap(std::vector<\textcolor{keywordtype}{double},\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc<double,25>}} >\&, std::vector<\textcolor{keywordtype}{double},\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc<double,25>}} >\&);}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} operator== ( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}}\& ) \textcolor{keyword}{const};}
+\DoxyCodeLine{124    \textcolor{comment}{// equality operator for matrices (BaBar)}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126    \textcolor{keyword}{static} \textcolor{keywordtype}{void} error(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *s);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{129    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} num\_size() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{130    \textcolor{keywordtype}{void} delete\_m(\textcolor{keywordtype}{int} size, \textcolor{keywordtype}{double}*);}
+\DoxyCodeLine{131    \textcolor{keywordtype}{double}* new\_m(\textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{public}:}
+\DoxyCodeLine{134    \textcolor{keyword}{enum}\{size\_max = 25\};}
+\DoxyCodeLine{135    \textcolor{comment}{// This is not the maximum size of the Matrix. It is the maximum length of}}
+\DoxyCodeLine{136    \textcolor{comment}{// the array (1D) which can be put on the pile.}}
+\DoxyCodeLine{137    \textcolor{comment}{//}}
+\DoxyCodeLine{138    \textcolor{comment}{// This enum used to be private, but it then is not accessible}}
+\DoxyCodeLine{139    \textcolor{comment}{// in the definition of array\_pile in the .cc file for Sun CC 4.0.1.}}
+\DoxyCodeLine{140    \textcolor{comment}{// efrank@upenn5.hep.upenn.edu}}
+\DoxyCodeLine{141  }
+\DoxyCodeLine{142 \textcolor{keyword}{private}:}
+\DoxyCodeLine{143    \textcolor{keywordtype}{void} operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}} \&) \{\}}
+\DoxyCodeLine{144    \textcolor{comment}{// Remove default operator for HepGenMatrix.}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146    \textcolor{keyword}{friend} \textcolor{keyword}{class }HepGenMatrix\_row;}
+\DoxyCodeLine{147    \textcolor{keyword}{friend} \textcolor{keyword}{class }HepGenMatrix\_row\_const;}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149    \textcolor{comment}{//-\/ap: removed this as it is taken over by the std::vector<double>}}
+\DoxyCodeLine{150    \textcolor{comment}{//-\/ap  double data\_array[size\_max];  }}
+\DoxyCodeLine{151 \};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{double} norm(\textcolor{keyword}{const} HepGenMatrix \&m);}
+\DoxyCodeLine{154 \textcolor{keywordtype}{double} norm1(\textcolor{keyword}{const} HepGenMatrix \&m);}
+\DoxyCodeLine{155 \textcolor{keywordtype}{double} norm\_infinity(\textcolor{keyword}{const} HepGenMatrix \&m);}
+\DoxyCodeLine{156 \textcolor{comment}{// 2, 1 or infinity-\/norm of a matrix.}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \}  \textcolor{comment}{// namespace CLHEP}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#ifdef ENABLE\_BACKWARDS\_COMPATIBILITY}}
+\DoxyCodeLine{161 \textcolor{comment}{//  backwards compatibility will be enabled ONLY in CLHEP 1.9}}
+\DoxyCodeLine{162 \textcolor{keyword}{using namespace }CLHEP;}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#ifndef HEP\_DEBUG\_INLINE}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/GenMatrix.icc"{}}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,43 @@
+\hypertarget{GateVoxelizedPosDistribution_8hh_source}{}\doxysection{Gate\+Voxelized\+Pos\+Distribution.\+hh}
+\label{GateVoxelizedPosDistribution_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVoxelizedPosDistribution.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVoxelizedPosDistribution.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateVoxelizedPosDistribution.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 20 nov. 2015}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: js244228}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEVOXELIZEDPOSDISTRIBUTION\_HH\_}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEVOXELIZEDPOSDISTRIBUTION\_HH\_}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateSPSPosDistribution.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelizedPosDistribution}{GateVoxelizedPosDistribution}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateSPSPosDistribution}{GateSPSPosDistribution}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \mbox{\hyperlink{classGateVoxelizedPosDistribution}{GateVoxelizedPosDistribution}}(G4String filename);}
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateVoxelizedPosDistribution}{\string~GateVoxelizedPosDistribution}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23   \textcolor{keywordtype}{void} SetPosition(G4ThreeVector pos) \{mPosition = pos;\};}
+\DoxyCodeLine{24   G4ThreeVector GenerateOne();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27   G4ThreeVector mPosition;       \textcolor{comment}{// position in world coordinates of pixel 0,0,0}}
+\DoxyCodeLine{28   G4ThreeVector mResolution;     \textcolor{comment}{// resolution of data}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   G4int m\_nx, m\_ny, m\_nz;     \textcolor{comment}{// size of voxelized distribution}}
+\DoxyCodeLine{31   G4double *mPosDistZCDF;   \textcolor{comment}{// Cumulative distribution function in Z}}
+\DoxyCodeLine{32   G4double **mPosDistYCDF;  \textcolor{comment}{// CDF in Y}}
+\DoxyCodeLine{33   G4double ***mPosDistXCDF;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEVOXELIZEDPOSDISTRIBUTION\_HH\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

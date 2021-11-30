@@ -1,0 +1,171 @@
+\hypertarget{GateSinogram_8hh_source}{}\doxysection{Gate\+Sinogram.\+hh}
+\label{GateSinogram_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSinogram.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSinogram.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{10 \textcolor{comment}{   Modifications history}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     Gate 6.2}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{    C. Comtat, CEA/SHFJ, 10/02/2011    Allows for virtual crystals, needed to simulate ecat like sinogram output for Biograph scanners}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GateSinogram\_H}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GateSinogram\_H}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSinogram}{GateSinogram}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} SinogramDataType;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{public}:}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSinogram_aef964738f13971e21ccc7bc9ea00c449}{GateSinogram}}();                            }
+\DoxyCodeLine{43     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSinogram_a47a0f5e52ae66c4a4f538676661826d9}{\string~GateSinogram}}() \{\mbox{\hyperlink{classGateSinogram_ad3b71d91edc356855c9e2613f3de7006}{Reset}}();\}       }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_ad3b71d91edc356855c9e2613f3de7006}{Reset}}(\textcolor{keywordtype}{size\_t} ringNumber=0, \textcolor{keywordtype}{size\_t} crystalNumber=0, \textcolor{keywordtype}{size\_t} radialElemNb=0, \textcolor{keywordtype}{size\_t} virtualRingNumber=0, \textcolor{keywordtype}{size\_t} virtualCrystalPerBlockNumber=0);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_abe9caa831e9faa929f563ba9bc4c62dc}{ClearData}}(\textcolor{keywordtype}{size\_t} frameID, \textcolor{keywordtype}{size\_t} gateID, \textcolor{keywordtype}{size\_t} dataID, \textcolor{keywordtype}{size\_t} bedID);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_a702c6e199a53f530c26d460ffc89cae4}{CrystalBlurring}}( G4int *ringID, G4int *crystalID, G4double ringResolution,}
+\DoxyCodeLine{53                           G4double crystalResolution );}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     G4int \mbox{\hyperlink{classGateSinogram_a8714503fae192b8830fa72e01994d571}{Fill}}( G4int ring1ID, G4int ring2ID, G4int crystal1ID, G4int crystal2ID, \textcolor{keywordtype}{int} signe);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59     G4int \mbox{\hyperlink{classGateSinogram_af1b09ee1a06ef0f323097900d9e75572}{FillRandoms}}( G4int ring1ID, G4int ring2ID);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     G4int \mbox{\hyperlink{classGateSinogram_a655f3b93cc33cac84935db10ec27c58d}{GetSinoID}}( G4int ring1ID, G4int ring2ID);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_aff604cb4bd4fbe83021b53dc68720277}{GetRingNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{69 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_af6a56cfb6905dda1f54503e651311c56}{m\_ringNb}};\}}
+\DoxyCodeLine{71     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_a287adc5a63aa6da45163c5f10094e48e}{SetRingNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{72       \{ \mbox{\hyperlink{classGateSinogram_af6a56cfb6905dda1f54503e651311c56}{m\_ringNb}} = aNb;\}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// C. Comtat, February 2011: Required to simulate Biograph output sinograms with virtual crystals}}
+\DoxyCodeLine{76 \textcolor{comment}{}    \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_a5c03be5f54424ab0aa7a517d9e712cee}{GetVirtualRingPerBlockNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{77 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a123db145031dec887e8e8c25e20798bd}{m\_virtualRingPerBlockNb}};\}}
+\DoxyCodeLine{79     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_a908b39a211c0636007f490fc0fc467ad}{SetVirtualRingPerBlockNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{80       \{ \mbox{\hyperlink{classGateSinogram_a123db145031dec887e8e8c25e20798bd}{m\_virtualRingPerBlockNb}} = aNb;\}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{// C. Comtat, February 2011: Required to simulate Biograph output sinograms with virtual crystals}}
+\DoxyCodeLine{84 \textcolor{comment}{}    \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_a241a02777db735a96d70967c90f0acb5}{GetVirtualCrystalPerBlockNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{85 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a4f2a889fce94511e55779e9a56dc8424}{m\_virtualCrystalPerBlockNb}};\}}
+\DoxyCodeLine{87     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_ae731f0c9d23944fa6c8d114df1cfb75a}{SetVirtualCrystalPerBlockNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{88       \{ \mbox{\hyperlink{classGateSinogram_a4f2a889fce94511e55779e9a56dc8424}{m\_virtualCrystalPerBlockNb}} = aNb;\}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{92      \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_abbb652392fec20d787fcdcac99333503}{GetRadialElemNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{93 \textcolor{keyword}{       }\{ \textcolor{keywordflow}{return}  \mbox{\hyperlink{classGateSinogram_a278cc16d059b99e5a66049e1204b755a}{m\_radialElemNb}};\}}
+\DoxyCodeLine{95      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_aeae423effa8dfe6e0cf255224d9fee87}{SetRadialElemNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{96        \{ \mbox{\hyperlink{classGateSinogram_a278cc16d059b99e5a66049e1204b755a}{m\_radialElemNb}} = aNb;\}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99      \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_ab171ae8929baa4f08fc7fdd8303a0a81}{GetSinogramNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{100 \textcolor{keyword}{       }\{ \textcolor{keywordflow}{return}  \mbox{\hyperlink{classGateSinogram_ae4b32953ce8331cfd11430c427e371e5}{m\_sinogramNb}};\}}
+\DoxyCodeLine{102      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_acc0599cb84e45579b588cdec0b9753a4}{SetSinogramNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{103        \{ \mbox{\hyperlink{classGateSinogram_ae4b32953ce8331cfd11430c427e371e5}{m\_sinogramNb}} = aNb;\}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_aad48ec7557604c23135a91ca5f946688}{GetCrystalNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{107 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_acd257fd3515fd63d077e937923f7fb20}{m\_crystalNb}};\}}
+\DoxyCodeLine{109     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_aff30a2a4c6406ec7373f3cbf8af62e2e}{SetCrystalNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{110       \{ \mbox{\hyperlink{classGateSinogram_acd257fd3515fd63d077e937923f7fb20}{m\_crystalNb}} = aNb;\}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{113     \textcolor{keyword}{inline} SinogramDataType** \mbox{\hyperlink{classGateSinogram_a67f2c492497784a64418d45db050fa38}{GetData}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{114 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a369626e7336d2bbfdcb9c2343f25978a}{m\_data}};\}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117     \textcolor{keyword}{inline} SinogramDataType* \mbox{\hyperlink{classGateSinogram_a705fedde52a806d80ce9944dcb79e942}{GetRandoms}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{118 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a27c18ce0890afd3eae20c70a51c975c5}{m\_randomsNb}};\}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{121     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_a44f438225f5c7eebbea2d8e189f16188}{SetVerboseLevel}}(G4int val)}
+\DoxyCodeLine{122       \{ nVerboseLevel = val; \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{125     \textcolor{keyword}{inline} SinogramDataType* \mbox{\hyperlink{classGateSinogram_af39eaf612a8297e71cf2577482d5bcbf}{GetSinogram}}(\textcolor{keywordtype}{size\_t} sinoID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{126 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a369626e7336d2bbfdcb9c2343f25978a}{m\_data}}[sinoID];\}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateSinogram_a7ff74b9db7813124ad79eb27bd887ce7}{PixelsPerSinogram}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{130 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a278cc16d059b99e5a66049e1204b755a}{m\_radialElemNb}} * \mbox{\hyperlink{classGateSinogram_acd257fd3515fd63d077e937923f7fb20}{m\_crystalNb}} / 2;\}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{133     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateSinogram_a926de05813ff38ea3689a45ee665ab1f}{BytesPerSinogram}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{134 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a7ff74b9db7813124ad79eb27bd887ce7}{PixelsPerSinogram}}() * \mbox{\hyperlink{classGateSinogram_a2e8926eb3d8826fbbe9edc65014f4a85}{BytesPerPixel}}() ;\}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_a2e8926eb3d8826fbbe9edc65014f4a85}{BytesPerPixel}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{138 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(SinogramDataType);\}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{141     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_aa8e8eab769dfa11a6c7d0844f9249f1a}{GetCurrentFrameID}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{142 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a9c8a301281d5e80262a58151af05a7aa}{m\_currentFrameID}};\}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_a50440f0d947f01ff8890bc541e15a7fa}{GetCurrentGateID}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{146 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_aca0f4144eecb3d3e4ef651f1eaa77b65}{m\_currentGateID}};\}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{149     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_a26ce367534c195a7ed6160afcdc97db0}{GetCurrentDataID}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{150 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a0d0198c22a48961abd0b8e20c59b401a}{m\_currentDataID}};\}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{153     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSinogram_a7057b6888eb4a2bd4ba43118b3798038}{GetCurrentBedID}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{154 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSinogram_a7256502ac6b65a3e1db30f0cbd71cc03}{m\_currentBedID}};\}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158 }
+\DoxyCodeLine{164     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinogram_a1c2a939edc177718431886b7973194ef}{StreamOut}}(std::ofstream\& dest, \textcolor{keywordtype}{size\_t} sinoID, \textcolor{keywordtype}{size\_t} seekID);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{keywordtype}{size\_t}                \mbox{\hyperlink{classGateSinogram_af6a56cfb6905dda1f54503e651311c56}{m\_ringNb}};                             }
+\DoxyCodeLine{170     \textcolor{keywordtype}{size\_t}        \mbox{\hyperlink{classGateSinogram_acd257fd3515fd63d077e937923f7fb20}{m\_crystalNb}};                          }
+\DoxyCodeLine{171     SinogramDataType    **\mbox{\hyperlink{classGateSinogram_a369626e7336d2bbfdcb9c2343f25978a}{m\_data}};                               }
+\DoxyCodeLine{172     G4int                 \mbox{\hyperlink{classGateSinogram_a9c8a301281d5e80262a58151af05a7aa}{m\_currentFrameID}};                     }
+\DoxyCodeLine{173     G4int                 \mbox{\hyperlink{classGateSinogram_aca0f4144eecb3d3e4ef651f1eaa77b65}{m\_currentGateID}};                      }
+\DoxyCodeLine{174     G4int             \mbox{\hyperlink{classGateSinogram_a0d0198c22a48961abd0b8e20c59b401a}{m\_currentDataID}};                      }
+\DoxyCodeLine{175     G4int                 \mbox{\hyperlink{classGateSinogram_a7256502ac6b65a3e1db30f0cbd71cc03}{m\_currentBedID}};                       }
+\DoxyCodeLine{176     G4int                 nVerboseLevel;}
+\DoxyCodeLine{177     SinogramDataType     *\mbox{\hyperlink{classGateSinogram_a27c18ce0890afd3eae20c70a51c975c5}{m\_randomsNb}};                          }
+\DoxyCodeLine{178     \textcolor{keywordtype}{size\_t}        \mbox{\hyperlink{classGateSinogram_a278cc16d059b99e5a66049e1204b755a}{m\_radialElemNb}};         }
+\DoxyCodeLine{179     \textcolor{keywordtype}{size\_t}                \mbox{\hyperlink{classGateSinogram_ae4b32953ce8331cfd11430c427e371e5}{m\_sinogramNb}};                         }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \textcolor{comment}{// C. Comtat, February 2011: Required to simulate Biograph output sinograms with virtual crystals}}
+\DoxyCodeLine{182     \textcolor{keywordtype}{size\_t}                \mbox{\hyperlink{classGateSinogram_a123db145031dec887e8e8c25e20798bd}{m\_virtualRingPerBlockNb}};              }
+\DoxyCodeLine{183     \textcolor{keywordtype}{size\_t}                \mbox{\hyperlink{classGateSinogram_a4f2a889fce94511e55779e9a56dc8424}{m\_virtualCrystalPerBlockNb}};           }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{comment}{// ProjectionDataType   *m\_dataMax;                         //!< Max count for each projection}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{comment}{// Public constructor}}
+\DoxyCodeLine{195 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSinogram_aef964738f13971e21ccc7bc9ea00c449}{GateSinogram::GateSinogram}}()}
+\DoxyCodeLine{196   : m\_ringNb(0)}
+\DoxyCodeLine{197   , m\_crystalNb(0)}
+\DoxyCodeLine{198   , m\_data(0)}
+\DoxyCodeLine{199   , m\_currentFrameID(-\/1)}
+\DoxyCodeLine{200   , m\_currentGateID(-\/1)}
+\DoxyCodeLine{201   , m\_currentDataID(-\/1)}
+\DoxyCodeLine{202   , m\_currentBedID(-\/1)}
+\DoxyCodeLine{203   , nVerboseLevel(0)}
+\DoxyCodeLine{204   , m\_randomsNb(0)}
+\DoxyCodeLine{205   , m\_radialElemNb(0)}
+\DoxyCodeLine{206   , m\_sinogramNb(0)}
+\DoxyCodeLine{207   , m\_virtualRingPerBlockNb(0)}
+\DoxyCodeLine{208   , m\_virtualCrystalPerBlockNb(0)}
+\DoxyCodeLine{209 \{}
+\DoxyCodeLine{210 \}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

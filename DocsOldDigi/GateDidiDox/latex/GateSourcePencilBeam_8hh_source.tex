@@ -1,0 +1,132 @@
+\hypertarget{GateSourcePencilBeam_8hh_source}{}\doxysection{Gate\+Source\+Pencil\+Beam.\+hh}
+\label{GateSourcePencilBeam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourcePencilBeam.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourcePencilBeam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATESOURCEPENCILBEAM\_HH}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATESOURCEPENCILBEAM\_HH}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4VPrimaryGenerator.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4IonTable.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4PrimaryVertex.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4ParticleMomentum.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}GateSourcePencilBeamMessenger.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}CLHEP/RandomObjects/RandMultiGauss.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}CLHEP/Random/RandGauss.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/Vector.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/SymMatrix.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}GateRandomEngine.hh"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourcePencilBeam}{GateSourcePencilBeam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}}, G4UImessenger}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateSourcePencilBeam}{GateSourcePencilBeam}}(G4String name, \textcolor{keywordtype}{bool} useMessenger=\textcolor{keyword}{true});}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateSourcePencilBeam}{\string~GateSourcePencilBeam}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{typedef} \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{CLHEP::RandMultiGauss}} \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}};}
+\DoxyCodeLine{45   \textcolor{keyword}{typedef} CLHEP::RandGauss RandGauss;}
+\DoxyCodeLine{46   \textcolor{keyword}{typedef} \mbox{\hyperlink{classCLHEP_1_1HepVector}{CLHEP::HepVector}} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}};}
+\DoxyCodeLine{47   \textcolor{keyword}{typedef} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{CLHEP::HepSymMatrix}} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}};}
+\DoxyCodeLine{48   \textcolor{keyword}{typedef} CLHEP::HepJamesRandom HepJamesRandom;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   G4int GeneratePrimaries( G4Event* event );}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} GenerateVertex( G4Event* );}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{comment}{//Particle Type}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} SetParticleType(G4String ParticleType) \{mIsInitialized \&= (ParticleType==mParticleType); mParticleType = ParticleType;\}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} SetWeight(\textcolor{keywordtype}{double} w) \{ mWeight=w; \} \textcolor{comment}{// no need for re-\/initialization}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{double} GetWeight() \{\textcolor{keywordflow}{return} mWeight; \}}
+\DoxyCodeLine{57   \textcolor{comment}{//Particle Properties If GenericIon}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} SetIonParameter(G4String ParticleParameters);}
+\DoxyCodeLine{59   \textcolor{comment}{//Energy}}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} SetEnergy(\textcolor{keywordtype}{double} energy) \{mIsInitialized \&= (mEnergy==energy); mEnergy=energy;\}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} SetSigmaEnergy(\textcolor{keywordtype}{double} sigmaE) \{mIsInitialized \&= (mSigmaEnergy==sigmaE); mSigmaEnergy=sigmaE;\}}
+\DoxyCodeLine{62   \textcolor{comment}{//Position}}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} SetPosition(G4ThreeVector p) \{mPosition=p;\} \textcolor{comment}{// no need for re-\/initialization}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} SetSigmaX(\textcolor{keywordtype}{double} SigmaX) \{mIsInitialized \&= (mSigmaX==SigmaX); mSigmaX=SigmaX;\}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} SetSigmaY(\textcolor{keywordtype}{double} SigmaY) \{mIsInitialized \&= (mSigmaY==SigmaY); mSigmaY=SigmaY;\}}
+\DoxyCodeLine{66   \textcolor{comment}{//Direction}}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} SetSigmaTheta(\textcolor{keywordtype}{double} SigmaTheta) \{mIsInitialized \&= (mSigmaTheta==SigmaTheta); mSigmaTheta=SigmaTheta;\}}
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} SetSigmaPhi(\textcolor{keywordtype}{double} SigmaPhi) \{mIsInitialized \&= (mSigmaPhi==SigmaPhi); mSigmaPhi=SigmaPhi;\}}
+\DoxyCodeLine{69   \textcolor{comment}{// first rotation possibility => Necessary for the GateSourceTPSPencilBeam !!!!!!}}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} SetRotation(G4ThreeVector rot) \{mRotation=rot;\} \textcolor{comment}{// no need for re-\/initialization}}
+\DoxyCodeLine{71   \textcolor{comment}{//second rotation possibility}}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} SetRotationAxis(G4ThreeVector axis) \{mRotationAxis=axis;\} \textcolor{comment}{// no need for re-\/initialization}}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetRotationAngle(\textcolor{keywordtype}{double} angle) \{mRotationAngle=angle;\} \textcolor{comment}{// no need for re-\/initialization}}
+\DoxyCodeLine{74   \textcolor{comment}{//Correlation Position/Direction}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} SetEllipseXThetaArea(\textcolor{keywordtype}{double} EllipseXThetaArea) \{mIsInitialized \&= (mEllipseXThetaArea==EllipseXThetaArea); mEllipseXThetaArea=EllipseXThetaArea;\}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetEllipseYPhiArea(\textcolor{keywordtype}{double} EllipseYPhiArea) \{mIsInitialized \&= (mEllipseYPhiArea==EllipseYPhiArea); mEllipseYPhiArea=EllipseYPhiArea;\}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} SetEllipseXThetaRotationNorm(std::string rotation) \{ SetConvergenceX(rotation==\textcolor{stringliteral}{"{}positive"{}});\}}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} SetEllipseYPhiRotationNorm(std::string rotation) \{ SetConvergenceY(rotation==\textcolor{stringliteral}{"{}positive"{}});\}}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} SetConvergenceX(\textcolor{keywordtype}{bool} b) \{mIsInitialized \&= (mConvergenceX==b); mConvergenceX=b;\}}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} SetConvergenceY(\textcolor{keywordtype}{bool} b) \{mIsInitialized \&= (mConvergenceY==b); mConvergenceY=b;\}}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} SetTestFlag(\textcolor{keywordtype}{bool} b) \{mTestFlag=b;\} \textcolor{comment}{// no need for re-\/initialization}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateSourcePencilBeamMessenger}{GateSourcePencilBeamMessenger}} * pMessenger;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keywordtype}{bool} mIsInitialized;}
+\DoxyCodeLine{87   \textcolor{comment}{//Particle Type}}
+\DoxyCodeLine{88   G4String mParticleType;}
+\DoxyCodeLine{89   \textcolor{keywordtype}{double} mWeight;}
+\DoxyCodeLine{90   \textcolor{comment}{//Particle Properties If GenericIon}}
+\DoxyCodeLine{91   G4int    mAtomicNumber;}
+\DoxyCodeLine{92   G4int    mAtomicMass;}
+\DoxyCodeLine{93   G4int    mIonCharge;}
+\DoxyCodeLine{94   G4double mIonExciteEnergy;}
+\DoxyCodeLine{95   \textcolor{comment}{//Energy}}
+\DoxyCodeLine{96   \textcolor{keywordtype}{double} mEnergy;}
+\DoxyCodeLine{97   \textcolor{keywordtype}{double} mSigmaEnergy;}
+\DoxyCodeLine{98   \textcolor{comment}{//Position}}
+\DoxyCodeLine{99   G4ThreeVector mPosition;}
+\DoxyCodeLine{100   \textcolor{keywordtype}{double} mSigmaX,mSigmaY;}
+\DoxyCodeLine{101   \textcolor{comment}{//Direction}}
+\DoxyCodeLine{102   \textcolor{keywordtype}{double} mSigmaTheta, mSigmaPhi;}
+\DoxyCodeLine{103   \textcolor{comment}{// first rotation possibility, necessary for the GateSourceTPSPencilBeam !!!!!  no messenger}}
+\DoxyCodeLine{104   G4ThreeVector mRotation;}
+\DoxyCodeLine{105   \textcolor{comment}{//second rotation possibility, with messenger}}
+\DoxyCodeLine{106   G4ThreeVector mRotationAxis;}
+\DoxyCodeLine{107   \textcolor{keywordtype}{double} mRotationAngle;}
+\DoxyCodeLine{108   \textcolor{comment}{//Correlation Position/Direction}}
+\DoxyCodeLine{109   \textcolor{keywordtype}{double} mEllipseXThetaArea;    \textcolor{comment}{//mm*rad}}
+\DoxyCodeLine{110   \textcolor{keywordtype}{double} mEllipseYPhiArea;  \textcolor{comment}{//mm*rad}}
+\DoxyCodeLine{111   \textcolor{keywordtype}{bool} mConvergenceX; \textcolor{comment}{// true corresponds to: X-\/Theta rotation norm is positive}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{bool} mConvergenceY; \textcolor{comment}{// true corresponds to: Y-\/Phi rotation norm is positive}}
+\DoxyCodeLine{113   \textcolor{comment}{//Gaussian distribution generation for direction}}
+\DoxyCodeLine{114   \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} * mGaussian2DYPhi;}
+\DoxyCodeLine{115   \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} * mGaussian2DXTheta;}
+\DoxyCodeLine{116   \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} mUXTheta, mUYPhi;}
+\DoxyCodeLine{117   \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} mSXTheta, mSYPhi;}
+\DoxyCodeLine{118   \textcolor{comment}{//Gaussian distribution generation for energy}}
+\DoxyCodeLine{119   RandGauss * mGaussianEnergy;}
+\DoxyCodeLine{120   \textcolor{comment}{//Others}}
+\DoxyCodeLine{121   \textcolor{keywordtype}{bool} mTestFlag;}
+\DoxyCodeLine{122   \textcolor{keywordtype}{double} mparticle\_time;}
+\DoxyCodeLine{123   \textcolor{keywordtype}{int} mCurrentParticleNumber;}
+\DoxyCodeLine{124 \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

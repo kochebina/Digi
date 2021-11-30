@@ -1,0 +1,106 @@
+\hypertarget{GateTwistedTubs_8hh_source}{}\doxysection{Gate\+Twisted\+Tubs.\+hh}
+\label{GateTwistedTubs_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedTubs.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedTubs.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateTwistedTubs.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATETWISTEDTUBS\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATETWISTEDTUBS\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4TwistedTubs;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedTubsMessenger}{GateTwistedTubsMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedTubs}{GateTwistedTubs}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateTwistedTubs_aa4e1bbbcf1119dcb8438eaa28aea4c4c}{GateTwistedTubs}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{25                  G4int depth=0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateTwistedTubs_aa4e1bbbcf1119dcb8438eaa28aea4c4c}{GateTwistedTubs}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{28                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                  G4double itsTwistAngle,}
+\DoxyCodeLine{30                  G4double itsInnerR,}
+\DoxyCodeLine{31                  G4double itsOuterR,}
+\DoxyCodeLine{32                  G4double itsNegZ,}
+\DoxyCodeLine{33                  G4double itsPosZ,}
+\DoxyCodeLine{34                  G4int itsNSegment,}
+\DoxyCodeLine{35                  G4double itsTotalPhi,}
+\DoxyCodeLine{36                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{37                  G4int depth=0);}
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTwistedTubs_aa9ff09e14735a71439c7cb4a0644f960}{\string~GateTwistedTubs}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateTwistedTubs}{GateTwistedTubs}})}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateTwistedTubs_ac6b9741c75f67b5701fe01fd2ac3f350}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTwistedTubs_a70468f53ff6586666d5b458d96935fdf}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateTwistedTubs_a95506a3abccc320172c14dd7fcdcdbe7}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if} (axis==0) \{}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} m\_outerR;}
+\DoxyCodeLine{57     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==1) \{}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} m\_outerR;}
+\DoxyCodeLine{59     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==2) \{}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} (m\_posZ + m\_negZ)/2.0;}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{67   G4double \mbox{\hyperlink{classGateTwistedTubs_a34df766b907f35dcb4e8753c9e1940c1}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keyword}{inline} G4double GetTwistedTubsInnerR()    \{ \textcolor{keywordflow}{return} m\_innerR; \}}
+\DoxyCodeLine{72   \textcolor{keyword}{inline} G4double GetTwistedTubsOuterR()    \{ \textcolor{keywordflow}{return} m\_outerR; \}}
+\DoxyCodeLine{73   \textcolor{keyword}{inline} G4double GetTwistedTubsPosZ()      \{ \textcolor{keywordflow}{return} m\_posZ; \}}
+\DoxyCodeLine{74   \textcolor{keyword}{inline} G4double GetTwistedTubsNegZ()      \{ \textcolor{keywordflow}{return} m\_negZ; \}}
+\DoxyCodeLine{75   \textcolor{keyword}{inline} G4double GetTwistedTubsTotalPhi()  \{ \textcolor{keywordflow}{return} m\_totalPhi; \}}
+\DoxyCodeLine{76   \textcolor{keyword}{inline} G4double GetTwistedTubsTwistAngle()    \{ \textcolor{keywordflow}{return} m\_twistAngle; \}}
+\DoxyCodeLine{77   \textcolor{keyword}{inline} G4int GetTwistedTubsNSegment()     \{ \textcolor{keywordflow}{return} m\_nSegment; \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} SetTwistedTubsInnerR(G4double val)   \{ m\_innerR = val; \}}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} SetTwistedTubsOuterR(G4double val)   \{ m\_outerR = val; \}}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} SetTwistedTubsPosZ(G4double val)     \{ m\_posZ = val; \}}
+\DoxyCodeLine{82   \textcolor{keywordtype}{void} SetTwistedTubsNegZ(G4double val)     \{ m\_negZ = val; \}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} SetTwistedTubsTotalPhi(G4double val) \{ m\_totalPhi = val; \}}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} SetTwistedTubsTwistAngle(G4double val)   \{ m\_twistAngle = val; \}}
+\DoxyCodeLine{85   \textcolor{keywordtype}{void} SetTwistedTubsNSegment(G4int val)    \{ m\_nSegment = val; \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{private}:}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   G4TwistedTubs*          m\_twistedtubs\_solid;              }
+\DoxyCodeLine{94   G4LogicalVolume*   m\_twistedtubs\_log;                 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   G4double m\_twistAngle;    }
+\DoxyCodeLine{100   G4double m\_innerR;        }
+\DoxyCodeLine{101   G4double m\_outerR;        }
+\DoxyCodeLine{102   G4double m\_negZ;      }
+\DoxyCodeLine{103   G4double m\_posZ;      }
+\DoxyCodeLine{104   G4int m\_nSegment;         }
+\DoxyCodeLine{105   G4double m\_totalPhi;          }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110   \mbox{\hyperlink{classGateTwistedTubsMessenger}{GateTwistedTubsMessenger}}* m\_Messenger;}
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 MAKE\_AUTO\_CREATOR\_VOLUME(twistedtubesegment,\mbox{\hyperlink{classGateTwistedTubs}{GateTwistedTubs}})}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATETWISTEDTUBS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

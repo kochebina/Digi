@@ -1,0 +1,84 @@
+\hypertarget{classGateBuffer}{}\doxysection{Gate\+Buffer Class Reference}
+\label{classGateBuffer}\index{GateBuffer@{GateBuffer}}
+Inheritance diagram for Gate\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateBuffer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateBuffer_acb744d90fa0ceafbe26b501f91d46ab1}\label{classGateBuffer_acb744d90fa0ceafbe26b501f91d46ab1}} 
+typedef unsigned long long int {\bfseries buffer\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateBuffer_a899077cadba1629ec1c81ed04f30aa97}\label{classGateBuffer_a899077cadba1629ec1c81ed04f30aa97}} 
+{\bfseries Gate\+Buffer} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name=the\+Type\+Name)
+\item 
+\mbox{\Hypertarget{classGateBuffer_ad906ab3299785e33b653dddc0443f71d}\label{classGateBuffer_ad906ab3299785e33b653dddc0443f71d}} 
+virtual {\bfseries $\sim$\+Gate\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateBuffer_a771ebe47e227be7228b8e0787cc3f4d2}{Set\+Buffer\+Size}} (buffer\+\_\+t val)
+\item 
+\mbox{\Hypertarget{classGateBuffer_ac2d1b562916dee6a1a784980958fc01a}\label{classGateBuffer_ac2d1b562916dee6a1a784980958fc01a}} 
+void {\bfseries Set\+Read\+Frequency} (G4double val)
+\item 
+\mbox{\Hypertarget{classGateBuffer_af7f79f9d0c18128e9a984f19a6a4a8e6}\label{classGateBuffer_af7f79f9d0c18128e9a984f19a6a4a8e6}} 
+void {\bfseries Set\+Do\+Modify\+Time} (G4bool val)
+\item 
+\mbox{\Hypertarget{classGateBuffer_ac1d7f5c5bb8ebb77180b91ba5490942c}\label{classGateBuffer_ac1d7f5c5bb8ebb77180b91ba5490942c}} 
+void {\bfseries Set\+Mode} (G4int val)
+\item 
+\mbox{\Hypertarget{classGateBuffer_aab36cfc61a2e80158bf68dd199b09387}\label{classGateBuffer_aab36cfc61a2e80158bf68dd199b09387}} 
+void {\bfseries Set\+Depth} (size\+\_\+t depth)
+\item 
+virtual void \mbox{\hyperlink{classGateBuffer_a87f0dd293a5abef8ee155e2e4134aac5}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Pure virtual method Decribe\+Myself() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateBuffer_acd3d62cbe456134fc9e7cbbd09cd91ed}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateBuffer_a87f0dd293a5abef8ee155e2e4134aac5}\label{classGateBuffer_a87f0dd293a5abef8ee155e2e4134aac5}} 
+\index{GateBuffer@{GateBuffer}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateBuffer@{GateBuffer}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Buffer\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method Decribe\+Myself() 
+
+
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateBuffer_acd3d62cbe456134fc9e7cbbd09cd91ed}\label{classGateBuffer_acd3d62cbe456134fc9e7cbbd09cd91ed}} 
+\index{GateBuffer@{GateBuffer}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateBuffer@{GateBuffer}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Buffer\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateBuffer_a771ebe47e227be7228b8e0787cc3f4d2}\label{classGateBuffer_a771ebe47e227be7228b8e0787cc3f4d2}} 
+\index{GateBuffer@{GateBuffer}!SetBufferSize@{SetBufferSize}}
+\index{SetBufferSize@{SetBufferSize}!GateBuffer@{GateBuffer}}
+\doxysubsubsection{\texorpdfstring{SetBufferSize()}{SetBufferSize()}}
+{\footnotesize\ttfamily void Gate\+Buffer\+::\+Set\+Buffer\+Size (\begin{DoxyParamCaption}\item[{buffer\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the blurring 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Buffer.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Buffer.\+cc\end{DoxyCompactItemize}

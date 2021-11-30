@@ -1,0 +1,107 @@
+\hypertarget{GateSphere_8hh_source}{}\doxysection{Gate\+Sphere.\+hh}
+\label{GateSphere_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSphere.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSphere.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateSphere\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateSphere\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4Sphere.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4VisAttributes;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSphereMessenger}{GateSphereMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSphere}{GateSphere}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateSphere_a901ad6a5af66d9ce23c8c6ba3ab2225b}{GateSphere}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{34              G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{35              G4int depth=0);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \mbox{\hyperlink{classGateSphere_a901ad6a5af66d9ce23c8c6ba3ab2225b}{GateSphere}}(\textcolor{keyword}{const} G4String\& itsName, \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{39              G4double itsRmax,}
+\DoxyCodeLine{40              G4double itsRmin=0.,}
+\DoxyCodeLine{41              G4double itsSPhi=0., G4double itsDPhi=twopi,}
+\DoxyCodeLine{42              G4double itsSTheta=0., G4double itsDTheta=pi,}
+\DoxyCodeLine{43              G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{44              G4int depth=0);}
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSphere_a0383d5cdac77366fbf0cb5e9fe855e98}{\string~GateSphere}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateSphere}{GateSphere}})}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} G4LogicalVolume*   \mbox{\hyperlink{classGateSphere_a31eb7fb5f40e3d1ff922a7f08293b125}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool);}
+\DoxyCodeLine{57   \textcolor{comment}{//     virtual G4VPhysicalVolume* ConstructOwnPhysicalVolume();}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_af2ac6946bcfe5ae5c6e836da869b31aa}{DestroyOwnSolidAndLogicalVolume}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_a9c0a7e9c7a50f08c78f082371f504903}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{73   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphere_aa7e4fc8315f9bcec96aea4b34808888e}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} )}
+\DoxyCodeLine{74   \{\textcolor{keywordflow}{return} m\_sphereRmax;\};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{78   G4double \mbox{\hyperlink{classGateSphere_a420461de9fdac7e36d006045407c8a5b}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphere_ad53a2410484ab751eb8f80617e0904c8}{GetSphereRmin}}()     \{\textcolor{keywordflow}{return} m\_sphereRmin;\};}
+\DoxyCodeLine{88   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphere_a0edcb5fbac19176725fa22cb02bdd9d4}{GetSphereRmax}}()     \{\textcolor{keywordflow}{return} m\_sphereRmax;\};}
+\DoxyCodeLine{90   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphere_abc5cd79d49844b3dd85bab9b22281196}{GetSphereSPhi}}()     \{\textcolor{keywordflow}{return} m\_sphereSPhi;\};}
+\DoxyCodeLine{92   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphere_aedf5f8be4dd49fd04af9a1291ca16524}{GetSphereDPhi}}()     \{\textcolor{keywordflow}{return} m\_sphereDPhi;\};}
+\DoxyCodeLine{94   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphere_aa1814d4217defb697c4ec1e86cef40be}{GetSphereSTheta}}()     \{\textcolor{keywordflow}{return} m\_sphereSTheta;\};}
+\DoxyCodeLine{96   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphere_a9643036a9003f904beee03f7462fa9c4}{GetSphereDTheta}}()     \{\textcolor{keywordflow}{return} m\_sphereDTheta;\};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_a661b017e6147f04ea175e55517e67acf}{SetSphereRmin}}  (G4double val)}
+\DoxyCodeLine{100   \{  m\_sphereRmin = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_a29e93342cfdd1eb7f1c7a24b5a945d71}{SetSphereRmax}}  (G4double val)}
+\DoxyCodeLine{103   \{  m\_sphereRmax = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_a955ffeeafe6e7838268b651f8b3af2e3}{SetSphereSPhi}}  (G4double val)}
+\DoxyCodeLine{106   \{  m\_sphereSPhi = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_a49bbb894b1d85f81d7d8bb23481f9406}{SetSphereDPhi}}  (G4double val)}
+\DoxyCodeLine{109   \{  m\_sphereDPhi = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{111   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_a9020e961d7739834ab2eb37a1b9f331a}{SetSphereSTheta}}  (G4double val)}
+\DoxyCodeLine{112   \{ m\_sphereSTheta = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{114   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphere_a244cca368a8a981d902268d22c5b9b85}{SetSphereDTheta}}  (G4double val)}
+\DoxyCodeLine{115   \{  m\_sphereDTheta = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{private}:}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122   G4Sphere*          m\_sphere\_solid;            }
+\DoxyCodeLine{123   G4LogicalVolume*   m\_sphere\_log;              }
+\DoxyCodeLine{125 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   G4double m\_sphereRmin;                        }
+\DoxyCodeLine{129   G4double m\_sphereRmax;                        }
+\DoxyCodeLine{130   G4double m\_sphereSPhi;                        }
+\DoxyCodeLine{131   G4double m\_sphereDPhi;                        }
+\DoxyCodeLine{132   G4double m\_sphereSTheta;                  }
+\DoxyCodeLine{133   G4double m\_sphereDTheta;                  }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{138   G4VisAttributes *m\_own\_visAtt;}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{141   \mbox{\hyperlink{classGateSphereMessenger}{GateSphereMessenger}}* m\_Messenger;}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 MAKE\_AUTO\_CREATOR\_VOLUME(sphere,\mbox{\hyperlink{classGateSphere}{GateSphere}})}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

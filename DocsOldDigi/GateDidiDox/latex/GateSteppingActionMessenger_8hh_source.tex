@@ -1,0 +1,59 @@
+\hypertarget{GateSteppingActionMessenger_8hh_source}{}\doxysection{Gate\+Stepping\+Action\+Messenger.\+hh}
+\label{GateSteppingActionMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSteppingActionMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSteppingActionMessenger.hh}}
+\mbox{\hyperlink{GateSteppingActionMessenger_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Giovanni Santin <giovanni.santin@cern.ch>}}
+\DoxyCodeLine{5 \textcolor{comment}{   Daniel Strul <daniel.strul@iphe.unil.ch>}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{   Copyright (C) 2002 UNIL/IPHE, CH-\/1015 Lausanne}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{10 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{11 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{12 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef GateSteppingActionMessenger\_h}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define GateSteppingActionMessenger\_h 1}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}};}
+\DoxyCodeLine{32 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{33 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{34 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{35 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{36 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSteppingActionMessenger}{GateSteppingActionMessenger}}: \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43   \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \mbox{\hyperlink{classGateSteppingActionMessenger}{GateSteppingActionMessenger}}(\mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}}* msa);}
+\DoxyCodeLine{45     \mbox{\hyperlink{classGateSteppingActionMessenger}{\string~GateSteppingActionMessenger}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand * command,G4String newValues);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{private}:}
+\DoxyCodeLine{51     \mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}} * myAction;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{private}: \textcolor{comment}{//commands}}
+\DoxyCodeLine{54   G4UIdirectory*         GateSteppingDir;}
+\DoxyCodeLine{55   G4UIcmdWithAnInteger*  drawTrajectoryLevelCmd;}
+\DoxyCodeLine{56   G4UIcmdWithAnInteger*  VerboseCmd;}
+\DoxyCodeLine{57   G4UIcmdWithAString*    SetModeCmd;}
+\DoxyCodeLine{58   G4UIcmdWithAString*    PolicyCmd;}
+\DoxyCodeLine{59   G4UIcmdWithAString*    GetTxtCmd;}
+\DoxyCodeLine{60   G4UIcmdWithAnInteger*  SetFilesCmd;}
+\DoxyCodeLine{61   \textcolor{comment}{//G4UIcmdWithAnInteger*  SetPhFilesCmd;}}
+\DoxyCodeLine{62   \textcolor{comment}{//G4UIcmdWithAnInteger*  SetRSFilesCmd;}}
+\DoxyCodeLine{63   G4UIcmdWithADoubleAndUnit* setEnergyTcmd;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

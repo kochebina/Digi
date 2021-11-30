@@ -1,0 +1,45 @@
+\hypertarget{GateQuantumEfficiencyMessenger_8hh_source}{}\doxysection{Gate\+Quantum\+Efficiency\+Messenger.\+hh}
+\label{GateQuantumEfficiencyMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateQuantumEfficiencyMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateQuantumEfficiencyMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateQuantumEfficiencyMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateQuantumEfficiencyMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4UIdirectory.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateQuantumEfficiencyMessenger}{GateQuantumEfficiencyMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateQuantumEfficiencyMessenger}{GateQuantumEfficiencyMessenger}}(\mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}}* itsQE);}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateQuantumEfficiencyMessenger}{\string~GateQuantumEfficiencyMessenger}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}}* GetQE()}
+\DoxyCodeLine{31       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{private}:}
+\DoxyCodeLine{34     G4UIcmdWithAString   *newVolCmd;}
+\DoxyCodeLine{35     G4UIcmdWithADouble   *uniqueQECmd;}
+\DoxyCodeLine{36     G4UIcmdWithAString   *newFileCmd;}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,165 @@
+\hypertarget{metaDTITube_8h_source}{}\doxysection{meta\+DTITube.\+h}
+\label{metaDTITube_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaDTITube.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaDTITube.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METADTITUBE\_H}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define ITKMetaIO\_METADTITUBE\_H}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#if defined(\_MSC\_VER)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma warning ( disable : 4786 )}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{41 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classDTITubePnt}{DTITubePnt}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{typedef} METAIO\_STL::pair<METAIO\_STL::string,float>  FieldType;}
+\DoxyCodeLine{49   \textcolor{keyword}{typedef} METAIO\_STL::vector<FieldType>        FieldListType;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \mbox{\hyperlink{classDTITubePnt}{DTITubePnt}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \mbox{\hyperlink{classDTITubePnt}{\string~DTITubePnt}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keyword}{const} FieldListType \& GetExtraFields() \textcolor{keyword}{const};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} AddField(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{float} GetField(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name) \textcolor{keyword}{const};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{62   \textcolor{keywordtype}{float}* m\_X;}
+\DoxyCodeLine{63   \textcolor{keywordtype}{float}* m\_TensorMatrix;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   FieldListType m\_ExtraFields;}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaDTITube}{MetaDTITube}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{72   \{}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{75   \textcolor{comment}{//}}
+\DoxyCodeLine{76   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{77   \textcolor{comment}{//}}
+\DoxyCodeLine{79 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81    \textcolor{keyword}{typedef} METAIO\_STL::list<DTITubePnt*> PointListType;}
+\DoxyCodeLine{82    \textcolor{keyword}{typedef} METAIO\_STL::pair<METAIO\_STL::string,unsigned int> PositionType;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85     \textcolor{comment}{//}}
+\DoxyCodeLine{86     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{87     \textcolor{comment}{//}}
+\DoxyCodeLine{89 \textcolor{comment}{}    \mbox{\hyperlink{classMetaDTITube}{MetaDTITube}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \mbox{\hyperlink{classMetaDTITube}{MetaDTITube}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \mbox{\hyperlink{classMetaDTITube}{MetaDTITube}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaDTITube}{MetaDTITube}} *\_DTITube);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \mbox{\hyperlink{classMetaDTITube}{MetaDTITube}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \mbox{\hyperlink{classMetaDTITube}{\string~MetaDTITube}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{//    NPoints(...)}}
+\DoxyCodeLine{104     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{105     \textcolor{comment}{//       Number of points wich compose the DTITube}}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void}  NPoints(\textcolor{keywordtype}{int} npnt);}
+\DoxyCodeLine{107     \textcolor{keywordtype}{int}   NPoints(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{//    PointDim(...)}}
+\DoxyCodeLine{110     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{111     \textcolor{comment}{//       Definition of points}}
+\DoxyCodeLine{112     \textcolor{keywordtype}{void}        PointDim(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pointDim);}
+\DoxyCodeLine{113     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* PointDim(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{//    Root(...)}}
+\DoxyCodeLine{116     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{117     \textcolor{comment}{//       Set if this DTITube is a root}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{void}  Root(\textcolor{keywordtype}{bool} root);}
+\DoxyCodeLine{119     \textcolor{keywordtype}{bool}   Root(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{comment}{//    ParentPoint(...)}}
+\DoxyCodeLine{123     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{124     \textcolor{comment}{//       Set the point number of the parent DTITube where the branch occurs}}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void}  ParentPoint(\textcolor{keywordtype}{int} parentpoint);}
+\DoxyCodeLine{126     \textcolor{keywordtype}{int}   ParentPoint(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     PointListType \&  GetPoints(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{131     \textcolor{keyword}{const} PointListType \&  GetPoints(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     MET\_ValueEnumType ElementType(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void}  ElementType(MET\_ValueEnumType \_elementType);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137   \textcolor{comment}{//}}
+\DoxyCodeLine{138   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{139   \textcolor{comment}{//}}
+\DoxyCodeLine{141 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keywordtype}{bool}  m\_ElementByteOrderMSB;}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} m\_ParentPoint;  \textcolor{comment}{// "{}ParentPoint = "{}     -\/1}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{keywordtype}{bool} m\_Root;         \textcolor{comment}{// "{}Root = "{}            False}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{keywordtype}{int} m\_NPoints;      \textcolor{comment}{// "{}NPoints = "{}         0}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     METAIO\_STL::string m\_PointDim; \textcolor{comment}{// "{}PointDim = "{}       "{}x y z r"{}}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     PointListType m\_PointList;}
+\DoxyCodeLine{164     MET\_ValueEnumType m\_ElementType;}
+\DoxyCodeLine{165     METAIO\_STL::vector<PositionType> m\_Positions;}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{keywordtype}{int} GetPosition(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*) \textcolor{keyword}{const};}
+\DoxyCodeLine{168   \};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{171 \};}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

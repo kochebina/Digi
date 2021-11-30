@@ -1,0 +1,77 @@
+\hypertarget{GateImageCT_8hh_source}{}\doxysection{Gate\+Image\+CT.\+hh}
+\label{GateImageCT_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateImageCT.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateImageCT.hh}}
+\mbox{\hyperlink{GateImageCT_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Didier Benoit <benoit@cppm.in2p3.fr>}}
+\DoxyCodeLine{5 \textcolor{comment}{   Franca Cassol Brunner <cassol@cppm.in2p3.fr>}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{   Copyright (C) 2009 imXgam/CNRS, CPPM Marseille}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{   This software is distributed under the terms}}
+\DoxyCodeLine{10 \textcolor{comment}{   of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{11 \textcolor{comment}{   See LICENSE.md for further details}}
+\DoxyCodeLine{12 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef GATEIMAGECT\_HH}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define GATEIMAGECT\_HH}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageCT}{GateImageCT}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keyword}{public}:}
+\DoxyCodeLine{33         \mbox{\hyperlink{classGateImageCT_a472c582df521b62e68434d7439b729f9}{GateImageCT}}();}
+\DoxyCodeLine{35         \mbox{\hyperlink{classGateImageCT_ab32a9b5456f606d1f00e803effdc14b3}{\string~GateImageCT}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageCT_a8b13642095439ea814fd0a1135075e18}{Reset}}( std::vector<size\_t>\&, std::vector<size\_t>\& );}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageCT_ad8cbd643418cb8c8b16b117565ecbd04}{ClearData}}( G4int );}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageCT_ad4e1b71cb8d6ae7f06951f6f98928d5d}{Fill}}( \textcolor{keywordtype}{size\_t} );}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} StreamOut( std::ofstream\& );}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keyword}{inline} G4int GetBytesByImage()}
+\DoxyCodeLine{49         \{ \textcolor{keywordflow}{return} m\_byte; \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52         \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateImageCT_a4ba06b9e7a6ccd9d18cf6fd63e7c90dc}{GetNumberOfPixel}}()}
+\DoxyCodeLine{53         \{ \textcolor{keywordflow}{return} m\_numberOfPixel; \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} GetNumberOfPixelByModule()}
+\DoxyCodeLine{56         \{ \textcolor{keywordflow}{return} m\_numberOfPixelByModule; \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} GetMultiplicityModule()}
+\DoxyCodeLine{59         \{ \textcolor{keywordflow}{return} m\_multiplicityModule; \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} GetMultiplicityPixel1()}
+\DoxyCodeLine{62         \{ \textcolor{keywordflow}{return} m\_multiplicityPixel\_1; \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} GetMultiplicityPixel2()}
+\DoxyCodeLine{65         \{ \textcolor{keywordflow}{return} m\_multiplicityPixel\_2; \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} GetMultiplicityPixel3()}
+\DoxyCodeLine{68         \{ \textcolor{keywordflow}{return} m\_multiplicityPixel\_3; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{keyword}{inline} G4int GetCurrentFrame()}
+\DoxyCodeLine{71         \{ \textcolor{keywordflow}{return} m\_currentFrameID; \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keyword}{private}:}
+\DoxyCodeLine{74         \textcolor{keywordtype}{float}* m\_data;}
+\DoxyCodeLine{75         \textcolor{keywordtype}{size\_t} m\_multiplicityModule;}
+\DoxyCodeLine{76         \textcolor{keywordtype}{size\_t} m\_numberOfPixel;}
+\DoxyCodeLine{77         \textcolor{keywordtype}{size\_t} m\_numberOfPixelByModule;}
+\DoxyCodeLine{78         \textcolor{keywordtype}{size\_t} m\_multiplicityPixel\_1;}
+\DoxyCodeLine{79         \textcolor{keywordtype}{size\_t} m\_multiplicityPixel\_2;}
+\DoxyCodeLine{80         \textcolor{keywordtype}{size\_t} m\_multiplicityPixel\_3;}
+\DoxyCodeLine{81         G4int m\_byte;}
+\DoxyCodeLine{82         G4int m\_currentFrameID;}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

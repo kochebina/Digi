@@ -1,0 +1,75 @@
+\hypertarget{GateDoseSpectrumActor_8hh_source}{}\doxysection{Gate\+Dose\+Spectrum\+Actor.\+hh}
+\label{GateDoseSpectrumActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseSpectrumActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseSpectrumActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GATEDOSESPECTRUMACTOR\_HH}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GATEDOSESPECTRUMACTOR\_HH}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateDoseSpectrumActorMessenger.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{24 \textcolor{comment}{}\textcolor{keyword}{class }G4EmCalculator;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoseSpectrumActor}{GateDoseSpectrumActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28  \textcolor{keyword}{public}: }
+\DoxyCodeLine{29     }
+\DoxyCodeLine{30   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{31   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDoseSpectrumActor_a716b031a234dae710627166121b64c30}{\string~GateDoseSpectrumActor}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateDoseSpectrumActor}{GateDoseSpectrumActor}})}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{37   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseSpectrumActor_a8ceb8f9a3b82f807259994a19ae5c29a}{Construct}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run * r);}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *) ;}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{comment}{//virtual void EndOfEventAction(const G4Event*);}}
+\DoxyCodeLine{48   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{50 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseSpectrumActor_a1d79da1e1a9abe71c61a82e7a5f5da7e}{SaveData}}();}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} DosePrimaryOnly(\textcolor{keywordtype}{bool} b)\{mDosePrimaryOnly = b;\}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55   \mbox{\hyperlink{classGateDoseSpectrumActor_ae993806bad96e3f33abaaafabf22eb6b}{GateDoseSpectrumActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{bool} mDosePrimaryOnly;}
+\DoxyCodeLine{58   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{59   G4double mEventEnergy;}
+\DoxyCodeLine{60   G4double mTotalEventEnergyDep;}
+\DoxyCodeLine{61   std::map< G4double, G4int > mNumParticPerEnergy;}
+\DoxyCodeLine{62   std::map< G4double, G4double > mEnergy;}
+\DoxyCodeLine{63   std::map< G4double, G4double > mEnergySquare;}
+\DoxyCodeLine{64   GateDoseSpectrumActorMessenger* pMessenger;}
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 MAKE\_AUTO\_CREATOR\_ACTOR(DoseSpectrumActor,\mbox{\hyperlink{classGateDoseSpectrumActor}{GateDoseSpectrumActor}})}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEDOSESPECTRUMACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 }
+
+\end{DoxyCode}

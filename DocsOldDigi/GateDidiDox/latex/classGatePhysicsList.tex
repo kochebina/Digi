@@ -1,0 +1,220 @@
+\hypertarget{classGatePhysicsList}{}\doxysection{Gate\+Physics\+List Class Reference}
+\label{classGatePhysicsList}\index{GatePhysicsList@{GatePhysicsList}}
+Inheritance diagram for Gate\+Physics\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGatePhysicsList}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGatePhysicsList_1_1ParticleCutType}{Particle\+Cut\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a9e2887d649bcea252a91d358c11e4c90}\label{classGatePhysicsList_a9e2887d649bcea252a91d358c11e4c90}} 
+typedef std\+::map$<$ G4\+String, \mbox{\hyperlink{structGatePhysicsList_1_1ParticleCutType}{Particle\+Cut\+Type}} $>$ {\bfseries Region\+Cut\+Map\+Type}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a7f1ad8914351b13e2d1ef74238a67184}\label{classGatePhysicsList_a7f1ad8914351b13e2d1ef74238a67184}} 
+typedef std\+::map$<$ G4\+String, \mbox{\hyperlink{classGateUserLimits}{Gate\+User\+Limits}} $\ast$ $>$ {\bfseries Volume\+User\+Limits\+Map\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a0c3dce5ea14be9a101066672c20506b2}\label{classGatePhysicsList_a0c3dce5ea14be9a101066672c20506b2}} 
+void {\bfseries Construct\+Process} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a0d998a4cf8fa4a562c70d47540825256}\label{classGatePhysicsList_a0d998a4cf8fa4a562c70d47540825256}} 
+void {\bfseries Construct\+Particle} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_aac1e7af6b38b228710bd7a6e9cd97a5e}\label{classGatePhysicsList_aac1e7af6b38b228710bd7a6e9cd97a5e}} 
+void {\bfseries Construct\+Physics\+List} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a4fe206cfda7abe88d363447470fb86dc}\label{classGatePhysicsList_a4fe206cfda7abe88d363447470fb86dc}} 
+void {\bfseries Construct\+Physics\+List\+DNAMixed} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_aa8f8dc2129eec0a6859f83d2226db401}\label{classGatePhysicsList_aa8f8dc2129eec0a6859f83d2226db401}} 
+void {\bfseries Construct\+Process\+Mixed} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ac73f9202acb18584e0cbb8a4371eca62}\label{classGatePhysicsList_ac73f9202acb18584e0cbb8a4371eca62}} 
+void {\bfseries Print} (G4\+String type, G4\+String particlename)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_abc87c5d117320aa6de790a79b7610a07}\label{classGatePhysicsList_abc87c5d117320aa6de790a79b7610a07}} 
+void {\bfseries Print} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_aaa2a97f3d6ab9ebde89565c62b06c89d}\label{classGatePhysicsList_aaa2a97f3d6ab9ebde89565c62b06c89d}} 
+void {\bfseries Remove\+Processes} (G4\+String process, G4\+String particle)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a28c53fb6f2538214d2e7e47fb349b601}\label{classGatePhysicsList_a28c53fb6f2538214d2e7e47fb349b601}} 
+void {\bfseries Add\+Processes} (G4\+String process, G4\+String particle)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a1c4a9c598f4200a394725a648445af29}\label{classGatePhysicsList_a1c4a9c598f4200a394725a648445af29}} 
+void {\bfseries Add\+Atom\+Deexcitation} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a77882f0e7eb02dfd1580ca3479a19836}\label{classGatePhysicsList_a77882f0e7eb02dfd1580ca3479a19836}} 
+void {\bfseries Purge\+If\+Fictitious} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_af6102080ed1f86f4c2ee182cb0addab0}\label{classGatePhysicsList_af6102080ed1f86f4c2ee182cb0addab0}} 
+void {\bfseries Write} (G4\+String file)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a70034b0bce52aaa61a047e4c348c37cd}\label{classGatePhysicsList_a70034b0bce52aaa61a047e4c348c37cd}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVProcess}{Gate\+VProcess}} $\ast$ $>$ {\bfseries Find\+Process} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a7bf4edbc20b0c51f124efd563015dd04}\label{classGatePhysicsList_a7bf4edbc20b0c51f124efd563015dd04}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries Get\+The\+List\+Of\+PBName} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a62b0802a6d213afd4fea247f5147a981}\label{classGatePhysicsList_a62b0802a6d213afd4fea247f5147a981}} 
+void {\bfseries Set\+Cuts} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a596d26fbf861972d8d72466da0e4a7ac}\label{classGatePhysicsList_a596d26fbf861972d8d72466da0e4a7ac}} 
+void {\bfseries Set\+Em\+Process\+Options} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a8a9b8326b1b5661e7a06bcdc9262f35b}\label{classGatePhysicsList_a8a9b8326b1b5661e7a06bcdc9262f35b}} 
+void {\bfseries Define\+Cuts} (G4\+VUser\+Physics\+List $\ast$phys)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a20b1b96fc44352bc711a46feb871791f}\label{classGatePhysicsList_a20b1b96fc44352bc711a46feb871791f}} 
+void {\bfseries Define\+Cuts} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ac71f481ce6a69fd067c08905a4f86575}\label{classGatePhysicsList_ac71f481ce6a69fd067c08905a4f86575}} 
+void {\bfseries Set\+Cut\+In\+Region} (G4\+String particle\+Name, G4\+String region\+Name, G4double cut\+Value)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a50497dd1718ef3adbb4f463dc087a9da}\label{classGatePhysicsList_a50497dd1718ef3adbb4f463dc087a9da}} 
+void {\bfseries Disable\+All\+Cuts} (G4\+String particle\+Name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a6a9534c7e66a2c6df87197fa951d73a5}\label{classGatePhysicsList_a6a9534c7e66a2c6df87197fa951d73a5}} 
+void {\bfseries Set\+Special\+Cut\+In\+Region} (G4\+String cut\+Type, G4\+String region\+Name, G4double cut\+Value)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a9094043412107277c16d7777cc4487bb}\label{classGatePhysicsList_a9094043412107277c16d7777cc4487bb}} 
+void {\bfseries Set\+Energy\+Range\+Min\+Limit} (double val)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a5fb0922f53c15606968757f9f808fb41}\label{classGatePhysicsList_a5fb0922f53c15606968757f9f808fb41}} 
+void {\bfseries Get\+Cuts} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a93f2058e8e2d211a50e92988f73991ff}\label{classGatePhysicsList_a93f2058e8e2d211a50e92988f73991ff}} 
+G4\+String {\bfseries Get\+List\+Of\+Physics\+Lists} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_aa54c16c36f43e9c97338a563065b62d9}\label{classGatePhysicsList_aa54c16c36f43e9c97338a563065b62d9}} 
+void {\bfseries Set\+Opt\+DEDXBinning} (G4int val)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a3de04ceeb78c8f1a30e8154939b43925}\label{classGatePhysicsList_a3de04ceeb78c8f1a30e8154939b43925}} 
+void {\bfseries Set\+Opt\+Lambda\+Binning} (G4int val)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_af36acd3ef7eb26d0f28ffabfd62710c2}\label{classGatePhysicsList_af36acd3ef7eb26d0f28ffabfd62710c2}} 
+void {\bfseries Set\+Opt\+EMin} (G4double val)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a86f9b9b79aa7ae53d63b17123e25c00d}\label{classGatePhysicsList_a86f9b9b79aa7ae53d63b17123e25c00d}} 
+void {\bfseries Set\+Opt\+EMax} (G4double val)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a7e179fee294acb75b9f0ac97e52bf036}\label{classGatePhysicsList_a7e179fee294acb75b9f0ac97e52bf036}} 
+void {\bfseries Set\+Opt\+Spline\+Flag} (G4bool val)
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ae5b6a1aacf7f528c5a2938e2f42b5bae}\label{classGatePhysicsList_ae5b6a1aacf7f528c5a2938e2f42b5bae}} 
+Region\+Cut\+Map\+Type \& {\bfseries Get\+Map\+Of\+Region\+Cuts} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a8a9b511720d3b919ed79995eb746e265}\label{classGatePhysicsList_a8a9b511720d3b919ed79995eb746e265}} 
+G4double {\bfseries Get\+Low\+Edge\+Energy} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a0c52402f487e96c00ec106e6dcce7b7f}\label{classGatePhysicsList_a0c52402f487e96c00ec106e6dcce7b7f}} 
+static \mbox{\hyperlink{classGatePhysicsList}{Gate\+Physics\+List}} $\ast$ {\bfseries Get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ab30a076c6a0e4dec020a4f33030cacff}\label{classGatePhysicsList_ab30a076c6a0e4dec020a4f33030cacff}} 
+G4bool {\bfseries gamma\+Cut\+Disabled\+By\+Default}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a69998ccda0396024fd8c88105e6fe498}\label{classGatePhysicsList_a69998ccda0396024fd8c88105e6fe498}} 
+G4bool {\bfseries electron\+Cut\+Disabled\+By\+Default}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a6421859b378f8a81a33c8ced695e14cb}\label{classGatePhysicsList_a6421859b378f8a81a33c8ced695e14cb}} 
+G4bool {\bfseries positron\+Cut\+Disabled\+By\+Default}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ae5b340e9140bdac6c3f146a1238994de}\label{classGatePhysicsList_ae5b340e9140bdac6c3f146a1238994de}} 
+G4bool {\bfseries proton\+Cut\+Disabled\+By\+Default}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a6b360b6e55c715f8054f10b497d172ab}\label{classGatePhysicsList_a6b360b6e55c715f8054f10b497d172ab}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries m\+List\+Of\+Step\+Limiter}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ab68b23cb7d3f0dade994b0383947fe5e}\label{classGatePhysicsList_ab68b23cb7d3f0dade994b0383947fe5e}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries m\+List\+Of\+G4\+User\+Special\+Cut}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a9a75e580979a0a9328d12e6328dc3449}\label{classGatePhysicsList_a9a75e580979a0a9328d12e6328dc3449}} 
+Region\+Cut\+Map\+Type {\bfseries map\+Of\+Region\+Cuts}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a02f96881096337e6c419fa7d4b17472e}\label{classGatePhysicsList_a02f96881096337e6c419fa7d4b17472e}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVProcess}{Gate\+VProcess}} $\ast$ $>$ $\ast$ {\bfseries Get\+The\+List\+Of\+Processs} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_aadb3a73f8e93e5b07ca4ffb53780e8aa}\label{classGatePhysicsList_aadb3a73f8e93e5b07ca4ffb53780e8aa}} 
+int {\bfseries m\+Load\+State}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a069855575455183964d0ddb21cbcce36}\label{classGatePhysicsList_a069855575455183964d0ddb21cbcce36}} 
+\mbox{\hyperlink{classGatePhysicsListMessenger}{Gate\+Physics\+List\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a4daf2c438816115e2ff7a39853aebe1e}\label{classGatePhysicsList_a4daf2c438816115e2ff7a39853aebe1e}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries the\+List\+Of\+PBName}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_adf0c21af196ccb1710cb34f30ba18d70}\label{classGatePhysicsList_adf0c21af196ccb1710cb34f30ba18d70}} 
+Volume\+User\+Limits\+Map\+Type {\bfseries map\+Of\+Volume\+User\+Limits}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_aa53fb719c11a3e111b187daf40a9d471}\label{classGatePhysicsList_aa53fb719c11a3e111b187daf40a9d471}} 
+std\+::list$<$ G4\+Production\+Cuts $\ast$ $>$ {\bfseries the\+List\+Of\+Cuts}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a5548e76306296df7c204c96b3b338bc1}\label{classGatePhysicsList_a5548e76306296df7c204c96b3b338bc1}} 
+int {\bfseries m\+DEDXBinning}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a7b858a7d8367f97859df34e13f7ecf61}\label{classGatePhysicsList_a7b858a7d8367f97859df34e13f7ecf61}} 
+int {\bfseries m\+Lambda\+Binning}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_abf25fd54174cb3d8013b74b30d4902e9}\label{classGatePhysicsList_abf25fd54174cb3d8013b74b30d4902e9}} 
+double {\bfseries m\+Emin}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a3fbb900e5a88972b84582cc559f0a43b}\label{classGatePhysicsList_a3fbb900e5a88972b84582cc559f0a43b}} 
+double {\bfseries m\+Emax}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a36889b69aba4f760d54d3ec6dc92d2cc}\label{classGatePhysicsList_a36889b69aba4f760d54d3ec6dc92d2cc}} 
+bool {\bfseries m\+Spline\+Flag}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_aeebcb06f194973b846c6d9027d5a2546}\label{classGatePhysicsList_aeebcb06f194973b846c6d9027d5a2546}} 
+G4\+User\+Limits $\ast$ {\bfseries userlimits}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a48e1e3b3b8dd890677a2e49a49198c81}\label{classGatePhysicsList_a48e1e3b3b8dd890677a2e49a49198c81}} 
+std\+::vector$<$ G4\+VPhysics\+Constructor $\ast$ $>$ {\bfseries m\+User\+List\+Of\+Physic\+List}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a5a114de40e4095b418f5b1bfecf139d7}\label{classGatePhysicsList_a5a114de40e4095b418f5b1bfecf139d7}} 
+G4\+VModular\+Physics\+List $\ast$ {\bfseries em\+Physics\+List\+Mixed}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a2d5c05edf20706d16f65654a9f9d8374}\label{classGatePhysicsList_a2d5c05edf20706d16f65654a9f9d8374}} 
+G4\+String {\bfseries m\+User\+Physic\+List\+Name}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a2cbf715d75d4500a2e90c8a39ed1ae33}\label{classGatePhysicsList_a2cbf715d75d4500a2e90c8a39ed1ae33}} 
+G4\+String {\bfseries m\+List\+Of\+Physics\+Lists}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_a4550e1eac6e32f74518c01f26e8d5551}\label{classGatePhysicsList_a4550e1eac6e32f74518c01f26e8d5551}} 
+G4double {\bfseries m\+Low\+Energy\+Range\+Limit}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ac1daf949099b5813b07e971321a1f1e5}\label{classGatePhysicsList_ac1daf949099b5813b07e971321a1f1e5}} 
+G4\+Em\+Parameters $\ast$ {\bfseries em\+Par}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsList_ad786be6fbf94b53b4682e3964d596184}\label{classGatePhysicsList_ad786be6fbf94b53b4682e3964d596184}} 
+static \mbox{\hyperlink{classGatePhysicsList}{Gate\+Physics\+List}} $\ast$ {\bfseries singleton} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Physics\+List.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Physics\+List.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,147 @@
+\hypertarget{GateVolumeID_8hh_source}{}\doxysection{Gate\+Volume\+ID.\+hh}
+\label{GateVolumeID_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumeID.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumeID.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVolumeID\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVolumeID\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4VPhysicalVolume.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4LogicalVolume.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4AffineTransform.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4TouchableHistory;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeSelector}{GateVolumeSelector}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30   \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     }
+\DoxyCodeLine{33     \mbox{\hyperlink{classGateVolumeSelector_a61b45277dce1e0ba5154d05a3af5b3e1}{GateVolumeSelector}}(G4VPhysicalVolume* itsVolume);}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVolumeSelector}{\string~GateVolumeSelector}}() \{\}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     G4int  \mbox{\hyperlink{classGateVolumeSelector_a82a4fcc6088acf77e031d53a0357c6cc}{GetDaughterID}}()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_daughterID;\}   }
+\DoxyCodeLine{42     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVolumeSelector_a9db896ac4d1ab5e70a34c719e0119c20}{GetCreator}}()\textcolor{keyword}{ const     }\{ \textcolor{keywordflow}{return} m\_creator;\}       }
+\DoxyCodeLine{43     G4int \mbox{\hyperlink{classGateVolumeSelector_a322c8f4cf16a640ec9ff99a58944e168}{GetCopyNo}}()\textcolor{keyword}{ const              }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVolumeSelector_a20e6112d71ee0f5b3271d6f11a8e57f6}{m\_copyNo}};\}       }
+\DoxyCodeLine{44     G4VPhysicalVolume* \mbox{\hyperlink{classGateVolumeSelector_a197b78f5aadce026488c28c22a0ce4d4}{GetVolume}}()\textcolor{keyword}{ const          }}
+\DoxyCodeLine{45 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return}  m\_creator-\/>\mbox{\hyperlink{classGateVVolume_a0302a1273144ebe6ae072aac847f9e16}{GetPhysicalVolume}}(\mbox{\hyperlink{classGateVolumeSelector_a20e6112d71ee0f5b3271d6f11a8e57f6}{m\_copyNo}}); \}              }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48    }
+\DoxyCodeLine{50     \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateVolumeSelector_afda9e22d32be06f8ba5f2cf454c50086}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeSelector}{GateVolumeSelector}}\& right)\textcolor{keyword}{  const}}
+\DoxyCodeLine{51 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} (m\_creator==right.m\_creator) \&\& (\mbox{\hyperlink{classGateVolumeSelector_a20e6112d71ee0f5b3271d6f11a8e57f6}{m\_copyNo}}==right.\mbox{\hyperlink{classGateVolumeSelector_a20e6112d71ee0f5b3271d6f11a8e57f6}{m\_copyNo}});\}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classGateVolumeSelector_a7635203519d09fa841c27ec8c0a1867e}{operator<<}}(std::ostream\&, \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeSelector}{GateVolumeSelector}}\& volumeLevelID);    }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{57     G4int m\_daughterID;}
+\DoxyCodeLine{58     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* m\_creator;  }
+\DoxyCodeLine{59     G4int \mbox{\hyperlink{classGateVolumeSelector_a20e6112d71ee0f5b3271d6f11a8e57f6}{m\_copyNo}};                   }
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{79 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeID}{GateVolumeID}} : \textcolor{keyword}{public} std::vector<GateVolumeSelector>}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81   \textcolor{keyword}{public}:}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84     \mbox{\hyperlink{classGateVolumeID_adb548d37080512bcf1491a5f2401e55d}{GateVolumeID}}(\textcolor{keyword}{const} G4TouchableHistory* touchable);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87     \mbox{\hyperlink{classGateVolumeID_adb548d37080512bcf1491a5f2401e55d}{GateVolumeID}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{90     \mbox{\hyperlink{classGateVolumeID_adb548d37080512bcf1491a5f2401e55d}{GateVolumeID}}(G4int *daughterID, \textcolor{keywordtype}{size\_t} arraySize);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVolumeID}{\string~GateVolumeID}}() \{\}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \textcolor{keyword}{public}:}
+\DoxyCodeLine{95     \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateVolumeID_aa6e78af67e9c7230e9fbab94a1230a31}{IsValid}}()\textcolor{keyword}{ const     }\{ \textcolor{keywordflow}{return} size()!=0; \}          }
+\DoxyCodeLine{96     \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateVolumeID_afdeb40b034ae5096240cf634ab3d8eed}{IsInvalid}}()\textcolor{keyword}{ const   }\{ \textcolor{keywordflow}{return} !\mbox{\hyperlink{classGateVolumeID_aa6e78af67e9c7230e9fbab94a1230a31}{IsValid}}(); \}        }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateVolumeID_aadb2f0cf48361a6e3edb24cab85e1aa1}{IsValidDepth}}(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{   const }}
+\DoxyCodeLine{99 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} (depth<size());\}       }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{103     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateVolumeID_a2e21b8d22a9b1345cb0db68ddab2e0d8}{GetDaughterID}}(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{ const}}
+\DoxyCodeLine{104 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVolumeID_aadb2f0cf48361a6e3edb24cab85e1aa1}{IsValidDepth}}(depth)) ? \mbox{\hyperlink{classGateVolumeID_ad43ee35e1d8269658288887cd4f0809f}{GetSelector}}(depth).\mbox{\hyperlink{classGateVolumeSelector_a82a4fcc6088acf77e031d53a0357c6cc}{GetDaughterID}}() : -\/1;\}    }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107     G4VPhysicalVolume* \mbox{\hyperlink{classGateVolumeID_a8350872c63f71b79a5d7682a4c27dd11}{GetVolume}}(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{ const               }}
+\DoxyCodeLine{108 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVolumeID_aadb2f0cf48361a6e3edb24cab85e1aa1}{IsValidDepth}}(depth)) ? \mbox{\hyperlink{classGateVolumeID_ad43ee35e1d8269658288887cd4f0809f}{GetSelector}}(depth).\mbox{\hyperlink{classGateVolumeSelector_a197b78f5aadce026488c28c22a0ce4d4}{GetVolume}}() : 0;\}    }
+\DoxyCodeLine{109     }
+\DoxyCodeLine{110     \textcolor{keyword}{inline} G4VPhysicalVolume* \mbox{\hyperlink{classGateVolumeID_aa38c054e3828e1049013803b7311a42e}{GetTopVolume}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{111 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVolumeID_a8350872c63f71b79a5d7682a4c27dd11}{GetVolume}}(0);\}                                      }
+\DoxyCodeLine{112     \textcolor{keyword}{inline} G4VPhysicalVolume* \mbox{\hyperlink{classGateVolumeID_a46adb500038b34ffefb7788a092f7f45}{GetBottomVolume}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{113 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVolumeID_a8350872c63f71b79a5d7682a4c27dd11}{GetVolume}}(size()-\/1);\}                           }
+\DoxyCodeLine{114  }
+\DoxyCodeLine{116     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVolumeID_aac7cdb7d89e0a9b572b0615faa194020}{GetCreator}}(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{ const                }}
+\DoxyCodeLine{117 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVolumeID_aadb2f0cf48361a6e3edb24cab85e1aa1}{IsValidDepth}}(depth)) ? \mbox{\hyperlink{classGateVolumeID_ad43ee35e1d8269658288887cd4f0809f}{GetSelector}}(depth).\mbox{\hyperlink{classGateVolumeSelector_a9db896ac4d1ab5e70a34c719e0119c20}{GetCreator}}() : 0;\}    }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVolumeID_aadaa6764d97964ad908f4f92a021f7d6}{GetBottomCreator}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{120 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVolumeID_aac7cdb7d89e0a9b572b0615faa194020}{GetCreator}}(size()-\/1);\}                             }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     G4int \mbox{\hyperlink{classGateVolumeID_a524f89115ff9a99cb225edbf948f279c}{GetCreatorDepth}} (G4String name) \textcolor{keyword}{const};                   }
+\DoxyCodeLine{123     }
+\DoxyCodeLine{125     G4int \mbox{\hyperlink{classGateVolumeID_af2f8822814f50bfa97206e5b506f634a}{GetCopyNo}}(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{ const                }}
+\DoxyCodeLine{126 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVolumeID_aadb2f0cf48361a6e3edb24cab85e1aa1}{IsValidDepth}}(depth)) ? \mbox{\hyperlink{classGateVolumeID_ad43ee35e1d8269658288887cd4f0809f}{GetSelector}}(depth).\mbox{\hyperlink{classGateVolumeSelector_a322c8f4cf16a640ec9ff99a58944e168}{GetCopyNo}}() : -\/1;\}    }
+\DoxyCodeLine{127     }
+\DoxyCodeLine{129     \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeSelector}{GateVolumeSelector}}\& \mbox{\hyperlink{classGateVolumeID_ad43ee35e1d8269658288887cd4f0809f}{GetSelector}}(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{ const}}
+\DoxyCodeLine{130 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (*\textcolor{keyword}{this})[depth]; \}    }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{133     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumeID_a0a7766e22824fbb536ef62bb2f446343}{InsertVolumeLevel}}(G4VPhysicalVolume* volume)}
+\DoxyCodeLine{134     \{ insert(begin(),\mbox{\hyperlink{classGateVolumeSelector}{GateVolumeSelector}}(volume)); \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136  }
+\DoxyCodeLine{138     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumeID_ae2df511cf2a76340d2ac937cf2baee74}{StoreDaughterIDs}}(G4int* dest,\textcolor{keywordtype}{size\_t} destSize)\textcolor{keyword}{ const}}
+\DoxyCodeLine{139 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{140           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0;i<destSize;i++)}
+\DoxyCodeLine{141             dest[i] = \mbox{\hyperlink{classGateVolumeID_a2e21b8d22a9b1345cb0db68ddab2e0d8}{GetDaughterID}}(i);}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145     G4AffineTransform \mbox{\hyperlink{classGateVolumeID_a4f423cebd9709300836cc1ac1474ee79}{ComputeAffineTransform}}(G4int ancestorDepth) \textcolor{keyword}{const};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     }
+\DoxyCodeLine{154     G4ThreeVector \mbox{\hyperlink{classGateVolumeID_acb397f1228c00cbabe83c1f981eb2ed5}{MoveToAncestorVolumeFrame}}(G4ThreeVector position,G4int ancestorLevel=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 }
+\DoxyCodeLine{164     G4ThreeVector \mbox{\hyperlink{classGateVolumeID_ab33596f033382bc624fb4f5b7d10b1a7}{MoveToBottomVolumeFrame}}(G4ThreeVector position,G4int ancestorLevel=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{165     }
+\DoxyCodeLine{166     }
+\DoxyCodeLine{173     G4ThreeVector  \mbox{\hyperlink{classGateVolumeID_a91c16e173e4be3983384bb12ab00e411}{MoveToFrameByTransform}}(G4ThreeVector position,\textcolor{keyword}{const} G4AffineTransform\& transform,G4bool flagDirect) \textcolor{keyword}{const};}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{178     G4ThreeVector \mbox{\hyperlink{classGateVolumeID_a0b3529839b2dfda2b00f7188a3470a87}{MoveToMotherFrame}}(G4ThreeVector position,G4VPhysicalVolume* physicalVolume)\textcolor{keyword}{ const}}
+\DoxyCodeLine{179 \textcolor{keyword}{    }\{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVolumeID_a91c16e173e4be3983384bb12ab00e411}{MoveToFrameByTransform}}(position,\mbox{\hyperlink{classGateVolumeID_a36593561d702d7a594dadd322039022c}{GetVolumeAffineTransform}}(physicalVolume),\textcolor{keyword}{true}); \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181  }
+\DoxyCodeLine{183     \textcolor{keyword}{static} G4AffineTransform \mbox{\hyperlink{classGateVolumeID_a36593561d702d7a594dadd322039022c}{GetVolumeAffineTransform}}(G4VPhysicalVolume* physicalVolume);}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classGateVolumeID_ab0b34e9588c0dacc7e7ebe7a34f69f71}{operator<<}}(std::ostream\&, \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& volumeID);    }
+\DoxyCodeLine{187 \};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVolumeID_adb548d37080512bcf1491a5f2401e55d}{GateVolumeID::GateVolumeID}}()}
+\DoxyCodeLine{190  : std::vector<\mbox{\hyperlink{classGateVolumeSelector}{GateVolumeSelector}}>()}
+\DoxyCodeLine{191 \{\}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{195 }
+
+\end{DoxyCode}

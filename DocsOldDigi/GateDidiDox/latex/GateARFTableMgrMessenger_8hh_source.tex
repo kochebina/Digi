@@ -1,0 +1,56 @@
+\hypertarget{GateARFTableMgrMessenger_8hh_source}{}\doxysection{Gate\+ARFTable\+Mgr\+Messenger.\+hh}
+\label{GateARFTableMgrMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/arf/include/GateARFTableMgrMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/arf/include/GateARFTableMgrMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{ This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{ of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{ See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateARFTableMgrMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateARFTableMgrMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateARFTableMgr}{GateARFTableMgr}};}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClock}{GateClock}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAVector.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateARFTableMgrMessenger}{GateARFTableMgrMessenger}}: \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{28   \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateARFTableMgrMessenger}{GateARFTableMgrMessenger}}(G4String aName, \mbox{\hyperlink{classGateARFTableMgr}{GateARFTableMgr}}*);}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateARFTableMgrMessenger}{\string~GateARFTableMgrMessenger}}();}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateARFTableMgr}{GateARFTableMgr}}* mArfTableMgr;}
+\DoxyCodeLine{36   G4UIdirectory* mGateARFTableDir;}
+\DoxyCodeLine{37   G4UIcmdWithAString* mCptTableEWCmd;}
+\DoxyCodeLine{38   G4UIcmdWithoutParameter* mListARFTableCmd;}
+\DoxyCodeLine{39   G4UIcmdWithAnInteger* mVerboseCmd;}
+\DoxyCodeLine{40   G4UIcmdWithADouble* mSetEResocmd;}
+\DoxyCodeLine{41   G4UIcmdWithADoubleAndUnit* mSetERefcmd;}
+\DoxyCodeLine{42   G4UIcmdWithADoubleAndUnit* mSetEThreshHoldcmd;}
+\DoxyCodeLine{43   G4UIcmdWithADoubleAndUnit* mSetEUpHoldcmd;}
+\DoxyCodeLine{44   G4UIcmdWithAString* mSaveToBinaryFileCmd;}
+\DoxyCodeLine{45   G4UIcmdWithAnInteger* mSetNBinsCmd;}
+\DoxyCodeLine{46   G4UIcmdWithAString* mLoadFromBinaryFileCmd;}
+\DoxyCodeLine{47   G4UIcmdWithADoubleAndUnit* mSetDistancecmd;}
+\DoxyCodeLine{48   \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

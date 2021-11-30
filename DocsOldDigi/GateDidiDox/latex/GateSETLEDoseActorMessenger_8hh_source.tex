@@ -1,0 +1,57 @@
+\hypertarget{GateSETLEDoseActorMessenger_8hh_source}{}\doxysection{Gate\+SETLEDose\+Actor\+Messenger.\+hh}
+\label{GateSETLEDoseActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSETLEDoseActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSETLEDoseActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/*}}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)class  GateSETLEDoseActorMessenger}}
+\DoxyCodeLine{13 \textcolor{comment}{  \(\backslash\)author fabien.baldacci@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{      francois.smekens@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{15 \textcolor{comment}{*/}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATESETLEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATESETLEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateUIcmdWithTwoDouble.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSETLEDoseActor}{GateSETLEDoseActor}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSETLEDoseActorMessenger}{GateSETLEDoseActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateSETLEDoseActorMessenger}{GateSETLEDoseActorMessenger}}(\mbox{\hyperlink{classGateSETLEDoseActor}{GateSETLEDoseActor}}* sensor);}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSETLEDoseActorMessenger}{\string~GateSETLEDoseActorMessenger}}();}
+\DoxyCodeLine{31   }
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEDoseActorMessenger_aded1f33e48311550e97bf6c8a3d71fd4}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateSETLEDoseActor}{GateSETLEDoseActor}} * pDoseActor;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   G4UIcmdWithABool * pEnableDoseCmd;}
+\DoxyCodeLine{39   G4UIcmdWithABool * pEnableDoseUncertaintyCmd;}
+\DoxyCodeLine{40   G4UIcmdWithABool * pEnablePrimaryDoseCmd;}
+\DoxyCodeLine{41   G4UIcmdWithABool * pEnablePrimaryDoseUncertaintyCmd;}
+\DoxyCodeLine{42   G4UIcmdWithABool * pEnableSecondaryDoseCmd;}
+\DoxyCodeLine{43   G4UIcmdWithABool * pEnableSecondaryDoseUncertaintyCmd;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   G4UIcmdWithABool * pEnableHybridinoCmd;}
+\DoxyCodeLine{46   G4UIcmdWithAnInteger * pSetPrimaryMultiplicityCmd;}
+\DoxyCodeLine{47   G4UIcmdWithAnInteger * pSetSecondaryMultiplicityCmd;}
+\DoxyCodeLine{48   \mbox{\hyperlink{classGateUIcmdWithTwoDouble}{GateUIcmdWithTwoDouble}} *pSetSecondaryMultiplicityCmd2;}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESETLEDOSEACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

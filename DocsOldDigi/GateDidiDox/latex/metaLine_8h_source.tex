@@ -1,0 +1,134 @@
+\hypertarget{metaLine_8h_source}{}\doxysection{meta\+Line.\+h}
+\label{metaLine_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaLine.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaLine.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METALINE\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METALINE\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{classLinePnt}{LinePnt}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classLinePnt}{LinePnt}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \mbox{\hyperlink{classLinePnt}{\string~LinePnt}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{51   \textcolor{keywordtype}{float}*   m\_X;}
+\DoxyCodeLine{52   \textcolor{keywordtype}{float}**  m\_V;}
+\DoxyCodeLine{53   \textcolor{keywordtype}{float}    m\_Color[4];}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaLine}{MetaLine}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{60   \{}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63   \textcolor{comment}{//}}
+\DoxyCodeLine{64   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{65   \textcolor{comment}{//}}
+\DoxyCodeLine{67 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69    \textcolor{keyword}{typedef} METAIO\_STL::list<LinePnt*> PointListType;}
+\DoxyCodeLine{71     \textcolor{comment}{//}}
+\DoxyCodeLine{72     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{73     \textcolor{comment}{//}}
+\DoxyCodeLine{75 \textcolor{comment}{}    \mbox{\hyperlink{classMetaLine}{MetaLine}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \mbox{\hyperlink{classMetaLine}{MetaLine}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \mbox{\hyperlink{classMetaLine}{MetaLine}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaLine}{MetaLine}} *\_line);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \mbox{\hyperlink{classMetaLine}{MetaLine}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \mbox{\hyperlink{classMetaLine}{\string~MetaLine}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{//    NPoints(...)}}
+\DoxyCodeLine{91     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{92     \textcolor{comment}{//       Number of points wich compose the line}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void}  NPoints(\textcolor{keywordtype}{int} npnt);}
+\DoxyCodeLine{94     \textcolor{keywordtype}{int}   NPoints(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{//    PointDim(...)}}
+\DoxyCodeLine{97     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{98     \textcolor{comment}{//       Definition of points}}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void}        PointDim(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pointDim);}
+\DoxyCodeLine{100     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* PointDim(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     PointListType \& GetPoints(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{106     \textcolor{keyword}{const} PointListType \& GetPoints(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     MET\_ValueEnumType ElementType(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void}  ElementType(MET\_ValueEnumType \_elementType);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112   \textcolor{comment}{//}}
+\DoxyCodeLine{113   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{114   \textcolor{comment}{//}}
+\DoxyCodeLine{116 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{bool}  m\_ElementByteOrderMSB;}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{keywordtype}{int}   m\_NPoints;      \textcolor{comment}{// "{}NPoints = "{}         0}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{keywordtype}{char} m\_PointDim[255]; \textcolor{comment}{// "{}PointDim = "{}       "{}x y z r"{}}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     PointListType m\_PointList;}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     MET\_ValueEnumType m\_ElementType;}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{141 \};}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

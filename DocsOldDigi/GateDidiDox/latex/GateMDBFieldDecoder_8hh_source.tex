@@ -1,0 +1,64 @@
+\hypertarget{GateMDBFieldDecoder_8hh_source}{}\doxysection{Gate\+MDBField\+Decoder.\+hh}
+\label{GateMDBFieldDecoder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMDBFieldDecoder.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMDBFieldDecoder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateMDBFieldDecoder\_hh}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateMDBFieldDecoder\_hh}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMDBFieldDecoder}{GateMDBFieldDecoder}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMDBFieldDecoder}{GateMDBFieldDecoder}}() \{\}}
+\DoxyCodeLine{21   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMDBFieldDecoder}{\string~GateMDBFieldDecoder}}() \{\}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \textcolor{keyword}{enum} PrefixCode \{}
+\DoxyCodeLine{25     prefix\_symbol,}
+\DoxyCodeLine{26     prefix\_atomicnumber,}
+\DoxyCodeLine{27     prefix\_nucleonnumber,}
+\DoxyCodeLine{28     prefix\_molarmass,}
+\DoxyCodeLine{29     prefix\_density,}
+\DoxyCodeLine{30     prefix\_state,}
+\DoxyCodeLine{31     prefix\_temp,}
+\DoxyCodeLine{32     prefix\_pressure,}
+\DoxyCodeLine{33     prefix\_ncomponents,}
+\DoxyCodeLine{34     prefix\_name,}
+\DoxyCodeLine{35     prefix\_fraction,}
+\DoxyCodeLine{36     prefix\_natoms,}
+\DoxyCodeLine{37     prefix\_error}
+\DoxyCodeLine{38     \};}
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41   \textcolor{keyword}{static} \textcolor{keywordtype}{char} thePrefixSeparator;}
+\DoxyCodeLine{42   \textcolor{keyword}{static} \textcolor{keywordtype}{char} theUnitOptionalPrefixChar;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{45   G4double DecodeNumericField(\textcolor{keyword}{const} G4String\& elementName,G4String field,\textcolor{keyword}{const} G4String\& fieldName,\mbox{\hyperlink{classGateCodeMap}{GateCodeMap}}\& prefixMap, \mbox{\hyperlink{classGateUnitMap}{GateUnitMap}}\& unitMap);}
+\DoxyCodeLine{46   G4int    DecodeIntegerField(\textcolor{keyword}{const} G4String\& elementName,G4String field,\textcolor{keyword}{const} G4String\& fieldName,\mbox{\hyperlink{classGateCodeMap}{GateCodeMap}}\& prefixMap);}
+\DoxyCodeLine{47   G4String DecodeTextField(\textcolor{keyword}{const} G4String\& elementName,G4String field,\textcolor{keyword}{const} G4String\& fieldName,\mbox{\hyperlink{classGateCodeMap}{GateCodeMap}}\& prefixMap);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   PrefixCode  DecodeFieldPrefix(\textcolor{keyword}{const} G4String\& elementName,G4String field, \textcolor{keyword}{const} G4String\& fieldName,\mbox{\hyperlink{classGateCodeMap}{GateCodeMap}}\& prefixMap, G4String\& fieldAfterPrefix);}
+\DoxyCodeLine{50   G4double    DecodeFieldFloatingValue(\textcolor{keyword}{const} G4String\& elementName, G4String fieldAfterPrefix, \textcolor{keyword}{const} G4String\& fieldName,G4String\& unitString);}
+\DoxyCodeLine{51   G4int       DecodeFieldIntegerValue(\textcolor{keyword}{const} G4String\& elementName, G4String fieldAfterPrefix, \textcolor{keyword}{const} G4String\& fieldName);}
+\DoxyCodeLine{52   G4double    DecodeFieldUnit(\textcolor{keyword}{const} G4String\& elementName, G4String unitString, \textcolor{keyword}{const} G4String\& fieldName,\mbox{\hyperlink{classGateUnitMap}{GateUnitMap}}\& unitMap);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void}         DecodingException(\textcolor{keyword}{const} G4String\& elementName,\textcolor{keyword}{const} G4String\& errorMsg);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

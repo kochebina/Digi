@@ -1,0 +1,105 @@
+\hypertarget{classGateGeometryVoxelImageReader}{}\doxysection{Gate\+Geometry\+Voxel\+Image\+Reader Class Reference}
+\label{classGateGeometryVoxelImageReader}\index{GateGeometryVoxelImageReader@{GateGeometryVoxelImageReader}}
+
+
+This class is a concrete implementation of the abstract \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Geometry\+Voxel\+Image\+Reader.\+hh$>$}
+
+Inheritance diagram for Gate\+Geometry\+Voxel\+Image\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateGeometryVoxelImageReader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelImageReader_a23c9ee691158cca69ddf1ceae79fbaaf}\label{classGateGeometryVoxelImageReader_a23c9ee691158cca69ddf1ceae79fbaaf}} 
+{\bfseries Gate\+Geometry\+Voxel\+Image\+Reader} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$inserter)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelImageReader_a8a0cef651acf10539b2c42c8d2a2bfe8}{Read\+File}} (G4\+String file\+Name)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelImageReader_a4ff56c5f4b41c68dae72fe047d3461e9}{Read\+RTFile}} (G4\+String header\+\_\+file\+Name, G4\+String file\+Name)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelImageReader_a24dd60714ddd3d6069867870b1a2829c}{Describe}} (G4int level)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelImageReader_ae372a9ada005795e201e1c8298576347}\label{classGateGeometryVoxelImageReader_ae372a9ada005795e201e1c8298576347}} 
+\mbox{\hyperlink{classGateGeometryVoxelImageReaderMessenger}{Gate\+Geometry\+Voxel\+Image\+Reader\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class is a concrete implementation of the abstract \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateGeometryVoxelImageReader}{Gate\+Geometry\+Voxel\+Image\+Reader}} -\/ by \href{mailto:Giovanni.Santin@cern.ch}{\texttt{ Giovanni.\+Santin@cern.\+ch}}
+\item it reads a the voxel info from an ASCII file with the sequence of info\+:
+\begin{DoxyItemize}
+\item nx ny nz
+\item dx dy dz (mm)
+\item number\+\_\+of\+\_\+listed\+\_\+voxels
+\item i1 j1 k1 material\+Name1
+\item i2 j2 k2 material\+Name2
+\item ...
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}} 
+
+\mbox{\hyperlink{classGateGeometryVoxelImageReaderMessenger}{Gate\+Geometry\+Voxel\+Image\+Reader\+Messenger}} 
+
+\mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelReader}{Gate\+VSource\+Voxel\+Reader}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGeometryVoxelImageReader_a24dd60714ddd3d6069867870b1a2829c}\label{classGateGeometryVoxelImageReader_a24dd60714ddd3d6069867870b1a2829c}} 
+\index{GateGeometryVoxelImageReader@{GateGeometryVoxelImageReader}!Describe@{Describe}}
+\index{Describe@{Describe}!GateGeometryVoxelImageReader@{GateGeometryVoxelImageReader}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Image\+Reader\+::\+Describe (\begin{DoxyParamCaption}\item[{G4int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelImageReader_a8a0cef651acf10539b2c42c8d2a2bfe8}\label{classGateGeometryVoxelImageReader_a8a0cef651acf10539b2c42c8d2a2bfe8}} 
+\index{GateGeometryVoxelImageReader@{GateGeometryVoxelImageReader}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!GateGeometryVoxelImageReader@{GateGeometryVoxelImageReader}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Image\+Reader\+::\+Read\+File (\begin{DoxyParamCaption}\item[{G4\+String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelImageReader_a4ff56c5f4b41c68dae72fe047d3461e9}\label{classGateGeometryVoxelImageReader_a4ff56c5f4b41c68dae72fe047d3461e9}} 
+\index{GateGeometryVoxelImageReader@{GateGeometryVoxelImageReader}!ReadRTFile@{ReadRTFile}}
+\index{ReadRTFile@{ReadRTFile}!GateGeometryVoxelImageReader@{GateGeometryVoxelImageReader}}
+\doxysubsubsection{\texorpdfstring{ReadRTFile()}{ReadRTFile()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Image\+Reader\+::\+Read\+RTFile (\begin{DoxyParamCaption}\item[{G4\+String}]{header\+\_\+file\+Name,  }\item[{G4\+String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Geometry\+Voxel\+Image\+Reader.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Geometry\+Voxel\+Image\+Reader.\+cc\end{DoxyCompactItemize}

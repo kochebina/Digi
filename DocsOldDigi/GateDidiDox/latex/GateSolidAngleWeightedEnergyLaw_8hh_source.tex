@@ -1,0 +1,58 @@
+\hypertarget{GateSolidAngleWeightedEnergyLaw_8hh_source}{}\doxysection{Gate\+Solid\+Angle\+Weighted\+Energy\+Law.\+hh}
+\label{GateSolidAngleWeightedEnergyLaw_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSolidAngleWeightedEnergyLaw.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSolidAngleWeightedEnergyLaw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GateSolidAngleWeightedEnergyLaw\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GateSolidAngleWeightedEnergyLaw\_h 1}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVEffectiveEnergyLaw.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateSolidAngleWeightedEnergyLawMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateTools.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4VoxelLimits.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSolidAngleWeightedEnergyLaw}{GateSolidAngleWeightedEnergyLaw}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}} \{}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     public :}
+\DoxyCodeLine{24         \mbox{\hyperlink{classGateSolidAngleWeightedEnergyLaw}{GateSolidAngleWeightedEnergyLaw}}(\textcolor{keyword}{const} G4String\& itsName, G4double itsRectangleSzX=-\/1., G4double itsRectangleSzY=-\/1.);}
+\DoxyCodeLine{25         \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSolidAngleWeightedEnergyLaw}{\string~GateSolidAngleWeightedEnergyLaw}}() \{\textcolor{keyword}{delete} m\_messenger;\}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keyword}{virtual} G4double \mbox{\hyperlink{classGateSolidAngleWeightedEnergyLaw_a68fbc60095c1a7670118e8363b1560b1}{ComputeEffectiveEnergy}}(\mbox{\hyperlink{classGatePulse}{GatePulse}} plse) \textcolor{keyword}{const};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keyword}{inline} G4double GetRectangleSzX()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_szX; \}}
+\DoxyCodeLine{31         \textcolor{keyword}{inline} G4double GetRectangleSzY()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_szY; \}}
+\DoxyCodeLine{32         \textcolor{keyword}{inline} G4double GetZSense()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return}  m\_zSense4Readout; \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetRectangleSzX(G4double SzX) \{ m\_szX = SzX; \}}
+\DoxyCodeLine{35         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetRectangleSzY(G4double SzY) \{ m\_szY = SzY; \}}
+\DoxyCodeLine{36          \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetZSense(G4int senseZ) \{ m\_zSense4Readout= senseZ; \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself (\textcolor{keywordtype}{size\_t} ident=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     private :}
+\DoxyCodeLine{45         G4double m\_szX;}
+\DoxyCodeLine{46         G4double m\_szY;}
+\DoxyCodeLine{47         G4int  m\_zSense4Readout;}
+\DoxyCodeLine{48         \mbox{\hyperlink{classGateSolidAngleWeightedEnergyLawMessenger}{GateSolidAngleWeightedEnergyLawMessenger}}* m\_messenger;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

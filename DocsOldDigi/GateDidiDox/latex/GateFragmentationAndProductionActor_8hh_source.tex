@@ -1,0 +1,81 @@
+\hypertarget{GateFragmentationAndProductionActor_8hh_source}{}\doxysection{Gate\+Fragmentation\+And\+Production\+Actor.\+hh}
+\label{GateFragmentationAndProductionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFragmentationAndProductionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFragmentationAndProductionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATEFRAGMENTATIONANDPRODUCTIONACTOR\_HH}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATEFRAGMENTATIONANDPRODUCTIONACTOR\_HH}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateFragmentationAndProductionActorMessenger.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}TH1.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}TH2.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}TVector2.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }GateFragmentationAndProductionActor : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28  \textcolor{keyword}{public}:}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \string~GateFragmentationAndProductionActor();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{33   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{34   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(GateFragmentationAndProductionActor)}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{37   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Construct}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run * r);}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *) ;}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*) ;}
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*) ;}
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{50   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{52 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{//  virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{56   \textcolor{comment}{//virtual void clear()\{ResetData();\}}}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} SetNBins(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} aNBins) \{ pNBins = aNBins; \}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetNBins()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} pNBins; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{64   GateFragmentationAndProductionActor(G4String name, G4int depth=0);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNBins;}
+\DoxyCodeLine{67   TFile * pTFile;}
+\DoxyCodeLine{68   TH1D * pGammaProduction;}
+\DoxyCodeLine{69   TH1D * pNeutronProduction;}
+\DoxyCodeLine{70   TH1D * pFragmentation;}
+\DoxyCodeLine{71   TVector2 * pNEvent;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   GateFragmentationAndProductionActorMessenger * pMessenger;}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 MAKE\_AUTO\_CREATOR\_ACTOR(FragmentationAndProductionActor,GateFragmentationAndProductionActor)}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEFRAGMENTATIONANDPRODUCTIONACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

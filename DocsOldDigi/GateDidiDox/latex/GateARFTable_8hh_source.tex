@@ -1,0 +1,200 @@
+\hypertarget{GateARFTable_8hh_source}{}\doxysection{Gate\+ARFTable.\+hh}
+\label{GateARFTable_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/arf/include/GateARFTable.hh@{/biomaps/physique/appli/GateOlga/src/source/arf/include/GateARFTable.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{ This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{ of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{ See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef GateARFTable\_h}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define GateARFTable\_h}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include"{}globals.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}TDirectory.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}TBranch.h"{}}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }TH2I;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }TH2D;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }TH1D;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }GateARFTable}
+\DoxyCodeLine{26   \{}
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28   G4String \_ArfTableName; \textcolor{comment}{/* the name of the ARF Table */}}
+\DoxyCodeLine{29   G4int \_ArfTableIndex; \textcolor{comment}{/* the index of the ARF Table because many are defined for one simulation */}}
+\DoxyCodeLine{30   G4double* \_ArfTableVector; \textcolor{comment}{/* contains the probability for each cos(theta)\_k, tan(phi)\_k' as a single linearized index */}}
+\DoxyCodeLine{31   G4double* \_DrfTableVector; \textcolor{comment}{/* contains the ARF table before normalization */}}
+\DoxyCodeLine{32   G4int \_DrfTableDimensionX;}
+\DoxyCodeLine{33   G4int \_DrfTableDimensionY;}
+\DoxyCodeLine{34   G4double \_DistanceSourceToImage;}
+\DoxyCodeLine{35   G4int \_AverageNumberOfPixels;}
+\DoxyCodeLine{36   G4double \_DrfBinSize;}
+\DoxyCodeLine{37   G4double \_LowX;}
+\DoxyCodeLine{38   G4double \_LowY;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   G4int \_NumberOfCosTheta; \textcolor{comment}{/* the number of discretized values of cos(theta) */}}
+\DoxyCodeLine{41   G4int \_NumberOfTanPhi; \textcolor{comment}{/* the number of discretized values of tan(phi) */}}
+\DoxyCodeLine{42   G4int \_TotalNumberbOfThetaPhi; \textcolor{comment}{/* the product of m\_NbOfcosTheta by m\_NbOftanPhi */}}
+\DoxyCodeLine{43   G4double \_EnergyLow; \textcolor{comment}{/* the left end energy of the energy window */}}
+\DoxyCodeLine{44   G4double \_EnergyHigh; \textcolor{comment}{/* the right end energy of the energy window */}}
+\DoxyCodeLine{45   G4int \_IsPrimary;}
+\DoxyCodeLine{46   G4double \_EnergyLowUser; \textcolor{comment}{/* window energy specified by the user */}}
+\DoxyCodeLine{47   G4double \_EnergyHighUser; \textcolor{comment}{/* window energy specified by the user */}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   G4double* \_ThetaVector;}
+\DoxyCodeLine{50   G4double* \_CosThetaVector;}
+\DoxyCodeLine{51   G4double* \_CosThetaIVector;}
+\DoxyCodeLine{52   G4double* \_TanPhiVector;}
+\DoxyCodeLine{53   G4double* mPhi;}
+\DoxyCodeLine{54   G4double mStep1;}
+\DoxyCodeLine{55   G4double mStep2;}
+\DoxyCodeLine{56   G4double mStep3;}
+\DoxyCodeLine{57   G4double mStep4;}
+\DoxyCodeLine{58   G4double mTanPhiStep; \textcolor{comment}{/* Steps parameters for the theta,phi grids */}}
+\DoxyCodeLine{59   G4double mBase1;}
+\DoxyCodeLine{60   G4double mBase2;}
+\DoxyCodeLine{61   G4double mBase3;}
+\DoxyCodeLine{62   G4double mBase4;}
+\DoxyCodeLine{63   G4double mEnergyResolution;}
+\DoxyCodeLine{64   G4double mEnergyReference;}
+\DoxyCodeLine{65   G4double mConstantTerm;}
+\DoxyCodeLine{66   G4double mLinearTerm;}
+\DoxyCodeLine{67   G4double mTotalNumberOfPhotons; \textcolor{comment}{/* total number of simulated photons for this incident energy window */}}
+\DoxyCodeLine{68   \textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mBinnedPhotonCounter; \textcolor{comment}{/*  the number of binned photons */}}
+\DoxyCodeLine{69   \textcolor{keywordtype}{int} mPhiCounts;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{public}:}
+\DoxyCodeLine{72   GateARFTable(\textcolor{keyword}{const} G4String \& aName);}
+\DoxyCodeLine{73   \string~GateARFTable();}
+\DoxyCodeLine{74   G4String GetName()}
+\DoxyCodeLine{75     \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} \_ArfTableName;}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78   ;}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} GetARFAsBinaryBuffer(G4double*\&);}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} FillTableFromBuffer(G4double*\&);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   G4int GetPrimary()}
+\DoxyCodeLine{83     \{}
+\DoxyCodeLine{84     \textcolor{keywordflow}{return} \_IsPrimary;}
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86   ;}
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} SetPrimary()}
+\DoxyCodeLine{88     \{}
+\DoxyCodeLine{89     \_IsPrimary = 1;}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} SetNoPrimary()}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93     \_IsPrimary = 0;}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95   G4double GetEWlow()}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} \_EnergyLowUser;}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{99   ;}
+\DoxyCodeLine{100   G4double GetEWhigh()}
+\DoxyCodeLine{101     \{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} \_EnergyHighUser;}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104   ;}
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} SetName(\textcolor{keyword}{const} G4String \& aName)}
+\DoxyCodeLine{106     \{}
+\DoxyCodeLine{107     \_ArfTableName = aName;}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109   ;}
+\DoxyCodeLine{110   G4int GetIndex()}
+\DoxyCodeLine{111     \{}
+\DoxyCodeLine{112     \textcolor{keywordflow}{return} \_ArfTableIndex;}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{114   ;}
+\DoxyCodeLine{115   \textcolor{keywordtype}{void} SetIndex(\textcolor{keyword}{const} G4int \& aIndex)}
+\DoxyCodeLine{116     \{}
+\DoxyCodeLine{117     \_ArfTableIndex = aIndex;}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119   ;}
+\DoxyCodeLine{120   G4int GetNbofTheta()}
+\DoxyCodeLine{121     \{}
+\DoxyCodeLine{122     \textcolor{keywordflow}{return} \_NumberOfCosTheta;}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124   ;}
+\DoxyCodeLine{125   G4int GetNbofPhi()}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127     \textcolor{keywordflow}{return} \_NumberOfTanPhi;}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129   ;}
+\DoxyCodeLine{130   G4int GetTotalNb()}
+\DoxyCodeLine{131     \{}
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} \_TotalNumberbOfThetaPhi;}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134   ;}
+\DoxyCodeLine{135   G4double GetElow()}
+\DoxyCodeLine{136     \{}
+\DoxyCodeLine{137     \textcolor{keywordflow}{return} \_EnergyLow;}
+\DoxyCodeLine{138     \}}
+\DoxyCodeLine{139   ;}
+\DoxyCodeLine{140   \textcolor{keywordtype}{void} SetElow(\textcolor{keyword}{const} G4double \& aD)}
+\DoxyCodeLine{141     \{}
+\DoxyCodeLine{142     \_EnergyLow = aD;}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144   ;}
+\DoxyCodeLine{145   G4double GetEhigh()}
+\DoxyCodeLine{146     \{}
+\DoxyCodeLine{147     \textcolor{keywordflow}{return} \_EnergyHigh;}
+\DoxyCodeLine{148     \}}
+\DoxyCodeLine{149   ;}
+\DoxyCodeLine{150   \textcolor{keywordtype}{void} SetEhigh(\textcolor{keyword}{const} G4double \& aD)}
+\DoxyCodeLine{151     \{}
+\DoxyCodeLine{152     \_EnergyHigh = aD;}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154   ;}
+\DoxyCodeLine{155   \textcolor{keywordtype}{void} InitializePhi();}
+\DoxyCodeLine{156   \textcolor{keywordtype}{void} InitializeCosTheta();}
+\DoxyCodeLine{157   \textcolor{keywordtype}{void} Describe();}
+\DoxyCodeLine{158   \textcolor{keywordtype}{void} Initialize(\textcolor{keyword}{const} G4double \& energyLow, \textcolor{keyword}{const} G4double \& energyHigh);}
+\DoxyCodeLine{159   G4int GetIndexes(\textcolor{keyword}{const} G4double \& x, \textcolor{keyword}{const} G4double \& y, G4int\& theta, G4int\& phi);}
+\DoxyCodeLine{160   \textcolor{keywordtype}{void} NormalizeTable();}
+\DoxyCodeLine{161   G4double RetrieveProbability(\textcolor{keyword}{const} G4double \& x, \textcolor{keyword}{const} G4double \& y);}
+\DoxyCodeLine{162   \textcolor{keywordtype}{void} SetEnergyReso(\textcolor{keyword}{const} G4double \& aE);}
+\DoxyCodeLine{163   \textcolor{keywordtype}{void} SetERef(\textcolor{keyword}{const} G4double \& aE);}
+\DoxyCodeLine{164   \textcolor{keyword}{inline} G4double GetEnergyReso()}
+\DoxyCodeLine{165     \{}
+\DoxyCodeLine{166     \textcolor{keywordflow}{return} mEnergyResolution;}
+\DoxyCodeLine{167     \}}
+\DoxyCodeLine{168   ;}
+\DoxyCodeLine{169   \textcolor{keyword}{inline} G4double GetERef()}
+\DoxyCodeLine{170     \{}
+\DoxyCodeLine{171     \textcolor{keywordflow}{return} mEnergyReference;}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173   ;}
+\DoxyCodeLine{174   G4int GetOneDimensionIndex(G4int  x, G4int y);}
+\DoxyCodeLine{175   \textcolor{keywordtype}{void} FillDRFTable(\textcolor{keyword}{const} G4double \& meanE, \textcolor{keyword}{const} G4double \& X, \textcolor{keyword}{const} G4double \& Y);}
+\DoxyCodeLine{176   \textcolor{keywordtype}{void} convertDRF2ARF();}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178   G4double computeARFfromDRF(\textcolor{keyword}{const} G4double \& xI, \textcolor{keyword}{const} G4double \& yJ, \textcolor{keyword}{const} G4double \& cosTheta);}
+\DoxyCodeLine{179   \textcolor{keywordtype}{void} SetDistanceFromSourceToDetector(\textcolor{keyword}{const} G4double \& aD)}
+\DoxyCodeLine{180     \{}
+\DoxyCodeLine{181     \_DistanceSourceToImage = aD;}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183   ;}
+\DoxyCodeLine{184   \textcolor{keywordtype}{void} SetNSimuPhotons(\textcolor{keyword}{const} G4double \& N)}
+\DoxyCodeLine{185     \{}
+\DoxyCodeLine{186     mTotalNumberOfPhotons = N;}
+\DoxyCodeLine{187     G4cout << \textcolor{stringliteral}{"{} TOTAL number of photons   "{}}}
+\DoxyCodeLine{188            << (\textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} int) (mTotalNumberOfPhotons)}
+\DoxyCodeLine{189            << Gateendl;}
+\DoxyCodeLine{190            \};}
+\DoxyCodeLine{191          \};}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* G4ANALYSIS\_USE\_ROOT */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

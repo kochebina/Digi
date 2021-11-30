@@ -1,0 +1,73 @@
+\hypertarget{GateSPSEneDistribution_8hh_source}{}\doxysection{Gate\+SPSEne\+Distribution.\+hh}
+\label{GateSPSEneDistribution_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSPSEneDistribution.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSPSEneDistribution.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ *                                                                              *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *  Class Description :                                                         *}}
+\DoxyCodeLine{12 \textcolor{comment}{ *                                                                              *}}
+\DoxyCodeLine{13 \textcolor{comment}{ *  To generate the energy of a primary vertex according to the defined         *}}
+\DoxyCodeLine{14 \textcolor{comment}{ *  distribution                                                                *}}
+\DoxyCodeLine{15 \textcolor{comment}{ *                                                                              *}}
+\DoxyCodeLine{16 \textcolor{comment}{ *   Revision 1.5 2014/08/1 Yann PERROT and Simon NICOLAS  LPC Clermont-\/ferrand *}}
+\DoxyCodeLine{17 \textcolor{comment}{ *   Solution for generating particles from Energy spectra (discrete spectrum,  *}}
+\DoxyCodeLine{18 \textcolor{comment}{ *   histogram and linear interpolation)                                        *}}
+\DoxyCodeLine{19 \textcolor{comment}{ *   Creation of two new methods:                                               *}}
+\DoxyCodeLine{20 \textcolor{comment}{ *     ConstructUserSpectrum() and GenerateFromUserSpectrum()                   *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifndef GateSPSEneDistribution\_h}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define GateSPSEneDistribution\_h 1}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <G4Types.hh>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <G4String.hh>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <G4ParticleDefinition.hh>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <G4SPSEneDistribution.hh>}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSPSEneDistribution}{GateSPSEneDistribution}} : \textcolor{keyword}{public} G4SPSEneDistribution}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37   \mbox{\hyperlink{classGateSPSEneDistribution}{GateSPSEneDistribution}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} GenerateFluor18();}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} GenerateOxygen15();}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} GenerateCarbon11();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} GenerateRangeEnergy();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{comment}{// Shoot an energy in previously created probability tables}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} GenerateFromUserSpectrum();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{comment}{// Create probability tables}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} BuildUserSpectrum(G4String fileName);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   G4double GenerateOne(G4ParticleDefinition*);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} SetEnergyRange(G4double r) \{ mEnergyRange = r; \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55   G4double  mParticleEnergy;}
+\DoxyCodeLine{56   G4double  mEnergyRange;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   G4int     mMode;}
+\DoxyCodeLine{59   G4int     mDimSpectrum;}
+\DoxyCodeLine{60   G4double  mSumProba;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   std::vector<G4double> mTabProba;}
+\DoxyCodeLine{63   std::vector<G4double> mTabSumProba;}
+\DoxyCodeLine{64   std::vector<G4double> mTabEnergy;}
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// GateSPSEneDistribution\_h}}
+
+\end{DoxyCode}

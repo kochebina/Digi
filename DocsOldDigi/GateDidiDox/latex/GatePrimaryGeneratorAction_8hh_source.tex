@@ -1,0 +1,66 @@
+\hypertarget{GatePrimaryGeneratorAction_8hh_source}{}\doxysection{Gate\+Primary\+Generator\+Action.\+hh}
+\label{GatePrimaryGeneratorAction_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GatePrimaryGeneratorAction.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GatePrimaryGeneratorAction.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePrimaryGeneratorAction\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePrimaryGeneratorAction\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4VUserPrimaryGeneratorAction.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GatePrimaryGeneratorMessenger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4GeneralParticleSource;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4Event;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePrimaryGeneratorMessenger}{GatePrimaryGeneratorMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePrimaryGeneratorAction}{GatePrimaryGeneratorAction}} : \textcolor{keyword}{public} G4VUserPrimaryGeneratorAction}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGatePrimaryGeneratorAction}{GatePrimaryGeneratorAction}}();}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGatePrimaryGeneratorAction}{\string~GatePrimaryGeneratorAction}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} GeneratePrimaries(G4Event* anEvent);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePrimaryGeneratorAction_a2e2438d508f06b3958408241368fd93d}{GenerateSimulationPrimaries}}(G4Event* anEvent);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} GenerateDigitisationPrimaries(G4Event* anEvent);}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} AddEvent();}
+\DoxyCodeLine{33   G4int GetEventNumber() \{ \textcolor{keywordflow}{return} m\_nEvents; \};}
+\DoxyCodeLine{34   \textcolor{comment}{//  G4double GetTimeSlice()           \{ return m\_timeSlice; \};}}
+\DoxyCodeLine{35   \textcolor{comment}{//  void SetTimeSlice(G4double value) \{ m\_timeSlice = value; \};}}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} SetVerboseLevel(G4int value);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} EnableGPS(G4bool b) \{ m\_useGPS = b; \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{40   G4GeneralParticleSource*       m\_particleGun;}
+\DoxyCodeLine{41   G4String                       m\_rndmFlag;        \textcolor{comment}{//flag for a random impact point }}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGatePrimaryGeneratorMessenger}{GatePrimaryGeneratorMessenger}}* m\_messenger;}
+\DoxyCodeLine{43   \textcolor{comment}{//    G4double m\_timeSlice;}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   G4double m\_primGenTime;}
+\DoxyCodeLine{46   G4double m\_maxTime;}
+\DoxyCodeLine{47   G4double m\_lifeTime;}
+\DoxyCodeLine{48   G4int    m\_nAliveParticles;}
+\DoxyCodeLine{49   G4int    m\_nEvents;}
+\DoxyCodeLine{50   G4int    m\_nEventsPerRun;}
+\DoxyCodeLine{51   G4int    m\_nTotalEvents;}
+\DoxyCodeLine{52   G4int    m\_printModulo;}
+\DoxyCodeLine{53   G4int    m\_nVerboseLevel;}
+\DoxyCodeLine{54   G4bool   m\_useGPS;}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+
+\end{DoxyCode}

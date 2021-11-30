@@ -1,0 +1,258 @@
+\hypertarget{GateComptonCameraActor_8hh_source}{}\doxysection{Gate\+Compton\+Camera\+Actor.\+hh}
+\label{GateComptonCameraActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateComptonCameraActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateComptonCameraActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 \textcolor{comment}{//Ane Etxebeste 01/2020}}
+\DoxyCodeLine{13 \textcolor{comment}{}\textcolor{preprocessor}{\#ifndef GATECOMPTONCAMERACTOR\_HH}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GATECOMPTONCAMERACTOR\_HH}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVolumeID.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4EventManager.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateCrystalHit.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateHitConvertor.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateDigitizer.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GatePulseAdder.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateCCCoincidenceDigi.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GatePrimTrackInformation.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateCCRootDefs.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateTreeFileManager.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include  <iomanip>}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }G4EmCalculator;}
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateComptonCameraActor}{GateComptonCameraActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateComptonCameraActor_ad067c4dd0f58efbf516c20ac254de13d}{\string~GateComptonCameraActor}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{44   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{45   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateComptonCameraActor}{GateComptonCameraActor}})}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{48   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateComptonCameraActor_ac3a4b2967ed8ee3b822fd9fd0a4ad8ce}{Construct}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{52   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run * r);}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *) ;}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{59   \textcolor{comment}{//test nov}}
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{65 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateComptonCameraActor_acd2d19f80ce69f59620a722ca3025e03}{SaveData}}();}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent* )\{\}}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetNDaughtersBB() \{\textcolor{keywordflow}{return} nDaughterBB;\}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{comment}{//Messenger flags}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} SetSaveHitsTreeFlag( \textcolor{keywordtype}{bool} b )\{  mSaveHitsTreeFlag= b; \}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetSaveSinglesTreeFlag( \textcolor{keywordtype}{bool} b )\{  mSaveSinglesTreeFlag= b; \}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} SetSaveCoincidencesTreeFlag( \textcolor{keywordtype}{bool} b )\{  mSaveCoincidencesTreeFlag= b; \}}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} SetSaveCoincidenceChainsTreeFlag( \textcolor{keywordtype}{bool} b )\{  mSaveCoincidenceChainsTreeFlag= b; \}}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} SetSaveEventInfoTreeFlag( \textcolor{keywordtype}{bool} b )\{  mSaveEventInfoTreeFlag= b; \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} SetNumberOfDiffScattererLayers( \textcolor{keywordtype}{int} numS)\{mNumberDiffScattLayers=numS;\}}
+\DoxyCodeLine{82   \textcolor{keywordtype}{void} SetNumberOfTotScattererLayers( \textcolor{keywordtype}{int} numS)\{mNumberTotScattLayers=numS;\}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} SetNameOfScattererSDVol(G4String name)\{mNameOfScattererSDVol=name;\}}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} SetNameOfAbsorberSDVol(G4String name ) \{mNameOfAbsorberSDVol=name;\}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keywordtype}{void} SetParentIDSpecificationFlag( \textcolor{keywordtype}{bool} b )\{  mParentIDSpecificationFlag= b; \}}
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} SetParentIDFileName(G4String name ) \{mParentIDFileName=name;\}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{comment}{//Information stored in the tree handle by messenger flags}}
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} SetIsEnergyEnabled(\textcolor{keywordtype}{bool} b)\{EnableEnergy = b;\}}
+\DoxyCodeLine{92   \textcolor{keywordtype}{void} SetIsEnergyIniEnabled(\textcolor{keywordtype}{bool} b)\{EnableEnergyIni = b;\}}
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} SetIsEnergyFinEnabled(\textcolor{keywordtype}{bool} b)\{EnableEnergyFin = b;\}}
+\DoxyCodeLine{94   \textcolor{keywordtype}{void} SetIsTimeEnabled(\textcolor{keywordtype}{bool} b)\{EnableTime = b;\}}
+\DoxyCodeLine{95   \textcolor{keywordtype}{void} SetIsXPositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableXPosition = b;\}}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} SetIsYPositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableYPosition = b;\}}
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} SetIsZPositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableZPosition = b;\}}
+\DoxyCodeLine{98   \textcolor{keywordtype}{void} SetIsXLocalPositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableXLocalPosition = b;\}}
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} SetIsYLocalPositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableYLocalPosition = b;\}}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} SetIsZLocalPositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableZLocalPosition = b;\}}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} SetIsXSourcePositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableXSourcePosition = b;\}}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} SetIsYSourcePositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableYSourcePosition = b;\}}
+\DoxyCodeLine{103   \textcolor{keywordtype}{void} SetIsZSourcePositionEnabled(\textcolor{keywordtype}{bool} b)\{EnableZSourcePosition = b;\}}
+\DoxyCodeLine{104   \textcolor{keywordtype}{void} SetIsVolumeIDEnabled(\textcolor{keywordtype}{bool} b)\{EnableVolumeID=b;\}}
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} SetIsSourceEnergyEnabled(\textcolor{keywordtype}{bool} b)\{EnableSourceEnergy=b;\}}
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} SetIsSourcePDGEnabled(\textcolor{keywordtype}{bool} b)\{EnableSourcePDG=b;\}}
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} SetIsnCrystalComptEnabled(\textcolor{keywordtype}{bool} b)\{EnablenCrystalCompt=b;\}}
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} SetIsnCrystalRaylEnabled(\textcolor{keywordtype}{bool} b)\{EnablenCrystalRayl=b;\}}
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} SetIsnCrystalConvEnabled(\textcolor{keywordtype}{bool} b)\{EnablenCrystalConv=b;\}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}*   \mbox{\hyperlink{classGateComptonCameraActor_aee709348d9f28aacc16ea042f18f18b7}{GetDigitizer}}()}
+\DoxyCodeLine{113   \{ \textcolor{keywordflow}{return} m\_digitizer; \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{116   \mbox{\hyperlink{classGateComptonCameraActor_ad9ccd882ba7425e1dca0a5bcebdadc34}{GateComptonCameraActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{117   std::vector<G4String> layerNames;}
+\DoxyCodeLine{118   \textcolor{keywordtype}{int} slayerID;}
+\DoxyCodeLine{119   G4String mHistName;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \textcolor{comment}{//std::vector<std::shared\_ptr<std::ofstream> > ossCoincidenceChains;}}
+\DoxyCodeLine{124   std::vector<G4String> coincidenceChainNames;}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126   \textcolor{comment}{//Using new GateFileManager classes 12/2019}}
+\DoxyCodeLine{127   \mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}} mFileHits;}
+\DoxyCodeLine{128   \mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}} mFileSingles;}
+\DoxyCodeLine{129   \mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}} mFileCoinc;}
+\DoxyCodeLine{130   \mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}} mFileEvent;}
+\DoxyCodeLine{131   std::vector<std::unique\_ptr<GateOutputTreeFileManager>> mVectorFileCoinChain;}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133   \mbox{\hyperlink{classGateCCRootHitBuffer}{GateCCRootHitBuffer}}  m\_HitsBuffer;}
+\DoxyCodeLine{134   \mbox{\hyperlink{classGateCCRootSingleBuffer}{GateCCRootSingleBuffer}}  m\_SinglesBuffer;}
+\DoxyCodeLine{135   \mbox{\hyperlink{classGateCCRootCoincBuffer}{GateCCRootCoincBuffer}}  m\_CoincBuffer;}
+\DoxyCodeLine{136 \textcolor{comment}{//==============================}}
+\DoxyCodeLine{137   \textcolor{comment}{//Inmformation saved in the files}}
+\DoxyCodeLine{138   \textcolor{keywordtype}{bool} EnableEnergy;}
+\DoxyCodeLine{139   \textcolor{keywordtype}{bool} EnableEnergyIni;}
+\DoxyCodeLine{140   \textcolor{keywordtype}{bool} EnableEnergyFin;}
+\DoxyCodeLine{141   \textcolor{keywordtype}{bool} EnableTime;}
+\DoxyCodeLine{142   \textcolor{keywordtype}{bool} EnableXPosition;}
+\DoxyCodeLine{143   \textcolor{keywordtype}{bool} EnableYPosition;}
+\DoxyCodeLine{144   \textcolor{keywordtype}{bool} EnableZPosition;}
+\DoxyCodeLine{145   \textcolor{keywordtype}{bool} EnableXLocalPosition;}
+\DoxyCodeLine{146   \textcolor{keywordtype}{bool} EnableYLocalPosition;}
+\DoxyCodeLine{147   \textcolor{keywordtype}{bool} EnableZLocalPosition;}
+\DoxyCodeLine{148   \textcolor{keywordtype}{bool} EnableXSourcePosition;}
+\DoxyCodeLine{149   \textcolor{keywordtype}{bool} EnableYSourcePosition;}
+\DoxyCodeLine{150   \textcolor{keywordtype}{bool} EnableZSourcePosition;}
+\DoxyCodeLine{151   \textcolor{keywordtype}{bool} EnableVolumeID;}
+\DoxyCodeLine{152   \textcolor{keywordtype}{bool} EnableSourceEnergy;}
+\DoxyCodeLine{153   \textcolor{keywordtype}{bool} EnableSourcePDG;}
+\DoxyCodeLine{154   \textcolor{keywordtype}{bool} EnablenCrystalCompt;}
+\DoxyCodeLine{155   \textcolor{keywordtype}{bool} EnablenCrystalConv;}
+\DoxyCodeLine{156   \textcolor{keywordtype}{bool} EnablenCrystalRayl;}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158  \textcolor{comment}{//========================}}
+\DoxyCodeLine{159   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nDaughterBB;}
+\DoxyCodeLine{160   G4String attachPhysVolumeName;}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162   \textcolor{keywordtype}{double} Ei,Ef;}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165   \textcolor{keywordtype}{bool} newEvt;}
+\DoxyCodeLine{166   \textcolor{keywordtype}{bool} newTrack;}
+\DoxyCodeLine{167   \textcolor{keywordtype}{double} sumNi;}
+\DoxyCodeLine{168   \textcolor{keywordtype}{double} edepTrack;}
+\DoxyCodeLine{169   \textcolor{keywordtype}{double} edepEvt;}
+\DoxyCodeLine{170   \textcolor{keywordtype}{double} tof;}
+\DoxyCodeLine{171   \textcolor{keywordtype}{double} edptempAb;}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173   G4String processPostStep;}
+\DoxyCodeLine{174   G4String VolNameStep;}
+\DoxyCodeLine{175   G4int evtID;}
+\DoxyCodeLine{176   G4int runID;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178   G4int nElectronEscapedEvt;}
+\DoxyCodeLine{179   G4double energyElectronEscapedEvt;}
+\DoxyCodeLine{180   G4bool IseExitingSDVol;}
+\DoxyCodeLine{181   G4String eEspVolName;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184   G4int nCrystalConv;}
+\DoxyCodeLine{185   G4int nCrystalCompt;}
+\DoxyCodeLine{186   G4int nCrystalRayl;}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188   \textcolor{comment}{//std::vector<double> nCrystalCompt\_posZ;}}
+\DoxyCodeLine{189   \textcolor{comment}{//std::vector<double> nCrystalConv\_posZ;}}
+\DoxyCodeLine{190   std::vector<double> nCrystalCompt\_gTime;}
+\DoxyCodeLine{191   std::vector<double> nCrystalConv\_gTime;}
+\DoxyCodeLine{192   std::vector<double> nCrystalRayl\_gTime;}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195   G4double hitEdep;}
+\DoxyCodeLine{196   G4double Ef\_oldPrimary;}
+\DoxyCodeLine{197   G4ThreeVector hitPostPos;}
+\DoxyCodeLine{198   G4ThreeVector hitPrePos;}
+\DoxyCodeLine{199   G4ThreeVector sourcePos;}
+\DoxyCodeLine{200   G4double sourceEnergy;}
+\DoxyCodeLine{201   G4int sourcePDG;}
+\DoxyCodeLine{202   G4int trackID;}
+\DoxyCodeLine{203   G4int  parentID;}
+\DoxyCodeLine{204   G4double trackLength;}
+\DoxyCodeLine{205   G4double trackLocalTime;}
+\DoxyCodeLine{206   G4ThreeVector hitPreLocalPos;}
+\DoxyCodeLine{207   G4ThreeVector hitPostLocalPos;}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210   \textcolor{comment}{//Vector fo the hit collection since GateCrystalHistsCollection is not freeing memeory easily}}
+\DoxyCodeLine{211   std::vector<GateCrystalHit*> hitsList;}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216   \textcolor{comment}{// GatePulseList* crystalPulseList;}}
+\DoxyCodeLine{217   \textcolor{keyword}{static} \textcolor{keyword}{const} G4String thedigitizerName;}
+\DoxyCodeLine{218   \mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* chain;}
+\DoxyCodeLine{219   \textcolor{keyword}{static} \textcolor{keyword}{const} G4String thedigitizerSorterName;}
+\DoxyCodeLine{220   \mbox{\hyperlink{classGateCoincidenceSorter}{GateCoincidenceSorter}}* coincidenceSorter;}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222   \textcolor{keywordtype}{void} readPulses(\mbox{\hyperlink{classGatePulseList}{GatePulseList}}* pPulseList);}
+\DoxyCodeLine{223   \textcolor{keywordtype}{void} processPulsesIntoSinglesTree();}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226   \textcolor{comment}{//messenger}}
+\DoxyCodeLine{227   \textcolor{keywordtype}{bool} mSaveHitsTreeFlag;}
+\DoxyCodeLine{228   \textcolor{keywordtype}{bool} mSaveSinglesTreeFlag;}
+\DoxyCodeLine{229   \textcolor{keywordtype}{bool} mSaveCoincidencesTreeFlag;}
+\DoxyCodeLine{230   \textcolor{keywordtype}{bool} mSaveCoincidenceChainsTreeFlag;}
+\DoxyCodeLine{231   \textcolor{keywordtype}{bool} mSaveEventInfoTreeFlag;}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233   \textcolor{keywordtype}{int} mNumberDiffScattLayers;}
+\DoxyCodeLine{234   \textcolor{keywordtype}{int} mNumberTotScattLayers;}
+\DoxyCodeLine{235   G4String  mNameOfScattererSDVol;}
+\DoxyCodeLine{236   G4String  mNameOfAbsorberSDVol;}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238   \textcolor{keywordtype}{bool} mParentIDSpecificationFlag;}
+\DoxyCodeLine{239   G4String  mParentIDFileName;}
+\DoxyCodeLine{240   std::vector<G4int> specfParentID;}
+\DoxyCodeLine{241   std::vector<G4int>::iterator itPrtID;}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246   \textcolor{comment}{//GatePrimTrackInformation* trackInfo;}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248   \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}* pMessenger;}
+\DoxyCodeLine{249   G4EmCalculator * emcalc;}
+\DoxyCodeLine{250   \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* m\_digitizer;}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \};}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 MAKE\_AUTO\_CREATOR\_ACTOR(ComptonCameraActor,\mbox{\hyperlink{classGateComptonCameraActor}{GateComptonCameraActor}})}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATECOMPTONCAMERAACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{258 \textcolor{comment}{//\#endif}}
+
+\end{DoxyCode}

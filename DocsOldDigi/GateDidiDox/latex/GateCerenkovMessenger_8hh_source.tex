@@ -1,0 +1,54 @@
+\hypertarget{GateCerenkovMessenger_8hh_source}{}\doxysection{Gate\+Cerenkov\+Messenger.\+hh}
+\label{GateCerenkovMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateCerenkovMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateCerenkovMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{2 \textcolor{comment}{\#developed by Hermann Fuchs}}
+\DoxyCodeLine{3 \textcolor{comment}{\#}}
+\DoxyCodeLine{4 \textcolor{comment}{\#Christian Doppler Laboratory for Medical Radiation Research for Radiation Oncology}}
+\DoxyCodeLine{5 \textcolor{comment}{\#Department of Radiation Oncology}}
+\DoxyCodeLine{6 \textcolor{comment}{\#Medical University of Vienna}}
+\DoxyCodeLine{7 \textcolor{comment}{\#}}
+\DoxyCodeLine{8 \textcolor{comment}{\#and }}
+\DoxyCodeLine{9 \textcolor{comment}{\#}}
+\DoxyCodeLine{10 \textcolor{comment}{\#Pierre Gueth}}
+\DoxyCodeLine{11 \textcolor{comment}{\#CREATIS}}
+\DoxyCodeLine{12 \textcolor{comment}{\#}}
+\DoxyCodeLine{13 \textcolor{comment}{\#July 2012}}
+\DoxyCodeLine{14 \textcolor{comment}{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{15 \textcolor{comment}{*/}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATECERENKOVPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATECERENKOVPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVProcessMessenger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVProcess}{GateVProcess}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCerenkovMessenger}{GateCerenkovMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVProcessMessenger}{GateVProcessMessenger}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     \textcolor{keyword}{public}:}
+\DoxyCodeLine{29         \mbox{\hyperlink{classGateCerenkovMessenger}{GateCerenkovMessenger}}(\mbox{\hyperlink{classGateVProcess}{GateVProcess}}* pb);}
+\DoxyCodeLine{30         \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCerenkovMessenger}{\string~GateCerenkovMessenger}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{33         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keyword}{inline} \textcolor{keywordtype}{int} GetMaxNumPhotonsPerStep()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} maxNumPhotonsPerStep; \}}
+\DoxyCodeLine{36         \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} GetTrackSecondariesFirst()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} trackSecondariesFirst; \}}
+\DoxyCodeLine{37         \textcolor{keyword}{inline} \textcolor{keywordtype}{double} GetMaxBetaChangePerStep()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} maxBetaChangePerStep; \}}
+\DoxyCodeLine{38     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{39         G4UIcmdWithAnInteger* pSetMaxNumPhotonsPerStep;}
+\DoxyCodeLine{40         G4UIcmdWithABool* pSetTrackSecondariesFirst;}
+\DoxyCodeLine{41         G4UIcmdWithADouble* pSetMaxBetaChangePerStep;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keywordtype}{int} maxNumPhotonsPerStep;}
+\DoxyCodeLine{44         \textcolor{keywordtype}{bool} trackSecondariesFirst;}
+\DoxyCodeLine{45         \textcolor{keywordtype}{double} maxBetaChangePerStep;}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\hypertarget{GateBlurringWithIntrinsicResolutionMessenger_8hh_source}{}\doxysection{Gate\+Blurring\+With\+Intrinsic\+Resolution\+Messenger.\+hh}
+\label{GateBlurringWithIntrinsicResolutionMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBlurringWithIntrinsicResolutionMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBlurringWithIntrinsicResolutionMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateBlurringWithIntrinsicResolutionMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateBlurringWithIntrinsicResolutionMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4UIdirectory.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBlurringWithIntrinsicResolution}{GateBlurringWithIntrinsicResolution}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBlurringWithIntrinsicResolutionMessenger}{GateBlurringWithIntrinsicResolutionMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateBlurringWithIntrinsicResolutionMessenger}{GateBlurringWithIntrinsicResolutionMessenger}}(\mbox{\hyperlink{classGateBlurringWithIntrinsicResolution}{GateBlurringWithIntrinsicResolution}}* itsIntrinsic);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateBlurringWithIntrinsicResolutionMessenger}{\string~GateBlurringWithIntrinsicResolutionMessenger}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{31   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue2(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution}{GateBlurringWithIntrinsicResolution}}* GetBlurringWithIntrinsicResolution()}
+\DoxyCodeLine{34   \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateBlurringWithIntrinsicResolution}{GateBlurringWithIntrinsicResolution}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37   G4UIcmdWithAString   *newVolCmd;}
+\DoxyCodeLine{38   std::vector<G4UIdirectory*> m\_volDirectory;}
+\DoxyCodeLine{39   std::vector<G4UIcmdWithADouble*>   resolutionCmd;}
+\DoxyCodeLine{40   std::vector<G4UIcmdWithADoubleAndUnit*>   erefCmd;}
+\DoxyCodeLine{41   std::vector<G4String> m\_name;}
+\DoxyCodeLine{42   G4int m\_count;}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

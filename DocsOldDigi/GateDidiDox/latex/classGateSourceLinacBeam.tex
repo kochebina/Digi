@@ -1,0 +1,122 @@
+\hypertarget{classGateSourceLinacBeam}{}\doxysection{Gate\+Source\+Linac\+Beam Class Reference}
+\label{classGateSourceLinacBeam}\index{GateSourceLinacBeam@{GateSourceLinacBeam}}
+Inheritance diagram for Gate\+Source\+Linac\+Beam\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateSourceLinacBeam}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a850ef3c2d019a9af2796d93205d34d50}\label{classGateSourceLinacBeam_a850ef3c2d019a9af2796d93205d34d50}} 
+{\bfseries Gate\+Source\+Linac\+Beam} (G4\+String name)
+\item 
+virtual void \mbox{\hyperlink{classGateSourceLinacBeam_a011282ad807d8c12ca55413e827908a4}{Generate\+Primary\+Vertex}} (G4\+Event $\ast$evt)
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a733154fd26bec1df7667f761971d37e7}\label{classGateSourceLinacBeam_a733154fd26bec1df7667f761971d37e7}} 
+void {\bfseries Set\+Source\+From\+Phase\+Space\+Filename} (G4\+String f)
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a2f5c9c354e1f406bb7a237baa7b7db21}\label{classGateSourceLinacBeam_a2f5c9c354e1f406bb7a237baa7b7db21}} 
+void {\bfseries Set\+Rmax\+Filename} (G4\+String f)
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a4ad2d3f9b62fef7e93ad3a41521dcf07}\label{classGateSourceLinacBeam_a4ad2d3f9b62fef7e93ad3a41521dcf07}} 
+void {\bfseries Set\+Reference\+Position} (G4\+Three\+Vector p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a94d1bc095936a8721258066b01bf34a6}\label{classGateSourceLinacBeam_a94d1bc095936a8721258066b01bf34a6}} 
+typedef std\+::vector$<$ TH1D $\ast$ $>$ {\bfseries Histo\+Vector1\+DType}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_ad2c42b9ecdd4dff0f85297c5a1f7ff19}\label{classGateSourceLinacBeam_ad2c42b9ecdd4dff0f85297c5a1f7ff19}} 
+typedef std\+::vector$<$ Histo\+Vector1\+DType $>$ {\bfseries Histo\+Vector2\+DType}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a90e1ee2c37e8afe9b96cf0800e64c623}\label{classGateSourceLinacBeam_a90e1ee2c37e8afe9b96cf0800e64c623}} 
+typedef std\+::vector$<$ Histo\+Vector2\+DType $>$ {\bfseries Histo\+Vector3\+DType}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a756002061360ef904b3cd41dc3d54e11}\label{classGateSourceLinacBeam_a756002061360ef904b3cd41dc3d54e11}} 
+double {\bfseries Get\+Rmax\+From\+Time} (double time)
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a77a4ce681a4c5542daa7797d320766c1}\label{classGateSourceLinacBeam_a77a4ce681a4c5542daa7797d320766c1}} 
+int {\bfseries Get\+Index\+From\+Time} (double time)
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a216e7485adf872b5927d5436550a95b1}\label{classGateSourceLinacBeam_a216e7485adf872b5927d5436550a95b1}} 
+void {\bfseries Print\+Histo\+Info} (TH1D $\ast$h)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a32ca1385ea8918d7d6ce20d39a189124}\label{classGateSourceLinacBeam_a32ca1385ea8918d7d6ce20d39a189124}} 
+\mbox{\hyperlink{classGateSourceLinacBeamMessenger}{Gate\+Source\+Linac\+Beam\+Messenger}} $\ast$ {\bfseries m\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a124a011a0828c0623125b82db6d0548b}\label{classGateSourceLinacBeam_a124a011a0828c0623125b82db6d0548b}} 
+G4\+String {\bfseries m\+Source\+From\+Phase\+Space\+Filename}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a2b4ea7f748b073d8a944e38326e4bd3b}\label{classGateSourceLinacBeam_a2b4ea7f748b073d8a944e38326e4bd3b}} 
+G4\+String {\bfseries m\+Rmax\+Filename}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a63a0ea2715e9ad3edd619949177e705a}\label{classGateSourceLinacBeam_a63a0ea2715e9ad3edd619949177e705a}} 
+TFile $\ast$ {\bfseries m\+Phase\+Space\+File}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a8b26b0a4438f55721a17f83fc750acba}\label{classGateSourceLinacBeam_a8b26b0a4438f55721a17f83fc750acba}} 
+G4\+Three\+Vector {\bfseries m\+Reference\+Position}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a4ea50f5b7293de21699df067e5a21f77}\label{classGateSourceLinacBeam_a4ea50f5b7293de21699df067e5a21f77}} 
+G4int {\bfseries m\+Number\+Of\+Volume}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a251ddd3959d4785adf090fb99ef6f098}\label{classGateSourceLinacBeam_a251ddd3959d4785adf090fb99ef6f098}} 
+G4int {\bfseries m\+Nb\+Of\+Radius\+Bins}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a1ead62185dcfc54019b6c9e7610c3f6c}\label{classGateSourceLinacBeam_a1ead62185dcfc54019b6c9e7610c3f6c}} 
+G4int {\bfseries m\+Nb\+Of\+Radius\+Bins\+For\+Angle}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_afd81ad69becb5b2c4fd12e39375b8bbd}\label{classGateSourceLinacBeam_afd81ad69becb5b2c4fd12e39375b8bbd}} 
+G4int {\bfseries m\+Nb\+Of\+Energy\+Bins\+For\+Angle}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a9ee619c422c601d3183e40a90a13861b}\label{classGateSourceLinacBeam_a9ee619c422c601d3183e40a90a13861b}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries m\+Volume\+Names}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a5f40f3e0891e1c0b7df1845b06d5641b}\label{classGateSourceLinacBeam_a5f40f3e0891e1c0b7df1845b06d5641b}} 
+TH1D $\ast$ {\bfseries m\+Histo\+Volume}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a9a93ed7b9ec2124e85ca2203e47946a9}\label{classGateSourceLinacBeam_a9a93ed7b9ec2124e85ca2203e47946a9}} 
+Histo\+Vector1\+DType {\bfseries m\+Histo\+Radius}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_aefad9546199acf81227b1b76ebcb400c}\label{classGateSourceLinacBeam_aefad9546199acf81227b1b76ebcb400c}} 
+Histo\+Vector2\+DType {\bfseries m\+Histo\+Energy}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_ad7d42e1920d4047a49afdd9a28720796}\label{classGateSourceLinacBeam_ad7d42e1920d4047a49afdd9a28720796}} 
+Histo\+Vector3\+DType {\bfseries m\+Histo\+Theta\+Direction}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_aca040bb0b3bf7e06437af720fff11f33}\label{classGateSourceLinacBeam_aca040bb0b3bf7e06437af720fff11f33}} 
+Histo\+Vector3\+DType {\bfseries m\+Histo\+Phi\+Direction}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a148dc617d711b3707790052167782be9}\label{classGateSourceLinacBeam_a148dc617d711b3707790052167782be9}} 
+std\+::vector$<$ double $>$ {\bfseries m\+Time\+List}
+\item 
+\mbox{\Hypertarget{classGateSourceLinacBeam_a3abc88619747ac1ef12a94e8c977eb65}\label{classGateSourceLinacBeam_a3abc88619747ac1ef12a94e8c977eb65}} 
+std\+::vector$<$ double $>$ {\bfseries m\+Rmax\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSourceLinacBeam_a011282ad807d8c12ca55413e827908a4}\label{classGateSourceLinacBeam_a011282ad807d8c12ca55413e827908a4}} 
+\index{GateSourceLinacBeam@{GateSourceLinacBeam}!GeneratePrimaryVertex@{GeneratePrimaryVertex}}
+\index{GeneratePrimaryVertex@{GeneratePrimaryVertex}!GateSourceLinacBeam@{GateSourceLinacBeam}}
+\doxysubsubsection{\texorpdfstring{GeneratePrimaryVertex()}{GeneratePrimaryVertex()}}
+{\footnotesize\ttfamily void Gate\+Source\+Linac\+Beam\+::\+Generate\+Primary\+Vertex (\begin{DoxyParamCaption}\item[{G4\+Event $\ast$}]{evt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSource}{Gate\+VSource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Source\+Linac\+Beam.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Source\+Linac\+Beam.\+cc\end{DoxyCompactItemize}

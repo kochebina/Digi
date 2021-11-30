@@ -1,0 +1,47 @@
+\hypertarget{GateBenchmarkActorMessenger_8hh_source}{}\doxysection{Gate\+Benchmark\+Actor\+Messenger.\+hh}
+\label{GateBenchmarkActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBenchmarkActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBenchmarkActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GATEBENCHMARKACTORMESSENGER\_HH}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GATEBENCHMARKACTORMESSENGER\_HH}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }GateBenchmarkActor;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }GateBenchmarkActorMessenger : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         GateBenchmarkActorMessenger(GateBenchmarkActor * v);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         \string~GateBenchmarkActorMessenger();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{30     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         GateBenchmarkActor * pActor;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36         \textcolor{comment}{//G4UIcmdWithAnInteger * pNBinsCmd;}}
+\DoxyCodeLine{37         \textcolor{comment}{//G4UIcmdWithADoubleAndUnit * pEmaxCmd;}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

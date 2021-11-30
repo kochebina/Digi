@@ -1,0 +1,73 @@
+\hypertarget{GateToLMFMessenger_8hh_source}{}\doxysection{Gate\+To\+LMFMessenger.\+hh}
+\label{GateToLMFMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToLMFMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToLMFMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef GateToLMFMessenger\_h}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define GateToLMFMessenger\_h 1}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifdef GATE\_USE\_LMF}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }GateToLMF;}
+\DoxyCodeLine{30 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{31 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{32 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{33 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{34 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{35 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{36 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{37 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToLMFMessenger}{GateToLMFMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44   \mbox{\hyperlink{classGateToLMFMessenger}{GateToLMFMessenger}}(GateToLMF* gateToLMF);}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateToLMFMessenger}{\string~GateToLMFMessenger}}();}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55   GateToLMF*            m\_gateToLMF;}
+\DoxyCodeLine{56   G4UIcmdWithAString*   GetFileNameCmd;}
+\DoxyCodeLine{57   G4UIcmdWithAString*   SetInputDataCmd;  }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{66   G4UIcmdWithABool*     GetCoincidenceBoolCmd;}
+\DoxyCodeLine{67   G4UIcmdWithABool*     GetDetectorIDBoolCmd;}
+\DoxyCodeLine{68   G4UIcmdWithABool*     GetEnergyBoolCmd;}
+\DoxyCodeLine{69   G4UIcmdWithABool*     GetNeighbourBoolCmd;}
+\DoxyCodeLine{70   G4UIcmdWithAnInteger* GetNeighbourhoodOrderCmd;}
+\DoxyCodeLine{71   G4UIcmdWithABool*     GetGantryAxialPosBoolCmd;}
+\DoxyCodeLine{72   G4UIcmdWithABool*     GetGantryAngularPosBoolCmd;}
+\DoxyCodeLine{73   G4UIcmdWithABool*     GetSourcePosBoolCmd;}
+\DoxyCodeLine{74   G4UIcmdWithABool*     GetGateDigiBoolCmd;}
+\DoxyCodeLine{75   G4UIcmdWithABool*     GetComptonBoolCmd;}
+\DoxyCodeLine{76   G4UIcmdWithABool*     GetComptonDetectorBoolCmd;}
+\DoxyCodeLine{77   G4UIcmdWithABool*     GetSourceIDBoolCmd;}
+\DoxyCodeLine{78   G4UIcmdWithABool*     GetSourceXYZPosBoolCmd;}
+\DoxyCodeLine{79   G4UIcmdWithABool*     GetGlobalXYZPosBoolCmd;}
+\DoxyCodeLine{80   G4UIcmdWithABool*     GetEventIDBoolCmd;}
+\DoxyCodeLine{81   G4UIcmdWithABool*     GetRunIDBoolCmd;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

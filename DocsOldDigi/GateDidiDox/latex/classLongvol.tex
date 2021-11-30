@@ -1,0 +1,202 @@
+\hypertarget{classLongvol}{}\doxysection{Longvol Class Reference}
+\label{classLongvol}\index{Longvol@{Longvol}}
+
+
+{\ttfamily \#include $<$Gate\+DMaplongvol.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLongvol_adb3463eeb773d345e97de4f194b250cc}{Longvol}} (int sx, int sy, int sz, lvoxel tcolor)
+\item 
+\mbox{\hyperlink{classLongvol_a360b2addfce445d55f496f6d67f4522b}{Longvol}} (const char $\ast$fname)
+\item 
+\mbox{\Hypertarget{classLongvol_ae6a55088943047ae3f9425645437b153}\label{classLongvol_ae6a55088943047ae3f9425645437b153}} 
+{\bfseries Longvol} (const char $\ast$fname, int sx, int sy, int sz, lvoxel default\+Alpha=0)
+\begin{DoxyCompactList}\small\item\em Constructor to build a volume from a .raw file {\itshape without} size informations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a4221fcc7df04bbfda02f2a4d80b551c4}\label{classLongvol_a4221fcc7df04bbfda02f2a4d80b551c4}} 
+{\bfseries Longvol} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a7c32033ebcda197d1e838563e7b6e935}\label{classLongvol_a7c32033ebcda197d1e838563e7b6e935}} 
+{\bfseries $\sim$\+Longvol} ()
+\begin{DoxyCompactList}\small\item\em Destructor (not virtual, so don\textquotesingle{}t inherit this class !) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_abd81ae25b1a218f77b014ed462aaf987}\label{classLongvol_abd81ae25b1a218f77b014ed462aaf987}} 
+lvoxel $\ast$ {\bfseries get\+Data\+Pointer} ()
+\item 
+\mbox{\Hypertarget{classLongvol_a9c0e02b04a58486414eaf36b17ac7797}\label{classLongvol_a9c0e02b04a58486414eaf36b17ac7797}} 
+{\bfseries Longvol} (const \mbox{\hyperlink{classLongvol}{Longvol}} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_ae489541578d7703dbe9c4fcaa07bdbe5}\label{classLongvol_ae489541578d7703dbe9c4fcaa07bdbe5}} 
+const \mbox{\hyperlink{classLongvol}{Longvol}} \& {\bfseries operator=} (const \mbox{\hyperlink{classLongvol}{Longvol}} \&)
+\begin{DoxyCompactList}\small\item\em Assignement operator. \end{DoxyCompactList}\item 
+lvoxel \& \mbox{\hyperlink{classLongvol_acfbe6d30fd35974f5278390b4110e702}{operator()}} (int x, int y, int z)
+\begin{DoxyCompactList}\small\item\em Operator to access a pixel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a30cada4f86c7a821aab75671f7eb29ce}\label{classLongvol_a30cada4f86c7a821aab75671f7eb29ce}} 
+lvoxel {\bfseries operator()} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Operateur to access a pixel when object is const. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_ad6026f1ba1abbbdeb1ae090b27791fcc}\label{classLongvol_ad6026f1ba1abbbdeb1ae090b27791fcc}} 
+lvoxel {\bfseries get} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Some people could prefer this syntax to get/set a lvoxel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_ab560e9a4673ec5da008b173071e45d96}\label{classLongvol_ab560e9a4673ec5da008b173071e45d96}} 
+void {\bfseries set} (int x, int y, int z, lvoxel c)
+\item 
+int \mbox{\hyperlink{classLongvol_a6f28198c003f937a4eac5ae3b66e8003}{dump\+Longvol}} (const char $\ast$filename)
+\item 
+int \mbox{\hyperlink{classLongvol_a26d61106ab9905dead0648d9142fae17}{dump\+Raw}} (const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classLongvol_a0ca4e109f25c303c52e87dc10c620130}\label{classLongvol_a0ca4e109f25c303c52e87dc10c620130}} 
+bool {\bfseries is\+OK} ()
+\begin{DoxyCompactList}\small\item\em Returns the state of the object (false \+: bad, true \+: ok) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a2aa3adf4206e7f549172c31669b044bb}\label{classLongvol_a2aa3adf4206e7f549172c31669b044bb}} 
+\mbox{\hyperlink{classLongvol}{Longvol}} \& {\bfseries operator$\vert$=} (const \mbox{\hyperlink{classLongvol}{Longvol}} \&)
+\begin{DoxyCompactList}\small\item\em vol union \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_aa1d59fdeb140cd73d37282b77a14e103}\label{classLongvol_aa1d59fdeb140cd73d37282b77a14e103}} 
+\mbox{\hyperlink{classLongvol}{Longvol}} \& {\bfseries operator\&=} (const \mbox{\hyperlink{classLongvol}{Longvol}} \&)
+\begin{DoxyCompactList}\small\item\em longvol and \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a19753a454aeaf962f0158125df01922a}\label{classLongvol_a19753a454aeaf962f0158125df01922a}} 
+\mbox{\hyperlink{classLongvol}{Longvol}} \& {\bfseries operator-\/=} (const \mbox{\hyperlink{classLongvol}{Longvol}} \&v)
+\begin{DoxyCompactList}\small\item\em longvol minus \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a40b47db49d4231de8689dbb00cdd638a}\label{classLongvol_a40b47db49d4231de8689dbb00cdd638a}} 
+const char $\ast$ {\bfseries get\+Header\+Value} (const char $\ast$type) const
+\begin{DoxyCompactList}\small\item\em Returns NULL if this field is not found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a49ff34fe2cd4372f18650e852d44bdfc}\label{classLongvol_a49ff34fe2cd4372f18650e852d44bdfc}} 
+int {\bfseries get\+Header\+Value\+As\+Double} (const char $\ast$type, double $\ast$dest) const
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero if failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a9fe72121726e862c188d2bd5e8ae5134}\label{classLongvol_a9fe72121726e862c188d2bd5e8ae5134}} 
+int {\bfseries get\+Header\+Value\+As\+Int} (const char $\ast$type, int $\ast$dest) const
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero if failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_aa235967ff3b1bc610aae8b70abcd89e6}\label{classLongvol_aa235967ff3b1bc610aae8b70abcd89e6}} 
+int {\bfseries set\+Header\+Value} (const char $\ast$type, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero on failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a4ee86277231e839c725b9d5584002a16}\label{classLongvol_a4ee86277231e839c725b9d5584002a16}} 
+int {\bfseries set\+Header\+Value} (const char $\ast$type, lvoxel value)
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero on failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_aafd8199cbf360b84069af1d04f3ff3be}\label{classLongvol_aafd8199cbf360b84069af1d04f3ff3be}} 
+int {\bfseries set\+Header\+Value} (const char $\ast$type, int value)
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero on failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a791eba95deaa31543efd34979c103037}\label{classLongvol_a791eba95deaa31543efd34979c103037}} 
+int {\bfseries set\+Header\+Value} (const char $\ast$type, double value)
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero on failure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLongvol_abe9f920afa067d7cab7e4af66271f2b4}{set\+Volume\+Center}} (int x, int y, int z)
+\item 
+\mbox{\Hypertarget{classLongvol_a19bf98e114ccfa44d4119dc76f679f5c}\label{classLongvol_a19bf98e114ccfa44d4119dc76f679f5c}} 
+void {\bfseries draw\+Axis} ()
+\begin{DoxyCompactList}\small\item\em Draw Axis X, Y and Z. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a72140cf887a03bceff6abd3269a8bf5b}\label{classLongvol_a72140cf887a03bceff6abd3269a8bf5b}} 
+void {\bfseries invert} ()
+\begin{DoxyCompactList}\small\item\em longvol invert (/!\textbackslash{} All colors are lost) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a00607c88ac1789570c7a3bfe82997e17}\label{classLongvol_a00607c88ac1789570c7a3bfe82997e17}} 
+void {\bfseries rotate} (double rx, double ry, double rz)
+\begin{DoxyCompactList}\small\item\em rotate image in longvolume \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_ad7f174e9f4bfc194ea4e974d50f4daa0}\label{classLongvol_ad7f174e9f4bfc194ea4e974d50f4daa0}} 
+void {\bfseries symetry} (int maxx, int maxy, int maxz)
+\begin{DoxyCompactList}\small\item\em will compute the symetry of all positives points in the longvolume. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLongvol_af5c3053b0ebe29dbade8f78c0658ad84}{translate}} (int vx, int vy, int vz)
+\item 
+\mbox{\Hypertarget{classLongvol_ad8de1d0263206b23a761e4629af9f9fc}\label{classLongvol_ad8de1d0263206b23a761e4629af9f9fc}} 
+int {\bfseries sizeX} () const
+\begin{DoxyCompactList}\small\item\em X-\/size of the 3D longvolume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a6876946b3cd6665d94ee379c523ce774}\label{classLongvol_a6876946b3cd6665d94ee379c523ce774}} 
+int {\bfseries sizeY} () const
+\begin{DoxyCompactList}\small\item\em Y-\/size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a887ac0339a4287e5fd85eaa5a683e043}\label{classLongvol_a887ac0339a4287e5fd85eaa5a683e043}} 
+int {\bfseries sizeZ} () const
+\begin{DoxyCompactList}\small\item\em Z-\/sizw. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_aa38a6faae472d5855a875befd6bb1304}\label{classLongvol_aa38a6faae472d5855a875befd6bb1304}} 
+int {\bfseries minX} () const
+\begin{DoxyCompactList}\small\item\em The least x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a364e129f9428f31ac1e58665bd40d76a}\label{classLongvol_a364e129f9428f31ac1e58665bd40d76a}} 
+int {\bfseries minY} () const
+\begin{DoxyCompactList}\small\item\em The least y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_ab47db529949efe3d2fc3b08e3e070134}\label{classLongvol_ab47db529949efe3d2fc3b08e3e070134}} 
+int {\bfseries minZ} () const
+\begin{DoxyCompactList}\small\item\em The least z. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a080e18705a5c0f6618c1c9001c17784c}\label{classLongvol_a080e18705a5c0f6618c1c9001c17784c}} 
+int {\bfseries maxX} () const
+\begin{DoxyCompactList}\small\item\em The greatest X ( warning \+: it is not included in bounds ) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a72a1bde895b198bb5a2a5b350672a3f0}\label{classLongvol_a72a1bde895b198bb5a2a5b350672a3f0}} 
+int {\bfseries maxY} () const
+\begin{DoxyCompactList}\small\item\em The greatest Y ( warning \+: it is not included in bounds ) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_ab5072999b23b1996b179c02e95c26ce7}\label{classLongvol_ab5072999b23b1996b179c02e95c26ce7}} 
+int {\bfseries maxZ} () const
+\begin{DoxyCompactList}\small\item\em The greatest Z ( warning \+: it is not included in bounds ) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a715c891cf96a5d15605f8929b3c48a18}\label{classLongvol_a715c891cf96a5d15605f8929b3c48a18}} 
+int {\bfseries cX} () const
+\begin{DoxyCompactList}\small\item\em The X-\/coordinate of the center. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a82347a2e63c38968bbacbe464f1b447b}\label{classLongvol_a82347a2e63c38968bbacbe464f1b447b}} 
+int {\bfseries cY} () const
+\begin{DoxyCompactList}\small\item\em The Y-\/coordinate of the center. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a8f467481f4b81b100808e30e634cc390}\label{classLongvol_a8f467481f4b81b100808e30e634cc390}} 
+int {\bfseries cZ} () const
+\begin{DoxyCompactList}\small\item\em The Z-\/coordinates of the center. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a067a95a586b568681a399bf9d65706c7}\label{classLongvol_a067a95a586b568681a399bf9d65706c7}} 
+bool {\bfseries in\+Bounds} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Returns true if the point is valid for this longvolume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_af49b45de76854cb29a61bba83623ffba}\label{classLongvol_af49b45de76854cb29a61bba83623ffba}} 
+lvoxel {\bfseries alpha} () const
+\begin{DoxyCompactList}\small\item\em Returns alpha color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLongvol_a696d896d62e486a756bad0add094f668}\label{classLongvol_a696d896d62e486a756bad0add094f668}} 
+int {\bfseries pos\+Of} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Position of a point in the lvoxel array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles lvoxel 3D pictures. It can save them to disk and read them. See test.\+cc for an example of use of this class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLongvol_adb3463eeb773d345e97de4f194b250cc}\label{classLongvol_adb3463eeb773d345e97de4f194b250cc}} 
+\index{Longvol@{Longvol}!Longvol@{Longvol}}
+\index{Longvol@{Longvol}!Longvol@{Longvol}}
+\doxysubsubsection{\texorpdfstring{Longvol()}{Longvol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Longvol\+::\+Longvol (\begin{DoxyParamCaption}\item[{int}]{sx,  }\item[{int}]{sy,  }\item[{int}]{sz,  }\item[{lvoxel}]{tcolor }\end{DoxyParamCaption})}
+
+Constructor to create \textquotesingle{}from scratch\textquotesingle{} a new volume. No file is created. \mbox{\Hypertarget{classLongvol_a360b2addfce445d55f496f6d67f4522b}\label{classLongvol_a360b2addfce445d55f496f6d67f4522b}} 
+\index{Longvol@{Longvol}!Longvol@{Longvol}}
+\index{Longvol@{Longvol}!Longvol@{Longvol}}
+\doxysubsubsection{\texorpdfstring{Longvol()}{Longvol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Longvol\+::\+Longvol (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname }\end{DoxyParamCaption})}
+
+Constructor to build a volume from a .vol file. If filename is \char`\"{}\char`\"{}, stdin is used. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLongvol_a6f28198c003f937a4eac5ae3b66e8003}\label{classLongvol_a6f28198c003f937a4eac5ae3b66e8003}} 
+\index{Longvol@{Longvol}!dumpLongvol@{dumpLongvol}}
+\index{dumpLongvol@{dumpLongvol}!Longvol@{Longvol}}
+\doxysubsubsection{\texorpdfstring{dumpLongvol()}{dumpLongvol()}}
+{\footnotesize\ttfamily int Longvol\+::dump\+Longvol (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Write this longvolume object into a .longvol file. If filename is \char`\"{}\char`\"{}, stdout is used. Return \texorpdfstring{$>$}{>} 0 if error. \mbox{\Hypertarget{classLongvol_a26d61106ab9905dead0648d9142fae17}\label{classLongvol_a26d61106ab9905dead0648d9142fae17}} 
+\index{Longvol@{Longvol}!dumpRaw@{dumpRaw}}
+\index{dumpRaw@{dumpRaw}!Longvol@{Longvol}}
+\doxysubsubsection{\texorpdfstring{dumpRaw()}{dumpRaw()}}
+{\footnotesize\ttfamily int Longvol\+::dump\+Raw (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Write this volume object into a .raw file If filanem is \char`\"{}\char`\"{}, stdout is used. Return \texorpdfstring{$>$}{>} 0 if error \mbox{\Hypertarget{classLongvol_acfbe6d30fd35974f5278390b4110e702}\label{classLongvol_acfbe6d30fd35974f5278390b4110e702}} 
+\index{Longvol@{Longvol}!operator()@{operator()}}
+\index{operator()@{operator()}!Longvol@{Longvol}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily lvoxel \& Longvol\+::operator() (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+Operator to access a pixel. 
+
+Usage \+: mylongvolume(0, 0, 0) = mycolor; \mbox{\Hypertarget{classLongvol_abe9f920afa067d7cab7e4af66271f2b4}\label{classLongvol_abe9f920afa067d7cab7e4af66271f2b4}} 
+\index{Longvol@{Longvol}!setVolumeCenter@{setVolumeCenter}}
+\index{setVolumeCenter@{setVolumeCenter}!Longvol@{Longvol}}
+\doxysubsubsection{\texorpdfstring{setVolumeCenter()}{setVolumeCenter()}}
+{\footnotesize\ttfamily void Longvol\+::set\+Volume\+Center (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+You can set the coordinates of the center of the longvolume. By default, center is (0, 0, 0). \mbox{\Hypertarget{classLongvol_af5c3053b0ebe29dbade8f78c0658ad84}\label{classLongvol_af5c3053b0ebe29dbade8f78c0658ad84}} 
+\index{Longvol@{Longvol}!translate@{translate}}
+\index{translate@{translate}!Longvol@{Longvol}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void Longvol\+::translate (\begin{DoxyParamCaption}\item[{int}]{vx,  }\item[{int}]{vy,  }\item[{int}]{vz }\end{DoxyParamCaption})}
+
+Translate contents of the longvolume New lvoxels are transparents 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+DMaplongvol.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+DMaplongvol.\+cc\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+DMapreadlongvol.\+cc\end{DoxyCompactItemize}

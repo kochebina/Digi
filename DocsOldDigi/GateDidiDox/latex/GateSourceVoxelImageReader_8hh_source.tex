@@ -1,0 +1,39 @@
+\hypertarget{GateSourceVoxelImageReader_8hh_source}{}\doxysection{Gate\+Source\+Voxel\+Image\+Reader.\+hh}
+\label{GateSourceVoxelImageReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceVoxelImageReader.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceVoxelImageReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATESOURCEVOXELIMAGEREADER\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATESOURCEVOXELIMAGEREADER\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVSourceVoxelReader.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateImage.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceVoxelImageReaderMessenger}{GateSourceVoxelImageReaderMessenger}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceVoxelImageReader}{GateSourceVoxelImageReader}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{classGateSourceVoxelImageReader}{GateSourceVoxelImageReader}}(\mbox{\hyperlink{classGateVSource}{GateVSource}}* source);}
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSourceVoxelImageReader}{\string~GateSourceVoxelImageReader}}();}
+\DoxyCodeLine{24   \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} PixelType;}
+\DoxyCodeLine{25   \textcolor{keywordtype}{void} ReadFile(G4String fileName);}
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} ReadRTFile(G4String, G4String);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateSourceVoxelImageReaderMessenger}{GateSourceVoxelImageReaderMessenger}}* m\_messenger;}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

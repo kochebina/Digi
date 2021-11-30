@@ -1,0 +1,32 @@
+\hypertarget{Calfactor_8hh_source}{}\doxysection{Calfactor.\+hh}
+\label{Calfactor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/Calfactor.hh@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/Calfactor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CALFACTOR\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CALFACTOR\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{classCalfactor}{Calfactor}} \{}
+\DoxyCodeLine{5 \textcolor{keyword}{public}:}
+\DoxyCodeLine{6   \mbox{\hyperlink{classCalfactor}{Calfactor}}(u8 itsNbSct = 6,}
+\DoxyCodeLine{7         u8 itsNbMod = 3, u8 itsNbCry = 64, u8 itsNbLay = 2);}
+\DoxyCodeLine{8   \mbox{\hyperlink{classCalfactor}{\string~Calfactor}}();}
+\DoxyCodeLine{9   \textcolor{keywordtype}{double} operator() (\textcolor{keyword}{const} u8 \&, \textcolor{keyword}{const} u8 \&, \textcolor{keyword}{const} u8 \&, \textcolor{keyword}{const} u8 \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{10   \textcolor{keywordtype}{double} \&operator()(\textcolor{keyword}{const} u8 \&, \textcolor{keyword}{const} u8 \&, \textcolor{keyword}{const} u8 \&, \textcolor{keyword}{const} u8 \&);}
+\DoxyCodeLine{11   \textcolor{keywordtype}{void} ReadCalfactorTable(u8 sct, u8 mod, u8 lay, u8 set = 1);}
+\DoxyCodeLine{12   \textcolor{keywordtype}{void} ReadAllCalfactorTables(u8 set = 1);}
+\DoxyCodeLine{13   \textcolor{keywordtype}{void} WriteAllCalfactorInFiles(u8 set = 1);}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15   u8 m\_nbsct;}
+\DoxyCodeLine{16   u8 m\_nbmod;}
+\DoxyCodeLine{17   u8 m\_nbcry;}
+\DoxyCodeLine{18   u8 m\_nblay;}
+\DoxyCodeLine{19   \textcolor{keywordtype}{double} ****m\_calfactors;}
+\DoxyCodeLine{20   \mbox{\hyperlink{structmean__std}{mean\_std}} *m\_calBase;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   u8 SectorToIndex(\textcolor{keyword}{const} u8 \& sct) \textcolor{keyword}{const};}
+\DoxyCodeLine{23   u8 IndexToSector(\textcolor{keyword}{const} u8 \& idx) \textcolor{keyword}{const};}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

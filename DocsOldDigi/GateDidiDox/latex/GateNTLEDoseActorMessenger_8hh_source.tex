@@ -1,0 +1,64 @@
+\hypertarget{GateNTLEDoseActorMessenger_8hh_source}{}\doxysection{Gate\+NTLEDose\+Actor\+Messenger.\+hh}
+\label{GateNTLEDoseActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateNTLEDoseActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateNTLEDoseActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateNTLEDoseActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)authors: Halima Elazhar (halima.elazhar@ihpc.cnrs.fr)}}
+\DoxyCodeLine{12 \textcolor{comment}{            Thomas Deschler (thomas.deschler@iphc.cnrs.fr)}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATENTLEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATENTLEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNTLEDoseActor}{GateNTLEDoseActor}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNTLEDoseActorMessenger}{GateNTLEDoseActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateNTLEDoseActorMessenger}{GateNTLEDoseActorMessenger}}(\mbox{\hyperlink{classGateNTLEDoseActor}{GateNTLEDoseActor}}*);}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateNTLEDoseActorMessenger}{\string~GateNTLEDoseActorMessenger}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} BuildCommands(G4String);}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNTLEDoseActorMessenger_aa24c026b052df553b8425355f45549a2}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{32     \mbox{\hyperlink{classGateNTLEDoseActor}{GateNTLEDoseActor}}* pDoseActor;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     G4UIcmdWithABool* pEnableEdepCmd;}
+\DoxyCodeLine{35     G4UIcmdWithABool* pEnableEdepSquaredCmd;}
+\DoxyCodeLine{36     G4UIcmdWithABool* pEnableEdepUncertaintyCmd;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     G4UIcmdWithABool* pEnableDoseCmd;}
+\DoxyCodeLine{39     G4UIcmdWithABool* pEnableDoseSquaredCmd;}
+\DoxyCodeLine{40     G4UIcmdWithABool* pEnableDoseUncertaintyCmd;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     G4UIcmdWithABool* pEnableFluxCmd;}
+\DoxyCodeLine{43     G4UIcmdWithABool* pEnableFluxSquaredCmd;}
+\DoxyCodeLine{44     G4UIcmdWithABool* pEnableFluxUncertaintyCmd;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     G4UIcmdWithABool* pEnableDoseCorrectionCmd;}
+\DoxyCodeLine{47     G4UIcmdWithABool* pEnableDoseCorrectionTLECmd;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     G4UIcmdWithABool* pEnableKFExtrapolationCmd;}
+\DoxyCodeLine{50     G4UIcmdWithABool* pEnableKFDACmd;}
+\DoxyCodeLine{51     G4UIcmdWithABool* pEnableKermaFactorDumpCmd;}
+\DoxyCodeLine{52     G4UIcmdWithABool* pEnableKillSecondaryCmd;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     G4UIcmdWithABool* pEnableKermaEquivalentFactorCmd;}
+\DoxyCodeLine{55     G4UIcmdWithABool* pEnablePhotonKermaEquivalentFactorCmd;}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

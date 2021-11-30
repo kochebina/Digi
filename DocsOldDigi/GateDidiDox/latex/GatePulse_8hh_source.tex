@@ -1,0 +1,263 @@
+\hypertarget{GatePulse_8hh_source}{}\doxysection{Gate\+Pulse.\+hh}
+\label{GatePulse_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulse.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulse.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePulse\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePulse\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVolumeID.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateOutputVolumeID.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulse}{GatePulse}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42     \mbox{\hyperlink{classGatePulse_a6d54a7937ac23d2e82b97e8d86d9d737}{GatePulse}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* itsMother=0);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulse_ad306b58285b036be874efe4a6ca61dc6}{GatePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* right)}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         *\textcolor{keyword}{this} = *right;}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulse_a9f6c5e94a3cacfc5ef149a863927c2f9}{\string~GatePulse}}() \{\}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetMother(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* mother)                \{ m\_mother = mother; \}}
+\DoxyCodeLine{58     \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{void}* GetMother()\textcolor{keyword}{   const                  }\{ \textcolor{keywordflow}{return} m\_mother; \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetRunID(G4int j)                            \{ m\_runID = j; \}}
+\DoxyCodeLine{61     \textcolor{keyword}{inline} G4int GetRunID()\textcolor{keyword}{  const                                }\{ \textcolor{keywordflow}{return} m\_runID; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetEventID(G4int j)                          \{ m\_eventID = j; \}}
+\DoxyCodeLine{64     \textcolor{keyword}{inline} G4int GetEventID()\textcolor{keyword}{ const                               }\{ \textcolor{keywordflow}{return} m\_eventID; \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSourceID(G4int j)                         \{ m\_sourceID = j; \}}
+\DoxyCodeLine{67     \textcolor{keyword}{inline} G4int GetSourceID()\textcolor{keyword}{  const                       }\{ \textcolor{keywordflow}{return} m\_sourceID; \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSourcePosition(\textcolor{keyword}{const} G4ThreeVector\& xyz)    \{ m\_sourcePosition = xyz; \}}
+\DoxyCodeLine{70     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetSourcePosition()\textcolor{keyword}{ const          }\{ \textcolor{keywordflow}{return} m\_sourcePosition; \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{inline} G4double GetTime()\textcolor{keyword}{ const                         }\{ \textcolor{keywordflow}{return} m\_time; \}}
+\DoxyCodeLine{73     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetTime(G4double value)                   \{ m\_time = value; \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keyword}{inline} G4double GetEnergy()\textcolor{keyword}{   const                           }\{ \textcolor{keywordflow}{return} m\_energy; \}}
+\DoxyCodeLine{76     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergy(G4double value)                     \{ m\_energy = value; \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetPDGEncoding(\textcolor{keyword}{const} G4int j)                      \{ m\_PDGEncoding = j; \}}
+\DoxyCodeLine{79     \textcolor{keyword}{inline} G4int GetPDGEncoding()\textcolor{keyword}{ const                     }\{ \textcolor{keywordflow}{return} m\_PDGEncoding; \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetLocalPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)      \{ m\_localPos = xyz; \}}
+\DoxyCodeLine{82     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetLocalPos()\textcolor{keyword}{ const              }\{ \textcolor{keywordflow}{return} m\_localPos; \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetGlobalPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_globalPos = xyz; \}}
+\DoxyCodeLine{85     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetGlobalPos()\textcolor{keyword}{  const            }\{ \textcolor{keywordflow}{return} m\_globalPos; \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNPhantomCompton(G4int j)  \{ m\_nPhantomCompton = j; \}}
+\DoxyCodeLine{88     \textcolor{keyword}{inline} G4int GetNPhantomCompton()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nPhantomCompton; \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNCrystalCompton(G4int j)  \{ m\_nCrystalCompton = j; \}}
+\DoxyCodeLine{91     \textcolor{keyword}{inline} G4int GetNCrystalCompton()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nCrystalCompton; \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNPhantomRayleigh(G4int j)  \{ m\_nPhantomRayleigh = j; \}}
+\DoxyCodeLine{94     \textcolor{keyword}{inline} G4int GetNPhantomRayleigh()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nPhantomRayleigh; \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNCrystalRayleigh(G4int j)  \{ m\_nCrystalRayleigh = j; \}}
+\DoxyCodeLine{97     \textcolor{keyword}{inline} G4int GetNCrystalRayleigh()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nCrystalRayleigh; \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetComptonVolumeName(\textcolor{keyword}{const} G4String\& name) \{ m\_comptonVolumeName = name; \}}
+\DoxyCodeLine{100     \textcolor{keyword}{inline} G4String GetComptonVolumeName()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_comptonVolumeName; \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetRayleighVolumeName(\textcolor{keyword}{const} G4String\& name) \{ m\_RayleighVolumeName = name; \}}
+\DoxyCodeLine{103     \textcolor{keyword}{inline} G4String GetRayleighVolumeName()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_RayleighVolumeName; \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetVolumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& volumeID)            \{ m\_volumeID = volumeID; \}}
+\DoxyCodeLine{106     \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& GetVolumeID()\textcolor{keyword}{ const                      }\{ \textcolor{keywordflow}{return} m\_volumeID; \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetScannerPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)                \{ m\_scannerPos = xyz; \}}
+\DoxyCodeLine{109     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetScannerPos()\textcolor{keyword}{ const                       }\{ \textcolor{keywordflow}{return} m\_scannerPos; \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetScannerRotAngle(G4double angle)                  \{ m\_scannerRotAngle = angle; \}}
+\DoxyCodeLine{112     \textcolor{keyword}{inline} G4double GetScannerRotAngle()\textcolor{keyword}{ const                              }\{ \textcolor{keywordflow}{return} m\_scannerRotAngle; \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetOutputVolumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}}\& outputVolumeID)          \{ m\_outputVolumeID = outputVolumeID; \}}
+\DoxyCodeLine{115     \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}}\& GetOutputVolumeID()\textcolor{keyword}{  const                       }\{ \textcolor{keywordflow}{return} m\_outputVolumeID; \}}
+\DoxyCodeLine{116     \textcolor{keyword}{inline} G4int GetComponentID(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{ const    }\{ \textcolor{keywordflow}{return} (m\_outputVolumeID.size()>depth) ? m\_outputVolumeID[depth] : -\/1; \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePulse_aaf5cd80c0eae62758d4925152db73403}{ChangeVolumeIDAndOutputVolumeIDValue}}(\textcolor{keywordtype}{size\_t} depth, G4int value);}
+\DoxyCodeLine{120     \textcolor{comment}{// Reset the local position to be 0}}
+\DoxyCodeLine{121     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} ResetLocalPos() \{m\_localPos[0]=0.;m\_localPos[1]=0.;m\_localPos[2]=0.;\}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} ResetGlobalPos(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* system);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{126     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}   SetOptical(G4bool optical = \textcolor{keyword}{true}) \{ m\_optical = optical;\}}
+\DoxyCodeLine{127     \textcolor{keyword}{inline} G4bool IsOptical()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_optical;\}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{// HDS : record septal penetration}}
+\DoxyCodeLine{131     \textcolor{keyword}{inline} G4int GetNSeptal()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_nSeptal; \}}
+\DoxyCodeLine{132     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNSeptal(G4int septalNb) \{ m\_nSeptal = septalNb; \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{comment}{// AE : Added for IdealComptonPhot adder which take into account several Comptons in the same volume}}
+\DoxyCodeLine{138     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetPostStepProcess(G4String proc) \{ m\_Postprocess = proc; \}}
+\DoxyCodeLine{139     \textcolor{keyword}{inline} G4String GetPostStepProcess()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_Postprocess; \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyIniTrack(G4double eIni)          \{ m\_energyIniTrack = eIni; \}}
+\DoxyCodeLine{142     \textcolor{keyword}{inline} G4double GetEnergyIniTrack()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_energyIniTrack; \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyFin(G4double eFin)          \{ m\_energyFin = eFin; \}}
+\DoxyCodeLine{145     \textcolor{keyword}{inline} G4double GetEnergyFin()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_energyFin; \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSourceEnergy(G4double eValue)          \{ m\_sourceEnergy = eValue; \}}
+\DoxyCodeLine{148     \textcolor{keyword}{inline} G4double GetSourceEnergy()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_sourceEnergy; \}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSourcePDG(G4int PDGEncoding)          \{ m\_sourcePDG = PDGEncoding; \}}
+\DoxyCodeLine{151     \textcolor{keyword}{inline} G4int GetSourcePDG()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_sourcePDG; \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNCrystalConv(G4int nConv)          \{ m\_nCrystalConv = nConv; \}}
+\DoxyCodeLine{154     \textcolor{keyword}{inline} G4int GetNCrystalConv()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_nCrystalConv; \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetProcessCreator(G4String proc) \{ m\_processCreator = proc; \}}
+\DoxyCodeLine{158     \textcolor{keyword}{inline} G4String GetProcessCreator()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_processCreator; \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrackID(G4int trkID)          \{ m\_trackID = trkID; \}}
+\DoxyCodeLine{161     \textcolor{keyword}{inline} G4int GetTrackID()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_trackID; \}}
+\DoxyCodeLine{162     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetParentID(G4int parentID)          \{ m\_parentID = parentID; \}}
+\DoxyCodeLine{163     \textcolor{keyword}{inline} G4int GetParentID()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_parentID; \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{comment}{//AE}}
+\DoxyCodeLine{166     \textcolor{keyword}{inline} G4double GetEnergyError()\textcolor{keyword}{   const                          }\{ \textcolor{keywordflow}{return} m\_energyError; \}}
+\DoxyCodeLine{167     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyError(G4double value)                    \{ m\_energyError = value; \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetLocalPosError(\textcolor{keyword}{const} G4ThreeVector\& xyz)      \{ m\_localPosError = xyz; \}}
+\DoxyCodeLine{170     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetLocalPosError()\textcolor{keyword}{ const              }\{ \textcolor{keywordflow}{return} m\_localPosError; \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetGlobalPosError(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_globalPosError = xyz; \}}
+\DoxyCodeLine{173     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetGlobalPosError()\textcolor{keyword}{  const            }\{ \textcolor{keywordflow}{return} m\_globalPosError; \}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177     \textcolor{comment}{//AE for CSR}}
+\DoxyCodeLine{178     \textcolor{keywordtype}{bool} operator <( \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& rhs )}
+\DoxyCodeLine{179     \{}
+\DoxyCodeLine{180         \textcolor{keywordflow}{return}  GetGlobalPos().getZ() <= rhs.GetGlobalPos().getZ() ;}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& CentroidMerge(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* secondaryPulse);}
+\DoxyCodeLine{188     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& CentroidMergeCompton(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* right);}
+\DoxyCodeLine{189     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& CentroidMergeComptPhotIdeal(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* right);}
+\DoxyCodeLine{190     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& MergePositionEnergyWin(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* right);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{193     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classGatePulse_a678b22c7979fa2f12ea8d14a710a4574}{operator<<}}(std::ostream\&, \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\&);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{keyword}{private}:}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     G4int m\_runID;                    }
+\DoxyCodeLine{199     G4int m\_eventID;                  }
+\DoxyCodeLine{200     G4int m\_sourceID;                 }
+\DoxyCodeLine{201     G4ThreeVector m\_sourcePosition; }
+\DoxyCodeLine{202     G4double m\_time;                  }
+\DoxyCodeLine{203     G4double m\_energy;                }
+\DoxyCodeLine{204     G4ThreeVector m\_localPos;         }
+\DoxyCodeLine{205     G4ThreeVector m\_globalPos;      }
+\DoxyCodeLine{206     G4int m\_PDGEncoding;        \textcolor{comment}{// G4 PDGEncoding}}
+\DoxyCodeLine{207     G4int m\_nPhantomCompton;          }
+\DoxyCodeLine{208     G4int m\_nCrystalCompton;          }
+\DoxyCodeLine{209     G4int m\_nPhantomRayleigh;         }
+\DoxyCodeLine{210     G4int m\_nCrystalRayleigh;         }
+\DoxyCodeLine{211     G4String m\_comptonVolumeName;   }
+\DoxyCodeLine{212     G4String m\_RayleighVolumeName;   }
+\DoxyCodeLine{213     \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}} m\_volumeID;        }
+\DoxyCodeLine{214     G4ThreeVector m\_scannerPos;       }
+\DoxyCodeLine{215     G4double m\_scannerRotAngle;       }
+\DoxyCodeLine{216     \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}} m\_outputVolumeID;}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{218     G4bool m\_optical;               }
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{220     G4int m\_nSeptal;                  }
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222     \textcolor{comment}{// AE : Added for IdealComptonPhot adder which take into account several Comptons in the same volume}}
+\DoxyCodeLine{223     \textcolor{comment}{//These variables no sense for a general pulse but I need them to  process idealy the hits. or create another structure}}
+\DoxyCodeLine{224     G4String m\_Postprocess;         \textcolor{comment}{// PostStep process}}
+\DoxyCodeLine{225     G4double m\_energyIniTrack;         \textcolor{comment}{// Initial energy of the track}}
+\DoxyCodeLine{226     G4double m\_energyFin;         \textcolor{comment}{// final energy of the particle}}
+\DoxyCodeLine{227     G4String m\_processCreator;}
+\DoxyCodeLine{228     G4int m\_trackID;}
+\DoxyCodeLine{229     G4int m\_parentID;}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232     G4double m\_energyError;               }
+\DoxyCodeLine{233     G4ThreeVector m\_globalPosError;      }
+\DoxyCodeLine{234     G4ThreeVector m\_localPosError;        }
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     G4double m\_sourceEnergy;}
+\DoxyCodeLine{238     G4int m\_sourcePDG;}
+\DoxyCodeLine{239     G4int m\_nCrystalConv;}
+\DoxyCodeLine{240     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 }
+\DoxyCodeLine{244 }
+\DoxyCodeLine{246     \textcolor{keyword}{const} \textcolor{keywordtype}{void}* m\_mother;}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 }
+\DoxyCodeLine{260 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseList}{GatePulseList}}: \textcolor{keyword}{public} std::vector<GatePulse*>}
+\DoxyCodeLine{261 \{}
+\DoxyCodeLine{262 \textcolor{keyword}{public}:}
+\DoxyCodeLine{263     \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}(\textcolor{keyword}{const} G4String\& aName)}
+\DoxyCodeLine{264         : m\_name(aName)}
+\DoxyCodeLine{265     \{\}}
+\DoxyCodeLine{266     \mbox{\hyperlink{classGatePulseList}{GatePulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& src);}
+\DoxyCodeLine{267     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseList}{\string~GatePulseList}}();}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{270     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulse}{GatePulse}}* \mbox{\hyperlink{classGatePulseList_abe4945f3ea618554731f58fb770add0f}{FindFirstPulse}}() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{271     \textcolor{keyword}{virtual} G4double ComputeStartTime() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{272     \textcolor{keyword}{virtual} G4double ComputeFinishTime() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{273     G4double ComputeEnergy() \textcolor{keyword}{const};}
+\DoxyCodeLine{274     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} InsertUniqueSortedCopy(\mbox{\hyperlink{classGatePulse}{GatePulse}}* newPulse);}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{277     \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGatePulseList_a6ae75760c2d485e5bbf8e69dc896d1bd}{GetListName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{278 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} m\_name;\}}
+\DoxyCodeLine{279     \textcolor{keywordtype}{void} SetName(\textcolor{keyword}{const} G4String\& name)\{m\_name=name;\}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{282     G4String m\_name;}
+\DoxyCodeLine{283 \};}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 }
+\DoxyCodeLine{287 \textcolor{keyword}{typedef} GatePulseList::iterator GatePulseIterator;}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 }
+\DoxyCodeLine{291 \textcolor{keyword}{typedef} GatePulseList::const\_iterator GatePulseConstIterator;}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,45 @@
+\hypertarget{GateVoxelBoxParam_8hh_source}{}\doxysection{Gate\+Voxel\+Box\+Param.\+hh}
+\label{GateVoxelBoxParam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelBoxParam.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelBoxParam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVoxelBoxParam\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVoxelBoxParam\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVoxelBoxParameterization.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelBoxParam}{GateVoxelBoxParam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateVoxelBoxParam_a9cec91c49e0ee9bd6ac0d4b8559666b9}{GateVoxelBoxParam}}( \textcolor{keyword}{const} G4String\& itsName, \mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}}* vpi);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVoxelBoxParam_aab3e9da8b0e56748259aa7101bb40e22}{\string~GateVoxelBoxParam}}();}
+\DoxyCodeLine{29      }
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} ConstructOwnPhysicalVolume(G4bool flagUpdate);}
+\DoxyCodeLine{31 \textcolor{comment}{//e  void DestroyOwnPhysicalVolumes();}}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} DestroyGeometry();}
+\DoxyCodeLine{33   }
+\DoxyCodeLine{34   }
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}}* itsInserter;}
+\DoxyCodeLine{37   \mbox{\hyperlink{classGateVoxelBoxParameterization}{GateVoxelBoxParameterization}}*      m\_parameterization;}
+\DoxyCodeLine{38   G4VPhysicalVolume*                 m\_pvParameterized;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

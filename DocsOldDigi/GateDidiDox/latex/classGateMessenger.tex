@@ -1,0 +1,93 @@
+\hypertarget{classGateMessenger}{}\doxysection{Gate\+Messenger Class Reference}
+\label{classGateMessenger}\index{GateMessenger@{GateMessenger}}
+
+
+Provides some basic fonctionalities for GATE messengers.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Messenger.\+hh$>$}
+
+Inheritance diagram for Gate\+Messenger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateMessenger}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateMessenger_abe5cf6d733a35b1c4aa07378b759aed3}{Gate\+Messenger}} (const G4\+String \&its\+Name, G4bool create\+Directory=true)
+\item 
+\mbox{\Hypertarget{classGateMessenger_a4c39412b12e7df9fc05062a47485e6e3}\label{classGateMessenger_a4c39412b12e7df9fc05062a47485e6e3}} 
+void {\bfseries Set\+New\+Value} (G4\+UIcommand $\ast$, G4\+String)
+\begin{DoxyCompactList}\small\item\em UI command interpreter method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMessenger_a38ff6bd962757bf687292de821fc99dd}\label{classGateMessenger_a38ff6bd962757bf687292de821fc99dd}} 
+const G4\+String \& {\bfseries Get\+Name} () const
+\begin{DoxyCompactList}\small\item\em Returns the directory base-\/name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMessenger_adb2442f2fede13e91e31e945b1335153}\label{classGateMessenger_adb2442f2fede13e91e31e945b1335153}} 
+const G4\+String \& {\bfseries Get\+Directory\+Name} () const
+\begin{DoxyCompactList}\small\item\em Returns the directory full-\/path ( = \char`\"{}/\+Gate/\char`\"{} + base-\/name) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMessenger_af99b74c8fb7488bf5ce863fd0d475369}\label{classGateMessenger_af99b74c8fb7488bf5ce863fd0d475369}} 
+G4\+UIdirectory $\ast$ {\bfseries Get\+Directory} () const
+\begin{DoxyCompactList}\small\item\em Returns the directory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMessenger_af42593930a9ca97e78b2248c83033073}\label{classGateMessenger_af42593930a9ca97e78b2248c83033073}} 
+void {\bfseries Set\+Directory\+Guidance} (const G4\+String \&guidance)
+\begin{DoxyCompactList}\small\item\em Adds a new line to the directory guidance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static G4\+String \mbox{\hyperlink{classGateMessenger_a1ad520afd5257e93e770054de83d8bf3}{Compute\+Directory\+Name}} (const G4\+String \&name)
+\begin{DoxyCompactList}\small\item\em Tool method\+: compute a directory full-\/path based on the geometry base-\/name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMessenger_aed7d546b401a05ae449c20ee997e772e}\label{classGateMessenger_aed7d546b401a05ae449c20ee997e772e}} 
+G4\+String {\bfseries m\+Name}
+\item 
+\mbox{\Hypertarget{classGateMessenger_a01bc96aaf641877c3142d6bcff71a309}\label{classGateMessenger_a01bc96aaf641877c3142d6bcff71a309}} 
+G4\+String {\bfseries m\+Dir\+Name}
+\begin{DoxyCompactList}\small\item\em Directory full-\/path ( = \char`\"{}/gate/\char`\"{} + base-\/name) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMessenger_a56724c9bf14600ba2599e79723d102b3}\label{classGateMessenger_a56724c9bf14600ba2599e79723d102b3}} 
+G4\+UIdirectory $\ast$ {\bfseries p\+Dir}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides some basic fonctionalities for GATE messengers. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateMessenger}{Gate\+Messenger}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The main function of a \mbox{\hyperlink{classGateMessenger}{Gate\+Messenger}} is to create (as needed) and manage a UI messenger directory.
+\item It stores the directory base-\/name and directory-\/name ( = \char`\"{}/gate/\char`\"{} + base-\/name), and a pointer to the directory
+\item It also provides the ability to communicate with the geometry, and to ask it to update or rebuild itself (OK... storing this method here is not very OO...) 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateMessenger_abe5cf6d733a35b1c4aa07378b759aed3}\label{classGateMessenger_abe5cf6d733a35b1c4aa07378b759aed3}} 
+\index{GateMessenger@{GateMessenger}!GateMessenger@{GateMessenger}}
+\index{GateMessenger@{GateMessenger}!GateMessenger@{GateMessenger}}
+\doxysubsubsection{\texorpdfstring{GateMessenger()}{GateMessenger()}}
+{\footnotesize\ttfamily Gate\+Messenger\+::\+Gate\+Messenger (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{its\+Name,  }\item[{G4bool}]{create\+Directory = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor \textquotesingle{}its\+Name\textquotesingle{} is the base-\/name of the directory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateMessenger_a1ad520afd5257e93e770054de83d8bf3}\label{classGateMessenger_a1ad520afd5257e93e770054de83d8bf3}} 
+\index{GateMessenger@{GateMessenger}!ComputeDirectoryName@{ComputeDirectoryName}}
+\index{ComputeDirectoryName@{ComputeDirectoryName}!GateMessenger@{GateMessenger}}
+\doxysubsubsection{\texorpdfstring{ComputeDirectoryName()}{ComputeDirectoryName()}}
+{\footnotesize\ttfamily static G4\+String Gate\+Messenger\+::\+Compute\+Directory\+Name (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Tool method\+: compute a directory full-\/path based on the geometry base-\/name. 
+
+Tells GATE that the geometrical parameters have undergone a minor modification so that the geometry should be updated Tells GATE that the geometrical parameters have undergone a major modification so that the geometry should be rebuilt 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Messenger.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Messenger.\+cc\end{DoxyCompactItemize}

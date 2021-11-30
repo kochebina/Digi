@@ -1,0 +1,63 @@
+\hypertarget{GateSimplifiedDecay_8hh_source}{}\doxysection{Gate\+Simplified\+Decay.\+hh}
+\label{GateSimplifiedDecay_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSimplifiedDecay.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSimplifiedDecay.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSimplifiedDecay\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSimplifiedDecay\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// for\_each}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{15 \textcolor{comment}{// mem\_fun}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateSimplifiedDecayTransition.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSimplifiedDecay}{GateSimplifiedDecay}}\{}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateSimplifiedDecay}{GateSimplifiedDecay}}():transitionVector(\textcolor{keyword}{new} std::vector<GateSimplifiedDecayTransition*>)\{;\}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateSimplifiedDecay}{\string~GateSimplifiedDecay}}()\{}
+\DoxyCodeLine{27     std::vector<GateSimplifiedDecayTransition*>::iterator i = this-\/>transitionVector-\/>begin();}
+\DoxyCodeLine{28     \textcolor{keywordflow}{for}( ; i != this-\/>transitionVector-\/>end(); ++i ) \{}
+\DoxyCodeLine{29       \textcolor{keyword}{delete} *i;}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31     transitionVector-\/>clear();}
+\DoxyCodeLine{32     \textcolor{keyword}{delete} transitionVector;}
+\DoxyCodeLine{33   \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} print()\{}
+\DoxyCodeLine{36     std::for\_each(  transitionVector-\/>begin(),  transitionVector-\/>end(), std::mem\_fn( \&GateSimplifiedDecayTransition::print)  );}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} sample(\textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} k)\{}
+\DoxyCodeLine{40     (*transitionVector)[k]-\/>sample(n);}
+\DoxyCodeLine{41   \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} addTransition(\mbox{\hyperlink{classGateSimplifiedDecayTransition}{GateSimplifiedDecayTransition}}* t )\{}
+\DoxyCodeLine{44     transitionVector-\/>push\_back(t );}
+\DoxyCodeLine{45   \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   std::vector<psd>* doDecay( std::vector<psd>* );}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50   std::vector<GateSimplifiedDecayTransition*>* transitionVector;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

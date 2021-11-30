@@ -1,0 +1,57 @@
+\hypertarget{GateOrbitingMoveMessenger_8hh_source}{}\doxysection{Gate\+Orbiting\+Move\+Messenger.\+hh}
+\label{GateOrbitingMoveMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOrbitingMoveMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOrbitingMoveMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateOrbitingMoveMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateOrbitingMoveMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateObjectMoveMessenger.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateOrbitingMove.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOrbitingMoveMessenger}{GateOrbitingMoveMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateObjectMoveMessenger}{GateObjectMoveMessenger}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46   \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{classGateOrbitingMoveMessenger_ad3c70890ad1b7d369af672beaa37213c}{GateOrbitingMoveMessenger}}(\mbox{\hyperlink{classGateOrbitingMove}{GateOrbitingMove}}* itsMove);}
+\DoxyCodeLine{50    \mbox{\hyperlink{classGateOrbitingMoveMessenger_a099f3470b2c25607f3726098fb1703d4}{\string~GateOrbitingMoveMessenger}}();}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOrbitingMoveMessenger_a66537403b0a60614d9983cf9a51a0f2d}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateOrbitingMove}{GateOrbitingMove}}* \mbox{\hyperlink{classGateOrbitingMoveMessenger_aab90a2a6a75bfcefcd8c83c40a69373d}{GetOrbitingMove}}() }
+\DoxyCodeLine{57       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateOrbitingMove}{GateOrbitingMove}}*)\mbox{\hyperlink{classGateObjectMoveMessenger_afa145ba41ac952bdf44b39bdfcf72207}{GetMove}}(); \}}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59   \textcolor{keyword}{private}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   G4UIcmdWith3VectorAndUnit*   Point1Cmd;   }
+\DoxyCodeLine{63   G4UIcmdWith3VectorAndUnit*   Point2Cmd;   }
+\DoxyCodeLine{64   G4UIcmdWithADoubleAndUnit*   VelocityCmd;   }
+\DoxyCodeLine{65   G4UIcmdWithABool*            EnableAutoRotationCmd;  }
+\DoxyCodeLine{66   G4UIcmdWithABool*            DisableAutoRotationCmd; }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 }
+
+\end{DoxyCode}

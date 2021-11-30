@@ -1,0 +1,42 @@
+\hypertarget{GateWashOutActorMessenger_8hh_source}{}\doxysection{Gate\+Wash\+Out\+Actor\+Messenger.\+hh}
+\label{GateWashOutActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateWashOutActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateWashOutActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATEWASHOUTACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATEWASHOUTACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAStringADoubleAndADoubleWithUnit.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWashOutActor}{GateWashOutActor}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWashOutActorMessenger}{GateWashOutActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateWashOutActorMessenger}{GateWashOutActorMessenger}}(\mbox{\hyperlink{classGateWashOutActor}{GateWashOutActor}}* sensor);}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateWashOutActorMessenger}{\string~GateWashOutActorMessenger}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* command, G4String newValue);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   G4double ScaleValue(G4double value,G4String unit);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateWashOutActor}{GateWashOutActor}} * pWashOutActor;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   G4UIcmdWithAString* ReadWashOutTableCmd;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEWASHOUTACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

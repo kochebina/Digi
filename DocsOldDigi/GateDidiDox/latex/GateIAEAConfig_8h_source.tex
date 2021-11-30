@@ -1,0 +1,78 @@
+\hypertarget{GateIAEAConfig_8h_source}{}\doxysection{Gate\+IAEAConfig.\+h}
+\label{GateIAEAConfig_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAConfig.h@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// int *      signed, signed int   System dependent}}
+\DoxyCodeLine{2 \textcolor{comment}{// unsigned int      *      unsigned      System dependent}}
+\DoxyCodeLine{3 \textcolor{comment}{//\_\_int8      1      char, signed char    -\/128 to 127}}
+\DoxyCodeLine{4 \textcolor{comment}{//\_\_int16     2      short, short int, signed short int -\/32,768 to 32,767}}
+\DoxyCodeLine{5 \textcolor{comment}{//\_\_int32     4      signed, signed int   -\/2,147,483,648 to 2,147,483,647}}
+\DoxyCodeLine{6 \textcolor{comment}{//\_\_int64     8      none   -\/9,223,372,036,854,775,808 to 9,223,372,036,854,775,807}}
+\DoxyCodeLine{7 \textcolor{comment}{//char 1      signed char   -\/128 to 127}}
+\DoxyCodeLine{8 \textcolor{comment}{//unsigned char      1      none   0 to 255}}
+\DoxyCodeLine{9 \textcolor{comment}{//short       2      short int, signed short int -\/32,768 to 32,767}}
+\DoxyCodeLine{10 \textcolor{comment}{//unsigned short     2      unsigned short int   0 to 65,535}}
+\DoxyCodeLine{11 \textcolor{comment}{//long 4      long int, signed long int   -\/2,147,483,648 to 2,147,483,647}}
+\DoxyCodeLine{12 \textcolor{comment}{//unsigned long      4      unsigned long int    0 to 4,294,967,295}}
+\DoxyCodeLine{13 \textcolor{comment}{//enum *      none   Same as int}}
+\DoxyCodeLine{14 \textcolor{comment}{//float       4      none   3.4E +/-\/ 38 (7 digits)}}
+\DoxyCodeLine{15 \textcolor{comment}{//double      8      none   1.7E +/-\/ 308 (15 digits)}}
+\DoxyCodeLine{16 \textcolor{comment}{//long double 10     none   1.2E +/-\/ 4932 (19 digits)}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef IAEA\_CONFIG}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define IAEA\_CONFIG}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifdef DOUBLE}}
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} \textcolor{keywordtype}{double} IAEA\_Float;}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} \textcolor{keywordtype}{float}  IAEA\_Float;}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} IAEA\_I16;}
+\DoxyCodeLine{28 \textcolor{comment}{//typedef long  IAEA\_I32; // RCN changed to long to allow storage of EGS LATCH, Dec. 2006 }}
+\DoxyCodeLine{29 \textcolor{keyword}{typedef}  \textcolor{keywordtype}{int}  IAEA\_I32;    \textcolor{comment}{// Changed back on April 2011, following Daniel OBrien's comments}}
+\DoxyCodeLine{30                            \textcolor{comment}{// It also corresponds to EGSnrc definition (see egs\_config1.h file)}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifdef WIN32}}
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \_\_int64 IAEA\_I64;}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#if defined NO\_LONG\_LONG || defined LONG\_IS\_64}}
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} IAEA\_I64;}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} IAEA\_I64;}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define IAEA\_EXTERN\_C extern "{}C"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define IAEA\_EXTERN\_C extern}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef WIN32 }}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef BUILD\_DLL}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define IAEA\_EXPORT \_\_declspec(dllexport)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#elif defined USE\_DLL}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define IAEA\_EXPORT \_\_declspec(dllimport)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define IAEA\_EXPORT}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define IAEA\_LOCAL}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifdef HAVE\_VISIBILITY}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define IAEA\_EXPORT \_\_attribute\_\_ ((visibility ("{}default"{}})))}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define IAEA\_LOCAL  \_\_attribute\_\_ ((visibility ("{}hidden"{}})))}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define IAEA\_EXPORT}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define IAEA\_LOCAL}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

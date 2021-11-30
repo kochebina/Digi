@@ -1,0 +1,87 @@
+\hypertarget{classGateEnergyThresholder}{}\doxysection{Gate\+Energy\+Thresholder Class Reference}
+\label{classGateEnergyThresholder}\index{GateEnergyThresholder@{GateEnergyThresholder}}
+Inheritance diagram for Gate\+Energy\+Thresholder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateEnergyThresholder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateEnergyThresholder_aecccdf91d60c5bbd0ceb0dbb5eaefd33}\label{classGateEnergyThresholder_aecccdf91d60c5bbd0ceb0dbb5eaefd33}} 
+{\bfseries Gate\+Energy\+Thresholder} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name, G4double its\+Threshold=0)
+\begin{DoxyCompactList}\small\item\em Constructs a new Energy\+Thresholder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEnergyThresholder_a915a861484218b37faf19b038b6ec73f}\label{classGateEnergyThresholder_a915a861484218b37faf19b038b6ec73f}} 
+virtual {\bfseries $\sim$\+Gate\+Energy\+Thresholder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEnergyThresholder_a5b0686e1c43eafb83273211d03c17938}\label{classGateEnergyThresholder_a5b0686e1c43eafb83273211d03c17938}} 
+G4double {\bfseries Get\+Threshold} ()
+\begin{DoxyCompactList}\small\item\em Returns the threshold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEnergyThresholder_ac03dc26c8f6f78e4be428a2ea2a0fbe4}\label{classGateEnergyThresholder_ac03dc26c8f6f78e4be428a2ea2a0fbe4}} 
+void {\bfseries Set\+Threshold} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the threshold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEnergyThresholder_a6960a38bc896c542c049f59a4a8d10b9}\label{classGateEnergyThresholder_a6960a38bc896c542c049f59a4a8d10b9}} 
+\mbox{\hyperlink{classGateVEffectiveEnergyLaw}{Gate\+VEffective\+Energy\+Law}} $\ast$ {\bfseries Get\+Effective\+Energy\+Law} ()
+\begin{DoxyCompactList}\small\item\em This function returns the effective energy law in use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateEnergyThresholder_a10af2d0c9e0d47ff5744d15cc85ab413}{Set\+Effective\+Energy\+Law}} (\mbox{\hyperlink{classGateVEffectiveEnergyLaw}{Gate\+VEffective\+Energy\+Law}} $\ast$law)
+\begin{DoxyCompactList}\small\item\em This function sets the blurring law for the resolution. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateEnergyThresholder_aa5fdc804654603e1a466b8c28985cd09}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateEnergyThresholder_afcb65bbfb3b0f594093389fcc390e397}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGateEnergyThresholder_acbc7a6537432f9b6931238e6977c6045}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateEnergyThresholder_aa5fdc804654603e1a466b8c28985cd09}\label{classGateEnergyThresholder_aa5fdc804654603e1a466b8c28985cd09}} 
+\index{GateEnergyThresholder@{GateEnergyThresholder}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateEnergyThresholder@{GateEnergyThresholder}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Energy\+Thresholder\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the Energy\+Thresholder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateEnergyThresholder_afcb65bbfb3b0f594093389fcc390e397}\label{classGateEnergyThresholder_afcb65bbfb3b0f594093389fcc390e397}} 
+\index{GateEnergyThresholder@{GateEnergyThresholder}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateEnergyThresholder@{GateEnergyThresholder}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Energy\+Thresholder\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateEnergyThresholder_acbc7a6537432f9b6931238e6977c6045}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateEnergyThresholder_acbc7a6537432f9b6931238e6977c6045}\label{classGateEnergyThresholder_acbc7a6537432f9b6931238e6977c6045}} 
+\index{GateEnergyThresholder@{GateEnergyThresholder}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GateEnergyThresholder@{GateEnergyThresholder}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+Energy\+Thresholder\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default function for pulse-\/list processing This function reads an input pulse-\/list. It then calls sequantially the method \mbox{\hyperlink{classGateEnergyThresholder_afcb65bbfb3b0f594093389fcc390e397}{Process\+One\+Pulse()}}, once for each of the input pulses. The method returns the output pulse-\/list resulting from this processing 
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateEnergyThresholder_a10af2d0c9e0d47ff5744d15cc85ab413}\label{classGateEnergyThresholder_a10af2d0c9e0d47ff5744d15cc85ab413}} 
+\index{GateEnergyThresholder@{GateEnergyThresholder}!SetEffectiveEnergyLaw@{SetEffectiveEnergyLaw}}
+\index{SetEffectiveEnergyLaw@{SetEffectiveEnergyLaw}!GateEnergyThresholder@{GateEnergyThresholder}}
+\doxysubsubsection{\texorpdfstring{SetEffectiveEnergyLaw()}{SetEffectiveEnergyLaw()}}
+{\footnotesize\ttfamily void Gate\+Energy\+Thresholder\+::\+Set\+Effective\+Energy\+Law (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVEffectiveEnergyLaw}{Gate\+VEffective\+Energy\+Law}} $\ast$}]{law }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function sets the blurring law for the resolution. 
+
+Choose between \char`\"{}linear\char`\"{} and \char`\"{}inverse\+Square\char`\"{} blurring law 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Energy\+Thresholder.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Energy\+Thresholder.\+cc\end{DoxyCompactItemize}

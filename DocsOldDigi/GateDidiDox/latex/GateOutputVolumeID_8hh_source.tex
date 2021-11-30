@@ -1,0 +1,54 @@
+\hypertarget{GateOutputVolumeID_8hh_source}{}\doxysection{Gate\+Output\+Volume\+ID.\+hh}
+\label{GateOutputVolumeID_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOutputVolumeID.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOutputVolumeID.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateOutputVolumeID\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateOutputVolumeID\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define OUTPUTVOLUMEID\_SIZE  6}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}} : \textcolor{keyword}{public} std::vector<G4int>}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \mbox{\hyperlink{classGateOutputVolumeID_a9811a647efb9b1feb6d2e92816614b07}{GateOutputVolumeID}}(\textcolor{keywordtype}{size\_t} itsSize=OUTPUTVOLUMEID\_SIZE);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOutputVolumeID_a9688429754d74fefc89d0a872256d303}{\string~GateOutputVolumeID}}() \{\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classGateOutputVolumeID_a432f2a3b0961e1b8672893c8344b2464}{operator<<}}(std::ostream\&, \textcolor{keyword}{const} \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}}\& volumeID);    }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     G4bool \mbox{\hyperlink{classGateOutputVolumeID_a13edfc3899e6b6d4b2c27ae142ea3f90}{IsValid}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateOutputVolumeID_afbdfc1095cb5da9c0c10fd564a73a28e}{IsInvalid}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{48 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} !(\mbox{\hyperlink{classGateOutputVolumeID_a13edfc3899e6b6d4b2c27ae142ea3f90}{IsValid}}()); \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{52     \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}} \mbox{\hyperlink{classGateOutputVolumeID_ac90c691f6e1520d1c675328f52f7da05}{Top}}(\textcolor{keywordtype}{size\_t} depth) \textcolor{keyword}{const};}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateOutputVolumeID_a9811a647efb9b1feb6d2e92816614b07}{GateOutputVolumeID::GateOutputVolumeID}}(\textcolor{keywordtype}{size\_t} itsSize)}
+\DoxyCodeLine{56  : std::vector<G4int>(itsSize, -\/1)}
+\DoxyCodeLine{57 \{\}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define BASE\_DEPTH         0}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define RSECTOR\_DEPTH      1}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define MODULE\_DEPTH       2}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define SUBMODULE\_DEPTH    3}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define CRYSTAL\_DEPTH      4}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define LAYER\_DEPTH        5}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

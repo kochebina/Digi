@@ -1,0 +1,67 @@
+\hypertarget{GateVFilter_8hh_source}{}\doxysection{Gate\+VFilter.\+hh}
+\label{GateVFilter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVFilter.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVFilter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateVFilter}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GATEVFILTER\_HH}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GATEVFILTER\_HH}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateNamedObject.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4Step.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4Track.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVFilter}{GateVFilter}} : }
+\DoxyCodeLine{31   \textcolor{keyword}{public} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateVFilter}{GateVFilter}}(G4String name);}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVFilter}{\string~GateVFilter}}()\{\}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40  }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43  }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{private}:}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define MAKE\_AUTO\_CREATOR\_FILTER(NAME,CLASS)        \(\backslash\)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{  class NAME\#\#Creator \{                 \(\backslash\)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{  public:                       \(\backslash\)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{    NAME\#\#Creator() \{                   \(\backslash\)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{      GateActorManager::GetInstance()-\/>theListOfFilterPrototypes[\#NAME]= CLASS::make\_filter; \} \}; \(\backslash\)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{  static NAME\#\#Creator ActorCreator\#\#NAME;}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define FCT\_FOR\_AUTO\_CREATOR\_FILTER(CLASS) \(\backslash\)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{  static GateVFilter *make\_filter(G4String name)\{ return new CLASS(name); \}; \(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{  using GateVFilter::Accept;}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEVFILTER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

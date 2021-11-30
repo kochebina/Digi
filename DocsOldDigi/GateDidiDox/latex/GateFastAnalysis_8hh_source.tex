@@ -1,0 +1,56 @@
+\hypertarget{GateFastAnalysis_8hh_source}{}\doxysection{Gate\+Fast\+Analysis.\+hh}
+\label{GateFastAnalysis_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFastAnalysis.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFastAnalysis.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateFastAnalysis\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateFastAnalysis\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateDetectorConstruction.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }GateFastAnalysisMessenger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }GateFastAnalysis :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   GateFastAnalysis(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr, DigiMode digiMode);}
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \string~GateFastAnalysis();}
+\DoxyCodeLine{50   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run * );}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run * );}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event * );}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event * );}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * , \textcolor{keyword}{const} G4Step * );}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetVerboseLevel(G4int val);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{private}:}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   GateFastAnalysisMessenger* m\_messenger;}
+\DoxyCodeLine{66   G4String m\_noFileName;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

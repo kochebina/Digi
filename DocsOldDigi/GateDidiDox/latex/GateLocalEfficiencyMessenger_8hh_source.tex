@@ -1,0 +1,40 @@
+\hypertarget{GateLocalEfficiencyMessenger_8hh_source}{}\doxysection{Gate\+Local\+Efficiency\+Messenger.\+hh}
+\label{GateLocalEfficiencyMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEfficiencyMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEfficiencyMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateLocalEfficiencyMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateLocalEfficiencyMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEfficiency}{GateLocalEfficiency}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEfficiencyMessenger}{GateLocalEfficiencyMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22   \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \mbox{\hyperlink{classGateLocalEfficiencyMessenger}{GateLocalEfficiencyMessenger}}(\mbox{\hyperlink{classGateLocalEfficiency}{GateLocalEfficiency}}* itsPulseProcessor);}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalEfficiencyMessenger}{\string~GateLocalEfficiencyMessenger}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{private}:}
+\DoxyCodeLine{29     G4UIcmdWithAString   *crystalEfficiencyCmd;}
+\DoxyCodeLine{30     G4UIcmdWithAnInteger *enableCommand;}
+\DoxyCodeLine{31     G4UIcmdWithAnInteger *disableCommand;}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

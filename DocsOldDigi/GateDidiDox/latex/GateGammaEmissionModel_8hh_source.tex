@@ -1,0 +1,55 @@
+\hypertarget{GateGammaEmissionModel_8hh_source}{}\doxysection{Gate\+Gamma\+Emission\+Model.\+hh}
+\label{GateGammaEmissionModel_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateGammaEmissionModel.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateGammaEmissionModel.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef GateGammaEmissionModel\_hh}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define GateGammaEmissionModel\_hh}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4PrimaryParticle.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateEmittedGammaInformation.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGammaEmissionModel}{GateGammaEmissionModel}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24  \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateGammaEmissionModel_a300fc2c32d24d89b2abb568658a596ac}{GateGammaEmissionModel}}();}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGammaEmissionModel}{\string~GateGammaEmissionModel}}();}
+\DoxyCodeLine{28   }
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGammaEmissionModel_aceaee19a9244581439a46e45c9e94ba3}{SetFixedEmissionDirection}}( \textcolor{keyword}{const} G4ThreeVector\& momentum\_direction );}
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGammaEmissionModel_ae77975e83ea7d715733c0b3847b15da0}{SetEnableFixedEmissionDirection}}( \textcolor{keyword}{const} G4bool enable );}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGammaEmissionModel_addfeec2c5cb529a428c0351f0ae1501e}{SetEmissionEnergy}}( \textcolor{keyword}{const} G4double\& energy );}
+\DoxyCodeLine{41   G4double \mbox{\hyperlink{classGateGammaEmissionModel_a69fe269e4c1d9b8c2f22b5dbc88b1814}{GetEmissionEnergy}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGammaEmissionModel_adc565c483bc5c962fbfdb285aca24ffe}{SetSeed}}( G4long seed );}
+\DoxyCodeLine{48   G4long \mbox{\hyperlink{classGateGammaEmissionModel_a94b263758409887bf525b33c4a4f77b6}{GetSeed}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateGammaEmissionModel_acf66f399281de77601acce985a05ca02}{GeneratePrimaryVertices}}(G4Event* event, G4double\& particle\_time,  G4ThreeVector\& particle\_position);}
+\DoxyCodeLine{53    }
+\DoxyCodeLine{54  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEmittedGammaInformation}{GateEmittedGammaInformation}}* \mbox{\hyperlink{classGateGammaEmissionModel_a06a97459ff8c9444142c6807c0d18b2e}{GetPrimaryParticleInformation}}( \textcolor{keyword}{const} G4PrimaryParticle* pp, \textcolor{keyword}{const} \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{GateEmittedGammaInformation::GammaKind}}\& gamma\_kind ) \textcolor{keyword}{const};}
+\DoxyCodeLine{60   G4ThreeVector \mbox{\hyperlink{classGateGammaEmissionModel_a8bce051f65886f0281091c45c0bc7c1f}{GetUniformOnSphere}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{63   G4ThreeVector \mbox{\hyperlink{classGateGammaEmissionModel_a007c57f3a1358adc2e1d1114437c54e1}{GetPolarization}}( \textcolor{keyword}{const} G4ThreeVector\& momentum ) \textcolor{keyword}{const};}
+\DoxyCodeLine{66   G4ThreeVector \mbox{\hyperlink{classGateGammaEmissionModel_ad019ac51e7129075cd014ece5230e07b}{GetPerpendicularVector}}(\textcolor{keyword}{const} G4ThreeVector\& v) \textcolor{keyword}{const};}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGammaEmissionModel_a27a4306be65def160387690b9aa9b623}{SetModelName}}( \textcolor{keyword}{const} G4String model\_name );}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGammaEmissionModel_ae34bedfd6d68eda75354da26a89645b3}{NoticeError}}( G4String method\_name, G4String exception\_description ) \textcolor{keyword}{const};}
+\DoxyCodeLine{75   G4PrimaryParticle* \mbox{\hyperlink{classGateGammaEmissionModel_a9709f015e804d64270bdb387bf7bf2fc}{GetSingleGamma}}( \textcolor{keyword}{const} G4double\& energy ) \textcolor{keyword}{const};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{78   G4ThreeVector fFixedEmissionDirection = G4ThreeVector( 0.0, 0.0, 0.0 );}
+\DoxyCodeLine{79   G4bool fUseFixedEmissionDirection = \textcolor{keyword}{false};}
+\DoxyCodeLine{80   G4double fEmissionEnergy = 0.511 * MeV;\textcolor{comment}{//[MeV]}}
+\DoxyCodeLine{81   G4String fModelName = \textcolor{stringliteral}{"{}GateGammaEmissionModel"{}};}
+\DoxyCodeLine{82   \textcolor{comment}{//Gamma definiotion -\/ the same is used in each one model}}
+\DoxyCodeLine{83   G4ParticleDefinition* pGammaDefinition = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

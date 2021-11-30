@@ -1,0 +1,56 @@
+\hypertarget{GateLocalClusteringMessenger_8hh_source}{}\doxysection{Gate\+Local\+Clustering\+Messenger.\+hh}
+\label{GateLocalClusteringMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalClusteringMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalClusteringMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateLocalClusteringMessenger\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateLocalClusteringMessenger\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{9 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{10 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{11 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{12 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalClustering}{GateLocalClustering}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalClusteringMessenger}{GateLocalClusteringMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateLocalClusteringMessenger}{GateLocalClusteringMessenger}}(\mbox{\hyperlink{classGateLocalClustering}{GateLocalClustering}}* itsPulseAdder);}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalClusteringMessenger}{\string~GateLocalClusteringMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{29     \textcolor{keyword}{inline}  \textcolor{keywordtype}{void} SetNewValue2(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateLocalClustering}{GateLocalClustering}}* GetLocalClustering()}
+\DoxyCodeLine{32       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateLocalClustering}{GateLocalClustering}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34  \textcolor{keyword}{private}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38    G4UIcmdWithAString   *newVolCmd;}
+\DoxyCodeLine{39    std::vector<G4UIdirectory*> m\_volDirectory;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41    std::vector<G4UIcmdWithADoubleAndUnit*>    pAcceptedDist;}
+\DoxyCodeLine{42    std::vector<G4UIcmdWithABool*>     pRejectionMultipleClustersCmd;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44    std::vector<G4String> m\_name;}
+\DoxyCodeLine{45     G4int m\_count;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

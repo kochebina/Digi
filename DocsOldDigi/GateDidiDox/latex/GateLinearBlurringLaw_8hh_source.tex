@@ -1,0 +1,55 @@
+\hypertarget{GateLinearBlurringLaw_8hh_source}{}\doxysection{Gate\+Linear\+Blurring\+Law.\+hh}
+\label{GateLinearBlurringLaw_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLinearBlurringLaw.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLinearBlurringLaw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateLinearBlurringLaw\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateLinearBlurringLaw\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVBlurringLaw.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateLinearBlurringLawMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateTools.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLinearBlurringLaw}{GateLinearBlurringLaw}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVBlurringLaw}{GateVBlurringLaw}} \{}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     public :}
+\DoxyCodeLine{28         \mbox{\hyperlink{classGateLinearBlurringLaw}{GateLinearBlurringLaw}}(\textcolor{keyword}{const} G4String\& itsName, G4double itsReferenceEnergy=-\/1., G4double itsResolution=0., G4double itsSlope=0.);}
+\DoxyCodeLine{29         \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLinearBlurringLaw}{\string~GateLinearBlurringLaw}}() \{ \textcolor{keyword}{delete} m\_messenger; \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{comment}{// Implementation of the pure virtual method of the GateVBlurringLaw class}}
+\DoxyCodeLine{32         \textcolor{comment}{// Linear resolution is calculated by  R = s(E-\/E0) + R0}}
+\DoxyCodeLine{33         \textcolor{keyword}{virtual} G4double ComputeResolution(G4double energy) \textcolor{keyword}{const};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keyword}{inline} G4double GetResolution()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_resolution; \}}
+\DoxyCodeLine{36         \textcolor{keyword}{inline} G4double GetEnergyRef()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_eref; \}}
+\DoxyCodeLine{37         \textcolor{keyword}{inline} G4double GetSlope()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_slope; \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetResolution(G4double res) \{ m\_resolution = res; \}}
+\DoxyCodeLine{40         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyRef(G4double ener) \{ m\_eref = ener; \}}
+\DoxyCodeLine{41         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSlope(G4double slope) \{ m\_slope = slope; \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{comment}{// Implementation of the pure virtual method of the GateVBlurringLaw class}}
+\DoxyCodeLine{44         \textcolor{comment}{// Also called by GateBlurring}}
+\DoxyCodeLine{45         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself (\textcolor{keywordtype}{size\_t} indent=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     private :}
+\DoxyCodeLine{48         G4double m\_eref;}
+\DoxyCodeLine{49         G4double m\_resolution;}
+\DoxyCodeLine{50         G4double m\_slope;}
+\DoxyCodeLine{51         \mbox{\hyperlink{classGateLinearBlurringLawMessenger}{GateLinearBlurringLawMessenger}}* m\_messenger;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

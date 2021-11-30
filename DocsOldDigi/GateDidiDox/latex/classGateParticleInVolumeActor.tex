@@ -1,0 +1,206 @@
+\hypertarget{classGateParticleInVolumeActor}{}\doxysection{Gate\+Particle\+In\+Volume\+Actor Class Reference}
+\label{classGateParticleInVolumeActor}\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+
+
+{\ttfamily \#include $<$Gate\+Particle\+In\+Volume\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Particle\+In\+Volume\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateParticleInVolumeActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_adadd83295cab6b35e9a1df8c938863d4}\label{classGateParticleInVolumeActor_adadd83295cab6b35e9a1df8c938863d4}} 
+virtual {\bfseries $\sim$\+Gate\+Particle\+In\+Volume\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_a7fac91cd83d912003b86d7b0353483ed}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a219a7646271608da07926c3ee99085f2}\label{classGateParticleInVolumeActor_a219a7646271608da07926c3ee99085f2}} 
+void {\bfseries Enable\+Particle\+In\+Volume\+Image} (bool b)
+\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_a4a965cb77f860d8933c90cf7c8cef497}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_a6aa99f98e611945bf7206976b7261cac}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_a1394601c440b1179c7366bb1639d7e6d}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_a9aad4bbbc518bff4384e78c121b1d3e7}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_a4e801c49a5e6cb1d130967eabdc7f85c}{User\+Post\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_a632c87b6bad147fc90d58aa88dd195ce}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_ab0b1ae7de07b87b45c3109075442e115}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_ad40a6b1907d8f2e3359527275f457141}{Initialize}} (G4\+HCof\+This\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Scorer related. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateParticleInVolumeActor_ad7bc021f58692b7ea3a8e1482833916b}{End\+Of\+Event}} (G4\+HCof\+This\+Event $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a312d24d9bbae87ce91dac710d1964c9e}\label{classGateParticleInVolumeActor_a312d24d9bbae87ce91dac710d1964c9e}} 
+{\bfseries Gate\+Particle\+In\+Volume\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a6f5a6212c105d323f9df9d705009a82d}\label{classGateParticleInVolumeActor_a6f5a6212c105d323f9df9d705009a82d}} 
+\mbox{\hyperlink{classGateImageActorMessenger}{Gate\+Image\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a056376023d8755ec83cab2e64bf47c08}\label{classGateParticleInVolumeActor_a056376023d8755ec83cab2e64bf47c08}} 
+bool {\bfseries m\+Is\+Last\+Hit\+Event\+Image\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a5c3859f7c1fe0b75ce4eea9b682056bc}\label{classGateParticleInVolumeActor_a5c3859f7c1fe0b75ce4eea9b682056bc}} 
+bool {\bfseries m\+Is\+Particle\+In\+Volume\+Image\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a1034d6fd7933212fbf5f9f08b7cd1813}\label{classGateParticleInVolumeActor_a1034d6fd7933212fbf5f9f08b7cd1813}} 
+bool {\bfseries outside\+Track}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a71439caef65dd1768ff665f1d8c9e770}\label{classGateParticleInVolumeActor_a71439caef65dd1768ff665f1d8c9e770}} 
+\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Int}} {\bfseries m\+Last\+Hit\+Event\+Image}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a2b304e671356c6194f6d882a4ec34be2}\label{classGateParticleInVolumeActor_a2b304e671356c6194f6d882a4ec34be2}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Particle\+In\+Volume\+Image}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a74cfaad708a40fe01b1d490a00885826}\label{classGateParticleInVolumeActor_a74cfaad708a40fe01b1d490a00885826}} 
+G4\+String {\bfseries m\+Particle\+In\+Volume\+Filename}
+\item 
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a427eaf74fa47d9d2c81cb5797362eb83}\label{classGateParticleInVolumeActor_a427eaf74fa47d9d2c81cb5797362eb83}} 
+G4int {\bfseries m\+Current\+Event}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a6aa99f98e611945bf7206976b7261cac}\label{classGateParticleInVolumeActor_a6aa99f98e611945bf7206976b7261cac}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Particle\+In\+Volume\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a4a965cb77f860d8933c90cf7c8cef497}\label{classGateParticleInVolumeActor_a4a965cb77f860d8933c90cf7c8cef497}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Particle\+In\+Volume\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a7fac91cd83d912003b86d7b0353483ed}\label{classGateParticleInVolumeActor_a7fac91cd83d912003b86d7b0353483ed}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Particle\+In\+Volume\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_ad7bc021f58692b7ea3a8e1482833916b}\label{classGateParticleInVolumeActor_ad7bc021f58692b7ea3a8e1482833916b}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!EndOfEvent@{EndOfEvent}}
+\index{EndOfEvent@{EndOfEvent}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEvent()}{EndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+Particle\+In\+Volume\+Actor\+::\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_ad40a6b1907d8f2e3359527275f457141}\label{classGateParticleInVolumeActor_ad40a6b1907d8f2e3359527275f457141}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Gate\+Particle\+In\+Volume\+Actor\+::\+Initialize (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Scorer related. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_ab0b1ae7de07b87b45c3109075442e115}\label{classGateParticleInVolumeActor_ab0b1ae7de07b87b45c3109075442e115}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Particle\+In\+Volume\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a632c87b6bad147fc90d58aa88dd195ce}\label{classGateParticleInVolumeActor_a632c87b6bad147fc90d58aa88dd195ce}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Particle\+In\+Volume\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a4e801c49a5e6cb1d130967eabdc7f85c}\label{classGateParticleInVolumeActor_a4e801c49a5e6cb1d130967eabdc7f85c}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Particle\+In\+Volume\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a9aad4bbbc518bff4384e78c121b1d3e7}\label{classGateParticleInVolumeActor_a9aad4bbbc518bff4384e78c121b1d3e7}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Particle\+In\+Volume\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateParticleInVolumeActor_a1394601c440b1179c7366bb1639d7e6d}\label{classGateParticleInVolumeActor_a1394601c440b1179c7366bb1639d7e6d}} 
+\index{GateParticleInVolumeActor@{GateParticleInVolumeActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateParticleInVolumeActor@{GateParticleInVolumeActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Particle\+In\+Volume\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Particle\+In\+Volume\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Particle\+In\+Volume\+Actor.\+cc\end{DoxyCompactItemize}

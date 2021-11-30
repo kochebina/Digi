@@ -1,0 +1,123 @@
+\hypertarget{GateRTPhantom_8hh_source}{}\doxysection{Gate\+RTPhantom.\+hh}
+\label{GateRTPhantom_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateRTPhantom.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateRTPhantom.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GateRTPhantom\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GateRTPhantom\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{//\#include "{}GateRTPhantomMessenger.hh"{}}}
+\DoxyCodeLine{5 \textcolor{comment}{//\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{6 \textcolor{comment}{//\#include "{}GateVSourceVoxelReader.hh"{}}}
+\DoxyCodeLine{7 \textcolor{comment}{//\#include "{}GateVObjectInserter.hh"{}}}
+\DoxyCodeLine{8 \textcolor{comment}{//\#include "{}GateSourceVoxellized.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//\#include "{}globals.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRTPhantomMessenger}{GateRTPhantomMessenger}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRTPhantom}{GateRTPhantom}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateRTPhantom}{GateRTPhantom}}(G4String name = \textcolor{stringliteral}{"{}"{}} ); }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateRTPhantom}{\string~GateRTPhantom}}();}
+\DoxyCodeLine{27   \textcolor{keywordtype}{void} SetVerboseLevel(G4int val) \{ m\_VerboseLevel = val; \};}
+\DoxyCodeLine{28   G4int GetVerboseLevel() \{ \textcolor{keywordflow}{return} m\_VerboseLevel; \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} SetTimeActivTables( G4String aFName);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRTPhantom_a331bc7357475ecedd6059bfe5f291942}{Describe}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   G4int IsAttachedTo(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}*);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39   \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateRTPhantom_a8efe2b9c4db3c399749e14b2140f2f1c}{GetName}}()              \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateRTPhantom_ae1a2657942345bfcc3cef5ce7bbb8039}{m\_name}}; \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetName(G4String name) \{ \mbox{\hyperlink{classGateRTPhantom_ae1a2657942345bfcc3cef5ce7bbb8039}{m\_name}} = name; \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* GetInserter() \{ \textcolor{keywordflow}{return} m\_inserter; \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} SetGReader(\mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* aReader)\{ itsGReader = aReader;\};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* GetGReader()\{\textcolor{keywordflow}{return} itsGReader;\};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetSReader(\mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}* aReader)\{ itsSReader = aReader;\};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}* GetSReader()\{\textcolor{keywordflow}{return} itsSReader;\};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Compute(G4double aTime);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{// methods for voxellized RTPhantoms}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   G4int GetVoxelNx()\{ \textcolor{keywordflow}{return} XDIM; \};}
+\DoxyCodeLine{58   G4int GetVoxelNy()\{ \textcolor{keywordflow}{return} YDIM; \};}
+\DoxyCodeLine{59   G4int GetVoxelNz()\{ \textcolor{keywordflow}{return}  ZDIM\_OUTPUT; \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   G4ThreeVector GetPixelWidth()\{ \textcolor{keywordflow}{return} pixel\_width; \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{//G4float  GetPixelWidth()\{ return pixel\_width; \};}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} AttachToGeometry(G4String aname);}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} AttachToSource(G4String aname);}
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} Enable() \{ IsEnabled = 1;\};}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} SetVoxellized() \{ IsVoxellized = 1;\};}
+\DoxyCodeLine{70   G4int GetVoxellized() \{ \textcolor{keywordflow}{return} IsVoxellized;\};}
+\DoxyCodeLine{71   G4int GetEnabled() \{ \textcolor{keywordflow}{return} IsEnabled;\};}
+\DoxyCodeLine{72   G4int IsInit() \{ \textcolor{keywordflow}{return} IsInitialized;\};}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} Init()\{ IsInitialized = 1; \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75    \textcolor{keywordtype}{void} Disable();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   G4bool \mbox{\hyperlink{classGateRTPhantom_abcd2364457289db96bbacdfbe7a17f11}{isFirst}}; \textcolor{comment}{// first computation ?}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   G4int XDIM;}
+\DoxyCodeLine{85   G4int YDIM,ZDIM;}
+\DoxyCodeLine{86   G4int ZDIM\_OUTPUT;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   G4ThreeVector pixel\_width;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{//G4double pixel\_width;}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   G4int                      m\_VerboseLevel;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \mbox{\hyperlink{classGateRTPhantomMessenger}{GateRTPhantomMessenger}}*    m\_messenger;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   G4int p\_cK;   \textcolor{comment}{// get previous cK value  start value is 1 set in .cc;}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 G4int IsVoxellized; }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 G4int IsEnabled;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 G4int IsInitialized;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *m\_inserter; \textcolor{comment}{// inserter to which the RTPhantom is attached to}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* itsGReader;}
+\DoxyCodeLine{108  }
+\DoxyCodeLine{109 \textcolor{comment}{/* the Geometry Voxel Reader attached to the RTPhantom to Fill in Voxel material*/}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}* itsSReader; }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{/* the Source Voxel Reader attached to the RTPhantom to Fill in Voxel activity*/}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   G4String                   \mbox{\hyperlink{classGateRTPhantom_ae1a2657942345bfcc3cef5ce7bbb8039}{m\_name}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

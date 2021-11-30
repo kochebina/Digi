@@ -1,0 +1,56 @@
+\hypertarget{GatePolyhedra_8hh_source}{}\doxysection{Gate\+Polyhedra.\+hh}
+\label{GatePolyhedra_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GatePolyhedra.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GatePolyhedra.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePolyhedra\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePolyhedra\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4Polyhedra.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePolyhedra}{GatePolyhedra}} : \textcolor{keyword}{public} G4Polyhedra}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25   \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28   \mbox{\hyperlink{classGatePolyhedra_a357eb0298b4d270bce83b40f73c51e9c}{GatePolyhedra}}( \textcolor{keyword}{const} G4String\& name, }
+\DoxyCodeLine{29                        G4double phiStart,    \textcolor{comment}{// initial phi starting angle}}
+\DoxyCodeLine{30                        G4double phiTotal,    \textcolor{comment}{// total phi angle}}
+\DoxyCodeLine{31                        G4int numSide,        \textcolor{comment}{// number sides}}
+\DoxyCodeLine{32                        G4int numZPlanes,     \textcolor{comment}{// number of z planes}}
+\DoxyCodeLine{33                  \textcolor{keyword}{const} G4double zPlane[],    \textcolor{comment}{// position of z planes}}
+\DoxyCodeLine{34                  \textcolor{keyword}{const} G4double rInner[],    \textcolor{comment}{// tangent distance to inner surface}}
+\DoxyCodeLine{35                  \textcolor{keyword}{const} G4double rOuter[]  ) \textcolor{comment}{// tangent distance to outer surface}}
+\DoxyCodeLine{36     : G4Polyhedra(name,phiStart,phiTotal,numSide,numZPlanes,zPlane,rInner,rOuter)}
+\DoxyCodeLine{37     \{\}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   \mbox{\hyperlink{classGatePolyhedra_ab0029c8a93dfcf94d7ead818bc323de2}{GatePolyhedra}}( \textcolor{keyword}{const} G4String\& name, }
+\DoxyCodeLine{43                        G4double phiStart,    \textcolor{comment}{// initial phi starting angle}}
+\DoxyCodeLine{44                        G4double phiTotal,    \textcolor{comment}{// total phi angle}}
+\DoxyCodeLine{45                        G4int    numSide,     \textcolor{comment}{// number sides}}
+\DoxyCodeLine{46                        G4int    numRZ,       \textcolor{comment}{// number corners in r,z space}}
+\DoxyCodeLine{47                  \textcolor{keyword}{const} G4double r[],         \textcolor{comment}{// r coordinate of these corners}}
+\DoxyCodeLine{48                  \textcolor{keyword}{const} G4double z[]       )  \textcolor{comment}{// z coordinate of these corners}}
+\DoxyCodeLine{49     : G4Polyhedra(name,phiStart,phiTotal,numSide,numRZ,r,z)}
+\DoxyCodeLine{50     \{\}}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{53   \textcolor{keyword}{using} G4VCSGfaceted::DistanceToOut;}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} G4double DistanceToOut( \textcolor{keyword}{const} G4ThreeVector\& p,}
+\DoxyCodeLine{55                                   \textcolor{keyword}{const} G4ThreeVector\& v,}
+\DoxyCodeLine{56                                   \textcolor{keyword}{const} G4bool calcNorm=\textcolor{keyword}{false},}
+\DoxyCodeLine{57                                         G4bool *validNorm=0,}
+\DoxyCodeLine{58                                         G4ThreeVector *n=0 ) \textcolor{keyword}{const};}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

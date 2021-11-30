@@ -1,0 +1,102 @@
+\hypertarget{classGateReadout}{}\doxysection{Gate\+Readout Class Reference}
+\label{classGateReadout}\index{GateReadout@{GateReadout}}
+
+
+Pulse-\/processor modelling a simple PMT readout (maximum energy wins) of a crystal-\/block.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Readout.\+hh$>$}
+
+Inheritance diagram for Gate\+Readout\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateReadout}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateReadout_afbe6379c10c0cd52cb84bb3b604b387f}\label{classGateReadout_afbe6379c10c0cd52cb84bb3b604b387f}} 
+{\bfseries Gate\+Readout} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new readout attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateReadout_ae0fa151af34cb7821d9b0bec524c20a5}\label{classGateReadout_ae0fa151af34cb7821d9b0bec524c20a5}} 
+virtual {\bfseries $\sim$\+Gate\+Readout} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateReadout_a10df66505e3d40c154ab58e0592ef9db}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+\mbox{\Hypertarget{classGateReadout_ab2c590eb71960be50ab2b8d40606fba8}\label{classGateReadout_ab2c590eb71960be50ab2b8d40606fba8}} 
+G4int {\bfseries Get\+Depth} () const
+\begin{DoxyCompactList}\small\item\em Returns the depth of the readout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateReadout_a4953e8aff35cdab56b2d8ed90af9dc9f}\label{classGateReadout_a4953e8aff35cdab56b2d8ed90af9dc9f}} 
+void {\bfseries Set\+Depth} (G4int a\+Depth)
+\begin{DoxyCompactList}\small\item\em Set the depth of the readout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateReadout_a6b718b5555161a60626da27b7cdc5a34}\label{classGateReadout_a6b718b5555161a60626da27b7cdc5a34}} 
+void {\bfseries Set\+Policy} (const G4\+String \&a\+Policy)
+\begin{DoxyCompactList}\small\item\em Set the policy of the readout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateReadout_a093d3d204131b20c6fbfb3d62dc305d7}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGateReadout_a36dfb3de4a8b33bfe1a53a0c253f5693}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\begin{DoxyCompactList}\small\item\em Overload the virtual (not pure) method of \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modelling a simple PMT readout (maximum energy wins) of a crystal-\/block. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateReadout}{Gate\+Readout}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The readout is parameterised by its \textquotesingle{}depth\textquotesingle{}\+: pulses will be summed up if their volume IDs are identical up to this depth. For instance, the default depth is 1\+: this means that pulses will be considered as taking place in a same block if the first two figures of their volume IDs are identical
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateReadout_a10df66505e3d40c154ab58e0592ef9db}\label{classGateReadout_a10df66505e3d40c154ab58e0592ef9db}} 
+\index{GateReadout@{GateReadout}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateReadout@{GateReadout}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Readout\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the readout 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateReadout_a093d3d204131b20c6fbfb3d62dc305d7}\label{classGateReadout_a093d3d204131b20c6fbfb3d62dc305d7}} 
+\index{GateReadout@{GateReadout}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateReadout@{GateReadout}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Readout\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateReadout_a36dfb3de4a8b33bfe1a53a0c253f5693}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateReadout_a36dfb3de4a8b33bfe1a53a0c253f5693}\label{classGateReadout_a36dfb3de4a8b33bfe1a53a0c253f5693}} 
+\index{GateReadout@{GateReadout}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GateReadout@{GateReadout}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+Readout\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overload the virtual (not pure) method of \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Readout.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Readout.\+cc\end{DoxyCompactItemize}

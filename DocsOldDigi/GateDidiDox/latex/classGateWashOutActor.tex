@@ -1,0 +1,196 @@
+\hypertarget{classGateWashOutActor}{}\doxysection{Gate\+Wash\+Out\+Actor Class Reference}
+\label{classGateWashOutActor}\index{GateWashOutActor@{GateWashOutActor}}
+
+
+{\ttfamily \#include $<$Gate\+Wash\+Out\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Wash\+Out\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateWashOutActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_a9b6d3bf6989b7466b73e432d99330a05}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the sensor (set world as parent by default) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_a0448a2a520f76b918acfaf1ce5c75303}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_a76515abe05039f9dc3e94836b282a9ea}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_a00ee00e9e6f6dd8d976bee0705e3dbd8}{End\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_a54bd839736d9ba4bf50b916f1f1a19f8}{User\+Stepping\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_ac99454dff997167c8a371b2a9a67e173}{Pre\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_a5c875a96a64325b6e7024c997f4d4c97}{Post\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a60abf200fc3f787a169bc24a9993a20a}\label{classGateWashOutActor_a60abf200fc3f787a169bc24a9993a20a}} 
+G4double {\bfseries Get\+Wash\+Out\+Model\+Value} ()
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a7bbdb8d1729a03a876040901e5028a73}\label{classGateWashOutActor_a7bbdb8d1729a03a876040901e5028a73}} 
+virtual void {\bfseries Read\+Wash\+Out\+Table} (G4\+String file\+Name)
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a310697920c8c82d9df33047ca0ae89b2}\label{classGateWashOutActor_a310697920c8c82d9df33047ca0ae89b2}} 
+G4double {\bfseries Scale\+Value} (G4double value, G4\+String unit)
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_aba42784b7e72c2e48931b7387998fcb6}{Save\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateWashOutActor_a5bd15ff706f59c9607715af5cb7edb03}{Reset\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a13a1f7315c69a2bebad068de2a9cf441}\label{classGateWashOutActor_a13a1f7315c69a2bebad068de2a9cf441}} 
+{\bfseries Gate\+Wash\+Out\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_aa1b12bcd96b463597d1d5bcf61c79c7f}\label{classGateWashOutActor_aa1b12bcd96b463597d1d5bcf61c79c7f}} 
+\mbox{\hyperlink{classGateWashOutActorMessenger}{Gate\+Wash\+Out\+Actor\+Messenger}} $\ast$ {\bfseries p\+Wash\+Out\+Actor}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a362b01c78c72341a5b42937a821af7bf}\label{classGateWashOutActor_a362b01c78c72341a5b42937a821af7bf}} 
+\mbox{\hyperlink{classGateActorMessenger}{Gate\+Actor\+Messenger}} $\ast$ {\bfseries p\+Actor}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a038a7a2f7e8e1316c73d526bd9f25407}\label{classGateWashOutActor_a038a7a2f7e8e1316c73d526bd9f25407}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries v}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a295420f0116a2f4398eeb654979ad382}\label{classGateWashOutActor_a295420f0116a2f4398eeb654979ad382}} 
+\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ {\bfseries m\+Source\+Now}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a2f93abc20d48a5a25b75d5a5a38d4ac6}\label{classGateWashOutActor_a2f93abc20d48a5a25b75d5a5a38d4ac6}} 
+\mbox{\hyperlink{classGateVSourceVoxelReader}{Gate\+VSource\+Voxel\+Reader}} $\ast$ {\bfseries m\+SVReader}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_ab5f4206a95ed4b9db4aae396bd3def1d}\label{classGateWashOutActor_ab5f4206a95ed4b9db4aae396bd3def1d}} 
+G4int {\bfseries m\+Source\+ID}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a713f99621af44857ac391156dae93a7b}\label{classGateWashOutActor_a713f99621af44857ac391156dae93a7b}} 
+G4int {\bfseries m\+Source\+Wash\+Out\+ID}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a1989d5e21230c30d861a7deb69b3e21c}\label{classGateWashOutActor_a1989d5e21230c30d861a7deb69b3e21c}} 
+G4double {\bfseries m\+Time\+Now}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a2a8a30b6af6cf10d9cd79f6502f8962c}\label{classGateWashOutActor_a2a8a30b6af6cf10d9cd79f6502f8962c}} 
+G4double {\bfseries m\+Model}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a90aaf4598402a3492c72321bf56ac31d}\label{classGateWashOutActor_a90aaf4598402a3492c72321bf56ac31d}} 
+std\+::vector$<$ G4double $>$ {\bfseries m\+Gate\+Wash\+Out\+Activity\+Ini}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a55123b47076e8113a61035d55e08fbec}\label{classGateWashOutActor_a55123b47076e8113a61035d55e08fbec}} 
+std\+::vector$<$ std\+::vector$<$ G4double $>$ $>$ {\bfseries m\+Gate\+Wash\+Out\+Parameters}
+\item 
+\mbox{\Hypertarget{classGateWashOutActor_a7533a87eb1c24c64beb43b3636c44882}\label{classGateWashOutActor_a7533a87eb1c24c64beb43b3636c44882}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries m\+Gate\+Wash\+Out\+Sources}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+I. Martinez-\/\+Rovira (\href{mailto:immamartinez@gmail.com}{\texttt{ immamartinez@gmail.\+com}}) S. Jan (\href{mailto:sebastien.jan@cea.fr}{\texttt{ sebastien.\+jan@cea.\+fr}}) 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateWashOutActor_a76515abe05039f9dc3e94836b282a9ea}\label{classGateWashOutActor_a76515abe05039f9dc3e94836b282a9ea}} 
+\index{GateWashOutActor@{GateWashOutActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Wash\+Out\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_a0448a2a520f76b918acfaf1ce5c75303}\label{classGateWashOutActor_a0448a2a520f76b918acfaf1ce5c75303}} 
+\index{GateWashOutActor@{GateWashOutActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Wash\+Out\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_a9b6d3bf6989b7466b73e432d99330a05}\label{classGateWashOutActor_a9b6d3bf6989b7466b73e432d99330a05}} 
+\index{GateWashOutActor@{GateWashOutActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Wash\+Out\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Constructs the sensor (set world as parent by default) 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_a00ee00e9e6f6dd8d976bee0705e3dbd8}\label{classGateWashOutActor_a00ee00e9e6f6dd8d976bee0705e3dbd8}} 
+\index{GateWashOutActor@{GateWashOutActor}!EndOfEventAction@{EndOfEventAction}}
+\index{EndOfEventAction@{EndOfEventAction}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEventAction()}{EndOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Wash\+Out\+Actor\+::\+End\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_a5c875a96a64325b6e7024c997f4d4c97}\label{classGateWashOutActor_a5c875a96a64325b6e7024c997f4d4c97}} 
+\index{GateWashOutActor@{GateWashOutActor}!PostUserTrackingAction@{PostUserTrackingAction}}
+\index{PostUserTrackingAction@{PostUserTrackingAction}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{PostUserTrackingAction()}{PostUserTrackingAction()}}
+{\footnotesize\ttfamily virtual void Gate\+Wash\+Out\+Actor\+::\+Post\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_ac99454dff997167c8a371b2a9a67e173}\label{classGateWashOutActor_ac99454dff997167c8a371b2a9a67e173}} 
+\index{GateWashOutActor@{GateWashOutActor}!PreUserTrackingAction@{PreUserTrackingAction}}
+\index{PreUserTrackingAction@{PreUserTrackingAction}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{PreUserTrackingAction()}{PreUserTrackingAction()}}
+{\footnotesize\ttfamily virtual void Gate\+Wash\+Out\+Actor\+::\+Pre\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_a5bd15ff706f59c9607715af5cb7edb03}\label{classGateWashOutActor_a5bd15ff706f59c9607715af5cb7edb03}} 
+\index{GateWashOutActor@{GateWashOutActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily virtual void Gate\+Wash\+Out\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_aba42784b7e72c2e48931b7387998fcb6}\label{classGateWashOutActor_aba42784b7e72c2e48931b7387998fcb6}} 
+\index{GateWashOutActor@{GateWashOutActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily virtual void Gate\+Wash\+Out\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateWashOutActor_a54bd839736d9ba4bf50b916f1f1a19f8}\label{classGateWashOutActor_a54bd839736d9ba4bf50b916f1f1a19f8}} 
+\index{GateWashOutActor@{GateWashOutActor}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GateWashOutActor@{GateWashOutActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}}
+{\footnotesize\ttfamily virtual void Gate\+Wash\+Out\+Actor\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Wash\+Out\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Wash\+Out\+Actor.\+cc\end{DoxyCompactItemize}

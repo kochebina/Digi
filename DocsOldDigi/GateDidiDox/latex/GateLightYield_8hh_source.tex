@@ -1,0 +1,84 @@
+\hypertarget{GateLightYield_8hh_source}{}\doxysection{Gate\+Light\+Yield.\+hh}
+\label{GateLightYield_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLightYield.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLightYield.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateLightYield\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateLightYield\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLightYieldMessenger}{GateLightYieldMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLightYield}{GateLightYield}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45     \textcolor{keyword}{static} \mbox{\hyperlink{classGateLightYield}{GateLightYield}}* \mbox{\hyperlink{classGateLightYield_a6f6c9a0641413f9c35b9275d414508a7}{GetInstance}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{46                        \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLightYield_aa5b2487a365629f0974d2a0f7d37d37d}{\string~GateLightYield}}() ;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{private}:}
+\DoxyCodeLine{54   \mbox{\hyperlink{classGateLightYield}{GateLightYield}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{55          \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{public}:}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     G4int \mbox{\hyperlink{classGateLightYield_ae3a4e90ef3685486f0f28306871b92ae}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLightYield_a744b3028456c6c231f6b7cdb1604ad9e}{SetLightOutput}}(G4String name, G4double val)   \{ m\_table[name] = val; \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71     G4double \mbox{\hyperlink{classGateLightYield_aa9cac9079b1e357da37fddef6e0e6ecf}{GetLightOutput}}(G4String name)   \{ \textcolor{keywordflow}{return} m\_table[name]; \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74     G4double \mbox{\hyperlink{classGateLightYield_a75cceb56093ae867b8306c7535fe6e78}{GetActLightOutput}}() \{ \textcolor{keywordflow}{return} m\_lightOutput; \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77     G4double \mbox{\hyperlink{classGateLightYield_a0ada4f071c1644ebbe57f447780303cd}{GetMinLightOutput}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80     G4String \mbox{\hyperlink{classGateLightYield_acbe2d0964209fd7a88208f4104897405}{GetMinLightOutputName}}()  \{ \textcolor{keywordflow}{return} m\_minLightOutputName; \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{86     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLightYield_a2c447d35ca421409ea984c46952813c0}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLightYield_a3bd35678d1160e043740c2e3e9fea083}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keyword}{private}:}
+\DoxyCodeLine{97     \textcolor{keyword}{static} \mbox{\hyperlink{classGateLightYield}{GateLightYield}}* theGateLightYield;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keyword}{private}:}
+\DoxyCodeLine{100     G4String m\_name;                               }
+\DoxyCodeLine{101     \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4double>}} m\_table ;  }
+\DoxyCodeLine{102     \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4double>}} ::iterator im;  }
+\DoxyCodeLine{103     \mbox{\hyperlink{classGateLightYieldMessenger}{GateLightYieldMessenger}} *m\_messenger;   }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     G4double m\_lightOutput;                        }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     G4double m\_minLightOutput;                     }
+\DoxyCodeLine{108     G4String m\_minLightOutputName;                 }
+\DoxyCodeLine{109 \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

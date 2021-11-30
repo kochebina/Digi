@@ -1,0 +1,67 @@
+\hypertarget{GateVCoincidencePulseProcessor_8hh_source}{}\doxysection{Gate\+VCoincidence\+Pulse\+Processor.\+hh}
+\label{GateVCoincidencePulseProcessor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVCoincidencePulseProcessor.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVCoincidencePulseProcessor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVCoincidencePulseProcessor\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVCoincidencePulseProcessor\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateCoincidencePulse.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVCoincidencePulseProcessor}{GateVCoincidencePulseProcessor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     }
+\DoxyCodeLine{39     \mbox{\hyperlink{classGateVCoincidencePulseProcessor_afd80c98da4edcd5f354d8529cada0840}{GateVCoincidencePulseProcessor}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{40                         \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{\string~GateVCoincidencePulseProcessor}}() \{\}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* ProcessPulse(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* inputPulse,G4int iPulse)=0;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53    }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57      \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* GetChain()}
+\DoxyCodeLine{58        \{ \textcolor{keywordflow}{return} m\_chain; \}}
+\DoxyCodeLine{59      \textcolor{comment}{//mhadi\_add[}}
+\DoxyCodeLine{60      \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} IsTriCoincProcessor()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 0; \} }
+\DoxyCodeLine{61      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} CollectSingles() \{\}}
+\DoxyCodeLine{62      \textcolor{comment}{//mhadi\_add]}}
+\DoxyCodeLine{64 \textcolor{comment}{}}
+\DoxyCodeLine{68      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ae0b0d279c11b7199d29af398ff669dfe}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{69      }
+\DoxyCodeLine{71      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent=0) =0 ;}
+\DoxyCodeLine{72      }
+\DoxyCodeLine{73   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{74 \textcolor{comment}{/*    bool                                m\_isTriCoincProc;*/}}
+\DoxyCodeLine{75     \mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* m\_chain;}
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 }
+
+\end{DoxyCode}

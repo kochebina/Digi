@@ -1,0 +1,63 @@
+\hypertarget{GateSystemComponentMessenger_8hh_source}{}\doxysection{Gate\+System\+Component\+Messenger.\+hh}
+\label{GateSystemComponentMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponentMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponentMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSystemComponentMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSystemComponentMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateClockDependentMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{48 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponentMessenger}{GateSystemComponentMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52   \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \mbox{\hyperlink{classGateSystemComponentMessenger_aebc135d3fce7e0591038aa9a112a028d}{GateSystemComponentMessenger}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* itsSystemComponent);  }
+\DoxyCodeLine{54     \mbox{\hyperlink{classGateSystemComponentMessenger_a94a09ded12f2f51f421476cc0ceb8164}{\string~GateSystemComponentMessenger}}();                                       }
+\DoxyCodeLine{55     }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemComponentMessenger_a3f0a1c5616ee6ba9bdc734541b092ae4}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateSystemComponentMessenger_ab90dfb32089a1afc2d858e7bfd9ee4a9}{GetSystemComponent}}() }
+\DoxyCodeLine{61       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{62       }
+\DoxyCodeLine{63   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemComponentMessenger_a31a5148e413dfdd5b46cbad01fa499b9}{AddCreator}}(\textcolor{keyword}{const} G4String\& creatorName);}
+\DoxyCodeLine{67     G4String FabricateDirName(\textcolor{keyword}{const} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* component);\textcolor{comment}{// Fabricate the directory name (multi-\/system approach)}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keyword}{private}:}
+\DoxyCodeLine{70     }
+\DoxyCodeLine{71     G4UIcmdWithAString          *AttachCmd;         }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         G4UIcmdWithAnInteger*          minSectorDiffCmd ;}
+\DoxyCodeLine{74     G4UIcmdWithAString*            setInCoincidenceWithCmd ;}
+\DoxyCodeLine{75     G4UIcmdWithAnInteger*          setRingIDCmd;}
+\DoxyCodeLine{76     G4String                       m\_dirName;}
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 }
+
+\end{DoxyCode}

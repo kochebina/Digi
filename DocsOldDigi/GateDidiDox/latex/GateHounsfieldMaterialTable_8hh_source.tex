@@ -1,0 +1,63 @@
+\hypertarget{GateHounsfieldMaterialTable_8hh_source}{}\doxysection{Gate\+Hounsfield\+Material\+Table.\+hh}
+\label{GateHounsfieldMaterialTable_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldMaterialTable.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldMaterialTable.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef \_\_GateHounsfieldMaterialTable\_\_hh\_\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define \_\_GateHounsfieldMaterialTable\_\_hh\_\_}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateHounsfieldMaterialProperties.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateMiscFunctions.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHounsfieldMaterialTable}{GateHounsfieldMaterialTable}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateHounsfieldMaterialTable}{GateHounsfieldMaterialTable}}();}
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateHounsfieldMaterialTable}{\string~GateHounsfieldMaterialTable}}();}
+\DoxyCodeLine{28   \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} LabelType;}
+\DoxyCodeLine{29   \textcolor{keyword}{typedef} std::map<LabelType,G4String> LabelToMaterialNameType;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{struct }\mbox{\hyperlink{structGateHounsfieldMaterialTable_1_1mMaterials}{mMaterials}}}
+\DoxyCodeLine{32   \{}
+\DoxyCodeLine{33     G4Material* mMaterial;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{double} mH1;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{double} mH2;}
+\DoxyCodeLine{36     \textcolor{keywordtype}{double} md1;}
+\DoxyCodeLine{37     G4String mName;}
+\DoxyCodeLine{38   \};}
+\DoxyCodeLine{39   \textcolor{keyword}{typedef} std::vector<mMaterials> GateMaterialsVector;}
+\DoxyCodeLine{40   \textcolor{keyword}{typedef} GateMaterialsVector::iterator iterator;}
+\DoxyCodeLine{41   \textcolor{keyword}{typedef} GateMaterialsVector::const\_iterator const\_iterator;}
+\DoxyCodeLine{42   iterator begin()\{ \textcolor{keywordflow}{return} mMaterialsVector.begin(); \}}
+\DoxyCodeLine{43   iterator end()\{ \textcolor{keywordflow}{return} mMaterialsVector.end(); \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} AddMaterial(\textcolor{keywordtype}{double} H1, \textcolor{keywordtype}{double} H2, \textcolor{keywordtype}{double} d, \mbox{\hyperlink{classGateHounsfieldMaterialProperties}{GateHounsfieldMaterialProperties}} * p);}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} AddMaterial(\textcolor{keywordtype}{double} H1, \textcolor{keywordtype}{double} H2, G4String name);}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} WriteMaterialDatabase(G4String filename);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} WriteMaterialtoHounsfieldLink(G4String filename);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} WriteMaterial(G4Material * m, std::ofstream \& os);}
+\DoxyCodeLine{50   \textcolor{keywordtype}{int} GetNumberOfMaterials() \{ \textcolor{keywordflow}{return} mMaterialsVector.size(); \}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} Reset();}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} MapLabelToMaterial(LabelToMaterialNameType \& m);}
+\DoxyCodeLine{53   \textcolor{keywordtype}{double} GetHMeanFromLabel(\textcolor{keywordtype}{int} l);}
+\DoxyCodeLine{54   LabelType GetLabelFromH(\textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   GateMaterialsVector GetMaterials() \{ \textcolor{keywordflow}{return} mMaterialsVector; \}}
+\DoxyCodeLine{57   \textcolor{keyword}{inline} mMaterials \& operator[](\textcolor{keywordtype}{int} index)\{ \textcolor{keywordflow}{return} mMaterialsVector[index];\}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{60   GateMaterialsVector mMaterialsVector;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

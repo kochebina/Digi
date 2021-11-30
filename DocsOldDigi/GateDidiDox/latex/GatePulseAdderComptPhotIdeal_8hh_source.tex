@@ -1,0 +1,55 @@
+\hypertarget{GatePulseAdderComptPhotIdeal_8hh_source}{}\doxysection{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal.\+hh}
+\label{GatePulseAdderComptPhotIdeal_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdderComptPhotIdeal.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdderComptPhotIdeal.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GatePulseAdderComptPhotIdeal\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GatePulseAdderComptPhotIdeal\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4Types.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdderComptPhotIdealMessenger}{GatePulseAdderComptPhotIdealMessenger}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdderComptPhotIdeal}{GatePulseAdderComptPhotIdeal}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19   \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22     \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_ada4b1e716823ce27fe6209026c98f214}{GatePulseAdderComptPhotIdeal}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_aa61bda6d0becb32e3563ee720a934a52}{\string~GatePulseAdderComptPhotIdeal}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_a683e351feb238b5f36eba15dcc0fac04}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{comment}{//redefined because need to call repack() after last pulse}}
+\DoxyCodeLine{32     \textcolor{comment}{//GatePulseList* ProcessPulseList(const GatePulseList* inputPulseList);}}
+\DoxyCodeLine{33     std::vector<G4int> lastTrackID;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{bool} flgEvtRej;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} SetEvtRejectionPolicy(G4bool flgval)\{m\_flgRejActPolicy=flgval;\};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_a9a4e6a3e4d2f4290fb7609c99a26fced}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{43     \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_a525890d3ea3f37b17115116c076e3f49}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{44   \textcolor{keyword}{private}:}
+\DoxyCodeLine{45     \mbox{\hyperlink{classGatePulseAdderComptPhotIdealMessenger}{GatePulseAdderComptPhotIdealMessenger}} *m\_messenger;     }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{comment}{//several functions needed for special processing of electronic pulses}}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} PulsePushBack(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse, \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{49     \textcolor{comment}{//void DifferentVolumeIDs(const GatePulse* InputPulse, GatePulseList\& outputPulseList);}}
+\DoxyCodeLine{50     \textcolor{comment}{//void repackLastVolumeID(GatePulseList\& outputPulseList);}}
+\DoxyCodeLine{51     G4bool m\_flgRejActPolicy;}
+\DoxyCodeLine{52      \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \textcolor{keywordtype}{double} epsilonEnergy=0.00001;\textcolor{comment}{//MeV}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

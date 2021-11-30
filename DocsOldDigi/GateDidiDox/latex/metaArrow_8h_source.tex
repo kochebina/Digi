@@ -1,0 +1,93 @@
+\hypertarget{metaArrow_8h_source}{}\doxysection{meta\+Arrow.\+h}
+\label{metaArrow_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaArrow.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaArrow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAARROW\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAARROW\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaArrow}{MetaArrow}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{42   \{}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   \textcolor{comment}{//}}
+\DoxyCodeLine{46   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{47   \textcolor{comment}{//}}
+\DoxyCodeLine{49 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{comment}{//}}
+\DoxyCodeLine{53     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{54     \textcolor{comment}{//}}
+\DoxyCodeLine{56 \textcolor{comment}{}    \mbox{\hyperlink{classMetaArrow}{MetaArrow}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \mbox{\hyperlink{classMetaArrow}{MetaArrow}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \mbox{\hyperlink{classMetaArrow}{MetaArrow}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaArrow}{MetaArrow}} *\_Arrow);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \mbox{\hyperlink{classMetaArrow}{MetaArrow}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \mbox{\hyperlink{classMetaArrow}{\string~MetaArrow}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void}  Length(\textcolor{keywordtype}{float} length);}
+\DoxyCodeLine{73     \textcolor{keywordtype}{float} Length(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{void}  Lenght(\textcolor{keywordtype}{float} length) \{this-\/>Length(length);\}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{float} Lenght(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} Length();\}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{void}  Direction(\textcolor{keyword}{const} \textcolor{keywordtype}{double} *direction);}
+\DoxyCodeLine{79     \textcolor{keyword}{const} \textcolor{keywordtype}{double} * Direction(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83   \textcolor{comment}{//}}
+\DoxyCodeLine{84   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{85   \textcolor{comment}{//}}
+\DoxyCodeLine{87 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{keywordtype}{float} M\_Length; \textcolor{comment}{// default 1.0}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keywordtype}{double} M\_Direction[10];}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{104 \};}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,66 @@
+\hypertarget{classGateCoincidenceTimeDiffSelector}{}\doxysection{Gate\+Coincidence\+Time\+Diff\+Selector Class Reference}
+\label{classGateCoincidenceTimeDiffSelector}\index{GateCoincidenceTimeDiffSelector@{GateCoincidenceTimeDiffSelector}}
+Inheritance diagram for Gate\+Coincidence\+Time\+Diff\+Selector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCoincidenceTimeDiffSelector}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_aac0ab2dd8d0975f68f35c2792967897a}\label{classGateCoincidenceTimeDiffSelector_aac0ab2dd8d0975f68f35c2792967897a}} 
+virtual {\bfseries $\sim$\+Gate\+Coincidence\+Time\+Diff\+Selector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_af97ebbed951d09a84a19d15364d07fd4}\label{classGateCoincidenceTimeDiffSelector_af97ebbed951d09a84a19d15364d07fd4}} 
+{\bfseries Gate\+Coincidence\+Time\+Diff\+Selector} (\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{Gate\+Coincidence\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new dead time attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_a4abb349c64a3b4e26f656e127b3c2597}\label{classGateCoincidenceTimeDiffSelector_a4abb349c64a3b4e26f656e127b3c2597}} 
+G4double {\bfseries Get\+Min\+Time} () const
+\begin{DoxyCompactList}\small\item\em Returns the Time\+Diff\+Selector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_a051782cb1801fc0803d253c80ee189d6}\label{classGateCoincidenceTimeDiffSelector_a051782cb1801fc0803d253c80ee189d6}} 
+G4double {\bfseries Get\+Max\+Time} () const
+\item 
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_a8ecf3fd2992aefb89e5a964cce7f205a}\label{classGateCoincidenceTimeDiffSelector_a8ecf3fd2992aefb89e5a964cce7f205a}} 
+void {\bfseries Set\+Min\+Time} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the Time\+Diff\+Selector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_acf4fc263059fd0904d88ec2a4dfcbe48}\label{classGateCoincidenceTimeDiffSelector_acf4fc263059fd0904d88ec2a4dfcbe48}} 
+void {\bfseries Set\+Max\+Time} (G4double val)
+\item 
+virtual void \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_a5c1a8b6b999e34694a63d55a781b3083}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_ad760836838d89a1773ce7c886ac8bd3e}{Process\+Pulse}} (\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$input\+Pulse, G4int i\+Pulse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_a5c1a8b6b999e34694a63d55a781b3083}\label{classGateCoincidenceTimeDiffSelector_a5c1a8b6b999e34694a63d55a781b3083}} 
+\index{GateCoincidenceTimeDiffSelector@{GateCoincidenceTimeDiffSelector}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateCoincidenceTimeDiffSelector@{GateCoincidenceTimeDiffSelector}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Coincidence\+Time\+Diff\+Selector\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the Time\+Diff\+Selector 
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateCoincidenceTimeDiffSelector_ad760836838d89a1773ce7c886ac8bd3e}\label{classGateCoincidenceTimeDiffSelector_ad760836838d89a1773ce7c886ac8bd3e}} 
+\index{GateCoincidenceTimeDiffSelector@{GateCoincidenceTimeDiffSelector}!ProcessPulse@{ProcessPulse}}
+\index{ProcessPulse@{ProcessPulse}!GateCoincidenceTimeDiffSelector@{GateCoincidenceTimeDiffSelector}}
+\doxysubsubsection{\texorpdfstring{ProcessPulse()}{ProcessPulse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ Gate\+Coincidence\+Time\+Diff\+Selector\+::\+Process\+Pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{G4int}]{i\+Pulse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}} 
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Coincidence\+Time\+Diff\+Selector.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Coincidence\+Time\+Diff\+Selector.\+cc\end{DoxyCompactItemize}

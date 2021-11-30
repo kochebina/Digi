@@ -1,0 +1,67 @@
+\hypertarget{GatePlacementQueue_8hh_source}{}\doxysection{Gate\+Placement\+Queue.\+hh}
+\label{GatePlacementQueue_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GatePlacementQueue.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GatePlacementQueue.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePlacementQueue\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePlacementQueue\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4RotationMatrix.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} std::pair<G4RotationMatrix,G4ThreeVector> GatePlacement;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{32 \textcolor{comment}{}\textcolor{comment}{// Do we need an iterable queue for fast traveling?? Solution is easy and retains queue purposes}}
+\DoxyCodeLine{33 \textcolor{comment}{//Example class definition for iterable queue}}
+\DoxyCodeLine{34 \textcolor{comment}{/*\#include <queue>}}
+\DoxyCodeLine{35 \textcolor{comment}{\#include <deque>}}
+\DoxyCodeLine{36 \textcolor{comment}{\#include <iostream>}}
+\DoxyCodeLine{37 \textcolor{comment}{}}
+\DoxyCodeLine{38 \textcolor{comment}{template<typename T, typename Container=std::deque<T> >}}
+\DoxyCodeLine{39 \textcolor{comment}{class iterable\_queue : public std::queue<T,Container>}}
+\DoxyCodeLine{40 \textcolor{comment}{\{}}
+\DoxyCodeLine{41 \textcolor{comment}{public:}}
+\DoxyCodeLine{42 \textcolor{comment}{    typedef typename Container::iterator iterator;}}
+\DoxyCodeLine{43 \textcolor{comment}{    typedef typename Container::const\_iterator const\_iterator;}}
+\DoxyCodeLine{44 \textcolor{comment}{}}
+\DoxyCodeLine{45 \textcolor{comment}{    iterator begin() \{ return this-\/>c.begin(); \}}}
+\DoxyCodeLine{46 \textcolor{comment}{    iterator end() \{ return this-\/>c.end(); \}}}
+\DoxyCodeLine{47 \textcolor{comment}{    const\_iterator begin() const \{ return this-\/>c.begin(); \}}}
+\DoxyCodeLine{48 \textcolor{comment}{    const\_iterator end() const \{ return this-\/>c.end(); \}}}
+\DoxyCodeLine{49 \textcolor{comment}{\};*/}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePlacementQueue}{GatePlacementQueue}} : \textcolor{keyword}{public} std::queue<GatePlacement>}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53   \textcolor{keyword}{public}:  }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classGatePlacementQueue}{GatePlacementQueue}}() \{\}}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePlacementQueue}{\string~ GatePlacementQueue}}() \{\}}
+\DoxyCodeLine{57   }
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} push\_back(\textcolor{keyword}{const} GatePlacement\& aPlacement)}
+\DoxyCodeLine{59     \{ std::queue<GatePlacement>::push(aPlacement) ; \}}
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} push\_back(\textcolor{keyword}{const} G4RotationMatrix\& rotationMatrix,\textcolor{keyword}{const} G4ThreeVector\& position)}
+\DoxyCodeLine{61     \{ push\_back(GatePlacement(rotationMatrix,position)) ; \}}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} GatePlacement pop\_front()}
+\DoxyCodeLine{63   \{ GatePlacement placement = front();}
+\DoxyCodeLine{64     std::queue<GatePlacement>::pop() ; }
+\DoxyCodeLine{65     \textcolor{keywordflow}{return} placement;}
+\DoxyCodeLine{66   \}}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+
+\end{DoxyCode}

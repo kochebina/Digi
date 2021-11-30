@@ -1,0 +1,421 @@
+\hypertarget{classGateMultiMaterialThermalActor}{}\doxysection{Gate\+Multi\+Material\+Thermal\+Actor Class Reference}
+\label{classGateMultiMaterialThermalActor}\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+Inheritance diagram for Gate\+Multi\+Material\+Thermal\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateMultiMaterialThermalActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1DiffusionStruct}{Diffusion\+Struct}}
+\item 
+struct \mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1MeasurementStruct}{Measurement\+Struct}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a59adbfdec66c5ee48aa7c6d1c83e0724}\label{classGateMultiMaterialThermalActor_a59adbfdec66c5ee48aa7c6d1c83e0724}} 
+typedef itk\+::\+Image$<$ float, 3 $>$ {\bfseries Float\+Image\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a1816e0c92dc8162bd6409943fba0a25e}\label{classGateMultiMaterialThermalActor_a1816e0c92dc8162bd6409943fba0a25e}} 
+typedef itk\+::\+Image$<$ double, 3 $>$ {\bfseries Double\+Image\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a011e1a2263235a4b10a5844d081e6e9a}\label{classGateMultiMaterialThermalActor_a011e1a2263235a4b10a5844d081e6e9a}} 
+typedef itk\+::\+Image\+Region\+Iterator$<$ Float\+Image\+Type $>$ {\bfseries Float\+Iterator\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a2a18c4da76a52fb85e2b9b8858fcd70d}\label{classGateMultiMaterialThermalActor_a2a18c4da76a52fb85e2b9b8858fcd70d}} 
+typedef itk\+::\+Image\+Region\+Iterator$<$ Double\+Image\+Type $>$ {\bfseries Double\+Iterator\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_afa5e3ac38872888e05dd0f9c52df9fc3}\label{classGateMultiMaterialThermalActor_afa5e3ac38872888e05dd0f9c52df9fc3}} 
+typedef itk\+::\+Image\+Duplicator$<$ Float\+Image\+Type $>$ {\bfseries Float\+Duplicator\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_abec207085ae2023c5fe5d41d52f4e29c}\label{classGateMultiMaterialThermalActor_abec207085ae2023c5fe5d41d52f4e29c}} 
+typedef itk\+::\+Image\+Duplicator$<$ Double\+Image\+Type $>$ {\bfseries Double\+Duplicator\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_afb70381b25b43f8880eea3214bfffc0b}\label{classGateMultiMaterialThermalActor_afb70381b25b43f8880eea3214bfffc0b}} 
+typedef itk\+::\+Image\+File\+Reader$<$ Double\+Image\+Type $>$ {\bfseries Double\+Reader\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a209065716500d21b9d0e8c10e2ac3f69}\label{classGateMultiMaterialThermalActor_a209065716500d21b9d0e8c10e2ac3f69}} 
+typedef itk\+::\+Multiply\+Image\+Filter$<$ Double\+Image\+Type, Float\+Image\+Type, Double\+Image\+Type $>$ {\bfseries Multiply\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_acc9a99ef5b961598f9be40b4d1267ef0}\label{classGateMultiMaterialThermalActor_acc9a99ef5b961598f9be40b4d1267ef0}} 
+typedef itk\+::\+Exp\+Image\+Filter$<$ Double\+Image\+Type, Float\+Image\+Type $>$ {\bfseries Exp\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_ac8dc6407800feaee0da2e6820d2dcdb4}\label{classGateMultiMaterialThermalActor_ac8dc6407800feaee0da2e6820d2dcdb4}} 
+typedef itk\+::\+Add\+Image\+Filter$<$ Double\+Image\+Type, Double\+Image\+Type, Double\+Image\+Type $>$ {\bfseries Add\+Image\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a98131ed7777cb997c808a395e9bdcfbb}\label{classGateMultiMaterialThermalActor_a98131ed7777cb997c808a395e9bdcfbb}} 
+typedef itk\+::\+Subtract\+Image\+Filter$<$ Double\+Image\+Type, Double\+Image\+Type $>$ {\bfseries Subtract\+Image\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a56b3c0b3e9d6ad49be3ebb188a72bff3}\label{classGateMultiMaterialThermalActor_a56b3c0b3e9d6ad49be3ebb188a72bff3}} 
+typedef itk\+::\+Binary\+Threshold\+Image\+Filter$<$ Float\+Image\+Type, Float\+Image\+Type $>$ {\bfseries Binary\+Threshold\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a9904de843303c2e845b3ed5b4f65416d}\label{classGateMultiMaterialThermalActor_a9904de843303c2e845b3ed5b4f65416d}} 
+typedef itk\+::\+Recursive\+Gaussian\+Image\+Filter$<$ Double\+Image\+Type, Double\+Image\+Type $>$ {\bfseries Gaussian\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_ab0e7332d3dcea178fd2e76e728024b96}\label{classGateMultiMaterialThermalActor_ab0e7332d3dcea178fd2e76e728024b96}} 
+typedef itk\+::\+Import\+Image\+Filter$<$ float, 3 $>$ {\bfseries Import\+Filter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a5d5754833a05f049bb6bf985bc33b237}\label{classGateMultiMaterialThermalActor_a5d5754833a05f049bb6bf985bc33b237}} 
+typedef itk\+::\+Region\+Of\+Interest\+Image\+Filter$<$ Float\+Image\+Type, Float\+Image\+Type $>$ {\bfseries Float\+To\+Float\+ROIFilter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_afc5869bbd12ca76f9b04154fc04a851d}\label{classGateMultiMaterialThermalActor_afc5869bbd12ca76f9b04154fc04a851d}} 
+typedef itk\+::\+Region\+Of\+Interest\+Image\+Filter$<$ Double\+Image\+Type, Double\+Image\+Type $>$ {\bfseries Double\+To\+Double\+ROIFilter\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a17e24b388394d32ab729ef4c633b7e87}\label{classGateMultiMaterialThermalActor_a17e24b388394d32ab729ef4c633b7e87}} 
+typedef itk\+::\+Paste\+Image\+Filter$<$ Double\+Image\+Type $>$ {\bfseries Paste\+Image\+Filter\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_a04ff56e4e40c308e15dd8e7de69c49ac}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Type name of the sensor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_aa66ec6d336d639ec0ad78a6bc25d2d47}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_a1d8fb924666e614d1e0ed8652298a16f}{End\+Of\+Run\+Action}} (const G4\+Run $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_a482b3de9a5bf0071eacd00ddfbb06ef4}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_a230df235aec9810ce2369e128375d12e}{End\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_a614198d2bf08421bbb1215e9ed72dcfe}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_af8ded8c91250f7bfd8b914af6b9b9c8b}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$track)
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_a3a977c1541554467a0675f076bd6f7df}{User\+Post\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_af7b4624e038d95369defa16f2c683faa}{Save\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_a5f0db553dce2166b7aed2d045b66f9fc}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_aced0b4ac6ae3778a859d9071971d3303}{Initialize}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateMultiMaterialThermalActor_aab02d5e1f4b507127e165db798d728c6}{End\+Of\+Event}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a4c846082882eb04ab22659170dd66d89}\label{classGateMultiMaterialThermalActor_a4c846082882eb04ab22659170dd66d89}} 
+void {\bfseries Construct\+Region\+Masks} (\mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} $\ast$)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a19e182ad61e03b93f679714437a139b9}\label{classGateMultiMaterialThermalActor_a19e182ad61e03b93f679714437a139b9}} 
+void {\bfseries Construct\+Perfusion\+Map} ()
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aaa343192027ad82ab0d6203483c48c86}\label{classGateMultiMaterialThermalActor_aaa343192027ad82ab0d6203483c48c86}} 
+void {\bfseries Read\+Measurement\+File} (Double\+Image\+Type\+::\+Pointer)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a72cf36ee5be47320e724a4070dde8b95}\label{classGateMultiMaterialThermalActor_a72cf36ee5be47320e724a4070dde8b95}} 
+double {\bfseries Get\+Property\+From\+Material} (const G4\+Material $\ast$, G4\+String, G4double)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a0203c1be6e2cd1d7819cdd365a9f87ba}\label{classGateMultiMaterialThermalActor_a0203c1be6e2cd1d7819cdd365a9f87ba}} 
+void {\bfseries Apply\+Step\+Perfusion} (double, bool)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a371b6650711b8fc1c2d3fd9e9ce706b8}\label{classGateMultiMaterialThermalActor_a371b6650711b8fc1c2d3fd9e9ce706b8}} 
+void {\bfseries Apply\+Step\+Diffusion} (double, bool)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aa45e294ad30bf41b001a7d206e8e4030}\label{classGateMultiMaterialThermalActor_aa45e294ad30bf41b001a7d206e8e4030}} 
+void {\bfseries Apply\+Step\+Measurement} (double, bool)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a6f42d07150f5286aa89dee198d6c2113}\label{classGateMultiMaterialThermalActor_a6f42d07150f5286aa89dee198d6c2113}} 
+void {\bfseries Apply\+User\+Relaxation} ()
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_affea46b074e7333386cb5349c8451795}\label{classGateMultiMaterialThermalActor_affea46b074e7333386cb5349c8451795}} 
+Float\+Image\+Type\+::\+Pointer {\bfseries Convert\+Gate\+To\+ITKImage\+\_\+float} (\mbox{\hyperlink{classGateImage}{Gate\+Image}} $\ast$)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a29ca7dd5e94222ed396a474d1cb05fab}\label{classGateMultiMaterialThermalActor_a29ca7dd5e94222ed396a474d1cb05fab}} 
+Double\+Image\+Type\+::\+Pointer {\bfseries Convert\+Gate\+To\+ITKImage\+\_\+double} (\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Double}} $\ast$)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a72834464d0de319311ed296401a092e0}\label{classGateMultiMaterialThermalActor_a72834464d0de319311ed296401a092e0}} 
+void {\bfseries Save\+ITKimage} (Float\+Image\+Type\+::\+Pointer, G4\+String)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aa9e2e194292e1d1dbd285952424f2a1d}\label{classGateMultiMaterialThermalActor_aa9e2e194292e1d1dbd285952424f2a1d}} 
+void {\bfseries Save\+ITKimage} (Double\+Image\+Type\+::\+Pointer, G4\+String)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_ae28b333bf8ba55b5cbacbedefd7afdd3}\label{classGateMultiMaterialThermalActor_ae28b333bf8ba55b5cbacbedefd7afdd3}} 
+void {\bfseries Set\+Blood\+Perfusion\+By\+Material} (G4bool)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a3f576785b5d2b6fc92b7a0817a614952}\label{classGateMultiMaterialThermalActor_a3f576785b5d2b6fc92b7a0817a614952}} 
+void {\bfseries Set\+Blood\+Perfusion\+By\+Constant} (G4double)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_ad71f4e111f99e7d9b82164ddcab379ea}\label{classGateMultiMaterialThermalActor_ad71f4e111f99e7d9b82164ddcab379ea}} 
+void {\bfseries Set\+Blood\+Perfusion\+By\+Image} (G4\+String)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a02855fd8b496cf628e861a726d510125}\label{classGateMultiMaterialThermalActor_a02855fd8b496cf628e861a726d510125}} 
+void {\bfseries Set\+Measurement\+Filename} (G4\+String)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_afc68c80f75fb984bb6497bd71d601572}\label{classGateMultiMaterialThermalActor_afc68c80f75fb984bb6497bd71d601572}} 
+void {\bfseries set\+Relaxation\+Time} (G4double t)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a8b3eaf07138b430329ea9f7df7cd0de6}\label{classGateMultiMaterialThermalActor_a8b3eaf07138b430329ea9f7df7cd0de6}} 
+void {\bfseries set\+Diffusivity} (G4double d)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aae051c5e7b4c094186e184b862f18c26}\label{classGateMultiMaterialThermalActor_aae051c5e7b4c094186e184b862f18c26}} 
+void {\bfseries set\+Blood\+Density} (G4double d)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a7fc7c29764032297b0d20fc8cb10c64a}\label{classGateMultiMaterialThermalActor_a7fc7c29764032297b0d20fc8cb10c64a}} 
+void {\bfseries set\+Blood\+Heat\+Capacity} (G4double c)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a8a678d503b34f2ecf8b28b1655777a3d}\label{classGateMultiMaterialThermalActor_a8a678d503b34f2ecf8b28b1655777a3d}} 
+void {\bfseries set\+Tissue\+Density} (G4double d)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aafb128c91f957842427fe7972d374625}\label{classGateMultiMaterialThermalActor_aafb128c91f957842427fe7972d374625}} 
+void {\bfseries set\+Tissue\+Heat\+Capacity} (G4double c)
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a35fc96dd90a594fd2b27aea2d8f35226}\label{classGateMultiMaterialThermalActor_a35fc96dd90a594fd2b27aea2d8f35226}} 
+void {\bfseries enable\+Step\+Diffusion} (G4bool b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a877271a7d7c0aa7660910042c8ddf871}\label{classGateMultiMaterialThermalActor_a877271a7d7c0aa7660910042c8ddf871}} 
+{\bfseries Gate\+Multi\+Material\+Thermal\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a493663710d4e32bb0b7f2cd7f2d7470e}\label{classGateMultiMaterialThermalActor_a493663710d4e32bb0b7f2cd7f2d7470e}} 
+\mbox{\hyperlink{classGateMultiMaterialThermalActorMessenger}{Gate\+Multi\+Material\+Thermal\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aac3a33543c24d5fa4ec917cf7cca790c}\label{classGateMultiMaterialThermalActor_aac3a33543c24d5fa4ec917cf7cca790c}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a46ad3dbf4b4e69dbb458811c37a7805c}\label{classGateMultiMaterialThermalActor_a46ad3dbf4b4e69dbb458811c37a7805c}} 
+Step\+Hit\+Type {\bfseries m\+User\+Step\+Hit\+Type}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a1496c8ac3e68b3d85a92d130e6bf6062}\label{classGateMultiMaterialThermalActor_a1496c8ac3e68b3d85a92d130e6bf6062}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} {\bfseries m\+Absorption\+Image}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_adfb7bd3b43f0bb0739f8ca1528ae057b}\label{classGateMultiMaterialThermalActor_adfb7bd3b43f0bb0739f8ca1528ae057b}} 
+G4\+String {\bfseries m\+Absorption\+Filename}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a513789a3dba96fa770e7fbad2f5dcf1d}\label{classGateMultiMaterialThermalActor_a513789a3dba96fa770e7fbad2f5dcf1d}} 
+G4\+String {\bfseries m\+Heat\+Absorption\+Filename}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a3d42097ccfc001a9bc05aff0b9cb1025}\label{classGateMultiMaterialThermalActor_a3d42097ccfc001a9bc05aff0b9cb1025}} 
+G4\+String {\bfseries m\+Heat\+Relaxation\+Filename}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a3ef71c53d33e5aab4e65da69c6de30b7}\label{classGateMultiMaterialThermalActor_a3ef71c53d33e5aab4e65da69c6de30b7}} 
+Double\+Image\+Type\+::\+Pointer {\bfseries m\+ITKheat\+Map}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a80325090e10225300856fb810e2f1e96}\label{classGateMultiMaterialThermalActor_a80325090e10225300856fb810e2f1e96}} 
+Double\+Image\+Type\+::\+Pointer {\bfseries m\+ITKperfusion\+Rate\+Map}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a90227c4aa381cd42b325626dd4681f57}\label{classGateMultiMaterialThermalActor_a90227c4aa381cd42b325626dd4681f57}} 
+Double\+Image\+Type\+::\+Pointer {\bfseries m\+ITKheat\+Conversion\+Map}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a67504df3c9fc5e8951790dc0f558a754}\label{classGateMultiMaterialThermalActor_a67504df3c9fc5e8951790dc0f558a754}} 
+double {\bfseries m\+Current\+Time}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a85fd48d971325bac3324b43a88cb6bbe}\label{classGateMultiMaterialThermalActor_a85fd48d971325bac3324b43a88cb6bbe}} 
+double {\bfseries m\+Previous\+Time}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a2ba84cd75463ce2368f969ab03c5ac37}\label{classGateMultiMaterialThermalActor_a2ba84cd75463ce2368f969ab03c5ac37}} 
+double {\bfseries m\+Perfusion\+Timer}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_abbec85e13cb37778028f639820da626b}\label{classGateMultiMaterialThermalActor_abbec85e13cb37778028f639820da626b}} 
+double {\bfseries m\+User\+Relaxation\+Time}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aa6b1d52851a223ba03b2cf5c69692c98}\label{classGateMultiMaterialThermalActor_aa6b1d52851a223ba03b2cf5c69692c98}} 
+std\+::vector$<$ G4\+Material $\ast$ $>$ {\bfseries m\+Material\+List}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a3633088930534ea54e5bc829901b2c86}\label{classGateMultiMaterialThermalActor_a3633088930534ea54e5bc829901b2c86}} 
+std\+::map$<$ G4\+Material $\ast$, \mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1DiffusionStruct}{Diffusion\+Struct}} $>$ {\bfseries m\+Material\+To\+Diffusion\+Struct}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a06ede76535021b71414f218670701ddf}\label{classGateMultiMaterialThermalActor_a06ede76535021b71414f218670701ddf}} 
+double {\bfseries m\+Min\+Time\+Step}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a05bfee35a975a2de8286c0c4ef745d60}\label{classGateMultiMaterialThermalActor_a05bfee35a975a2de8286c0c4ef745d60}} 
+bool {\bfseries m\+Is\+Perfusion\+Activated}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a4f7c0ce0c5ff18916b94df38f66f960b}\label{classGateMultiMaterialThermalActor_a4f7c0ce0c5ff18916b94df38f66f960b}} 
+bool {\bfseries m\+Is\+Perfusion\+By\+Material}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a816667687198ae8e6562fcbb3ace83b8}\label{classGateMultiMaterialThermalActor_a816667687198ae8e6562fcbb3ace83b8}} 
+bool {\bfseries m\+Is\+Perfusion\+By\+Constant}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a653fc3ccf3e9a7b7c17f6eeeeee030fd}\label{classGateMultiMaterialThermalActor_a653fc3ccf3e9a7b7c17f6eeeeee030fd}} 
+bool {\bfseries m\+Is\+Perfusion\+By\+Image}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a6770140b3c2ba4e1bd1d5d100064209f}\label{classGateMultiMaterialThermalActor_a6770140b3c2ba4e1bd1d5d100064209f}} 
+bool {\bfseries m\+Is\+Diffusion\+Activated}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a016eab529696a1ae27f45867353fc4de}\label{classGateMultiMaterialThermalActor_a016eab529696a1ae27f45867353fc4de}} 
+bool {\bfseries m\+Is\+Measurement\+Activated}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a94925a5d527b489922198fdf3a25c97c}\label{classGateMultiMaterialThermalActor_a94925a5d527b489922198fdf3a25c97c}} 
+G4\+String {\bfseries m\+Measurement\+Filename}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a9dd3cfe11c85fa157bb1e128488cd806}\label{classGateMultiMaterialThermalActor_a9dd3cfe11c85fa157bb1e128488cd806}} 
+std\+::vector$<$ \mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1MeasurementStruct}{Measurement\+Struct}} $>$ {\bfseries m\+Measurement\+Points}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a854a982e2230e9c7c847ce2d510dff11}\label{classGateMultiMaterialThermalActor_a854a982e2230e9c7c847ce2d510dff11}} 
+G4\+String {\bfseries m\+User\+Perfusion\+Image\+Name}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aae20f2856f1112775086556404342dff}\label{classGateMultiMaterialThermalActor_aae20f2856f1112775086556404342dff}} 
+double {\bfseries m\+User\+Blood\+Perfusion\+Rate}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a1d815d0d6c7464bbfee1e42af6bc7d0c}\label{classGateMultiMaterialThermalActor_a1d815d0d6c7464bbfee1e42af6bc7d0c}} 
+double {\bfseries m\+User\+Blood\+Density}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a7fbcb06efb1450446b944bf7499498e1}\label{classGateMultiMaterialThermalActor_a7fbcb06efb1450446b944bf7499498e1}} 
+double {\bfseries m\+User\+Blood\+Heat\+Capacity}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_ae35beeb1c1bbdbc4e302b6c4bbee6972}\label{classGateMultiMaterialThermalActor_ae35beeb1c1bbdbc4e302b6c4bbee6972}} 
+double {\bfseries m\+User\+Tissue\+Density}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_af62e1e184fc4dfaca305fc78b8f4b575}\label{classGateMultiMaterialThermalActor_af62e1e184fc4dfaca305fc78b8f4b575}} 
+double {\bfseries m\+User\+Tissue\+Heat\+Capacity}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_ab397656eb6a9f65d5ff1d0475a3091e1}\label{classGateMultiMaterialThermalActor_ab397656eb6a9f65d5ff1d0475a3091e1}} 
+double {\bfseries m\+Min\+Perfusion\+Coef}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a5ed6fb9899210e32826b49e8480bcfb9}\label{classGateMultiMaterialThermalActor_a5ed6fb9899210e32826b49e8480bcfb9}} 
+double {\bfseries m\+Max\+Perfusion\+Coef}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a31c5ebd0b69254cdbd776331a7396c76}\label{classGateMultiMaterialThermalActor_a31c5ebd0b69254cdbd776331a7396c76}} 
+double {\bfseries m\+Perfusion\+Ratio}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a675d9e0151e10b1fdcf05bcae13bfadd}\label{classGateMultiMaterialThermalActor_a675d9e0151e10b1fdcf05bcae13bfadd}} 
+double {\bfseries m\+Min\+Perfusion\+Time\+Step}
+\item 
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a89ca61e75bb018f44a45f1a22a512501}\label{classGateMultiMaterialThermalActor_a89ca61e75bb018f44a45f1a22a512501}} 
+double {\bfseries m\+User\+Material\+Diffusivity}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a482b3de9a5bf0071eacd00ddfbb06ef4}\label{classGateMultiMaterialThermalActor_a482b3de9a5bf0071eacd00ddfbb06ef4}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aa66ec6d336d639ec0ad78a6bc25d2d47}\label{classGateMultiMaterialThermalActor_aa66ec6d336d639ec0ad78a6bc25d2d47}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a04ff56e4e40c308e15dd8e7de69c49ac}\label{classGateMultiMaterialThermalActor_a04ff56e4e40c308e15dd8e7de69c49ac}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Type name of the sensor. 
+
+Constructs the sensor.
+
+Constructs the sensor 
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aab02d5e1f4b507127e165db798d728c6}\label{classGateMultiMaterialThermalActor_aab02d5e1f4b507127e165db798d728c6}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!EndOfEvent@{EndOfEvent}}
+\index{EndOfEvent@{EndOfEvent}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEvent()}{EndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a230df235aec9810ce2369e128375d12e}\label{classGateMultiMaterialThermalActor_a230df235aec9810ce2369e128375d12e}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!EndOfEventAction@{EndOfEventAction}}
+\index{EndOfEventAction@{EndOfEventAction}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEventAction()}{EndOfEventAction()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+End\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a1d8fb924666e614d1e0ed8652298a16f}\label{classGateMultiMaterialThermalActor_a1d8fb924666e614d1e0ed8652298a16f}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!EndOfRunAction@{EndOfRunAction}}
+\index{EndOfRunAction@{EndOfRunAction}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{EndOfRunAction()}{EndOfRunAction()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+End\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_aced0b4ac6ae3778a859d9071971d3303}\label{classGateMultiMaterialThermalActor_aced0b4ac6ae3778a859d9071971d3303}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+Initialize (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a5f0db553dce2166b7aed2d045b66f9fc}\label{classGateMultiMaterialThermalActor_a5f0db553dce2166b7aed2d045b66f9fc}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_af7b4624e038d95369defa16f2c683faa}\label{classGateMultiMaterialThermalActor_af7b4624e038d95369defa16f2c683faa}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a3a977c1541554467a0675f076bd6f7df}\label{classGateMultiMaterialThermalActor_a3a977c1541554467a0675f076bd6f7df}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_af8ded8c91250f7bfd8b914af6b9b9c8b}\label{classGateMultiMaterialThermalActor_af8ded8c91250f7bfd8b914af6b9b9c8b}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{track }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMultiMaterialThermalActor_a614198d2bf08421bbb1215e9ed72dcfe}\label{classGateMultiMaterialThermalActor_a614198d2bf08421bbb1215e9ed72dcfe}} 
+\index{GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateMultiMaterialThermalActor@{GateMultiMaterialThermalActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Multi\+Material\+Thermal\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Multi\+Material\+Thermal\+Actor.\+hh\end{DoxyCompactItemize}

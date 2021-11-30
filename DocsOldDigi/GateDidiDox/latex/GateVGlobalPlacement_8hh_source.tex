@@ -1,0 +1,74 @@
+\hypertarget{GateVGlobalPlacement_8hh_source}{}\doxysection{Gate\+VGlobal\+Placement.\+hh}
+\label{GateVGlobalPlacement_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVGlobalPlacement.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVGlobalPlacement.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATEVGLOBALPLACEMENT\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATEVGLOBALPLACEMENT\_H 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4RotationMatrix.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GatePlacementQueue.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48   \mbox{\hyperlink{classGateVGlobalPlacement_a7f9ac81ce3098a44bea24077b23d4efb}{GateVGlobalPlacement}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter, \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVGlobalPlacement_a0e451af6a67647e2c133002d336649e2}{\string~GateVGlobalPlacement}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVGlobalPlacement_af3d9c811a543bc1eafa6e78ced5eb780}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePlacementQueue}{GatePlacementQueue}}* \mbox{\hyperlink{classGateVGlobalPlacement_ae0aed17d0a1fe7526ac2041edd0cb713}{ComputePlacements}}(\mbox{\hyperlink{classGatePlacementQueue}{GatePlacementQueue}}* motherQueue);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{82                                 \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{83                                 G4double aTime) = 0;}
+\DoxyCodeLine{89   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent)=0;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{public}:}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVGlobalPlacement_a3a9fe179c4336067c0d816d799e87a6c}{PushBackPlacement}}(GatePlacement placement)}
+\DoxyCodeLine{96   \{ }
+\DoxyCodeLine{97     \mbox{\hyperlink{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}{m\_placementQueue}}.push\_back(placement) ; \}}
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVGlobalPlacement_aa3439c0f3575c7a9c85bc640bc58b9c8}{PushBackPlacement}}(\textcolor{keyword}{const} G4RotationMatrix\& rotationMatrix,\textcolor{keyword}{const} G4ThreeVector\& position)}
+\DoxyCodeLine{101   \{ \mbox{\hyperlink{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}{m\_placementQueue}}.push\_back(rotationMatrix,position) ; \}}
+\DoxyCodeLine{103   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} GatePlacement \mbox{\hyperlink{classGateVGlobalPlacement_a9af57faaff7f98b03afddb247653ef57}{PopFrontPlacement}}()}
+\DoxyCodeLine{104   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}{m\_placementQueue}}.pop\_front() ; \}}
+\DoxyCodeLine{105  }
+\DoxyCodeLine{106   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keyword}{const} GatePlacement \& FrontPlacement()}
+\DoxyCodeLine{107   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}{m\_placementQueue}}.front() ; \}}
+\DoxyCodeLine{108  }
+\DoxyCodeLine{109   \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} size() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}{m\_placementQueue}}.size() ; \}  }
+\DoxyCodeLine{111       }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVGlobalPlacement_a9f99c4e5c60c7a7b3c9572038e95624e}{GetVolumeCreator}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{116 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVGlobalPlacement_acd5c91ac8d90d2aac70863ca10888f66}{m\_objectInserter}};\}     }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \textcolor{comment}{//inline virtual void ComputeParameters(G4double aTime) \{\}}}
+\DoxyCodeLine{120   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ComputeParameters(G4double ) \{\}}
+\DoxyCodeLine{121  }
+\DoxyCodeLine{122 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{123   \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVGlobalPlacement_acd5c91ac8d90d2aac70863ca10888f66}{m\_objectInserter}};    }
+\DoxyCodeLine{124   \mbox{\hyperlink{classGatePlacementQueue}{GatePlacementQueue}} \mbox{\hyperlink{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}{m\_placementQueue}};      }
+\DoxyCodeLine{125 \};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{128 }
+
+\end{DoxyCode}

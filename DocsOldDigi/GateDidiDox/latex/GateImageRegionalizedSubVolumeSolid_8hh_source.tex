@@ -1,0 +1,133 @@
+\hypertarget{GateImageRegionalizedSubVolumeSolid_8hh_source}{}\doxysection{Gate\+Image\+Regionalized\+Sub\+Volume\+Solid.\+hh}
+\label{GateImageRegionalizedSubVolumeSolid_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageRegionalizedSubVolumeSolid.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageRegionalizedSubVolumeSolid.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/*}}
+\DoxyCodeLine{11 \textcolor{comment}{   \(\backslash\)class GateImageRegionalizedSubVolumeSolid}}
+\DoxyCodeLine{12 \textcolor{comment}{   \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{           laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{       david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{15 \textcolor{comment}{*/}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef \_\_GateImageRegionalizedSubVolumeSolid\_\_hh\_\_}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define \_\_GateImageRegionalizedSubVolumeSolid\_\_hh\_\_}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4Box.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateImageRegionalizedSubVolume.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{27 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateImageRegionalizedSubVolumeSolid}{GateImageRegionalizedSubVolumeSolid}} : \textcolor{keyword}{virtual} \textcolor{keyword}{public} G4Box}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{32 \textcolor{comment}{}  \mbox{\hyperlink{classGateImageRegionalizedSubVolumeSolid_a97146fb6d64c4b5454e2965829df2cbb}{GateImageRegionalizedSubVolumeSolid}}(\textcolor{keyword}{const} G4String\& name,}
+\DoxyCodeLine{33                       \mbox{\hyperlink{classGateImageRegionalizedSubVolume}{GateImageRegionalizedSubVolume}}* volume);}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateImageRegionalizedSubVolumeSolid_a60a0413765169ec2ced230f9c2b9a052}{\string~GateImageRegionalizedSubVolumeSolid}}();}
+\DoxyCodeLine{36   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38  }
+\DoxyCodeLine{39   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{40   \textcolor{comment}{/* inherited from G4Box :}}
+\DoxyCodeLine{41 \textcolor{comment}{  void ComputeDimensions(G4VPVParameterisation* p,}}
+\DoxyCodeLine{42 \textcolor{comment}{             const G4int n,}}
+\DoxyCodeLine{43 \textcolor{comment}{             const G4VPhysicalVolume* pRep);}}
+\DoxyCodeLine{44 \textcolor{comment}{  }}
+\DoxyCodeLine{45 \textcolor{comment}{  G4bool CalculateExtent(const EAxis pAxis,}}
+\DoxyCodeLine{46 \textcolor{comment}{             const G4VoxelLimits\& pVoxelLimit,}}
+\DoxyCodeLine{47 \textcolor{comment}{             const G4AffineTransform\& pTransform,}}
+\DoxyCodeLine{48 \textcolor{comment}{             G4double\& pmin, G4double\& pmax) const;}}
+\DoxyCodeLine{49 \textcolor{comment}{  */}}
+\DoxyCodeLine{50   \textcolor{comment}{// Methods for solid}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{inline} EInside Inside(\textcolor{keyword}{const} G4ThreeVector\& p) \textcolor{keyword}{const};}
+\DoxyCodeLine{53   \textcolor{comment}{//  \{ return mVolume-\/>Inside(p); \}}}
+\DoxyCodeLine{54   \textcolor{comment}{// Returns kOutside if the point at offset p is outside the shapes}}
+\DoxyCodeLine{55   \textcolor{comment}{// boundaries plus Tolerance/2, kSurface if the point is <= Tolerance/2}}
+\DoxyCodeLine{56   \textcolor{comment}{// from a surface, otherwise kInside.}}
+\DoxyCodeLine{57   \textcolor{comment}{// Uses G4Box::Inside to know if the points falls in the image }}
+\DoxyCodeLine{58   \textcolor{comment}{// and if so picks the label of image to compare it to the label of Gate solid}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   G4ThreeVector SurfaceNormal( \textcolor{keyword}{const} G4ThreeVector\& p) \textcolor{keyword}{const};}
+\DoxyCodeLine{61   \textcolor{comment}{// Returns the outwards pointing unit normal of the shape for the}}
+\DoxyCodeLine{62   \textcolor{comment}{// surface closest to the point at offset p.}}
+\DoxyCodeLine{63   }
+\DoxyCodeLine{64   G4double DistanceToIn(\textcolor{keyword}{const} G4ThreeVector\& p, \textcolor{keyword}{const} G4ThreeVector\& v) \textcolor{keyword}{const};}
+\DoxyCodeLine{65   \textcolor{comment}{// Return the distance along the normalised vector v to the shape,}}
+\DoxyCodeLine{66   \textcolor{comment}{// from the point at offset p. If there is no intersection, return}}
+\DoxyCodeLine{67   \textcolor{comment}{// kInfinity. The first intersection resulting from `leaving' a}}
+\DoxyCodeLine{68   \textcolor{comment}{// surface/volume is discarded. Hence, it is tolerant of points on}}
+\DoxyCodeLine{69   \textcolor{comment}{// the surface of the shape.}}
+\DoxyCodeLine{70   }
+\DoxyCodeLine{71   G4double DistanceToIn(\textcolor{keyword}{const} G4ThreeVector\& p) \textcolor{keyword}{const};}
+\DoxyCodeLine{72   \textcolor{comment}{// Calculate the distance to the nearest surface of a shape from an}}
+\DoxyCodeLine{73   \textcolor{comment}{// outside point. The distance can be an underestimate.}}
+\DoxyCodeLine{74   \textcolor{comment}{// G4Box::DistanceToIn() is ok as can be an underestimate.}}
+\DoxyCodeLine{75   }
+\DoxyCodeLine{76   G4double DistanceToOut(\textcolor{keyword}{const} G4ThreeVector\& p, \textcolor{keyword}{const} G4ThreeVector\& v,}
+\DoxyCodeLine{77              \textcolor{keyword}{const} G4bool calcNorm=\textcolor{keyword}{false},}
+\DoxyCodeLine{78              G4bool *validNorm=0, G4ThreeVector *n=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{79   \textcolor{comment}{// Return the distance along the normalised vector v to the shape,}}
+\DoxyCodeLine{80   \textcolor{comment}{// from a point at an offset p inside or on the surface of the shape.}}
+\DoxyCodeLine{81   \textcolor{comment}{// Intersections with surfaces, when the point is < Tolerance/2 from a}}
+\DoxyCodeLine{82   \textcolor{comment}{// surface must be ignored.}}
+\DoxyCodeLine{83   \textcolor{comment}{// If calcNorm==true:}}
+\DoxyCodeLine{84   \textcolor{comment}{//    validNorm set true if the solid lies entirely behind or on the}}
+\DoxyCodeLine{85   \textcolor{comment}{//              exiting surface.}}
+\DoxyCodeLine{86   \textcolor{comment}{//    n set to exiting outwards normal vector (undefined Magnitude).}}
+\DoxyCodeLine{87   \textcolor{comment}{//    validNorm set to false if the solid does not lie entirely behind}}
+\DoxyCodeLine{88   \textcolor{comment}{//              or on the exiting surface}}
+\DoxyCodeLine{89   \textcolor{comment}{// If calcNorm==false:}}
+\DoxyCodeLine{90   \textcolor{comment}{//    validNorm and n are unused.}}
+\DoxyCodeLine{91   \textcolor{comment}{//}}
+\DoxyCodeLine{92   \textcolor{comment}{// Must be called as solid.DistanceToOut(p,v) or by specifying all}}
+\DoxyCodeLine{93   \textcolor{comment}{// the parameters.}}
+\DoxyCodeLine{94   }
+\DoxyCodeLine{95   G4double DistanceToOut(\textcolor{keyword}{const} G4ThreeVector\& p) \textcolor{keyword}{const};}
+\DoxyCodeLine{96   \textcolor{comment}{// Calculate the distance to the nearest surface of a shape from an}}
+\DoxyCodeLine{97   \textcolor{comment}{// inside point. The distance can be an underestimate.}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   G4GeometryType GetEntityType() \textcolor{keyword}{const};}
+\DoxyCodeLine{100   \textcolor{comment}{// Provide identification of the class of an object.}}
+\DoxyCodeLine{101   \textcolor{comment}{// (required for persistency and STEP interface)}}
+\DoxyCodeLine{102   }
+\DoxyCodeLine{103   G4ThreeVector GetPointOnSurface() \textcolor{keyword}{const}; }
+\DoxyCodeLine{104   \textcolor{comment}{// Returns a random point located on the surface of the solid.}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   std::ostream\& StreamInfo(std::ostream\& os) \textcolor{keyword}{const};}
+\DoxyCodeLine{107   \textcolor{comment}{// Dumps contents of the solid to a stream.}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   }
+\DoxyCodeLine{110   \textcolor{comment}{// Functions for visualization}}
+\DoxyCodeLine{111   \textcolor{comment}{/* TODAY : inherited from G4Box}}
+\DoxyCodeLine{112 \textcolor{comment}{  void          DescribeYourselfTo (G4VGraphicsScene\& scene) const;}}
+\DoxyCodeLine{113 \textcolor{comment}{  // A "{}double dispatch"{} function which identifies the solid}}
+\DoxyCodeLine{114 \textcolor{comment}{  // to the graphics scene.}}
+\DoxyCodeLine{115 \textcolor{comment}{  G4VisExtent   GetExtent          () const;}}
+\DoxyCodeLine{116 \textcolor{comment}{  // Provide extent (bounding box) as possible hint to the graphics view.}}
+\DoxyCodeLine{117 \textcolor{comment}{  G4Polyhedron* CreatePolyhedron   () const;}}
+\DoxyCodeLine{118 \textcolor{comment}{  G4NURBS*      CreateNURBS        () const;}}
+\DoxyCodeLine{119 \textcolor{comment}{  // Create a G4Polyhedron/G4NURBS/...  (It is the caller's responsibility}}
+\DoxyCodeLine{120 \textcolor{comment}{  // to delete it).  A null pointer means "{}not created"{}.}}
+\DoxyCodeLine{121 \textcolor{comment}{  */}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{124   \textcolor{comment}{// The sub-\/volume of which it is the solid}}
+\DoxyCodeLine{125   \mbox{\hyperlink{classGateImageRegionalizedSubVolume}{GateImageRegionalizedSubVolume}}* pVolume;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \};}
+\DoxyCodeLine{128 \textcolor{comment}{// EO class GateImageRegionalizedSubVolumeSolid}}
+\DoxyCodeLine{129 \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{comment}{// EOF}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

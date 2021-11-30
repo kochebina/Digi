@@ -1,0 +1,61 @@
+\hypertarget{GateRTPhantomMgr_8hh_source}{}\doxysection{Gate\+RTPhantom\+Mgr.\+hh}
+\label{GateRTPhantomMgr_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateRTPhantomMgr.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateRTPhantomMgr.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GateRTPhantomMgr\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GateRTPhantomMgr\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}GateRTPhantom.hh"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRTPhantomMgrMessenger}{GateRTPhantomMgrMessenger}};}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRTPhantomMgr}{GateRTPhantomMgr}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateRTPhantomMgr_ae0b002eb13f921565a428ed7f7a263e2}{\string~GateRTPhantomMgr}}(); }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17   \textcolor{keywordtype}{void} AddPhantom( G4String aname );}
+\DoxyCodeLine{18   \textcolor{keywordtype}{void} UpdatePhantoms(G4int cK);}
+\DoxyCodeLine{19   \textcolor{keywordtype}{void} UpdatePhantoms(G4double aTime);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateRTPhantom}{GateRTPhantom}} * CheckSourceAttached( G4String aname);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateRTPhantom}{GateRTPhantom}} * CheckGeometryAttached( G4String aname);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27   \textcolor{keyword}{static} \mbox{\hyperlink{classGateRTPhantomMgr}{GateRTPhantomMgr}}* \mbox{\hyperlink{classGateRTPhantomMgr_a7df9336703fdedded42746c1c6f2d5e8}{GetInstance}}() \{}
+\DoxyCodeLine{28     \textcolor{keywordflow}{if} (instance == 0)}
+\DoxyCodeLine{29       instance = \textcolor{keyword}{new} \mbox{\hyperlink{classGateRTPhantomMgr}{GateRTPhantomMgr}}(\textcolor{stringliteral}{"{}RTPhantom"{}});}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{31   \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} SetVerboseLevel(G4int val);}
+\DoxyCodeLine{34   \textcolor{keyword}{inline} G4int GetVerboseLevel()\{\textcolor{keywordflow}{return} m\_verboseLevel;\};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRTPhantomMgr_afb368a442fbe6205d274b370606919af}{Describe}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40   \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateRTPhantomMgr_a93de97d73ba359fc0197d8200c14a917}{GetName}}()              \{ \textcolor{keywordflow}{return} m\_name; \};}
+\DoxyCodeLine{41   \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetName(G4String name) \{ m\_name = name; \};}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateRTPhantom}{GateRTPhantom}}* Find( G4String aname);}
+\DoxyCodeLine{43 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateRTPhantomMgr}{GateRTPhantomMgr}}(\textcolor{keyword}{const} G4String name); }
+\DoxyCodeLine{46   \textcolor{keyword}{static} \mbox{\hyperlink{classGateRTPhantomMgr}{GateRTPhantomMgr}}* instance;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49   G4int                      m\_verboseLevel;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52   std::vector<GateRTPhantom*>   m\_RTPhantom;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classGateRTPhantomMgrMessenger}{GateRTPhantomMgrMessenger}}*    m\_messenger;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58   G4String                   m\_name;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

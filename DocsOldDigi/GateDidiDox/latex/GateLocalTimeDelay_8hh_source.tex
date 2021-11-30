@@ -1,0 +1,59 @@
+\hypertarget{GateLocalTimeDelay_8hh_source}{}\doxysection{Gate\+Local\+Time\+Delay.\+hh}
+\label{GateLocalTimeDelay_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalTimeDelay.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalTimeDelay.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GateLocalTimeDelay\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GateLocalTimeDelay\_h 1}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalTimeDelayMessenger}{GateLocalTimeDelayMessenger}};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalTimeDelay}{GateLocalTimeDelay}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26     \mbox{\hyperlink{classGateLocalTimeDelay_a3cb4c5cfd687070c0c4147a74f892010}{GateLocalTimeDelay}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{27                    \textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalTimeDelay_a3c52070645621103f366ea2cd6898f4f}{\string~GateLocalTimeDelay}}() ;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     G4int \mbox{\hyperlink{classGateLocalTimeDelay_a04c72495f0364de48f67cc284b95ed26}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalTimeDelay_a7ecac821e0f4023c5da344c955fb9b01}{SetDelay}}(G4String name, G4double val)   \{ m\_table[name].delay = val;  \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalTimeDelay_aba583186ff77cf320c07faae39f8ec11}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalTimeDelay_a55d244dcda4d8b9791f683fc63e4a508}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{private}:}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keyword}{struct }param \{}
+\DoxyCodeLine{59       G4double delay;}
+\DoxyCodeLine{60     \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62    param m\_param;                                 }
+\DoxyCodeLine{63    \textcolor{comment}{//  G4double m\_delay;}}
+\DoxyCodeLine{64     G4String m\_name;                               }
+\DoxyCodeLine{65     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} m\_table ;  }
+\DoxyCodeLine{66     \textcolor{comment}{// GateMap<G4String,G4double> m\_table ;  //! Table which contains the names of volume with their characteristics}}
+\DoxyCodeLine{67     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} ::iterator im;  }
+\DoxyCodeLine{68     \mbox{\hyperlink{classGateLocalTimeDelayMessenger}{GateLocalTimeDelayMessenger}} *m\_messenger;       }
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

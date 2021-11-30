@@ -1,0 +1,39 @@
+\hypertarget{GateTessellatedMessenger_8hh_source}{}\doxysection{Gate\+Tessellated\+Messenger.\+hh}
+\label{GateTessellatedMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTessellatedMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTessellatedMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateTessellatedMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateTessellatedMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTessellated}{GateTessellated}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTessellatedMessenger}{GateTessellatedMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19   \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{classGateTessellatedMessenger}{GateTessellatedMessenger}}( \mbox{\hyperlink{classGateTessellated}{GateTessellated}}* itsCreator );}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTessellatedMessenger}{\string~GateTessellatedMessenger}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} SetNewValue( G4UIcommand*, G4String );}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateTessellated}{GateTessellated}}* GetTessellatedCreator()}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26       \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateTessellated}{GateTessellated}}*)GetVolumeCreator();}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     G4UIcmdWithAString* PathToSTLFileCmd;}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

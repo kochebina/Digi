@@ -1,0 +1,62 @@
+\hypertarget{GateBlurring_8hh_source}{}\doxysection{Gate\+Blurring.\+hh}
+\label{GateBlurring_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBlurring.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBlurring.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateBlurring\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateBlurring\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVBlurringLaw.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateInverseSquareBlurringLaw.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBlurringMessenger}{GateBlurringMessenger}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBlurring}{GateBlurring}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34   \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateBlurring_a065f3de5896f2b52d8345d3f060470f4}{GateBlurring}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{41                  \textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateBlurring_a216f6c783c9dedbc91a790c948c4dc6a}{\string~GateBlurring}}() ;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVBlurringLaw}{GateVBlurringLaw}}* \mbox{\hyperlink{classGateBlurring_ab174bc53b047cae13ca1127cddb4cee7}{GetBlurringLaw}}()           \{ \textcolor{keywordflow}{return} m\_blurringLaw; \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{56     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBlurring_a59d2e3ba371333da7cd55b63b03c04cb}{SetBlurringLaw}}(\mbox{\hyperlink{classGateVBlurringLaw}{GateVBlurringLaw}}* law)   \{ m\_blurringLaw = law; \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{62     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBlurring_ac645fe66ce6fd0f463d054800001edef}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBlurring_a5d6173adcb20f376f4fe401afccf82b0}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keyword}{private}:}
+\DoxyCodeLine{72     \mbox{\hyperlink{classGateVBlurringLaw}{GateVBlurringLaw}}* m\_blurringLaw;}
+\DoxyCodeLine{73     \mbox{\hyperlink{classGateBlurringMessenger}{GateBlurringMessenger}} *m\_messenger;   }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

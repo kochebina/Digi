@@ -1,0 +1,140 @@
+\hypertarget{GateFluenceActor_8hh_source}{}\doxysection{Gate\+Fluence\+Actor.\+hh}
+\label{GateFluenceActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFluenceActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFluenceActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEFLUENCEACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEFLUENCEACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateMiscFunctions.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateFluenceActorMessenger.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateEnergyResponseFunctor.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFluenceActor}{GateFluenceActor}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateFluenceActor}{\string~GateFluenceActor}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateFluenceActor}{GateFluenceActor}})}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFluenceActor_a6f567572a73e374231b93a0cbe65b5c2}{Construct}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} EnableSquaredImage(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{41   \{}
+\DoxyCodeLine{42     mIsSquaredImageEnabled = b;}
+\DoxyCodeLine{43   \}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} EnableStepLengthImage(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{45   \{}
+\DoxyCodeLine{46     mIsStepLengthImageEnabled = b;}
+\DoxyCodeLine{47   \}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} EnableUncertaintyImage(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{49   \{}
+\DoxyCodeLine{50     mIsUncertaintyImageEnabled = b;}
+\DoxyCodeLine{51   \}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} EnableNormalisation(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{53   \{}
+\DoxyCodeLine{54     mIsNormalisationEnabled = b;}
+\DoxyCodeLine{55     mImage.SetScaleFactor(1.0);}
+\DoxyCodeLine{56   \}}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} EnableNumberOfHitsImage(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{58   \{}
+\DoxyCodeLine{59     mIsNumberOfHitsImageEnabled = b;}
+\DoxyCodeLine{60   \}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} EnableScatterImage(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{62   \{}
+\DoxyCodeLine{63     mIsScatterImageEnabled = b;}
+\DoxyCodeLine{64   \}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} SetIgnoreWeight(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{66   \{}
+\DoxyCodeLine{67     mIgnoreWeight = b;}
+\DoxyCodeLine{68   \}}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * e);}
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFluenceActor_a9652aad579d01455dc62e380a47db864}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/},}
+\DoxyCodeLine{73                                          \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/})}
+\DoxyCodeLine{74   \{}
+\DoxyCodeLine{75   \}}
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/},}
+\DoxyCodeLine{77                                           \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*aTrack*/});}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFluenceActor_a92f7fe5cc92cb0436430e85f1b6b91f4}{SaveData}}();}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFluenceActor_a66ef37f65c2026dcb152b7cfb403ce68}{Initialize}}(G4HCofThisEvent*)}
+\DoxyCodeLine{86   \{}
+\DoxyCodeLine{87   \}}
+\DoxyCodeLine{88   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)}
+\DoxyCodeLine{89   \{}
+\DoxyCodeLine{90   \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{keywordtype}{void} SetResponseDetectorFile(G4String name)}
+\DoxyCodeLine{93   \{}
+\DoxyCodeLine{94     mResponseFileName = name;}
+\DoxyCodeLine{95   \}}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} SetScatterOrderFilename(G4String name)}
+\DoxyCodeLine{97   \{}
+\DoxyCodeLine{98     mScatterOrderFilename = name;}
+\DoxyCodeLine{99   \}}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} SetSeparateProcessFilename(G4String name)}
+\DoxyCodeLine{101   \{}
+\DoxyCodeLine{102     mSeparateProcessFilename = name;}
+\DoxyCodeLine{103   \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mImage;}
+\DoxyCodeLine{108   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mImageProcess;}
+\DoxyCodeLine{109   \mbox{\hyperlink{classGateImage}{GateImage}} mLastHitEventImage;}
+\DoxyCodeLine{110   \mbox{\hyperlink{classGateImage}{GateImage}} mNumberOfHitsImage;}
+\DoxyCodeLine{111   \mbox{\hyperlink{classGateImageT}{GateImageDouble}} mStepLengthImage;}
+\DoxyCodeLine{112   \mbox{\hyperlink{classGateImageT}{GateImageDouble}} mNumberOfHitsStepLengthImage;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114   \textcolor{comment}{//GateImage mImageScatter;}}
+\DoxyCodeLine{115   \mbox{\hyperlink{classGateFluenceActor}{GateFluenceActor}}(G4String name, G4int depth = 0);}
+\DoxyCodeLine{116   \mbox{\hyperlink{classGateFluenceActorMessenger}{GateFluenceActorMessenger}} * pMessenger;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{119   \textcolor{keywordtype}{bool} mIsLastHitEventImageEnabled;}
+\DoxyCodeLine{120   \textcolor{keywordtype}{bool} mIsStepLengthImageEnabled;}
+\DoxyCodeLine{121   \textcolor{keywordtype}{bool} mIsSquaredImageEnabled;}
+\DoxyCodeLine{122   \textcolor{keywordtype}{bool} mIsUncertaintyImageEnabled;}
+\DoxyCodeLine{123   \textcolor{keywordtype}{bool} mIsNormalisationEnabled;}
+\DoxyCodeLine{124   \textcolor{keywordtype}{bool} mIsNumberOfHitsImageEnabled;}
+\DoxyCodeLine{125   \textcolor{keywordtype}{bool} mIsScatterImageEnabled;}
+\DoxyCodeLine{126   \textcolor{keywordtype}{bool} mIgnoreWeight;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   std::map<G4String, GateImage*> mProcesses;}
+\DoxyCodeLine{129   std::vector<G4String> mProcessName;}
+\DoxyCodeLine{130   std::vector<GateImage*> mFluencePerOrderImages;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132   G4String mResponseFileName;}
+\DoxyCodeLine{133   G4String mScatterOrderFilename;}
+\DoxyCodeLine{134   G4String mSeparateProcessFilename;}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136   \mbox{\hyperlink{classGateEnergyResponseFunctor}{GateEnergyResponseFunctor}} mEnergyResponse;}
+\DoxyCodeLine{137 \};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 MAKE\_AUTO\_CREATOR\_ACTOR(FluenceActor, \mbox{\hyperlink{classGateFluenceActor}{GateFluenceActor}})}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESIMULATIONSTATISTICACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

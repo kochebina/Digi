@@ -1,0 +1,237 @@
+\hypertarget{GateSinoToEcat7_8hh_source}{}\doxysection{Gate\+Sino\+To\+Ecat7.\+hh}
+\label{GateSinoToEcat7_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSinoToEcat7.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSinoToEcat7.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{10 \textcolor{comment}{   Modifications history}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     Gate 6.2}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{    C. Comtat, CEA/SHFJ, 10/02/2011    Allows for an interfile-\/like ("{}ecat8"{}) output instead of ecat7.}}
+\DoxyCodeLine{15 \textcolor{comment}{                       It does not require the ecat library! (GATE\_USE\_ECAT7 not set)}}
+\DoxyCodeLine{16 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef GateSinoToEcat7\_H}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define GateSinoToEcat7\_H}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4Timer.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{//ECAT7 include file}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifdef GATE\_USE\_ECAT7}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}matrix.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}machine\_indep.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{35 \textcolor{comment}{// CC, 10.02.2011 : some structures of ECAT7 in matrix.h are included here if Gate is linked without the ecat library.}}
+\DoxyCodeLine{36 \textcolor{comment}{//                  They are required for the interfile-\/like output}}
+\DoxyCodeLine{37 \textcolor{keyword}{enum}    DataSetType \{}
+\DoxyCodeLine{38     NoData, Sinogram, PetImage, AttenCor, Normalization,}
+\DoxyCodeLine{39     PolarMap, ByteVolume, PetVolume, ByteProjection,}
+\DoxyCodeLine{40     PetProjection, ByteImage, Short3dSinogram, Byte3dSinogram, Norm3d,}
+\DoxyCodeLine{41     Float3dSinogram,InterfileImage, NumDataSetTypes\};}
+\DoxyCodeLine{42 \textcolor{keyword}{enum}    MatrixDataType \{}
+\DoxyCodeLine{43     UnknownMatDataType, ByteData, VAX\_Ix2, VAX\_Ix4,}
+\DoxyCodeLine{44     VAX\_Rx4, IeeeFloat, SunShort, SunLong,  NumMatrixDataTypes,}
+\DoxyCodeLine{45     UShort\_BE, UShort\_LE, Color\_24, Color\_8, BitData\};}
+\DoxyCodeLine{46 \textcolor{keyword}{enum}    ScanType \{UndefScan, BlankScan,}
+\DoxyCodeLine{47         TransmissionScan, StaticEmission,}
+\DoxyCodeLine{48         DynamicEmission, GatedEmission,}
+\DoxyCodeLine{49         TransRectilinear, EmissionRectilinear,}
+\DoxyCodeLine{50         NumScanTypes\};}
+\DoxyCodeLine{51 \textcolor{keyword}{enum}    SeptaPos \{SeptaExtended, SeptaRetracted, NoSeptaInstalled\};}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}} \{}
+\DoxyCodeLine{53     \textcolor{keywordtype}{char} magic\_number[14];}
+\DoxyCodeLine{54     \textcolor{keywordtype}{char} original\_file\_name[32];}
+\DoxyCodeLine{55     \textcolor{keywordtype}{short} sw\_version;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{short} system\_type;}
+\DoxyCodeLine{57     \textcolor{keywordtype}{short} file\_type;}
+\DoxyCodeLine{58     \textcolor{keywordtype}{char} serial\_number[10];}
+\DoxyCodeLine{59     \textcolor{keywordtype}{short} align\_0;}
+\DoxyCodeLine{60     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} scan\_start\_time;}
+\DoxyCodeLine{61     \textcolor{keywordtype}{char} isotope\_code[8];}
+\DoxyCodeLine{62     \textcolor{keywordtype}{float} isotope\_halflife;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{char} radiopharmaceutical[32];}
+\DoxyCodeLine{64     \textcolor{keywordtype}{float} gantry\_tilt;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{float} gantry\_rotation;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{float} bed\_elevation;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{float} intrinsic\_tilt;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{short} wobble\_speed;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{short} transm\_source\_type;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{float} distance\_scanned;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{float} transaxial\_fov;}
+\DoxyCodeLine{72     \textcolor{keywordtype}{short} angular\_compression;}
+\DoxyCodeLine{73     \textcolor{keywordtype}{short} coin\_samp\_mode;}
+\DoxyCodeLine{74     \textcolor{keywordtype}{short} axial\_samp\_mode;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{short} align\_1;}
+\DoxyCodeLine{76     \textcolor{keywordtype}{float} calibration\_factor;}
+\DoxyCodeLine{77     \textcolor{keywordtype}{short} calibration\_units;}
+\DoxyCodeLine{78     \textcolor{keywordtype}{short} calibration\_units\_label;}
+\DoxyCodeLine{79     \textcolor{keywordtype}{short} compression\_code;}
+\DoxyCodeLine{80     \textcolor{keywordtype}{char} study\_name[12];}
+\DoxyCodeLine{81     \textcolor{keywordtype}{char} patient\_id[16];}
+\DoxyCodeLine{82     \textcolor{keywordtype}{char} patient\_name[32];}
+\DoxyCodeLine{83     \textcolor{keywordtype}{char} patient\_sex[1];}
+\DoxyCodeLine{84     \textcolor{keywordtype}{char} patient\_dexterity[1];}
+\DoxyCodeLine{85     \textcolor{keywordtype}{float} patient\_age;}
+\DoxyCodeLine{86     \textcolor{keywordtype}{float} patient\_height;}
+\DoxyCodeLine{87     \textcolor{keywordtype}{float} patient\_weight;}
+\DoxyCodeLine{88     \textcolor{keywordtype}{int} patient\_birth\_date;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{char} physician\_name[32];}
+\DoxyCodeLine{90     \textcolor{keywordtype}{char} operator\_name[32];}
+\DoxyCodeLine{91     \textcolor{keywordtype}{char} study\_description[32];}
+\DoxyCodeLine{92     \textcolor{keywordtype}{short} acquisition\_type;}
+\DoxyCodeLine{93     \textcolor{keywordtype}{short} patient\_orientation;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{char} facility\_name[20];}
+\DoxyCodeLine{95     \textcolor{keywordtype}{short} num\_planes;}
+\DoxyCodeLine{96     \textcolor{keywordtype}{short} num\_frames;}
+\DoxyCodeLine{97     \textcolor{keywordtype}{short} num\_gates;}
+\DoxyCodeLine{98     \textcolor{keywordtype}{short} num\_bed\_pos;}
+\DoxyCodeLine{99     \textcolor{keywordtype}{float} init\_bed\_position;}
+\DoxyCodeLine{100     \textcolor{keywordtype}{float} bed\_offset[15];}
+\DoxyCodeLine{101     \textcolor{keywordtype}{float} plane\_separation;}
+\DoxyCodeLine{102     \textcolor{keywordtype}{short} lwr\_sctr\_thres;}
+\DoxyCodeLine{103     \textcolor{keywordtype}{short} lwr\_true\_thres;}
+\DoxyCodeLine{104     \textcolor{keywordtype}{short} upr\_true\_thres;}
+\DoxyCodeLine{105     \textcolor{keywordtype}{char} user\_process\_code[10];}
+\DoxyCodeLine{106     \textcolor{keywordtype}{short} acquisition\_mode;}
+\DoxyCodeLine{107     \textcolor{keywordtype}{short} align\_2;}
+\DoxyCodeLine{108     \textcolor{keywordtype}{float} bin\_size;}
+\DoxyCodeLine{109     \textcolor{keywordtype}{float} branching\_fraction;}
+\DoxyCodeLine{110     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dose\_start\_time;}
+\DoxyCodeLine{111     \textcolor{keywordtype}{float} dosage;}
+\DoxyCodeLine{112     \textcolor{keywordtype}{float} well\_counter\_factor;}
+\DoxyCodeLine{113     \textcolor{keywordtype}{char} data\_units[32];}
+\DoxyCodeLine{114     \textcolor{keywordtype}{short} septa\_state;}
+\DoxyCodeLine{115     \textcolor{keywordtype}{short} align\_3;}
+\DoxyCodeLine{116 \} \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}};}
+\DoxyCodeLine{117 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structX3DSCAN__SUB}{X3DSCAN\_SUB}} \{}
+\DoxyCodeLine{118     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{119     \textcolor{keywordtype}{short} num\_dimensions;}
+\DoxyCodeLine{120     \textcolor{keywordtype}{short} num\_r\_elements;}
+\DoxyCodeLine{121     \textcolor{keywordtype}{short} num\_angles;}
+\DoxyCodeLine{122     \textcolor{keywordtype}{short} corrections\_applied;}
+\DoxyCodeLine{123     \textcolor{keywordtype}{short} num\_z\_elements[64];}
+\DoxyCodeLine{124     \textcolor{keywordtype}{short} ring\_difference;}
+\DoxyCodeLine{125     \textcolor{keywordtype}{short} storage\_order;}
+\DoxyCodeLine{126     \textcolor{keywordtype}{short} axial\_compression;}
+\DoxyCodeLine{127     \textcolor{keywordtype}{float} x\_resolution;}
+\DoxyCodeLine{128     \textcolor{keywordtype}{float} v\_resolution;}
+\DoxyCodeLine{129     \textcolor{keywordtype}{float} z\_resolution;}
+\DoxyCodeLine{130     \textcolor{keywordtype}{float} w\_resolution;}
+\DoxyCodeLine{131     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} gate\_duration;}
+\DoxyCodeLine{132     \textcolor{keywordtype}{int} r\_wave\_offset;}
+\DoxyCodeLine{133     \textcolor{keywordtype}{int} num\_accepted\_beats;}
+\DoxyCodeLine{134     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{135     \textcolor{keywordtype}{short} scan\_min;}
+\DoxyCodeLine{136     \textcolor{keywordtype}{short} scan\_max;}
+\DoxyCodeLine{137     \textcolor{keywordtype}{int} prompts;}
+\DoxyCodeLine{138     \textcolor{keywordtype}{int} delayed;}
+\DoxyCodeLine{139     \textcolor{keywordtype}{int} multiples;}
+\DoxyCodeLine{140     \textcolor{keywordtype}{int} net\_trues;}
+\DoxyCodeLine{141     \textcolor{keywordtype}{float} tot\_avg\_cor;}
+\DoxyCodeLine{142     \textcolor{keywordtype}{float} tot\_avg\_uncor;}
+\DoxyCodeLine{143     \textcolor{keywordtype}{int} total\_coin\_rate;}
+\DoxyCodeLine{144     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_start\_time;}
+\DoxyCodeLine{145     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_duration;}
+\DoxyCodeLine{146     \textcolor{keywordtype}{float} loss\_correction\_fctr;}
+\DoxyCodeLine{147     \textcolor{keywordtype}{float} uncor\_singles[128];}
+\DoxyCodeLine{148 \} \mbox{\hyperlink{structX3DSCAN__SUB}{Scan3D\_subheader}};}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSinoToEcat7Messenger}{GateSinoToEcat7Messenger}};}
+\DoxyCodeLine{152 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEcatSystem}{GateEcatSystem}};}
+\DoxyCodeLine{153 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToSinogram}{GateToSinogram}};}
+\DoxyCodeLine{154 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSinogram}{GateSinogram}};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSinoToEcat7}{GateSinoToEcat7}} :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{159 \{}
+\DoxyCodeLine{160 \textcolor{keyword}{public}:}
+\DoxyCodeLine{161   \mbox{\hyperlink{classGateSinoToEcat7}{GateSinoToEcat7}}(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,\mbox{\hyperlink{classGateEcatSystem}{GateEcatSystem}}* itsSystem,DigiMode digiMode);}
+\DoxyCodeLine{162   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSinoToEcat7_ac9d6209b3600758970206c13c131eb02}{\string~GateSinoToEcat7}}(); }
+\DoxyCodeLine{163   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{166   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_af3235d8b963de7acdfe15f1b06ee7cef}{RecordBeginOfAcquisition}}();}
+\DoxyCodeLine{168   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a254bb87b50226d93b0349f559e48ca07}{RecordEndOfAcquisition}}();}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{171   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_ade8aa336615263e2a7d5de0b266f765d}{RecordBeginOfRun}}(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{173   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a8566dd35c6d6f2dc2b388dea224b7d7d}{RecordEndOfRun}}(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175   \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event * ) \{\}}
+\DoxyCodeLine{176   \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event * ) \{\}}
+\DoxyCodeLine{177   \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * , \textcolor{keyword}{const} G4Step *) \{\}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{181   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_aef1c5cd7d703700bca88a96970902440}{RecordVoxels}}(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{184   \textcolor{keyword}{const}  G4String\& \mbox{\hyperlink{classGateSinoToEcat7_a6b6e749f80629f42a4ff42a1ca2c0d16}{GetFileName}}()                \{ \textcolor{keywordflow}{return} m\_fileName;       \};}
+\DoxyCodeLine{186   \textcolor{keywordtype}{void}   \mbox{\hyperlink{classGateSinoToEcat7_abf0935635fa55ca5108d2adb3854e248}{SetFileName}}(\textcolor{keyword}{const} G4String\& aName)     \{ m\_fileName = aName;      \};}
+\DoxyCodeLine{188   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a6365534a4470edbed9be122faa3b338f}{SetMashing}}(\textcolor{keyword}{const} G4int aNumber)          \{ m\_mashing = aNumber;     \};}
+\DoxyCodeLine{190   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a64767214ac8dca2cd167d2d04e1d32b5}{SetSpan}}(\textcolor{keyword}{const} G4int aNumber)             \{ m\_span = aNumber;        \};}
+\DoxyCodeLine{192   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a81d7aba4ca0955a40df0ceaaca62b84b}{SetMaxRingDiff}}(\textcolor{keyword}{const} G4int aNumber)      \{ m\_maxRingDiff = aNumber; \};}
+\DoxyCodeLine{194   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a9934bcf7c43fcac4f87f08f34341c631}{SetEcatCameraNumber}}(\textcolor{keyword}{const} G4int aNumber) \{ m\_ecatCameraNumber = aNumber; \} ;}
+\DoxyCodeLine{196   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_af3a39a715002b429ddc27be0d30c739a}{SetIsotopeCode}}(\textcolor{keyword}{const} G4String\& aName)    \{ m\_isotope\_code = aName;   \};}
+\DoxyCodeLine{198   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_ad7760864eb5d2e9577a76ba9f92f2763}{SetIsotopeHalflife}}(\textcolor{keyword}{const} G4double aNumber) \{ m\_isotope\_halflife = aNumber; \};}
+\DoxyCodeLine{200   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a64f0ada00be667fd4c5f2b01a1ea12e4}{SetIsotopeBranchingFraction}}(\textcolor{keyword}{const} G4double aNumber) \{ m\_isotope\_branching\_fraction = aNumber; \};}
+\DoxyCodeLine{201 \textcolor{preprocessor}{  \#ifdef GATE\_USE\_ECAT7}}
+\DoxyCodeLine{203   \textcolor{keywordtype}{void} SetEcatVersion(\textcolor{keyword}{const} G4int aNumber) \{ m\_ecatVersion = aNumber; \} ;}
+\DoxyCodeLine{204 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{209   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_a4b32ef88f4ba4f1a260dc42b78e21178}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{212   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_acd2c89899b1024fb665046643c287c4b}{FillMainHeader}}();}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{216   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSinoToEcat7_ac05bc8df2d281d5ef8f0800e35f4438e}{FillData}}(\mbox{\hyperlink{classGateSinogram}{GateSinogram}}* m\_sinogram);}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{keyword}{private}:}
+\DoxyCodeLine{219   \mbox{\hyperlink{classGateSinoToEcat7Messenger}{GateSinoToEcat7Messenger}}* m\_asciiMessenger;}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{222   \mbox{\hyperlink{classGateEcatSystem}{GateEcatSystem}} *m\_system;}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224   G4String m\_fileName;}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \textcolor{preprocessor}{  \#ifdef GATE\_USE\_ECAT7}}
+\DoxyCodeLine{227   \mbox{\hyperlink{structmatrix__file}{MatrixFile}} *m\_ptr;}
+\DoxyCodeLine{228 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{229   \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *mh;}
+\DoxyCodeLine{230   \mbox{\hyperlink{structX3DSCAN__SUB}{Scan3D\_subheader}} *sh;}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232   G4int                 m\_mashing;           }
+\DoxyCodeLine{233   G4int                 m\_span;              }
+\DoxyCodeLine{234   G4int                 m\_maxRingDiff;       }
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236   G4int                 m\_segmentNb;}
+\DoxyCodeLine{237   G4int                *m\_delRingMinSeg;}
+\DoxyCodeLine{238   G4int                *m\_delRingMaxSeg;}
+\DoxyCodeLine{239   G4int                *m\_zMinSeg;}
+\DoxyCodeLine{240   G4int                *m\_zMaxSeg;}
+\DoxyCodeLine{241   G4int                *m\_segment;}
+\DoxyCodeLine{242   G4int                 m\_ecatCameraNumber;   }
+\DoxyCodeLine{243   G4String              m\_isotope\_code;       }
+\DoxyCodeLine{244   G4double              m\_isotope\_halflife;   }
+\DoxyCodeLine{245   G4double              m\_isotope\_branching\_fraction; }
+\DoxyCodeLine{246   \textcolor{comment}{//\#ifdef GATE\_USE\_ECAT7}}
+\DoxyCodeLine{247   G4int                 m\_ecatVersion; }
+\DoxyCodeLine{248   \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{249   \textcolor{comment}{//std::ofstream               m\_headerFile;               //!< Output stream for the header file}}
+\DoxyCodeLine{250   \textcolor{comment}{//std::ofstream               m\_dataFile;                 //!< Output stream for the data file}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 \};}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

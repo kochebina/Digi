@@ -1,0 +1,78 @@
+\hypertarget{GateMixedDNAPhysics_8hh_source}{}\doxysection{Gate\+Mixed\+DNAPhysics.\+hh}
+\label{GateMixedDNAPhysics_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateMixedDNAPhysics.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateMixedDNAPhysics.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8   }
+\DoxyCodeLine{9   }
+\DoxyCodeLine{10   }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GateMixedDNAPhysics\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GateMixedDNAPhysics\_h 1}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4VModularPhysicsList.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4VModularPhysicsList.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ProcessManager.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ParticleTypes.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4VPhysicsConstructor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMixedDNAPhysicsMessenger}{GateMixedDNAPhysicsMessenger}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMixedDNAPhysics}{GateMixedDNAPhysics}}: \textcolor{keyword}{public} G4VModularPhysicsList}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateMixedDNAPhysics}{GateMixedDNAPhysics}}(G4String);}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMixedDNAPhysics}{\string~GateMixedDNAPhysics}}();}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32 \textcolor{comment}{//  void defineRegionsWithDNA(G4String);}}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} defineRegionsWithDNA(G4String nameRegions) \{}
+\DoxyCodeLine{34     regionsWithDNA.push\_back(nameRegions);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \}}
+\DoxyCodeLine{37   }
+\DoxyCodeLine{38 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{// these methods construct particles }}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} ConstructBosons();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} ConstructLeptons();}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} ConstructBarions();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{comment}{// these methods construct physics processes and register them}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} ConstructEM();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{comment}{// Construct particle and physics}}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} ConstructParticle();}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} ConstructProcess();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} setDefaultModelsInWorld(G4String);}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} setDNAInWorld();}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} inactivateDefaultModelsInRegion();}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} activateDNAInRegion();}
+\DoxyCodeLine{57     }
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \mbox{\hyperlink{classGateMixedDNAPhysicsMessenger}{GateMixedDNAPhysicsMessenger}} *pMessenger;   \textcolor{comment}{//}}
+\DoxyCodeLine{61   G4String nameprocessmixed;        \textcolor{comment}{//}}
+\DoxyCodeLine{62   std::vector <G4String> regionsWithDNA;   \textcolor{comment}{// vector for regions with DNA}}
+\DoxyCodeLine{63  }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+
+\end{DoxyCode}

@@ -1,0 +1,53 @@
+\hypertarget{GateThermalActorMessenger_8hh_source}{}\doxysection{Gate\+Thermal\+Actor\+Messenger.\+hh}
+\label{GateThermalActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateThermalActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateThermalActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class GateThermalActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)brief This class is the GateThermalActor messenger. }}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)author vesna.cuplov@gmail.com}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATETHERMALACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATETHERMALACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateThermalActor}{GateThermalActor}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateThermalActorMessenger}{GateThermalActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateThermalActorMessenger}{GateThermalActorMessenger}}(\mbox{\hyperlink{classGateThermalActor}{GateThermalActor}}* sensor);}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateThermalActorMessenger}{\string~GateThermalActorMessenger}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateThermalActorMessenger_a7ab9507d952581d5675b3181a22082ae}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateThermalActor}{GateThermalActor}} * pThermalActor;}
+\DoxyCodeLine{34   G4UIcmdWithADouble* pTimeCmd;}
+\DoxyCodeLine{35   G4UIcmdWithADouble* pDiffusivityCmd;}
+\DoxyCodeLine{36   G4UIcmdWithADouble* pBloodPerfusionRateCmd;}
+\DoxyCodeLine{37   G4UIcmdWithADouble* pBloodDensityCmd;}
+\DoxyCodeLine{38   G4UIcmdWithADouble* pBloodHeatCapacityCmd;}
+\DoxyCodeLine{39   G4UIcmdWithADouble* pTissueDensityCmd;}
+\DoxyCodeLine{40   G4UIcmdWithADouble* pTissueHeatCapacityCmd;}
+\DoxyCodeLine{41   G4UIcmdWithADouble* pScaleCmd;}
+\DoxyCodeLine{42   G4UIcmdWithAnInteger* pNumTimeFramesCmd;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATETHERMALACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 }
+
+\end{DoxyCode}

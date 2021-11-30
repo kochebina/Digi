@@ -1,0 +1,59 @@
+\hypertarget{GateBoxReplicaPlacement_8hh_source}{}\doxysection{Gate\+Box\+Replica\+Placement.\+hh}
+\label{GateBoxReplicaPlacement_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateBoxReplicaPlacement.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateBoxReplicaPlacement.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateBoxReplicaInserter\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateBoxReplicaInserter\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateBoxReplica.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBoxReplicaPlacement}{GateBoxReplicaPlacement}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26      \mbox{\hyperlink{classGateBoxReplicaPlacement}{GateBoxReplicaPlacement}}(\mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}}* itsParallelBeamInserter,}
+\DoxyCodeLine{27                               \textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{28                               G4double itsLength,G4double itsWidth,G4double itsHeight,}
+\DoxyCodeLine{29                   G4double itsDelta,EAxis itsAxis,G4int itsReplicaNb);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateBoxReplicaPlacement}{\string~GateBoxReplicaPlacement}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ConstructOwnPhysicalVolume(G4bool flagUpdateOnly);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Update(\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{36                      G4double itslength,G4double itsHeight,G4double itsWidth,}
+\DoxyCodeLine{37                  G4double itsDelta,G4int itsReplicaNb);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateBox}{GateBox}}* GetBoxCreator()\textcolor{keyword}{ const}}
+\DoxyCodeLine{40 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateBox}{GateBox}}*) \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}(); \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}} *m\_ParallelBeamInserter;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     G4String          m\_materialName;}
+\DoxyCodeLine{46     G4double          m\_Delta,m\_Length,m\_Height,m\_Width;}
+\DoxyCodeLine{47     EAxis             m\_Axis;}
+\DoxyCodeLine{48     G4int             m\_ReplicaNb;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateBoxReplica}{GateBoxReplica}}*   m\_Replica;}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

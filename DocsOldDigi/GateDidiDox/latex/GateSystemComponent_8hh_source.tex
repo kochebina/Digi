@@ -1,0 +1,271 @@
+\hypertarget{GateSystemComponent_8hh_source}{}\doxysection{Gate\+System\+Component.\+hh}
+\label{GateSystemComponent_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponent.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponent.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSystemComponent\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSystemComponent\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateSystemComponentList.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterList.hh"{}}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponentMessenger}{GateSystemComponentMessenger}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTranslationMove}{GateTranslationMove}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRotationMove}{GateRotationMove}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}};}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLinearRepeater}{GateLinearRepeater}};}
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAngularRepeater}{GateAngularRepeater}};}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGenericRepeater}{GateGenericRepeater}};}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSphereRepeater}{GateSphereRepeater}};}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOrbitingMove}{GateOrbitingMove}};}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEccentRotMove}{GateEccentRotMove}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{71 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73   \textcolor{keyword}{public}:}
+\DoxyCodeLine{80     \mbox{\hyperlink{classGateSystemComponent_a1953aa611af2e5258dab3b63e679deb4}{GateSystemComponent}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{81                         \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* itsMotherComponent,}
+\DoxyCodeLine{82                 \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* itsSystem);}
+\DoxyCodeLine{84     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemComponent_a8a597bf610e3e2f99cb6bcd23f410519}{\string~GateSystemComponent}}();}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{86  }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{95     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemComponent_a38422ecd55419e6fe46de983bda6d0ed}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{102     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* \mbox{\hyperlink{classGateSystemComponent_a872d6da9e0e664cc24ca3a6508df5fe6}{GetSystem}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{103 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSystemComponent_a2909c2632c9d7a230758694e9156750f}{m\_system}}; \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateSystemComponent_a0c3344c0ae303eb467127eabfbfe4ba8}{GetMotherComponent}}()\textcolor{keyword}{ const }}
+\DoxyCodeLine{107 \textcolor{keyword}{      }\{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSystemComponent_aac9bafcaf62a39a045cb17b40e8adaa3}{m\_motherComponent}};\}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemComponent_aa7b4a281c8e375f8f6f08862613a5677}{SetMotherComponent}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* aComponent)}
+\DoxyCodeLine{111       \{  \mbox{\hyperlink{classGateSystemComponent_aac9bafcaf62a39a045cb17b40e8adaa3}{m\_motherComponent}} = aComponent; \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     G4bool \mbox{\hyperlink{classGateSystemComponent_ab1de6103dd0217adbeff075583c01b75}{IsActive}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{115 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}{m\_creator}}!=0);\}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{118     \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateSystemComponent_ae42a7974fb3a8dd952a7dd62e8359996}{ComputeOutputOffset}}();}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{keywordtype}{void} SetminSectorDiff( G4int aI )\{ m\_minSectorDiff = aI; \};}
+\DoxyCodeLine{123     G4int GetminSectorDiff()\{ \textcolor{keywordflow}{return} m\_minSectorDiff; \};}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} setInCoincidenceWith(G4String );    G4int IsInCoincidenceWith(G4String );}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} SetRingID(G4int aR )\{ m\_ringID = aR;\};    G4int GetRingID()\{ \textcolor{keywordflow}{return} m\_ringID;\};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{132     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateSystemComponent_abc9aa14eb5143d0f70fc959f62ee8f71}{GetCreator}}()\textcolor{keyword}{ const     }}
+\DoxyCodeLine{133 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}{m\_creator}}; \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{138     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemComponent_aef02bce7c6407b301f557c266767069b}{SetCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{146     G4bool \mbox{\hyperlink{classGateSystemComponent_a3b50fae67122e4bdd591c57994b05cef}{CheckConnectionToCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator);}
+\DoxyCodeLine{147     }
+\DoxyCodeLine{148     }
+\DoxyCodeLine{153     \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateSystemComponent_a1548a571dbb344360098842f178a3e2e}{IsValidAttachmentRequest}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}*}
+\DoxyCodeLine{154     anCreator) \textcolor{keyword}{const};}
+\DoxyCodeLine{155    }
+\DoxyCodeLine{157     \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSystemComponent_a3b81d0892ed1c1ede7991a420887653a}{GetVolumeNumber}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{161     \textcolor{keyword}{template} <\textcolor{keyword}{class} C>}
+\DoxyCodeLine{162     C* \mbox{\hyperlink{classGateSystemComponent_ad63ff4868a4c119b72b87dc269a660d6}{FindMove}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{166     \textcolor{keyword}{template} <\textcolor{keyword}{class} C>}
+\DoxyCodeLine{167     C* \mbox{\hyperlink{classGateSystemComponent_a1cdad2011826b43616ca50d2e953eb75}{FindRepeater}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{176      \textcolor{keyword}{virtual} G4VPhysicalVolume* \mbox{\hyperlink{classGateSystemComponent_a46de5d871342c1af68c67716a7c429b7}{GetPhysicalVolume}}(\textcolor{keywordtype}{size\_t} copyNumber=0) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{178      \textcolor{keyword}{virtual} G4ThreeVector  \mbox{\hyperlink{classGateSystemComponent_ab1a533febf764c37ddc04bc54e01b7d0}{GetCurrentTranslation}}(\textcolor{keywordtype}{size\_t} copyNumber=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{180      \textcolor{keyword}{virtual} G4RotationMatrix*     \mbox{\hyperlink{classGateSystemComponent_af93fdb1e0b29e8d3d08aa5660f515df9}{GetCurrentRotation}}(\textcolor{keywordtype}{size\_t} copyNumber=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{181     }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 }
+\DoxyCodeLine{189     \mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}}* \mbox{\hyperlink{classGateSystemComponent_ad507c7de1b88077f1f88bc62b4f0f85d}{FindPlacementMove}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{198     \mbox{\hyperlink{classGateTranslationMove}{GateTranslationMove}}* \mbox{\hyperlink{classGateSystemComponent_ab49119262e7929986c527175c24bea62}{FindTranslationMove}}() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{200     G4ThreeVector \mbox{\hyperlink{classGateSystemComponent_aeba4e9ac59f180288758165012c9136f}{GetTranslationVelocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 }
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 }
+\DoxyCodeLine{209     \mbox{\hyperlink{classGateRotationMove}{GateRotationMove}}* \mbox{\hyperlink{classGateSystemComponent_a7ddfce1bc235f3f23a17ca9f651e6d98}{FindRotationMove}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{211     G4double \mbox{\hyperlink{classGateSystemComponent_a09f1229beb100098bbb9afcf28d65104}{GetRotationVelocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{212     }
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 }
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 }
+\DoxyCodeLine{220     \mbox{\hyperlink{classGateOrbitingMove}{GateOrbitingMove}}* \mbox{\hyperlink{classGateSystemComponent_ac33066580225cc4d8d86ba830c6dc09f}{FindOrbitingMove}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{222     G4double \mbox{\hyperlink{classGateSystemComponent_afc72a6765f2668083552764d326d8d93}{GetOrbitingVelocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{223  }
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 }
+\DoxyCodeLine{228     \mbox{\hyperlink{classGateEccentRotMove}{GateEccentRotMove}}* \mbox{\hyperlink{classGateSystemComponent_a2eb402a70571f58ae0b80c59a0414098}{FindEccentRotMove}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{231     G4double \mbox{\hyperlink{classGateSystemComponent_adece57f103f32c014bc2280430b15656}{GetEccentRotVelocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{234     \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateSystemComponent_acaee8e175ff9808fb6f3899c56ab265d}{GetEccentRotShift}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{235     }
+\DoxyCodeLine{236     }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 }
+\DoxyCodeLine{244     \mbox{\hyperlink{classGateLinearRepeater}{GateLinearRepeater}}* \mbox{\hyperlink{classGateSystemComponent_af973647f34da9140da9f96b359e6870f}{FindLinearRepeater}}();}
+\DoxyCodeLine{246     G4int \mbox{\hyperlink{classGateSystemComponent_a92562dc8580d86df0dddfbbaa675ca48}{GetLinearRepeatNumber}}();}
+\DoxyCodeLine{248     \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateSystemComponent_a9674c3ecb7fa62ea0b4249c9bd8c2690}{GetLinearRepeatVector}}();}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 }
+\DoxyCodeLine{257     \mbox{\hyperlink{classGateAngularRepeater}{GateAngularRepeater}}* \mbox{\hyperlink{classGateSystemComponent_a39b698fc15b822ca91fbfd001805368a}{FindAngularRepeater}}();}
+\DoxyCodeLine{259     G4int \mbox{\hyperlink{classGateSystemComponent_ac42a9296a59111b341516618c56ca859}{GetAngularRepeatNumber}}();}
+\DoxyCodeLine{261     G4double \mbox{\hyperlink{classGateSystemComponent_a56f7b97d8b1ba992e8209ce2c46d1034}{GetAngularRepeatPitch}}();}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{264     G4int \mbox{\hyperlink{classGateSystemComponent_acfebf4f5ba13d02cd5425f3b8914a4fc}{GetAngularModuloNumber}}();}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{267     G4double \mbox{\hyperlink{classGateSystemComponent_a78234ca23a017f30a7cfac0d5f6a18af}{GetAngularRepeatZShift1}}();}
+\DoxyCodeLine{268     G4double GetAngularRepeatZShift2();}
+\DoxyCodeLine{269     G4double GetAngularRepeatZShift3();}
+\DoxyCodeLine{270     G4double GetAngularRepeatZShift4();}
+\DoxyCodeLine{271     G4double GetAngularRepeatZShift5();}
+\DoxyCodeLine{272     G4double GetAngularRepeatZShift6();}
+\DoxyCodeLine{273     G4double GetAngularRepeatZShift7();}
+\DoxyCodeLine{274     G4double GetAngularRepeatZShift8();}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 }
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 }
+\DoxyCodeLine{281     \mbox{\hyperlink{classGateSphereRepeater}{GateSphereRepeater}}* \mbox{\hyperlink{classGateSystemComponent_a2836fd18d67d8052f423be0af50b9534}{FindSphereRepeater}}();}
+\DoxyCodeLine{283     G4double \mbox{\hyperlink{classGateSystemComponent_a2d6455c46e26b4f940d5f9cd165874f4}{GetSphereAxialRepeatPitch}}();}
+\DoxyCodeLine{285     G4double \mbox{\hyperlink{classGateSystemComponent_a2134eeeeb56c55b99e5f8febb8f88de3}{GetSphereAzimuthalRepeatPitch}}();}
+\DoxyCodeLine{287     G4int \mbox{\hyperlink{classGateSystemComponent_a858b8d0f75baccf2a543f112097c00e7}{GetSphereAxialRepeatNumber}}();}
+\DoxyCodeLine{289     G4int \mbox{\hyperlink{classGateSystemComponent_ab24d6504810860981eb0c5dca1eb3ccd}{GetSphereAzimuthalRepeatNumber}}();}
+\DoxyCodeLine{291     G4double \mbox{\hyperlink{classGateSystemComponent_a890f8a27b889b83d29d45d267695a2fd}{GetSphereRadius}}();}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 }
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296 }
+\DoxyCodeLine{298 }
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 }
+\DoxyCodeLine{303     \mbox{\hyperlink{classGateGenericRepeater}{GateGenericRepeater}}* \mbox{\hyperlink{classGateSystemComponent_a1c0e963e878450b9d985620fadcf93cc}{FindGenericRepeater}}();}
+\DoxyCodeLine{305     G4int \mbox{\hyperlink{classGateSystemComponent_a0792316e6f6145b52bae6122d7d349c3}{GetGenericRepeatNumber}}();}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309     }
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 }
+\DoxyCodeLine{314     \textcolor{keyword}{enum} \mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}} \{}
+\DoxyCodeLine{315         align\_right=-\/1,       }
+\DoxyCodeLine{316         align\_center = 0,}
+\DoxyCodeLine{317         align\_left=+1,}
+\DoxyCodeLine{318     align\_unknown=999}
+\DoxyCodeLine{319       \};}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{338     G4double \mbox{\hyperlink{classGateSystemComponent_abc5b9fc20eccfd7bfb7bff407df7b9d8}{ComputeOffset}}(\textcolor{keywordtype}{size\_t} axis,\mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}} alignment=align\_center,\mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}} referenceAlignment=align\_center) \textcolor{keyword}{const};}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342 }
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 }
+\DoxyCodeLine{349     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSystemComponent_a1464bdbe4fa798a2005b9d461914bebf}{GetTreeDepth}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{350 \textcolor{keyword}{    }\{  \textcolor{keywordflow}{return} 1 + \mbox{\hyperlink{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}{m\_childComponentList}}-\/>\mbox{\hyperlink{classGateSystemComponentList_a1e58ecbafc586ca52a11780df5216437}{GetMaxChildTreeDepth}}(); \}}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{353     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSystemComponent_aba54330ab75586d03cde16ce096a4a31}{GetChildNumber}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{354 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}{m\_childComponentList}}-\/>GetChildNumber(); \}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{357     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateSystemComponent_acf49f022e70881968ee5ceb260c37051}{GetChildComponent}}(\textcolor{keywordtype}{size\_t} i)\textcolor{keyword}{ const }}
+\DoxyCodeLine{358 \textcolor{keyword}{      }\{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}{m\_childComponentList}}-\/>GetChildComponent(i); \}}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{361     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemComponent_a15252b6ceb1209f777d718aa59a0d2ab}{InsertChildComponent}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* aComponent)}
+\DoxyCodeLine{362     \{ \mbox{\hyperlink{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}{m\_childComponentList}}-\/>InsertChildComponent(aComponent); \}}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{365     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSystemComponent_ad203d55698a87ba2c0b64cf4f086db03}{GetActiveChildNumber}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{366 \textcolor{keyword}{    }\{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}{m\_childComponentList}}-\/>\mbox{\hyperlink{classGateSystemComponentList_a5b733ba62b9cfa77063d23d37d07168b}{GetActiveChildNumber}}(); \}}
+\DoxyCodeLine{367       }
+\DoxyCodeLine{369     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateSystemComponent_a3b105a0be26e8294c8415df4682fa34d}{FindSystemComponent}}(\textcolor{keyword}{const} G4String\& componentName);}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{375     \mbox{\hyperlink{classGateVSystem}{GateVSystem}}                      *\mbox{\hyperlink{classGateSystemComponent_a2909c2632c9d7a230758694e9156750f}{m\_system}};         }
+\DoxyCodeLine{376     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}               *\mbox{\hyperlink{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}{m\_creator}};           }
+\DoxyCodeLine{377     \mbox{\hyperlink{classGateSystemComponentMessenger}{GateSystemComponentMessenger}}    *\mbox{\hyperlink{classGateSystemComponent_ab62ae71494114e07f669d43985368d58}{m\_messenger}};       }
+\DoxyCodeLine{378     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}              *\mbox{\hyperlink{classGateSystemComponent_aac9bafcaf62a39a045cb17b40e8adaa3}{m\_motherComponent}};    }
+\DoxyCodeLine{379     \mbox{\hyperlink{classGateSystemComponentList}{GateSystemComponentList}}         *\mbox{\hyperlink{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}{m\_childComponentList}}; }
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381     G4int m\_minSectorDiff;}
+\DoxyCodeLine{382     std::vector<G4String> m\_coincidence\_rsector; \textcolor{comment}{// for rsector only }}
+\DoxyCodeLine{383     G4int m\_ringID;}
+\DoxyCodeLine{384 \};}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387 \textcolor{comment}{// Tenplate for finding moves of a specific type: the function returns a non-\/zero pointer}}
+\DoxyCodeLine{388 \textcolor{comment}{// only if a move of the requested type was found in the creator's move list}}
+\DoxyCodeLine{389 \textcolor{keyword}{template} <\textcolor{keyword}{class} C>}
+\DoxyCodeLine{390 C* \mbox{\hyperlink{classGateSystemComponent_ad63ff4868a4c119b72b87dc269a660d6}{GateSystemComponent::FindMove}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{391 \textcolor{keyword}{}\{}
+\DoxyCodeLine{392       \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}{m\_creator}})}
+\DoxyCodeLine{393         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{394       \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* aList = \mbox{\hyperlink{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}{m\_creator}}-\/>\mbox{\hyperlink{classGateVVolume_a13f633c4bd6864ca5c028d71c93a2222}{GetMoveList}}();}
+\DoxyCodeLine{395       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i < aList-\/>size() ; i++)}
+\DoxyCodeLine{396         \textcolor{keywordflow}{if} ( \textcolor{keyword}{dynamic\_cast<}C*\textcolor{keyword}{>}(aList-\/>GetRepeater(i)) )}
+\DoxyCodeLine{397           \textcolor{keywordflow}{return} \textcolor{keyword}{dynamic\_cast<}C*\textcolor{keyword}{>}(aList-\/>GetRepeater(i));}
+\DoxyCodeLine{398       \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{399 \}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 \textcolor{comment}{// Tenplate for finding repeaters of a specific type: the function returns a non-\/zero pointer}}
+\DoxyCodeLine{403 \textcolor{comment}{// only if a repeater of the requested type was found in the creator's repeater list}}
+\DoxyCodeLine{404 \textcolor{keyword}{template} <\textcolor{keyword}{class} C>}
+\DoxyCodeLine{405 C* \mbox{\hyperlink{classGateSystemComponent_a1cdad2011826b43616ca50d2e953eb75}{GateSystemComponent::FindRepeater}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{406 \textcolor{keyword}{}\{}
+\DoxyCodeLine{407       \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}{m\_creator}})}
+\DoxyCodeLine{408         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{409       \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* aList = \mbox{\hyperlink{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}{m\_creator}}-\/>\mbox{\hyperlink{classGateVVolume_abc1a6a3592a4c24ac4a0088a9df9b13c}{GetRepeaterList}}();}
+\DoxyCodeLine{410       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i < aList-\/>size() ; i++)}
+\DoxyCodeLine{411         \textcolor{keywordflow}{if} ( \textcolor{keyword}{dynamic\_cast<}C*\textcolor{keyword}{>}(aList-\/>GetRepeater(i)) )}
+\DoxyCodeLine{412           \textcolor{keywordflow}{return} \textcolor{keyword}{dynamic\_cast<}C*\textcolor{keyword}{>}(aList-\/>GetRepeater(i));}
+\DoxyCodeLine{413       \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{414 \}}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{419 }
+
+\end{DoxyCode}

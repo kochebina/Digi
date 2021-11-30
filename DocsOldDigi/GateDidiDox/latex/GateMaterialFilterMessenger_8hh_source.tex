@@ -1,0 +1,40 @@
+\hypertarget{GateMaterialFilterMessenger_8hh_source}{}\doxysection{Gate\+Material\+Filter\+Messenger.\+hh}
+\label{GateMaterialFilterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMaterialFilterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMaterialFilterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GATEMATFILTERMESSENGER\_HH}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GATEMATFILTERMESSENGER\_HH}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialFilter}{GateMaterialFilter}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialFilterMessenger}{GateMaterialFilterMessenger}} : \textcolor{keyword}{public}  G4UImessenger}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateMaterialFilterMessenger}{GateMaterialFilterMessenger}}(\mbox{\hyperlink{classGateMaterialFilter}{GateMaterialFilter}}* matFilter);}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMaterialFilterMessenger}{\string~GateMaterialFilterMessenger}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateMaterialFilter}{GateMaterialFilter}} * pMaterialFilter;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   G4UIcmdWithAString* pAddMaterialCmd;}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEMATFILTERMESSENGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

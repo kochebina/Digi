@@ -1,0 +1,536 @@
+\hypertarget{classMetaCommand}{}\doxysection{Meta\+Command Class Reference}
+\label{classMetaCommand}\index{MetaCommand@{MetaCommand}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMetaCommand_1_1Field}{Field}}
+\item 
+struct \mbox{\hyperlink{structMetaCommand_1_1Option}{Option}}
+\item 
+struct \mbox{\hyperlink{structMetaCommand_1_1ParameterGroup}{Parameter\+Group}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a2cf7df8da83611e1a9acfaf43837d344}\label{classMetaCommand_a2cf7df8da83611e1a9acfaf43837d344}} 
+enum {\bfseries Data\+Enum\+Type} \{ {\bfseries DATA\+\_\+\+NONE}
+, {\bfseries DATA\+\_\+\+IN}
+, {\bfseries DATA\+\_\+\+OUT}
+ \}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a2ad1e38fef45cdf0ee0995751a220c43}\label{classMetaCommand_a2ad1e38fef45cdf0ee0995751a220c43}} 
+enum {\bfseries Type\+Enum\+Type} \{ \newline
+{\bfseries INT}
+, {\bfseries FLOAT}
+, {\bfseries CHAR}
+, {\bfseries STRING}
+, \newline
+{\bfseries LIST}
+, {\bfseries FLAG}
+, {\bfseries BOOL}
+, {\bfseries IMAGE}
+, \newline
+{\bfseries ENUM}
+, {\bfseries FILE}
+ \}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a87d908008ef9b1af1a68935c35473c0e}\label{classMetaCommand_a87d908008ef9b1af1a68935c35473c0e}} 
+typedef METAIO\+\_\+\+STL\+::vector$<$ \mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} $>$ {\bfseries Option\+Vector}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a20d28fb781995a4edb6e9c53f7e98fe2}\label{classMetaCommand_a20d28fb781995a4edb6e9c53f7e98fe2}} 
+typedef METAIO\+\_\+\+STL\+::vector$<$ \mbox{\hyperlink{structMetaCommand_1_1ParameterGroup}{Parameter\+Group}} $>$ {\bfseries Parameter\+Group\+Vector}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaCommand_ac12463aca14dbc831e459b0ef3262150}\label{classMetaCommand_ac12463aca14dbc831e459b0ef3262150}} 
+bool {\bfseries Set\+Option} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} option)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a100fc1d133a11f5b77d756ad2743b189}\label{classMetaCommand_a100fc1d133a11f5b77d756ad2743b189}} 
+bool {\bfseries Set\+Option} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string tag, bool required, METAIO\+\_\+\+STL\+::string description, METAIO\+\_\+\+STL\+::vector$<$ \mbox{\hyperlink{structMetaCommand_1_1Field}{Field}} $>$ fields)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a6f44796ba73726516aadd14f95ada912}\label{classMetaCommand_a6f44796ba73726516aadd14f95ada912}} 
+bool {\bfseries Set\+Option} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string tag, bool required, METAIO\+\_\+\+STL\+::string description, Type\+Enum\+Type type=FLAG, METAIO\+\_\+\+STL\+::string def\+Val=\char`\"{}\char`\"{}, Data\+Enum\+Type external\+Data=DATA\+\_\+\+NONE)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a01bbb6cb0883250e94924ebe13ec81d0}{Add\+Field}} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string description, Type\+Enum\+Type type, Data\+Enum\+Type external\+Data=DATA\+\_\+\+NONE, METAIO\+\_\+\+STL\+::string range\+Min=\char`\"{}\char`\"{}, METAIO\+\_\+\+STL\+::string range\+Max=\char`\"{}\char`\"{})
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a900c29d61dcb0b77f6d74dee82abcc85}{Add\+Field}} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string description, Type\+Enum\+Type type, bool external\+Data)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_aea581d899cf0075f52f6a315f4e450f6}{Add\+Option\+Field}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string name, Type\+Enum\+Type type, bool required=true, METAIO\+\_\+\+STL\+::string def\+Val=\char`\"{}\char`\"{}, METAIO\+\_\+\+STL\+::string description=\char`\"{}\char`\"{}, Data\+Enum\+Type external\+Data=DATA\+\_\+\+NONE)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_ace3aca1edda65ba6edf1d8b35a42ef41}{Set\+Option\+Range}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string range\+Min, METAIO\+\_\+\+STL\+::string range\+Max)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_ad2b4ceb78dde5825916e4028430f5c2f}{Set\+Option\+Enumerations}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string option\+Enums)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a0f049fbd5a5144cee11945b8328a5f18}{Set\+Option\+Long\+Tag}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string long\+Tag)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a527baa1cf72233a727b130f4809aae76}{Set\+Option\+Label}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string label)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_ab5c29d8090ec87e9b0a9b53ded382e0a}{Set\+Parameter\+Group}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string group\+Name, METAIO\+\_\+\+STL\+::string group\+Description=\char`\"{}\char`\"{}, bool advanced=false)
+\item 
+void \mbox{\hyperlink{classMetaCommand_a7009dd04d1863bd5e9adb171f36e9e75}{Set\+Option\+Complete}} (METAIO\+\_\+\+STL\+::string option\+Name, bool complete)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_ac2c0ccf2fdcd90ca4737dfe2e1035227}{Get\+Value\+As\+Bool}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a4a03d1cf2440a6135a7eba193fa09dc5}{Get\+Value\+As\+Bool}} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} option, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+float \mbox{\hyperlink{classMetaCommand_a6100c8469640e7e0de3325f71c2a170e}{Get\+Value\+As\+Float}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+float \mbox{\hyperlink{classMetaCommand_a451a13375bde7601147391b978a35cb8}{Get\+Value\+As\+Float}} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} option, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+int \mbox{\hyperlink{classMetaCommand_a3735f3a332e05ce1ae1d42178809f036}{Get\+Value\+As\+Int}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+int \mbox{\hyperlink{classMetaCommand_a386b8947dd8f4326719f1df1252b0579}{Get\+Value\+As\+Int}} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} option, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_a156c11ce6ab517b72351a13ca8972fd3}{Get\+Value\+As\+String}} (METAIO\+\_\+\+STL\+::string option\+Name, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_a89a480f282a0d8ac2770f98d97dd6b9e}{Get\+Value\+As\+String}} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} option, METAIO\+\_\+\+STL\+::string field\+Name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classMetaCommand_af4669faa5f9a7f299ddb2b624bead589}\label{classMetaCommand_af4669faa5f9a7f299ddb2b624bead589}} 
+METAIO\+\_\+\+STL\+::list$<$ METAIO\+\_\+\+STL\+::string $>$ {\bfseries Get\+Value\+As\+List} (METAIO\+\_\+\+STL\+::string option\+Name)
+\item 
+METAIO\+\_\+\+STL\+::list$<$ METAIO\+\_\+\+STL\+::string $>$ \mbox{\hyperlink{classMetaCommand_a4bffa13624129d624bd3738bca7871ca}{Get\+Value\+As\+List}} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} option)
+\item 
+\mbox{\Hypertarget{classMetaCommand_abea3f7d79c5432dc50f9756d2c7ee712}\label{classMetaCommand_abea3f7d79c5432dc50f9756d2c7ee712}} 
+bool {\bfseries Get\+Option\+Was\+Set} (METAIO\+\_\+\+STL\+::string option\+Name)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a830d236562bf2d595c49acc092a60117}\label{classMetaCommand_a830d236562bf2d595c49acc092a60117}} 
+bool {\bfseries Get\+Option\+Was\+Set} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} option)
+\item 
+void \mbox{\hyperlink{classMetaCommand_ac02c0659fb0df37c3d1a7238b5dc0646}{List\+Options}} ()
+\item 
+void \mbox{\hyperlink{classMetaCommand_a5df8987779820bd3a2901bcfce6ba3f0}{List\+Options\+XML}} ()
+\item 
+void \mbox{\hyperlink{classMetaCommand_af27775ce77d0c9f50182339f7506f1d7}{List\+Options\+Slicer\+XML}} ()
+\item 
+void \mbox{\hyperlink{classMetaCommand_ab165fe31670f358be9e619192b42c681}{List\+Options\+Simplified}} (bool extended=true)
+\item 
+\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} $\ast$ \mbox{\hyperlink{classMetaCommand_aa76b052092b8e51510371ac050e1d029}{Get\+Option\+By\+Minus\+Tag}} (METAIO\+\_\+\+STL\+::string minus\+Tag)
+\item 
+\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} $\ast$ \mbox{\hyperlink{classMetaCommand_adfee8251193ddfa212fbbc2e85dd2f1d}{Get\+Option\+By\+Tag}} (METAIO\+\_\+\+STL\+::string minus\+Tag)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a6d302d658bda5ade5db4346fdcf02dd1}{Option\+Exists\+By\+Minus\+Tag}} (METAIO\+\_\+\+STL\+::string minus\+Tag)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a37eb26d611c5522fc7c84b5ddd0bf027}{Parse}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+bool \mbox{\hyperlink{classMetaCommand_afad91b056dd207c644fe7296050faab0}{Parse\+XML}} (const char $\ast$buffer)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_ab5f312cb33b75f9ea4190df1b59791ee}{Export\+GAD}} (bool dynamic=false)
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_ac606abe0c132265682fb7582757f89df}{Extract\+Date\+From\+CVS}} (METAIO\+\_\+\+STL\+::string date)
+\item 
+\mbox{\Hypertarget{classMetaCommand_ae52b6b0b719e390073bd4d807d3ef3e1}\label{classMetaCommand_ae52b6b0b719e390073bd4d807d3ef3e1}} 
+void {\bfseries Set\+Date\+From\+CVS} (METAIO\+\_\+\+STL\+::string date)
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_a77da757dea212909fca0b6dd823f61e9}{Extract\+Version\+From\+CVS}} (METAIO\+\_\+\+STL\+::string version)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a0b9a14fa9a451818a4d6c9ca4e2acdbc}\label{classMetaCommand_a0b9a14fa9a451818a4d6c9ca4e2acdbc}} 
+void {\bfseries Set\+Version\+From\+CVS} (METAIO\+\_\+\+STL\+::string version)
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_a662075ecad6e74ca05d77789c8db2326}{Get\+Version}} ()
+\item 
+\mbox{\Hypertarget{classMetaCommand_a272b87188034432fa5f7d792365595d9}\label{classMetaCommand_a272b87188034432fa5f7d792365595d9}} 
+void {\bfseries Set\+Version} (const char $\ast$version)
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_ab9f5967bab54a907db3e0553c97d7f9a}{Get\+Application\+Name}} ()
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_ae02a295e71b9f75e068f7256877aa710}{Get\+Date}} ()
+\item 
+\mbox{\Hypertarget{classMetaCommand_a399dd7ab1cc103c2442f7adc4f4f892e}\label{classMetaCommand_a399dd7ab1cc103c2442f7adc4f4f892e}} 
+void {\bfseries Set\+Date} (const char $\ast$date)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a8e1d589699f8b08ff1e7492dce7e9b55}\label{classMetaCommand_a8e1d589699f8b08ff1e7492dce7e9b55}} 
+void {\bfseries Set\+Name} (const char $\ast$name)
+\item 
+void \mbox{\hyperlink{classMetaCommand_aae3741349cb2f09050a2199a943413d3}{Set\+Description}} (const char $\ast$description)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a8627f9fb6b7c42eef3e0ad83c2959cd1}\label{classMetaCommand_a8627f9fb6b7c42eef3e0ad83c2959cd1}} 
+METAIO\+\_\+\+STL\+::string {\bfseries Get\+Description} () const
+\item 
+void \mbox{\hyperlink{classMetaCommand_aee905037f4a084e9cc502b1d88bab3fb}{Set\+Author}} (const char $\ast$author)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a4e67cdd72c6ad14801a11e96a74c7a31}\label{classMetaCommand_a4e67cdd72c6ad14801a11e96a74c7a31}} 
+METAIO\+\_\+\+STL\+::string {\bfseries Get\+Author} () const
+\item 
+void \mbox{\hyperlink{classMetaCommand_a93b5a524fda1bca56d742ed755843ed3}{Set\+Acknowledgments}} (const char $\ast$acknowledgments)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a1181b27fd992122d2d96018ac04ee1b8}\label{classMetaCommand_a1181b27fd992122d2d96018ac04ee1b8}} 
+METAIO\+\_\+\+STL\+::string {\bfseries Get\+Acknowledgments} () const
+\item 
+void \mbox{\hyperlink{classMetaCommand_ac9a91a58918cde863077bb847693c1ae}{Set\+Category}} (const char $\ast$category)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a7efbb189717358d6581a4b6559c84acc}\label{classMetaCommand_a7efbb189717358d6581a4b6559c84acc}} 
+METAIO\+\_\+\+STL\+::string {\bfseries Get\+Category} () const
+\item 
+long \mbox{\hyperlink{classMetaCommand_a54711041d7253e22a7188a25fbd6bb36}{Get\+Option\+Id}} (\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} $\ast$option)
+\item 
+const Option\+Vector \& \mbox{\hyperlink{classMetaCommand_aebcf550ac8474aea43625f462b2871b4}{Get\+Options}} ()
+\item 
+const Option\+Vector \& \mbox{\hyperlink{classMetaCommand_a2b588d59aa64f00451ffc916befcc9e2}{Get\+Parsed\+Options}} ()
+\item 
+\mbox{\Hypertarget{classMetaCommand_a6da2bf5f50fe0d38d5f778f4234e9a0f}\label{classMetaCommand_a6da2bf5f50fe0d38d5f778f4234e9a0f}} 
+void {\bfseries Set\+Help\+Call\+Back} (void($\ast$new\+Help\+Call\+Back)(void))
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_a7cc8cd9d33397c18e897f86dba0a0a9e}{Type\+To\+String}} (Type\+Enum\+Type type)
+\item 
+Type\+Enum\+Type \mbox{\hyperlink{classMetaCommand_aa5496556fd5f73c296531be785accfc9}{String\+To\+Type}} (const char $\ast$type)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a188d83468e0d609692805565d03735bc}\label{classMetaCommand_a188d83468e0d609692805565d03735bc}} 
+void {\bfseries Set\+Verbose} (bool verbose)
+\item 
+\mbox{\Hypertarget{classMetaCommand_a9b1424e14339ff0e7520935d3eed902c}\label{classMetaCommand_a9b1424e14339ff0e7520935d3eed902c}} 
+void {\bfseries Set\+Parse\+Failure\+On\+Unrecognized\+Option} (bool fail)
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a901ac9f89f833bab95d2e8514bb81d40}{Got\+XMLFlag}} ()
+\item 
+void \mbox{\hyperlink{classMetaCommand_a8e77220fbbd11177c03ddd9d1a3c8097}{Disable\+Deprecated\+Warnings}} ()
+\item 
+bool \mbox{\hyperlink{classMetaCommand_a54fcd84385da8e909f8ab6107ccf6f81}{Load\+Arguments\+From\+XML}} (const char $\ast$filename, bool create\+Missing\+Arguments=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+METAIO\+\_\+\+STL\+::string \mbox{\hyperlink{classMetaCommand_ad275a0f2652e11a8b3c96353e45be1c9}{Get\+XML}} (const char $\ast$buffer, const char $\ast$desc, unsigned long pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a50c56b5fc12dff054c63525256798ddc}\label{classMetaCommand_a50c56b5fc12dff054c63525256798ddc}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Version}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a9d2abd085b45c71a554fd0d26010e4c8}\label{classMetaCommand_a9d2abd085b45c71a554fd0d26010e4c8}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Date}
+\item 
+\mbox{\Hypertarget{classMetaCommand_abcb9ca8bb5cea2ab16c6d85b362c1b5a}\label{classMetaCommand_abcb9ca8bb5cea2ab16c6d85b362c1b5a}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Name}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a5b73ca90878415df68f8aada74cec716}\label{classMetaCommand_a5b73ca90878415df68f8aada74cec716}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Description}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a33be54adbe98d34658510382a1b4a071}\label{classMetaCommand_a33be54adbe98d34658510382a1b4a071}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Author}
+\item 
+\mbox{\Hypertarget{classMetaCommand_aab8a3a8ab5ae61893cd893bf2ec87cb1}\label{classMetaCommand_aab8a3a8ab5ae61893cd893bf2ec87cb1}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Executable\+Name}
+\item 
+\mbox{\Hypertarget{classMetaCommand_af68b6a15827afe5e9aa4e9331705b0a0}\label{classMetaCommand_af68b6a15827afe5e9aa4e9331705b0a0}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Acknowledgments}
+\item 
+\mbox{\Hypertarget{classMetaCommand_aff06aabe56f75d34771d0e9d3ca1c8f1}\label{classMetaCommand_aff06aabe56f75d34771d0e9d3ca1c8f1}} 
+METAIO\+\_\+\+STL\+::string {\bfseries m\+\_\+\+Category}
+\item 
+\mbox{\Hypertarget{classMetaCommand_a5d5d4dd8468b7ba5e37db481c6177ffe}\label{classMetaCommand_a5d5d4dd8468b7ba5e37db481c6177ffe}} 
+Parameter\+Group\+Vector {\bfseries m\+\_\+\+Parameter\+Group}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetaCommand_a900c29d61dcb0b77f6d74dee82abcc85}\label{classMetaCommand_a900c29d61dcb0b77f6d74dee82abcc85}} 
+\index{MetaCommand@{MetaCommand}!AddField@{AddField}}
+\index{AddField@{AddField}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{AddField()}{AddField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Add\+Field (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{description,  }\item[{Type\+Enum\+Type}]{type,  }\item[{bool}]{external\+Data }\end{DoxyParamCaption})}
+
+For backward compatibility \mbox{\Hypertarget{classMetaCommand_a01bbb6cb0883250e94924ebe13ec81d0}\label{classMetaCommand_a01bbb6cb0883250e94924ebe13ec81d0}} 
+\index{MetaCommand@{MetaCommand}!AddField@{AddField}}
+\index{AddField@{AddField}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{AddField()}{AddField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Add\+Field (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{description,  }\item[{Type\+Enum\+Type}]{type,  }\item[{Data\+Enum\+Type}]{external\+Data = {\ttfamily DATA\+\_\+NONE},  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Min = {\ttfamily \char`\"{}\char`\"{}},  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Max = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Fields are added in order
+
+Add a field \mbox{\Hypertarget{classMetaCommand_aea581d899cf0075f52f6a315f4e450f6}\label{classMetaCommand_aea581d899cf0075f52f6a315f4e450f6}} 
+\index{MetaCommand@{MetaCommand}!AddOptionField@{AddOptionField}}
+\index{AddOptionField@{AddOptionField}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{AddOptionField()}{AddOptionField()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Add\+Option\+Field (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{Type\+Enum\+Type}]{type,  }\item[{bool}]{required = {\ttfamily true},  }\item[{METAIO\+\_\+\+STL\+::string}]{def\+Val = {\ttfamily \char`\"{}\char`\"{}},  }\item[{METAIO\+\_\+\+STL\+::string}]{description = {\ttfamily \char`\"{}\char`\"{}},  }\item[{Data\+Enum\+Type}]{external\+Data = {\ttfamily DATA\+\_\+NONE} }\end{DoxyParamCaption})}
+
+Add a field to an option
+
+Add a field to a given an option \mbox{\Hypertarget{classMetaCommand_a8e77220fbbd11177c03ddd9d1a3c8097}\label{classMetaCommand_a8e77220fbbd11177c03ddd9d1a3c8097}} 
+\index{MetaCommand@{MetaCommand}!DisableDeprecatedWarnings@{DisableDeprecatedWarnings}}
+\index{DisableDeprecatedWarnings@{DisableDeprecatedWarnings}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{DisableDeprecatedWarnings()}{DisableDeprecatedWarnings()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+Disable\+Deprecated\+Warnings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Disable the deprecated warnings \mbox{\Hypertarget{classMetaCommand_ab5f312cb33b75f9ea4190df1b59791ee}\label{classMetaCommand_ab5f312cb33b75f9ea4190df1b59791ee}} 
+\index{MetaCommand@{MetaCommand}!ExportGAD@{ExportGAD}}
+\index{ExportGAD@{ExportGAD}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ExportGAD()}{ExportGAD()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Export\+GAD (\begin{DoxyParamCaption}\item[{bool}]{dynamic = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Export the current command line arguments to a Grid Application Description file \mbox{\Hypertarget{classMetaCommand_ac606abe0c132265682fb7582757f89df}\label{classMetaCommand_ac606abe0c132265682fb7582757f89df}} 
+\index{MetaCommand@{MetaCommand}!ExtractDateFromCVS@{ExtractDateFromCVS}}
+\index{ExtractDateFromCVS@{ExtractDateFromCVS}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ExtractDateFromCVS()}{ExtractDateFromCVS()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Extract\+Date\+From\+CVS (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{date }\end{DoxyParamCaption})}
+
+Extract the date from cvs date
+
+Extract the date from a CVS Date keyword/value pair. ~\newline
+ \mbox{\Hypertarget{classMetaCommand_a77da757dea212909fca0b6dd823f61e9}\label{classMetaCommand_a77da757dea212909fca0b6dd823f61e9}} 
+\index{MetaCommand@{MetaCommand}!ExtractVersionFromCVS@{ExtractVersionFromCVS}}
+\index{ExtractVersionFromCVS@{ExtractVersionFromCVS}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ExtractVersionFromCVS()}{ExtractVersionFromCVS()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Extract\+Version\+From\+CVS (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{version }\end{DoxyParamCaption})}
+
+Extract the version from cvs date
+
+Extract the version from a CVS Revision keyword/value pair. ~\newline
+ \mbox{\Hypertarget{classMetaCommand_ab9f5967bab54a907db3e0553c97d7f9a}\label{classMetaCommand_ab9f5967bab54a907db3e0553c97d7f9a}} 
+\index{MetaCommand@{MetaCommand}!GetApplicationName@{GetApplicationName}}
+\index{GetApplicationName@{GetApplicationName}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetApplicationName()}{GetApplicationName()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Get\+Application\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the name of the application \mbox{\Hypertarget{classMetaCommand_ae02a295e71b9f75e068f7256877aa710}\label{classMetaCommand_ae02a295e71b9f75e068f7256877aa710}} 
+\index{MetaCommand@{MetaCommand}!GetDate@{GetDate}}
+\index{GetDate@{GetDate}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetDate()}{GetDate()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the date of the app \mbox{\Hypertarget{classMetaCommand_aa76b052092b8e51510371ac050e1d029}\label{classMetaCommand_aa76b052092b8e51510371ac050e1d029}} 
+\index{MetaCommand@{MetaCommand}!GetOptionByMinusTag@{GetOptionByMinusTag}}
+\index{GetOptionByMinusTag@{GetOptionByMinusTag}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetOptionByMinusTag()}{GetOptionByMinusTag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMetaCommand_1_1Option}{Meta\+Command\+::\+Option}} $\ast$ Meta\+Command\+::\+Get\+Option\+By\+Minus\+Tag (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{minus\+Tag }\end{DoxyParamCaption})}
+
+Get the option by \char`\"{}-\/\char`\"{}+tag or by \char`\"{}-\/-\/\char`\"{}+longtag \mbox{\Hypertarget{classMetaCommand_adfee8251193ddfa212fbbc2e85dd2f1d}\label{classMetaCommand_adfee8251193ddfa212fbbc2e85dd2f1d}} 
+\index{MetaCommand@{MetaCommand}!GetOptionByTag@{GetOptionByTag}}
+\index{GetOptionByTag@{GetOptionByTag}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetOptionByTag()}{GetOptionByTag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMetaCommand_1_1Option}{Meta\+Command\+::\+Option}} $\ast$ Meta\+Command\+::\+Get\+Option\+By\+Tag (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{tag }\end{DoxyParamCaption})}
+
+Get the option by tag \mbox{\Hypertarget{classMetaCommand_a54711041d7253e22a7188a25fbd6bb36}\label{classMetaCommand_a54711041d7253e22a7188a25fbd6bb36}} 
+\index{MetaCommand@{MetaCommand}!GetOptionId@{GetOptionId}}
+\index{GetOptionId@{GetOptionId}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetOptionId()}{GetOptionId()}}
+{\footnotesize\ttfamily long Meta\+Command\+::\+Get\+Option\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}} $\ast$}]{option }\end{DoxyParamCaption})}
+
+Return the option id. i.\+e the position in the vector \mbox{\Hypertarget{classMetaCommand_aebcf550ac8474aea43625f462b2871b4}\label{classMetaCommand_aebcf550ac8474aea43625f462b2871b4}} 
+\index{MetaCommand@{MetaCommand}!GetOptions@{GetOptions}}
+\index{GetOptions@{GetOptions}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetOptions()}{GetOptions()}}
+{\footnotesize\ttfamily const Option\+Vector \& Meta\+Command\+::\+Get\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the list of options \mbox{\Hypertarget{classMetaCommand_a2b588d59aa64f00451ffc916befcc9e2}\label{classMetaCommand_a2b588d59aa64f00451ffc916befcc9e2}} 
+\index{MetaCommand@{MetaCommand}!GetParsedOptions@{GetParsedOptions}}
+\index{GetParsedOptions@{GetParsedOptions}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetParsedOptions()}{GetParsedOptions()}}
+{\footnotesize\ttfamily const Option\+Vector \& Meta\+Command\+::\+Get\+Parsed\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the list of parse options \mbox{\Hypertarget{classMetaCommand_ac2c0ccf2fdcd90ca4737dfe2e1035227}\label{classMetaCommand_ac2c0ccf2fdcd90ca4737dfe2e1035227}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsBool@{GetValueAsBool}}
+\index{GetValueAsBool@{GetValueAsBool}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsBool()}{GetValueAsBool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Get\+Value\+As\+Bool (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Get the values given the option name
+
+Return the value of the option as a boolean \mbox{\Hypertarget{classMetaCommand_a4a03d1cf2440a6135a7eba193fa09dc5}\label{classMetaCommand_a4a03d1cf2440a6135a7eba193fa09dc5}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsBool@{GetValueAsBool}}
+\index{GetValueAsBool@{GetValueAsBool}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsBool()}{GetValueAsBool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Get\+Value\+As\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}}}]{option,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Return the value of the option as a bool \mbox{\Hypertarget{classMetaCommand_a6100c8469640e7e0de3325f71c2a170e}\label{classMetaCommand_a6100c8469640e7e0de3325f71c2a170e}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsFloat@{GetValueAsFloat}}
+\index{GetValueAsFloat@{GetValueAsFloat}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsFloat()}{GetValueAsFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Meta\+Command\+::\+Get\+Value\+As\+Float (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Return the value of the option as a float \mbox{\Hypertarget{classMetaCommand_a451a13375bde7601147391b978a35cb8}\label{classMetaCommand_a451a13375bde7601147391b978a35cb8}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsFloat@{GetValueAsFloat}}
+\index{GetValueAsFloat@{GetValueAsFloat}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsFloat()}{GetValueAsFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Meta\+Command\+::\+Get\+Value\+As\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}}}]{option,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Return the value of the option as a float \mbox{\Hypertarget{classMetaCommand_a3735f3a332e05ce1ae1d42178809f036}\label{classMetaCommand_a3735f3a332e05ce1ae1d42178809f036}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsInt@{GetValueAsInt}}
+\index{GetValueAsInt@{GetValueAsInt}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsInt()}{GetValueAsInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Meta\+Command\+::\+Get\+Value\+As\+Int (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Return the value of the option as a int \mbox{\Hypertarget{classMetaCommand_a386b8947dd8f4326719f1df1252b0579}\label{classMetaCommand_a386b8947dd8f4326719f1df1252b0579}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsInt@{GetValueAsInt}}
+\index{GetValueAsInt@{GetValueAsInt}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsInt()}{GetValueAsInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Meta\+Command\+::\+Get\+Value\+As\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}}}]{option,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Return the value of the option as a int \mbox{\Hypertarget{classMetaCommand_a4bffa13624129d624bd3738bca7871ca}\label{classMetaCommand_a4bffa13624129d624bd3738bca7871ca}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsList@{GetValueAsList}}
+\index{GetValueAsList@{GetValueAsList}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsList()}{GetValueAsList()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::list$<$ METAIO\+\_\+\+STL\+::string $>$ Meta\+Command\+::\+Get\+Value\+As\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}}}]{option }\end{DoxyParamCaption})}
+
+Return the value of the option as a list of strings \mbox{\Hypertarget{classMetaCommand_a156c11ce6ab517b72351a13ca8972fd3}\label{classMetaCommand_a156c11ce6ab517b72351a13ca8972fd3}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsString@{GetValueAsString}}
+\index{GetValueAsString@{GetValueAsString}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsString()}{GetValueAsString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Get\+Value\+As\+String (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Return the value of the option as a string \mbox{\Hypertarget{classMetaCommand_a89a480f282a0d8ac2770f98d97dd6b9e}\label{classMetaCommand_a89a480f282a0d8ac2770f98d97dd6b9e}} 
+\index{MetaCommand@{MetaCommand}!GetValueAsString@{GetValueAsString}}
+\index{GetValueAsString@{GetValueAsString}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetValueAsString()}{GetValueAsString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Get\+Value\+As\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMetaCommand_1_1Option}{Option}}}]{option,  }\item[{METAIO\+\_\+\+STL\+::string}]{field\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Return the value of the option as a string \mbox{\Hypertarget{classMetaCommand_a662075ecad6e74ca05d77789c8db2326}\label{classMetaCommand_a662075ecad6e74ca05d77789c8db2326}} 
+\index{MetaCommand@{MetaCommand}!GetVersion@{GetVersion}}
+\index{GetVersion@{GetVersion}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetVersion()}{GetVersion()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the version of the app \mbox{\Hypertarget{classMetaCommand_ad275a0f2652e11a8b3c96353e45be1c9}\label{classMetaCommand_ad275a0f2652e11a8b3c96353e45be1c9}} 
+\index{MetaCommand@{MetaCommand}!GetXML@{GetXML}}
+\index{GetXML@{GetXML}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GetXML()}{GetXML()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Get\+XML (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{const char $\ast$}]{desc,  }\item[{unsigned long}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Small XML helper
+
+Internal small XML parser \mbox{\Hypertarget{classMetaCommand_a901ac9f89f833bab95d2e8514bb81d40}\label{classMetaCommand_a901ac9f89f833bab95d2e8514bb81d40}} 
+\index{MetaCommand@{MetaCommand}!GotXMLFlag@{GotXMLFlag}}
+\index{GotXMLFlag@{GotXMLFlag}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{GotXMLFlag()}{GotXMLFlag()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Got\+XMLFlag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return true if we got the --xml \mbox{\Hypertarget{classMetaCommand_ac02c0659fb0df37c3d1a7238b5dc0646}\label{classMetaCommand_ac02c0659fb0df37c3d1a7238b5dc0646}} 
+\index{MetaCommand@{MetaCommand}!ListOptions@{ListOptions}}
+\index{ListOptions@{ListOptions}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ListOptions()}{ListOptions()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+List\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+List the options
+
+List the current options \mbox{\Hypertarget{classMetaCommand_ab165fe31670f358be9e619192b42c681}\label{classMetaCommand_ab165fe31670f358be9e619192b42c681}} 
+\index{MetaCommand@{MetaCommand}!ListOptionsSimplified@{ListOptionsSimplified}}
+\index{ListOptionsSimplified@{ListOptionsSimplified}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ListOptionsSimplified()}{ListOptionsSimplified()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+List\+Options\+Simplified (\begin{DoxyParamCaption}\item[{bool}]{extended = {\ttfamily true} }\end{DoxyParamCaption})}
+
+List the current options \mbox{\Hypertarget{classMetaCommand_af27775ce77d0c9f50182339f7506f1d7}\label{classMetaCommand_af27775ce77d0c9f50182339f7506f1d7}} 
+\index{MetaCommand@{MetaCommand}!ListOptionsSlicerXML@{ListOptionsSlicerXML}}
+\index{ListOptionsSlicerXML@{ListOptionsSlicerXML}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ListOptionsSlicerXML()}{ListOptionsSlicerXML()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+List\+Options\+Slicer\+XML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+List the current options in Slicer\textquotesingle{}s xml format (www.\+slicer.\+org) \mbox{\Hypertarget{classMetaCommand_a5df8987779820bd3a2901bcfce6ba3f0}\label{classMetaCommand_a5df8987779820bd3a2901bcfce6ba3f0}} 
+\index{MetaCommand@{MetaCommand}!ListOptionsXML@{ListOptionsXML}}
+\index{ListOptionsXML@{ListOptionsXML}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ListOptionsXML()}{ListOptionsXML()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+List\+Options\+XML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+List the current options in xml format \mbox{\Hypertarget{classMetaCommand_a54fcd84385da8e909f8ab6107ccf6f81}\label{classMetaCommand_a54fcd84385da8e909f8ab6107ccf6f81}} 
+\index{MetaCommand@{MetaCommand}!LoadArgumentsFromXML@{LoadArgumentsFromXML}}
+\index{LoadArgumentsFromXML@{LoadArgumentsFromXML}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{LoadArgumentsFromXML()}{LoadArgumentsFromXML()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Load\+Arguments\+From\+XML (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{bool}]{create\+Missing\+Arguments = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Load arguments from XML file. The second argument when set to true allows external classes to use this function to parse XML arguments.
+
+Load arguments from XML file \mbox{\Hypertarget{classMetaCommand_a6d302d658bda5ade5db4346fdcf02dd1}\label{classMetaCommand_a6d302d658bda5ade5db4346fdcf02dd1}} 
+\index{MetaCommand@{MetaCommand}!OptionExistsByMinusTag@{OptionExistsByMinusTag}}
+\index{OptionExistsByMinusTag@{OptionExistsByMinusTag}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{OptionExistsByMinusTag()}{OptionExistsByMinusTag()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Option\+Exists\+By\+Minus\+Tag (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{minus\+Tag }\end{DoxyParamCaption})}
+
+Get the option by \char`\"{}-\/\char`\"{}+tag or by \char`\"{}-\/-\/\char`\"{}+longtag \mbox{\Hypertarget{classMetaCommand_a37eb26d611c5522fc7c84b5ddd0bf027}\label{classMetaCommand_a37eb26d611c5522fc7c84b5ddd0bf027}} 
+\index{MetaCommand@{MetaCommand}!Parse@{Parse}}
+\index{Parse@{Parse}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Parse the command line \mbox{\Hypertarget{classMetaCommand_afad91b056dd207c644fe7296050faab0}\label{classMetaCommand_afad91b056dd207c644fe7296050faab0}} 
+\index{MetaCommand@{MetaCommand}!ParseXML@{ParseXML}}
+\index{ParseXML@{ParseXML}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{ParseXML()}{ParseXML()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Parse\+XML (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Given an XML buffer fill in the command line arguments \mbox{\Hypertarget{classMetaCommand_a93b5a524fda1bca56d742ed755843ed3}\label{classMetaCommand_a93b5a524fda1bca56d742ed755843ed3}} 
+\index{MetaCommand@{MetaCommand}!SetAcknowledgments@{SetAcknowledgments}}
+\index{SetAcknowledgments@{SetAcknowledgments}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetAcknowledgments()}{SetAcknowledgments()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+Set\+Acknowledgments (\begin{DoxyParamCaption}\item[{const char $\ast$}]{acknowledgments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the acknowledgments \mbox{\Hypertarget{classMetaCommand_aee905037f4a084e9cc502b1d88bab3fb}\label{classMetaCommand_aee905037f4a084e9cc502b1d88bab3fb}} 
+\index{MetaCommand@{MetaCommand}!SetAuthor@{SetAuthor}}
+\index{SetAuthor@{SetAuthor}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetAuthor()}{SetAuthor()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+Set\+Author (\begin{DoxyParamCaption}\item[{const char $\ast$}]{author }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the author \mbox{\Hypertarget{classMetaCommand_ac9a91a58918cde863077bb847693c1ae}\label{classMetaCommand_ac9a91a58918cde863077bb847693c1ae}} 
+\index{MetaCommand@{MetaCommand}!SetCategory@{SetCategory}}
+\index{SetCategory@{SetCategory}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetCategory()}{SetCategory()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+Set\+Category (\begin{DoxyParamCaption}\item[{const char $\ast$}]{category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the category \mbox{\Hypertarget{classMetaCommand_aae3741349cb2f09050a2199a943413d3}\label{classMetaCommand_aae3741349cb2f09050a2199a943413d3}} 
+\index{MetaCommand@{MetaCommand}!SetDescription@{SetDescription}}
+\index{SetDescription@{SetDescription}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetDescription()}{SetDescription()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+Set\+Description (\begin{DoxyParamCaption}\item[{const char $\ast$}]{description }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the description \mbox{\Hypertarget{classMetaCommand_a7009dd04d1863bd5e9adb171f36e9e75}\label{classMetaCommand_a7009dd04d1863bd5e9adb171f36e9e75}} 
+\index{MetaCommand@{MetaCommand}!SetOptionComplete@{SetOptionComplete}}
+\index{SetOptionComplete@{SetOptionComplete}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetOptionComplete()}{SetOptionComplete()}}
+{\footnotesize\ttfamily void Meta\+Command\+::\+Set\+Option\+Complete (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{bool}]{complete }\end{DoxyParamCaption})}
+
+Collect all the information until the next tag \begin{DoxyWarning}{Warning}
+this function works only if the field is of type String 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classMetaCommand_ad2b4ceb78dde5825916e4028430f5c2f}\label{classMetaCommand_ad2b4ceb78dde5825916e4028430f5c2f}} 
+\index{MetaCommand@{MetaCommand}!SetOptionEnumerations@{SetOptionEnumerations}}
+\index{SetOptionEnumerations@{SetOptionEnumerations}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetOptionEnumerations()}{SetOptionEnumerations()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Set\+Option\+Enumerations (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{option\+Enums }\end{DoxyParamCaption})}
+
+Set the list of values that can be used with an option
+
+Set the range of an option \mbox{\Hypertarget{classMetaCommand_a527baa1cf72233a727b130f4809aae76}\label{classMetaCommand_a527baa1cf72233a727b130f4809aae76}} 
+\index{MetaCommand@{MetaCommand}!SetOptionLabel@{SetOptionLabel}}
+\index{SetOptionLabel@{SetOptionLabel}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetOptionLabel()}{SetOptionLabel()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Set\+Option\+Label (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{label }\end{DoxyParamCaption})}
+
+Set the label for the option \mbox{\Hypertarget{classMetaCommand_a0f049fbd5a5144cee11945b8328a5f18}\label{classMetaCommand_a0f049fbd5a5144cee11945b8328a5f18}} 
+\index{MetaCommand@{MetaCommand}!SetOptionLongTag@{SetOptionLongTag}}
+\index{SetOptionLongTag@{SetOptionLongTag}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetOptionLongTag()}{SetOptionLongTag()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Set\+Option\+Long\+Tag (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{long\+Tag }\end{DoxyParamCaption})}
+
+Set the long tag for the option
+
+Set the long flag for the option \mbox{\Hypertarget{classMetaCommand_ace3aca1edda65ba6edf1d8b35a42ef41}\label{classMetaCommand_ace3aca1edda65ba6edf1d8b35a42ef41}} 
+\index{MetaCommand@{MetaCommand}!SetOptionRange@{SetOptionRange}}
+\index{SetOptionRange@{SetOptionRange}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetOptionRange()}{SetOptionRange()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Set\+Option\+Range (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Min,  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Max }\end{DoxyParamCaption})}
+
+Set the range of value as an option
+
+Set the range of an option \mbox{\Hypertarget{classMetaCommand_ab5c29d8090ec87e9b0a9b53ded382e0a}\label{classMetaCommand_ab5c29d8090ec87e9b0a9b53ded382e0a}} 
+\index{MetaCommand@{MetaCommand}!SetParameterGroup@{SetParameterGroup}}
+\index{SetParameterGroup@{SetParameterGroup}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{SetParameterGroup()}{SetParameterGroup()}}
+{\footnotesize\ttfamily bool Meta\+Command\+::\+Set\+Parameter\+Group (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{option\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{group\+Name,  }\item[{METAIO\+\_\+\+STL\+::string}]{group\+Description = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{advanced = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Set the group for a field or an option If the group doesn\textquotesingle{}t exist it is automatically created. \mbox{\Hypertarget{classMetaCommand_aa5496556fd5f73c296531be785accfc9}\label{classMetaCommand_aa5496556fd5f73c296531be785accfc9}} 
+\index{MetaCommand@{MetaCommand}!StringToType@{StringToType}}
+\index{StringToType@{StringToType}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{StringToType()}{StringToType()}}
+{\footnotesize\ttfamily Meta\+Command\+::\+Type\+Enum\+Type Meta\+Command\+::\+String\+To\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{type }\end{DoxyParamCaption})}
+
+Return a type given a string \mbox{\Hypertarget{classMetaCommand_a7cc8cd9d33397c18e897f86dba0a0a9e}\label{classMetaCommand_a7cc8cd9d33397c18e897f86dba0a0a9e}} 
+\index{MetaCommand@{MetaCommand}!TypeToString@{TypeToString}}
+\index{TypeToString@{TypeToString}!MetaCommand@{MetaCommand}}
+\doxysubsubsection{\texorpdfstring{TypeToString()}{TypeToString()}}
+{\footnotesize\ttfamily METAIO\+\_\+\+STL\+::string Meta\+Command\+::\+Type\+To\+String (\begin{DoxyParamCaption}\item[{Type\+Enum\+Type}]{type }\end{DoxyParamCaption})}
+
+Return the string representation of a type 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Command.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Command.\+cxx\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+\hypertarget{GateOscTranslationMove_8hh_source}{}\doxysection{Gate\+Osc\+Translation\+Move.\+hh}
+\label{GateOscTranslationMove_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOscTranslationMove.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOscTranslationMove.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateOscTranslationMove\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateOscTranslationMove\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOscTranslationMoveMessenger}{GateOscTranslationMoveMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOscTranslationMove}{GateOscTranslationMove}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateOscTranslationMove_ac1ecb65451ac2f63b0826ef96f2be1c0}{GateOscTranslationMove}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{35                                   \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{36                   \textcolor{keyword}{const} G4ThreeVector\& itsAmplitude=G4ThreeVector(),}
+\DoxyCodeLine{37                   G4double itsFrequency=0.,}
+\DoxyCodeLine{38                   G4double itsPhase=0.);}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOscTranslationMove_a29e5445a1172926977f2130c9c5b4a86}{\string~GateOscTranslationMove}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOscTranslationMove_a3d7865933c0a023f101144b482dfdedb}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{53                                       \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{54                                   G4double aTime);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOscTranslationMove_a6f48045f4894a02c6d745fee92cdb732}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{62      }
+\DoxyCodeLine{63   \textcolor{keyword}{public}:}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateOscTranslationMove_a5f5007b4579bb7ba16534c922bace871}{GetAmplitude}}()  \{ \textcolor{keywordflow}{return} m\_amplitude;\}}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOscTranslationMove_aa712520be1cdbd5434280d09204e90a5}{SetAmplitude}}(\textcolor{keyword}{const} G4ThreeVector\& val) \{ m\_amplitude = val;  \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateOscTranslationMove_a7c01407fe840863414fe0b424ed12729}{GetFrequency}}()   \{ \textcolor{keywordflow}{return} m\_frequency;\}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOscTranslationMove_a2d9d19efc2866878932682360acba7b0}{SetFrequency}}(G4double val)  \{ m\_frequency = val;  \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateOscTranslationMove_a096ac6402dab99d4f9695ba458d86bd2}{GetPeriod}}()  \{ \textcolor{keywordflow}{return} m\_frequency ? 1./m\_frequency : DBL\_MAX;\}}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOscTranslationMove_a865cc3f106ca1cd33ab1e75934fa9540}{SetPeriod}}(G4double val) \{ m\_frequency = val ? 1./val : DBL\_MAX;  \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateOscTranslationMove_af431fdf3b694d5a4d195c81d6d0ee535}{GetPhase}}()   \{ \textcolor{keywordflow}{return} m\_phase;\}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOscTranslationMove_a11d6c738f8db3e7ef4d99b684e9b32d8}{SetPhase}}(G4double val)  \{ m\_phase = val;  \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateOscTranslationMove_a99e117ebce7c800d350c9016bc46e5c3}{GetCurrentTranslation}}() \{ \textcolor{keywordflow}{return} m\_currentTranslation;\}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{keyword}{private}:}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     G4ThreeVector m\_amplitude;    }
+\DoxyCodeLine{94     G4double      m\_frequency;    }
+\DoxyCodeLine{95     G4double      m\_phase;        }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99     G4ThreeVector m\_currentTranslation;}
+\DoxyCodeLine{100     }
+\DoxyCodeLine{102     \mbox{\hyperlink{classGateOscTranslationMoveMessenger}{GateOscTranslationMoveMessenger}}* m\_Messenger; }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+
+\end{DoxyCode}

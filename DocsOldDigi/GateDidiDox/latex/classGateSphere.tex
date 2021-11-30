@@ -1,0 +1,154 @@
+\hypertarget{classGateSphere}{}\doxysection{Gate\+Sphere Class Reference}
+\label{classGateSphere}\index{GateSphere@{GateSphere}}
+
+
+The \mbox{\hyperlink{classGateSphere}{Gate\+Sphere}} creates a solid and a logical volume for a sphere.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Sphere.\+hh$>$}
+
+Inheritance diagram for Gate\+Sphere\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateSphere}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSphere_a901ad6a5af66d9ce23c8c6ba3ab2225b}\label{classGateSphere_a901ad6a5af66d9ce23c8c6ba3ab2225b}} 
+{\bfseries Gate\+Sphere} (const G4\+String \&its\+Name, G4bool accepts\+Children=true, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a9a7d7cd6f9186d965212b2760f15c76a}\label{classGateSphere_a9a7d7cd6f9186d965212b2760f15c76a}} 
+{\bfseries Gate\+Sphere} (const G4\+String \&its\+Name, const G4\+String \&its\+Material\+Name, G4double its\+Rmax, G4double its\+Rmin=0., G4double its\+SPhi=0., G4double its\+DPhi=twopi, G4double its\+STheta=0., G4double its\+DTheta=pi, G4bool accepts\+Children=true, G4int depth=0)
+\item 
+\mbox{\Hypertarget{classGateSphere_a0383d5cdac77366fbf0cb5e9fe855e98}\label{classGateSphere_a0383d5cdac77366fbf0cb5e9fe855e98}} 
+virtual {\bfseries $\sim$\+Gate\+Sphere} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Implementations of pure virtual methods declared by the base-\/class}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateSphere_a31eb7fb5f40e3d1ff922a7f08293b125}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$, G4bool)
+\item 
+virtual void \mbox{\hyperlink{classGateSphere_af2ac6946bcfe5ae5c6e836da869b31aa}{Destroy\+Own\+Solid\+And\+Logical\+Volume}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateSphere_a9c0a7e9c7a50f08c78f082371f504903}{Describe\+Myself}} (size\+\_\+t level)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateSphere_a9c0a7e9c7a50f08c78f082371f504903}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\item 
+G4double \mbox{\hyperlink{classGateSphere_aa7e4fc8315f9bcec96aea4b34808888e}{Get\+Half\+Dimension}} (size\+\_\+t)
+\item 
+G4double \mbox{\hyperlink{classGateSphere_a420461de9fdac7e36d006045407c8a5b}{Compute\+My\+Own\+Volume}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSphere_ad53a2410484ab751eb8f80617e0904c8}\label{classGateSphere_ad53a2410484ab751eb8f80617e0904c8}} 
+G4double {\bfseries Get\+Sphere\+Rmin} ()
+\begin{DoxyCompactList}\small\item\em Get the internal diameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a0edcb5fbac19176725fa22cb02bdd9d4}\label{classGateSphere_a0edcb5fbac19176725fa22cb02bdd9d4}} 
+G4double {\bfseries Get\+Sphere\+Rmax} ()
+\begin{DoxyCompactList}\small\item\em Get the external diameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_abc5cd79d49844b3dd85bab9b22281196}\label{classGateSphere_abc5cd79d49844b3dd85bab9b22281196}} 
+G4double {\bfseries Get\+Sphere\+SPhi} ()
+\begin{DoxyCompactList}\small\item\em Get the start phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_aedf5f8be4dd49fd04af9a1291ca16524}\label{classGateSphere_aedf5f8be4dd49fd04af9a1291ca16524}} 
+G4double {\bfseries Get\+Sphere\+DPhi} ()
+\begin{DoxyCompactList}\small\item\em Get the angular span for the phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_aa1814d4217defb697c4ec1e86cef40be}\label{classGateSphere_aa1814d4217defb697c4ec1e86cef40be}} 
+G4double {\bfseries Get\+Sphere\+STheta} ()
+\begin{DoxyCompactList}\small\item\em Get the start theta angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a9643036a9003f904beee03f7462fa9c4}\label{classGateSphere_a9643036a9003f904beee03f7462fa9c4}} 
+G4double {\bfseries Get\+Sphere\+DTheta} ()
+\begin{DoxyCompactList}\small\item\em Get the angular span for the theta angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a661b017e6147f04ea175e55517e67acf}\label{classGateSphere_a661b017e6147f04ea175e55517e67acf}} 
+void {\bfseries Set\+Sphere\+Rmin} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the internal diameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a29e93342cfdd1eb7f1c7a24b5a945d71}\label{classGateSphere_a29e93342cfdd1eb7f1c7a24b5a945d71}} 
+void {\bfseries Set\+Sphere\+Rmax} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the external diameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a955ffeeafe6e7838268b651f8b3af2e3}\label{classGateSphere_a955ffeeafe6e7838268b651f8b3af2e3}} 
+void {\bfseries Set\+Sphere\+SPhi} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the start phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a49bbb894b1d85f81d7d8bb23481f9406}\label{classGateSphere_a49bbb894b1d85f81d7d8bb23481f9406}} 
+void {\bfseries Set\+Sphere\+DPhi} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the angular span for the phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a9020e961d7739834ab2eb37a1b9f331a}\label{classGateSphere_a9020e961d7739834ab2eb37a1b9f331a}} 
+void {\bfseries Set\+Sphere\+STheta} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the start theta angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphere_a244cca368a8a981d902268d22c5b9b85}\label{classGateSphere_a244cca368a8a981d902268d22c5b9b85}} 
+void {\bfseries Set\+Sphere\+DTheta} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the angular span for the theta angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateSphere}{Gate\+Sphere}} creates a solid and a logical volume for a sphere. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSphere}{Gate\+Sphere}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSphere_a420461de9fdac7e36d006045407c8a5b}\label{classGateSphere_a420461de9fdac7e36d006045407c8a5b}} 
+\index{GateSphere@{GateSphere}!ComputeMyOwnVolume@{ComputeMyOwnVolume}}
+\index{ComputeMyOwnVolume@{ComputeMyOwnVolume}!GateSphere@{GateSphere}}
+\doxysubsubsection{\texorpdfstring{ComputeMyOwnVolume()}{ComputeMyOwnVolume()}}
+{\footnotesize\ttfamily G4double Gate\+Sphere\+::\+Compute\+My\+Own\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Overload of the dummy virtual method \mbox{\hyperlink{classGateSphere_a420461de9fdac7e36d006045407c8a5b}{Compute\+My\+Own\+Volume()}} defined by the base-\/class Returns the volume of the solid \mbox{\Hypertarget{classGateSphere_a31eb7fb5f40e3d1ff922a7f08293b125}\label{classGateSphere_a31eb7fb5f40e3d1ff922a7f08293b125}} 
+\index{GateSphere@{GateSphere}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateSphere@{GateSphere}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily G4\+Logical\+Volume $\ast$ Gate\+Sphere\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{mater,  }\item[{G4bool}]{flag\+Update\+Only }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method Construct\+Own\+Solid\+And\+Logical() declared by the base-\/class. Construct a new sphere-\/solid and its logical volume. If flag\+Update\+Only is set to 1, the sphere is updated rather than rebuilt. 
+
+Implements \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateSphere_a9c0a7e9c7a50f08c78f082371f504903}\label{classGateSphere_a9c0a7e9c7a50f08c78f082371f504903}} 
+\index{GateSphere@{GateSphere}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateSphere@{GateSphere}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Sphere\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateSphere_a9c0a7e9c7a50f08c78f082371f504903}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the creator
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateSphere_af2ac6946bcfe5ae5c6e836da869b31aa}\label{classGateSphere_af2ac6946bcfe5ae5c6e836da869b31aa}} 
+\index{GateSphere@{GateSphere}!DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}}
+\index{DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}!GateSphere@{GateSphere}}
+\doxysubsubsection{\texorpdfstring{DestroyOwnSolidAndLogicalVolume()}{DestroyOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily void Gate\+Sphere\+::\+Destroy\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method Destroy\+Own\+Solid\+And\+Volume() declared by the base-\/class. Destroy the solid and logical volume created by Construct\+Own\+Solid\+And\+Logical() 
+
+Implements \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateSphere_aa7e4fc8315f9bcec96aea4b34808888e}\label{classGateSphere_aa7e4fc8315f9bcec96aea4b34808888e}} 
+\index{GateSphere@{GateSphere}!GetHalfDimension@{GetHalfDimension}}
+\index{GetHalfDimension@{GetHalfDimension}!GateSphere@{GateSphere}}
+\doxysubsubsection{\texorpdfstring{GetHalfDimension()}{GetHalfDimension()}}
+{\footnotesize\ttfamily G4double Gate\+Sphere\+::\+Get\+Half\+Dimension (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method \mbox{\hyperlink{classGateSphere_aa7e4fc8315f9bcec96aea4b34808888e}{Get\+Half\+Dimension()}} declared by the base-\/class Must return the half-\/size of the sphere along an axis (X=0, Y=1, Z=2) Returns the radius\+: accurate only for full spheres 
+
+Implements \mbox{\hyperlink{classGateVVolume_a6b5af3dbb80ec1b182ad571560aa762b}{Gate\+VVolume}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Sphere.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Sphere.\+cc\end{DoxyCompactItemize}

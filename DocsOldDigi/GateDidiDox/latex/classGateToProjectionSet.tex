@@ -1,0 +1,348 @@
+\hypertarget{classGateToProjectionSet}{}\doxysection{Gate\+To\+Projection\+Set Class Reference}
+\label{classGateToProjectionSet}\index{GateToProjectionSet@{GateToProjectionSet}}
+Inheritance diagram for Gate\+To\+Projection\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateToProjectionSet}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a65e0913c2eed9dcc9cde6a321bf9c910}\label{classGateToProjectionSet_a65e0913c2eed9dcc9cde6a321bf9c910}} 
+{\bfseries Gate\+To\+Projection\+Set} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$its\+System, Digi\+Mode digi\+Mode)
+\begin{DoxyCompactList}\small\item\em Public constructor (creates an empty, uninitialised, project set) \end{DoxyCompactList}\item 
+const G4\+String \& \mbox{\hyperlink{classGateToProjectionSet_aab7e2a381874225771d5e478dd09218c}{Give\+Name\+Of\+File}} ()
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_aa322c68b317003aef2f1f588c50b0ea2}\label{classGateToProjectionSet_aa322c68b317003aef2f1f588c50b0ea2}} 
+void {\bfseries Set\+Verbose\+To\+Projection\+Set\+And\+Interfile} (G4int a\+Verbosity)
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_aa85b373c99b633d5dfe325fa4abe292a}\label{classGateToProjectionSet_aa85b373c99b633d5dfe325fa4abe292a}} 
+void {\bfseries Send\+Describe\+To\+Projection\+Set\+And\+Interfile} ()
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_aa3e8114ee3469a5da7542d3c10673fdf}\label{classGateToProjectionSet_aa3e8114ee3469a5da7542d3c10673fdf}} 
+void {\bfseries Set\+Enable\+To\+Projection\+Set\+And\+Interfile} ()
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_ad3e928119384015bfc2ce5ae08e2e799}\label{classGateToProjectionSet_ad3e928119384015bfc2ce5ae08e2e799}} 
+void {\bfseries Set\+Disable\+To\+Projection\+Set\+And\+Interfile} ()
+\item 
+void \mbox{\hyperlink{classGateToProjectionSet_a1ef91b4eb159255544745791f7553623}{Record\+Begin\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em Initialisation of the projection set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToProjectionSet_ad6f380c68ec49313ada669d0d31edc09}{Record\+End\+Of\+Acquisition}} ()
+\item 
+void \mbox{\hyperlink{classGateToProjectionSet_a88bdb091de20780aa98943fbe9b21668}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Reset the projection data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToProjectionSet_abe281d4da37ed50315f737fa0cd04c36}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Nothing to do. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToProjectionSet_a3270bef05a22a8ff633217773685c1e3}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Nothing to do. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToProjectionSet_a53ea31146205bfed1505d6fc572f5633}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Update the target projections with regards to the digis acquired for this event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToProjectionSet_a6b0f2e450cd1f0a417b6aaa967725f93}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\begin{DoxyCompactList}\small\item\em Nothing to do for steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToProjectionSet_a8c079bbf468a38282394546aeb48da2b}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Nothing to do. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToProjectionSet_ae13b3b2ddbeb63ceb850d26d8c951985}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_ade4215c6c7cf15481194ff638fa04cfe}\label{classGateToProjectionSet_ade4215c6c7cf15481194ff638fa04cfe}} 
+void {\bfseries Stream\+Out} (std\+::ofstream \&dest)
+\begin{DoxyCompactList}\small\item\em Writes the projection sets onto an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters for the projection maker}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateToProjectionSet_a9c162eb771c0e557fc58626e578d1b77}{Set\+Verbose\+Level}} (G4int val)
+\begin{DoxyCompactList}\small\item\em Overload of the base-\/class\textquotesingle{} method\+: we command both our own verbosity and that of the projection set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a6744efa448dcb7c42c2adb0fe8548ef0}\label{classGateToProjectionSet_a6744efa448dcb7c42c2adb0fe8548ef0}} 
+G4double {\bfseries Get\+Angular\+Span} () const
+\begin{DoxyCompactList}\small\item\em return the total angular span of the projection set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a12eaf8c6015fdbdaeef27eec0f33ef4f}\label{classGateToProjectionSet_a12eaf8c6015fdbdaeef27eec0f33ef4f}} 
+G4double {\bfseries Get\+Time\+Per\+Projection} () const
+\begin{DoxyCompactList}\small\item\em return the time per projection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a279203b945b177a40773dc0ea15314ea}\label{classGateToProjectionSet_a279203b945b177a40773dc0ea15314ea}} 
+G4double {\bfseries Get\+Head\+Angular\+Pitch} () const
+\begin{DoxyCompactList}\small\item\em return the angulart pitch between heads \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a4df47b96422dd7475b54bb11aa7ea1a4}\label{classGateToProjectionSet_a4df47b96422dd7475b54bb11aa7ea1a4}} 
+G4double {\bfseries Get\+Study\+Duration} () const
+\begin{DoxyCompactList}\small\item\em Returns the study duration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a9c577c3fd888bfc3e4c0303298b4e74f}\label{classGateToProjectionSet_a9c577c3fd888bfc3e4c0303298b4e74f}} 
+void {\bfseries Set\+Projection\+Plane} (const G4\+String \&plane\+Name)
+\begin{DoxyCompactList}\small\item\em Set the sampling plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a16e7fc36bd7e9f6fdd0d27bb3936b88c}\label{classGateToProjectionSet_a16e7fc36bd7e9f6fdd0d27bb3936b88c}} 
+size\+\_\+t {\bfseries Get\+Projection\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of projections per head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_acdb12fd90618481633bb6a0acd7816a7}\label{classGateToProjectionSet_acdb12fd90618481633bb6a0acd7816a7}} 
+size\+\_\+t {\bfseries Get\+Head\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of heads per energy window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_ac3acfc383f41c8a4d335c4f465dacc6d}\label{classGateToProjectionSet_ac3acfc383f41c8a4d335c4f465dacc6d}} 
+size\+\_\+t {\bfseries Get\+Energy\+Window\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of energy windows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a72dba475979ac314cca29d157098b89b}\label{classGateToProjectionSet_a72dba475979ac314cca29d157098b89b}} 
+size\+\_\+t {\bfseries Get\+Total\+Image\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of images. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_af048d34fc07ef7cc3cfd6fd8c40177ca}\label{classGateToProjectionSet_af048d34fc07ef7cc3cfd6fd8c40177ca}} 
+const G4\+String \& {\bfseries Get\+Input\+Data\+Name} (size\+\_\+t energy\+Window\+ID) const
+\begin{DoxyCompactList}\small\item\em Get the input data channel name for energy window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_ad74324fbcd9b0cc3817270019176a1e5}\label{classGateToProjectionSet_ad74324fbcd9b0cc3817270019176a1e5}} 
+G4int {\bfseries Get\+Input\+Data\+ID} (size\+\_\+t energy\+Window\+ID) const
+\begin{DoxyCompactList}\small\item\em Get the input data channel id for energy window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a436178ba20c3281d8060a77d9d8c6174}\label{classGateToProjectionSet_a436178ba20c3281d8060a77d9d8c6174}} 
+void {\bfseries Add\+Input\+Data\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Add the input data channel name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_abbf0f665a2d9858aa97e3e483068858a}\label{classGateToProjectionSet_abbf0f665a2d9858aa97e3e483068858a}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries Get\+Input\+Data\+Name\+List} () const
+\begin{DoxyCompactList}\small\item\em Get the list of input data channel name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a2f21e7997a22ca082ca7eaa686c3c094}\label{classGateToProjectionSet_a2f21e7997a22ca082ca7eaa686c3c094}} 
+std\+::vector$<$ G4int $>$ {\bfseries Get\+Input\+Data\+IDList} () const
+\begin{DoxyCompactList}\small\item\em Get the list of input data channel id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a1b3e604ad2fa9f8a8bfc43ab37d3d915}\label{classGateToProjectionSet_a1b3e604ad2fa9f8a8bfc43ab37d3d915}} 
+void {\bfseries Set\+Input\+Data\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Reset the list of intput data channel and add a name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a89f88563fa6e28da488fc7c92073b6f4}\label{classGateToProjectionSet_a89f88563fa6e28da488fc7c92073b6f4}} 
+void {\bfseries Set\+Output\+File\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Set the output file name in the \mbox{\hyperlink{classGateToInterfile}{Gate\+To\+Interfile}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{getters and setters to access the fields of the projection set}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}\label{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}} 
+\mbox{\hyperlink{classGateProjectionSet}{Gate\+Projection\+Set}} $\ast$ {\bfseries m\+\_\+projection\+Set}
+\begin{DoxyCompactList}\small\item\em Projection set for SPECT or OPTICAL simulations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_afdef83649313f1ca32259b3e7f1634e1}\label{classGateToProjectionSet_afdef83649313f1ca32259b3e7f1634e1}} 
+size\+\_\+t {\bfseries m\+\_\+energy\+Window\+Nb}
+\begin{DoxyCompactList}\small\item\em Number of energy windows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_aa07d808295282ae6b575c35d7b195239}\label{classGateToProjectionSet_aa07d808295282ae6b575c35d7b195239}} 
+size\+\_\+t {\bfseries m\+\_\+proj\+Nb}
+\begin{DoxyCompactList}\small\item\em Total number of projections. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_ae1521b7fd52d599fc7cb5effb4e13b81}\label{classGateToProjectionSet_ae1521b7fd52d599fc7cb5effb4e13b81}} 
+size\+\_\+t {\bfseries m\+\_\+head\+Nb}
+\begin{DoxyCompactList}\small\item\em Number of heads. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_ac87c30d6bd4b2db232bf304413fc772b}\label{classGateToProjectionSet_ac87c30d6bd4b2db232bf304413fc772b}} 
+G4double {\bfseries m\+\_\+orbiting\+Step}
+\begin{DoxyCompactList}\small\item\em Angular step between runs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a38220822bada8e895d01361db62c22c9}\label{classGateToProjectionSet_a38220822bada8e895d01361db62c22c9}} 
+G4double {\bfseries m\+\_\+head\+Angular\+Pitch}
+\begin{DoxyCompactList}\small\item\em Angular step between heads. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a85f302fe9ac87bb012086c343ee0fd45}\label{classGateToProjectionSet_a85f302fe9ac87bb012086c343ee0fd45}} 
+G4\+String {\bfseries m\+\_\+projection\+Plane}
+\begin{DoxyCompactList}\small\item\em The name of the projection plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_afc82e2fd2f3d2c54c56b09e03f45763a}\label{classGateToProjectionSet_afc82e2fd2f3d2c54c56b09e03f45763a}} 
+size\+\_\+t {\bfseries m\+\_\+coordX}
+\begin{DoxyCompactList}\small\item\em The coordinate axis to use for the X coord. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a52dae6dc3b83fe5f8361bff9c8079d13}\label{classGateToProjectionSet_a52dae6dc3b83fe5f8361bff9c8079d13}} 
+size\+\_\+t {\bfseries m\+\_\+coordY}
+\begin{DoxyCompactList}\small\item\em The coordinate axis to use for the Y coord. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_aac0501948c6aec80d496ec386c91f1fb}\label{classGateToProjectionSet_aac0501948c6aec80d496ec386c91f1fb}} 
+G4double {\bfseries m\+\_\+study\+Duration}
+\begin{DoxyCompactList}\small\item\em Total duration of the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a5bbec9d1ac6b885fa6fa7dff433d49e7}\label{classGateToProjectionSet_a5bbec9d1ac6b885fa6fa7dff433d49e7}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the system, used to get the system information (rotation speed...) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a71d1a4a355e7dbfb1d0505f2f79fd82e}\label{classGateToProjectionSet_a71d1a4a355e7dbfb1d0505f2f79fd82e}} 
+\mbox{\hyperlink{classGateToProjectionSetMessenger}{Gate\+To\+Projection\+Set\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_af4949855b35977568047e30d19750557}\label{classGateToProjectionSet_af4949855b35977568047e30d19750557}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries m\+\_\+input\+Data\+Channel\+List}
+\begin{DoxyCompactList}\small\item\em Name of the coincidence-\/collection to store into the sinogram. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_aae2bf90a8629bf5856a79e568d2a3fa6}\label{classGateToProjectionSet_aae2bf90a8629bf5856a79e568d2a3fa6}} 
+std\+::vector$<$ G4int $>$ {\bfseries m\+\_\+input\+Data\+Channel\+IDList}
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a1e6592733cbb545ec2413543d71634de}\label{classGateToProjectionSet_a1e6592733cbb545ec2413543d71634de}} 
+G4\+String {\bfseries m\+\_\+no\+File\+Name}
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a03180603dee46a57bf0e54360faf01a2}\label{classGateToProjectionSet_a03180603dee46a57bf0e54360faf01a2}} 
+\mbox{\hyperlink{classGateToInterfile}{Gate\+To\+Interfile}} $\ast$ {\bfseries m\+\_\+gate\+To\+Interfile}
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_aaae619013d7f7d11b592104b2594c755}\label{classGateToProjectionSet_aaae619013d7f7d11b592104b2594c755}} 
+\mbox{\hyperlink{classGateToOpticalRaw}{Gate\+To\+Optical\+Raw}} $\ast$ {\bfseries m\+\_\+gate\+To\+Optical\+Raw}
+\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a4bc499e55f058e5fb65fbfddc859c2dd}\label{classGateToProjectionSet_a4bc499e55f058e5fb65fbfddc859c2dd}} 
+\mbox{\hyperlink{classGateProjectionSet}{Gate\+Projection\+Set}} $\ast$ {\bfseries Get\+Projection\+Set} () const
+\begin{DoxyCompactList}\small\item\em Returns the projection set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a5818818cbf0c03a751e6206a217ecb61}\label{classGateToProjectionSet_a5818818cbf0c03a751e6206a217ecb61}} 
+G4int {\bfseries Get\+Pixel\+NbX} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pixels along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a9993a534d7062c8a9a4652c3d86418c3}\label{classGateToProjectionSet_a9993a534d7062c8a9a4652c3d86418c3}} 
+void {\bfseries Set\+Pixel\+NbX} (G4int a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of pixels along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a1f623f8ec7e593f76b3ad81b055c075a}\label{classGateToProjectionSet_a1f623f8ec7e593f76b3ad81b055c075a}} 
+G4int {\bfseries Get\+Pixel\+NbY} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pixels along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a656bfb578a9eeeaa007a32a16612c9af}\label{classGateToProjectionSet_a656bfb578a9eeeaa007a32a16612c9af}} 
+void {\bfseries Set\+Pixel\+NbY} (G4int a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of pixels along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a7cf68939559f3de99f6d50da5fda6787}\label{classGateToProjectionSet_a7cf68939559f3de99f6d50da5fda6787}} 
+G4double {\bfseries Get\+Pixel\+SizeX} () const
+\begin{DoxyCompactList}\small\item\em Returns the pixel size along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a4dffe3e33f2ac38ace356c0e9894ba05}\label{classGateToProjectionSet_a4dffe3e33f2ac38ace356c0e9894ba05}} 
+void {\bfseries Set\+Pixel\+SizeX} (G4double a\+Size)
+\begin{DoxyCompactList}\small\item\em Set the pixel size along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a29a226b5782fa692e8d1f02a92dca29c}\label{classGateToProjectionSet_a29a226b5782fa692e8d1f02a92dca29c}} 
+G4double {\bfseries Get\+Pixel\+SizeY} () const
+\begin{DoxyCompactList}\small\item\em Returns the pixel size along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a2999db5ac39c07bb7c754815a94bc89a}\label{classGateToProjectionSet_a2999db5ac39c07bb7c754815a94bc89a}} 
+void {\bfseries Set\+Pixel\+SizeY} (G4double a\+Size)
+\begin{DoxyCompactList}\small\item\em Set the pixel size along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToProjectionSet_a8d26150919d8d72290e14e360fda0c52}\label{classGateToProjectionSet_a8d26150919d8d72290e14e360fda0c52}} 
+size\+\_\+t {\bfseries Bytes\+Per\+Pixel} () const
+\begin{DoxyCompactList}\small\item\em Returns the nb of bytes per pixel;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateToProjectionSet_ae13b3b2ddbeb63ceb850d26d8c951985}\label{classGateToProjectionSet_ae13b3b2ddbeb63ceb850d26d8c951985}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!Describe@{Describe}}
+\index{Describe@{Describe}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_aab7e2a381874225771d5e478dd09218c}\label{classGateToProjectionSet_aab7e2a381874225771d5e478dd09218c}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!GiveNameOfFile@{GiveNameOfFile}}
+\index{GiveNameOfFile@{GiveNameOfFile}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{GiveNameOfFile()}{GiveNameOfFile()}}
+{\footnotesize\ttfamily const G4\+String \& Gate\+To\+Projection\+Set\+::\+Give\+Name\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_a1ef91b4eb159255544745791f7553623}\label{classGateToProjectionSet_a1ef91b4eb159255544745791f7553623}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialisation of the projection set. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_a3270bef05a22a8ff633217773685c1e3}\label{classGateToProjectionSet_a3270bef05a22a8ff633217773685c1e3}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nothing to do. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_a88bdb091de20780aa98943fbe9b21668}\label{classGateToProjectionSet_a88bdb091de20780aa98943fbe9b21668}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the projection data. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_ad6f380c68ec49313ada669d0d31edc09}\label{classGateToProjectionSet_ad6f380c68ec49313ada669d0d31edc09}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+We leave the projection set as it is (so that it can be stored afterwards) but we still have to destroy the array of projection IDs 
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_a53ea31146205bfed1505d6fc572f5633}\label{classGateToProjectionSet_a53ea31146205bfed1505d6fc572f5633}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update the target projections with regards to the digis acquired for this event. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_abe281d4da37ed50315f737fa0cd04c36}\label{classGateToProjectionSet_abe281d4da37ed50315f737fa0cd04c36}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nothing to do. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_a6b0f2e450cd1f0a417b6aaa967725f93}\label{classGateToProjectionSet_a6b0f2e450cd1f0a417b6aaa967725f93}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nothing to do for steps. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_a8c079bbf468a38282394546aeb48da2b}\label{classGateToProjectionSet_a8c079bbf468a38282394546aeb48da2b}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nothing to do. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToProjectionSet_a9c162eb771c0e557fc58626e578d1b77}\label{classGateToProjectionSet_a9c162eb771c0e557fc58626e578d1b77}} 
+\index{GateToProjectionSet@{GateToProjectionSet}!SetVerboseLevel@{SetVerboseLevel}}
+\index{SetVerboseLevel@{SetVerboseLevel}!GateToProjectionSet@{GateToProjectionSet}}
+\doxysubsubsection{\texorpdfstring{SetVerboseLevel()}{SetVerboseLevel()}}
+{\footnotesize\ttfamily void Gate\+To\+Projection\+Set\+::\+Set\+Verbose\+Level (\begin{DoxyParamCaption}\item[{G4int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Overload of the base-\/class\textquotesingle{} method\+: we command both our own verbosity and that of the projection set. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/\mbox{\hyperlink{GateToProjectionSet_8hh}{Gate\+To\+Projection\+Set.\+hh}}\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/\mbox{\hyperlink{GateToProjectionSet_8cc}{Gate\+To\+Projection\+Set.\+cc}}\end{DoxyCompactItemize}

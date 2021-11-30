@@ -1,0 +1,121 @@
+\hypertarget{classGateGenericRepeater}{}\doxysection{Gate\+Generic\+Repeater Class Reference}
+\label{classGateGenericRepeater}\index{GateGenericRepeater@{GateGenericRepeater}}
+
+
+The \mbox{\hyperlink{classGateGenericRepeater}{Gate\+Generic\+Repeater}} create a repetition of an object.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Generic\+Repeater.\+hh$>$}
+
+Inheritance diagram for Gate\+Generic\+Repeater\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateGenericRepeater}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a31e7fb4c622f9a108d57f76d04ef2c03}\label{classGateGenericRepeater_a31e7fb4c622f9a108d57f76d04ef2c03}} 
+{\bfseries Gate\+Generic\+Repeater} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name=\char`\"{}generic\+Repeater\char`\"{})
+\item 
+virtual void \mbox{\hyperlink{classGateGenericRepeater_a2f43b90d40075df26b9e197066127303}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateGenericRepeater_a60136907f18c8e48f9b2d71df67277a0}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a59d4486105678d32c71d4cee084a596c}\label{classGateGenericRepeater_a59d4486105678d32c71d4cee084a596c}} 
+void {\bfseries Set\+Placements\+Filename} (std\+::string filename)
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a81365ccbcc10462bd0a227d7de01f34f}\label{classGateGenericRepeater_a81365ccbcc10462bd0a227d7de01f34f}} 
+void {\bfseries Enable\+Relative\+Translation} (bool b)
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a40539deb10d24cfbc110b3b482f11305}\label{classGateGenericRepeater_a40539deb10d24cfbc110b3b482f11305}} 
+void {\bfseries Set\+Placement\+List} (std\+::vector$<$ Gate\+Placement $>$ l)
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a721c9f2b1f331ddd74b60aba3ce58faa}\label{classGateGenericRepeater_a721c9f2b1f331ddd74b60aba3ce58faa}} 
+G4int {\bfseries Get\+Repeat\+Number} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a365b770cb900e6ba81a3d08ee14ae954}\label{classGateGenericRepeater_a365b770cb900e6ba81a3d08ee14ae954}} 
+\mbox{\hyperlink{classGateGenericRepeaterMessenger}{Gate\+Generic\+Repeater\+Messenger}} $\ast$ {\bfseries m\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a295a1f015be4c6f8f238f30965652417}\label{classGateGenericRepeater_a295a1f015be4c6f8f238f30965652417}} 
+std\+::vector$<$ Gate\+Placement $>$ {\bfseries m\+Placements\+List}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a0fdfdd6389d33d56511ef853d9574952}\label{classGateGenericRepeater_a0fdfdd6389d33d56511ef853d9574952}} 
+bool {\bfseries m\+Use\+Rotation}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a41ca85436b4a41fbb6187ca823c1bea7}\label{classGateGenericRepeater_a41ca85436b4a41fbb6187ca823c1bea7}} 
+bool {\bfseries m\+Use\+Translation}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeater_a2bfa84120fc46d970b30044f00c0b6f8}\label{classGateGenericRepeater_a2bfa84120fc46d970b30044f00c0b6f8}} 
+bool {\bfseries m\+Use\+Relative\+Translation}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateGenericRepeater}{Gate\+Generic\+Repeater}} create a repetition of an object. 
+
+according to a given list of translation ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGenericRepeater_a60136907f18c8e48f9b2d71df67277a0}\label{classGateGenericRepeater_a60136907f18c8e48f9b2d71df67277a0}} 
+\index{GateGenericRepeater@{GateGenericRepeater}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateGenericRepeater@{GateGenericRepeater}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Repeater\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must print-\/out a short description of the repeater
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateGenericRepeater_a2f43b90d40075df26b9e197066127303}\label{classGateGenericRepeater_a2f43b90d40075df26b9e197066127303}} 
+\index{GateGenericRepeater@{GateGenericRepeater}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateGenericRepeater@{GateGenericRepeater}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Repeater\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must compute a series of placements (position+orientation) for a series of copies of the
+
+orignal volume. These placements must be stored in the placement queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Generic\+Repeater.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Generic\+Repeater.\+cc\end{DoxyCompactItemize}

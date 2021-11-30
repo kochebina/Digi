@@ -1,0 +1,92 @@
+\hypertarget{classGateAsciiTree}{}\doxysection{Gate\+Ascii\+Tree Class Reference}
+\label{classGateAsciiTree}\index{GateAsciiTree@{GateAsciiTree}}
+Inheritance diagram for Gate\+Ascii\+Tree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateAsciiTree}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateAsciiTree_a782cded3bf30146e9016e95a7b09f47c}\label{classGateAsciiTree_a782cded3bf30146e9016e95a7b09f47c}} 
+static std\+::string {\bfseries \+\_\+get\+\_\+factory\+\_\+name} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateAsciiTree_a7807336311f654be55abe2afa6c48530}{register\+\_\+variable}} (const std\+::string \&name, const void $\ast$p, std\+::type\+\_\+index t\+\_\+index) override
+\item 
+void \mbox{\hyperlink{classGateAsciiTree_af29f833240247ecdb2009f8f4ed208ce}{register\+\_\+variable}} (const std\+::string \&name, const char $\ast$p, size\+\_\+t nb\+\_\+char) override
+\item 
+void \mbox{\hyperlink{classGateAsciiTree_af7ee10ef10a1c499510e31a160be0384}{register\+\_\+variable}} (const std\+::string \&name, const std\+::string $\ast$p, size\+\_\+t nb\+\_\+char) override
+\item 
+void \mbox{\hyperlink{classGateAsciiTree_a2c300edd10caf1cc282ee1a24aee98b7}{register\+\_\+variable}} (const std\+::string \&name, const int $\ast$p, size\+\_\+t n) override
+\item 
+\mbox{\Hypertarget{classGateAsciiTree_a8bbe3ae727a1e51e2a9d413cd98f95b3}\label{classGateAsciiTree_a8bbe3ae727a1e51e2a9d413cd98f95b3}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries register\+\_\+variable} (const std\+::string \&name, const T $\ast$p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateAsciiTree_aa80b7f3684cfa1ad1d01758199faeb9e}\label{classGateAsciiTree_aa80b7f3684cfa1ad1d01758199faeb9e}} 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, save\+\_\+to\+\_\+file\+\_\+f $>$ {\bfseries m\+\_\+tmap\+Of\+Save\+\_\+to\+\_\+file}
+\item 
+\mbox{\Hypertarget{classGateAsciiTree_ad7cd6d472c9823d97e16f861aa36d2bf}\label{classGateAsciiTree_ad7cd6d472c9823d97e16f861aa36d2bf}} 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, read\+\_\+from\+\_\+string\+\_\+f $>$ {\bfseries m\+\_\+tmap\+Of\+Read\+\_\+from\+\_\+string}
+\item 
+\mbox{\Hypertarget{classGateAsciiTree_a39e31e443336b8c50ebaf9ff78a6cde3}\label{classGateAsciiTree_a39e31e443336b8c50ebaf9ff78a6cde3}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateAsciiData}{Gate\+Ascii\+Data}} $>$ {\bfseries m\+\_\+vector\+\_\+of\+\_\+pointer\+\_\+to\+\_\+data}
+\item 
+\mbox{\Hypertarget{classGateAsciiTree_a8bd4723a4004e22c36af82ac64745b2c}\label{classGateAsciiTree_a8bd4723a4004e22c36af82ac64745b2c}} 
+std\+::string {\bfseries m\+\_\+sep}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateAsciiTree_af29f833240247ecdb2009f8f4ed208ce}\label{classGateAsciiTree_af29f833240247ecdb2009f8f4ed208ce}} 
+\index{GateAsciiTree@{GateAsciiTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateAsciiTree@{GateAsciiTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Gate\+Ascii\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const char $\ast$}]{p,  }\item[{size\+\_\+t}]{nb\+\_\+char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+\mbox{\Hypertarget{classGateAsciiTree_a2c300edd10caf1cc282ee1a24aee98b7}\label{classGateAsciiTree_a2c300edd10caf1cc282ee1a24aee98b7}} 
+\index{GateAsciiTree@{GateAsciiTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateAsciiTree@{GateAsciiTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Gate\+Ascii\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const int $\ast$}]{p,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+\mbox{\Hypertarget{classGateAsciiTree_af7ee10ef10a1c499510e31a160be0384}\label{classGateAsciiTree_af7ee10ef10a1c499510e31a160be0384}} 
+\index{GateAsciiTree@{GateAsciiTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateAsciiTree@{GateAsciiTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Gate\+Ascii\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string $\ast$}]{p,  }\item[{size\+\_\+t}]{nb\+\_\+char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+\mbox{\Hypertarget{classGateAsciiTree_a7807336311f654be55abe2afa6c48530}\label{classGateAsciiTree_a7807336311f654be55abe2afa6c48530}} 
+\index{GateAsciiTree@{GateAsciiTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateAsciiTree@{GateAsciiTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Gate\+Ascii\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const void $\ast$}]{p,  }\item[{std\+::type\+\_\+index}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/io/include/Gate\+Ascii\+File.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/io/src/Gate\+Ascii\+File.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\hypertarget{namespaceGateSignalHandler}{}\doxysection{Gate\+Signal\+Handler Namespace Reference}
+\label{namespaceGateSignalHandler}\index{GateSignalHandler@{GateSignalHandler}}
+
+
+Namespace to catch and process system signals.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceGateSignalHandler_a677cd0b87fb8f3e566b9f7a38cdecbee}\label{namespaceGateSignalHandler_a677cd0b87fb8f3e566b9f7a38cdecbee}} 
+G4int {\bfseries Install} (void)
+\begin{DoxyCompactList}\small\item\em Install the signal handlers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceGateSignalHandler_ac0248cf6d598687af187052176172462}{Quit\+Signal\+Handler}} (int sig)
+\item 
+\mbox{\Hypertarget{namespaceGateSignalHandler_acd3306310b4459f221914abc729e649c}\label{namespaceGateSignalHandler_acd3306310b4459f221914abc729e649c}} 
+void {\bfseries Print\+Simulation\+Status} (int sig)
+\item 
+\mbox{\Hypertarget{namespaceGateSignalHandler_a78850a9eb4c1bdb57f7283b7177a83ad}\label{namespaceGateSignalHandler_a78850a9eb4c1bdb57f7283b7177a83ad}} 
+void {\bfseries Ignore\+Signal\+Handler} (int sig)
+\begin{DoxyCompactList}\small\item\em Ignore signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace to catch and process system signals. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{namespaceGateSignalHandler}{Gate\+Signal\+Handler}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (June 7 2002)
+\item The \mbox{\hyperlink{namespaceGateSignalHandler}{Gate\+Signal\+Handler}} namespace is a collection of routines allowing to catch and process system signals.
+\item For now, its only task is to catch SCTRL-\/\textbackslash{} (SIGQUIT) so that the user can stop an acquisition and get back in idle mode. 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceGateSignalHandler_ac0248cf6d598687af187052176172462}\label{namespaceGateSignalHandler_ac0248cf6d598687af187052176172462}} 
+\index{GateSignalHandler@{GateSignalHandler}!QuitSignalHandler@{QuitSignalHandler}}
+\index{QuitSignalHandler@{QuitSignalHandler}!GateSignalHandler@{GateSignalHandler}}
+\doxysubsubsection{\texorpdfstring{QuitSignalHandler()}{QuitSignalHandler()}}
+{\footnotesize\ttfamily void Gate\+Signal\+Handler\+::\+Quit\+Signal\+Handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+Handles the signal SIGQUIT (CTRL-\/). When a Beam\+On/\+Start\+DAQ is running, aborts the current run and stops the DAQ, returning GATE in Idle state. In the other states, the signal is ignored. 

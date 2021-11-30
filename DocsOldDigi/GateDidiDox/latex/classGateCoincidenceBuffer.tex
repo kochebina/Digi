@@ -1,0 +1,69 @@
+\hypertarget{classGateCoincidenceBuffer}{}\doxysection{Gate\+Coincidence\+Buffer Class Reference}
+\label{classGateCoincidenceBuffer}\index{GateCoincidenceBuffer@{GateCoincidenceBuffer}}
+Inheritance diagram for Gate\+Coincidence\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCoincidenceBuffer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceBuffer_a3f85087f1d1190e701097fe8170d5047}\label{classGateCoincidenceBuffer_a3f85087f1d1190e701097fe8170d5047}} 
+typedef unsigned long long int {\bfseries buffer\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceBuffer_ae4867de705c3f3486807a8b173bf5e33}\label{classGateCoincidenceBuffer_ae4867de705c3f3486807a8b173bf5e33}} 
+virtual {\bfseries $\sim$\+Gate\+Coincidence\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceBuffer_a129746b7daf0e2bbc9a550b5e7df5b47}\label{classGateCoincidenceBuffer_a129746b7daf0e2bbc9a550b5e7df5b47}} 
+{\bfseries Gate\+Coincidence\+Buffer} (\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{Gate\+Coincidence\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new dead time attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceBuffer_affac0ebd80a2bbbe043ab63dd90338ff}\label{classGateCoincidenceBuffer_affac0ebd80a2bbbe043ab63dd90338ff}} 
+void {\bfseries Set\+Buffer\+Size} (buffer\+\_\+t val)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceBuffer_a8f333d11b1ef105d6fd296e5e7398bac}\label{classGateCoincidenceBuffer_a8f333d11b1ef105d6fd296e5e7398bac}} 
+void {\bfseries Set\+Read\+Frequency} (G4double val)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceBuffer_a14d3ad1929b9199f6e61da83e853c879}\label{classGateCoincidenceBuffer_a14d3ad1929b9199f6e61da83e853c879}} 
+void {\bfseries Set\+Mode} (G4int val)
+\item 
+virtual void \mbox{\hyperlink{classGateCoincidenceBuffer_a1d297b10537908ccbf466fd96d30dea0}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ \mbox{\hyperlink{classGateCoincidenceBuffer_a2efc161d47d4ea83b3cb1864c0e9e5d9}{Process\+Pulse}} (\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$input\+Pulse, G4int i\+Pulse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCoincidenceBuffer_a1d297b10537908ccbf466fd96d30dea0}\label{classGateCoincidenceBuffer_a1d297b10537908ccbf466fd96d30dea0}} 
+\index{GateCoincidenceBuffer@{GateCoincidenceBuffer}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateCoincidenceBuffer@{GateCoincidenceBuffer}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Coincidence\+Buffer\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the dead\+Time 
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateCoincidenceBuffer_a2efc161d47d4ea83b3cb1864c0e9e5d9}\label{classGateCoincidenceBuffer_a2efc161d47d4ea83b3cb1864c0e9e5d9}} 
+\index{GateCoincidenceBuffer@{GateCoincidenceBuffer}!ProcessPulse@{ProcessPulse}}
+\index{ProcessPulse@{ProcessPulse}!GateCoincidenceBuffer@{GateCoincidenceBuffer}}
+\doxysubsubsection{\texorpdfstring{ProcessPulse()}{ProcessPulse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ Gate\+Coincidence\+Buffer\+::\+Process\+Pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{G4int}]{i\+Pulse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}} 
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Coincidence\+Buffer.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Coincidence\+Buffer.\+cc\end{DoxyCompactItemize}

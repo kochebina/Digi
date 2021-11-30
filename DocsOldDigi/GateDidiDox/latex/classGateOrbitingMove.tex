@@ -1,0 +1,140 @@
+\hypertarget{classGateOrbitingMove}{}\doxysection{Gate\+Orbiting\+Move Class Reference}
+\label{classGateOrbitingMove}\index{GateOrbitingMove@{GateOrbitingMove}}
+
+
+The \mbox{\hyperlink{classGateRotationMove}{Gate\+Rotation\+Move}} models a movement where the volume orbits.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Orbiting\+Move.\+hh$>$}
+
+Inheritance diagram for Gate\+Orbiting\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateOrbitingMove}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateOrbitingMove_a664b2b2d17ffc3dbac628e8239bdf4ac}{Gate\+Orbiting\+Move}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name, const G4\+Point3D \&its\+Point1=G4\+Point3D(), const G4\+Point3D \&its\+Point2=G4\+Point3D(0., 0., 1.), double its\+Velocity=0., G4bool its\+Flag\+Auto\+Rotation=true)
+\item 
+\mbox{\Hypertarget{classGateOrbitingMove_adae06b36b6f35b6387addaf9ef55380b}\label{classGateOrbitingMove_adae06b36b6f35b6387addaf9ef55380b}} 
+virtual {\bfseries $\sim$\+Gate\+Orbiting\+Move} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateOrbitingMove_a863a3e74123478b370487afc9eb03f0a}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method Push\+My\+Placement(), to compute. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateOrbitingMove_a19bd77e8e73f0cca1a651a58a8271c55}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateOrbitingMove_a19bd77e8e73f0cca1a651a58a8271c55}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOrbitingMove_aaac3e0e08d1a308e33b7f8d858f29e49}\label{classGateOrbitingMove_aaac3e0e08d1a308e33b7f8d858f29e49}} 
+const G4\+Point3D \& {\bfseries Get\+Point1} ()
+\begin{DoxyCompactList}\small\item\em Get the first point (origin) of the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_a526602944fce82333cca8461570f1df4}\label{classGateOrbitingMove_a526602944fce82333cca8461570f1df4}} 
+const G4\+Point3D \& {\bfseries Get\+Point2} ()
+\begin{DoxyCompactList}\small\item\em Get the second point (end-\/point) of the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_ab3bcbeaa393153d62bc815109c564f62}\label{classGateOrbitingMove_ab3bcbeaa393153d62bc815109c564f62}} 
+G4double {\bfseries Get\+Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_a66e69378d5b4cb45cae9f7888583f95b}\label{classGateOrbitingMove_a66e69378d5b4cb45cae9f7888583f95b}} 
+G4bool {\bfseries Get\+Auto\+Rotation} ()
+\begin{DoxyCompactList}\small\item\em Get the auto-\/rotation mode flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_a66d8ab39e7183455adc1aaeb79f149b2}\label{classGateOrbitingMove_a66d8ab39e7183455adc1aaeb79f149b2}} 
+void {\bfseries Set\+Point1} (const G4\+Point3D \&val)
+\begin{DoxyCompactList}\small\item\em Set the first point (origin) of the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_a2bf2f134d2a40eee40e3dcfcd00de59b}\label{classGateOrbitingMove_a2bf2f134d2a40eee40e3dcfcd00de59b}} 
+void {\bfseries Set\+Point2} (const G4\+Point3D \&val)
+\begin{DoxyCompactList}\small\item\em Set the second point (end-\/point) of the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_a9c76c1479cb5fd59513f06c0caef5545}\label{classGateOrbitingMove_a9c76c1479cb5fd59513f06c0caef5545}} 
+void {\bfseries Set\+Velocity} (double val)
+\begin{DoxyCompactList}\small\item\em Set the rotation speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_a73a1bb564b0691c16cf355949284ee2e}\label{classGateOrbitingMove_a73a1bb564b0691c16cf355949284ee2e}} 
+void {\bfseries Set\+Auto\+Rotation} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Set the auto-\/rotation mode flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOrbitingMove_ab2da396b6b07e8adfbca8c7af6e759e0}\label{classGateOrbitingMove_ab2da396b6b07e8adfbca8c7af6e759e0}} 
+G4double {\bfseries Get\+Current\+Angle} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the rotation angle that was last computed by Push\+My\+Placement() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateRotationMove}{Gate\+Rotation\+Move}} models a movement where the volume orbits. 
+
+around an axis
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateOrbitingMove}{Gate\+Orbiting\+Move}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The movement modeled by this class is an orbit, where the volume revolves around an axis at a constant speed. At any moment, the volume remains at the same distance from the axis, along a direction whose angle is theta(t) = V x t where V is the angular rotation speed and t the time.
+\item If the auto-\/rotation mode is enabled, the object rotates at the same time as it revolves. If the auto-\/rotation mode is disbaled, the object always keeps the same orientation. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateOrbitingMove_a664b2b2d17ffc3dbac628e8239bdf4ac}\label{classGateOrbitingMove_a664b2b2d17ffc3dbac628e8239bdf4ac}} 
+\index{GateOrbitingMove@{GateOrbitingMove}!GateOrbitingMove@{GateOrbitingMove}}
+\index{GateOrbitingMove@{GateOrbitingMove}!GateOrbitingMove@{GateOrbitingMove}}
+\doxysubsubsection{\texorpdfstring{GateOrbitingMove()}{GateOrbitingMove()}}
+{\footnotesize\ttfamily Gate\+Orbiting\+Move\+::\+Gate\+Orbiting\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{its\+Object\+Inserter,  }\item[{const G4\+String \&}]{its\+Name,  }\item[{const G4\+Point3D \&}]{its\+Point1 = {\ttfamily G4Point3D()},  }\item[{const G4\+Point3D \&}]{its\+Point2 = {\ttfamily G4Point3D(0.,0.,1.)},  }\item[{double}]{its\+Velocity = {\ttfamily 0.},  }\item[{G4bool}]{its\+Flag\+Auto\+Rotation = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor The default movement parameters are chosen so that, by default, the rotation is around the Z axis whilst the rotation speed is zero By default, the auto-\/rotation mode is enabled 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateOrbitingMove_a19bd77e8e73f0cca1a651a58a8271c55}\label{classGateOrbitingMove_a19bd77e8e73f0cca1a651a58a8271c55}} 
+\index{GateOrbitingMove@{GateOrbitingMove}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateOrbitingMove@{GateOrbitingMove}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Orbiting\+Move\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateOrbitingMove_a19bd77e8e73f0cca1a651a58a8271c55}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the movement
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateOrbitingMove_a863a3e74123478b370487afc9eb03f0a}\label{classGateOrbitingMove_a863a3e74123478b370487afc9eb03f0a}} 
+\index{GateOrbitingMove@{GateOrbitingMove}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateOrbitingMove@{GateOrbitingMove}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Orbiting\+Move\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method Push\+My\+Placement(), to compute. 
+
+a volume position and orientation as a function of time
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object Gate\+Placement combining the new position and the new orientation of the volume computed by the movement equation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Orbiting\+Move.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Orbiting\+Move.\+cc\end{DoxyCompactItemize}

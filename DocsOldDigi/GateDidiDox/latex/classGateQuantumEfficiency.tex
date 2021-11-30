@@ -1,0 +1,124 @@
+\hypertarget{classGateQuantumEfficiency}{}\doxysection{Gate\+Quantum\+Efficiency Class Reference}
+\label{classGateQuantumEfficiency}\index{GateQuantumEfficiency@{GateQuantumEfficiency}}
+
+
+Pulse-\/processor for simulating a quantum efficiency.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Quantum\+Efficiency.\+hh$>$}
+
+Inheritance diagram for Gate\+Quantum\+Efficiency\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateQuantumEfficiency}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_a64f6982d4f14d1a68d4e43f0fdf5caef}\label{classGateQuantumEfficiency_a64f6982d4f14d1a68d4e43f0fdf5caef}} 
+virtual {\bfseries $\sim$\+Gate\+Quantum\+Efficiency} ()
+\begin{DoxyCompactList}\small\item\em Public Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_a136c4c31466e4f607514dfba15c700fc}\label{classGateQuantumEfficiency_a136c4c31466e4f607514dfba15c700fc}} 
+void {\bfseries Check\+Volume\+Name} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Check the validity of the volume name where the quantum efficiency will be applied. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_ab4883a6fc125c26bb77ea763a5810fff}\label{classGateQuantumEfficiency_ab4883a6fc125c26bb77ea763a5810fff}} 
+void {\bfseries Use\+File} (G4\+String a\+File)
+\begin{DoxyCompactList}\small\item\em Allow to use file(s) as lookout table for quantum efficiency. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_af969c7519a0b43270273519e5a4c9fb4}\label{classGateQuantumEfficiency_af969c7519a0b43270273519e5a4c9fb4}} 
+void {\bfseries Set\+Unique\+QE} (G4double val)
+\begin{DoxyCompactList}\small\item\em Apply an unique quantum efficiency for all the channels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_abfe0383736c55ed5e5251b5e0b49eba8}\label{classGateQuantumEfficiency_abfe0383736c55ed5e5251b5e0b49eba8}} 
+void {\bfseries Create\+Table} ()
+\begin{DoxyCompactList}\small\item\em Create the table for the quantum efficiency inhomogeneity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_ab57d5e1a4dbe705d2bfd9e2359cf51f4}\label{classGateQuantumEfficiency_ab57d5e1a4dbe705d2bfd9e2359cf51f4}} 
+G4\+String {\bfseries Get\+Volume\+Name} ()
+\begin{DoxyCompactList}\small\item\em Return the volume name where the quantum efficiency is applied. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_a9a3307cbe91f914459fafa9928e249ab}\label{classGateQuantumEfficiency_a9a3307cbe91f914459fafa9928e249ab}} 
+G4double {\bfseries Get\+Act\+QECoeff} ()
+\begin{DoxyCompactList}\small\item\em Return the actual QE coef. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_a656f2fc514871a787776547983294ddc}\label{classGateQuantumEfficiency_a656f2fc514871a787776547983294ddc}} 
+G4double {\bfseries Get\+QECoeff} (G4int table\+NB, G4int crystal\+Nb)
+\begin{DoxyCompactList}\small\item\em Return the QE coef. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_af2d17c9c2891f0fde8d5c317b3753a45}\label{classGateQuantumEfficiency_af2d17c9c2891f0fde8d5c317b3753a45}} 
+G4double {\bfseries Get\+Min\+QECoeff} ()
+\begin{DoxyCompactList}\small\item\em Return the minimum QE coef. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_a06269dbf9b75d315ff3111d8f61c4bbf}\label{classGateQuantumEfficiency_a06269dbf9b75d315ff3111d8f61c4bbf}} 
+G4int {\bfseries Getlevel1\+No} ()
+\begin{DoxyCompactList}\small\item\em Return the number of element at level 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_ab3f7c5fce7ec2d711fc53bdff308e27c}\label{classGateQuantumEfficiency_ab3f7c5fce7ec2d711fc53bdff308e27c}} 
+G4int {\bfseries Getlevel2\+No} ()
+\begin{DoxyCompactList}\small\item\em Return the number of element at level 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateQuantumEfficiency_a614245b108de75d89f0352573bd18a4b}\label{classGateQuantumEfficiency_a614245b108de75d89f0352573bd18a4b}} 
+G4int {\bfseries Getlevel3\+No} ()
+\begin{DoxyCompactList}\small\item\em Return the number of element at level 3. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateQuantumEfficiency_a1b52452eadaa0744ab50336c99d5ab8e}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGateQuantumEfficiency}{Gate\+Quantum\+Efficiency}} $\ast$ \mbox{\hyperlink{classGateQuantumEfficiency_a531134581d4bc9a29a3a48fb3bbeec5b}{Get\+Instance}} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateQuantumEfficiency}{Gate\+Quantum\+Efficiency}} singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateQuantumEfficiency_a153a605953adbc35c951165b7b030279}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating a quantum efficiency. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateQuantumEfficiency}{Gate\+Quantum\+Efficiency}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (dec 2002)
+\item Pulse-\/processor for simulating the quantum efficiency on each channel of a PM or an APD. There are two options\+: one, is to give an unique quantum efficiency for all the channels, and, the other, is to give some lookout tables which contains data and this class takes these data with small variations (minus than 2\%) for creating the tables before the simulation.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateQuantumEfficiency_a1b52452eadaa0744ab50336c99d5ab8e}\label{classGateQuantumEfficiency_a1b52452eadaa0744ab50336c99d5ab8e}} 
+\index{GateQuantumEfficiency@{GateQuantumEfficiency}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateQuantumEfficiency@{GateQuantumEfficiency}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Quantum\+Efficiency\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the gain module 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateQuantumEfficiency_a531134581d4bc9a29a3a48fb3bbeec5b}\label{classGateQuantumEfficiency_a531134581d4bc9a29a3a48fb3bbeec5b}} 
+\index{GateQuantumEfficiency@{GateQuantumEfficiency}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GateQuantumEfficiency@{GateQuantumEfficiency}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateQuantumEfficiency}{Gate\+Quantum\+Efficiency}} $\ast$ Gate\+Quantum\+Efficiency\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$}]{its\+Chain,  }\item[{const G4\+String \&}]{its\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateQuantumEfficiency}{Gate\+Quantum\+Efficiency}} singleton. 
+
+\begin{DoxyVerb}If the GateQuantumEfficiency already exists, GetInstance only returns a pointer to this singleton.
+\end{DoxyVerb}
+ If this singleton does not exist yet, Get\+Instance creates it by calling the private \mbox{\hyperlink{classGateQuantumEfficiency}{Gate\+Quantum\+Efficiency}} constructor \mbox{\Hypertarget{classGateQuantumEfficiency_a153a605953adbc35c951165b7b030279}\label{classGateQuantumEfficiency_a153a605953adbc35c951165b7b030279}} 
+\index{GateQuantumEfficiency@{GateQuantumEfficiency}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateQuantumEfficiency@{GateQuantumEfficiency}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Quantum\+Efficiency\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Quantum\+Efficiency.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Quantum\+Efficiency.\+cc\end{DoxyCompactItemize}

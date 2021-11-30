@@ -1,0 +1,43 @@
+\hypertarget{GateCompressedVoxelOutputMessenger_8hh_source}{}\doxysection{Gate\+Compressed\+Voxel\+Output\+Messenger.\+hh}
+\label{GateCompressedVoxelOutputMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelOutputMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelOutputMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCompressedVoxelOutputMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCompressedVoxelOutputMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelOutput}{GateCompressedVoxelOutput}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelOutputMessenger}{GateCompressedVoxelOutputMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateCompressedVoxelOutputMessenger}{GateCompressedVoxelOutputMessenger}}(\mbox{\hyperlink{classGateCompressedVoxelOutput}{GateCompressedVoxelOutput}}* g);}
+\DoxyCodeLine{25    \mbox{\hyperlink{classGateCompressedVoxelOutputMessenger}{\string~GateCompressedVoxelOutputMessenger}}();}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{classGateCompressedVoxelOutput}{GateCompressedVoxelOutput}}*          m\_gateVoxelOutput;}
+\DoxyCodeLine{31     G4UIcmdWithAString*       SetFileNameCmd;}
+\DoxyCodeLine{32     G4UIcmdWithABool*         saveUncertaintyCmd;}
+\DoxyCodeLine{33    }
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 }
+
+\end{DoxyCode}

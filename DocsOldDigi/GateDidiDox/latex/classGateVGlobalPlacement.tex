@@ -1,0 +1,198 @@
+\hypertarget{classGateVGlobalPlacement}{}\doxysection{Gate\+VGlobal\+Placement Class Reference}
+\label{classGateVGlobalPlacement}\index{GateVGlobalPlacement@{GateVGlobalPlacement}}
+
+
+Framework base-\/class for all repeater classes.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VGlobal\+Placement.\+hh$>$}
+
+Inheritance diagram for Gate\+VGlobal\+Placement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateVGlobalPlacement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateVGlobalPlacement_a7f9ac81ce3098a44bea24077b23d4efb}{Gate\+VGlobal\+Placement}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_a0e451af6a67647e2c133002d336649e2}\label{classGateVGlobalPlacement_a0e451af6a67647e2c133002d336649e2}} 
+virtual {\bfseries $\sim$\+Gate\+VGlobal\+Placement} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVGlobalPlacement_af3d9c811a543bc1eafa6e78ced5eb780}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method defined by the base-\/class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGatePlacementQueue}{Gate\+Placement\+Queue}} $\ast$ \mbox{\hyperlink{classGateVGlobalPlacement_ae0aed17d0a1fe7526ac2041edd0cb713}{Compute\+Placements}} (\mbox{\hyperlink{classGatePlacementQueue}{Gate\+Placement\+Queue}} $\ast$mother\+Queue)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ management of the placement queue}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_a3a9fe179c4336067c0d816d799e87a6c}\label{classGateVGlobalPlacement_a3a9fe179c4336067c0d816d799e87a6c}} 
+virtual void {\bfseries Push\+Back\+Placement} (Gate\+Placement placement)
+\begin{DoxyCompactList}\small\item\em Places a new placement into the queue. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVGlobalPlacement_aa3439c0f3575c7a9c85bc640bc58b9c8}{Push\+Back\+Placement}} (const G4\+Rotation\+Matrix \&rotation\+Matrix, const G4\+Three\+Vector \&position)
+\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_a9af57faaff7f98b03afddb247653ef57}\label{classGateVGlobalPlacement_a9af57faaff7f98b03afddb247653ef57}} 
+virtual Gate\+Placement {\bfseries Pop\+Front\+Placement} ()
+\begin{DoxyCompactList}\small\item\em Extract and return the placement in the front of the queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_a0d8a6f94f420cadb25f90dee332dce80}\label{classGateVGlobalPlacement_a0d8a6f94f420cadb25f90dee332dce80}} 
+virtual const Gate\+Placement \& {\bfseries Front\+Placement} ()
+\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_a43d6fbb7f400a0f125fc1d23fd487539}\label{classGateVGlobalPlacement_a43d6fbb7f400a0f125fc1d23fd487539}} 
+virtual int {\bfseries size} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Describe\+Myself}} (size\+\_\+t indent)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{getters and setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_acd5c91ac8d90d2aac70863ca10888f66}\label{classGateVGlobalPlacement_acd5c91ac8d90d2aac70863ca10888f66}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries m\+\_\+object\+Inserter}
+\begin{DoxyCompactList}\small\item\em object to which the repeater is attached \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}\label{classGateVGlobalPlacement_abec6f03d397e1282411e9c1d180800f4}} 
+\mbox{\hyperlink{classGatePlacementQueue}{Gate\+Placement\+Queue}} {\bfseries m\+\_\+placement\+Queue}
+\begin{DoxyCompactList}\small\item\em Repeater private placement queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_a9f99c4e5c60c7a7b3c9572038e95624e}\label{classGateVGlobalPlacement_a9f99c4e5c60c7a7b3c9572038e95624e}} 
+virtual \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Get\+Volume\+Creator} () const
+\begin{DoxyCompactList}\small\item\em Return the object to which the repeater is attached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVGlobalPlacement_a655323b6f8ef095cebdbdb7652d487ee}\label{classGateVGlobalPlacement_a655323b6f8ef095cebdbdb7652d487ee}} 
+virtual void {\bfseries Compute\+Parameters} (G4double)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Framework base-\/class for all repeater classes. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVGlobalPlacement}{Gate\+VGlobal\+Placement}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The Gate\+VObject\+Move is derived from \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}}. It is responsible for computing the orientation and position of a series of copies of a volume, according to a repetition algorithm equation programmed by the user.
+\item \mbox{\hyperlink{classGateVGlobalPlacement}{Gate\+VGlobal\+Placement}} is an abstract class\+: specific repeaters can be modelled by deriving application classes from it. In each application class, it is the responsability of the developper to implement a model of the repetition in the pure virtual method \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Push\+My\+Placements()}}.
+\item It is also the responsability of the developper to implement the pure virtual method \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Describe\+Myself()}}. This method should print-\/out a description of the repeater (i.\+e. its parameters). 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateVGlobalPlacement_a7f9ac81ce3098a44bea24077b23d4efb}\label{classGateVGlobalPlacement_a7f9ac81ce3098a44bea24077b23d4efb}} 
+\index{GateVGlobalPlacement@{GateVGlobalPlacement}!GateVGlobalPlacement@{GateVGlobalPlacement}}
+\index{GateVGlobalPlacement@{GateVGlobalPlacement}!GateVGlobalPlacement@{GateVGlobalPlacement}}
+\doxysubsubsection{\texorpdfstring{GateVGlobalPlacement()}{GateVGlobalPlacement()}}
+{\footnotesize\ttfamily Gate\+VGlobal\+Placement\+::\+Gate\+VGlobal\+Placement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{its\+Object\+Inserter,  }\item[{const G4\+String \&}]{its\+Name }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em its\+Object\+Inserter} & the inserter to which the repeater is appended \\
+\hline
+{\em its\+Name} & the name chosen for this repeater \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVGlobalPlacement_ae0aed17d0a1fe7526ac2041edd0cb713}\label{classGateVGlobalPlacement_ae0aed17d0a1fe7526ac2041edd0cb713}} 
+\index{GateVGlobalPlacement@{GateVGlobalPlacement}!ComputePlacements@{ComputePlacements}}
+\index{ComputePlacements@{ComputePlacements}!GateVGlobalPlacement@{GateVGlobalPlacement}}
+\doxysubsubsection{\texorpdfstring{ComputePlacements()}{ComputePlacements()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePlacementQueue}{Gate\+Placement\+Queue}} $\ast$ Gate\+VGlobal\+Placement\+::\+Compute\+Placements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePlacementQueue}{Gate\+Placement\+Queue}} $\ast$}]{mother\+Queue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Public method to be called to repeat a series of placements placed into an input queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em mother\+Queue} & the input queue to repeat\\
+\hline
+\end{DoxyParams}
+If the repeater is enabled, it repeats each placement in the input queue using the user-\/defined virtual method Push\+My\+Placements. The series thus obtained are all placed into the repeater placement queue, which is returned to the caller. If the repeater is disabled, it directly places a copy of each input placement into the output queue, so that the output queue is a direct copy of the input queue. In both cases (enabled or disabled), the input queue is emptied as it is processed. \mbox{\Hypertarget{classGateVGlobalPlacement_af3d9c811a543bc1eafa6e78ced5eb780}\label{classGateVGlobalPlacement_af3d9c811a543bc1eafa6e78ced5eb780}} 
+\index{GateVGlobalPlacement@{GateVGlobalPlacement}!Describe@{Describe}}
+\index{Describe@{Describe}!GateVGlobalPlacement@{GateVGlobalPlacement}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+VGlobal\+Placement\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method defined by the base-\/class. 
+
+Calls \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Describe\+Myself()}} to print-\/out a description of the repeater
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent}}.
+
+\mbox{\Hypertarget{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}\label{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}} 
+\index{GateVGlobalPlacement@{GateVGlobalPlacement}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateVGlobalPlacement@{GateVGlobalPlacement}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily virtual void Gate\+VGlobal\+Placement\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must print-\/out a short description of the repeater
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classGateAngularRepeater_a93fa5784dd681fae25ab73f2296886cc}{Gate\+Angular\+Repeater}}, \mbox{\hyperlink{classGateArrayRepeater_a00948407612c87f994d2b69554b36244}{Gate\+Array\+Repeater}}, \mbox{\hyperlink{classGateEccentRotMove_acb13a62a1b091cf45380225b68bd51bb}{Gate\+Eccent\+Rot\+Move}}, \mbox{\hyperlink{classGateGenericMove_ae8e02bf388f27ca79380c3b5ba85cc25}{Gate\+Generic\+Move}}, \mbox{\hyperlink{classGateGenericRepeater_a60136907f18c8e48f9b2d71df67277a0}{Gate\+Generic\+Repeater}}, \mbox{\hyperlink{classGateGenericRepeaterMove_ae1d0e23cf7ef1053d17da3994320a442}{Gate\+Generic\+Repeater\+Move}}, \mbox{\hyperlink{classGateLinearRepeater_ad977d6f950ce73fd12d972e5aa12b8ad}{Gate\+Linear\+Repeater}}, \mbox{\hyperlink{classGateOrbitingMove_a19bd77e8e73f0cca1a651a58a8271c55}{Gate\+Orbiting\+Move}}, \mbox{\hyperlink{classGateOscTranslationMove_a6f48045f4894a02c6d745fee92cdb732}{Gate\+Osc\+Translation\+Move}}, \mbox{\hyperlink{classGateQuadrantRepeater_a7a44de7875d7f5cee01ff954ab7f2ba3}{Gate\+Quadrant\+Repeater}}, \mbox{\hyperlink{classGateRotationMove_ae1f78674c823afc10e4c04ffda0e982c}{Gate\+Rotation\+Move}}, \mbox{\hyperlink{classGateSphereRepeater_a738964d13db270608f0921dcac2284cd}{Gate\+Sphere\+Repeater}}, \mbox{\hyperlink{classGateTranslationMove_adae8c136a2940a4769e9759a701d1f74}{Gate\+Translation\+Move}}, and \mbox{\hyperlink{classGateVolumePlacement_a1627fbb7adeb6de1889ec523494915cf}{Gate\+Volume\+Placement}}.
+
+\mbox{\Hypertarget{classGateVGlobalPlacement_aa3439c0f3575c7a9c85bc640bc58b9c8}\label{classGateVGlobalPlacement_aa3439c0f3575c7a9c85bc640bc58b9c8}} 
+\index{GateVGlobalPlacement@{GateVGlobalPlacement}!PushBackPlacement@{PushBackPlacement}}
+\index{PushBackPlacement@{PushBackPlacement}!GateVGlobalPlacement@{GateVGlobalPlacement}}
+\doxysubsubsection{\texorpdfstring{PushBackPlacement()}{PushBackPlacement()}}
+{\footnotesize\ttfamily virtual void Gate\+VGlobal\+Placement\+::\+Push\+Back\+Placement (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Makes a new placement from a rotation matrix and a translation, and pushes this placement into the placement queue \mbox{\Hypertarget{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}\label{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}} 
+\index{GateVGlobalPlacement@{GateVGlobalPlacement}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateVGlobalPlacement@{GateVGlobalPlacement}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily virtual void Gate\+VGlobal\+Placement\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must compute a series of placements (position+orientation) for a series of copies of the
+
+orignal volume. These placements must be stored in the placement queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classGateAngularRepeater_ab520956730009bcfaed16c00cf9b333c}{Gate\+Angular\+Repeater}}, \mbox{\hyperlink{classGateArrayRepeater_ae61ac33d6f521348a98c04b7f378b68e}{Gate\+Array\+Repeater}}, \mbox{\hyperlink{classGateEccentRotMove_ac2c39f5db4a8692d104afc05bbe752d1}{Gate\+Eccent\+Rot\+Move}}, \mbox{\hyperlink{classGateGenericMove_a9456dd56ed16a07da541265affa0fae9}{Gate\+Generic\+Move}}, \mbox{\hyperlink{classGateGenericRepeater_a2f43b90d40075df26b9e197066127303}{Gate\+Generic\+Repeater}}, \mbox{\hyperlink{classGateGenericRepeaterMove_a656d51155d227a4976588cfc837c3ef9}{Gate\+Generic\+Repeater\+Move}}, \mbox{\hyperlink{classGateLinearRepeater_aadc9d9250370b9d808940b87e0c5d464}{Gate\+Linear\+Repeater}}, \mbox{\hyperlink{classGateOrbitingMove_a863a3e74123478b370487afc9eb03f0a}{Gate\+Orbiting\+Move}}, \mbox{\hyperlink{classGateOscTranslationMove_a3d7865933c0a023f101144b482dfdedb}{Gate\+Osc\+Translation\+Move}}, \mbox{\hyperlink{classGateQuadrantRepeater_a8872c89ec4354aaf4059948746b2003b}{Gate\+Quadrant\+Repeater}}, \mbox{\hyperlink{classGateRotationMove_abffa9c56ba5a5d7a760484e828751f5c}{Gate\+Rotation\+Move}}, \mbox{\hyperlink{classGateSphereRepeater_ad6365ef17559235a78c26584e07ff3e2}{Gate\+Sphere\+Repeater}}, \mbox{\hyperlink{classGateTranslationMove_a1393bf7f2a41a6b1140b47956946f271}{Gate\+Translation\+Move}}, and \mbox{\hyperlink{classGateVolumePlacement_a2add39f47364a4fecc22884f344d242e}{Gate\+Volume\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+VGlobal\+Placement.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+VGlobal\+Placement.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,61 @@
+\hypertarget{GateException_8hh_source}{}\doxysection{Gate\+Exception.\+hh}
+\label{GateException_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateException.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateException.hh}}
+\mbox{\hyperlink{GateException_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef \_\_GateException\_h\_\_}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define \_\_GateException\_h\_\_}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//\#include "{}GateSystem.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{namespace }Gate}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keyword}{inline} std::string bbGetObjectDescription() \{ \textcolor{keywordflow}{return}(\textcolor{stringliteral}{"{}"{}}); \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keyword}{class }\mbox{\hyperlink{classGate_1_1Exception}{Exception}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{37   \{}
+\DoxyCodeLine{38   \textcolor{keyword}{public}:}
+\DoxyCodeLine{39     \mbox{\hyperlink{classGate_1_1Exception}{Exception}}(\textcolor{keyword}{const} std::string\& \textcolor{keywordtype}{object},}
+\DoxyCodeLine{40           \textcolor{keyword}{const} std::string\& file,}
+\DoxyCodeLine{41           \textcolor{keyword}{const} std::string\& message) \textcolor{keywordflow}{throw}()}
+\DoxyCodeLine{42       : mObject(\textcolor{keywordtype}{object}),}
+\DoxyCodeLine{43     mFile(file),}
+\DoxyCodeLine{44     mMessage(message)}
+\DoxyCodeLine{45     \{\}}
+\DoxyCodeLine{46     \mbox{\hyperlink{classGate_1_1Exception}{\string~Exception}}() \textcolor{keywordflow}{throw}() \{\}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} Print() \textcolor{keywordflow}{throw}()}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49       std::cout << \textcolor{stringliteral}{"{}* ERROR  : "{}} << mMessage << Gateendl; }
+\DoxyCodeLine{50       \textcolor{comment}{//       printf("{}ERROR : [\%s]\(\backslash\)n"{},mLabel.c\_str());}}
+\DoxyCodeLine{51       \textcolor{keywordtype}{int} lev = GateMessageManager::GetMessageLevel(\textcolor{stringliteral}{"{}Error"{}});}
+\DoxyCodeLine{52       \textcolor{keywordflow}{if} (lev > 0) \{}
+\DoxyCodeLine{53     std::cout << \textcolor{stringliteral}{"{}* OBJECT : "{}} <<mObject<< Gateendl;}
+\DoxyCodeLine{54     std::cout << \textcolor{stringliteral}{"{}* FILE   : "{}} <<mFile<< Gateendl;}
+\DoxyCodeLine{55     \textcolor{comment}{//More info displayed}}
+\DoxyCodeLine{56       \}}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58     \textcolor{keyword}{const} std::string\& GetObject()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mObject; \}}
+\DoxyCodeLine{59     \textcolor{keyword}{const} std::string\& GetFile()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mFile; \}}
+\DoxyCodeLine{60     \textcolor{keyword}{const} std::string\& GetMessage()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mMessage; \}}
+\DoxyCodeLine{61   \textcolor{keyword}{private}:}
+\DoxyCodeLine{62     std::string mObject;}
+\DoxyCodeLine{63     std::string mFile;}
+\DoxyCodeLine{64     std::string mMessage;}
+\DoxyCodeLine{65   \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \}\textcolor{comment}{//namespace}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

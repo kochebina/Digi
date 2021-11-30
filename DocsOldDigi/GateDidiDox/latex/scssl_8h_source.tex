@@ -1,0 +1,111 @@
+\hypertarget{scssl_8h_source}{}\doxysection{scssl.\+h}
+\label{scssl_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/scssl.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/scssl.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#)scssl.h  1.1 7/11/92 */}}
+\DoxyCodeLine{2 \textcolor{comment}{/* Table of SSL entry points in reverse order to be included in}}
+\DoxyCodeLine{3 \textcolor{comment}{   scdef.h and scfun.c for user entry point table creation */}}
+\DoxyCodeLine{4   }
+\DoxyCodeLine{5         scssladdr(loadca\_)      }
+\DoxyCodeLine{6         scssladdr(loadca2\_)      }
+\DoxyCodeLine{7         scssladdr(nop\_)      }
+\DoxyCodeLine{8         scssladdr(xdmav\_)      }
+\DoxyCodeLine{9         scssladdr(xdmah\_)     }
+\DoxyCodeLine{10         scssladdr(xmodca\_)   }
+\DoxyCodeLine{11         scssladdr(xfluca\_) }
+\DoxyCodeLine{12         scssladdr(xsslca\_)}
+\DoxyCodeLine{13         scssladdr(xallca\_)        }
+\DoxyCodeLine{14         scssladdr(xbp\_)           }
+\DoxyCodeLine{15         scssladdr(xvsq\_)          }
+\DoxyCodeLine{16         scssladdr(xvsm2a\_)        }
+\DoxyCodeLine{17         scssladdr(xvmvic\_)        }
+\DoxyCodeLine{18         scssladdr(xvfl2c\_)        }
+\DoxyCodeLine{19         scssladdr(xvfx2c\_)        }
+\DoxyCodeLine{20         scssladdr(xvmgtf\_)        }
+\DoxyCodeLine{21         scssladdr(xvclpu\_)        }
+\DoxyCodeLine{22         scssladdr(xvclpl\_)        }
+\DoxyCodeLine{23         scssladdr(xdh\_)           }
+\DoxyCodeLine{24         scssladdr(xdv\_)           }
+\DoxyCodeLine{25         scssladdr(xgints\_)        }
+\DoxyCodeLine{26         scssladdr(xcvadd\_)        }
+\DoxyCodeLine{27         scssladdr(xvsml\_)         }
+\DoxyCodeLine{28         scssladdr(xvsbx\_)         }
+\DoxyCodeLine{29         scssladdr(xvsad\_)         }
+\DoxyCodeLine{30         scssladdr(xvneg\_)         }
+\DoxyCodeLine{31         scssladdr(xcvsub\_)        }
+\DoxyCodeLine{32         scssladdr(xcvsbx\_)        }
+\DoxyCodeLine{33         scssladdr(xvsb\_)          }
+\DoxyCodeLine{34         scssladdr(xvclr\_)         }
+\DoxyCodeLine{35         scssladdr(xvad\_)          }
+\DoxyCodeLine{36         scssladdr(xvfl2\_)         }
+\DoxyCodeLine{37         scssladdr(xvfx2\_)         }
+\DoxyCodeLine{38         scssladdr(xcvcnj\_)        }
+\DoxyCodeLine{39         scssladdr(xcrdtc\_)        }
+\DoxyCodeLine{40         scssladdr(xccvml\_)        }
+\DoxyCodeLine{41         scssladdr(xvmvgt\_)        }
+\DoxyCodeLine{42         scssladdr(xvmovi\_)        }
+\DoxyCodeLine{43         scssladdr(xvtabi\_)        }
+\DoxyCodeLine{44         scssladdr(xvcos\_)         }
+\DoxyCodeLine{45         scssladdr(xvsin\_)         }
+\DoxyCodeLine{46         scssladdr(xvcosr\_)        }
+\DoxyCodeLine{47         scssladdr(xvsinr\_)        }
+\DoxyCodeLine{48         scssladdr(xvsinp\_)        }
+\DoxyCodeLine{49         scssladdr(xvaln\_)         }
+\DoxyCodeLine{50         scssladdr(xvln\_)          }
+\DoxyCodeLine{51         scssladdr(xvsqrt\_)        }
+\DoxyCodeLine{52         scssladdr(xvatn2\_)        }
+\DoxyCodeLine{53         scssladdr(xdintg\_)        }
+\DoxyCodeLine{54         scssladdr(xrsma\_)         }
+\DoxyCodeLine{55         scssladdr(xrsmsq\_)        }
+\DoxyCodeLine{56         scssladdr(xrsum\_)         }
+\DoxyCodeLine{57         scssladdr(xcrmai\_)        }
+\DoxyCodeLine{58         scssladdr(xvfx4\_)         }
+\DoxyCodeLine{59         scssladdr(xvfl4\_)         }
+\DoxyCodeLine{60         scssladdr(xsfx4\_)         }
+\DoxyCodeLine{61         scssladdr(xsfl4\_)         }
+\DoxyCodeLine{62         scssladdr(xvclip\_)        }
+\DoxyCodeLine{63         scssladdr(xrmn\_)          }
+\DoxyCodeLine{64         scssladdr(xrmx\_)          }
+\DoxyCodeLine{65         scssladdr(xrlts\_)         }
+\DoxyCodeLine{66         scssladdr(xrles\_)         }
+\DoxyCodeLine{67         scssladdr(xrgts\_)         }
+\DoxyCodeLine{68         scssladdr(xrges\_)         }
+\DoxyCodeLine{69         scssladdr(xrnes\_)         }
+\DoxyCodeLine{70         scssladdr(xreqs\_)         }
+\DoxyCodeLine{71         scssladdr(xcjmul\_)        }
+\DoxyCodeLine{72         scssladdr(xcrmul\_)        }
+\DoxyCodeLine{73         scssladdr(xccmul\_)        }
+\DoxyCodeLine{74         scssladdr(xcssub\_)        }
+\DoxyCodeLine{75         scssladdr(xcsadd\_)        }
+\DoxyCodeLine{76         scssladdr(xvab\_)          }
+\DoxyCodeLine{77         scssladdr(xsmul\_)         }
+\DoxyCodeLine{78         scssladdr(xssub\_)         }
+\DoxyCodeLine{79         scssladdr(xsadd\_)         }
+\DoxyCodeLine{80         scssladdr(xvdiv\_)         }
+\DoxyCodeLine{81         scssladdr(xvrcp\_)         }
+\DoxyCodeLine{82         scssladdr(xsdiv\_)         }
+\DoxyCodeLine{83         scssladdr(xdfl22\_)        }
+\DoxyCodeLine{84         scssladdr(xdcord\_)        }
+\DoxyCodeLine{85         scssladdr(xvrmp\_)         }
+\DoxyCodeLine{86         scssladdr(xdcori\_)        }
+\DoxyCodeLine{87         scssladdr(xcrdot\_)        }
+\DoxyCodeLine{88         scssladdr(xrdot\_)         }
+\DoxyCodeLine{89         scssladdr(xfri\_)          }
+\DoxyCodeLine{90         scssladdr(xfrf\_)          }
+\DoxyCodeLine{91         scssladdr(xcvmov\_)        }
+\DoxyCodeLine{92         scssladdr(xvmov\_)         }
+\DoxyCodeLine{93         scssladdr(xfci\_)          }
+\DoxyCodeLine{94         scssladdr(xfcf\_)          }
+\DoxyCodeLine{95         scssladdr(xdcor\_)         }
+\DoxyCodeLine{96         scssladdr(xmovk\_)         }
+\DoxyCodeLine{97         scssladdr(xdcork\_)        }
+\DoxyCodeLine{98         scssladdr(xvpow\_)         }
+\DoxyCodeLine{99         scssladdr(xcvmls\_)        }
+\DoxyCodeLine{100         scssladdr(xcrml\_)         }
+\DoxyCodeLine{101         scssladdr(xvmls\_)         }
+\DoxyCodeLine{102         scssladdr(xcrma2\_)        }
+\DoxyCodeLine{103         scssladdr(xcrma1\_)        }
+\DoxyCodeLine{104         scssladdr(xvsma2\_)        }
+\DoxyCodeLine{105         scssladdr(xvsma1\_)        }
+
+\end{DoxyCode}

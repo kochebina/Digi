@@ -1,0 +1,61 @@
+\hypertarget{inftrees_8h_source}{}\doxysection{inftrees.\+h}
+\label{inftrees_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/inftrees.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/inftrees.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* inftrees.h -\/-\/ header to use inftrees.c}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 1995-\/2005 Mark Adler}}
+\DoxyCodeLine{3 \textcolor{comment}{ * For conditions of distribution and use, see copyright notice in zlib.h}}
+\DoxyCodeLine{4 \textcolor{comment}{ */}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{/* WARNING: this file should *not* be used by applications. It is}}
+\DoxyCodeLine{7 \textcolor{comment}{   part of the implementation of the compression library and is}}
+\DoxyCodeLine{8 \textcolor{comment}{   subject to change. Applications should only use zlib.h.}}
+\DoxyCodeLine{9 \textcolor{comment}{ */}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* Structure for decoding tables.  Each entry provides either the}}
+\DoxyCodeLine{12 \textcolor{comment}{   information needed to do the operation requested by the code that}}
+\DoxyCodeLine{13 \textcolor{comment}{   indexed that table entry, or it provides a pointer to another}}
+\DoxyCodeLine{14 \textcolor{comment}{   table that indexes more bits of the code.  op indicates whether}}
+\DoxyCodeLine{15 \textcolor{comment}{   the entry is a pointer to another table, a literal, a length or}}
+\DoxyCodeLine{16 \textcolor{comment}{   distance, an end-\/of-\/block, or an invalid code.  For a table}}
+\DoxyCodeLine{17 \textcolor{comment}{   pointer, the low four bits of op is the number of index bits of}}
+\DoxyCodeLine{18 \textcolor{comment}{   that table.  For a length or distance, the low four bits of op}}
+\DoxyCodeLine{19 \textcolor{comment}{   is the number of extra bits to get after the code.  bits is}}
+\DoxyCodeLine{20 \textcolor{comment}{   the number of bits in this code or part of the code to drop off}}
+\DoxyCodeLine{21 \textcolor{comment}{   of the bit buffer.  val is the actual byte to output in the case}}
+\DoxyCodeLine{22 \textcolor{comment}{   of a literal, the base length or distance, or the offset from}}
+\DoxyCodeLine{23 \textcolor{comment}{   the current table to the next table.  Each entry is four bytes. */}}
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{25     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} op;           \textcolor{comment}{/* operation, extra bits, table bits */}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} bits;         \textcolor{comment}{/* bits in this part of the code */}}
+\DoxyCodeLine{27     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} val;         \textcolor{comment}{/* offset in table or code value */}}
+\DoxyCodeLine{28 \} \mbox{\hyperlink{structcode}{code}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/* op values as set by inflate\_table():}}
+\DoxyCodeLine{31 \textcolor{comment}{    00000000 -\/ literal}}
+\DoxyCodeLine{32 \textcolor{comment}{    0000tttt -\/ table link, tttt != 0 is the number of table index bits}}
+\DoxyCodeLine{33 \textcolor{comment}{    0001eeee -\/ length or distance, eeee is the number of extra bits}}
+\DoxyCodeLine{34 \textcolor{comment}{    01100000 -\/ end of block}}
+\DoxyCodeLine{35 \textcolor{comment}{    01000000 -\/ invalid code}}
+\DoxyCodeLine{36 \textcolor{comment}{ */}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{/* Maximum size of dynamic tree.  The maximum found in a long but non-\/}}
+\DoxyCodeLine{39 \textcolor{comment}{   exhaustive search was 1444 code structures (852 for length/literals}}
+\DoxyCodeLine{40 \textcolor{comment}{   and 592 for distances, the latter actually the result of an}}
+\DoxyCodeLine{41 \textcolor{comment}{   exhaustive search).  The true maximum is not known, but the value}}
+\DoxyCodeLine{42 \textcolor{comment}{   below is more than safe. */}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define ENOUGH 2048}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define MAXD 592}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{/* Type of code to build for inftable() */}}
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{48     CODES,}
+\DoxyCodeLine{49     LENS,}
+\DoxyCodeLine{50     DISTS}
+\DoxyCodeLine{51 \} codetype;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} inflate\_table OF((codetype type, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} FAR *lens,}
+\DoxyCodeLine{54                              \textcolor{keywordtype}{unsigned} codes, \mbox{\hyperlink{structcode}{code}} FAR * FAR *table,}
+\DoxyCodeLine{55                              \textcolor{keywordtype}{unsigned} FAR *bits, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} FAR *work));}
+
+\end{DoxyCode}

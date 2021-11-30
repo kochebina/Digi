@@ -1,0 +1,43 @@
+\hypertarget{GateSystemFilterMessenger_8hh_source}{}\doxysection{Gate\+System\+Filter\+Messenger.\+hh}
+\label{GateSystemFilterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSystemFilterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSystemFilterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateSystemFilterMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateSystemFilterMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemFilter}{GateSystemFilter}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemFilterMessenger}{GateSystemFilterMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28      \mbox{\hyperlink{classGateSystemFilterMessenger}{GateSystemFilterMessenger}}(\mbox{\hyperlink{classGateSystemFilter}{GateSystemFilter}}* itsSystemFilter);}
+\DoxyCodeLine{29      \mbox{\hyperlink{classGateSystemFilterMessenger}{\string~GateSystemFilterMessenger}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} ObtainCandidates();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSystemFilter}{GateSystemFilter}}* GetSystemFilter()}
+\DoxyCodeLine{35       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemFilter}{GateSystemFilter}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37    \textcolor{keyword}{private}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39       G4UIcmdWithAString* m\_SetSystemNameCmd;}
+\DoxyCodeLine{40       G4String m\_insertedSystems;}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

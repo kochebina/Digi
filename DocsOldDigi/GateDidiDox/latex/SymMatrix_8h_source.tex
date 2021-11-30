@@ -1,0 +1,356 @@
+\hypertarget{SymMatrix_8h_source}{}\doxysection{Sym\+Matrix.\+h}
+\label{SymMatrix_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/SymMatrix.h@{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/SymMatrix.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// -\/*-\/ C++ -\/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{// CLASSDOC OFF}}
+\DoxyCodeLine{3 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// CLASSDOC ON}}
+\DoxyCodeLine{5 \textcolor{comment}{// }}
+\DoxyCodeLine{6 \textcolor{comment}{// This file is a part of the CLHEP -\/ a Class Library for High Energy Physics.}}
+\DoxyCodeLine{7 \textcolor{comment}{// }}
+\DoxyCodeLine{8 \textcolor{comment}{// This is the definition of the HepSymMatrix class.}}
+\DoxyCodeLine{9 \textcolor{comment}{// }}
+\DoxyCodeLine{10 \textcolor{comment}{// This software written by Nobu Katayama and Mike Smyth, Cornell University.}}
+\DoxyCodeLine{11 \textcolor{comment}{//}}
+\DoxyCodeLine{12 \textcolor{comment}{// .SS Usage}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 \textcolor{comment}{//   This is very much like the Matrix, except of course it is restricted to}}
+\DoxyCodeLine{15 \textcolor{comment}{//   Symmetric Matrix.  All the operations for Matrix can also be done here}}
+\DoxyCodeLine{16 \textcolor{comment}{//   (except for the +=,-\/=,*= that don't yield a symmetric matrix.  e.g.}}
+\DoxyCodeLine{17 \textcolor{comment}{//    +=(const Matrix \&) is not defined)}}
+\DoxyCodeLine{18    }
+\DoxyCodeLine{19 \textcolor{comment}{//   The matrix is stored as a lower triangular matrix.}}
+\DoxyCodeLine{20 \textcolor{comment}{//   In addition to the (row, col) method of finding element, fast(row, col)}}
+\DoxyCodeLine{21 \textcolor{comment}{//   returns an element with checking to see if row and col need to be }}
+\DoxyCodeLine{22 \textcolor{comment}{//   interchanged so that row >= col.}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{//   New operations are:}}
+\DoxyCodeLine{25 \textcolor{comment}{//}}
+\DoxyCodeLine{26 \textcolor{comment}{// .ft B}}
+\DoxyCodeLine{27 \textcolor{comment}{//  sym = s.similarity(m);}}
+\DoxyCodeLine{28 \textcolor{comment}{//}}
+\DoxyCodeLine{29 \textcolor{comment}{//  This returns m*s*m.T(). This is a similarity}}
+\DoxyCodeLine{30 \textcolor{comment}{//  transform when m is orthogonal, but nothing}}
+\DoxyCodeLine{31 \textcolor{comment}{//  restricts m to be orthogonal.  It is just}}
+\DoxyCodeLine{32 \textcolor{comment}{//  a more efficient way to calculate m*s*m.T,}}
+\DoxyCodeLine{33 \textcolor{comment}{//  and it realizes that this should be a }}
+\DoxyCodeLine{34 \textcolor{comment}{//  HepSymMatrix (the explicit operation m*s*m.T}}
+\DoxyCodeLine{35 \textcolor{comment}{//  will return a Matrix, not realizing that }}
+\DoxyCodeLine{36 \textcolor{comment}{//  it is symmetric).}}
+\DoxyCodeLine{37 \textcolor{comment}{//}}
+\DoxyCodeLine{38 \textcolor{comment}{// .ft B}}
+\DoxyCodeLine{39 \textcolor{comment}{//  sym =  similarityT(m);}}
+\DoxyCodeLine{40 \textcolor{comment}{//}}
+\DoxyCodeLine{41 \textcolor{comment}{// This returns m.T()*s*m.}}
+\DoxyCodeLine{42 \textcolor{comment}{//}}
+\DoxyCodeLine{43 \textcolor{comment}{// .ft B}}
+\DoxyCodeLine{44 \textcolor{comment}{// s << m;}}
+\DoxyCodeLine{45 \textcolor{comment}{//}}
+\DoxyCodeLine{46 \textcolor{comment}{// This takes the matrix m, and treats it}}
+\DoxyCodeLine{47 \textcolor{comment}{// as symmetric matrix that is copied to s.}}
+\DoxyCodeLine{48 \textcolor{comment}{// This is useful for operations that yield}}
+\DoxyCodeLine{49 \textcolor{comment}{// symmetric matrix, but which the computer}}
+\DoxyCodeLine{50 \textcolor{comment}{// is too dumb to realize.}}
+\DoxyCodeLine{51 \textcolor{comment}{//}}
+\DoxyCodeLine{52 \textcolor{comment}{// .ft B}}
+\DoxyCodeLine{53 \textcolor{comment}{// s = vT\_times\_v(const HepVector v);}}
+\DoxyCodeLine{54 \textcolor{comment}{//}}
+\DoxyCodeLine{55 \textcolor{comment}{//  calculates v.T()*v.}}
+\DoxyCodeLine{56 \textcolor{comment}{//}}
+\DoxyCodeLine{57 \textcolor{comment}{// ./"{}This code has been written by Mike Smyth, and the algorithms used are}}
+\DoxyCodeLine{58 \textcolor{comment}{// ./"{}described in the thesis "{}A Tracking Library for a Silicon Vertex Detector"{}}}
+\DoxyCodeLine{59 \textcolor{comment}{// ./"{}(Mike Smyth, Cornell University, June 1993).}}
+\DoxyCodeLine{60 \textcolor{comment}{// ./"{}This is file contains C++ stuff for doing things with Matrixes.}}
+\DoxyCodeLine{61 \textcolor{comment}{// ./"{}To turn on bound checking, define MATRIX\_BOUND\_CHECK before including}}
+\DoxyCodeLine{62 \textcolor{comment}{// ./"{}this file.}}
+\DoxyCodeLine{63 \textcolor{comment}{//}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#ifndef \_SYMMatrix\_H\_}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define \_SYMMatrix\_H\_}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#ifdef GNUPRAGMA}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#pragma interface}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/defs.h"{}}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/GenMatrix.h"{}}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#include "{}CLHEP/Utility/thread\_local.h"{}}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{namespace }CLHEP \{}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{class }HepRandom;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{class }HepMatrix;}
+\DoxyCodeLine{83 \textcolor{keyword}{class }HepDiagMatrix;}
+\DoxyCodeLine{84 \textcolor{keyword}{class }HepVector;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{90 \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}} \{}
+\DoxyCodeLine{91 \textcolor{keyword}{public}:}
+\DoxyCodeLine{92    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}();}
+\DoxyCodeLine{93    \textcolor{comment}{// Default constructor. Gives 0x0 symmetric matrix.}}
+\DoxyCodeLine{94    \textcolor{comment}{// Another SymMatrix can be assigned to it.}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96    \textcolor{keyword}{explicit} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}(\textcolor{keywordtype}{int} p);}
+\DoxyCodeLine{97    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}(\textcolor{keywordtype}{int} p, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{98    \textcolor{comment}{// Constructor. Gives p x p symmetric matrix.}}
+\DoxyCodeLine{99    \textcolor{comment}{// With a second argument, the matrix is initialized. 0 means a zero}}
+\DoxyCodeLine{100    \textcolor{comment}{// matrix, 1 means the identity matrix.}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}(\textcolor{keywordtype}{int} p, HepRandom \&r);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1);}
+\DoxyCodeLine{105    \textcolor{comment}{// Copy constructor.}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1);}
+\DoxyCodeLine{108    \textcolor{comment}{// Constructor from DiagMatrix}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110    \textcolor{keyword}{virtual} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{\string~HepSymMatrix}}();}
+\DoxyCodeLine{111    \textcolor{comment}{// Destructor.}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} num\_row() \textcolor{keyword}{const};}
+\DoxyCodeLine{114    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} num\_col() \textcolor{keyword}{const};}
+\DoxyCodeLine{115    \textcolor{comment}{// Returns number of rows/columns.}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117    \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const}; }
+\DoxyCodeLine{118    \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{119    \textcolor{comment}{// Read and write a SymMatrix element.}}
+\DoxyCodeLine{120    \textcolor{comment}{// ** Note that indexing starts from (1,1). **}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122    \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& fast(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const};}
+\DoxyCodeLine{123    \textcolor{keywordtype}{double} \& fast(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{124    \textcolor{comment}{// fast element access.}}
+\DoxyCodeLine{125    \textcolor{comment}{// Must be row>=col;}}
+\DoxyCodeLine{126    \textcolor{comment}{// ** Note that indexing starts from (1,1). **}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128    \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{129    \textcolor{comment}{// Assigns hm2 to s, assuming hm2 is a symmetric matrix.}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131    \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{132    \textcolor{comment}{// Another form of assignment. For consistency.}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator*=(\textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{135    \textcolor{comment}{// Multiply a SymMatrix by a floating number.}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator/=(\textcolor{keywordtype}{double} t); }
+\DoxyCodeLine{138    \textcolor{comment}{// Divide a SymMatrix by a floating number.}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator+=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{141    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator+=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{142    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator-\/=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{143    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator-\/=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{144    \textcolor{comment}{// Add or subtract a SymMatrix.}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{147    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& operator=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{148    \textcolor{comment}{// Assignment operators. Notice that there is no SymMatrix = Matrix.}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator-\/ () \textcolor{keyword}{const};}
+\DoxyCodeLine{151    \textcolor{comment}{// unary minus, ie. flip the sign of each element.}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} T() \textcolor{keyword}{const};}
+\DoxyCodeLine{154    \textcolor{comment}{// Returns the transpose of a SymMatrix (which is itself).}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} apply(\textcolor{keywordtype}{double} (*f)(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int})) \textcolor{keyword}{const};}
+\DoxyCodeLine{157    \textcolor{comment}{// Apply a function to all elements of the matrix.}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} similarity(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1) \textcolor{keyword}{const};}
+\DoxyCodeLine{160    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} similarity(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1) \textcolor{keyword}{const};}
+\DoxyCodeLine{161    \textcolor{comment}{// Returns hm1*s*hm1.T().}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} similarityT(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1) \textcolor{keyword}{const};}
+\DoxyCodeLine{164    \textcolor{comment}{// temporary. test of new similarity.}}
+\DoxyCodeLine{165    \textcolor{comment}{// Returns hm1.T()*s*hm1.}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167    \textcolor{keywordtype}{double} similarity(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v) \textcolor{keyword}{const};}
+\DoxyCodeLine{168    \textcolor{comment}{// Returns v.T()*s*v (This is a scaler).}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} sub(\textcolor{keywordtype}{int} min\_row, \textcolor{keywordtype}{int} max\_row) \textcolor{keyword}{const};}
+\DoxyCodeLine{171    \textcolor{comment}{// Returns a sub matrix of a SymMatrix.}}
+\DoxyCodeLine{172    \textcolor{keywordtype}{void} sub(\textcolor{keywordtype}{int} row, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1);}
+\DoxyCodeLine{173    \textcolor{comment}{// Sub matrix of this SymMatrix is replaced with hm1.}}
+\DoxyCodeLine{174    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} sub(\textcolor{keywordtype}{int} min\_row, \textcolor{keywordtype}{int} max\_row);}
+\DoxyCodeLine{175    \textcolor{comment}{// SGI CC bug. I have to have both with/without const. I should not need}}
+\DoxyCodeLine{176    \textcolor{comment}{// one without const.}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} inverse(\textcolor{keywordtype}{int} \&ifail) \textcolor{keyword}{const};}
+\DoxyCodeLine{179    \textcolor{comment}{// Invert a Matrix. The matrix is not changed}}
+\DoxyCodeLine{180    \textcolor{comment}{// Returns 0 when successful, otherwise non-\/zero.}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182    \textcolor{keywordtype}{void} invert(\textcolor{keywordtype}{int} \&ifail);}
+\DoxyCodeLine{183    \textcolor{comment}{// Invert a Matrix.}}
+\DoxyCodeLine{184    \textcolor{comment}{// N.B. the contents of the matrix are replaced by the inverse.}}
+\DoxyCodeLine{185    \textcolor{comment}{// Returns ierr = 0 when successful, otherwise non-\/zero. }}
+\DoxyCodeLine{186    \textcolor{comment}{// This method has less overhead then inverse().}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} invert();}
+\DoxyCodeLine{189    \textcolor{comment}{// Invert a matrix. Throw std::runtime\_error on failure.}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} inverse() \textcolor{keyword}{const};}
+\DoxyCodeLine{192    \textcolor{comment}{// Invert a matrix. Throw std::runtime\_error on failure. }}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194    \textcolor{keywordtype}{double} determinant() \textcolor{keyword}{const};}
+\DoxyCodeLine{195    \textcolor{comment}{// calculate the determinant of the matrix.}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197    \textcolor{keywordtype}{double} trace() \textcolor{keyword}{const};}
+\DoxyCodeLine{198    \textcolor{comment}{// calculate the trace of the matrix (sum of diagonal elements).}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200    \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row}{HepSymMatrix\_row}} \{}
+\DoxyCodeLine{201    \textcolor{keyword}{public}:}
+\DoxyCodeLine{202       \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row}{HepSymMatrix\_row}}(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\&,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{203       \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int});}
+\DoxyCodeLine{204    \textcolor{keyword}{private}:}
+\DoxyCodeLine{205       \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\& \_a;}
+\DoxyCodeLine{206       \textcolor{keywordtype}{int} \_r;}
+\DoxyCodeLine{207    \};}
+\DoxyCodeLine{208    \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row__const}{HepSymMatrix\_row\_const}} \{}
+\DoxyCodeLine{209    \textcolor{keyword}{public}:}
+\DoxyCodeLine{210       \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row__const}{HepSymMatrix\_row\_const}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\&,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{211       \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int}) \textcolor{keyword}{const};}
+\DoxyCodeLine{212    \textcolor{keyword}{private}:}
+\DoxyCodeLine{213       \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\& \_a;}
+\DoxyCodeLine{214       \textcolor{keywordtype}{int} \_r;}
+\DoxyCodeLine{215    \};}
+\DoxyCodeLine{216    \textcolor{comment}{// helper class to implement m[i][j]}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row}{HepSymMatrix\_row}} operator[] (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{219    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row__const}{HepSymMatrix\_row\_const}} operator[] (\textcolor{keywordtype}{int}) \textcolor{keyword}{const};}
+\DoxyCodeLine{220    \textcolor{comment}{// Read or write a matrix element.}}
+\DoxyCodeLine{221    \textcolor{comment}{// While it may not look like it, you simply do m[i][j] to get an}}
+\DoxyCodeLine{222    \textcolor{comment}{// element. }}
+\DoxyCodeLine{223    \textcolor{comment}{// ** Note that the indexing starts from [0][0]. **}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225    \textcolor{comment}{// Special-\/case inversions for 5x5 and 6x6 symmetric positive definite:}}
+\DoxyCodeLine{226    \textcolor{comment}{// These set ifail=0 and invert if the matrix was positive definite;}}
+\DoxyCodeLine{227    \textcolor{comment}{// otherwise ifail=1 and the matrix is left unaltered.}}
+\DoxyCodeLine{228    \textcolor{keywordtype}{void} invertCholesky5 (\textcolor{keywordtype}{int} \&ifail);  }
+\DoxyCodeLine{229    \textcolor{keywordtype}{void} invertCholesky6 (\textcolor{keywordtype}{int} \&ifail);}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231    \textcolor{comment}{// Inversions for 5x5 and 6x6 forcing use of specific methods:  The}}
+\DoxyCodeLine{232    \textcolor{comment}{// behavior (though not the speed) will be identical to invert(ifail).}}
+\DoxyCodeLine{233    \textcolor{keywordtype}{void} invertHaywood4 (\textcolor{keywordtype}{int} \& ifail);  }
+\DoxyCodeLine{234    \textcolor{keywordtype}{void} invertHaywood5 (\textcolor{keywordtype}{int} \&ifail);  }
+\DoxyCodeLine{235    \textcolor{keywordtype}{void} invertHaywood6 (\textcolor{keywordtype}{int} \&ifail);}
+\DoxyCodeLine{236    \textcolor{keywordtype}{void} invertBunchKaufman (\textcolor{keywordtype}{int} \&ifail);  }
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{239    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} num\_size() \textcolor{keyword}{const};}
+\DoxyCodeLine{240   }
+\DoxyCodeLine{241 \textcolor{keyword}{private}:}
+\DoxyCodeLine{242    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row}{HepSymMatrix\_row}};}
+\DoxyCodeLine{243    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix_1_1HepSymMatrix__row__const}{HepSymMatrix\_row\_const}};}
+\DoxyCodeLine{244    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}};}
+\DoxyCodeLine{245    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} tridiagonal(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *a,\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *hsm);}
+\DoxyCodeLine{248    \textcolor{keyword}{friend} \textcolor{keywordtype}{double} condition(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&m);}
+\DoxyCodeLine{249    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} diag\_step(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *t,\textcolor{keywordtype}{int} begin,\textcolor{keywordtype}{int} end);}
+\DoxyCodeLine{250    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} diag\_step(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *t,\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *u,\textcolor{keywordtype}{int} begin,\textcolor{keywordtype}{int} end);}
+\DoxyCodeLine{251    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} diagonalize(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *s);}
+\DoxyCodeLine{252    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} house(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&a,\textcolor{keywordtype}{int} row,\textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{253    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} house\_with\_update2(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *a,\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *v,\textcolor{keywordtype}{int} row,\textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, }
+\DoxyCodeLine{256                   \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{257    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, }
+\DoxyCodeLine{258                   \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{259    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{260    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{261    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{262    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm2);}
+\DoxyCodeLine{263    \textcolor{comment}{// Multiply a Matrix by a Matrix or Vector.}}
+\DoxyCodeLine{264    }
+\DoxyCodeLine{265    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} vT\_times\_v(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v);}
+\DoxyCodeLine{266    \textcolor{comment}{// Returns v * v.T();}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#ifdef DISABLE\_ALLOC}}
+\DoxyCodeLine{269    std::vector<double > m;}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{271    std::vector<double,Alloc<double,25> > m;}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{273    \textcolor{keywordtype}{int} nrow;}
+\DoxyCodeLine{274    \textcolor{keywordtype}{int} size\_;                    \textcolor{comment}{// total number of elements}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276    \textcolor{keyword}{static} CLHEP\_THREAD\_LOCAL \textcolor{keywordtype}{double} posDefFraction5x5;}
+\DoxyCodeLine{277    \textcolor{keyword}{static} CLHEP\_THREAD\_LOCAL \textcolor{keywordtype}{double} adjustment5x5;}
+\DoxyCodeLine{278    \textcolor{keyword}{static} \textcolor{keyword}{const}  \textcolor{keywordtype}{double} CHOLESKY\_THRESHOLD\_5x5;}
+\DoxyCodeLine{279    \textcolor{keyword}{static} \textcolor{keyword}{const}  \textcolor{keywordtype}{double} CHOLESKY\_CREEP\_5x5;}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281    \textcolor{keyword}{static} CLHEP\_THREAD\_LOCAL \textcolor{keywordtype}{double} posDefFraction6x6;}
+\DoxyCodeLine{282    \textcolor{keyword}{static} CLHEP\_THREAD\_LOCAL \textcolor{keywordtype}{double} adjustment6x6;}
+\DoxyCodeLine{283    \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} CHOLESKY\_THRESHOLD\_6x6;}
+\DoxyCodeLine{284    \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} CHOLESKY\_CREEP\_6x6;}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286    \textcolor{keywordtype}{void} invert4  (\textcolor{keywordtype}{int} \& ifail);}
+\DoxyCodeLine{287    \textcolor{keywordtype}{void} invert5  (\textcolor{keywordtype}{int} \& ifail);}
+\DoxyCodeLine{288    \textcolor{keywordtype}{void} invert6  (\textcolor{keywordtype}{int} \& ifail);}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \};}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{comment}{//}}
+\DoxyCodeLine{293 \textcolor{comment}{// Operations other than member functions for Matrix, SymMatrix, DiagMatrix}}
+\DoxyCodeLine{294 \textcolor{comment}{// and Vectors implemented in Matrix.cc and Matrix.icc (inline).}}
+\DoxyCodeLine{295 \textcolor{comment}{//}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 std::ostream\& operator<<(std::ostream \&s, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&q);}
+\DoxyCodeLine{298 \textcolor{comment}{// Write out Matrix, SymMatrix, DiagMatrix and Vector into ostream.}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{301 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{302 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{303 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator*(\textcolor{keywordtype}{double} t, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1);}
+\DoxyCodeLine{304 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1, \textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{305 \textcolor{comment}{// Multiplication operators.}}
+\DoxyCodeLine{306 \textcolor{comment}{// Note that m *= hm1 is always faster than m = m * hm1}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{309 \textcolor{comment}{// s = s1 / t. (s /= t is faster if you can use it.)}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s2);}
+\DoxyCodeLine{312 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{313 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s2);}
+\DoxyCodeLine{314 \textcolor{comment}{// Addition operators}}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s2);}
+\DoxyCodeLine{317 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{318 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s2);}
+\DoxyCodeLine{319 \textcolor{comment}{// subtraction operators}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} dsum(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s2);}
+\DoxyCodeLine{322 \textcolor{comment}{// Direct sum of two symmetric matrices;}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 \textcolor{keywordtype}{double} condition(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&m);}
+\DoxyCodeLine{325 \textcolor{comment}{// Find the conditon number of a symmetric matrix.}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327 \textcolor{keywordtype}{void} diag\_step(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *t, \textcolor{keywordtype}{int} begin, \textcolor{keywordtype}{int} end);}
+\DoxyCodeLine{328 \textcolor{keywordtype}{void} diag\_step(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *t, \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *u, \textcolor{keywordtype}{int} begin, \textcolor{keywordtype}{int} end);}
+\DoxyCodeLine{329 \textcolor{comment}{// Implicit symmetric QR step with Wilkinson Shift}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} diagonalize(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *s);}
+\DoxyCodeLine{332 \textcolor{comment}{// Diagonalize a symmetric matrix.}}
+\DoxyCodeLine{333 \textcolor{comment}{// It returns the matrix U so that s\_old = U * s\_diag * U.T()}}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} house(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&a, \textcolor{keywordtype}{int} row=1, \textcolor{keywordtype}{int} col=1);}
+\DoxyCodeLine{336 \textcolor{keywordtype}{void} house\_with\_update2(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *a, \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *v, \textcolor{keywordtype}{int} row=1, \textcolor{keywordtype}{int} col=1);}
+\DoxyCodeLine{337 \textcolor{comment}{// Finds and does Householder reflection on matrix.}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{keywordtype}{void} tridiagonal(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *a, \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *hsm);}
+\DoxyCodeLine{340 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} tridiagonal(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *a);}
+\DoxyCodeLine{341 \textcolor{comment}{// Does a Householder tridiagonalization of a symmetric matrix.}}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 \}  \textcolor{comment}{// namespace CLHEP}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#ifdef ENABLE\_BACKWARDS\_COMPATIBILITY}}
+\DoxyCodeLine{346 \textcolor{comment}{//  backwards compatibility will be enabled ONLY in CLHEP 1.9}}
+\DoxyCodeLine{347 \textcolor{keyword}{using namespace }CLHEP;}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#ifndef HEP\_DEBUG\_INLINE}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/SymMatrix.icc"{}}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

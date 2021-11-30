@@ -1,0 +1,84 @@
+\hypertarget{classGateRunManager}{}\doxysection{Gate\+Run\+Manager Class Reference}
+\label{classGateRunManager}\index{GateRunManager@{GateRunManager}}
+
+
+Extension of the G4\+Run\+Manager to provide new functions.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Run\+Manager.\+hh$>$}
+
+Inheritance diagram for Gate\+Run\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateRunManager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRunManager_a97f4d9bcd5a58e27f2e6ff02f46ce936}\label{classGateRunManager_a97f4d9bcd5a58e27f2e6ff02f46ce936}} 
+{\bfseries Gate\+Run\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRunManager_aeb4998ee6c7977e109ebcbb83adb1a6a}\label{classGateRunManager_aeb4998ee6c7977e109ebcbb83adb1a6a}} 
+virtual {\bfseries $\sim$\+Gate\+Run\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRunManager_a1b5ce8d2cb917e571a9a7ea7d274cbd0}\label{classGateRunManager_a1b5ce8d2cb917e571a9a7ea7d274cbd0}} 
+void {\bfseries Physics\+Has\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Reset the physics\+Initialised flag to zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRunManager_a20942a3a3b6452b89fc379ca0627f163}\label{classGateRunManager_a20942a3a3b6452b89fc379ca0627f163}} 
+void {\bfseries Initialize\+All} ()
+\begin{DoxyCompactList}\small\item\em Initialise the geometry, the actors and the physics list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRunManager_a531b03030840a96359882dec6d625cc6}\label{classGateRunManager_a531b03030840a96359882dec6d625cc6}} 
+void {\bfseries Init\+Geometry\+Only} ()
+\begin{DoxyCompactList}\small\item\em Initialise only the geometry, to allow the building of the GATE geometry. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRunManager_a1b51d5c403aa75bf66c7f58dd69b09a8}\label{classGateRunManager_a1b51d5c403aa75bf66c7f58dd69b09a8}} 
+void {\bfseries Init\+Physics} ()
+\item 
+\mbox{\Hypertarget{classGateRunManager_afc26465adc3fec1be2c485955c9065ed}\label{classGateRunManager_afc26465adc3fec1be2c485955c9065ed}} 
+void {\bfseries Run\+Initialization} ()
+\begin{DoxyCompactList}\small\item\em Overload of G4\+Run\+Manager()\+::\+Run\+Initialisation() that resets the geometry navigator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRunManager_a221df063efcead54c5dec2876f42062d}\label{classGateRunManager_a221df063efcead54c5dec2876f42062d}} 
+bool {\bfseries Get\+Global\+Output\+Flag} ()
+\item 
+\mbox{\Hypertarget{classGateRunManager_a6ea25ab40b88557f424df61a4d878f0b}\label{classGateRunManager_a6ea25ab40b88557f424df61a4d878f0b}} 
+void {\bfseries Enable\+Global\+Output} (bool b)
+\item 
+\mbox{\Hypertarget{classGateRunManager_abfa89eff68c506b6bfb721addcb55b42}\label{classGateRunManager_abfa89eff68c506b6bfb721addcb55b42}} 
+void {\bfseries Set\+User\+Physic\+List} (G4\+VUser\+Physics\+List $\ast$m)
+\item 
+\mbox{\Hypertarget{classGateRunManager_a974e36a1b652841e2ee645d99b3d872e}\label{classGateRunManager_a974e36a1b652841e2ee645d99b3d872e}} 
+void {\bfseries Set\+User\+Physic\+List\+Name} (G4\+String m)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRunManager_ad0465d874750b1c6b57dcc199ba90aa6}\label{classGateRunManager_ad0465d874750b1c6b57dcc199ba90aa6}} 
+static \mbox{\hyperlink{classGateRunManager}{Gate\+Run\+Manager}} $\ast$ {\bfseries Get\+Run\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Return the instance of the run manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extension of the G4\+Run\+Manager to provide new functions. 
+
+and automated resetting of the navigator at the beginning of each run
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateRunManager}{Gate\+Run\+Manager}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item A \mbox{\hyperlink{classGateRunManager}{Gate\+Run\+Manager}} is derived from G4\+Run\+Manager, and provides the following functionalities\+:
+\item \mbox{\hyperlink{classGateRunManager_a1b5ce8d2cb917e571a9a7ea7d274cbd0}{Physics\+Has\+Changed()}}\+: to reset the physics\+Initialised flag
+\item \mbox{\hyperlink{classGateRunManager_a531b03030840a96359882dec6d625cc6}{Init\+Geometry\+Only()}}\+: new method to initialise only the geometry, allowing us to build the GATE geometry
+\item Run\+Initialisation()\+: overload of G4\+Run\+Manager()\+::\+Run\+Initialisation() that resets the geometry navigator.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}, Gate\+Box\+Creator\+Component, \mbox{\hyperlink{classGateArrayRepeater}{Gate\+Array\+Repeater}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Run\+Manager.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Run\+Manager.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,120 @@
+\hypertarget{GateTwistedTrap_8hh_source}{}\doxysection{Gate\+Twisted\+Trap.\+hh}
+\label{GateTwistedTrap_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedTrap.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedTrap.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateTwistedTrap.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATETWISTEDTRAP\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATETWISTEDTRAP\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4TwistedTrap;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedTrapMessenger}{GateTwistedTrapMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedTrap}{GateTwistedTrap}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateTwistedTrap_a484e588786a538f9976f3381bd606f26}{GateTwistedTrap}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{25                  G4int depth=0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateTwistedTrap_a484e588786a538f9976f3381bd606f26}{GateTwistedTrap}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{28                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                  G4double itsZLength,}
+\DoxyCodeLine{30                  G4double itsYMinusLength,}
+\DoxyCodeLine{31                  G4double itsYPlusLength,}
+\DoxyCodeLine{32                  G4double itsX1MinusLength,}
+\DoxyCodeLine{33                  G4double itsX2MinusLength,}
+\DoxyCodeLine{34                  G4double itsX1PlusLength,}
+\DoxyCodeLine{35                  G4double itsX2PlusLength,}
+\DoxyCodeLine{36                  G4double itsTwistAngle,}
+\DoxyCodeLine{37                  G4double itsPolarAngle,}
+\DoxyCodeLine{38                  G4double itsAzimuthalAngle,}
+\DoxyCodeLine{39                  G4double itsTiltAngle,}
+\DoxyCodeLine{40                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{41                  G4int depth=0);}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTwistedTrap_a25bba71c721ca215006df9f344942ac1}{\string~GateTwistedTrap}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateTwistedTrap}{GateTwistedTrap}})}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateTwistedTrap_ade43f09fe5fec5bc6f2f8ea79327c246}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTwistedTrap_a5f470b080d63476f961893f1ef0e1abf}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateTwistedTrap_a3de92719a826ac4fb578b7099ade9c75}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{59     \textcolor{keywordflow}{if} (axis==0) \{}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} (m\_x1MinusLength+m\_x1PlusLength+m\_x2MinusLength+m\_x2PlusLength)/4.0;}
+\DoxyCodeLine{61     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==1) \{}
+\DoxyCodeLine{62     \textcolor{keywordflow}{return} (m\_yMinusLength + m\_yPlusLength)/4.0;}
+\DoxyCodeLine{63     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==2) \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} m\_zLength/2.0;}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{67   \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{71   G4double \mbox{\hyperlink{classGateTwistedTrap_a5422d9c0c2645a7aa3e1bf46c6dd77cc}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keyword}{inline} G4double GetTwistedTrapZLength()   \{ \textcolor{keywordflow}{return} m\_zLength; \}}
+\DoxyCodeLine{76   \textcolor{keyword}{inline} G4double GetTwistedTrapYMinusLength()  \{ \textcolor{keywordflow}{return} m\_yMinusLength; \}}
+\DoxyCodeLine{77   \textcolor{keyword}{inline} G4double GetTwistedTrapYPlusLength()   \{ \textcolor{keywordflow}{return} m\_yPlusLength; \}}
+\DoxyCodeLine{78   \textcolor{keyword}{inline} G4double GetTwistedTrapX1MinusLength() \{ \textcolor{keywordflow}{return} m\_x1MinusLength; \}}
+\DoxyCodeLine{79   \textcolor{keyword}{inline} G4double GetTwistedTrapX2MinusLength() \{ \textcolor{keywordflow}{return} m\_x2MinusLength; \}}
+\DoxyCodeLine{80   \textcolor{keyword}{inline} G4double GetTwistedTrapX1PlusLength()  \{ \textcolor{keywordflow}{return} m\_x1PlusLength; \}}
+\DoxyCodeLine{81   \textcolor{keyword}{inline} G4double GetTwistedTrapX2PlusLength()  \{ \textcolor{keywordflow}{return} m\_x2PlusLength; \}}
+\DoxyCodeLine{82   \textcolor{keyword}{inline} G4double GetTwistedTrapTwistAngle()    \{ \textcolor{keywordflow}{return} m\_twistAngle; \}}
+\DoxyCodeLine{83   \textcolor{keyword}{inline} G4double GetTwistedTrapPolarAngle()    \{ \textcolor{keywordflow}{return} m\_polarAngle; \}}
+\DoxyCodeLine{84   \textcolor{keyword}{inline} G4double GetTwistedTrapAzimuthalAngle() \{ \textcolor{keywordflow}{return} m\_azimuthalAngle; \}}
+\DoxyCodeLine{85   \textcolor{keyword}{inline} G4double GetTwistedTrapTiltAngle()     \{ \textcolor{keywordflow}{return} m\_tiltAngle; \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} SetTwistedTrapZLength(G4double val)      \{ m\_zLength = val; \}}
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} SetTwistedTrapYMinusLength(G4double val)     \{ m\_yMinusLength = val; \}}
+\DoxyCodeLine{89   \textcolor{keywordtype}{void} SetTwistedTrapYPlusLength(G4double val)      \{ m\_yPlusLength = val; \}}
+\DoxyCodeLine{90   \textcolor{keywordtype}{void} SetTwistedTrapX1MinusLength(G4double val)    \{ m\_x1MinusLength = val; \}}
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} SetTwistedTrapX2MinusLength(G4double val)    \{ m\_x2MinusLength = val; \}}
+\DoxyCodeLine{92   \textcolor{keywordtype}{void} SetTwistedTrapX1PlusLength(G4double val)     \{ m\_x1PlusLength = val; \}}
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} SetTwistedTrapX2PlusLength(G4double val)     \{ m\_x2PlusLength = val; \}}
+\DoxyCodeLine{94   \textcolor{keywordtype}{void} SetTwistedTrapTwistAngle(G4double val)       \{ m\_twistAngle = val; \}}
+\DoxyCodeLine{95   \textcolor{keywordtype}{void} SetTwistedTrapPolarAngle(G4double val)       \{ m\_polarAngle = val; \}}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} SetTwistedTrapAzimuthalAngle(G4double val)   \{ m\_azimuthalAngle = val; \}}
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} SetTwistedTrapTiltAngle(G4double val)        \{ m\_tiltAngle = val; \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{keyword}{private}:}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   G4TwistedTrap*     m\_twistedtrap\_solid;               }
+\DoxyCodeLine{104   G4LogicalVolume*   m\_twistedtrap\_log;                 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   G4double m\_zLength;       }
+\DoxyCodeLine{110   G4double m\_yMinusLength;  }
+\DoxyCodeLine{111   G4double m\_yPlusLength;   }
+\DoxyCodeLine{112   G4double m\_x1MinusLength;     }
+\DoxyCodeLine{113   G4double m\_x2MinusLength;     }
+\DoxyCodeLine{114   G4double m\_x1PlusLength;  }
+\DoxyCodeLine{115   G4double m\_x2PlusLength;  }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   G4double m\_twistAngle;    }
+\DoxyCodeLine{118   G4double m\_polarAngle;    }
+\DoxyCodeLine{119   G4double m\_azimuthalAngle;    }
+\DoxyCodeLine{120   G4double m\_tiltAngle;     }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{124   \mbox{\hyperlink{classGateTwistedTrapMessenger}{GateTwistedTrapMessenger}}* m\_Messenger;}
+\DoxyCodeLine{125 \};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 MAKE\_AUTO\_CREATOR\_VOLUME(twistedtrap,\mbox{\hyperlink{classGateTwistedTrap}{GateTwistedTrap}})}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATETWISTEDTRAP\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

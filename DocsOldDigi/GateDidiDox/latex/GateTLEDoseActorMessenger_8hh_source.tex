@@ -1,0 +1,55 @@
+\hypertarget{GateTLEDoseActorMessenger_8hh_source}{}\doxysection{Gate\+TLEDose\+Actor\+Messenger.\+hh}
+\label{GateTLEDoseActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLEDoseActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLEDoseActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateTLEDoseActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author fabien.baldacci@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATETLEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATETLEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTLEDoseActor}{GateTLEDoseActor}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTLEDoseActorMessenger}{GateTLEDoseActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateTLEDoseActorMessenger}{GateTLEDoseActorMessenger}}(\mbox{\hyperlink{classGateTLEDoseActor}{GateTLEDoseActor}}* sensor);}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTLEDoseActorMessenger}{\string~GateTLEDoseActorMessenger}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLEDoseActorMessenger_a1a35670220d3ee98aff8bd1f6c2500c6}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateTLEDoseActor}{GateTLEDoseActor}} * pDoseActor;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   G4UIcmdWithABool * pEnableDoseCmd;}
+\DoxyCodeLine{35   G4UIcmdWithABool * pEnableDoseSquaredCmd;}
+\DoxyCodeLine{36   G4UIcmdWithABool * pEnableDoseUncertaintyCmd;}
+\DoxyCodeLine{37   G4UIcmdWithABool * pEnableEdepCmd;}
+\DoxyCodeLine{38   G4UIcmdWithABool * pEnableEdepSquaredCmd;}
+\DoxyCodeLine{39   G4UIcmdWithABool * pEnableEdepUncertaintyCmd;}
+\DoxyCodeLine{40   G4UIcmdWithABool * pEnableDoseNormToMaxCmd;}
+\DoxyCodeLine{41   G4UIcmdWithABool * pEnableDoseNormToIntegralCmd;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   G4UIcmdWithAString * pSetDoseAlgorithmCmd;}
+\DoxyCodeLine{44   G4UIcmdWithAString * pImportMassImageCmd;}
+\DoxyCodeLine{45   G4UIcmdWithAString * pVolumeFilterCmd;}
+\DoxyCodeLine{46   G4UIcmdWithAString * pMaterialFilterCmd;}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATETLEDOSEACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

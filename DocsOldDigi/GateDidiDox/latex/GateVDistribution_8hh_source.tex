@@ -1,0 +1,41 @@
+\hypertarget{GateVDistribution_8hh_source}{}\doxysection{Gate\+VDistribution.\+hh}
+\label{GateVDistribution_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVDistribution.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVDistribution.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVDistribution\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVDistribution\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateNamedObject.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36     \mbox{\hyperlink{classGateVDistribution_ab53954748b03df7883088cc5fcf52cd2}{GateVDistribution}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVDistribution_a8ad754e3c015ac55ea3d34ade7db40c9}{\string~GateVDistribution}}() ;}
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} G4double MinX() \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} G4double MinY() \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} G4double MaxX() \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} G4double MaxY() \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{43     \textcolor{keyword}{virtual} G4double Value(G4double x) \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{44     \textcolor{comment}{// Returns a random number following the current distribution}}
+\DoxyCodeLine{45     \textcolor{comment}{// should be optimised according to each distrbution type}}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} G4double ShootRandom() \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{private}:}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,373 @@
+\hypertarget{metaObject_8h_source}{}\doxysection{meta\+Object.\+h}
+\label{metaObject_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaObject.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAOBJECT\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAOBJECT\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaEvent.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{30   \{}
+\DoxyCodeLine{32   \textcolor{comment}{//}}
+\DoxyCodeLine{33   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{34   \textcolor{comment}{//}}
+\DoxyCodeLine{36 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38       \textcolor{keyword}{typedef} METAIO\_STL::vector<MET\_FieldRecordType *> FieldsContainerType;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40       METAIO\_STREAM::ifstream * m\_ReadStream;}
+\DoxyCodeLine{41       METAIO\_STREAM::ofstream * m\_WriteStream;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43       FieldsContainerType m\_Fields;}
+\DoxyCodeLine{44       FieldsContainerType m\_UserDefinedWriteFields;}
+\DoxyCodeLine{45       FieldsContainerType m\_UserDefinedReadFields;}
+\DoxyCodeLine{46       FieldsContainerType m\_AdditionalReadFields;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48       \textcolor{keywordtype}{char}  m\_FileName[255];}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50       \textcolor{keywordtype}{char}  m\_Comment[255];            \textcolor{comment}{// "{}Comment = "{}       "{}"{}}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52       \textcolor{keywordtype}{char}  m\_ObjectTypeName[255];     \textcolor{comment}{// "{}ObjectType = "{}    defined by suffix}}
+\DoxyCodeLine{53       \textcolor{keywordtype}{char}  m\_ObjectSubTypeName[255];  \textcolor{comment}{// "{}ObjectSubType = "{} defined by suffix}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55       \textcolor{keywordtype}{int}   m\_NDims;                   \textcolor{comment}{// "{}NDims = "{}         required}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57       \textcolor{keywordtype}{double} m\_Offset[10];             \textcolor{comment}{// "{}Offset = "{}          0,0,0}}
+\DoxyCodeLine{58       \textcolor{keywordtype}{double} m\_TransformMatrix[100];   \textcolor{comment}{// "{}TransformMatrix = "{} 1,0,0,0,1,0,0,0,1}}
+\DoxyCodeLine{59       \textcolor{keywordtype}{double} m\_CenterOfRotation[10];   \textcolor{comment}{// "{}CenterOfRotation = "{}  0 0 0}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61       MET\_OrientationEnumType m\_AnatomicalOrientation[10];}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63       MET\_DistanceUnitsEnumType m\_DistanceUnits;   \textcolor{comment}{// "{}DistanceUnits = mm"{}}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65       \textcolor{keywordtype}{float} m\_ElementSpacing[10];   \textcolor{comment}{// "{}ElementSpacing = "{}   0,0,0}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67       \textcolor{keywordtype}{float} m\_Color[4];             \textcolor{comment}{// "{}Color = "{}            1.0, 0.0, 0.0, 1.0}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69       \textcolor{keywordtype}{char}  m\_AcquisitionDate[255]; \textcolor{comment}{// "{}AcquisitionDate = "{}  "{}2007.03.21"{}}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71       \textcolor{keywordtype}{int}   m\_ID;                   \textcolor{comment}{// "{}ID = "{}               0}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73       \textcolor{keywordtype}{int}   m\_ParentID;             \textcolor{comment}{// "{}ParentID = "{}         -\/1}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75       \textcolor{keywordtype}{char}  m\_Name[255];            \textcolor{comment}{// "{}Name = "{}             "{}"{}}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77       \textcolor{keywordtype}{bool}  m\_BinaryData;           \textcolor{comment}{// "{}BinaryData = "{}      False}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79       \textcolor{keywordtype}{bool}  m\_BinaryDataByteOrderMSB;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81       METAIO\_STL::streamoff m\_CompressedDataSize;}
+\DoxyCodeLine{82       \textcolor{comment}{// Used internally to set if the dataSize should be written}}
+\DoxyCodeLine{83       \textcolor{keywordtype}{bool} m\_WriteCompressedDataSize;}
+\DoxyCodeLine{84       \textcolor{keywordtype}{bool} m\_CompressedData;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92       \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94       \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} M\_PrepareNewReadStream();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98       \mbox{\hyperlink{classMetaEvent}{MetaEvent}}*     m\_Event;}
+\DoxyCodeLine{99       \textcolor{comment}{//MET\_FieldRecordType * M\_GetFieldRecord(const char * \_fieldName);}}
+\DoxyCodeLine{100       \textcolor{comment}{//int   M\_GetFieldRecordNumber(const char * \_fieldName);}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_DoublePrecision;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{105   \textcolor{comment}{//}}
+\DoxyCodeLine{106   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{107   \textcolor{comment}{//}}
+\DoxyCodeLine{109 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112       \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{114 \textcolor{comment}{}      \mbox{\hyperlink{classMetaObject}{MetaObject}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{115       \mbox{\hyperlink{classMetaObject}{MetaObject}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fileName);}
+\DoxyCodeLine{116       \mbox{\hyperlink{classMetaObject}{MetaObject}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118       \textcolor{keyword}{virtual} \mbox{\hyperlink{classMetaObject}{\string~MetaObject}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120       \textcolor{keywordtype}{void}  FileName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_fileName);}
+\DoxyCodeLine{121       \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * FileName(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125       \textcolor{keywordtype}{bool}  Read(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fileName=NULL);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127       \textcolor{keywordtype}{bool}  ReadStream(\textcolor{keywordtype}{int} \_nDims, METAIO\_STREAM::ifstream * \_stream);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129       \textcolor{keywordtype}{bool}  Write(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fileName=NULL);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131       \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}  Append(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headName=NULL);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{134       \textcolor{comment}{//}}
+\DoxyCodeLine{135       \textcolor{comment}{// Common fields}}
+\DoxyCodeLine{136       \textcolor{comment}{//}}
+\DoxyCodeLine{138 \textcolor{comment}{}}
+\DoxyCodeLine{139       \textcolor{comment}{//    PrintMetaInfo()}}
+\DoxyCodeLine{140       \textcolor{comment}{//       Writes image parameters to stdout}}
+\DoxyCodeLine{141       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143       \textcolor{comment}{//    Comment(...)}}
+\DoxyCodeLine{144       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{145       \textcolor{comment}{//       Arbitrary string}}
+\DoxyCodeLine{146       \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * Comment(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{147       \textcolor{keywordtype}{void}    Comment(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_comment);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149       \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * ObjectTypeName(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{150       \textcolor{keywordtype}{void}    ObjectTypeName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_objectTypeName);}
+\DoxyCodeLine{151       \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * ObjectSubTypeName(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{152       \textcolor{keywordtype}{void}    ObjectSubTypeName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_objectSubTypeName);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154       \textcolor{comment}{//    NDims()}}
+\DoxyCodeLine{155       \textcolor{comment}{//       REQUIRED Field}}
+\DoxyCodeLine{156       \textcolor{comment}{//       Number of dimensions to the image}}
+\DoxyCodeLine{157       \textcolor{keywordtype}{int}   NDims(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159       \textcolor{comment}{//    Offset(...)}}
+\DoxyCodeLine{160       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{161       \textcolor{comment}{//       Physical location (in millimeters and wrt machine coordinate}}
+\DoxyCodeLine{162       \textcolor{comment}{//         system or the patient) of the first element in the image}}
+\DoxyCodeLine{163       \textcolor{keyword}{const} \textcolor{keywordtype}{double} * Offset(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{164       \textcolor{keywordtype}{double} Offset(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{165       \textcolor{keywordtype}{void}  Offset(\textcolor{keyword}{const} \textcolor{keywordtype}{double} * \_position);}
+\DoxyCodeLine{166       \textcolor{keywordtype}{void}  Offset(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{double} \_value);}
+\DoxyCodeLine{167       \textcolor{keyword}{const} \textcolor{keywordtype}{double} * Position(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{168       \textcolor{keywordtype}{double} Position(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{169       \textcolor{keywordtype}{void}  Position(\textcolor{keyword}{const} \textcolor{keywordtype}{double} * \_position);}
+\DoxyCodeLine{170       \textcolor{keywordtype}{void}  Position(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{double} \_value);}
+\DoxyCodeLine{171       \textcolor{keyword}{const} \textcolor{keywordtype}{double} * Origin(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{172       \textcolor{keywordtype}{double} Origin(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{173       \textcolor{keywordtype}{void}  Origin(\textcolor{keyword}{const} \textcolor{keywordtype}{double} * \_position);}
+\DoxyCodeLine{174       \textcolor{keywordtype}{void}  Origin(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{double} \_value);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176       \textcolor{comment}{//    TransformMatrix(...)}}
+\DoxyCodeLine{177       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{178       \textcolor{comment}{//       Physical orientation of the object as an NDims x NDims matrix}}
+\DoxyCodeLine{179       \textcolor{keyword}{const} \textcolor{keywordtype}{double} * TransformMatrix(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{180       \textcolor{keywordtype}{double} TransformMatrix(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{int} \_j) \textcolor{keyword}{const};}
+\DoxyCodeLine{181       \textcolor{keywordtype}{void}  TransformMatrix(\textcolor{keyword}{const} \textcolor{keywordtype}{double} * \_orientation);}
+\DoxyCodeLine{182       \textcolor{keywordtype}{void}  TransformMatrix(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{int} \_j, \textcolor{keywordtype}{double} \_value);}
+\DoxyCodeLine{183       \textcolor{keyword}{const} \textcolor{keywordtype}{double} * Rotation(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{184       \textcolor{keywordtype}{double} Rotation(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{int} \_j) \textcolor{keyword}{const};}
+\DoxyCodeLine{185       \textcolor{keywordtype}{void}  Rotation(\textcolor{keyword}{const} \textcolor{keywordtype}{double} * \_orientation);}
+\DoxyCodeLine{186       \textcolor{keywordtype}{void}  Rotation(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{int} \_j, \textcolor{keywordtype}{double} \_value);}
+\DoxyCodeLine{187       \textcolor{keyword}{const} \textcolor{keywordtype}{double} * Orientation(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{188       \textcolor{keywordtype}{double} Orientation(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{int} \_j) \textcolor{keyword}{const};}
+\DoxyCodeLine{189       \textcolor{keywordtype}{void}  Orientation(\textcolor{keyword}{const} \textcolor{keywordtype}{double} * \_orientation);}
+\DoxyCodeLine{190       \textcolor{keywordtype}{void}  Orientation(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{int} \_j, \textcolor{keywordtype}{double} \_value);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192       \textcolor{comment}{//}}
+\DoxyCodeLine{193       \textcolor{comment}{//}}
+\DoxyCodeLine{194       \textcolor{comment}{//}}
+\DoxyCodeLine{195       \textcolor{keyword}{const} \textcolor{keywordtype}{double} * CenterOfRotation(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{196       \textcolor{keywordtype}{double} CenterOfRotation(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{197       \textcolor{keywordtype}{void}  CenterOfRotation(\textcolor{keyword}{const} \textcolor{keywordtype}{double} * \_position);}
+\DoxyCodeLine{198       \textcolor{keywordtype}{void}  CenterOfRotation(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{double} \_value);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200       \textcolor{comment}{//}}
+\DoxyCodeLine{201       \textcolor{comment}{//}}
+\DoxyCodeLine{202       \textcolor{comment}{//}}
+\DoxyCodeLine{203       \textcolor{keyword}{const} \textcolor{keywordtype}{char} * DistanceUnitsName(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{204       MET\_DistanceUnitsEnumType DistanceUnits(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{205       \textcolor{keywordtype}{void} DistanceUnits(MET\_DistanceUnitsEnumType \_distanceUnits);}
+\DoxyCodeLine{206       \textcolor{keywordtype}{void} DistanceUnits(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_distanceUnits);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208       \textcolor{keyword}{const} \textcolor{keywordtype}{char} * AnatomicalOrientationAcronym(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{209       \textcolor{keyword}{const} MET\_OrientationEnumType * AnatomicalOrientation(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{210       MET\_OrientationEnumType AnatomicalOrientation(\textcolor{keywordtype}{int} \_dim) \textcolor{keyword}{const};}
+\DoxyCodeLine{211       \textcolor{keywordtype}{void} AnatomicalOrientation(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_ao);}
+\DoxyCodeLine{212       \textcolor{keywordtype}{void} AnatomicalOrientation(\textcolor{keyword}{const} MET\_OrientationEnumType *\_ao);}
+\DoxyCodeLine{213       \textcolor{keywordtype}{void} AnatomicalOrientation(\textcolor{keywordtype}{int} \_dim, MET\_OrientationEnumType \_ao);}
+\DoxyCodeLine{214       \textcolor{keywordtype}{void} AnatomicalOrientation(\textcolor{keywordtype}{int} \_dim, \textcolor{keywordtype}{char} ao);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217       \textcolor{comment}{//    ElementSpacing(...)}}
+\DoxyCodeLine{218       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{219       \textcolor{comment}{//       Physical Spacing (in same units as position)}}
+\DoxyCodeLine{220       \textcolor{keyword}{const} \textcolor{keywordtype}{float} * ElementSpacing(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{221       \textcolor{keywordtype}{float} ElementSpacing(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{222       \textcolor{keywordtype}{void}  ElementSpacing(\textcolor{keyword}{const} \textcolor{keywordtype}{float} * \_elementSpacing);}
+\DoxyCodeLine{223       \textcolor{keywordtype}{void}  ElementSpacing(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{float} \_value);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225       \textcolor{comment}{//    Name(...)}}
+\DoxyCodeLine{226       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{227       \textcolor{comment}{//       Name of the current metaObject}}
+\DoxyCodeLine{228       \textcolor{keywordtype}{void}  Name(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_Name);}
+\DoxyCodeLine{229       \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * Name(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231       \textcolor{comment}{//    Color(...)}}
+\DoxyCodeLine{232       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{233       \textcolor{comment}{//       Color of the current metaObject}}
+\DoxyCodeLine{234       \textcolor{keyword}{const} \textcolor{keywordtype}{float} * Color(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{235       \textcolor{keywordtype}{void}  Color(\textcolor{keywordtype}{float} \_r, \textcolor{keywordtype}{float} \_g, \textcolor{keywordtype}{float} \_b, \textcolor{keywordtype}{float} \_a);}
+\DoxyCodeLine{236       \textcolor{keywordtype}{void}  Color(\textcolor{keyword}{const} \textcolor{keywordtype}{float} * \_color);}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238       \textcolor{comment}{//    ID(...)}}
+\DoxyCodeLine{239       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{240       \textcolor{comment}{//       ID number of the current metaObject}}
+\DoxyCodeLine{241       \textcolor{keywordtype}{void} ID(\textcolor{keywordtype}{int} \_id);}
+\DoxyCodeLine{242       \textcolor{keywordtype}{int}  ID(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244       \textcolor{comment}{//    ParentID(...)}}
+\DoxyCodeLine{245       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{246       \textcolor{comment}{//       ID number of the parent  metaObject}}
+\DoxyCodeLine{247       \textcolor{keywordtype}{void}  ParentID(\textcolor{keywordtype}{int} \_parentId);}
+\DoxyCodeLine{248       \textcolor{keywordtype}{int}   ParentID(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250       \textcolor{comment}{//    AcquisitionDate(...)}}
+\DoxyCodeLine{251       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{252       \textcolor{comment}{//       YYYY.MM.DD is the recommended format}}
+\DoxyCodeLine{253       \textcolor{keywordtype}{void}  AcquisitionDate(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_acquisitionDate);}
+\DoxyCodeLine{254       \textcolor{keyword}{const} \textcolor{keywordtype}{char} *  AcquisitionDate(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256       \textcolor{comment}{//    BinaryData(...)}}
+\DoxyCodeLine{257       \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{258       \textcolor{comment}{//       Data is binary or not}}
+\DoxyCodeLine{259       \textcolor{keywordtype}{void}  BinaryData(\textcolor{keywordtype}{bool} \_binaryData);}
+\DoxyCodeLine{260       \textcolor{keywordtype}{bool}  BinaryData(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262       \textcolor{keywordtype}{void}  BinaryDataByteOrderMSB(\textcolor{keywordtype}{bool} \_binaryDataByteOrderMSB);}
+\DoxyCodeLine{263       \textcolor{keywordtype}{bool}  BinaryDataByteOrderMSB(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266       \textcolor{keywordtype}{void}  CompressedData(\textcolor{keywordtype}{bool} \_compressedData);}
+\DoxyCodeLine{267       \textcolor{keywordtype}{bool}  CompressedData(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272       \textcolor{keywordtype}{void} ClearFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274       \textcolor{keywordtype}{void} ClearAdditionalFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276       \textcolor{keywordtype}{bool} InitializeEssential(\textcolor{keywordtype}{int} m\_NDims);}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278       \textcolor{comment}{//}}
+\DoxyCodeLine{279       \textcolor{comment}{//}}
+\DoxyCodeLine{280       \textcolor{comment}{// User's field definitions}}
+\DoxyCodeLine{281       \textcolor{keywordtype}{bool} AddUserField(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_fieldName, MET\_ValueEnumType \_type,}
+\DoxyCodeLine{282                         \textcolor{keywordtype}{int} \_length=0, \textcolor{keywordtype}{bool} \_required=\textcolor{keyword}{true},}
+\DoxyCodeLine{283                         \textcolor{keywordtype}{int} \_dependsOn=-\/1);}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285       \textcolor{comment}{// find a field record in a field vector}}
+\DoxyCodeLine{286       \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}} *FindFieldRecord(FieldsContainerType \&container,}
+\DoxyCodeLine{287                                            \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName)}
+\DoxyCodeLine{288       \{}
+\DoxyCodeLine{289         FieldsContainerType::iterator it;}
+\DoxyCodeLine{290         \textcolor{keywordflow}{for}(it = container.begin();}
+\DoxyCodeLine{291             it != container.end();}
+\DoxyCodeLine{292             it++)}
+\DoxyCodeLine{293           \{}
+\DoxyCodeLine{294           \textcolor{keywordflow}{if}(strcmp((*it)-\/>name,fieldName) == 0)}
+\DoxyCodeLine{295             \{}
+\DoxyCodeLine{296             \textcolor{keywordflow}{return} (*it);}
+\DoxyCodeLine{297             \}}
+\DoxyCodeLine{298           \}}
+\DoxyCodeLine{299         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{300       \}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302       \textcolor{comment}{// Add a user's field}}
+\DoxyCodeLine{303       \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{304       \textcolor{keywordtype}{bool} AddUserField(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_fieldName, MET\_ValueEnumType \_type,}
+\DoxyCodeLine{305                         \textcolor{keywordtype}{int} \_length, T *\_v, \textcolor{keywordtype}{bool} \_required=\textcolor{keyword}{true},}
+\DoxyCodeLine{306                         \textcolor{keywordtype}{int} \_dependsOn=-\/1 )}
+\DoxyCodeLine{307         \{}
+\DoxyCodeLine{308         \textcolor{comment}{// don't add the same field twice. In the unlikely event}}
+\DoxyCodeLine{309         \textcolor{comment}{// a field of the same name gets added more than once,}}
+\DoxyCodeLine{310         \textcolor{comment}{// over-\/write the existing FieldRecord}}
+\DoxyCodeLine{311         \textcolor{keywordtype}{bool} duplicate(\textcolor{keyword}{true});}
+\DoxyCodeLine{312         \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}}* mFw =}
+\DoxyCodeLine{313           this-\/>FindFieldRecord(m\_UserDefinedWriteFields,}
+\DoxyCodeLine{314                                 \_fieldName);}
+\DoxyCodeLine{315         \textcolor{keywordflow}{if}(mFw == 0)}
+\DoxyCodeLine{316           \{}
+\DoxyCodeLine{317           duplicate = \textcolor{keyword}{false};}
+\DoxyCodeLine{318           mFw = \textcolor{keyword}{new} \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}};}
+\DoxyCodeLine{319           \}}
+\DoxyCodeLine{320         MET\_InitWriteField(mFw, \_fieldName, \_type, \_length, \_v);}
+\DoxyCodeLine{321         \textcolor{keywordflow}{if}(!duplicate)}
+\DoxyCodeLine{322           \{}
+\DoxyCodeLine{323           m\_UserDefinedWriteFields.push\_back(mFw);}
+\DoxyCodeLine{324           \}}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326         duplicate = \textcolor{keyword}{true};}
+\DoxyCodeLine{327         \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}}* mFr =}
+\DoxyCodeLine{328           this-\/>FindFieldRecord(m\_UserDefinedReadFields,}
+\DoxyCodeLine{329                                 \_fieldName);}
+\DoxyCodeLine{330         \textcolor{keywordflow}{if}(mFr == 0)}
+\DoxyCodeLine{331           \{}
+\DoxyCodeLine{332           duplicate = \textcolor{keyword}{false};}
+\DoxyCodeLine{333           mFr = \textcolor{keyword}{new} \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}};}
+\DoxyCodeLine{334           \}}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336         MET\_InitReadField(mFr,\_fieldName, \_type, \_required, \_dependsOn,}
+\DoxyCodeLine{337           \_length);}
+\DoxyCodeLine{338         \textcolor{keywordflow}{if}(!duplicate)}
+\DoxyCodeLine{339           \{}
+\DoxyCodeLine{340           m\_UserDefinedReadFields.push\_back(mFr);}
+\DoxyCodeLine{341           \}}
+\DoxyCodeLine{342         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{343         \}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345       \textcolor{comment}{// Clear UserFields}}
+\DoxyCodeLine{346       \textcolor{keywordtype}{void} ClearUserFields();}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348       \textcolor{comment}{// Get the user field}}
+\DoxyCodeLine{349       \textcolor{keywordtype}{void}* GetUserField(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_name);}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351       \textcolor{keywordtype}{int} GetNumberOfAdditionalReadFields();}
+\DoxyCodeLine{352       \textcolor{keywordtype}{char} * GetAdditionalReadFieldName( \textcolor{keywordtype}{int} i );}
+\DoxyCodeLine{353       \textcolor{keywordtype}{char} * GetAdditionalReadFieldValue( \textcolor{keywordtype}{int} i );}
+\DoxyCodeLine{354       \textcolor{keywordtype}{int} GetAdditionalReadFieldValueLength( \textcolor{keywordtype}{int} i );}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356       \textcolor{comment}{//}}
+\DoxyCodeLine{357       \textcolor{keywordtype}{void} SetEvent(\mbox{\hyperlink{classMetaEvent}{MetaEvent}}* event) \{m\_Event = event;\}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359       \textcolor{comment}{// Set the double precision for writing}}
+\DoxyCodeLine{360       \textcolor{keywordtype}{void} SetDoublePrecision(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} precision)}
+\DoxyCodeLine{361         \{}
+\DoxyCodeLine{362         m\_DoublePrecision = precision;}
+\DoxyCodeLine{363         \}}
+\DoxyCodeLine{364       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetDoublePrecision()}
+\DoxyCodeLine{365         \{}
+\DoxyCodeLine{366         \textcolor{keywordflow}{return} m\_DoublePrecision;}
+\DoxyCodeLine{367         \}}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369   \};}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{372 \};}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

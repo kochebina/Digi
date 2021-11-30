@@ -1,0 +1,99 @@
+\hypertarget{classGateMDBFile}{}\doxysection{Gate\+MDBFile Class Reference}
+\label{classGateMDBFile}\index{GateMDBFile@{GateMDBFile}}
+Inheritance diagram for Gate\+MDBFile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateMDBFile}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a85a11aa07b8291729f908bf70dba045e}\label{classGateMDBFile_a85a11aa07b8291729f908bf70dba045e}} 
+{\bfseries Gate\+MDBFile} (\mbox{\hyperlink{classGateMaterialDatabase}{Gate\+Material\+Database}} $\ast$db, const G4\+String \&its\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. Takes the Database which uses this and the filename of the part of the database it is responsible to read. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMDBFile_a63666780607e01c2ea47cfe55ea10c29}\label{classGateMDBFile_a63666780607e01c2ea47cfe55ea10c29}} 
+\mbox{\hyperlink{classGateIsotopeCreator}{Gate\+Isotope\+Creator}} $\ast$ {\bfseries Read\+Isotope} (const G4\+String \&isotope\+Name)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a9c600fbfa4014272fdf50d83c5057220}\label{classGateMDBFile_a9c600fbfa4014272fdf50d83c5057220}} 
+\mbox{\hyperlink{classGateElementCreator}{Gate\+Element\+Creator}} $\ast$ {\bfseries Read\+Element} (const G4\+String \&element\+Name)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a5584e6d74003dd8496c4d2d2cb06e2d6}\label{classGateMDBFile_a5584e6d74003dd8496c4d2d2cb06e2d6}} 
+\mbox{\hyperlink{classGateMaterialCreator}{Gate\+Material\+Creator}} $\ast$ {\bfseries Read\+Material} (const G4\+String \&material\+Name)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_ac2d5af9c3a4a8bb7b958ce47b2fd90c1}\label{classGateMDBFile_ac2d5af9c3a4a8bb7b958ce47b2fd90c1}} 
+G4\+String {\bfseries Get\+MDBFile\+Name} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a04f400766fe66cc6fc61892b684d6274}\label{classGateMDBFile_a04f400766fe66cc6fc61892b684d6274}} 
+static char {\bfseries the\+Starter\+Separator} = \textquotesingle{}\+:\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a3badaeae3fd30c1a0309a74dade9255a}\label{classGateMDBFile_a3badaeae3fd30c1a0309a74dade9255a}} 
+static char {\bfseries the\+Field\+Separator} = \textquotesingle{};\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a6a1b98fc6ee47241825b642439cefb43}\label{classGateMDBFile_a6a1b98fc6ee47241825b642439cefb43}} 
+static G4\+String {\bfseries the\+Read\+Item\+Error\+Msg} = \char`\"{}Item not found\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a6217f6495e3877a292f21b003ff30f8f}\label{classGateMDBFile_a6217f6495e3877a292f21b003ff30f8f}} 
+\mbox{\hyperlink{classGateScratchElementCreator}{Gate\+Scratch\+Element\+Creator}} $\ast$ {\bfseries Read\+Scratch\+Element} (const G4\+String \&element\+Name, const G4\+String \&\mbox{\hyperlink{structline}{line}})
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a0fd09bb9efefe05743ccc8b18ae09c1f}\label{classGateMDBFile_a0fd09bb9efefe05743ccc8b18ae09c1f}} 
+\mbox{\hyperlink{classGateCompoundElementCreator}{Gate\+Compound\+Element\+Creator}} $\ast$ {\bfseries Read\+Compound\+Element} (const G4\+String \&element\+Name, const G4\+String \&\mbox{\hyperlink{structline}{line}})
+\item 
+\mbox{\Hypertarget{classGateMDBFile_ad5963318da9270eb713a1b8aa903e7f3}\label{classGateMDBFile_ad5963318da9270eb713a1b8aa903e7f3}} 
+\mbox{\hyperlink{classGateScratchMaterialCreator}{Gate\+Scratch\+Material\+Creator}} $\ast$ {\bfseries Read\+Scratch\+Material} (const G4\+String \&material\+Name, const G4\+String \&\mbox{\hyperlink{structline}{line}})
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a49f4941a6057edad367b3cb3e3689f7d}\label{classGateMDBFile_a49f4941a6057edad367b3cb3e3689f7d}} 
+\mbox{\hyperlink{classGateCompoundMaterialCreator}{Gate\+Compound\+Material\+Creator}} $\ast$ {\bfseries Read\+Compound\+Material} (const G4\+String \&material\+Name, const G4\+String \&\mbox{\hyperlink{structline}{line}})
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a0a6d0afd5a3e287161c10689479997d6}\label{classGateMDBFile_a0a6d0afd5a3e287161c10689479997d6}} 
+\mbox{\hyperlink{classGateComponentCreator}{Gate\+Component\+Creator}} $\ast$ {\bfseries Read\+Component} (const G4\+String \&material\+Name, const G4\+String \&component\+Ordinal)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_abea3fb67898fd58560ac0387d8b2c966}\label{classGateMDBFile_abea3fb67898fd58560ac0387d8b2c966}} 
+\mbox{\hyperlink{classGateElemComponentCreator}{Gate\+Elem\+Component\+Creator}} $\ast$ {\bfseries Read\+Elem\+Component} (const G4\+String \&material\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&\mbox{\hyperlink{structline}{line}})
+\item 
+\mbox{\Hypertarget{classGateMDBFile_acd91f224cbbd0f3355af9b88e69436d4}\label{classGateMDBFile_acd91f224cbbd0f3355af9b88e69436d4}} 
+\mbox{\hyperlink{classGateEByNComponentCreator}{Gate\+EBy\+NComponent\+Creator}} $\ast$ {\bfseries Read\+EBy\+NComponent} (const G4\+String \&material\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&field, const G4\+String \&component\+Name)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a31d11ab55fbbff358028c652d6051221}\label{classGateMDBFile_a31d11ab55fbbff358028c652d6051221}} 
+\mbox{\hyperlink{classGateEByFComponentCreator}{Gate\+EBy\+FComponent\+Creator}} $\ast$ {\bfseries Read\+EBy\+FComponent} (const G4\+String \&material\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&field, const G4\+String \&component\+Name)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a6dbb06c10585df4edebab0087032c14c}\label{classGateMDBFile_a6dbb06c10585df4edebab0087032c14c}} 
+\mbox{\hyperlink{classGateIByFComponentCreator}{Gate\+IBy\+FComponent\+Creator}} $\ast$ {\bfseries Read\+Iso\+Component} (const G4\+String \&element\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&\mbox{\hyperlink{structline}{line}})
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a99ee76b2dee3e14993619ff60f840ece}\label{classGateMDBFile_a99ee76b2dee3e14993619ff60f840ece}} 
+\mbox{\hyperlink{classGateMatComponentCreator}{Gate\+Mat\+Component\+Creator}} $\ast$ {\bfseries Read\+Mat\+Component} (const G4\+String \&material\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&\mbox{\hyperlink{structline}{line}})
+\item 
+\mbox{\Hypertarget{classGateMDBFile_aac055cfb4952cee60dbb03163e4a9b97}\label{classGateMDBFile_aac055cfb4952cee60dbb03163e4a9b97}} 
+void {\bfseries Read\+All\+Material\+Options} (const G4\+String \&material\+Name, const G4\+String \&\mbox{\hyperlink{structline}{line}}, \mbox{\hyperlink{classGateMaterialCreator}{Gate\+Material\+Creator}} $\ast$creator)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_ab3d6c3cca8e41e600d3cb06aa99e9a06}\label{classGateMDBFile_ab3d6c3cca8e41e600d3cb06aa99e9a06}} 
+void {\bfseries Read\+Material\+Option} (const G4\+String \&material\+Name, const G4\+String \&field, \mbox{\hyperlink{classGateMaterialCreator}{Gate\+Material\+Creator}} $\ast$creator)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_ac2e8e4d3d24e3f824d2baf0f42126221}\label{classGateMDBFile_ac2e8e4d3d24e3f824d2baf0f42126221}} 
+void {\bfseries Find\+Section} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a44713989fb8705685e56a5cf787c012c}\label{classGateMDBFile_a44713989fb8705685e56a5cf787c012c}} 
+G4bool {\bfseries Look\+For\+Text} (const G4\+String \&text)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a931e30954ebe86eb1d0eb5074399c665}\label{classGateMDBFile_a931e30954ebe86eb1d0eb5074399c665}} 
+G4\+String {\bfseries Read\+Item} (const G4\+String \&section\+Name, const G4\+String \&item\+Name)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a6cceba2bbb24908deaa9379a7d9db341}\label{classGateMDBFile_a6cceba2bbb24908deaa9379a7d9db341}} 
+G4int {\bfseries Read\+Non\+Empty\+Line} (G4\+String \&line\+Buffer)
+\item 
+\mbox{\Hypertarget{classGateMDBFile_a2b412a77f0c701300bdbc8cfd0d1433e}\label{classGateMDBFile_a2b412a77f0c701300bdbc8cfd0d1433e}} 
+G4int {\bfseries Read\+Line} (G4\+String \&line\+Buffer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+MDBFile.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/\mbox{\hyperlink{GateMDBFile_8cc}{Gate\+MDBFile.\+cc}}\end{DoxyCompactItemize}

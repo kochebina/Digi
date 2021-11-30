@@ -1,0 +1,66 @@
+\hypertarget{classGateSolidAngleWeightedEnergyLaw}{}\doxysection{Gate\+Solid\+Angle\+Weighted\+Energy\+Law Class Reference}
+\label{classGateSolidAngleWeightedEnergyLaw}\index{GateSolidAngleWeightedEnergyLaw@{GateSolidAngleWeightedEnergyLaw}}
+Inheritance diagram for Gate\+Solid\+Angle\+Weighted\+Energy\+Law\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateSolidAngleWeightedEnergyLaw}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_ad1fffc170e642a9ccd65cf241db07b95}\label{classGateSolidAngleWeightedEnergyLaw_ad1fffc170e642a9ccd65cf241db07b95}} 
+{\bfseries Gate\+Solid\+Angle\+Weighted\+Energy\+Law} (const G4\+String \&its\+Name, G4double its\+Rectangle\+SzX=-\/1., G4double its\+Rectangle\+SzY=-\/1.)
+\item 
+virtual G4double \mbox{\hyperlink{classGateSolidAngleWeightedEnergyLaw_a68fbc60095c1a7670118e8363b1560b1}{Compute\+Effective\+Energy}} (\mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} plse) const
+\item 
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_ac9868b1d9171775e43fcd5e4f4541425}\label{classGateSolidAngleWeightedEnergyLaw_ac9868b1d9171775e43fcd5e4f4541425}} 
+G4double {\bfseries Get\+Rectangle\+SzX} () const
+\item 
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_a8cbc0f437d9ead8ca49338143c3224bf}\label{classGateSolidAngleWeightedEnergyLaw_a8cbc0f437d9ead8ca49338143c3224bf}} 
+G4double {\bfseries Get\+Rectangle\+SzY} () const
+\item 
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_a8c6defd441857cbb02dd06a52113b9a0}\label{classGateSolidAngleWeightedEnergyLaw_a8c6defd441857cbb02dd06a52113b9a0}} 
+G4double {\bfseries Get\+ZSense} () const
+\item 
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_ad32bc6cfdcc6d36eb5b40adf3ca720a1}\label{classGateSolidAngleWeightedEnergyLaw_ad32bc6cfdcc6d36eb5b40adf3ca720a1}} 
+void {\bfseries Set\+Rectangle\+SzX} (G4double SzX)
+\item 
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_a592f9b0cd1285e7649c627185b1ae488}\label{classGateSolidAngleWeightedEnergyLaw_a592f9b0cd1285e7649c627185b1ae488}} 
+void {\bfseries Set\+Rectangle\+SzY} (G4double SzY)
+\item 
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_a6b4c401f4f49623d94a4df84e4de9aa0}\label{classGateSolidAngleWeightedEnergyLaw_a6b4c401f4f49623d94a4df84e4de9aa0}} 
+void {\bfseries Set\+ZSense} (G4int senseZ)
+\item 
+virtual void \mbox{\hyperlink{classGateSolidAngleWeightedEnergyLaw_a4660e064c63006efa03a3e36f22dc342}{Describe\+Myself}} (size\+\_\+t ident=0) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_a68fbc60095c1a7670118e8363b1560b1}\label{classGateSolidAngleWeightedEnergyLaw_a68fbc60095c1a7670118e8363b1560b1}} 
+\index{GateSolidAngleWeightedEnergyLaw@{GateSolidAngleWeightedEnergyLaw}!ComputeEffectiveEnergy@{ComputeEffectiveEnergy}}
+\index{ComputeEffectiveEnergy@{ComputeEffectiveEnergy}!GateSolidAngleWeightedEnergyLaw@{GateSolidAngleWeightedEnergyLaw}}
+\doxysubsubsection{\texorpdfstring{ComputeEffectiveEnergy()}{ComputeEffectiveEnergy()}}
+{\footnotesize\ttfamily G4double Gate\+Solid\+Angle\+Weighted\+Energy\+Law\+::\+Compute\+Effective\+Energy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePulse}{Gate\+Pulse}}}]{plse }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+double alfa=m\+\_\+sz\+X/(2$\ast$pulse.Get);
+
+Implements \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{Gate\+VEffective\+Energy\+Law}}.
+
+\mbox{\Hypertarget{classGateSolidAngleWeightedEnergyLaw_a4660e064c63006efa03a3e36f22dc342}\label{classGateSolidAngleWeightedEnergyLaw_a4660e064c63006efa03a3e36f22dc342}} 
+\index{GateSolidAngleWeightedEnergyLaw@{GateSolidAngleWeightedEnergyLaw}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateSolidAngleWeightedEnergyLaw@{GateSolidAngleWeightedEnergyLaw}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Solid\+Angle\+Weighted\+Energy\+Law\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ident = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{Gate\+VEffective\+Energy\+Law}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Solid\+Angle\+Weighted\+Energy\+Law.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Solid\+Angle\+Weighted\+Energy\+Law.\+cc\end{DoxyCompactItemize}

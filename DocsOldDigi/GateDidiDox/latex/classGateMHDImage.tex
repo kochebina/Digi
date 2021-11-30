@@ -1,0 +1,71 @@
+\hypertarget{classGateMHDImage}{}\doxysection{Gate\+MHDImage Class Reference}
+\label{classGateMHDImage}\index{GateMHDImage@{GateMHDImage}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_ad5063a7b982d764b200014749849f9bf}\label{classGateMHDImage_ad5063a7b982d764b200014749849f9bf}} 
+void {\bfseries Read\+Header} (std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_ad275f7b21bc7e3ae291b5f515e1c7bbb}\label{classGateMHDImage_ad275f7b21bc7e3ae291b5f515e1c7bbb}} 
+{\footnotesize template$<$class Pixel\+Type $>$ }\\void {\bfseries Read\+Data} (std\+::string filename, std\+::vector$<$ Pixel\+Type $>$ \&data)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a0a20b7b0b27298f90732e53acfa85bb0}\label{classGateMHDImage_a0a20b7b0b27298f90732e53acfa85bb0}} 
+{\footnotesize template$<$class Pixel\+Type $>$ }\\void {\bfseries Write\+Header} (std\+::string filename, \mbox{\hyperlink{classGateImageT}{Gate\+ImageT}}$<$ Pixel\+Type $>$ $\ast$image, bool write\+Data=false, bool change\+Extension=false, bool is\+ARF=false, int number\+Of\+ARFFFDHeads=1)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a8ad9dd574d253959aa3f982f9065e27f}\label{classGateMHDImage_a8ad9dd574d253959aa3f982f9065e27f}} 
+{\footnotesize template$<$class Pixel\+Type $>$ }\\void {\bfseries Write\+Data} (std\+::string filename, \mbox{\hyperlink{classGateImageT}{Gate\+ImageT}}$<$ Pixel\+Type $>$ $\ast$image)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_ab0506c69cba0b1274e08722207d93f9f}\label{classGateMHDImage_ab0506c69cba0b1274e08722207d93f9f}} 
+std\+::vector$<$ double $>$ {\bfseries size}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a671c78b325fc704796d78b67d7150f59}\label{classGateMHDImage_a671c78b325fc704796d78b67d7150f59}} 
+std\+::vector$<$ double $>$ {\bfseries spacing}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a55e45cda5d7b73bd51a73e699b062098}\label{classGateMHDImage_a55e45cda5d7b73bd51a73e699b062098}} 
+std\+::vector$<$ double $>$ {\bfseries origin}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a34940c067a100c80f09e7de64b78edaf}\label{classGateMHDImage_a34940c067a100c80f09e7de64b78edaf}} 
+std\+::vector$<$ double $>$ {\bfseries transform}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_ad78291d42c8c540e9051075ba394746c}\label{classGateMHDImage_ad78291d42c8c540e9051075ba394746c}} 
+void {\bfseries Print} ()
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a6dea4272cdb6b0ec4ef7a8bc0db53798}\label{classGateMHDImage_a6dea4272cdb6b0ec4ef7a8bc0db53798}} 
+void {\bfseries Read\+\_\+3\+\_\+values} (std\+::string tag, double $\ast$v)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_ac8626866a5643f590b7de550d1e6a655}\label{classGateMHDImage_ac8626866a5643f590b7de550d1e6a655}} 
+int {\bfseries Read\+\_\+tag} (std\+::string tag)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a670ba4efd345c04b0b61918767856a8a}\label{classGateMHDImage_a670ba4efd345c04b0b61918767856a8a}} 
+void {\bfseries Check\+\_\+tag\+\_\+value} (std\+::string tag, std\+::string value)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_aea978da78c893729218b8c157941016c}\label{classGateMHDImage_aea978da78c893729218b8c157941016c}} 
+void {\bfseries Erase\+White\+Spaces} (std\+::string \&s)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_ac05f6b228dcba7e085582d16bb4ae0a1}\label{classGateMHDImage_ac05f6b228dcba7e085582d16bb4ae0a1}} 
+void {\bfseries Get\+Raw\+Filename} (std\+::string filename, std\+::string \&f, bool keep\+Folder, bool change\+Extension=false)
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a459914d06408ce817cb21d9c4b6f2026}\label{classGateMHDImage_a459914d06408ce817cb21d9c4b6f2026}} 
+double {\bfseries round\+\_\+to\+\_\+digits} (double, int)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a799d459853590a0712d084ad8daf67a9}\label{classGateMHDImage_a799d459853590a0712d084ad8daf67a9}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries tags}
+\item 
+\mbox{\Hypertarget{classGateMHDImage_a72a187e63470401b039ff41ec28ffd8f}\label{classGateMHDImage_a72a187e63470401b039ff41ec28ffd8f}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries values}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+MHDImage.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/\mbox{\hyperlink{GateMHDImage_8cc}{Gate\+MHDImage.\+cc}}\end{DoxyCompactItemize}

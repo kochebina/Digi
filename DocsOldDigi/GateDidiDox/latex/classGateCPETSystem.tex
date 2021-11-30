@@ -1,0 +1,102 @@
+\hypertarget{classGateCPETSystem}{}\doxysection{Gate\+CPETSystem Class Reference}
+\label{classGateCPETSystem}\index{GateCPETSystem@{GateCPETSystem}}
+
+
+The \mbox{\hyperlink{classGateCPETSystem}{Gate\+CPETSystem}} models a CPET-\/like scanner.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+CPETSystem.\+hh$>$}
+
+Inheritance diagram for Gate\+CPETSystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCPETSystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCPETSystem_aa987da00e7b8d016a83397f89822a75e}\label{classGateCPETSystem_aa987da00e7b8d016a83397f89822a75e}} 
+{\bfseries Gate\+CPETSystem} (const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCPETSystem_a75ad6320841e59e430326bdb10d00c1d}\label{classGateCPETSystem_a75ad6320841e59e430326bdb10d00c1d}} 
+virtual {\bfseries $\sim$\+Gate\+CPETSystem} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Describe()}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCPETSystem_a01d09865b47be00469ff9bd9a5cb5510}{Print\+To\+Stream}} (std\+::ostream \&a\+Stream, G4bool)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Describe()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCPETSystem_afbcba64c1480f3879c89ed8d6cd2be5b}\label{classGateCPETSystem_afbcba64c1480f3879c89ed8d6cd2be5b}} 
+virtual G4double {\bfseries Compute\+Internal\+Radius} ()
+\begin{DoxyCompactList}\small\item\em Compute the internal radius of the crystal ring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateCPETSystem}{Gate\+CPETSystem}} models a CPET-\/like scanner. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateCPETSystem}{Gate\+CPETSystem}} -\/ By \href{mailto:Juliette.Feuardent@imed.jussieu.fr}{\texttt{ Juliette.\+Feuardent@imed.\+jussieu.\+fr}} and \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item A \mbox{\hyperlink{classGateCPETSystem}{Gate\+CPETSystem}} models a CPET-\/like scanner, using curved crystals.
+\item This system overloads two methods of the \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} base-\/class, \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Describe()}} and \mbox{\hyperlink{classGateCPETSystem_a01d09865b47be00469ff9bd9a5cb5510}{Print\+To\+Stream()}}
+\item Beside the standard system methods, it also provides the method \mbox{\hyperlink{classGateCPETSystem_afbcba64c1480f3879c89ed8d6cd2be5b}{Compute\+Internal\+Radius()}} to compute the internal radius of the scanner 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}\label{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}} 
+\index{GateCPETSystem@{GateCPETSystem}!Describe@{Describe}}
+\index{Describe@{Describe}!GateCPETSystem@{GateCPETSystem}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+CPETSystem\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Describe()}}. 
+
+This methods prints-\/out a description of the system, which is
+
+optimised for creating LMF header files
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Gate\+VSystem}}.
+
+\mbox{\Hypertarget{classGateCPETSystem_a01d09865b47be00469ff9bd9a5cb5510}\label{classGateCPETSystem_a01d09865b47be00469ff9bd9a5cb5510}} 
+\index{GateCPETSystem@{GateCPETSystem}!PrintToStream@{PrintToStream}}
+\index{PrintToStream@{PrintToStream}!GateCPETSystem@{GateCPETSystem}}
+\doxysubsubsection{\texorpdfstring{PrintToStream()}{PrintToStream()}}
+{\footnotesize\ttfamily void Gate\+CPETSystem\+::\+Print\+To\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{a\+Stream,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Describe()}}. 
+
+This methods prints out description of the system to a stream.
+
+It is essentially to be used by the class Gate\+To\+LMF, but it may also be used by \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Describe()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Stream} & the output stream \\
+\hline
+{\em do\+Print\+Numbers} & tells whether we print-\/out the volume numbers in addition to their dimensions \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSystem_a0f2ca5a41d87527ede0dd8d6183f93ef}{Gate\+VSystem}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+CPETSystem.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+CPETSystem.\+cc\end{DoxyCompactItemize}

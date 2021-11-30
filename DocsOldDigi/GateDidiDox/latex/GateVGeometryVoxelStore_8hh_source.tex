@@ -1,0 +1,104 @@
+\hypertarget{GateVGeometryVoxelStore_8hh_source}{}\doxysection{Gate\+VGeometry\+Voxel\+Store.\+hh}
+\label{GateVGeometryVoxelStore_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVGeometryVoxelStore.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVGeometryVoxelStore.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVGeometryVoxelStore\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVGeometryVoxelStore\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* creator);}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVGeometryVoxelStore}{\string~GateVGeometryVoxelStore}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{//E  GateVVolume*     GetInserter()  \{ return m\_inserter; \};}}
+\DoxyCodeLine{53   \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*     GetCreator()  \{ \textcolor{keywordflow}{return} m\_creator; \};}
+\DoxyCodeLine{54   }
+\DoxyCodeLine{55   G4String                 GetName()      \{ \textcolor{keywordflow}{return} m\_name; \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVerboseLevel(G4int value) \{ nVerboseLevel = value; \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateVGeometryVoxelStore_ac4fa447b36d2bc74a25a102c532e9ee8}{EmptyStore}}() = 0;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateVGeometryVoxelStore_a3b367494c9faf9f0ad661e4234b9cadc}{AddVoxel}}(G4int ix, G4int iy, G4int iz, G4Material* material) = 0;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateVGeometryVoxelStore_a0fb092c6487833ffda3f5c696cc2d01c}{SetVoxelMaterial}}(G4int ix, G4int iy, G4int iz, G4Material* material) = 0;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} G4Material*      \mbox{\hyperlink{classGateVGeometryVoxelStore_acaf5e6b32e105c5923ef1c1efdbc373f}{GetVoxelMaterial}}(G4int ix, G4int iy, G4int iz) = 0;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} std::vector<G4int> \mbox{\hyperlink{classGateVGeometryVoxelStore_aeaf848e7a1adfbd31b9bacb2f75b9d2a}{GetVoxel}}(G4int index) = 0;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keyword}{virtual} G4int            GetNumberOfVoxels() = 0;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} G4int            GetVoxelNx()        \{ \textcolor{keywordflow}{return} m\_voxelNx; \};}
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVoxelNx(G4int n) \{ m\_voxelNx = n; \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} G4int            GetVoxelNy()        \{ \textcolor{keywordflow}{return} m\_voxelNy; \};}
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVoxelNy(G4int n) \{ m\_voxelNy = n; \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} G4int            GetVoxelNz()        \{ \textcolor{keywordflow}{return} m\_voxelNz; \};}
+\DoxyCodeLine{83   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVoxelNz(G4int n) \{ m\_voxelNz = n; \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVoxelSize(G4ThreeVector size)  \{ m\_voxelSize = size; \};}
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} G4ThreeVector    GetVoxelSize()                    \{ \textcolor{keywordflow}{return} m\_voxelSize; \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetPosition(G4ThreeVector pos)    \{ m\_position = pos; \};}
+\DoxyCodeLine{89   \textcolor{keyword}{virtual} G4ThreeVector    GetPosition()                     \{ \textcolor{keywordflow}{return} m\_position; \};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetDefaultMaterial(G4Material* material)  \{ m\_defaultMaterial = material; \};}
+\DoxyCodeLine{92   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetDefaultMaterial(G4String materialName);}
+\DoxyCodeLine{93   \textcolor{keyword}{virtual} G4Material*      GetDefaultMaterial()                      \{ \textcolor{keywordflow}{return} m\_defaultMaterial; \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             Dump();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             Describe(G4int level);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   G4int                          nVerboseLevel;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   G4String                       m\_name;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{//E  GateVVolume*           m\_inserter;}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*                   m\_creator;}
+\DoxyCodeLine{108   }
+\DoxyCodeLine{109   G4int                          m\_voxelNx;}
+\DoxyCodeLine{110   G4int                          m\_voxelNy;}
+\DoxyCodeLine{111   G4int                          m\_voxelNz;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   G4ThreeVector                  m\_voxelSize;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115   G4ThreeVector                  m\_position;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   G4Material*                    m\_defaultMaterial;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   G4String                       m\_type;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 }
+
+\end{DoxyCode}

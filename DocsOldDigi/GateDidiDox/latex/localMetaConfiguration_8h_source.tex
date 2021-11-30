@@ -1,0 +1,77 @@
+\hypertarget{localMetaConfiguration_8h_source}{}\doxysection{local\+Meta\+Configuration.\+h}
+\label{localMetaConfiguration_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/localMetaConfiguration.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/localMetaConfiguration.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifdef METAIO\_USE\_NAMESPACE}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{  \#undef METAIO\_USE\_NAMESPACE}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifdef METAIO\_NAMESPACE}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{  \#undef METAIO\_NAMESPACE}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef METAIO\_STL}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{  \#undef METAIO\_STL}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifdef METAIO\_STREAM}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{  \#undef METAIO\_STREAM}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifdef METAIO\_EXPORT}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{  \#undef METAIO\_EXPORT}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}metaIOConfig.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#if defined(METAIO\_FOR\_ITK) || !defined(METAIO\_FOR\_VTK)}}
+\DoxyCodeLine{31   \textcolor{comment}{// ITK}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{  \#define METAIO\_USE\_NAMESPACE  0}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{  \#define METAIO\_NAMESPACE      ITKMetaIO}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{  \#include "{}itk\_zlib.h"{}}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{  \#define METAIO\_STL    std}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{  \#define METAIO\_STREAM std}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{  \#include <iostream>}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{  \#include <fstream>}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{  \#define METAIO\_EXPORT}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{46 \textcolor{comment}{// VTK}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{  \#define METAIO\_USE\_NAMESPACE  1}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{  \#define METAIO\_NAMESPACE      vtkmetaio}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{  \#include "{}vtk\_zlib.h"{}}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{  \#define METAIO\_STL    std}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{  \#define METAIO\_STREAM std}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{  \#include <iostream>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{  \#include <fstream>}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{  \#if (defined(\_WIN32) || defined(WIN32)) \&\& defined(vtkmetaio\_BUILD\_SHARED\_LIBS)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{    \#ifdef vtkmetaio\_EXPORTS}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{      \#define METAIO\_EXPORT \_\_declspec(dllexport)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{      \#define METAIO\_EXTERN}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{      \#define METAIO\_EXPORT \_\_declspec(dllimport)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{      \#define METAIO\_EXTERN extern}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{  \#else}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{    \#define METAIO\_EXPORT}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{// end VTK/ITK}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

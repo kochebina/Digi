@@ -1,0 +1,81 @@
+\hypertarget{GateOrbitingMove_8hh_source}{}\doxysection{Gate\+Orbiting\+Move.\+hh}
+\label{GateOrbitingMove_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOrbitingMove.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOrbitingMove.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateOrbitingMove\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateOrbitingMove\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4Point3D.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4Transform3D.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOrbitingMoveMessenger}{GateOrbitingMoveMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOrbitingMove}{GateOrbitingMove}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39   \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \mbox{\hyperlink{classGateOrbitingMove_a664b2b2d17ffc3dbac628e8239bdf4ac}{GateOrbitingMove}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{45                          \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{46                          \textcolor{keyword}{const} G4Point3D\& itsPoint1=G4Point3D(),}
+\DoxyCodeLine{47                          \textcolor{keyword}{const} G4Point3D\& itsPoint2=G4Point3D(0.,0.,1.),}
+\DoxyCodeLine{48              \textcolor{keywordtype}{double} itsVelocity=0.,}
+\DoxyCodeLine{49              G4bool itsFlagAutoRotation=\textcolor{keyword}{true});}
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOrbitingMove_adae06b36b6f35b6387addaf9ef55380b}{\string~GateOrbitingMove}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{63      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOrbitingMove_a863a3e74123478b370487afc9eb03f0a}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{64                                       \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{65                           G4double aTime);}
+\DoxyCodeLine{71      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOrbitingMove_a19bd77e8e73f0cca1a651a58a8271c55}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{72      }
+\DoxyCodeLine{73   \textcolor{keyword}{public}:}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4Point3D\& \mbox{\hyperlink{classGateOrbitingMove_aaac3e0e08d1a308e33b7f8d858f29e49}{GetPoint1}}() }
+\DoxyCodeLine{78           \{ \textcolor{keywordflow}{return} m\_point1;\}}
+\DoxyCodeLine{80     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4Point3D\& \mbox{\hyperlink{classGateOrbitingMove_a526602944fce82333cca8461570f1df4}{GetPoint2}}() }
+\DoxyCodeLine{81           \{ \textcolor{keywordflow}{return} m\_point2;\}}
+\DoxyCodeLine{83     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateOrbitingMove_ab3bcbeaa393153d62bc815109c564f62}{GetVelocity}}() }
+\DoxyCodeLine{84           \{ \textcolor{keywordflow}{return} m\_velocity;\}}
+\DoxyCodeLine{86     \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateOrbitingMove_a66e69378d5b4cb45cae9f7888583f95b}{GetAutoRotation}}() }
+\DoxyCodeLine{87           \{ \textcolor{keywordflow}{return} m\_flagAutoRotation;\}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOrbitingMove_a66d8ab39e7183455adc1aaeb79f149b2}{SetPoint1}}(\textcolor{keyword}{const} G4Point3D\& val) }
+\DoxyCodeLine{91           \{ m\_point1 = val; \}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOrbitingMove_a2bf2f134d2a40eee40e3dcfcd00de59b}{SetPoint2}}(\textcolor{keyword}{const} G4Point3D\& val) }
+\DoxyCodeLine{94           \{ m\_point2 = val;  \}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOrbitingMove_a9c76c1479cb5fd59513f06c0caef5545}{SetVelocity}}(\textcolor{keywordtype}{double} val) }
+\DoxyCodeLine{97           \{  m\_velocity = val; \}}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOrbitingMove_a73a1bb564b0691c16cf355949284ee2e}{SetAutoRotation}}(G4bool val)}
+\DoxyCodeLine{100           \{ m\_flagAutoRotation = val;  \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{103     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateOrbitingMove_ab2da396b6b07e8adfbca8c7af6e759e0}{GetCurrentAngle}}() }
+\DoxyCodeLine{104           \{ \textcolor{keywordflow}{return} m\_currentAngle;\}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keyword}{private}:}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     G4Point3D m\_point1;                   }
+\DoxyCodeLine{111     G4Point3D m\_point2;                   }
+\DoxyCodeLine{112     G4double m\_velocity;                  }
+\DoxyCodeLine{113     G4bool   m\_flagAutoRotation;          }
+\DoxyCodeLine{115     }
+\DoxyCodeLine{117     G4double m\_currentAngle;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{120     \mbox{\hyperlink{classGateOrbitingMoveMessenger}{GateOrbitingMoveMessenger}}* m\_Messenger; }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+
+\end{DoxyCode}

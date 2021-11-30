@@ -1,0 +1,128 @@
+\hypertarget{classGateFictitiousVoxelMapParameterized}{}\doxysection{Gate\+Fictitious\+Voxel\+Map\+Parameterized Class Reference}
+\label{classGateFictitiousVoxelMapParameterized}\index{GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}}
+Inheritance diagram for Gate\+Fictitious\+Voxel\+Map\+Parameterized\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classGateFictitiousVoxelMapParameterized}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_ae7663679baa1581e13e8f6025c5332e4}\label{classGateFictitiousVoxelMapParameterized_ae7663679baa1581e13e8f6025c5332e4}} 
+enum {\bfseries Envelope\+Type} \{ {\bfseries Box}
+, {\bfseries Cylinder}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_aab53acbeb7e919738dcccdd002b04688}\label{classGateFictitiousVoxelMapParameterized_aab53acbeb7e919738dcccdd002b04688}} 
+{\bfseries Gate\+Fictitious\+Voxel\+Map\+Parameterized} (const G4\+String \&name, G4bool accepts\+Children=true, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a8c5f02e559f607140246ca75d864ebb0}\label{classGateFictitiousVoxelMapParameterized_a8c5f02e559f607140246ca75d864ebb0}} 
+{\bfseries Gate\+Fictitious\+Voxel\+Map\+Parameterized} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a9fe450f75ebea27ccc83925299e7b714}\label{classGateFictitiousVoxelMapParameterized_a9fe450f75ebea27ccc83925299e7b714}} 
+{\bfseries $\sim$\+Gate\+Fictitious\+Voxel\+Map\+Parameterized} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a8a90fef44b90ac4349da0e0141ec7e13}\label{classGateFictitiousVoxelMapParameterized_a8a90fef44b90ac4349da0e0141ec7e13}} 
+void {\bfseries Insert\+Reader} (G4\+String reader\+Type)
+\begin{DoxyCompactList}\small\item\em Insert the reader to read and store the voxel material info. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a7e87ddfb0600416c3720041edae4b01e}\label{classGateFictitiousVoxelMapParameterized_a7e87ddfb0600416c3720041edae4b01e}} 
+void {\bfseries Remove\+Reader} ()
+\begin{DoxyCompactList}\small\item\em Remove the reader to read and store the voxel material info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a9fe96aea5f18ea1f72aec71f0f868c90}{Attach\+Phantom\+SD}} ()
+\begin{DoxyCompactList}\small\item\em Attach the matrix to the phantom SD. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a0779b157037ed248851e8a45dd34e8a5}\label{classGateFictitiousVoxelMapParameterized_a0779b157037ed248851e8a45dd34e8a5}} 
+void {\bfseries Add\+Output} (G4\+String name)
+\begin{DoxyCompactList}\small\item\em Attach an new output module for dose calculation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a3dca01a00dd4d134b81f1606e8da2ad3}{Construct\+Geometry}} (G4\+Logical\+Volume $\ast$mother\+\_\+log, G4bool flag\+Update\+Only)
+\begin{DoxyCompactList}\small\item\em Implementation of virtual method Construct\+Geometry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a5df441af77d92eefe36a9a6e82cb089d}{Construct\+Own\+Physical\+Volume}} (G4bool flag\+Update\+Only)
+\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a50daf21bb35b29b6ad98ce1aaf172e12}\label{classGateFictitiousVoxelMapParameterized_a50daf21bb35b29b6ad98ce1aaf172e12}} 
+\mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}} $\ast$ {\bfseries Get\+Reader} () const
+\begin{DoxyCompactList}\small\item\em Get the reader to read and store the voxel material info. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a4020eabb976d3e73096610bf2fffbc74}\label{classGateFictitiousVoxelMapParameterized_a4020eabb976d3e73096610bf2fffbc74}} 
+G4int {\bfseries Get\+Verbosity} ()
+\begin{DoxyCompactList}\small\item\em Get and Set the verbose level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_aab62321d48de42efb6d94a1227cf7e7a}{Set\+Verbosity}} (G4int the\+Verbose\+Level)
+\begin{DoxyCompactList}\small\item\em Set the verbosity of the system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a1d94dc887c62bdb8b6d0aef5b9f8d730}\label{classGateFictitiousVoxelMapParameterized_a1d94dc887c62bdb8b6d0aef5b9f8d730}} 
+G4\+String {\bfseries Get\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the name m\+\_\+name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a26bffa3cb47a1b0f939fe2d2796ea41a}\label{classGateFictitiousVoxelMapParameterized_a26bffa3cb47a1b0f939fe2d2796ea41a}} 
+void {\bfseries Change\+Skip\+Equal\+Materials} (G4bool a\+Bool)
+\begin{DoxyCompactList}\small\item\em Get and Set the Skip\+Equal\+Materials parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_aaaa2e9f29dc7869955b29543d78d1f05}\label{classGateFictitiousVoxelMapParameterized_aaaa2e9f29dc7869955b29543d78d1f05}} 
+G4int {\bfseries Get\+Skip\+Equal\+Materials} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a3e540b8b6d010f21c0d1c74ad9404d8b}\label{classGateFictitiousVoxelMapParameterized_a3e540b8b6d010f21c0d1c74ad9404d8b}} 
+enum Gate\+Fictitious\+Voxel\+Map\+Parameterized\+::\+Envelope\+Type {\bfseries m\+\_\+n\+Envelope\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a9fe96aea5f18ea1f72aec71f0f868c90}\label{classGateFictitiousVoxelMapParameterized_a9fe96aea5f18ea1f72aec71f0f868c90}} 
+\index{GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}!AttachPhantomSD@{AttachPhantomSD}}
+\index{AttachPhantomSD@{AttachPhantomSD}!GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}}
+\doxysubsubsection{\texorpdfstring{AttachPhantomSD()}{AttachPhantomSD()}}
+{\footnotesize\ttfamily void Gate\+Fictitious\+Voxel\+Map\+Parameterized\+::\+Attach\+Phantom\+SD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attach the matrix to the phantom SD. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume_aa9f0786134689e77c3f473d2f182d6a8}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a3dca01a00dd4d134b81f1606e8da2ad3}\label{classGateFictitiousVoxelMapParameterized_a3dca01a00dd4d134b81f1606e8da2ad3}} 
+\index{GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}!ConstructGeometry@{ConstructGeometry}}
+\index{ConstructGeometry@{ConstructGeometry}!GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}}
+\doxysubsubsection{\texorpdfstring{ConstructGeometry()}{ConstructGeometry()}}
+{\footnotesize\ttfamily void Gate\+Fictitious\+Voxel\+Map\+Parameterized\+::\+Construct\+Geometry (\begin{DoxyParamCaption}\item[{G4\+Logical\+Volume $\ast$}]{mother\+\_\+log,  }\item[{G4bool}]{flag\+Update\+Only }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of virtual method Construct\+Geometry. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_a5df441af77d92eefe36a9a6e82cb089d}\label{classGateFictitiousVoxelMapParameterized_a5df441af77d92eefe36a9a6e82cb089d}} 
+\index{GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}!ConstructOwnPhysicalVolume@{ConstructOwnPhysicalVolume}}
+\index{ConstructOwnPhysicalVolume@{ConstructOwnPhysicalVolume}!GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnPhysicalVolume()}{ConstructOwnPhysicalVolume()}}
+{\footnotesize\ttfamily void Gate\+Fictitious\+Voxel\+Map\+Parameterized\+::\+Construct\+Own\+Physical\+Volume (\begin{DoxyParamCaption}\item[{G4bool}]{flag\+Update\+Only }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of virtual method Construct\+Own\+Physical\+Volumes. It is in fact a copy of the Autoplaced\+Creator\+Inserter same method but instead of placing a new physical volume (that creates one too), we take the physical container created and used by the regular parameterization. ! 
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateFictitiousVoxelMapParameterized_aab62321d48de42efb6d94a1227cf7e7a}\label{classGateFictitiousVoxelMapParameterized_aab62321d48de42efb6d94a1227cf7e7a}} 
+\index{GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}!SetVerbosity@{SetVerbosity}}
+\index{SetVerbosity@{SetVerbosity}!GateFictitiousVoxelMapParameterized@{GateFictitiousVoxelMapParameterized}}
+\doxysubsubsection{\texorpdfstring{SetVerbosity()}{SetVerbosity()}}
+{\footnotesize\ttfamily void Gate\+Fictitious\+Voxel\+Map\+Parameterized\+::\+Set\+Verbosity (\begin{DoxyParamCaption}\item[{G4int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the verbosity of the system. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateNamedObject_a07533b5bf3ffeed08d4a444d261f930c}{Gate\+Named\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Fictitious\+Voxel\+Map\+Parameterized.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Fictitious\+Voxel\+Map\+Parameterized.\+cc\end{DoxyCompactItemize}

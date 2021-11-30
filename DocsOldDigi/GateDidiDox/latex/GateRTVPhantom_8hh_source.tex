@@ -1,0 +1,58 @@
+\hypertarget{GateRTVPhantom_8hh_source}{}\doxysection{Gate\+RTVPhantom.\+hh}
+\label{GateRTVPhantom_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateRTVPhantom.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateRTVPhantom.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GateRTVPhantom\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GateRTVPhantom\_HH 1}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdio.h>}          }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateRTPhantom.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRTVPhantomMessenger}{GateRTVPhantomMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRTVPhantom}{GateRTVPhantom}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateRTPhantom}{GateRTPhantom}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26 \mbox{\hyperlink{classGateRTVPhantomMessenger}{GateRTVPhantomMessenger}}* m\_messenger;}
+\DoxyCodeLine{27 G4int NbOfFrames;}
+\DoxyCodeLine{28 G4String base\_FN; \textcolor{comment}{// base file name of frames}}
+\DoxyCodeLine{29 G4String current\_FN; \textcolor{comment}{// current Frame file name}}
+\DoxyCodeLine{30 G4String header\_FN; \textcolor{comment}{// the header file name for reading the matrix dimensions}}
+\DoxyCodeLine{31 G4int cK; \textcolor{comment}{// current index for phantoms file}}
+\DoxyCodeLine{32 G4double m\_TPF; \textcolor{comment}{// time per frame}}
+\DoxyCodeLine{33 G4int set\_ActAsAtt;}
+\DoxyCodeLine{34 G4int set\_AttAsAct;}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36 \mbox{\hyperlink{classGateRTVPhantom}{GateRTVPhantom}}();}
+\DoxyCodeLine{37 G4int GetNbOfFrames();}
+\DoxyCodeLine{38 \textcolor{keywordtype}{void}   SetNbOfFrames( G4int aNb );}
+\DoxyCodeLine{39 \textcolor{keywordtype}{void}   SetBaseFileName( G4String aFN );}
+\DoxyCodeLine{40 \textcolor{keywordtype}{void}   SetHeaderFileName( G4String aFN );}
+\DoxyCodeLine{41 \textcolor{keywordtype}{void}   SetActAsAtt()\{ set\_ActAsAtt = 1;\}}
+\DoxyCodeLine{42 \textcolor{keywordtype}{void}   SetAttAsAct()\{ set\_AttAsAct = 1;\}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keywordtype}{void} SetTPF( G4double aTPF);}
+\DoxyCodeLine{45 G4double GetTPF();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} Compute(G4double aTime);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+
+\end{DoxyCode}

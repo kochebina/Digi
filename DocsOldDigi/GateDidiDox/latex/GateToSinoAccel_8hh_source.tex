@@ -1,0 +1,138 @@
+\hypertarget{GateToSinoAccel_8hh_source}{}\doxysection{Gate\+To\+Sino\+Accel.\+hh}
+\label{GateToSinoAccel_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToSinoAccel.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToSinoAccel.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateToSinoAccel\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateToSinoAccel\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}fstream"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateSinogram.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToSinoAccelMessenger}{GateToSinoAccelMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToSinoAccel}{GateToSinoAccel}} :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateToSinoAccel_a476daf654dd51a01f8386080708f8499}{GateToSinoAccel}}(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* itsSystem,DigiMode digiMode);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateToSinoAccel}{\string~GateToSinoAccel}}();}
+\DoxyCodeLine{28   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_af27cf38d3f4d87dd789128fa6acb62a4}{RecordBeginOfAcquisition}}();}
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_a9536e951c57220c10d5475a7122b4225}{RecordEndOfAcquisition}}();}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_a78880eefb03c328e8be74ffee6482ebe}{RecordBeginOfRun}}(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_abab3153ad72651861bf5a7a2e88573f7}{RecordEndOfRun}}(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_abded8b57b9bb4d3842aba22e6a8cc216}{RecordBeginOfEvent}}(\textcolor{keyword}{const} G4Event *) \{\}}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_a314ba7ca603bc6e918cade9a846014ca}{RecordEndOfEvent}}(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_abfcc9a8682bc2726f36f14fd92cd0d34}{RecordStepWithVolume}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step *) \{\}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_a43334e238e3f9d99af250050f691a99c}{RecordVoxels}}(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_af1548b10fa740a992d55cffb41aa08fa}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_aa00d43955e2259f2396bbcc87c8d64f2}{StreamOut}}(std::ofstream\& dest);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateToSinoAccel_a03676bfd92afe1d23f62f281a9a8ba3c}{IsRawOutputEnabled}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{60 \textcolor{keyword}{          }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_ad6bc3b9ceb8e67eb70fcbe67925bebad}{m\_flagIsRawOutputEnabled}};\}}
+\DoxyCodeLine{62     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_a02283b74e8f04b8f49405244845e5c02}{RawOutputEnable}}(G4bool val)}
+\DoxyCodeLine{63           \{ \mbox{\hyperlink{classGateToSinoAccel_ad6bc3b9ceb8e67eb70fcbe67925bebad}{m\_flagIsRawOutputEnabled}} = val; \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateToSinoAccel_ab6261cc2a2ccd4ca9847a3461142e168}{IsTruesOnly}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{68 \textcolor{keyword}{          }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_acab474353ad7ed4154db7f1799a642bc}{m\_flagTruesOnly}}; \}}
+\DoxyCodeLine{70     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_ad681b6652a9896dcb5c5c714eaea444c}{TruesOnly}}(G4bool val)}
+\DoxyCodeLine{71           \{ \mbox{\hyperlink{classGateToSinoAccel_acab474353ad7ed4154db7f1799a642bc}{m\_flagTruesOnly}} = val; \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74     \textcolor{keyword}{const}  G4String\& \mbox{\hyperlink{classGateToSinoAccel_a97c1f98e8b7c3fd7cde98e717917d0eb}{GetFileName}}()}
+\DoxyCodeLine{75           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_ad6c740e87176bd30e8fa97516b0967f2}{m\_fileName}};       \};}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void}   \mbox{\hyperlink{classGateToSinoAccel_a50fe18ab72ae0d610ad4c13b910c3d05}{SetFileName}}(\textcolor{keyword}{const} G4String\& aName)}
+\DoxyCodeLine{78           \{ \mbox{\hyperlink{classGateToSinoAccel_ad6c740e87176bd30e8fa97516b0967f2}{m\_fileName}} = aName;      \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81     \textcolor{keyword}{const}  G4String\& \mbox{\hyperlink{classGateToSinoAccel_a64a00cbd30b875f1601d5fd882c6fcd3}{GetInputDataName}}()}
+\DoxyCodeLine{82           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_a96a13bd2aefca5eb78c22a43f81df84b}{m\_inputDataChannel}};       \};}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void}   \mbox{\hyperlink{classGateToSinoAccel_a3bdf9ac78169298815041fa3524749e9}{SetOutputDataName}}(\textcolor{keyword}{const} G4String\& aName)}
+\DoxyCodeLine{85           \{ \mbox{\hyperlink{classGateToSinoAccel_a96a13bd2aefca5eb78c22a43f81df84b}{m\_inputDataChannel}} = aName;      \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_a165c4807cb611c08b1e78ba8c0e1f359}{SetVerboseLevel}}(G4int val)}
+\DoxyCodeLine{90       \{ GateVOutputModule::SetVerboseLevel(val); \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_a44f438225f5c7eebbea2d8e189f16188}{SetVerboseLevel}}(val); \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToSinoAccel_a7da8bf58fd8dbebed8ac55ca53c61048}{GetStudyDuration}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{95 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_a5379c69c7cfbcb1f332c8e5e984230d8}{m\_studyDuration}};\}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToSinoAccel_af2813b67fdafe1acb5e28dd2623cf094}{GetFrameDuration}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{99 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_a25967725c6e9dfc2528ee5320878caf7}{m\_frameDuration}};\}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{102     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateToSinoAccel_a9e23d732ac385b896cd8709f60aa561f}{GetFrameNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{103 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_a8ceddf7858f673e3766e550664fba611}{m\_frameNb}};\}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSinogram}{GateSinogram}}* \mbox{\hyperlink{classGateToSinoAccel_a62d3c9eccffab2d877e2b8e2a7a89703}{GetSinogram}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{107 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}};\}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateToSinoAccel_a3f5eddc958f97ef19af0d19a0f4b6feb}{GetCrystalNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{111 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_aad48ec7557604c23135a91ca5f946688}{GetCrystalNb}}();\}}
+\DoxyCodeLine{113     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_afafed8208209478f3b9f16b942659236}{SetCrystalNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{114       \{ \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_aff30a2a4c6406ec7373f3cbf8af62e2e}{SetCrystalNb}}(aNb);\}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateToSinoAccel_ab45ce83196f62c1dda35a402b913ee28}{GetRingNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{118 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_aff604cb4bd4fbe83021b53dc68720277}{GetRingNb}}();\}}
+\DoxyCodeLine{120     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_aeb1809425f493ac7ee90e0af43c8b23d}{SetRingNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{121       \{ \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_a287adc5a63aa6da45163c5f10094e48e}{SetRingNb}}(aNb);\}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{124      \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateToSinoAccel_ab64527784ec30d90cd471de0a981f674}{GetRadialElemNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{125 \textcolor{keyword}{       }\{ \textcolor{keywordflow}{return}  \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_abbb652392fec20d787fcdcac99333503}{GetRadialElemNb}}();\}}
+\DoxyCodeLine{127      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_aeaf40c18e55cd8d9883ab87838be5e57}{SetRadialElemNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{128        \{ \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_aeae423effa8dfe6e0cf255224d9fee87}{SetRadialElemNb}}(aNb);\}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{131      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToSinoAccel_a783daa778edcdb0d2125ff1221303743}{GetTangCrystalResolution}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{132 \textcolor{keyword}{       }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_a5078122eaf6ebf8afa344a197adedd84}{m\_tangCrystalResolution}};\}}
+\DoxyCodeLine{134      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_a29c1533f88e0108b8580629c8c4093cc}{SetTangCrystalResolution}}(G4double aNb)}
+\DoxyCodeLine{135        \{ \mbox{\hyperlink{classGateToSinoAccel_a5078122eaf6ebf8afa344a197adedd84}{m\_tangCrystalResolution}} = aNb;\}}
+\DoxyCodeLine{137      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToSinoAccel_adc865563cc75834b6e7d5c7420db38bd}{GetAxialCrystalResolution}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{138 \textcolor{keyword}{       }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_a93ec6b3cced8277b92a71c544d884cab}{m\_axialCrystalResolution}};\}}
+\DoxyCodeLine{140      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToSinoAccel_ac89eeaf85d41f4b005629c1eab889d63}{SetAxialCrystalResolution}}(G4double aNb)}
+\DoxyCodeLine{141        \{ \mbox{\hyperlink{classGateToSinoAccel_a93ec6b3cced8277b92a71c544d884cab}{m\_axialCrystalResolution}} = aNb;\}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{144     \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateToSinoAccel_a5bc11dacd84ab23a3f982b981f84e011}{BytesPerPixel}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{145 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}}-\/>\mbox{\hyperlink{classGateSinogram_a2e8926eb3d8826fbbe9edc65014f4a85}{BytesPerPixel}}();\}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{150   \mbox{\hyperlink{classGateSinogram}{GateSinogram}}*       \mbox{\hyperlink{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}{m\_sinogram}};           }
+\DoxyCodeLine{151   \textcolor{comment}{// GateSinogram*       m\_sinoRandoms;              //!< Additional 2D sinograms for random coincidences}}
+\DoxyCodeLine{152   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToSinoAccel_a7889ac2e2f6ce61a625154c65e309ddb}{m\_crystalNb}};                 }
+\DoxyCodeLine{153   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToSinoAccel_a823dd9968766eb1874530e22264ba4f2}{m\_ringNb}};                   }
+\DoxyCodeLine{154   G4double            \mbox{\hyperlink{classGateToSinoAccel_a5379c69c7cfbcb1f332c8e5e984230d8}{m\_studyDuration}};             }
+\DoxyCodeLine{155   G4double            \mbox{\hyperlink{classGateToSinoAccel_a25967725c6e9dfc2528ee5320878caf7}{m\_frameDuration}};            }
+\DoxyCodeLine{156   G4int               \mbox{\hyperlink{classGateToSinoAccel_a8ceddf7858f673e3766e550664fba611}{m\_frameNb}};                  }
+\DoxyCodeLine{157   \mbox{\hyperlink{classGateVSystem}{GateVSystem}}        *\mbox{\hyperlink{classGateToSinoAccel_ab1d6e4fd26116117a40832ee328e18bb}{m\_system}};                   }
+\DoxyCodeLine{158   G4bool              \mbox{\hyperlink{classGateToSinoAccel_acab474353ad7ed4154db7f1799a642bc}{m\_flagTruesOnly}};            }
+\DoxyCodeLine{159   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToSinoAccel_ae52caf44ee3776ee72ee099e1fd50573}{m\_radialElemNb}};             }
+\DoxyCodeLine{160   G4bool          \mbox{\hyperlink{classGateToSinoAccel_ad6bc3b9ceb8e67eb70fcbe67925bebad}{m\_flagIsRawOutputEnabled}};   }
+\DoxyCodeLine{161   G4String            \mbox{\hyperlink{classGateToSinoAccel_ad6c740e87176bd30e8fa97516b0967f2}{m\_fileName}};                 }
+\DoxyCodeLine{162   G4double            \mbox{\hyperlink{classGateToSinoAccel_a5078122eaf6ebf8afa344a197adedd84}{m\_tangCrystalResolution}};    }
+\DoxyCodeLine{163   G4double            \mbox{\hyperlink{classGateToSinoAccel_a93ec6b3cced8277b92a71c544d884cab}{m\_axialCrystalResolution}};   }
+\DoxyCodeLine{164   \mbox{\hyperlink{classGateToSinoAccelMessenger}{GateToSinoAccelMessenger}} *m\_messenger;}
+\DoxyCodeLine{165   G4String        \mbox{\hyperlink{classGateToSinoAccel_a96a13bd2aefca5eb78c22a43f81df84b}{m\_inputDataChannel}};   }
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167   \textcolor{comment}{// CC \& AC: Durty work}}
+\DoxyCodeLine{168   \textcolor{comment}{// G4std::ofstream     m\_dataFile;              //!< Output stream for the data file}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

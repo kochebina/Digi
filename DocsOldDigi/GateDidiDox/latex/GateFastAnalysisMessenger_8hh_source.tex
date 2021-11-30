@@ -1,0 +1,42 @@
+\hypertarget{GateFastAnalysisMessenger_8hh_source}{}\doxysection{Gate\+Fast\+Analysis\+Messenger.\+hh}
+\label{GateFastAnalysisMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFastAnalysisMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFastAnalysisMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateFastAnalysisMessenger\_h}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateFastAnalysisMessenger\_h 1}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }GateFastAnalysis;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }GateFastAnalysisMessenger: \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     GateFastAnalysisMessenger(GateFastAnalysis* gateFastAnalysis);}
+\DoxyCodeLine{29    \string~GateFastAnalysisMessenger();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{34     GateFastAnalysis* m\_gateFastAnalysis;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

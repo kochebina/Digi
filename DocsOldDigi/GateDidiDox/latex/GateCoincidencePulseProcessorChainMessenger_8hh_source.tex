@@ -1,0 +1,59 @@
+\hypertarget{GateCoincidencePulseProcessorChainMessenger_8hh_source}{}\doxysection{Gate\+Coincidence\+Pulse\+Processor\+Chain\+Messenger.\+hh}
+\label{GateCoincidencePulseProcessorChainMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateCoincidencePulseProcessorChainMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateCoincidencePulseProcessorChainMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidencePulseProcessorChainMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidencePulseProcessorChainMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateListMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateCoincidencePulseProcessorChain.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{30 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidencePulseProcessorChainMessenger}{GateCoincidencePulseProcessorChainMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34   \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{classGateCoincidencePulseProcessorChainMessenger_ab3e15d9e0cafecb8130f9e85b04aff0e}{GateCoincidencePulseProcessorChainMessenger}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* itsProcessorChain);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateCoincidencePulseProcessorChainMessenger}{\string~GateCoincidencePulseProcessorChainMessenger}}();}
+\DoxyCodeLine{39         }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidencePulseProcessorChainMessenger_ab09c4fd54eda8158e6a3dc710aef07d5}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     G4bool \mbox{\hyperlink{classGateCoincidencePulseProcessorChainMessenger_a9465aa5af3fe5518d96016bd8a0b30ca}{CheckNameConflict}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{private}:}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& DumpMap();}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DoInsertion(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* GetProcessorChain()}
+\DoxyCodeLine{54       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}*) \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}(); \}}
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56   \textcolor{keyword}{private}:}
+\DoxyCodeLine{57   }
+\DoxyCodeLine{58     G4UIcmdWithAString*         AddInputNameCmd;        }
+\DoxyCodeLine{59     G4UIcmdWithABool*           usePriorityCmd;    }
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+
+\end{DoxyCode}

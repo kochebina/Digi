@@ -1,0 +1,73 @@
+\hypertarget{GateToASCIIMessenger_8hh_source}{}\doxysection{Gate\+To\+ASCIIMessenger.\+hh}
+\label{GateToASCIIMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToASCIIMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToASCIIMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateToASCIIMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateToASCIIMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_FILE}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateToASCII.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{28 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }GateToASCIIMessenger: \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34   \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     GateToASCIIMessenger(GateToASCII* gateToASCII);}
+\DoxyCodeLine{36    \string~GateToASCIIMessenger();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} CreateNewOutputChannelCommand(GateToASCII::VOutputChannel* anOutputChannel);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     G4bool IsAnOutputChannelCmd(G4UIcommand* command);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} ExecuteOutputChannelCmd(G4UIcommand* command,G4String newValue);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46     GateToASCII*                         m\_gateToASCII;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     G4UIcmdWithoutParameter*                 ResetCmd;}
+\DoxyCodeLine{49     G4UIcmdWithABool*                        OutFileHitsCmd;}
+\DoxyCodeLine{50     G4UIcmdWithABool*                        OutFileVoxelCmd;}
+\DoxyCodeLine{51     G4UIcmdWithAString*                      SetFileNameCmd;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     std::vector<G4UIcmdWithABool*>           OutputChannelCmdList;}
+\DoxyCodeLine{54     std::vector<GateToASCII::VOutputChannel*>  m\_outputChannelList;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     G4UIcommand* CoincidenceMaskCmd;}
+\DoxyCodeLine{57     G4int m\_coincidenceMaskLength;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     G4UIcommand* SingleMaskCmd;}
+\DoxyCodeLine{60     G4int m\_singleMaskLength;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     G4UIcmdWithAnInteger*                    SetOutFileSizeLimitCmd;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

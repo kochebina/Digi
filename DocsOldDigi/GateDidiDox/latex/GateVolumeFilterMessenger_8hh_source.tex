@@ -1,0 +1,49 @@
+\hypertarget{GateVolumeFilterMessenger_8hh_source}{}\doxysection{Gate\+Volume\+Filter\+Messenger.\+hh}
+\label{GateVolumeFilterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVolumeFilterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVolumeFilterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateVolumeFilterMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEVOLUMEFILTERMESSENGER\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEVOLUMEFILTERMESSENGER\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeFilter}{GateVolumeFilter}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeFilterMessenger}{GateVolumeFilterMessenger}} : \textcolor{keyword}{public}  G4UImessenger}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateVolumeFilterMessenger}{GateVolumeFilterMessenger}}(\mbox{\hyperlink{classGateVolumeFilter}{GateVolumeFilter}}* idFilter);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVolumeFilterMessenger}{\string~GateVolumeFilterMessenger}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{38   \mbox{\hyperlink{classGateVolumeFilter}{GateVolumeFilter}} * pVolumeFilter;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   G4UIcmdWithAString* pAddVolumeCmd;}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEVOLUMEFILTERMESSENGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+\hypertarget{GateTransferEfficiency_8hh_source}{}\doxysection{Gate\+Transfer\+Efficiency.\+hh}
+\label{GateTransferEfficiency_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTransferEfficiency.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTransferEfficiency.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateTransferEfficiency\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateTransferEfficiency\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTransferEfficiencyMessenger}{GateTransferEfficiencyMessenger}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTransferEfficiency}{GateTransferEfficiency}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{42     \textcolor{keyword}{static} \mbox{\hyperlink{classGateTransferEfficiency}{GateTransferEfficiency}}* \mbox{\hyperlink{classGateTransferEfficiency_a647fc13750d798f588a3496874795ae4}{GetInstance}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{43                    \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTransferEfficiency_aca36143606ba359f30d399fd2b4aeca3}{\string~GateTransferEfficiency}}() ;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{private}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateTransferEfficiency}{GateTransferEfficiency}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{51                    \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{52   \textcolor{keyword}{public}:}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     G4int \mbox{\hyperlink{classGateTransferEfficiency_a53f71cd219eeae69ad49287964f021be}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTransferEfficiency_afc7974e5576336f816ec6c59d8800944}{SetTECoeff}}(G4String name, G4double val)   \{ m\_table[name] = val;  \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64     G4double \mbox{\hyperlink{classGateTransferEfficiency_a6f92326cbc6cd903799f9f2ac154cc6c}{GetTECrystCoeff}}(G4String name)   \{ \textcolor{keywordflow}{return} m\_table[name]; \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     G4double \mbox{\hyperlink{classGateTransferEfficiency_a15c4c5a43f1e6b75b1e6b86c985ac62e}{GetTECoeff}}()   \{ \textcolor{keywordflow}{return} m\_TECoef;  \};}
+\DoxyCodeLine{69     G4double \mbox{\hyperlink{classGateTransferEfficiency_a675c355b36fd493f00bf4e1ad0099be9}{GetTEMin}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{74     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTransferEfficiency_ae953d910a56d734cab91300ca5b27c66}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTransferEfficiency_a762ab36463f1d925c120d8c7e874abe8}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     \textcolor{keyword}{static} \mbox{\hyperlink{classGateTransferEfficiency}{GateTransferEfficiency}}* theGateTransferEfficiency;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \textcolor{keyword}{private}:}
+\DoxyCodeLine{89     G4String m\_name;                               }
+\DoxyCodeLine{91     \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4double>}} m\_table ;}
+\DoxyCodeLine{92     \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4double>}} ::iterator im;}
+\DoxyCodeLine{93     G4double m\_TECoef;        }
+\DoxyCodeLine{94     G4double m\_TEMin;                  }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \mbox{\hyperlink{classGateTransferEfficiencyMessenger}{GateTransferEfficiencyMessenger}} *m\_messenger;       }
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

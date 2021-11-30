@@ -1,0 +1,78 @@
+\hypertarget{GateEmCalculatorActor_8hh_source}{}\doxysection{Gate\+Em\+Calculator\+Actor.\+hh}
+\label{GateEmCalculatorActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEmCalculatorActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEmCalculatorActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GATEEmCalculatorActor\_HH}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GATEEmCalculatorActor\_HH}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateEmCalculatorActorMessenger.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{24 \textcolor{comment}{//\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4EmCalculator.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateEmCalculatorActor}{GateEmCalculatorActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31  \textcolor{keyword}{public}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEmCalculatorActor_af842d7eb8c1c89dd4cf021eccb0953e8}{\string~GateEmCalculatorActor}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{36   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{37   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateEmCalculatorActor}{GateEmCalculatorActor}})}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEmCalculatorActor_a7953d9257be7c7bf7513ae9242e67013}{Construct}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{44   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{45 \textcolor{comment}{//    virtual void BeginOfRunAction(const G4Run*);}}
+\DoxyCodeLine{46 \textcolor{comment}{//    virtual void BeginOfEventAction(const G4Event*);}}
+\DoxyCodeLine{47 \textcolor{comment}{//    virtual void PreUserTrackingAction(const GateVVolume *, const G4Track*);}}
+\DoxyCodeLine{48 \textcolor{comment}{//    virtual void UserSteppingAction(const GateVVolume *, const G4Step*);}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{comment}{// other methods}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} SetEnergy (\textcolor{keywordtype}{double} E) \{mEnergy=E;\}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} SetParticleName (G4String Name) \{mPartName=Name;\}}
+\DoxyCodeLine{53   \textcolor{comment}{//Particle Properties If GenericIon}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} SetIonParameter(G4String ParticleParameters) \{mParticleParameters=ParticleParameters;\}}
+\DoxyCodeLine{55   \textcolor{comment}{//Specify how to define the particle type}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} SetIsGenericIon(\textcolor{keywordtype}{bool} IsGenericIon) \{mIsGenericIon=IsGenericIon;\}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{60 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEmCalculatorActor_abeec2d29f24bd158405020b2eb823ab5}{SaveData}}();}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{64   \textcolor{keyword}{const} G4ParticleDefinition* GetIonDefinition();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{double} mEnergy;}
+\DoxyCodeLine{67   G4String mPartName;}
+\DoxyCodeLine{68   G4String mParticleParameters;}
+\DoxyCodeLine{69   \textcolor{keywordtype}{bool} mIsGenericIon;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   G4EmCalculator * emcalc;}
+\DoxyCodeLine{72   \mbox{\hyperlink{classGateEmCalculatorActor_a221e8013b54ec5f019c3ab37f9eced6d}{GateEmCalculatorActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{73   \mbox{\hyperlink{classGateEmCalculatorActorMessenger}{GateEmCalculatorActorMessenger}} * pActorMessenger;}
+\DoxyCodeLine{74 \textcolor{comment}{//  GateActorMessenger * pActor;}}
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 MAKE\_AUTO\_CREATOR\_ACTOR(EmCalculatorActor,\mbox{\hyperlink{classGateEmCalculatorActor}{GateEmCalculatorActor}})}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEEmCalculatorActor\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

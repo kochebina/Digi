@@ -1,0 +1,109 @@
+\hypertarget{classGateLightYield}{}\doxysection{Gate\+Light\+Yield Class Reference}
+\label{classGateLightYield}\index{GateLightYield@{GateLightYield}}
+
+
+Pulse-\/processor for simulating the effect of the light yield of crystal(s). You have to give the light yield (LY) of each crystal.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Light\+Yield.\+hh$>$}
+
+Inheritance diagram for Gate\+Light\+Yield\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateLightYield}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLightYield_aa5b2487a365629f0974d2a0f7d37d37d}\label{classGateLightYield_aa5b2487a365629f0974d2a0f7d37d37d}} 
+virtual {\bfseries $\sim$\+Gate\+Light\+Yield} ()
+\begin{DoxyCompactList}\small\item\em Public Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLightYield_ae3a4e90ef3685486f0f28306871b92ae}\label{classGateLightYield_ae3a4e90ef3685486f0f28306871b92ae}} 
+G4int {\bfseries Choose\+Volume} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Adds volume to the hashmap and returns 1 if it exists. If it does not exist, returns 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGateLightYield}{Gate\+Light\+Yield}} $\ast$ \mbox{\hyperlink{classGateLightYield_a6f6c9a0641413f9c35b9275d414508a7}{Get\+Instance}} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateLightYield}{Gate\+Light\+Yield}} singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{setters and getters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLightYield_a744b3028456c6c231f6b7cdb1604ad9e}\label{classGateLightYield_a744b3028456c6c231f6b7cdb1604ad9e}} 
+void {\bfseries Set\+Light\+Output} (G4\+String name, G4double val)
+\begin{DoxyCompactList}\small\item\em Allows to set the light output for crystal called \textquotesingle{}name\textquotesingle{} (Nph/\+MeV) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLightYield_aa9cac9079b1e357da37fddef6e0e6ecf}\label{classGateLightYield_aa9cac9079b1e357da37fddef6e0e6ecf}} 
+G4double {\bfseries Get\+Light\+Output} (G4\+String name)
+\begin{DoxyCompactList}\small\item\em Allows to get the light output for crystal called \textquotesingle{}name\textquotesingle{} (Nph/\+MeV) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLightYield_a75cceb56093ae867b8306c7535fe6e78}\label{classGateLightYield_a75cceb56093ae867b8306c7535fe6e78}} 
+G4double {\bfseries Get\+Act\+Light\+Output} ()
+\begin{DoxyCompactList}\small\item\em Return the actual light output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLightYield_a0ada4f071c1644ebbe57f447780303cd}\label{classGateLightYield_a0ada4f071c1644ebbe57f447780303cd}} 
+G4double {\bfseries Get\+Min\+Light\+Output} ()
+\begin{DoxyCompactList}\small\item\em Return the minimum light output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLightYield_acbe2d0964209fd7a88208f4104897405}\label{classGateLightYield_acbe2d0964209fd7a88208f4104897405}} 
+G4\+String {\bfseries Get\+Min\+Light\+Output\+Name} ()
+\begin{DoxyCompactList}\small\item\em Return the crystal name which have the minimum light output. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateLightYield_a2c447d35ca421409ea984c46952813c0}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateLightYield_a3bd35678d1160e043740c2e3e9fea083}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating the effect of the light yield of crystal(s). You have to give the light yield (LY) of each crystal. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateLightYield}{Gate\+Light\+Yield}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (mai 2003)
+\item Pulse-\/processor for simulating the effect of the light yield of several crystals. You have to give the light yield (LY) of each crystal.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateLightYield_a2c447d35ca421409ea984c46952813c0}\label{classGateLightYield_a2c447d35ca421409ea984c46952813c0}} 
+\index{GateLightYield@{GateLightYield}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateLightYield@{GateLightYield}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Light\+Yield\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the blurring 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateLightYield_a6f6c9a0641413f9c35b9275d414508a7}\label{classGateLightYield_a6f6c9a0641413f9c35b9275d414508a7}} 
+\index{GateLightYield@{GateLightYield}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GateLightYield@{GateLightYield}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateLightYield}{Gate\+Light\+Yield}} $\ast$ Gate\+Light\+Yield\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$}]{its\+Chain,  }\item[{const G4\+String \&}]{its\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateLightYield}{Gate\+Light\+Yield}} singleton. 
+
+\begin{DoxyVerb}If the GateLightYield already exists, GetInstance only returns a pointer to this singleton.
+\end{DoxyVerb}
+ If this singleton does not exist yet, Get\+Instance creates it by calling the private \mbox{\hyperlink{classGateLightYield}{Gate\+Light\+Yield}} constructor \mbox{\Hypertarget{classGateLightYield_a3bd35678d1160e043740c2e3e9fea083}\label{classGateLightYield_a3bd35678d1160e043740c2e3e9fea083}} 
+\index{GateLightYield@{GateLightYield}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateLightYield@{GateLightYield}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Light\+Yield\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Light\+Yield.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Light\+Yield.\+cc\end{DoxyCompactItemize}

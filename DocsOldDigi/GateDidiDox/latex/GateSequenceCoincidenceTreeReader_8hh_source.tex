@@ -1,0 +1,68 @@
+\hypertarget{GateSequenceCoincidenceTreeReader_8hh_source}{}\doxysection{Gate\+Sequence\+Coincidence\+Tree\+Reader.\+hh}
+\label{GateSequenceCoincidenceTreeReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSequenceCoincidenceTreeReader.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSequenceCoincidenceTreeReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateSequenceCoincidenceTreeReader\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateSequenceCoincidenceTreeReader\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GateComptonCameraCones.hh"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//root libraries}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}TSystem.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}TObject.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateCCRootDefs.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSequenceCoincidenceTreeReader}{GateSequenceCoincidenceTreeReader}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{classGateSequenceCoincidenceTreeReader}{GateSequenceCoincidenceTreeReader}}(\textcolor{keyword}{const} std::string path);}
+\DoxyCodeLine{22      \textcolor{keywordtype}{void} PrepareAcquisition();}
+\DoxyCodeLine{23       \textcolor{keywordtype}{void} LoadCoincData();}
+\DoxyCodeLine{24      \textcolor{keywordtype}{bool} hasNext();}
+\DoxyCodeLine{25  }
+\DoxyCodeLine{26     G4int PrepareNextEvent();}
+\DoxyCodeLine{27     G4int PrepareNextEventIdeal();}
+\DoxyCodeLine{28     \mbox{\hyperlink{classGateComptonCameraCones}{GateComptonCameraCones}} PrepareEndOfEvent();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{private}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{const} std::string filepath;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36       TFile * f;}
+\DoxyCodeLine{37       TTree * m\_coincTree;}
+\DoxyCodeLine{38       \textcolor{keywordtype}{int} nentries;}
+\DoxyCodeLine{39       \textcolor{keywordtype}{int} currentEntry;}
+\DoxyCodeLine{40       \textcolor{keywordtype}{int} oldCoincID;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43       \mbox{\hyperlink{classGateCCRootCoincBuffer}{GateCCRootCoincBuffer}}       m\_coincBuffer;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46       \mbox{\hyperlink{classGateComptonCameraCones}{GateComptonCameraCones}} aCone;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+
+\end{DoxyCode}

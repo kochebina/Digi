@@ -1,0 +1,259 @@
+\hypertarget{classMetaContour}{}\doxysection{Meta\+Contour Class Reference}
+\label{classMetaContour}\index{MetaContour@{MetaContour}}
+Inheritance diagram for Meta\+Contour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMetaContour}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaContour_a1988df7ddd172a14fdff3ba31c02d24d}\label{classMetaContour_a1988df7ddd172a14fdff3ba31c02d24d}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classContourControlPnt}{Contour\+Control\+Pnt}} $\ast$ $>$ {\bfseries Control\+Point\+List\+Type}
+\item 
+\mbox{\Hypertarget{classMetaContour_abebcf91ae3a2ebb7ceba92336e455722}\label{classMetaContour_abebcf91ae3a2ebb7ceba92336e455722}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classContourInterpolatedPnt}{Contour\+Interpolated\+Pnt}} $\ast$ $>$ {\bfseries Interpolated\+Point\+List\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMetaContour_a049d74bc09d4b4c21723b1ffa35031cf}{Meta\+Contour}} (void)
+\item 
+\mbox{\hyperlink{classMetaContour_a61a1fd96d9825d40d770282043bb564f}{Meta\+Contour}} (const char $\ast$\+\_\+header\+Name)
+\item 
+\mbox{\Hypertarget{classMetaContour_a6c573567f652971197415157cf71c458}\label{classMetaContour_a6c573567f652971197415157cf71c458}} 
+{\bfseries Meta\+Contour} (const \mbox{\hyperlink{classMetaContour}{Meta\+Contour}} $\ast$\+\_\+\+Contour)
+\item 
+\mbox{\Hypertarget{classMetaContour_a3b83ee199ac25f1df488101256ce0a74}\label{classMetaContour_a3b83ee199ac25f1df488101256ce0a74}} 
+{\bfseries Meta\+Contour} (unsigned int dim)
+\item 
+void \mbox{\hyperlink{classMetaContour_aa7fa9a03ca8183531146eb2226a9a346}{Print\+Info}} (void) const
+\item 
+void \mbox{\hyperlink{classMetaContour_acb5eebed7a5c7a7aaf5a18c352a350ff}{Copy\+Info}} (const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$\+\_\+object)
+\item 
+\mbox{\Hypertarget{classMetaContour_a524ff6afb87922e6bd5ccbdb7dc4f00d}\label{classMetaContour_a524ff6afb87922e6bd5ccbdb7dc4f00d}} 
+int {\bfseries NControl\+Points} (void) const
+\item 
+\mbox{\Hypertarget{classMetaContour_a7d76bd843e60f2ac9017f1844aef16f8}\label{classMetaContour_a7d76bd843e60f2ac9017f1844aef16f8}} 
+void {\bfseries Control\+Point\+Dim} (const char $\ast$point\+Dim)
+\item 
+\mbox{\Hypertarget{classMetaContour_af1015d669c753c32362ba573a7830f9d}\label{classMetaContour_af1015d669c753c32362ba573a7830f9d}} 
+const char $\ast$ {\bfseries Control\+Point\+Dim} (void) const
+\item 
+\mbox{\Hypertarget{classMetaContour_aeefff82750736e0a6c7c15dd61b8bc9b}\label{classMetaContour_aeefff82750736e0a6c7c15dd61b8bc9b}} 
+MET\+\_\+\+Interpolation\+Enum\+Type {\bfseries Interpolation} (void) const
+\item 
+\mbox{\Hypertarget{classMetaContour_ac97350b8142c91f7ab93f6da792c7d7e}\label{classMetaContour_ac97350b8142c91f7ab93f6da792c7d7e}} 
+void {\bfseries Interpolation} (MET\+\_\+\+Interpolation\+Enum\+Type \+\_\+interpolation)
+\item 
+\mbox{\Hypertarget{classMetaContour_a2ecb33415b99bce175ca877e6ca34d05}\label{classMetaContour_a2ecb33415b99bce175ca877e6ca34d05}} 
+int {\bfseries NInterpolated\+Points} (void) const
+\item 
+\mbox{\Hypertarget{classMetaContour_a85d4baf7966782f4efdf4a4d9904c6ef}\label{classMetaContour_a85d4baf7966782f4efdf4a4d9904c6ef}} 
+void {\bfseries Interpolated\+Point\+Dim} (const char $\ast$point\+Dim)
+\item 
+\mbox{\Hypertarget{classMetaContour_a88ebf203a31a8a2ee0426d761b361ef4}\label{classMetaContour_a88ebf203a31a8a2ee0426d761b361ef4}} 
+const char $\ast$ {\bfseries Interpolated\+Point\+Dim} (void) const
+\item 
+\mbox{\Hypertarget{classMetaContour_a406138f49e98f1bf4e9b513600ba38f5}\label{classMetaContour_a406138f49e98f1bf4e9b513600ba38f5}} 
+void {\bfseries Closed} (bool close)
+\item 
+\mbox{\Hypertarget{classMetaContour_a42894440d062114cd6bb28dd2d44b764}\label{classMetaContour_a42894440d062114cd6bb28dd2d44b764}} 
+bool {\bfseries Closed} () const
+\item 
+void \mbox{\hyperlink{classMetaContour_a49758642cad8ade830d7760ab7540034}{Attached\+To\+Slice}} (long int slice)
+\item 
+long int \mbox{\hyperlink{classMetaContour_ab1785d4e7d6a6591088ab44660690afb}{Attached\+To\+Slice}} () const
+\item 
+void \mbox{\hyperlink{classMetaContour_a5835c808fb535e2b2ebbdfb5bb99471f}{Display\+Orientation}} (int display)
+\item 
+\mbox{\Hypertarget{classMetaContour_ab8736a0008fb827c65f7d03d6ac2632c}\label{classMetaContour_ab8736a0008fb827c65f7d03d6ac2632c}} 
+int {\bfseries Display\+Orientation} () const
+\item 
+void \mbox{\hyperlink{classMetaContour_a8282a3d05a194bb211000372243c9d5a}{Clear}} (void)
+\item 
+\mbox{\Hypertarget{classMetaContour_a086a6f0f7630b1317b2d863ecd05e23e}\label{classMetaContour_a086a6f0f7630b1317b2d863ecd05e23e}} 
+Control\+Point\+List\+Type \& {\bfseries Get\+Control\+Points} (void)
+\item 
+\mbox{\Hypertarget{classMetaContour_a0c77e2f7d3370d6e58875ad792ab3058}\label{classMetaContour_a0c77e2f7d3370d6e58875ad792ab3058}} 
+const Control\+Point\+List\+Type \& {\bfseries Get\+Control\+Points} (void) const
+\item 
+\mbox{\Hypertarget{classMetaContour_aabd2671a7113fa674f2a01315fb8f2e6}\label{classMetaContour_aabd2671a7113fa674f2a01315fb8f2e6}} 
+Interpolated\+Point\+List\+Type \& {\bfseries Get\+Interpolated\+Points} (void)
+\item 
+\mbox{\Hypertarget{classMetaContour_aed08ddaefa31985ec367bd6a2b60b47c}\label{classMetaContour_aed08ddaefa31985ec367bd6a2b60b47c}} 
+const Interpolated\+Point\+List\+Type \& {\bfseries Get\+Interpolated\+Points} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMetaContour_a9ab66666c5508f5a41d1f0688c6c4531}{M\+\_\+\+Destroy}} (void)
+\item 
+void \mbox{\hyperlink{classMetaContour_adb2e8f55375003f2d97c6458d5f3468e}{M\+\_\+\+Setup\+Read\+Fields}} (void)
+\item 
+void \mbox{\hyperlink{classMetaContour_a082bb0a71202521bfff4193e968438ee}{M\+\_\+\+Setup\+Write\+Fields}} (void)
+\item 
+bool \mbox{\hyperlink{classMetaContour_a64fab4a06b61e3a19ea8161698c25ae1}{M\+\_\+\+Read}} (void)
+\item 
+bool \mbox{\hyperlink{classMetaContour_a8c383df3ef8ad1412f12c97f1927b4e2}{M\+\_\+\+Write}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaContour_a3984a9e019bd1ed329021c57c9e39705}\label{classMetaContour_a3984a9e019bd1ed329021c57c9e39705}} 
+bool {\bfseries m\+\_\+\+Element\+Byte\+Order\+MSB}
+\item 
+\mbox{\Hypertarget{classMetaContour_a227f3c02188ce019c9bab87a3bdd6dc0}\label{classMetaContour_a227f3c02188ce019c9bab87a3bdd6dc0}} 
+int {\bfseries m\+\_\+\+NControl\+Points}
+\item 
+\mbox{\Hypertarget{classMetaContour_a3c5e3948fecb515aeb9c4729d304ccd4}\label{classMetaContour_a3c5e3948fecb515aeb9c4729d304ccd4}} 
+int {\bfseries m\+\_\+\+NInterpolated\+Points}
+\item 
+\mbox{\Hypertarget{classMetaContour_af0b2170e6305ba7c98fa1f35ce966006}\label{classMetaContour_af0b2170e6305ba7c98fa1f35ce966006}} 
+char {\bfseries m\+\_\+\+Control\+Point\+Dim} \mbox{[}255\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaContour_a8ecfb10429d7816b6ade88111af14452}\label{classMetaContour_a8ecfb10429d7816b6ade88111af14452}} 
+char {\bfseries m\+\_\+\+Interpolated\+Point\+Dim} \mbox{[}255\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaContour_a2e3549cb1d40b7fd0b2c38f3a0d8ec22}\label{classMetaContour_a2e3549cb1d40b7fd0b2c38f3a0d8ec22}} 
+bool {\bfseries m\+\_\+\+Closed}
+\item 
+\mbox{\Hypertarget{classMetaContour_a562c9502c1c6cf81afe3ef631d80957b}\label{classMetaContour_a562c9502c1c6cf81afe3ef631d80957b}} 
+MET\+\_\+\+Interpolation\+Enum\+Type {\bfseries m\+\_\+\+Interpolation\+Type}
+\item 
+\mbox{\Hypertarget{classMetaContour_a7ead6da98a2a6bbec293da8574f2d310}\label{classMetaContour_a7ead6da98a2a6bbec293da8574f2d310}} 
+Control\+Point\+List\+Type {\bfseries m\+\_\+\+Control\+Points\+List}
+\item 
+\mbox{\Hypertarget{classMetaContour_a557ad2bff0feb7a82e595ae761e9d1ca}\label{classMetaContour_a557ad2bff0feb7a82e595ae761e9d1ca}} 
+Interpolated\+Point\+List\+Type {\bfseries m\+\_\+\+Interpolated\+Points\+List}
+\item 
+\mbox{\Hypertarget{classMetaContour_a99ca1bd227a33bd115548aa133bc2b8b}\label{classMetaContour_a99ca1bd227a33bd115548aa133bc2b8b}} 
+int {\bfseries m\+\_\+\+Display\+Orientation}
+\item 
+\mbox{\Hypertarget{classMetaContour_a03119f8287bf2361cc92cde07408bfb2}\label{classMetaContour_a03119f8287bf2361cc92cde07408bfb2}} 
+long {\bfseries m\+\_\+\+Attached\+To\+Slice}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMetaContour_a049d74bc09d4b4c21723b1ffa35031cf}\label{classMetaContour_a049d74bc09d4b4c21723b1ffa35031cf}} 
+\index{MetaContour@{MetaContour}!MetaContour@{MetaContour}}
+\index{MetaContour@{MetaContour}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{MetaContour()}{MetaContour()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Meta\+Contour\+::\+Meta\+Contour (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classMetaContour_a61a1fd96d9825d40d770282043bb564f}\label{classMetaContour_a61a1fd96d9825d40d770282043bb564f}} 
+\index{MetaContour@{MetaContour}!MetaContour@{MetaContour}}
+\index{MetaContour@{MetaContour}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{MetaContour()}{MetaContour()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Meta\+Contour\+::\+Meta\+Contour (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+header\+Name }\end{DoxyParamCaption})}
+
+Constructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetaContour_ab1785d4e7d6a6591088ab44660690afb}\label{classMetaContour_ab1785d4e7d6a6591088ab44660690afb}} 
+\index{MetaContour@{MetaContour}!AttachedToSlice@{AttachedToSlice}}
+\index{AttachedToSlice@{AttachedToSlice}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{AttachedToSlice()}{AttachedToSlice()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily long int Meta\+Contour\+::\+Attached\+To\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get if the contour is pinned to a particulare slice \mbox{\Hypertarget{classMetaContour_a49758642cad8ade830d7760ab7540034}\label{classMetaContour_a49758642cad8ade830d7760ab7540034}} 
+\index{MetaContour@{MetaContour}!AttachedToSlice@{AttachedToSlice}}
+\index{AttachedToSlice@{AttachedToSlice}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{AttachedToSlice()}{AttachedToSlice()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+Attached\+To\+Slice (\begin{DoxyParamCaption}\item[{long int}]{slice }\end{DoxyParamCaption})}
+
+Set if the contour is pinned to a particulare slice \mbox{\Hypertarget{classMetaContour_a8282a3d05a194bb211000372243c9d5a}\label{classMetaContour_a8282a3d05a194bb211000372243c9d5a}} 
+\index{MetaContour@{MetaContour}!Clear@{Clear}}
+\index{Clear@{Clear}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clear Contour information 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaContour_acb5eebed7a5c7a7aaf5a18c352a350ff}\label{classMetaContour_acb5eebed7a5c7a7aaf5a18c352a350ff}} 
+\index{MetaContour@{MetaContour}!CopyInfo@{CopyInfo}}
+\index{CopyInfo@{CopyInfo}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{CopyInfo()}{CopyInfo()}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+Copy\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$}]{\+\_\+object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaContour_a5835c808fb535e2b2ebbdfb5bb99471f}\label{classMetaContour_a5835c808fb535e2b2ebbdfb5bb99471f}} 
+\index{MetaContour@{MetaContour}!DisplayOrientation@{DisplayOrientation}}
+\index{DisplayOrientation@{DisplayOrientation}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{DisplayOrientation()}{DisplayOrientation()}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+Display\+Orientation (\begin{DoxyParamCaption}\item[{int}]{display }\end{DoxyParamCaption})}
+
+Get the orientation of the display \mbox{\Hypertarget{classMetaContour_a9ab66666c5508f5a41d1f0688c6c4531}\label{classMetaContour_a9ab66666c5508f5a41d1f0688c6c4531}} 
+\index{MetaContour@{MetaContour}!M\_Destroy@{M\_Destroy}}
+\index{M\_Destroy@{M\_Destroy}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{M\_Destroy()}{M\_Destroy()}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+M\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Destroy Contour information 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaContour_a64fab4a06b61e3a19ea8161698c25ae1}\label{classMetaContour_a64fab4a06b61e3a19ea8161698c25ae1}} 
+\index{MetaContour@{MetaContour}!M\_Read@{M\_Read}}
+\index{M\_Read@{M\_Read}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{M\_Read()}{M\_Read()}}
+{\footnotesize\ttfamily bool Meta\+Contour\+::\+M\+\_\+\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaContour_adb2e8f55375003f2d97c6458d5f3468e}\label{classMetaContour_adb2e8f55375003f2d97c6458d5f3468e}} 
+\index{MetaContour@{MetaContour}!M\_SetupReadFields@{M\_SetupReadFields}}
+\index{M\_SetupReadFields@{M\_SetupReadFields}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{M\_SetupReadFields()}{M\_SetupReadFields()}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+M\+\_\+\+Setup\+Read\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Set Read fields 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaContour_a082bb0a71202521bfff4193e968438ee}\label{classMetaContour_a082bb0a71202521bfff4193e968438ee}} 
+\index{MetaContour@{MetaContour}!M\_SetupWriteFields@{M\_SetupWriteFields}}
+\index{M\_SetupWriteFields@{M\_SetupWriteFields}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{M\_SetupWriteFields()}{M\_SetupWriteFields()}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+M\+\_\+\+Setup\+Write\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaContour_a8c383df3ef8ad1412f12c97f1927b4e2}\label{classMetaContour_a8c383df3ef8ad1412f12c97f1927b4e2}} 
+\index{MetaContour@{MetaContour}!M\_Write@{M\_Write}}
+\index{M\_Write@{M\_Write}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{M\_Write()}{M\_Write()}}
+{\footnotesize\ttfamily bool Meta\+Contour\+::\+M\+\_\+\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Then write the control points
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaContour_aa7fa9a03ca8183531146eb2226a9a346}\label{classMetaContour_aa7fa9a03ca8183531146eb2226a9a346}} 
+\index{MetaContour@{MetaContour}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!MetaContour@{MetaContour}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily void Meta\+Contour\+::\+Print\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Contour.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Contour.\+cxx\end{DoxyCompactItemize}

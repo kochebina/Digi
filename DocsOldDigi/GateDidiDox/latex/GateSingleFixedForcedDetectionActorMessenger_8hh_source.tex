@@ -1,0 +1,55 @@
+\hypertarget{GateSingleFixedForcedDetectionActorMessenger_8hh_source}{}\doxysection{Gate\+Single\+Fixed\+Forced\+Detection\+Actor\+Messenger.\+hh}
+\label{GateSingleFixedForcedDetectionActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSingleFixedForcedDetectionActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSingleFixedForcedDetectionActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifdef GATE\_USE\_RTK}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATESINGLEFIXEDFORCEDDECTECTIONACTORMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATESINGLEFIXEDFORCEDDECTECTIONACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UIcmdWith3Vector.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWith3VectorAndUnit.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionActorMessenger.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateSingleFixedForcedDetectionActor.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateUIcmdWith2Vector.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }GateSingleFixedForcedDetectionActor;}
+\DoxyCodeLine{29 \textcolor{keyword}{class }GateSingleFixedForcedDetectionActorMessenger: \textcolor{keyword}{public} GateFixedForcedDetectionActorMessenger}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32   GateSingleFixedForcedDetectionActorMessenger(GateSingleFixedForcedDetectionActor* sensor);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \string~GateSingleFixedForcedDetectionActorMessenger();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{39   GateSingleFixedForcedDetectionActor * pActor;}
+\DoxyCodeLine{40   G4UIcmdWithAString * pSetSingleInteractionFilenameCmd;}
+\DoxyCodeLine{41   G4UIcmdWithAString * pSetSingleInteractionTypeCmd;}
+\DoxyCodeLine{42   G4UIcmdWith3Vector * pSetSingleInteractionDirectionCmd;}
+\DoxyCodeLine{43   G4UIcmdWith3VectorAndUnit * pSetSingleInteractionPositionCmd;}
+\DoxyCodeLine{44   G4UIcmdWithADoubleAndUnit * pSetSingleInteractionEnergyCmd;}
+\DoxyCodeLine{45   G4UIcmdWithAnInteger * pSetSingleInteractionZCmd;}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESINGLEFIXEDFORCEDDECTECTIONACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GATE\_USE\_RTK}}
+
+\end{DoxyCode}

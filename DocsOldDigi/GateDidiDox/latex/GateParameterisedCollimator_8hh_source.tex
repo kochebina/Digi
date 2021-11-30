@@ -1,0 +1,89 @@
+\hypertarget{GateParameterisedCollimator_8hh_source}{}\doxysection{Gate\+Parameterised\+Collimator.\+hh}
+\label{GateParameterisedCollimator_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParameterisedCollimator.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParameterisedCollimator.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateParameterisedCollimator\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateParameterisedCollimator\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParameterisedHole}{GateParameterisedHole}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParameterisedCollimatorMessenger}{GateParameterisedCollimatorMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \textcolor{comment}{// Constructor1}}
+\DoxyCodeLine{26      \mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}}(\textcolor{keyword}{const} G4String\& itsName,G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{27                      G4int depth=0);}
+\DoxyCodeLine{28   \textcolor{comment}{// Constructor2}}
+\DoxyCodeLine{29      \mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{30      G4double itsFocalDistanceX,G4double itsFocalDistanceY,G4double itsSeptalThickness,}
+\DoxyCodeLine{31      G4double itsInnerRadius,G4double itsHeight,G4double itsDimensionX,G4double itsDimensionY);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateParameterisedCollimator}{\string~GateParameterisedCollimator}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35      FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}})}
+\DoxyCodeLine{36      }
+\DoxyCodeLine{37      \mbox{\hyperlink{classGateBox}{GateBox}}* GetCollimatorCreator()\textcolor{keyword}{ const}}
+\DoxyCodeLine{38 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateBox}{GateBox}}*) \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}(); \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40      \textcolor{keywordtype}{void} PreComputeConstants();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42      \textcolor{keywordtype}{void} ResizeCollimator();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44      \textcolor{keyword}{inline} G4double GetCollimatorFocalDistanceX()\textcolor{keyword}{ const}}
+\DoxyCodeLine{45 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_FocalDistanceX; \}}
+\DoxyCodeLine{46      \textcolor{keyword}{inline} G4double GetCollimatorFocalDistanceY()\textcolor{keyword}{ const}}
+\DoxyCodeLine{47 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_FocalDistanceY; \}}
+\DoxyCodeLine{48      \textcolor{keyword}{inline} G4double GetCollimatorSeptalThickness()\textcolor{keyword}{ const}}
+\DoxyCodeLine{49 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_SeptalThickness; \}}
+\DoxyCodeLine{50      \textcolor{keyword}{inline} G4double GetCollimatorInnerRadius()\textcolor{keyword}{ const}}
+\DoxyCodeLine{51 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_InnerRadius; \}}
+\DoxyCodeLine{52      \textcolor{keyword}{inline} G4double GetCollimatorHeight()\textcolor{keyword}{ const}}
+\DoxyCodeLine{53 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_Height; \}}
+\DoxyCodeLine{54      \textcolor{keyword}{inline} G4double GetCollimatorDimensionX()\textcolor{keyword}{ const}}
+\DoxyCodeLine{55 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_DimensionX; \}}
+\DoxyCodeLine{56      \textcolor{keyword}{inline} G4double GetCollimatorDimensionY()\textcolor{keyword}{ const}}
+\DoxyCodeLine{57 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_DimensionY; \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCollimatorFocalDistanceX(G4double val)}
+\DoxyCodeLine{60     \{ m\_FocalDistanceX = val; ResizeCollimator();\}}
+\DoxyCodeLine{61      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCollimatorFocalDistanceY(G4double val)}
+\DoxyCodeLine{62     \{ m\_FocalDistanceY = val; ResizeCollimator();\}}
+\DoxyCodeLine{63      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCollimatorSeptalThickness(G4double val)}
+\DoxyCodeLine{64     \{ m\_SeptalThickness = val; ResizeCollimator();\}}
+\DoxyCodeLine{65      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCollimatorInnerRadius(G4double val)}
+\DoxyCodeLine{66         \{ m\_InnerRadius = val; ResizeCollimator(); \}}
+\DoxyCodeLine{67      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCollimatorHeight(G4double val)}
+\DoxyCodeLine{68     \{ m\_Height = val; ResizeCollimator(); \}}
+\DoxyCodeLine{69      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCollimatorDimensionX(G4double val)}
+\DoxyCodeLine{70     \{ m\_DimensionX = val; ResizeCollimator(); \}}
+\DoxyCodeLine{71      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCollimatorDimensionY(G4double val)}
+\DoxyCodeLine{72     \{ m\_DimensionY = val; ResizeCollimator();\}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{75      G4double m\_FocalDistanceX,m\_FocalDistanceY,m\_SeptalThickness,m\_InnerRadius,m\_Height,m\_DimensionX,m\_DimensionY;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77      \mbox{\hyperlink{classGateParameterisedHole}{GateParameterisedHole}}*                m\_holeInserter;}
+\DoxyCodeLine{78      \mbox{\hyperlink{classGateParameterisedCollimatorMessenger}{GateParameterisedCollimatorMessenger}}* m\_messenger;}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 MAKE\_AUTO\_CREATOR\_VOLUME(collimator,\mbox{\hyperlink{classGateParameterisedCollimator}{GateParameterisedCollimator}})}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

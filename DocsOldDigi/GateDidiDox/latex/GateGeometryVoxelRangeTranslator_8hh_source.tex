@@ -1,0 +1,68 @@
+\hypertarget{GateGeometryVoxelRangeTranslator_8hh_source}{}\doxysection{Gate\+Geometry\+Voxel\+Range\+Translator.\+hh}
+\label{GateGeometryVoxelRangeTranslator_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelRangeTranslator.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelRangeTranslator.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateGeometryVoxelRangeTranslator\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateGeometryVoxelRangeTranslator\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelTranslator.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4VisAttributes.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelRangeTranslatorMessenger}{GateGeometryVoxelRangeTranslatorMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelRangeTranslator}{GateGeometryVoxelRangeTranslator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{GateVGeometryVoxelTranslator}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{classGateGeometryVoxelRangeTranslator}{GateGeometryVoxelRangeTranslator}}(\mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* voxelReader);}
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGeometryVoxelRangeTranslator}{\string~GateGeometryVoxelRangeTranslator}}();}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{25   \textcolor{keywordtype}{void}     ReadTranslationTable(G4String fileName);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keywordtype}{void}     Describe(G4int level);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{inline} G4VisAttributes* GetMaterialAttributes(G4Material* m)\{}
+\DoxyCodeLine{32     \textcolor{keywordflow}{return} m\_voxelAttributesTranslation[m];}
+\DoxyCodeLine{33   \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   G4String TranslateToMaterial(G4int voxelValue) \{}
+\DoxyCodeLine{36     G4double xVoxelValue = voxelValue; }
+\DoxyCodeLine{37     \textcolor{keywordflow}{return} TranslateToMaterial(xVoxelValue);}
+\DoxyCodeLine{38   \};}
+\DoxyCodeLine{39   G4String TranslateToMaterial(G4double voxelValue);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   G4String \mbox{\hyperlink{classGateGeometryVoxelRangeTranslator_a1ba6e28baddc954076a4533dca940694}{GetNextMaterial}}(G4bool doReset=\textcolor{keyword}{false});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGeometryVoxelRangeTranslator_a6ccceb367e0ad0985169015b80a3ce9c}{GetCompleteListOfMaterials}}(std::vector<G4String>\& mat);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{typedef} std::pair<std::pair<G4double,G4double>,G4String> GateVoxelMaterialTranslationRange;}
+\DoxyCodeLine{50   \textcolor{keyword}{typedef} std::vector<GateVoxelMaterialTranslationRange>     GateVoxelMaterialTranslationRangeVector;}
+\DoxyCodeLine{51   GateVoxelMaterialTranslationRangeVector                      m\_voxelMaterialTranslation;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{typedef} std::map<G4Material*, G4VisAttributes*>            GateVoxelAttributesTranslationMap;}
+\DoxyCodeLine{54   GateVoxelAttributesTranslationMap                            m\_voxelAttributesTranslation;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \mbox{\hyperlink{classGateGeometryVoxelRangeTranslatorMessenger}{GateGeometryVoxelRangeTranslatorMessenger}}*                   m\_messenger; }
+\DoxyCodeLine{57   }
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59   \textcolor{comment}{// Iterator for the GetNextMaterial function}}
+\DoxyCodeLine{60   GateVoxelMaterialTranslationRangeVector::iterator anIterator;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

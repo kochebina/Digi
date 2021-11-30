@@ -1,0 +1,141 @@
+\hypertarget{GateTrajectory_8hh_source}{}\doxysection{Gate\+Trajectory.\+hh}
+\label{GateTrajectory_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTrajectory.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTrajectory.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateTrajectory}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GateTrajectory\_h}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GateTrajectory\_h 1}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4VTrajectory.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4Allocator.hh"{}}}
+\DoxyCodeLine{22 \textcolor{comment}{//\#include <stdlib.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4ios.hh"{}}}
+\DoxyCodeLine{25 \textcolor{comment}{//\#include "{}g4std"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4TrajectoryPoint.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4Track.hh"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}G4Step.hh"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }G4Polyline;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} std::vector<G4VTrajectoryPoint*> GateTrajectoryPointContainer;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrajectory}{GateTrajectory}} : \textcolor{keyword}{public} G4VTrajectory}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38  \textcolor{keyword}{public}:}
+\DoxyCodeLine{39    \mbox{\hyperlink{classGateTrajectory}{GateTrajectory}}();}
+\DoxyCodeLine{40    \mbox{\hyperlink{classGateTrajectory}{GateTrajectory}}(\textcolor{keyword}{const} G4Track* aTrack);}
+\DoxyCodeLine{41    \mbox{\hyperlink{classGateTrajectory}{GateTrajectory}}(\mbox{\hyperlink{classGateTrajectory}{GateTrajectory}} \&);}
+\DoxyCodeLine{42    \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTrajectory}{\string~GateTrajectory}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44    \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* \textcolor{keyword}{operator} \textcolor{keyword}{new}(size\_t);}
+\DoxyCodeLine{45    \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  \textcolor{keyword}{operator} \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{46    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} operator == (\textcolor{keyword}{const} \mbox{\hyperlink{classGateTrajectory}{GateTrajectory}}\& right)\textcolor{keyword}{ const}}
+\DoxyCodeLine{47 \textcolor{keyword}{   }\{\textcolor{keywordflow}{return} (\textcolor{keyword}{this}==\&right);\}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49    \textcolor{keyword}{inline} G4int GetTrackID()\textcolor{keyword}{ const}}
+\DoxyCodeLine{50 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} fTrackID; \}}
+\DoxyCodeLine{51    \textcolor{keyword}{inline} G4int GetParentID()\textcolor{keyword}{ const}}
+\DoxyCodeLine{52 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} fParentID; \}}
+\DoxyCodeLine{53    \textcolor{keyword}{inline} G4String GetParticleName()\textcolor{keyword}{ const}}
+\DoxyCodeLine{54 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} ParticleName; \}}
+\DoxyCodeLine{55    \textcolor{keyword}{inline} G4double GetCharge()\textcolor{keyword}{ const}}
+\DoxyCodeLine{56 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} PDGCharge; \}}
+\DoxyCodeLine{57    \textcolor{keyword}{inline} G4int GetPDGEncoding()\textcolor{keyword}{ const}}
+\DoxyCodeLine{58 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} PDGEncoding; \}}
+\DoxyCodeLine{59    \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetMomentum()\textcolor{keyword}{ const}}
+\DoxyCodeLine{60 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} momentum; \}}
+\DoxyCodeLine{61    \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetVertexPosition()\textcolor{keyword}{ const}}
+\DoxyCodeLine{62 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} vertexPosition; \}}
+\DoxyCodeLine{63    \textcolor{keyword}{inline} G4double GetGlobalTime()\textcolor{keyword}{ const}}
+\DoxyCodeLine{64 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} globalTime; \}}
+\DoxyCodeLine{65    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} GetPointEntries()\textcolor{keyword}{ const}}
+\DoxyCodeLine{66 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} positionRecord-\/>size(); \}}
+\DoxyCodeLine{67    \textcolor{keyword}{virtual} G4VTrajectoryPoint* GetPoint(G4int i)\textcolor{keyword}{ const}}
+\DoxyCodeLine{68 \textcolor{keyword}{   }\{ \textcolor{keywordflow}{return} (*positionRecord)[i]; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70    \textcolor{comment}{//virtual G4ThreeVector GetInitialMomentum() const \{return 0;\}}}
+\DoxyCodeLine{71    \textcolor{keyword}{virtual} G4ThreeVector GetInitialMomentum() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ShowTrajectory(std::ostream\&) \textcolor{keyword}{const};}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#if (G4VERSION\_MAJOR == 10 \&\& G4VERSION\_MINOR == 0)}}
+\DoxyCodeLine{75    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DrawTrajectory(G4int i\_mode =0) \textcolor{keyword}{const};}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DrawTrajectory() \textcolor{keyword}{const};}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AppendStep(\textcolor{keyword}{const} G4Step* aStep);}
+\DoxyCodeLine{80    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} MergeTrajectory(G4VTrajectory* secondTrajectory);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82    G4ParticleDefinition* GetParticleDefinition();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84  \textcolor{keyword}{private}:}
+\DoxyCodeLine{85    GateTrajectoryPointContainer* positionRecord;}
+\DoxyCodeLine{86    G4int                        fTrackID;}
+\DoxyCodeLine{87    G4int                        fParentID;}
+\DoxyCodeLine{88    G4ParticleDefinition*        fpParticleDefinition;}
+\DoxyCodeLine{89    G4String                     ParticleName;}
+\DoxyCodeLine{90    G4double                     PDGCharge;}
+\DoxyCodeLine{91    G4int                        PDGEncoding;}
+\DoxyCodeLine{92    G4ThreeVector                momentum;}
+\DoxyCodeLine{93    G4ThreeVector                vertexPosition;}
+\DoxyCodeLine{94    G4double                     globalTime;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{keyword}{extern} G4Allocator<GateTrajectory> myTrajectoryAllocator;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* GateTrajectory::operator \textcolor{keyword}{new}(size\_t)}
+\DoxyCodeLine{101 \{}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void}* aTrajectory;}
+\DoxyCodeLine{103   aTrajectory = (\textcolor{keywordtype}{void}*)myTrajectoryAllocator.MallocSingle();}
+\DoxyCodeLine{104   \textcolor{keywordflow}{return} aTrajectory;}
+\DoxyCodeLine{105 \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} GateTrajectory::operator \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}* aTrajectory)}
+\DoxyCodeLine{108 \{}
+\DoxyCodeLine{109   myTrajectoryAllocator.FreeSingle((\mbox{\hyperlink{classGateTrajectory}{GateTrajectory}}*)aTrajectory);}
+\DoxyCodeLine{110 \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrackIDInfo}{GateTrackIDInfo}}}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115 \textcolor{keyword}{public}:}
+\DoxyCodeLine{116   \mbox{\hyperlink{classGateTrackIDInfo}{GateTrackIDInfo}}()\{mParticleName=\textcolor{stringliteral}{"{}"{}};mID=0;mParentID=0;\}}
+\DoxyCodeLine{117   \mbox{\hyperlink{classGateTrackIDInfo}{GateTrackIDInfo}}(G4String name, G4int \textcolor{keywordtype}{id}, G4int pid)\{mParticleName=name;mID=id;mParentID=pid;\}}
+\DoxyCodeLine{118   \mbox{\hyperlink{classGateTrackIDInfo}{\string~GateTrackIDInfo}}()\{\}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120   \textcolor{keywordtype}{void} SetParticleName(G4String name)\{mParticleName=name;\}}
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} SetID(G4int \textcolor{keywordtype}{id})\{mID=id;\}}
+\DoxyCodeLine{122   \textcolor{keywordtype}{void} SetParentID(G4int \textcolor{keywordtype}{id})\{mParentID=id;\}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   G4String GetParticleName()\{\textcolor{keywordflow}{return} mParticleName;\}}
+\DoxyCodeLine{125   G4int GetID()\{\textcolor{keywordflow}{return} mID;\}}
+\DoxyCodeLine{126   G4int GetParentID()\{\textcolor{keywordflow}{return} mParentID;\}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{129   G4String mParticleName;}
+\DoxyCodeLine{130   G4int mID;}
+\DoxyCodeLine{131   G4int mParentID;}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

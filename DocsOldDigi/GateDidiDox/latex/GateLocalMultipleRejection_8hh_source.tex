@@ -1,0 +1,81 @@
+\hypertarget{GateLocalMultipleRejection_8hh_source}{}\doxysection{Gate\+Local\+Multiple\+Rejection.\+hh}
+\label{GateLocalMultipleRejection_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalMultipleRejection.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalMultipleRejection.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GateLocalMultipleRejection\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GateLocalMultipleRejection\_h 1}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalMultipleRejectionMessenger}{GateLocalMultipleRejectionMessenger}};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{kvolumeName,}
+\DoxyCodeLine{15               kvolumeID,}
+\DoxyCodeLine{16              \} multiple\_def\_t;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalMultipleRejection}{GateLocalMultipleRejection}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20   \textcolor{keyword}{public}:}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23     \mbox{\hyperlink{classGateLocalMultipleRejection_a54c58d64e656d390a96ff6a5072c61fc}{GateLocalMultipleRejection}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{24                    \textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalMultipleRejection_a4840013a6ec3a2c3410a383c5bda56ab}{\string~GateLocalMultipleRejection}}() ;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     G4int \mbox{\hyperlink{classGateLocalMultipleRejection_a49059ab4028cb267a2b4f9cdbcb8786f}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalMultipleRejection_a865db57ccb8187f5598c7b67a5810eaf}{SetRejectionPolicy}}(G4String name, G4bool val) \{ m\_table[name].rejectionAllPolicy = val;  \}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} SetMultipleDefinition(G4String name, G4String policy)\{}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if} (policy==\textcolor{stringliteral}{"{}volumeID"{}})\{}
+\DoxyCodeLine{41             m\_table[name].multipleDef = kvolumeID;}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{44             \textcolor{keywordflow}{if}(policy==\textcolor{stringliteral}{"{}volumeName"{}})\{}
+\DoxyCodeLine{45                 m\_table[name].multipleDef = kvolumeName;}
+\DoxyCodeLine{46             \}}
+\DoxyCodeLine{47             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{48                 G4cout<<\textcolor{stringliteral}{"{}WARNING : multiple rejection policy not recognized. Default volumeName policy is employed \(\backslash\)n"{}};}
+\DoxyCodeLine{49             \}}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{56     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalMultipleRejection_a577281e2f9dcb2e691e836d8295e949d}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalMultipleRejection_aab5eb29a4413cf81549200b6327d7c0b}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{64   \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateLocalMultipleRejection_af25c00f14ee11c67fe52f457ccaa9eac}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keyword}{private}:}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keyword}{struct }param \{}
+\DoxyCodeLine{69         G4bool rejectionAllPolicy;}
+\DoxyCodeLine{70         multiple\_def\_t multipleDef;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \};}
+\DoxyCodeLine{73     std::map<G4String , std::vector<int>> multiplesIndex;}
+\DoxyCodeLine{74     std::map<G4String , G4bool> multiplesRejPol;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} currentNumber;}
+\DoxyCodeLine{77     G4String currentVolumeName;}
+\DoxyCodeLine{78     param m\_param;                                 }
+\DoxyCodeLine{79     G4String m\_name;                               }
+\DoxyCodeLine{80     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} m\_table ;  }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} ::iterator im;  }
+\DoxyCodeLine{83     \mbox{\hyperlink{classGateLocalMultipleRejectionMessenger}{GateLocalMultipleRejectionMessenger}} *m\_messenger;       }
+\DoxyCodeLine{84 \};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

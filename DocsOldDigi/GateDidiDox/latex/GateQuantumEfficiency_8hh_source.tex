@@ -1,0 +1,98 @@
+\hypertarget{GateQuantumEfficiency_8hh_source}{}\doxysection{Gate\+Quantum\+Efficiency.\+hh}
+\label{GateQuantumEfficiency_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateQuantumEfficiency.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateQuantumEfficiency.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateQuantumEfficiency\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateQuantumEfficiency\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateLevelsFinder.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateQuantumEfficiencyMessenger}{GateQuantumEfficiencyMessenger}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{44     \textcolor{keyword}{static} \mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}}* \mbox{\hyperlink{classGateQuantumEfficiency_a531134581d4bc9a29a3a48fb3bbeec5b}{GetInstance}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{45                           \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateQuantumEfficiency_a64f6982d4f14d1a68d4e43f0fdf5caef}{\string~GateQuantumEfficiency}}() ;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{private}:}
+\DoxyCodeLine{53     \mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{54               \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{public}:}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuantumEfficiency_a136c4c31466e4f607514dfba15c700fc}{CheckVolumeName}}(G4String val);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuantumEfficiency_ab4883a6fc125c26bb77ea763a5810fff}{UseFile}}(G4String aFile);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuantumEfficiency_af969c7519a0b43270273519e5a4c9fb4}{SetUniqueQE}}(G4double val) \{ m\_uniqueQE = val; \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuantumEfficiency_abfe0383736c55ed5e5251b5e0b49eba8}{CreateTable}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71     G4String \mbox{\hyperlink{classGateQuantumEfficiency_ab57d5e1a4dbe705d2bfd9e2359cf51f4}{GetVolumeName}}() \{ \textcolor{keywordflow}{return} m\_volumeName; \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74     G4double \mbox{\hyperlink{classGateQuantumEfficiency_a9a3307cbe91f914459fafa9928e249ab}{GetActQECoeff}}() \{ \textcolor{keywordflow}{return} m\_QECoef; \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77     G4double \mbox{\hyperlink{classGateQuantumEfficiency_a656f2fc514871a787776547983294ddc}{GetQECoeff}}(G4int tableNB, G4int crystalNb) \{ \textcolor{keywordflow}{return} m\_table[tableNB][crystalNb]; \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80     G4double \mbox{\hyperlink{classGateQuantumEfficiency_af2d17c9c2891f0fde8d5c317b3753a45}{GetMinQECoeff}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83     G4int \mbox{\hyperlink{classGateQuantumEfficiency_a06269dbf9b75d315ff3111d8f61c4bbf}{Getlevel1No}}() \{ \textcolor{keywordflow}{return} m\_level1No; \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86     G4int \mbox{\hyperlink{classGateQuantumEfficiency_ab3f7c5fce7ec2d711fc53bdff308e27c}{Getlevel2No}}() \{ \textcolor{keywordflow}{return} m\_level2No; \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89     G4int \mbox{\hyperlink{classGateQuantumEfficiency_a614245b108de75d89f0352573bd18a4b}{Getlevel3No}}() \{ \textcolor{keywordflow}{return} m\_level3No; \};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{93     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuantumEfficiency_a1b52452eadaa0744ab50336c99d5ab8e}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuantumEfficiency_a153a605953adbc35c951165b7b030279}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \textcolor{keyword}{private}:}
+\DoxyCodeLine{105     \textcolor{keyword}{static} \mbox{\hyperlink{classGateQuantumEfficiency}{GateQuantumEfficiency}}* theGateQuantumEfficiency;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \mbox{\hyperlink{classGateQuantumEfficiencyMessenger}{GateQuantumEfficiencyMessenger}}* m\_messenger;       }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     G4String m\_volumeName;  }
+\DoxyCodeLine{110     G4int m\_testVolume;     }
+\DoxyCodeLine{111     \textcolor{keywordtype}{size\_t} m\_count;         }
+\DoxyCodeLine{112   \mbox{\hyperlink{classGateLevelsFinder}{GateLevelsFinder}}* m\_levelFinder;}
+\DoxyCodeLine{114     G4int m\_nbCrystals;}
+\DoxyCodeLine{116     G4int m\_level3No;}
+\DoxyCodeLine{118     G4int m\_level2No;}
+\DoxyCodeLine{120     G4int m\_level1No;}
+\DoxyCodeLine{121     G4int m\_nbTables;}
+\DoxyCodeLine{122     G4int m\_volumeIDNo;     }
+\DoxyCodeLine{123     G4int m\_i, m\_j, m\_k;    }
+\DoxyCodeLine{124     \textcolor{keywordtype}{size\_t} m\_depth;         }
+\DoxyCodeLine{125     G4int m\_nbFiles;        }
+\DoxyCodeLine{126     std::vector<G4String> m\_file;  }
+\DoxyCodeLine{127     G4double m\_uniqueQE;    }
+\DoxyCodeLine{128     G4double** m\_table;     }
+\DoxyCodeLine{129     G4double m\_QECoef;      }
+\DoxyCodeLine{130     G4double m\_minQECoef;   }
+\DoxyCodeLine{131 \};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

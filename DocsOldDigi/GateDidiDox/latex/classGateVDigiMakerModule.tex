@@ -1,0 +1,88 @@
+\hypertarget{classGateVDigiMakerModule}{}\doxysection{Gate\+VDigi\+Maker\+Module Class Reference}
+\label{classGateVDigiMakerModule}\index{GateVDigiMakerModule@{GateVDigiMakerModule}}
+
+
+It processes a pulse-\/list, generating single digis.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VDigi\+Maker\+Module.\+hh$>$}
+
+Inheritance diagram for Gate\+VDigi\+Maker\+Module\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateVDigiMakerModule}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_a01904652b6288932fa8ff2738ed08e89}\label{classGateVDigiMakerModule_a01904652b6288932fa8ff2738ed08e89}} 
+{\bfseries Gate\+VDigi\+Maker\+Module} (\mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}} $\ast$its\+Digitizer, const G4\+String \&its\+Input\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_af27be7e3035f72f21703c5ce4733fe73}\label{classGateVDigiMakerModule_af27be7e3035f72f21703c5ce4733fe73}} 
+{\bfseries $\sim$\+Gate\+VDigi\+Maker\+Module} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVDigiMakerModule_a41ed8e7c532724d75482dc2a4ee74a27}{Digitize}} ()=0
+\begin{DoxyCompactList}\small\item\em Convert a pulse list into a single Digi collection. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVDigiMakerModule_ad5383b5a49bf4a52744ee13f30fb2682}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_a7dc9fae162de825bb864a755bd589710}\label{classGateVDigiMakerModule_a7dc9fae162de825bb864a755bd589710}} 
+virtual void {\bfseries Set\+Input\+Name} (const G4\+String \&input\+Name)
+\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_a12b3be2bf34ab6b4e2ec5a91d2450e05}\label{classGateVDigiMakerModule_a12b3be2bf34ab6b4e2ec5a91d2450e05}} 
+virtual const G4\+String \& {\bfseries Get\+Input\+Name} ()
+\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_a96dcbbf84261a0974bc2dae18ef7a53b}\label{classGateVDigiMakerModule_a96dcbbf84261a0974bc2dae18ef7a53b}} 
+virtual const G4\+String \& {\bfseries Get\+Collection\+Name} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_a52f30c3896c8a1a74d326d87efc515e7}\label{classGateVDigiMakerModule_a52f30c3896c8a1a74d326d87efc515e7}} 
+\mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}} $\ast$ {\bfseries m\+\_\+digitizer}
+\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_a207c957b752e2b93290c323a6b726ecf}\label{classGateVDigiMakerModule_a207c957b752e2b93290c323a6b726ecf}} 
+G4\+String {\bfseries m\+\_\+input\+Name}
+\item 
+\mbox{\Hypertarget{classGateVDigiMakerModule_a6f91f2b833dc53e8268ddb9f0b84784d}\label{classGateVDigiMakerModule_a6f91f2b833dc53e8268ddb9f0b84784d}} 
+G4\+String {\bfseries m\+\_\+collection\+Name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It processes a pulse-\/list, generating single digis. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVDigiMakerModule}{Gate\+VDigi\+Maker\+Module}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVDigiMakerModule_ad5383b5a49bf4a52744ee13f30fb2682}\label{classGateVDigiMakerModule_ad5383b5a49bf4a52744ee13f30fb2682}} 
+\index{GateVDigiMakerModule@{GateVDigiMakerModule}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateVDigiMakerModule@{GateVDigiMakerModule}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+VDigi\+Maker\+Module\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class print-\/out the attributes specific of the attachment list \mbox{\Hypertarget{classGateVDigiMakerModule_a41ed8e7c532724d75482dc2a4ee74a27}\label{classGateVDigiMakerModule_a41ed8e7c532724d75482dc2a4ee74a27}} 
+\index{GateVDigiMakerModule@{GateVDigiMakerModule}!Digitize@{Digitize}}
+\index{Digitize@{Digitize}!GateVDigiMakerModule@{GateVDigiMakerModule}}
+\doxysubsubsection{\texorpdfstring{Digitize()}{Digitize()}}
+{\footnotesize\ttfamily virtual void Gate\+VDigi\+Maker\+Module\+::\+Digitize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Convert a pulse list into a single Digi collection. 
+
+
+
+Implemented in \mbox{\hyperlink{classGateCoincidenceDigiMaker_a51cb99141d45e54e6873045b4aa11b03}{Gate\+Coincidence\+Digi\+Maker}}, and \mbox{\hyperlink{classGateSingleDigiMaker_a726898b223f383727c6b76671bdff8ca}{Gate\+Single\+Digi\+Maker}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+VDigi\+Maker\+Module.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+VDigi\+Maker\+Module.\+cc\end{DoxyCompactItemize}

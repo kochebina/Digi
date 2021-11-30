@@ -1,0 +1,189 @@
+\hypertarget{classGatePhysicsExtractorActor}{}\doxysection{Gate\+Physics\+Extractor\+Actor Class Reference}
+\label{classGatePhysicsExtractorActor}\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+Inheritance diagram for Gate\+Physics\+Extractor\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGatePhysicsExtractorActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_af21f444c41512e400558aabf54696c37}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the sensor (set world as parent by default) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_a336ab9b6e3c949429e1d16adfa761ed0}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_a1c7521ab776b8300fc150ca184b3bd8e}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_af63c940ebf36d5803fcd75b09eca93db}{User\+Stepping\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_abf3d10ddde71ff5680a3b54b2b8fd4cc}{Pre\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_a635c32fc03cc5800cf9512be5559d01c}{Post\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_ac71d02d37130a4e6ae974f552b0a57e1}{End\+Of\+Event\+Action}} (const G4\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_a19ab1f0cf8d1a4534d2d91085f0d2924}{Save\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGatePhysicsExtractorActor_a32b8cb730c4b6062c7508ea5762a801b}{Reset\+Data}} ()
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_aa35221f349e426eaa92ddbcd84f364b3}\label{classGatePhysicsExtractorActor_aa35221f349e426eaa92ddbcd84f364b3}} 
+void {\bfseries Set\+Process\+Name} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a659db8a0c43b0cd272cba322e62a5e01}\label{classGatePhysicsExtractorActor_a659db8a0c43b0cd272cba322e62a5e01}} 
+void {\bfseries Set\+Particle\+Name} (const G4\+String \&particle\+Name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a66bf5dcc39ce90de92f66eee479c3112}\label{classGatePhysicsExtractorActor_a66bf5dcc39ce90de92f66eee479c3112}} 
+void {\bfseries Set\+Material\+Name} (const G4\+String \&material\+Name)
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a6361dd6b03570126c167e6bee7d7b052}\label{classGatePhysicsExtractorActor_a6361dd6b03570126c167e6bee7d7b052}} 
+void {\bfseries Set\+Energy\+Cut\+Threshold} (double thresh)
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_aec4da9f7a6cab3455cb88885cd637b73}\label{classGatePhysicsExtractorActor_aec4da9f7a6cab3455cb88885cd637b73}} 
+void {\bfseries Set\+Min\+Energy} (double energy)
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a59d1075882a12b0b0cb7f3c7d27f1d74}\label{classGatePhysicsExtractorActor_a59d1075882a12b0b0cb7f3c7d27f1d74}} 
+void {\bfseries Set\+Max\+Energy} (double energy)
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a6a57a23af4bdee971bcd9adfa0fb2c11}\label{classGatePhysicsExtractorActor_a6a57a23af4bdee971bcd9adfa0fb2c11}} 
+void {\bfseries Set\+Number\+Of\+Points\+Per\+Order\+Of\+Magnitude} (double nb\+Points)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a15f95c8b60c1298bf85c6f0a157f12ed}\label{classGatePhysicsExtractorActor_a15f95c8b60c1298bf85c6f0a157f12ed}} 
+{\bfseries Gate\+Physics\+Extractor\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a07133f8d599b5e3c0c9dd1e3b4487565}\label{classGatePhysicsExtractorActor_a07133f8d599b5e3c0c9dd1e3b4487565}} 
+G4\+Em\+Calculator $\ast$ {\bfseries p\+Calculator}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_abbbca053fba16e51b61ffb2b179769d0}\label{classGatePhysicsExtractorActor_abbbca053fba16e51b61ffb2b179769d0}} 
+const G4\+Particle\+Definition $\ast$ {\bfseries p\+Particle\+Definition}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a586f0edb4ea3739a726a50710db38596}\label{classGatePhysicsExtractorActor_a586f0edb4ea3739a726a50710db38596}} 
+const G4\+Material $\ast$ {\bfseries p\+Material}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_afc2b9dbd1d09f04849920c4c4bda68b5}\label{classGatePhysicsExtractorActor_afc2b9dbd1d09f04849920c4c4bda68b5}} 
+G4\+String {\bfseries p\+Process\+Name}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_ab0e3e1a6fc16d8d41bd152fa227c1d08}\label{classGatePhysicsExtractorActor_ab0e3e1a6fc16d8d41bd152fa227c1d08}} 
+double {\bfseries p\+Min\+Energy}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a48923f0597d8803b3e3b49b44451a8f2}\label{classGatePhysicsExtractorActor_a48923f0597d8803b3e3b49b44451a8f2}} 
+double {\bfseries p\+Max\+Energy}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_ab5bc7d58e855f9c131f70cd488e16724}\label{classGatePhysicsExtractorActor_ab5bc7d58e855f9c131f70cd488e16724}} 
+double {\bfseries p\+Nb\+Points}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_afa4180ece9315e1da42da89e0aa10b07}\label{classGatePhysicsExtractorActor_afa4180ece9315e1da42da89e0aa10b07}} 
+double {\bfseries p\+Cut\+Threshold}
+\item 
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a9fcb92dd95826d2b2318969b2ff3c44f}\label{classGatePhysicsExtractorActor_a9fcb92dd95826d2b2318969b2ff3c44f}} 
+Gate\+Physics\+Extractor\+Actor\+Messenger $\ast$ {\bfseries p\+Messenger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a1c7521ab776b8300fc150ca184b3bd8e}\label{classGatePhysicsExtractorActor_a1c7521ab776b8300fc150ca184b3bd8e}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a336ab9b6e3c949429e1d16adfa761ed0}\label{classGatePhysicsExtractorActor_a336ab9b6e3c949429e1d16adfa761ed0}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_af21f444c41512e400558aabf54696c37}\label{classGatePhysicsExtractorActor_af21f444c41512e400558aabf54696c37}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Constructs the sensor (set world as parent by default) 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_ac71d02d37130a4e6ae974f552b0a57e1}\label{classGatePhysicsExtractorActor_ac71d02d37130a4e6ae974f552b0a57e1}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!EndOfEventAction@{EndOfEventAction}}
+\index{EndOfEventAction@{EndOfEventAction}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEventAction()}{EndOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+End\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a635c32fc03cc5800cf9512be5559d01c}\label{classGatePhysicsExtractorActor_a635c32fc03cc5800cf9512be5559d01c}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!PostUserTrackingAction@{PostUserTrackingAction}}
+\index{PostUserTrackingAction@{PostUserTrackingAction}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{PostUserTrackingAction()}{PostUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+Post\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_abf3d10ddde71ff5680a3b54b2b8fd4cc}\label{classGatePhysicsExtractorActor_abf3d10ddde71ff5680a3b54b2b8fd4cc}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!PreUserTrackingAction@{PreUserTrackingAction}}
+\index{PreUserTrackingAction@{PreUserTrackingAction}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{PreUserTrackingAction()}{PreUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+Pre\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a32b8cb730c4b6062c7508ea5762a801b}\label{classGatePhysicsExtractorActor_a32b8cb730c4b6062c7508ea5762a801b}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_a19ab1f0cf8d1a4534d2d91085f0d2924}\label{classGatePhysicsExtractorActor_a19ab1f0cf8d1a4534d2d91085f0d2924}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePhysicsExtractorActor_af63c940ebf36d5803fcd75b09eca93db}\label{classGatePhysicsExtractorActor_af63c940ebf36d5803fcd75b09eca93db}} 
+\index{GatePhysicsExtractorActor@{GatePhysicsExtractorActor}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GatePhysicsExtractorActor@{GatePhysicsExtractorActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}}
+{\footnotesize\ttfamily void Gate\+Physics\+Extractor\+Actor\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Physics\+Extractor\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Physics\+Extractor\+Actor.\+cc\end{DoxyCompactItemize}

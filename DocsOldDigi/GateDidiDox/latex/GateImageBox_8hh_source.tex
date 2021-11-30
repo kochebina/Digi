@@ -1,0 +1,71 @@
+\hypertarget{GateImageBox_8hh_source}{}\doxysection{Gate\+Image\+Box.\+hh}
+\label{GateImageBox_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageBox.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageBox.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GATEIMAGEBOX\_HH}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GATEIMAGEBOX\_HH}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifdef G4VIS\_USE\_OPENGL}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{  \#include "{}G4Version.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{  \#if G4VERSION\_NUMBER >= 960}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{    \#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{    \#ifdef GATE\_USE\_OPENGL}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{      \#ifdef \_\_APPLE\_\_}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{        \#include <OpenGL/gl.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{      \#else}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{        \#include <GL/gl.h>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{      \#endif}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{      \#define G4VIS\_BUILD\_OPENGL\_DRIVER}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{      \#include "{}G4OpenGLSceneHandler.hh"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{      \#define GATEIMAGEBOX\_USE\_OPENGL 1}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{    \#endif }\textcolor{comment}{/* GATE\_USE\_OPENGL */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{  \#endif }\textcolor{comment}{/* G4VERSION\_NUMBER */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* G4VIS\_USE\_OPENGL */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}G4Box.hh"{}}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}GateImage.hh"{}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageBox}{GateImageBox}} : \textcolor{keyword}{public} \textcolor{keyword}{virtual} G4Box \{}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{classGateImageBox}{GateImageBox}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateImage}{GateImage}} \& image, \textcolor{keyword}{const} G4String \& name);}
+\DoxyCodeLine{49     \mbox{\hyperlink{classGateImageBox}{\string~GateImageBox}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} PixelType; \textcolor{comment}{// FIXME}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} DescribeYourselfTo(G4VGraphicsScene\& scene) \textcolor{keyword}{const};}
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifdef GATEIMAGEBOX\_USE\_OPENGL}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} DescribeYourselfTo(G4OpenGLSceneHandler\& scene) \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     std::vector<PixelType> getXYSlice(\textcolor{keyword}{const} \mbox{\hyperlink{classGateImage}{GateImage}} \& image, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} z) \textcolor{keyword}{const};}
+\DoxyCodeLine{59     std::vector<PixelType> getXZSlice(\textcolor{keyword}{const} \mbox{\hyperlink{classGateImage}{GateImage}} \& image, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} y) \textcolor{keyword}{const};}
+\DoxyCodeLine{60     std::vector<PixelType> getYZSlice(\textcolor{keyword}{const} \mbox{\hyperlink{classGateImage}{GateImage}} \& image, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} x) \textcolor{keyword}{const};}
+\DoxyCodeLine{61     GLubyte * convertToRGB(std::vector<PixelType> slice, PixelType min, PixelType max) \textcolor{keyword}{const};}
+\DoxyCodeLine{62     GLuint genOpenGLTexture(\textcolor{keyword}{const} GLubyte * rgb, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height) \textcolor{keyword}{const};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} initOpenGLTextures(\textcolor{keyword}{const} \mbox{\hyperlink{classGateImage}{GateImage}} \& image, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} x, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} y, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} z);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{size\_t} position\_x;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{size\_t} position\_y;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{size\_t} position\_z;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{size\_t} resolution\_x;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{size\_t} resolution\_y;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{size\_t} resolution\_z;}
+\DoxyCodeLine{71     GLuint texture\_xy;}
+\DoxyCodeLine{72     GLuint texture\_xz;}
+\DoxyCodeLine{73     GLuint texture\_yz;}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEIMAGEBOX\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

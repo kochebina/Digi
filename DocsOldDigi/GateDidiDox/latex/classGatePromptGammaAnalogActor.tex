@@ -1,0 +1,136 @@
+\hypertarget{classGatePromptGammaAnalogActor}{}\doxysection{Gate\+Prompt\+Gamma\+Analog\+Actor Class Reference}
+\label{classGatePromptGammaAnalogActor}\index{GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}}
+Inheritance diagram for Gate\+Prompt\+Gamma\+Analog\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGatePromptGammaAnalogActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaAnalogActor_aedc24ba73e4146bb0c0db8a885e9fe8e}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Type name of the sensor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaAnalogActor_ae101845efabc8c514c7c2e9dc2134b86}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaAnalogActor_af9c30dd629005a8aaeb2ded2e7c1066d}{User\+Post\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaAnalogActor_ad09e60e71c65fafad831852896d47e7c}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_a512717e33e551932cc3bead9434b4e55}\label{classGatePromptGammaAnalogActor_a512717e33e551932cc3bead9434b4e55}} 
+void {\bfseries Set\+Input\+Data\+Filename} (std\+::string filename)
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaAnalogActor_ab659b50faf84b28045bede3570aca23d}{Save\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaAnalogActor_ac9c0f00f66817fb9522b21f9bfb1160f}{Reset\+Data}} ()
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_a9dce68eda139bb1967f8b2e5ceddad30}\label{classGatePromptGammaAnalogActor_a9dce68eda139bb1967f8b2e5ceddad30}} 
+void {\bfseries Set\+Output\+Count} (bool b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_a4530c8807d01a041259a84ac64163717}\label{classGatePromptGammaAnalogActor_a4530c8807d01a041259a84ac64163717}} 
+{\bfseries Gate\+Prompt\+Gamma\+Analog\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_a1f9112a61f03be97e6de2fdca2a4350f}\label{classGatePromptGammaAnalogActor_a1f9112a61f03be97e6de2fdca2a4350f}} 
+\mbox{\hyperlink{classGatePromptGammaAnalogActorMessenger}{Gate\+Prompt\+Gamma\+Analog\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_a22c2e1bc525c227216aedb48300a2b6d}\label{classGatePromptGammaAnalogActor_a22c2e1bc525c227216aedb48300a2b6d}} 
+std\+::string {\bfseries m\+Input\+Data\+Filename}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_a82ae1da0ad6f589c0bb7435a7145ac27}\label{classGatePromptGammaAnalogActor_a82ae1da0ad6f589c0bb7435a7145ac27}} 
+\mbox{\hyperlink{classGatePromptGammaData}{Gate\+Prompt\+Gamma\+Data}} {\bfseries data}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_a28f7747074853c5f1afab1d32b804cb0}\label{classGatePromptGammaAnalogActor_a28f7747074853c5f1afab1d32b804cb0}} 
+bool {\bfseries m\+Set\+Output\+Count}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_aa3e8f1bec0ebf9dc206aaacfeeb97c40}\label{classGatePromptGammaAnalogActor_aa3e8f1bec0ebf9dc206aaacfeeb97c40}} 
+bool {\bfseries already\+Here}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_afada8b8bc741a04b7a2b3fa17b9159df}\label{classGatePromptGammaAnalogActor_afada8b8bc741a04b7a2b3fa17b9159df}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries m\+Image\+Gamma}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_aedc24ba73e4146bb0c0db8a885e9fe8e}\label{classGatePromptGammaAnalogActor_aedc24ba73e4146bb0c0db8a885e9fe8e}} 
+\index{GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+Analog\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Type name of the sensor. 
+
+Constructs the sensor.
+
+Constructs the sensor 
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_ac9c0f00f66817fb9522b21f9bfb1160f}\label{classGatePromptGammaAnalogActor_ac9c0f00f66817fb9522b21f9bfb1160f}} 
+\index{GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+Analog\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_ab659b50faf84b28045bede3570aca23d}\label{classGatePromptGammaAnalogActor_ab659b50faf84b28045bede3570aca23d}} 
+\index{GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+Analog\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_af9c30dd629005a8aaeb2ded2e7c1066d}\label{classGatePromptGammaAnalogActor_af9c30dd629005a8aaeb2ded2e7c1066d}} 
+\index{GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+Analog\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_ae101845efabc8c514c7c2e9dc2134b86}\label{classGatePromptGammaAnalogActor_ae101845efabc8c514c7c2e9dc2134b86}} 
+\index{GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+Analog\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaAnalogActor_ad09e60e71c65fafad831852896d47e7c}\label{classGatePromptGammaAnalogActor_ad09e60e71c65fafad831852896d47e7c}} 
+\index{GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GatePromptGammaAnalogActor@{GatePromptGammaAnalogActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+Analog\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Prompt\+Gamma\+Analog\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Prompt\+Gamma\+Analog\+Actor.\+cc\end{DoxyCompactItemize}

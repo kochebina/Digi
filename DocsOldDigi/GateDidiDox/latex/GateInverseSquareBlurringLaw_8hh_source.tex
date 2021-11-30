@@ -1,0 +1,56 @@
+\hypertarget{GateInverseSquareBlurringLaw_8hh_source}{}\doxysection{Gate\+Inverse\+Square\+Blurring\+Law.\+hh}
+\label{GateInverseSquareBlurringLaw_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateInverseSquareBlurringLaw.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateInverseSquareBlurringLaw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GateInverseSquareBlurringLaw\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GateInverseSquareBlurringLaw\_h 1}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVBlurringLaw.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateInverseSquareBlurringLawMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateTools.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateInverseSquareBlurringLaw}{GateInverseSquareBlurringLaw}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVBlurringLaw}{GateVBlurringLaw}} \{}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     public :}
+\DoxyCodeLine{30         \mbox{\hyperlink{classGateInverseSquareBlurringLaw}{GateInverseSquareBlurringLaw}}(\textcolor{keyword}{const} G4String\& itsName, G4double itsReferenceEnergy=-\/1., G4double itsResolution=0.);}
+\DoxyCodeLine{31         \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateInverseSquareBlurringLaw}{\string~GateInverseSquareBlurringLaw}}() \{\textcolor{keyword}{delete} m\_messenger;\}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{comment}{// Implementation of the pure virtual method in GateVBlurringLaw}}
+\DoxyCodeLine{34         \textcolor{comment}{// Inverse Square resolution is calculated by  R = R0*sqrt(E0)/sqrt(E)}}
+\DoxyCodeLine{35         \textcolor{keyword}{virtual} G4double ComputeResolution(G4double energy) \textcolor{keyword}{const};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keyword}{inline} G4double GetResolution()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_resolution; \}}
+\DoxyCodeLine{38         \textcolor{keyword}{inline} G4double GetEnergyRef()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_eref; \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetResolution(G4double res) \{ m\_resolution = res; \}}
+\DoxyCodeLine{41         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyRef(G4double ener) \{ m\_eref = ener; \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{comment}{// Implementation of the virtual method in GateVBlurringLaw}}
+\DoxyCodeLine{45         \textcolor{comment}{// Also called by GateBlurring}}
+\DoxyCodeLine{46         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself (\textcolor{keywordtype}{size\_t} ident=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     private :}
+\DoxyCodeLine{51         G4double m\_eref;}
+\DoxyCodeLine{52         G4double m\_resolution;}
+\DoxyCodeLine{53         \mbox{\hyperlink{classGateInverseSquareBlurringLawMessenger}{GateInverseSquareBlurringLawMessenger}}* m\_messenger;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

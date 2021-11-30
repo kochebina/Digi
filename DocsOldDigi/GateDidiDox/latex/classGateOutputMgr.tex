@@ -1,0 +1,284 @@
+\hypertarget{classGateOutputMgr}{}\doxysection{Gate\+Output\+Mgr Class Reference}
+\label{classGateOutputMgr}\index{GateOutputMgr@{GateOutputMgr}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_aa4839ba45987c4b44bd60d0e67f7b2cd}\label{classGateOutputMgr_aa4839ba45987c4b44bd60d0e67f7b2cd}} 
+virtual {\bfseries $\sim$\+Gate\+Output\+Mgr} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_a3c37c5266c32bd86272a4918b673957b}{Record\+Begin\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{classGateApplicationMgr}{Gate\+Application\+Mgr}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_a3111b6fd88886a6e3a7e7ee76ea96d12}{Record\+End\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{classGateApplicationMgr}{Gate\+Application\+Mgr}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_ac15700aecd47c9645222c3b880355ef7}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{classGateRunAction}{Gate\+Run\+Action}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_a56b9322f3985f2cfa6fb7af01329454c}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{classGateRunAction}{Gate\+Run\+Action}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_ad67a735765891ab9f599a607ee8b1f5f}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{classGateEventAction}{Gate\+Event\+Action}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_a6d3ffd288503001ca4e9a87e26a3505b}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{classGateEventAction}{Gate\+Event\+Action}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_ab4d25d0e7b4c82df57723d52154ed96e}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\begin{DoxyCompactList}\small\item\em Called by \mbox{\hyperlink{classGateSteppingAction}{Gate\+Stepping\+Action}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_aa223bad604db9af46b43f19b6f8be903}\label{classGateOutputMgr_aa223bad604db9af46b43f19b6f8be903}} 
+void {\bfseries Record\+Voxels} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Called by the Voxel Store, saves the geometry voxel information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateOutputMgr_ab299dfe19ff6c3c5c0eb0db961db2edb}{Add\+Output\+Module}} (\mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}} $\ast$module)
+\begin{DoxyCompactList}\small\item\em Used internally to add a module to the output module list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_ad2b79dd8fdb14b7308b460c6aee81501}\label{classGateOutputMgr_ad2b79dd8fdb14b7308b460c6aee81501}} 
+void {\bfseries Begin\+Of\+Run\+Action} (const G4\+Run $\ast$)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a747738f9c921b4041b2bf28caf5bafd8}\label{classGateOutputMgr_a747738f9c921b4041b2bf28caf5bafd8}} 
+void {\bfseries End\+Of\+Run\+Action} (const G4\+Run $\ast$)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_aaa21bef65ae57ae5ba41a301e40895aa}\label{classGateOutputMgr_aaa21bef65ae57ae5ba41a301e40895aa}} 
+void {\bfseries Begin\+Of\+Event\+Action} (const G4\+Event $\ast$)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a163607408ea55b1c07ca7ad1fd4bafb5}\label{classGateOutputMgr_a163607408ea55b1c07ca7ad1fd4bafb5}} 
+void {\bfseries End\+Of\+Event\+Action} (const G4\+Event $\ast$)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a008990be762945206a8dbc478725ac47}\label{classGateOutputMgr_a008990be762945206a8dbc478725ac47}} 
+virtual void {\bfseries User\+Stepping\+Action} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a620c92ebdf335c85e8e56e675cf34e6c}\label{classGateOutputMgr_a620c92ebdf335c85e8e56e675cf34e6c}} 
+void {\bfseries Set\+Verbose\+Level} (G4int val)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_ad4324f8a39f58c424681aac991825027}\label{classGateOutputMgr_ad4324f8a39f58c424681aac991825027}} 
+virtual void {\bfseries Describe} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Provides a description of the properties of the Mgr and of its output modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_a49213545c366183f2c10b3503e40bf31}\label{classGateOutputMgr_a49213545c366183f2c10b3503e40bf31}} 
+G4\+String {\bfseries Get\+Name} ()
+\begin{DoxyCompactList}\small\item\em Getter used by the Messenger to construct the commands directory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_a08413bd62d1c3bcbd69fb5daa0e80a8c}\label{classGateOutputMgr_a08413bd62d1c3bcbd69fb5daa0e80a8c}} 
+void {\bfseries Set\+Name} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a59039a4d90657135b3ee04210d43fada}\label{classGateOutputMgr_a59039a4d90657135b3ee04210d43fada}} 
+\mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}} $\ast$ {\bfseries Get\+Module} (G4\+String)
+\item 
+void \mbox{\hyperlink{classGateOutputMgr_a35c1496860708cfe3cd8ff7778c9df55}{Check\+File\+Name\+For\+All\+Output}} ()
+\item 
+Gate\+Crystal\+Hits\+Collection $\ast$ \mbox{\hyperlink{classGateOutputMgr_ab10610a93381ae6862b5c8c874c96a8b}{Get\+Crystal\+Hit\+Collection}} ()
+\begin{DoxyCompactList}\small\item\em Return the current crystal-\/hit collection (if nay) \end{DoxyCompactList}\item 
+Gate\+Phantom\+Hits\+Collection $\ast$ \mbox{\hyperlink{classGateOutputMgr_a406e78994210ab61d6ddb639bfba01f8}{Get\+Phantom\+Hit\+Collection}} ()
+\begin{DoxyCompactList}\small\item\em Return the current phantom-\/hit collection (if nay) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_aff49e13dce4f5e85f357dfbc312bb623}\label{classGateOutputMgr_aff49e13dce4f5e85f357dfbc312bb623}} 
+Gate\+Single\+Digi\+Collection $\ast$ {\bfseries Get\+Single\+Digi\+Collection} (const G4\+String \&collection\+Name)
+\begin{DoxyCompactList}\small\item\em Return the current single-\/digi collection (if nay) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_a813d57023a02f04c04517676ddaf6408}\label{classGateOutputMgr_a813d57023a02f04c04517676ddaf6408}} 
+Gate\+Coincidence\+Digi\+Collection $\ast$ {\bfseries Get\+Coincidence\+Digi\+Collection} (const G4\+String \&collection\+Name)
+\begin{DoxyCompactList}\small\item\em Return the current coincidence-\/digi collection (if nay) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_a765695631230737ebb3230a442a0e65d}\label{classGateOutputMgr_a765695631230737ebb3230a442a0e65d}} 
+void {\bfseries Register\+New\+Single\+Digi\+Collection} (const G4\+String \&a\+Collection\+Name, G4bool output\+Flag)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a2de7fb2f9b749a40ff37869be7043112}\label{classGateOutputMgr_a2de7fb2f9b749a40ff37869be7043112}} 
+void {\bfseries Register\+New\+Coincidence\+Digi\+Collection} (const G4\+String \&a\+Collection\+Name, G4bool output\+Flag)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_ac70d4cef9b04ac37824be60378955c4f}\label{classGateOutputMgr_ac70d4cef9b04ac37824be60378955c4f}} 
+G4bool {\bfseries Get\+Save\+Voxel\+Tuple} ()
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a358493118c601f9fe84886f15cff6b18}\label{classGateOutputMgr_a358493118c601f9fe84886f15cff6b18}} 
+void {\bfseries Set\+Save\+Voxel\+Tuple} (G4bool flag)
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_af684d3a06108f623e5afa820cfbf141d}\label{classGateOutputMgr_af684d3a06108f623e5afa820cfbf141d}} 
+void {\bfseries Allow\+No\+Output} ()
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_aecc8c2d47eee774120cc51ec710fa93c}\label{classGateOutputMgr_aecc8c2d47eee774120cc51ec710fa93c}} 
+void {\bfseries Record\+Tracks} (\mbox{\hyperlink{classGateSteppingAction}{Gate\+Stepping\+Action}} $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_aca88ac34ec5a77303c162d290336fbba}\label{classGateOutputMgr_aca88ac34ec5a77303c162d290336fbba}} 
+static \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$ {\bfseries Get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Used to create and access the Output\+Mgr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_ae2ea104bf35bc68ccc1981779f6d2429}\label{classGateOutputMgr_ae2ea104bf35bc68ccc1981779f6d2429}} 
+static Digi\+Mode {\bfseries Get\+Digi\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Static getter and setter to know the current mode of the digitizer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_adb1c1c9b95557ea27898851fb3eb573e}\label{classGateOutputMgr_adb1c1c9b95557ea27898851fb3eb573e}} 
+static void {\bfseries Set\+Digi\+Mode} (Digi\+Mode mode)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateOutputMgr_a99f25e20f15d601baa3d8414c30dec82}{Gate\+Output\+Mgr}} (const G4\+String name)
+\begin{DoxyCompactList}\small\item\em Private constructor (the class is a singleton) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_af0b9f595fcbc9c486558a5d0ef89f307}\label{classGateOutputMgr_af0b9f595fcbc9c486558a5d0ef89f307}} 
+G4int {\bfseries n\+Verbose\+Level}
+\begin{DoxyCompactList}\small\item\em Verbose level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_a81b9e0b97f5a189fb1ce5623a499f7ad}\label{classGateOutputMgr_a81b9e0b97f5a189fb1ce5623a499f7ad}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}} $\ast$ $>$ {\bfseries m\+\_\+output\+Modules}
+\begin{DoxyCompactList}\small\item\em List of the output modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_a3341c5e3bf3d2a2924462e8923dde46c}\label{classGateOutputMgr_a3341c5e3bf3d2a2924462e8923dde46c}} 
+\mbox{\hyperlink{classGateOutputMgrMessenger}{Gate\+Output\+Mgr\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\begin{DoxyCompactList}\small\item\em messenger for the Mgr specific commands \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_a984bf08c1eacec2a8d7560087e35b6e9}\label{classGateOutputMgr_a984bf08c1eacec2a8d7560087e35b6e9}} 
+G4\+String {\bfseries m\+Name}
+\begin{DoxyCompactList}\small\item\em class name, used by the messenger \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputMgr_aa844f941a06abd2f64a066d2d8e92cf5}\label{classGateOutputMgr_aa844f941a06abd2f64a066d2d8e92cf5}} 
+G4bool {\bfseries m\+\_\+acquisition\+Started}
+\begin{DoxyCompactList}\small\item\em Flag to check that an acquisition has started. \end{DoxyCompactList}\item 
+G4bool \mbox{\hyperlink{classGateOutputMgr_afee9c4f422cb6d9b070756ef88dbe09e}{m\+\_\+allow\+No\+Output}}
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_ab06db4edfb0150dacbb32dd60289e819}\label{classGateOutputMgr_ab06db4edfb0150dacbb32dd60289e819}} 
+G4bool {\bfseries m\+\_\+save\+Voxel\+Tuple}
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a9073c04b594e41841c5aef17d83c5f00}\label{classGateOutputMgr_a9073c04b594e41841c5aef17d83c5f00}} 
+G4\+Timer {\bfseries m\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em Timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_a61e9206acd7c3df33b4810fbaa06160a}\label{classGateOutputMgr_a61e9206acd7c3df33b4810fbaa06160a}} 
+static \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$ {\bfseries instance} = 0
+\item 
+\mbox{\Hypertarget{classGateOutputMgr_ac5a2f16dc34bfdf9847aa0c51683a719}\label{classGateOutputMgr_ac5a2f16dc34bfdf9847aa0c51683a719}} 
+static Digi\+Mode {\bfseries m\+\_\+digi\+Mode} = kruntime\+Mode
+\begin{DoxyCompactList}\small\item\em Code for the current digitizer mode (runtime or offline) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateOutputMgr_a99f25e20f15d601baa3d8414c30dec82}\label{classGateOutputMgr_a99f25e20f15d601baa3d8414c30dec82}} 
+\index{GateOutputMgr@{GateOutputMgr}!GateOutputMgr@{GateOutputMgr}}
+\index{GateOutputMgr@{GateOutputMgr}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{GateOutputMgr()}{GateOutputMgr()}}
+{\footnotesize\ttfamily Gate\+Output\+Mgr\+::\+Gate\+Output\+Mgr (\begin{DoxyParamCaption}\item[{const G4\+String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Private constructor (the class is a singleton) 
+
+In the constructor we build the list of the output modules to attach to the Mgr. In the future this will be substituted by a dynamic insertion of modules of predefined type. A Messenger of the type \mbox{\hyperlink{classGateOutputMgrMessenger}{Gate\+Output\+Mgr\+Messenger}} is built. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the Output Manager is necessary to build the commands directory in the Messenger \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateOutputMgr_ab299dfe19ff6c3c5c0eb0db961db2edb}{Add\+Output\+Module()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateOutputMgr_ab299dfe19ff6c3c5c0eb0db961db2edb}\label{classGateOutputMgr_ab299dfe19ff6c3c5c0eb0db961db2edb}} 
+\index{GateOutputMgr@{GateOutputMgr}!AddOutputModule@{AddOutputModule}}
+\index{AddOutputModule@{AddOutputModule}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{AddOutputModule()}{AddOutputModule()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Add\+Output\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}} $\ast$}]{module }\end{DoxyParamCaption})}
+
+
+
+Used internally to add a module to the output module list. 
+
+For the moment it\textquotesingle{}s a simple push\+\_\+back in a vector of pointers, but it may become more complex if the structure of the module list evolves \mbox{\Hypertarget{classGateOutputMgr_a35c1496860708cfe3cd8ff7778c9df55}\label{classGateOutputMgr_a35c1496860708cfe3cd8ff7778c9df55}} 
+\index{GateOutputMgr@{GateOutputMgr}!CheckFileNameForAllOutput@{CheckFileNameForAllOutput}}
+\index{CheckFileNameForAllOutput@{CheckFileNameForAllOutput}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{CheckFileNameForAllOutput()}{CheckFileNameForAllOutput()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Check\+File\+Name\+For\+All\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Call in start\+DAQ, this function search for all output module inserted in this manager to see for each enabled module if a file\+Name is given. If it is not the case the module is disabled and a warning is sent. \mbox{\Hypertarget{classGateOutputMgr_ab10610a93381ae6862b5c8c874c96a8b}\label{classGateOutputMgr_ab10610a93381ae6862b5c8c874c96a8b}} 
+\index{GateOutputMgr@{GateOutputMgr}!GetCrystalHitCollection@{GetCrystalHitCollection}}
+\index{GetCrystalHitCollection@{GetCrystalHitCollection}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{GetCrystalHitCollection()}{GetCrystalHitCollection()}}
+{\footnotesize\ttfamily Gate\+Crystal\+Hits\+Collection $\ast$ Gate\+Output\+Mgr\+::\+Get\+Crystal\+Hit\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the current crystal-\/hit collection (if nay) 
+
+\texorpdfstring{$<$}{<} Collection ID for the crystal hits\mbox{\Hypertarget{classGateOutputMgr_a406e78994210ab61d6ddb639bfba01f8}\label{classGateOutputMgr_a406e78994210ab61d6ddb639bfba01f8}} 
+\index{GateOutputMgr@{GateOutputMgr}!GetPhantomHitCollection@{GetPhantomHitCollection}}
+\index{GetPhantomHitCollection@{GetPhantomHitCollection}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{GetPhantomHitCollection()}{GetPhantomHitCollection()}}
+{\footnotesize\ttfamily Gate\+Phantom\+Hits\+Collection $\ast$ Gate\+Output\+Mgr\+::\+Get\+Phantom\+Hit\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the current phantom-\/hit collection (if nay) 
+
+\texorpdfstring{$<$}{<} Collection ID for the phantom hits\mbox{\Hypertarget{classGateOutputMgr_a3c37c5266c32bd86272a4918b673957b}\label{classGateOutputMgr_a3c37c5266c32bd86272a4918b673957b}} 
+\index{GateOutputMgr@{GateOutputMgr}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{classGateApplicationMgr}{Gate\+Application\+Mgr}}. 
+
+It calls in turn the Record\+Begin\+Of\+Acquisition method of the inserted modules \mbox{\Hypertarget{classGateOutputMgr_ad67a735765891ab9f599a607ee8b1f5f}\label{classGateOutputMgr_ad67a735765891ab9f599a607ee8b1f5f}} 
+\index{GateOutputMgr@{GateOutputMgr}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{classGateEventAction}{Gate\+Event\+Action}}. 
+
+It calls in turn the Record\+Begin\+Of\+Event method of the inserted modules \mbox{\Hypertarget{classGateOutputMgr_ac15700aecd47c9645222c3b880355ef7}\label{classGateOutputMgr_ac15700aecd47c9645222c3b880355ef7}} 
+\index{GateOutputMgr@{GateOutputMgr}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{run }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{classGateRunAction}{Gate\+Run\+Action}}. 
+
+It calls in turn the Record\+Begin\+Of\+Run method of the inserted modules \mbox{\Hypertarget{classGateOutputMgr_a3111b6fd88886a6e3a7e7ee76ea96d12}\label{classGateOutputMgr_a3111b6fd88886a6e3a7e7ee76ea96d12}} 
+\index{GateOutputMgr@{GateOutputMgr}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{classGateApplicationMgr}{Gate\+Application\+Mgr}}. 
+
+It calls in turn the Record\+End\+Of\+Acquisition method of the inserted modules \mbox{\Hypertarget{classGateOutputMgr_a6d3ffd288503001ca4e9a87e26a3505b}\label{classGateOutputMgr_a6d3ffd288503001ca4e9a87e26a3505b}} 
+\index{GateOutputMgr@{GateOutputMgr}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{classGateEventAction}{Gate\+Event\+Action}}. 
+
+It calls in turn the Record\+End\+Of\+Event method of the inserted modules \mbox{\Hypertarget{classGateOutputMgr_a56b9322f3985f2cfa6fb7af01329454c}\label{classGateOutputMgr_a56b9322f3985f2cfa6fb7af01329454c}} 
+\index{GateOutputMgr@{GateOutputMgr}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{run }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{classGateRunAction}{Gate\+Run\+Action}}. 
+
+It calls in turn the Record\+End\+Of\+Run method of the inserted modules \mbox{\Hypertarget{classGateOutputMgr_ab4d25d0e7b4c82df57723d52154ed96e}\label{classGateOutputMgr_ab4d25d0e7b4c82df57723d52154ed96e}} 
+\index{GateOutputMgr@{GateOutputMgr}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+Output\+Mgr\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})}
+
+
+
+Called by \mbox{\hyperlink{classGateSteppingAction}{Gate\+Stepping\+Action}}. 
+
+It calls in turn the Record\+Step method of the inserted modules 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGateOutputMgr_afee9c4f422cb6d9b070756ef88dbe09e}\label{classGateOutputMgr_afee9c4f422cb6d9b070756ef88dbe09e}} 
+\index{GateOutputMgr@{GateOutputMgr}!m\_allowNoOutput@{m\_allowNoOutput}}
+\index{m\_allowNoOutput@{m\_allowNoOutput}!GateOutputMgr@{GateOutputMgr}}
+\doxysubsubsection{\texorpdfstring{m\_allowNoOutput}{m\_allowNoOutput}}
+{\footnotesize\ttfamily G4bool Gate\+Output\+Mgr\+::m\+\_\+allow\+No\+Output\hspace{0.3cm}{\ttfamily [protected]}}
+
+Flag to say if the user allow to launch a simulation without any output nor actor 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Output\+Mgr.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Output\+Mgr.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,300 @@
+\hypertarget{structure__LMF_8h_source}{}\doxysection{structure\+\_\+\+LMF.\+h}
+\label{structure__LMF_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/structure\_LMF.h@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/structure\_LMF.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{           List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{     -\/-\/  structure\_LMF.h  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{     Luc.Simon@iphe.unil.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{     Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{     Copyright (C) 2003 IPHE/UNIL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{     of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{     Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{     See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{     Description of structure\_LMF.h:}}
+\DoxyCodeLine{22 \textcolor{comment}{     structures used for binary part of LMF, in particular}}
+\DoxyCodeLine{23 \textcolor{comment}{         for the LMF record carrier.}}
+\DoxyCodeLine{24 \textcolor{comment}{}}
+\DoxyCodeLine{25 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/*}}
+\DoxyCodeLine{28 \textcolor{comment}{|  List Mode Format Record Carrier      |}}
+\DoxyCodeLine{29 \textcolor{comment}{|  Declaration of the structures        |}}
+\DoxyCodeLine{30 \textcolor{comment}{|  used to build the LMF .ccs files     |}}
+\DoxyCodeLine{31 \textcolor{comment}{-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/}}
+\DoxyCodeLine{34 \textcolor{comment}{  -\/  1.  Headers  Structures : all the parameters for an acquisition   =}}
+\DoxyCodeLine{35 \textcolor{comment}{-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{37 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* 1.A This structure gives the ID's format */}}
+\DoxyCodeLine{41   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__scanEncodingID}{LMF\_ccs\_scanEncodingID}} \{ \textcolor{comment}{/* rrrssssmmmcccccl */}}
+\DoxyCodeLine{42     u8 bitForRsectors;      \textcolor{comment}{/* number of bits reserved for rings/sectors in ID */}}
+\DoxyCodeLine{43     u16 maximumRsectors;    \textcolor{comment}{/* maximum number of sectors = 2 ** bitForRsectors */}}
+\DoxyCodeLine{44     u8 bitForModules;       \textcolor{comment}{/* number of bits reserved for modules in ID */}}
+\DoxyCodeLine{45     u16 maximumModules;     \textcolor{comment}{/* maximum number of modules = 2**bitForModules */}}
+\DoxyCodeLine{46     u8 bitForSubmodules;    \textcolor{comment}{/* number of bits reserved for submodules in ID */}}
+\DoxyCodeLine{47     u16 maximumSubmodules;  \textcolor{comment}{/* maximum number of submodules = 2 ** bitForSubmodules */}}
+\DoxyCodeLine{48     u8 bitForCrystals;      \textcolor{comment}{/* number of bits reserved for crystals in ID */}}
+\DoxyCodeLine{49     u16 maximumCrystals;    \textcolor{comment}{/* maximum number of crystals = 2** bitForCrystals */}}
+\DoxyCodeLine{50     u8 bitForLayers;        \textcolor{comment}{/* number of bits reserved for layers in ID */}}
+\DoxyCodeLine{51     u16 maximumLayers;      \textcolor{comment}{/* maximum number of layers = 2** bitForLayers */}}
+\DoxyCodeLine{52   \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{55 \textcolor{comment}{/* 1.B This structure gives the Scan Design */}}
+\DoxyCodeLine{56   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__scannerTopology}{LMF\_ccs\_scannerTopology}} \{}
+\DoxyCodeLine{57     u16 numberOfRings;      \textcolor{comment}{/* number of rings */}}
+\DoxyCodeLine{58     u16 numberOfSectors;    \textcolor{comment}{/* number of sectors */}}
+\DoxyCodeLine{59     u16 totalNumberOfRsectors;  \textcolor{comment}{/* number of rings * number of sectors */}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{comment}{/*-\/=-\/=-\/=-\/ FOR EACH RSECTOR : =-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{62     u16 axialNumberOfModules;   \textcolor{comment}{/* number of modules axially */}}
+\DoxyCodeLine{63     u16 tangentialNumberOfModules;  \textcolor{comment}{/* number of modules tangentially */}}
+\DoxyCodeLine{64     u16 totalNumberOfModules;   \textcolor{comment}{/* number of modules axially * tangentially */}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{comment}{/*-\/=-\/=-\/=-\/ FOR EACH MODULE : =-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{67     u16 axialNumberOfSubmodules;    \textcolor{comment}{/* number of submodules axially */}}
+\DoxyCodeLine{68     u16 tangentialNumberOfSubmodules;   \textcolor{comment}{/* number of submodules tangentially */}}
+\DoxyCodeLine{69     u16 totalNumberOfSubmodules;    \textcolor{comment}{/* number of submodules = Axial * Tangential */}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{comment}{/*-\/=-\/=-\/=-\/ FOR EACH SUBMODULE : =-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{72     u16 axialNumberOfCrystals;  \textcolor{comment}{/* number of crystals axially */}}
+\DoxyCodeLine{73     u16 tangentialNumberOfCrystals; \textcolor{comment}{/* number of crystals tangentially */}}
+\DoxyCodeLine{74     u16 totalNumberOfCrystals;  \textcolor{comment}{/* number of crystals = Axial * Tangential */}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{comment}{/*-\/=-\/=-\/=-\/ FOR EACH CRYSTAL : =-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     u16 axialNumberOfLayers;    \textcolor{comment}{/* number of layers axially (always 1) */}}
+\DoxyCodeLine{79     u16 radialNumberOfLayers;   \textcolor{comment}{/* number of layers radially */}}
+\DoxyCodeLine{80     u16 totalNumberOfLayers;    \textcolor{comment}{/* number of layers */}}
+\DoxyCodeLine{81   \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{/* 1.C This structure gives the kind(s) of records the .ccs file do contain */}}
+\DoxyCodeLine{85   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__scanContent}{LMF\_ccs\_scanContent}} \{}
+\DoxyCodeLine{86     u8 nRecord;         \textcolor{comment}{/* number of different records */}}
+\DoxyCodeLine{87     \textcolor{comment}{/* first record : event record */}}
+\DoxyCodeLine{88     u8 eventRecordBool;     \textcolor{comment}{/* event recorded if 1 */}}
+\DoxyCodeLine{89     u8 eventRecordTag;      \textcolor{comment}{/* event tag=0(1st bit of encoding event) */}}
+\DoxyCodeLine{90     \textcolor{comment}{/* second record : countrate record */}}
+\DoxyCodeLine{91     u8 countRateRecordBool; \textcolor{comment}{/* countrate recorded if 1 */}}
+\DoxyCodeLine{92     u8 countRateRecordTag;  \textcolor{comment}{/* countrate tag = 1000 (4 bits) */}}
+\DoxyCodeLine{93     \textcolor{comment}{/* third record : Gate Digi record */}}
+\DoxyCodeLine{94     u8 gateDigiRecordBool;  \textcolor{comment}{/* Gate single digi recorded if 1 */}}
+\DoxyCodeLine{95     u8 gateDigiRecordTag;   \textcolor{comment}{/* countrate tag = 1100 (4 bits) */}}
+\DoxyCodeLine{96     \textcolor{comment}{/* + eventually other records  */}}
+\DoxyCodeLine{97   \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{comment}{/* 1.D This structure contains these 3 last structures */}}
+\DoxyCodeLine{100   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__encodingHeader}{LMF\_ccs\_encodingHeader}} \{}
+\DoxyCodeLine{101     u8 scanEncodingIDLength;}
+\DoxyCodeLine{102     \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__scanEncodingID}{LMF\_ccs\_scanEncodingID}} scanEncodingID; \textcolor{comment}{/*rrrssssmmmcccccl = 1110000111000001 */}}
+\DoxyCodeLine{103     \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__scannerTopology}{LMF\_ccs\_scannerTopology}} scannerTopology;  \textcolor{comment}{/* scanner Design */}}
+\DoxyCodeLine{104     \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__scanContent}{LMF\_ccs\_scanContent}} scanContent;  \textcolor{comment}{/* definition of the records */}}
+\DoxyCodeLine{105   \};}
+\DoxyCodeLine{106   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__encodingHeader}{LMF\_ccs\_encodingHeader}} \mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{/* 1.E  This structure gives what's in the event record for building}}
+\DoxyCodeLine{109 \textcolor{comment}{   the event encoding pattern */}}
+\DoxyCodeLine{110   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__eventHeader}{LMF\_ccs\_eventHeader}} \{}
+\DoxyCodeLine{111     u8 coincidenceBool;     \textcolor{comment}{/* Coincidence if 1, singles if 0 */}}
+\DoxyCodeLine{112     u8 detectorIDBool;      \textcolor{comment}{/* detector ID recorded if 1, not recorded if 0 */}}
+\DoxyCodeLine{113     u8 energyBool;      \textcolor{comment}{/* energy recorded if 1 */}}
+\DoxyCodeLine{114     u8 neighbourBool;       \textcolor{comment}{/* energy of neighbours recorded if 1 */}}
+\DoxyCodeLine{115     u8 neighbourhoodOrder;  \textcolor{comment}{/* 0, 1, 2 , or 3 (cf fig. 1) */}}
+\DoxyCodeLine{116     u8 numberOfNeighbours;  \textcolor{comment}{/*Number of neighbours */}}
+\DoxyCodeLine{117     u8 gantryAxialPosBool;  \textcolor{comment}{/* gantry's axial position */}}
+\DoxyCodeLine{118     u8 gantryAngularPosBool;    \textcolor{comment}{/* gantry's angular position */}}
+\DoxyCodeLine{119     u8 sourcePosBool;       \textcolor{comment}{/* source's position */}}
+\DoxyCodeLine{120     u8 gateDigiBool;        \textcolor{comment}{/* gate Digi event record extension */}}
+\DoxyCodeLine{121     u8 fpgaNeighBool;       \textcolor{comment}{/* store FPGA of juelich NEIGHBOUR info */}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \};}
+\DoxyCodeLine{124   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__eventHeader}{LMF\_ccs\_eventHeader}} \mbox{\hyperlink{structLMF__ccs__eventHeader}{EVENT\_HEADER}};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{/* 1.F  This structure gives what's in the countrate record for building}}
+\DoxyCodeLine{127 \textcolor{comment}{   the countrate encoding pattern */}}
+\DoxyCodeLine{128   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__countRateHeader}{LMF\_ccs\_countRateHeader}} \{}
+\DoxyCodeLine{129     u8 singleRateBool;      \textcolor{comment}{/* singles countrate recorded if =1 */}}
+\DoxyCodeLine{130     u8 singleRatePart;      \textcolor{comment}{/* Ring (1), sector(2), module(3) or total (0) */}}
+\DoxyCodeLine{131     u8 totalCoincidenceBool;    \textcolor{comment}{/* total coincidence recorded if =1 */}}
+\DoxyCodeLine{132     u8 totalRandomBool;     \textcolor{comment}{/* total random rate recorded if =1 */}}
+\DoxyCodeLine{133     u8 angularSpeedBool;    \textcolor{comment}{/* angular speed recorded if =1 */}}
+\DoxyCodeLine{134     u8 axialSpeedBool;      \textcolor{comment}{/* axial speed recorded if =1 */}}
+\DoxyCodeLine{135   \};}
+\DoxyCodeLine{136   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__countRateHeader}{LMF\_ccs\_countRateHeader}} \mbox{\hyperlink{structLMF__ccs__countRateHeader}{COUNT\_RATE\_HEADER}};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{/* 1.G  This structure gives what's in the gate digi record for building}}
+\DoxyCodeLine{140 \textcolor{comment}{   the gate digi encoding pattern :  TTTT CSpe rGRR RRRR}}
+\DoxyCodeLine{141 \textcolor{comment}{TTTT = 1100 }}
+\DoxyCodeLine{142 \textcolor{comment}{}}
+\DoxyCodeLine{143 \textcolor{comment}{C = 1 if number of compton stored}}
+\DoxyCodeLine{144 \textcolor{comment}{p = 1 if Source decay XYZ pos stored}}
+\DoxyCodeLine{145 \textcolor{comment}{S = 1 if source ID stored}}
+\DoxyCodeLine{146 \textcolor{comment}{e = 1 if eventID stored}}
+\DoxyCodeLine{147 \textcolor{comment}{r = 1 if runID stored}}
+\DoxyCodeLine{148 \textcolor{comment}{G = 1 if global dig XYZ pos stored}}
+\DoxyCodeLine{149 \textcolor{comment}{R = 0 reserved bit}}
+\DoxyCodeLine{150 \textcolor{comment}{}}
+\DoxyCodeLine{151 \textcolor{comment}{Time always stored}}
+\DoxyCodeLine{152 \textcolor{comment}{*/}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__gateDigiHeader}{LMF\_ccs\_gateDigiHeader}} \{}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     u8 comptonBool;     \textcolor{comment}{/* C number of compton */}}
+\DoxyCodeLine{157     u8 comptonDetectorBool; \textcolor{comment}{/* D number of compton in detector */}}
+\DoxyCodeLine{158     u8 sourceIDBool;        \textcolor{comment}{/* s */}}
+\DoxyCodeLine{159     u8 sourceXYZPosBool;    \textcolor{comment}{/* S */}}
+\DoxyCodeLine{160     u8 eventIDBool;     \textcolor{comment}{/* e */}}
+\DoxyCodeLine{161     u8 runIDBool;       \textcolor{comment}{/* r */}}
+\DoxyCodeLine{162     u8 globalXYZPosBool;    \textcolor{comment}{/* G global xyz pos */}}
+\DoxyCodeLine{163     u8 multipleIDBool;      \textcolor{comment}{/* M multiple ID */}}
+\DoxyCodeLine{164   \};}
+\DoxyCodeLine{165   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__gateDigiHeader}{LMF\_ccs\_gateDigiHeader}} \mbox{\hyperlink{structLMF__ccs__gateDigiHeader}{GATE\_DIGI\_HEADER}};}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{comment}{/* + eventually other record's structures */}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{comment}{/* 1.E This structure contain what s carrid in the Carrier */}}
+\DoxyCodeLine{171   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__currentContent}{LMF\_ccs\_currentContent}} \{}
+\DoxyCodeLine{172     u8 typeOfCarrier;       \textcolor{comment}{/* = tag of event or countrate or gate digi */}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174   \};}
+\DoxyCodeLine{175   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__currentContent}{LMF\_ccs\_currentContent}} \mbox{\hyperlink{structLMF__ccs__currentContent}{CURRENT\_CONTENT}};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178                                           \textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}\textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__XYZpos}{LMF\_ccs\_XYZpos}} \{}
+\DoxyCodeLine{183     i16 X;}
+\DoxyCodeLine{184     i16 Y;}
+\DoxyCodeLine{185     i16 Z;}
+\DoxyCodeLine{186   \};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__gateDigiRecord}{LMF\_ccs\_gateDigiRecord}} \{}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     u32 runID;          \textcolor{comment}{/* 4 bytes */}}
+\DoxyCodeLine{191     u32 eventID[2];     \textcolor{comment}{/* 4 bytes */}}
+\DoxyCodeLine{192     u16 sourceID[2];}
+\DoxyCodeLine{193     \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__XYZpos}{LMF\_ccs\_XYZpos}} sourcePos[2];}
+\DoxyCodeLine{194     \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__XYZpos}{LMF\_ccs\_XYZpos}} globalPos[42];}
+\DoxyCodeLine{195     u8 numberCompton[2];}
+\DoxyCodeLine{196     u8 numberDetectorCompton[2];}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     u32 multipleID;     \textcolor{comment}{// 0 if singles or non multiple coincidence, multiple ID else}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201   \};}
+\DoxyCodeLine{202   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__gateDigiRecord}{LMF\_ccs\_gateDigiRecord}} \mbox{\hyperlink{structLMF__ccs__gateDigiRecord}{GATE\_DIGI\_RECORD}};}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{comment}{/* 2.A This structure can contain 1 event */}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__eventRecord}{LMF\_ccs\_eventRecord}} \{}
+\DoxyCodeLine{208     u8 timeStamp[8];        \textcolor{comment}{/*   time stamp on 63 bits for singles, 23 for coincidence */}}
+\DoxyCodeLine{209     u8 timeOfFlight;        \textcolor{comment}{/*  time of flight on 8 bits */}}
+\DoxyCodeLine{210     u64 *crystalIDs;        \textcolor{comment}{/* crystal's ID (1st \& 2nd and neighbours), 16 bits each */}}
+\DoxyCodeLine{211     u8 *energy;         \textcolor{comment}{/* energy in each crystal, 8 bits each */}}
+\DoxyCodeLine{212     u16 gantryAxialPos;     \textcolor{comment}{/* gantry's axial position, 16 bits */}}
+\DoxyCodeLine{213     u16 gantryAngularPos;   \textcolor{comment}{/* gantry's angular position, 16 bits */}}
+\DoxyCodeLine{214     u16 sourceAngularPos;   \textcolor{comment}{/* external source's angular position, 16 bits */}}
+\DoxyCodeLine{215     u16 sourceAxialPos;     \textcolor{comment}{/* external source's axial position, 16 bits */}}
+\DoxyCodeLine{216     u8 fpgaNeighInfo[2];    \textcolor{comment}{/* store fpga neighbour information */}}
+\DoxyCodeLine{217     \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__gateDigiRecord}{LMF\_ccs\_gateDigiRecord}} *pGDR;  \textcolor{comment}{/* extension of event record to accept GATE simul. infos */}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219   \};}
+\DoxyCodeLine{220   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__eventRecord}{LMF\_ccs\_eventRecord}} \mbox{\hyperlink{structLMF__ccs__eventRecord}{EVENT\_RECORD}};}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223                                           \textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}\textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{comment}{/* 3.A This  structure can contain 1 countrate */}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227   \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__countRateRecord}{LMF\_ccs\_countRateRecord}} \{}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229     u8 timeStamp[4];        \textcolor{comment}{/* time stamp */}}
+\DoxyCodeLine{230     u16 totalSingleRate[2]; \textcolor{comment}{/* total single rate */}}
+\DoxyCodeLine{231     u16 *pRsectorRate;      \textcolor{comment}{/* rsector's rate pointer */}}
+\DoxyCodeLine{232     u16 *pModuleRate;       \textcolor{comment}{/* module's rate */}}
+\DoxyCodeLine{233     u16 *pSubmoduleRate;    \textcolor{comment}{/* submodule's rate */}}
+\DoxyCodeLine{234     u16 coincidenceRate;    \textcolor{comment}{/* coincidence rate */}}
+\DoxyCodeLine{235     u16 randomRate;     \textcolor{comment}{/* random rate */}}
+\DoxyCodeLine{236     u8 angularSpeed;        \textcolor{comment}{/* rotation gantry's speed */}}
+\DoxyCodeLine{237     u8 axialSpeed;      \textcolor{comment}{/* axial speed's gantry */}}
+\DoxyCodeLine{238   \};}
+\DoxyCodeLine{239   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structLMF__ccs__countRateRecord}{LMF\_ccs\_countRateRecord}} \mbox{\hyperlink{structLMF__ccs__countRateRecord}{COUNT\_RATE\_RECORD}};}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{comment}{/* This structure contains clock counts versus angular and axial positions of the gantry */}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{244     u32 counts;}
+\DoxyCodeLine{245     u16 angularPos;}
+\DoxyCodeLine{246     u16 axialPos;}
+\DoxyCodeLine{247   \} \mbox{\hyperlink{structgantryEVENT}{gantryEVENT}};}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{comment}{/* This union use a number as an u64 or as 8 times u8 */}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251   \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{252     u16 w16;}
+\DoxyCodeLine{253     u8 w8[2];}
+\DoxyCodeLine{254   \} \mbox{\hyperlink{unionu16vsu8}{u16vsu8}};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256   \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{257     u32 w32;}
+\DoxyCodeLine{258     u16 w16[2];}
+\DoxyCodeLine{259     u8 w8[4];}
+\DoxyCodeLine{260   \} \mbox{\hyperlink{unionu32vsu8}{u32vsu8}};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262   \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{263     u64 w64;}
+\DoxyCodeLine{264     u8 w8[8];}
+\DoxyCodeLine{265   \} \mbox{\hyperlink{unionu64vsu8}{u64vsu8}};}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267   \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{268     u64 w64;}
+\DoxyCodeLine{269     u32 w32[2];}
+\DoxyCodeLine{270   \} \mbox{\hyperlink{unionw64vsw32}{w64vsw32}};}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272   \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{273     u64 w64;}
+\DoxyCodeLine{274     u16 w16[4];}
+\DoxyCodeLine{275   \} \mbox{\hyperlink{unionu64vsu16}{u64vsu16}};}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277   \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{278     u32 u32Tab[2];}
+\DoxyCodeLine{279     u8 u8Tab[8];}
+\DoxyCodeLine{280   \} \mbox{\hyperlink{uniont32}{t32}};}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282   \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{283     \textcolor{keywordtype}{double} mean;}
+\DoxyCodeLine{284     \textcolor{keywordtype}{double} std;}
+\DoxyCodeLine{285   \} \mbox{\hyperlink{structmean__std}{mean\_std}};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{288 \textcolor{comment}{/*-\/=-\/=-\/=-\/       END       =-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{289 \textcolor{comment}{/*-\/=-\/=-\/=-\/=-\/=-\/=-\/==-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=*/}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{293 \}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

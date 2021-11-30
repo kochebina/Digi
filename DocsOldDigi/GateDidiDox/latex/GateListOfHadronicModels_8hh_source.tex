@@ -1,0 +1,71 @@
+\hypertarget{GateListOfHadronicModels_8hh_source}{}\doxysection{Gate\+List\+Of\+Hadronic\+Models.\+hh}
+\label{GateListOfHadronicModels_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateListOfHadronicModels.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateListOfHadronicModels.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateListOfHadronicModels}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATELISTOFHADMODEL\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATELISTOFHADMODEL\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4Material.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4MaterialTable.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4Element.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4ElementTable.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateListOfHadronicModels}{GateListOfHadronicModels}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateListOfHadronicModels}{GateListOfHadronicModels}}(G4String model);}
+\DoxyCodeLine{37   \mbox{\hyperlink{classGateListOfHadronicModels}{\string~GateListOfHadronicModels}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} SetEmin(\textcolor{keywordtype}{double} val, G4String opt = \textcolor{stringliteral}{"{}NoOption"{}});}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} SetEmax(\textcolor{keywordtype}{double} val, G4String opt = \textcolor{stringliteral}{"{}NoOption"{}});}
+\DoxyCodeLine{41   G4double GetEmin(G4String opt = \textcolor{stringliteral}{"{}NoOption"{}});}
+\DoxyCodeLine{42   G4double GetEmax(G4String opt = \textcolor{stringliteral}{"{}NoOption"{}});}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} ClearERange();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} Print(G4int level=1, G4String symbol = \textcolor{stringliteral}{"{}*"{}}, G4String symbol2 = \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} Print(G4String file,G4int level=1, G4String symbol = \textcolor{stringliteral}{"{}*"{}}, G4String symbol2 = \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   G4Material * GetMaterial(G4String materialName);}
+\DoxyCodeLine{49   G4Element * GetElement(G4String elementName);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   std::vector<G4String> GetTheListOfOptions() \{\textcolor{keywordflow}{return} theListOfOptions  ;\}}
+\DoxyCodeLine{52   std::vector<double> GetTheListOfEmin() \{\textcolor{keywordflow}{return} theListOfEmin  ;\}}
+\DoxyCodeLine{53   std::vector<double> GetTheListOfEmax() \{\textcolor{keywordflow}{return} theListOfEmax  ;\}}
+\DoxyCodeLine{54   G4String GetModelName()\{\textcolor{keywordflow}{return} modelName;\}}
+\DoxyCodeLine{55   }
+\DoxyCodeLine{56   \textcolor{keywordtype}{bool} IsEnergyRangeDefined() \{\textcolor{keywordflow}{if}(theListOfOptions.size()!=0) \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \textcolor{keywordflow}{return} \textcolor{keyword}{false};\}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{59   G4String modelName;}
+\DoxyCodeLine{60   std::vector<G4String> theListOfOptions;}
+\DoxyCodeLine{61   std::vector<double> theListOfEmin;}
+\DoxyCodeLine{62   std::vector<double> theListOfEmax;}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

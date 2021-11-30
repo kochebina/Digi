@@ -1,0 +1,193 @@
+\hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{}\doxysection{Gate\+Fixed\+Forced\+Detection\+Functor\+::VAccumulation Class Reference}
+\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation}\index{GateFixedForcedDetectionFunctor::VAccumulation@{GateFixedForcedDetectionFunctor::VAccumulation}}
+Inheritance diagram for Gate\+Fixed\+Forced\+Detection\+Functor\+::VAccumulation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.530806cm]{classGateFixedForcedDetectionFunctor_1_1VAccumulation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aa457a17d483998c335bb7a508f95ac55}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aa457a17d483998c335bb7a508f95ac55}} 
+typedef itk\+::\+Vector$<$ double, Dimension $>$ {\bfseries Vector\+Type}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_acf97987511d1137b0420660c436d7a3f}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_acf97987511d1137b0420660c436d7a3f}} 
+typedef float {\bfseries Input\+Pixel\+Type}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_abfe7af03ff3cf7c1fc7131cf3427fc99}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_abfe7af03ff3cf7c1fc7131cf3427fc99}} 
+typedef itk\+::\+Image$<$ Input\+Pixel\+Type, Dimension $>$ {\bfseries Input\+Image\+Type}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a31945c0f28dd43d85faf77a0a3c4f884}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a31945c0f28dd43d85faf77a0a3c4f884}} 
+typedef itk\+::\+Image$<$ double, 2 $>$ {\bfseries Material\+Mu\+Image\+Type}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aa0ec9524e2912bf513597a0824d77ed1}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aa0ec9524e2912bf513597a0824d77ed1}} 
+typedef itk\+::\+Image$<$ double, 2 $>$ {\bfseries Material\+Delta\+Image\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a31389af73e1bf370532d32b2c14b8732}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a31389af73e1bf370532d32b2c14b8732}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}} \&) const
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a3f9afb98dfaa2c25a500a70575834b05}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a3f9afb98dfaa2c25a500a70575834b05}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}} \&other) const
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae2124016e0b0826a5ed4dd152246a1ae}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae2124016e0b0826a5ed4dd152246a1ae}} 
+void {\bfseries Set\+Volume\+Spacing} (const Vector\+Type \&\+\_\+arg)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aeb996a019f556010051c6930319080a0}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aeb996a019f556010051c6930319080a0}} 
+void {\bfseries Set\+Interpolation\+Weights} (std\+::vector$<$ double $>$ $\ast$\+\_\+arg)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae810bdb0c7000b64547f8817a9e54502}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae810bdb0c7000b64547f8817a9e54502}} 
+void {\bfseries Set\+Energy\+Weight\+List} (std\+::vector$<$ double $>$ $\ast$\+\_\+arg)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aea57151ece10dba06bba15fe746d481d}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aea57151ece10dba06bba15fe746d481d}} 
+void {\bfseries Set\+Mu\+To\+Delta\+Image\+Offset} (const std\+::ptrdiff\+\_\+t o)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac3e76b4289a1ae7b02a6424c1e0367d6}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac3e76b4289a1ae7b02a6424c1e0367d6}} 
+void {\bfseries Init} (unsigned int nthreads)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a0d123e223758d0181b0fa9f6142ec157}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a0d123e223758d0181b0fa9f6142ec157}} 
+void {\bfseries Set\+Solid\+Angle\+Parameters} (const Input\+Image\+Type\+::\+Pointer proj, const Vector\+Type \&u, const Vector\+Type \&v)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aea9b02a55f710129fd6b230501a70ff1}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aea9b02a55f710129fd6b230501a70ff1}} 
+double {\bfseries Get\+Solid\+Angle} (const Vector\+Type \&source\+To\+Pixel\+In\+Vox) const
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a417a4b1a49e0a36aa7369bf0c0218a09}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a417a4b1a49e0a36aa7369bf0c0218a09}} 
+Material\+Mu\+Image\+Type $\ast$ {\bfseries Get\+Material\+Mu} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a104b83cee47c8cb029a7b4da5803d248}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a104b83cee47c8cb029a7b4da5803d248}} 
+Material\+Delta\+Image\+Type $\ast$ {\bfseries Get\+Material\+Delta} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a5614b7963f419d05072e717948ad41ec}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a5614b7963f419d05072e717948ad41ec}} 
+void {\bfseries Create\+Material\+Mu\+Map} (G4\+Em\+Calculator $\ast$em\+Calculator, const double energy\+Spacing, const double energy\+Max, \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} $\ast$gate\+Image\+Volume)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae1b4d11f7643e8051c4423121f18cc71}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae1b4d11f7643e8051c4423121f18cc71}} 
+void {\bfseries Create\+Material\+Mu\+Map} (G4\+Em\+Calculator $\ast$em\+Calculator, const std\+::vector$<$ double $>$ \&energy\+List, \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} $\ast$gate\+Image\+Volume)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aba0390947f01daa62e398cc140da2264}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aba0390947f01daa62e398cc140da2264}} 
+void {\bfseries Create\+Material\+Delta\+Map} (const double energy\+Spacing, const double energy\+Max, \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} $\ast$gate\+Image\+Volume)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac453ec3773f3ea4642b698609067f534}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac453ec3773f3ea4642b698609067f534}} 
+void {\bfseries Create\+Material\+Delta\+Map} (const std\+::vector$<$ double $>$ \&energy\+List, \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} $\ast$gate\+Image\+Volume)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac56b4667a3fa156628b63e2f6f51a31a}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac56b4667a3fa156628b63e2f6f51a31a}} 
+Material\+Mu\+Image\+Type\+::\+Pointer {\bfseries Get\+Material\+Mu\+Map} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ad3900a3d0d57b8f37b56abbcda652c52}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ad3900a3d0d57b8f37b56abbcda652c52}} 
+Material\+Delta\+Image\+Type\+::\+Pointer {\bfseries Get\+Material\+Delta\+Map} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a57517ad53e14ef73e99e3acccc195f65}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a57517ad53e14ef73e99e3acccc195f65}} 
+double {\bfseries Get\+Integral\+Over\+Detector\+And\+Reset} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a7eaaea0733b9719f26796881128d39ad}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a7eaaea0733b9719f26796881128d39ad}} 
+double {\bfseries Get\+Squared\+Integral\+Over\+Detector\+And\+Reset} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a77421ac9d850faf818a8945715aebc56}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a77421ac9d850faf818a8945715aebc56}} 
+void {\bfseries Set\+Number\+Of\+Primaries} (G4int i)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a0e0afeb08387a1232d40e2167e951b67}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a0e0afeb08387a1232d40e2167e951b67}} 
+void {\bfseries Set\+Response\+Detector} (\mbox{\hyperlink{classGateEnergyResponseFunctor}{Gate\+Energy\+Response\+Functor}} $\ast$\+\_\+arg)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a05164189be566c2ad3c873106971d927}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a05164189be566c2ad3c873106971d927}} 
+void {\bfseries Set\+Energy\+Resolved\+Parameters} (const double bin, const unsigned int slice)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_abe592667ced3e0985103df304f1537c3}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_abe592667ced3e0985103df304f1537c3}} 
+void {\bfseries Prepare\+Photons\+List} (const unsigned int \&number\+Of\+Threads)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a316e36bcc69e9962f902e6491cbf27ff}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a316e36bcc69e9962f902e6491cbf27ff}} 
+std\+::vector$<$ \mbox{\hyperlink{structnewPhoton}{new\+Photon}} $>$ {\bfseries Get\+Photon\+List\+Per\+Thread} (const unsigned int \&thread)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a56861bae408e7d0cf301bcedc0c97a62}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a56861bae408e7d0cf301bcedc0c97a62}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structnewPhoton}{new\+Photon}} $>$ $>$ {\bfseries Get\+Photon\+List} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a46239087c821256a9bb5a36a542084fc}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a46239087c821256a9bb5a36a542084fc}} 
+void {\bfseries Clear\+Photon\+List\+Per\+Thread} (const unsigned int \&thread)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae649ba9fd6267db8ebca5b25ce4b3392}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae649ba9fd6267db8ebca5b25ce4b3392}} 
+void {\bfseries Clear\+Photon\+List} ()
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a209c704539be274c557de70d4305432c}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a209c704539be274c557de70d4305432c}} 
+void {\bfseries Save\+Photonsparameters} (const rtk\+::\+Thread\+Id\+Type thread\+Id, const Vector\+Type \&photon\+Position, const Vector\+Type \&photon\+Direction, const double \&weight, const double \&energy)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a083e664163e4d9b4981cf9212fbd2730}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a083e664163e4d9b4981cf9212fbd2730}} 
+void {\bfseries set\+Generate\+Photons} (const bool \&boolean)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac1e0df8bae5c63fcc578c4f2f92ac6fb}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac1e0df8bae5c63fcc578c4f2f92ac6fb}} 
+void {\bfseries set\+Generate\+ARF} (const bool \&boolean)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a0704b7136d1c2d23bec8b00c03a23f6e}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a0704b7136d1c2d23bec8b00c03a23f6e}} 
+static const unsigned int {\bfseries Dimension} = 3
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a5ab46de473e9fe4870748c27abc02126}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a5ab46de473e9fe4870748c27abc02126}} 
+void {\bfseries Accumulate} (const rtk\+::\+Thread\+Id\+Type thread\+Id, float \&output, const double value\+To\+Accumulate, const double energy)
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aca747d00b2322212b2b5eeeed443cc48}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aca747d00b2322212b2b5eeeed443cc48}} 
+void {\bfseries Accumulate\+Phase} (float \&output, const double value\+To\+Accumulate, const double energy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a7467e14269607a0f9244a01a48953a47}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a7467e14269607a0f9244a01a48953a47}} 
+Vector\+Type {\bfseries m\+\_\+\+Volume\+Spacing}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_af3ddab2d02b9d218aebe805b11be4368}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_af3ddab2d02b9d218aebe805b11be4368}} 
+std\+::vector$<$ double $>$ $\ast$ {\bfseries m\+\_\+\+Interpolation\+Weights}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_afcde08dab98837fd45cd998154b5ad92}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_afcde08dab98837fd45cd998154b5ad92}} 
+std\+::vector$<$ double $>$ $\ast$ {\bfseries m\+\_\+\+Energy\+Weight\+List}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_acbe218987ffef61124e6bb96a0047005}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_acbe218987ffef61124e6bb96a0047005}} 
+Material\+Mu\+Image\+Type\+::\+Pointer {\bfseries m\+\_\+\+Material\+Mu}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac94d5f120a1b007160e9ef4d7f869107}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ac94d5f120a1b007160e9ef4d7f869107}} 
+Material\+Delta\+Image\+Type\+::\+Pointer {\bfseries m\+\_\+\+Material\+Delta}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae53c40fa06166ae49b5096067cc3aa2f}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ae53c40fa06166ae49b5096067cc3aa2f}} 
+Vector\+Type {\bfseries m\+\_\+\+Detector\+Orientation\+Times\+Pixel\+Surface}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a5f8bf056e06c5c3c0e868cb6af764140}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a5f8bf056e06c5c3c0e868cb6af764140}} 
+double {\bfseries m\+\_\+\+Integral\+Over\+Detector} \mbox{[}ITK\+\_\+\+MAX\+\_\+\+THREADS\mbox{]}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aa8efde3a1e61ade17cf7e8702fed2988}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aa8efde3a1e61ade17cf7e8702fed2988}} 
+double {\bfseries m\+\_\+\+Squared\+Integral\+Over\+Detector} \mbox{[}ITK\+\_\+\+MAX\+\_\+\+THREADS\mbox{]}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a1b56486030ff77c24100b96fb8a3f8eb}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a1b56486030ff77c24100b96fb8a3f8eb}} 
+G4int {\bfseries m\+\_\+\+Number\+Of\+Primaries}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ab317e0bbaeb155bab075877fa73bf762}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_ab317e0bbaeb155bab075877fa73bf762}} 
+\mbox{\hyperlink{classGateEnergyResponseFunctor}{Gate\+Energy\+Response\+Functor}} $\ast$ {\bfseries m\+\_\+\+Response\+Detector}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_af3108e6835d8a90f048ab91dddf74172}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_af3108e6835d8a90f048ab91dddf74172}} 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+\+Energy\+List}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a53e31eaab78a489fb786edb471189cf1}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a53e31eaab78a489fb786edb471189cf1}} 
+std\+::ptrdiff\+\_\+t {\bfseries m\+\_\+\+Mu\+To\+Delta\+Image\+Offset}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a7e8f06741c4622bfb9d06c1d426944a9}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a7e8f06741c4622bfb9d06c1d426944a9}} 
+double {\bfseries m\+\_\+\+Energy\+Resolved\+Bin\+Size}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a4b99eb0fe67457b1d3caf8dcbb16658c}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a4b99eb0fe67457b1d3caf8dcbb16658c}} 
+unsigned int {\bfseries m\+\_\+\+Energy\+Resolved\+Slice\+Size}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_af619314530bfbba3e43de83929d96a58}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_af619314530bfbba3e43de83929d96a58}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structnewPhoton}{new\+Photon}} $>$ $>$ {\bfseries m\+\_\+\+Photon\+List}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a616e1022e9782960155a6c37241fdfc3}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_a616e1022e9782960155a6c37241fdfc3}} 
+bool {\bfseries m\+\_\+generate\+Photons}
+\item 
+\mbox{\Hypertarget{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aced7a4b784c0c891a1c1725b1d40dabb}\label{classGateFixedForcedDetectionFunctor_1_1VAccumulation_aced7a4b784c0c891a1c1725b1d40dabb}} 
+bool {\bfseries m\+\_\+\+ARF}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Fixed\+Forced\+Detection\+Functors.\+hh\end{DoxyCompactItemize}

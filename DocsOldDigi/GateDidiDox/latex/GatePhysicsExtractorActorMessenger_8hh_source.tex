@@ -1,0 +1,44 @@
+\hypertarget{GatePhysicsExtractorActorMessenger_8hh_source}{}\doxysection{Gate\+Physics\+Extractor\+Actor\+Messenger.\+hh}
+\label{GatePhysicsExtractorActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePhysicsExtractorActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePhysicsExtractorActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GATEPHYSICSEXTRACTORACTORMESSENGER\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GATEPHYSICSEXTRACTORACTORMESSENGER\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <G4UIcmdWithAString.hh>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <G4UIcmdWithADouble.hh>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <G4UIcmdWithADoubleAndUnit.hh>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhysicsExtractorActor}{GatePhysicsExtractorActor}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }GatePhysicsExtractorActorMessenger : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{keyword}{public}:}
+\DoxyCodeLine{19         GatePhysicsExtractorActorMessenger(\mbox{\hyperlink{classGatePhysicsExtractorActor}{GatePhysicsExtractorActor}}*);}
+\DoxyCodeLine{20         \string~GatePhysicsExtractorActorMessenger();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{23     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         G4UIcmdWithAString* pProcessNameCmd;}
+\DoxyCodeLine{27         G4UIcmdWithAString* pParticleNameCmd;}
+\DoxyCodeLine{28         G4UIcmdWithAString* pMaterialNameCmd;}
+\DoxyCodeLine{29         G4UIcmdWithADouble* pNbPtsCmd;}
+\DoxyCodeLine{30         G4UIcmdWithADoubleAndUnit* pEminCmd;}
+\DoxyCodeLine{31         G4UIcmdWithADoubleAndUnit* pEmaxCmd;}
+\DoxyCodeLine{32         G4UIcmdWithADoubleAndUnit* pEnergyCutCmd;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \mbox{\hyperlink{classGatePhysicsExtractorActor}{GatePhysicsExtractorActor}}* pActor;}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

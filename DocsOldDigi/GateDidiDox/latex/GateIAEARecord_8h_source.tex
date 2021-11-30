@@ -1,0 +1,72 @@
+\hypertarget{GateIAEARecord_8h_source}{}\doxysection{Gate\+IAEARecord.\+h}
+\label{GateIAEARecord_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEARecord.h@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEARecord.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef IAEA\_RECORD}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define IAEA\_RECORD}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GateIAEAUtilities.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GateIAEAConfig.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/* *********************************************************************** */}}
+\DoxyCodeLine{10 \textcolor{comment}{// defines}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// To use additional float or integers}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef NUM\_EXTRA\_FLOAT}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{  \#define NUM\_EXTRA\_FLOAT 10 }\textcolor{comment}{// Maximum 10 extra float stored}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef NUM\_EXTRA\_LONG}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{  \#define NUM\_EXTRA\_LONG  10 }\textcolor{comment}{// Maximum 10 extra long stored}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define MAX\_NUM\_PARTICLES 5 }\textcolor{comment}{// 1 photons }}
+\DoxyCodeLine{23                             \textcolor{comment}{// 2 electrons}}
+\DoxyCodeLine{24                             \textcolor{comment}{// 3 positrons}}
+\DoxyCodeLine{25                             \textcolor{comment}{// 4 neutrons}}
+\DoxyCodeLine{26                             \textcolor{comment}{// 5 protons}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define MAX\_NUM\_SOURCES 30}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define OK     0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define FAIL  -\/1}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/* *********************************************************************** */}}
+\DoxyCodeLine{33 \textcolor{comment}{// structures}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{struct }\mbox{\hyperlink{structiaea__record__type}{iaea\_record\_type}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   FILE *p\_file;   \textcolor{comment}{// phase space file pointer   }}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{short} particle; \textcolor{comment}{// mandatory       (photon:1 electron:2 positron:3 neutron:4 proton:5 ...)}}
+\DoxyCodeLine{40   }
+\DoxyCodeLine{41   \textcolor{keywordtype}{float}  energy;  \textcolor{comment}{// mandatory}}
+\DoxyCodeLine{42   }
+\DoxyCodeLine{43   IAEA\_I32 IsNewHistory; \textcolor{comment}{// coded as sign of energy }}
+\DoxyCodeLine{44                          \textcolor{comment}{//  Type changed from short to IAEA\_I32 to store EGS n\_stat}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{float} x;       \textcolor{keywordtype}{int} ix;       }
+\DoxyCodeLine{47   \textcolor{keywordtype}{float} y;       \textcolor{keywordtype}{int} iy;}
+\DoxyCodeLine{48   \textcolor{keywordtype}{float} z;       \textcolor{keywordtype}{int} iz;}
+\DoxyCodeLine{49   \textcolor{keywordtype}{float} u;       \textcolor{keywordtype}{int} iu;}
+\DoxyCodeLine{50   \textcolor{keywordtype}{float} v;       \textcolor{keywordtype}{int} iv;}
+\DoxyCodeLine{51   \textcolor{keywordtype}{float} w;       \textcolor{keywordtype}{int} iw;      \textcolor{comment}{// sign of w coded as sign of code}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{float} weight;  \textcolor{keywordtype}{int} iweight;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{short} iextrafloat; }
+\DoxyCodeLine{55   \textcolor{keywordtype}{short} iextralong;  }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{float} extrafloat[NUM\_EXTRA\_FLOAT];  \textcolor{comment}{// (default: no extra float stored)}}
+\DoxyCodeLine{58   IAEA\_I32 extralong[NUM\_EXTRA\_LONG];      \textcolor{comment}{// (default: one extra long stored)}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{public}:}
+\DoxyCodeLine{61       \textcolor{keywordtype}{short} read\_particle();}
+\DoxyCodeLine{62       \textcolor{keywordtype}{short} write\_particle();}
+\DoxyCodeLine{63       \textcolor{keywordtype}{short} initialize();}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

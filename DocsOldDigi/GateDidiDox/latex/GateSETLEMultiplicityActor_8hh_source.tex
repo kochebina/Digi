@@ -1,0 +1,128 @@
+\hypertarget{GateSETLEMultiplicityActor_8hh_source}{}\doxysection{Gate\+SETLEMultiplicity\+Actor.\+hh}
+\label{GateSETLEMultiplicityActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSETLEMultiplicityActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSETLEMultiplicityActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATESETLEMULTIPLICITYACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATESETLEMULTIPLICITYACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GatePhysicsList.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateMaterialMuHandler.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4VPhysicalVolume.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4Hybridino.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{struct }\mbox{\hyperlink{structRaycastingStruct}{RaycastingStruct}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32   \textcolor{keywordtype}{bool} isPrimary;}
+\DoxyCodeLine{33   \textcolor{keywordtype}{double} energy;}
+\DoxyCodeLine{34   \textcolor{keywordtype}{double} weight;}
+\DoxyCodeLine{35   }
+\DoxyCodeLine{36   G4ThreeVector position;}
+\DoxyCodeLine{37   G4ThreeVector momentum;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \mbox{\hyperlink{structRaycastingStruct}{RaycastingStruct}}(\textcolor{keywordtype}{bool} b, \textcolor{keywordtype}{double} e, \textcolor{keywordtype}{double} w, G4ThreeVector p, G4ThreeVector m)}
+\DoxyCodeLine{40   \{}
+\DoxyCodeLine{41     isPrimary = b;}
+\DoxyCodeLine{42     energy = e;}
+\DoxyCodeLine{43     weight = w;}
+\DoxyCodeLine{44     position = p;}
+\DoxyCodeLine{45     momentum = m;}
+\DoxyCodeLine{46   \}}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{keyword}{public}: }
+\DoxyCodeLine{54    }
+\DoxyCodeLine{55   \textcolor{keyword}{static} \mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}} *GetInstance()}
+\DoxyCodeLine{56   \{   }
+\DoxyCodeLine{57     \textcolor{keywordflow}{if} (singleton\_SETLEMultiplicityActor == 0)}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59       \textcolor{comment}{//std::cout << "{}creating GateActorManager...\(\backslash\)n"{};}}
+\DoxyCodeLine{60       singleton\_SETLEMultiplicityActor = \textcolor{keyword}{new} \mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}}(\textcolor{stringliteral}{"{}seTLEMultiplicityActor"{}},0);}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     \textcolor{comment}{//else std::cout << "{}GateActorManager already created!\(\backslash\)n"{};}}
+\DoxyCodeLine{63     \textcolor{keywordflow}{return} singleton\_SETLEMultiplicityActor;}
+\DoxyCodeLine{64   \};}
+\DoxyCodeLine{65   }
+\DoxyCodeLine{66   \mbox{\hyperlink{classGateSETLEMultiplicityActor_a81f49f4cdf0bc0f3e09d476529004aca}{\string~GateSETLEMultiplicityActor}}();}
+\DoxyCodeLine{67     }
+\DoxyCodeLine{68   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{69   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{70   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}})}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{73   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEMultiplicityActor_acbd5f4d93adcce8ed0bf1e69ee13ad04}{Construct}}();}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step *);  }
+\DoxyCodeLine{79   }
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} SetPrimaryMultiplicity(\textcolor{keywordtype}{int} m) \{ mDefaultPrimaryMultiplicity = m; \}}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} SetSecondaryMultiplicity(\textcolor{keywordtype}{int} m) \{ mDefaultSecondaryMultiplicity = m; \}}
+\DoxyCodeLine{82   \textcolor{keywordtype}{int} GetPrimaryMultiplicity() \{ \textcolor{keywordflow}{return} mDefaultPrimaryMultiplicity; \}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{int} GetSecondaryMultiplicity() \{ \textcolor{keywordflow}{return} mDefaultSecondaryMultiplicity; \}  }
+\DoxyCodeLine{84   }
+\DoxyCodeLine{85   G4double GetHybridTrackWeight() \{ \textcolor{keywordflow}{return} mCurrentHybridTrackWeight; \}}
+\DoxyCodeLine{86   \textcolor{keywordtype}{void} SetHybridTrackWeight(G4double w) \{ mCurrentHybridTrackWeight = w; \};}
+\DoxyCodeLine{87   }
+\DoxyCodeLine{88   std::vector<RaycastingStruct> *GetRaycastingList() \{ \textcolor{keywordflow}{return} \&mListOfRaycasting; \}}
+\DoxyCodeLine{89   }
+\DoxyCodeLine{90   \textcolor{keywordtype}{void} SetMultiplicity(\textcolor{keywordtype}{bool}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, G4VPhysicalVolume *);}
+\DoxyCodeLine{91   }
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEMultiplicityActor_a99efadf97075e87ebca3169f55f065c2}{SaveData}}();}
+\DoxyCodeLine{94   \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{95   }
+\DoxyCodeLine{96 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   \mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{comment}{// secondary multiplicity can be different in each volume}}
+\DoxyCodeLine{101   \textcolor{keywordtype}{bool} mIsHybridinoEnabled;}
+\DoxyCodeLine{102   \textcolor{keywordtype}{int} mDefaultPrimaryMultiplicity;}
+\DoxyCodeLine{103   \textcolor{keywordtype}{int} mDefaultSecondaryMultiplicity;}
+\DoxyCodeLine{104   std::map<G4VPhysicalVolume *,int> mSecondaryMultiplicityMap;}
+\DoxyCodeLine{105   G4ParticleDefinition *mHybridino;}
+\DoxyCodeLine{106   }
+\DoxyCodeLine{107   \mbox{\hyperlink{classGateMaterialMuHandler}{GateMaterialMuHandler}}* mMaterialHandler;}
+\DoxyCodeLine{108   G4ProcessVector *mProcessListForGamma;}
+\DoxyCodeLine{109       }
+\DoxyCodeLine{110   \textcolor{comment}{// store the track and the associated hybridWeight}}
+\DoxyCodeLine{111   \textcolor{comment}{// -\/ with hybridino}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{int} mCurrentTrackIndex;}
+\DoxyCodeLine{113   G4double mCurrentHybridTrackWeight;  }
+\DoxyCodeLine{114   std::vector<G4Track *> mListOfHybridTrack;}
+\DoxyCodeLine{115   std::vector<G4double> mListOfHybridWeight;}
+\DoxyCodeLine{116   \textcolor{comment}{// -\/ without hybridino}}
+\DoxyCodeLine{117   std::vector<RaycastingStruct> mListOfRaycasting;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{private}:}
+\DoxyCodeLine{120   \mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}}();}
+\DoxyCodeLine{121   \textcolor{keyword}{static} \mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}} *singleton\_SETLEMultiplicityActor;}
+\DoxyCodeLine{122 \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 MAKE\_AUTO\_CREATOR\_ACTOR(SETLEMultiplicityActor,\mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}})}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESHYBRIDMULTIPLICITYACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{128 }
+
+\end{DoxyCode}

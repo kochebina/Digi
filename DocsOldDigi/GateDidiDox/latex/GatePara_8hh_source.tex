@@ -1,0 +1,91 @@
+\hypertarget{GatePara_8hh_source}{}\doxysection{Gate\+Para.\+hh}
+\label{GatePara_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GatePara.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GatePara.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GatePara.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATEPARA\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATEPARA\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4Para;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParaMessenger}{GateParaMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePara}{GatePara}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGatePara_a68926791691e4108de7a74aeb0f4f3c4}{GatePara}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{25                  G4int depth=0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGatePara_a68926791691e4108de7a74aeb0f4f3c4}{GatePara}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{28                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                  G4double itsXLength,}
+\DoxyCodeLine{30                  G4double itsYLength,}
+\DoxyCodeLine{31                  G4double itsZLength,}
+\DoxyCodeLine{32                  G4double itsAlpha,}
+\DoxyCodeLine{33                  G4double itsTheta,}
+\DoxyCodeLine{34                  G4double itsPhi,}
+\DoxyCodeLine{35                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{36                  G4int depth=0);}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePara_a45af5dab2aa0a378e607ed47958378d3}{\string~GatePara}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGatePara}{GatePara}})}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGatePara_a395359890429a7f4d1d0acead4c0c5c8}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePara_a9066192c195045f597a6e908378f7810}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGatePara_a71a01af1ec6f5d38cc63dedd5fce32f4}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} m\_length[axis]/2.0;}
+\DoxyCodeLine{55   \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{59   G4double \mbox{\hyperlink{classGatePara_aeadcbb7dfb1724bf8197d0abe3aff1b2}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{inline} G4double GetParaXLength()  \{ \textcolor{keywordflow}{return} m\_length.x(); \}}
+\DoxyCodeLine{64   \textcolor{keyword}{inline} G4double GetParaYLength()  \{ \textcolor{keywordflow}{return} m\_length.y(); \}}
+\DoxyCodeLine{65   \textcolor{keyword}{inline} G4double GetParaZLength()  \{ \textcolor{keywordflow}{return} m\_length.z(); \}}
+\DoxyCodeLine{66   \textcolor{keyword}{inline} G4double GetParaAlpha()    \{ \textcolor{keywordflow}{return} m\_alpha; \}}
+\DoxyCodeLine{67   \textcolor{keyword}{inline} G4double GetParaTheta()    \{ \textcolor{keywordflow}{return} m\_theta; \}}
+\DoxyCodeLine{68   \textcolor{keyword}{inline} G4double GetParaPhi()      \{ \textcolor{keywordflow}{return} m\_phi; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} SetParaXLength(G4double val) \{ m\_length.setX(val); \}}
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} SetParaYLength(G4double val) \{ m\_length.setY(val); \}}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} SetParaZLength(G4double val) \{ m\_length.setZ(val); \}}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetParaAlpha(G4double val)   \{ m\_alpha = val; \}}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} SetParaTheta(G4double val)   \{ m\_theta = val; \}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} SetParaPhi(G4double val)     \{ m\_phi = val; \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{private}:}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   G4Para*          m\_para\_solid;            }
+\DoxyCodeLine{83   G4LogicalVolume*   m\_para\_log;                }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   G4ThreeVector m\_length;   }
+\DoxyCodeLine{89   G4double m\_alpha;     }
+\DoxyCodeLine{90   G4double m\_theta;     }
+\DoxyCodeLine{91   G4double m\_phi;       }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95   \mbox{\hyperlink{classGateParaMessenger}{GateParaMessenger}}* m\_Messenger;}
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 MAKE\_AUTO\_CREATOR\_VOLUME(para,\mbox{\hyperlink{classGatePara}{GatePara}})}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEPARA\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

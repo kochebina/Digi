@@ -1,0 +1,50 @@
+\hypertarget{GateOpticalAdder_8hh_source}{}\doxysection{Gate\+Optical\+Adder.\+hh}
+\label{GateOpticalAdder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateOpticalAdder.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateOpticalAdder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef GateOpticalAdder\_h}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define GateOpticalAdder\_h 1}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }GateOpticalAdderMessenger;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }GateOpticalAdder : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35   \textcolor{keyword}{public}:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38     GateOpticalAdder(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \string~GateOpticalAdder();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{private}:}
+\DoxyCodeLine{55     GateOpticalAdderMessenger *m\_messenger;     }
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

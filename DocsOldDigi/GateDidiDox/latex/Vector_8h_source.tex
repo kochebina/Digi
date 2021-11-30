@@ -1,0 +1,213 @@
+\hypertarget{Vector_8h_source}{}\doxysection{Vector.\+h}
+\label{Vector_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/Vector.h@{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/Vector.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// -\/*-\/ C++ -\/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{// CLASSDOC OFF}}
+\DoxyCodeLine{3 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// CLASSDOC ON}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// This file is a part of the CLHEP -\/ a Class Library for High Energy Physics.}}
+\DoxyCodeLine{7 \textcolor{comment}{//}}
+\DoxyCodeLine{8 \textcolor{comment}{//   Although Vector and Matrix class are very much related, I like the typing}}
+\DoxyCodeLine{9 \textcolor{comment}{//   information I get by making them different types. It is usually an error}}
+\DoxyCodeLine{10 \textcolor{comment}{//   to use a Matrix where a Vector is expected, except in the case that the}}
+\DoxyCodeLine{11 \textcolor{comment}{//   Matrix is a single column.  But this case can be taken care of by using}}
+\DoxyCodeLine{12 \textcolor{comment}{//   constructors as conversions.  For this same reason, I don't want to make}}
+\DoxyCodeLine{13 \textcolor{comment}{//   a Vector a derived class of Matrix.}}
+\DoxyCodeLine{14 \textcolor{comment}{//}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef \_Vector\_H\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define \_Vector\_H\_}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifdef GNUPRAGMA}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma interface}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/defs.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/GenMatrix.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }CLHEP \{}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }HepRandom;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }HepMatrix;}
+\DoxyCodeLine{31 \textcolor{keyword}{class }HepSymMatrix;}
+\DoxyCodeLine{32 \textcolor{keyword}{class }HepDiagMatrix;}
+\DoxyCodeLine{33 \textcolor{keyword}{class }Hep3Vector;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}} \{}
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}();}
+\DoxyCodeLine{42    \textcolor{comment}{// Default constructor. Gives vector of length 0.}}
+\DoxyCodeLine{43    \textcolor{comment}{// Another Vector can be assigned to it.}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45    \textcolor{keyword}{explicit} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}(\textcolor{keywordtype}{int} p);}
+\DoxyCodeLine{46    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}(\textcolor{keywordtype}{int} p, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{47    \textcolor{comment}{// Constructor. Gives vector of length p.}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}(\textcolor{keywordtype}{int} p, HepRandom \&r);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v);}
+\DoxyCodeLine{52    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&m);}
+\DoxyCodeLine{53    \textcolor{comment}{// Copy constructors.}}
+\DoxyCodeLine{54    \textcolor{comment}{// Note that there is an assignment operator for v = Hep3Vector.}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56    \textcolor{keyword}{virtual} \mbox{\hyperlink{classCLHEP_1_1HepVector}{\string~HepVector}}();}
+\DoxyCodeLine{57    \textcolor{comment}{// Destructor.}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59    \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row) \textcolor{keyword}{const};}
+\DoxyCodeLine{60    \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row);}
+\DoxyCodeLine{61    \textcolor{comment}{// Read or write a matrix element. }}
+\DoxyCodeLine{62    \textcolor{comment}{// ** Note that the indexing starts from (1). **}}
+\DoxyCodeLine{63    }
+\DoxyCodeLine{64    \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int} row) \textcolor{keyword}{const};}
+\DoxyCodeLine{65    \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int} row);}
+\DoxyCodeLine{66    \textcolor{comment}{// Read and write an element of a Vector.}}
+\DoxyCodeLine{67    \textcolor{comment}{// ** Note that the indexing starts from [0]. **}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69    \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const};}
+\DoxyCodeLine{70    \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \& operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{71    \textcolor{comment}{// Read or write a matrix element. }}
+\DoxyCodeLine{72    \textcolor{comment}{// ** Note that the indexing starts from (1,1). **}}
+\DoxyCodeLine{73    \textcolor{comment}{// Allows accessing Vector using GenMatrix}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& operator*=(\textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{76    \textcolor{comment}{// Multiply a Vector by a floating number. }}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& operator/=(\textcolor{keywordtype}{double} t); }
+\DoxyCodeLine{79    \textcolor{comment}{// Divide a Vector by a floating number.}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& operator+=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&v2);}
+\DoxyCodeLine{82    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& operator+=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{83    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& operator-\/=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&v2);}
+\DoxyCodeLine{84    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& operator-\/=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{85    \textcolor{comment}{// Add or subtract a Vector.}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& operator=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm2);}
+\DoxyCodeLine{88    \textcolor{comment}{// Assignment operators.}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&);}
+\DoxyCodeLine{91    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}\& operator=(\textcolor{keyword}{const} Hep3Vector \&);}
+\DoxyCodeLine{92    \textcolor{comment}{// assignment operators from other classes.}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator-\/ () \textcolor{keyword}{const};}
+\DoxyCodeLine{95    \textcolor{comment}{// unary minus, ie. flip the sign of each element.}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} apply(\textcolor{keywordtype}{double} (*f)(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{int})) \textcolor{keyword}{const};}
+\DoxyCodeLine{98    \textcolor{comment}{// Apply a function to all elements.}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} sub(\textcolor{keywordtype}{int} min\_row, \textcolor{keywordtype}{int} max\_row) \textcolor{keyword}{const};}
+\DoxyCodeLine{101    \textcolor{comment}{// Returns a sub vector.}}
+\DoxyCodeLine{102    \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} sub(\textcolor{keywordtype}{int} min\_row, \textcolor{keywordtype}{int} max\_row);}
+\DoxyCodeLine{103    \textcolor{comment}{// SGI CC bug. I have to have both with/without const. I should not need}}
+\DoxyCodeLine{104    \textcolor{comment}{// one without const.}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106    \textcolor{keywordtype}{void} sub(\textcolor{keywordtype}{int} row, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1);}
+\DoxyCodeLine{107    \textcolor{comment}{// Replaces a sub vector of a Vector with v1.}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109    \textcolor{keyword}{inline} \textcolor{keywordtype}{double} normsq() \textcolor{keyword}{const};}
+\DoxyCodeLine{110    \textcolor{comment}{// Returns norm squared.}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112    \textcolor{keyword}{inline} \textcolor{keywordtype}{double} norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{113    \textcolor{comment}{// Returns norm.}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} num\_row() \textcolor{keyword}{const};}
+\DoxyCodeLine{116    \textcolor{comment}{// Returns number of rows.}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} num\_col() \textcolor{keyword}{const};}
+\DoxyCodeLine{119    \textcolor{comment}{// Number of columns. Always returns 1. Provided for compatibility with}}
+\DoxyCodeLine{120    \textcolor{comment}{// GenMatrix. }}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122    \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} T() \textcolor{keyword}{const};}
+\DoxyCodeLine{123    \textcolor{comment}{// Returns the transpose of a Vector. Note that the returning type is}}
+\DoxyCodeLine{124    \textcolor{comment}{// Matrix.}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126    \textcolor{keyword}{friend} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{127    \textcolor{comment}{// Swaps two vectors.}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{130    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} num\_size() \textcolor{keyword}{const};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{keyword}{private}:}
+\DoxyCodeLine{133    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} invert(\textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{134    \textcolor{comment}{// produces an error. Demanded by GenMatrix}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}};}
+\DoxyCodeLine{137    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}};}
+\DoxyCodeLine{138    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}};}
+\DoxyCodeLine{139    \textcolor{comment}{// friend classes}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141    \textcolor{keyword}{friend} \textcolor{keywordtype}{double} dot(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{142    \textcolor{comment}{// f = v1 * v2;}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{145    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{146    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm2);}
+\DoxyCodeLine{147    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm2);}
+\DoxyCodeLine{148    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{149    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm2);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} solve(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&a, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v);}
+\DoxyCodeLine{152    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} tridiagonal(\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} *a,\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *hsm);}
+\DoxyCodeLine{153    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} row\_house(\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *,\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int},}
+\DoxyCodeLine{154              \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{155    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} row\_house(\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *,\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{156    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} back\_solve(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&R, \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} *b);}
+\DoxyCodeLine{157    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} col\_house(\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *,\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&,\textcolor{keywordtype}{double}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int},}
+\DoxyCodeLine{158              \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{159    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} house(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&a,\textcolor{keywordtype}{int} row,\textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{160    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} house(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&a,\textcolor{keywordtype}{int} row,\textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{161    \textcolor{keyword}{friend} \textcolor{keywordtype}{void} house\_with\_update(\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *a,\textcolor{keywordtype}{int} row,\textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{162    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} vT\_times\_v(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v);}
+\DoxyCodeLine{163    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} qr\_solve(\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} *, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#ifdef DISABLE\_ALLOC}}
+\DoxyCodeLine{166    std::vector<double > m;}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{168    std::vector<double,Alloc<double,25> > m;}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{170    \textcolor{keywordtype}{int} nrow;}
+\DoxyCodeLine{171 \};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{comment}{//}}
+\DoxyCodeLine{174 \textcolor{comment}{// Operations other than member functions}}
+\DoxyCodeLine{175 \textcolor{comment}{//}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 std::ostream\& operator<<(std::ostream \&s, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v);}
+\DoxyCodeLine{178 \textcolor{comment}{// Write out Matrix, SymMatrix, DiagMatrix and Vector into ostream.}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm2);}
+\DoxyCodeLine{181 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keywordtype}{double} t, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1);}
+\DoxyCodeLine{182 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{183 \textcolor{comment}{// Multiplication operators.}}
+\DoxyCodeLine{184 \textcolor{comment}{// Note that m *= x is always faster than m = m * x.}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{187 \textcolor{comment}{// Divide by a real number.}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{190 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{191 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{192 \textcolor{comment}{// Addition operators}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{195 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{196 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&v2);}
+\DoxyCodeLine{197 \textcolor{comment}{// subtraction operators}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} dsum(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&s2);}
+\DoxyCodeLine{200 \textcolor{comment}{// Direct sum of two vectors;}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \}  \textcolor{comment}{// namespace CLHEP}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#ifdef ENABLE\_BACKWARDS\_COMPATIBILITY}}
+\DoxyCodeLine{205 \textcolor{comment}{//  backwards compatibility will be enabled ONLY in CLHEP 1.9}}
+\DoxyCodeLine{206 \textcolor{keyword}{using namespace }CLHEP;}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/Vector.icc"{}}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

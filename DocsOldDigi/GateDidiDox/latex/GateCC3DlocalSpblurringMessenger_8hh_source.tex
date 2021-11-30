@@ -1,0 +1,48 @@
+\hypertarget{GateCC3DlocalSpblurringMessenger_8hh_source}{}\doxysection{Gate\+CC3\+Dlocal\+Spblurring\+Messenger.\+hh}
+\label{GateCC3DlocalSpblurringMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCC3DlocalSpblurringMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCC3DlocalSpblurringMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateCC3DlocalSpblurringMessenger\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateCC3DlocalSpblurringMessenger\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}G4UIdirectory.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{11 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{12 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCC3DlocalSpblurring}{GateCC3DlocalSpblurring}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCC3DlocalSpblurringMessenger}{GateCC3DlocalSpblurringMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateCC3DlocalSpblurringMessenger}{GateCC3DlocalSpblurringMessenger}}(\mbox{\hyperlink{classGateCC3DlocalSpblurring}{GateCC3DlocalSpblurring}}* itsResolution);}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCC3DlocalSpblurringMessenger}{\string~GateCC3DlocalSpblurringMessenger}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{29     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue2(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCC3DlocalSpblurring}{GateCC3DlocalSpblurring}}* GetLocal3DSpBlurring()}
+\DoxyCodeLine{32     \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCC3DlocalSpblurring}{GateCC3DlocalSpblurring}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35     G4UIcmdWithAString   *newVolCmd;}
+\DoxyCodeLine{36     std::vector<G4UIdirectory*> m\_volDirectory;}
+\DoxyCodeLine{37     std::vector<G4UIcmdWith3VectorAndUnit*>   sigmaCmd;}
+\DoxyCodeLine{38     std::vector<G4String> m\_name;}
+\DoxyCodeLine{39     G4int m\_count;}
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

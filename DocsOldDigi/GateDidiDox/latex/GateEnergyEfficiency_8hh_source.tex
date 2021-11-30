@@ -1,0 +1,51 @@
+\hypertarget{GateEnergyEfficiency_8hh_source}{}\doxysection{Gate\+Energy\+Efficiency.\+hh}
+\label{GateEnergyEfficiency_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergyEfficiency.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergyEfficiency.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateEnergyEfficiency\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateEnergyEfficiency\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEnergyEfficiencyMessenger}{GateEnergyEfficiencyMessenger}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEnergyEfficiency}{GateEnergyEfficiency}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateEnergyEfficiency}{GateEnergyEfficiency}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{26          \textcolor{keyword}{const} G4String\& itsName=theTypeName) ;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEnergyEfficiency_aa2d4c6185939af62ee79c4056bab7d19}{\string~GateEnergyEfficiency}}() ;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEnergyEfficiency_a441c15c4afd7a7629a307d2d8aa992bb}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} SetEfficiency(\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* dist) \{m\_efficiency = dist;\}}
+\DoxyCodeLine{33     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* GetEfficiency()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_efficiency;\}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEnergyEfficiency_a58682116184dc5ef79e66736a25da6c5}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{41   \textcolor{keyword}{private}:}
+\DoxyCodeLine{42     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* m\_efficiency;          }
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateEnergyEfficiencyMessenger}{GateEnergyEfficiencyMessenger}} *m\_messenger;   }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{static} \textcolor{keyword}{const} G4String\& theTypeName;   }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,60 @@
+\hypertarget{GateGridDiscretizationMessenger_8hh_source}{}\doxysection{Gate\+Grid\+Discretization\+Messenger.\+hh}
+\label{GateGridDiscretizationMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateGridDiscretizationMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateGridDiscretizationMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateGridDiscretizationMessenger\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateGridDiscretizationMessenger\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{9 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{10 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{11 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{12 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGridDiscretization}{GateGridDiscretization}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGridDiscretizationMessenger}{GateGridDiscretizationMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateGridDiscretizationMessenger}{GateGridDiscretizationMessenger}}(\mbox{\hyperlink{classGateGridDiscretization}{GateGridDiscretization}}* itsPulseAdder);}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGridDiscretizationMessenger}{\string~GateGridDiscretizationMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{28     \textcolor{keyword}{inline}  \textcolor{keywordtype}{void} SetNewValue2(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateGridDiscretization}{GateGridDiscretization}}* GetGridDiscretization()}
+\DoxyCodeLine{31       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateGridDiscretization}{GateGridDiscretization}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33  \textcolor{keyword}{private}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     G4UIcmdWithAString   *newVolCmd;}
+\DoxyCodeLine{36      std::vector<G4UIdirectory*> m\_volDirectory;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38    \textcolor{comment}{// std::vector<G4UIcmdWithADoubleAndUnit*>    pthresholdCmd;}}
+\DoxyCodeLine{39     std::vector<G4UIcmdWithADoubleAndUnit*>    pStripOffsetX;}
+\DoxyCodeLine{40     std::vector<G4UIcmdWithADoubleAndUnit*>    pStripOffsetY;}
+\DoxyCodeLine{41     std::vector<G4UIcmdWithADoubleAndUnit*>    pStripWidthX;}
+\DoxyCodeLine{42     std::vector<G4UIcmdWithADoubleAndUnit*>    pStripWidthY;}
+\DoxyCodeLine{43     std::vector<G4UIcmdWithAnInteger*>    pNumberStripsX;}
+\DoxyCodeLine{44     std::vector<G4UIcmdWithAnInteger*>     pNumberStripsY;}
+\DoxyCodeLine{45     std::vector<G4UIcmdWithAnInteger*>    pNumberReadOutBlocksX;}
+\DoxyCodeLine{46     std::vector<G4UIcmdWithAnInteger*>     pNumberReadOutBlocksY;}
+\DoxyCodeLine{47    \textcolor{comment}{// std::vector<G4UIcmdWithABool*>     pRejectionMultiplesCmd;}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     std::vector<G4String> m\_name;}
+\DoxyCodeLine{50      G4int m\_count;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

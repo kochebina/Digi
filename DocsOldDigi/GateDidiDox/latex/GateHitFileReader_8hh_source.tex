@@ -1,0 +1,92 @@
+\hypertarget{GateHitFileReader_8hh_source}{}\doxysection{Gate\+Hit\+File\+Reader.\+hh}
+\label{GateHitFileReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateHitFileReader.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateHitFileReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateHitFileReader\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateHitFileReader\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4Event;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateRootDefs.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHitFileReaderMessenger}{GateHitFileReaderMessenger}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }GateHitFileReader : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{54   \textcolor{keyword}{static} GateHitFileReader* GetInstance();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \string~GateHitFileReader();       }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59   GateHitFileReader();        }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} PrepareAcquisition();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71   G4int PrepareNextEvent(G4Event* event);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} PrepareEndOfEvent();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} TerminateAfterAcquisition();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83   \textcolor{keyword}{const}  G4String\& GetFileName()             \{ \textcolor{keywordflow}{return} m\_fileName; \};}
+\DoxyCodeLine{85   \textcolor{keywordtype}{void}   SetFileName(\textcolor{keyword}{const} G4String aName)   \{ m\_fileName = aName; \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Describe(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} LoadHitData();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   G4String            m\_fileName;             }
+\DoxyCodeLine{102   TFile*              m\_hitFile;              }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   TTree*              m\_hitTree;              }
+\DoxyCodeLine{105   Stat\_t              m\_entries;              }
+\DoxyCodeLine{106   G4int               m\_currentEntry;         }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   GateRootHitBuffer        m\_hitBuffer;               }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114   std::queue<GateCrystalHit*> m\_hitQueue;   }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \mbox{\hyperlink{classGateHitFileReaderMessenger}{GateHitFileReaderMessenger}} *m\_messenger;    }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{private}:}
+\DoxyCodeLine{122   \textcolor{keyword}{static} GateHitFileReader*   instance;       }
+\DoxyCodeLine{123 \};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

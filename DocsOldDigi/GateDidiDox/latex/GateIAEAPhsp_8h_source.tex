@@ -1,0 +1,412 @@
+\hypertarget{GateIAEAPhsp_8h_source}{}\doxysection{Gate\+IAEAPhsp.\+h}
+\label{GateIAEAPhsp_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAPhsp.h@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAPhsp.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{/* }}
+\DoxyCodeLine{3 \textcolor{comment}{ * INTERFACE FOR IAEA PHSP ROUTINES (CONTAINS ONLY DECLARATIONS)}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Copyright (C) 2006 International Atomic Energy Agency}}
+\DoxyCodeLine{6 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining a copy}}
+\DoxyCodeLine{9 \textcolor{comment}{ * of this software and associated documentation files (the "{}Software"{}), to deal}}
+\DoxyCodeLine{10 \textcolor{comment}{ * in the Software without restriction, including without limitation the rights}}
+\DoxyCodeLine{11 \textcolor{comment}{ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell}}
+\DoxyCodeLine{12 \textcolor{comment}{ * copies of the Software, and to permit persons to whom the Software is furnished}}
+\DoxyCodeLine{13 \textcolor{comment}{ * to do so, subject to the following conditions:}}
+\DoxyCodeLine{14 \textcolor{comment}{ *}}
+\DoxyCodeLine{15 \textcolor{comment}{ * The above copyright notice and this permission notice shall be included in all}}
+\DoxyCodeLine{16 \textcolor{comment}{ * copies or substantial portions of the Software.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{19 \textcolor{comment}{ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,}}
+\DoxyCodeLine{20 \textcolor{comment}{ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{21 \textcolor{comment}{ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER}}
+\DoxyCodeLine{22 \textcolor{comment}{ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN}}
+\DoxyCodeLine{24 \textcolor{comment}{ * THE SOFTWARE.}}
+\DoxyCodeLine{25 \textcolor{comment}{ *}}
+\DoxyCodeLine{26 \textcolor{comment}{ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{27 \textcolor{comment}{ *}}
+\DoxyCodeLine{28 \textcolor{comment}{ *   AUTHORS:}}
+\DoxyCodeLine{29 \textcolor{comment}{ *}}
+\DoxyCodeLine{30 \textcolor{comment}{ *   Roberto Capote Noy, PhD}}
+\DoxyCodeLine{31 \textcolor{comment}{ *   e-\/mail: R.CapoteNoy@iaea.org (rcapotenoy@yahoo.com)}}
+\DoxyCodeLine{32 \textcolor{comment}{ *   International Atomic Energy Agency}}
+\DoxyCodeLine{33 \textcolor{comment}{ *   Nuclear Data Section, P.O.Box 100}}
+\DoxyCodeLine{34 \textcolor{comment}{ *   Wagramerstrasse 5, Vienna A-\/1400, AUSTRIA}}
+\DoxyCodeLine{35 \textcolor{comment}{ *   Phone: +431-\/260021713; Fax: +431-\/26007}}
+\DoxyCodeLine{36 \textcolor{comment}{ *}}
+\DoxyCodeLine{37 \textcolor{comment}{ *   Iwan Kawrakow, PhD}}
+\DoxyCodeLine{38 \textcolor{comment}{ *   e-\/mail iwan@irs.phy.nrc.ca}}
+\DoxyCodeLine{39 \textcolor{comment}{ *   Ionizing Radiation Standards}}
+\DoxyCodeLine{40 \textcolor{comment}{ *   Institute for National Measurement Standards }}
+\DoxyCodeLine{41 \textcolor{comment}{ *   National Research Council of Canada Ottawa, ON, K1A 0R6 Canada}}
+\DoxyCodeLine{42 \textcolor{comment}{ *   Phone: +1-\/613-\/993 2197, ext.241; Fax: +1-\/613-\/952 9865}}
+\DoxyCodeLine{43 \textcolor{comment}{ *}}
+\DoxyCodeLine{44 \textcolor{comment}{ **********************************************************************************}}
+\DoxyCodeLine{45 \textcolor{comment}{ * For documentation}}
+\DoxyCodeLine{46 \textcolor{comment}{ * see http://www-\/nds.iaea.org/reports-\/new/indc-\/reports/indc-\/nds/indc-\/nds-\/0484.pdf}}
+\DoxyCodeLine{47 \textcolor{comment}{ **********************************************************************************/}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifndef IAEA\_PHSP}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define IAEA\_PHSP}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}GateIAEAConfig.h"{}}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{55 \textcolor{comment}{* Initialization }}
+\DoxyCodeLine{56 \textcolor{comment}{*}}
+\DoxyCodeLine{57 \textcolor{comment}{* Given a file name header\_file of length hf\_length, initialize a}}
+\DoxyCodeLine{58 \textcolor{comment}{* new IAEA particle source, assign an unique source\_ID to it and return }}
+\DoxyCodeLine{59 \textcolor{comment}{* this Id in result. Don’t assume header\_file is null-\/terminated as the}}
+\DoxyCodeLine{60 \textcolor{comment}{* function may be called from a Fortran program.}}
+\DoxyCodeLine{61 \textcolor{comment}{* The need for an Id arises from the fact that some applications may}}
+\DoxyCodeLine{62 \textcolor{comment}{* want to use several IAEA sources at once. The implementation must therefore}}
+\DoxyCodeLine{63 \textcolor{comment}{* maintain a list of already initialized sources.}}
+\DoxyCodeLine{64 \textcolor{comment}{* If an error occures (e.g. header file does not exist, there are errors}}
+\DoxyCodeLine{65 \textcolor{comment}{* in the header file, etc.), assign a negative number to result.}}
+\DoxyCodeLine{66 \textcolor{comment}{* (one may want to specify a list of error codes so that the application}}
+\DoxyCodeLine{67 \textcolor{comment}{* knows what went wrong). This function *must* be called before using}}
+\DoxyCodeLine{68 \textcolor{comment}{* any of the following functions for a given source id.}}
+\DoxyCodeLine{69 \textcolor{comment}{*}}
+\DoxyCodeLine{70 \textcolor{comment}{* access = 1 => opening read-\/only file}}
+\DoxyCodeLine{71 \textcolor{comment}{* access = 2 => opening file for writing}}
+\DoxyCodeLine{72 \textcolor{comment}{* access = 3 => opening file for appending/updating}}
+\DoxyCodeLine{73 \textcolor{comment}{*}}
+\DoxyCodeLine{74 \textcolor{comment}{***********************************************************************/}}
+\DoxyCodeLine{75 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{76 \textcolor{keywordtype}{void} iaea\_new\_source(IAEA\_I32 *source\_ID, \textcolor{keywordtype}{char} *header\_file,   }
+\DoxyCodeLine{77                      \textcolor{keyword}{const} IAEA\_I32 *access, IAEA\_I32 *result, }
+\DoxyCodeLine{78                      \textcolor{keywordtype}{int} hf\_length);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{81 \textcolor{comment}{* Maximum number of particles }}
+\DoxyCodeLine{82 \textcolor{comment}{*}}
+\DoxyCodeLine{83 \textcolor{comment}{* Set n\_particle to the maximum number of particle of type type the}}
+\DoxyCodeLine{84 \textcolor{comment}{* source with Id id can return. If type<0, set n\_particle to the}}
+\DoxyCodeLine{85 \textcolor{comment}{* total number of all particles. For event generators, this function}}
+\DoxyCodeLine{86 \textcolor{comment}{* should set n\_particle to the maximum integer that can be stored in a}}
+\DoxyCodeLine{87 \textcolor{comment}{* signed 64 bit integer. If the source with Id id does not exist,}}
+\DoxyCodeLine{88 \textcolor{comment}{* set n\_particle to a negative number.}}
+\DoxyCodeLine{89 \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{90 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} iaea\_get\_max\_particles(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, \textcolor{keyword}{const} IAEA\_I32 *type,}
+\DoxyCodeLine{92                              IAEA\_I64 *n\_particle);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{95 \textcolor{comment}{* Maximum energy }}
+\DoxyCodeLine{96 \textcolor{comment}{*}}
+\DoxyCodeLine{97 \textcolor{comment}{* Return the maximum energy of an initialized IAEA source with Id id}}
+\DoxyCodeLine{98 \textcolor{comment}{* in Emax. Set Emax to negative if a source with that Id does not exist.}}
+\DoxyCodeLine{99 \textcolor{comment}{************************************************************************/}}
+\DoxyCodeLine{100 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} iaea\_get\_maximum\_energy(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, IAEA\_Float *Emax);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{104 \textcolor{comment}{* Number of additional floats and integers returned by the source }}
+\DoxyCodeLine{105 \textcolor{comment}{*}}
+\DoxyCodeLine{106 \textcolor{comment}{* Return the number of additional floats in n\_extra\_float and the number}}
+\DoxyCodeLine{107 \textcolor{comment}{* of additional integers in n\_extra\_integer for the source with Id id.}}
+\DoxyCodeLine{108 \textcolor{comment}{* Set n\_extra\_integer and/or n\_extra\_float to be negative if such a}}
+\DoxyCodeLine{109 \textcolor{comment}{* source does not exist.}}
+\DoxyCodeLine{110 \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{111 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} iaea\_get\_extra\_numbers(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, IAEA\_I32 *n\_extra\_float,}
+\DoxyCodeLine{113                             IAEA\_I32 *n\_extra\_int);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{116 \textcolor{comment}{* Number of additional floats and integers to be stored}}
+\DoxyCodeLine{117 \textcolor{comment}{*}}
+\DoxyCodeLine{118 \textcolor{comment}{* Set the number of additional floats in n\_extra\_float and the number}}
+\DoxyCodeLine{119 \textcolor{comment}{* of additional integers in n\_extra\_integer for the source with Id id}}
+\DoxyCodeLine{120 \textcolor{comment}{* to be stored in the corresponding file.}}
+\DoxyCodeLine{121 \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{122 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} iaea\_set\_extra\_numbers(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, IAEA\_I32 *n\_extra\_float,}
+\DoxyCodeLine{124                                   IAEA\_I32 *n\_extra\_int);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{127 \textcolor{comment}{* Set a type type of the extra long variable corresponding to the "{}index"{} number}}
+\DoxyCodeLine{128 \textcolor{comment}{* for a corresponding header of the phsp "{}id"{}. Index is running from zero.            }}
+\DoxyCodeLine{129 \textcolor{comment}{*}}
+\DoxyCodeLine{130 \textcolor{comment}{* The current list of types for extra long variables is:  }}
+\DoxyCodeLine{131 \textcolor{comment}{*   0: User defined generic type}}
+\DoxyCodeLine{132 \textcolor{comment}{*   1: Incremental history number (EGS,PENELOPE)}}
+\DoxyCodeLine{133 \textcolor{comment}{*      = 0 indicates a nonprimary particle event}}
+\DoxyCodeLine{134 \textcolor{comment}{*      > 0 indicates a primary particle. The value is equal to the number of }}
+\DoxyCodeLine{135 \textcolor{comment}{*          primaries particles employed to get to this history after the last}}
+\DoxyCodeLine{136 \textcolor{comment}{*          primary event was recorded.}}
+\DoxyCodeLine{137 \textcolor{comment}{*   2: LATCH (EGS)}}
+\DoxyCodeLine{138 \textcolor{comment}{*   3: ILB (PENELOPE) }}
+\DoxyCodeLine{139 \textcolor{comment}{*   more to be defined}}
+\DoxyCodeLine{140 \textcolor{comment}{*}}
+\DoxyCodeLine{141 \textcolor{comment}{* Usually called before writing phsp header to set the type of extra long }}
+\DoxyCodeLine{142 \textcolor{comment}{* variables to be stored. It must be called once for every extralong variable.}}
+\DoxyCodeLine{143 \textcolor{comment}{*}}
+\DoxyCodeLine{144 \textcolor{comment}{* type = -\/1 means the source's header file does not exist}}
+\DoxyCodeLine{145 \textcolor{comment}{*           or source was not properly initialized (call iaea\_new\_...)}}
+\DoxyCodeLine{146 \textcolor{comment}{* type = -\/2 means the index is out of range ( 0 <= index < NUM\_EXTRA\_LONG )}}
+\DoxyCodeLine{147 \textcolor{comment}{* type = -\/3 means the type to be set is out of range }}
+\DoxyCodeLine{148 \textcolor{comment}{*           ( 1 <= type < MAX\_NUMB\_EXTRALONG\_TYPES )}}
+\DoxyCodeLine{149 \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{150 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{151 \textcolor{keywordtype}{void} iaea\_set\_type\_extralong\_variable(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, }
+\DoxyCodeLine{152                                       \textcolor{keyword}{const} IAEA\_I32 *index,  }
+\DoxyCodeLine{153                                             IAEA\_I32 *type);}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{156 \textcolor{comment}{* Set a type type of the extra float variable corresponding to the "{}index"{} number}}
+\DoxyCodeLine{157 \textcolor{comment}{* for a corresponding header of the phsp "{}id"{}. Index is running from zero.            }}
+\DoxyCodeLine{158 \textcolor{comment}{*}}
+\DoxyCodeLine{159 \textcolor{comment}{* The current list of types for extra float variables is:}}
+\DoxyCodeLine{160 \textcolor{comment}{*   1: XLAST (x coord. of the last interaction)  }}
+\DoxyCodeLine{161 \textcolor{comment}{*   2: YLAST (y coord. of the last interaction)  }}
+\DoxyCodeLine{162 \textcolor{comment}{*   3: ZLAST (z coord. of the last interaction)  }}
+\DoxyCodeLine{163 \textcolor{comment}{*   more to be defined}}
+\DoxyCodeLine{164 \textcolor{comment}{*}}
+\DoxyCodeLine{165 \textcolor{comment}{* Usually called before writing phsp header to set the type of extra float }}
+\DoxyCodeLine{166 \textcolor{comment}{* variables to be stored. It must be called once for every extra float variable.}}
+\DoxyCodeLine{167 \textcolor{comment}{*}}
+\DoxyCodeLine{168 \textcolor{comment}{* type = -\/1 means the source's header file does not exist}}
+\DoxyCodeLine{169 \textcolor{comment}{*           or source was not properly initialized (call iaea\_new\_...)}}
+\DoxyCodeLine{170 \textcolor{comment}{* type = -\/2 means the index is out of range ( 0 <= index < NUM\_EXTRA\_FLOAT )}}
+\DoxyCodeLine{171 \textcolor{comment}{* type = -\/3 means the type to be set is out of range }}
+\DoxyCodeLine{172 \textcolor{comment}{*           ( 1 <= type < MAX\_NUMB\_EXTRAFLOAT\_TYPES )}}
+\DoxyCodeLine{173 \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{174 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{175 \textcolor{keywordtype}{void} iaea\_set\_type\_extrafloat\_variable(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, }
+\DoxyCodeLine{176                                        \textcolor{keyword}{const} IAEA\_I32 *index,  }
+\DoxyCodeLine{177                                              IAEA\_I32 *type);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{180 \textcolor{comment}{* Get a type type of all extra variables from a header of the phsp "{}id"{}.}}
+\DoxyCodeLine{181 \textcolor{comment}{*}}
+\DoxyCodeLine{182 \textcolor{comment}{* extralong\_types[] AND extrafloat\_types[] must have a dimension bigger than}}
+\DoxyCodeLine{183 \textcolor{comment}{* MAX\_NUMB\_EXTRALONG\_TYPES and MAX\_NUMB\_EXTRAFLOAT\_TYPES correspondingly}}
+\DoxyCodeLine{184 \textcolor{comment}{*}}
+\DoxyCodeLine{185 \textcolor{comment}{* The current list of types for extra long variables is:  }}
+\DoxyCodeLine{186 \textcolor{comment}{*   0: User defined generic type}}
+\DoxyCodeLine{187 \textcolor{comment}{*   1: Incremental history number (EGS,PENELOPE)}}
+\DoxyCodeLine{188 \textcolor{comment}{*      = 0 indicates a nonprimary particle event}}
+\DoxyCodeLine{189 \textcolor{comment}{*      > 0 indicates a primary particle. The value is equal to the number of }}
+\DoxyCodeLine{190 \textcolor{comment}{*          primaries particles employed to get to this history after the last}}
+\DoxyCodeLine{191 \textcolor{comment}{*          primary event was recorded.}}
+\DoxyCodeLine{192 \textcolor{comment}{*   2: LATCH (EGS)}}
+\DoxyCodeLine{193 \textcolor{comment}{*   3: ILB (PENELOPE) }}
+\DoxyCodeLine{194 \textcolor{comment}{*   more to be defined}}
+\DoxyCodeLine{195 \textcolor{comment}{*}}
+\DoxyCodeLine{196 \textcolor{comment}{* The current list of types for extra float variables is:}}
+\DoxyCodeLine{197 \textcolor{comment}{*   1: XLAST (x coord. of the last interaction)  }}
+\DoxyCodeLine{198 \textcolor{comment}{*   2: YLAST (y coord. of the last interaction)  }}
+\DoxyCodeLine{199 \textcolor{comment}{*   3: ZLAST (z coord. of the last interaction)  }}
+\DoxyCodeLine{200 \textcolor{comment}{*   more to be defined}}
+\DoxyCodeLine{201 \textcolor{comment}{*}}
+\DoxyCodeLine{202 \textcolor{comment}{* Usually called before reading phsp header to know the type of extra long }}
+\DoxyCodeLine{203 \textcolor{comment}{* variables to be read. It must be called once for every extra float variable.}}
+\DoxyCodeLine{204 \textcolor{comment}{*}}
+\DoxyCodeLine{205 \textcolor{comment}{* result = -\/1 means the source's header file does not exist}}
+\DoxyCodeLine{206 \textcolor{comment}{*             or source was not properly initialized (call iaea\_new\_...)}}
+\DoxyCodeLine{207 \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{208 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{209 \textcolor{keywordtype}{void} iaea\_get\_type\_extra\_variables(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, IAEA\_I32 *result,}
+\DoxyCodeLine{210       IAEA\_I32 extralong\_types[], IAEA\_I32 extrafloat\_types[]);}
+\DoxyCodeLine{211                                                                               }
+\DoxyCodeLine{212 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{213 \textcolor{comment}{* Set variable corresponding to the "{}index"{} number to a "{}constant"{} value}}
+\DoxyCodeLine{214 \textcolor{comment}{* for a corresponding header of the phsp "{}id"{}. Index is running from zero.                        }}
+\DoxyCodeLine{215 \textcolor{comment}{*}}
+\DoxyCodeLine{216 \textcolor{comment}{*       (Usually called as needed before MC loop started)}}
+\DoxyCodeLine{217 \textcolor{comment}{*}}
+\DoxyCodeLine{218 \textcolor{comment}{*                index  =  0 1 2 3 4 5 6  }}
+\DoxyCodeLine{219 \textcolor{comment}{*          corresponds to  x,y,z,u,v,w,wt}}
+\DoxyCodeLine{220 \textcolor{comment}{*}}
+\DoxyCodeLine{221 \textcolor{comment}{* Usually called before writing phsp files to set those variables which}}
+\DoxyCodeLine{222 \textcolor{comment}{* are not going to be stored. It must be called once for every variable}}
+\DoxyCodeLine{223 \textcolor{comment}{*}}
+\DoxyCodeLine{224 \textcolor{comment}{* constant = -\/1 means the source's header file does not exist}}
+\DoxyCodeLine{225 \textcolor{comment}{*               or source was not properly initialized (call iaea\_new\_...)}}
+\DoxyCodeLine{226 \textcolor{comment}{* constant = -\/2 means the index is out of range ( 0 <= index < 7 )}}
+\DoxyCodeLine{227 \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{228 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{229 \textcolor{keywordtype}{void} iaea\_set\_constant\_variable(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, \textcolor{keyword}{const} IAEA\_I32 *index,  }
+\DoxyCodeLine{230                                 IAEA\_Float *constant);}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{233 \textcolor{comment}{* Get value of constant corresponding to the "{}index"{} number}}
+\DoxyCodeLine{234 \textcolor{comment}{* for a corresponding header of the phsp "{}id"{}. Index is running from zero.}}
+\DoxyCodeLine{235 \textcolor{comment}{*}}
+\DoxyCodeLine{236 \textcolor{comment}{*                index  =  0 1 2 3 4 5 6}}
+\DoxyCodeLine{237 \textcolor{comment}{*          corresponds to  x,y,z,u,v,w,wt}}
+\DoxyCodeLine{238 \textcolor{comment}{*}}
+\DoxyCodeLine{239 \textcolor{comment}{* Usually called when reading phsp header info.}}
+\DoxyCodeLine{240 \textcolor{comment}{* It must be called once for every variable}}
+\DoxyCodeLine{241 \textcolor{comment}{*}}
+\DoxyCodeLine{242 \textcolor{comment}{*  result = -\/1 means the source's header file does not exist}}
+\DoxyCodeLine{243 \textcolor{comment}{*               or source was not properly initialized (call iaea\_new\_...)}}
+\DoxyCodeLine{244 \textcolor{comment}{*  result = -\/2 means the index is out of range ( 0 <= index < 7 )}}
+\DoxyCodeLine{245 \textcolor{comment}{*  result = -\/3 means that the parameter indicated by index is not a constant}}
+\DoxyCodeLine{246 \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{247 IAEA\_EXTERN\_C IAEA\_EXPORT}
+\DoxyCodeLine{248 \textcolor{keywordtype}{void} iaea\_get\_constant\_variable(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, \textcolor{keyword}{const} IAEA\_I32 *index,}
+\DoxyCodeLine{249                                  IAEA\_Float *constant, IAEA\_I32 *result);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 \textcolor{comment}{/*****************************************************************************}}
+\DoxyCodeLine{252 \textcolor{comment}{* Get n\_indep\_particles number of statistically independent particles read }}
+\DoxyCodeLine{253 \textcolor{comment}{* so far from the Source with Id id.                                  }}
+\DoxyCodeLine{254 \textcolor{comment}{*}}
+\DoxyCodeLine{255 \textcolor{comment}{* Set n\_indep\_particles to negative if such source does not exist.}}
+\DoxyCodeLine{256 \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{257 IAEA\_EXTERN\_C IAEA\_EXPORT}
+\DoxyCodeLine{258 \textcolor{keywordtype}{void} iaea\_get\_used\_original\_particles(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, }
+\DoxyCodeLine{259                                             IAEA\_I64 *n\_indep\_particles);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{comment}{/*****************************************************************************}}
+\DoxyCodeLine{262 \textcolor{comment}{* Get Total Number of Original Particles from the Source with Id id. }}
+\DoxyCodeLine{263 \textcolor{comment}{*}}
+\DoxyCodeLine{264 \textcolor{comment}{* For a typical linac it should be equal to the total number of electrons}}
+\DoxyCodeLine{265 \textcolor{comment}{* incident on the primary target. }}
+\DoxyCodeLine{266 \textcolor{comment}{*}}
+\DoxyCodeLine{267 \textcolor{comment}{* Set number\_of\_original\_particles to negative if such source does not exist.}}
+\DoxyCodeLine{268 \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{269 IAEA\_EXTERN\_C IAEA\_EXPORT}
+\DoxyCodeLine{270 \textcolor{keywordtype}{void} iaea\_get\_total\_original\_particles(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, }
+\DoxyCodeLine{271                                              IAEA\_I64 *number\_of\_original\_particles);}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{comment}{/*****************************************************************************}}
+\DoxyCodeLine{274 \textcolor{comment}{* Set Total Number of Original Particles for the Source with Id id. }}
+\DoxyCodeLine{275 \textcolor{comment}{*}}
+\DoxyCodeLine{276 \textcolor{comment}{* For a typical linac it should be equal to the total number of electrons}}
+\DoxyCodeLine{277 \textcolor{comment}{* incident on the primary target. }}
+\DoxyCodeLine{278 \textcolor{comment}{*}}
+\DoxyCodeLine{279 \textcolor{comment}{* Set number\_of\_original\_particles to negative if such source does not exist.}}
+\DoxyCodeLine{280 \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{281 IAEA\_EXTERN\_C IAEA\_EXPORT}
+\DoxyCodeLine{282 \textcolor{keywordtype}{void} iaea\_set\_total\_original\_particles(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, }
+\DoxyCodeLine{283                                        IAEA\_I64 *number\_of\_original\_particles);}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{286 \textcolor{comment}{* Partitioning for parallel runs }}
+\DoxyCodeLine{287 \textcolor{comment}{*}}
+\DoxyCodeLine{288 \textcolor{comment}{* i\_parallel is the job number, i\_chunk the calculation chunk,}}
+\DoxyCodeLine{289 \textcolor{comment}{* n\_chunk the total number of calculation chunks. This function}}
+\DoxyCodeLine{290 \textcolor{comment}{* should divide the available phase space of source with Id id}}
+\DoxyCodeLine{291 \textcolor{comment}{* into n\_chunk equal portions and from now on deliver particles}}
+\DoxyCodeLine{292 \textcolor{comment}{* from the i\_chunk’th portion. (i\_chunk must be between 1 and n\_chunk)}}
+\DoxyCodeLine{293 \textcolor{comment}{* The extra parameter i\_parallel is needed}}
+\DoxyCodeLine{294 \textcolor{comment}{* for the cases where the source is an event generator and should}}
+\DoxyCodeLine{295 \textcolor{comment}{* be used to adjust the random number sequence.}}
+\DoxyCodeLine{296 \textcolor{comment}{* The variable is\_ok should be set to 0 if everything went smoothly,}}
+\DoxyCodeLine{297 \textcolor{comment}{* or to some error code if it didn’t.}}
+\DoxyCodeLine{298 \textcolor{comment}{**************************************************************************/}}
+\DoxyCodeLine{299 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{300 \textcolor{keywordtype}{void} iaea\_set\_parallel(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, \textcolor{keyword}{const} IAEA\_I32 *i\_parallel,}
+\DoxyCodeLine{301                        \textcolor{keyword}{const} IAEA\_I32 *i\_chunk, \textcolor{keyword}{const} IAEA\_I32 *n\_chunk, }
+\DoxyCodeLine{302                        IAEA\_I32 *is\_ok);}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{305 \textcolor{comment}{* setting the pointer to a user-\/specified record no. in the file}}
+\DoxyCodeLine{306 \textcolor{comment}{*}}
+\DoxyCodeLine{307 \textcolor{comment}{* record\_num is the user-\/specified record number passed to the function.}}
+\DoxyCodeLine{308 \textcolor{comment}{* id is the phase space file identifier.}}
+\DoxyCodeLine{309 \textcolor{comment}{* The variable result should be set to 0 if everything went smoothly,}}
+\DoxyCodeLine{310 \textcolor{comment}{* or to some error code if it didnt.}}
+\DoxyCodeLine{311 \textcolor{comment}{**************************************************************************/}}
+\DoxyCodeLine{312 IAEA\_EXTERN\_C IAEA\_EXPORT}
+\DoxyCodeLine{313 \textcolor{keywordtype}{void} iaea\_set\_record(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, \textcolor{keyword}{const} IAEA\_I64 *record\_num,}
+\DoxyCodeLine{314                            IAEA\_I32 *result);}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316 \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{317 \textcolor{comment}{* check that the file size equals the value of checksum in the header}}
+\DoxyCodeLine{318 \textcolor{comment}{*}}
+\DoxyCodeLine{319 \textcolor{comment}{* id is the phase space file identifier.  If the size of the phase space}}
+\DoxyCodeLine{320 \textcolor{comment}{* file is not equal to checksum, then result returns -\/1, otherwise result}}
+\DoxyCodeLine{321 \textcolor{comment}{* is set to 0.}}
+\DoxyCodeLine{322 \textcolor{comment}{**************************************************************************/}}
+\DoxyCodeLine{323 IAEA\_EXTERN\_C IAEA\_EXPORT}
+\DoxyCodeLine{324 \textcolor{keywordtype}{void} iaea\_check\_file\_size\_byte\_order(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, IAEA\_I32 *result);}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326 \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{327 \textcolor{comment}{* Get a particle}}
+\DoxyCodeLine{328 \textcolor{comment}{*}}
+\DoxyCodeLine{329 \textcolor{comment}{* Return the next particle from the sequence of particles from source}}
+\DoxyCodeLine{330 \textcolor{comment}{* with Id id. Set n\_stat to the number of statistically independent}}
+\DoxyCodeLine{331 \textcolor{comment}{* events since the last call to this function (i.e. n\_stat = 0, if}}
+\DoxyCodeLine{332 \textcolor{comment}{* the particle resulted from the same incident electron, n\_stat = 377}}
+\DoxyCodeLine{333 \textcolor{comment}{* if there were 377 statistically independent events sinc the last particle}}
+\DoxyCodeLine{334 \textcolor{comment}{* returned, etc.). If this information is not available,}}
+\DoxyCodeLine{335 \textcolor{comment}{* simply set n\_stat to 1 if the particle belongs to a new statistically}}
+\DoxyCodeLine{336 \textcolor{comment}{* independent event. Set n\_stat to -\/1, if a source with Id id does not}}
+\DoxyCodeLine{337 \textcolor{comment}{* exist. Set n\_stat to -\/2, if end of file of the phase space source reached}}
+\DoxyCodeLine{338 \textcolor{comment}{**************************************************************************/}}
+\DoxyCodeLine{339 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{340 \textcolor{keywordtype}{void} iaea\_get\_particle(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, IAEA\_I32 *n\_stat,}
+\DoxyCodeLine{341 IAEA\_I32 *type, \textcolor{comment}{/* particle type */}}
+\DoxyCodeLine{342 IAEA\_Float *E,  \textcolor{comment}{/* kinetic energy in MeV */}}
+\DoxyCodeLine{343 IAEA\_Float *wt, \textcolor{comment}{/* statistical weight */}}
+\DoxyCodeLine{344 IAEA\_Float *x,}
+\DoxyCodeLine{345 IAEA\_Float *y,}
+\DoxyCodeLine{346 IAEA\_Float *z,  \textcolor{comment}{/* position in cartesian coordinates*/}}
+\DoxyCodeLine{347 IAEA\_Float *u,}
+\DoxyCodeLine{348 IAEA\_Float *v,}
+\DoxyCodeLine{349 IAEA\_Float *w,  \textcolor{comment}{/* direction in cartesian coordinates*/}}
+\DoxyCodeLine{350 IAEA\_Float *extra\_floats,}
+\DoxyCodeLine{351 IAEA\_I32 *extra\_ints);}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{354 \textcolor{comment}{* Write a particle }}
+\DoxyCodeLine{355 \textcolor{comment}{* n\_stat = 0 for a secondary particle}}
+\DoxyCodeLine{356 \textcolor{comment}{* n\_stat > 0 for an independent particle }}
+\DoxyCodeLine{357 \textcolor{comment}{*}}
+\DoxyCodeLine{358 \textcolor{comment}{* Write a particle to the source with Id id. }}
+\DoxyCodeLine{359 \textcolor{comment}{* Set n\_stat to -\/1, if ERROR (source with Id id does not exist).}}
+\DoxyCodeLine{360 \textcolor{comment}{**************************************************************************/}}
+\DoxyCodeLine{361 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{362 \textcolor{keywordtype}{void} iaea\_write\_particle(\textcolor{keyword}{const} IAEA\_I32 *\textcolor{keywordtype}{id}, IAEA\_I32 *n\_stat, }
+\DoxyCodeLine{363 \textcolor{keyword}{const} IAEA\_I32 *type, \textcolor{comment}{/* particle type */}}
+\DoxyCodeLine{364 \textcolor{keyword}{const} IAEA\_Float *E,  \textcolor{comment}{/* kinetic energy in MeV */}}
+\DoxyCodeLine{365 \textcolor{keyword}{const} IAEA\_Float *wt, \textcolor{comment}{/* statistical weight */}}
+\DoxyCodeLine{366 \textcolor{keyword}{const} IAEA\_Float *x,}
+\DoxyCodeLine{367 \textcolor{keyword}{const} IAEA\_Float *y,}
+\DoxyCodeLine{368 \textcolor{keyword}{const} IAEA\_Float *z,  \textcolor{comment}{/* position in cartesian coordinates*/}}
+\DoxyCodeLine{369 \textcolor{keyword}{const} IAEA\_Float *u,}
+\DoxyCodeLine{370 \textcolor{keyword}{const} IAEA\_Float *v,}
+\DoxyCodeLine{371 \textcolor{keyword}{const} IAEA\_Float *w,  \textcolor{comment}{/* direction in cartesian coordinates*/}}
+\DoxyCodeLine{372 \textcolor{keyword}{const} IAEA\_Float *extra\_floats,}
+\DoxyCodeLine{373 \textcolor{keyword}{const} IAEA\_I32 *extra\_ints);}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{376 \textcolor{comment}{* Destroy a source }}
+\DoxyCodeLine{377 \textcolor{comment}{*}}
+\DoxyCodeLine{378 \textcolor{comment}{* This function de-\/initializes the source with Id id, closing all open}}
+\DoxyCodeLine{379 \textcolor{comment}{* files, deallocating memory, etc. Nothing happens if a source with that}}
+\DoxyCodeLine{380 \textcolor{comment}{* id does not exist. Header is updated.}}
+\DoxyCodeLine{381 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{382 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{383 \textcolor{keywordtype}{void} iaea\_destroy\_source(\textcolor{keyword}{const} IAEA\_I32 *source\_ID, IAEA\_I32 *result);}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{386 \textcolor{comment}{* Print the current header associated to source id}}
+\DoxyCodeLine{387 \textcolor{comment}{*}}
+\DoxyCodeLine{388 \textcolor{comment}{* result is set to negative if phsp source does not exist.}}
+\DoxyCodeLine{389 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{390 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{391 \textcolor{keywordtype}{void} iaea\_print\_header(\textcolor{keyword}{const} IAEA\_I32 *source\_ID, IAEA\_I32 *result);}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393 \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{394 \textcolor{comment}{* Copy header of the source\_id to the header of the destiny\_id }}
+\DoxyCodeLine{395 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{396 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{397 \textcolor{keywordtype}{void} iaea\_copy\_header(\textcolor{keyword}{const} IAEA\_I32 *source\_ID, \textcolor{keyword}{const} IAEA\_I32 *destiny\_ID, }
+\DoxyCodeLine{398                       IAEA\_I32 *result);}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{401 \textcolor{comment}{* Update header of the source\_id }}
+\DoxyCodeLine{402 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{403 IAEA\_EXTERN\_C IAEA\_EXPORT }
+\DoxyCodeLine{404 \textcolor{keywordtype}{void} iaea\_update\_header(\textcolor{keyword}{const} IAEA\_I32 *source\_ID, IAEA\_I32 *result);}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

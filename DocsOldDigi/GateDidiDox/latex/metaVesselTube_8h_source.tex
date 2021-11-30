@@ -1,0 +1,164 @@
+\hypertarget{metaVesselTube_8h_source}{}\doxysection{meta\+Vessel\+Tube.\+h}
+\label{metaVesselTube_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaVesselTube.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaVesselTube.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAVESSELTUBE\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAVESSELTUBE\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classVesselTubePnt}{VesselTubePnt}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classVesselTubePnt}{VesselTubePnt}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{46   \mbox{\hyperlink{classVesselTubePnt}{\string~VesselTubePnt}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{49   \textcolor{keywordtype}{float}* m\_V1;}
+\DoxyCodeLine{50   \textcolor{keywordtype}{float}* m\_V2;}
+\DoxyCodeLine{51   \textcolor{keywordtype}{float}* m\_X;}
+\DoxyCodeLine{52   \textcolor{keywordtype}{float}* m\_T;}
+\DoxyCodeLine{53   \textcolor{keywordtype}{float} m\_Alpha1;}
+\DoxyCodeLine{54   \textcolor{keywordtype}{float} m\_Alpha2;}
+\DoxyCodeLine{55   \textcolor{keywordtype}{float} m\_Alpha3;}
+\DoxyCodeLine{56   \textcolor{keywordtype}{float} m\_R;}
+\DoxyCodeLine{57   \textcolor{keywordtype}{float} m\_Medialness;}
+\DoxyCodeLine{58   \textcolor{keywordtype}{float} m\_Ridgeness;}
+\DoxyCodeLine{59   \textcolor{keywordtype}{float} m\_Branchness;}
+\DoxyCodeLine{60   \textcolor{keywordtype}{bool}  m\_Mark;}
+\DoxyCodeLine{61   \textcolor{keywordtype}{float} m\_Color[4];}
+\DoxyCodeLine{62   \textcolor{keywordtype}{int}   m\_ID;}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaVesselTube}{MetaVesselTube}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{69   \{}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72   \textcolor{comment}{//}}
+\DoxyCodeLine{73   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{74   \textcolor{comment}{//}}
+\DoxyCodeLine{76 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78    \textcolor{keyword}{typedef} METAIO\_STL::list<VesselTubePnt*> PointListType;}
+\DoxyCodeLine{80     \textcolor{comment}{//}}
+\DoxyCodeLine{81     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{82     \textcolor{comment}{//}}
+\DoxyCodeLine{84 \textcolor{comment}{}    \mbox{\hyperlink{classMetaVesselTube}{MetaVesselTube}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \mbox{\hyperlink{classMetaVesselTube}{MetaVesselTube}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \mbox{\hyperlink{classMetaVesselTube}{MetaVesselTube}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaVesselTube}{MetaVesselTube}} *\_VesselTube);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \mbox{\hyperlink{classMetaVesselTube}{MetaVesselTube}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \mbox{\hyperlink{classMetaVesselTube}{\string~MetaVesselTube}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{//    NPoints(...)}}
+\DoxyCodeLine{99     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{100     \textcolor{comment}{//       Number of points wich compose the VesselTube}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void}  NPoints(\textcolor{keywordtype}{int} npnt);}
+\DoxyCodeLine{102     \textcolor{keywordtype}{int}   NPoints(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{//    PointDim(...)}}
+\DoxyCodeLine{105     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{106     \textcolor{comment}{//       Definition of points}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void}        PointDim(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pointDim);}
+\DoxyCodeLine{108     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* PointDim(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{//    Root(...)}}
+\DoxyCodeLine{111     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{112     \textcolor{comment}{//       Set if this VesselTube is a root}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{void}  Root(\textcolor{keywordtype}{bool} root);}
+\DoxyCodeLine{114     \textcolor{keywordtype}{bool}  Root(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{//    Artery(...)}}
+\DoxyCodeLine{117     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{118     \textcolor{comment}{//       Set if this VesselTube is a root}}
+\DoxyCodeLine{119     \textcolor{keywordtype}{void}  Artery(\textcolor{keywordtype}{bool} artery);}
+\DoxyCodeLine{120     \textcolor{keywordtype}{bool}  Artery(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{//    ParentPoint(...)}}
+\DoxyCodeLine{124     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{125     \textcolor{comment}{//       Set the point number of the parent VesselTube where the branch occurs}}
+\DoxyCodeLine{126     \textcolor{keywordtype}{void}  ParentPoint(\textcolor{keywordtype}{int} parentpoint);}
+\DoxyCodeLine{127     \textcolor{keywordtype}{int}   ParentPoint(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     PointListType \&  GetPoints(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{132     \textcolor{keyword}{const} PointListType \&  GetPoints(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     MET\_ValueEnumType ElementType(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void}  ElementType(MET\_ValueEnumType \_elementType);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{138   \textcolor{comment}{//}}
+\DoxyCodeLine{139   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{140   \textcolor{comment}{//}}
+\DoxyCodeLine{142 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{keywordtype}{bool}  m\_ElementByteOrderMSB;}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{keywordtype}{int}   m\_ParentPoint;  \textcolor{comment}{// "{}ParentPoint = "{}     -\/1}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{keywordtype}{bool}  m\_Root;         \textcolor{comment}{// "{}Root = "{}            false}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keywordtype}{bool}  m\_Artery;         \textcolor{comment}{// "{}Artery = "{}            true}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{keywordtype}{int}   m\_NPoints;      \textcolor{comment}{// "{}NPoints = "{}         0}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{keywordtype}{char} m\_PointDim[255]; \textcolor{comment}{// "{}PointDim = "{}       "{}x y z r"{}}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     PointListType m\_PointList;}
+\DoxyCodeLine{167     MET\_ValueEnumType m\_ElementType;}
+\DoxyCodeLine{168   \};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{171 \};}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

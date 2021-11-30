@@ -1,0 +1,151 @@
+\hypertarget{GateInterfileHeader_8hh_source}{}\doxysection{Gate\+Interfile\+Header.\+hh}
+\label{GateInterfileHeader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateInterfileHeader.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateInterfileHeader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEINTERFILEREADER\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEINTERFILEREADER\_HH 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// std}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// g4}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// gate}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateMiscFunctions.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateMachine.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateInterfileHeader}{GateInterfileHeader}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} DefaultPixelType;}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateInterfileHeader}{GateInterfileHeader}}();}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateInterfileHeader}{\string~GateInterfileHeader}}() \{\};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} ReadHeader(G4String headerFileName);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{template}<\textcolor{keyword}{class} VoxelType>}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} ReadData(std::vector<VoxelType> \& data);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{template}<\textcolor{keyword}{class} VoxelType>}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} ReadData(G4String dataFileName, std::vector<VoxelType> \& data);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} ReadKey(FILE* fp);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   G4String m\_headerFileName;}
+\DoxyCodeLine{47   G4String m\_dataFileName;}
+\DoxyCodeLine{48   G4int m\_numPlanes;}
+\DoxyCodeLine{49   G4float m\_planeThickness;}
+\DoxyCodeLine{50   G4int m\_dim[2];}
+\DoxyCodeLine{51   G4float m\_pixelSize[2];}
+\DoxyCodeLine{52   G4float m\_matrixSize[2];}
+\DoxyCodeLine{53   G4String m\_dataTypeName;}
+\DoxyCodeLine{54   G4int m\_bytePerPixel;}
+\DoxyCodeLine{55   G4int m\_dataByteOrder;}
+\DoxyCodeLine{56   G4int m\_offset;}
+\DoxyCodeLine{57 \textcolor{keyword}{private}:}
+\DoxyCodeLine{58   \textcolor{keyword}{template} <\textcolor{keyword}{class} ReadPixelType, \textcolor{keyword}{class} OutputPixelType>}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} DoDataRead(std::vector<OutputPixelType> \&data);}
+\DoxyCodeLine{60   G4bool m\_isHeaderInfoRead;}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{66 \textcolor{keyword}{template} <\textcolor{keyword}{class} ReadPixelType, \textcolor{keyword}{class} OutputPixelType>}
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} GateInterfileHeader::DoDataRead(std::vector<OutputPixelType> \&data) \{}
+\DoxyCodeLine{68   G4int pixelNumber = m\_dim[0]*m\_dim[1]*m\_numPlanes ;}
+\DoxyCodeLine{69   std::ifstream is;}
+\DoxyCodeLine{70   OpenFileInput(m\_dataFileName, is);}
+\DoxyCodeLine{71   std::vector<ReadPixelType> temp(pixelNumber);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   data.resize(pixelNumber);}
+\DoxyCodeLine{74   is.seekg(m\_offset, std::ios::beg);}
+\DoxyCodeLine{75   is.read((\textcolor{keywordtype}{char}*)(\&(temp[0])), pixelNumber*\textcolor{keyword}{sizeof}(ReadPixelType));}
+\DoxyCodeLine{76   \textcolor{keywordflow}{if} (!is) \{}
+\DoxyCodeLine{77     G4cerr << Gateendl <<\textcolor{stringliteral}{"{}Error: the number of pixels that were read from the data file ("{}} << is.gcount() << \textcolor{stringliteral}{"{}) \(\backslash\)n"{}}}
+\DoxyCodeLine{78            << \textcolor{stringliteral}{"{}is inferior to the number computed from its header file ("{}} << pixelNumber << \textcolor{stringliteral}{"{})!\(\backslash\)n"{}};}
+\DoxyCodeLine{79     G4Exception( \textcolor{stringliteral}{"{}GateInterfileHeader.cc InterfileTooShort"{}}, \textcolor{stringliteral}{"{}InterfileTooShort"{}}, FatalException, \textcolor{stringliteral}{"{}Correct problem then try again... Sorry!"{}} );}
+\DoxyCodeLine{80   \}}
+\DoxyCodeLine{81   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<temp.size(); i++) \{}
+\DoxyCodeLine{82     \textcolor{keywordflow}{if} ( BYTE\_ORDER != m\_dataByteOrder ) \{}
+\DoxyCodeLine{83       ReadPixelType t = temp[i];}
+\DoxyCodeLine{84       \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}}( t );}
+\DoxyCodeLine{85       temp[i] = t;}
+\DoxyCodeLine{86       \textcolor{comment}{//      GateMachine::SwapEndians( temp[i] );}}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88     data[i] = (OutputPixelType)temp[i];}
+\DoxyCodeLine{89   \}}
+\DoxyCodeLine{90   is.close();}
+\DoxyCodeLine{91 \}}
+\DoxyCodeLine{92 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{96 \textcolor{keyword}{template}<\textcolor{keyword}{class} VoxelType>}
+\DoxyCodeLine{97 \textcolor{keywordtype}{void} GateInterfileHeader::ReadData(G4String dataFileName, std::vector<VoxelType> \& data)}
+\DoxyCodeLine{98 \{}
+\DoxyCodeLine{99   m\_dataFileName = dataFileName;}
+\DoxyCodeLine{100   ReadData(data);}
+\DoxyCodeLine{101 \}}
+\DoxyCodeLine{102 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{106 \textcolor{keyword}{template}<\textcolor{keyword}{class} VoxelType>}
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} GateInterfileHeader::ReadData(std::vector<VoxelType> \& data)}
+\DoxyCodeLine{108 \{}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keywordflow}{if} (!m\_isHeaderInfoRead) \{}
+\DoxyCodeLine{111     G4Exception(\textcolor{stringliteral}{"{}GateInterfileHeader.cc:ReadData"{}}, \textcolor{stringliteral}{"{}NoHeaderInformation"{}}, FatalException, \textcolor{stringliteral}{"{}call GateInterfileHeader::ReadHeader first!"{}});}
+\DoxyCodeLine{112   \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114   \textcolor{keywordflow}{if} (m\_dataTypeName == \textcolor{stringliteral}{"{}UNSIGNED INTEGER"{}}) \{}
+\DoxyCodeLine{115     \textcolor{keywordflow}{if} (m\_bytePerPixel==1) \{}
+\DoxyCodeLine{116       DoDataRead<unsigned char>(data);}
+\DoxyCodeLine{117     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_bytePerPixel==2) \{}
+\DoxyCodeLine{118       DoDataRead<unsigned short>( data);}
+\DoxyCodeLine{119     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_bytePerPixel==4) \{}
+\DoxyCodeLine{120       DoDataRead<unsigned int>( data);}
+\DoxyCodeLine{121     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_bytePerPixel==8) \{}
+\DoxyCodeLine{122       DoDataRead<unsigned long>( data);}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_dataTypeName == \textcolor{stringliteral}{"{}SIGNED INTEGER"{}}) \{}
+\DoxyCodeLine{125     \textcolor{keywordflow}{if} (m\_bytePerPixel==1) \{}
+\DoxyCodeLine{126       DoDataRead<char>(data);}
+\DoxyCodeLine{127     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_bytePerPixel==2) \{}
+\DoxyCodeLine{128       DoDataRead<short>( data);}
+\DoxyCodeLine{129     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_bytePerPixel==4) \{}
+\DoxyCodeLine{130       DoDataRead<int>( data);}
+\DoxyCodeLine{131     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_bytePerPixel==8) \{}
+\DoxyCodeLine{132       DoDataRead<long>( data);}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134   \}}
+\DoxyCodeLine{135   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_dataTypeName == \textcolor{stringliteral}{"{}FLOAT"{}}) \{}
+\DoxyCodeLine{136     \textcolor{keywordflow}{if} (m\_bytePerPixel==4) \{}
+\DoxyCodeLine{137       DoDataRead<float>( data);}
+\DoxyCodeLine{138     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_bytePerPixel==8) \{}
+\DoxyCodeLine{139       DoDataRead<double>( data);}
+\DoxyCodeLine{140     \}}
+\DoxyCodeLine{141   \}}
+\DoxyCodeLine{142 \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

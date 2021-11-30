@@ -1,0 +1,275 @@
+\hypertarget{zutil_8h_source}{}\doxysection{zutil.\+h}
+\label{zutil_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/zutil.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/zutil.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* zutil.h -\/-\/ internal interface and configuration of the compression library}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 1995-\/2005 Jean-\/loup Gailly.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * For conditions of distribution and use, see copyright notice in zlib.h}}
+\DoxyCodeLine{4 \textcolor{comment}{ */}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{/* WARNING: this file should *not* be used by applications. It is}}
+\DoxyCodeLine{7 \textcolor{comment}{   part of the implementation of the compression library and is}}
+\DoxyCodeLine{8 \textcolor{comment}{   subject to change. Applications should only use zlib.h.}}
+\DoxyCodeLine{9 \textcolor{comment}{ */}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* @(\#) Id */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef ZUTIL\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define ZUTIL\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define ZLIB\_INTERNAL}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}zlib.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifdef STDC}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#  ifndef \_WIN32\_WCE}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#    include <stddef.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#  include <string.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#  include <stdlib.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifdef NO\_ERRNO\_H}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#   ifdef \_WIN32\_WCE}}
+\DoxyCodeLine{28       \textcolor{comment}{/* The Microsoft C Run-\/Time Library for Windows CE doesn't have}}
+\DoxyCodeLine{29 \textcolor{comment}{       * errno.  We define it as a global variable to simplify porting.}}
+\DoxyCodeLine{30 \textcolor{comment}{       * Its value is always 0 and should not be used.  We rename it to}}
+\DoxyCodeLine{31 \textcolor{comment}{       * avoid conflict with other libraries that use the same workaround.}}
+\DoxyCodeLine{32 \textcolor{comment}{       */}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#     define errno z\_errno}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{35     \textcolor{keyword}{extern} \textcolor{keywordtype}{int} errno;}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#  ifndef \_WIN32\_WCE}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#    include <errno.h>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef local}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#  define local static}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{45 \textcolor{comment}{/* compile with -\/Dlocal if your debugger can't find static symbols */}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}  uch;}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} uch FAR uchf;}
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ush;}
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} ush FAR ushf;}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}  ulg;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \textcolor{keyword}{const} z\_errmsg[10]; \textcolor{comment}{/* indexed by 2-\/zlib\_error */}}
+\DoxyCodeLine{54 \textcolor{comment}{/* (size given to avoid silly warnings with Visual C++) */}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define ERR\_MSG(err) z\_errmsg[Z\_NEED\_DICT-\/(err)]}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define ERR\_RETURN(strm,err) \(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{  return (strm-\/>msg = (char*)ERR\_MSG(err), (err))}}
+\DoxyCodeLine{60 \textcolor{comment}{/* To be used only when the state is known to be valid */}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{comment}{/* common constants */}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifndef DEF\_WBITS}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#  define DEF\_WBITS MAX\_WBITS}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 \textcolor{comment}{/* default windowBits for decompression. MAX\_WBITS is for compression only */}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#if MAX\_MEM\_LEVEL >= 8}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#  define DEF\_MEM\_LEVEL 8}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#  define DEF\_MEM\_LEVEL  MAX\_MEM\_LEVEL}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 \textcolor{comment}{/* default memLevel */}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define STORED\_BLOCK 0}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define STATIC\_TREES 1}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define DYN\_TREES    2}}
+\DoxyCodeLine{79 \textcolor{comment}{/* The three kinds of block type */}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define MIN\_MATCH  3}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define MAX\_MATCH  258}}
+\DoxyCodeLine{83 \textcolor{comment}{/* The minimum and maximum match lengths */}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define PRESET\_DICT 0x20 }\textcolor{comment}{/* preset dictionary flag in zlib header */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         \textcolor{comment}{/* target dependencies */}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#if defined(MSDOS) || (defined(WINDOWS) \&\& !defined(WIN32))}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#  define OS\_CODE  0x00}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#  if defined(\_\_TURBOC\_\_) || defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#    if(\_\_STDC\_\_ == 1) \&\& (defined(\_\_LARGE\_\_) || defined(\_\_COMPACT\_\_))}}
+\DoxyCodeLine{93        \textcolor{comment}{/* Allow compilation with ANSI keywords only enabled */}}
+\DoxyCodeLine{94        \textcolor{keywordtype}{void} \_Cdecl farfree( \textcolor{keywordtype}{void} *block );}
+\DoxyCodeLine{95        \textcolor{keywordtype}{void} *\_Cdecl farmalloc( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} nbytes );}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#    else}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#      include <alloc.h>}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#  else }\textcolor{comment}{/* MSC or DJGPP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#    include <malloc.h>}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifdef AMIGA}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#  define OS\_CODE  0x01}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#if defined(VAXC) || defined(VMS)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#  define OS\_CODE  0x02}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#  define F\_OPEN(name, mode) \(\backslash\)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{     fopen((name), (mode), "{}mbc=60"{}}, "{}ctx=stm"{}, "{}rfm=fix"{}, "{}mrs=512"{})}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#if defined(ATARI) || defined(atarist)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#  define OS\_CODE  0x05}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#ifdef OS2}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#  define OS\_CODE  0x06}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#  ifdef M\_I86}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{     \#include <malloc.h>}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#if defined(MACOS) || defined(TARGET\_OS\_MAC)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#  define OS\_CODE  0x07}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#  if defined(\_\_MWERKS\_\_) \&\& \_\_dest\_os != \_\_be\_os \&\& \_\_dest\_os != \_\_win32\_os}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#    include <unix.h>} \textcolor{comment}{/* for fdopen */}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#    ifndef fdopen}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#      define fdopen(fd,mode) NULL }\textcolor{comment}{/* No fdopen() */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#ifdef TOPS20}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#  define OS\_CODE  0x0a}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifdef WIN32}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#  ifndef \_\_CYGWIN\_\_  }\textcolor{comment}{/* Cygwin is Unix, not Win32 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#    define OS\_CODE  0x0b}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#ifdef \_\_50SERIES }\textcolor{comment}{/* Prime/PRIMOS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#  define OS\_CODE  0x0f}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#if defined(\_BEOS\_) || defined(RISCOS)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#  define fdopen(fd,mode) NULL }\textcolor{comment}{/* No fdopen() */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#if (defined(\_MSC\_VER) \&\& (\_MSC\_VER > 600))}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#  if defined(\_WIN32\_WCE)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#    define fdopen(fd,mode) NULL }\textcolor{comment}{/* No fdopen() */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#    ifndef \_PTRDIFF\_T\_DEFINED}}
+\DoxyCodeLine{158        \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ptrdiff\_t;}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#      define \_PTRDIFF\_T\_DEFINED}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#    define fdopen(fd,type)  \_fdopen(fd,type)}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \textcolor{comment}{/* common defaults */}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#ifndef OS\_CODE}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#  define OS\_CODE  0x03  }\textcolor{comment}{/* assume Unix */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#ifndef F\_OPEN}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#  define F\_OPEN(name, mode) fopen((name), (mode))}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176          \textcolor{comment}{/* functions */}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#if defined(STDC99) || (defined(\_\_TURBOC\_\_) \&\& \_\_TURBOC\_\_ >= 0x550)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#  ifndef HAVE\_VSNPRINTF}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#    define HAVE\_VSNPRINTF}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#if defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#  ifndef HAVE\_VSNPRINTF}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#    define HAVE\_VSNPRINTF}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#ifndef HAVE\_VSNPRINTF}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#  ifdef MSDOS}}
+\DoxyCodeLine{190      \textcolor{comment}{/* vsnprintf may exist on some MS-\/DOS compilers (DJGPP?),}}
+\DoxyCodeLine{191 \textcolor{comment}{        but for now we just assume it doesn't. */}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#    define NO\_vsnprintf}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#  ifdef \_\_TURBOC\_\_}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#    define NO\_vsnprintf}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#  ifdef WIN32}}
+\DoxyCodeLine{198      \textcolor{comment}{/* In Win32, vsnprintf is available as the "{}non-\/ANSI"{} \_vsnprintf. */}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#    if !defined(vsnprintf) \&\& !defined(NO\_vsnprintf)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#      define vsnprintf \_vsnprintf}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#  ifdef \_\_SASC}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#    define NO\_vsnprintf}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#ifdef VMS}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#  define NO\_vsnprintf}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#if defined(pyr)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#  define NO\_MEMCPY}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#if defined(SMALL\_MEDIUM) \&\& !defined(\_MSC\_VER) \&\& !defined(\_\_SC\_\_)}}
+\DoxyCodeLine{215  \textcolor{comment}{/* Use our own functions for small and medium model with MSC <= 5.0.}}
+\DoxyCodeLine{216 \textcolor{comment}{  * You may have to use the same strategy for Borland C (untested).}}
+\DoxyCodeLine{217 \textcolor{comment}{  * The \_\_SC\_\_ check is for Symantec.}}
+\DoxyCodeLine{218 \textcolor{comment}{  */}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#  define NO\_MEMCPY}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#if defined(STDC) \&\& !defined(HAVE\_MEMCPY) \&\& !defined(NO\_MEMCPY)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#  define HAVE\_MEMCPY}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#ifdef HAVE\_MEMCPY}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#  ifdef SMALL\_MEDIUM }\textcolor{comment}{/* MSDOS small or medium model */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#    define zmemcpy \_fmemcpy}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#    define zmemcmp \_fmemcmp}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#    define zmemzero(dest, len) \_fmemset(dest, 0, len)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#    define zmemcpy memcpy}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#    define zmemcmp memcmp}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#    define zmemzero(dest, len) memset(dest, 0, len)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{235    \textcolor{keyword}{extern} \textcolor{keywordtype}{void} zmemcpy  OF((Bytef* dest, \textcolor{keyword}{const} Bytef* source, uInt len));}
+\DoxyCodeLine{236    \textcolor{keyword}{extern} \textcolor{keywordtype}{int}  zmemcmp  OF((\textcolor{keyword}{const} Bytef* s1, \textcolor{keyword}{const} Bytef* s2, uInt len));}
+\DoxyCodeLine{237    \textcolor{keyword}{extern} \textcolor{keywordtype}{void} zmemzero OF((Bytef* dest, uInt len));}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{comment}{/* Diagnostic functions */}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#ifdef DEBUG}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#  include <stdio.h>}}
+\DoxyCodeLine{243    \textcolor{keyword}{extern} \textcolor{keywordtype}{int} z\_verbose;}
+\DoxyCodeLine{244    \textcolor{keyword}{extern} \textcolor{keywordtype}{void} z\_error    OF((\textcolor{keywordtype}{char} *m));}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#  define Assert(cond,msg) \{if(!(cond)) z\_error(msg);\}}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#  define Trace(x) \{if (z\_verbose>=0) fprintf x ;\}}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#  define Tracev(x) \{if (z\_verbose>0) fprintf x ;\}}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#  define Tracevv(x) \{if (z\_verbose>1) fprintf x ;\}}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#  define Tracec(c,x) \{if (z\_verbose>0 \&\& (c)) fprintf x ;\}}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#  define Tracecv(c,x) \{if (z\_verbose>1 \&\& (c)) fprintf x ;\}}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#  define Assert(cond,msg)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#  define Trace(x)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#  define Tracev(x)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#  define Tracevv(x)}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#  define Tracec(c,x)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#  define Tracecv(c,x)}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 voidpf zcalloc OF((voidpf opaque, \textcolor{keywordtype}{unsigned} items, \textcolor{keywordtype}{unsigned} size));}
+\DoxyCodeLine{262 \textcolor{keywordtype}{void}   zcfree  OF((voidpf opaque, voidpf ptr));}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#define ZALLOC(strm, items, size) \(\backslash\)}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{           (*((strm)-\/>zalloc))((strm)-\/>opaque, (items), (size))}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define ZFREE(strm, addr)  (*((strm)-\/>zfree))((strm)-\/>opaque, (voidpf)(addr))}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#define TRY\_FREE(s, p) \{if (p) ZFREE(s, p);\}}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ZUTIL\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

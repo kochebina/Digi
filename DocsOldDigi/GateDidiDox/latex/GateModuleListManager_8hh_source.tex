@@ -1,0 +1,46 @@
+\hypertarget{GateModuleListManager_8hh_source}{}\doxysection{Gate\+Module\+List\+Manager.\+hh}
+\label{GateModuleListManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateModuleListManager.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateModuleListManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateModuleListManager\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateModuleListManager\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateListManager.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }GateVObjectCreator;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateModuleListManager}{GateModuleListManager}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateListManager}{GateListManager}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21   \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{classGateModuleListManager}{GateModuleListManager}}(\mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}* itsMotherObject,}
+\DoxyCodeLine{23                   \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                       \textcolor{keyword}{const} G4String\& itsElementTypeName,}
+\DoxyCodeLine{25                       G4bool canBeDisabled=\textcolor{keyword}{true},}
+\DoxyCodeLine{26                       G4bool acceptNewElements=\textcolor{keyword}{true});}
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateModuleListManager}{\string~GateModuleListManager}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keyword}{public}:}
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateModuleListManager_a6840a2555e30f86bfbf4ee3a24d79d1d}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{33      }
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}* GetMotherObject()\textcolor{keyword}{ const}}
+\DoxyCodeLine{35 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} pMotherObject; \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}*    pMotherObject;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+
+\end{DoxyCode}

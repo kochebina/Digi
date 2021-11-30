@@ -1,0 +1,48 @@
+\hypertarget{GateMagTabulatedField3D_8hh_source}{}\doxysection{Gate\+Mag\+Tabulated\+Field3\+D.\+hh}
+\label{GateMagTabulatedField3D_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMagTabulatedField3D.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMagTabulatedField3D.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4MagneticField.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMagTabulatedField3D}{GateMagTabulatedField3D}} : \textcolor{keyword}{public} G4MagneticField}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \mbox{\hyperlink{classGateMagTabulatedField3D}{GateMagTabulatedField3D}}(G4String filename);}
+\DoxyCodeLine{21   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMagTabulatedField3D}{\string~GateMagTabulatedField3D}}();}
+\DoxyCodeLine{22   \textcolor{keywordtype}{void}  GetFieldValue( \textcolor{keyword}{const}  \textcolor{keywordtype}{double} Point[4], \textcolor{keywordtype}{double} *Bfield) \textcolor{keyword}{const};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25   \textcolor{keywordtype}{void}  ReadDatabase(G4String filename);}
+\DoxyCodeLine{26   \textcolor{keywordtype}{void}  SetDimensions(std::ifstream \& is);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{comment}{// Storage space for the table}}
+\DoxyCodeLine{29   vector< vector< vector< double > > > xField;}
+\DoxyCodeLine{30   vector< vector< vector< double > > > yField;}
+\DoxyCodeLine{31   vector< vector< vector< double > > > zField;}
+\DoxyCodeLine{32   \textcolor{comment}{// The dimensions of the table}}
+\DoxyCodeLine{33   \textcolor{keywordtype}{int} nx,ny,nz; }
+\DoxyCodeLine{34   \textcolor{comment}{// The physical limits of the defined region}}
+\DoxyCodeLine{35   \textcolor{keywordtype}{double} minx, maxx, miny, maxy, minz, maxz;}
+\DoxyCodeLine{36   \textcolor{comment}{// The physical extent of the defined region}}
+\DoxyCodeLine{37   \textcolor{keywordtype}{double} dx, dy, dz;}
+\DoxyCodeLine{38   \textcolor{keywordtype}{bool} invertX, invertY, invertZ;}
+\DoxyCodeLine{39   \textcolor{keywordtype}{double} lenUnit;}
+\DoxyCodeLine{40   \textcolor{keywordtype}{double} fieldUnit;}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+
+\end{DoxyCode}

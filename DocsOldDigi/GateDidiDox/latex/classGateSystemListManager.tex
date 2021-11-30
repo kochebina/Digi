@@ -1,0 +1,172 @@
+\hypertarget{classGateSystemListManager}{}\doxysection{Gate\+System\+List\+Manager Class Reference}
+\label{classGateSystemListManager}\index{GateSystemListManager@{GateSystemListManager}}
+
+
+Stores the list of systems.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+System\+List\+Manager.\+hh$>$}
+
+Inheritance diagram for Gate\+System\+List\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateSystemListManager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemListManager_a88a0751f40855bbae63ba4ae6f3dac95}\label{classGateSystemListManager_a88a0751f40855bbae63ba4ae6f3dac95}} 
+virtual {\bfseries $\sim$\+Gate\+System\+List\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Methods to manage the listgeometry/include/\+Gate\+OPETSystem.hh\+:\#ifndef}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemListManager_a28670e3ca1e98c2865154d9b63cd2310}\label{classGateSystemListManager_a28670e3ca1e98c2865154d9b63cd2310}} 
+virtual void {\bfseries Register\+System} (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$new\+System)
+\begin{DoxyCompactList}\small\item\em Registers a new system in the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemListManager_afb35395085e940282909b0c5d80b5d91}\label{classGateSystemListManager_afb35395085e940282909b0c5d80b5d91}} 
+virtual void {\bfseries Unregister\+System} (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$system)
+\begin{DoxyCompactList}\small\item\em Removes a deleted system from the system-\/list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemListManager_a4ef5a0b649b83d8e920d96ef1b96a710}\label{classGateSystemListManager_a4ef5a0b649b83d8e920d96ef1b96a710}} 
+virtual void {\bfseries List\+Systems} () const
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} List the systems stored in the list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Methods to retrieve a system}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemListManager_a594399a568df18e7b81d7d49444f13f2}\label{classGateSystemListManager_a594399a568df18e7b81d7d49444f13f2}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries Find\+System} (const G4\+String \&name)
+\begin{DoxyCompactList}\small\item\em Retrieves a system from its name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ \mbox{\hyperlink{classGateSystemListManager_a741980ff3e33226c54512a8d5e1142f6}{Find\+System\+Of\+Creator}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemListManager_a07fd43c839159a150bd8abc4463e7053}\label{classGateSystemListManager_a07fd43c839159a150bd8abc4463e7053}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries Get\+System} (size\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Retrieves a system from a store-\/iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGateSystemListManager}{Gate\+System\+List\+Manager}} $\ast$ \mbox{\hyperlink{classGateSystemListManager_a25f1f35e42e8569f357e93b74769e7a7}{Get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Methods to create new systems}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemListManager_ad625d0fe88aadb07be2fc403223f6c63}\label{classGateSystemListManager_ad625d0fe88aadb07be2fc403223f6c63}} 
+\mbox{\hyperlink{classGateSystemListMessenger}{Gate\+System\+List\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\begin{DoxyCompactList}\small\item\em Pointer to the store\textquotesingle{}s messenger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSystemListManager_a2999071fe825c7b2c78a7e35e51235d5}{Check\+Scanner\+Auto\+Creation}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$new\+Child\+Creator)
+\item 
+G4int \mbox{\hyperlink{classGateSystemListManager_ad7b8ee5f5a1a4156599841ed24b246de}{Decode\+Type\+Name}} (const G4\+String \&name)
+\item 
+virtual \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ \mbox{\hyperlink{classGateSystemListManager_adee2fb983b52d3b2b895819a1a07092c}{Insert\+New\+System}} (const G4\+String \&type\+Name)
+\item 
+\mbox{\Hypertarget{classGateSystemListManager_a8453c13f282e9120a8e9d38e817dc8e8}\label{classGateSystemListManager_a8453c13f282e9120a8e9d38e817dc8e8}} 
+virtual const G4\+String \& {\bfseries Dump\+Choices} ()
+\begin{DoxyCompactList}\small\item\em Lists all the system-\/names into a string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemListManager_ac6a601a35939b42fd99d9150b21de6c1}\label{classGateSystemListManager_ac6a601a35939b42fd99d9150b21de6c1}} 
+virtual void {\bfseries List\+Choices} ()
+\begin{DoxyCompactList}\small\item\em Lists all the system-\/names onto the standard output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemListManager_aa72270bb236f9898a2a1cc42603101e8}\label{classGateSystemListManager_aa72270bb236f9898a2a1cc42603101e8}} 
+std\+::vector$<$ G4\+String $>$ $\ast$ {\bfseries Get\+Inserted\+Systems\+Names} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Stores the list of systems. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSystemListManager}{Gate\+System\+List\+Manager}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (May 16 2002)
+\item The \mbox{\hyperlink{classGateSystemListManager}{Gate\+System\+List\+Manager}} is a singleton. Its task is to handle a list of systems, provide tools for retrieving systems ort system-\/components, and allow the insertion of new systems.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSystemListManager_a2999071fe825c7b2c78a7e35e51235d5}\label{classGateSystemListManager_a2999071fe825c7b2c78a7e35e51235d5}} 
+\index{GateSystemListManager@{GateSystemListManager}!CheckScannerAutoCreation@{CheckScannerAutoCreation}}
+\index{CheckScannerAutoCreation@{CheckScannerAutoCreation}!GateSystemListManager@{GateSystemListManager}}
+\doxysubsubsection{\texorpdfstring{CheckScannerAutoCreation()}{CheckScannerAutoCreation()}}
+{\footnotesize\ttfamily void Gate\+System\+List\+Manager\+::\+Check\+Scanner\+Auto\+Creation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{new\+Child\+Creator }\end{DoxyParamCaption})}
+
+Check whether a new inserter has the same name as one of the predefined systems If that\textquotesingle{}s the case, auto-\/create the system
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Child\+Creator} & the newly-\/created inserter ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateSystemListManager_ad7b8ee5f5a1a4156599841ed24b246de}\label{classGateSystemListManager_ad7b8ee5f5a1a4156599841ed24b246de}} 
+\index{GateSystemListManager@{GateSystemListManager}!DecodeTypeName@{DecodeTypeName}}
+\index{DecodeTypeName@{DecodeTypeName}!GateSystemListManager@{GateSystemListManager}}
+\doxysubsubsection{\texorpdfstring{DecodeTypeName()}{DecodeTypeName()}}
+{\footnotesize\ttfamily G4int Gate\+System\+List\+Manager\+::\+Decode\+Type\+Name (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name }\end{DoxyParamCaption})}
+
+Checks whether a name corresponds to onw of the predefined system-\/names
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the position of the name in the name-\/table (-\/1 if not found) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGateSystemListManager_a741980ff3e33226c54512a8d5e1142f6}\label{classGateSystemListManager_a741980ff3e33226c54512a8d5e1142f6}} 
+\index{GateSystemListManager@{GateSystemListManager}!FindSystemOfCreator@{FindSystemOfCreator}}
+\index{FindSystemOfCreator@{FindSystemOfCreator}!GateSystemListManager@{GateSystemListManager}}
+\doxysubsubsection{\texorpdfstring{FindSystemOfCreator()}{FindSystemOfCreator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ Gate\+System\+List\+Manager\+::\+Find\+System\+Of\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption})}
+
+Tries to find to which system an inserter is attached (either directly or through one of its ancestors)
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+Creator} & the inserter to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the system to which the inserter is attached, if any 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGateSystemListManager_a25f1f35e42e8569f357e93b74769e7a7}\label{classGateSystemListManager_a25f1f35e42e8569f357e93b74769e7a7}} 
+\index{GateSystemListManager@{GateSystemListManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GateSystemListManager@{GateSystemListManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateSystemListManager}{Gate\+System\+List\+Manager}} $\ast$ Gate\+System\+List\+Manager\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateSystemListManager}{Gate\+System\+List\+Manager}} singleton
+
+If the \mbox{\hyperlink{classGateSystemListManager}{Gate\+System\+List\+Manager}} already exists, Get\+Instance only returns a pointer to this singleton. If this singleton does not exist yet, Get\+Instance creates it by calling the private \mbox{\hyperlink{classGateSystemListManager}{Gate\+System\+List\+Manager}} constructor \mbox{\Hypertarget{classGateSystemListManager_adee2fb983b52d3b2b895819a1a07092c}\label{classGateSystemListManager_adee2fb983b52d3b2b895819a1a07092c}} 
+\index{GateSystemListManager@{GateSystemListManager}!InsertNewSystem@{InsertNewSystem}}
+\index{InsertNewSystem@{InsertNewSystem}!GateSystemListManager@{GateSystemListManager}}
+\doxysubsubsection{\texorpdfstring{InsertNewSystem()}{InsertNewSystem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ Gate\+System\+List\+Manager\+::\+Insert\+New\+System (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{type\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Create a new system of a specific type
+
+
+\begin{DoxyParams}{Parameters}
+{\em child\+Type\+Name} & the type-\/name of the system to create\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly created system 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+System\+List\+Manager.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+System\+List\+Manager.\+cc\end{DoxyCompactItemize}

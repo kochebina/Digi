@@ -1,0 +1,96 @@
+\hypertarget{GateWedge_8hh_source}{}\doxysection{Gate\+Wedge.\+hh}
+\label{GateWedge_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateWedge.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateWedge.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateWedge\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateWedge\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4VVisManager.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4Trap.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateObjectChildList.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWedgeMessenger}{GateWedgeMessenger}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWedge}{GateWedge}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{29     }
+\DoxyCodeLine{30     \mbox{\hyperlink{classGateWedge_a4b285ec702ba532868ab5ce8a0c970f5}{GateWedge}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{31             G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{32             G4int depth=0); }
+\DoxyCodeLine{33          }
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateWedge_a4b285ec702ba532868ab5ce8a0c970f5}{GateWedge}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{35                     G4double itsXLength, G4double itsNarrowerXLength, G4double itsYLength,G4double itsZLength);}
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateWedge_abf0e33599b1ec495fd2446f7969b869a}{\string~GateWedge}}();}
+\DoxyCodeLine{38     }
+\DoxyCodeLine{39     FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateWedge}{GateWedge}})}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{public}:}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43      \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateWedge_a0c3a93681a89d27c0b4ae46111276702}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{44      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();  }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a931a9fc2ee6cc8cd9dde29c91765abb8}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis)    \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_ae0724e8a11fc964aaa1afcd942218efc}{GetWedgeHalfLength}}(axis); \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50      \textcolor{keyword}{inline} G4double ComputeMyOwnVolume()\textcolor{keyword}{  const     }}
+\DoxyCodeLine{51 \textcolor{keyword}{       }\{\textcolor{keywordflow}{return} m\_WedgeLength[0]*m\_WedgeLength[1]*m\_WedgeLength[2]; \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateWedge_a8a7c357c4fbc4d5a43b763eea32968b9}{SetWedgeXLength}} (G4double val)   }
+\DoxyCodeLine{56      \{  m\_WedgeLength[0] = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{58      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateWedge_af48c27ef227ba7daf06bd9b753714b60}{SetWedgeNarrowerXLength}} (G4double val)   }
+\DoxyCodeLine{59      \{  m\_WedgeLength[1] = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{61      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateWedge_a126210e0fa41d65b1ed45c162b794e6d}{SetWedgeYLength}} (G4double val)   }
+\DoxyCodeLine{62      \{  m\_WedgeLength[2] = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{64      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateWedge_acd1e55a3fc364edcea700ffc5669cafa}{SetWedgeZLength}} (G4double val)   }
+\DoxyCodeLine{65      \{  m\_WedgeLength[3] = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{66      }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a9e8552d85fecf7fb0d3541383b6e7b2e}{GetWedgeLength}}(\textcolor{keywordtype}{size\_t} axis)       \{\textcolor{keywordflow}{return} m\_WedgeLength[axis];\}}
+\DoxyCodeLine{71      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a4b9bd17fa39b16401b67be75fed3e0e4}{GetWedgeXLength}}()              \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_a9e8552d85fecf7fb0d3541383b6e7b2e}{GetWedgeLength}}(0);\}}
+\DoxyCodeLine{73      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a367b746ea14a4b687610520004839676}{GetWedgeNarrowerXLength}}()         \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_a9e8552d85fecf7fb0d3541383b6e7b2e}{GetWedgeLength}}(1);\}}
+\DoxyCodeLine{75      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_abbcb7021a31968bd069d6ef5ec68306a}{GetWedgeYLength}}()              \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_a9e8552d85fecf7fb0d3541383b6e7b2e}{GetWedgeLength}}(2);\}}
+\DoxyCodeLine{77      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_af61c810d78d0d1b36b6376fb2ca2fc1c}{GetWedgeZLength}}()              \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_a9e8552d85fecf7fb0d3541383b6e7b2e}{GetWedgeLength}}(3);\}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_ae0724e8a11fc964aaa1afcd942218efc}{GetWedgeHalfLength}}(\textcolor{keywordtype}{size\_t} axis)      \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_a9e8552d85fecf7fb0d3541383b6e7b2e}{GetWedgeLength}}(axis)/2.;\}}
+\DoxyCodeLine{82      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a3d12021809a507d3b3a96e30b16884ae}{GetWedgeXHalfLength}}()             \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_ae0724e8a11fc964aaa1afcd942218efc}{GetWedgeHalfLength}}(0);\}}
+\DoxyCodeLine{84      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a4c1a70321f6dde4b65701640381b3986}{GetWedgeNarrowerXHalfLength}}()        \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_ae0724e8a11fc964aaa1afcd942218efc}{GetWedgeHalfLength}}(1);\}}
+\DoxyCodeLine{86      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a5d9decbe8880ff3d348cb9f0b2b8142a}{GetWedgeYHalfLength}}()             \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_ae0724e8a11fc964aaa1afcd942218efc}{GetWedgeHalfLength}}(2);\}}
+\DoxyCodeLine{88      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateWedge_a06b9113a809cdcd8f787acbe5d0c85b3}{GetWedgeZHalfLength}}()             \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedge_ae0724e8a11fc964aaa1afcd942218efc}{GetWedgeHalfLength}}(3);\}}
+\DoxyCodeLine{89  }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{keyword}{private}:}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95      G4Trap*               m\_Wedge\_solid;       }
+\DoxyCodeLine{96      G4LogicalVolume*      m\_Wedge\_log;         }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101      G4double m\_WedgeLength[4];                 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{105      \mbox{\hyperlink{classGateWedgeMessenger}{GateWedgeMessenger}}* m\_Messenger; }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 MAKE\_AUTO\_CREATOR\_VOLUME(wedge,\mbox{\hyperlink{classGateWedge}{GateWedge}})}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{112 }
+
+\end{DoxyCode}

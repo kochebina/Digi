@@ -1,0 +1,62 @@
+\hypertarget{GateActorMessenger_8hh_source}{}\doxysection{Gate\+Actor\+Messenger.\+hh}
+\label{GateActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{          david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEACTORMESSENGER\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEACTORMESSENGER\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVActor}{GateVActor}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}} : \textcolor{keyword}{public}  G4UImessenger}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}(\mbox{\hyperlink{classGateVActor}{GateVActor}}* sensor);}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateActorMessenger}{\string~GateActorMessenger}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{43   \mbox{\hyperlink{classGateVActor}{GateVActor}} * pActor;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   G4UIcmdWithAString*   pSetFileNameCmd;}
+\DoxyCodeLine{46   G4UIcmdWithAString*   pSetVolumeNameCmd;}
+\DoxyCodeLine{47   G4UIcmdWithAnInteger* pSaveEveryNEventsCmd;}
+\DoxyCodeLine{48   G4UIcmdWithAnInteger* pSaveEveryNSecondsCmd;}
+\DoxyCodeLine{49   G4UIcmdWithABool *    pSetOverWriteFilesFlagCmd;}
+\DoxyCodeLine{50   G4UIcmdWithABool *    pSetResetDataAtEachRunFlagCmd;}
+\DoxyCodeLine{51   G4UIcmdWithAString *  pAddFilterCmd;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   G4String baseName;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

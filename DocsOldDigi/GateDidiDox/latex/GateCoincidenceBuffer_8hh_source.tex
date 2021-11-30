@@ -1,0 +1,68 @@
+\hypertarget{GateCoincidenceBuffer_8hh_source}{}\doxysection{Gate\+Coincidence\+Buffer.\+hh}
+\label{GateCoincidenceBuffer_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceBuffer.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceBuffer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceBuffer\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceBuffer\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVCoincidencePulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceBufferMessenger}{GateCoincidenceBufferMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceBuffer}{GateCoincidenceBuffer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{GateVCoincidencePulseProcessor}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int}  buffer\_t;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidenceBuffer_ae4867de705c3f3486807a8b173bf5e33}{\string~GateCoincidenceBuffer}}() ;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateCoincidenceBuffer_a129746b7daf0e2bbc9a550b5e7df5b47}{GateCoincidenceBuffer}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{36                  \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} SetBufferSize(buffer\_t val)   \{ m\_bufferSize = val;\}}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} SetReadFrequency(G4double val)   \{ m\_readFrequency = val;\}}
+\DoxyCodeLine{42 \textcolor{comment}{//  void SetDoModifyTime(G4bool val)   \{ m\_doModifyTime = val;\}}}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} SetMode(G4int val)   \{ m\_mode = val;\}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceBuffer_a1d297b10537908ccbf466fd96d30dea0}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53   \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* \mbox{\hyperlink{classGateCoincidenceBuffer_a2efc161d47d4ea83b3cb1864c0e9e5d9}{ProcessPulse}}(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* inputPulse,G4int iPulse);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{private}:}
+\DoxyCodeLine{57   buffer\_t m\_bufferSize;}
+\DoxyCodeLine{58   buffer\_t m\_bufferPos;}
+\DoxyCodeLine{59   buffer\_t m\_oldClock;}
+\DoxyCodeLine{60   G4double m\_readFrequency;}
+\DoxyCodeLine{61 \textcolor{comment}{//  G4bool   m\_doModifyTime;}}
+\DoxyCodeLine{62   G4int    m\_mode;}
+\DoxyCodeLine{63   \mbox{\hyperlink{classGateCoincidenceBufferMessenger}{GateCoincidenceBufferMessenger}} *m\_messenger;    }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

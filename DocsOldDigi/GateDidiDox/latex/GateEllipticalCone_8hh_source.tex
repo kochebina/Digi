@@ -1,0 +1,92 @@
+\hypertarget{GateEllipticalCone_8hh_source}{}\doxysection{Gate\+Elliptical\+Cone.\+hh}
+\label{GateEllipticalCone_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEllipticalCone.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEllipticalCone.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateEllipticalCone.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATEELLIPTICALCONE\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATEELLIPTICALCONE\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4EllipticalCone;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEllipticalConeMessenger}{GateEllipticalConeMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEllipticalCone}{GateEllipticalCone}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateEllipticalCone_a31907de2e79797fa726e6e69bbe1131c}{GateEllipticalCone}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{25                  G4int depth=0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateEllipticalCone_a31907de2e79797fa726e6e69bbe1131c}{GateEllipticalCone}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{28                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                  G4double itsXSemiAxis,}
+\DoxyCodeLine{30                  G4double itsYSemiAxis,}
+\DoxyCodeLine{31                  G4double itsZLength,}
+\DoxyCodeLine{32                  G4double itsZCut,}
+\DoxyCodeLine{33                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{34                  G4int depth=0);}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEllipticalCone_a37350d208b807ecc4905666e9a2aac6d}{\string~GateEllipticalCone}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateEllipticalCone}{GateEllipticalCone}})}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateEllipticalCone_aa73af8d4873cba9efa671deb401ac0fe}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEllipticalCone_ae6028d0ff6e7568d0fd6b116f11f68d1}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateEllipticalCone_a9f42a9cac327e3cb5f169b03a1de216b}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{52     \textcolor{keywordflow}{if} (axis==0) \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{return} m\_xSemiAxis;}
+\DoxyCodeLine{54     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==1) \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} m\_ySemiAxis;}
+\DoxyCodeLine{56     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==2) \{}
+\DoxyCodeLine{57     \textcolor{keywordflow}{return} m\_zLength/2.0;}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{60   \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{64   G4double \mbox{\hyperlink{classGateEllipticalCone_afa012138ffa4a99b2bf4360dd417942a}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{inline} G4double GetEllipticalConeXSemiAxis()  \{ \textcolor{keywordflow}{return} m\_xSemiAxis; \}}
+\DoxyCodeLine{69   \textcolor{keyword}{inline} G4double GetEllipticalConeYSemiAxis()  \{ \textcolor{keywordflow}{return} m\_ySemiAxis; \}}
+\DoxyCodeLine{70   \textcolor{keyword}{inline} G4double GetEllipticalConeZLength()    \{ \textcolor{keywordflow}{return} m\_zLength; \}}
+\DoxyCodeLine{71   \textcolor{keyword}{inline} G4double GetEllipticalConeZCut()   \{ \textcolor{keywordflow}{return} m\_zCut; \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetEllipticalConeXSemiAxis(G4double val) \{ m\_xSemiAxis = val; \}}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} SetEllipticalConeYSemiAxis(G4double val) \{ m\_ySemiAxis = val; \}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} SetEllipticalConeZLength(G4double val)   \{ m\_zLength = val; \}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetEllipticalConeZCut(G4double val)  \{ m\_zCut = val; \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{private}:}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   G4EllipticalCone*          m\_ellipticalcone\_solid;            }
+\DoxyCodeLine{84   G4LogicalVolume*   m\_ellipticalcone\_log;              }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   G4double m\_xSemiAxis;     }
+\DoxyCodeLine{90   G4double m\_ySemiAxis;     }
+\DoxyCodeLine{91   G4double m\_zLength;       }
+\DoxyCodeLine{92   G4double m\_zCut;      }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96   \mbox{\hyperlink{classGateEllipticalConeMessenger}{GateEllipticalConeMessenger}}* m\_Messenger;}
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 MAKE\_AUTO\_CREATOR\_VOLUME(ellipticalcone,\mbox{\hyperlink{classGateEllipticalCone}{GateEllipticalCone}})}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEELLIPTICALCONE\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

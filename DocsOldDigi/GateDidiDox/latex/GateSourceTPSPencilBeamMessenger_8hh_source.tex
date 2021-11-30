@@ -1,0 +1,84 @@
+\hypertarget{GateSourceTPSPencilBeamMessenger_8hh_source}{}\doxysection{Gate\+Source\+TPSPencil\+Beam\+Messenger.\+hh}
+\label{GateSourceTPSPencilBeamMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceTPSPencilBeamMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceTPSPencilBeamMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateSourceTPSPencilBeamMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateSourceTPSPencilBeamMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVSourceMessenger.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceTPSPencilBeam}{GateSourceTPSPencilBeam}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4ParticleTable;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcommand;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{28 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{29 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{30 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSource}{GateVSource}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceTPSPencilBeamMessenger}{GateSourceTPSPencilBeamMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSourceMessenger}{GateVSourceMessenger}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{classGateSourceTPSPencilBeamMessenger}{GateSourceTPSPencilBeamMessenger}}(\mbox{\hyperlink{classGateSourceTPSPencilBeam}{GateSourceTPSPencilBeam}}* source);}
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateSourceTPSPencilBeamMessenger}{\string~GateSourceTPSPencilBeamMessenger}}();}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{private}:}
+\DoxyCodeLine{42     \mbox{\hyperlink{classGateSourceTPSPencilBeam}{GateSourceTPSPencilBeam}} * pSourceTPSPencilBeam;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//Particle Type}}
+\DoxyCodeLine{45     G4UIcmdWithAString * pParticleTypeCmd;}
+\DoxyCodeLine{46     \textcolor{comment}{//Particle Properties If GenericIon}}
+\DoxyCodeLine{47     G4UIcommand * pIonCmd;}
+\DoxyCodeLine{48     \textcolor{comment}{//Set the test Flag for debugging (verbosity)}}
+\DoxyCodeLine{49     G4UIcmdWithABool* pTestCmd;}
+\DoxyCodeLine{50     \textcolor{comment}{//Configuration of vertex generation method (random by default)}}
+\DoxyCodeLine{51     G4UIcmdWithABool* pSortedSpotGenerationCmd;}
+\DoxyCodeLine{52     \textcolor{comment}{//Configuration of absolute/relative energy spread specification (relative by default)}}
+\DoxyCodeLine{53     G4UIcmdWithABool* pSigmaEnergyInMeVCmd;}
+\DoxyCodeLine{54     \textcolor{comment}{//Treatment Plan file ("{}plan description file"{})}}
+\DoxyCodeLine{55     G4UIcmdWithAString * pPlanCmd;}
+\DoxyCodeLine{56     \textcolor{comment}{//FlatGenerationFlag}}
+\DoxyCodeLine{57     G4UIcmdWithABool * pFlatGeneFlagCmd;}
+\DoxyCodeLine{58     \textcolor{comment}{//Not allowed fieldID (all fields allowed by default)}}
+\DoxyCodeLine{59     G4UIcmdWithAnInteger * pNotAllowedFieldCmd;}
+\DoxyCodeLine{60     \textcolor{comment}{//Allowed fieldID}}
+\DoxyCodeLine{61     G4UIcmdWithAnInteger * pAllowedFieldCmd;}
+\DoxyCodeLine{62     \textcolor{comment}{//Source description file}}
+\DoxyCodeLine{63     G4UIcmdWithAString * pSourceFileCmd;}
+\DoxyCodeLine{64     \textcolor{comment}{//Configuration of spot intensity as number of ions or MU (MU by default)}}
+\DoxyCodeLine{65     G4UIcmdWithABool * pSpotIntensityCmd;}
+\DoxyCodeLine{66     \textcolor{comment}{//to inform the user about renamed option}}
+\DoxyCodeLine{67     G4UIcmdWithABool * pDeprecatedSpotIntensityCmd;}
+\DoxyCodeLine{68     \textcolor{comment}{//Convergent or divergent beam model (divergent by default)}}
+\DoxyCodeLine{69     G4UIcmdWithABool* pDivergenceCmd;}
+\DoxyCodeLine{70     G4UIcmdWithABool* pDivergenceXThetaCmd;}
+\DoxyCodeLine{71      G4UIcmdWithABool* pDivergenceYPhiCmd;}
+\DoxyCodeLine{72     \textcolor{comment}{//Selection of one layer}}
+\DoxyCodeLine{73     G4UIcmdWithAnInteger * pSelectLayerIDCmd;}
+\DoxyCodeLine{74     \textcolor{comment}{//Selection of one spot}}
+\DoxyCodeLine{75     G4UIcmdWithAnInteger * pSelectSpotCmd;}
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 \textcolor{comment}{// vim: ai sw=2 ts=2 et}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

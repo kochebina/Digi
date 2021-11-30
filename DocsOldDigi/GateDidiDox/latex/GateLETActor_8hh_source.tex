@@ -1,0 +1,125 @@
+\hypertarget{GateLETActor_8hh_source}{}\doxysection{Gate\+LETActor.\+hh}
+\label{GateLETActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLETActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLETActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATELETACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATELETACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <G4NistManager.hh>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateLETActorMessenger.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4VProcess.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }G4EmCalculator;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLETActor}{GateLETActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLETActor_a249a222f9ea0404f468752b8529bcef3}{\string~GateLETActor}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateLETActor}{GateLETActor}})}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLETActor_af1fa1d9e93e12fbc84de1158169b9f18}{Construct}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} SetLETtoWater(\textcolor{keywordtype}{bool} b) \{ mIsLETtoWaterEnabled = b; \}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} SetParallelCalculation(\textcolor{keywordtype}{bool} b) \{ mIsParallelCalculationEnabled = b; \}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} SetLETType(G4String s) \{ mAveragingType = s; \}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} SetMaterial(G4String s) \{ mSetMaterial = s; mIsLETtoWaterEnabled = \textcolor{keyword}{true};\}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} SetCutVal(G4double d) \{ mCutVal = d; \}}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetLETthrMin(G4double d) \{ mLETthrMin = d; \}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} SetLETthrMax(G4double d) \{ mLETthrMax = d; \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLETActor_afd43e83afc2506da067e370f11b650a9}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{comment}{// Do nothing but needed because pure virtual}}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int}, \textcolor{keyword}{const} G4Track*) \{\}}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int}, \textcolor{keyword}{const} G4Track*) \{\}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{comment}{//  Saves the data collected to the file}}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLETActor_aa57f6d73dec9fd18eeb6d22c2dc70ebc}{SaveData}}();}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{comment}{// Scorer related}}
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{67     }
+\DoxyCodeLine{68   }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{71   \mbox{\hyperlink{classGateLETActor}{GateLETActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{72   \mbox{\hyperlink{classGateLETActorMessenger}{GateLETActorMessenger}} * pMessenger;}
+\DoxyCodeLine{73   }
+\DoxyCodeLine{74   \textcolor{comment}{//virtual void polynomial(double* coefs, double deg, double x) \{double yv;\}}}
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} polynomial(\textcolor{keywordtype}{double} * coefs, \textcolor{keywordtype}{int} deg, \textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{78   \textcolor{keywordtype}{bool} mIsLETtoWaterEnabled;}
+\DoxyCodeLine{79   G4String mAveragingType;}
+\DoxyCodeLine{80   G4String mSetMaterial;}
+\DoxyCodeLine{81   }
+\DoxyCodeLine{82   \mbox{\hyperlink{classGateImageT}{GateImageDouble}} mWeightedLETImage;}
+\DoxyCodeLine{83   \mbox{\hyperlink{classGateImageT}{GateImageDouble}} mNormalizationLETImage;}
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateImageT}{GateImageDouble}} mDoseTrackAverageLETImage;}
+\DoxyCodeLine{85   G4String mLETFilename;}
+\DoxyCodeLine{86   G4String numeratorFileName;}
+\DoxyCodeLine{87   G4String denominatorFileName;}
+\DoxyCodeLine{88   G4String sigmaFilename;}
+\DoxyCodeLine{89   }
+\DoxyCodeLine{90   \textcolor{keywordtype}{bool} mKGrosswendt;}
+\DoxyCodeLine{91   G4double mCutVal;}
+\DoxyCodeLine{92   G4double mLETthrMin;}
+\DoxyCodeLine{93   G4double mLETthrMax;}
+\DoxyCodeLine{94   }
+\DoxyCodeLine{95   }
+\DoxyCodeLine{96   \textcolor{keywordtype}{double} k\_FitParWAir;}
+\DoxyCodeLine{97   \textcolor{keywordtype}{bool} mIsSwairApprox;}
+\DoxyCodeLine{98   \textcolor{keywordtype}{bool} mIsMeanEnergyToProduceIonPairInAir;}
+\DoxyCodeLine{99   \textcolor{keywordtype}{bool} mIsMeanEnergyToProduceIonPairInAirAR;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{bool} mIsDoseAveraged;}
+\DoxyCodeLine{102   \textcolor{keywordtype}{bool} mIsTrackAveraged;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \textcolor{keywordtype}{bool} mIsTrackAverageDEDX;}
+\DoxyCodeLine{105   \textcolor{keywordtype}{bool} mIsTrackAverageEdepDX;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{bool} mIsDoseAverageDEDX;}
+\DoxyCodeLine{108   \textcolor{keywordtype}{bool} mIsDoseAverageEdepDX;}
+\DoxyCodeLine{109   }
+\DoxyCodeLine{110   \textcolor{keywordtype}{bool} mIsAverageKinEnergy;}
+\DoxyCodeLine{111   }
+\DoxyCodeLine{112   \textcolor{keywordtype}{bool} mIsGqq0EBT31stOrder;}
+\DoxyCodeLine{113   \textcolor{keywordtype}{bool} mIsGqq0EBT34thOrder;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{keywordtype}{bool} mIsParallelCalculationEnabled;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   G4EmCalculator * emcalc;}
+\DoxyCodeLine{119   }
+\DoxyCodeLine{120   StepHitType mUserStepHitType;}
+\DoxyCodeLine{121 \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 MAKE\_AUTO\_CREATOR\_ACTOR(LETActor,\mbox{\hyperlink{classGateLETActor}{GateLETActor}})}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATELETACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

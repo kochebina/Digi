@@ -1,0 +1,60 @@
+\hypertarget{GateSystemComponentList_8hh_source}{}\doxysection{Gate\+System\+Component\+List.\+hh}
+\label{GateSystemComponentList_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponentList.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponentList.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSystemComponentList\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSystemComponentList\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateModuleListManager.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponentListMessenger}{GateSystemComponentListMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponentList}{GateSystemComponentList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateModuleListManager}{GateModuleListManager}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateSystemComponentList}{GateSystemComponentList}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* itsMother,}
+\DoxyCodeLine{25                     \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemComponentList}{\string~GateSystemComponentList}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} InsertChildComponent(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* newChildComponent);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeChildComponents(\textcolor{keywordtype}{size\_t} indent,G4bool recursiveDescribe=\textcolor{keyword}{false});}
+\DoxyCodeLine{31      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListElements();}
+\DoxyCodeLine{32      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* FindChildComponent(\textcolor{keyword}{const} G4String\& name)}
+\DoxyCodeLine{33           \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*) FindElement(name); \}}
+\DoxyCodeLine{34      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* GetChildComponent(\textcolor{keywordtype}{size\_t} i)}
+\DoxyCodeLine{35           \{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*) GetElement(i);\}}
+\DoxyCodeLine{36      \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* GetMotherComponent()}
+\DoxyCodeLine{37           \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*) GetMotherObject() ;\}}
+\DoxyCodeLine{38      \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} GetChildNumber()}
+\DoxyCodeLine{39           \{ \textcolor{keywordflow}{return} size();\}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{47     G4bool \mbox{\hyperlink{classGateSystemComponentList_a83e01248c79dff1e72eb14db73078e7c}{CheckConnectionToCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator);}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{50     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSystemComponentList_a5b733ba62b9cfa77063d23d37d07168b}{GetActiveChildNumber}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateSystemComponentList_a1e58ecbafc586ca52a11780df5216437}{GetMaxChildTreeDepth}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateSystemComponentList_a6c3a2b3aec5a8706f20bde515f5e5b6d}{FindSystemComponent}}(\textcolor{keyword}{const} G4String\& componentName);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{59       \mbox{\hyperlink{classGateSystemComponentListMessenger}{GateSystemComponentListMessenger}}*    m\_messenger;}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+
+\end{DoxyCode}

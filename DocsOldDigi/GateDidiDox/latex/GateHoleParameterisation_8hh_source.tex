@@ -1,0 +1,57 @@
+\hypertarget{GateHoleParameterisation_8hh_source}{}\doxysection{Gate\+Hole\+Parameterisation.\+hh}
+\label{GateHoleParameterisation_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHoleParameterisation.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHoleParameterisation.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateHoleParameterisation\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateHoleParameterisation\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GatePVParameterisation.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4Trap;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHoleParameterisation}{GateHoleParameterisation}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGatePVParameterisation}{GatePVParameterisation}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22    \textcolor{keyword}{public}:}
+\DoxyCodeLine{23       \mbox{\hyperlink{classGateHoleParameterisation}{GateHoleParameterisation}}(G4double itsFDx,G4double itsFDy,G4double itsDx,G4double itsDy,}
+\DoxyCodeLine{24          G4int itsNx,G4int itsNy,G4double itsOffsetX,G4double itsOffsetY1,G4double itsOffsetY2,}
+\DoxyCodeLine{25      G4double itsDz, G4double itsDy1, G4double itsDy2, G4double itsDx1,}
+\DoxyCodeLine{26          G4double itsDx2, G4double itsDx3, G4double itsDx4);}
+\DoxyCodeLine{27    }
+\DoxyCodeLine{28    \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateHoleParameterisation}{\string~GateHoleParameterisation}}() \{\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ComputeTransformation(\textcolor{keyword}{const} G4int copyNumber, G4VPhysicalVolume *aVolume) \textcolor{keyword}{const};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32    \textcolor{keyword}{using} G4VPVParameterisation::ComputeDimensions;}
+\DoxyCodeLine{33    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ComputeDimensions(G4Trap\& Coll\_Trap, \textcolor{keyword}{const} G4int copyNo, \textcolor{keyword}{const} G4VPhysicalVolume* physVol) \textcolor{keyword}{const};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35    \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{classGateHoleParameterisation_a71e7e252140f962109e4f8fa928ffd0a}{GetNbOfCopies}}()}
+\DoxyCodeLine{36       \{ \textcolor{keywordflow}{return} m\_N; \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38    \textcolor{keywordtype}{void} Update(G4double fdX,G4double fdY,G4double dX,G4double dY,G4int nX,G4int nY,G4double offsetX,G4double offsetY1,}
+\DoxyCodeLine{39     G4double offsetY2,G4double dZ,G4double dY1,G4double dY2,G4double dX1,G4double dX2,G4double dX3,G4double dX4);}
+\DoxyCodeLine{40     }
+\DoxyCodeLine{41    \textcolor{keywordtype}{void} PreComputeConsts();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43    \textcolor{keyword}{protected}:}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45       G4int m\_Nx,m\_Ny,m\_N;}
+\DoxyCodeLine{46       G4double m\_FDx,m\_FDy,m\_Dx,m\_Dy,m\_OffsetX,m\_OffsetY1,m\_OffsetY2;}
+\DoxyCodeLine{47       G4double m\_Dz,m\_Dy1,m\_Dy2,m\_Dx1,m\_Dx2,m\_Dx3,m\_Dx4;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+
+\end{DoxyCode}

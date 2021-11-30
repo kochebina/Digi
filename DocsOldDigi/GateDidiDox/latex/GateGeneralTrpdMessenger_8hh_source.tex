@@ -1,0 +1,62 @@
+\hypertarget{GateGeneralTrpdMessenger_8hh_source}{}\doxysection{Gate\+General\+Trpd\+Messenger.\+hh}
+\label{GateGeneralTrpdMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeneralTrpdMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeneralTrpdMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateGeneralTrpdMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateGeneralTrpdMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeneralTrpdMessenger}{GateGeneralTrpdMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateGeneralTrpdMessenger}{GateGeneralTrpdMessenger}}(\mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}}* itsCreator);}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateGeneralTrpdMessenger}{\string~GateGeneralTrpdMessenger}}();}
+\DoxyCodeLine{26   }
+\DoxyCodeLine{27   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{28   \textcolor{comment}{// get here the pointer to created object from base class VObjectCreator see doxygen}}
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}}* GetGeneralTrpdCreator() }
+\DoxyCodeLine{30   \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}}*) GetVolumeCreator(); \}}
+\DoxyCodeLine{31   }
+\DoxyCodeLine{32 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33   G4UIcmdWithADoubleAndUnit* TrpdX1LengthCmd;    }
+\DoxyCodeLine{34   G4UIcmdWithADoubleAndUnit* TrpdX2LengthCmd;    }
+\DoxyCodeLine{35   G4UIcmdWithADoubleAndUnit* TrpdX3LengthCmd;    }
+\DoxyCodeLine{36   G4UIcmdWithADoubleAndUnit* TrpdX4LengthCmd;    }
+\DoxyCodeLine{37   G4UIcmdWithADoubleAndUnit* TrpdY1LengthCmd;    }
+\DoxyCodeLine{38   G4UIcmdWithADoubleAndUnit* TrpdY2LengthCmd;    }
+\DoxyCodeLine{39   G4UIcmdWithADoubleAndUnit* TrpdZLengthCmd;     }
+\DoxyCodeLine{40   G4UIcmdWithADoubleAndUnit* TrpdThetaCmd;    }
+\DoxyCodeLine{41   G4UIcmdWithADoubleAndUnit* TrpdPhiCmd;    }
+\DoxyCodeLine{42   G4UIcmdWithADoubleAndUnit* TrpdAlp1Cmd;    }
+\DoxyCodeLine{43   G4UIcmdWithADoubleAndUnit* TrpdAlp2Cmd;    }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/*Loic  //  G4UIcmdWith3VectorAndUnit* TrpdBoxLengthCmd}}
+\DoxyCodeLine{46 \textcolor{comment}{  //  G4UIcmdWith3VectorAndUnit* TrpdBoxPosCmd}}
+\DoxyCodeLine{47 \textcolor{comment}{  G4UIcmdWithADoubleAndUnit* TrpdXBoxLengthCmd;  }}
+\DoxyCodeLine{48 \textcolor{comment}{  G4UIcmdWithADoubleAndUnit* TrpdYBoxLengthCmd;  }}
+\DoxyCodeLine{49 \textcolor{comment}{  G4UIcmdWithADoubleAndUnit* TrpdZBoxLengthCmd;  }}
+\DoxyCodeLine{50 \textcolor{comment}{  G4UIcmdWithADoubleAndUnit* TrpdXBoxPosCmd;     }}
+\DoxyCodeLine{51 \textcolor{comment}{  G4UIcmdWithADoubleAndUnit* TrpdYBoxPosCmd;     }}
+\DoxyCodeLine{52 \textcolor{comment}{  G4UIcmdWithADoubleAndUnit* TrpdZBoxPosCmd;     */}}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{56 }
+
+\end{DoxyCode}

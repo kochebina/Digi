@@ -1,0 +1,80 @@
+\hypertarget{GateMDBFile_8hh_source}{}\doxysection{Gate\+MDBFile.\+hh}
+\label{GateMDBFile_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMDBFile.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMDBFile.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GateMDBFile\_hh}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GateMDBFile\_hh}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4Material.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMDBCreators_8hh}{GateMDBCreators.hh}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateMDBFieldReader.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMDBFile}{GateMDBFile}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateMDBFieldReader}{GateMDBFieldReader}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateMDBFile_a85a11aa07b8291729f908bf70dba045e}{GateMDBFile}}(\mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsFileName);}
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMDBFile}{\string~GateMDBFile}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateIsotopeCreator}{GateIsotopeCreator}}*  ReadIsotope(\textcolor{keyword}{const} G4String\& isotopeName);}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateElementCreator}{GateElementCreator}}*  ReadElement(\textcolor{keyword}{const} G4String\& elementName);}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}}* ReadMaterial(\textcolor{keyword}{const} G4String\& materialName);}
+\DoxyCodeLine{35   G4String GetMDBFileName()\{\textcolor{keywordflow}{return} filePath;\}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{38   \mbox{\hyperlink{classGateScratchElementCreator}{GateScratchElementCreator}}*  ReadScratchElement(\textcolor{keyword}{const} G4String\& elementName,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}});}
+\DoxyCodeLine{39   \mbox{\hyperlink{classGateCompoundElementCreator}{GateCompoundElementCreator}}* ReadCompoundElement(\textcolor{keyword}{const} G4String\& elementName,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateScratchMaterialCreator}{GateScratchMaterialCreator}}*  ReadScratchMaterial(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}});}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateCompoundMaterialCreator}{GateCompoundMaterialCreator}}* ReadCompoundMaterial(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}}*      ReadComponent(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& componentOrdinal);}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateElemComponentCreator}{GateElemComponentCreator}}*  ReadElemComponent(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& componentOrdinal,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}});}
+\DoxyCodeLine{46   \mbox{\hyperlink{classGateEByNComponentCreator}{GateEByNComponentCreator}}*  ReadEByNComponent(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& componentOrdinal,}
+\DoxyCodeLine{47                                                \textcolor{keyword}{const} G4String\& field, \textcolor{keyword}{const} G4String\& componentName);}
+\DoxyCodeLine{48   \mbox{\hyperlink{classGateEByFComponentCreator}{GateEByFComponentCreator}}*  ReadEByFComponent(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& componentOrdinal,}
+\DoxyCodeLine{49                                                \textcolor{keyword}{const} G4String\& field, \textcolor{keyword}{const} G4String\& componentName);}
+\DoxyCodeLine{50   \mbox{\hyperlink{classGateIByFComponentCreator}{GateIByFComponentCreator}}*  ReadIsoComponent(\textcolor{keyword}{const} G4String\& elementName,\textcolor{keyword}{const} G4String\& componentOrdinal,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}});}
+\DoxyCodeLine{51   \mbox{\hyperlink{classGateMatComponentCreator}{GateMatComponentCreator}}*   ReadMatComponent(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& componentOrdinal,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}});}
+\DoxyCodeLine{52   }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void}     ReadAllMaterialOptions(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& \mbox{\hyperlink{structline}{line}},\mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}}* creator);}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void}     ReadMaterialOption(\textcolor{keyword}{const} G4String\& materialName,\textcolor{keyword}{const} G4String\& field,\mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}}* creator);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{void}     FindSection(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{57   G4bool   LookForText(\textcolor{keyword}{const} G4String\& text);}
+\DoxyCodeLine{58   G4String ReadItem(\textcolor{keyword}{const} G4String\& sectionName,\textcolor{keyword}{const} G4String\& itemName);}
+\DoxyCodeLine{59   G4int    ReadNonEmptyLine(G4String\& lineBuffer);}
+\DoxyCodeLine{60   G4int    ReadLine(G4String\& lineBuffer);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{private}:}
+\DoxyCodeLine{63   \textcolor{comment}{// Stores the database which instanciated this (used by creators)}}
+\DoxyCodeLine{64   \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* mDatabase;}
+\DoxyCodeLine{65   G4String fileName;}
+\DoxyCodeLine{66   G4String filePath;}
+\DoxyCodeLine{67   std::ifstream dbStream;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{public}:}
+\DoxyCodeLine{70   \textcolor{keyword}{static} \textcolor{keywordtype}{char} theStarterSeparator;}
+\DoxyCodeLine{71   \textcolor{keyword}{static} \textcolor{keywordtype}{char} theFieldSeparator;}
+\DoxyCodeLine{72   \textcolor{keyword}{static} G4String theReadItemErrorMsg;}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

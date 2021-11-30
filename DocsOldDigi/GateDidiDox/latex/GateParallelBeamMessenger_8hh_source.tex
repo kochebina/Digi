@@ -1,0 +1,49 @@
+\hypertarget{GateParallelBeamMessenger_8hh_source}{}\doxysection{Gate\+Parallel\+Beam\+Messenger.\+hh}
+\label{GateParallelBeamMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParallelBeamMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParallelBeamMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateParallelBeamMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateParallelBeamMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParallelBeamMessenger}{GateParallelBeamMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateMessenger}{GateMessenger}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21   \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{classGateParallelBeamMessenger}{GateParallelBeamMessenger}}(\mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}}* itsInserter);}
+\DoxyCodeLine{23    \mbox{\hyperlink{classGateParallelBeamMessenger}{\string~GateParallelBeamMessenger}}();}
+\DoxyCodeLine{24     }
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}}* GetParallelBeamInserter() }
+\DoxyCodeLine{28       \{ \textcolor{keywordflow}{return} m\_inserter; \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{private}:}
+\DoxyCodeLine{31     G4UIcmdWithADoubleAndUnit* ParallelBeamDimensionXCmd;}
+\DoxyCodeLine{32     G4UIcmdWithADoubleAndUnit* ParallelBeamDimensionYCmd;}
+\DoxyCodeLine{33     G4UIcmdWithADoubleAndUnit* ParallelBeamHeightCmd;}
+\DoxyCodeLine{34     G4UIcmdWithADoubleAndUnit* ParallelBeamSeptalThicknessCmd;}
+\DoxyCodeLine{35     G4UIcmdWithADoubleAndUnit* ParallelBeamInnerRadiusCmd;}
+\DoxyCodeLine{36     G4UIcmdWithAString*        ParallelBeamMaterialCmd;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}}*  m\_inserter;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+
+\end{DoxyCode}

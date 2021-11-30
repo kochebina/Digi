@@ -1,0 +1,89 @@
+\hypertarget{classGateClustering}{}\doxysection{Gate\+Clustering Class Reference}
+\label{classGateClustering}\index{GateClustering@{GateClustering}}
+Inheritance diagram for Gate\+Clustering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateClustering}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateClustering_a20e5a081b6eeec0f7c772870899293d7}\label{classGateClustering_a20e5a081b6eeec0f7c772870899293d7}} 
+{\bfseries Gate\+Clustering} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new pulse-\/adder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateClustering_a78591c22798a3abd20a8e6c89901b7ac}\label{classGateClustering_a78591c22798a3abd20a8e6c89901b7ac}} 
+virtual {\bfseries $\sim$\+Gate\+Clustering} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateClustering_af1641d5810f9aee28914605c052f9d5d}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+\mbox{\Hypertarget{classGateClustering_a3d7cdfd7300706c0b3e8a1462b656b7f}\label{classGateClustering_a3d7cdfd7300706c0b3e8a1462b656b7f}} 
+void {\bfseries Set\+Accepted\+Distance} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the threshold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateClustering_afe258b987b4cfb83348701e7de6a7ea6}\label{classGateClustering_afe258b987b4cfb83348701e7de6a7ea6}} 
+void {\bfseries Set\+Rejection\+Flag} (G4bool flgval)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateClustering_ae105e61c888e18c3de24d6e6927bac2a}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGateClustering_a3cff8969564191e06738d868ab090a1f}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\item 
+\mbox{\Hypertarget{classGateClustering_aa39319a3c652a1f9e8af4a564744aac7}\label{classGateClustering_aa39319a3c652a1f9e8af4a564744aac7}} 
+double {\bfseries get\+Distance} (G4\+Three\+Vector pos1, G4\+Three\+Vector pos2)
+\item 
+\mbox{\Hypertarget{classGateClustering_a2788195caba30fd835ec81c43989d32c}\label{classGateClustering_a2788195caba30fd835ec81c43989d32c}} 
+void {\bfseries check\+Cluster\+Centers\+Distance} (\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\Hypertarget{classGateClustering_ace98835b4b9af48ec3416c5cacb82fe7}\label{classGateClustering_ace98835b4b9af48ec3416c5cacb82fe7}} 
+void {\bfseries Pulse\+Push\+Back} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\Hypertarget{classGateClustering_a7ff5fcc57cfa2adeaab7c1c5b004a8b6}\label{classGateClustering_a7ff5fcc57cfa2adeaab7c1c5b004a8b6}} 
+bool {\bfseries same\+\_\+volume\+ID} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$pulse1, const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$pulse2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateClustering_a555d19f3ae3d5bbbdc9eeb3e6e5be78b}\label{classGateClustering_a555d19f3ae3d5bbbdc9eeb3e6e5be78b}} 
+\mbox{\hyperlink{classGateClusteringMessenger}{Gate\+Clustering\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\begin{DoxyCompactList}\small\item\em Messenger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateClustering_af1641d5810f9aee28914605c052f9d5d}\label{classGateClustering_af1641d5810f9aee28914605c052f9d5d}} 
+\index{GateClustering@{GateClustering}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateClustering@{GateClustering}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Clustering\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the pulse adder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateClustering_ae105e61c888e18c3de24d6e6927bac2a}\label{classGateClustering_ae105e61c888e18c3de24d6e6927bac2a}} 
+\index{GateClustering@{GateClustering}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateClustering@{GateClustering}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Clustering\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateClustering_a3cff8969564191e06738d868ab090a1f}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateClustering_a3cff8969564191e06738d868ab090a1f}\label{classGateClustering_a3cff8969564191e06738d868ab090a1f}} 
+\index{GateClustering@{GateClustering}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GateClustering@{GateClustering}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+Clustering\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default function for pulse-\/list processing This function reads an input pulse-\/list. It then calls sequantially the method \mbox{\hyperlink{classGateClustering_ae105e61c888e18c3de24d6e6927bac2a}{Process\+One\+Pulse()}}, once for each of the input pulses. The method returns the output pulse-\/list resulting from this processing 
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Clustering.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Clustering.\+cc\end{DoxyCompactItemize}

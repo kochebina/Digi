@@ -1,0 +1,55 @@
+\hypertarget{GateOscTranslationMoveMessenger_8hh_source}{}\doxysection{Gate\+Osc\+Translation\+Move\+Messenger.\+hh}
+\label{GateOscTranslationMoveMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOscTranslationMoveMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOscTranslationMoveMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateOscTranslationMoveMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateOscTranslationMoveMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOscTranslationMove}{GateOscTranslationMove}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOscTranslationMoveMessenger}{GateOscTranslationMoveMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateObjectRepeaterMessenger}{GateObjectRepeaterMessenger}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46   \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{classGateOscTranslationMoveMessenger_ac9b4dbaaa236b3c2d6d4351d9aed6031}{GateOscTranslationMoveMessenger}}(\mbox{\hyperlink{classGateOscTranslationMove}{GateOscTranslationMove}}* itsTranslationMove);}
+\DoxyCodeLine{50    \mbox{\hyperlink{classGateOscTranslationMoveMessenger_a04ad8c8287bd1f0ec5c42601c95a37ad}{\string~GateOscTranslationMoveMessenger}}();}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateOscTranslationMoveMessenger_a9b8b546c8306caf8b885222ee93ca75f}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateOscTranslationMove}{GateOscTranslationMove}}* \mbox{\hyperlink{classGateOscTranslationMoveMessenger_a908f3653c08fcfe3bb10c4b2680b6076}{GetTranslationMove}}() }
+\DoxyCodeLine{57       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateOscTranslationMove}{GateOscTranslationMove}}*)GetObjectRepeater(); \}}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59   \textcolor{keyword}{private}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     G4UIcmdWith3VectorAndUnit*  AmplitudeCmd;   }
+\DoxyCodeLine{63     G4UIcmdWithADoubleAndUnit*  FrequencyCmd;   }
+\DoxyCodeLine{64     G4UIcmdWithADoubleAndUnit*  PeriodCmd;      }
+\DoxyCodeLine{65     G4UIcmdWithADoubleAndUnit*  PhaseCmd;       }
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+
+\end{DoxyCode}

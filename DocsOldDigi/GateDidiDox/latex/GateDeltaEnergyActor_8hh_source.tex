@@ -1,0 +1,93 @@
+\hypertarget{GateDeltaEnergyActor_8hh_source}{}\doxysection{Gate\+Delta\+Energy\+Actor.\+hh}
+\label{GateDeltaEnergyActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDeltaEnergyActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDeltaEnergyActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef GATESTOPPOWACTOR\_HH}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define GATESTOPPOWACTOR\_HH}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateStoppingPowerActor}{GateStoppingPowerActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29  \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{32   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateStoppingPowerActor_a8ca965aeffe925b5a51bcfdea33be26f}{\string~GateStoppingPowerActor}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateStoppingPowerActor}{GateStoppingPowerActor}})}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{38   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateStoppingPowerActor_a5829a66ea25e848784266d2068b47213}{Construct}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} EnableStopPowerImage(\textcolor{keywordtype}{bool} b) \{ mIsStopPowerImageEnabled = b; \}}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} EnableStopPowerSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsStopPowerSquaredImageEnabled = b; \}}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} EnableStopPowerUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsStopPowerUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} EnableRelStopPowerImage(\textcolor{keywordtype}{bool} b) \{ mIsRelStopPowerImageEnabled = b; \}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} EnableRelStopPowerSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsRelStopPowerSquaredImageEnabled = b; \}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} EnableRelStopPowerUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsRelStopPowerUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} EnableNumberOfHitsImage(\textcolor{keywordtype}{bool} b) \{ mIsNumberOfHitsImageEnabled = b; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateStoppingPowerActor_a09be37363a44c377dfc428bfe5c8ec0f}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateStoppingPowerActor_ad2d9ec8de7fd464e427a8d584b699305}{SaveData}}();}
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateStoppingPowerActor_a0fbf8a6e8d25e12baac002d595ed60db}{Initialize}}(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{67   \mbox{\hyperlink{classGateStoppingPowerActor}{GateStoppingPowerActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}} * pMessenger;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{bool} mIsLastHitEventImageEnabled;}
+\DoxyCodeLine{74   \textcolor{keywordtype}{bool} mIsStopPowerImageEnabled;}
+\DoxyCodeLine{75   \textcolor{keywordtype}{bool} mIsRelStopPowerImageEnabled;}
+\DoxyCodeLine{76   \textcolor{keywordtype}{bool} mIsNumberOfHitsImageEnabled;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \textcolor{keywordtype}{bool} mIsStopPowerSquaredImageEnabled;}
+\DoxyCodeLine{79   \textcolor{keywordtype}{bool} mIsStopPowerUncertaintyImageEnabled;}
+\DoxyCodeLine{80   \textcolor{keywordtype}{bool} mIsRelStopPowerSquaredImageEnabled;}
+\DoxyCodeLine{81   \textcolor{keywordtype}{bool} mIsRelStopPowerUncertaintyImageEnabled;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mStopPowerImage;}
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mRelStopPowerImage;}
+\DoxyCodeLine{85   \mbox{\hyperlink{classGateImage}{GateImage}} mNumberOfHitsImage;}
+\DoxyCodeLine{86   \mbox{\hyperlink{classGateImage}{GateImage}} mLastHitEventImage;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   G4String mStopPowerFilename;}
+\DoxyCodeLine{89   G4String mRelStopPowerFilename;}
+\DoxyCodeLine{90   G4String mNbOfHitsFilename;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 MAKE\_AUTO\_CREATOR\_ACTOR(StoppingPowerActor,\mbox{\hyperlink{classGateStoppingPowerActor}{GateStoppingPowerActor}})}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

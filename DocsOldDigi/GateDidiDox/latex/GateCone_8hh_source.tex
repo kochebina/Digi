@@ -1,0 +1,115 @@
+\hypertarget{GateCone_8hh_source}{}\doxysection{Gate\+Cone.\+hh}
+\label{GateCone_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCone.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCone.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCone\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCone\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4Cons.hh"{}}}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateConeMessenger}{GateConeMessenger}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCone}{GateCone}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateCone}{GateCone}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{37            G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{38            G4int depth=0);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateCone}{GateCone}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{42            G4double itsRmax1, G4double itsRmax2,}
+\DoxyCodeLine{43            G4double itsHeight,}
+\DoxyCodeLine{44            G4double itsRmin1=0.,G4double itsRmin2=0.,}
+\DoxyCodeLine{45            G4double itsSPhi=0., G4double itsDPhi=twopi,}
+\DoxyCodeLine{46            G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{47            G4int depth=0);}
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCone_a30c4cec7df365739c961043536774041}{\string~GateCone}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateCone}{GateCone}})}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} G4LogicalVolume*   \mbox{\hyperlink{classGateCone_add32c7a294de18f5a93b19bb8dec1bef}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool);}
+\DoxyCodeLine{57   \textcolor{comment}{//     virtual G4VPhysicalVolume* ConstructOwnPhysicalVolume();}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_a7c3e05dc7268ade696199b3b6bc943d3}{DestroyOwnSolidAndLogicalVolume}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_aaa5d2a05f0ac76683976691e036381dd}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{73   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_a370062232fb9c846c641a29a35b26872}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis)}
+\DoxyCodeLine{74   \{ \textcolor{keywordflow}{if} (axis==2)}
+\DoxyCodeLine{75       \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCone_a7753cbd69afdfefd61ca2bcade889102}{GetConeHalfHeight}}();}
+\DoxyCodeLine{76     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{77       \textcolor{keywordflow}{return} .5* ( m\_coneRmax1 + m\_coneRmax2 );}
+\DoxyCodeLine{78   \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_a3877c412f6cf577a74c73fbbbc8cfd94}{GetConeHeight}}()          \{\textcolor{keywordflow}{return} m\_coneHeight;\};}
+\DoxyCodeLine{88   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_a7753cbd69afdfefd61ca2bcade889102}{GetConeHalfHeight}}()      \{\textcolor{keywordflow}{return} m\_coneHeight/2.;\};}
+\DoxyCodeLine{90   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_ab60db447d06909ce73bda71849651f17}{GetConeRmin1}}()     \{\textcolor{keywordflow}{return} m\_coneRmin1;\};}
+\DoxyCodeLine{92   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_aa57c0227345bab87324aa468725fcdd2}{GetConeRmax1}}()     \{\textcolor{keywordflow}{return} m\_coneRmax1;\};}
+\DoxyCodeLine{94   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_a07ce43d6c0cd93343b95744988ed602b}{GetConeRmin2}}()     \{\textcolor{keywordflow}{return} m\_coneRmin2;\};}
+\DoxyCodeLine{96   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_a876fca111ebce20152c56fad14aaf1e2}{GetConeRmax2}}()     \{\textcolor{keywordflow}{return} m\_coneRmax2;\};}
+\DoxyCodeLine{98   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_a181b51ca84e347cfca9296504e33a988}{GetConeSPhi}}()     \{\textcolor{keywordflow}{return} m\_coneSPhi;\};}
+\DoxyCodeLine{100   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCone_a69163d3409c63d9cbc8782f2ad9d4c47}{GetConeDPhi}}()     \{\textcolor{keywordflow}{return} m\_coneDPhi;\};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{103   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_a7e6bf6b7aefbc1b390129ffb3f07cf93}{SetConeHeight}}   (G4double val)}
+\DoxyCodeLine{104   \{  m\_coneHeight = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_a9484735b430320edba3b39ecd3234954}{SetConeRmin1}}  (G4double val)}
+\DoxyCodeLine{107   \{  m\_coneRmin1 = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_a7ddddf056b74206597dbb9931c41b338}{SetConeRmax1}}  (G4double val)}
+\DoxyCodeLine{110   \{ m\_coneRmax1 = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_a9370873abb0301cfd126cd18a961e405}{SetConeRmin2}}  (G4double val)}
+\DoxyCodeLine{113   \{ m\_coneRmin2 = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{115   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_ae156f9e8dd8479bddf1365754a7c0fee}{SetConeRmax2}}  (G4double val)}
+\DoxyCodeLine{116   \{ m\_coneRmax2 = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{118   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_aa48111d9cec94caad7eda22c2c641f31}{SetConeSPhi}}  (G4double val)}
+\DoxyCodeLine{119   \{  m\_coneSPhi = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCone_ab96ba2771eaf81ea2d0802b21315a3a2}{SetConeDPhi}}  (G4double val)}
+\DoxyCodeLine{122   \{  m\_coneDPhi = val; \textcolor{comment}{/*ComputeParameters(); */}\}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keyword}{private}:}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129   G4Cons*          m\_cone\_solid;            }
+\DoxyCodeLine{130   G4LogicalVolume*   m\_cone\_log;                }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135   G4double m\_coneHeight;                        }
+\DoxyCodeLine{136   G4double m\_coneRmin1;                         }
+\DoxyCodeLine{137   G4double m\_coneRmax1;                         }
+\DoxyCodeLine{138   G4double m\_coneRmin2;                         }
+\DoxyCodeLine{139   G4double m\_coneRmax2;                         }
+\DoxyCodeLine{140   G4double m\_coneSPhi;                          }
+\DoxyCodeLine{141   G4double m\_coneDPhi;                          }
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145   \mbox{\hyperlink{classGateConeMessenger}{GateConeMessenger}}* m\_Messenger;}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 MAKE\_AUTO\_CREATOR\_VOLUME(cone,\mbox{\hyperlink{classGateCone}{GateCone}})}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

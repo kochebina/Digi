@@ -1,0 +1,42 @@
+\hypertarget{GateSourceLinacBeamMessenger_8hh_source}{}\doxysection{Gate\+Source\+Linac\+Beam\+Messenger.\+hh}
+\label{GateSourceLinacBeamMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceLinacBeamMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceLinacBeamMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSourceLinacBeamMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSourceLinacBeamMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVSourceMessenger.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateSourceLinacBeam.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAVector.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceLinacBeamMessenger}{GateSourceLinacBeamMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSourceMessenger}{GateVSourceMessenger}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateSourceLinacBeamMessenger}{GateSourceLinacBeamMessenger}}(\mbox{\hyperlink{classGateSourceLinacBeam}{GateSourceLinacBeam}} * source);}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateSourceLinacBeamMessenger}{\string~GateSourceLinacBeamMessenger}}();}
+\DoxyCodeLine{25   }
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{27     }
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateSourceLinacBeam}{GateSourceLinacBeam}} *  mSource;}
+\DoxyCodeLine{30   G4UIcmdWith3VectorAndUnit * mRefPosCmd;}
+\DoxyCodeLine{31   G4UIcmdWithAString * mSourceFromPhSCmd;}
+\DoxyCodeLine{32   G4UIcmdWithAString * mRmaxCmd;}
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+
+\end{DoxyCode}

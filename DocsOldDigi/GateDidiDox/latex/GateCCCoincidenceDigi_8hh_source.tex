@@ -1,0 +1,130 @@
+\hypertarget{GateCCCoincidenceDigi_8hh_source}{}\doxysection{Gate\+CCCoincidence\+Digi.\+hh}
+\label{GateCCCoincidenceDigi_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidenceDigi.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidenceDigi.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateCCCoincidenceDigi\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateCCCoincidenceDigi\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}G4VDigi.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}G4TDigiCollection.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}G4Allocator.hh"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCCoincidenceDigi}{GateCCCoincidenceDigi}} : \textcolor{keyword}{public} G4VDigi}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateCCCoincidenceDigi}{GateCCCoincidenceDigi}}();}
+\DoxyCodeLine{22   \mbox{\hyperlink{classGateCCCoincidenceDigi}{GateCCCoincidenceDigi}}(\mbox{\hyperlink{classGatePulse}{GatePulse}}* pulse, G4int coincidenceID);}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateCCCoincidenceDigi}{GateCCCoincidenceDigi}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& pulse, G4int coincidenceID);}
+\DoxyCodeLine{24   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCCCoincidenceDigi}{\string~GateCCCoincidenceDigi}}() \{\}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* \textcolor{keyword}{operator} \textcolor{keyword}{new}(size\_t);}
+\DoxyCodeLine{27   \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  \textcolor{keyword}{operator} \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} Draw();}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} Print();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{comment}{//}}
+\DoxyCodeLine{33   \textcolor{comment}{//printing methods}}
+\DoxyCodeLine{34   \textcolor{comment}{//}}
+\DoxyCodeLine{35   \textcolor{comment}{//friend std::ostream\& operator<<(std::ostream\&, const GateCCCoincidenceDigi\& );}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{comment}{//friend std::ofstream\& operator<<(std::ofstream\&, GateCCCoincidenceDigi* );}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetRunID(G4int j)                          \{ m\_pulse.SetRunID(j); \}}
+\DoxyCodeLine{42       \textcolor{keyword}{inline} G4int GetRunID()\textcolor{keyword}{ const                               }\{ \textcolor{keywordflow}{return} m\_pulse.GetRunID(); \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetEventID(G4int j)                        \{ m\_pulse.SetEventID(j); \}}
+\DoxyCodeLine{45       \textcolor{keyword}{inline} G4int GetEventID()\textcolor{keyword}{ const                             }\{ \textcolor{keywordflow}{return} m\_pulse.GetEventID(); \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetTime(G4double value)                 \{ m\_pulse.SetTime(value); \}}
+\DoxyCodeLine{49       \textcolor{keyword}{inline} G4double GetTime()\textcolor{keyword}{ const                             }\{ \textcolor{keywordflow}{return} m\_pulse.GetTime(); \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergy(G4double value)                   \{ m\_pulse.SetEnergy(value); \}}
+\DoxyCodeLine{52       \textcolor{keyword}{inline} G4double GetEnergy()\textcolor{keyword}{ const                           }\{ \textcolor{keywordflow}{return} m\_pulse.GetEnergy(); \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetLocalPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)      \{ m\_pulse.SetLocalPos(xyz); \}}
+\DoxyCodeLine{55       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetLocalPos()\textcolor{keyword}{ const              }\{ \textcolor{keywordflow}{return} m\_pulse.GetLocalPos(); \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetGlobalPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_pulse.SetGlobalPos(xyz); \}}
+\DoxyCodeLine{58       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetGlobalPos()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_pulse.GetGlobalPos(); \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSourcePosition(\textcolor{keyword}{const} G4ThreeVector\& xyz)  \{ m\_pulse.SetSourcePosition(xyz); \}}
+\DoxyCodeLine{62       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetSourcePosition()\textcolor{keyword}{ const          }\{ \textcolor{keywordflow}{return} m\_pulse.GetSourcePosition(); \}}
+\DoxyCodeLine{63       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSourceEnergy(G4double value)                     \{ m\_pulse.SetSourceEnergy(value); \}}
+\DoxyCodeLine{64       \textcolor{keyword}{inline} G4double GetSourceEnergy()\textcolor{keyword}{ const                             }\{ \textcolor{keywordflow}{return} m\_pulse.GetSourceEnergy(); \}}
+\DoxyCodeLine{65       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSourcePDG(G4int value)                   \{ m\_pulse.SetSourcePDG(value); \}}
+\DoxyCodeLine{66       \textcolor{keyword}{inline} G4int GetSourcePDG()\textcolor{keyword}{ const                           }\{ \textcolor{keywordflow}{return} m\_pulse.GetSourcePDG(); \}}
+\DoxyCodeLine{67       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNCrystalConv(G4int value)                    \{ m\_pulse.SetNCrystalConv(value); \}}
+\DoxyCodeLine{68       \textcolor{keyword}{inline} G4int GetNCrystalConv()\textcolor{keyword}{ const                            }\{ \textcolor{keywordflow}{return} m\_pulse.GetNCrystalConv(); \}}
+\DoxyCodeLine{69     \textcolor{comment}{// Compton y Rayl}}
+\DoxyCodeLine{70       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNCrystalCompton(G4int value)                     \{ m\_pulse.SetNCrystalCompton(value); \}}
+\DoxyCodeLine{71       \textcolor{keyword}{inline} G4int GetNCrystalCompton()\textcolor{keyword}{ const                             }\{ \textcolor{keywordflow}{return} m\_pulse.GetNCrystalCompton(); \}}
+\DoxyCodeLine{72       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNCrystalRayleigh(G4int value)                    \{ m\_pulse.SetNCrystalRayleigh(value); \}}
+\DoxyCodeLine{73       \textcolor{keyword}{inline} G4int GetNCrystalRayleigh()\textcolor{keyword}{ const                            }\{ \textcolor{keywordflow}{return} m\_pulse.GetNCrystalRayleigh(); \}}
+\DoxyCodeLine{74       \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& GetPulse()             \{ \textcolor{keywordflow}{return} m\_pulse; \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76        \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetVolumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& v) \{  m\_pulse.SetVolumeID(v); \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetCoincidenceID(G4int value)                   \{ coincID=value; \}}
+\DoxyCodeLine{79       \textcolor{keyword}{inline} G4double GetCoincidenceID()\textcolor{keyword}{ const                                }\{ \textcolor{keywordflow}{return} coincID; \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81       \textcolor{comment}{//AE:Ef for AdderComptPhotIdeal Megalib comparison}}
+\DoxyCodeLine{82       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetFinalEnergy(G4double value)      \{ m\_pulse.SetEnergyFin(value); \}}
+\DoxyCodeLine{83       \textcolor{keyword}{inline} G4double GetFinalEnergy()\textcolor{keyword}{ const                   }\{ \textcolor{keywordflow}{return} m\_pulse.GetEnergyFin(); \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetIniEnergy(G4double value)      \{ m\_pulse.SetEnergyIniTrack(value); \}}
+\DoxyCodeLine{86         \textcolor{keyword}{inline} G4double GetIniEnergy()\textcolor{keyword}{ const                   }\{ \textcolor{keywordflow}{return} m\_pulse.GetEnergyIniTrack(); \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{private}:}
+\DoxyCodeLine{91       \mbox{\hyperlink{classGatePulse}{GatePulse}} m\_pulse;}
+\DoxyCodeLine{92       G4int coincID;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{keyword}{typedef} G4TDigiCollection<GateCCCoincidenceDigi> GateCCCoincidenceDigiCollection;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{extern} G4Allocator<GateCCCoincidenceDigi> GateCCCoincidenceDigiAllocator;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* GateCCCoincidenceDigi::operator \textcolor{keyword}{new}(size\_t)}
+\DoxyCodeLine{109 \{}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void}* aDigi;}
+\DoxyCodeLine{111   aDigi = (\textcolor{keywordtype}{void}*) GateCCCoincidenceDigiAllocator.MallocSingle();}
+\DoxyCodeLine{112   \textcolor{keywordflow}{return} aDigi;}
+\DoxyCodeLine{113 \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} GateCCCoincidenceDigi::operator \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}* aDigi)}
+\DoxyCodeLine{120 \{}
+\DoxyCodeLine{121   GateCCCoincidenceDigiAllocator.FreeSingle((\mbox{\hyperlink{classGateCCCoincidenceDigi}{GateCCCoincidenceDigi}}*) aDigi);}
+\DoxyCodeLine{122 \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

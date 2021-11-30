@@ -1,0 +1,83 @@
+\hypertarget{classGateCalibration}{}\doxysection{Gate\+Calibration Class Reference}
+\label{classGateCalibration}\index{GateCalibration@{GateCalibration}}
+
+
+Pulse-\/processor modelling a calibration Nphotons-\/\texorpdfstring{$>$}{>}Energy.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Calibration.\+hh$>$}
+
+Inheritance diagram for Gate\+Calibration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCalibration}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCalibration_a58e78ed7621d92a7a64340724ec0442b}\label{classGateCalibration_a58e78ed7621d92a7a64340724ec0442b}} 
+{\bfseries Gate\+Calibration} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new calibration attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCalibration_a52ac9618d4511e3c5ef9c6d1b37070f7}\label{classGateCalibration_a52ac9618d4511e3c5ef9c6d1b37070f7}} 
+virtual {\bfseries $\sim$\+Gate\+Calibration} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCalibration_a4f3b201e4885397f000a6e239bf1d9ea}\label{classGateCalibration_a4f3b201e4885397f000a6e239bf1d9ea}} 
+G4double {\bfseries Get\+Calibration\+Factor} ()
+\item 
+\mbox{\Hypertarget{classGateCalibration_a48624cf6b4017ffd1d2702254c640db7}\label{classGateCalibration_a48624cf6b4017ffd1d2702254c640db7}} 
+void {\bfseries Set\+Calibration\+Factor} (G4double its\+Calib)
+\item 
+virtual void \mbox{\hyperlink{classGateCalibration_ad9dae6b10f05e43aa388c471cfb158fe}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateCalibration_acec34dd493f5a1c8e6943ce3ba58bceb}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modelling a calibration Nphotons-\/\texorpdfstring{$>$}{>}Energy. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateCalibration}{Gate\+Calibration}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (feb 2003)
+\item Can be usefull if you use the class(es) \mbox{\hyperlink{classGateLightYield}{Gate\+Light\+Yield}}, \mbox{\hyperlink{classGateTransferEfficiency}{Gate\+Transfer\+Efficiency}} or \mbox{\hyperlink{classGateQuantumEfficiency}{Gate\+Quantum\+Efficiency}}. You can also set your own calibration factor. Allows the \char`\"{}recalibration\char`\"{} in energy.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCalibration_ad9dae6b10f05e43aa388c471cfb158fe}\label{classGateCalibration_ad9dae6b10f05e43aa388c471cfb158fe}} 
+\index{GateCalibration@{GateCalibration}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateCalibration@{GateCalibration}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Calibration\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the calibration 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateCalibration_acec34dd493f5a1c8e6943ce3ba58bceb}\label{classGateCalibration_acec34dd493f5a1c8e6943ce3ba58bceb}} 
+\index{GateCalibration@{GateCalibration}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateCalibration@{GateCalibration}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Calibration\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Calibration.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Calibration.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{GateTriCoincidenceSorter_8hh_source}{}\doxysection{Gate\+Tri\+Coincidence\+Sorter.\+hh}
+\label{GateTriCoincidenceSorter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTriCoincidenceSorter.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTriCoincidenceSorter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  03/2012}}
+\DoxyCodeLine{3 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef GateTriCoincidenceSorter\_h}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define GateTriCoincidenceSorter\_h 1}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateDigitizer.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVCoincidencePulseProcessor.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateRootDefs.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTriCoincidenceSorterMessenger}{GateTriCoincidenceSorterMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// typedef std::vector<G4ThreeVector*> PositionVector;}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTriCoincidenceSorter}{GateTriCoincidenceSorter}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{GateVCoincidencePulseProcessor}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27 \textcolor{comment}{//  typedef unsigned long long int  buffer\_t;}}
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateTriCoincidenceSorter}{GateTriCoincidenceSorter}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{29                  \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTriCoincidenceSorter}{\string~GateTriCoincidenceSorter}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36    \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* FindSinglesPulseList(\textcolor{keyword}{const} G4String\& pulseListName)}
+\DoxyCodeLine{37    \{\textcolor{keywordflow}{return} m\_digitizer-\/>\mbox{\hyperlink{classGateDigitizer_a4f96b7bc353efbd5a77da8788ca16ce5}{FindPulseList}}(pulseListName);\}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSinglesPulseListName(G4String\& name)      \{m\_sPulseListName = name ;\}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41    \textcolor{keyword}{inline} G4double GetTriCoincWindow()                      \{ \textcolor{keywordflow}{return} m\_triCoincWindow;\}}
+\DoxyCodeLine{42    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTriCoincWindow( G4double window)          \{ m\_triCoincWindow = window;\}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44    \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetWSPulseListSize(G4int size)              \{ m\_waitingSinglesSize = size; \}}
+\DoxyCodeLine{45    \textcolor{keyword}{inline} G4int GetWSPulseListSize()\textcolor{keyword}{ const                  }\{ \textcolor{keywordflow}{return} m\_waitingSinglesSize; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47    \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} IsTriCoincProcessor()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 1; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTriCoincidenceSorter_aa28bfb995ea742c5f8c53ed69117f06d}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RegisterTCSingles(\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& sPulseList);}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} G4String SetSinglesTreeName(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} CollectSingles();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57   \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* \mbox{\hyperlink{classGateTriCoincidenceSorter_a99696be06f2a503670e2e98f4cf5db3f}{ProcessPulse}}(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* inputPulse,G4int iPulse);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{private}:}
+\DoxyCodeLine{61    \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* m\_digitizer;}
+\DoxyCodeLine{62    G4String m\_sPulseListName;}
+\DoxyCodeLine{63    \mbox{\hyperlink{classGateTriCoincidenceSorterMessenger}{GateTriCoincidenceSorterMessenger}} *m\_messenger;    }
+\DoxyCodeLine{64 \textcolor{comment}{/*   bool                         m\_isTriCoincProc;*/}}
+\DoxyCodeLine{65    G4double m\_triCoincWindow;}
+\DoxyCodeLine{66    \mbox{\hyperlink{classGatePulseList}{GatePulseList}}*               m\_waitingSingles;}
+\DoxyCodeLine{67    GateRootSingleBuffer         m\_sBuffer;}
+\DoxyCodeLine{68    GateSingleTree*              m\_sTree;}
+\DoxyCodeLine{69    G4String                     m\_sTreeName;}
+\DoxyCodeLine{70    Int\_t                        m\_triCoincID;}
+\DoxyCodeLine{71    TBranch*                     m\_triCID;}
+\DoxyCodeLine{72    G4int                        m\_waitingSinglesSize;}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,272 @@
+\hypertarget{GateCrystalHit_8hh_source}{}\doxysection{Gate\+Crystal\+Hit.\+hh}
+\label{GateCrystalHit_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrystalHit.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrystalHit.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCrystalHit\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCrystalHit\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4VHit.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4THitsCollection.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4Allocator.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateVolumeID.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateOutputVolumeID.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{32 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}} : \textcolor{keyword}{public} G4VHit}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38       \mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}}();}
+\DoxyCodeLine{39       \mbox{\hyperlink{classGateCrystalHit}{\string~GateCrystalHit}}();}
+\DoxyCodeLine{40       \textcolor{comment}{//GateCrystalHit(const GateCrystalHit \&right);}}
+\DoxyCodeLine{41       \textcolor{comment}{//const GateCrystalHit\& operator=(const GateCrystalHit \&right);}}
+\DoxyCodeLine{42       \textcolor{comment}{//int operator==(const GateCrystalHit \&right) const;}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} *\textcolor{keyword}{operator} \textcolor{keyword}{new}(size\_t);}
+\DoxyCodeLine{46       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \textcolor{keyword}{operator} \textcolor{keyword}{delete}(\textcolor{keywordtype}{void} *aHit);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48       \textcolor{keywordtype}{void} Draw();}
+\DoxyCodeLine{49       \textcolor{keywordtype}{void} Print();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51       \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& flux, \textcolor{keyword}{const} \mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}}\& hit);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53       \textcolor{keyword}{friend} std::ofstream\& operator<<(std::ofstream\& flux, \mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}}* hit);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{private}:}
+\DoxyCodeLine{56   G4double m\_edep;            \textcolor{comment}{// energy deposit for the current hit}}
+\DoxyCodeLine{57   G4double m\_stepLength;      \textcolor{comment}{// length of the step for the current hit}}
+\DoxyCodeLine{58   G4double m\_trackLength;      \textcolor{comment}{// length of the track }}
+\DoxyCodeLine{59   G4double m\_time;            \textcolor{comment}{// time of the current hit}}
+\DoxyCodeLine{60   G4double m\_trackLocalTime;  \textcolor{comment}{// time of the current track}}
+\DoxyCodeLine{61   G4ThreeVector m\_pos;        \textcolor{comment}{// position of the current hit}}
+\DoxyCodeLine{62   G4double m\_posx;}
+\DoxyCodeLine{63   G4double m\_posy;}
+\DoxyCodeLine{64   G4double m\_posz;}
+\DoxyCodeLine{65   G4ThreeVector m\_momDir;        \textcolor{comment}{// momentum Direction of the current hit}}
+\DoxyCodeLine{66   G4ThreeVector m\_localPos;   \textcolor{comment}{// position of the current hit}}
+\DoxyCodeLine{67   G4String m\_process;         \textcolor{comment}{// process on the current hit}}
+\DoxyCodeLine{68   G4int m\_PDGEncoding;        \textcolor{comment}{// G4 PDGEncoding}}
+\DoxyCodeLine{69   G4int m\_trackID;            \textcolor{comment}{// track ID}}
+\DoxyCodeLine{70   G4int m\_parentID;           \textcolor{comment}{// parent track ID}}
+\DoxyCodeLine{71   G4int m\_sourceID;           \textcolor{comment}{// source progressive number}}
+\DoxyCodeLine{72   G4ThreeVector m\_sourcePosition; \textcolor{comment}{// position of the source (NOT the positron) that generated the hit}}
+\DoxyCodeLine{73   G4int m\_photonID;           \textcolor{comment}{// photon ID (1 or 2, 0 if not caused by one of the 2 gammas)}}
+\DoxyCodeLine{74   G4int m\_nPhantomCompton;    \textcolor{comment}{// \# of compton processes in the phantom occurred to the photon}}
+\DoxyCodeLine{75   G4int m\_nCrystalCompton;    \textcolor{comment}{// \# of compton processes in the crystal occurred to the photon}}
+\DoxyCodeLine{76   G4int m\_nPhantomRayleigh;    \textcolor{comment}{// \# of Rayleigh processes in the phantom occurred to the photon}}
+\DoxyCodeLine{77   G4int m\_nCrystalRayleigh;    \textcolor{comment}{// \# of Rayleigh processes in the crystal occurred to the photon}}
+\DoxyCodeLine{78   G4String m\_comptonVolumeName; \textcolor{comment}{// name of the volume of the last (if any) compton scattering}}
+\DoxyCodeLine{79   G4String m\_RayleighVolumeName; \textcolor{comment}{// name of the volume of the last (if any) Rayleigh scattering}}
+\DoxyCodeLine{80   G4int m\_primaryID;          \textcolor{comment}{// primary that caused the hit}}
+\DoxyCodeLine{81   G4int m\_eventID;            \textcolor{comment}{// eventID}}
+\DoxyCodeLine{82   G4int m\_runID;              \textcolor{comment}{// runID}}
+\DoxyCodeLine{83   \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}} m\_volumeID;    \textcolor{comment}{// Volume ID in the world volume tree}}
+\DoxyCodeLine{84   G4ThreeVector m\_scannerPos; \textcolor{comment}{// Position of the scanner}}
+\DoxyCodeLine{85   G4double m\_scannerRotAngle; \textcolor{comment}{// Rotation angle of the scanner}}
+\DoxyCodeLine{86   \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}} m\_outputVolumeID;}
+\DoxyCodeLine{87   G4int m\_systemID;           \textcolor{comment}{// system ID in for the multi-\/system approach}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{comment}{// To use with GateROOTBasicOutput classes}}
+\DoxyCodeLine{90   G4ThreeVector pos;  \textcolor{comment}{// position}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{comment}{// HDS : Added in order to record septal penetration}}
+\DoxyCodeLine{93   G4int m\_nSeptal;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{// AE : Added for IdealComptonPhot adder which take into account several Comptons in the same volume}}
+\DoxyCodeLine{97   G4String m\_Postprocess;         \textcolor{comment}{// PostStep process }}
+\DoxyCodeLine{98   G4double m\_energyIniTrack;         \textcolor{comment}{// Initial energy of the track}}
+\DoxyCodeLine{99   G4double m\_energyFin;         \textcolor{comment}{// final energy of the particle}}
+\DoxyCodeLine{100   G4double m\_sourceEnergy;\textcolor{comment}{//AE}}
+\DoxyCodeLine{101   G4int m\_sourcePDG;\textcolor{comment}{//AE}}
+\DoxyCodeLine{102   G4int m\_nCrystalConv;    \textcolor{comment}{// \# of pair creation process in the crystal occurred to the photon}}
+\DoxyCodeLine{103   }
+\DoxyCodeLine{104   \textcolor{comment}{//Additional information from ExtendedVSource}}
+\DoxyCodeLine{105   G4int m\_sourceType = 0;\textcolor{comment}{//0 means 'by default not known'; sourceType says what type of positronium (Ps) is used: pPs, oPs }}
+\DoxyCodeLine{106   G4int m\_decayType = 0;\textcolor{comment}{//0 means 'by default not known'; decayType says what type of Ps decay is used: standard (without prompt gamma), deexcitation (with prompt gamma)}}
+\DoxyCodeLine{107   G4int m\_gammaType = 0;\textcolor{comment}{//0 means 'by default not known'; gammaType says what type of gamma is emitted: annihilation, prompt, other}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keyword}{public}:}
+\DoxyCodeLine{110       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEdep(G4double de)          \{ m\_edep = de; \}}
+\DoxyCodeLine{111       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AddEdep(G4double de)          \{ m\_edep += de; \}}
+\DoxyCodeLine{112       \textcolor{keyword}{inline} G4double GetEdep()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_edep; \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetStepLength(G4double value) \{ m\_stepLength = value; \}}
+\DoxyCodeLine{115       \textcolor{keyword}{inline} G4double GetStepLength()\textcolor{keyword}{ const          }\{ \textcolor{keywordflow}{return} m\_stepLength; \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrackLength(G4double value) \{ m\_trackLength = value; \}}
+\DoxyCodeLine{118       \textcolor{keyword}{inline} G4double GetTrackLength()\textcolor{keyword}{ const          }\{ \textcolor{keywordflow}{return} m\_trackLength; \}}
+\DoxyCodeLine{119       }
+\DoxyCodeLine{120       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetTrackLocalTime(G4double aTime)    \{ m\_trackLocalTime = aTime; \}}
+\DoxyCodeLine{121       \textcolor{keyword}{inline} G4double GetTrackLocalTime()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_trackLocalTime; \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetTime(G4double aTime)    \{ m\_time = aTime; \}}
+\DoxyCodeLine{124       \textcolor{keyword}{inline} G4double GetTime()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_time; \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetGlobalPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)    \{ m\_pos = xyz; \}}
+\DoxyCodeLine{127       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetGlobalPos()\textcolor{keyword}{ const            }\{ \textcolor{keywordflow}{return} m\_pos; \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetMomentumDir(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_momDir = xyz; \}}
+\DoxyCodeLine{131       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetMomentumDir()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_momDir; \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetLocalPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_localPos = xyz; \}}
+\DoxyCodeLine{134       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetLocalPos()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_localPos; \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetProcess(G4String proc) \{ m\_process = proc; \}}
+\DoxyCodeLine{138       \textcolor{keyword}{inline} G4String GetProcess()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_process; \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetPDGEncoding(G4int j)      \{ m\_PDGEncoding = j; \}}
+\DoxyCodeLine{141       \textcolor{keyword}{inline} G4int GetPDGEncoding()\textcolor{keyword}{ const            }\{ \textcolor{keywordflow}{return} m\_PDGEncoding; \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetTrackID(G4int j)          \{ m\_trackID = j; \}}
+\DoxyCodeLine{144       \textcolor{keyword}{inline} G4int GetTrackID()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_trackID; \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetParentID(G4int j)         \{ m\_parentID = j; \}}
+\DoxyCodeLine{147       \textcolor{keyword}{inline} G4int GetParentID()\textcolor{keyword}{ const               }\{ \textcolor{keywordflow}{return} m\_parentID; \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSourceID(G4int j)         \{ m\_sourceID = j; \}}
+\DoxyCodeLine{150       \textcolor{keyword}{inline} G4int GetSourceID()\textcolor{keyword}{ const               }\{ \textcolor{keywordflow}{return} m\_sourceID; \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSourcePosition(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_sourcePosition = xyz; \}}
+\DoxyCodeLine{153       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetSourcePosition()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_sourcePosition; \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetPhotonID(G4int j)         \{ m\_photonID = j; \}}
+\DoxyCodeLine{156       \textcolor{keyword}{inline} G4int GetPhotonID()\textcolor{keyword}{ const               }\{  \textcolor{keywordflow}{return} m\_photonID; \}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNPhantomCompton(G4int j)  \{ m\_nPhantomCompton = j; \}}
+\DoxyCodeLine{159       \textcolor{keyword}{inline} G4int GetNPhantomCompton()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nPhantomCompton; \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNCrystalCompton(G4int j)  \{ m\_nCrystalCompton = j; \}}
+\DoxyCodeLine{162       \textcolor{keyword}{inline} G4int GetNCrystalCompton()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nCrystalCompton; \}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNPhantomRayleigh(G4int j)  \{ m\_nPhantomRayleigh = j; \}}
+\DoxyCodeLine{165       \textcolor{keyword}{inline} G4int GetNPhantomRayleigh()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nPhantomRayleigh; \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNCrystalRayleigh(G4int j)  \{ m\_nCrystalRayleigh = j; \}}
+\DoxyCodeLine{168       \textcolor{keyword}{inline} G4int GetNCrystalRayleigh()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nCrystalRayleigh; \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetComptonVolumeName(G4String name) \{ m\_comptonVolumeName = name; \}}
+\DoxyCodeLine{171       \textcolor{keyword}{inline} G4String GetComptonVolumeName()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_comptonVolumeName; \}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetRayleighVolumeName(G4String name) \{ m\_RayleighVolumeName = name; \}}
+\DoxyCodeLine{174       \textcolor{keyword}{inline} G4String GetRayleighVolumeName()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_RayleighVolumeName; \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetPrimaryID(G4int j)        \{ m\_primaryID = j; \}}
+\DoxyCodeLine{177       \textcolor{keyword}{inline} G4int GetPrimaryID()\textcolor{keyword}{ const              }\{ \textcolor{keywordflow}{return} m\_primaryID; \}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetEventID(G4int j)          \{ m\_eventID = j; \}}
+\DoxyCodeLine{180       \textcolor{keyword}{inline} G4int GetEventID()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_eventID; \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetRunID(G4int j)            \{ m\_runID = j; \}}
+\DoxyCodeLine{183       \textcolor{keyword}{inline} G4int GetRunID()\textcolor{keyword}{ const                  }\{ \textcolor{keywordflow}{return} m\_runID; \}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetVolumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& volumeID)            \{ m\_volumeID = volumeID; \}}
+\DoxyCodeLine{186       \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& GetVolumeID()\textcolor{keyword}{ const                    }\{ \textcolor{keywordflow}{return} m\_volumeID; \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetScannerPos(\textcolor{keyword}{const} G4ThreeVector\& xyz)              \{ m\_scannerPos = xyz; \}}
+\DoxyCodeLine{189       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetScannerPos()\textcolor{keyword}{ const                     }\{ \textcolor{keywordflow}{return} m\_scannerPos; \}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetScannerRotAngle(G4double angle)                \{ m\_scannerRotAngle = angle; \}}
+\DoxyCodeLine{192       \textcolor{keyword}{inline} G4double GetScannerRotAngle()\textcolor{keyword}{ const                            }\{ \textcolor{keywordflow}{return} m\_scannerRotAngle; \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetOutputVolumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}}\& outputVolumeID)  \{ m\_outputVolumeID = outputVolumeID; \}}
+\DoxyCodeLine{195       \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}}\& GetOutputVolumeID()\textcolor{keyword}{  const                 }\{ \textcolor{keywordflow}{return} m\_outputVolumeID; \}}
+\DoxyCodeLine{196       \textcolor{keyword}{inline} G4int GetComponentID(\textcolor{keywordtype}{size\_t} depth)\textcolor{keyword}{ const    }\{ \textcolor{keywordflow}{return} (m\_outputVolumeID.size()>depth) ? m\_outputVolumeID[depth] : -\/1; \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSystemID(\textcolor{keyword}{const} G4int systemID) \{ m\_systemID = systemID; \}}
+\DoxyCodeLine{199       \textcolor{keyword}{inline} G4int GetSystemID()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_systemID; \}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201       \textcolor{keyword}{inline} G4bool GoodForAnalysis()\textcolor{keyword}{ const}}
+\DoxyCodeLine{202 \textcolor{keyword}{          }\{ \textcolor{keywordflow}{return} ( (m\_process != \textcolor{stringliteral}{"{}Transportation"{}}) || (m\_edep!=0.) ); \}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204       \textcolor{comment}{// HDS : Added in order to record septal penetration}}
+\DoxyCodeLine{205       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNSeptal(G4int j)  \{ m\_nSeptal = j; \}}
+\DoxyCodeLine{206       \textcolor{keyword}{inline} G4int GetNSeptal()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nSeptal; \}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211       \textcolor{comment}{// AE : Added for IdealComptonPhot adder which take into account several Comptons in the same volume }}
+\DoxyCodeLine{212       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetPostStepProcess(G4String proc) \{ m\_Postprocess = proc; \}}
+\DoxyCodeLine{213       \textcolor{keyword}{inline} G4String GetPostStepProcess()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_Postprocess; \}}
+\DoxyCodeLine{214      }
+\DoxyCodeLine{215       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyIniTrack(G4double eIni)          \{ m\_energyIniTrack = eIni; \}}
+\DoxyCodeLine{216       \textcolor{keyword}{inline} G4double GetEnergyIniTrack()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_energyIniTrack; \}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyFin(G4double eFin)          \{ m\_energyFin = eFin; \}}
+\DoxyCodeLine{219       \textcolor{keyword}{inline} G4double GetEnergyFin()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_energyFin; \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224       \textcolor{comment}{//-\/-\/-\/-\/-\/-\/AE-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{225       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSourceEnergy(G4double value)     \{ m\_sourceEnergy = value; \}}
+\DoxyCodeLine{226       \textcolor{keyword}{inline}  G4double GetSourceEnergy()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_sourceEnergy; \}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetSourcePDG(G4int value)     \{ m\_sourcePDG = value; \}}
+\DoxyCodeLine{229       \textcolor{keyword}{inline}  G4int GetSourcePDG()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_sourcePDG; \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNCrystalConv(G4int value)     \{ m\_nCrystalConv = value; \}}
+\DoxyCodeLine{233       \textcolor{keyword}{inline}  G4int GetNCrystalConv()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_nCrystalConv; \}}
+\DoxyCodeLine{234       \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237       \textcolor{comment}{// To test move part of the code -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{238       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetXPos(\textcolor{keyword}{const} G4double \& x)    \{ m\_posx = x; \}}
+\DoxyCodeLine{239       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4double\& GetXPos()\textcolor{keyword}{ const      }\{ \textcolor{keywordflow}{return} m\_posx; \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetYPos(\textcolor{keyword}{const} G4double \& y)    \{ m\_posy = y; \}}
+\DoxyCodeLine{242       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4double\& GetYPos()\textcolor{keyword}{ const      }\{ \textcolor{keywordflow}{return} m\_posy; \}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245       \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetZPos(\textcolor{keyword}{const} G4double \& z)    \{ m\_posz = z; \}}
+\DoxyCodeLine{246       \textcolor{keyword}{inline} \textcolor{keyword}{const} G4double\& GetZPos()\textcolor{keyword}{ const      }\{ \textcolor{keywordflow}{return} m\_posz; \}}
+\DoxyCodeLine{248       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSourceType(G4int value) \{ m\_sourceType = value; \}}
+\DoxyCodeLine{249       \textcolor{keyword}{inline} G4int GetSourceType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_sourceType; \}}
+\DoxyCodeLine{250       }
+\DoxyCodeLine{251       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetDecayType(G4int value) \{ m\_decayType = value; \}}
+\DoxyCodeLine{252       \textcolor{keyword}{inline} G4int GetDecayType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_decayType; \}}
+\DoxyCodeLine{253       }
+\DoxyCodeLine{254       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetGammaType(G4int value)\{ m\_gammaType = value; \}}
+\DoxyCodeLine{255       \textcolor{keyword}{inline} G4int GetGammaType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_gammaType; \}}
+\DoxyCodeLine{256 \};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{keyword}{typedef} G4THitsCollection<GateCrystalHit> GateCrystalHitsCollection;}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 \textcolor{keyword}{extern} G4Allocator<GateCrystalHit> GateCrystalHitAllocator;}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* GateCrystalHit::operator \textcolor{keyword}{new}(size\_t)}
+\DoxyCodeLine{263 \{}
+\DoxyCodeLine{264   \textcolor{keywordtype}{void} *aHit;}
+\DoxyCodeLine{265   aHit = (\textcolor{keywordtype}{void} *) GateCrystalHitAllocator.MallocSingle();}
+\DoxyCodeLine{266   \textcolor{keywordflow}{return} aHit;}
+\DoxyCodeLine{267 \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} GateCrystalHit::operator \textcolor{keyword}{delete}(\textcolor{keywordtype}{void} *aHit)}
+\DoxyCodeLine{270 \{}
+\DoxyCodeLine{271   GateCrystalHitAllocator.FreeSingle((\mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}}*) aHit);}
+\DoxyCodeLine{272 \}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

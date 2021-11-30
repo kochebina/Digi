@@ -1,0 +1,152 @@
+\hypertarget{GateMaps_8hh_source}{}\doxysection{Gate\+Maps.\+hh}
+\label{GateMaps_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMaps.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMaps.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateMaps\_hh}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateMaps\_hh}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{23 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tkey,\textcolor{keyword}{typename} Tvalue>}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMap}{GateMap}} : \textcolor{keyword}{public} std::map<Tkey,Tvalue>}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \textcolor{keyword}{typedef}          std::pair<Tkey,Tvalue>             \mbox{\hyperlink{classMapPair}{MapPair}} ;}
+\DoxyCodeLine{31   \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::map<Tkey,Tvalue>::iterator  iterator ;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateMap_ae96abb54892c0142e65a91c3c435351e}{GateMap}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37   \mbox{\hyperlink{classGateMap_a0f470bfcd69fe19d1c1a1e14387267e1}{GateMap}}(\mbox{\hyperlink{classMapPair}{MapPair}}* first);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{43   \mbox{\hyperlink{classGateMap_ae694a93c0556ec33e159d5c0e092409f}{GateMap}}(\mbox{\hyperlink{classMapPair}{MapPair}}* first,\mbox{\hyperlink{classMapPair}{MapPair}}* last);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{47   \mbox{\hyperlink{classGateMap_a92e8dcb292fb3d0cc3e64e43c6d307b5}{GateMap}}(\textcolor{keywordtype}{size\_t} n, \mbox{\hyperlink{classMapPair}{MapPair}}* first);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{51   \mbox{\hyperlink{classGateMap_a23fb391ecda07378814d222019b7ee8d}{GateMap}}(\textcolor{keywordtype}{size\_t} n, \mbox{\hyperlink{classGateMap}{GateMap<Tkey,Tvalue>}} *mapArray[]);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMap}{\string~GateMap}}() \{\}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} G4String \mbox{\hyperlink{classGateMap_affe62fdd9191c8d5f6fd178ee6ae57bb}{DumpMap}}(G4bool flagWithQuotes=\textcolor{keyword}{false},G4String suffix=\textcolor{stringliteral}{"{}"{}},G4String separator=\textcolor{stringliteral}{"{} "{}},G4String prefix=\textcolor{stringliteral}{"{}"{}} );}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{// Defaut constructor -\/> empty GateMap}}
+\DoxyCodeLine{68 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tkey,\textcolor{keyword}{typename} Tvalue>}
+\DoxyCodeLine{69 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMap_ae96abb54892c0142e65a91c3c435351e}{GateMap<Tkey,Tvalue>::GateMap}}()}
+\DoxyCodeLine{70  : std::map<Tkey,Tvalue>()}
+\DoxyCodeLine{71 \{\}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{// Constructs a GateMap with one item}}
+\DoxyCodeLine{77 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tkey,\textcolor{keyword}{typename} Tvalue>}
+\DoxyCodeLine{78 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMap_ae96abb54892c0142e65a91c3c435351e}{GateMap<Tkey,Tvalue>::GateMap}}(\mbox{\hyperlink{classMapPair}{MapPair}}* first)}
+\DoxyCodeLine{79  : std::map<Tkey,Tvalue>(first,first+1)}
+\DoxyCodeLine{80 \{\}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{// Constructs a GateMap from an array of MapPairs}}
+\DoxyCodeLine{86 \textcolor{comment}{// In agremment with the STL map template, the arguments are the start and the end of the array}}
+\DoxyCodeLine{87 \textcolor{comment}{// Remember that the end is one step AFTER the last element of the array}}
+\DoxyCodeLine{88 \textcolor{comment}{// For instance, for an array 'array' with 3 elements, call : GateMap(array,array+3)}}
+\DoxyCodeLine{89 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tkey,\textcolor{keyword}{typename} Tvalue>}
+\DoxyCodeLine{90 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMap_ae96abb54892c0142e65a91c3c435351e}{GateMap<Tkey,Tvalue>::GateMap}}(\mbox{\hyperlink{classMapPair}{MapPair}}* first,\mbox{\hyperlink{classMapPair}{MapPair}}* last)}
+\DoxyCodeLine{91  : std::map<Tkey,Tvalue>(first,last)}
+\DoxyCodeLine{92 \{\}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{comment}{// Constructs a GateMap from an array of MapPairs}}
+\DoxyCodeLine{99 \textcolor{comment}{// Pass the size of the array a pointer to and its first element}}
+\DoxyCodeLine{100 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tkey,\textcolor{keyword}{typename} Tvalue>}
+\DoxyCodeLine{101 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMap_ae96abb54892c0142e65a91c3c435351e}{GateMap<Tkey,Tvalue>::GateMap}}(\textcolor{keywordtype}{size\_t} n, \mbox{\hyperlink{classMapPair}{MapPair}}* first)}
+\DoxyCodeLine{102  : std::map<Tkey,Tvalue>(first,first+n)}
+\DoxyCodeLine{103 \{\}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{// Constructs a new GateMap by combining several GateMaps}}
+\DoxyCodeLine{110 \textcolor{comment}{// Pass the number of GateMaps and an array of GateMap pointers}}
+\DoxyCodeLine{111 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tkey,\textcolor{keyword}{typename} Tvalue>}
+\DoxyCodeLine{112 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMap_ae96abb54892c0142e65a91c3c435351e}{GateMap<Tkey,Tvalue>::GateMap}}(\textcolor{keywordtype}{size\_t} n, \mbox{\hyperlink{classGateMap}{GateMap<Tkey,Tvalue>}} *mapArray[])}
+\DoxyCodeLine{113  : std::map<Tkey,Tvalue>()}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<n ; i++)\{}
+\DoxyCodeLine{116     \mbox{\hyperlink{classGateMap}{GateMap<Tkey,Tvalue>}}* mapElement = mapArray[i];}
+\DoxyCodeLine{117     \textcolor{keywordflow}{for} (iterator iter = mapElement-\/>begin(); iter != mapElement-\/>end(); iter++)}
+\DoxyCodeLine{118       this-\/>insert(*iter);}
+\DoxyCodeLine{119   \}}
+\DoxyCodeLine{120 \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{// Dump a map into a printable string}}
+\DoxyCodeLine{126 \textcolor{comment}{// This function concatenates all the map keys into one printable string}}
+\DoxyCodeLine{127 \textcolor{comment}{// Each key can be preceded by a prefix and followed by a suffix. It can be printed within quotes.}}
+\DoxyCodeLine{128 \textcolor{comment}{// Also, each key can be separated from the next one by a separator-\/string.}}
+\DoxyCodeLine{129 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tkey,\textcolor{keyword}{typename} Tvalue>}
+\DoxyCodeLine{130 \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateMap_affe62fdd9191c8d5f6fd178ee6ae57bb}{GateMap<Tkey,Tvalue>::DumpMap}}(G4bool flagWithQuotes, G4String suffix, G4String separator, G4String prefix )}
+\DoxyCodeLine{131 \{}
+\DoxyCodeLine{132     G4String dump;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     iterator iter = this-\/>begin();}
+\DoxyCodeLine{135     \textcolor{keywordflow}{while} (iter != this-\/>end()) \{}
+\DoxyCodeLine{136       dump += prefix;}
+\DoxyCodeLine{137       \textcolor{keywordflow}{if} (flagWithQuotes)}
+\DoxyCodeLine{138         dump += \textcolor{stringliteral}{"{}'"{}};}
+\DoxyCodeLine{139       dump += G4String(iter-\/>first) + suffix;}
+\DoxyCodeLine{140       \textcolor{keywordflow}{if} (flagWithQuotes)}
+\DoxyCodeLine{141         dump += \textcolor{stringliteral}{"{}'"{}};}
+\DoxyCodeLine{142        \textcolor{keywordflow}{if} ( (++iter) != this-\/>end() )}
+\DoxyCodeLine{143         dump += separator;}
+\DoxyCodeLine{144     \}}
+\DoxyCodeLine{145     \textcolor{keywordflow}{return} dump;}
+\DoxyCodeLine{146 \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 }
+\DoxyCodeLine{154 \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4double>}} \mbox{\hyperlink{classGateUnitMap}{GateUnitMap}};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 }
+\DoxyCodeLine{162 \textcolor{keyword}{typedef} GateUnitMap::MapPair \mbox{\hyperlink{classGateUnitPair}{GateUnitPair}};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 }
+\DoxyCodeLine{170 \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4int>}} \mbox{\hyperlink{classGateCodeMap}{GateCodeMap}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{178 \textcolor{keyword}{typedef} GateCodeMap::MapPair \mbox{\hyperlink{classGateCodePair}{GateCodePair}};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

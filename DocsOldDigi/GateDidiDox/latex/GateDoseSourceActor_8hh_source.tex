@@ -1,0 +1,65 @@
+\hypertarget{GateDoseSourceActor_8hh_source}{}\doxysection{Gate\+Dose\+Source\+Actor.\+hh}
+\label{GateDoseSourceActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseSourceActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseSourceActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  GATE version name: gate\_v7}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GATEDOSESOURCEACTOR\_HH}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GATEDOSESOURCEACTOR\_HH}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateDoseSourceActorMessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateImageOfHistograms.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateSourceMgr.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoseSourceActor}{GateDoseSourceActor}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDoseSourceActor}{\string~GateDoseSourceActor}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateDoseSourceActor}{GateDoseSourceActor}})}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseSourceActor_ae185f7b7f14caf758f4414174d147b98}{Construct}}();}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseSourceActor_a983172ef90d50f8245c69e6ea83ed50e}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * e);}
+\DoxyCodeLine{35   \textcolor{comment}{//virtual void BeginOfRunAction(const G4Event * e);}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} SetSpotIDFromSource(G4String nameOfSource)\{bSourceName = nameOfSource;SpotOrNot=\textcolor{keyword}{true};\}}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} SetLayerIDFromSource(G4String nameOfSource)\{bSourceName = nameOfSource;SpotOrNot=\textcolor{keyword}{false};\}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{44   \mbox{\hyperlink{classGateDoseSourceActor}{GateDoseSourceActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateDoseSourceActorMessenger}{GateDoseSourceActorMessenger}} * pMessenger;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \mbox{\hyperlink{classGateSourceTPSPencilBeam}{GateSourceTPSPencilBeam}} *tpspencilsource;}
+\DoxyCodeLine{48   G4String bSourceName;}
+\DoxyCodeLine{49   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * doseSourceImage;  \textcolor{comment}{//main output (yield)}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{int} bID; \textcolor{comment}{//current spotid OR layerID set at beginofeventaction}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{bool} areweinityet;}
+\DoxyCodeLine{52   \textcolor{keywordtype}{bool} SpotOrNot;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 MAKE\_AUTO\_CREATOR\_ACTOR(DoseSourceActor,\mbox{\hyperlink{classGateDoseSourceActor}{GateDoseSourceActor}})}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// end GATEDOSESOURCEACTOR}}
+
+\end{DoxyCode}

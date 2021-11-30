@@ -1,0 +1,222 @@
+\hypertarget{classGateAnalyzeHeader}{}\doxysection{Gate\+Analyze\+Header Class Reference}
+\label{classGateAnalyzeHeader}\index{GateAnalyzeHeader@{GateAnalyzeHeader}}
+
+
+Handler for \char`\"{}\+Analyze\char`\"{} header files (free 3D medical images headers) ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Analyze\+Header.\+hh$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Full header structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1Header__key}{Header\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Structure storing general information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1History}{History}}
+\item 
+struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1Image__characteristics}{Image\+\_\+characteristics}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a3cb55ec594edaeb7bbf95601d4f5a1c7}\label{classGateAnalyzeHeader_a3cb55ec594edaeb7bbf95601d4f5a1c7}} 
+typedef float {\bfseries Pixel\+Type}
+\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_ac9c64dca374c6f0f20e2ec80a37077a9}\label{classGateAnalyzeHeader_ac9c64dca374c6f0f20e2ec80a37077a9}} 
+typedef struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1Header__key}{Gate\+Analyze\+Header\+::\+Header\+\_\+key}} {\bfseries h\+\_\+k}
+\begin{DoxyCompactList}\small\item\em Structure storing general information. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1Image__characteristics}{Gate\+Analyze\+Header\+::\+Image\+\_\+characteristics}} \mbox{\hyperlink{classGateAnalyzeHeader_a12155e2900aace9483d0a48061ba1614}{i\+\_\+c}}
+\item 
+typedef struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1History}{Gate\+Analyze\+Header\+::\+History}} \mbox{\hyperlink{classGateAnalyzeHeader_a13dde3c269e24e85e42f86290f30fb4e}{h}}
+\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}\label{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}} 
+typedef unsigned char {\bfseries Type\+Code}
+\begin{DoxyCompactList}\small\item\em Type for coding image pixels type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a0991915f2204aaff6c81db5797c0bbdd}\label{classGateAnalyzeHeader_a0991915f2204aaff6c81db5797c0bbdd}} 
+{\bfseries Gate\+Analyze\+Header} ()
+\begin{DoxyCompactList}\small\item\em Ctor. Creates a default header. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a5e5ae2a480bcf5af8fb8922a1b6fac89}\label{classGateAnalyzeHeader_a5e5ae2a480bcf5af8fb8922a1b6fac89}} 
+{\bfseries $\sim$\+Gate\+Analyze\+Header} ()
+\begin{DoxyCompactList}\small\item\em Dtor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGateAnalyzeHeader_ad01c272f2e7fadc418149f05afd8fd2e}{Read}} (const G4\+String \&filename)
+\item 
+bool \mbox{\hyperlink{classGateAnalyzeHeader_af4e8bf92c1fa90fdf3a058c825263482}{Write}} (const G4\+String \&filename)
+\begin{DoxyCompactList}\small\item\em Writes the header. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGateAnalyzeHeader_a0a89a3d2c5aa7c16efcd08b75b6abd63}{Is\+Right\+Endian}} () const
+\begin{DoxyCompactList}\small\item\em Returns true iff the header was encoded with the same machine type (little/big endian). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a6d935abf5c5a5e2bcf33284fd52cd864}\label{classGateAnalyzeHeader_a6d935abf5c5a5e2bcf33284fd52cd864}} 
+const \mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\+\_\+struct}} \& {\bfseries Get\+Data} () const
+\begin{DoxyCompactList}\small\item\em Returns a const ref on the header information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a42ef255bba60550fd42dcabf10d3a68c}\label{classGateAnalyzeHeader_a42ef255bba60550fd42dcabf10d3a68c}} 
+\mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\+\_\+struct}} \& {\bfseries Get\+Data} ()
+\begin{DoxyCompactList}\small\item\em Returns a ref on the header information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a7d99be44924624582e698798a43e9858}\label{classGateAnalyzeHeader_a7d99be44924624582e698798a43e9858}} 
+void {\bfseries Set\+Voxel\+Type} (\mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} t)
+\begin{DoxyCompactList}\small\item\em Sets the type of the voxel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_ac5e9f332eff93c16139c22f9dc03fc53}\label{classGateAnalyzeHeader_ac5e9f332eff93c16139c22f9dc03fc53}} 
+\mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Get\+Voxel\+Type} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of the voxel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_abc3d8bfdb1d3bd116abb9b418fc21f26}\label{classGateAnalyzeHeader_abc3d8bfdb1d3bd116abb9b418fc21f26}} 
+void {\bfseries Set\+Image\+Size} (short int sx, short int sy, short int sz, short int nbchannels=1)
+\begin{DoxyCompactList}\small\item\em Sets the image size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_adbc0f12ecf6c6d387cadd18ab33053c6}\label{classGateAnalyzeHeader_adbc0f12ecf6c6d387cadd18ab33053c6}} 
+void {\bfseries Get\+Image\+Size} (short int \&sx, short int \&sy, short int \&sz, short int \&nbchannels)
+\begin{DoxyCompactList}\small\item\em Gets the image size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a2e6f4b212cbd7a72ad8ae3b10cbb9699}\label{classGateAnalyzeHeader_a2e6f4b212cbd7a72ad8ae3b10cbb9699}} 
+void {\bfseries Set\+Voxel\+Size} (Pixel\+Type sx, Pixel\+Type sy, Pixel\+Type sz)
+\begin{DoxyCompactList}\small\item\em Sets the voxels size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a72962a6223340336c39be22ae3a10207}\label{classGateAnalyzeHeader_a72962a6223340336c39be22ae3a10207}} 
+void {\bfseries Get\+Voxel\+Size} (Pixel\+Type \&sx, Pixel\+Type \&sy, Pixel\+Type \&sz)
+\begin{DoxyCompactList}\small\item\em Gets the voxels size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a674f2a141e48f5b8e71706a7388391df}\label{classGateAnalyzeHeader_a674f2a141e48f5b8e71706a7388391df}} 
+void {\bfseries Set\+Voxel\+Unit} (const G4\+String \&unit)
+\begin{DoxyCompactList}\small\item\em Sets the voxel unit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_ab546acdee4f0ddd9cebae7f4664c4509}\label{classGateAnalyzeHeader_ab546acdee4f0ddd9cebae7f4664c4509}} 
+G4\+String {\bfseries Get\+Voxel\+Unit} ()
+\begin{DoxyCompactList}\small\item\em Sets the voxel unit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_ae539acadc5f551438e754459127b4d0e}\label{classGateAnalyzeHeader_ae539acadc5f551438e754459127b4d0e}} 
+void {\bfseries Set\+Defaults} ()
+\begin{DoxyCompactList}\small\item\em Sets a default header (0x0x0 image) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a9071ea79a84a15938a9d3b81bc8aae2c}\label{classGateAnalyzeHeader_a9071ea79a84a15938a9d3b81bc8aae2c}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Unknown\+Type} = 0
+\begin{DoxyCompactList}\small\item\em Code for unknown pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a9ca1a58c73b7905dc607e3003b686a8f}\label{classGateAnalyzeHeader_a9ca1a58c73b7905dc607e3003b686a8f}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Binary\+Type} = 1
+\begin{DoxyCompactList}\small\item\em Code for binary pixel type (1 bi)t. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_aa8ed3966647443204e5eda3bd46a112d}\label{classGateAnalyzeHeader_aa8ed3966647443204e5eda3bd46a112d}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Unsigned\+Char\+Type} = 2
+\begin{DoxyCompactList}\small\item\em Code for unsigned char pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a6d049868f754eefe0e751681ac6965c6}\label{classGateAnalyzeHeader_a6d049868f754eefe0e751681ac6965c6}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Signed\+Short\+Type} = 4
+\begin{DoxyCompactList}\small\item\em Code for signed short pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a375da882146cc07cb61248b327e2db93}\label{classGateAnalyzeHeader_a375da882146cc07cb61248b327e2db93}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Signed\+Int\+Type} = 8
+\begin{DoxyCompactList}\small\item\em Code for signed int pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a3c9ec937a3abf7142d5c110ccf614d50}\label{classGateAnalyzeHeader_a3c9ec937a3abf7142d5c110ccf614d50}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Float\+Type} = 16
+\begin{DoxyCompactList}\small\item\em Code for Pixel\+Type pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a4982be18ac67179c8b718a2ae800f44e}\label{classGateAnalyzeHeader_a4982be18ac67179c8b718a2ae800f44e}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Complex\+Type} = 32
+\begin{DoxyCompactList}\small\item\em Code for complex pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a4f119ddc1f8e011b77217df26f7a9513}\label{classGateAnalyzeHeader_a4f119ddc1f8e011b77217df26f7a9513}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries Double\+Type} = 64
+\begin{DoxyCompactList}\small\item\em Code for double pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a9f4212e0dbb3d8cc42c5abd5fce96720}\label{classGateAnalyzeHeader_a9f4212e0dbb3d8cc42c5abd5fce96720}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries RGBType} = 128
+\begin{DoxyCompactList}\small\item\em Code for RGB pixel type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a8b1cef0db47d1a068187821a88eda73d}\label{classGateAnalyzeHeader_a8b1cef0db47d1a068187821a88eda73d}} 
+static const \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{Type\+Code}} {\bfseries All\+Type} = 255
+\begin{DoxyCompactList}\small\item\em Code for All pixel type (Meaning ?) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\+\_\+struct}} \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Sets the header information to the image\textquotesingle{}s characteristics. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateAnalyzeHeader_a8534e5507d16bf55f05b8fac35265dc2}\label{classGateAnalyzeHeader_a8534e5507d16bf55f05b8fac35265dc2}} 
+bool {\bfseries m\+\_\+right\+Endian}
+\begin{DoxyCompactList}\small\item\em For hdr oriented img reading \+: is the header coded with the right endian convention (same as the current machine\textquotesingle{}s one) ? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handler for \char`\"{}\+Analyze\char`\"{} header files (free 3D medical images headers) ~\newline
+ 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classGateAnalyzeHeader_a13dde3c269e24e85e42f86290f30fb4e}\label{classGateAnalyzeHeader_a13dde3c269e24e85e42f86290f30fb4e}} 
+\index{GateAnalyzeHeader@{GateAnalyzeHeader}!h@{h}}
+\index{h@{h}!GateAnalyzeHeader@{GateAnalyzeHeader}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1History}{Gate\+Analyze\+Header\+::\+History}} \mbox{\hyperlink{classGateAnalyzeHeader_a13dde3c269e24e85e42f86290f30fb4e}{Gate\+Analyze\+Header\+::h}}}
+
+Structure storing data concerning the history of the acquisition (metadata) \mbox{\Hypertarget{classGateAnalyzeHeader_a12155e2900aace9483d0a48061ba1614}\label{classGateAnalyzeHeader_a12155e2900aace9483d0a48061ba1614}} 
+\index{GateAnalyzeHeader@{GateAnalyzeHeader}!i\_c@{i\_c}}
+\index{i\_c@{i\_c}!GateAnalyzeHeader@{GateAnalyzeHeader}}
+\doxysubsubsection{\texorpdfstring{i\_c}{i\_c}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structGateAnalyzeHeader_1_1Image__characteristics}{Gate\+Analyze\+Header\+::\+Image\+\_\+characteristics}} \mbox{\hyperlink{classGateAnalyzeHeader_a12155e2900aace9483d0a48061ba1614}{Gate\+Analyze\+Header\+::i\+\_\+c}}}
+
+Structure storing the image characteristics \+: dimensions, voxel size, type, etc. ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateAnalyzeHeader_a0a89a3d2c5aa7c16efcd08b75b6abd63}\label{classGateAnalyzeHeader_a0a89a3d2c5aa7c16efcd08b75b6abd63}} 
+\index{GateAnalyzeHeader@{GateAnalyzeHeader}!IsRightEndian@{IsRightEndian}}
+\index{IsRightEndian@{IsRightEndian}!GateAnalyzeHeader@{GateAnalyzeHeader}}
+\doxysubsubsection{\texorpdfstring{IsRightEndian()}{IsRightEndian()}}
+{\footnotesize\ttfamily bool Gate\+Analyze\+Header\+::\+Is\+Right\+Endian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true iff the header was encoded with the same machine type (little/big endian). 
+
+If returns false (after header read) then the data (.img) should be read with endian bytes coding reversal (assuming header and data were encoded the same way). \mbox{\Hypertarget{classGateAnalyzeHeader_ad01c272f2e7fadc418149f05afd8fd2e}\label{classGateAnalyzeHeader_ad01c272f2e7fadc418149f05afd8fd2e}} 
+\index{GateAnalyzeHeader@{GateAnalyzeHeader}!Read@{Read}}
+\index{Read@{Read}!GateAnalyzeHeader@{GateAnalyzeHeader}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily bool Gate\+Analyze\+Header\+::\+Read (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{filename }\end{DoxyParamCaption})}
+
+Reads a .hdr file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if read successful ~\newline
+ 
+\end{DoxyReturn}
+Tests wether the bytes are written in reverse order than the current machine settings
+
+(little/big endians) The first record should be the file size, hence if reading it doesn\textquotesingle{}t match the actual file size assume the header has bytes inverted gets the file size
+
+reads the records
+
+if opposite endian \+: reverse all data
+
+swaps the records\mbox{\Hypertarget{classGateAnalyzeHeader_af4e8bf92c1fa90fdf3a058c825263482}\label{classGateAnalyzeHeader_af4e8bf92c1fa90fdf3a058c825263482}} 
+\index{GateAnalyzeHeader@{GateAnalyzeHeader}!Write@{Write}}
+\index{Write@{Write}!GateAnalyzeHeader@{GateAnalyzeHeader}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily bool Gate\+Analyze\+Header\+::\+Write (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Writes the header. 
+
+Writes the header 
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if read successful ~\newline
+ 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}\label{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}} 
+\index{GateAnalyzeHeader@{GateAnalyzeHeader}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!GateAnalyzeHeader@{GateAnalyzeHeader}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\+\_\+struct}} Gate\+Analyze\+Header\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets the header information to the image\textquotesingle{}s characteristics. 
+
+the data 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Analyze\+Header.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Analyze\+Header.\+cc\end{DoxyCompactItemize}

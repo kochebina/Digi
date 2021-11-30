@@ -1,0 +1,148 @@
+\hypertarget{GateFictitiousVoxelMap_8hh_source}{}\doxysection{Gate\+Fictitious\+Voxel\+Map.\+hh}
+\label{GateFictitiousVoxelMap_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMap.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMap.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateFictitiousVoxelMap\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateFictitiousVoxelMap\_hh 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVFictitiousMap.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4ios.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4Region;}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateCrossSectionsTable.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4GeometryTolerance.hh"{}} }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} G4Region G4Envelope;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMap}{GateFictitiousVoxelMap}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVFictitiousMap}{GateVFictitiousMap}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     \textcolor{keyword}{public}:}
+\DoxyCodeLine{33         \mbox{\hyperlink{classGateFictitiousVoxelMap}{GateFictitiousVoxelMap}} ( G4Envelope* env );}
+\DoxyCodeLine{34         \mbox{\hyperlink{classGateFictitiousVoxelMap}{\string~GateFictitiousVoxelMap}}();}
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} RegisterGeometryVoxelReader ( \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}} *, \textcolor{keywordtype}{bool} deleteWithThis );}
+\DoxyCodeLine{36         \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}}* GetCrossSectionsTable() \textcolor{keyword}{const};}
+\DoxyCodeLine{37         \textcolor{keyword}{inline} G4double GetCrossSection ( \textcolor{keyword}{const} G4ThreeVector\& pos, G4double kin\_en ) \textcolor{keyword}{const};}
+\DoxyCodeLine{38         \textcolor{keyword}{inline} G4double GetMaxCrossSection ( G4double kin\_en ) \textcolor{keyword}{const};}
+\DoxyCodeLine{39         \textcolor{keyword}{inline} G4int GetNx() \textcolor{keyword}{const};}
+\DoxyCodeLine{40         \textcolor{keyword}{inline} G4int GetNy() \textcolor{keyword}{const};}
+\DoxyCodeLine{41         \textcolor{keyword}{inline} G4int GetNz() \textcolor{keyword}{const};}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} Check() \textcolor{keyword}{const};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{keyword}{inline} G4Material* GetMaterial ( \textcolor{keyword}{const} G4ThreeVector\& pos ) \textcolor{keyword}{const};}
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} GetMaterials ( std::vector<G4Material*>\& ) \textcolor{keyword}{const};}
+\DoxyCodeLine{46         \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* GetGeometryVoxelReader() \textcolor{keyword}{const};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keyword}{private}:}
+\DoxyCodeLine{49         \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}} * pGeometryVoxelReader;}
+\DoxyCodeLine{50         G4ThreeVector m\_nHalfContainerDim; \textcolor{comment}{// half dimensions of container}}
+\DoxyCodeLine{51         G4ThreeVector m\_nVoxelDim; \textcolor{comment}{// dimension of voxel}}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} m\_nDeleteGeometryVoxelReader;}
+\DoxyCodeLine{53         G4int m\_nNx, m\_nNy, m\_nNz;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{inline} G4int GateFictitiousVoxelMap::GetNx()\textcolor{keyword}{ const}}
+\DoxyCodeLine{57 \textcolor{keyword}{}\{}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} m\_nNx;}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 \textcolor{keyword}{inline} G4int GateFictitiousVoxelMap::GetNy()\textcolor{keyword}{ const}}
+\DoxyCodeLine{61 \textcolor{keyword}{}\{}
+\DoxyCodeLine{62     \textcolor{keywordflow}{return} m\_nNy;}
+\DoxyCodeLine{63 \}}
+\DoxyCodeLine{64 \textcolor{keyword}{inline} G4int GateFictitiousVoxelMap::GetNz()\textcolor{keyword}{ const}}
+\DoxyCodeLine{65 \textcolor{keyword}{}\{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} m\_nNz;}
+\DoxyCodeLine{67 \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}}* GateFictitiousVoxelMap::GetCrossSectionsTable()\textcolor{keyword}{ const}}
+\DoxyCodeLine{71 \textcolor{keyword}{}\{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{return} pCrossSectionsTable; }
+\DoxyCodeLine{73 \}}
+\DoxyCodeLine{74 \textcolor{keyword}{inline} G4Material* GateFictitiousVoxelMap::GetMaterial ( \textcolor{keyword}{const} G4ThreeVector\& localPos )\textcolor{keyword}{ const}}
+\DoxyCodeLine{75 \textcolor{keyword}{}\{}
+\DoxyCodeLine{76     G4int i=\textcolor{keyword}{static\_cast<}G4int\textcolor{keyword}{>} ( ( localPos[0]+m\_nHalfContainerDim[0] ) /m\_nVoxelDim[0] );}
+\DoxyCodeLine{77     G4int j=\textcolor{keyword}{static\_cast<}G4int\textcolor{keyword}{>} ( ( localPos[1]+m\_nHalfContainerDim[1] ) /m\_nVoxelDim[1] );}
+\DoxyCodeLine{78     G4int k=\textcolor{keyword}{static\_cast<}G4int\textcolor{keyword}{>} ( ( localPos[2]+m\_nHalfContainerDim[2] ) /m\_nVoxelDim[2] );}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keywordflow}{if} ( i>=m\_nNx )\{}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} ( localPos[0]+m\_nHalfContainerDim[0]-\/m\_nVoxelDim[0]*m\_nNx<=G4GeometryTolerance::GetInstance()-\/>GetSurfaceTolerance() )}
+\DoxyCodeLine{82             i=m\_nNx-\/1;}
+\DoxyCodeLine{83         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{84             G4Exception ( \textcolor{stringliteral}{"{}GateFictitiousVoxelMap::GetMaterial (const G4ThreeVector\& localPos )"{}}, \textcolor{stringliteral}{"{}x position outside fictitious volume"{}}, FatalException,}
+\DoxyCodeLine{85                           \textcolor{stringliteral}{"{}x too large"{}} );}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if} ( j>=m\_nNy )\{}
+\DoxyCodeLine{88         \textcolor{keywordflow}{if} ( localPos[1]+m\_nHalfContainerDim[1]-\/m\_nVoxelDim[1]*m\_nNy<=G4GeometryTolerance::GetInstance()-\/>GetSurfaceTolerance() )}
+\DoxyCodeLine{89             j=m\_nNy-\/1;}
+\DoxyCodeLine{90         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{91             G4Exception ( \textcolor{stringliteral}{"{}GateFictitiousVoxelMap::GetMaterial (const G4ThreeVector\& localPos )"{}}, \textcolor{stringliteral}{"{}y position outside fictitious volume"{}}, FatalException,}
+\DoxyCodeLine{92                           \textcolor{stringliteral}{"{}y too large"{}} );}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} ( k>=m\_nNz )\{}
+\DoxyCodeLine{96         \textcolor{keywordflow}{if} ( localPos[2]+m\_nHalfContainerDim[2]-\/m\_nVoxelDim[2]*m\_nNz<=G4GeometryTolerance::GetInstance()-\/>GetSurfaceTolerance() )}
+\DoxyCodeLine{97             k=m\_nNz-\/1;}
+\DoxyCodeLine{98         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{99             G4Exception ( \textcolor{stringliteral}{"{}GateFictitiousVoxelMap::GetMaterial (const G4ThreeVector\& localPos )"{}}, \textcolor{stringliteral}{"{}z position outside fictitious volume"{}}, FatalException,}
+\DoxyCodeLine{100                           \textcolor{stringliteral}{"{}z too large"{}} );}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102     \textcolor{keywordflow}{if} ( i<0 )\{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if} ( localPos[0]+m\_nHalfContainerDim[0]-\/m\_nVoxelDim[0]*m\_nNx>-\/G4GeometryTolerance::GetInstance()-\/>GetSurfaceTolerance() )}
+\DoxyCodeLine{104             i=0;}
+\DoxyCodeLine{105         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{106             G4Exception ( \textcolor{stringliteral}{"{}GateFictitiousVoxelMap::GetMaterial (const G4ThreeVector\& localPos )"{}}, \textcolor{stringliteral}{"{}x position outside fictitious volume"{}}, FatalException,}
+\DoxyCodeLine{107                           \textcolor{stringliteral}{"{}x too small"{}} );}
+\DoxyCodeLine{108         \}}
+\DoxyCodeLine{109     \textcolor{keywordflow}{if} ( j<0 )\{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} ( localPos[1]+m\_nHalfContainerDim[1]-\/m\_nVoxelDim[1]*m\_nNy>-\/G4GeometryTolerance::GetInstance()-\/>GetSurfaceTolerance() )}
+\DoxyCodeLine{111             j=0;}
+\DoxyCodeLine{112         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{113             G4Exception ( \textcolor{stringliteral}{"{}GateFictitiousVoxelMap::GetMaterial (const G4ThreeVector\& localPos )"{}}, \textcolor{stringliteral}{"{}y position outside fictitious volume"{}}, FatalException,}
+\DoxyCodeLine{114                           \textcolor{stringliteral}{"{}y too small"{}} );}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116     \textcolor{keywordflow}{if} ( k<0 )\{}
+\DoxyCodeLine{117         \textcolor{keywordflow}{if} ( localPos[2]+m\_nHalfContainerDim[2]-\/m\_nVoxelDim[2]*m\_nNz>-\/G4GeometryTolerance::GetInstance()-\/>GetSurfaceTolerance() )}
+\DoxyCodeLine{118             k=0;}
+\DoxyCodeLine{119         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{120             G4Exception ( \textcolor{stringliteral}{"{}GateFictitiousVoxelMap::GetMaterial (const G4ThreeVector\& localPos )"{}}, \textcolor{stringliteral}{"{}z position outside fictitious volume"{}}, FatalException,}
+\DoxyCodeLine{121                           \textcolor{stringliteral}{"{}z too small"{}} );}
+\DoxyCodeLine{122         \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} pGeometryVoxelReader-\/>\mbox{\hyperlink{classGateGeometryVoxelArrayStore_a588ae2fec31c38dca8bec0aabae402c0}{GetVoxelMaterial\_noCheck}} ( i,j,k );}
+\DoxyCodeLine{125 \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keyword}{inline} G4double GateFictitiousVoxelMap::GetCrossSection ( \textcolor{keyword}{const} G4ThreeVector\& pos, G4double kin\_en )\textcolor{keyword}{ const}}
+\DoxyCodeLine{128 \textcolor{keyword}{}\{}
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} ( pCrossSectionsTable==NULL )        G4Exception ( \textcolor{stringliteral}{"{}GateFictitiousVoxelMap::GetCrossSection ( const G4ThreeVector\&, G4double)"{}}, \textcolor{stringliteral}{"{}CrossSectionsTable not registered"{}}, FatalException,}
+\DoxyCodeLine{130                 \textcolor{stringliteral}{"{}pCrossSectionsTable==NULL!"{}} );}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} pCrossSectionsTable-\/>GetCrossSection ( GetMaterial ( pos ),kin\_en );}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* GateFictitiousVoxelMap::GetGeometryVoxelReader()\textcolor{keyword}{ const}}
+\DoxyCodeLine{136 \textcolor{keyword}{}\{}
+\DoxyCodeLine{137     \textcolor{keywordflow}{return} pGeometryVoxelReader;}
+\DoxyCodeLine{138 \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{keyword}{inline} G4double GateFictitiousVoxelMap::GetMaxCrossSection ( G4double kin\_en )\textcolor{keyword}{ const}}
+\DoxyCodeLine{141 \textcolor{keyword}{}\{}
+\DoxyCodeLine{142     \textcolor{keywordflow}{return} pCrossSectionsTable-\/>GetMaxCrossSection ( kin\_en );}
+\DoxyCodeLine{143 \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

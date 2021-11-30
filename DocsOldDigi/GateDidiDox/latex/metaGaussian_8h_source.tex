@@ -1,0 +1,96 @@
+\hypertarget{metaGaussian_8h_source}{}\doxysection{meta\+Gaussian.\+h}
+\label{metaGaussian_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaGaussian.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaGaussian.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAGAUSSIAN\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAGAUSSIAN\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaGaussian}{MetaGaussian}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{42   \{}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   \textcolor{comment}{//}}
+\DoxyCodeLine{46   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{47   \textcolor{comment}{//}}
+\DoxyCodeLine{49 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{comment}{//}}
+\DoxyCodeLine{53     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{54     \textcolor{comment}{//}}
+\DoxyCodeLine{56 \textcolor{comment}{}    \mbox{\hyperlink{classMetaGaussian}{MetaGaussian}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \mbox{\hyperlink{classMetaGaussian}{MetaGaussian}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \mbox{\hyperlink{classMetaGaussian}{MetaGaussian}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaGaussian}{MetaGaussian}} *\_gaussian);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \mbox{\hyperlink{classMetaGaussian}{MetaGaussian}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \mbox{\hyperlink{classMetaGaussian}{\string~MetaGaussian}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMetaGaussian_ab03b19bae9ef0a5929fdd5d98b5094bc}{Maximum}}(\textcolor{keywordtype}{float} val) \{ m\_Maximum = val; \}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{float} Maximum()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_Maximum; \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMetaGaussian_a54fa05eaf8751c5cb13be8468bb5e8cf}{Radius}}(\textcolor{keywordtype}{float} val) \{ m\_Radius = val; \}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{float} Radius()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_Radius; \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMetaGaussian_a24357016f869d18958bad35c9d8288a0}{Sigma}}(\textcolor{keywordtype}{float} val) \{ m\_Sigma = val; \}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{float} Sigma()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_Sigma; \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85   \textcolor{comment}{//}}
+\DoxyCodeLine{86   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{87   \textcolor{comment}{//}}
+\DoxyCodeLine{89 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{103     \textcolor{keywordtype}{float} \mbox{\hyperlink{classMetaGaussian_a3dda9d8719d6a80373df1444d3e8148a}{m\_Maximum}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106     \textcolor{keywordtype}{float} \mbox{\hyperlink{classMetaGaussian_afcea2af61b7e742d5b4dd2bd0019477d}{m\_Radius}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{109     \textcolor{keywordtype}{float} \mbox{\hyperlink{classMetaGaussian_a2ec7fed11cf0891d3e3b1994b935bddb}{m\_Sigma}};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{115 \};}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

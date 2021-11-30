@@ -1,0 +1,77 @@
+\hypertarget{namespaceGateTools}{}\doxysection{Gate\+Tools Namespace Reference}
+\label{namespaceGateTools}\index{GateTools@{GateTools}}
+
+
+Namespace to provide general-\/purpose utility functions to GATE.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceGateTools_a894e8f2e440aa6cc7ec90b3f468c04ac}\label{namespaceGateTools_a894e8f2e440aa6cc7ec90b3f468c04ac}} 
+G4\+String {\bfseries Indent} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Returns a string composed of a number of tabulations. \end{DoxyCompactList}\item 
+G4\+String \mbox{\hyperlink{namespaceGateTools_a09b9f60f35a4b9cdf23b2d2f7fdd9c4a}{Get\+Base\+Name}} (const G4\+String \&name, const G4\+String \&tag)
+\item 
+G4\+String \mbox{\hyperlink{namespaceGateTools_a32adf8537009afe94b97c872ad936822}{Find\+Gate\+File}} (const G4\+String \&file\+Name)
+\item 
+G4\+String \mbox{\hyperlink{namespaceGateTools_a9a7ad31e98a0b4212033606721cd3b94}{Path\+Dir\+Name}} (const G4\+String \&path)
+\item 
+std\+::pair$<$ G4\+String, G4\+String $>$ \mbox{\hyperlink{namespaceGateTools_aef5da08a1f70842ecd5ffbacb417e1bc}{Path\+Split}} (const G4\+String \&path)
+\item 
+std\+::pair$<$ G4\+String, G4\+String $>$ \mbox{\hyperlink{namespaceGateTools_ae64c0655139047fa1000a6ebba265595}{Path\+Split\+Ext}} (const G4\+String \&file\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace to provide general-\/purpose utility functions to GATE. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{namespaceGateTools}{Gate\+Tools}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The \mbox{\hyperlink{namespaceGateTools}{Gate\+Tools}} namespace is a collection of functions providing some general-\/purpose utility functions to GATE\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{namespaceGateTools_a894e8f2e440aa6cc7ec90b3f468c04ac}{Indent()}} to compute a string made of tabulations
+\item \mbox{\hyperlink{namespaceGateTools_a09b9f60f35a4b9cdf23b2d2f7fdd9c4a}{Get\+Base\+Name()}} to extract the beginning of a string terminated by a tag
+\item \mbox{\hyperlink{namespaceGateTools_a32adf8537009afe94b97c872ad936822}{Find\+Gate\+File()}} to find a file in the GATE directories 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceGateTools_a32adf8537009afe94b97c872ad936822}\label{namespaceGateTools_a32adf8537009afe94b97c872ad936822}} 
+\index{GateTools@{GateTools}!FindGateFile@{FindGateFile}}
+\index{FindGateFile@{FindGateFile}!GateTools@{GateTools}}
+\doxysubsubsection{\texorpdfstring{FindGateFile()}{FindGateFile()}}
+{\footnotesize\ttfamily G4\+String Gate\+Tools\+::\+Find\+Gate\+File (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+Looks for a GATE file\+: if the file can not be found in the current directory, \mbox{\hyperlink{namespaceGateTools_a32adf8537009afe94b97c872ad936822}{Find\+Gate\+File()}} looks for it in the directory \$\+GATEHOME. The function returns either the full file path or \char`\"{}\char`\"{} (file not found). \mbox{\Hypertarget{namespaceGateTools_a09b9f60f35a4b9cdf23b2d2f7fdd9c4a}\label{namespaceGateTools_a09b9f60f35a4b9cdf23b2d2f7fdd9c4a}} 
+\index{GateTools@{GateTools}!GetBaseName@{GetBaseName}}
+\index{GetBaseName@{GetBaseName}!GateTools@{GateTools}}
+\doxysubsubsection{\texorpdfstring{GetBaseName()}{GetBaseName()}}
+{\footnotesize\ttfamily G4\+String Gate\+Tools\+::\+Get\+Base\+Name (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name,  }\item[{const G4\+String \&}]{tag }\end{DoxyParamCaption})}
+
+Checks if a tag can be found within a string. If the tag is found, returns everything before the tag. If the tag is not found, returns the whole string. \mbox{\Hypertarget{namespaceGateTools_a9a7ad31e98a0b4212033606721cd3b94}\label{namespaceGateTools_a9a7ad31e98a0b4212033606721cd3b94}} 
+\index{GateTools@{GateTools}!PathDirName@{PathDirName}}
+\index{PathDirName@{PathDirName}!GateTools@{GateTools}}
+\doxysubsubsection{\texorpdfstring{PathDirName()}{PathDirName()}}
+{\footnotesize\ttfamily G4\+String Gate\+Tools\+::\+Path\+Dir\+Name (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{path }\end{DoxyParamCaption})}
+
+Get directory name from full path.
+
+Examples\+: \char`\"{}/path/to/file.\+txt\char`\"{} yields \char`\"{}/path/to/\char`\"{} \char`\"{}/path/to/file\char`\"{} yields \char`\"{}/path/to/\char`\"{} \char`\"{}/path/to/\char`\"{} yields \char`\"{}/path/to/\char`\"{} \mbox{\Hypertarget{namespaceGateTools_aef5da08a1f70842ecd5ffbacb417e1bc}\label{namespaceGateTools_aef5da08a1f70842ecd5ffbacb417e1bc}} 
+\index{GateTools@{GateTools}!PathSplit@{PathSplit}}
+\index{PathSplit@{PathSplit}!GateTools@{GateTools}}
+\doxysubsubsection{\texorpdfstring{PathSplit()}{PathSplit()}}
+{\footnotesize\ttfamily std\+::pair$<$ G4\+String, G4\+String $>$ Gate\+Tools\+::\+Path\+Split (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{path }\end{DoxyParamCaption})}
+
+Split into directory and file name.
+
+Examples\+: \char`\"{}/path/to/file.\+txt\char`\"{} yields (\char`\"{}/path/to/\char`\"{}, \char`\"{}file.\+txt\char`\"{}) \char`\"{}/path/to/file\char`\"{} yields (\char`\"{}/path/to/\char`\"{}, \char`\"{}file\char`\"{}) \char`\"{}/path/to/\char`\"{}\char`\"{}        yields  (\char`\"{}/path/to/\char`\"{}, \char`\"{}"{}) \mbox{\Hypertarget{namespaceGateTools_ae64c0655139047fa1000a6ebba265595}\label{namespaceGateTools_ae64c0655139047fa1000a6ebba265595}} 
+\index{GateTools@{GateTools}!PathSplitExt@{PathSplitExt}}
+\index{PathSplitExt@{PathSplitExt}!GateTools@{GateTools}}
+\doxysubsubsection{\texorpdfstring{PathSplitExt()}{PathSplitExt()}}
+{\footnotesize\ttfamily std\+::pair$<$ G4\+String, G4\+String $>$ Gate\+Tools\+::\+Path\+Split\+Ext (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+Split into root and file extension.
+
+Examples\+: \char`\"{}file.\+txt\char`\"{} yields (\char`\"{}file\char`\"{}, \char`\"{}.\+txt\char`\"{}) \char`\"{}.\+hidden\+\_\+file\char`\"{} yields (\char`\"{}.\+hidden\+\_\+file\char`\"{}, \char`\"{}\char`\"{}) \char`\"{}file\+\_\+no\+\_\+ext\char`\"{} yields (\char`\"{}file\+\_\+no\+\_\+ext\char`\"{}, \char`\"{}\char`\"{}) \char`\"{}file.\+one.\+two\char`\"{} yields (\char`\"{}file.\+one\char`\"{}, \char`\"{}.\+two\char`\"{}) 

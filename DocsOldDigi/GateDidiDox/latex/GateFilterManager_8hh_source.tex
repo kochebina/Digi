@@ -1,0 +1,61 @@
+\hypertarget{GateFilterManager_8hh_source}{}\doxysection{Gate\+Filter\+Manager.\+hh}
+\label{GateFilterManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateFilterManager.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateFilterManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateFilterManager}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEFILTERMANAGER\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEFILTERMANAGER\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4VSDFilter.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVFilter.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4Step.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4Track.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFilterManager}{GateFilterManager}} : }
+\DoxyCodeLine{33   \textcolor{keyword}{public} G4VSDFilter}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateFilterManager}{GateFilterManager}}(G4String name);}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateFilterManager}{\string~GateFilterManager}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Step*) \textcolor{keyword}{const};}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Track*) \textcolor{keyword}{const};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} AddFilter(\mbox{\hyperlink{classGateVFilter}{GateVFilter}}* filter)\{theFilters.push\_back(filter);\}}
+\DoxyCodeLine{43   G4int GetNumberOfFilters()\{\textcolor{keywordflow}{return} theFilters.size();\}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{47   G4String mFilterName;}
+\DoxyCodeLine{48   std::vector<GateVFilter*> theFilters;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51   }
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEFILTERMANAGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

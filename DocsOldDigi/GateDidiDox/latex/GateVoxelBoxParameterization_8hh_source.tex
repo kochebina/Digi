@@ -1,0 +1,77 @@
+\hypertarget{GateVoxelBoxParameterization_8hh_source}{}\doxysection{Gate\+Voxel\+Box\+Parameterization.\+hh}
+\label{GateVoxelBoxParameterization_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelBoxParameterization.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelBoxParameterization.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVoxelBoxParameterization\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVoxelBoxParameterization\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GatePVParameterisation.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateUtilityForG4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4Box.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4VTouchable.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelBoxParameterization}{GateVoxelBoxParameterization}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGatePVParameterisation}{GatePVParameterisation}}}
+\DoxyCodeLine{25 \{ }
+\DoxyCodeLine{26   \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   }
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateVoxelBoxParameterization_abf012928fb37d8f85d2167e8c146823c}{GateVoxelBoxParameterization}}( \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* voxR, \textcolor{keyword}{const} G4ThreeVector\& voxN, \textcolor{keyword}{const} G4ThreeVector\& voxS);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateVoxelBoxParameterization}{\string~GateVoxelBoxParameterization}}()\{;\}}
+\DoxyCodeLine{32  }
+\DoxyCodeLine{33  }
+\DoxyCodeLine{34   \textcolor{keyword}{using} G4VPVParameterisation::ComputeMaterial;}
+\DoxyCodeLine{35   G4Material* ComputeMaterial(\textcolor{keyword}{const} G4int copyNo, G4VPhysicalVolume * aVolume);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} ComputeTransformation(\textcolor{keyword}{const} G4int copyNo,  G4VPhysicalVolume *aVolume) \textcolor{keyword}{const};}
+\DoxyCodeLine{39   \textcolor{keyword}{using} G4VPVParameterisation::ComputeDimensions;}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} ComputeDimensions(G4Box*, \textcolor{keyword}{const} G4int ,\textcolor{keyword}{const} G4VPhysicalVolume* ) \textcolor{keyword}{const};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{44   \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{classGateVoxelBoxParameterization_a5a5099474f166659be7359c69a0f4cd7}{GetNbOfCopies}}() \{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(voxelNumber.x()*voxelNumber.y()*voxelNumber.z()); \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{private}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{comment}{//  Calculate the three (array) indices of the current (copyNo) voxel}}
+\DoxyCodeLine{49   \textcolor{keyword}{inline} G4ThreeVector ComputeArrayIndices(G4int copyNo)\textcolor{keyword}{const}\{}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     div\_t  qr  ( div(copyNo, nxy) );}
+\DoxyCodeLine{52     div\_t  qr2 ( div(qr.rem, nx ) );}
+\DoxyCodeLine{53     }
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} G4ThreeVector( qr2.rem, qr2.quot, qr.quot );}
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56   \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   }
+\DoxyCodeLine{59 \textcolor{keyword}{private}:}
+\DoxyCodeLine{60   \textcolor{keyword}{const} G4ThreeVector voxelNumber;}
+\DoxyCodeLine{61   \textcolor{keyword}{const} G4ThreeVector voxelSize;}
+\DoxyCodeLine{62   \textcolor{keyword}{const} G4ThreeVector voxelZeroPos;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* voxelReader;}
+\DoxyCodeLine{65   \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{GateVGeometryVoxelTranslator}}* translator;}
+\DoxyCodeLine{66   }
+\DoxyCodeLine{67   \textcolor{keyword}{const} \textcolor{keywordtype}{int} nxy;}
+\DoxyCodeLine{68   \textcolor{keyword}{const} \textcolor{keywordtype}{int} nx;}
+\DoxyCodeLine{69   }
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+
+\end{DoxyCode}

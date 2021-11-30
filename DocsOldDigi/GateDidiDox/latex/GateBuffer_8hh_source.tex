@@ -1,0 +1,63 @@
+\hypertarget{GateBuffer_8hh_source}{}\doxysection{Gate\+Buffer.\+hh}
+\label{GateBuffer_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBuffer.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBuffer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateBuffer\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateBuffer\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBufferMessenger}{GateBufferMessenger}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBuffer}{GateBuffer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int}  buffer\_t;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \mbox{\hyperlink{classGateBuffer}{GateBuffer}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{28          \textcolor{keyword}{const} G4String\& itsName=theTypeName) ;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateBuffer_ad906ab3299785e33b653dddc0443f71d}{\string~GateBuffer}}() ;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBuffer_a771ebe47e227be7228b8e0787cc3f4d2}{SetBufferSize}}(buffer\_t val)   \{ m\_bufferSize = val;\}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} SetReadFrequency(G4double val)   \{ m\_readFrequency = val;\}}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} SetDoModifyTime(G4bool val)   \{ m\_doModifyTime = val;\}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} SetMode(G4int val)   \{ m\_mode = val;\}}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} SetDepth(\textcolor{keywordtype}{size\_t} depth);}
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBuffer_a87f0dd293a5abef8ee155e2e4134aac5}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBuffer_acd3d62cbe456134fc9e7cbbd09cd91ed}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{50   \textcolor{keyword}{private}:}
+\DoxyCodeLine{51     buffer\_t m\_bufferSize;}
+\DoxyCodeLine{52     std::vector<buffer\_t> m\_bufferPos;}
+\DoxyCodeLine{53     buffer\_t m\_oldClock;}
+\DoxyCodeLine{54     G4double m\_readFrequency;}
+\DoxyCodeLine{55     G4bool   m\_doModifyTime;}
+\DoxyCodeLine{56     G4int    m\_mode;}
+\DoxyCodeLine{57     std::vector<G4bool> m\_enableList;}
+\DoxyCodeLine{58     \mbox{\hyperlink{classGateBufferMessenger}{GateBufferMessenger}} *m\_messenger;     }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keyword}{static} \textcolor{keyword}{const} G4String\& theTypeName;  }
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,84 @@
+\hypertarget{GateImageRegularParametrisedVolume_8hh_source}{}\doxysection{Gate\+Image\+Regular\+Parametrised\+Volume.\+hh}
+\label{GateImageRegularParametrisedVolume_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageRegularParametrisedVolume.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageRegularParametrisedVolume.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef \_\_GateImageRegularParametrisedVolume\_\_hh\_\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define \_\_GateImageRegularParametrisedVolume\_\_hh\_\_}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateVImageVolume_8hh}{GateVImageVolume.hh}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4PVParameterised.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4PhantomParameterisation.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageRegularParametrisedVolumeMessenger}{GateImageRegularParametrisedVolumeMessenger}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateImageRegularParametrisedVolume}{GateImageRegularParametrisedVolume}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35 \textcolor{comment}{}  \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{GateVImageVolume::LabelType}} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a6c74a9f27f46536312d7928f401fccae}{LabelType}};}
+\DoxyCodeLine{37   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateImage}{GateVImageVolume::ImageType}} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_afe4f6585981ba9c7951f9a3bdd077e35}{ImageType}};}
+\DoxyCodeLine{38   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{45 \textcolor{comment}{}  \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a1596c87f7330404812a29ccc59bfa40a}{GateImageRegularParametrisedVolume}}(\textcolor{keyword}{const} G4String\& name,G4bool acceptsChildren,G4int depth);}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a5d90474321e72b31ecddc91e8307a937}{\string~GateImageRegularParametrisedVolume}}();}
+\DoxyCodeLine{48   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{49   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateImageRegularParametrisedVolume}{GateImageRegularParametrisedVolume}})}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{54 \textcolor{comment}{}  virtual G4String \mbox{\hyperlink{classGateImageRegularParametrisedVolume_ade702c35b5d9af6021493b669697d868}{GetTypeName}}() \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ImageRegularParametrised"{}}; \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a179de6ae71e03426b7f832ceca03d752}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool);}
+\DoxyCodeLine{57   \textcolor{comment}{//virtual void DestroyOwnSolidAndLogicalVolume()\{\};}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{63 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_ac74335fed8c2f334ab6481f585de3eb9}{ImageAndTableFilenamesOK}}() \{\}}
+\DoxyCodeLine{64   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{66 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a705673a9d35ee9359b8a917ad42a9b03}{ConstructSolid}}() \{\}}
+\DoxyCodeLine{68   \textcolor{comment}{//  virtual void Construct();}}
+\DoxyCodeLine{69   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{72   \textcolor{comment}{// IO}}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a913c968d874aed834b8a4882a4f49465}{PrintInfo}}();}
+\DoxyCodeLine{74   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} PropagateGlobalSensitiveDetector();}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_ac33d0347b548253940a8d2111c53ac04}{PropagateSensitiveDetectorToChild}}(\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}} * msd);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a4af0fb909211caad053f1305b69c8bb1}{SetSkipEqualMaterialsFlag}}(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{82   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateImageRegularParametrisedVolume_aca0a2fa51bca783d3f78c5ccacdae779}{GetSkipEqualMaterialsFlag}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{85   \textcolor{comment}{// The messenger}}
+\DoxyCodeLine{86   \mbox{\hyperlink{classGateImageRegularParametrisedVolumeMessenger}{GateImageRegularParametrisedVolumeMessenger}}* pMessenger;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   G4PVParameterised * mImagePhysVol;}
+\DoxyCodeLine{89   G4Box             * mVoxelSolid;}
+\DoxyCodeLine{90   G4LogicalVolume   * mVoxelLog;}
+\DoxyCodeLine{91   std::vector<G4Material*> mVectorLabel2Material;}
+\DoxyCodeLine{92   \textcolor{keywordtype}{size\_t} * mImageData;}
+\DoxyCodeLine{93   \textcolor{keywordtype}{bool} mSkipEqualMaterialsFlag;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{96 \textcolor{comment}{// EO class GateImageRegularParametrisedVolume}}
+\DoxyCodeLine{97 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{98 MAKE\_AUTO\_CREATOR\_VOLUME(ImageRegularParametrisedVolume,\mbox{\hyperlink{classGateImageRegularParametrisedVolume}{GateImageRegularParametrisedVolume}})}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

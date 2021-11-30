@@ -1,0 +1,337 @@
+\hypertarget{deflate_8h_source}{}\doxysection{deflate.\+h}
+\label{deflate_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/deflate.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/deflate.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* deflate.h -\/-\/ internal compression state}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 1995-\/2004 Jean-\/loup Gailly}}
+\DoxyCodeLine{3 \textcolor{comment}{ * For conditions of distribution and use, see copyright notice in zlib.h}}
+\DoxyCodeLine{4 \textcolor{comment}{ */}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{/* WARNING: this file should *not* be used by applications. It is}}
+\DoxyCodeLine{7 \textcolor{comment}{   part of the implementation of the compression library and is}}
+\DoxyCodeLine{8 \textcolor{comment}{   subject to change. Applications should only use zlib.h.}}
+\DoxyCodeLine{9 \textcolor{comment}{ */}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* @(\#) Id */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef DEFLATE\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define DEFLATE\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}zutil.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{/* define NO\_GZIP when compiling if you want to disable gzip header and}}
+\DoxyCodeLine{19 \textcolor{comment}{   trailer creation by deflate().  NO\_GZIP would be used to avoid linking in}}
+\DoxyCodeLine{20 \textcolor{comment}{   the crc code when it is not needed.  For shared libraries, gzip encoding}}
+\DoxyCodeLine{21 \textcolor{comment}{   should be left enabled. */}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef NO\_GZIP}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#  define GZIP}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{/* ===========================================================================}}
+\DoxyCodeLine{27 \textcolor{comment}{ * Internal compression state.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define LENGTH\_CODES 29}}
+\DoxyCodeLine{31 \textcolor{comment}{/* number of length codes, not counting the special END\_BLOCK code */}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define LITERALS  256}}
+\DoxyCodeLine{34 \textcolor{comment}{/* number of literal bytes 0..255 */}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define L\_CODES (LITERALS+1+LENGTH\_CODES)}}
+\DoxyCodeLine{37 \textcolor{comment}{/* number of Literal or Length codes, including the END\_BLOCK code */}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define D\_CODES   30}}
+\DoxyCodeLine{40 \textcolor{comment}{/* number of distance codes */}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define BL\_CODES  19}}
+\DoxyCodeLine{43 \textcolor{comment}{/* number of codes used to transfer the bit lengths */}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define HEAP\_SIZE (2*L\_CODES+1)}}
+\DoxyCodeLine{46 \textcolor{comment}{/* maximum heap size */}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define MAX\_BITS 15}}
+\DoxyCodeLine{49 \textcolor{comment}{/* All codes must not exceed MAX\_BITS bits */}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define INIT\_STATE    42}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define EXTRA\_STATE   69}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define NAME\_STATE    73}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define COMMENT\_STATE 91}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define HCRC\_STATE   103}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define BUSY\_STATE   113}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define FINISH\_STATE 666}}
+\DoxyCodeLine{58 \textcolor{comment}{/* Stream status */}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{/* Data structure describing a single value and its code string. */}}
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structct__data__s}{ct\_data\_s}} \{}
+\DoxyCodeLine{63     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{64         ush  freq;       \textcolor{comment}{/* frequency count */}}
+\DoxyCodeLine{65         ush  \mbox{\hyperlink{structcode}{code}};       \textcolor{comment}{/* bit string */}}
+\DoxyCodeLine{66     \} fc;}
+\DoxyCodeLine{67     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{68         ush  dad;        \textcolor{comment}{/* father node in Huffman tree */}}
+\DoxyCodeLine{69         ush  len;        \textcolor{comment}{/* length of bit string */}}
+\DoxyCodeLine{70     \} dl;}
+\DoxyCodeLine{71 \} FAR \mbox{\hyperlink{structct__data__s}{ct\_data}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define Freq fc.freq}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define Code fc.code}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define Dad  dl.dad}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define Len  dl.len}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structstatic__tree__desc__s}{static\_tree\_desc\_s}}  \mbox{\hyperlink{structstatic__tree__desc__s}{static\_tree\_desc}};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtree__desc__s}{tree\_desc\_s}} \{}
+\DoxyCodeLine{81     \mbox{\hyperlink{structct__data__s}{ct\_data}} *dyn\_tree;           \textcolor{comment}{/* the dynamic tree */}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{int}     max\_code;            \textcolor{comment}{/* largest code with non zero frequency */}}
+\DoxyCodeLine{83     \mbox{\hyperlink{structstatic__tree__desc__s}{static\_tree\_desc}} *stat\_desc; \textcolor{comment}{/* the corresponding static tree */}}
+\DoxyCodeLine{84 \} FAR \mbox{\hyperlink{structtree__desc__s}{tree\_desc}};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{typedef} ush Pos;}
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} Pos FAR Posf;}
+\DoxyCodeLine{88 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} IPos;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{/* A Pos is an index in the character window. We use short instead of int to}}
+\DoxyCodeLine{91 \textcolor{comment}{ * save space in the various tables. IPos is used only for parameter passing.}}
+\DoxyCodeLine{92 \textcolor{comment}{ */}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structinternal__state}{internal\_state}} \{}
+\DoxyCodeLine{95     z\_streamp strm;      \textcolor{comment}{/* pointer back to this zlib stream */}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{int}   status;        \textcolor{comment}{/* as the name implies */}}
+\DoxyCodeLine{97     Bytef *pending\_buf;  \textcolor{comment}{/* output still pending */}}
+\DoxyCodeLine{98     ulg   pending\_buf\_size; \textcolor{comment}{/* size of pending\_buf */}}
+\DoxyCodeLine{99     Bytef *pending\_out;  \textcolor{comment}{/* next pending byte to output to the stream */}}
+\DoxyCodeLine{100     uInt   pending;      \textcolor{comment}{/* nb of bytes in the pending buffer */}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{int}   wrap;          \textcolor{comment}{/* bit 0 true for zlib, bit 1 true for gzip */}}
+\DoxyCodeLine{102     gz\_headerp  gzhead;  \textcolor{comment}{/* gzip header information to write */}}
+\DoxyCodeLine{103     uInt   gzindex;      \textcolor{comment}{/* where in extra, name, or comment */}}
+\DoxyCodeLine{104     Byte  method;        \textcolor{comment}{/* STORED (for zip only) or DEFLATED */}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{int}   last\_flush;    \textcolor{comment}{/* value of flush param for previous deflate call */}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107                 \textcolor{comment}{/* used by deflate.c: */}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     uInt  w\_size;        \textcolor{comment}{/* LZ77 window size (32K by default) */}}
+\DoxyCodeLine{110     uInt  w\_bits;        \textcolor{comment}{/* log2(w\_size)  (8..16) */}}
+\DoxyCodeLine{111     uInt  w\_mask;        \textcolor{comment}{/* w\_size -\/ 1 */}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     Bytef *window;}
+\DoxyCodeLine{114     \textcolor{comment}{/* Sliding window. Input bytes are read into the second half of the window,}}
+\DoxyCodeLine{115 \textcolor{comment}{     * and move to the first half later to keep a dictionary of at least wSize}}
+\DoxyCodeLine{116 \textcolor{comment}{     * bytes. With this organization, matches are limited to a distance of}}
+\DoxyCodeLine{117 \textcolor{comment}{     * wSize-\/MAX\_MATCH bytes, but this ensures that IO is always}}
+\DoxyCodeLine{118 \textcolor{comment}{     * performed with a length multiple of the block size. Also, it limits}}
+\DoxyCodeLine{119 \textcolor{comment}{     * the window size to 64K, which is quite useful on MSDOS.}}
+\DoxyCodeLine{120 \textcolor{comment}{     * To do: use the user input buffer as sliding window.}}
+\DoxyCodeLine{121 \textcolor{comment}{     */}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     ulg window\_size;}
+\DoxyCodeLine{124     \textcolor{comment}{/* Actual size of window: 2*wSize, except when the user input buffer}}
+\DoxyCodeLine{125 \textcolor{comment}{     * is directly used as sliding window.}}
+\DoxyCodeLine{126 \textcolor{comment}{     */}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     Posf *prev;}
+\DoxyCodeLine{129     \textcolor{comment}{/* Link to older string with same hash index. To limit the size of this}}
+\DoxyCodeLine{130 \textcolor{comment}{     * array to 64K, this link is maintained only for the last 32K strings.}}
+\DoxyCodeLine{131 \textcolor{comment}{     * An index in this array is thus a window index modulo 32K.}}
+\DoxyCodeLine{132 \textcolor{comment}{     */}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     Posf *head; \textcolor{comment}{/* Heads of the hash chains or NIL. */}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     uInt  ins\_h;          \textcolor{comment}{/* hash index of string to be inserted */}}
+\DoxyCodeLine{137     uInt  hash\_size;      \textcolor{comment}{/* number of elements in hash table */}}
+\DoxyCodeLine{138     uInt  hash\_bits;      \textcolor{comment}{/* log2(hash\_size) */}}
+\DoxyCodeLine{139     uInt  hash\_mask;      \textcolor{comment}{/* hash\_size-\/1 */}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     uInt  hash\_shift;}
+\DoxyCodeLine{142     \textcolor{comment}{/* Number of bits by which ins\_h must be shifted at each input}}
+\DoxyCodeLine{143 \textcolor{comment}{     * step. It must be such that after MIN\_MATCH steps, the oldest}}
+\DoxyCodeLine{144 \textcolor{comment}{     * byte no longer takes part in the hash key, that is:}}
+\DoxyCodeLine{145 \textcolor{comment}{     *   hash\_shift * MIN\_MATCH >= hash\_bits}}
+\DoxyCodeLine{146 \textcolor{comment}{     */}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keywordtype}{long} block\_start;}
+\DoxyCodeLine{149     \textcolor{comment}{/* Window position at the beginning of the current output block. Gets}}
+\DoxyCodeLine{150 \textcolor{comment}{     * negative when the window is moved backwards.}}
+\DoxyCodeLine{151 \textcolor{comment}{     */}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     uInt match\_length;           \textcolor{comment}{/* length of best match */}}
+\DoxyCodeLine{154     IPos prev\_match;             \textcolor{comment}{/* previous match */}}
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} match\_available;         \textcolor{comment}{/* set if previous match exists */}}
+\DoxyCodeLine{156     uInt strstart;               \textcolor{comment}{/* start of string to insert */}}
+\DoxyCodeLine{157     uInt match\_start;            \textcolor{comment}{/* start of matching string */}}
+\DoxyCodeLine{158     uInt lookahead;              \textcolor{comment}{/* number of valid bytes ahead in window */}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     uInt prev\_length;}
+\DoxyCodeLine{161     \textcolor{comment}{/* Length of the best match at previous step. Matches not greater than this}}
+\DoxyCodeLine{162 \textcolor{comment}{     * are discarded. This is used in the lazy match evaluation.}}
+\DoxyCodeLine{163 \textcolor{comment}{     */}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     uInt max\_chain\_length;}
+\DoxyCodeLine{166     \textcolor{comment}{/* To speed up deflation, hash chains are never searched beyond this}}
+\DoxyCodeLine{167 \textcolor{comment}{     * length.  A higher limit improves compression ratio but degrades the}}
+\DoxyCodeLine{168 \textcolor{comment}{     * speed.}}
+\DoxyCodeLine{169 \textcolor{comment}{     */}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     uInt max\_lazy\_match;}
+\DoxyCodeLine{172     \textcolor{comment}{/* Attempt to find a better match only when the current match is strictly}}
+\DoxyCodeLine{173 \textcolor{comment}{     * smaller than this value. This mechanism is used only for compression}}
+\DoxyCodeLine{174 \textcolor{comment}{     * levels >= 4.}}
+\DoxyCodeLine{175 \textcolor{comment}{     */}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#   define max\_insert\_length  max\_lazy\_match}}
+\DoxyCodeLine{177     \textcolor{comment}{/* Insert new strings in the hash table only if the match length is not}}
+\DoxyCodeLine{178 \textcolor{comment}{     * greater than this length. This saves time but degrades compression.}}
+\DoxyCodeLine{179 \textcolor{comment}{     * max\_insert\_length is used only for compression levels <= 3.}}
+\DoxyCodeLine{180 \textcolor{comment}{     */}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{keywordtype}{int} level;    \textcolor{comment}{/* compression level (1..9) */}}
+\DoxyCodeLine{183     \textcolor{keywordtype}{int} strategy; \textcolor{comment}{/* favor or force Huffman coding*/}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     uInt good\_match;}
+\DoxyCodeLine{186     \textcolor{comment}{/* Use a faster search when the previous match is longer than this */}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{keywordtype}{int} nice\_match; \textcolor{comment}{/* Stop searching when current match exceeds this */}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190                 \textcolor{comment}{/* used by trees.c: */}}
+\DoxyCodeLine{191     \textcolor{comment}{/* Didn't use ct\_data typedef below to supress compiler warning */}}
+\DoxyCodeLine{192     \textcolor{keyword}{struct }\mbox{\hyperlink{structct__data__s}{ct\_data\_s}} dyn\_ltree[HEAP\_SIZE];   \textcolor{comment}{/* literal and length tree */}}
+\DoxyCodeLine{193     \textcolor{keyword}{struct }\mbox{\hyperlink{structct__data__s}{ct\_data\_s}} dyn\_dtree[2*D\_CODES+1]; \textcolor{comment}{/* distance tree */}}
+\DoxyCodeLine{194     \textcolor{keyword}{struct }\mbox{\hyperlink{structct__data__s}{ct\_data\_s}} bl\_tree[2*BL\_CODES+1];  \textcolor{comment}{/* Huffman tree for bit lengths */}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     \textcolor{keyword}{struct }\mbox{\hyperlink{structtree__desc__s}{tree\_desc\_s}} l\_desc;               \textcolor{comment}{/* desc. for literal tree */}}
+\DoxyCodeLine{197     \textcolor{keyword}{struct }\mbox{\hyperlink{structtree__desc__s}{tree\_desc\_s}} d\_desc;               \textcolor{comment}{/* desc. for distance tree */}}
+\DoxyCodeLine{198     \textcolor{keyword}{struct }\mbox{\hyperlink{structtree__desc__s}{tree\_desc\_s}} bl\_desc;              \textcolor{comment}{/* desc. for bit length tree */}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     ush bl\_count[MAX\_BITS+1];}
+\DoxyCodeLine{201     \textcolor{comment}{/* number of codes at each bit length for an optimal tree */}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{keywordtype}{int} heap[2*L\_CODES+1];      \textcolor{comment}{/* heap used to build the Huffman trees */}}
+\DoxyCodeLine{204     \textcolor{keywordtype}{int} heap\_len;               \textcolor{comment}{/* number of elements in the heap */}}
+\DoxyCodeLine{205     \textcolor{keywordtype}{int} heap\_max;               \textcolor{comment}{/* element of largest frequency */}}
+\DoxyCodeLine{206     \textcolor{comment}{/* The sons of heap[n] are heap[2*n] and heap[2*n+1]. heap[0] is not used.}}
+\DoxyCodeLine{207 \textcolor{comment}{     * The same heap array is used to build all trees.}}
+\DoxyCodeLine{208 \textcolor{comment}{     */}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     uch depth[2*L\_CODES+1];}
+\DoxyCodeLine{211     \textcolor{comment}{/* Depth of each subtree used as tie breaker for trees of equal frequency}}
+\DoxyCodeLine{212 \textcolor{comment}{     */}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     uchf *l\_buf;          \textcolor{comment}{/* buffer for literals or lengths */}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216     uInt  lit\_bufsize;}
+\DoxyCodeLine{217     \textcolor{comment}{/* Size of match buffer for literals/lengths.  There are 4 reasons for}}
+\DoxyCodeLine{218 \textcolor{comment}{     * limiting lit\_bufsize to 64K:}}
+\DoxyCodeLine{219 \textcolor{comment}{     *   -\/ frequencies can be kept in 16 bit counters}}
+\DoxyCodeLine{220 \textcolor{comment}{     *   -\/ if compression is not successful for the first block, all input}}
+\DoxyCodeLine{221 \textcolor{comment}{     *     data is still in the window so we can still emit a stored block even}}
+\DoxyCodeLine{222 \textcolor{comment}{     *     when input comes from standard input.  (This can also be done for}}
+\DoxyCodeLine{223 \textcolor{comment}{     *     all blocks if lit\_bufsize is not greater than 32K.)}}
+\DoxyCodeLine{224 \textcolor{comment}{     *   -\/ if compression is not successful for a file smaller than 64K, we can}}
+\DoxyCodeLine{225 \textcolor{comment}{     *     even emit a stored file instead of a stored block (saving 5 bytes).}}
+\DoxyCodeLine{226 \textcolor{comment}{     *     This is applicable only for zip (not gzip or zlib).}}
+\DoxyCodeLine{227 \textcolor{comment}{     *   -\/ creating new Huffman trees less frequently may not provide fast}}
+\DoxyCodeLine{228 \textcolor{comment}{     *     adaptation to changes in the input data statistics. (Take for}}
+\DoxyCodeLine{229 \textcolor{comment}{     *     example a binary file with poorly compressible code followed by}}
+\DoxyCodeLine{230 \textcolor{comment}{     *     a highly compressible string table.) Smaller buffer sizes give}}
+\DoxyCodeLine{231 \textcolor{comment}{     *     fast adaptation but have of course the overhead of transmitting}}
+\DoxyCodeLine{232 \textcolor{comment}{     *     trees more frequently.}}
+\DoxyCodeLine{233 \textcolor{comment}{     *   -\/ I can't count above 4}}
+\DoxyCodeLine{234 \textcolor{comment}{     */}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     uInt last\_lit;      \textcolor{comment}{/* running index in l\_buf */}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238     ushf *d\_buf;}
+\DoxyCodeLine{239     \textcolor{comment}{/* Buffer for distances. To simplify the code, d\_buf and l\_buf have}}
+\DoxyCodeLine{240 \textcolor{comment}{     * the same number of elements. To use different lengths, an extra flag}}
+\DoxyCodeLine{241 \textcolor{comment}{     * array would be necessary.}}
+\DoxyCodeLine{242 \textcolor{comment}{     */}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     ulg opt\_len;        \textcolor{comment}{/* bit length of current block with optimal trees */}}
+\DoxyCodeLine{245     ulg static\_len;     \textcolor{comment}{/* bit length of current block with static trees */}}
+\DoxyCodeLine{246     uInt matches;       \textcolor{comment}{/* number of string matches in current block */}}
+\DoxyCodeLine{247     \textcolor{keywordtype}{int} last\_eob\_len;   \textcolor{comment}{/* bit length of EOB code for last block */}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#ifdef DEBUG}}
+\DoxyCodeLine{250     ulg compressed\_len; \textcolor{comment}{/* total bit length of compressed file mod 2\string^32 */}}
+\DoxyCodeLine{251     ulg bits\_sent;      \textcolor{comment}{/* bit length of compressed data sent mod 2\string^32 */}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254     ush bi\_buf;}
+\DoxyCodeLine{255     \textcolor{comment}{/* Output buffer. bits are inserted starting at the bottom (least}}
+\DoxyCodeLine{256 \textcolor{comment}{     * significant bits).}}
+\DoxyCodeLine{257 \textcolor{comment}{     */}}
+\DoxyCodeLine{258     \textcolor{keywordtype}{int} bi\_valid;}
+\DoxyCodeLine{259     \textcolor{comment}{/* Number of valid bits in bi\_buf.  All bits above the last valid bit}}
+\DoxyCodeLine{260 \textcolor{comment}{     * are always zero.}}
+\DoxyCodeLine{261 \textcolor{comment}{     */}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \} FAR \mbox{\hyperlink{structinternal__state}{deflate\_state}};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \textcolor{comment}{/* Output a byte on the stream.}}
+\DoxyCodeLine{266 \textcolor{comment}{ * IN assertion: there is enough room in pending\_buf.}}
+\DoxyCodeLine{267 \textcolor{comment}{ */}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define put\_byte(s, c) \{s-\/>pending\_buf[s-\/>pending++] = (c);\}}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define MIN\_LOOKAHEAD (MAX\_MATCH+MIN\_MATCH+1)}}
+\DoxyCodeLine{272 \textcolor{comment}{/* Minimum amount of lookahead, except at the end of the input file.}}
+\DoxyCodeLine{273 \textcolor{comment}{ * See deflate.c for comments about the MIN\_MATCH+1.}}
+\DoxyCodeLine{274 \textcolor{comment}{ */}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define MAX\_DIST(s)  ((s)-\/>w\_size-\/MIN\_LOOKAHEAD)}}
+\DoxyCodeLine{277 \textcolor{comment}{/* In order to simplify the code, particularly on 16 bit machines, match}}
+\DoxyCodeLine{278 \textcolor{comment}{ * distances are limited to MAX\_DIST instead of WSIZE.}}
+\DoxyCodeLine{279 \textcolor{comment}{ */}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281         \textcolor{comment}{/* in trees.c */}}
+\DoxyCodeLine{282 \textcolor{keywordtype}{void} \_tr\_init         OF((\mbox{\hyperlink{structinternal__state}{deflate\_state}} *s));}
+\DoxyCodeLine{283 \textcolor{keywordtype}{int}  \_tr\_tally        OF((\mbox{\hyperlink{structinternal__state}{deflate\_state}} *s, \textcolor{keywordtype}{unsigned} dist, \textcolor{keywordtype}{unsigned} lc));}
+\DoxyCodeLine{284 \textcolor{keywordtype}{void} \_tr\_flush\_block  OF((\mbox{\hyperlink{structinternal__state}{deflate\_state}} *s, charf *buf, ulg stored\_len,}
+\DoxyCodeLine{285                           \textcolor{keywordtype}{int} eof));}
+\DoxyCodeLine{286 \textcolor{keywordtype}{void} \_tr\_align        OF((\mbox{\hyperlink{structinternal__state}{deflate\_state}} *s));}
+\DoxyCodeLine{287 \textcolor{keywordtype}{void} \_tr\_stored\_block OF((\mbox{\hyperlink{structinternal__state}{deflate\_state}} *s, charf *buf, ulg stored\_len,}
+\DoxyCodeLine{288                           \textcolor{keywordtype}{int} eof));}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define d\_code(dist) \(\backslash\)}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{   ((dist) < 256 ? \_dist\_code[dist] : \_dist\_code[256+((dist)>>7)])}}
+\DoxyCodeLine{292 \textcolor{comment}{/* Mapping from a distance to a distance code. dist is the distance -\/ 1 and}}
+\DoxyCodeLine{293 \textcolor{comment}{ * must not have side effects. \_dist\_code[256] and \_dist\_code[257] are never}}
+\DoxyCodeLine{294 \textcolor{comment}{ * used.}}
+\DoxyCodeLine{295 \textcolor{comment}{ */}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#ifndef DEBUG}}
+\DoxyCodeLine{298 \textcolor{comment}{/* Inline versions of \_tr\_tally for speed: */}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#if defined(GEN\_TREES\_H) || !defined(STDC)}}
+\DoxyCodeLine{301   \textcolor{keyword}{extern} uch \_length\_code[];}
+\DoxyCodeLine{302   \textcolor{keyword}{extern} uch \_dist\_code[];}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{304   \textcolor{keyword}{extern} \textcolor{keyword}{const} uch \_length\_code[];}
+\DoxyCodeLine{305   \textcolor{keyword}{extern} \textcolor{keyword}{const} uch \_dist\_code[];}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \textcolor{preprocessor}{\# define \_tr\_tally\_lit(s, c, flush) \(\backslash\)}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{  \{ uch cc = (c); \(\backslash\)}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{    s-\/>d\_buf[s-\/>last\_lit] = 0; \(\backslash\)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{    s-\/>l\_buf[s-\/>last\_lit++] = cc; \(\backslash\)}}
+\DoxyCodeLine{312 \textcolor{preprocessor}{    s-\/>dyn\_ltree[cc].Freq++; \(\backslash\)}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{    flush = (s-\/>last\_lit == s-\/>lit\_bufsize-\/1); \(\backslash\)}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{   \}}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\# define \_tr\_tally\_dist(s, distance, length, flush) \(\backslash\)}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{  \{ uch len = (length); \(\backslash\)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{    ush dist = (distance); \(\backslash\)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{    s-\/>d\_buf[s-\/>last\_lit] = dist; \(\backslash\)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{    s-\/>l\_buf[s-\/>last\_lit++] = len; \(\backslash\)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{    dist-\/-\/; \(\backslash\)}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{    s-\/>dyn\_ltree[\_length\_code[len]+LITERALS+1].Freq++; \(\backslash\)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{    s-\/>dyn\_dtree[d\_code(dist)].Freq++; \(\backslash\)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{    flush = (s-\/>last\_lit == s-\/>lit\_bufsize-\/1); \(\backslash\)}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{  \}}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\# define \_tr\_tally\_lit(s, c, flush) flush = \_tr\_tally(s, 0, c)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\# define \_tr\_tally\_dist(s, distance, length, flush) \(\backslash\)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{              flush = \_tr\_tally(s, distance, length)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DEFLATE\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

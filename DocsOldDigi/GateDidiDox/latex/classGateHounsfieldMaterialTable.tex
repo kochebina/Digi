@@ -1,0 +1,82 @@
+\hypertarget{classGateHounsfieldMaterialTable}{}\doxysection{Gate\+Hounsfield\+Material\+Table Class Reference}
+\label{classGateHounsfieldMaterialTable}\index{GateHounsfieldMaterialTable@{GateHounsfieldMaterialTable}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGateHounsfieldMaterialTable_1_1mMaterials}{m\+Materials}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_ae6de443e974c60b69b4c019d8dd6551c}\label{classGateHounsfieldMaterialTable_ae6de443e974c60b69b4c019d8dd6551c}} 
+typedef int {\bfseries Label\+Type}
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_ad7dc19c248e31b6b81de5894221a89ec}\label{classGateHounsfieldMaterialTable_ad7dc19c248e31b6b81de5894221a89ec}} 
+typedef std\+::map$<$ Label\+Type, G4\+String $>$ {\bfseries Label\+To\+Material\+Name\+Type}
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_adef71c44d5010e3a55a0e3c0bd28dc70}\label{classGateHounsfieldMaterialTable_adef71c44d5010e3a55a0e3c0bd28dc70}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{structGateHounsfieldMaterialTable_1_1mMaterials}{m\+Materials}} $>$ {\bfseries Gate\+Materials\+Vector}
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a7eeacd7971a48dbf40718dc7488a0733}\label{classGateHounsfieldMaterialTable_a7eeacd7971a48dbf40718dc7488a0733}} 
+typedef Gate\+Materials\+Vector\+::iterator {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a632a8384a31cd3392e449ce7177901d6}\label{classGateHounsfieldMaterialTable_a632a8384a31cd3392e449ce7177901d6}} 
+typedef Gate\+Materials\+Vector\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a923a0c59cabcbc7ab5d2b4d1330b29c4}\label{classGateHounsfieldMaterialTable_a923a0c59cabcbc7ab5d2b4d1330b29c4}} 
+iterator {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_ae768d06ad567909ab910a5ddab5484f4}\label{classGateHounsfieldMaterialTable_ae768d06ad567909ab910a5ddab5484f4}} 
+iterator {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_aac3d4596ff0b0f5c65fd62fa4292468d}\label{classGateHounsfieldMaterialTable_aac3d4596ff0b0f5c65fd62fa4292468d}} 
+void {\bfseries Add\+Material} (double H1, double H2, double d, \mbox{\hyperlink{classGateHounsfieldMaterialProperties}{Gate\+Hounsfield\+Material\+Properties}} $\ast$p)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_adc7e81506daa2e60a83f7ecdb0e43a2e}\label{classGateHounsfieldMaterialTable_adc7e81506daa2e60a83f7ecdb0e43a2e}} 
+void {\bfseries Add\+Material} (double H1, double H2, G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a6b4420c47e6293b46e314c67e6f22bac}\label{classGateHounsfieldMaterialTable_a6b4420c47e6293b46e314c67e6f22bac}} 
+void {\bfseries Write\+Material\+Database} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a1998b370fb56bace1ba7f10e34add41a}\label{classGateHounsfieldMaterialTable_a1998b370fb56bace1ba7f10e34add41a}} 
+void {\bfseries Write\+Materialto\+Hounsfield\+Link} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a2ed66542dc251653266528c81a4271bc}\label{classGateHounsfieldMaterialTable_a2ed66542dc251653266528c81a4271bc}} 
+void {\bfseries Write\+Material} (G4\+Material $\ast$m, std\+::ofstream \&os)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_ac90a7246d3861ad18a4a7b1b5688dfa5}\label{classGateHounsfieldMaterialTable_ac90a7246d3861ad18a4a7b1b5688dfa5}} 
+int {\bfseries Get\+Number\+Of\+Materials} ()
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a317beffeddf5d29c7c4adc274c159141}\label{classGateHounsfieldMaterialTable_a317beffeddf5d29c7c4adc274c159141}} 
+void {\bfseries Reset} ()
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a3118975d3c6de2a789a3f5b6a07f9ff1}\label{classGateHounsfieldMaterialTable_a3118975d3c6de2a789a3f5b6a07f9ff1}} 
+void {\bfseries Map\+Label\+To\+Material} (Label\+To\+Material\+Name\+Type \&m)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_ad139eafa7603b72005edce4edb51cad4}\label{classGateHounsfieldMaterialTable_ad139eafa7603b72005edce4edb51cad4}} 
+double {\bfseries Get\+HMean\+From\+Label} (int l)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_abafc0e9f7d8cd8bb4de0ff17bd58b4ad}\label{classGateHounsfieldMaterialTable_abafc0e9f7d8cd8bb4de0ff17bd58b4ad}} 
+Label\+Type {\bfseries Get\+Label\+FromH} (double h)
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_afd1c49cf141661b124ab4fedf9693551}\label{classGateHounsfieldMaterialTable_afd1c49cf141661b124ab4fedf9693551}} 
+Gate\+Materials\+Vector {\bfseries Get\+Materials} ()
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a2ce4d93f1c0d112a7c96f95001debb32}\label{classGateHounsfieldMaterialTable_a2ce4d93f1c0d112a7c96f95001debb32}} 
+\mbox{\hyperlink{structGateHounsfieldMaterialTable_1_1mMaterials}{m\+Materials}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateHounsfieldMaterialTable_a39c7036649640a41bc6bb4dde2100a48}\label{classGateHounsfieldMaterialTable_a39c7036649640a41bc6bb4dde2100a48}} 
+Gate\+Materials\+Vector {\bfseries m\+Materials\+Vector}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Hounsfield\+Material\+Table.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Hounsfield\+Material\+Table.\+cc\end{DoxyCompactItemize}

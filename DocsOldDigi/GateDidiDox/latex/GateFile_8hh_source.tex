@@ -1,0 +1,29 @@
+\hypertarget{GateFile_8hh_source}{}\doxysection{Gate\+File.\+hh}
+\label{GateFile_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/io/include/GateFile.hh@{/biomaps/physique/appli/GateOlga/src/source/io/include/GateFile.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by mdupont on 17/12/18.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFile}{GateFile}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} is\_open() = 0;}
+\DoxyCodeLine{15   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} close() = 0;}
+\DoxyCodeLine{16   \textcolor{keyword}{const} std::string \&path() \textcolor{keyword}{const};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{19   \textcolor{keywordtype}{void} open(\textcolor{keyword}{const} std::string\& path, std::ios\_base::openmode) ;}
+\DoxyCodeLine{20   std::ios\_base::openmode m\_mode;}
+\DoxyCodeLine{21   std::string m\_path;}
+\DoxyCodeLine{22 \};}
+\DoxyCodeLine{23 }
+
+\end{DoxyCode}

@@ -1,0 +1,265 @@
+\hypertarget{GateMultiMaterialThermalActor_8hh_source}{}\doxysection{Gate\+Multi\+Material\+Thermal\+Actor.\+hh}
+\label{GateMultiMaterialThermalActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMultiMaterialThermalActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMultiMaterialThermalActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class GateMultiMaterialThermalActor}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author fsmekens@gmail.com}}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)brief Class GateMultiMaterialThermalActor : This actor produces voxelised images of the heat diffusion in tissue.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEMULTIMATERIALTHERMALACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEMULTIMATERIALTHERMALACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <G4NistManager.hh>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateMultiMaterialThermalActorMessenger.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateVImageVolume_8hh}{GateVImageVolume.hh}}"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{// itk}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifdef GATE\_USE\_ITK}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}itkImage.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}itkImageFileReader.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}itkImageFileWriter.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}itkImageIterator.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}itkRecursiveGaussianImageFilter.h"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}itkMultiplyImageFilter.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}itkExpImageFilter.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}itkAddImageFilter.h"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}itkSubtractImageFilter.h"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}itkBinaryThresholdImageFilter.h"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}itkImageDuplicator.h"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}itkImportImageFilter.h"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}itkRegionOfInterestImageFilter.h"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}itkPasteImageFilter.h"{}}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiMaterialThermalActor}{GateMultiMaterialThermalActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{54   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMultiMaterialThermalActor}{\string~GateMultiMaterialThermalActor}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateMultiMaterialThermalActor}{GateMultiMaterialThermalActor}})}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{comment}{// typedef for itk}}
+\DoxyCodeLine{60   \textcolor{keyword}{typedef} itk::Image<float, 3> FloatImageType;}
+\DoxyCodeLine{61   \textcolor{keyword}{typedef} itk::Image<double, 3> DoubleImageType;}
+\DoxyCodeLine{62   \textcolor{keyword}{typedef} itk::ImageRegionIterator<FloatImageType> FloatIteratorType;}
+\DoxyCodeLine{63   \textcolor{keyword}{typedef} itk::ImageRegionIterator<DoubleImageType> DoubleIteratorType;}
+\DoxyCodeLine{64   \textcolor{keyword}{typedef} itk::ImageDuplicator<FloatImageType> FloatDuplicatorType;}
+\DoxyCodeLine{65   \textcolor{keyword}{typedef} itk::ImageDuplicator<DoubleImageType> DoubleDuplicatorType;}
+\DoxyCodeLine{66   \textcolor{keyword}{typedef} itk::ImageFileReader<DoubleImageType> DoubleReaderType;}
+\DoxyCodeLine{67   \textcolor{keyword}{typedef} itk::MultiplyImageFilter<DoubleImageType, FloatImageType, DoubleImageType> MultiplyFilterType;}
+\DoxyCodeLine{68   \textcolor{keyword}{typedef} itk::ExpImageFilter<DoubleImageType, FloatImageType> ExpFilterType;}
+\DoxyCodeLine{69   \textcolor{keyword}{typedef} itk::AddImageFilter<DoubleImageType, DoubleImageType, DoubleImageType> AddImageFilterType;}
+\DoxyCodeLine{70   \textcolor{keyword}{typedef} itk::SubtractImageFilter<DoubleImageType, DoubleImageType> SubtractImageFilterType;}
+\DoxyCodeLine{71   \textcolor{keyword}{typedef} itk::BinaryThresholdImageFilter<FloatImageType, FloatImageType> BinaryThresholdFilterType;}
+\DoxyCodeLine{72   \textcolor{keyword}{typedef} itk::RecursiveGaussianImageFilter<DoubleImageType, DoubleImageType> GaussianFilterType;}
+\DoxyCodeLine{73   \textcolor{keyword}{typedef} itk::ImportImageFilter<float, 3> ImportFilterType;}
+\DoxyCodeLine{74   \textcolor{keyword}{typedef} itk::RegionOfInterestImageFilter<FloatImageType, FloatImageType> FloatToFloatROIFilterType;}
+\DoxyCodeLine{75   \textcolor{keyword}{typedef} itk::RegionOfInterestImageFilter<DoubleImageType, DoubleImageType> DoubleToDoubleROIFilterType;}
+\DoxyCodeLine{76   \textcolor{keyword}{typedef} itk::PasteImageFilter<DoubleImageType> PasteImageFilterType;}
+\DoxyCodeLine{77   }
+\DoxyCodeLine{78   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{79   \textcolor{comment}{// Defines ROI for thermal diffusion and corresponding thermal diffusion periodicity}}
+\DoxyCodeLine{80   \textcolor{keyword}{struct }\mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1DiffusionStruct}{DiffusionStruct}} \{}
+\DoxyCodeLine{81     \textcolor{keywordtype}{double} diffusivity;}
+\DoxyCodeLine{82     \textcolor{keywordtype}{double} period;}
+\DoxyCodeLine{83     \textcolor{keywordtype}{double} sigma;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{bool} isROIused;}
+\DoxyCodeLine{85     FloatImageType::RegionType regionOfInterest;}
+\DoxyCodeLine{86     FloatImageType::Pointer mask;}
+\DoxyCodeLine{87     \textcolor{keywordtype}{double} timer;}
+\DoxyCodeLine{88     \textcolor{keywordtype}{double} currentTimeStep;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{double} totalTime;}
+\DoxyCodeLine{90     \textcolor{keywordtype}{int} diffusionNumber;}
+\DoxyCodeLine{91     }
+\DoxyCodeLine{92     \mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1DiffusionStruct}{DiffusionStruct}}(\textcolor{keywordtype}{double} c, \textcolor{keywordtype}{double} s, \textcolor{keywordtype}{bool} useROI, FloatImageType::RegionType r, FloatImageType::Pointer m) \{}
+\DoxyCodeLine{93       diffusivity = c;}
+\DoxyCodeLine{94       sigma = s;}
+\DoxyCodeLine{95       isROIused = useROI;}
+\DoxyCodeLine{96       regionOfInterest = r;}
+\DoxyCodeLine{97       mask = m;}
+\DoxyCodeLine{98       period = sigma * sigma / (2.0 * diffusivity);}
+\DoxyCodeLine{99       timer = 0.0;}
+\DoxyCodeLine{100       currentTimeStep = 0.0;}
+\DoxyCodeLine{101       totalTime = 0.0;}
+\DoxyCodeLine{102       diffusionNumber = 0;}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104     }
+\DoxyCodeLine{105     \textcolor{keywordtype}{bool} CheckDiffusionTime(\textcolor{keywordtype}{double} stepTime, \textcolor{keywordtype}{bool} forced) \{}
+\DoxyCodeLine{106       timer += stepTime;}
+\DoxyCodeLine{107       totalTime += stepTime;}
+\DoxyCodeLine{108       sigma = sqrt(2.0 * timer * diffusivity);}
+\DoxyCodeLine{109       \textcolor{keywordflow}{if}((timer >= period or forced) and sigma > 0.0) \{}
+\DoxyCodeLine{110         currentTimeStep = timer;}
+\DoxyCodeLine{111         timer = 0.0;}
+\DoxyCodeLine{112         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{113       \}}
+\DoxyCodeLine{114       \textcolor{keywordflow}{else} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116   \};}
+\DoxyCodeLine{117   }
+\DoxyCodeLine{118   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{119   \textcolor{comment}{// Defines rectangle ROI and corresponding measurement periodicity }}
+\DoxyCodeLine{120   \textcolor{keyword}{struct }\mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1MeasurementStruct}{MeasurementStruct}} \{}
+\DoxyCodeLine{121     \textcolor{keywordtype}{int} label;}
+\DoxyCodeLine{122     \textcolor{keywordtype}{double} period;}
+\DoxyCodeLine{123     \textcolor{keywordtype}{double} timer;}
+\DoxyCodeLine{124     \textcolor{keywordtype}{double} totalTime;}
+\DoxyCodeLine{125     std::vector<DoubleImageType::IndexType> indexList;}
+\DoxyCodeLine{126     std::vector<double> timeList;}
+\DoxyCodeLine{127     std::vector<double> measList;}
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129     \mbox{\hyperlink{structGateMultiMaterialThermalActor_1_1MeasurementStruct}{MeasurementStruct}}(\textcolor{keywordtype}{int} l, \textcolor{keywordtype}{double} t) \{}
+\DoxyCodeLine{130       label = l;}
+\DoxyCodeLine{131       period = t;}
+\DoxyCodeLine{132       timer = 0.0;}
+\DoxyCodeLine{133       totalTime = 0.0;}
+\DoxyCodeLine{134       indexList.clear();}
+\DoxyCodeLine{135       timeList.clear();}
+\DoxyCodeLine{136       measList.clear();}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138     }
+\DoxyCodeLine{139     \textcolor{keywordtype}{bool} CheckMeasurementTime(\textcolor{keywordtype}{double} stepTime, \textcolor{keywordtype}{bool} forced) \{}
+\DoxyCodeLine{140       timer += stepTime;}
+\DoxyCodeLine{141       totalTime += stepTime;}
+\DoxyCodeLine{142       \textcolor{keywordflow}{if}(timer >= period or forced)}
+\DoxyCodeLine{143       \{}
+\DoxyCodeLine{144         timer = 0.0;}
+\DoxyCodeLine{145         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{146       \}}
+\DoxyCodeLine{147       \textcolor{keywordflow}{else} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{148     \}}
+\DoxyCodeLine{149     }
+\DoxyCodeLine{150     \textcolor{keywordtype}{void} SetValue(\textcolor{keywordtype}{double} t, \textcolor{keywordtype}{double} m) \{}
+\DoxyCodeLine{151       timeList.push\_back(t);}
+\DoxyCodeLine{152       measList.push\_back(m);}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154   \};}
+\DoxyCodeLine{155   }
+\DoxyCodeLine{156   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{157   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{158   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMultiMaterialThermalActor_a04ff56e4e40c308e15dd8e7de69c49ac}{Construct}}();}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run *r);}
+\DoxyCodeLine{161   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfRunAction(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{162   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *event);}
+\DoxyCodeLine{163   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event *event);}
+\DoxyCodeLine{164   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMultiMaterialThermalActor_a614198d2bf08421bbb1215e9ed72dcfe}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step *step);}
+\DoxyCodeLine{165   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int}, \textcolor{keyword}{const} G4Track *track);}
+\DoxyCodeLine{166   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int}, \textcolor{keyword}{const} G4Track *) \{\}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168   \textcolor{comment}{//  Saves the data collected to the file}}
+\DoxyCodeLine{169   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{170   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172   \textcolor{comment}{// Scorer related}}
+\DoxyCodeLine{173   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*) \{\}}
+\DoxyCodeLine{174   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*) \{\}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176   \textcolor{comment}{// Main functions for applying the thermal diffusion and perfussion}}
+\DoxyCodeLine{177   \textcolor{keywordtype}{void} ConstructRegionMasks(\mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} *);}
+\DoxyCodeLine{178   \textcolor{keywordtype}{void} ConstructPerfusionMap();}
+\DoxyCodeLine{179   \textcolor{keywordtype}{void} ReadMeasurementFile(DoubleImageType::Pointer);}
+\DoxyCodeLine{180   \textcolor{keywordtype}{double} GetPropertyFromMaterial(\textcolor{keyword}{const} G4Material *, G4String, G4double);}
+\DoxyCodeLine{181   \textcolor{keywordtype}{void} ApplyStepPerfusion(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{182   \textcolor{keywordtype}{void} ApplyStepDiffusion(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{183   \textcolor{keywordtype}{void} ApplyStepMeasurement(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{184   \textcolor{keywordtype}{void} ApplyUserRelaxation();}
+\DoxyCodeLine{185   }
+\DoxyCodeLine{186   \textcolor{comment}{// images management}}
+\DoxyCodeLine{187   FloatImageType::Pointer ConvertGateToITKImage\_float(\mbox{\hyperlink{classGateImage}{GateImage}} *);}
+\DoxyCodeLine{188   DoubleImageType::Pointer ConvertGateToITKImage\_double(\mbox{\hyperlink{classGateImageT}{GateImageDouble}} *);}
+\DoxyCodeLine{189   \textcolor{keywordtype}{void} SaveITKimage(FloatImageType::Pointer, G4String);}
+\DoxyCodeLine{190   \textcolor{keywordtype}{void} SaveITKimage(DoubleImageType::Pointer, G4String);}
+\DoxyCodeLine{191   }
+\DoxyCodeLine{192   \textcolor{comment}{// Complex 'set' functions}}
+\DoxyCodeLine{193   \textcolor{keywordtype}{void} SetBloodPerfusionByMaterial(G4bool);}
+\DoxyCodeLine{194   \textcolor{keywordtype}{void} SetBloodPerfusionByConstant(G4double);}
+\DoxyCodeLine{195   \textcolor{keywordtype}{void} SetBloodPerfusionByImage(G4String);}
+\DoxyCodeLine{196   \textcolor{keywordtype}{void} SetMeasurementFilename(G4String);}
+\DoxyCodeLine{197   \textcolor{comment}{// Basic 'set' functions}}
+\DoxyCodeLine{198   \textcolor{keywordtype}{void} setRelaxationTime(G4double t) \{ mUserRelaxationTime = t; \}}
+\DoxyCodeLine{199   \textcolor{keywordtype}{void} setDiffusivity(G4double d) \{ mUserMaterialDiffusivity = d; \}}
+\DoxyCodeLine{200   \textcolor{keywordtype}{void} setBloodDensity(G4double d) \{ mUserBloodDensity = d; \}}
+\DoxyCodeLine{201   \textcolor{keywordtype}{void} setBloodHeatCapacity(G4double c) \{ mUserBloodHeatCapacity = c; \}}
+\DoxyCodeLine{202   \textcolor{keywordtype}{void} setTissueDensity(G4double d) \{ mUserTissueDensity = d; \}}
+\DoxyCodeLine{203   \textcolor{keywordtype}{void} setTissueHeatCapacity(G4double c) \{ mUserTissueHeatCapacity = c; \}}
+\DoxyCodeLine{204   \textcolor{keywordtype}{void} enableStepDiffusion(G4bool b) \{ mIsDiffusionActivated = b; \}}
+\DoxyCodeLine{205   }
+\DoxyCodeLine{206 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208   \mbox{\hyperlink{classGateMultiMaterialThermalActor}{GateMultiMaterialThermalActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{209   \mbox{\hyperlink{classGateMultiMaterialThermalActorMessenger}{GateMultiMaterialThermalActorMessenger}} * pMessenger;}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{212   StepHitType mUserStepHitType;}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214   \textcolor{comment}{// image data}}
+\DoxyCodeLine{215   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mAbsorptionImage;}
+\DoxyCodeLine{216   G4String mAbsorptionFilename;}
+\DoxyCodeLine{217   G4String mHeatAbsorptionFilename;}
+\DoxyCodeLine{218   G4String mHeatRelaxationFilename;}
+\DoxyCodeLine{219   DoubleImageType::Pointer mITKheatMap;}
+\DoxyCodeLine{220   DoubleImageType::Pointer mITKperfusionRateMap;}
+\DoxyCodeLine{221   DoubleImageType::Pointer mITKheatConversionMap;}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223   \textcolor{comment}{// time data}}
+\DoxyCodeLine{224   \textcolor{keywordtype}{double} mCurrentTime;}
+\DoxyCodeLine{225   \textcolor{keywordtype}{double} mPreviousTime;}
+\DoxyCodeLine{226   \textcolor{keywordtype}{double} mPerfusionTimer;}
+\DoxyCodeLine{227   \textcolor{keywordtype}{double} mUserRelaxationTime;}
+\DoxyCodeLine{228   std::vector<G4Material *> mMaterialList;}
+\DoxyCodeLine{229   std::map<G4Material *, DiffusionStruct> mMaterialToDiffusionStruct;}
+\DoxyCodeLine{230   \textcolor{keywordtype}{double} mMinTimeStep;}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232   \textcolor{comment}{// activation flags}}
+\DoxyCodeLine{233   \textcolor{keywordtype}{bool} mIsPerfusionActivated;}
+\DoxyCodeLine{234   \textcolor{keywordtype}{bool} mIsPerfusionByMaterial;}
+\DoxyCodeLine{235   \textcolor{keywordtype}{bool} mIsPerfusionByConstant;}
+\DoxyCodeLine{236   \textcolor{keywordtype}{bool} mIsPerfusionByImage;}
+\DoxyCodeLine{237   \textcolor{keywordtype}{bool} mIsDiffusionActivated;  }
+\DoxyCodeLine{238   \textcolor{keywordtype}{bool} mIsMeasurementActivated;}
+\DoxyCodeLine{239   G4String mMeasurementFilename;}
+\DoxyCodeLine{240   std::vector<MeasurementStruct> mMeasurementPoints;}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242   \textcolor{comment}{// constant values}}
+\DoxyCodeLine{243   G4String mUserPerfusionImageName;}
+\DoxyCodeLine{244   \textcolor{keywordtype}{double} mUserBloodPerfusionRate;}
+\DoxyCodeLine{245   \textcolor{keywordtype}{double} mUserBloodDensity;}
+\DoxyCodeLine{246   \textcolor{keywordtype}{double} mUserBloodHeatCapacity;}
+\DoxyCodeLine{247   \textcolor{keywordtype}{double} mUserTissueDensity;}
+\DoxyCodeLine{248   \textcolor{keywordtype}{double} mUserTissueHeatCapacity;}
+\DoxyCodeLine{249   \textcolor{keywordtype}{double} mMinPerfusionCoef;}
+\DoxyCodeLine{250   \textcolor{keywordtype}{double} mMaxPerfusionCoef;}
+\DoxyCodeLine{251   \textcolor{keywordtype}{double} mPerfusionRatio;}
+\DoxyCodeLine{252   \textcolor{keywordtype}{double} mMinPerfusionTimeStep;}
+\DoxyCodeLine{253   \textcolor{keywordtype}{double} mUserMaterialDiffusivity;}
+\DoxyCodeLine{254   }
+\DoxyCodeLine{255 \};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 MAKE\_AUTO\_CREATOR\_ACTOR(MultiMaterialThermalActor,\mbox{\hyperlink{classGateMultiMaterialThermalActor}{GateMultiMaterialThermalActor}})}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEMULTIMATERIALTHERMALACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

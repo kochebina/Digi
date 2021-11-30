@@ -1,0 +1,214 @@
+\hypertarget{classGateImageRegionalizedSubVolume}{}\doxysection{Gate\+Image\+Regionalized\+Sub\+Volume Class Reference}
+\label{classGateImageRegionalizedSubVolume}\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+
+
+A volume which represents a region of a 3D image of labels.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Image\+Regionalized\+Sub\+Volume.\+hh$>$}
+
+Inheritance diagram for Gate\+Image\+Regionalized\+Sub\+Volume\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateImageRegionalizedSubVolume}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}\label{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}} 
+typedef \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{Gate\+Image\+Regionalized\+Volume\+::\+Label\+Type}} {\bfseries Label\+Type}
+\begin{DoxyCompactList}\small\item\em The type of label. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateImageRegionalizedSubVolume_a37ea435619e35f732be29fc49452fc2a}{Gate\+Image\+Regionalized\+Sub\+Volume}} (const G4\+String \&name, G4bool accepts\+Children, G4int depth)
+\begin{DoxyCompactList}\small\item\em The type of label images. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a63663626b4f53d3140474b5d0f44181a}\label{classGateImageRegionalizedSubVolume_a63663626b4f53d3140474b5d0f44181a}} 
+{\bfseries $\sim$\+Gate\+Image\+Regionalized\+Sub\+Volume} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual G4double \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a128c864be04f59ace93e503f3fcdbcbd}{Get\+Half\+Dimension}} (size\+\_\+t)
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a3e3e4b5aff766262bf3d5335b18ec0c1}\label{classGateImageRegionalizedSubVolume_a3e3e4b5aff766262bf3d5335b18ec0c1}} 
+virtual G4\+String {\bfseries Get\+Type\+Name} ()
+\item 
+virtual G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a27008a040243cc1f8bbbe070ea6e15ac}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$, G4bool)
+\item 
+virtual void \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a3fdabf7b9a3ba701e89e80979a1373f6}{Destroy\+Own\+Solid\+And\+Logical\+Volume}} ()
+\item 
+void \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a7ae0acd8b39f11a6c5dc8e4924ed0418}{Set\+Volume}} (\mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Constructs the solid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a5327b5c1f78357f45a52cb3031391ad5}{Set\+Label}} (\mbox{\hyperlink{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}{Label\+Type}} label)
+\begin{DoxyCompactList}\small\item\em Sets the Image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}} $\ast$ \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a2baa416165f8a6728d3258996b607b4d}{Get\+Volume}} ()
+\begin{DoxyCompactList}\small\item\em Sets the half size of the volume. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}{Label\+Type}} \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a2dd134244483168a9a2c7111b042b5f1}{Get\+Label}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a48916463560abf9d36287053610c108e}\label{classGateImageRegionalizedSubVolume_a48916463560abf9d36287053610c108e}} 
+G4\+Three\+Vector {\bfseries Get\+Half\+Size} () const
+\begin{DoxyCompactList}\small\item\em Gets the half size of the volume which the half size of its containing volume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a8cc3e38b3ee57b3ba2639cf417516deb}\label{classGateImageRegionalizedSubVolume_a8cc3e38b3ee57b3ba2639cf417516deb}} 
+EInside {\bfseries Inside} (const G4\+Three\+Vector \&p) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a66f507d35652cc9754fa269cd3232fcb}\label{classGateImageRegionalizedSubVolume_a66f507d35652cc9754fa269cd3232fcb}} 
+G4double {\bfseries Distance\+To\+In} (const G4\+Three\+Vector \&p, const G4\+Three\+Vector \&v) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a39487e04d163249b6c1a84a5bc9b5804}\label{classGateImageRegionalizedSubVolume_a39487e04d163249b6c1a84a5bc9b5804}} 
+G4double {\bfseries Distance\+To\+In} (const G4\+Three\+Vector \&p) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a39d2b3eb57f4bc9bd8b66169749a1485}\label{classGateImageRegionalizedSubVolume_a39d2b3eb57f4bc9bd8b66169749a1485}} 
+G4double {\bfseries Distance\+To\+Out} (const G4\+Three\+Vector \&p, const G4\+Three\+Vector \&v, const G4bool calc\+Norm=false, G4bool $\ast$valid\+Norm=0, G4\+Three\+Vector $\ast$n=0) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a43953469734be65380e5674b9a4e93a0}\label{classGateImageRegionalizedSubVolume_a43953469734be65380e5674b9a4e93a0}} 
+G4double {\bfseries Distance\+To\+Out} (const G4\+Three\+Vector \&p) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a801eb1848e5e620455400f0597de4990}\label{classGateImageRegionalizedSubVolume_a801eb1848e5e620455400f0597de4990}} 
+G4\+Three\+Vector {\bfseries Surface\+Normal} (const G4\+Three\+Vector \&p) const
+\item 
+virtual void \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a2a35b70e30994695d964dbc7776a897f}{Propagate\+Global\+Sensitive\+Detector}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_ad7bf7bd00af4f9c1b2974da7b0215f8c}\label{classGateImageRegionalizedSubVolume_ad7bf7bd00af4f9c1b2974da7b0215f8c}} 
+\mbox{\hyperlink{classGateImageRegionalizedSubVolumeMessenger}{Gate\+Image\+Regionalized\+Sub\+Volume\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\begin{DoxyCompactList}\small\item\em its messenger \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a6b19d0bd7da57327429cd918fa112f2d}\label{classGateImageRegionalizedSubVolume_a6b19d0bd7da57327429cd918fa112f2d}} 
+\mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}} $\ast$ {\bfseries p\+Volume}
+\begin{DoxyCompactList}\small\item\em the regionalized volume in which it is contained \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}{Label\+Type}} \mbox{\hyperlink{classGateImageRegionalizedSubVolume_a95b85c7bc4a067b2b11c9517ca52ec60}{m\+Label}}
+\begin{DoxyCompactList}\small\item\em The image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_aa84eb2fa0b81937e664cca43817fe4b9}\label{classGateImageRegionalizedSubVolume_aa84eb2fa0b81937e664cca43817fe4b9}} 
+\mbox{\hyperlink{classGateImageRegionalizedSubVolumeSolid}{Gate\+Image\+Regionalized\+Sub\+Volume\+Solid}} $\ast$ {\bfseries p\+Box\+Solid}
+\begin{DoxyCompactList}\small\item\em The half size of the volume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a43e4e46c0d02a794a6d41697948725dc}\label{classGateImageRegionalizedSubVolume_a43e4e46c0d02a794a6d41697948725dc}} 
+G4\+Logical\+Volume $\ast$ {\bfseries p\+Box\+Log}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A volume which represents a region of a 3D image of labels. 
+
+A volume which represents a region of a 3D image of labels (sub-\/volume of a \mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}})
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a37ea435619e35f732be29fc49452fc2a}\label{classGateImageRegionalizedSubVolume_a37ea435619e35f732be29fc49452fc2a}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{GateImageRegionalizedSubVolume()}{GateImageRegionalizedSubVolume()}}
+{\footnotesize\ttfamily Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Gate\+Image\+Regionalized\+Sub\+Volume (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name,  }\item[{G4bool}]{accepts\+Children,  }\item[{G4int}]{depth }\end{DoxyParamCaption})}
+
+
+
+The type of label images. 
+
+Constructor with \+: the path to the volume to create (for commands) the name of the volume to create Creates the messenger associated to the volume 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a27008a040243cc1f8bbbe070ea6e15ac}\label{classGateImageRegionalizedSubVolume_a27008a040243cc1f8bbbe070ea6e15ac}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily G4\+Logical\+Volume $\ast$ Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pure virtual method, will be defined in concrete classes \mbox{\hyperlink{classGateBox}{Gate\+Box}}, \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} ... 
+
+Implements \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a3fdabf7b9a3ba701e89e80979a1373f6}\label{classGateImageRegionalizedSubVolume_a3fdabf7b9a3ba701e89e80979a1373f6}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}}
+\index{DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{DestroyOwnSolidAndLogicalVolume()}{DestroyOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily virtual void Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Destroy\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a128c864be04f59ace93e503f3fcdbcbd}\label{classGateImageRegionalizedSubVolume_a128c864be04f59ace93e503f3fcdbcbd}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!GetHalfDimension@{GetHalfDimension}}
+\index{GetHalfDimension@{GetHalfDimension}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{GetHalfDimension()}{GetHalfDimension()}}
+{\footnotesize\ttfamily virtual G4double Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Get\+Half\+Dimension (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns a string describing the type of volume and which is used for commands 
+
+Implements \mbox{\hyperlink{classGateVVolume_a6b5af3dbb80ec1b182ad571560aa762b}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a2dd134244483168a9a2c7111b042b5f1}\label{classGateImageRegionalizedSubVolume_a2dd134244483168a9a2c7111b042b5f1}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!GetLabel@{GetLabel}}
+\index{GetLabel@{GetLabel}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{GetLabel()}{GetLabel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}{Label\+Type}} Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Get\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Image. 
+
+Gets the label of the region \mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a2baa416165f8a6728d3258996b607b4d}\label{classGateImageRegionalizedSubVolume_a2baa416165f8a6728d3258996b607b4d}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!GetVolume@{GetVolume}}
+\index{GetVolume@{GetVolume}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{GetVolume()}{GetVolume()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}} $\ast$ Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Get\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the half size of the volume. 
+
+Gets the \mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}} of which it is a subvolume \mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a2a35b70e30994695d964dbc7776a897f}\label{classGateImageRegionalizedSubVolume_a2a35b70e30994695d964dbc7776a897f}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!PropagateGlobalSensitiveDetector@{PropagateGlobalSensitiveDetector}}
+\index{PropagateGlobalSensitiveDetector@{PropagateGlobalSensitiveDetector}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{PropagateGlobalSensitiveDetector()}{PropagateGlobalSensitiveDetector()}}
+{\footnotesize\ttfamily void Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Propagate\+Global\+Sensitive\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a5327b5c1f78357f45a52cb3031391ad5}\label{classGateImageRegionalizedSubVolume_a5327b5c1f78357f45a52cb3031391ad5}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!SetLabel@{SetLabel}}
+\index{SetLabel@{SetLabel}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{SetLabel()}{SetLabel()}}
+{\footnotesize\ttfamily void Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Set\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}{Label\+Type}}}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the Image. 
+
+Sets the label of the region it represents \mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a7ae0acd8b39f11a6c5dc8e4924ed0418}\label{classGateImageRegionalizedSubVolume_a7ae0acd8b39f11a6c5dc8e4924ed0418}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!SetVolume@{SetVolume}}
+\index{SetVolume@{SetVolume}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{SetVolume()}{SetVolume()}}
+{\footnotesize\ttfamily void Gate\+Image\+Regionalized\+Sub\+Volume\+::\+Set\+Volume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the solid. 
+
+Sets the \mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}} of which it is a subvolume 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolume_a95b85c7bc4a067b2b11c9517ca52ec60}\label{classGateImageRegionalizedSubVolume_a95b85c7bc4a067b2b11c9517ca52ec60}} 
+\index{GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}!mLabel@{mLabel}}
+\index{mLabel@{mLabel}!GateImageRegionalizedSubVolume@{GateImageRegionalizedSubVolume}}
+\doxysubsubsection{\texorpdfstring{mLabel}{mLabel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateImageRegionalizedSubVolume_ae009d436690f2474789ab5a4559326f7}{Label\+Type}} Gate\+Image\+Regionalized\+Sub\+Volume\+::m\+Label\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The image. 
+
+The label of the region 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Image\+Regionalized\+Sub\+Volume.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/\mbox{\hyperlink{GateImageRegionalizedSubVolume_8cc}{Gate\+Image\+Regionalized\+Sub\+Volume.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,101 @@
+\hypertarget{classGateBoxComponent}{}\doxysection{Gate\+Box\+Component Class Reference}
+\label{classGateBoxComponent}\index{GateBoxComponent@{GateBoxComponent}}
+
+
+A \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}} is a subtype of \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Box\+Component.\+hh$>$}
+
+Inheritance diagram for Gate\+Box\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classGateBoxComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateBoxComponent_aff3f52e8a01d80092c7653efd787c891}{Gate\+Box\+Component}} (const G4\+String \&its\+Name, \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$its\+Mother\+Component, \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$its\+System)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBoxComponent_a9830d735d79a1053797bfe90173e7957}\label{classGateBoxComponent_a9830d735d79a1053797bfe90173e7957}} 
+virtual {\bfseries $\sim$\+Gate\+Box\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual G4bool \mbox{\hyperlink{classGateBoxComponent_a846e143acd3b2f9771efbf4370ca6011}{Is\+Valid\+Attachment\+Request}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator) const
+\item 
+\mbox{\Hypertarget{classGateBoxComponent_a513e81e85588bbe5062e0d4463475c14}\label{classGateBoxComponent_a513e81e85588bbe5062e0d4463475c14}} 
+\mbox{\hyperlink{classGateBox}{Gate\+Box}} $\ast$ {\bfseries Get\+Box\+Creator} () const
+\begin{DoxyCompactList}\small\item\em Return the box creator attached to our own Creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBoxComponent_aa264264b8866f122c81113d8bfafc819}\label{classGateBoxComponent_aa264264b8866f122c81113d8bfafc819}} 
+G4double {\bfseries Get\+Box\+Length} (size\+\_\+t axis) const
+\begin{DoxyCompactList}\small\item\em Return the length along an axis of the box-\/creator attached to our Creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateBoxComponent_ac527f3aeb3e722fbb100116985d03846}\label{classGateBoxComponent_ac527f3aeb3e722fbb100116985d03846}} 
+static \mbox{\hyperlink{classGateBox}{Gate\+Box}} $\ast$ {\bfseries Get\+Box\+Creator} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator)
+\begin{DoxyCompactList}\small\item\em Tool method\+: return the creator attached to an Creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBoxComponent_a4bb74f5a68a11b7446f3a69c72ac5aaf}\label{classGateBoxComponent_a4bb74f5a68a11b7446f3a69c72ac5aaf}} 
+static \mbox{\hyperlink{classGateBox}{Gate\+Box}} $\ast$ {\bfseries Cast\+To\+Box\+Creator} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$creator)
+\begin{DoxyCompactList}\small\item\em Tool method\+: try to cast a creator into a box creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}} is a subtype of \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}. 
+
+It is meant to be connected to box Creators, such as crystals or detectors
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (Oct 2002)
+\item A \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}} is derived from \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}, and thus inherits all the properties of system-\/components. In addition, it includes some methods that are specific to box-\/creator Creators\+: \mbox{\hyperlink{classGateBoxComponent_a4bb74f5a68a11b7446f3a69c72ac5aaf}{Cast\+To\+Box\+Creator()}}, \mbox{\hyperlink{classGateBoxComponent_a513e81e85588bbe5062e0d4463475c14}{Get\+Box\+Creator()}}, \mbox{\hyperlink{classGateBoxComponent_aa264264b8866f122c81113d8bfafc819}{Get\+Box\+Length()}}
+\item There is also a method \mbox{\hyperlink{classGateBoxComponent_a846e143acd3b2f9771efbf4370ca6011}{Is\+Valid\+Attachment\+Request()}}, that overloads the method from the \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} base-\/class\+: this overloading allows to check that the Creator is indeed connected to a box creator
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}, \mbox{\hyperlink{classGateBox}{Gate\+Box}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateBoxComponent_aff3f52e8a01d80092c7653efd787c891}\label{classGateBoxComponent_aff3f52e8a01d80092c7653efd787c891}} 
+\index{GateBoxComponent@{GateBoxComponent}!GateBoxComponent@{GateBoxComponent}}
+\index{GateBoxComponent@{GateBoxComponent}!GateBoxComponent@{GateBoxComponent}}
+\doxysubsubsection{\texorpdfstring{GateBoxComponent()}{GateBoxComponent()}}
+{\footnotesize\ttfamily Gate\+Box\+Component\+::\+Gate\+Box\+Component (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{its\+Name,  }\item[{\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$}]{its\+Mother\+Component,  }\item[{\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$}]{its\+System }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em its\+Name} & the name chosen for this system-\/component \\
+\hline
+{\em its\+Mother\+Component} & the mother of the component (0 if top of a tree) \\
+\hline
+{\em its\+System} & the system to which the component belongs \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateBoxComponent_a846e143acd3b2f9771efbf4370ca6011}\label{classGateBoxComponent_a846e143acd3b2f9771efbf4370ca6011}} 
+\index{GateBoxComponent@{GateBoxComponent}!IsValidAttachmentRequest@{IsValidAttachmentRequest}}
+\index{IsValidAttachmentRequest@{IsValidAttachmentRequest}!GateBoxComponent@{GateBoxComponent}}
+\doxysubsubsection{\texorpdfstring{IsValidAttachmentRequest()}{IsValidAttachmentRequest()}}
+{\footnotesize\ttfamily G4bool Gate\+Box\+Component\+::\+Is\+Valid\+Attachment\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method overloading the method \mbox{\hyperlink{classGateBoxComponent_a846e143acd3b2f9771efbf4370ca6011}{Is\+Valid\+Attachment\+Request()}} of the base-\/class \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} It tells whether an Creator may be attached to this component In addition to the test performed by the base-\/class\textquotesingle{} method, it also checks that the Creator is indeed connected to a box creator 
+
+Reimplemented from \mbox{\hyperlink{classGateSystemComponent_a1548a571dbb344360098842f178a3e2e}{Gate\+System\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Box\+Component.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Box\+Component.\+cc\end{DoxyCompactItemize}

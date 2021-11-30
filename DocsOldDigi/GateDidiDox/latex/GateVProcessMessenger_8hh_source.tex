@@ -1,0 +1,98 @@
+\hypertarget{GateVProcessMessenger_8hh_source}{}\doxysection{Gate\+VProcess\+Messenger.\+hh}
+\label{GateVProcessMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVProcessMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVProcessMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateVProcessMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEVPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEVPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateUIcmdWith2String.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4UIcmdWithoutParameter.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateUIcmdWithADoubleAnd3String.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateUIcmdWithADoubleAnd2String.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAStringAndAnInteger.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAStringAndADouble.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVProcess}{GateVProcess}};}
+\DoxyCodeLine{35 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVProcessMessenger}{GateVProcessMessenger}}:\textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateVProcessMessenger}{GateVProcessMessenger}}(\mbox{\hyperlink{classGateVProcess}{GateVProcess}} *pb);}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVProcessMessenger}{\string~GateVProcessMessenger}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} BuildERangeCommands(G4String base);\textcolor{comment}{// Not yet used!}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} SetERangeNewValue(G4UIcommand*, G4String);\textcolor{comment}{// Not yet used!}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} BuildModelsCommands(G4String base);}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} BuildEnergyRangeModelsCommands(G4String base);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} SetModelsNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetEnergyRangeModelsNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} BuildDataSetCommands(G4String base);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} SetDataSetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} BuildWrapperCommands(G4String base);}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} SetWrapperNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BuildCommands(G4String base)=0;}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String)=0;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   G4double ScaleValue(G4double value,G4String unit);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{63   \mbox{\hyperlink{classGateVProcess}{GateVProcess}} *pProcess;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \mbox{\hyperlink{classGateUIcmdWithAStringAndAnInteger}{GateUIcmdWithAStringAndAnInteger}} * pSetSplit;}
+\DoxyCodeLine{66   \mbox{\hyperlink{classGateUIcmdWithAStringAndAnInteger}{GateUIcmdWithAStringAndAnInteger}} * pSetRussianR;}
+\DoxyCodeLine{67   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}}    * pAddFilter;}
+\DoxyCodeLine{68   \mbox{\hyperlink{classGateUIcmdWithAStringAndADouble}{GateUIcmdWithAStringAndADouble}} * pSetCSE;}
+\DoxyCodeLine{69   G4UIcmdWithABool * pFilteredParticleState;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \mbox{\hyperlink{classGateUIcmdWithADoubleAnd3String}{GateUIcmdWithADoubleAnd3String}} * pSetEmin;}
+\DoxyCodeLine{72   \mbox{\hyperlink{classGateUIcmdWithADoubleAnd3String}{GateUIcmdWithADoubleAnd3String}} * pSetEmax;}
+\DoxyCodeLine{73   G4UIcmdWithoutParameter * pClearERange;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} *pAddDataSet;}
+\DoxyCodeLine{76   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} *pRemoveDataSet;}
+\DoxyCodeLine{77   G4UIcmdWithAString * pListDataSet;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} * pAddModel;}
+\DoxyCodeLine{80   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} * pRemoveModel;}
+\DoxyCodeLine{81   G4UIcmdWithAString * pListModel;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   std::vector<GateUIcmdWithADoubleAnd3String *> plModelSetEmin;}
+\DoxyCodeLine{84   std::vector<GateUIcmdWithADoubleAnd3String *> plModelSetEmax;}
+\DoxyCodeLine{85   std::vector<G4UIcmdWithAString *> plModelClearERange;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   G4String mPrefix;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   G4UIdirectory*  pProcessDir;}
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEVPROCESSMESSENGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

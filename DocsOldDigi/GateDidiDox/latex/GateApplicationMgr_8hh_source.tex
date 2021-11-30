@@ -1,0 +1,130 @@
+\hypertarget{GateApplicationMgr_8hh_source}{}\doxysection{Gate\+Application\+Mgr.\+hh}
+\label{GateApplicationMgr_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateApplicationMgr.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateApplicationMgr.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateApplicationMgr\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateApplicationMgr\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateApplicationMgrMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateApplicationMgr}{GateApplicationMgr}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \textcolor{keyword}{static} \mbox{\hyperlink{classGateApplicationMgr}{GateApplicationMgr}}* GetInstance() \{}
+\DoxyCodeLine{23     \textcolor{keywordflow}{if} (instance == 0)}
+\DoxyCodeLine{24       instance = \textcolor{keyword}{new} \mbox{\hyperlink{classGateApplicationMgr}{GateApplicationMgr}}();}
+\DoxyCodeLine{25     \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{26   \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateApplicationMgr}{\string~GateApplicationMgr}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   G4double GetTimeSlice();}
+\DoxyCodeLine{31   G4double GetTimeSlice(\textcolor{keywordtype}{int} run);}
+\DoxyCodeLine{32   G4double GetEndTimeSlice(\textcolor{keywordtype}{int} run);}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} SetTimeSlice(G4double value);}
+\DoxyCodeLine{34   G4double GetTimeStart();}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} SetTimeStart(G4double value);}
+\DoxyCodeLine{36   G4double GetTimeStop();}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} SetTimeStop(G4double value);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   G4double GetVirtualTimeStop();}
+\DoxyCodeLine{40   G4double GetVirtualTimeStart();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} StartDAQ();}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} StartDAQCluster(G4ThreeVector param);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} StartDAQComplete(G4ThreeVector param);}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} StopDAQ() \{\};}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} PauseDAQ() \{\};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} Describe();}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} PrintStatus();}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} SetVerboseLevel(G4int value) \{ nVerboseLevel = value; \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} SetTimeInterval(G4double v);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} SetTotalNumberOfPrimaries(\textcolor{keywordtype}{double} n);}
+\DoxyCodeLine{56   \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} GetTotalNumberOfPrimaries()\{\textcolor{keywordflow}{return} mRequestedAmountOfPrimaries;\}}
+\DoxyCodeLine{57   }
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} SetNumberOfPrimariesPerRun(\textcolor{keywordtype}{double} n);}
+\DoxyCodeLine{59   \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} GetNumberOfPrimariesPerRun()\{\textcolor{keywordflow}{return} mRequestedAmountOfPrimariesPerRun;\}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{comment}{//LSLS}}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} ReadNumberOfPrimariesInAFile(G4String filename);}
+\DoxyCodeLine{63   \textcolor{keywordtype}{bool} IsReadNumberOfPrimariesInAFileModeEnabled()\{\textcolor{keywordflow}{return} mReadNumberOfPrimariesInAFileIsUsed;\}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} SetNoOutputMode();}
+\DoxyCodeLine{68   \textcolor{keywordtype}{bool} GetOutputMode()\{\textcolor{keywordflow}{return} mOutputMode;\}}
+\DoxyCodeLine{69   \textcolor{keywordtype}{bool} IsTotalAmountOfPrimariesModeEnabled()\{\textcolor{keywordflow}{return} mATotalAmountOfPrimariesIsRequested;\}}
+\DoxyCodeLine{70   \textcolor{keywordtype}{bool} IsAnAmountOfPrimariesPerRunModeEnabled()\{\textcolor{keywordflow}{return} mRequestedAmountOfPrimariesPerRun;\}}
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} ReadTimeSlicesInAFile(G4String filename);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetCurrentTime(G4double value)\{m\_time=value;\}}
+\DoxyCodeLine{74   G4double GetCurrentTime()\{\textcolor{keywordflow}{return} m\_time;\}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   G4double GetTimeStepInTotalAmountOfPrimariesMode()\{\textcolor{keywordflow}{return} mTimeStepInTotalAmountOfPrimariesMode;\}}
+\DoxyCodeLine{78   G4double GetWeight()\{\textcolor{keywordflow}{return} m\_weight;\}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} EnableTimeStudy(G4String filename);}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} EnableTimeStudyForSteps(G4String filename);}
+\DoxyCodeLine{82   \textcolor{keywordtype}{long} GetRequestedAmountOfPrimariesPerRun() \{ \textcolor{keywordflow}{return} mRequestedAmountOfPrimariesPerRun; \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \mbox{\hyperlink{classGateApplicationMgr}{GateApplicationMgr}}();}
+\DoxyCodeLine{87   \textcolor{keyword}{static} \mbox{\hyperlink{classGateApplicationMgr}{GateApplicationMgr}}* instance;}
+\DoxyCodeLine{88   }
+\DoxyCodeLine{89   G4double m\_clusterStart;}
+\DoxyCodeLine{90   G4double m\_clusterStop;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   G4int nVerboseLevel;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   G4double m\_time;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   G4double m\_weight;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   G4double mTimeSliceDuration;}
+\DoxyCodeLine{99   std::vector<G4double> mTimeSlices;}
+\DoxyCodeLine{100   }
+\DoxyCodeLine{101   \textcolor{comment}{//LSLS}}
+\DoxyCodeLine{102   std::vector<G4int> mNumberOfPrimariesPerRun;}
+\DoxyCodeLine{103   \textcolor{keywordtype}{bool} mReadNumberOfPrimariesInAFileIsUsed;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{bool} mOutputMode;}
+\DoxyCodeLine{108   \textcolor{keywordtype}{bool} mTimeSliceIsSetUsingAddSlice;}
+\DoxyCodeLine{109   \textcolor{keywordtype}{bool} mTimeSliceIsSetUsingReadSliceInFile;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mRequestedAmountOfPrimaries;}
+\DoxyCodeLine{112   \textcolor{keywordtype}{bool} mATotalAmountOfPrimariesIsRequested;}
+\DoxyCodeLine{113   \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mRequestedAmountOfPrimariesPerRun;}
+\DoxyCodeLine{114   \textcolor{keywordtype}{bool} mAnAmountOfPrimariesPerRunIsRequested;}
+\DoxyCodeLine{115   \textcolor{keywordtype}{double} mTimeStepInTotalAmountOfPrimariesMode;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   \textcolor{keywordtype}{void} InitializeTimeSlices();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \mbox{\hyperlink{classGateApplicationMgrMessenger}{GateApplicationMgrMessenger}}* m\_appMgrMessenger;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 }
+
+\end{DoxyCode}

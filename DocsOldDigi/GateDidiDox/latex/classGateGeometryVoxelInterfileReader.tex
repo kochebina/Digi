@@ -1,0 +1,108 @@
+\hypertarget{classGateGeometryVoxelInterfileReader}{}\doxysection{Gate\+Geometry\+Voxel\+Interfile\+Reader Class Reference}
+\label{classGateGeometryVoxelInterfileReader}\index{GateGeometryVoxelInterfileReader@{GateGeometryVoxelInterfileReader}}
+
+
+This class is a concrete implementation of the abstract \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Geometry\+Voxel\+Interfile\+Reader.\+hh$>$}
+
+Inheritance diagram for Gate\+Geometry\+Voxel\+Interfile\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateGeometryVoxelInterfileReader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelInterfileReader_ab6de45ba0a7e6f13400a939c39f21ecc}\label{classGateGeometryVoxelInterfileReader_ab6de45ba0a7e6f13400a939c39f21ecc}} 
+{\bfseries Gate\+Geometry\+Voxel\+Interfile\+Reader} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$inserter)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelInterfileReader_aaafd883d567ac775c7576abd38bf8114}{Describe}} (G4int level)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelInterfileReader_a0400026a227134e122e1a1094b42f8ef}{Read\+File}} (G4\+String file\+Name)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelInterfileReader_a259fbfe41d304201c70017ac846e92cb}{Read\+RTFile}} (G4\+String header\+\_\+file\+Name, G4\+String file\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelInterfileReader_a7a373831bce7f634df094bc2fac16dc5}\label{classGateGeometryVoxelInterfileReader_a7a373831bce7f634df094bc2fac16dc5}} 
+\mbox{\hyperlink{classGateGeometryVoxelInterfileReaderMessenger}{Gate\+Geometry\+Voxel\+Interfile\+Reader\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelInterfileReader_aa3017bc6cfccb80822edf6876e2ea053}\label{classGateGeometryVoxelInterfileReader_aa3017bc6cfccb80822edf6876e2ea053}} 
+G4bool {\bfseries Is\+First\+Frame}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class is a concrete implementation of the abstract \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateGeometryVoxelInterfileReader}{Gate\+Geometry\+Voxel\+Interfile\+Reader}} -\/ by \href{mailto:Giovanni.Santin@cern.ch}{\texttt{ Giovanni.\+Santin@cern.\+ch}}
+\item it reads a the voxel info from an ASCII file with the sequence of info\+:
+\begin{DoxyItemize}
+\item nx ny nz
+\item dx dy dz (mm)
+\item number\+\_\+of\+\_\+listed\+\_\+voxels
+\item i1 j1 k1 material\+Name1
+\item i2 j2 k2 material\+Name2
+\item ...
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}} 
+
+\mbox{\hyperlink{classGateGeometryVoxelInterfileReaderMessenger}{Gate\+Geometry\+Voxel\+Interfile\+Reader\+Messenger}} 
+
+\mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelReader}{Gate\+VSource\+Voxel\+Reader}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGeometryVoxelInterfileReader_aaafd883d567ac775c7576abd38bf8114}\label{classGateGeometryVoxelInterfileReader_aaafd883d567ac775c7576abd38bf8114}} 
+\index{GateGeometryVoxelInterfileReader@{GateGeometryVoxelInterfileReader}!Describe@{Describe}}
+\index{Describe@{Describe}!GateGeometryVoxelInterfileReader@{GateGeometryVoxelInterfileReader}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Interfile\+Reader\+::\+Describe (\begin{DoxyParamCaption}\item[{G4int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelInterfileReader_a0400026a227134e122e1a1094b42f8ef}\label{classGateGeometryVoxelInterfileReader_a0400026a227134e122e1a1094b42f8ef}} 
+\index{GateGeometryVoxelInterfileReader@{GateGeometryVoxelInterfileReader}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!GateGeometryVoxelInterfileReader@{GateGeometryVoxelInterfileReader}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Interfile\+Reader\+::\+Read\+File (\begin{DoxyParamCaption}\item[{G4\+String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelInterfileReader_a259fbfe41d304201c70017ac846e92cb}\label{classGateGeometryVoxelInterfileReader_a259fbfe41d304201c70017ac846e92cb}} 
+\index{GateGeometryVoxelInterfileReader@{GateGeometryVoxelInterfileReader}!ReadRTFile@{ReadRTFile}}
+\index{ReadRTFile@{ReadRTFile}!GateGeometryVoxelInterfileReader@{GateGeometryVoxelInterfileReader}}
+\doxysubsubsection{\texorpdfstring{ReadRTFile()}{ReadRTFile()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Interfile\+Reader\+::\+Read\+RTFile (\begin{DoxyParamCaption}\item[{G4\+String}]{header\+\_\+file\+Name,  }\item[{G4\+String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Geometry\+Voxel\+Interfile\+Reader.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Geometry\+Voxel\+Interfile\+Reader.\+cc\end{DoxyCompactItemize}

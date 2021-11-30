@@ -1,0 +1,38 @@
+\hypertarget{scdef_8h_source}{}\doxysection{scdef.\+h}
+\label{scdef_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/scdef.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/scdef.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#)scdef.h  1.1 7/11/92 */}}
+\DoxyCodeLine{2 \textcolor{comment}{/* scdef.h -\/-\/ used on host for defining ueptable\_ offsets,}}
+\DoxyCodeLine{3 \textcolor{comment}{                  used on SuperCard for creating ueptable\_  }}
+\DoxyCodeLine{4 \textcolor{comment}{*/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{/* this section creates the structure data type for the ueptable */}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define sc\_stack\_option(var) }\textcolor{comment}{/* stack option = var */}\textcolor{preprocessor}{ }}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define sc\_heap\_option(var)  }\textcolor{comment}{/* heap  option = var */}\textcolor{preprocessor}{ }}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define scssladdr(name) void (*name)();}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define scuserfun(name) void (*name)();}}
+\DoxyCodeLine{13 \textcolor{keyword}{struct }\mbox{\hyperlink{structxl__uep__t}{xl\_uep\_t}}}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15     void (*uep\_0)();}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}scssl.h"{}}}
+\DoxyCodeLine{17     void (*uep\_1)();}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}scfun.h"{}}}
+\DoxyCodeLine{19     void (*uep\_2)();}
+\DoxyCodeLine{20     \};}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#undef scssladdr}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#undef scuserfun}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#undef sc\_stack\_option}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#undef sc\_heap\_option}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{/* a specific instance of the structure is created, in order to}}
+\DoxyCodeLine{27 \textcolor{comment}{   allow the definition of the "{}x\_f"{} macro. This macro is used in}}
+\DoxyCodeLine{28 \textcolor{comment}{   a user's host C program to calculate the offset of a given entry}}
+\DoxyCodeLine{29 \textcolor{comment}{   into the ueptable}}
+\DoxyCodeLine{30 \textcolor{comment}{*/}}
+\DoxyCodeLine{31 \textcolor{keyword}{struct }\mbox{\hyperlink{structxl__uep__t}{xl\_uep\_t}} xl\_uept;}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define x\_f(f)  (long) (\&xl\_uept.uep\_1 -\/ \&xl\_uept.f)}}
+
+\end{DoxyCode}

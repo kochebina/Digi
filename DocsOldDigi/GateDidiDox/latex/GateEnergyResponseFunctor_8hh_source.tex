@@ -1,0 +1,74 @@
+\hypertarget{GateEnergyResponseFunctor_8hh_source}{}\doxysection{Gate\+Energy\+Response\+Functor.\+hh}
+\label{GateEnergyResponseFunctor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergyResponseFunctor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergyResponseFunctor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GATEENERGYRESPONSEFUNCTOR\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GATEENERGYRESPONSEFUNCTOR\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// Geant4}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <G4VEMDataSet.hh>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <G4EmCalculator.hh>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <G4VDataSetAlgorithm.hh>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <G4LivermoreComptonModel.hh>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <G4LogLogInterpolation.hh>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <G4CompositeEMDataSet.hh>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <G4CrossSectionHandler.hh>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{15 \textcolor{comment}{// Handling of the interpolation weight in primary: store the weights and}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEnergyResponseFunctor}{GateEnergyResponseFunctor}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 \textcolor{keyword}{inline} G4double operator() (\textcolor{keywordtype}{double} photonEnergy) \{}
+\DoxyCodeLine{21   \textcolor{keywordflow}{if}(!mResponseMap.size())}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} 1.;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{comment}{// Energy Response Detector (linear interpolation to obtain the right value from the list)}}
+\DoxyCodeLine{25   std::map< G4double, G4double >::iterator iterResponseMap = mResponseMap.end();}
+\DoxyCodeLine{26   iterResponseMap =  mResponseMap.lower\_bound( photonEnergy);}
+\DoxyCodeLine{27   \textcolor{keywordflow}{if}(iterResponseMap == mResponseMap.begin() || iterResponseMap == mResponseMap.end()) \{}
+\DoxyCodeLine{28      G4cout << \textcolor{stringliteral}{"{} Photon Energy outside the Response Detector list\(\backslash\)n"{}};}
+\DoxyCodeLine{29      exit(1);}
+\DoxyCodeLine{30   \}}
+\DoxyCodeLine{31   \textcolor{keywordtype}{double} upperEn = iterResponseMap-\/>first;}
+\DoxyCodeLine{32   \textcolor{keywordtype}{double} upperMu = iterResponseMap-\/>second;}
+\DoxyCodeLine{33   iterResponseMap-\/-\/;}
+\DoxyCodeLine{34   \textcolor{keywordtype}{double} lowerEn = iterResponseMap-\/>first;}
+\DoxyCodeLine{35   \textcolor{keywordtype}{double} lowerMu = iterResponseMap-\/>second;}
+\DoxyCodeLine{36   \textcolor{comment}{// Interpolation result value corresponding to the detector response}}
+\DoxyCodeLine{37   \textcolor{keywordtype}{double} responseDetector = ((( upperMu -\/ lowerMu)/( upperEn -\/ lowerEn)) * ( photonEnergy -\/ upperEn) + upperMu);}
+\DoxyCodeLine{38   \textcolor{keywordflow}{return} responseDetector;}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keywordtype}{void} ReadResponseDetectorFile(std::string responseFileName) \{}
+\DoxyCodeLine{42   \textcolor{keywordflow}{if}(responseFileName == \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{43     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   G4double energy, response;}
+\DoxyCodeLine{46   std::ifstream inResponseFile;}
+\DoxyCodeLine{47   mResponseMap.clear();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   inResponseFile.open(responseFileName.c\_str());}
+\DoxyCodeLine{50   \textcolor{keywordflow}{if}( !inResponseFile ) \{}
+\DoxyCodeLine{51     \textcolor{comment}{// file couldn't be opened}}
+\DoxyCodeLine{52     G4cout << \textcolor{stringliteral}{"{}Error: file ["{}} << responseFileName << \textcolor{stringliteral}{"{}] could not be opened\(\backslash\)n"{}};}
+\DoxyCodeLine{53     exit( 1);}
+\DoxyCodeLine{54   \}}
+\DoxyCodeLine{55   \textcolor{keywordflow}{while} ( !inResponseFile.eof( )) \{}
+\DoxyCodeLine{56     inResponseFile >> energy >> response;}
+\DoxyCodeLine{57     energy = energy*MeV;}
+\DoxyCodeLine{58     mResponseMap[energy] = response;}
+\DoxyCodeLine{59   \}}
+\DoxyCodeLine{60   inResponseFile.close( );}
+\DoxyCodeLine{61 \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{64   std::map< G4double, G4double > mResponseMap;}
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GATEHYBRIDFORCEDDETECTIONACTORFUNCTORS\_HH}}
+
+\end{DoxyCode}

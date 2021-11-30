@@ -1,0 +1,274 @@
+\hypertarget{GateVVolume_8hh_source}{}\doxysection{Gate\+VVolume.\+hh}
+\label{GateVVolume_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVVolume.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVVolume.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GateVVolume\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GateVVolume\_h 1}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateObjectChildList.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVolumePlacement.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4LogicalVolume.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4VPhysicalVolume.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4RotationMatrix.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4VisAttributes.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4Box.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVActor}{GateVActor}};}
+\DoxyCodeLine{31 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{32 \textcolor{keyword}{class }G4VSensitiveDetector;}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeManager}{GateVolumeManager}};}
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectChildList}{GateObjectChildList}};}
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}};}
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}};}
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}};}
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumePlacementMessenger}{GateVolumePlacementMessenger}};}
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classGateActorManager}{GateActorManager}};}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}};}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{42 \textcolor{keyword}{class }GateSurfaceList;}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{46 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48 public :}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \mbox{\hyperlink{classGateVVolume}{GateVVolume}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{51           G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{52           G4int depth=0);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{\string~GateVVolume}}();}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} G4VPhysicalVolume* Construct(G4bool flagUpdateOnly = \textcolor{keyword}{false});}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ConstructGeometry(G4LogicalVolume*, G4bool);}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyGeometry();}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  DestroyOwnPhysicalVolumes();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} G4double \mbox{\hyperlink{classGateVVolume_a6b5af3dbb80ec1b182ad571560aa762b}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis)=0;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_ae9d8af0c4db741aa305b694fabe37031}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_ac0e11270420cf5e755570dc0cc5863ee}{PropagateSensitiveDetectorToChild}}(\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}} *) \{\}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{comment}{// Use to propagate global SD (such as PhantomSD) to child logical}}
+\DoxyCodeLine{75   \textcolor{comment}{// volume. Do nothing by default. Complex volume (such as voxelized)}}
+\DoxyCodeLine{76   \textcolor{comment}{// must implement this function to set the sensitive detector to}}
+\DoxyCodeLine{77   \textcolor{comment}{// their sub-\/logical volume.}}
+\DoxyCodeLine{78   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PropagateGlobalSensitiveDetector() \{\}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 protected :}
+\DoxyCodeLine{83   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool)=0;}
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ConstructOwnPhysicalVolume(G4bool flagUpdateOnly);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PushPhysicalVolume(G4VPhysicalVolume* volume)}
+\DoxyCodeLine{87   \{ theListOfOwnPhysVolume.push\_back(volume);\}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume()=0;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 public :}
+\DoxyCodeLine{93   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_a7ee2813a16b4e324bdee157de1bb7fb7}{SetCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator)}
+\DoxyCodeLine{94   \{ \mbox{\hyperlink{classGateVVolume_a8f0e4fb23a9c7e3a3d91bd855f46641b}{m\_creator}} = anCreator;\}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{98 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a8f0e4fb23a9c7e3a3d91bd855f46641b}{m\_creator}};\}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetParentVolume(\mbox{\hyperlink{classGateVVolume}{GateVVolume}} * p) \{ mParent = p; \}}
+\DoxyCodeLine{101   \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * GetParentVolume() \{ \textcolor{keywordflow}{return} mParent; \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateObjectChildList}{GateObjectChildList}}* \mbox{\hyperlink{classGateVVolume_af4e42c370d681f1175cab664889fc745}{GetMotherList}}()\textcolor{keyword}{ const         }\{ \textcolor{keywordflow}{return} pMotherList;\}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107   \mbox{\hyperlink{classGateObjectChildList}{GateObjectChildList}} *\mbox{\hyperlink{classGateVVolume_a61d344e92432ff4d34d6f33d62daf538}{GetTheChildList}}()                             \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a16619cb291fe924e4d4670d72141ded7}{pChildList}};\}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{111   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} GateSurfaceList* GetSurfaceList()\textcolor{keyword}{ const}}
+\DoxyCodeLine{112 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} m\_surfaceList;\}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{116   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_adff6bf88cf5beea9adbbfedba1eaef23}{SetMotherList}}(\mbox{\hyperlink{classGateObjectChildList}{GateObjectChildList}}* motherList) \{ pMotherList = motherList;\}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{119   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVVolume_afad47c1d1cf7b623ba2ee54e0b97fdba}{GetMotherCreator}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{120 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} pMotherList ? pMotherList-\/>GetCreator() : 0 ;\}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{123   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* \mbox{\hyperlink{classGateVVolume_a13f633c4bd6864ca5c028d71c93a2222}{GetMoveList}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_moveList;\}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{126   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* \mbox{\hyperlink{classGateVVolume_abc1a6a3592a4c24ac4a0088a9df9b13c}{GetRepeaterList}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a0e2934577fe22b38dd4048be9ab0435d}{m\_repeaterList}};\}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}}* GetVolumePlacement() \textcolor{keyword}{const};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 public :}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{133   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateVVolume_aff3fa8718ce92ef0b73add8375040235}{GetSolidName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{134 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_ab986a6aa1ef37638a2c6803d35013b58}{mSolidName}}; \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_a979f50bf6ad1ba40f5786298a41a8fa5}{SetMaterialName}}(\textcolor{keyword}{const} G4String\& val)}
+\DoxyCodeLine{138   \{ \mbox{\hyperlink{classGateVVolume_a604e0eaa44d2890bdd4cd747e89b7157}{mMaterialName}} = val; \mbox{\hyperlink{classGateVVolume_a873f7d35bc7e13cf37bdb5a25723952e}{AutoSetColor}}(); \mbox{\hyperlink{classGateVVolume_ad2cec2079eb3bf7cbe22635c5fc1b580}{DefineOwnMaterials}}(); \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{141   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateVVolume_a628cbcece112e51df7e63876881afb2b}{GetMaterialName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{142 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a604e0eaa44d2890bdd4cd747e89b7157}{mMaterialName}};\}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4Material* \mbox{\hyperlink{classGateVVolume_a536211d5018fbe903833a54a79ba437f}{GetMaterial}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{146 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a81d51fccf7abd1db0d87da00e695285a}{pOwnMaterial}};\}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{149   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateVVolume_ab0dffc6c6d17774eb3d790111a8d70a8}{GetLogicalVolumeName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{150 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a09d10526356459c05bdda745aec056a8}{mLogicalVolumeName}};\}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{153   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4VPhysicalVolume* \mbox{\hyperlink{classGateVVolume_a0302a1273144ebe6ae072aac847f9e16}{GetPhysicalVolume}}(\textcolor{keywordtype}{size\_t} copyNumber)\textcolor{keyword}{ const}}
+\DoxyCodeLine{154 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} (copyNumber<theListOfOwnPhysVolume.size()) ? theListOfOwnPhysVolume[copyNumber] : 0; \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{157   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4VPhysicalVolume* \mbox{\hyperlink{classGateVVolume_a8d04e98a11daad7b856029d868df1ba8}{GetPhysicalVolume}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{158 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_af7e19f80f5daf6b54f7b4a45922d331c}{pOwnPhys}};\}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateVVolume_a797b5c95b75698aab7d8f552694952bb}{GetLogicalVolume}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{162 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_ae77a7c844b8bcb2e87526a73f234576e}{pOwnLog}};\}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{165   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateVVolume_a55fb169e160d3abdd3f0e6ae52970c57}{GetPhysicalVolumeName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{166 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a87e4c0f01acb2e6db9b7b494f7a4f647}{mPhysicalVolumeName}};\}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{169   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateVVolume_a7b5d65d0ded1c54f982d478fdc13253a}{GetVolumeNumber}}()\textcolor{keyword}{ const                   }\{ \textcolor{keywordflow}{return} theListOfOwnPhysVolume.size(); \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{172   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4LogicalVolume* \mbox{\hyperlink{classGateVVolume_a7259301d7b12412b0307dac988d83bd3}{GetMotherLogicalVolume}}()\textcolor{keyword}{ const  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_a32fc3605eff753344c85a453b0da5dcb}{pMotherLogicalVolume}};\}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{175   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateVVolume_a9e57354879a3da5c4b75d8057a51d194}{GetLogicalMotherVolumeName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{176 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_afbfdf262ab51b210e6e0b7252e226f24}{mLogicalMotherVolumeName}};\}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{179   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4VisAttributes* \mbox{\hyperlink{classGateVVolume_a3485a5ffcad592224d7424cb77e0b0ba}{GetVisAttributes}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVVolume_abdd9dd341d331fbf82836c6ca98d7812}{pOwnVisAtt}};\}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{182   \textcolor{keyword}{static} \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateVVolume_a1354956d6adb3f7b42285336dcc31d5d}{MakeSolidName}}(\textcolor{keyword}{const} G4String\& name)}
+\DoxyCodeLine{183   \{ \textcolor{keywordflow}{return} name + mTheSolidNameTag;\}}
+\DoxyCodeLine{185   \textcolor{keyword}{static} \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateVVolume_ac141c8b28e03d5573d2455728b41333a}{MakeLogicalVolumeName}}(\textcolor{keyword}{const} G4String\& name)}
+\DoxyCodeLine{186   \{ \textcolor{keywordflow}{return} name + mTheLogicalVolumeNameTag;\}}
+\DoxyCodeLine{188   \textcolor{keyword}{static} \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateVVolume_aa2b5de184eba6261a597d5517ab11712}{MakePhysicalVolumeName}}(\textcolor{keyword}{const} G4String\& name)}
+\DoxyCodeLine{189   \{ \textcolor{keywordflow}{return} name + mThePhysicalVolumeNameTag;\}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{193   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_a2d8c63a9a707be020cc7f85ded953da1}{AttachSD}}(G4VSensitiveDetector* val)}
+\DoxyCodeLine{194   \{ \mbox{\hyperlink{classGateVVolume_a44efffc33f6f7381bebc2211fb8c99da}{m\_sensitiveDetector}} = val; \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{197   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_a3ce9349505fd0eaafa0b7655a7ccc8d7}{AttachCrystalSD}}() ;}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{200   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_aa9f0786134689e77c3f473d2f182d6a8}{AttachPhantomSD}}() ;}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202   \textcolor{keywordtype}{void} AttachARFSD(); \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204   \textcolor{keywordtype}{void} DumpVoxelizedVolume(G4ThreeVector);}
+\DoxyCodeLine{205   \textcolor{keywordtype}{void} SetDumpPath(G4String b) \{ mDumpPath = b; \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AttachOutputToVolume();}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209   \textcolor{keyword}{virtual} G4bool CheckOutputExistence();}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211   \textcolor{comment}{// Origin (coordinate of the corner)}}
+\DoxyCodeLine{212   \textcolor{keywordtype}{void} SetOrigin(\textcolor{keyword}{const} G4ThreeVector \& i);}
+\DoxyCodeLine{213   \textcolor{keyword}{inline} G4ThreeVector GetOrigin()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_origin; \}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 protected :}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{219   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_ad2cec2079eb3bf7cbe22635c5fc1b580}{DefineOwnMaterials}}();}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 }
+\DoxyCodeLine{223   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVVolume_a873f7d35bc7e13cf37bdb5a25723952e}{AutoSetColor}}();}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 protected :}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{228   G4String \mbox{\hyperlink{classGateVVolume_ab986a6aa1ef37638a2c6803d35013b58}{mSolidName}};}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{231   G4String \mbox{\hyperlink{classGateVVolume_a604e0eaa44d2890bdd4cd747e89b7157}{mMaterialName}};}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{234   G4Material* \mbox{\hyperlink{classGateVVolume_a81d51fccf7abd1db0d87da00e695285a}{pOwnMaterial}};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{237   G4String \mbox{\hyperlink{classGateVVolume_a09d10526356459c05bdda745aec056a8}{mLogicalVolumeName}};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{240   G4String \mbox{\hyperlink{classGateVVolume_afbfdf262ab51b210e6e0b7252e226f24}{mLogicalMotherVolumeName}};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{243   G4String \mbox{\hyperlink{classGateVVolume_a87e4c0f01acb2e6db9b7b494f7a4f647}{mPhysicalVolumeName}};}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{247   G4VPhysicalVolume* \mbox{\hyperlink{classGateVVolume_af7e19f80f5daf6b54f7b4a45922d331c}{pOwnPhys}};}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{250   G4LogicalVolume* \mbox{\hyperlink{classGateVVolume_ae77a7c844b8bcb2e87526a73f234576e}{pOwnLog}};}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+\DoxyCodeLine{255   G4VisAttributes* \mbox{\hyperlink{classGateVVolume_abdd9dd341d331fbf82836c6ca98d7812}{pOwnVisAtt}};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258   \mbox{\hyperlink{classGateObjectChildList}{GateObjectChildList}}* pMotherList;}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260   std::vector<G4VPhysicalVolume*> theListOfOwnPhysVolume;}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{263   \mbox{\hyperlink{classGateObjectChildList}{GateObjectChildList}}* \mbox{\hyperlink{classGateVVolume_a16619cb291fe924e4d4670d72141ded7}{pChildList}};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{267   GateSurfaceList* m\_surfaceList;}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{271   \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}*  \mbox{\hyperlink{classGateVVolume_a0e2934577fe22b38dd4048be9ab0435d}{m\_repeaterList}};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{274   \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}*       m\_moveList;}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{277   G4LogicalVolume* \mbox{\hyperlink{classGateVVolume_a32fc3605eff753344c85a453b0da5dcb}{pMotherLogicalVolume}};}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{280   \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* \mbox{\hyperlink{classGateVVolume_a8f0e4fb23a9c7e3a3d91bd855f46641b}{m\_creator}};}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 }
+\DoxyCodeLine{284   G4VSensitiveDetector* \mbox{\hyperlink{classGateVVolume_a44efffc33f6f7381bebc2211fb8c99da}{m\_sensitiveDetector}};}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286   \mbox{\hyperlink{classGateVActor}{GateVActor}} * pActor;}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288   \textcolor{comment}{// Some volume can have an origin, store it.}}
+\DoxyCodeLine{289   G4ThreeVector m\_origin;}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 private :}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{294   \textcolor{keyword}{static} \textcolor{keyword}{const} G4String mTheSolidNameTag;}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{297   \textcolor{keyword}{static} \textcolor{keyword}{const} G4String mTheLogicalVolumeNameTag;}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{300   \textcolor{keyword}{static} \textcolor{keyword}{const} G4String mThePhysicalVolumeNameTag;}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{303   G4ThreeVector m\_translation;}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{306   G4RotationMatrix newRotationMatrix;}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{309   G4ThreeVector m\_rotationAxis;}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311   \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}* pMessenger;}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313   \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * mParent;}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315   G4String mDumpPath;}
+\DoxyCodeLine{316 \};}
+\DoxyCodeLine{317 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define FCT\_FOR\_AUTO\_CREATOR\_VOLUME(CLASS)              \(\backslash\)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{  static GateVVolume *make\_volume(const G4String\& itsName,      \(\backslash\)}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{                  G4bool itsFlagAcceptChildren, G4int depth)\{return new CLASS(itsName, \(\backslash\)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{                                                  itsFlagAcceptChildren, depth); \};}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define MAKE\_AUTO\_CREATOR\_VOLUME(NAME,CLASS)                \(\backslash\)}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{  class NAME\#\#Creator \{                         \(\backslash\)}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{  public:                               \(\backslash\)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{  NAME\#\#Creator() \{                         \(\backslash\)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{    GateVolumeManager::GetInstance()-\/>theListOfVolumePrototypes[\#NAME]= CLASS::make\_volume; \} \}; \(\backslash\)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{  static NAME\#\#Creator VolumeCreator\#\#NAME;}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,60 @@
+\hypertarget{GateObjectRepeaterListMessenger_8hh_source}{}\doxysection{Gate\+Object\+Repeater\+List\+Messenger.\+hh}
+\label{GateObjectRepeaterListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateObjectRepeaterListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateObjectRepeaterListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateObjectRepeaterListMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateObjectRepeaterListMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateListMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterList.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectRepeaterListMessenger}{GateObjectRepeaterListMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateObjectRepeaterListMessenger}{GateObjectRepeaterListMessenger}}(\mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* itsRepeaterList);}
+\DoxyCodeLine{35    \mbox{\hyperlink{classGateObjectRepeaterListMessenger}{\string~GateObjectRepeaterListMessenger}}();}
+\DoxyCodeLine{36     }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{private}:}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& DumpMap();}
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListChoices();}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DoInsertion(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{43     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}* GetRepeaterList()}
+\DoxyCodeLine{44       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}*) \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}();\}}
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* GetCreator()}
+\DoxyCodeLine{46       \{ \textcolor{keywordflow}{return} GetRepeaterList()-\/>GetCreator(); \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{private}:}
+\DoxyCodeLine{50   }
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+
+\end{DoxyCode}

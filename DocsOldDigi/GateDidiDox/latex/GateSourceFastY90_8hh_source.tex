@@ -1,0 +1,80 @@
+\hypertarget{GateSourceFastY90_8hh_source}{}\doxysection{Gate\+Source\+Fast\+Y90.\+hh}
+\label{GateSourceFastY90_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceFastY90.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceFastY90.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GATEFASTY90SOURCE\_HH}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GATEFASTY90SOURCE\_HH}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}G4VPrimaryGenerator.hh"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4PrimaryVertex.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4ParticleMomentum.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateSourceFastY90Messenger.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//\#include "{}GateRunManager.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateUserActions.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceFastY90}{GateSourceFastY90}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateSourceFastY90}{GateSourceFastY90}}(G4String name);}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateSourceFastY90}{\string~GateSourceFastY90}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   G4int GeneratePrimaries(G4Event *event);}
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} GeneratePrimaryVertex(G4Event* event);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} SetMinEnergy(G4double energy)}
+\DoxyCodeLine{32   \{}
+\DoxyCodeLine{33     mMinEnergy = energy;}
+\DoxyCodeLine{34     CalculateEnergyTable();}
+\DoxyCodeLine{35   \}}
+\DoxyCodeLine{36   G4double GetMinEnergy() \{\textcolor{keywordflow}{return} mMinEnergy;\}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} SetPositronProbability(G4double probability) \{mPosProb = probability;\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} LoadVoxelizedPhantom(G4String filename);}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} SetPhantomPosition(G4ThreeVector pos);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   G4double GetNextTime( G4double timeStart );}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46   G4double mMinEnergy;  \textcolor{comment}{// minimum energy below which photons won't be generated}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   G4double mBremProb;   \textcolor{comment}{// probability of a brem photon above minEnergy}}
+\DoxyCodeLine{49   G4double mPosProb;    \textcolor{comment}{// probability of producing a positron}}
+\DoxyCodeLine{50   G4double mGammaProb;  \textcolor{comment}{// probability of emitting a 1.76 MeV gamma (TODO: not yet implemented)}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{static} \textcolor{keyword}{const} G4double mEnergyTable[200];     \textcolor{comment}{// energy probability table in 10 keV steps}}
+\DoxyCodeLine{53   \textcolor{keyword}{static} \textcolor{keyword}{const} G4double mRangeTable[100][120]; \textcolor{comment}{// probability table of range in 0.1 mm increments}}
+\DoxyCodeLine{54   \textcolor{keyword}{static} \textcolor{keyword}{const} G4double mAngleTable[100][180]; \textcolor{comment}{// probability table of angles in 1 degree increments}}
+\DoxyCodeLine{55   \textcolor{keyword}{static} \textcolor{keyword}{const} G4double mPositronEnergyTable[738];}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   G4double *mCumulativeEnergyTable; \textcolor{comment}{// cumulative histogram of energy probability}}
+\DoxyCodeLine{58   G4double **mCumulativeRangeTable; \textcolor{comment}{// cumulative histogram of energy probability}}
+\DoxyCodeLine{59   G4double **mCumulativeAngleTable; \textcolor{comment}{// cumulative probability table of angle}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   G4ParticleDefinition* pGammaParticleDefinition;}
+\DoxyCodeLine{62   G4ParticleDefinition* pPositronParticleDefinition;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} CalculateEnergyTable(); \textcolor{comment}{// create the energy table}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   G4double GetBremsstrahlungEnergy();}
+\DoxyCodeLine{67   G4double GetRange(G4double energy);   \textcolor{comment}{// distance from source to point of bremsstrahlung emission}}
+\DoxyCodeLine{68   G4double GetAngle(G4double energy);   \textcolor{comment}{//}}
+\DoxyCodeLine{69   G4ThreeVector PerturbVector(G4ThreeVector original, G4double theta);}
+\DoxyCodeLine{70   G4double GetPositronEnergy();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

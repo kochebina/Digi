@@ -1,0 +1,43 @@
+\hypertarget{GatePileupMessenger_8hh_source}{}\doxysection{Gate\+Pileup\+Messenger.\+hh}
+\label{GatePileupMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePileupMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePileupMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePileupMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePileupMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePileup}{GatePileup}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePileupMessenger}{GatePileupMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGatePileupMessenger}{GatePileupMessenger}}(\mbox{\hyperlink{classGatePileup}{GatePileup}}* itsPileup);}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual}\mbox{\hyperlink{classGatePileupMessenger}{\string~GatePileupMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePileup}{GatePileup}}* GetPileup()}
+\DoxyCodeLine{30       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGatePileup}{GatePileup}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     G4UIcmdWithAnInteger*      SetDepthCmd;}
+\DoxyCodeLine{34     G4UIcmdWithADoubleAndUnit* SetPileupCmd;}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

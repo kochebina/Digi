@@ -1,0 +1,90 @@
+\hypertarget{metaEllipse_8h_source}{}\doxysection{meta\+Ellipse.\+h}
+\label{metaEllipse_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaEllipse.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaEllipse.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAELLIPSE\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAELLIPSE\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaEllipse}{MetaEllipse}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{43   \{}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46   \textcolor{comment}{//}}
+\DoxyCodeLine{47   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{48   \textcolor{comment}{//}}
+\DoxyCodeLine{50 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     \textcolor{comment}{//}}
+\DoxyCodeLine{54     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{55     \textcolor{comment}{//}}
+\DoxyCodeLine{57 \textcolor{comment}{}    \mbox{\hyperlink{classMetaEllipse}{MetaEllipse}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \mbox{\hyperlink{classMetaEllipse}{MetaEllipse}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \mbox{\hyperlink{classMetaEllipse}{MetaEllipse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaEllipse}{MetaEllipse}} *\_ellipse);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \mbox{\hyperlink{classMetaEllipse}{MetaEllipse}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \mbox{\hyperlink{classMetaEllipse}{\string~MetaEllipse}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{void}  Radius(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* radius);}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void}  Radius(\textcolor{keywordtype}{float} radius);}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void}  Radius(\textcolor{keywordtype}{float} r1,\textcolor{keywordtype}{float} r2);}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void}  Radius(\textcolor{keywordtype}{float} r1,\textcolor{keywordtype}{float} r2, \textcolor{keywordtype}{float} r3);}
+\DoxyCodeLine{77     \textcolor{keyword}{const} \textcolor{keywordtype}{float}* Radius(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81   \textcolor{comment}{//}}
+\DoxyCodeLine{82   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{83   \textcolor{comment}{//}}
+\DoxyCodeLine{85 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{float} m\_Radius[100];  \textcolor{comment}{// "{}Radius = "{}     0}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,89 @@
+\hypertarget{GateFictitiousVoxelMapParameterized_8hh_source}{}\doxysection{Gate\+Fictitious\+Voxel\+Map\+Parameterized.\+hh}
+\label{GateFictitiousVoxelMapParameterized_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMapParameterized.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMapParameterized.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateFictitiousVoxelMapParameterized\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateFictitiousVoxelMapParameterized\_hh 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateRegularParameterization.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateFictitiousVoxelMapParam.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateFictitiousVoxelMap.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4ProductionCuts;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParam}{GateFictitiousVoxelMapParam}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParameterizedMessenger}{GateFictitiousVoxelMapParameterizedMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \textcolor{keyword}{enum} EnvelopeType \{Box,Cylinder\} m\_nEnvelopeType;}
+\DoxyCodeLine{29     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_aab53acbeb7e919738dcccdd002b04688}{GateFictitiousVoxelMapParameterized}}(\textcolor{keyword}{const} G4String\& name,}
+\DoxyCodeLine{30                          G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{31                      G4int depth=0);}
+\DoxyCodeLine{32     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_aab53acbeb7e919738dcccdd002b04688}{GateFictitiousVoxelMapParameterized}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a9fe450f75ebea27ccc83925299e7b714}{\string~GateFictitiousVoxelMapParameterized}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}})}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a8a90fef44b90ac4349da0e0141ec7e13}{InsertReader}}(G4String readerType);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a7e87ddfb0600416c3720041edae4b01e}{RemoveReader}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a9fe96aea5f18ea1f72aec71f0f868c90}{AttachPhantomSD}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a0779b157037ed248851e8a45dd34e8a5}{AddOutput}}(G4String name);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a3dca01a00dd4d134b81f1606e8da2ad3}{ConstructGeometry}}(G4LogicalVolume* mother\_log, G4bool flagUpdateOnly);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a5df441af77d92eefe36a9a6e82cb089d}{ConstructOwnPhysicalVolume}}(G4bool flagUpdateOnly);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a50daf21bb35b29b6ad98ce1aaf172e12}{GetReader}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{63 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_voxelReader;\}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a4020eabb976d3e73096610bf2fffbc74}{GetVerbosity}} ()                      \{\textcolor{keywordflow}{return} verboseLevel;\}}
+\DoxyCodeLine{67     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_aab62321d48de42efb6d94a1227cf7e7a}{SetVerbosity}} (G4int theVerboseLevel) \{verboseLevel=theVerboseLevel;\}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70     \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a1d94dc887c62bdb8b6d0aef5b9f8d730}{GetName}}() \{\textcolor{keywordflow}{return} m\_name;\}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized_a26bffa3cb47a1b0f939fe2d2796ea41a}{ChangeSkipEqualMaterials}}(G4bool aBool) \{\textcolor{keywordflow}{if} (aBool) skipEqualMaterials=1; \textcolor{keywordflow}{else} skipEqualMaterials=0;\}}
+\DoxyCodeLine{74     \textcolor{keyword}{inline} G4int GetSkipEqualMaterials() \{\textcolor{keywordflow}{return} skipEqualMaterials;\}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{private}:}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} Init(\textcolor{keyword}{const} G4String\& name, EnvelopeType type);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     }
+\DoxyCodeLine{81     G4String m\_name;}
+\DoxyCodeLine{82     G4int verboseLevel;}
+\DoxyCodeLine{83     G4int skipEqualMaterials;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterizedMessenger}{GateFictitiousVoxelMapParameterizedMessenger}}*  m\_messenger;}
+\DoxyCodeLine{86     \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}*                   m\_voxelReader;}
+\DoxyCodeLine{87     \mbox{\hyperlink{classGateFictitiousVoxelMapParam}{GateFictitiousVoxelMapParam}}*                   m\_voxelInserter;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     G4ThreeVector                               voxelNumber;}
+\DoxyCodeLine{90     G4ThreeVector                               voxelSize;}
+\DoxyCodeLine{91     G4ProductionCuts* m\_pProductionCuts;}
+\DoxyCodeLine{92     G4double m\_nGammaCut;}
+\DoxyCodeLine{93     std::string Double2String(G4double d) \textcolor{keyword}{const};}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 MAKE\_AUTO\_CREATOR\_VOLUME(fictitiousVoxelMap,\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}})}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

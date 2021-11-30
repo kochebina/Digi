@@ -1,0 +1,167 @@
+\hypertarget{metaContour_8h_source}{}\doxysection{meta\+Contour.\+h}
+\label{metaContour_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaContour.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaContour.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METACONTOUR\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METACONTOUR\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4786 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{28 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{40 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classContourControlPnt}{ContourControlPnt}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \mbox{\hyperlink{classContourControlPnt}{ContourControlPnt}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{45   \mbox{\hyperlink{classContourControlPnt}{\string~ContourControlPnt}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{48   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Id;}
+\DoxyCodeLine{49   \textcolor{keywordtype}{float}* m\_X;}
+\DoxyCodeLine{50   \textcolor{keywordtype}{float}* m\_XPicked;}
+\DoxyCodeLine{51   \textcolor{keywordtype}{float}* m\_V;}
+\DoxyCodeLine{52   \textcolor{keywordtype}{float}  m\_Color[4];}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classContourInterpolatedPnt}{ContourInterpolatedPnt}}}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58 \textcolor{keyword}{public}:}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \mbox{\hyperlink{classContourInterpolatedPnt}{ContourInterpolatedPnt}}(\textcolor{keywordtype}{int} dim)}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62     m\_Dim = dim;}
+\DoxyCodeLine{63     m\_Id = 0;}
+\DoxyCodeLine{64     m\_X = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[m\_Dim];}
+\DoxyCodeLine{65     \textcolor{comment}{//Color is red by default}}
+\DoxyCodeLine{66     m\_Color[0]=1.0f;}
+\DoxyCodeLine{67     m\_Color[1]=0.0f;}
+\DoxyCodeLine{68     m\_Color[2]=0.0f;}
+\DoxyCodeLine{69     m\_Color[3]=1.0f;}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \mbox{\hyperlink{classContourInterpolatedPnt}{\string~ContourInterpolatedPnt}}()}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74     \textcolor{keyword}{delete} []m\_X;}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{78   \textcolor{keywordtype}{float}* m\_X;}
+\DoxyCodeLine{79   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  m\_Id;}
+\DoxyCodeLine{80   \textcolor{keywordtype}{float}  m\_Color[4];}
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaContour}{MetaContour}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{85 \{}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{public}:}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89  \textcolor{keyword}{typedef} METAIO\_STL::list<ContourControlPnt*> ControlPointListType;}
+\DoxyCodeLine{90  \textcolor{keyword}{typedef} METAIO\_STL::list<ContourInterpolatedPnt*> InterpolatedPointListType;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92  \mbox{\hyperlink{classMetaContour}{MetaContour}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{93  \mbox{\hyperlink{classMetaContour}{MetaContour}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{94  \mbox{\hyperlink{classMetaContour}{MetaContour}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaContour}{MetaContour}} *\_Contour);}
+\DoxyCodeLine{95  \mbox{\hyperlink{classMetaContour}{MetaContour}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97  \mbox{\hyperlink{classMetaContour}{\string~MetaContour}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   \textcolor{comment}{//    NPoints(...)}}
+\DoxyCodeLine{103   \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{104   \textcolor{comment}{//       Number of points wich compose the tube}}
+\DoxyCodeLine{105   \textcolor{keywordtype}{int}   NControlPoints(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{comment}{//    ControlPointDim(...)}}
+\DoxyCodeLine{108   \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{109   \textcolor{comment}{//       Definition of points}}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void}        ControlPointDim(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pointDim);}
+\DoxyCodeLine{111   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* ControlPointDim(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   MET\_InterpolationEnumType  Interpolation(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{114   \textcolor{keywordtype}{void} Interpolation(MET\_InterpolationEnumType \_interpolation);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{keywordtype}{int}   NInterpolatedPoints(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keywordtype}{void}        InterpolatedPointDim(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pointDim);}
+\DoxyCodeLine{119   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* InterpolatedPointDim(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} Closed(\textcolor{keywordtype}{bool} close);}
+\DoxyCodeLine{122   \textcolor{keywordtype}{bool} Closed() \textcolor{keyword}{const};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   \textcolor{keywordtype}{void}     AttachedToSlice(\textcolor{keywordtype}{long} \textcolor{keywordtype}{int} slice);}
+\DoxyCodeLine{125   \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} AttachedToSlice() \textcolor{keyword}{const};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{keywordtype}{void} DisplayOrientation(\textcolor{keywordtype}{int} display);}
+\DoxyCodeLine{128   \textcolor{keywordtype}{int}  DisplayOrientation() \textcolor{keyword}{const};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130   \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132   ControlPointListType \& GetControlPoints(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{133     \{\textcolor{keywordflow}{return} m\_ControlPointsList;\}}
+\DoxyCodeLine{134   \textcolor{keyword}{const} ControlPointListType \& GetControlPoints(\textcolor{keywordtype}{void})\textcolor{keyword}{ const}}
+\DoxyCodeLine{135 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} m\_ControlPointsList;\}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137   InterpolatedPointListType \& GetInterpolatedPoints(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{138     \{\textcolor{keywordflow}{return} m\_InterpolatedPointsList;\}}
+\DoxyCodeLine{139   \textcolor{keyword}{const} InterpolatedPointListType \& GetInterpolatedPoints(\textcolor{keywordtype}{void})\textcolor{keyword}{ const}}
+\DoxyCodeLine{140 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} m\_InterpolatedPointsList;\}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144   \textcolor{keywordtype}{bool}  m\_ElementByteOrderMSB;}
+\DoxyCodeLine{145   \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{146   \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{147   \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{148   \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{149   \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151   \textcolor{keywordtype}{int} m\_NControlPoints;}
+\DoxyCodeLine{152   \textcolor{keywordtype}{int} m\_NInterpolatedPoints;}
+\DoxyCodeLine{153   \textcolor{keywordtype}{char} m\_ControlPointDim[255];}
+\DoxyCodeLine{154   \textcolor{keywordtype}{char} m\_InterpolatedPointDim[255];}
+\DoxyCodeLine{155   \textcolor{keywordtype}{bool} m\_Closed;}
+\DoxyCodeLine{156   MET\_InterpolationEnumType m\_InterpolationType;}
+\DoxyCodeLine{157   ControlPointListType      m\_ControlPointsList;}
+\DoxyCodeLine{158   InterpolatedPointListType m\_InterpolatedPointsList;}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160   \textcolor{keywordtype}{int}       m\_DisplayOrientation;}
+\DoxyCodeLine{161   \textcolor{keywordtype}{long}      m\_AttachedToSlice;}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{166 \};}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\hypertarget{GatePrimTrackInformation_8hh_source}{}\doxysection{Gate\+Prim\+Track\+Information.\+hh}
+\label{GatePrimTrackInformation_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePrimTrackInformation.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePrimTrackInformation.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GatePrimTrackInformation\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GatePrimTrackInformation\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}G4Track.hh"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4Allocator.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4VUserTrackInformation.hh"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}} : \textcolor{keyword}{public} G4VUserTrackInformation }
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16   \mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}}();}
+\DoxyCodeLine{17   \mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}}(\textcolor{keyword}{const} G4Track* aTrack);}
+\DoxyCodeLine{18   \mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}}* aTrackInfo);}
+\DoxyCodeLine{19   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePrimTrackInformation}{\string~GatePrimTrackInformation}}();}
+\DoxyCodeLine{20    }
+\DoxyCodeLine{21   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} *\textcolor{keyword}{operator} \textcolor{keyword}{new}(size\_t);}
+\DoxyCodeLine{22   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \textcolor{keyword}{operator} \textcolor{keyword}{delete}(\textcolor{keywordtype}{void} *aTrackInfo);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24  \mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}}\& right);}
+\DoxyCodeLine{25   }
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} SetEPrimTrackInformation(\textcolor{keyword}{const} G4Track* aTrack);}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Print() \textcolor{keyword}{const};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   }
+\DoxyCodeLine{31   \textcolor{keyword}{inline} G4double GetSourceEini()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_energyPrimaryTrack;\}}
+\DoxyCodeLine{32   \textcolor{keyword}{inline} \textcolor{keywordtype}{int} GetSourcePDG()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_PDGPrimaryTrack;\}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} setNCompton(\textcolor{keyword}{const} G4int nCompt) \{m\_NCompton=nCompt;\}}
+\DoxyCodeLine{36    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} GetNCompton()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_NCompton;\}}
+\DoxyCodeLine{37   }
+\DoxyCodeLine{38    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} setNConv(\textcolor{keyword}{const} G4int numConv) \{m\_NConv=numConv;\}}
+\DoxyCodeLine{39    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} GetNConv()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_NConv;\}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} setNRayl(\textcolor{keyword}{const} G4int numRayl) \{m\_NRayl=numRayl;\}}
+\DoxyCodeLine{42    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} GetNRayl()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_NRayl;\}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{private}:}
+\DoxyCodeLine{45   \textcolor{comment}{// Information of the primary track at the primary vertex}}
+\DoxyCodeLine{46   G4int                 fOriginalTrackID;  \textcolor{comment}{// Track ID of primary particle}}
+\DoxyCodeLine{47   G4ParticleDefinition* fParticleDefinition;}
+\DoxyCodeLine{48   G4ThreeVector         fOriginalPosition;}
+\DoxyCodeLine{49   G4ThreeVector         fOriginalMomentum;}
+\DoxyCodeLine{50   G4double              fOriginalEnergy;}
+\DoxyCodeLine{51   G4double              fOriginalTime;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   G4double             m\_energyPrimaryTrack;}
+\DoxyCodeLine{54   G4int                m\_PDGPrimaryTrack;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   G4int                m\_NCompton;}
+\DoxyCodeLine{57   G4int                m\_NConv;}
+\DoxyCodeLine{58   G4int                m\_NRayl;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{extern} G4ThreadLocal}
+\DoxyCodeLine{67  G4Allocator<GatePrimTrackInformation> * aTrackInformationAllocator;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* GatePrimTrackInformation::operator \textcolor{keyword}{new}(size\_t)}
+\DoxyCodeLine{70 \{}
+\DoxyCodeLine{71   \textcolor{keywordflow}{if}(!aTrackInformationAllocator)}
+\DoxyCodeLine{72     aTrackInformationAllocator = \textcolor{keyword}{new} G4Allocator<GatePrimTrackInformation>;}
+\DoxyCodeLine{73   \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)aTrackInformationAllocator-\/>MallocSingle();}
+\DoxyCodeLine{74 \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} GatePrimTrackInformation::operator \textcolor{keyword}{delete}(\textcolor{keywordtype}{void} *aTrackInfo)}
+\DoxyCodeLine{77 \{ aTrackInformationAllocator-\/>FreeSingle((\mbox{\hyperlink{classGatePrimTrackInformation}{GatePrimTrackInformation}}*)aTrackInfo);\}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 }
+
+\end{DoxyCode}

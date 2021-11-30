@@ -1,0 +1,88 @@
+\hypertarget{GateVoxelOutput_8hh_source}{}\doxysection{Gate\+Voxel\+Output.\+hh}
+\label{GateVoxelOutput_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelOutput.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelOutput.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef GateVoxelOutput\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define GateVoxelOutput\_H}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateDetectorConstruction.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <valarray>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}}; }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelOutputMessenger}{GateVoxelOutputMessenger}}; }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelOutput}{GateVoxelOutput}} :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateVoxelOutput}{GateVoxelOutput}}(\textcolor{keyword}{const} G4String\& name, \textcolor{keyword}{const} G4String\& phantomName, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,DigiMode digiMode, \mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}}* inserter);}
+\DoxyCodeLine{33   }
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateVoxelOutput}{GateVoxelOutput}}(\textcolor{keyword}{const} G4String\& name, \textcolor{keyword}{const} G4String\& phantomName, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,DigiMode digiMode, \mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}}* inserter);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateVoxelOutput}{GateVoxelOutput}}(\textcolor{keyword}{const} G4String\& name, \textcolor{keyword}{const} G4String\& phantomName, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,DigiMode digiMode, \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}* inserter);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVoxelOutput}{\string~GateVoxelOutput}}();}
+\DoxyCodeLine{39   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v, \textcolor{keyword}{const} G4Step *);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetVerboseLevel(G4int val);}
+\DoxyCodeLine{52   }
+\DoxyCodeLine{54   \textcolor{keyword}{inline}  \textcolor{keyword}{const}  G4String\& \mbox{\hyperlink{classGateVoxelOutput_a87f9c980cc2f0de5a2ce49d74f61f69c}{GetFileName}}()\textcolor{keyword}{const }\{ \textcolor{keywordflow}{return} m\_fileName; \}}
+\DoxyCodeLine{55   }
+\DoxyCodeLine{57   \textcolor{keywordtype}{void}   \mbox{\hyperlink{classGateVoxelOutput_ad840ff41d36873f4899fee12ee349c9a}{SetFileName}}(\textcolor{keyword}{const} G4String aName)    \{ m\_fileName = aName; \}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void}   SetSaveUncertainty(G4bool b) ;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{private}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   std::valarray<float>*              m\_array;            \textcolor{comment}{// the array for collecting energy deposits}}
+\DoxyCodeLine{65   std::valarray<float>*              m\_arraySquare;      \textcolor{comment}{// the array for square of energy deposits}}
+\DoxyCodeLine{66   std::valarray<unsigned int>*       m\_arrayCounts;      \textcolor{comment}{// the array for counts}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}}*             m\_trajectoryNavigator;}
+\DoxyCodeLine{69   \mbox{\hyperlink{classGateVoxelOutputMessenger}{GateVoxelOutputMessenger}}*            m\_outputMessenger;}
+\DoxyCodeLine{70   \mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}}*          m\_voxelInserter;}
+\DoxyCodeLine{71   \mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}}*            m\_regularInserter;}
+\DoxyCodeLine{72   \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}* m\_fictitiousInserter;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   G4int                              m\_inserterType;   \textcolor{comment}{// Initialized with 1 if voxelBoxParameterized,}}
+\DoxyCodeLine{75                                                        \textcolor{comment}{// or 2 if regularParameterized,}}
+\DoxyCodeLine{76                                                        \textcolor{comment}{// or 3 if FictitiousVoxelMapParameterized}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   G4String                           m\_fileName;}
+\DoxyCodeLine{79   G4bool                             m\_uncertainty;}
+\DoxyCodeLine{80   G4String                           m\_phantomName;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

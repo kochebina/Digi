@@ -1,0 +1,119 @@
+\hypertarget{GateCrossSectionProductionActor_8hh_source}{}\doxysection{Gate\+Cross\+Section\+Production\+Actor.\+hh}
+\label{GateCrossSectionProductionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrossSectionProductionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrossSectionProductionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{comment}{/* Modified: replaced length of voxel by path length of proton in voxel. This enables arbitrary beam directions. Author: Heide Meissner, TU Wien */}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATECROSSSECTIONPRODUCTIONACTOR\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATECROSSSECTIONPRODUCTIONACTOR\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// \#include "{}GateSourceMgr.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateCrossSectionProductionActorMessenger.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrossSectionProductionActor}{GateCrossSectionProductionActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34  \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{37   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCrossSectionProductionActor_a378c9c69be747f07a5382b7f208140b8}{\string~GateCrossSectionProductionActor}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateCrossSectionProductionActor}{GateCrossSectionProductionActor}})}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{43   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrossSectionProductionActor_ac8f07238d082e9ef4b7f3dd4ef949790}{Construct}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrossSectionProductionActor_a8a0944a0e3a350d0aa0da6def61fe323}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrossSectionProductionActor_a8ffcf3ab9febf6235969254e5bde8657}{SaveData}}();}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrossSectionProductionActor_a82a316d617f82fedcb817c480a0427d1}{clear}}()\{ResetData();\}}
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} SetFilename(G4String f) \{ mIsotopeFilename = f; \}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} ActiveC11(\textcolor{keywordtype}{bool} b)\{m\_IsC11=b; \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} ActiveO15(\textcolor{keywordtype}{bool} b)\{m\_IsO15=b; \}}
+\DoxyCodeLine{67 \textcolor{comment}{//new stuff 10/11/11}}
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event* eve);}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrossSectionProductionActor_afaf8373223b4919fe762f1e652cd2c8b}{PreUserTrackingAction}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{70   \textcolor{keywordtype}{float} InterpolLin (\textcolor{keywordtype}{float} xa , \textcolor{keywordtype}{float} ya, \textcolor{keywordtype}{float} xb, \textcolor{keywordtype}{float} yb, \textcolor{keywordtype}{float} X);}
+\DoxyCodeLine{71   \textcolor{keywordtype}{double} GetSectionEfficace(\textcolor{keywordtype}{double} nrj,std::map<float, float>\& MapSigma);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{74   \mbox{\hyperlink{classGateCrossSectionProductionActor}{GateCrossSectionProductionActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{75   \mbox{\hyperlink{classGateCrossSectionProductionActorMessenger}{GateCrossSectionProductionActorMessenger}} * pMessenger;}
+\DoxyCodeLine{76   std::map <float, float> SectionTableC11\_C12;}
+\DoxyCodeLine{77   std::map <float, float> SectionTableC11\_O16;}
+\DoxyCodeLine{78   std::map <float, float> SectionTableO15\_O16;}
+\DoxyCodeLine{79   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{80   G4int nb\_elemt\_C12\_in\_table;}
+\DoxyCodeLine{81   G4int nb\_elemt\_O16\_in\_table;}
+\DoxyCodeLine{82   \textcolor{keywordtype}{bool} newTrack;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   std::map <int, int>PixelValuePerEvent;}
+\DoxyCodeLine{85   std::map <int, int>PixelValuePerEvent\_secondary;}
+\DoxyCodeLine{86   \textcolor{comment}{//for C12}}
+\DoxyCodeLine{87   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} *  mIsotopeImage;}
+\DoxyCodeLine{88   \mbox{\hyperlink{classGateImage}{GateImage}} mEnergyImage;}
+\DoxyCodeLine{89   \mbox{\hyperlink{classGateImage}{GateImage}} mStatImage;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{comment}{/* Stores path length of proton */}}
+\DoxyCodeLine{92   \mbox{\hyperlink{classGateImage}{GateImage}} mStepLengthImage;}
+\DoxyCodeLine{93   \mbox{\hyperlink{classGateImage}{GateImage}} mStepLengthImage\_secondary;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \mbox{\hyperlink{classGateImage}{GateImage}} mEnergyImage\_secondary;}
+\DoxyCodeLine{96   \mbox{\hyperlink{classGateImage}{GateImage}} mStatImage\_secondary;}
+\DoxyCodeLine{97   \mbox{\hyperlink{classGateImage}{GateImage}} mDensityImage;}
+\DoxyCodeLine{98   \mbox{\hyperlink{classGateImage}{GateImage}} mfractionC12Image;}
+\DoxyCodeLine{99   \mbox{\hyperlink{classGateImage}{GateImage}} mfractionO16Image;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   G4String mIsotopeFilename;}
+\DoxyCodeLine{102   G4String mEnergyFilename;}
+\DoxyCodeLine{103   G4String mStatFilename;}
+\DoxyCodeLine{104   G4double threshold\_energy\_C12;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   G4double A\_12;}
+\DoxyCodeLine{107   G4double A\_16;}
+\DoxyCodeLine{108   G4double max\_energy\_cross\_section;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \textcolor{keywordtype}{bool} m\_IsC11;}
+\DoxyCodeLine{112   \textcolor{keywordtype}{bool} m\_IsO15;}
+\DoxyCodeLine{113   \textcolor{comment}{//O15}}
+\DoxyCodeLine{114   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} * mIsotopeImage\_O15;}
+\DoxyCodeLine{115   G4double threshold\_energy\_O16;}
+\DoxyCodeLine{116 \};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 MAKE\_AUTO\_CREATOR\_ACTOR(CrossSectionProductionActor,\mbox{\hyperlink{classGateCrossSectionProductionActor}{GateCrossSectionProductionActor}})}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

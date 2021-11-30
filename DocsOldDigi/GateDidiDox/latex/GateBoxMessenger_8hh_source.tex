@@ -1,0 +1,42 @@
+\hypertarget{GateBoxMessenger_8hh_source}{}\doxysection{Gate\+Box\+Messenger.\+hh}
+\label{GateBoxMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateBoxMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateBoxMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateBoxMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateBoxMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBox}{GateBox}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBoxMessenger}{GateBoxMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateBoxMessenger}{GateBoxMessenger}}(\mbox{\hyperlink{classGateBox}{GateBox}}*);}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateBoxMessenger}{\string~GateBoxMessenger}}();}
+\DoxyCodeLine{25     }
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateBox}{GateBox}}* GetBoxCreator() \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateBox}{GateBox}}*)GetVolumeCreator(); \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{30   G4UIcmdWithADoubleAndUnit* pBoxXLengthCmd;}
+\DoxyCodeLine{31   G4UIcmdWithADoubleAndUnit* pBoxYLengthCmd;}
+\DoxyCodeLine{32   G4UIcmdWithADoubleAndUnit* pBoxZLengthCmd;}
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,153 @@
+\hypertarget{GateTrack_8hh_source}{}\doxysection{Gate\+Track.\+hh}
+\label{GateTrack_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTrack.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTrack.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GateTrack\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GateTrack\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}G4ios.hh"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}G4Track.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//\#include "{}GatePhantomHit.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrack}{GateTrack}}}
+\DoxyCodeLine{17 \{  \textcolor{keyword}{public}:}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19    \mbox{\hyperlink{classGateTrack}{GateTrack}}();}
+\DoxyCodeLine{20    \mbox{\hyperlink{classGateTrack}{GateTrack}}( \mbox{\hyperlink{classGateTrack}{GateTrack}}\& aTrack);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22    \mbox{\hyperlink{classGateTrack}{\string~GateTrack}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24    G4bool Compare( G4Track* aTrack);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26    G4int GetTrackID();}
+\DoxyCodeLine{27    \textcolor{keywordtype}{void} SetTrackID(\textcolor{keyword}{const} G4int aValue);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29    G4int GetEventID();}
+\DoxyCodeLine{30    \textcolor{keywordtype}{void} SetEventID(\textcolor{keyword}{const} G4int aValue);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32    G4int GetRunID();}
+\DoxyCodeLine{33    \textcolor{keywordtype}{void} SetRunID(\textcolor{keyword}{const} G4int aValue);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keywordtype}{void} SetProcessName(G4String aName ) \{ m\_processName = aName; \};}
+\DoxyCodeLine{36 G4String GetProcessName() \{ \textcolor{keywordflow}{return} m\_processName; \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   G4String GetParentParticleName()\{ \textcolor{keywordflow}{return} m\_ParentParticleName;\};}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} SetParentParticleName(  G4String aName )\{m\_ParentParticleName = aName;\};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   G4String GetParticleName ();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} SetParticleName(  G4String aName ) ;}
+\DoxyCodeLine{43    G4int GetParentID();}
+\DoxyCodeLine{44    \textcolor{keywordtype}{void} SetParentID(\textcolor{keyword}{const} G4int aValue);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46    \textcolor{comment}{// position, time}}
+\DoxyCodeLine{47    G4ThreeVector\& GetPosition();}
+\DoxyCodeLine{48    \textcolor{keywordtype}{void} SetPosition(\textcolor{keyword}{const} G4ThreeVector\& aValue);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50    G4double GetGlobalTime();}
+\DoxyCodeLine{51    \textcolor{keywordtype}{void} SetGlobalTime(\textcolor{keyword}{const} G4double aValue);}
+\DoxyCodeLine{52      \textcolor{comment}{// Time since the event in which the track belongs is created.}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54    G4double GetLocalTime();}
+\DoxyCodeLine{55    \textcolor{keywordtype}{void} SetLocalTime(\textcolor{keyword}{const} G4double aValue);}
+\DoxyCodeLine{56       \textcolor{comment}{// Time since the current track is created.}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58    G4double GetProperTime();}
+\DoxyCodeLine{59    \textcolor{keywordtype}{void} SetProperTime(\textcolor{keyword}{const} G4double aValue);}
+\DoxyCodeLine{60       \textcolor{comment}{// Proper time of the current track}}
+\DoxyCodeLine{61    G4double GetKineticEnergy();}
+\DoxyCodeLine{62    \textcolor{keywordtype}{void} SetKineticEnergy(\textcolor{keyword}{const} G4double aValue);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64    G4double GetTotalEnergy();}
+\DoxyCodeLine{65    \textcolor{keywordtype}{void} SetTotalEnergy(G4double Energy);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{comment}{// moemtnum}}
+\DoxyCodeLine{68     G4ThreeVector\& GetMomentumDirection();}
+\DoxyCodeLine{69    \textcolor{keywordtype}{void} SetMomentumDirection(\textcolor{keyword}{const} G4ThreeVector\& aValue);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71    G4ThreeVector GetMomentum();}
+\DoxyCodeLine{72    \textcolor{keywordtype}{void} SetMomentum(G4ThreeVector aVector);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74    G4double GetVelocity();}
+\DoxyCodeLine{75    \textcolor{keywordtype}{void} SetVelocity(G4double aVelocity);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{comment}{// polarization}}
+\DoxyCodeLine{78    G4ThreeVector\& GetPolarization() ;}
+\DoxyCodeLine{79    \textcolor{keywordtype}{void} SetPolarization(\textcolor{keyword}{const} G4ThreeVector\& aValue);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{comment}{// vertex (,where this track was created) information}}
+\DoxyCodeLine{82     G4ThreeVector\& GetVertexPosition() ;}
+\DoxyCodeLine{83    \textcolor{keywordtype}{void} SetVertexPosition(G4ThreeVector\& aValue);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     G4ThreeVector\& GetVertexMomentumDirection() ;}
+\DoxyCodeLine{86    \textcolor{keywordtype}{void} SetVertexMomentumDirection(\textcolor{keyword}{const} G4ThreeVector\& aValue);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88    G4double GetVertexKineticEnergy() ;}
+\DoxyCodeLine{89    \textcolor{keywordtype}{void} SetVertexKineticEnergy(\textcolor{keyword}{const} G4double aValue);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91    G4int GetPDGCode()\{ \textcolor{keywordflow}{return} m\_PDGCode;\};}
+\DoxyCodeLine{92    \textcolor{keywordtype}{void} SetPDGCode( G4int aCode ) \{ m\_PDGCode = aCode; \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{comment}{// track weight}}
+\DoxyCodeLine{96   \textcolor{comment}{// These are methods for manipulating a weight for this track.}}
+\DoxyCodeLine{97    G4double GetWeight() ;}
+\DoxyCodeLine{98    \textcolor{keywordtype}{void}     SetWeight(G4double aValue);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100    \textcolor{keywordtype}{void} SetVertexVolumeName( G4String aName);}
+\DoxyCodeLine{101    G4String GetVertexVolumeName();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{//   std::vector<GatePhantomHit> GetPHitVector()\{return PHitVector;\};}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keywordtype}{void} Print();}
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} Fill\_Track(G4Track* aTrack);}
+\DoxyCodeLine{107 G4int GetSourceID() \{\textcolor{keywordflow}{return} m\_sourceID;\};}
+\DoxyCodeLine{108 \textcolor{keywordtype}{void} SetSourceID(G4int aID) \{ m\_sourceID = aID; \};}
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} SetWasKilled( G4int aI) \{ fwasKilled = aI; \};}
+\DoxyCodeLine{110 G4int GetWasKilled() \{ \textcolor{keywordflow}{return} fwasKilled;\};}
+\DoxyCodeLine{111 G4double GetTime() \{ \textcolor{keywordflow}{return} m\_time; \};}
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} SetTime (G4double aTime) \{ m\_time = aTime; \};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{keyword}{private}:}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116    G4double m\_time;  \textcolor{comment}{// time at which the tarck is created}}
+\DoxyCodeLine{117    G4ThreeVector fPosition;        \textcolor{comment}{// Current positon}}
+\DoxyCodeLine{118    G4double fGlobalTime;           \textcolor{comment}{// Time since the event is created}}
+\DoxyCodeLine{119    G4double fLocalTime;            \textcolor{comment}{// Time since the track is created}}
+\DoxyCodeLine{120    G4double fProperTime;}
+\DoxyCodeLine{121    G4int fParentID;}
+\DoxyCodeLine{122    G4int feventID;}
+\DoxyCodeLine{123    G4int fRunID;}
+\DoxyCodeLine{124    G4int fTrackID;}
+\DoxyCodeLine{125    G4double fKineticEnergy;}
+\DoxyCodeLine{126    G4ThreeVector fMomentum;}
+\DoxyCodeLine{127    G4ThreeVector fMDirection;}
+\DoxyCodeLine{128    G4double fVelocity;}
+\DoxyCodeLine{129   G4ThreeVector fPolarization;}
+\DoxyCodeLine{130    G4double fTotalEnergy;}
+\DoxyCodeLine{131    G4ThreeVector fVtxPosition;          \textcolor{comment}{// (x,y,z) of the vertex}}
+\DoxyCodeLine{132    G4ThreeVector fVtxMomentumDirection; \textcolor{comment}{// Momentum direction at the vertex}}
+\DoxyCodeLine{133    G4double fVtxKineticEnergy;          \textcolor{comment}{// Kinetic energy at the vertex}}
+\DoxyCodeLine{134    G4double fWeight;}
+\DoxyCodeLine{135    G4String ParticleName;}
+\DoxyCodeLine{136    G4String VertexVolumeName;}
+\DoxyCodeLine{137    G4int fwasKilled;  }
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141    G4String m\_processName,m\_ParentParticleName;}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143    G4int m\_PDGCode,m\_sourceID;}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{comment}{//   std::vector<GatePhantomHit> PHitVector;}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

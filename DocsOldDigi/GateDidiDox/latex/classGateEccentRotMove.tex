@@ -1,0 +1,138 @@
+\hypertarget{classGateEccentRotMove}{}\doxysection{Gate\+Eccent\+Rot\+Move Class Reference}
+\label{classGateEccentRotMove}\index{GateEccentRotMove@{GateEccentRotMove}}
+
+
+The \mbox{\hyperlink{classGateEccentRotMove}{Gate\+Eccent\+Rot\+Move}} models a movement where.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Eccent\+Rot\+Move.\+hh$>$}
+
+Inheritance diagram for Gate\+Eccent\+Rot\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateEccentRotMove}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateEccentRotMove_a93384761ef33b4c6eb00ae8e2e146bc1}{Gate\+Eccent\+Rot\+Move}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name=\char`\"{}Eccent\+Rot\char`\"{}, const G4\+Three\+Vector \&its\+Shift=G4\+Three\+Vector(0., 0., 0.), double its\+Velocity=0.)
+\item 
+\mbox{\Hypertarget{classGateEccentRotMove_a45487e35cf4fbde08d044ce24af7e558}\label{classGateEccentRotMove_a45487e35cf4fbde08d044ce24af7e558}} 
+virtual {\bfseries $\sim$\+Gate\+Eccent\+Rot\+Move} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateEccentRotMove_ac2c39f5db4a8692d104afc05bbe752d1}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method Push\+My\+Placement(), to compute. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateEccentRotMove_acb13a62a1b091cf45380225b68bd51bb}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateEccentRotMove_acb13a62a1b091cf45380225b68bd51bb}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateEccentRotMove_aac3d0424e6d4c06c65fbae8f66cdcc6b}\label{classGateEccentRotMove_aac3d0424e6d4c06c65fbae8f66cdcc6b}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Shift} ()
+\begin{DoxyCompactList}\small\item\em Get the shift of eccentric rotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEccentRotMove_a566e831796c21ffb257c54133d4c362e}\label{classGateEccentRotMove_a566e831796c21ffb257c54133d4c362e}} 
+G4double {\bfseries Get\+Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEccentRotMove_afa14524c1c574957ac83999d40872c94}\label{classGateEccentRotMove_afa14524c1c574957ac83999d40872c94}} 
+virtual G4double {\bfseries Get\+Current\+Angle} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the rotation angle that was last computed by Push\+My\+Placement() \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEccentRotMove_a5e9ec1eaab7644c586262a40685abd19}\label{classGateEccentRotMove_a5e9ec1eaab7644c586262a40685abd19}} 
+void {\bfseries Set\+Shift} (const G4\+Three\+Vector \&val)
+\begin{DoxyCompactList}\small\item\em Set the shift position in the transaxial plane (z=0 plan) regards to the OZ rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEccentRotMove_a983c6102e56f94c2b45327c7850afbc2}\label{classGateEccentRotMove_a983c6102e56f94c2b45327c7850afbc2}} 
+void {\bfseries Set\+Velocity} (double val)
+\begin{DoxyCompactList}\small\item\em Set the rotation speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateEccentRotMove}{Gate\+Eccent\+Rot\+Move}} models a movement where. 
+
+
+\begin{DoxyItemize}
+\item the volume is shifted (3D space) to its new eccentric position ~\newline
+
+\item the volume orbits around the world O-\/Z axis
+\end{DoxyItemize}
+
+This move is equivalent to translate the volume respect to r followed by applying an orbiting
+
+move with an rotation axis passing trough O lab center and autorotation flag on.
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateEccentRotMove}{Gate\+Eccent\+Rot\+Move}} -\/ by Jean-\/\+Marc. \href{mailto:Vieira@iphe.unil.ch}{\texttt{ Vieira@iphe.\+unil.\+ch}}
+\item The movement modeled by this class is an orbit, where the volume revolves around the O-\/Z lab frame axis at a constant speed. At any moment, each points of the the volume remains at the same distance from the axis, along a direction whose angle is theta(t) = V x t where V is the angular rotation speed and t the time.
+\item Based of the orbiting (cf CLHEP lib. 3D transforms) move with an auto-\/rotation mode enabled, the object rotates at the same time as it revolves. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateEccentRotMove_a93384761ef33b4c6eb00ae8e2e146bc1}\label{classGateEccentRotMove_a93384761ef33b4c6eb00ae8e2e146bc1}} 
+\index{GateEccentRotMove@{GateEccentRotMove}!GateEccentRotMove@{GateEccentRotMove}}
+\index{GateEccentRotMove@{GateEccentRotMove}!GateEccentRotMove@{GateEccentRotMove}}
+\doxysubsubsection{\texorpdfstring{GateEccentRotMove()}{GateEccentRotMove()}}
+{\footnotesize\ttfamily Gate\+Eccent\+Rot\+Move\+::\+Gate\+Eccent\+Rot\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{its\+Object\+Inserter,  }\item[{const G4\+String \&}]{its\+Name = {\ttfamily \char`\"{}EccentRot\char`\"{}},  }\item[{const G4\+Three\+Vector \&}]{its\+Shift = {\ttfamily G4ThreeVector(0.,0.,0.)},  }\item[{double}]{its\+Velocity = {\ttfamily 0.} }\end{DoxyParamCaption})}
+
+Constructor The default movement parameters are chosen so that, by default, the rotation is around the Z axis whilst the rotation speed is zero no shifts by defauts ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateEccentRotMove_acb13a62a1b091cf45380225b68bd51bb}\label{classGateEccentRotMove_acb13a62a1b091cf45380225b68bd51bb}} 
+\index{GateEccentRotMove@{GateEccentRotMove}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateEccentRotMove@{GateEccentRotMove}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Eccent\+Rot\+Move\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateEccentRotMove_acb13a62a1b091cf45380225b68bd51bb}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the movement
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateEccentRotMove_ac2c39f5db4a8692d104afc05bbe752d1}\label{classGateEccentRotMove_ac2c39f5db4a8692d104afc05bbe752d1}} 
+\index{GateEccentRotMove@{GateEccentRotMove}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateEccentRotMove@{GateEccentRotMove}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Eccent\+Rot\+Move\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method Push\+My\+Placement(), to compute. 
+
+a volume position and orientation as a function of time
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object Gate\+Placement combining the new position and the new orientation of the volume computed by the movement equation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Eccent\+Rot\+Move.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Eccent\+Rot\+Move.\+cc\end{DoxyCompactItemize}

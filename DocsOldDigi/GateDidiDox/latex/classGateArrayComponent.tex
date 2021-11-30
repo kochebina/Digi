@@ -1,0 +1,81 @@
+\hypertarget{classGateArrayComponent}{}\doxysection{Gate\+Array\+Component Class Reference}
+\label{classGateArrayComponent}\index{GateArrayComponent@{GateArrayComponent}}
+
+
+A \mbox{\hyperlink{classGateArrayComponent}{Gate\+Array\+Component}} is a subtype of \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}}.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Array\+Component.\+hh$>$}
+
+Inheritance diagram for Gate\+Array\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classGateArrayComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateArrayComponent_ae489ca012f8cb9ddc6ba477341836297}{Gate\+Array\+Component}} (const G4\+String \&its\+Name, \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$its\+Mother\+Component, \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$its\+System)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateArrayComponent_a8963d5d605e10c1b002cf07c1f2bd180}\label{classGateArrayComponent_a8963d5d605e10c1b002cf07c1f2bd180}} 
+virtual {\bfseries $\sim$\+Gate\+Array\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateArrayComponent_a9f70c34c1f672ad1f9b138d729c4337c}\label{classGateArrayComponent_a9f70c34c1f672ad1f9b138d729c4337c}} 
+\mbox{\hyperlink{classGateArrayRepeater}{Gate\+Array\+Repeater}} $\ast$ {\bfseries Find\+Array\+Repeater} ()
+\begin{DoxyCompactList}\small\item\em Finds the first array-\/repeater in the inserter\textquotesingle{}s repeater list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateArrayComponent_a2c572ff2dfa033dec985ecf95c2ddac0}\label{classGateArrayComponent_a2c572ff2dfa033dec985ecf95c2ddac0}} 
+G4int {\bfseries Get\+Repeat\+Number} (size\+\_\+t axis)
+\begin{DoxyCompactList}\small\item\em Finds the first array-\/repeater\textquotesingle{}s repeat number along an axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateArrayComponent_adfabe6b93579f34f410a2bd18801ca89}\label{classGateArrayComponent_adfabe6b93579f34f410a2bd18801ca89}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Repeat\+Vector} ()
+\begin{DoxyCompactList}\small\item\em Finds the first array-\/repeater\textquotesingle{}s repeat vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classGateArrayComponent}{Gate\+Array\+Component}} is a subtype of \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}}. 
+
+It is meant to be connected to box inserters that are repeated
+
+in arrays, such as crystal matrices
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateArrayComponent}{Gate\+Array\+Component}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (Oct 2002)
+\item A \mbox{\hyperlink{classGateArrayComponent}{Gate\+Array\+Component}} is derived from \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}}, and thus inherits all the properties of boxcreator-\/components. In addition, it includes some methods that are specific to inserters repeated by array-\/repeaters\+: \mbox{\hyperlink{classGateArrayComponent_a9f70c34c1f672ad1f9b138d729c4337c}{Find\+Array\+Repeater()}}, \mbox{\hyperlink{classGateArrayComponent_a2c572ff2dfa033dec985ecf95c2ddac0}{Get\+Repeat\+Number()}} and \mbox{\hyperlink{classGateArrayComponent_adfabe6b93579f34f410a2bd18801ca89}{Get\+Repeat\+Vector()}}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}, \mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}}, \mbox{\hyperlink{classGateArrayRepeater}{Gate\+Array\+Repeater}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateArrayComponent_ae489ca012f8cb9ddc6ba477341836297}\label{classGateArrayComponent_ae489ca012f8cb9ddc6ba477341836297}} 
+\index{GateArrayComponent@{GateArrayComponent}!GateArrayComponent@{GateArrayComponent}}
+\index{GateArrayComponent@{GateArrayComponent}!GateArrayComponent@{GateArrayComponent}}
+\doxysubsubsection{\texorpdfstring{GateArrayComponent()}{GateArrayComponent()}}
+{\footnotesize\ttfamily Gate\+Array\+Component\+::\+Gate\+Array\+Component (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{its\+Name,  }\item[{\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$}]{its\+Mother\+Component,  }\item[{\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$}]{its\+System }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em its\+Name} & the name chosen for this system-\/component \\
+\hline
+{\em its\+Mother\+Component} & the mother of the component (0 if top of a tree) \\
+\hline
+{\em its\+System} & the system to which the component belongs \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Array\+Component.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Array\+Component.\+cc\end{DoxyCompactItemize}

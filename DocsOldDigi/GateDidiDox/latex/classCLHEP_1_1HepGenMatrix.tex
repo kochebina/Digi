@@ -1,0 +1,106 @@
+\hypertarget{classCLHEP_1_1HepGenMatrix}{}\doxysection{CLHEP\+::Hep\+Gen\+Matrix Class Reference}
+\label{classCLHEP_1_1HepGenMatrix}\index{CLHEP::HepGenMatrix@{CLHEP::HepGenMatrix}}
+
+
+{\ttfamily \#include $<$Gen\+Matrix.\+h$>$}
+
+Inheritance diagram for CLHEP\+::Hep\+Gen\+Matrix\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.854305cm]{classCLHEP_1_1HepGenMatrix}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}}
+\item 
+class \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row}{Hep\+Gen\+Matrix\+\_\+row}}
+\item 
+class \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row__const}{Hep\+Gen\+Matrix\+\_\+row\+\_\+const}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a52d8489ff829381a9e797d5db026c269}\label{classCLHEP_1_1HepGenMatrix_a52d8489ff829381a9e797d5db026c269}} 
+enum \{ {\bfseries size\+\_\+max} = 25
+ \}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_ab608efad4de501f24207fe50ca2117de}\label{classCLHEP_1_1HepGenMatrix_ab608efad4de501f24207fe50ca2117de}} 
+typedef std\+::vector$<$ double, \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}}$<$ double, 25 $>$ $>$\+::iterator {\bfseries m\+Iter}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_aaceff6f667d59c660ce6f278614f0cf7}\label{classCLHEP_1_1HepGenMatrix_aaceff6f667d59c660ce6f278614f0cf7}} 
+typedef std\+::vector$<$ double, \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}}$<$ double, 25 $>$ $>$\+::const\+\_\+iterator {\bfseries mc\+Iter}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a26ba4af393557d512aff090c0522b468}\label{classCLHEP_1_1HepGenMatrix_a26ba4af393557d512aff090c0522b468}} 
+virtual int {\bfseries num\+\_\+row} () const =0
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_ad5614b4d62117d8b17d9b8c5fa6117eb}\label{classCLHEP_1_1HepGenMatrix_ad5614b4d62117d8b17d9b8c5fa6117eb}} 
+virtual int {\bfseries num\+\_\+col} () const =0
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a97b63f9e00c4226051f6ee60bc6bf18d}\label{classCLHEP_1_1HepGenMatrix_a97b63f9e00c4226051f6ee60bc6bf18d}} 
+virtual const double \& {\bfseries operator()} (int row, int col) const =0
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a7058a33154cbd57977c4dbee54501997}\label{classCLHEP_1_1HepGenMatrix_a7058a33154cbd57977c4dbee54501997}} 
+virtual double \& {\bfseries operator()} (int row, int col)=0
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a48176776c2f025ea9d58fb3aac4b7820}\label{classCLHEP_1_1HepGenMatrix_a48176776c2f025ea9d58fb3aac4b7820}} 
+virtual void {\bfseries invert} (int \&)=0
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a8665771d5720c4c8989c096af11996d9}\label{classCLHEP_1_1HepGenMatrix_a8665771d5720c4c8989c096af11996d9}} 
+\mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row}{Hep\+Gen\+Matrix\+\_\+row}} {\bfseries operator\mbox{[}$\,$\mbox{]}} (int)
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a9e771f6f8848aa407d4b52c419a3b6fd}\label{classCLHEP_1_1HepGenMatrix_a9e771f6f8848aa407d4b52c419a3b6fd}} 
+const \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1HepGenMatrix__row__const}{Hep\+Gen\+Matrix\+\_\+row\+\_\+const}} {\bfseries operator\mbox{[}$\,$\mbox{]}} (int) const
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a6f4fe0ac194e976b5396c60ee7634057}\label{classCLHEP_1_1HepGenMatrix_a6f4fe0ac194e976b5396c60ee7634057}} 
+virtual bool {\bfseries operator==} (const \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{Hep\+Gen\+Matrix}} \&) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a93faf24748eb241a3c1b4cfa7f305d5a}\label{classCLHEP_1_1HepGenMatrix_a93faf24748eb241a3c1b4cfa7f305d5a}} 
+static void {\bfseries swap} (int \&, int \&)
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a893b7e4285ca0dffc93ece2d20b5c14e}\label{classCLHEP_1_1HepGenMatrix_a893b7e4285ca0dffc93ece2d20b5c14e}} 
+static void {\bfseries swap} (std\+::vector$<$ double, \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}}$<$ double, 25 $>$ $>$ \&, std\+::vector$<$ double, \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix_1_1Alloc}{Alloc}}$<$ double, 25 $>$ $>$ \&)
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_acffea3714168e779717e9e863a797693}\label{classCLHEP_1_1HepGenMatrix_acffea3714168e779717e9e863a797693}} 
+static void {\bfseries error} (const char $\ast$s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_a3f1a6bf1bb8c54ce49f49b1c95eeaa22}\label{classCLHEP_1_1HepGenMatrix_a3f1a6bf1bb8c54ce49f49b1c95eeaa22}} 
+virtual int {\bfseries num\+\_\+size} () const =0
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_aff134514c99ae7bf28e00b2d92667e19}\label{classCLHEP_1_1HepGenMatrix_aff134514c99ae7bf28e00b2d92667e19}} 
+void {\bfseries delete\+\_\+m} (int size, double $\ast$)
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_aecea2d3ce8b25cc374adc68d6b6ea429}\label{classCLHEP_1_1HepGenMatrix_aecea2d3ce8b25cc374adc68d6b6ea429}} 
+double $\ast$ {\bfseries new\+\_\+m} (int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_adebf3d8d486e096a85e836ab596312f3}\label{classCLHEP_1_1HepGenMatrix_adebf3d8d486e096a85e836ab596312f3}} 
+class {\bfseries Hep\+Gen\+Matrix\+\_\+row}
+\item 
+\mbox{\Hypertarget{classCLHEP_1_1HepGenMatrix_ac14922596869e04eb9272f185f15ab0b}\label{classCLHEP_1_1HepGenMatrix_ac14922596869e04eb9272f185f15ab0b}} 
+class {\bfseries Hep\+Gen\+Matrix\+\_\+row\+\_\+const}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/clhep/include/\+CLHEP/\+Matrix/Gen\+Matrix.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/clhep/src/\+CLHEP/\+Matrix/Gen\+Matrix.\+cc\end{DoxyCompactItemize}

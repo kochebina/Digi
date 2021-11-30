@@ -1,0 +1,170 @@
+\hypertarget{prototypesLocateEvents_8h_source}{}\doxysection{prototypes\+Locate\+Events.\+h}
+\label{prototypesLocateEvents_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/prototypesLocateEvents.h@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/prototypesLocateEvents.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{           List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{     -\/-\/  prototypesLocateEvents.h  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{     Magalie.Krieguer@iphe.unil.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{     Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{     Copyright (C) 2003 IPHE/UNIL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{     of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{     Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{     See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{     Description of prototypesLocateEvents.h:}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{     Functions used for the calculation of events position }}
+\DoxyCodeLine{24 \textcolor{comment}{     in the 3D laboratory (x.y.z) system:}}
+\DoxyCodeLine{25 \textcolor{comment}{     -\/>locateEventInLaboratory -\/ Compute the elements 3D coordinates }}
+\DoxyCodeLine{26 \textcolor{comment}{                                 in the laboratory (x,y,z) system}}
+\DoxyCodeLine{27 \textcolor{comment}{     -\/>fillInStructScannerGeometry -\/ Initialize the members of the structure }}
+\DoxyCodeLine{28 \textcolor{comment}{                                     LMF\_cch\_scannerGeometry }}
+\DoxyCodeLine{29 \textcolor{comment}{     -\/>setLayersInfo -\/ Initialize the radial size and the interaction length in each layer}}
+\DoxyCodeLine{30 \textcolor{comment}{     -\/>setSubstructuresValues -\/ Create an array ("{}substructureNumericalValues"{}),}}
+\DoxyCodeLine{31 \textcolor{comment}{       which contains the substructures numerical values}}
+\DoxyCodeLine{32 \textcolor{comment}{     -\/>testPitchVersusSize -\/ Control the value of the substructures pitches in comparison }}
+\DoxyCodeLine{33 \textcolor{comment}{                             with the substructures sizes}}
+\DoxyCodeLine{34 \textcolor{comment}{     -\/>testAngleDefaultUnit -\/ Test if the angle default unit is the radian}}
+\DoxyCodeLine{35 \textcolor{comment}{     -\/>locateID -\/ Define the crystal or the submodule or the module or the rsector tangential and axial ID}}
+\DoxyCodeLine{36 \textcolor{comment}{     -\/>locateSubstructureInStructure -\/ Compute the 3D coordinates of substructure(id\_t,id\_z) }}
+\DoxyCodeLine{37 \textcolor{comment}{                                       in a tangential reference frame attached to a rsector}}
+\DoxyCodeLine{38 \textcolor{comment}{     -\/>locateRsectorInLaboratory -\/ Process to calculate the 3D coordinates of a rsector in the laboratory (x,y,z) system}}
+\DoxyCodeLine{39 \textcolor{comment}{     -\/>destroyScannerGeometryPointers -\/ Destroy the pointers to the lists called "{}intLengthLayersList"{}}}
+\DoxyCodeLine{40 \textcolor{comment}{                                        and "{}rdSizeLayersList"{} }}
+\DoxyCodeLine{41 \textcolor{comment}{}}
+\DoxyCodeLine{42 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{/* locateEventInLaboratory -\/ Calculation of the elements 3D coordinates in the 3D laboratory (x,y,z) system */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef \_locateEventInLaboratory\_h}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define \_locateEventInlaboratory\_h}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \mbox{\hyperlink{structcalculOfEventPosition}{calculOfEventPosition}} locateEventInLaboratory(\textcolor{keyword}{const} \mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}} *,}
+\DoxyCodeLine{50                           \textcolor{keyword}{const} \mbox{\hyperlink{structLMF__ccs__eventRecord}{EVENT\_RECORD}} *, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/* fillInStructScannerGeometry -\/ Initialize the members of the structure LMF\_cch\_scannerGeometry */}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifndef \_fillInStructScannerGeometry\_h}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define \_fillInStructScannerGeometry\_h}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keywordtype}{int} fillInStructScannerGeometry(\textcolor{keywordtype}{int} cch\_index,}
+\DoxyCodeLine{61                 \mbox{\hyperlink{structLMF__cch__scannerGeometry}{LMF\_cch\_scannerGeometry}} * pScanGeo);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{/* setLayersInfo -\/ Initialize the radial size and the interaction length in each layer */}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#ifndef \_setLayersInfo\_h}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_setLayersInfo\_h}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keywordtype}{int} setLayersInfo(\textcolor{keywordtype}{int} cch\_index,}
+\DoxyCodeLine{71           \textcolor{keywordtype}{int} rdNbOfLayers,}
+\DoxyCodeLine{72           \textcolor{keywordtype}{double} *first\_pIntLengthLayers,}
+\DoxyCodeLine{73           \textcolor{keywordtype}{double} *first\_pRdSizeLayers);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{/* setSubstructuresValues -\/ Create an array ("{}substructureNumericalValues"{}), }}
+\DoxyCodeLine{78 \textcolor{comment}{   which contains the substructures numerical values: */}}
+\DoxyCodeLine{79 \textcolor{comment}{/* layerAxialPitch, crystalAxialPitch, submoduleAxialPitch, moduleAxialPitch, rsectorAxialPitch */}}
+\DoxyCodeLine{80 \textcolor{comment}{/* layerRadialPitch, crystalTangentialPitch, submoduleTangentialPitch, moduleTangentialPitch, rsectorTangentialPitch */}}
+\DoxyCodeLine{81 \textcolor{comment}{/* axialNumberOfLayers, axialNumberOfCrystals, axialNumberOfSubmodules, axialNumberOfModules, axialNumberOfRsectors */}}
+\DoxyCodeLine{82 \textcolor{comment}{/* radialNbOfLayers, tangentialNbOfCrystals, tangentialNbOfSubmodules, tangentialNbOfModules, tangentialNbOfRsectors */}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#ifndef \_setSubstructuresValues\_h}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define \_setSubstructuresValues\_h}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keywordtype}{double} *setSubstructuresValues(\mbox{\hyperlink{structLMF__cch__scannerGeometry}{LMF\_cch\_scannerGeometry}} *,}
+\DoxyCodeLine{88                    \textcolor{keyword}{const} \mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}} *);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{/* testPitchVersusSize -\/ Control the value of the substructures pitches in comparison with the substructures sizes */}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#ifndef \_testPitchVersusSize\_h}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define \_testPitchVersusSize\_h}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keywordtype}{int} testPitchVersusSize(\textcolor{keywordtype}{double} *first\_pSubstructuresNumericalValues,}
+\DoxyCodeLine{98             \mbox{\hyperlink{structLMF__cch__scannerGeometry}{LMF\_cch\_scannerGeometry}} * pScanGeo,}
+\DoxyCodeLine{99             \textcolor{keywordtype}{double} *first\_pRdSizeOfLayers);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/* testAngleDefaultUnit -\/ Test if the angle default unit is the radian */}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#ifndef \_testAngleDefaultUnit\_h}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define \_testAngleDefaultUnit\_h}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keywordtype}{double} testAngleDefaultUnit();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{/* locateID -\/ Define the crystal or the submodule or the module or the rsector tangential and axial ID */}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#ifndef \_locateID\_h}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define \_locateID\_h}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \mbox{\hyperlink{structgeneralSubstructureID}{generalSubstructureID}} locateID(u16 * pcrist, \textcolor{keywordtype}{int} substructureOrder, \textcolor{keywordtype}{double}}
+\DoxyCodeLine{118                    *first\_pSubstructuresNumericalValues);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 u16 remakeID(\mbox{\hyperlink{structgeneralSubstructureID}{generalSubstructureID}} substructureID,}
+\DoxyCodeLine{121          \textcolor{keywordtype}{int} substructureOrder,}
+\DoxyCodeLine{122          \textcolor{keywordtype}{double} *first\_pSubstructuresNumericalValues);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{/* locateSubstructureInStructure -\/ Calculation of the 3D coordinates of substructure(id\_t,id\_z) }}
+\DoxyCodeLine{127 \textcolor{comment}{   in a tangential reference frame attached to a rsector */}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#ifndef \_locateSubstructureInStructure\_h}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define \_locateSubstructureInStructure\_h}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \mbox{\hyperlink{structcoordinates}{coordinates}} locateSubstructureInStructure(u16 * pcrist,}
+\DoxyCodeLine{134                       \textcolor{keywordtype}{int} substructureOrder, \textcolor{keywordtype}{double}}
+\DoxyCodeLine{135                       *first\_pSubstructuresNumericalValues);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{/* locateRsectorInLaboratory -\/ Process to calculate the 3D coordinates of a rsector }}
+\DoxyCodeLine{140 \textcolor{comment}{   in the 3D laboratory (x,y,z) system */}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#ifndef \_locateRsectorInLaboratory\_h}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define \_locateRsectorInLaboratory\_h}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \mbox{\hyperlink{structcoordinates}{coordinates}} locateRsectorInLaboratory(u16 *,}
+\DoxyCodeLine{146                       \mbox{\hyperlink{structLMF__cch__scannerGeometry}{LMF\_cch\_scannerGeometry}} *,}
+\DoxyCodeLine{147                       \textcolor{keyword}{const} \mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}} *,}
+\DoxyCodeLine{148                       \textcolor{keyword}{const} \mbox{\hyperlink{structLMF__ccs__eventRecord}{EVENT\_RECORD}} *,}
+\DoxyCodeLine{149                       \textcolor{keywordtype}{double} *, \textcolor{keywordtype}{double} *,}
+\DoxyCodeLine{150                       \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double} *);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{comment}{/* destroyScannerGeometryPointers -\/ Destroy the pointers to the lists called "{}intLengthLayersList"{} }}
+\DoxyCodeLine{157 \textcolor{comment}{   and "{}rdSizeLayersList"{} */}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#ifndef \_destroyScannerGeometryPointers\_h}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define \_destroyScannerGeometryPointers\_h}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{keywordtype}{void} destroyScannerGeometryPointers();}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

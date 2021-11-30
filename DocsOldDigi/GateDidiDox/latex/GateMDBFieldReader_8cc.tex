@@ -1,0 +1,91 @@
+\hypertarget{GateMDBFieldReader_8cc}{}\doxysection{/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/\+Gate\+MDBField\+Reader.cc File Reference}
+\label{GateMDBFieldReader_8cc}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/src/GateMDBFieldReader.cc@{/biomaps/physique/appli/GateOlga/src/source/geometry/src/GateMDBFieldReader.cc}}
+
+
+Class \mbox{\hyperlink{classGateMDBFieldReader}{Gate\+MDBField\+Reader}}.  
+
+
+{\ttfamily \#include \char`\"{}G4\+System\+Of\+Units.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+MDBField\+Reader.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Tokenizer.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G4\+Physical\+Constants.\+hh\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_afd3e35afd8aa8d0f94ea4ccd35d3c4c4}\label{GateMDBFieldReader_8cc_afd3e35afd8aa8d0f94ea4ccd35d3c4c4}} 
+\#define {\bfseries N\+\_\+\+STATECODES}~12
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a5cabb865fc1cf3650d5cd183ce982988}\label{GateMDBFieldReader_8cc_a5cabb865fc1cf3650d5cd183ce982988}} 
+\#define {\bfseries N\+\_\+\+SYMBOLPREFIX}~3
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a38ff3fde1ec32360d2251700350f60d9}\label{GateMDBFieldReader_8cc_a38ff3fde1ec32360d2251700350f60d9}} 
+\#define {\bfseries N\+\_\+\+ATOMICNUMBERPREFIX}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a8dada5f3cbdacb2f353cb269f85127a5}\label{GateMDBFieldReader_8cc_a8dada5f3cbdacb2f353cb269f85127a5}} 
+\#define {\bfseries N\+\_\+\+NUCLEONNUMBERPREFIX}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_abf35e35c4e9064713015dce461aba921}\label{GateMDBFieldReader_8cc_abf35e35c4e9064713015dce461aba921}} 
+\#define {\bfseries N\+\_\+\+MOLARMASSPREFIX}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a0cd5922df4cedd47a09867ea0f35b1e9}\label{GateMDBFieldReader_8cc_a0cd5922df4cedd47a09867ea0f35b1e9}} 
+\#define {\bfseries N\+\_\+\+DENSITYPREFIX}~4
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a1e3d15927a6e62dfcef4e351f7079841}\label{GateMDBFieldReader_8cc_a1e3d15927a6e62dfcef4e351f7079841}} 
+\#define {\bfseries N\+\_\+\+STATEPREFIX}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a1c6db9bca7b180360f6e049d149a6062}\label{GateMDBFieldReader_8cc_a1c6db9bca7b180360f6e049d149a6062}} 
+\#define {\bfseries N\+\_\+\+TEMPPREFIX}~6
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a283b60757e0f5ffbd3e936823c271d86}\label{GateMDBFieldReader_8cc_a283b60757e0f5ffbd3e936823c271d86}} 
+\#define {\bfseries N\+\_\+\+PRESSUREPREFIX}~6
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_ab8b8ed7a653eb9509823d025562918cf}\label{GateMDBFieldReader_8cc_ab8b8ed7a653eb9509823d025562918cf}} 
+\#define {\bfseries N\+\_\+\+NCOMPONENTSSPREFIX}~6
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_ab9426464b80c9953222b915e13d57a31}\label{GateMDBFieldReader_8cc_ab9426464b80c9953222b915e13d57a31}} 
+\#define {\bfseries N\+\_\+\+NAMEPREFIX}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a1a61fa0cd2f1426802637f5f28241acd}\label{GateMDBFieldReader_8cc_a1a61fa0cd2f1426802637f5f28241acd}} 
+\#define {\bfseries N\+\_\+\+NATOMSPREFIX}~6
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a3ce11827ab8e421480a1112bf86fdb0a}\label{GateMDBFieldReader_8cc_a3ce11827ab8e421480a1112bf86fdb0a}} 
+\#define {\bfseries N\+\_\+\+FRACTIONPREFIX}~4
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a349eb03dce07285c7561c5957c275e34}\label{GateMDBFieldReader_8cc_a349eb03dce07285c7561c5957c275e34}} 
+\#define {\bfseries N\+\_\+\+ATOMICNUMBERUNIT}~1
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a92f834b1588ba67156e3161580efab99}\label{GateMDBFieldReader_8cc_a92f834b1588ba67156e3161580efab99}} 
+\#define {\bfseries N\+\_\+\+NUCLEONNUMBERUNIT}~1
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_afc4b7ec20502fb9a75f1fbf39bc827f3}\label{GateMDBFieldReader_8cc_afc4b7ec20502fb9a75f1fbf39bc827f3}} 
+\#define {\bfseries N\+\_\+\+MOLARMASSUNIT}~1
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_aa9b9ca71bfee897dc70ead8b3dee8e0e}\label{GateMDBFieldReader_8cc_aa9b9ca71bfee897dc70ead8b3dee8e0e}} 
+\#define {\bfseries N\+\_\+\+DENSITYUNIT}~9
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a426c84ec64b88b80f1aee6551fa46bb6}\label{GateMDBFieldReader_8cc_a426c84ec64b88b80f1aee6551fa46bb6}} 
+\#define {\bfseries N\+\_\+\+TEMPUNIT}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a4511e1cb6b1531968a07378c5c884f0c}\label{GateMDBFieldReader_8cc_a4511e1cb6b1531968a07378c5c884f0c}} 
+\#define {\bfseries N\+\_\+\+PRESSUREUNIT}~3
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a6de90abbb6b903985b1a00e17eabd26e}\label{GateMDBFieldReader_8cc_a6de90abbb6b903985b1a00e17eabd26e}} 
+\#define {\bfseries N\+\_\+\+FRACTIONUNIT}~8
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a1a3daf08d804f8a7fb91db0a3fddef26}\label{GateMDBFieldReader_8cc_a1a3daf08d804f8a7fb91db0a3fddef26}} 
+\#define {\bfseries N\+\_\+\+FMFPREFIXMAPS}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_aaf065e7477b02b19eac2fab5d9af7b5e}\label{GateMDBFieldReader_8cc_aaf065e7477b02b19eac2fab5d9af7b5e}} 
+\#define {\bfseries N\+\_\+\+FEFPREFIXMAPS}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_a5e5a1832116aeb040bb7bf62df72237b}\label{GateMDBFieldReader_8cc_a5e5a1832116aeb040bb7bf62df72237b}} 
+\#define {\bfseries N\+\_\+\+ABUNDANCEPREFIXMAPS}~2
+\item 
+\mbox{\Hypertarget{GateMDBFieldReader_8cc_aa01443291953f0a31d07d10833499bc2}\label{GateMDBFieldReader_8cc_aa01443291953f0a31d07d10833499bc2}} 
+\#define {\bfseries N\+\_\+\+MATERIALOPTIONPREFIXMAPS}~3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{classGateMDBFieldReader}{Gate\+MDBField\+Reader}}. 
+

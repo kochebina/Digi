@@ -1,0 +1,441 @@
+\hypertarget{classMetaImage}{}\doxysection{Meta\+Image Class Reference}
+\label{classMetaImage}\index{MetaImage@{MetaImage}}
+
+
+{\ttfamily \#include $<$meta\+Image.\+h$>$}
+
+Inheritance diagram for Meta\+Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMetaImage}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaImage_a9b66f4a5df1f6a555e66dab829847c3f}\label{classMetaImage_a9b66f4a5df1f6a555e66dab829847c3f}} 
+typedef METAIO\+\_\+\+STL\+::pair$<$ long, long $>$ {\bfseries Compression\+Offset\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaImage_a0b56c2efd96f0c8bf4f69df964bee2d6}\label{classMetaImage_a0b56c2efd96f0c8bf4f69df964bee2d6}} 
+{\bfseries Meta\+Image} (const char $\ast$\+\_\+header\+Name)
+\item 
+\mbox{\Hypertarget{classMetaImage_a90fa4a28dc7346e5519ff2a4542fede5}\label{classMetaImage_a90fa4a28dc7346e5519ff2a4542fede5}} 
+{\bfseries Meta\+Image} (\mbox{\hyperlink{classMetaImage}{Meta\+Image}} $\ast$\+\_\+im)
+\item 
+\mbox{\Hypertarget{classMetaImage_a477a3b632d5e5fdcc44a557c460467a9}\label{classMetaImage_a477a3b632d5e5fdcc44a557c460467a9}} 
+{\bfseries Meta\+Image} (int \+\_\+n\+Dims, const int $\ast$\+\_\+dim\+Size, const float $\ast$\+\_\+element\+Spacing, MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type, int \+\_\+element\+Number\+Of\+Channels=1, void $\ast$\+\_\+element\+Data=NULL)
+\item 
+\mbox{\Hypertarget{classMetaImage_ad69f9a777e86a91524e55c7e530e5258}\label{classMetaImage_ad69f9a777e86a91524e55c7e530e5258}} 
+{\bfseries Meta\+Image} (int \+\_\+x, int \+\_\+y, float \+\_\+element\+SpacingX, float \+\_\+element\+SpacingY, MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type, int \+\_\+element\+Number\+Of\+Channels=1, void $\ast$\+\_\+element\+Data=NULL)
+\item 
+\mbox{\Hypertarget{classMetaImage_adbfb7439dbf125c125096048e9511270}\label{classMetaImage_adbfb7439dbf125c125096048e9511270}} 
+{\bfseries Meta\+Image} (int \+\_\+x, int \+\_\+y, int \+\_\+z, float \+\_\+element\+SpacingX, float \+\_\+element\+SpacingY, float \+\_\+element\+SpacingZ, MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type, int \+\_\+element\+Number\+Of\+Channels=1, void $\ast$\+\_\+element\+Data=NULL)
+\item 
+virtual void \mbox{\hyperlink{classMetaImage_a847fe1d34798f0f464e733937b5a5734}{Print\+Info}} (void) const
+\item 
+virtual void \mbox{\hyperlink{classMetaImage_a188fe01bf796259181849ccf4524ac6a}{Copy\+Info}} (const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$\+\_\+object)
+\item 
+virtual void \mbox{\hyperlink{classMetaImage_a5ae33145bee648b7d343f9d7942c00d4}{Clear}} (void)
+\item 
+\mbox{\Hypertarget{classMetaImage_abda2cda5679b42c41a60d600d4112503}\label{classMetaImage_abda2cda5679b42c41a60d600d4112503}} 
+bool {\bfseries Initialize\+Essential} (int \+\_\+n\+Dims, const int $\ast$\+\_\+dim\+Size, const float $\ast$\+\_\+element\+Spacing, MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type, int \+\_\+element\+Number\+Of\+Channels=1, void $\ast$\+\_\+element\+Data=NULL, bool \+\_\+alloc\+Element\+Memory=true)
+\item 
+\mbox{\Hypertarget{classMetaImage_af4b97ab163710786dfb1575642139c80}\label{classMetaImage_af4b97ab163710786dfb1575642139c80}} 
+int {\bfseries Header\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_af38c4a021b0a0904ece052007ae4b030}\label{classMetaImage_af38c4a021b0a0904ece052007ae4b030}} 
+void {\bfseries Header\+Size} (int \+\_\+header\+Size)
+\item 
+\mbox{\Hypertarget{classMetaImage_abb3ab8325d0a9bad2491005482ff7567}\label{classMetaImage_abb3ab8325d0a9bad2491005482ff7567}} 
+MET\+\_\+\+Image\+Modality\+Enum\+Type {\bfseries Modality} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a33a43f3c3ba27ae880c45edea0f480dc}\label{classMetaImage_a33a43f3c3ba27ae880c45edea0f480dc}} 
+void {\bfseries Modality} (MET\+\_\+\+Image\+Modality\+Enum\+Type \+\_\+modality)
+\item 
+\mbox{\Hypertarget{classMetaImage_a052dbe8e70d7aae6b3de8cf446d20167}\label{classMetaImage_a052dbe8e70d7aae6b3de8cf446d20167}} 
+const int $\ast$ {\bfseries Dim\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a2b20fb6658cf4aaf94d0653d55931cea}\label{classMetaImage_a2b20fb6658cf4aaf94d0653d55931cea}} 
+int {\bfseries Dim\+Size} (int \+\_\+i) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a5adad4a71f13d7f9abc1d8a186bd93e2}\label{classMetaImage_a5adad4a71f13d7f9abc1d8a186bd93e2}} 
+METAIO\+\_\+\+STL\+::streamoff {\bfseries Quantity} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a9493514a2d6dc1423180422a0ecd2649}\label{classMetaImage_a9493514a2d6dc1423180422a0ecd2649}} 
+const METAIO\+\_\+\+STL\+::streamoff $\ast$ {\bfseries Sub\+Quantity} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_af8624db05c87e6a75beb23ed41916fc8}\label{classMetaImage_af8624db05c87e6a75beb23ed41916fc8}} 
+METAIO\+\_\+\+STL\+::streamoff {\bfseries Sub\+Quantity} (int \+\_\+i) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a284ebe784a1753c8766ab116287a526b}\label{classMetaImage_a284ebe784a1753c8766ab116287a526b}} 
+const float $\ast$ {\bfseries Sequence\+ID} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_acad0e6133164de253f495e9f5bdcb7ba}\label{classMetaImage_acad0e6133164de253f495e9f5bdcb7ba}} 
+float {\bfseries Sequence\+ID} (int \+\_\+i) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a1febb19f414fc5334ec7281470fc85e7}\label{classMetaImage_a1febb19f414fc5334ec7281470fc85e7}} 
+void {\bfseries Sequence\+ID} (const float $\ast$\+\_\+sequence\+ID)
+\item 
+\mbox{\Hypertarget{classMetaImage_a16b57398fe1a66a3804f1c016784d990}\label{classMetaImage_a16b57398fe1a66a3804f1c016784d990}} 
+void {\bfseries Sequence\+ID} (int \+\_\+i, float \+\_\+value)
+\item 
+\mbox{\Hypertarget{classMetaImage_a111b43463528cdebb8c6ebfdeef3df97}\label{classMetaImage_a111b43463528cdebb8c6ebfdeef3df97}} 
+bool {\bfseries Element\+Size\+Valid} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a8edf01e4e8b3d178e09e7c00c5ba2450}\label{classMetaImage_a8edf01e4e8b3d178e09e7c00c5ba2450}} 
+void {\bfseries Element\+Size\+Valid} (bool \+\_\+element\+Size\+Valid)
+\item 
+\mbox{\Hypertarget{classMetaImage_af8b70ece5c0ba6a466da838f864dd010}\label{classMetaImage_af8b70ece5c0ba6a466da838f864dd010}} 
+const float $\ast$ {\bfseries Element\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_acbe850fdfb86e10ac3603894fc1966c4}\label{classMetaImage_acbe850fdfb86e10ac3603894fc1966c4}} 
+float {\bfseries Element\+Size} (int i) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a02d8327bcd70d3713cf378ed0f734fc4}\label{classMetaImage_a02d8327bcd70d3713cf378ed0f734fc4}} 
+void {\bfseries Element\+Size} (const float $\ast$\+\_\+point\+Size)
+\item 
+\mbox{\Hypertarget{classMetaImage_a9a8cf5e1ad1545a53a535a84d0d64c8e}\label{classMetaImage_a9a8cf5e1ad1545a53a535a84d0d64c8e}} 
+void {\bfseries Element\+Size} (int \+\_\+i, float \+\_\+value)
+\item 
+\mbox{\Hypertarget{classMetaImage_a95d75139fd1c8b9f0bcaca13d593eeca}\label{classMetaImage_a95d75139fd1c8b9f0bcaca13d593eeca}} 
+MET\+\_\+\+Value\+Enum\+Type {\bfseries Element\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a089a6c18d9b72644ae7502419fce5887}\label{classMetaImage_a089a6c18d9b72644ae7502419fce5887}} 
+void {\bfseries Element\+Type} (MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type)
+\item 
+\mbox{\Hypertarget{classMetaImage_a99eb33d2a59a5414a8103d747a99ccc8}\label{classMetaImage_a99eb33d2a59a5414a8103d747a99ccc8}} 
+int {\bfseries Element\+Number\+Of\+Channels} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_aa97107d999e5c9986f6af28c87a65958}\label{classMetaImage_aa97107d999e5c9986f6af28c87a65958}} 
+void {\bfseries Element\+Number\+Of\+Channels} (int \+\_\+element\+Number\+Of\+Channels)
+\item 
+\mbox{\Hypertarget{classMetaImage_a7517111102254f3e6f63892fd802ca0d}\label{classMetaImage_a7517111102254f3e6f63892fd802ca0d}} 
+void {\bfseries Element\+Byte\+Order\+Swap} (METAIO\+\_\+\+STL\+::streamoff \+\_\+quantity=0)
+\item 
+\mbox{\Hypertarget{classMetaImage_a141f5319ed789951932302c454537558}\label{classMetaImage_a141f5319ed789951932302c454537558}} 
+bool {\bfseries Element\+Byte\+Order\+Fix} (METAIO\+\_\+\+STL\+::streamoff \+\_\+quantity=0)
+\item 
+\mbox{\Hypertarget{classMetaImage_a405d6ea063edb3504c77c32ce5f14852}\label{classMetaImage_a405d6ea063edb3504c77c32ce5f14852}} 
+bool {\bfseries Element\+Min\+Max\+Valid} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a1655052da0d5f543fc9b8e08c1de7cc0}\label{classMetaImage_a1655052da0d5f543fc9b8e08c1de7cc0}} 
+void {\bfseries Element\+Min\+Max\+Valid} (bool \+\_\+element\+Min\+Max\+Valid)
+\item 
+\mbox{\Hypertarget{classMetaImage_aa76dc585f91caa25ef5d6463e39b1860}\label{classMetaImage_aa76dc585f91caa25ef5d6463e39b1860}} 
+void {\bfseries Element\+Min\+Max\+Recalc} (void)
+\item 
+\mbox{\Hypertarget{classMetaImage_acbb7eed047ef7707134cf071e5aa9272}\label{classMetaImage_acbb7eed047ef7707134cf071e5aa9272}} 
+double {\bfseries Element\+Min} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_af71ec538fef636454aae9ec3b7044ff2}\label{classMetaImage_af71ec538fef636454aae9ec3b7044ff2}} 
+void {\bfseries Element\+Min} (double \+\_\+element\+Min)
+\item 
+\mbox{\Hypertarget{classMetaImage_ad8ae572ec69136b7ca601e1f959be156}\label{classMetaImage_ad8ae572ec69136b7ca601e1f959be156}} 
+double {\bfseries Element\+Max} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a145972fe2011755f48cf8672284bdc65}\label{classMetaImage_a145972fe2011755f48cf8672284bdc65}} 
+void {\bfseries Element\+Max} (double \+\_\+element\+Max)
+\item 
+\mbox{\Hypertarget{classMetaImage_ac009403d45bf0b21f05cee0783aed4af}\label{classMetaImage_ac009403d45bf0b21f05cee0783aed4af}} 
+double {\bfseries Element\+To\+Intensity\+Function\+Slope} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a6af97edfc739490e7209df8b29cf1d51}\label{classMetaImage_a6af97edfc739490e7209df8b29cf1d51}} 
+void {\bfseries Element\+To\+Intensity\+Function\+Slope} (double \+\_\+slope)
+\item 
+\mbox{\Hypertarget{classMetaImage_a9ae0fc3a9546ff67dacfb47a46f2c159}\label{classMetaImage_a9ae0fc3a9546ff67dacfb47a46f2c159}} 
+double {\bfseries Element\+To\+Intensity\+Function\+Offset} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_aee716c4129d90e30457a50f3b49a00cb}\label{classMetaImage_aee716c4129d90e30457a50f3b49a00cb}} 
+void {\bfseries Element\+To\+Intensity\+Function\+Offset} (double \+\_\+offset)
+\item 
+\mbox{\Hypertarget{classMetaImage_a5540342a3b2926866cd1ee269d8c1378}\label{classMetaImage_a5540342a3b2926866cd1ee269d8c1378}} 
+bool {\bfseries Auto\+Free\+Element\+Data} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a0dd7282228b77c78e714259b23836685}\label{classMetaImage_a0dd7282228b77c78e714259b23836685}} 
+void {\bfseries Auto\+Free\+Element\+Data} (bool \+\_\+free\+Data)
+\item 
+\mbox{\Hypertarget{classMetaImage_aa360efa9aadacb80a587cd8afcc1e842}\label{classMetaImage_aa360efa9aadacb80a587cd8afcc1e842}} 
+const char $\ast$ {\bfseries Element\+Data\+File\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classMetaImage_ad17c325ff9711d25229c71f9696080bf}\label{classMetaImage_ad17c325ff9711d25229c71f9696080bf}} 
+void {\bfseries Element\+Data\+File\+Name} (const char $\ast$\+\_\+data\+File\+Name)
+\item 
+\mbox{\Hypertarget{classMetaImage_ad51bad57e3f4014ee8af68772c8a4a7f}\label{classMetaImage_ad51bad57e3f4014ee8af68772c8a4a7f}} 
+void $\ast$ {\bfseries Element\+Data} (void)
+\item 
+\mbox{\Hypertarget{classMetaImage_ae8cc0b8f3650c07a33e5875d57e951ab}\label{classMetaImage_ae8cc0b8f3650c07a33e5875d57e951ab}} 
+double {\bfseries Element\+Data} (METAIO\+\_\+\+STL\+::streamoff \+\_\+i) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a629192561083a4e999b5676d4a2b7f1a}\label{classMetaImage_a629192561083a4e999b5676d4a2b7f1a}} 
+bool {\bfseries Element\+Data} (METAIO\+\_\+\+STL\+::streamoff \+\_\+i, double \+\_\+v)
+\item 
+\mbox{\Hypertarget{classMetaImage_a46b1914857d541c3d8cc17dfb3957a36}\label{classMetaImage_a46b1914857d541c3d8cc17dfb3957a36}} 
+void {\bfseries Element\+Data} (void $\ast$\+\_\+data, bool \+\_\+auto\+Free\+Element\+Data=false)
+\item 
+\mbox{\Hypertarget{classMetaImage_a59bad0f23977dd89281bbcda99ffd5c7}\label{classMetaImage_a59bad0f23977dd89281bbcda99ffd5c7}} 
+bool {\bfseries Convert\+Element\+Data\+To} (MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type=MET\+\_\+\+USHORT, double \+\_\+to\+Min=0, double \+\_\+to\+Max=0)
+\item 
+\mbox{\Hypertarget{classMetaImage_afbf5b002ad25872b2dadd621d35ffaaa}\label{classMetaImage_afbf5b002ad25872b2dadd621d35ffaaa}} 
+bool {\bfseries Convert\+Element\+Data\+To\+Intensity\+Data} (MET\+\_\+\+Value\+Enum\+Type \+\_\+intensity\+Type=MET\+\_\+\+SHORT)
+\item 
+\mbox{\Hypertarget{classMetaImage_a420696c010f5cbc8166d336813f7c90c}\label{classMetaImage_a420696c010f5cbc8166d336813f7c90c}} 
+bool {\bfseries Convert\+Intensity\+Data\+To\+Element\+Data} (MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type=MET\+\_\+\+USHORT)
+\item 
+\mbox{\Hypertarget{classMetaImage_aa7cfdffe9d0e54ed046633764700d0b0}\label{classMetaImage_aa7cfdffe9d0e54ed046633764700d0b0}} 
+bool {\bfseries Can\+Read} (const char $\ast$\+\_\+header\+Name=NULL) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a32f3ea1d0b66f2839953404486b88ccf}\label{classMetaImage_a32f3ea1d0b66f2839953404486b88ccf}} 
+bool {\bfseries Read} (const char $\ast$\+\_\+header\+Name=NULL, bool \+\_\+read\+Elements=true, void $\ast$\+\_\+buffer=NULL)
+\item 
+bool \mbox{\hyperlink{classMetaImage_a6940f1c268b032d9ea7b857ed8b88d5a}{Read\+ROI}} (int $\ast$\+\_\+index\+Min, int $\ast$\+\_\+index\+Max, const char $\ast$\+\_\+header\+Name=NULL, bool \+\_\+read\+Elements=true, void $\ast$\+\_\+buffer=NULL, unsigned int sub\+Sampling\+Factor=1)
+\item 
+\mbox{\Hypertarget{classMetaImage_ac78cfe53e79ce912fd0dd1e2834c7889}\label{classMetaImage_ac78cfe53e79ce912fd0dd1e2834c7889}} 
+bool {\bfseries Can\+Read\+Stream} (METAIO\+\_\+\+STREAM\+::ifstream $\ast$\+\_\+stream) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a6d5b635fbf21969bc197bfb3d7ddaeca}\label{classMetaImage_a6d5b635fbf21969bc197bfb3d7ddaeca}} 
+bool {\bfseries Read\+Stream} (int \+\_\+n\+Dims, METAIO\+\_\+\+STREAM\+::ifstream $\ast$\+\_\+stream, bool \+\_\+read\+Elements=true, void $\ast$\+\_\+buffer=NULL)
+\item 
+bool \mbox{\hyperlink{classMetaImage_ac4f6fd3ab170112b6fac5a433088e4c3}{Read\+ROIStream}} (int $\ast$\+\_\+index\+Min, int $\ast$\+\_\+index\+Max, int \+\_\+n\+Dims, METAIO\+\_\+\+STREAM\+::ifstream $\ast$\+\_\+stream, bool \+\_\+read\+Elements=true, void $\ast$\+\_\+buffer=NULL, unsigned int sub\+Sampling\+Factor=1)
+\item 
+\mbox{\Hypertarget{classMetaImage_a374fdbbc405ae0dcaacedfe089e654bd}\label{classMetaImage_a374fdbbc405ae0dcaacedfe089e654bd}} 
+bool {\bfseries Write} (const char $\ast$\+\_\+head\+Name=NULL, const char $\ast$\+\_\+data\+Name=NULL, bool \+\_\+write\+Elements=true, const void $\ast$\+\_\+const\+Element\+Data=NULL, bool \+\_\+append=false)
+\item 
+bool \mbox{\hyperlink{classMetaImage_ac464a54a413ff09589be5f7808255635}{Write\+ROI}} (int $\ast$\+\_\+index\+Min, int $\ast$\+\_\+index\+Max, const char $\ast$\+\_\+head\+Name=NULL, const char $\ast$\+\_\+data\+Name=NULL, bool \+\_\+write\+Elements=true, const void $\ast$\+\_\+const\+Element\+Data=NULL, bool \+\_\+append=false)
+\item 
+\mbox{\Hypertarget{classMetaImage_a72365604cd4a5c48976c504f1b5c8297}\label{classMetaImage_a72365604cd4a5c48976c504f1b5c8297}} 
+bool {\bfseries Write\+Stream} (METAIO\+\_\+\+STREAM\+::ofstream $\ast$\+\_\+stream, bool \+\_\+write\+Elements=true, const void $\ast$\+\_\+const\+Element\+Data=NULL)
+\item 
+bool \mbox{\hyperlink{classMetaImage_ab52fe0032fc9e71c8eb64ad3dcc0b28b}{Append}} (const char $\ast$\+\_\+head\+Name=NULL)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMetaImage_a9a02b3ae322cfee89840b1f6b3ffd8f0}{M\+\_\+\+Destroy}} (void)
+\item 
+virtual void \mbox{\hyperlink{classMetaImage_a70d27fd1035611497005fd9bd118b438}{M\+\_\+\+Setup\+Read\+Fields}} (void)
+\item 
+virtual void \mbox{\hyperlink{classMetaImage_a913fdb4c40b6480794b2404bf53b2e53}{M\+\_\+\+Setup\+Write\+Fields}} (void)
+\item 
+virtual bool \mbox{\hyperlink{classMetaImage_a7fcd0a6c21d0ab99b418b99e66518c37}{M\+\_\+\+Read}} (void)
+\item 
+\mbox{\Hypertarget{classMetaImage_a51c7ada443f30f3df4ebef7698f42c82}\label{classMetaImage_a51c7ada443f30f3df4ebef7698f42c82}} 
+bool {\bfseries M\+\_\+\+Read\+Elements} (METAIO\+\_\+\+STREAM\+::ifstream $\ast$\+\_\+fstream, void $\ast$\+\_\+data, METAIO\+\_\+\+STL\+::streamoff \+\_\+data\+Quantity)
+\item 
+bool \mbox{\hyperlink{classMetaImage_a92e378160391cf8051100903a091f119}{M\+\_\+\+Read\+Elements\+ROI}} (METAIO\+\_\+\+STREAM\+::ifstream $\ast$\+\_\+fstream, void $\ast$\+\_\+data, METAIO\+\_\+\+STL\+::streamoff \+\_\+data\+Quantity, int $\ast$\+\_\+index\+Min, int $\ast$\+\_\+index\+Max, unsigned int sub\+Sampling\+Factor=1, METAIO\+\_\+\+STL\+::streamoff \+\_\+total\+Data\+Quantity=0)
+\item 
+\mbox{\Hypertarget{classMetaImage_a2b2ed622e7140f83810ca839efe2fed4}\label{classMetaImage_a2b2ed622e7140f83810ca839efe2fed4}} 
+bool {\bfseries M\+\_\+\+Read\+Element\+Data} (METAIO\+\_\+\+STREAM\+::ifstream $\ast$\+\_\+fstream, void $\ast$\+\_\+data, METAIO\+\_\+\+STL\+::streamoff \+\_\+data\+Quantity)
+\item 
+\mbox{\Hypertarget{classMetaImage_a3d81f8082314a26f44c9e7ea24905986}\label{classMetaImage_a3d81f8082314a26f44c9e7ea24905986}} 
+bool {\bfseries M\+\_\+\+Write\+Elements} (METAIO\+\_\+\+STREAM\+::ofstream $\ast$\+\_\+fstream, const void $\ast$\+\_\+data, METAIO\+\_\+\+STL\+::streamoff \+\_\+data\+Quantity)
+\item 
+\mbox{\Hypertarget{classMetaImage_a0ebfed0bf1ec95c13f3438f380f651f5}\label{classMetaImage_a0ebfed0bf1ec95c13f3438f380f651f5}} 
+bool {\bfseries M\+\_\+\+Write\+Elements\+ROI} (METAIO\+\_\+\+STREAM\+::ofstream $\ast$\+\_\+fstream, const void $\ast$\+\_\+data, METAIO\+\_\+\+STL\+::streampos \+\_\+data\+Pos, int $\ast$\+\_\+index\+Min, int $\ast$\+\_\+index\+Max)
+\item 
+\mbox{\Hypertarget{classMetaImage_a90df7d6df0f5183e011c14a3509e6fa6}\label{classMetaImage_a90df7d6df0f5183e011c14a3509e6fa6}} 
+bool {\bfseries M\+\_\+\+Write\+Element\+Data} (METAIO\+\_\+\+STREAM\+::ofstream $\ast$\+\_\+fstream, const void $\ast$\+\_\+data, METAIO\+\_\+\+STL\+::streamoff \+\_\+data\+Quantity)
+\item 
+\mbox{\Hypertarget{classMetaImage_adba611bb4eae102f8f01aaade194b0c4}\label{classMetaImage_adba611bb4eae102f8f01aaade194b0c4}} 
+bool {\bfseries M\+\_\+\+File\+Exists} (const char $\ast$filename) const
+\item 
+\mbox{\Hypertarget{classMetaImage_a971f9d23b20e0eef15f4d835a8a7e904}\label{classMetaImage_a971f9d23b20e0eef15f4d835a8a7e904}} 
+bool {\bfseries File\+Is\+Full\+Path} (const char $\ast$in\+\_\+name) const
+\item 
+\mbox{\Hypertarget{classMetaImage_acc541c3ac90237337748fc6b1013e258}\label{classMetaImage_acc541c3ac90237337748fc6b1013e258}} 
+METAIO\+\_\+\+STL\+::string {\bfseries M\+\_\+\+Get\+Tag\+Value} (const METAIO\+\_\+\+STL\+::string \&buffer, const char $\ast$tag) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaImage_aa9af64ddb1cb9f1a253e476554f445e2}\label{classMetaImage_aa9af64ddb1cb9f1a253e476554f445e2}} 
+MET\+\_\+\+Image\+Modality\+Enum\+Type {\bfseries m\+\_\+\+Modality}
+\item 
+\mbox{\Hypertarget{classMetaImage_a73675456b5b2c39dd5a24fc29526d4eb}\label{classMetaImage_a73675456b5b2c39dd5a24fc29526d4eb}} 
+\mbox{\hyperlink{structMET__CompressionTable}{MET\+\_\+\+Compression\+Table\+Type}} $\ast$ {\bfseries m\+\_\+\+Compression\+Table}
+\item 
+\mbox{\Hypertarget{classMetaImage_a9f2b26bcfc065ad935b0979f3866d59f}\label{classMetaImage_a9f2b26bcfc065ad935b0979f3866d59f}} 
+int {\bfseries m\+\_\+\+Dim\+Size} \mbox{[}10\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaImage_a3dc0514f8733d752c5c88ed926618ad0}\label{classMetaImage_a3dc0514f8733d752c5c88ed926618ad0}} 
+METAIO\+\_\+\+STL\+::streamoff {\bfseries m\+\_\+\+Sub\+Quantity} \mbox{[}10\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaImage_ac99448508e47cfdd2915a81549b349aa}\label{classMetaImage_ac99448508e47cfdd2915a81549b349aa}} 
+METAIO\+\_\+\+STL\+::streamoff {\bfseries m\+\_\+\+Quantity}
+\item 
+\mbox{\Hypertarget{classMetaImage_a6c84d462aa66ecb5dd72dd7ecf592245}\label{classMetaImage_a6c84d462aa66ecb5dd72dd7ecf592245}} 
+int {\bfseries m\+\_\+\+Header\+Size}
+\item 
+\mbox{\Hypertarget{classMetaImage_a07af55b8cf58f2a4e076c4148b1d94c1}\label{classMetaImage_a07af55b8cf58f2a4e076c4148b1d94c1}} 
+float {\bfseries m\+\_\+\+Sequence\+ID} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaImage_ae3933db9b3ce9c17a22aa0eca4d95524}\label{classMetaImage_ae3933db9b3ce9c17a22aa0eca4d95524}} 
+bool {\bfseries m\+\_\+\+Element\+Size\+Valid}
+\item 
+\mbox{\Hypertarget{classMetaImage_a8d5138395dcd8f4f819eea3ed2c5711e}\label{classMetaImage_a8d5138395dcd8f4f819eea3ed2c5711e}} 
+float {\bfseries m\+\_\+\+Element\+Size} \mbox{[}10\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaImage_a2605d652fff4f74b0cbbcc06f7b60ba4}\label{classMetaImage_a2605d652fff4f74b0cbbcc06f7b60ba4}} 
+MET\+\_\+\+Value\+Enum\+Type {\bfseries m\+\_\+\+Element\+Type}
+\item 
+\mbox{\Hypertarget{classMetaImage_a336fb6f3ce9c221fade3108bdc70cd73}\label{classMetaImage_a336fb6f3ce9c221fade3108bdc70cd73}} 
+int {\bfseries m\+\_\+\+Element\+Number\+Of\+Channels}
+\item 
+\mbox{\Hypertarget{classMetaImage_a74943d879f96fcb5e3a226483a3e6e60}\label{classMetaImage_a74943d879f96fcb5e3a226483a3e6e60}} 
+bool {\bfseries m\+\_\+\+Element\+Min\+Max\+Valid}
+\item 
+\mbox{\Hypertarget{classMetaImage_a78d6424efaf8760ea1e31ee79435e971}\label{classMetaImage_a78d6424efaf8760ea1e31ee79435e971}} 
+double {\bfseries m\+\_\+\+Element\+Min}
+\item 
+\mbox{\Hypertarget{classMetaImage_a35b194c9de7c8a596326c74bf96293be}\label{classMetaImage_a35b194c9de7c8a596326c74bf96293be}} 
+double {\bfseries m\+\_\+\+Element\+Max}
+\item 
+\mbox{\Hypertarget{classMetaImage_abe5d9c294906d42fbbc5e4ed736c1113}\label{classMetaImage_abe5d9c294906d42fbbc5e4ed736c1113}} 
+double {\bfseries m\+\_\+\+Element\+To\+Intensity\+Function\+Slope}
+\item 
+\mbox{\Hypertarget{classMetaImage_a98750278f292038dc8327794da76d021}\label{classMetaImage_a98750278f292038dc8327794da76d021}} 
+double {\bfseries m\+\_\+\+Element\+To\+Intensity\+Function\+Offset}
+\item 
+\mbox{\Hypertarget{classMetaImage_a1e5cd50d432665ea9d2863edc8ed65f9}\label{classMetaImage_a1e5cd50d432665ea9d2863edc8ed65f9}} 
+bool {\bfseries m\+\_\+\+Auto\+Free\+Element\+Data}
+\item 
+\mbox{\Hypertarget{classMetaImage_ab0543c59e73ec4bd64d6257f467e7aa5}\label{classMetaImage_ab0543c59e73ec4bd64d6257f467e7aa5}} 
+void $\ast$ {\bfseries m\+\_\+\+Element\+Data}
+\item 
+\mbox{\Hypertarget{classMetaImage_a6cbb3c26941cc72965c8793667f246fc}\label{classMetaImage_a6cbb3c26941cc72965c8793667f246fc}} 
+char {\bfseries m\+\_\+\+Element\+Data\+File\+Name} \mbox{[}255\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classMetaImage}{Meta\+Image}} (.h and .cpp)
+
+Description\+: Reads and Writes Meta\+Image\+Files. Meta\+Image\+Files can be in one of two possible formats\+: a combined header/data format, typically designated .mha files or as separate header and data files, typically designated .mhd and .mda files
+
+Features\+: Header information is in ascii format -\/ for easy creation, editing, and review. If separate files are used, a specified number of header-\/bytes in the datafile can be skipped
+\begin{DoxyItemize}
+\item in this manner, different file formats (e.\+g., bmp, img, and /usr/\+Image) can be converted to meta\+Image\+File format by merely specifying a separate text header (.mhd) file and in that file specifying how many data-\/header-\/bytes should be skipped. Thereby the data files can serve a dual role (as bitmap files and as meta\+Image data files) Supports all pixel formats Handles byte ordering (MSB/\+LSB) Provides the ability to handle associated medical image information (element size, element spacing, etc). Has required and optional header data (provides rapid formation or extensive documentation). REQUIRED\+: NDims, Dim\+Size, Byte\+Order\+MSB, Element\+Data\+Type, Data\+File\+Name
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Stephen R. Aylward
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 29, 1999
+\end{DoxyDate}
+Depends on\+: Meta\+Utils.\+h Meta\+File\+Lib.\+h 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetaImage_ab52fe0032fc9e71c8eb64ad3dcc0b28b}\label{classMetaImage_ab52fe0032fc9e71c8eb64ad3dcc0b28b}} 
+\index{MetaImage@{MetaImage}!Append@{Append}}
+\index{Append@{Append}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{Append()}{Append()}}
+{\footnotesize\ttfamily bool Meta\+Image\+::\+Append (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+head\+Name = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a5ae33145bee648b7d343f9d7942c00d4}\label{classMetaImage_a5ae33145bee648b7d343f9d7942c00d4}} 
+\index{MetaImage@{MetaImage}!Clear@{Clear}}
+\index{Clear@{Clear}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Meta\+Image\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clear function 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a188fe01bf796259181849ccf4524ac6a}\label{classMetaImage_a188fe01bf796259181849ccf4524ac6a}} 
+\index{MetaImage@{MetaImage}!CopyInfo@{CopyInfo}}
+\index{CopyInfo@{CopyInfo}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{CopyInfo()}{CopyInfo()}}
+{\footnotesize\ttfamily void Meta\+Image\+::\+Copy\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$}]{\+\_\+object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a9a02b3ae322cfee89840b1f6b3ffd8f0}\label{classMetaImage_a9a02b3ae322cfee89840b1f6b3ffd8f0}} 
+\index{MetaImage@{MetaImage}!M\_Destroy@{M\_Destroy}}
+\index{M\_Destroy@{M\_Destroy}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{M\_Destroy()}{M\_Destroy()}}
+{\footnotesize\ttfamily void Meta\+Image\+::\+M\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a7fcd0a6c21d0ab99b418b99e66518c37}\label{classMetaImage_a7fcd0a6c21d0ab99b418b99e66518c37}} 
+\index{MetaImage@{MetaImage}!M\_Read@{M\_Read}}
+\index{M\_Read@{M\_Read}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{M\_Read()}{M\_Read()}}
+{\footnotesize\ttfamily bool Meta\+Image\+::\+M\+\_\+\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a92e378160391cf8051100903a091f119}\label{classMetaImage_a92e378160391cf8051100903a091f119}} 
+\index{MetaImage@{MetaImage}!M\_ReadElementsROI@{M\_ReadElementsROI}}
+\index{M\_ReadElementsROI@{M\_ReadElementsROI}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{M\_ReadElementsROI()}{M\_ReadElementsROI()}}
+{\footnotesize\ttfamily bool Meta\+Image\+::\+M\+\_\+\+Read\+Elements\+ROI (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STREAM\+::ifstream $\ast$}]{\+\_\+fstream,  }\item[{void $\ast$}]{\+\_\+data,  }\item[{METAIO\+\_\+\+STL\+::streamoff}]{\+\_\+data\+Quantity,  }\item[{int $\ast$}]{\+\_\+index\+Min,  }\item[{int $\ast$}]{\+\_\+index\+Max,  }\item[{unsigned int}]{sub\+Sampling\+Factor = {\ttfamily 1},  }\item[{METAIO\+\_\+\+STL\+::streamoff}]{\+\_\+total\+Data\+Quantity = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Read an ROI \mbox{\Hypertarget{classMetaImage_a70d27fd1035611497005fd9bd118b438}\label{classMetaImage_a70d27fd1035611497005fd9bd118b438}} 
+\index{MetaImage@{MetaImage}!M\_SetupReadFields@{M\_SetupReadFields}}
+\index{M\_SetupReadFields@{M\_SetupReadFields}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{M\_SetupReadFields()}{M\_SetupReadFields()}}
+{\footnotesize\ttfamily void Meta\+Image\+::\+M\+\_\+\+Setup\+Read\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a913fdb4c40b6480794b2404bf53b2e53}\label{classMetaImage_a913fdb4c40b6480794b2404bf53b2e53}} 
+\index{MetaImage@{MetaImage}!M\_SetupWriteFields@{M\_SetupWriteFields}}
+\index{M\_SetupWriteFields@{M\_SetupWriteFields}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{M\_SetupWriteFields()}{M\_SetupWriteFields()}}
+{\footnotesize\ttfamily void Meta\+Image\+::\+M\+\_\+\+Setup\+Write\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a847fe1d34798f0f464e733937b5a5734}\label{classMetaImage_a847fe1d34798f0f464e733937b5a5734}} 
+\index{MetaImage@{MetaImage}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily void Meta\+Image\+::\+Print\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaImage_a6940f1c268b032d9ea7b857ed8b88d5a}\label{classMetaImage_a6940f1c268b032d9ea7b857ed8b88d5a}} 
+\index{MetaImage@{MetaImage}!ReadROI@{ReadROI}}
+\index{ReadROI@{ReadROI}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{ReadROI()}{ReadROI()}}
+{\footnotesize\ttfamily bool Meta\+Image\+::\+Read\+ROI (\begin{DoxyParamCaption}\item[{int $\ast$}]{\+\_\+index\+Min,  }\item[{int $\ast$}]{\+\_\+index\+Max,  }\item[{const char $\ast$}]{\+\_\+header\+Name = {\ttfamily NULL},  }\item[{bool}]{\+\_\+read\+Elements = {\ttfamily true},  }\item[{void $\ast$}]{\+\_\+buffer = {\ttfamily NULL},  }\item[{unsigned int}]{sub\+Sampling\+Factor = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Streaming related functions \mbox{\Hypertarget{classMetaImage_ac4f6fd3ab170112b6fac5a433088e4c3}\label{classMetaImage_ac4f6fd3ab170112b6fac5a433088e4c3}} 
+\index{MetaImage@{MetaImage}!ReadROIStream@{ReadROIStream}}
+\index{ReadROIStream@{ReadROIStream}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{ReadROIStream()}{ReadROIStream()}}
+{\footnotesize\ttfamily bool Meta\+Image\+::\+Read\+ROIStream (\begin{DoxyParamCaption}\item[{int $\ast$}]{\+\_\+index\+Min,  }\item[{int $\ast$}]{\+\_\+index\+Max,  }\item[{int}]{\+\_\+n\+Dims,  }\item[{METAIO\+\_\+\+STREAM\+::ifstream $\ast$}]{\+\_\+stream,  }\item[{bool}]{\+\_\+read\+Elements = {\ttfamily true},  }\item[{void $\ast$}]{\+\_\+buffer = {\ttfamily NULL},  }\item[{unsigned int}]{sub\+Sampling\+Factor = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Read the ROI Stream \mbox{\Hypertarget{classMetaImage_ac464a54a413ff09589be5f7808255635}\label{classMetaImage_ac464a54a413ff09589be5f7808255635}} 
+\index{MetaImage@{MetaImage}!WriteROI@{WriteROI}}
+\index{WriteROI@{WriteROI}!MetaImage@{MetaImage}}
+\doxysubsubsection{\texorpdfstring{WriteROI()}{WriteROI()}}
+{\footnotesize\ttfamily bool Meta\+Image\+::\+Write\+ROI (\begin{DoxyParamCaption}\item[{int $\ast$}]{\+\_\+index\+Min,  }\item[{int $\ast$}]{\+\_\+index\+Max,  }\item[{const char $\ast$}]{\+\_\+head\+Name = {\ttfamily NULL},  }\item[{const char $\ast$}]{\+\_\+data\+Name = {\ttfamily NULL},  }\item[{bool}]{\+\_\+write\+Elements = {\ttfamily true},  }\item[{const void $\ast$}]{\+\_\+const\+Element\+Data = {\ttfamily NULL},  }\item[{bool}]{\+\_\+append = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Write a portion of an image 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Image.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Image.\+cxx\end{DoxyCompactItemize}

@@ -1,0 +1,134 @@
+\hypertarget{classGateActorManager}{}\doxysection{Gate\+Actor\+Manager Class Reference}
+\label{classGateActorManager}\index{GateActorManager@{GateActorManager}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a2401c41b4b2f98a764f312074b145a04}\label{classGateActorManager_a2401c41b4b2f98a764f312074b145a04}} 
+typedef \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$($\ast$ {\bfseries maker\+\_\+actor}) (G4\+String name, G4int depth)
+\item 
+\mbox{\Hypertarget{classGateActorManager_aca902629e39d83421c17a0f8a549a839}\label{classGateActorManager_aca902629e39d83421c17a0f8a549a839}} 
+typedef \mbox{\hyperlink{classGateVFilter}{Gate\+VFilter}} $\ast$($\ast$ {\bfseries maker\+\_\+filter}) (G4\+String name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a27c32bfdb5f97d49f6a81ec41f295479}\label{classGateActorManager_a27c32bfdb5f97d49f6a81ec41f295479}} 
+void {\bfseries Set\+Reset\+After\+Saving} (bool reset)
+\item 
+\mbox{\Hypertarget{classGateActorManager_a5464cf14ff21830e98afa678ec863c7e}\label{classGateActorManager_a5464cf14ff21830e98afa678ec863c7e}} 
+bool {\bfseries Get\+Reset\+After\+Saving} () const
+\item 
+\mbox{\Hypertarget{classGateActorManager_a5defea33219cf075abfb07727fcc1758}\label{classGateActorManager_a5defea33219cf075abfb07727fcc1758}} 
+void {\bfseries Add\+Actor} (G4\+String actor\+Type, G4\+String actor\+Name, int depth=0)
+\item 
+\mbox{\Hypertarget{classGateActorManager_a6386ad400db78881b65521268ee3a7a4}\label{classGateActorManager_a6386ad400db78881b65521268ee3a7a4}} 
+void {\bfseries Create\+Lists\+Of\+Enabled\+Actors} ()
+\item 
+\mbox{\Hypertarget{classGateActorManager_a3ca469ba900eec74400b097e1e0e1857}\label{classGateActorManager_a3ca469ba900eec74400b097e1e0e1857}} 
+void {\bfseries Print\+List\+Of\+Actors} () const
+\item 
+\mbox{\Hypertarget{classGateActorManager_a69e3e9c95650b1f0e4b8412517a9b86f}\label{classGateActorManager_a69e3e9c95650b1f0e4b8412517a9b86f}} 
+void {\bfseries Print\+List\+Of\+Actor\+Types} () const
+\item 
+\mbox{\Hypertarget{classGateActorManager_a1b3a0118c9ad9fcd8251293cb2c5a9e4}\label{classGateActorManager_a1b3a0118c9ad9fcd8251293cb2c5a9e4}} 
+\mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ {\bfseries Get\+Actor} (const G4\+String \&actor\+Type, const G4\+String \&actor\+Name)
+\item 
+\mbox{\Hypertarget{classGateActorManager_aec30bf8d06d304300852c650ee19090f}\label{classGateActorManager_aec30bf8d06d304300852c650ee19090f}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries Return\+List\+Of\+Actors} ()
+\item 
+\mbox{\Hypertarget{classGateActorManager_a731601a4d49737a098a942826d6334df}\label{classGateActorManager_a731601a4d49737a098a942826d6334df}} 
+G4bool {\bfseries Add\+Filter} (G4\+String filter\+Type, G4\+String actor\+Name)
+\item 
+\mbox{\Hypertarget{classGateActorManager_a4444c29ee0b8a6da31402f3f2199bcbb}\label{classGateActorManager_a4444c29ee0b8a6da31402f3f2199bcbb}} 
+void {\bfseries Begin\+Of\+Run\+Action} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em G4\+User\+Run\+Action callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateActorManager_afb75b155424e3a2a0273bb86d974672e}\label{classGateActorManager_afb75b155424e3a2a0273bb86d974672e}} 
+void {\bfseries End\+Of\+Run\+Action} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em G4\+User\+Run\+Action callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateActorManager_a0c527a652dad1827f0f192d74537e95b}\label{classGateActorManager_a0c527a652dad1827f0f192d74537e95b}} 
+void {\bfseries Begin\+Of\+Event\+Action} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em G4\+User\+Event\+Action callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateActorManager_a0ca2288d39dcdb7ceb183aa7193d2487}\label{classGateActorManager_a0ca2288d39dcdb7ceb183aa7193d2487}} 
+void {\bfseries End\+Of\+Event\+Action} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em G4\+User\+Event\+Action callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateActorManager_a97b95e5ab61cd79580d9a43517b63918}\label{classGateActorManager_a97b95e5ab61cd79580d9a43517b63918}} 
+void {\bfseries Pre\+User\+Tracking\+Action} (const G4\+Track $\ast$)
+\begin{DoxyCompactList}\small\item\em G4\+User\+Tracking\+Action callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateActorManager_a9163b38a214e42df23e898c0ec989d11}\label{classGateActorManager_a9163b38a214e42df23e898c0ec989d11}} 
+void {\bfseries Post\+User\+Tracking\+Action} (const G4\+Track $\ast$)
+\begin{DoxyCompactList}\small\item\em G4\+User\+Tracking\+Action callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateActorManager_a3247e544e6b16275c6d6524540b1f60a}\label{classGateActorManager_a3247e544e6b16275c6d6524540b1f60a}} 
+void {\bfseries User\+Stepping\+Action} (const G4\+Step $\ast$)
+\begin{DoxyCompactList}\small\item\em G4\+User\+Stepping\+Action callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateActorManager_a35983b7ff65ef18449fea41486467c19}\label{classGateActorManager_a35983b7ff65ef18449fea41486467c19}} 
+void {\bfseries Record\+End\+Of\+Acquisition} ()
+\item 
+\mbox{\Hypertarget{classGateActorManager_ad9732a95f05a9030787b132464c46eff}\label{classGateActorManager_ad9732a95f05a9030787b132464c46eff}} 
+void {\bfseries Set\+Multi\+Functional\+Detector} (\mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$actor, \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$volume)
+\item 
+\mbox{\Hypertarget{classGateActorManager_a6ac1399c9a702a7c19327a46187e3d5d}\label{classGateActorManager_a6ac1399c9a702a7c19327a46187e3d5d}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ \& {\bfseries Get\+The\+List\+Of\+Actors} ()
+\item 
+\mbox{\Hypertarget{classGateActorManager_a15941ce613af342b03e49be1709681ea}\label{classGateActorManager_a15941ce613af342b03e49be1709681ea}} 
+G4int {\bfseries Get\+Current\+Event\+Id} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateActorManager_aed00b2daeaa18e4bac17f7d66b9d2767}\label{classGateActorManager_aed00b2daeaa18e4bac17f7d66b9d2767}} 
+static \mbox{\hyperlink{classGateActorManager}{Gate\+Actor\+Manager}} $\ast$ {\bfseries Get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateActorManager_adeec315a95c9759df56bee0b95adf1ae}\label{classGateActorManager_adeec315a95c9759df56bee0b95adf1ae}} 
+std\+::map$<$ G4\+String, maker\+\_\+actor $>$ {\bfseries the\+List\+Of\+Actor\+Prototypes}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a9cf2ef0cc796bd9b7b47b6929f891f48}\label{classGateActorManager_a9cf2ef0cc796bd9b7b47b6929f891f48}} 
+std\+::map$<$ G4\+String, maker\+\_\+filter $>$ {\bfseries the\+List\+Of\+Filter\+Prototypes}
+\item 
+\mbox{\Hypertarget{classGateActorManager_afaf604e996b8d0749d500b98bb374f35}\label{classGateActorManager_afaf604e996b8d0749d500b98bb374f35}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateMultiSensitiveDetector}{Gate\+Multi\+Sensitive\+Detector}} $\ast$ $>$ {\bfseries the\+List\+Of\+Multi\+Sensitive\+Detector}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a3e325db58ecbab6fef39714c58defe73}\label{classGateActorManager_a3e325db58ecbab6fef39714c58defe73}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a7c008fec9f01121cbb94fae05fb13996}\label{classGateActorManager_a7c008fec9f01121cbb94fae05fb13996}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+Begin\+Of\+Run}
+\item 
+\mbox{\Hypertarget{classGateActorManager_ab8f19167e5a11c7de3114f4d51f3b9bd}\label{classGateActorManager_ab8f19167e5a11c7de3114f4d51f3b9bd}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+End\+Of\+Run}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a8325e3d8a99feb45a16c582f4643dba5}\label{classGateActorManager_a8325e3d8a99feb45a16c582f4643dba5}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+Begin\+Of\+Event}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a58ce0e333afb891c6a84273513995920}\label{classGateActorManager_a58ce0e333afb891c6a84273513995920}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+End\+Of\+Event}
+\item 
+\mbox{\Hypertarget{classGateActorManager_aea4eb3c5a92c7466dcfebbdfe74c7b00}\label{classGateActorManager_aea4eb3c5a92c7466dcfebbdfe74c7b00}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+Pre\+User\+Tracking\+Action}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a66c51eb13f4e4f00d33d0e38a8553f15}\label{classGateActorManager_a66c51eb13f4e4f00d33d0e38a8553f15}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+Post\+User\+Tracking\+Action}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a0862dd843f3e4deefd132e5b76437a37}\label{classGateActorManager_a0862dd843f3e4deefd132e5b76437a37}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+User\+Stepping\+Action}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a3e0a9d4d285b571f025a7b83b58e9a70}\label{classGateActorManager_a3e0a9d4d285b571f025a7b83b58e9a70}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateVActor}{Gate\+VActor}} $\ast$ $>$ {\bfseries the\+List\+Of\+Actors\+Enabled\+For\+Record\+End\+Of\+Acquisition}
+\item 
+\mbox{\Hypertarget{classGateActorManager_a7da4c4607e7e302f614db5c818db8248}\label{classGateActorManager_a7da4c4607e7e302f614db5c818db8248}} 
+\mbox{\hyperlink{classGateActorManagerMessenger}{Gate\+Actor\+Manager\+Messenger}} $\ast$ {\bfseries p\+Actor\+Manager\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateActorManager_ad7e0240cd85809101c13513c7412961d}\label{classGateActorManager_ad7e0240cd85809101c13513c7412961d}} 
+G4int {\bfseries m\+Current\+Event\+Id}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Actor\+Manager.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Actor\+Manager.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\hypertarget{GateDistributionListMessenger_8hh_source}{}\doxysection{Gate\+Distribution\+List\+Messenger.\+hh}
+\label{GateDistributionListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDistributionListManagerMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDistributionListManagerMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateListMessenger.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionListMessenger}{GateDistributionListMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \mbox{\hyperlink{classGateDistributionListMessenger_ac88d09ad3a5754fa41946aa46af495f7}{GateDistributionListMessenger}}(\mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}}* itsListManager);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDistributionListMessenger_a0e3e029f6673b8111934c4df00ec6b2b}{\string~GateDistributionListMessenger}}();  }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateDistributionListMessenger_a2851850d47eee1fcb736b7949eca7461}{DumpMap}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDistributionListMessenger_a38c670229a2e25fd18a923188076d9e1}{DoInsertion}}(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}}* \mbox{\hyperlink{classGateDistributionListMessenger_a53c4c8f96764cb55994b39993833aced}{GetDistributionListManager}}()}
+\DoxyCodeLine{48       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}}*) \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}(); \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{private}:}
+\DoxyCodeLine{51    \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{kFile,kManual,kGaussian,kExponential,kFlat\} distType\_t;}
+\DoxyCodeLine{52    \textcolor{keyword}{static} std::map<G4String,distType\_t> fgkTypes;}
+\DoxyCodeLine{53    std::vector<GateVDistribution*> m\_distribVector;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

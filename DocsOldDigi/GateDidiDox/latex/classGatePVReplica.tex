@@ -1,0 +1,47 @@
+\hypertarget{classGatePVReplica}{}\doxysection{Gate\+PVReplica Class Reference}
+\label{classGatePVReplica}\index{GatePVReplica@{GatePVReplica}}
+
+
+Base-\/class for replicas used in the GATE geometry.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+PVReplica.\+hh$>$}
+
+Inheritance diagram for Gate\+PVReplica\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGatePVReplica}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePVReplica_ada262c302692920e6c3909aee47ad650}\label{classGatePVReplica_ada262c302692920e6c3909aee47ad650}} 
+{\bfseries Gate\+PVReplica} (const G4\+String \&p\+Name, G4\+Logical\+Volume $\ast$p\+Logical, G4\+Logical\+Volume $\ast$p\+Mother, const EAxis p\+Axis, const G4int n\+Replicas, const G4double width, const G4double offset=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePVReplica_a9547096e03d39cc2e8fbafd7e77b8442}\label{classGatePVReplica_a9547096e03d39cc2e8fbafd7e77b8442}} 
+virtual {\bfseries $\sim$\+Gate\+PVReplica} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePVReplica_acf74f72038a80a13f6edfa53469c24e1}\label{classGatePVReplica_acf74f72038a80a13f6edfa53469c24e1}} 
+virtual void {\bfseries Update} (const EAxis p\+Axis, const G4int n\+Replicas, const G4double width, const G4double offset=0)
+\begin{DoxyCompactList}\small\item\em Method to update the replica\textquotesingle{}s parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base-\/class for replicas used in the GATE geometry. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGatePVReplica}{Gate\+PVReplica}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item This class is an extension of the regular class G4\+PVReplica.
+\item Its major feature is that it provides a public method \mbox{\hyperlink{classGatePVReplica_acf74f72038a80a13f6edfa53469c24e1}{Update()}} so that the replica can be updated rather than rebuilt.
+\item Only replication along the cartesian axes is allowed ~\newline
+ 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+PVReplica.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+PVReplica.\+cc\end{DoxyCompactItemize}

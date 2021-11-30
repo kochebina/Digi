@@ -1,0 +1,61 @@
+\hypertarget{GateDetectionProfileActorMessenger_8hh_source}{}\doxysection{Gate\+Detection\+Profile\+Actor\+Messenger.\+hh}
+\label{GateDetectionProfileActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDetectionProfileActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDetectionProfileActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateDetectionProfileActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author pierre.gueth@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATEDETECTIONPROFILEACTORMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATEDETECTIONPROFILEACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }GateDetectionProfileActor;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }GateDetectionProfilePrimaryTimerActor;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDetectionProfileActorMessenger}{GateDetectionProfileActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29   \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{classGateDetectionProfileActorMessenger}{GateDetectionProfileActorMessenger}}(GateDetectionProfileActor * v);}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDetectionProfileActorMessenger}{\string~GateDetectionProfileActorMessenger}}();}
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDetectionProfileActorMessenger_a2d2e42f9399ff1f45caca758ad979146}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{33   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{34     GateDetectionProfileActor *actor;}
+\DoxyCodeLine{35     G4UIcmdWithAString *cmdSetTimer;}
+\DoxyCodeLine{36     G4UIcmdWithADoubleAndUnit *cmdSetDistanceThreshold;}
+\DoxyCodeLine{37     G4UIcmdWithADoubleAndUnit *cmdSetDeltaEnergyThreshold;}
+\DoxyCodeLine{38     G4UIcmdWithAString *cmdSetDetectionPosition;}
+\DoxyCodeLine{39     G4UIcmdWithABool *cmdSetUseCristalNormal;}
+\DoxyCodeLine{40     G4UIcmdWithABool *cmdSetUseCristalPosition;}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDetectionProfilePrimaryTimerActorMessenger}{GateDetectionProfilePrimaryTimerActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45   \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \mbox{\hyperlink{classGateDetectionProfilePrimaryTimerActorMessenger}{GateDetectionProfilePrimaryTimerActorMessenger}}(GateDetectionProfilePrimaryTimerActor * v);}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDetectionProfilePrimaryTimerActorMessenger}{\string~GateDetectionProfilePrimaryTimerActorMessenger}}();}
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{49   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{50     GateDetectionProfilePrimaryTimerActor *actor;}
+\DoxyCodeLine{51     G4UIcmdWithAString *cmdAddReportForDetector;}
+\DoxyCodeLine{52     G4UIcmdWithADoubleAndUnit *cmdSetDetectionSize;}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

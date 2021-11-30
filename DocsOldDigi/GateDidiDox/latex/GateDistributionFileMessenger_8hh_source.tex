@@ -1,0 +1,45 @@
+\hypertarget{GateDistributionFileMessenger_8hh_source}{}\doxysection{Gate\+Distribution\+File\+Messenger.\+hh}
+\label{GateDistributionFileMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionFileMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionFileMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDistributionFileMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDistributionFileMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateDistributionArrayMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionFile}{GateDistributionFile}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionFileMessenger}{GateDistributionFileMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateDistributionArrayMessenger}{GateDistributionArrayMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateDistributionFileMessenger}{GateDistributionFileMessenger}}(\mbox{\hyperlink{classGateDistributionFile}{GateDistributionFile}}* itsDistribution,}
+\DoxyCodeLine{25                      \textcolor{keyword}{const} G4String\& itsDirectoryName=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDistributionFileMessenger}{\string~GateDistributionFileMessenger}}();}
+\DoxyCodeLine{27     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateDistributionFile}{GateDistributionFile}}* GetDistributionFile()\textcolor{keyword}{ const}}
+\DoxyCodeLine{28 \textcolor{keyword}{    }\{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateDistributionFile}{GateDistributionFile}}*)(GetDistribution());\}}
+\DoxyCodeLine{29     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{private}:}
+\DoxyCodeLine{32     G4UIcmdWithAString        *setFileNameCmd;}
+\DoxyCodeLine{33     G4UIcmdWithAnInteger      *setColXCmd;}
+\DoxyCodeLine{34     G4UIcmdWithAnInteger      *setColYCmd;}
+\DoxyCodeLine{35     G4UIcmdWithoutParameter   *readCmd;}
+\DoxyCodeLine{36     G4UIcmdWithoutParameter   *autoXCmd;}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

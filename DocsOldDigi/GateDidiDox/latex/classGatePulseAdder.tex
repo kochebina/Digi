@@ -1,0 +1,93 @@
+\hypertarget{classGatePulseAdder}{}\doxysection{Gate\+Pulse\+Adder Class Reference}
+\label{classGatePulseAdder}\index{GatePulseAdder@{GatePulseAdder}}
+
+
+Pulse-\/processor for adding/grouping pulses per volume.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Pulse\+Adder.\+hh$>$}
+
+Inheritance diagram for Gate\+Pulse\+Adder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGatePulseAdder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePulseAdder_a173eb54360b5903104fca8413ade794d}\label{classGatePulseAdder_a173eb54360b5903104fca8413ade794d}} 
+{\bfseries Gate\+Pulse\+Adder} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new pulse-\/adder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePulseAdder_a3cc10cc4b8f200a1044fb499b8a2efbe}\label{classGatePulseAdder_a3cc10cc4b8f200a1044fb499b8a2efbe}} 
+virtual {\bfseries $\sim$\+Gate\+Pulse\+Adder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGatePulseAdder_afbf3a22e4bea82b9f89b5a2269b3342d}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+\mbox{\Hypertarget{classGatePulseAdder_a26f872cc7a7e8c71e674c7ebcc93626d}\label{classGatePulseAdder_a26f872cc7a7e8c71e674c7ebcc93626d}} 
+void {\bfseries Set\+Position\+Policy} (const G4\+String \&policy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGatePulseAdder_af82e2fb400a7b5fafb70ed3c7f22cbe7}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePulseAdder_a61ff6b575d677fb73578439ac78e374b}\label{classGatePulseAdder_a61ff6b575d677fb73578439ac78e374b}} 
+position\+\_\+policy\+\_\+t {\bfseries m\+\_\+position\+Policy}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for adding/grouping pulses per volume. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGatePulseAdder}{Gate\+Pulse\+Adder}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item For each volume where there was one or more input pulse, we get exactly one output pulse, whose energy is the sum of all the input-\/pulse energies, and whose position is the centroid of the input-\/pulse positions.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}}
+\end{DoxySeeAlso}
+
+\item \mbox{\hyperlink{classGatePulseAdder}{Gate\+Pulse\+Adder}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item Exact Compton kinematics changes by \href{mailto:jbmichaud@videotron.ca}{\texttt{ jbmichaud@videotron.\+ca}}
+\item For each volume where there was one or more input pulse, we get exactly one output pulse, whose energy is the sum of all the input-\/pulse energies, and whose position is the centroid of the photonic input-\/pulse positions. Electronic pulses energy is assigned to the proper photonic pulse (the last pulse encountered). Wandering photo-\/electron are discarded, i.\+e. when no previous photonic interaction has occured inside the volume ID. This is not EXACT. The case when a photoelectron wanders and lands into a volume ID where
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePulseAdder_afbf3a22e4bea82b9f89b5a2269b3342d}\label{classGatePulseAdder_afbf3a22e4bea82b9f89b5a2269b3342d}} 
+\index{GatePulseAdder@{GatePulseAdder}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GatePulseAdder@{GatePulseAdder}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Pulse\+Adder\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the pulse adder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGatePulseAdder_af82e2fb400a7b5fafb70ed3c7f22cbe7}\label{classGatePulseAdder_af82e2fb400a7b5fafb70ed3c7f22cbe7}} 
+\index{GatePulseAdder@{GatePulseAdder}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GatePulseAdder@{GatePulseAdder}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Pulse\+Adder\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Pulse\+Adder.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Pulse\+Adder.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+\hypertarget{GateAnnihilationRangeActorMessenger_8hh_source}{}\doxysection{Gate\+Annihilation\+Range\+Actor\+Messenger.\+hh}
+\label{GateAnnihilationRangeActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateAnnihilationRangeActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateAnnihilationRangeActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATEAnnihilationRangeACTORMESSENGER\_HH}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATEAnnihilationRangeACTORMESSENGER\_HH}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAnnihilationRangeActor}{GateAnnihilationRangeActor}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAnnihilationRangeActorMessenger}{GateAnnihilationRangeActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}} \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{26     \textcolor{comment}{// Constructor with pointer on the associated sensor}}
+\DoxyCodeLine{27     \mbox{\hyperlink{classGateAnnihilationRangeActorMessenger}{GateAnnihilationRangeActorMessenger}}(\mbox{\hyperlink{classGateAnnihilationRangeActor}{GateAnnihilationRangeActor}} *v);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateAnnihilationRangeActorMessenger}{\string~GateAnnihilationRangeActorMessenger}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnnihilationRangeActorMessenger_a285629bd8efac167488fd14ed7dcd6ea}{SetNewValue}}(G4UIcommand *, G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateAnnihilationRangeActor}{GateAnnihilationRangeActor}} *\mbox{\hyperlink{classGateAnnihilationRangeActorMessenger_a068bff937ae3c6ea12387331d183e1a6}{pActor}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     G4UIcmdWithADoubleAndUnit *\mbox{\hyperlink{classGateAnnihilationRangeActorMessenger_a7c0fa5f535e01b4aa8fec4ad325fd904}{pLmaxCmd}};}
+\DoxyCodeLine{44     G4UIcmdWithADoubleAndUnit *pLminCmd;}
+\DoxyCodeLine{45     G4UIcmdWithAnInteger *pNBinsCmd;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \}; \textcolor{comment}{// end class GateAnnihilationRangeActorMessenger}}
+\DoxyCodeLine{48 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEAnnihilationRangeACTORMESSENGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

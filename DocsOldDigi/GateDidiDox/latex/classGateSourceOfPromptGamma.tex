@@ -1,0 +1,90 @@
+\hypertarget{classGateSourceOfPromptGamma}{}\doxysection{Gate\+Source\+Of\+Prompt\+Gamma Class Reference}
+\label{classGateSourceOfPromptGamma}\index{GateSourceOfPromptGamma@{GateSourceOfPromptGamma}}
+
+
+{\ttfamily \#include $<$Gate\+Source\+Of\+Prompt\+Gamma.\+hh$>$}
+
+Inheritance diagram for Gate\+Source\+Of\+Prompt\+Gamma\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateSourceOfPromptGamma}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_abc42e367bc0442ae422995c42f190894}\label{classGateSourceOfPromptGamma_abc42e367bc0442ae422995c42f190894}} 
+{\bfseries Gate\+Source\+Of\+Prompt\+Gamma} (G4\+String name)
+\item 
+G4int \mbox{\hyperlink{classGateSourceOfPromptGamma_aa9eac23fdc7589e5a4285fec74d8a3aa}{Generate\+Primaries}} (G4\+Event $\ast$event)
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_ad29e27949fd91dd17c88876df1288f10}\label{classGateSourceOfPromptGamma_ad29e27949fd91dd17c88876df1288f10}} 
+void {\bfseries Generate\+Vertex} (G4\+Event $\ast$)
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a93ed82808dad1e15d2a6c7907ff4c1a8}\label{classGateSourceOfPromptGamma_a93ed82808dad1e15d2a6c7907ff4c1a8}} 
+void {\bfseries Set\+Filename} (G4\+String filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateSourceOfPromptGamma_a166c328d8a9ee92e33b6525d15cf6c33}{Initialize}} ()
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a3bf5186c6601529b763c69b1dbfeaa2c}\label{classGateSourceOfPromptGamma_a3bf5186c6601529b763c69b1dbfeaa2c}} 
+void {\bfseries Initialize\+Number\+Of\+Primaries} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a410c25d4b21985ee321a840b534e5221}\label{classGateSourceOfPromptGamma_a410c25d4b21985ee321a840b534e5221}} 
+\mbox{\hyperlink{classGateSourceOfPromptGammaMessenger}{Gate\+Source\+Of\+Prompt\+Gamma\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a57f39efd0641a6c46c6b4717cfe3a4c2}\label{classGateSourceOfPromptGamma_a57f39efd0641a6c46c6b4717cfe3a4c2}} 
+bool {\bfseries m\+Is\+Initialized\+Flag}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a256da34066d2c8bcf39a9702aac91982}\label{classGateSourceOfPromptGamma_a256da34066d2c8bcf39a9702aac91982}} 
+bool {\bfseries m\+Is\+Initialized\+Number\+Of\+Primaries\+Flag}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a544d5f248474b913fbe9cdba18898514}\label{classGateSourceOfPromptGamma_a544d5f248474b913fbe9cdba18898514}} 
+\mbox{\hyperlink{classGateSourceOfPromptGammaData}{Gate\+Source\+Of\+Prompt\+Gamma\+Data}} $\ast$ {\bfseries m\+Data}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a014ce8c787a974355228307f4a89c8b3}\label{classGateSourceOfPromptGamma_a014ce8c787a974355228307f4a89c8b3}} 
+G4\+String {\bfseries m\+Filename}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a272cd6cfcd10c721eb049cbbe8ca68af}\label{classGateSourceOfPromptGamma_a272cd6cfcd10c721eb049cbbe8ca68af}} 
+double {\bfseries m\+Energy}
+\item 
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a9651a519f6a270a16a1a968ad437f43c}\label{classGateSourceOfPromptGamma_a9651a519f6a270a16a1a968ad437f43c}} 
+double {\bfseries ng}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gate Source\+: manage a source of Prompt Gamma. The source is a 3D spatial discrete distribution. Primary particles are photon created with position from the 3D spatial distribution. Energy is given by 1D spectrum distribution in each voxel. Directions are isotropic. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_aa9eac23fdc7589e5a4285fec74d8a3aa}\label{classGateSourceOfPromptGamma_aa9eac23fdc7589e5a4285fec74d8a3aa}} 
+\index{GateSourceOfPromptGamma@{GateSourceOfPromptGamma}!GeneratePrimaries@{GeneratePrimaries}}
+\index{GeneratePrimaries@{GeneratePrimaries}!GateSourceOfPromptGamma@{GateSourceOfPromptGamma}}
+\doxysubsubsection{\texorpdfstring{GeneratePrimaries()}{GeneratePrimaries()}}
+{\footnotesize\ttfamily G4int Gate\+Source\+Of\+Prompt\+Gamma\+::\+Generate\+Primaries (\begin{DoxyParamCaption}\item[{G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSource_a985e7b0a62bff42b400c97ef3bf71bab}{Gate\+VSource}}.
+
+\mbox{\Hypertarget{classGateSourceOfPromptGamma_a166c328d8a9ee92e33b6525d15cf6c33}\label{classGateSourceOfPromptGamma_a166c328d8a9ee92e33b6525d15cf6c33}} 
+\index{GateSourceOfPromptGamma@{GateSourceOfPromptGamma}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateSourceOfPromptGamma@{GateSourceOfPromptGamma}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Gate\+Source\+Of\+Prompt\+Gamma\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSource}{Gate\+VSource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Source\+Of\+Prompt\+Gamma.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Source\+Of\+Prompt\+Gamma.\+cc\end{DoxyCompactItemize}

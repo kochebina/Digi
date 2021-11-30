@@ -1,0 +1,44 @@
+\hypertarget{GateCCHitFileReaderMessenger_8hh_source}{}\doxysection{Gate\+CCHit\+File\+Reader\+Messenger.\+hh}
+\label{GateCCHitFileReaderMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCHitFileReaderMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCHitFileReaderMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCCHitFileReaderMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCCHitFileReaderMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//e \#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateClockDependentMessenger.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCHitFileReaderMessenger}{GateCCHitFileReaderMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateCCHitFileReaderMessenger}{GateCCHitFileReaderMessenger}}(\mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}}* itsHitFileReader);}
+\DoxyCodeLine{39    \mbox{\hyperlink{classGateCCHitFileReaderMessenger}{\string~GateCCHitFileReaderMessenger}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}}* \mbox{\hyperlink{classGateCCHitFileReaderMessenger_aa6e0df0a70c8944008a4d1fa93496525}{GetCCHitFileReader}}()}
+\DoxyCodeLine{45       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{48     G4UIcmdWithAString*      SetFileNameCmd;}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{//e \#endif}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

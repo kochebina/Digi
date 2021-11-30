@@ -1,0 +1,403 @@
+\hypertarget{prototypesLMF__cch_8h_source}{}\doxysection{prototypes\+LMF\+\_\+cch.\+h}
+\label{prototypesLMF__cch_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/prototypesLMF\_cch.h@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/prototypesLMF\_cch.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{           List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{     -\/-\/  prototypesLMF\_cch.h  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{     Magalie.Krieguer@iphe.unil.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{     Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{     Copyright (C) 2003 IPHE/UNIL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{     of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{     Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{     See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{     Description of prototypesLMF\_cch.h:}}
+\DoxyCodeLine{22 \textcolor{comment}{     Functions used for the ascii part of LMF.}}
+\DoxyCodeLine{23 \textcolor{comment}{     Fill in the LMF record carrier with the data contained in the LMF ASCII header file:}}
+\DoxyCodeLine{24 \textcolor{comment}{     -\/>LMFcchReader -\/ Read the scan file and fill in structures LMF\_cch in the LMF Record Carrier}}
+\DoxyCodeLine{25 \textcolor{comment}{     -\/>LMFcchReaderDestructor -\/ Destroy structures LMF\_cch in the LMF Record Carrier}}
+\DoxyCodeLine{26 \textcolor{comment}{     -\/>usefulOptions = Function allocOfMemoryForLMF\_Header -\/ Allocation of memory to store the data }}
+\DoxyCodeLine{27 \textcolor{comment}{                                                             contained in the LMF cch data base}}
+\DoxyCodeLine{28 \textcolor{comment}{                     + Function allocOfMemoryForLMF\_cch -\/ Allocation of memory to store the data }}
+\DoxyCodeLine{29 \textcolor{comment}{                                                  contained in the cch file}}
+\DoxyCodeLine{30 \textcolor{comment}{             + Function openFile -\/ Opening a file }}
+\DoxyCodeLine{31 \textcolor{comment}{             + Function initialize -\/ Initializing strings}}
+\DoxyCodeLine{32 \textcolor{comment}{             + Function copyFile -\/ Duplicate a file}}
+\DoxyCodeLine{33 \textcolor{comment}{             + Function modifyDataInFile: modify a data in a .cch file}}
+\DoxyCodeLine{34 \textcolor{comment}{     -\/>fileNameManager -\/ Manage the ccs file name, the coinci\_ccs file name and the bis\_ccs file name}}
+\DoxyCodeLine{35 \textcolor{comment}{     -\/>readTheLMFcchDataBase -\/ Read the LMF cch data base (lmf\_header.db) and store these informations }}
+\DoxyCodeLine{36 \textcolor{comment}{                                   in the structures lmf\_header}}
+\DoxyCodeLine{37 \textcolor{comment}{     -\/>fillInFieldAndData -\/ Fill in the members: field and data of the structure LMF\_cch }}
+\DoxyCodeLine{38 \textcolor{comment}{     -\/> newFieldInCchFile = Function writeNewFieldInDataBase -\/ Add a new field in the lmf\_header data base }}
+\DoxyCodeLine{39 \textcolor{comment}{                          + Function defineFieldType -\/ Define the type of the new field adding }}
+\DoxyCodeLine{40 \textcolor{comment}{                                               in lmf\_header data base}}
+\DoxyCodeLine{41 \textcolor{comment}{     -\/>testField -\/ Comparison between the fields described in the input file and the fields store }}
+\DoxyCodeLine{42 \textcolor{comment}{                   in the lmf\_header data base}}
+\DoxyCodeLine{43 \textcolor{comment}{     -\/>correctUnknownField -\/ Correct the unknown fields described in the input file}}
+\DoxyCodeLine{44 \textcolor{comment}{     -\/>dataConversion = Function defineUnitAndValue -\/ Define which part of the data is the numerical }}
+\DoxyCodeLine{45 \textcolor{comment}{                                                      value and which part is the unit}}
+\DoxyCodeLine{46 \textcolor{comment}{                      + Function definePrefiAndUnit -\/ Define which part of the unit is the prefix and }}
+\DoxyCodeLine{47 \textcolor{comment}{                                              which part is the real unit}}
+\DoxyCodeLine{48 \textcolor{comment}{              + Function findPrefixConversionFactor -\/ Convert data in a default format }}
+\DoxyCodeLine{49 \textcolor{comment}{              + Function findUnitConversionFactor -\/ Convert data in a default format}}
+\DoxyCodeLine{50 \textcolor{comment}{              + modifyDateFormat -\/ Convert date in a default format}}
+\DoxyCodeLine{51 \textcolor{comment}{              + modifySpeedFormat -\/ Separate in speed and rotation speed, numerator and denominator}}
+\DoxyCodeLine{52 \textcolor{comment}{              + modifySurfaceOrVolumeFormat -\/ Convert surface unit or volume unit in a distance unit}}
+\DoxyCodeLine{53 \textcolor{comment}{              + modifyTimeFormat -\/ Convert time and duration in a default format}}
+\DoxyCodeLine{54 \textcolor{comment}{     -\/>fillInCchDefaultUnitValue -\/ Set the default unit value in the members def\_unit and def\_unit\_value }}
+\DoxyCodeLine{55 \textcolor{comment}{                                   of the structure LMF\_cch after the data conversion }}
+\DoxyCodeLine{56 \textcolor{comment}{     -\/>getLMF\_cchData -\/ Find a data in the structures LMF\_cch }}
+\DoxyCodeLine{57 \textcolor{comment}{     -\/>editLMF\_cchInfo = Function getToEditLMF\_cchInfo -\/ Find and print a value in the cch\_file}}
+\DoxyCodeLine{58 \textcolor{comment}{                           + Function editLMF\_cchData -\/ Print structures LMF\_cch}}
+\DoxyCodeLine{59 \textcolor{comment}{     -\/>stringConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{60 \textcolor{comment}{                          with a string }}
+\DoxyCodeLine{61 \textcolor{comment}{     -\/>numberConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{62 \textcolor{comment}{                          with a number}}
+\DoxyCodeLine{63 \textcolor{comment}{         -\/>dateConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{64 \textcolor{comment}{                        with a date}}
+\DoxyCodeLine{65 \textcolor{comment}{     -\/>timeConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{66 \textcolor{comment}{                                  with a time}}
+\DoxyCodeLine{67 \textcolor{comment}{     -\/>surfaceConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{68 \textcolor{comment}{                           with a surface (numerical value + unit)}}
+\DoxyCodeLine{69 \textcolor{comment}{         -\/>volumeConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{70 \textcolor{comment}{                          with a volume (numerical value + unit)}}
+\DoxyCodeLine{71 \textcolor{comment}{}}
+\DoxyCodeLine{72 \textcolor{comment}{         -\/>speedConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{73 \textcolor{comment}{                         with a speed (numerical value + unit)}}
+\DoxyCodeLine{74 \textcolor{comment}{     -\/>rotationSpeedConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{75 \textcolor{comment}{                                 with a rotation speed (numerical value + unit)}}
+\DoxyCodeLine{76 \textcolor{comment}{                     }}
+\DoxyCodeLine{77 \textcolor{comment}{     -\/>setShiftValues -\/ set for each rsector a shift value}}
+\DoxyCodeLine{78 \textcolor{comment}{     -\/>chooseColumnIndex -\/ choose the shift way: x-\/axis, y-\/axis, z-\/axis }}
+\DoxyCodeLine{79 \textcolor{comment}{     -\/>findModuloNumber -\/ if the shift concerns 1 ring in 2 or 1 ring in 3, modulo is respectively equal to 2 and 3 }}
+\DoxyCodeLine{80 \textcolor{comment}{     -\/>findStartNumber -\/ the shift starts with the ring number 1 or 2, startNumber is respectively equal to 1 and 2 }}
+\DoxyCodeLine{81 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{comment}{/* LMFcchReader -\/ Read the scan file and fill in structures LMF\_cch in the LMF Record Carrier */}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#ifndef \_LMFcchReader\_h}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define \_LMFcchReader\_h}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keywordtype}{int} LMFcchReader(i8 inputFile[charNum]);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{/* LMFcchReaderDestructor -\/ Destroy structures LMF\_cch in the LMF Record Carrier */}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#ifndef \_LMFcchReaderDestructor\_h}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define \_LMFcchReaderDestructor\_h}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} LMFcchReaderDestructor();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/*   usefulOptions = */}}
+\DoxyCodeLine{104 \textcolor{comment}{/*   Function allocOfMemoryForLMF\_Header -\/ Allocation of memory to store the data contained }}
+\DoxyCodeLine{105 \textcolor{comment}{                                           in the LMF cch data base */}}
+\DoxyCodeLine{106 \textcolor{comment}{/* + Function allocOfMemoryForLMF\_cch -\/ Allocation of memory to store the data contained in the cch file */}}
+\DoxyCodeLine{107 \textcolor{comment}{/* + Function openFile -\/ Opening a file */}}
+\DoxyCodeLine{108 \textcolor{comment}{/* + Function initialize -\/ Initializing strings */}}
+\DoxyCodeLine{109 \textcolor{comment}{/* + Function copyFile -\/ Duplicate a file */}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#ifndef \_usefulOptions\_h}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define \_usefulOptions\_h}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \mbox{\hyperlink{structlmf__header}{lmf\_header}} *allocOfMemoryForLMF\_Header(\textcolor{keywordtype}{int} lmf\_header\_index);}
+\DoxyCodeLine{115 \mbox{\hyperlink{structLMF__cch}{LMF\_cch}} *allocOfMemoryForLMF\_cch(\textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{116 \textcolor{keywordtype}{int} openFile(FILE * popnf, i8 fileName[charNum]);}
+\DoxyCodeLine{117 \textcolor{keywordtype}{void} initialize(i8 buffer[charNum]);}
+\DoxyCodeLine{118 \textcolor{keywordtype}{int} copyFile(i8 infileName[charNum], i8 copyingFileName[charNum]);}
+\DoxyCodeLine{119 \textcolor{keywordtype}{int} modifyDataInFile(i8 dataDescription[charNum], i8 newData[charNum],}
+\DoxyCodeLine{120              i8 file[charNum]);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{comment}{/* fileNameManager -\/ Manage the ccs file name, the coinci\_ccs file name and the bis\_ccs file name */}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#ifndef \_fileNameManager\_h}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define \_fileNameManager\_h}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{keywordtype}{int} setFileName(i8 inputFile[charNum]);}
+\DoxyCodeLine{130 \textcolor{keywordtype}{int} get\_extension\_ccs\_FileName(i8 extension[charNum]);}
+\DoxyCodeLine{131 \textcolor{keywordtype}{int} get\_extension\_cch\_FileName(i8 extension[charNum]);}
+\DoxyCodeLine{132 \textcolor{keywordtype}{int} copyNewCCHfile(i8[charNum]);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{comment}{/* readTheLMFcchDataBase -\/ Read the LMF cch data base (lmf\_header.db) and store}}
+\DoxyCodeLine{137 \textcolor{comment}{   these informations in the structures lmf\_header */}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#ifndef \_readTheLMFcchDataBase\_h}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define \_readTheLMFcchDataBase\_h}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{keywordtype}{int} readTheLMFcchDataBase();}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{comment}{/* fillInFieldAndData -\/ Fill in the members: field and data of the structure LMF\_cch */}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#ifndef \_fillInFieldAndData\_h}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define \_fillInFieldAndData\_h}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keywordtype}{int} fillInFieldAndData();}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{/*   newFieldInCchFile = */}}
+\DoxyCodeLine{156 \textcolor{comment}{/*   Function writeNewFieldInDataBase -\/ Add a new field in the lmf\_header data base */}}
+\DoxyCodeLine{157 \textcolor{comment}{/* + Function defineFieldType -\/ Define the type of the new field adding in lmf\_header data base */}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#ifndef \_newFieldInCchFile\_h}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define \_newFieldInCchFile\_h}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{keywordtype}{int} writeNewFieldInDataBase(FILE * lmf\_header\_infile, i8 field[charNum]);}
+\DoxyCodeLine{164 \textcolor{keywordtype}{int} defineFieldType(i8 field[charNum]);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{comment}{/* testField -\/ Comparison between the fields described in the input file and the fields }}
+\DoxyCodeLine{169 \textcolor{comment}{   store in the lmf\_header data base */}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#ifndef \_testField\_h}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define \_testField\_h}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{keywordtype}{int} testField(\textcolor{keywordtype}{int} last\_lmf\_header, \textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{comment}{/* correctUnknownField -\/  Correct the unknown fields described in the input file */}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#ifndef \_correctUnknownField\_h}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define \_correctUnknownField\_h}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{keywordtype}{int} correctUnknownField(i8 field[charNum]);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{comment}{/*   dataConversion = */}}
+\DoxyCodeLine{190 \textcolor{comment}{/*   Function defineUnitAndValue -\/ Define which part of the data is the numerical value and }}
+\DoxyCodeLine{191 \textcolor{comment}{                                   which part is the unit */}}
+\DoxyCodeLine{192 \textcolor{comment}{/* + Function definePrefiAndUnit -\/ Define which part of the unit is the prefix and }}
+\DoxyCodeLine{193 \textcolor{comment}{                                   which part is the real unit */}}
+\DoxyCodeLine{194 \textcolor{comment}{/* + Function findPrefixConversionFactor -\/ Convert data in a default format */}}
+\DoxyCodeLine{195 \textcolor{comment}{/* + Function findUnitConversionFactor -\/ Convert data in a default format */}}
+\DoxyCodeLine{196 \textcolor{comment}{/* + modifyDateFormat -\/ Convert date in a default format */}}
+\DoxyCodeLine{197 \textcolor{comment}{/* + modifySpeedFormat -\/ Separate in speed and rotation speed, numerator and denominator */}}
+\DoxyCodeLine{198 \textcolor{comment}{/* + modifySurfaceOrVolumeFormat -\/ Convert surface unit or volume unit in a distance unit */}}
+\DoxyCodeLine{199 \textcolor{comment}{/* + modifyTimeFormat -\/ Convert time in a default format */}}
+\DoxyCodeLine{200 \textcolor{comment}{/* + modifyDurationFormat -\/ Convert duration in a default format */}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#ifndef \_dataConversion\_h}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define \_dataConversion\_h}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \mbox{\hyperlink{structcontent__data__unit}{content\_data\_unit}} defineUnitAndValue(i8 data[charNum]);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \mbox{\hyperlink{structcontent__data__unit}{content\_data\_unit}} definePrefixAndUnit(i8 undefined\_unit[charNum],}
+\DoxyCodeLine{208                       \textcolor{keywordtype}{int} unit\_type);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 \textcolor{keywordtype}{double} findPrefixConversionFactor(\mbox{\hyperlink{structcontent__data__unit}{content\_data\_unit}} unit,}
+\DoxyCodeLine{211                   \mbox{\hyperlink{structcontent__data__unit}{content\_data\_unit}} default\_unit);}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \mbox{\hyperlink{structresult__unit__conversion}{result\_unit\_conversion}} findUnitConversionFactor(\mbox{\hyperlink{structcontent__data__unit}{content\_data\_unit}} unit,}
+\DoxyCodeLine{214                         \mbox{\hyperlink{structcontent__data__unit}{content\_data\_unit}}}
+\DoxyCodeLine{215                         default\_unit,}
+\DoxyCodeLine{216                         \textcolor{keywordtype}{int} unit\_type);}
+\DoxyCodeLine{217 \textcolor{keyword}{struct }tm modifyDateFormat(i8 date[charNum], i8 field[charNum]);}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 \mbox{\hyperlink{structcomplex__unit__type}{complex\_unit\_type}} modifySpeedFormat(i8 undefined\_unit[charNum]);}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 i8 *modifySurfaceOrVolumeFormat(i8 unit[charNum],}
+\DoxyCodeLine{222                 \textcolor{keywordtype}{int} unit\_type, i8 power[charNum]);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224 \textcolor{keyword}{struct }tm modifyTimeFormat(i8 time[charNum], i8 field[charNum]);}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \mbox{\hyperlink{structcontent__data__unit}{content\_data\_unit}} modifyDurationFormat(i8 duration[charNum],}
+\DoxyCodeLine{227                        i8 field[charNum]);}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{comment}{/* fillInCchDefaultUnitValue -\/ Set the default unit value in the members }}
+\DoxyCodeLine{232 \textcolor{comment}{   def\_unit and def\_unit\_value of the structure LMF\_cch after the data conversion */}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#ifndef \_fillInCchDefaultUnitValue\_h}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define \_fillInCchDefaultUnitValue\_h}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{keywordtype}{int} fillInCchDefaultUnitValue(\textcolor{keywordtype}{int} last\_lmf\_header, \textcolor{keywordtype}{int} cch\_index,}
+\DoxyCodeLine{238                   \mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}} * pEncoHforGeometry);}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{comment}{/* getLMF\_cchData -\/ Find a data in the structures LMF\_cch */}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#ifndef \_getLMF\_cchData\_h}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define \_getLMF\_cchData\_h}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \mbox{\hyperlink{structcontentLMFdata}{contentLMFdata}} getLMF\_cchNumericalValue(i8 field[charNum]);}
+\DoxyCodeLine{252 \textcolor{keywordtype}{int} getLMF\_cchInfo(i8 field[charNum]);}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{comment}{/*   editLMF\_cchInfo = */}}
+\DoxyCodeLine{260 \textcolor{comment}{/* + Function getToEditLMF\_cchInfo -\/ Find and print a value in the cch\_file */}}
+\DoxyCodeLine{261 \textcolor{comment}{/* + Function editLMF\_cchData -\/ Print structures LMF\_cch */}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#ifndef \_editLMF\_cchInfo\_h}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#define \_editLMF\_cchInfo\_h}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{keywordtype}{int} getToEditLMF\_cchData(\textcolor{keywordtype}{int} last\_lmf\_header);}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 \textcolor{keywordtype}{int} editLMF\_cchData(\textcolor{keywordtype}{int} last\_lmf\_header);}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{comment}{/* Function stringConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{273 \textcolor{comment}{   with a string */}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#ifndef \_stringConversion\_h}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define \_stringConversion\_h}}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 \textcolor{keywordtype}{int} stringConversion(\textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{comment}{/* Function numberConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{283 \textcolor{comment}{   with a number */}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#ifndef \_numberConversion\_h}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define \_numberConversion\_h}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{keywordtype}{int} numberConversion(\textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{comment}{/* Function dateConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{293 \textcolor{comment}{   with a date */}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#ifndef \_dateConversion\_h}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define \_dateConversion\_h}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{keywordtype}{int} dateConversion(\textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 \textcolor{comment}{/* durationConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure}}
+\DoxyCodeLine{303 \textcolor{comment}{    with a duration */}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#ifndef \_durationConversion\_h}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define \_durationConversion\_h}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{keywordtype}{int} durationConversion(\textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \textcolor{comment}{/* Function timeConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{312 \textcolor{comment}{   with a time */}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#ifndef \_timeConversion\_h}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define \_timeConversion\_h}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317 \textcolor{keywordtype}{int} timeConversion(\textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{comment}{/* Function  surfaceConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{322 \textcolor{comment}{   with a surface (numerical value + unit) */}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#ifndef \_surfaceConversion\_h}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#define \_surfaceConversion\_h}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327 \textcolor{keywordtype}{int} surfaceConversion(\textcolor{keywordtype}{int} cch\_index, \textcolor{keywordtype}{int} dataType);}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{comment}{/* Function volumeConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{332 \textcolor{comment}{   with a volume (numerical value + unit) */}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#ifndef \_volumeConversion\_h}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define \_volumeConversion\_h}}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \textcolor{keywordtype}{int} volumeConversion(\textcolor{keywordtype}{int} cch\_index, \textcolor{keywordtype}{int} dataType);}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 \textcolor{comment}{/* Function speedConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{342 \textcolor{comment}{   with a speed (numerical value + unit) */}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#ifndef \_speedConversion\_h}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define \_speedConversion\_h}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347 \textcolor{keywordtype}{int} speedConversion(\textcolor{keywordtype}{int} cch\_index, \textcolor{keywordtype}{int} dataType);}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{comment}{/* Function rotationSpeedConversion -\/ Fill in the members value and default\_value of the LMF\_cch structure }}
+\DoxyCodeLine{352 \textcolor{comment}{   with a rotation speed (numerical value + unit) */}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#ifndef \_rotationSpeedConversion\_h}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define \_rotationSpeedConversion\_h}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{keywordtype}{int} rotationSpeedConversion(\textcolor{keywordtype}{int} cch\_index, \textcolor{keywordtype}{int} dataType);}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 \textcolor{comment}{/* setShiftValues -\/ set for each rsector a shift value */}}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#ifndef \_setShiftValues\_h}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define \_setShiftValues\_h}}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366 \textcolor{keywordtype}{int} setShiftValues(\mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}} * pEncoHforGeometry, \textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370 \textcolor{comment}{/* chooseColumnIndex -\/ choose the shift way: x-\/axis, y-\/axis, z-\/axis */}}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#ifndef \_chooseColumnIndex\_h}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define \_chooseColumnIndex\_h}}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{keywordtype}{int} chooseColumnIndex(\textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 \textcolor{comment}{/* findModuloNumber -\/ if the shift concerns 1 ring in 2 or 1 ring in 3, modulo is respectively equal to 2 and 3 */}}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#ifndef \_findModuloNumber\_h}}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define \_findModuloNumber\_h}}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{keywordtype}{int} findModuloNumber(i8 stringbuf[charNum]);}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{comment}{/* findStartNumber -\/ the shift starts with the ring number 1 or 2, startNumber is respectively equal to 1 and 2 */}}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#ifndef \_findStartNumber\_h}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define \_findStartNumber\_h}}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393 \textcolor{keywordtype}{int} findStartNumber(i8 stringbuf[charNum],}
+\DoxyCodeLine{394             \mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}} * pEncoHforGeometry,}
+\DoxyCodeLine{395             \textcolor{keywordtype}{int} structure\_index, \textcolor{keywordtype}{int} cch\_index);}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#ifndef \_getEnergyStepFromCCH\_h}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#define \_getEnergyStepFromCCH\_h}}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403 \textcolor{keywordtype}{int} getEnergyStepFromCCH();}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

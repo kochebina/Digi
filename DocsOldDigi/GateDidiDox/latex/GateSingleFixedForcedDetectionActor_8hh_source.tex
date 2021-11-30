@@ -1,0 +1,71 @@
+\hypertarget{GateSingleFixedForcedDetectionActor_8hh_source}{}\doxysection{Gate\+Single\+Fixed\+Forced\+Detection\+Actor.\+hh}
+\label{GateSingleFixedForcedDetectionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSingleFixedForcedDetectionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSingleFixedForcedDetectionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifdef GATE\_USE\_RTK}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATESINGLEFIXEDFORCEDDECTECTIONACTOR\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATESINGLEFIXEDFORCEDDECTECTIONACTOR\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{// Gate}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateSingleFixedForcedDetectionActorMessenger.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionActor.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }GateSingleFixedForcedDetectionActorMessenger;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }GateSingleFixedForcedDetectionActor : \textcolor{keyword}{public} GateFixedForcedDetectionActor}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{29   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(GateSingleFixedForcedDetectionActor)}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   GateSingleFixedForcedDetectionActor(G4String name, G4int depth=0);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \string~GateSingleFixedForcedDetectionActor();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{comment}{// Constructs the actor}}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Construct();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} SetSingleInteractionFilename(G4String name) \{ mSingleInteractionFilename = name; \}}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} SetSingleInteractionType(G4String type) \{ mSingleInteractionType = type; \}}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} SetSingleInteractionPosition(G4ThreeVector pos) \{ mSingleInteractionPosition = pos; \}}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} SetSingleInteractionDirection(G4ThreeVector dir) \{ mSingleInteractionDirection = dir; \}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} SetSingleInteractionEnergy(G4double e) \{ mSingleInteractionEnergy = e; \}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} SetSingleInteractionZ(G4int z) \{ mSingleInteractionZ = z; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{48   GateSingleFixedForcedDetectionActorMessenger * pActorMessenger;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   InputImageType::Pointer mSingleInteractionImage;}
+\DoxyCodeLine{51   G4String                mSingleInteractionFilename;}
+\DoxyCodeLine{52   G4String                mSingleInteractionType;}
+\DoxyCodeLine{53   G4ThreeVector           mSingleInteractionPosition;}
+\DoxyCodeLine{54   G4ThreeVector           mSingleInteractionDirection;}
+\DoxyCodeLine{55   G4double                mSingleInteractionEnergy;}
+\DoxyCodeLine{56   G4int                   mSingleInteractionZ;}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 MAKE\_AUTO\_CREATOR\_ACTOR(SingleFixedForcedDetectionActor, GateSingleFixedForcedDetectionActor)}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESINGLEFIXEDFORCEDDECTECTIONACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GATE\_USE\_RTK}}
+
+\end{DoxyCode}

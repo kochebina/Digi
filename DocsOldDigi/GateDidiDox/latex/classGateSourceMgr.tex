@@ -1,0 +1,241 @@
+\hypertarget{classGateSourceMgr}{}\doxysection{Gate\+Source\+Mgr Class Reference}
+\label{classGateSourceMgr}\index{GateSourceMgr@{GateSourceMgr}}
+
+
+A class to manage multiple sources.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Source\+Mgr.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a662dd7bbe749daa2044b295a58750371}\label{classGateSourceMgr_a662dd7bbe749daa2044b295a58750371}} 
+G4int {\bfseries Add\+Source} (std\+::vector$<$ G4\+String $>$)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a378239d9c3b7bd86f2415b930b05f730}\label{classGateSourceMgr_a378239d9c3b7bd86f2415b930b05f730}} 
+G4int {\bfseries Remove\+Source} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_aceb402e783e23690a858223203c1045b}\label{classGateSourceMgr_aceb402e783e23690a858223203c1045b}} 
+G4int {\bfseries Add\+Source} (\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$p\+Source)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a6be33bee82d2af314cf97c4b125fddd3}\label{classGateSourceMgr_a6be33bee82d2af314cf97c4b125fddd3}} 
+\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ {\bfseries Get\+Source\+By\+Name} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_ad37d17544e6bbe99f04c997f26c56bf1}\label{classGateSourceMgr_ad37d17544e6bbe99f04c997f26c56bf1}} 
+\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ {\bfseries Get\+Source} (int i)
+\item 
+Gate\+VSource\+Vector \mbox{\hyperlink{classGateSourceMgr_a5a95b8143ef76fbe9075de756b1b750f}{Get\+Sources\+For\+This\+Event}} ()
+\begin{DoxyCompactList}\small\item\em to obtain the used sources at the end of the event \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSourceMgr_ac25b11d162ed7171e8b29dcb4f883a21}\label{classGateSourceMgr_ac25b11d162ed7171e8b29dcb4f883a21}} 
+G4int {\bfseries Get\+Current\+Source\+ID} ()
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a26f1308d07b117f9c481cd19dcf10528}\label{classGateSourceMgr_a26f1308d07b117f9c481cd19dcf10528}} 
+void {\bfseries Set\+Current\+Source\+ID} (G4int a\+ID)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_afab121d4a6206de5e83a897a360c55ce}\label{classGateSourceMgr_afab121d4a6206de5e83a897a360c55ce}} 
+void {\bfseries Set\+Time} (G4double value)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a4262584dc29c208f0cba6077e55dd9dd}\label{classGateSourceMgr_a4262584dc29c208f0cba6077e55dd9dd}} 
+G4double {\bfseries Get\+Time} ()
+\item 
+\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ \mbox{\hyperlink{classGateSourceMgr_ab2e6cf565726ab9391b141d7fe6a11d1}{Get\+Next\+Source}} ()
+\item 
+G4int \mbox{\hyperlink{classGateSourceMgr_a87bb9463d2a277663dc815707199de98}{Prepare\+Next\+Event}} (G4\+Event $\ast$event)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a8bcebe476224fbde3264a2d3241fabe8}\label{classGateSourceMgr_a8bcebe476224fbde3264a2d3241fabe8}} 
+G4bool {\bfseries Is\+Launch\+Last\+Buffer} ()
+\item 
+G4int \mbox{\hyperlink{classGateSourceMgr_a3bef66da5697c2037781fe14d2ec37dd}{Prepare\+Next\+Run}} (const G4\+Run $\ast$run)
+\item 
+void \mbox{\hyperlink{classGateSourceMgr_a88a715ee2b4cc41dbd25cd5a0cbb74c0}{List\+Sources}} ()
+\item 
+void \mbox{\hyperlink{classGateSourceMgr_a2571beea80e06fc41b6a01dbdcd9153e}{Select\+Source\+By\+Name}} (G4\+String value)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a5758ceba6f2058ff2e9ecf89717e6d1c}\label{classGateSourceMgr_a5758ceba6f2058ff2e9ecf89717e6d1c}} 
+void {\bfseries Set\+Verbose\+Level} (G4int value)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a9e33947c4c15654a1d34116d463deefe}\label{classGateSourceMgr_a9e33947c4c15654a1d34116d463deefe}} 
+void {\bfseries Initialization} ()
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a0213ec6eabe697b56193a2ca6e8339ed}\label{classGateSourceMgr_a0213ec6eabe697b56193a2ca6e8339ed}} 
+bool {\bfseries Is\+Total\+Amount\+Of\+Primaries\+Mode\+Enabled} ()
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a21b4a37d764ef4a2646c75f8fca57c06}\label{classGateSourceMgr_a21b4a37d764ef4a2646c75f8fca57c06}} 
+void {\bfseries Set\+Weight} (G4double a)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_aa11f5591a2ca91b779d182cbcb142403}\label{classGateSourceMgr_aa11f5591a2ca91b779d182cbcb142403}} 
+G4double {\bfseries Get\+Weight} ()
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a6c0f3ea8f9ff0a511c203d8d6ee98550}\label{classGateSourceMgr_a6c0f3ea8f9ff0a511c203d8d6ee98550}} 
+G4int {\bfseries Get\+Number\+Of\+Event\+By\+Source} (int source\+Number)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a7b3f584d17330969db0c6b05d7676724}\label{classGateSourceMgr_a7b3f584d17330969db0c6b05d7676724}} 
+G4int {\bfseries Get\+Source\+ID} (G4int run)
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_aae4e68a8797cb52521c7a6ddb4acb61a}\label{classGateSourceMgr_aae4e68a8797cb52521c7a6ddb4acb61a}} 
+G4int {\bfseries Get\+Number\+Of\+Sources} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a3f884add84c58e9e0915a80f6ebbbaec}\label{classGateSourceMgr_a3f884add84c58e9e0915a80f6ebbbaec}} 
+static \mbox{\hyperlink{classGateSourceMgr}{Gate\+Source\+Mgr}} $\ast$ {\bfseries Get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a87208e9a1034ed44c72cc6aeb34ffed9}\label{classGateSourceMgr_a87208e9a1034ed44c72cc6aeb34ffed9}} 
+G4int {\bfseries Check\+Source\+Name} (G4\+String source\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_ac7a936ab3a6edaee23ce1ee64a0c70d0}\label{classGateSourceMgr_ac7a936ab3a6edaee23ce1ee64a0c70d0}} 
+Gate\+VSource\+Vector {\bfseries m\+Sources}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a75380d5a7abeeffba053b5c344d94306}\label{classGateSourceMgr_a75380d5a7abeeffba053b5c344d94306}} 
+\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ {\bfseries m\+\_\+previous\+Source}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a55ecfd424a8f9e4cad34308403c37d4b}\label{classGateSourceMgr_a55ecfd424a8f9e4cad34308403c37d4b}} 
+Gate\+VSource\+Vector {\bfseries m\+\_\+current\+Sources}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_afec1a3e47f858a86eb36b0b943ccdf1b}\label{classGateSourceMgr_afec1a3e47f858a86eb36b0b943ccdf1b}} 
+\mbox{\hyperlink{classGateSourceMgrMessenger}{Gate\+Source\+Mgr\+Messenger}} $\ast$ {\bfseries m\+\_\+source\+Mgr\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a10d144dfbcd9ebee0fd13d9f4f564c2b}\label{classGateSourceMgr_a10d144dfbcd9ebee0fd13d9f4f564c2b}} 
+\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ {\bfseries m\+\_\+selected\+Source}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a3e103da6c986ae85bb54b6816dc16076}\label{classGateSourceMgr_a3e103da6c986ae85bb54b6816dc16076}} 
+G4bool {\bfseries m\+\_\+need\+Source\+Init}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a7bea81b357a9be01a09cf01a0132995e}\label{classGateSourceMgr_a7bea81b357a9be01a09cf01a0132995e}} 
+G4double {\bfseries m\+\_\+time}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a55b35d9b402e1dcb8afadd04d9dc8acc}\label{classGateSourceMgr_a55b35d9b402e1dcb8afadd04d9dc8acc}} 
+G4double {\bfseries m\+\_\+time\+Limit}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a902067bf91100862cea21cf3d81c606b}\label{classGateSourceMgr_a902067bf91100862cea21cf3d81c606b}} 
+G4double {\bfseries m\+\_\+time\+Clock}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a2581691a7d16baf35a7b1a244ea301c4}\label{classGateSourceMgr_a2581691a7d16baf35a7b1a244ea301c4}} 
+G4double {\bfseries m\+\_\+first\+Time}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a0c2cd36a3e5f8ccaaba50b2a5cfd8558}\label{classGateSourceMgr_a0c2cd36a3e5f8ccaaba50b2a5cfd8558}} 
+G4bool {\bfseries m\+\_\+launch\+Last\+Buffer}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a6ed50ca5853dc790d17d250bc064b4ee}\label{classGateSourceMgr_a6ed50ca5853dc790d17d250bc064b4ee}} 
+G4int {\bfseries m\+\_\+source\+Progressive\+Number}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a0b02b0f2c864b6f93e87b4afbbef111d}\label{classGateSourceMgr_a0b02b0f2c864b6f93e87b4afbbef111d}} 
+G4int {\bfseries m\+Verbose\+Level}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_aaeeba964edeb951f6b99141d6c59d603}\label{classGateSourceMgr_aaeeba964edeb951f6b99141d6c59d603}} 
+G4int {\bfseries m\+\_\+\+Tot\+NPart}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_acbf88baaad0729acabb80505c9f07622}\label{classGateSourceMgr_acbf88baaad0729acabb80505c9f07622}} 
+G4int {\bfseries m\+\_\+current\+Source\+Number}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_ac1792e44b5cdd4bcfd48076b584cc6b5}\label{classGateSourceMgr_ac1792e44b5cdd4bcfd48076b584cc6b5}} 
+G4int {\bfseries m\+Nb\+Of\+Particle\+In\+The\+Current\+Run}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_aef448f900a80fe0f2decdf7e2877fa51}\label{classGateSourceMgr_aef448f900a80fe0f2decdf7e2877fa51}} 
+G4double {\bfseries m\+Weight}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a8288e11cb2bf2958ff2f14b8b68ef0f4}\label{classGateSourceMgr_a8288e11cb2bf2958ff2f14b8b68ef0f4}} 
+G4double {\bfseries m\+Total\+Intensity}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_af87929c1092e17df14a780eeac2a9ef8}\label{classGateSourceMgr_af87929c1092e17df14a780eeac2a9ef8}} 
+std\+::vector$<$ G4int $>$ {\bfseries list\+Of\+Weight}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a5a94a5cbcc82bf2f887a4f185e7566ad}\label{classGateSourceMgr_a5a94a5cbcc82bf2f887a4f185e7566ad}} 
+std\+::map$<$ G4int, G4int $>$ {\bfseries m\+Number\+Of\+Event\+By\+Source}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_ac37c5203647d1e181ecd2c571f67c91d}\label{classGateSourceMgr_ac37c5203647d1e181ecd2c571f67c91d}} 
+std\+::vector$<$ int $>$ {\bfseries m\+Source\+ID}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a9eac0f002c606e2bf54f004b825f46b0}\label{classGateSourceMgr_a9eac0f002c606e2bf54f004b825f46b0}} 
+G4int {\bfseries m\+\_\+current\+Source\+ID}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a29df5aff630c6636125f0e235d7e3161}\label{classGateSourceMgr_a29df5aff630c6636125f0e235d7e3161}} 
+\mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ {\bfseries m\+\_\+fictive\+Source}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_a7ee0410bc18d13a95c23b7c8eaef1f57}\label{classGateSourceMgr_a7ee0410bc18d13a95c23b7c8eaef1f57}} 
+G4int {\bfseries p\+\_\+cK}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceMgr_abf5823f7debe2c2edfdc3f326ad1f9e5}\label{classGateSourceMgr_abf5823f7debe2c2edfdc3f326ad1f9e5}} 
+static \mbox{\hyperlink{classGateSourceMgr}{Gate\+Source\+Mgr}} $\ast$ {\bfseries m\+Instance} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to manage multiple sources. 
+
+This class is used to build and use the sources In particular
+
+
+\begin{DoxyItemize}
+\item it builds the source with Add\+Source
+\item it prepare the events for the Primary\+Generator\+Action with Prepare\+Next\+Event
+\item it initialize the Run variables at Prepare\+Next\+Run
+\end{DoxyItemize}
+
+It has its own internal time, that is updated to the general GATE clock time at the beginning of the Run. For each event, it decides which source is to be used and it asks to this source to generate the primary vertices.
+
+\mbox{\hyperlink{classGateSourceMgr}{Gate\+Source\+Mgr}} is a singleton. \begin{DoxyAuthor}{Author}
+G.\+Santin 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSourceMgr_ab2e6cf565726ab9391b141d7fe6a11d1}\label{classGateSourceMgr_ab2e6cf565726ab9391b141d7fe6a11d1}} 
+\index{GateSourceMgr@{GateSourceMgr}!GetNextSource@{GetNextSource}}
+\index{GetNextSource@{GetNextSource}!GateSourceMgr@{GateSourceMgr}}
+\doxysubsubsection{\texorpdfstring{GetNextSource()}{GetNextSource()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateVSource}{Gate\+VSource}} $\ast$ Gate\+Source\+Mgr\+::\+Get\+Next\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+It is used internally by Prepare\+Next\+Event to decide which source has to be used for the current event. \mbox{\Hypertarget{classGateSourceMgr_a5a95b8143ef76fbe9075de756b1b750f}\label{classGateSourceMgr_a5a95b8143ef76fbe9075de756b1b750f}} 
+\index{GateSourceMgr@{GateSourceMgr}!GetSourcesForThisEvent@{GetSourcesForThisEvent}}
+\index{GetSourcesForThisEvent@{GetSourcesForThisEvent}!GateSourceMgr@{GateSourceMgr}}
+\doxysubsubsection{\texorpdfstring{GetSourcesForThisEvent()}{GetSourcesForThisEvent()}}
+{\footnotesize\ttfamily Gate\+VSource\+Vector Gate\+Source\+Mgr\+::\+Get\+Sources\+For\+This\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+to obtain the used sources at the end of the event 
+
+It permits to ask to the Source\+Mgr at the end of the event which source(s) has(have) been used for the present event, to set the corresponding flag in the output. \mbox{\Hypertarget{classGateSourceMgr_a88a715ee2b4cc41dbd25cd5a0cbb74c0}\label{classGateSourceMgr_a88a715ee2b4cc41dbd25cd5a0cbb74c0}} 
+\index{GateSourceMgr@{GateSourceMgr}!ListSources@{ListSources}}
+\index{ListSources@{ListSources}!GateSourceMgr@{GateSourceMgr}}
+\doxysubsubsection{\texorpdfstring{ListSources()}{ListSources()}}
+{\footnotesize\ttfamily void Gate\+Source\+Mgr\+::\+List\+Sources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Used by the messenger, command .../source/list \mbox{\Hypertarget{classGateSourceMgr_a87bb9463d2a277663dc815707199de98}\label{classGateSourceMgr_a87bb9463d2a277663dc815707199de98}} 
+\index{GateSourceMgr@{GateSourceMgr}!PrepareNextEvent@{PrepareNextEvent}}
+\index{PrepareNextEvent@{PrepareNextEvent}!GateSourceMgr@{GateSourceMgr}}
+\doxysubsubsection{\texorpdfstring{PrepareNextEvent()}{PrepareNextEvent()}}
+{\footnotesize\ttfamily G4int Gate\+Source\+Mgr\+::\+Prepare\+Next\+Event (\begin{DoxyParamCaption}\item[{G4\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+It is called by the Primary\+Generator\+Action at each event, to prepare the Primary Vertices. \mbox{\Hypertarget{classGateSourceMgr_a3bef66da5697c2037781fe14d2ec37dd}\label{classGateSourceMgr_a3bef66da5697c2037781fe14d2ec37dd}} 
+\index{GateSourceMgr@{GateSourceMgr}!PrepareNextRun@{PrepareNextRun}}
+\index{PrepareNextRun@{PrepareNextRun}!GateSourceMgr@{GateSourceMgr}}
+\doxysubsubsection{\texorpdfstring{PrepareNextRun()}{PrepareNextRun()}}
+{\footnotesize\ttfamily G4int Gate\+Source\+Mgr\+::\+Prepare\+Next\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{run }\end{DoxyParamCaption})}
+
+It is called by the Primary\+Generator\+Action at the beginning of the Run, to initialize the run-\/related variables. sending commands to the Gate\+RDM\mbox{\Hypertarget{classGateSourceMgr_a2571beea80e06fc41b6a01dbdcd9153e}\label{classGateSourceMgr_a2571beea80e06fc41b6a01dbdcd9153e}} 
+\index{GateSourceMgr@{GateSourceMgr}!SelectSourceByName@{SelectSourceByName}}
+\index{SelectSourceByName@{SelectSourceByName}!GateSourceMgr@{GateSourceMgr}}
+\doxysubsubsection{\texorpdfstring{SelectSourceByName()}{SelectSourceByName()}}
+{\footnotesize\ttfamily void Gate\+Source\+Mgr\+::\+Select\+Source\+By\+Name (\begin{DoxyParamCaption}\item[{G4\+String}]{value }\end{DoxyParamCaption})}
+
+Old method to select a source to change then its attributes. To be eliminated. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Source\+Mgr.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Source\+Mgr.\+cc\end{DoxyCompactItemize}

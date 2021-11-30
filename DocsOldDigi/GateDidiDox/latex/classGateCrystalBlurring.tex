@@ -1,0 +1,66 @@
+\hypertarget{classGateCrystalBlurring}{}\doxysection{Gate\+Crystal\+Blurring Class Reference}
+\label{classGateCrystalBlurring}\index{GateCrystalBlurring@{GateCrystalBlurring}}
+Inheritance diagram for Gate\+Crystal\+Blurring\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCrystalBlurring}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrystalBlurring_a198805741b1b8757cd925e3fb56533db}\label{classGateCrystalBlurring_a198805741b1b8757cd925e3fb56533db}} 
+{\bfseries Gate\+Crystal\+Blurring} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name=the\+Type\+Name, G4double its\+Crystalblurringmin=0, G4double its\+Crystalblurringmax=0, G4double its\+Crystal\+QE=1, G4double its\+Crystal\+Energy\+Ref=-\/1)
+\item 
+\mbox{\Hypertarget{classGateCrystalBlurring_a2dc61d107627d0be280699889038d816}\label{classGateCrystalBlurring_a2dc61d107627d0be280699889038d816}} 
+virtual {\bfseries $\sim$\+Gate\+Crystal\+Blurring} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrystalBlurring_add04eae6387174a4e42b4467e3a550b1}\label{classGateCrystalBlurring_add04eae6387174a4e42b4467e3a550b1}} 
+void {\bfseries Set\+Crystal\+Resolution\+Min} (G4double val)
+\item 
+\mbox{\Hypertarget{classGateCrystalBlurring_a4b464b0a5d221fb8e2f7ff5a18910c6d}\label{classGateCrystalBlurring_a4b464b0a5d221fb8e2f7ff5a18910c6d}} 
+void {\bfseries Set\+Crystal\+Resolution\+Max} (G4double val)
+\item 
+\mbox{\Hypertarget{classGateCrystalBlurring_a01f1d1b55c72f0791c7246908f877a81}\label{classGateCrystalBlurring_a01f1d1b55c72f0791c7246908f877a81}} 
+void {\bfseries Set\+Crystal\+QE} (G4double val)
+\item 
+\mbox{\Hypertarget{classGateCrystalBlurring_a69a9338f0a92f8f19ac6d9ece2b051de}\label{classGateCrystalBlurring_a69a9338f0a92f8f19ac6d9ece2b051de}} 
+void {\bfseries Set\+Crystal\+Ref\+Energy} (G4double eval)
+\item 
+virtual void \mbox{\hyperlink{classGateCrystalBlurring_ab4f272d053e9d40a1c1cb5029cdd76c5}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateCrystalBlurring_add2f241b1a2ba975b1fafdc1fd98d919}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCrystalBlurring_ab4f272d053e9d40a1c1cb5029cdd76c5}\label{classGateCrystalBlurring_ab4f272d053e9d40a1c1cb5029cdd76c5}} 
+\index{GateCrystalBlurring@{GateCrystalBlurring}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateCrystalBlurring@{GateCrystalBlurring}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Crystal\+Blurring\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the blurring 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateCrystalBlurring_add2f241b1a2ba975b1fafdc1fd98d919}\label{classGateCrystalBlurring_add2f241b1a2ba975b1fafdc1fd98d919}} 
+\index{GateCrystalBlurring@{GateCrystalBlurring}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateCrystalBlurring@{GateCrystalBlurring}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Crystal\+Blurring\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Crystal\+Blurring.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Crystal\+Blurring.\+cc\end{DoxyCompactItemize}

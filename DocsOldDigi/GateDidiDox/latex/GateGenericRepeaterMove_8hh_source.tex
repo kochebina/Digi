@@ -1,0 +1,53 @@
+\hypertarget{GateGenericRepeaterMove_8hh_source}{}\doxysection{Gate\+Generic\+Repeater\+Move.\+hh}
+\label{GateGenericRepeaterMove_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGenericRepeaterMove.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGenericRepeaterMove.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEGENERICREPEATERMOVE\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEGENERICREPEATERMOVE\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GatePlacementQueue.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateGenericRepeater.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGenericRepeaterMoveMessenger}{GateGenericRepeaterMoveMessenger}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGenericRepeaterMove}{GateGenericRepeaterMove}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateGenericRepeaterMove}{GateGenericRepeaterMove}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter, \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGenericRepeaterMove}{\string~GateGenericRepeaterMove}}();}
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGenericRepeaterMove_a656d51155d227a4976588cfc837c3ef9}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{28                                 \textcolor{keyword}{const} G4ThreeVector\& currentPosition, G4double aTime);}
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGenericRepeaterMove_ae1d0e23cf7ef1053d17da3994320a442}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} SetFilename(G4String filename);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} EnableRelativeTranslation(\textcolor{keywordtype}{bool} b) \{ mUseRelativeTranslation = b; mGenericRepeater-\/>EnableRelativeTranslation(b); \}}
+\DoxyCodeLine{32   }
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateGenericRepeater}{GateGenericRepeater}} * mGenericRepeater;}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateGenericRepeaterMoveMessenger}{GateGenericRepeaterMoveMessenger}}* mMessenger;}
+\DoxyCodeLine{36   std::vector<std::vector<GatePlacement> >  mListOfPlacementsList;}
+\DoxyCodeLine{37   std::vector<double> mTimeList;}
+\DoxyCodeLine{38   \textcolor{comment}{//void InsertLineOfTimePlacement(std::string \& line, double timeUnit, double translationUnit, double angleUnit);}}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} GetPlacementListFromTime(\textcolor{keywordtype}{double} aTime, std::vector<GatePlacement> \& list);}
+\DoxyCodeLine{40   \textcolor{comment}{// bool mUseTranslation;}}
+\DoxyCodeLine{41 \textcolor{comment}{//   bool mUseRotation;}}
+\DoxyCodeLine{42   \textcolor{keywordtype}{bool} mUseRelativeTranslation;}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+
+\end{DoxyCode}

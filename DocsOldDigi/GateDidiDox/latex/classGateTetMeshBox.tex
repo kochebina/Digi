@@ -1,0 +1,96 @@
+\hypertarget{classGateTetMeshBox}{}\doxysection{Gate\+Tet\+Mesh\+Box Class Reference}
+\label{classGateTetMeshBox}\index{GateTetMeshBox@{GateTetMeshBox}}
+Inheritance diagram for Gate\+Tet\+Mesh\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateTetMeshBox}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_a2615e4340b2e1e8729c5ef6a81293727}\label{classGateTetMeshBox_a2615e4340b2e1e8729c5ef6a81293727}} 
+{\bfseries Gate\+Tet\+Mesh\+Box} (const G4\+String \&its\+Name, G4bool accepts\+Children=false, G4int depth=0)
+\item 
+G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateTetMeshBox_abe737d06977bbfd6d34197197885c7f4}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$, G4bool) final
+\item 
+void \mbox{\hyperlink{classGateTetMeshBox_ab36933109c261cc0339f4f4312278c16}{Destroy\+Own\+Solid\+And\+Logical\+Volume}} () final
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_a5748126359615b4e22acda3719542bb1}\label{classGateTetMeshBox_a5748126359615b4e22acda3719542bb1}} 
+G4double {\bfseries Get\+Half\+Dimension} (std\+::size\+\_\+t) final
+\item 
+void \mbox{\hyperlink{classGateTetMeshBox_a0aed33539b5427c779d6021fa532a13a}{Propagate\+Sensitive\+Detector\+To\+Child}} (\mbox{\hyperlink{classGateMultiSensitiveDetector}{Gate\+Multi\+Sensitive\+Detector}} $\ast$) final
+\item 
+void \mbox{\hyperlink{classGateTetMeshBox_a43ccd2dcb277efc4c1981031b6183f98}{Propagate\+Global\+Sensitive\+Detector}} () final
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_a9f17d539705b815e6f3b9d8d18541da0}\label{classGateTetMeshBox_a9f17d539705b815e6f3b9d8d18541da0}} 
+void {\bfseries Set\+Path\+To\+ELEFile} (const G4\+String \&path)
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_a5ca1faab6b3c3f481d0ec4c02dfb08cf}\label{classGateTetMeshBox_a5ca1faab6b3c3f481d0ec4c02dfb08cf}} 
+void {\bfseries Set\+Path\+To\+Attribute\+Map} (const G4\+String \&path)
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_ab8676981685b92166d0181ae17d57ac2}\label{classGateTetMeshBox_ab8676981685b92166d0181ae17d57ac2}} 
+void {\bfseries Set\+Unit\+Of\+Length} (G4double unit\+Of\+Length)
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_ae594ee1e51d40d197a4d067588cc38e5}\label{classGateTetMeshBox_ae594ee1e51d40d197a4d067588cc38e5}} 
+std\+::size\+\_\+t {\bfseries Get\+Number\+Of\+Tetrahedra} ()
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_a414fb5b3f7288bb80b63c0e9c5e13e4a}\label{classGateTetMeshBox_a414fb5b3f7288bb80b63c0e9c5e13e4a}} 
+G4int {\bfseries Get\+Tet\+Index} (G4int phys\+Vol\+Copy\+Num) const
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_a06fd8fb70f59037520eeb1d06e9306ec}\label{classGateTetMeshBox_a06fd8fb70f59037520eeb1d06e9306ec}} 
+G4int {\bfseries Get\+Region\+Marker} (std\+::size\+\_\+t tet\+Index) const
+\item 
+\mbox{\Hypertarget{classGateTetMeshBox_a7a14ca737f61b15ad72ecd91ecdcdbb0}\label{classGateTetMeshBox_a7a14ca737f61b15ad72ecd91ecdcdbb0}} 
+const G4\+Logical\+Volume $\ast$ {\bfseries Get\+Tet\+Logical} (std\+::size\+\_\+t tet\+Index) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateTetMeshBox_abe737d06977bbfd6d34197197885c7f4}\label{classGateTetMeshBox_abe737d06977bbfd6d34197197885c7f4}} 
+\index{GateTetMeshBox@{GateTetMeshBox}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateTetMeshBox@{GateTetMeshBox}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily G4\+Logical\+Volume $\ast$ Gate\+Tet\+Mesh\+Box\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+Pure virtual method, will be defined in concrete classes \mbox{\hyperlink{classGateBox}{Gate\+Box}}, \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} ... 
+
+Implements \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateTetMeshBox_ab36933109c261cc0339f4f4312278c16}\label{classGateTetMeshBox_ab36933109c261cc0339f4f4312278c16}} 
+\index{GateTetMeshBox@{GateTetMeshBox}!DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}}
+\index{DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}!GateTetMeshBox@{GateTetMeshBox}}
+\doxysubsubsection{\texorpdfstring{DestroyOwnSolidAndLogicalVolume()}{DestroyOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily void Gate\+Tet\+Mesh\+Box\+::\+Destroy\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateTetMeshBox_a43ccd2dcb277efc4c1981031b6183f98}\label{classGateTetMeshBox_a43ccd2dcb277efc4c1981031b6183f98}} 
+\index{GateTetMeshBox@{GateTetMeshBox}!PropagateGlobalSensitiveDetector@{PropagateGlobalSensitiveDetector}}
+\index{PropagateGlobalSensitiveDetector@{PropagateGlobalSensitiveDetector}!GateTetMeshBox@{GateTetMeshBox}}
+\doxysubsubsection{\texorpdfstring{PropagateGlobalSensitiveDetector()}{PropagateGlobalSensitiveDetector()}}
+{\footnotesize\ttfamily void Gate\+Tet\+Mesh\+Box\+::\+Propagate\+Global\+Sensitive\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateTetMeshBox_a0aed33539b5427c779d6021fa532a13a}\label{classGateTetMeshBox_a0aed33539b5427c779d6021fa532a13a}} 
+\index{GateTetMeshBox@{GateTetMeshBox}!PropagateSensitiveDetectorToChild@{PropagateSensitiveDetectorToChild}}
+\index{PropagateSensitiveDetectorToChild@{PropagateSensitiveDetectorToChild}!GateTetMeshBox@{GateTetMeshBox}}
+\doxysubsubsection{\texorpdfstring{PropagateSensitiveDetectorToChild()}{PropagateSensitiveDetectorToChild()}}
+{\footnotesize\ttfamily void Gate\+Tet\+Mesh\+Box\+::\+Propagate\+Sensitive\+Detector\+To\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateMultiSensitiveDetector}{Gate\+Multi\+Sensitive\+Detector}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+You should override this method in sub-\/class if the described volume contains sub-\/volumes in order that actor associated with the volume are propagated to the sub-\/volumes. This is your responsability to do that (see \mbox{\hyperlink{classGateImageNestedParametrisedVolume}{Gate\+Image\+Nested\+Parametrised\+Volume}} for exemple). 
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume_ac0e11270420cf5e755570dc0cc5863ee}{Gate\+VVolume}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Tet\+Mesh\+Box.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Tet\+Mesh\+Box.\+cc\end{DoxyCompactItemize}

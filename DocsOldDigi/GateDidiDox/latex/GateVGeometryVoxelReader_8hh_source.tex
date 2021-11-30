@@ -1,0 +1,71 @@
+\hypertarget{GateVGeometryVoxelReader_8hh_source}{}\doxysection{Gate\+VGeometry\+Voxel\+Reader.\+hh}
+\label{GateVGeometryVoxelReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVGeometryVoxelReader.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVGeometryVoxelReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVGeometryVoxelReader\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVGeometryVoxelReader\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateMaterialDatabase.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVGeometryVoxelTranslator}{GateVGeometryVoxelTranslator}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{//\#include "{}GateGeometryVoxelMapStore.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateGeometryVoxelArrayStore.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4VisAttributes.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{48 \textcolor{comment}{//class GateVGeometryVoxelReader : public GateGeometryVoxelMapStore}}
+\DoxyCodeLine{49 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateGeometryVoxelArrayStore}{GateGeometryVoxelArrayStore}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51 \textcolor{keyword}{public}:}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* inserter);}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVGeometryVoxelReader}{\string~GateVGeometryVoxelReader}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             InsertTranslator(G4String translatorType);}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             RemoveTranslator();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             ReadFile(G4String fileName) = 0;}
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             ReadRTFile(G4String header\_fileName, G4String fileName) = 0; \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             Describe(G4int level);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{GateVGeometryVoxelTranslator}}*  GetVoxelTranslator() \{ \textcolor{keywordflow}{return} m\_voxelTranslator; \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4Material*      \mbox{\hyperlink{classGateVGeometryVoxelReader_a05e5366c9792d187b7cc703762022743}{GetVoxelMaterial}}(G4int ix, G4int iy, G4int iz)\{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ad4649a45870c315ecbc5d62eee1912fa}{GateGeometryVoxelArrayStore::GetVoxelMaterial}}(ix, iy, iz);}
+\DoxyCodeLine{67   \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{comment}{// This is inlined because it is called by the parameterization and has to be fast}}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keyword}{inline}  G4Material*      \mbox{\hyperlink{classGateVGeometryVoxelReader_a05e5366c9792d187b7cc703762022743}{GetVoxelMaterial}}(G4int copyNo)\{}
+\DoxyCodeLine{71     \textcolor{keywordflow}{if} (m\_geometryVoxelMaterials) \textcolor{keywordflow}{return} m\_geometryVoxelMaterials[copyNo];}
+\DoxyCodeLine{72     \textcolor{keywordflow}{else} G4Exception( \textcolor{stringliteral}{"{}GateGeometryVoxelImageReader::GetVoxelMaterial"{}}, \textcolor{stringliteral}{"{}GetVoxelMaterial"{}}, FatalException, \textcolor{stringliteral}{"{}No material array"{}} );}
+\DoxyCodeLine{73     \textcolor{keywordflow}{return} m\_geometryVoxelMaterials[copyNo];   \textcolor{comment}{//  not really, just to silence the warning}}
+\DoxyCodeLine{74   \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{GateVGeometryVoxelTranslator}}*  m\_voxelTranslator;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   G4String                       m\_fileName;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}          mMaterialDatabase;}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

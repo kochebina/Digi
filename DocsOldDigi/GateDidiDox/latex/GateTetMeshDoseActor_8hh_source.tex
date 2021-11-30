@@ -1,0 +1,90 @@
+\hypertarget{GateTetMeshDoseActor_8hh_source}{}\doxysection{Gate\+Tet\+Mesh\+Dose\+Actor.\+hh}
+\label{GateTetMeshDoseActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTetMeshDoseActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTetMeshDoseActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATE\_TETMESH\_DOSE\_ACTOR\_HH}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATE\_TETMESH\_DOSE\_ACTOR\_HH }}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <G4Types.hh>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <G4String.hh>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <G4THitsMap.hh>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <G4HCofThisEvent.hh>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <G4Step.hh>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <G4Run.hh>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <G4Event.hh>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTetMeshDoseActor}{GateTetMeshDoseActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31   \textcolor{keyword}{public}:}
+\DoxyCodeLine{32     \textcolor{keyword}{struct }\mbox{\hyperlink{structGateTetMeshDoseActor_1_1Estimators}{Estimators}}}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34       G4double dose;}
+\DoxyCodeLine{35       G4double sumOfSquaredDose;}
+\DoxyCodeLine{36       G4double relativeUncertainty;}
+\DoxyCodeLine{37     \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTetMeshDoseActor_a7e2376fc982a210775df2cbb043e0ac3}{Construct}}() final;}
+\DoxyCodeLine{40     }
+\DoxyCodeLine{41     FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateTetMeshDoseActor}{GateTetMeshDoseActor}})}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{// user callbacks for this actor, will be invoked in 'GateUserActions'}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} BeginOfRunAction(const G4Run*) final;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} EndOfRunAction(const G4Run*) final;}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} EndOfEventAction(const G4Event*) final;}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     \textcolor{comment}{// Will be called before first run}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} InitData();}
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51     \textcolor{comment}{// pure virtual from GateVActor:}}
+\DoxyCodeLine{52     \textcolor{comment}{//  -\/ how to save data to disk}}
+\DoxyCodeLine{53     \textcolor{comment}{//  -\/ how to reset data in RAM}}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} SaveData() final;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} ResetData() final;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// Implements the virtual functions of G4PrimitivScorer.}}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*) final;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*) final;}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} clear() final;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{// Is linked to 'ProcessHits' in GateVActor's interface. Omits the}}
+\DoxyCodeLine{63     \textcolor{comment}{// usage of a read-\/out geometry.}}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} UserSteppingAction(const \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*, const G4Step*) final;}
+\DoxyCodeLine{65   }
+\DoxyCodeLine{66   protected:}
+\DoxyCodeLine{67     \mbox{\hyperlink{classGateTetMeshDoseActor}{GateTetMeshDoseActor}}(G4String name, G4int depth = 0);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   private:}
+\DoxyCodeLine{70     \textcolor{comment}{// key = copy number of a tetrahedron's physical volume}}
+\DoxyCodeLine{71     \textcolor{comment}{// value = deposited dose}}
+\DoxyCodeLine{72     std::map<G4int, G4double> mEvtDoseMap;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     G4int mRunCounter;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// one entry per tetrahedron}}
+\DoxyCodeLine{77     std::vector<\mbox{\hyperlink{structGateTetMeshDoseActor_1_1Estimators}{Estimators}}> mRunData;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     std::unique\_ptr<\mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}> pMessenger;}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 MAKE\_AUTO\_CREATOR\_ACTOR(TetMeshDoseActor,\mbox{\hyperlink{classGateTetMeshDoseActor}{GateTetMeshDoseActor}})}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// GATE\_TETMESH\_DOSE\_ACTOR\_HH}}
+
+\end{DoxyCode}

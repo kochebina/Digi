@@ -1,0 +1,77 @@
+\hypertarget{classGateRegionDoseStat}{}\doxysection{Gate\+Region\+Dose\+Stat Class Reference}
+\label{classGateRegionDoseStat}\index{GateRegionDoseStat@{GateRegionDoseStat}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a9d06f001ec4f509adabf8f5fabfe5ac2}\label{classGateRegionDoseStat_a9d06f001ec4f509adabf8f5fabfe5ac2}} 
+typedef std\+::map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGateRegionDoseStat}{Gate\+Region\+Dose\+Stat}} $>$ $>$ {\bfseries Id\+To\+Single\+Region\+Map\+Type}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a0c32d0df27e280f1cfb8a7599ec3d984}\label{classGateRegionDoseStat_a0c32d0df27e280f1cfb8a7599ec3d984}} 
+typedef std\+::map$<$ int, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGateRegionDoseStat}{Gate\+Region\+Dose\+Stat}} $>$ $>$ $>$ {\bfseries Label\+To\+Several\+Regions\+Map\+Type}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_ae69ff95c6a1b567ab7c12bebec1d235e}\label{classGateRegionDoseStat_ae69ff95c6a1b567ab7c12bebec1d235e}} 
+typedef std\+::map$<$ int, std\+::vector$<$ int $>$ $>$ {\bfseries Id\+To\+Labels\+Map\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a4ef7936b4605b15d16d15bd3d15c332b}\label{classGateRegionDoseStat_a4ef7936b4605b15d16d15bd3d15c332b}} 
+{\bfseries Gate\+Region\+Dose\+Stat} (int id)
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a09f0e40a917691dafafdda4a2a072a50}\label{classGateRegionDoseStat_a09f0e40a917691dafafdda4a2a072a50}} 
+std\+::string {\bfseries To\+String} ()
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a2751ff6c26aa63fc2b989f6ca1cc7466}\label{classGateRegionDoseStat_a2751ff6c26aa63fc2b989f6ca1cc7466}} 
+void {\bfseries Update} (long event\+\_\+id, double edep, double density)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_af18c9bce4e61c80bce5f3435db84a36a}\label{classGateRegionDoseStat_af18c9bce4e61c80bce5f3435db84a36a}} 
+static void {\bfseries Init\+Regions} (\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Float}} \&image, Id\+To\+Single\+Region\+Map\+Type \&region\+Map, Label\+To\+Several\+Regions\+Map\+Type \&regions\+Map)
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a1b2e701bdd75680c958f8232c4920cc5}\label{classGateRegionDoseStat_a1b2e701bdd75680c958f8232c4920cc5}} 
+static void {\bfseries Add\+Aggregated\+Region} (Id\+To\+Single\+Region\+Map\+Type \&region\+Map, Label\+To\+Several\+Regions\+Map\+Type \&regions\+Map, Id\+To\+Labels\+Map\+Type \&labels\+Map)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_afb771a3120f44d42b5b793d7f3dbf0ba}\label{classGateRegionDoseStat_afb771a3120f44d42b5b793d7f3dbf0ba}} 
+int {\bfseries id}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_ac52b68544ebf1618b90d53360e9ce877}\label{classGateRegionDoseStat_ac52b68544ebf1618b90d53360e9ce877}} 
+double {\bfseries sum\+\_\+edep}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a996170b0b5559aa29f12e40a3f3e977d}\label{classGateRegionDoseStat_a996170b0b5559aa29f12e40a3f3e977d}} 
+double {\bfseries sum\+\_\+squared\+\_\+edep}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a00f69fd232726c80fdc400fd14c775a2}\label{classGateRegionDoseStat_a00f69fd232726c80fdc400fd14c775a2}} 
+double {\bfseries sum\+\_\+temp\+\_\+edep}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_acf69116cac62b37f526e59d061831223}\label{classGateRegionDoseStat_acf69116cac62b37f526e59d061831223}} 
+double {\bfseries sum\+\_\+dose}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a6594641d5b9bcd2c5a28474437e06afa}\label{classGateRegionDoseStat_a6594641d5b9bcd2c5a28474437e06afa}} 
+double {\bfseries sum\+\_\+squared\+\_\+dose}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a99f8b4a8abac2307240937347192b550}\label{classGateRegionDoseStat_a99f8b4a8abac2307240937347192b550}} 
+double {\bfseries sum\+\_\+temp\+\_\+dose}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a2a87c4d251fe0c78b35b989e5dba53c1}\label{classGateRegionDoseStat_a2a87c4d251fe0c78b35b989e5dba53c1}} 
+double {\bfseries volume}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a73215c8276879f3b0c78f3a297cad152}\label{classGateRegionDoseStat_a73215c8276879f3b0c78f3a297cad152}} 
+long {\bfseries last\+\_\+event\+\_\+id}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_ac94224b4ad22db23a97906e7c0ba0ca2}\label{classGateRegionDoseStat_ac94224b4ad22db23a97906e7c0ba0ca2}} 
+long {\bfseries nb\+\_\+hits}
+\item 
+\mbox{\Hypertarget{classGateRegionDoseStat_a7207493797dda262335e0b1bd9f98986}\label{classGateRegionDoseStat_a7207493797dda262335e0b1bd9f98986}} 
+long {\bfseries nb\+\_\+event\+\_\+hits}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Region\+Dose\+Stat.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Region\+Dose\+Stat.\+cc\end{DoxyCompactItemize}

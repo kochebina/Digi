@@ -1,0 +1,43 @@
+\hypertarget{GateCCCoincidenceSequenceReconMessenger_8hh_source}{}\doxysection{Gate\+CCCoincidence\+Sequence\+Recon\+Messenger.\+hh}
+\label{GateCCCoincidenceSequenceReconMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidenceSequenceReconMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidenceSequenceReconMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef GateCCCoincidenceSequenceReconMessenger\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GateCCCoincidenceSequenceReconMessenger\_h 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{10 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{11 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{12 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCCoincidenceSequenceRecon}{GateCCCoincidenceSequenceRecon}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCCoincidenceSequenceReconMessenger}{GateCCCoincidenceSequenceReconMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateCCCoincidenceSequenceReconMessenger}{GateCCCoincidenceSequenceReconMessenger}}(\mbox{\hyperlink{classGateCCCoincidenceSequenceRecon}{GateCCCoincidenceSequenceRecon}}* itsSequence);}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCCCoincidenceSequenceReconMessenger}{\string~GateCCCoincidenceSequenceReconMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCCCoincidenceSequenceRecon}{GateCCCoincidenceSequenceRecon}}* GetCoincidenceSequence()\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCCCoincidenceSequenceRecon}{GateCCCoincidenceSequenceRecon}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{private}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     G4UIcmdWithAString         * sequencePolicyCmd;  }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

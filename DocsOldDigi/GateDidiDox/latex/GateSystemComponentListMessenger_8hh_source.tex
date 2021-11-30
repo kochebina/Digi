@@ -1,0 +1,66 @@
+\hypertarget{GateSystemComponentListMessenger_8hh_source}{}\doxysection{Gate\+System\+Component\+List\+Messenger.\+hh}
+\label{GateSystemComponentListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponentListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemComponentListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSystemComponentListMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSystemComponentListMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateListMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateSystemComponentList.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponentListMessenger}{GateSystemComponentListMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{classGateSystemComponentListMessenger_ad8294628034626315b942224c242bcda}{GateSystemComponentListMessenger}}(\mbox{\hyperlink{classGateSystemComponentList}{GateSystemComponentList}}* itsSystemComponentList);  }
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateSystemComponentListMessenger_ac3badad4371c5f4447cb5eda42611246}{\string~GateSystemComponentListMessenger}}();                                           }
+\DoxyCodeLine{39     }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemComponentListMessenger_a92c9be53a3017eb25efed7c7273187e5}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{private}:}
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& DumpMap();}
+\DoxyCodeLine{46     }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DoInsertion(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{51     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSystemComponentList}{GateSystemComponentList}}* GetSystemComponentList() }
+\DoxyCodeLine{52       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemComponentList}{GateSystemComponentList}}*) \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}(); \}}
+\DoxyCodeLine{53       }
+\DoxyCodeLine{55     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* GetMotherComponent() }
+\DoxyCodeLine{56       \{ \textcolor{keywordflow}{return} GetSystemComponentList()-\/>GetMotherComponent(); \}}
+\DoxyCodeLine{57       }
+\DoxyCodeLine{58     \textcolor{comment}{/*  \(\backslash\)brief Check whether there may be a name conflict between a new}}
+\DoxyCodeLine{59 \textcolor{comment}{        \(\backslash\)brief system component and an already existing one}}
+\DoxyCodeLine{60 \textcolor{comment}{}}
+\DoxyCodeLine{61 \textcolor{comment}{        \(\backslash\)param name: the name of the attachment to create }}
+\DoxyCodeLine{62 \textcolor{comment}{    */}}
+\DoxyCodeLine{63     G4bool CheckNameConflict(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{64  }
+\DoxyCodeLine{65   \textcolor{keyword}{private}:}
+\DoxyCodeLine{66     }
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+
+\end{DoxyCode}

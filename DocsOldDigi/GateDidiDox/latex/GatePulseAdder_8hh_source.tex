@@ -1,0 +1,50 @@
+\hypertarget{GatePulseAdder_8hh_source}{}\doxysection{Gate\+Pulse\+Adder.\+hh}
+\label{GatePulseAdder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdder.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePulseAdder\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePulseAdder\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdderMessenger}{GatePulseAdderMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{kenergyWeightedCentroid,}
+\DoxyCodeLine{35               kTakeEnergyWin\} position\_policy\_t;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdder}{GatePulseAdder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42     \mbox{\hyperlink{classGatePulseAdder_a173eb54360b5903104fca8413ade794d}{GatePulseAdder}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseAdder_a3cc10cc4b8f200a1044fb499b8a2efbe}{\string~GatePulseAdder}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePulseAdder_afbf3a22e4bea82b9f89b5a2269b3342d}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{50      \textcolor{keywordtype}{void} SetPositionPolicy(\textcolor{keyword}{const} G4String\& policy);}
+\DoxyCodeLine{51   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePulseAdder_af82e2fb400a7b5fafb70ed3c7f22cbe7}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{57     position\_policy\_t   m\_positionPolicy;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{private}:}
+\DoxyCodeLine{60     \mbox{\hyperlink{classGatePulseAdderMessenger}{GatePulseAdderMessenger}} *m\_messenger;     }
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

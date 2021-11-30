@@ -1,0 +1,118 @@
+\hypertarget{analyze_8h_source}{}\doxysection{analyze.\+h}
+\label{analyze_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/analyze.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/analyze.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef analyze\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define analyze\_h}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/*}}
+\DoxyCodeLine{5 \textcolor{comment}{ * }}
+\DoxyCodeLine{6 \textcolor{comment}{ * (c) Copyright, 1986-\/1994}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Biomedical Imaging Resource}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Mayo Foundation}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * dbh.h}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ * database sub-\/definitions}}
+\DoxyCodeLine{14 \textcolor{comment}{ *}}
+\DoxyCodeLine{15 \textcolor{comment}{ * 20-\/Nov-\/1995: Renamed by Sibomana@topo.ucl.ac.be to analyze.h}}
+\DoxyCodeLine{16 \textcolor{comment}{ */}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{struct }\mbox{\hyperlink{structheader__key}{header\_key}}                 \textcolor{comment}{/*      header\_key       */}}
+\DoxyCodeLine{19     \{                                       \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{20         \textcolor{keywordtype}{int} sizeof\_hdr;                     \textcolor{comment}{/* 0 + 4     */}}
+\DoxyCodeLine{21         \textcolor{keywordtype}{char} data\_type[10];                 \textcolor{comment}{/* 4 + 10    */}}
+\DoxyCodeLine{22         \textcolor{keywordtype}{char} db\_name[18];                   \textcolor{comment}{/* 14 + 18   */}}
+\DoxyCodeLine{23         \textcolor{keywordtype}{int} extents;                        \textcolor{comment}{/* 32 + 4    */}}
+\DoxyCodeLine{24         \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} session\_error;            \textcolor{comment}{/* 36 + 2    */}}
+\DoxyCodeLine{25         \textcolor{keywordtype}{char} regular;                       \textcolor{comment}{/* 38 + 1    */}}
+\DoxyCodeLine{26         \textcolor{keywordtype}{char} hkey\_un0;                      \textcolor{comment}{/* 39 + 1    */}}
+\DoxyCodeLine{27     \};                          \textcolor{comment}{/* total=40  */}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{struct }\mbox{\hyperlink{structimage__dimension}{image\_dimension}}           \textcolor{comment}{/*      image\_dimension  */}}
+\DoxyCodeLine{30     \{                                       \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{31         \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} dim[8];                   \textcolor{comment}{/* 0 + 16    */}}
+\DoxyCodeLine{32         \textcolor{keywordtype}{char} vox\_units[4];          \textcolor{comment}{/* 16 + 4    */}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{char} cal\_units[8];          \textcolor{comment}{/* 20 + 4    */}}
+\DoxyCodeLine{34         \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} unused1;          \textcolor{comment}{/* 24 + 2    */}}
+\DoxyCodeLine{35         \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} datatype;         \textcolor{comment}{/* 30 + 2    */}}
+\DoxyCodeLine{36         \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} bitpix;                       \textcolor{comment}{/* 32 + 2    */}}
+\DoxyCodeLine{37         \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} dim\_un0;                      \textcolor{comment}{/* 34 + 2    */}}
+\DoxyCodeLine{38         \textcolor{keywordtype}{float} pixdim[8];                        \textcolor{comment}{/* 36 + 32   */}}
+\DoxyCodeLine{39                 \textcolor{comment}{/* }}
+\DoxyCodeLine{40 \textcolor{comment}{                    pixdim[] specifies the voxel dimensions:}}
+\DoxyCodeLine{41 \textcolor{comment}{                    pixdim[1] -\/ voxel width}}
+\DoxyCodeLine{42 \textcolor{comment}{                    pixdim[2] -\/ voxel height}}
+\DoxyCodeLine{43 \textcolor{comment}{                    pixdim[3] -\/ interslice distance}}
+\DoxyCodeLine{44 \textcolor{comment}{                        ..etc}}
+\DoxyCodeLine{45 \textcolor{comment}{                */}}
+\DoxyCodeLine{46         \textcolor{keywordtype}{float} vox\_offset;                       \textcolor{comment}{/* 68 + 4    */}}
+\DoxyCodeLine{47         \textcolor{keywordtype}{float} funused1;                         \textcolor{comment}{/* 72 + 4    */}}
+\DoxyCodeLine{48         \textcolor{keywordtype}{float} funused2;                         \textcolor{comment}{/* 76 + 4    */}}
+\DoxyCodeLine{49         \textcolor{keywordtype}{float} funused3;                         \textcolor{comment}{/* 80 + 4    */}}
+\DoxyCodeLine{50         \textcolor{keywordtype}{float} cal\_max;                      \textcolor{comment}{/* 84 + 4    */}}
+\DoxyCodeLine{51         \textcolor{keywordtype}{float} cal\_min;                      \textcolor{comment}{/* 88 + 4    */}}
+\DoxyCodeLine{52         \textcolor{keywordtype}{int} compressed;                         \textcolor{comment}{/* 92 + 4    */}}
+\DoxyCodeLine{53         \textcolor{keywordtype}{int} verified;                       \textcolor{comment}{/* 96 + 4    */}}
+\DoxyCodeLine{54         \textcolor{keywordtype}{int} glmax, glmin;                   \textcolor{comment}{/* 100 + 8   */}}
+\DoxyCodeLine{55     \};                          \textcolor{comment}{/* total=108 */}}
+\DoxyCodeLine{56          }
+\DoxyCodeLine{57 \textcolor{keyword}{struct }\mbox{\hyperlink{structdata__history}{data\_history}}                 \textcolor{comment}{/*      data\_history     */}}
+\DoxyCodeLine{58     \{                                       \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{59         \textcolor{keywordtype}{char} descrip[80];                   \textcolor{comment}{/* 0 + 80    */}}
+\DoxyCodeLine{60         \textcolor{keywordtype}{char} aux\_file[24];                  \textcolor{comment}{/* 80 + 24   */}}
+\DoxyCodeLine{61         \textcolor{keywordtype}{char} orient;                        \textcolor{comment}{/* 104 + 1   */}}
+\DoxyCodeLine{62         \textcolor{keywordtype}{char} originator[10];                \textcolor{comment}{/* 105 + 10  */}}
+\DoxyCodeLine{63         \textcolor{keywordtype}{char} generated[10];                 \textcolor{comment}{/* 115 + 10  */}}
+\DoxyCodeLine{64         \textcolor{keywordtype}{char} scannum[10];                   \textcolor{comment}{/* 125 + 10  */}}
+\DoxyCodeLine{65         \textcolor{keywordtype}{char} patient\_id[10];                \textcolor{comment}{/* 135 + 10  */}}
+\DoxyCodeLine{66         \textcolor{keywordtype}{char} exp\_date[10];                  \textcolor{comment}{/* 145 + 10  */}}
+\DoxyCodeLine{67         \textcolor{keywordtype}{char} exp\_time[10];                  \textcolor{comment}{/* 155 + 10  */}}
+\DoxyCodeLine{68         \textcolor{keywordtype}{char} hist\_un0[3];                   \textcolor{comment}{/* 165 + 3   */}}
+\DoxyCodeLine{69         \textcolor{keywordtype}{int} views;                          \textcolor{comment}{/* 168 + 4   */}}
+\DoxyCodeLine{70         \textcolor{keywordtype}{int} vols\_added;                     \textcolor{comment}{/* 172 + 4   */}}
+\DoxyCodeLine{71         \textcolor{keywordtype}{int} start\_field;                    \textcolor{comment}{/* 176 + 4   */}}
+\DoxyCodeLine{72         \textcolor{keywordtype}{int} field\_skip;                     \textcolor{comment}{/* 180 + 4   */}}
+\DoxyCodeLine{73         \textcolor{keywordtype}{int} omax,omin;                      \textcolor{comment}{/* 184 + 8   */}}
+\DoxyCodeLine{74         \textcolor{keywordtype}{int} smax,smin;                      \textcolor{comment}{/* 192 + 8   */}}
+\DoxyCodeLine{75     \};                              \textcolor{comment}{/* total=200 */}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{struct }\mbox{\hyperlink{structdsr}{dsr}}                       \textcolor{comment}{/*      dsr              */}}
+\DoxyCodeLine{78     \{                                       \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{79         \textcolor{keyword}{struct }\mbox{\hyperlink{structheader__key}{header\_key}} hk;                 \textcolor{comment}{/* 0 + 40    */}}
+\DoxyCodeLine{80         \textcolor{keyword}{struct }\mbox{\hyperlink{structimage__dimension}{image\_dimension}} dime;         \textcolor{comment}{/* 40 + 108  */}}
+\DoxyCodeLine{81         \textcolor{keyword}{struct }\mbox{\hyperlink{structdata__history}{data\_history}} hist;           \textcolor{comment}{/* 148 + 200 */}}
+\DoxyCodeLine{82     \};                              \textcolor{comment}{/* total=348 */}}
+\DoxyCodeLine{83         }
+\DoxyCodeLine{84 \textcolor{comment}{/* Acceptable values for hdr.dime.datatype */}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define DT\_NONE             0}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define DT\_UNKNOWN          0}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define DT\_BINARY           1}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define DT\_UNSIGNED\_CHAR        2}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define DT\_SIGNED\_SHORT         4}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define DT\_SIGNED\_INT           8}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define DT\_FLOAT            16}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define DT\_COMPLEX          32}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define DT\_DOUBLE           64}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define DT\_RGB              128}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define DT\_ALL              255}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }}
+\DoxyCodeLine{99     \{}
+\DoxyCodeLine{100     \textcolor{keywordtype}{float} real;}
+\DoxyCodeLine{101     \textcolor{keywordtype}{float} imag;}
+\DoxyCodeLine{102     \} \mbox{\hyperlink{structCOMPLEX}{COMPLEX}};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{/*}}
+\DoxyCodeLine{105 \textcolor{comment}{ * analyze\_orientation added on 09-\/sep-\/1996 as requested}}
+\DoxyCodeLine{106 \textcolor{comment}{ * by Thomas Nichols (nichols@pet.upmc.edu) to distinguish}}
+\DoxyCodeLine{107 \textcolor{comment}{ * spm and AIR generated files.}}
+\DoxyCodeLine{108 \textcolor{comment}{ */}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} analyze\_orientation;     \textcolor{comment}{/*  0: Neurology convention (spm),}}
+\DoxyCodeLine{111 \textcolor{comment}{                                        1: Radiology convention (AIR) */}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* analyze\_h */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

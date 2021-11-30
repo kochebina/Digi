@@ -1,0 +1,83 @@
+\hypertarget{classGateThresholder}{}\doxysection{Gate\+Thresholder Class Reference}
+\label{classGateThresholder}\index{GateThresholder@{GateThresholder}}
+
+
+Pulse-\/processor modelling a simple threshold discriminator.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Thresholder.\+hh$>$}
+
+Inheritance diagram for Gate\+Thresholder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateThresholder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateThresholder_a21f360d49e1b926cc8891a404a7007c4}\label{classGateThresholder_a21f360d49e1b926cc8891a404a7007c4}} 
+{\bfseries Gate\+Thresholder} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name, G4double its\+Threshold=0)
+\begin{DoxyCompactList}\small\item\em Constructs a new thresholder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateThresholder_ab22d88ca1cab0ea2acbcd2e178c2039f}\label{classGateThresholder_ab22d88ca1cab0ea2acbcd2e178c2039f}} 
+virtual {\bfseries $\sim$\+Gate\+Thresholder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateThresholder_a5226e3aaed1e7bf65abed83e728b3fcf}\label{classGateThresholder_a5226e3aaed1e7bf65abed83e728b3fcf}} 
+G4double {\bfseries Get\+Threshold} ()
+\begin{DoxyCompactList}\small\item\em Returns the threshold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateThresholder_a1c80ac2dbc61245c2e23bab4c58a0af5}\label{classGateThresholder_a1c80ac2dbc61245c2e23bab4c58a0af5}} 
+void {\bfseries Set\+Threshold} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the threshold. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateThresholder_ac4f88aecd0e738bb898728e64d605fdf}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateThresholder_ade00bf96b9c58986de656ef46065cbf1}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modelling a simple threshold discriminator. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateThresholder}{Gate\+Thresholder}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The method Process\+One\+Pulse of this class models a simple threshold discriminator\+: any input pulse whose energy is above the energy threshold is copied into the output pulse-\/list. On the contrary, any input pulse whose energy is beyond this threshold is discarded.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateThresholder_ac4f88aecd0e738bb898728e64d605fdf}\label{classGateThresholder_ac4f88aecd0e738bb898728e64d605fdf}} 
+\index{GateThresholder@{GateThresholder}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateThresholder@{GateThresholder}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Thresholder\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the thresholder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateThresholder_ade00bf96b9c58986de656ef46065cbf1}\label{classGateThresholder_ade00bf96b9c58986de656ef46065cbf1}} 
+\index{GateThresholder@{GateThresholder}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateThresholder@{GateThresholder}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Thresholder\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Thresholder.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Thresholder.\+cc\end{DoxyCompactItemize}

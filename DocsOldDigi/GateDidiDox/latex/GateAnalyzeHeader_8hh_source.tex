@@ -1,0 +1,218 @@
+\hypertarget{GateAnalyzeHeader_8hh_source}{}\doxysection{Gate\+Analyze\+Header.\+hh}
+\label{GateAnalyzeHeader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateAnalyzeHeader.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateAnalyzeHeader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef \_\_GateAnalyzeHeader\_h\_\_}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define \_\_GateAnalyzeHeader\_h\_\_}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{21 \textcolor{comment}{// namespace    : -\/}}
+\DoxyCodeLine{22 \textcolor{comment}{// classe       : AnalyzeHeader}}
+\DoxyCodeLine{23 \textcolor{comment}{// Handles Analyze Headers (.hdr) for 3D medical images }}
+\DoxyCodeLine{24 \textcolor{comment}{// See :}}
+\DoxyCodeLine{25 \textcolor{comment}{// http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}}
+\DoxyCodeLine{26 \textcolor{comment}{// http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm}}
+\DoxyCodeLine{27 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }G4String;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAnalyzeHeader}{GateAnalyzeHeader}} }
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42   \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} PixelType;}
+\DoxyCodeLine{43   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{45 \textcolor{comment}{}  \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structGateAnalyzeHeader_1_1Header__key}{Header\_key}}               \textcolor{comment}{/*      header\_key       */}}
+\DoxyCodeLine{46   \{                                         \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} sizeof\_hdr;                     \textcolor{comment}{/* 0 + 4     */}}
+\DoxyCodeLine{48     \textcolor{keywordtype}{char} data\_type[10];                 \textcolor{comment}{/* 4 + 10    */}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{char} db\_name[18];                   \textcolor{comment}{/* 14 + 18   */}}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} extents;                        \textcolor{comment}{/* 32 + 4    */}}
+\DoxyCodeLine{51     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} session\_error;            \textcolor{comment}{/* 36 + 2    */}}
+\DoxyCodeLine{52     \textcolor{keywordtype}{char} regular;                       \textcolor{comment}{/* 38 + 1    */}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{char} hkey\_un0;                      \textcolor{comment}{/* 39 + 1    */}}
+\DoxyCodeLine{54   \} \mbox{\hyperlink{classGateAnalyzeHeader_ac9c64dca374c6f0f20e2ec80a37077a9}{h\_k}};                         \textcolor{comment}{/* total=40  */}}
+\DoxyCodeLine{55   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{60 \textcolor{comment}{}  \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structGateAnalyzeHeader_1_1Image__characteristics}{Image\_characteristics}}  \textcolor{comment}{/*      image\_dimension  */}}
+\DoxyCodeLine{61   \{                                 \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{62     \textcolor{comment}{/* }}
+\DoxyCodeLine{63 \textcolor{comment}{       dim[] specifies the image dimensions}}
+\DoxyCodeLine{64 \textcolor{comment}{       dim[1] -\/ size in x dimension}}
+\DoxyCodeLine{65 \textcolor{comment}{       dim[2] -\/ size in y dimension}}
+\DoxyCodeLine{66 \textcolor{comment}{       dim[3] -\/ size in z dimension}}
+\DoxyCodeLine{67 \textcolor{comment}{       ...}}
+\DoxyCodeLine{68 \textcolor{comment}{     */}}
+\DoxyCodeLine{69     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} dim[8];               \textcolor{comment}{/* 0 + 16    */}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{char} vox\_units[4];          \textcolor{comment}{/* 16 + 4    */}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{char} cal\_units[8];          \textcolor{comment}{/* 20 + 4    */}}
+\DoxyCodeLine{72     \textcolor{comment}{// I use unused1 to code the number of channels}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} unused1;          \textcolor{comment}{/* 24 + 2    */} }
+\DoxyCodeLine{74     \textcolor{comment}{// datatype encodes the voxel type (use the constants below)}}
+\DoxyCodeLine{75     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} datatype;         \textcolor{comment}{/* 30 + 2    */}}
+\DoxyCodeLine{76     \textcolor{comment}{// number of bits per pixel }}
+\DoxyCodeLine{77     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} bitpix;                   \textcolor{comment}{/* 32 + 2    */}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} dim\_un0;                  \textcolor{comment}{/* 34 + 2    */}}
+\DoxyCodeLine{79     \textcolor{comment}{/* }}
+\DoxyCodeLine{80 \textcolor{comment}{       pixdim[] specifies the voxel dimensions:}}
+\DoxyCodeLine{81 \textcolor{comment}{       pixdim[1] -\/ voxel width}}
+\DoxyCodeLine{82 \textcolor{comment}{       pixdim[2] -\/ voxel height}}
+\DoxyCodeLine{83 \textcolor{comment}{       pixdim[3] -\/ interslice distance}}
+\DoxyCodeLine{84 \textcolor{comment}{       ..etc}}
+\DoxyCodeLine{85 \textcolor{comment}{    */}}
+\DoxyCodeLine{86     PixelType pixdim[8];                \textcolor{comment}{/* 36 + 32   */}}
+\DoxyCodeLine{87     PixelType vox\_offset;               \textcolor{comment}{/* 68 + 4    */}}
+\DoxyCodeLine{88     PixelType funused1;                 \textcolor{comment}{/* 72 + 4    */}}
+\DoxyCodeLine{89     PixelType funused2;                 \textcolor{comment}{/* 76 + 4    */}}
+\DoxyCodeLine{90     PixelType funused3;                 \textcolor{comment}{/* 80 + 4    */}}
+\DoxyCodeLine{91     PixelType cal\_max;                  \textcolor{comment}{/* 84 + 4    */}}
+\DoxyCodeLine{92     PixelType cal\_min;                  \textcolor{comment}{/* 88 + 4    */}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} compressed;                     \textcolor{comment}{/* 92 + 4    */}}
+\DoxyCodeLine{94     \textcolor{keywordtype}{int} verified;                       \textcolor{comment}{/* 96 + 4    */}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{int} glmax, glmin;                   \textcolor{comment}{/* 100 + 8   */}}
+\DoxyCodeLine{96   \} \mbox{\hyperlink{classGateAnalyzeHeader_a12155e2900aace9483d0a48061ba1614}{i\_c}};                     \textcolor{comment}{/* total=108 */}}
+\DoxyCodeLine{97   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{98          }
+\DoxyCodeLine{99   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{102 \textcolor{comment}{}  \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structGateAnalyzeHeader_1_1History}{History}}             \textcolor{comment}{/*      data\_history     */}}
+\DoxyCodeLine{103   \{                                     \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{char} descrip[80];                   \textcolor{comment}{/* 0 + 80    */}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{char} aux\_file[24];                  \textcolor{comment}{/* 80 + 24   */}}
+\DoxyCodeLine{106     \textcolor{keywordtype}{char} orient;                        \textcolor{comment}{/* 104 + 1   */}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{char} originator[10];                \textcolor{comment}{/* 105 + 10  */}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{char} generated[10];                 \textcolor{comment}{/* 115 + 10  */}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{char} scannum[10];                   \textcolor{comment}{/* 125 + 10  */}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{char} patient\_id[10];                \textcolor{comment}{/* 135 + 10  */}}
+\DoxyCodeLine{111     \textcolor{keywordtype}{char} exp\_date[10];                  \textcolor{comment}{/* 145 + 10  */}}
+\DoxyCodeLine{112     \textcolor{keywordtype}{char} exp\_time[10];                  \textcolor{comment}{/* 155 + 10  */}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{char} hist\_un0[3];                   \textcolor{comment}{/* 165 + 3   */}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} views;                          \textcolor{comment}{/* 168 + 4   */}}
+\DoxyCodeLine{115     \textcolor{keywordtype}{int} vols\_added;                     \textcolor{comment}{/* 172 + 4   */}}
+\DoxyCodeLine{116     \textcolor{keywordtype}{int} start\_field;                    \textcolor{comment}{/* 176 + 4   */}}
+\DoxyCodeLine{117     \textcolor{keywordtype}{int} field\_skip;                     \textcolor{comment}{/* 180 + 4   */}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{int} omax,omin;                      \textcolor{comment}{/* 184 + 8   */}}
+\DoxyCodeLine{119     \textcolor{keywordtype}{int} smax,smin;                      \textcolor{comment}{/* 192 + 8   */}}
+\DoxyCodeLine{120   \} \mbox{\hyperlink{classGateAnalyzeHeader_a13dde3c269e24e85e42f86290f30fb4e}{h}};                             \textcolor{comment}{/* total=200 */}}
+\DoxyCodeLine{121   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{125 \textcolor{comment}{}  \textcolor{comment}{// typedef}}
+\DoxyCodeLine{126   \textcolor{keyword}{struct }\mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\_struct}}                   \textcolor{comment}{/*      dsr              */}}
+\DoxyCodeLine{127   \{                                         \textcolor{comment}{/* off + size*/}}
+\DoxyCodeLine{128     \textcolor{keyword}{struct }\mbox{\hyperlink{structGateAnalyzeHeader_1_1Header__key}{Header\_key}} hk;                 \textcolor{comment}{/* 0 + 40    */}}
+\DoxyCodeLine{129     \textcolor{keyword}{struct }\mbox{\hyperlink{structGateAnalyzeHeader_1_1Image__characteristics}{Image\_characteristics}} ic;           \textcolor{comment}{/* 40 + 108  */}}
+\DoxyCodeLine{130     \textcolor{keyword}{struct }\mbox{\hyperlink{structGateAnalyzeHeader_1_1History}{History}} hist;                     \textcolor{comment}{/* 148 + 200 */}}
+\DoxyCodeLine{131   \};                        \textcolor{comment}{/* total = 348 */}}
+\DoxyCodeLine{132   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{138 \textcolor{comment}{}  \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}};}
+\DoxyCodeLine{140   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a9071ea79a84a15938a9d3b81bc8aae2c}{UnknownType}};}
+\DoxyCodeLine{142   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a9ca1a58c73b7905dc607e3003b686a8f}{BinaryType}};}
+\DoxyCodeLine{144   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_aa8ed3966647443204e5eda3bd46a112d}{UnsignedCharType}};}
+\DoxyCodeLine{146   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a6d049868f754eefe0e751681ac6965c6}{SignedShortType}};}
+\DoxyCodeLine{148   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a375da882146cc07cb61248b327e2db93}{SignedIntType}};}
+\DoxyCodeLine{150   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a3c9ec937a3abf7142d5c110ccf614d50}{FloatType}};}
+\DoxyCodeLine{152   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a4982be18ac67179c8b718a2ae800f44e}{ComplexType}};}
+\DoxyCodeLine{154   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a4f119ddc1f8e011b77217df26f7a9513}{DoubleType}};}
+\DoxyCodeLine{156   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a9f4212e0dbb3d8cc42c5abd5fce96720}{RGBType}};}
+\DoxyCodeLine{158   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_a8b1cef0db47d1a068187821a88eda73d}{AllType}};}
+\DoxyCodeLine{159   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{165 \textcolor{comment}{}  \mbox{\hyperlink{classGateAnalyzeHeader_a0991915f2204aaff6c81db5797c0bbdd}{GateAnalyzeHeader}}();}
+\DoxyCodeLine{167   \mbox{\hyperlink{classGateAnalyzeHeader_a5e5ae2a480bcf5af8fb8922a1b6fac89}{\string~GateAnalyzeHeader}}() \{\};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{172   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateAnalyzeHeader_ad01c272f2e7fadc418149f05afd8fd2e}{Read}}( \textcolor{keyword}{const} G4String\& filename );}
+\DoxyCodeLine{176   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateAnalyzeHeader_af4e8bf92c1fa90fdf3a058c825263482}{Write}}( \textcolor{keyword}{const} G4String\& filename );}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{181   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateAnalyzeHeader_a0a89a3d2c5aa7c16efcd08b75b6abd63}{IsRightEndian}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateAnalyzeHeader_a8534e5507d16bf55f05b8fac35265dc2}{m\_rightEndian}}; \}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{184   \textcolor{keyword}{const} \mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\_struct}}\& \mbox{\hyperlink{classGateAnalyzeHeader_a6d935abf5c5a5e2bcf33284fd52cd864}{GetData}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}; \}}
+\DoxyCodeLine{186   \mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\_struct}}\& \mbox{\hyperlink{classGateAnalyzeHeader_a42ef255bba60550fd42dcabf10d3a68c}{GetData}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}; \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 }
+\DoxyCodeLine{190   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnalyzeHeader_a7d99be44924624582e698798a43e9858}{SetVoxelType}} ( \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} t ) \{ }
+\DoxyCodeLine{191     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.datatype = t; }
+\DoxyCodeLine{192     \textcolor{comment}{//    m\_data.ic.bitpix = BitPix( t ) ;}}
+\DoxyCodeLine{193   \}}
+\DoxyCodeLine{195   \mbox{\hyperlink{classGateAnalyzeHeader_a3b83485752e6f2f2862222d66145c2e2}{TypeCode}} \mbox{\hyperlink{classGateAnalyzeHeader_ac5e9f332eff93c16139c22f9dc03fc53}{GetVoxelType}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.datatype; \}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{199   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnalyzeHeader_abc3d8bfdb1d3bd116abb9b418fc21f26}{SetImageSize}} ( \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} sx, \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} sz, \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} nbchannels = 1) \{ }
+\DoxyCodeLine{200     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.dim[1] = sx;}
+\DoxyCodeLine{201     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.dim[2] = sy;}
+\DoxyCodeLine{202     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.dim[3] = sz;}
+\DoxyCodeLine{203     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.unused1 = nbchannels;}
+\DoxyCodeLine{204   \}}
+\DoxyCodeLine{206   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnalyzeHeader_adbc0f12ecf6c6d387cadd18ab33053c6}{GetImageSize}} ( \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}\& sx, \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}\& sy, \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}\& sz, \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}\& nbchannels ) \{ }
+\DoxyCodeLine{207     sx = \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.dim[1];}
+\DoxyCodeLine{208     sy = \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.dim[2];}
+\DoxyCodeLine{209     sz = \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.dim[3];}
+\DoxyCodeLine{210     nbchannels = \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.unused1;}
+\DoxyCodeLine{211   \}}
+\DoxyCodeLine{213   \textcolor{comment}{//FIXME pixel type is not the same as pixel size type !!!}}
+\DoxyCodeLine{214   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnalyzeHeader_a2e6f4b212cbd7a72ad8ae3b10cbb9699}{SetVoxelSize}} ( PixelType sx, PixelType sy, PixelType sz ) \{ }
+\DoxyCodeLine{215     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.pixdim[1] = sx;}
+\DoxyCodeLine{216     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.pixdim[2] = sy;}
+\DoxyCodeLine{217     \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.pixdim[3] = sz;}
+\DoxyCodeLine{218   \}}
+\DoxyCodeLine{220   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnalyzeHeader_a72962a6223340336c39be22ae3a10207}{GetVoxelSize}} ( PixelType\& sx, PixelType\& sy, PixelType\& sz ) \{ }
+\DoxyCodeLine{221     sx = \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.pixdim[1];}
+\DoxyCodeLine{222     sy = \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.pixdim[2];}
+\DoxyCodeLine{223     sz = \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.pixdim[3];}
+\DoxyCodeLine{224   \}}
+\DoxyCodeLine{226   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnalyzeHeader_a674f2a141e48f5b8e71706a7388391df}{SetVoxelUnit}} ( \textcolor{keyword}{const} G4String\& unit) }
+\DoxyCodeLine{227   \{}
+\DoxyCodeLine{228       strcpy(\mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.vox\_units,unit);}
+\DoxyCodeLine{229   \}}
+\DoxyCodeLine{231   G4String \mbox{\hyperlink{classGateAnalyzeHeader_ab546acdee4f0ddd9cebae7f4664c4509}{GetVoxelUnit}} () }
+\DoxyCodeLine{232   \{}
+\DoxyCodeLine{233       \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}}.ic.vox\_units;}
+\DoxyCodeLine{234   \}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{240   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAnalyzeHeader_ae539acadc5f551438e754459127b4d0e}{SetDefaults}}();}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{243   \textcolor{comment}{//  void SetData( const Image\& i );}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{249   \mbox{\hyperlink{structGateAnalyzeHeader_1_1Analyze__struct}{Analyze\_struct}} \mbox{\hyperlink{classGateAnalyzeHeader_aa949ba6c42925fb10e8d7076dedea233}{m\_data}};}
+\DoxyCodeLine{251   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateAnalyzeHeader_a8534e5507d16bf55f05b8fac35265dc2}{m\_rightEndian}};}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 \};}
+\DoxyCodeLine{254 \textcolor{comment}{// EO GateAnalyzeHeaderHandler}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{260 \textcolor{comment}{// EOF}}
+\DoxyCodeLine{261 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

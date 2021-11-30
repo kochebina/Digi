@@ -1,0 +1,154 @@
+\hypertarget{GatePhysicsList_8hh_source}{}\doxysection{Gate\+Physics\+List.\+hh}
+\label{GatePhysicsList_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePhysicsList.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePhysicsList.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  Modified version 11-\/10-\/13 for physics mixed with dna}}
+\DoxyCodeLine{9 \textcolor{comment}{  Author: LPC Clermont-\/Fd}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GATEPHYSICSLIST\_HH}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GATEPHYSICSLIST\_HH}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4VModularPhysicsList.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4StepLimiter.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UserSpecialCuts.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4EmCalculator.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4ProductionCutsTable.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4ProductionCuts.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4EmParameters.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateVProcess.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateUserLimits.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{//class GateVProcess;}}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhysicsListMessenger}{GatePhysicsListMessenger}};}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}}: \textcolor{keyword}{public} G4VModularPhysicsList}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{private}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37   \textcolor{comment}{// Types}}
+\DoxyCodeLine{38   \textcolor{keyword}{struct }\mbox{\hyperlink{structGatePhysicsList_1_1ParticleCutType}{ParticleCutType}} \{}
+\DoxyCodeLine{39     G4double gammaCut;}
+\DoxyCodeLine{40     G4bool gammaCutDisabledByDefault;}
+\DoxyCodeLine{41     G4double electronCut;}
+\DoxyCodeLine{42     G4bool electronCutDisabledByDefault;}
+\DoxyCodeLine{43     G4double positronCut;}
+\DoxyCodeLine{44     G4bool positronCutDisabledByDefault;}
+\DoxyCodeLine{45     G4double protonCut;}
+\DoxyCodeLine{46     G4bool protonCutDisabledByDefault;}
+\DoxyCodeLine{47   \};}
+\DoxyCodeLine{48   \textcolor{keyword}{typedef} std::map<G4String, ParticleCutType> RegionCutMapType;}
+\DoxyCodeLine{49   G4bool gammaCutDisabledByDefault; \textcolor{comment}{// gamma default cut disabled for all region}}
+\DoxyCodeLine{50   G4bool electronCutDisabledByDefault; \textcolor{comment}{// electron default cut disabled for all region}}
+\DoxyCodeLine{51   G4bool positronCutDisabledByDefault; \textcolor{comment}{// positron default cut disabled for all region}}
+\DoxyCodeLine{52   G4bool protonCutDisabledByDefault; \textcolor{comment}{// positron default cut disabled for all region}}
+\DoxyCodeLine{53   \textcolor{keyword}{typedef} std::map<G4String, GateUserLimits*> VolumeUserLimitsMapType;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{comment}{// Functions}}
+\DoxyCodeLine{57   \textcolor{keyword}{static} \mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}} *GetInstance() \{ \textcolor{comment}{// static function must be here or icc, not in cc}}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if} (singleton == 0)}
+\DoxyCodeLine{59       \{}
+\DoxyCodeLine{60         \textcolor{comment}{//std::cout << "{}creating PhysicscList...\(\backslash\)n"{};}}
+\DoxyCodeLine{61         singleton = \textcolor{keyword}{new} \mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}};}
+\DoxyCodeLine{62       \}}
+\DoxyCodeLine{63     \textcolor{comment}{//else std::cout << "{}PhysicscList already created!\(\backslash\)n"{};}}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} singleton;}
+\DoxyCodeLine{65   \}}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePhysicsList}{\string~GatePhysicsList}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} ConstructProcess();}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} ConstructParticle();}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} ConstructPhysicsList(G4String name);}
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} ConstructPhysicsListDNAMixed(G4String name);}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} ConstructProcessMixed();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} Print(G4String type, G4String particlename);}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} Print(G4String name);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} RemoveProcesses(G4String process, G4String particle);}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} AddProcesses(G4String process, G4String particle);}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} AddAtomDeexcitation();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} PurgeIfFictitious();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} Write(G4String file);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   std::vector<GateVProcess*> FindProcess(G4String name);}
+\DoxyCodeLine{86   std::vector<G4String> GetTheListOfPBName() \{\textcolor{keywordflow}{return} theListOfPBName;\}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} SetCuts();}
+\DoxyCodeLine{89   \textcolor{keywordtype}{void} SetEmProcessOptions();}
+\DoxyCodeLine{90   \textcolor{keywordtype}{void} DefineCuts(G4VUserPhysicsList * phys);}
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} DefineCuts() \{ DefineCuts(\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{92   \textcolor{keywordtype}{void} SetCutInRegion(G4String particleName, G4String regionName, G4double cutValue);}
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} DisableAllCuts(G4String particleName);}
+\DoxyCodeLine{94   \textcolor{keywordtype}{void} SetSpecialCutInRegion(G4String cutType, G4String regionName, G4double cutValue);}
+\DoxyCodeLine{95   \textcolor{keywordtype}{void} SetEnergyRangeMinLimit(\textcolor{keywordtype}{double} val);}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} GetCuts();}
+\DoxyCodeLine{97   G4String GetListOfPhysicsLists() \{ \textcolor{keywordflow}{return} mListOfPhysicsLists; \}}
+\DoxyCodeLine{98   \textcolor{keywordtype}{void} SetOptDEDXBinning(G4int val);}
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} SetOptLambdaBinning(G4int val);}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} SetOptEMin(G4double val);}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} SetOptEMax(G4double val);}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} SetOptSplineFlag(G4bool val);}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#if G4VERSION\_MAJOR >= 10 \&\& G4VERSION\_MINOR >= 5}}
+\DoxyCodeLine{104   \textcolor{keywordtype}{void} SetUseICRU90DataFlag(G4bool val);}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106   RegionCutMapType \& GetMapOfRegionCuts() \{ \textcolor{keywordflow}{return} mapOfRegionCuts; \}}
+\DoxyCodeLine{107   G4double GetLowEdgeEnergy();}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   std::vector<G4String> mListOfStepLimiter;}
+\DoxyCodeLine{110   std::vector<G4String> mListOfG4UserSpecialCut;}
+\DoxyCodeLine{111   RegionCutMapType mapOfRegionCuts;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{114   \textcolor{keywordtype}{int} mLoadState;}
+\DoxyCodeLine{115   \mbox{\hyperlink{classGatePhysicsListMessenger}{GatePhysicsListMessenger}} * pMessenger;}
+\DoxyCodeLine{116   std::vector<G4String> theListOfPBName;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keyword}{static} \mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}} *singleton;}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120   std::vector<GateVProcess*>* GetTheListOfProcesss();}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122   VolumeUserLimitsMapType mapOfVolumeUserLimits;}
+\DoxyCodeLine{123   std::list<G4ProductionCuts*> theListOfCuts;}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125   \textcolor{keywordtype}{int} mDEDXBinning;}
+\DoxyCodeLine{126   \textcolor{keywordtype}{int} mLambdaBinning;}
+\DoxyCodeLine{127   \textcolor{keywordtype}{double} mEmin;}
+\DoxyCodeLine{128   \textcolor{keywordtype}{double} mEmax;}
+\DoxyCodeLine{129   \textcolor{keywordtype}{bool} mSplineFlag;}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#if G4VERSION\_MAJOR >= 10 \&\& G4VERSION\_MINOR >= 5}}
+\DoxyCodeLine{131   \textcolor{keywordtype}{bool} mUseICRU90Data;}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133   G4UserLimits * userlimits;}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135   \textcolor{comment}{// Physic list management}}
+\DoxyCodeLine{136   std::vector<G4VPhysicsConstructor*>  mUserListOfPhysicList;}
+\DoxyCodeLine{137   \textcolor{comment}{//Mixed EM and DNA Physics List}}
+\DoxyCodeLine{138   G4VModularPhysicsList* emPhysicsListMixed;}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140   G4String mUserPhysicListName;}
+\DoxyCodeLine{141   G4String mListOfPhysicsLists;}
+\DoxyCodeLine{142   G4double mLowEnergyRangeLimit;}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144   G4EmParameters *emPar;}
+\DoxyCodeLine{145 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEPHYSICSLIST\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

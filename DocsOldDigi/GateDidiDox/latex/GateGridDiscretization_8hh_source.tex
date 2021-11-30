@@ -1,0 +1,123 @@
+\hypertarget{GateGridDiscretization_8hh_source}{}\doxysection{Gate\+Grid\+Discretization.\+hh}
+\label{GateGridDiscretization_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateGridDiscretization.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateGridDiscretization.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateGridDiscretization\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateGridDiscretization\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{10 \textcolor{comment}{//\#include "{}G4Types.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4VoxelLimits.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGridDiscretizationMessenger}{GateGridDiscretizationMessenger}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGridDiscretization}{GateGridDiscretization}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26     \mbox{\hyperlink{classGateGridDiscretization_a4916d4923cc53138669d0ab5afc12130}{GateGridDiscretization}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGridDiscretization_a857fad0a93530386a77b26d957d33981}{\string~GateGridDiscretization}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32    G4int \mbox{\hyperlink{classGateGridDiscretization_a0a25dc90112ece8023de965ade0f9498}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGridDiscretization_abafd960660e42aa89fe5fe0abfc3b776}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40    \textcolor{comment}{// void SetThreshold(G4String name, G4double val) \{  m\_table[name].threshold = val;  \};}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGridDiscretization_a340ccee816b8b9fe400f126fd6bd0239}{SetStripOffsetX}}(G4String name, G4double val)   \{  m\_table[name].stripOffsetX = val;  \};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} SetStripOffsetY(G4String name, G4double val)   \{  m\_table[name].stripOffsetY = val;  \};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} SetNumberStripsX(G4String name,\textcolor{keywordtype}{int} val)   \{  m\_table[name].numberStripsX = val;  \};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} SetNumberStripsY(G4String name, \textcolor{keywordtype}{int} val)   \{  m\_table[name].numberStripsY = val;  \};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} SetStripWidthX(G4String name,\textcolor{keywordtype}{double} val)   \{  m\_table[name].stripWidthX = val;  \};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} SetStripWidthY(G4String name, \textcolor{keywordtype}{double} val)   \{  m\_table[name].stripWidthY = val;  \};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} SetNumberReadOutBlocksX(G4String name,\textcolor{keywordtype}{int} val)   \{  m\_table[name].numberReadOutBlocksX = val;  \};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} SetNumberReadOutBlocksY(G4String name, \textcolor{keywordtype}{int} val)   \{  m\_table[name].numberReadOutBlocksY = val;  \};}
+\DoxyCodeLine{49    \textcolor{comment}{// void SetRejectionFlag(G4String name, G4bool flgval)\{m\_table[name].rejectionFlg=flgval;\};}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52      \textcolor{keywordtype}{void} SetVolumeName(G4String name) \{}
+\DoxyCodeLine{53          G4cout<<\textcolor{stringliteral}{"{}seting m\_name Volume "{}}<<name<<G4endl;}
+\DoxyCodeLine{54          m\_name=name;\};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{64   \textcolor{comment}{//void ProcessOnePulse(const GatePulse* inputPulse,GatePulseList\& outputPulseList, std::vector<int> \& indexX, std::vector<int>\&  indexY);}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGridDiscretization_ad016200f4cf9e8bb0fecb2ffca931b02}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{//private:}}
+\DoxyCodeLine{68   \textcolor{keyword}{public}:}
+\DoxyCodeLine{69  \textcolor{comment}{// void ApplyEnergyThreshold( GatePulseList\& outputPulseList);}}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} ApplyBlockReadOut( \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{71   \textcolor{comment}{//void ApplyMultipleRejection( GatePulseList\& outputPulseList);}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73  \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateGridDiscretization_aa7f5ba2d0b4ebbf07fb50bbb76f22791}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   std::vector<int > index\_X\_list;}
+\DoxyCodeLine{76   std::vector<int > index\_Y\_list;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   std::map<std::pair<int,int>, std::vector<int>> blockIndex;}
+\DoxyCodeLine{79   \textcolor{comment}{//std::map<std::pair<int,int>, std::vector<int>> ::iterator imBlock;}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keyword}{struct }\mbox{\hyperlink{structGateGridDiscretization_1_1param}{param}} \{}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83      \textcolor{comment}{// G4double threshold;}}
+\DoxyCodeLine{84       G4double stripOffsetX;}
+\DoxyCodeLine{85       G4double stripOffsetY;}
+\DoxyCodeLine{86       G4double stripWidthX;}
+\DoxyCodeLine{87       G4double stripWidthY;}
+\DoxyCodeLine{88       G4int numberStripsX;}
+\DoxyCodeLine{89       G4int numberStripsY;}
+\DoxyCodeLine{90       G4int numberReadOutBlocksX;}
+\DoxyCodeLine{91       G4int numberReadOutBlocksY;}
+\DoxyCodeLine{92       \textcolor{comment}{//G4bool rejectionFlg;}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94       G4ThreeVector volSize;}
+\DoxyCodeLine{95       G4double deadSpX;}
+\DoxyCodeLine{96       G4double deadSpY;}
+\DoxyCodeLine{97       G4double pitchY;}
+\DoxyCodeLine{98       G4double pitchX;}
+\DoxyCodeLine{99   \};}
+\DoxyCodeLine{100      \mbox{\hyperlink{structGateGridDiscretization_1_1param}{param}} m\_param;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     G4String m\_name;                               }
+\DoxyCodeLine{103     \mbox{\hyperlink{classGateGridDiscretizationMessenger}{GateGridDiscretizationMessenger}} *\mbox{\hyperlink{classGateGridDiscretization_a8744bf6aa0659b777d475edfebd03f3a}{m\_messenger}};     }
+\DoxyCodeLine{104     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} m\_table ;  }
+\DoxyCodeLine{105     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} ::iterator \mbox{\hyperlink{classGateGridDiscretization_af87c3a8d01bf97f0f155b03a6fdaf310}{im}};  }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     G4VoxelLimits \mbox{\hyperlink{classGateGridDiscretization_a2c27714b76c1b917be01a459722a8d05}{limits}};}
+\DoxyCodeLine{110     G4double min, max;}
+\DoxyCodeLine{111     G4AffineTransform at;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} SetGridPoints2D( \textcolor{keywordtype}{int} indexX, \textcolor{keywordtype}{int} indexY, G4ThreeVector\& pos );}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{keywordtype}{int} GetXIndex(G4double posX);}
+\DoxyCodeLine{116    \textcolor{keywordtype}{int} GetYIndex(G4double posY);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{//several functions needed for special processing of electronic pulses}}
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} PulsePushBack(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse, \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122    \textcolor{keywordtype}{int} INVALID\_INDEX=-\/2;}
+\DoxyCodeLine{123    \textcolor{keywordtype}{double} EPSILON=1e-\/9;}
+\DoxyCodeLine{124 \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

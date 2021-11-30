@@ -1,0 +1,269 @@
+\hypertarget{classGateVProcess}{}\doxysection{Gate\+VProcess Class Reference}
+\label{classGateVProcess}\index{GateVProcess@{GateVProcess}}
+
+
+Base class for all Processes.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VProcess.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a34b3951a1f4e5823a8f950d52323172d}\label{classGateVProcess_a34b3951a1f4e5823a8f950d52323172d}} 
+{\bfseries Gate\+VProcess} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a431ae540fc9ab81742de2a044e070565}\label{classGateVProcess_a431ae540fc9ab81742de2a044e070565}} 
+void {\bfseries Construct\+Particle} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_ac306f0424ff8ce3f5807991da31bb447}\label{classGateVProcess_ac306f0424ff8ce3f5807991da31bb447}} 
+void {\bfseries Construct\+Process} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_ae9d47a3db32b79bfcc36021751ab1f5f}\label{classGateVProcess_ae9d47a3db32b79bfcc36021751ab1f5f}} 
+virtual void {\bfseries Construct\+Process} (G4\+Process\+Manager $\ast$manager)=0
+\item 
+\mbox{\Hypertarget{classGateVProcess_a346de35a7e8fb59fec3f5b058f0ca429}\label{classGateVProcess_a346de35a7e8fb59fec3f5b058f0ca429}} 
+virtual G4\+VProcess $\ast$ {\bfseries Create\+Process} (G4\+Particle\+Definition $\ast$)=0
+\item 
+\mbox{\Hypertarget{classGateVProcess_ad0db21a1edc1ac0201075e5665511594}\label{classGateVProcess_ad0db21a1edc1ac0201075e5665511594}} 
+virtual void {\bfseries kill} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a34dd7e89bc7255cb80273864f6b8b019}\label{classGateVProcess_a34dd7e89bc7255cb80273864f6b8b019}} 
+G4\+VProcess $\ast$ {\bfseries Get\+Process} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a793a4b774bcad1505dd64a13945bef56}\label{classGateVProcess_a793a4b774bcad1505dd64a13945bef56}} 
+G4\+VProcess $\ast$ {\bfseries Get\+User\+Model\+Process} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_ae2661543c51d50216b9638b0f27e235d}\label{classGateVProcess_ae2661543c51d50216b9638b0f27e235d}} 
+virtual bool {\bfseries Is\+Applicable} (G4\+Particle\+Definition $\ast$particule)=0
+\item 
+\mbox{\Hypertarget{classGateVProcess_a3a0c4f98e4dee0e87acbfcfe58a76c4b}\label{classGateVProcess_a3a0c4f98e4dee0e87acbfcfe58a76c4b}} 
+virtual bool {\bfseries Is\+Model\+Applicable} (G4\+String model, G4\+Particle\+Definition $\ast$par)
+\item 
+\mbox{\Hypertarget{classGateVProcess_ae2d0e3cf254f4d107d6a0aebbc3dc57b}\label{classGateVProcess_ae2d0e3cf254f4d107d6a0aebbc3dc57b}} 
+virtual bool {\bfseries Is\+Dataset\+Applicable} (G4\+String cs, G4\+Particle\+Definition $\ast$par)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a4c5969a4418464146a7e3be2904b7388}\label{classGateVProcess_a4c5969a4418464146a7e3be2904b7388}} 
+void {\bfseries Add\+Data\+Set} (G4\+String cs\+Name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a6b50f06ebaf121a1c35967096e6d96c7}\label{classGateVProcess_a6b50f06ebaf121a1c35967096e6d96c7}} 
+void {\bfseries Add\+Model} (\mbox{\hyperlink{classGateListOfHadronicModels}{Gate\+List\+Of\+Hadronic\+Models}} $\ast$model)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a783bf57ec28b60a6ce568688b7d5c650}\label{classGateVProcess_a783bf57ec28b60a6ce568688b7d5c650}} 
+virtual void {\bfseries Add\+User\+Data\+Set} (G4\+String cs\+Name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a1f687c025ea16b82cbf6641ea84223bd}\label{classGateVProcess_a1f687c025ea16b82cbf6641ea84223bd}} 
+virtual void {\bfseries Add\+User\+Model} (\mbox{\hyperlink{classGateListOfHadronicModels}{Gate\+List\+Of\+Hadronic\+Models}} $\ast$model)
+\item 
+\mbox{\Hypertarget{classGateVProcess_abb1e43d586ec205a688a346f75be4e0f}\label{classGateVProcess_abb1e43d586ec205a688a346f75be4e0f}} 
+void {\bfseries Set\+Default\+Particle} (G4\+String particle\+Name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_ab4fe5bde5072484c7bf2254d51ba436c}\label{classGateVProcess_ab4fe5bde5072484c7bf2254d51ba436c}} 
+void {\bfseries Add\+To\+Model\+List} (G4\+String model\+Name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_ae3c7e649c43afb34798890ba2036b91f}\label{classGateVProcess_ae3c7e649c43afb34798890ba2036b91f}} 
+void {\bfseries Add\+To\+Data\+Set\+List} (G4\+String cs\+Name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a9d60896296e80504c09da272e9c102ae}\label{classGateVProcess_a9d60896296e80504c09da272e9c102ae}} 
+void {\bfseries Set\+Process\+Info} (G4\+String process\+Name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a6448138ad8b9f3da80ffbdaa57799f95}\label{classGateVProcess_a6448138ad8b9f3da80ffbdaa57799f95}} 
+void {\bfseries Set\+Data\+Set} (G4\+String cs, G4\+String particle=\char`\"{}Default\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a9fa8212fd73b5b9f8b4a347aa4848b68}\label{classGateVProcess_a9fa8212fd73b5b9f8b4a347aa4848b68}} 
+void {\bfseries Un\+Set\+Data\+Set} (G4\+String cs, G4\+String particle=\char`\"{}Default\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_aff95bdca35194b5f4df9799813d156f3}\label{classGateVProcess_aff95bdca35194b5f4df9799813d156f3}} 
+void {\bfseries Data\+Set\+List} (G4\+String particle=\char`\"{}Default\char`\"{}, G4int level=1, G4\+String symbol=\char`\"{}$\ast$\char`\"{}, G4\+String symbol2=\char`\"{}-\/\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a2510419256d4d37dade710ba844286b8}\label{classGateVProcess_a2510419256d4d37dade710ba844286b8}} 
+void {\bfseries Set\+Energy\+Range} (G4\+Hadronic\+Interaction $\ast$had\+Interaction, \mbox{\hyperlink{classGateListOfHadronicModels}{Gate\+List\+Of\+Hadronic\+Models}} $\ast$model)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a3a612deb43e41ffae0192d06f4b242b6}\label{classGateVProcess_a3a612deb43e41ffae0192d06f4b242b6}} 
+void {\bfseries Register} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_ac0bf5ff3476ccef853ad434f3c5ddc1b}\label{classGateVProcess_ac0bf5ff3476ccef853ad434f3c5ddc1b}} 
+void {\bfseries Print\+Enabled\+Particles} (G4\+String particle=\char`\"{}All\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a10e7da00621fd2b8590a0e25cbe9ef98}\label{classGateVProcess_a10e7da00621fd2b8590a0e25cbe9ef98}} 
+void {\bfseries Print\+Enabled\+Particles\+To\+File} (G4\+String file)
+\item 
+\mbox{\Hypertarget{classGateVProcess_acefcbda772efde92a9494c8012ba98a4}\label{classGateVProcess_acefcbda772efde92a9494c8012ba98a4}} 
+void {\bfseries Create\+Enabled\+Particle} (G4\+String particle=\char`\"{}Default\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a8d516b4bac9142ac778e68095af63f23}\label{classGateVProcess_a8d516b4bac9142ac778e68095af63f23}} 
+void {\bfseries Remove\+Element\+Of\+Particle\+List} (G4\+String particle=\char`\"{}Default\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a5382f59f75fce8215221f0ad6512a33e}\label{classGateVProcess_a5382f59f75fce8215221f0ad6512a33e}} 
+void {\bfseries Set\+Model} (G4\+String model, G4\+String particle=\char`\"{}Default\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a2fb79a455d2e8f691875ecc25ad707b4}\label{classGateVProcess_a2fb79a455d2e8f691875ecc25ad707b4}} 
+void {\bfseries Un\+Set\+Model} (G4\+String model, G4\+String particle=\char`\"{}Default\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a794a5b74fa1b62018f8516ceb15966fb}\label{classGateVProcess_a794a5b74fa1b62018f8516ceb15966fb}} 
+void {\bfseries Model\+List} (G4\+String particle=\char`\"{}Default\char`\"{}, G4int level=1, G4\+String symbol=\char`\"{}$\ast$\char`\"{}, G4\+String symbol2=\char`\"{}-\/\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a0b54e85128ca1c2301a3a7e8ca6d2977}\label{classGateVProcess_a0b54e85128ca1c2301a3a7e8ca6d2977}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries Find\+Particle\+Name} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a1050c9321a56b13488901d7a05d60474}\label{classGateVProcess_a1050c9321a56b13488901d7a05d60474}} 
+std\+::vector$<$ G4\+Particle\+Definition $\ast$ $>$ {\bfseries Get\+Particles} (G4\+String param)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a707fe8b76f2d2242a56c9142b332ad1f}\label{classGateVProcess_a707fe8b76f2d2242a56c9142b332ad1f}} 
+void {\bfseries Set\+Model\+Energy\+Max} (G4\+String model, G4double energy, G4\+String particle=\char`\"{}All\char`\"{}, G4\+String Option=\char`\"{}No\+Option\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a8b04f6795ce03a0339ce7777b0707664}\label{classGateVProcess_a8b04f6795ce03a0339ce7777b0707664}} 
+void {\bfseries Set\+Model\+Energy\+Min} (G4\+String model, G4double energy, G4\+String particle=\char`\"{}All\char`\"{}, G4\+String Option=\char`\"{}No\+Option\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_a57bf31985299a6d140a6f7d17f916b35}\label{classGateVProcess_a57bf31985299a6d140a6f7d17f916b35}} 
+void {\bfseries Clear\+Model\+Energy\+Range} (G4\+String model, G4\+String particle=\char`\"{}All\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateVProcess_af150218b92ef613bdb08c5ffbc108bfb}\label{classGateVProcess_af150218b92ef613bdb08c5ffbc108bfb}} 
+bool {\bfseries Is\+Enabled} (G4\+Particle\+Definition $\ast$par)
+\item 
+\mbox{\Hypertarget{classGateVProcess_ad0555aa6cbc7b5063a0a95d03d1022b8}\label{classGateVProcess_ad0555aa6cbc7b5063a0a95d03d1022b8}} 
+G4\+String {\bfseries Get\+G4\+Process\+Name} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a7f0d9f787400300234ee5a6f5e79755a}\label{classGateVProcess_a7f0d9f787400300234ee5a6f5e79755a}} 
+int {\bfseries Get\+Number\+Of\+Particles} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_ad9b3e5f8d944a8dfd2b93183ed34551d}\label{classGateVProcess_ad9b3e5f8d944a8dfd2b93183ed34551d}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries Get\+The\+List\+Of\+Default\+Particles} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a6e67084677a941969a5c4a6ba1e2928b}\label{classGateVProcess_a6e67084677a941969a5c4a6ba1e2928b}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries Get\+The\+List\+Of\+Data\+Sets} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_ad35cac90cde4ec2d9cfdd5ae69f522fe}\label{classGateVProcess_ad35cac90cde4ec2d9cfdd5ae69f522fe}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries Get\+The\+List\+Of\+Models} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a29be9a816eb85a08145ce9eb61fa1255}\label{classGateVProcess_a29be9a816eb85a08145ce9eb61fa1255}} 
+std\+::vector$<$ G4\+Particle\+Definition $\ast$ $>$ {\bfseries Get\+The\+List\+Of\+Enabled\+Particles} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a2f93cac8c8321f3389c9d30595318cf4}\label{classGateVProcess_a2f93cac8c8321f3389c9d30595318cf4}} 
+G4\+String {\bfseries Get\+Process\+Info} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a9d5c0368519fdd7b294c2dbddbda4482}\label{classGateVProcess_a9d5c0368519fdd7b294c2dbddbda4482}} 
+G4bool {\bfseries Get\+Is\+Wrapper\+Active} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a1a30a8bac3b0808e4864fbe1085a6ca6}\label{classGateVProcess_a1a30a8bac3b0808e4864fbe1085a6ca6}} 
+void {\bfseries Set\+Is\+Wrapper\+Active} (G4bool b)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a44fb450175a2cfb4da6702a9528fe9cf}\label{classGateVProcess_a44fb450175a2cfb4da6702a9528fe9cf}} 
+void {\bfseries Set\+Wrapper\+Factor} (G4\+String part, G4double f)
+\item 
+\mbox{\Hypertarget{classGateVProcess_aad284fe15f12eaea32c8b726acec9cac}\label{classGateVProcess_aad284fe15f12eaea32c8b726acec9cac}} 
+void {\bfseries Set\+Wrapper\+CSEFactor} (G4\+String part, G4double f)
+\item 
+\mbox{\Hypertarget{classGateVProcess_af3e00917c37fc1486fd0e752bd11512b}\label{classGateVProcess_af3e00917c37fc1486fd0e752bd11512b}} 
+void {\bfseries Set\+Keep\+Filtered\+Sec} (G4bool b)
+\item 
+\mbox{\Hypertarget{classGateVProcess_ab99c9b8f0f3627945646e1dc52be858b}\label{classGateVProcess_ab99c9b8f0f3627945646e1dc52be858b}} 
+G4bool {\bfseries Add\+Filter} (G4\+String, G4\+String)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a4a54a159eefb827a804a09fa4089824c}\label{classGateVProcess_a4a54a159eefb827a804a09fa4089824c}} 
+void {\bfseries Set\+Step\+Function} (G4\+String part, G4double ratio, G4double final\+Range)
+\item 
+\mbox{\Hypertarget{classGateVProcess_a495cbe7c0a9f40cab020d749324c679b}\label{classGateVProcess_a495cbe7c0a9f40cab020d749324c679b}} 
+void {\bfseries Set\+Linearlosslimit} (G4\+String part, G4double limit)
+\item 
+\mbox{\Hypertarget{classGateVProcess_af9adcfa307ce5bb9e507a3c3bb33eff1}\label{classGateVProcess_af9adcfa307ce5bb9e507a3c3bb33eff1}} 
+void {\bfseries Set\+Msclimitation} (G4\+String part, G4\+String limit)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVProcess_aeee8a3f71a9322dd60e9422e015cdb09}\label{classGateVProcess_aeee8a3f71a9322dd60e9422e015cdb09}} 
+static std\+::vector$<$ \mbox{\hyperlink{classGateVProcess}{Gate\+VProcess}} $\ast$ $>$ $\ast$ {\bfseries Get\+The\+List\+Of\+Processes} ()
+\item 
+\mbox{\Hypertarget{classGateVProcess_a4a1e974b70cb86fccefc04468f5d13b6}\label{classGateVProcess_a4a1e974b70cb86fccefc04468f5d13b6}} 
+static void {\bfseries Delete} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVProcess_ab0120e7e8e106da974cc4324a4b99973}\label{classGateVProcess_ab0120e7e8e106da974cc4324a4b99973}} 
+G4\+String {\bfseries m\+G4\+Process\+Name}
+\item 
+\mbox{\Hypertarget{classGateVProcess_ab16089cc01f8ec6b6dce1df7f606243d}\label{classGateVProcess_ab16089cc01f8ec6b6dce1df7f606243d}} 
+G4\+VProcess $\ast$ {\bfseries p\+Process}
+\item 
+\mbox{\Hypertarget{classGateVProcess_aaf02bd961122a4c4e4ad4778585600f7}\label{classGateVProcess_aaf02bd961122a4c4e4ad4778585600f7}} 
+G4\+VProcess $\ast$ {\bfseries p\+Final\+Process}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a267d66a26be8b2ce26b877515ef4c844}\label{classGateVProcess_a267d66a26be8b2ce26b877515ef4c844}} 
+G4bool {\bfseries m\+Is\+Wrapper\+Active}
+\item 
+\mbox{\Hypertarget{classGateVProcess_adc4ebb0cb2a89f92d4af307e655ee144}\label{classGateVProcess_adc4ebb0cb2a89f92d4af307e655ee144}} 
+G4bool {\bfseries m\+Keep\+Sec}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a766d3e4c65490e2e486969881efcead2}\label{classGateVProcess_a766d3e4c65490e2e486969881efcead2}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries the\+List\+Of\+Default\+Particles}
+\item 
+\mbox{\Hypertarget{classGateVProcess_ac184ae9426da0e0ca6a6a71d992ab4fd}\label{classGateVProcess_ac184ae9426da0e0ca6a6a71d992ab4fd}} 
+G4\+String {\bfseries Process\+Info}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a1c236dec5badb462b2e8b08dd44dfbde}\label{classGateVProcess_a1c236dec5badb462b2e8b08dd44dfbde}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries the\+List\+Of\+Data\+Sets}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a5b1a8c03d8ee9fa1c14ddef5cc8881c2}\label{classGateVProcess_a5b1a8c03d8ee9fa1c14ddef5cc8881c2}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries the\+List\+Of\+Models}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a887a35aa5e15e34b16d29e898f322887}\label{classGateVProcess_a887a35aa5e15e34b16d29e898f322887}} 
+std\+::vector$<$ G4\+Particle\+Definition $\ast$ $>$ {\bfseries the\+List\+Of\+Enabled\+Particles}
+\item 
+\mbox{\Hypertarget{classGateVProcess_ac9346050ea3c8f96b2813076c8d31b6e}\label{classGateVProcess_ac9346050ea3c8f96b2813076c8d31b6e}} 
+std\+::vector$<$ G4\+Particle\+Definition $\ast$ $>$ {\bfseries the\+List\+Of\+Particles\+With\+Selected\+DS}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a84ecdaaaec15ba735f1d25c2503db7f0}\label{classGateVProcess_a84ecdaaaec15ba735f1d25c2503db7f0}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries the\+List\+Of\+Selected\+Data\+Sets}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a90414ab2e785f8cfe0593ac0f237fa31}\label{classGateVProcess_a90414ab2e785f8cfe0593ac0f237fa31}} 
+std\+::vector$<$ G4\+Particle\+Definition $\ast$ $>$ {\bfseries the\+List\+Of\+Particles\+With\+Selected\+Models}
+\item 
+\mbox{\Hypertarget{classGateVProcess_aa4fadb786db2122da67c9a1e44ba9deb}\label{classGateVProcess_aa4fadb786db2122da67c9a1e44ba9deb}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateListOfHadronicModels}{Gate\+List\+Of\+Hadronic\+Models}} $\ast$ $>$ {\bfseries the\+List\+Of\+Selected\+Models}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a3aeac5824cbe18304aaf960b1c5b7e98}\label{classGateVProcess_a3aeac5824cbe18304aaf960b1c5b7e98}} 
+std\+::map$<$ G4\+String, G4double $>$ {\bfseries the\+List\+Of\+Wrapper\+Factor}
+\item 
+\mbox{\Hypertarget{classGateVProcess_ae29e1a9cf53ada7b13f49a63124cccdc}\label{classGateVProcess_ae29e1a9cf53ada7b13f49a63124cccdc}} 
+std\+::map$<$ G4\+String, G4double $>$ {\bfseries the\+List\+Of\+Wrapper\+CSEFactor}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a3c3bcbaea966be4a5239d3f6dabc43e6}\label{classGateVProcess_a3c3bcbaea966be4a5239d3f6dabc43e6}} 
+std\+::map$<$ G4\+String, \mbox{\hyperlink{classGenericWrapperProcess}{Generic\+Wrapper\+Process}} $\ast$ $>$ {\bfseries the\+List\+Of\+Wrapper}
+\item 
+\mbox{\Hypertarget{classGateVProcess_abd981270a3a23b45562ca66301f32948}\label{classGateVProcess_abd981270a3a23b45562ca66301f32948}} 
+std\+::map$<$ G4\+String, G4double $>$ {\bfseries thelist\+Of\+Ratio\+For\+Step\+Function}
+\item 
+\mbox{\Hypertarget{classGateVProcess_acb6ff26321cd19a361468c9bd92ae2bb}\label{classGateVProcess_acb6ff26321cd19a361468c9bd92ae2bb}} 
+std\+::map$<$ G4\+String, G4double $>$ {\bfseries thelist\+Of\+Final\+Range\+For\+Step\+Function}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a8b59e5efa51d23946e6def7c47fa9f69}\label{classGateVProcess_a8b59e5efa51d23946e6def7c47fa9f69}} 
+std\+::map$<$ G4\+String, G4double $>$ {\bfseries thelist\+Of\+Linear\+Loss\+Limit}
+\item 
+\mbox{\Hypertarget{classGateVProcess_ab2235f2743caffb6f883432adf14568c}\label{classGateVProcess_ab2235f2743caffb6f883432adf14568c}} 
+std\+::map$<$ G4\+String, G4\+Msc\+Step\+Limit\+Type $>$ {\bfseries thelist\+Of\+Msc\+Limitation}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a3b3123b570a769be48cbc14ee94456f2}\label{classGateVProcess_a3b3123b570a769be48cbc14ee94456f2}} 
+std\+::list$<$ G4\+Hadronic\+Interaction $\ast$ $>$ {\bfseries the\+List\+Of\+G4\+Hadronic\+Models}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a427fa8748e9431150aa3ce12106a8e82}\label{classGateVProcess_a427fa8748e9431150aa3ce12106a8e82}} 
+G4\+Excitation\+Handler $\ast$ {\bfseries the\+Handler}
+\item 
+\mbox{\Hypertarget{classGateVProcess_a86e2c59e758e73cc47e6588d43af0b77}\label{classGateVProcess_a86e2c59e758e73cc47e6588d43af0b77}} 
+\mbox{\hyperlink{classGateVProcessMessenger}{Gate\+VProcess\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateVProcess_af807c044c323530e9e1ae4d87eff822d}\label{classGateVProcess_af807c044c323530e9e1ae4d87eff822d}} 
+std\+::list$<$ G4\+VProcess $\ast$ $>$ {\bfseries the\+List\+Of\+G4\+Processes}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all Processes. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+VProcess.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+VProcess.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\hypertarget{GateImageActorMessenger_8hh_source}{}\doxysection{Gate\+Image\+Actor\+Messenger.\+hh}
+\label{GateImageActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateImageActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateImageActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/*}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)class  GateImageActorMessenger}}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{15 \textcolor{comment}{*/}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GATEVIMAGEACTORMESSENGER\_HH}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GATEVIMAGEACTORMESSENGER\_HH}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UIcmdWith3Vector.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UIcmdWith3VectorAndUnit.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVImageActor}{GateVImageActor}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{32 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34  \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{38 \textcolor{comment}{}  \mbox{\hyperlink{classGateImageActorMessenger_aebacd8c2cb77b301babd18f8159564b7}{GateImageActorMessenger}}(\mbox{\hyperlink{classGateVImageActor}{GateVImageActor}} * v);}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateImageActorMessenger_aec96ecc89b8d1e3bd10397047e14755d}{\string~GateImageActorMessenger}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageActorMessenger_a0162dc76067fa5f90ea671457fecdb7e}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49   \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}} * \mbox{\hyperlink{classGateImageActorMessenger_a91ca27ece551ad61e7d1d4a20403e70b}{pImageActor}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52   G4UIcmdWith3VectorAndUnit * \mbox{\hyperlink{classGateImageActorMessenger_a1c3a36db5b6f17034d49d41dd463f72e}{pVoxelSizeCmd}};}
+\DoxyCodeLine{53   G4UIcmdWith3Vector        * pResolutionCmd;}
+\DoxyCodeLine{54   G4UIcmdWithAString        * pStepHitTypeCmd;}
+\DoxyCodeLine{55   G4UIcmdWith3VectorAndUnit * pHalfSizeCmd;}
+\DoxyCodeLine{56   G4UIcmdWith3VectorAndUnit * pSizeCmd;}
+\DoxyCodeLine{57   G4UIcmdWith3VectorAndUnit * pPositionCmd;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \}; \textcolor{comment}{// end class GateImageActorMessenger}}
+\DoxyCodeLine{60 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEVIMAGEACTORMESSENGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

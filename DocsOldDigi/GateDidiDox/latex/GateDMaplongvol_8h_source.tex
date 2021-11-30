@@ -1,0 +1,210 @@
+\hypertarget{GateDMaplongvol_8h_source}{}\doxysection{Gate\+DMaplongvol.\+h}
+\label{GateDMaplongvol_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateDMaplongvol.h@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateDMaplongvol.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Copyright 2002, 2003 Alexis Guillaume <aguillau@liris.univ-\/lyon2.fr> for "{}Laboratoire LIRIS, université Lyon II, France."{}}}
+\DoxyCodeLine{3 \textcolor{comment}{Copyright 2002, 2003 David Coeurjolly <dcoeurjo@liris.univ-\/lyon2.fr> for "{}Laboratoire LIRIS, université Lyon II, France."{}}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{This file is part of liblongvol.}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{    liblongvol is free software; you can redistribute it and/or modify}}
+\DoxyCodeLine{8 \textcolor{comment}{    it under the terms of the GNU General Public License as published by}}
+\DoxyCodeLine{9 \textcolor{comment}{    the Free Software Foundation; either version 2 of the License, or}}
+\DoxyCodeLine{10 \textcolor{comment}{    (at your option) any later version.}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{    liblongvol is distributed in the hope that it will be useful,}}
+\DoxyCodeLine{13 \textcolor{comment}{    but WITHOUT ANY WARRANTY; without even the implied warranty of}}
+\DoxyCodeLine{14 \textcolor{comment}{    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the}}
+\DoxyCodeLine{15 \textcolor{comment}{    GNU General Public License for more details.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{    You should have received a copy of the GNU General Public License}}
+\DoxyCodeLine{18 \textcolor{comment}{    along with liblongvol; if not, write to the Free Software}}
+\DoxyCodeLine{19 \textcolor{comment}{    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-\/1307  USA}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{*/}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef LIBLONGVOL}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define LIBLONGVOL}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} lvoxel;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classLongvol}{Longvol}} \{}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     \mbox{\hyperlink{classLongvol_a4221fcc7df04bbfda02f2a4d80b551c4}{Longvol}}( \textcolor{keywordtype}{int} sx, \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{int} sz, lvoxel tcolor );}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{42     \mbox{\hyperlink{classLongvol_a4221fcc7df04bbfda02f2a4d80b551c4}{Longvol}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fname );}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \mbox{\hyperlink{classLongvol_a4221fcc7df04bbfda02f2a4d80b551c4}{Longvol}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fname, \textcolor{keywordtype}{int} sx, \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{int} sz, lvoxel defaultAlpha = 0 );}
+\DoxyCodeLine{46     }
+\DoxyCodeLine{48     \mbox{\hyperlink{classLongvol_a4221fcc7df04bbfda02f2a4d80b551c4}{Longvol}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     \mbox{\hyperlink{classLongvol_a7c32033ebcda197d1e838563e7b6e935}{\string~Longvol}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53  lvoxel * getDataPointer() \{ \textcolor{keywordflow}{return} data; \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \mbox{\hyperlink{classLongvol_a4221fcc7df04bbfda02f2a4d80b551c4}{Longvol}}( \textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \& );}
+\DoxyCodeLine{58     \textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&\mbox{\hyperlink{classLongvol_ae489541578d7703dbe9c4fcaa07bdbe5}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     lvoxel \&    \mbox{\hyperlink{classLongvol_acfbe6d30fd35974f5278390b4110e702}{operator()}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z);}
+\DoxyCodeLine{64     lvoxel  \mbox{\hyperlink{classLongvol_acfbe6d30fd35974f5278390b4110e702}{operator()}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z) \textcolor{keyword}{const};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     lvoxel      \mbox{\hyperlink{classLongvol_ad6026f1ba1abbbdeb1ae090b27791fcc}{get}}( \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z )\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (*\textcolor{keyword}{this})(x, y, z); \}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void}        set( \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z, lvoxel c ) \{ (*this)(x, y, z) = c; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{int}         \mbox{\hyperlink{classLongvol_a6f28198c003f937a4eac5ae3b66e8003}{dumpLongvol}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename );}
+\DoxyCodeLine{77     \textcolor{keywordtype}{int}         \mbox{\hyperlink{classLongvol_a26d61106ab9905dead0648d9142fae17}{dumpRaw}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename );}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{bool}    \mbox{\hyperlink{classLongvol_a0ca4e109f25c303c52e87dc10c620130}{isOK}}() \{ }
+\DoxyCodeLine{82         \textcolor{keywordflow}{return} state\_ok;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86     \mbox{\hyperlink{classLongvol}{Longvol}} \&\mbox{\hyperlink{classLongvol_a2aa3adf4206e7f549172c31669b044bb}{operator |= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&);}
+\DoxyCodeLine{88     \mbox{\hyperlink{classLongvol}{Longvol}} \&\mbox{\hyperlink{classLongvol_aa1d59fdeb140cd73d37282b77a14e103}{operator \&= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&);}
+\DoxyCodeLine{90     \mbox{\hyperlink{classLongvol}{Longvol}} \&\mbox{\hyperlink{classLongvol_a19753a454aeaf962f0158125df01922a}{operator -\/= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&v);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     }
+\DoxyCodeLine{94     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{classLongvol_a40b47db49d4231de8689dbb00cdd638a}{getHeaderValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type ) \textcolor{keyword}{const};}
+\DoxyCodeLine{96     \textcolor{keywordtype}{int}         \mbox{\hyperlink{classLongvol_a49ff34fe2cd4372f18650e852d44bdfc}{getHeaderValueAsDouble}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type, \textcolor{keywordtype}{double} *dest ) \textcolor{keyword}{const};}
+\DoxyCodeLine{98     \textcolor{keywordtype}{int}         \mbox{\hyperlink{classLongvol_a9fe72121726e862c188d2bd5e8ae5134}{getHeaderValueAsInt}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type, \textcolor{keywordtype}{int} *dest ) \textcolor{keyword}{const};}
+\DoxyCodeLine{99     }
+\DoxyCodeLine{101     \textcolor{keywordtype}{int} \mbox{\hyperlink{classLongvol_aa235967ff3b1bc610aae8b70abcd89e6}{setHeaderValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *value );}
+\DoxyCodeLine{103     \textcolor{keywordtype}{int} \mbox{\hyperlink{classLongvol_aa235967ff3b1bc610aae8b70abcd89e6}{setHeaderValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type, lvoxel value );}
+\DoxyCodeLine{105     \textcolor{keywordtype}{int} \mbox{\hyperlink{classLongvol_aa235967ff3b1bc610aae8b70abcd89e6}{setHeaderValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type, \textcolor{keywordtype}{int} value );}
+\DoxyCodeLine{107     \textcolor{keywordtype}{int} \mbox{\hyperlink{classLongvol_aa235967ff3b1bc610aae8b70abcd89e6}{setHeaderValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type, \textcolor{keywordtype}{double} value );}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{111     \textcolor{keywordtype}{void}    \mbox{\hyperlink{classLongvol_abe9f920afa067d7cab7e4af66271f2b4}{setVolumeCenter}}( \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z );}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{void}        \mbox{\hyperlink{classLongvol_a19bf98e114ccfa44d4119dc76f679f5c}{drawAxis}}( );}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     }
+\DoxyCodeLine{118     \textcolor{keywordtype}{void}        \mbox{\hyperlink{classLongvol_a72140cf887a03bceff6abd3269a8bf5b}{invert}}();}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void}        \mbox{\hyperlink{classLongvol_a00607c88ac1789570c7a3bfe82997e17}{rotate}}( \textcolor{keywordtype}{double} rx, \textcolor{keywordtype}{double} ry, \textcolor{keywordtype}{double} rz );}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void}        \mbox{\hyperlink{classLongvol_ad7f174e9f4bfc194ea4e974d50f4daa0}{symetry}}( \textcolor{keywordtype}{int} maxx, \textcolor{keywordtype}{int} maxy, \textcolor{keywordtype}{int} maxz ); }
+\DoxyCodeLine{125     \textcolor{keywordtype}{void}        \mbox{\hyperlink{classLongvol_af5c3053b0ebe29dbade8f78c0658ad84}{translate}}( \textcolor{keywordtype}{int} vx, \textcolor{keywordtype}{int} vy, \textcolor{keywordtype}{int} vz );}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_ad8de1d0263206b23a761e4629af9f9fc}{sizeX}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} sx; \}}
+\DoxyCodeLine{131     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a6876946b3cd6665d94ee379c523ce774}{sizeY}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} sy; \}}
+\DoxyCodeLine{133     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a887ac0339a4287e5fd85eaa5a683e043}{sizeZ}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} sz; \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{136     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_aa38a6faae472d5855a875befd6bb1304}{minX}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cx -\/ sx/2; \}}
+\DoxyCodeLine{138     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a364e129f9428f31ac1e58665bd40d76a}{minY}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cy -\/ sy/2; \}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_ab47db529949efe3d2fc3b08e3e070134}{minZ}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cz -\/ sz/2; \}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{143     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a080e18705a5c0f6618c1c9001c17784c}{maxX}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cx + sx/2 + sx\%2; \}}
+\DoxyCodeLine{145     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a72a1bde895b198bb5a2a5b350672a3f0}{maxY}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cy + sy/2 + sy\%2; \}}
+\DoxyCodeLine{147     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_ab5072999b23b1996b179c02e95c26ce7}{maxZ}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cz + sz/2 + sz\%2; \}}
+\DoxyCodeLine{148     }
+\DoxyCodeLine{150     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a715c891cf96a5d15605f8929b3c48a18}{cX}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cx; \}}
+\DoxyCodeLine{152     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a82347a2e63c38968bbacbe464f1b447b}{cY}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cy; \}}
+\DoxyCodeLine{154     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a8f467481f4b81b100808e30e634cc390}{cZ}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} cz; \}}
+\DoxyCodeLine{155     }
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158     \textcolor{keywordtype}{bool}    \mbox{\hyperlink{classLongvol_a067a95a586b568681a399bf9d65706c7}{inBounds}}( \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z ) \textcolor{keyword}{const};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161     lvoxel  \mbox{\hyperlink{classLongvol_af49b45de76854cb29a61bba83623ffba}{alpha}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{162     }
+\DoxyCodeLine{164     \textcolor{keyword}{inline}}
+\DoxyCodeLine{165     \textcolor{keywordtype}{int}     \mbox{\hyperlink{classLongvol_a696d896d62e486a756bad0add094f668}{posOf}}( \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z )\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{166         \textcolor{keywordflow}{return} z*sx*sy + y*sx + x;}
+\DoxyCodeLine{167     \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{keyword}{private}:}
+\DoxyCodeLine{171     \textcolor{keywordtype}{void} copy( \textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \& );}
+\DoxyCodeLine{173     \textcolor{keywordtype}{void} destroy();}
+\DoxyCodeLine{175     \textcolor{keywordtype}{void} resize( \textcolor{keywordtype}{int} nsx, \textcolor{keywordtype}{int} nsy, \textcolor{keywordtype}{int} nsz );}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{178     lvoxel      *data;}
+\DoxyCodeLine{180     \textcolor{keywordtype}{int}         sx, sy, sz;}
+\DoxyCodeLine{182     \textcolor{keywordtype}{int}         total;}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{185     \textcolor{keywordtype}{int}     readLongvolData( FILE *in );}
+\DoxyCodeLine{187     \textcolor{keywordtype}{int}     readV1RawData( FILE *in, \textcolor{keywordtype}{bool} headerInited, lvoxel defaultAlpha );}
+\DoxyCodeLine{189     \textcolor{keywordtype}{int}     readV2RawData( FILE *in, \textcolor{keywordtype}{bool} headerInited, \textcolor{keywordtype}{int} sx, \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{int} sz, lvoxel defaultAlpha );}
+\DoxyCodeLine{190     }
+\DoxyCodeLine{192     \textcolor{keywordtype}{int}     internalDumpRaw( \textcolor{keywordtype}{int} fd );}
+\DoxyCodeLine{193     }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \textcolor{keywordtype}{bool}    rotatePoint( \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{int} * );}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{200 }
+\DoxyCodeLine{203     \textcolor{keyword}{struct }HeaderField \{}
+\DoxyCodeLine{205         HeaderField( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *t, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *v ) :}
+\DoxyCodeLine{206             type( strdup(t) ), value( strdup(v) ) \{\}}
+\DoxyCodeLine{207         \string~HeaderField() \{}
+\DoxyCodeLine{208             free( type );}
+\DoxyCodeLine{209             free( value );}
+\DoxyCodeLine{210         \}}
+\DoxyCodeLine{212         HeaderField( \textcolor{keyword}{const} HeaderField \&h ) :}
+\DoxyCodeLine{213             type( strdup(h.type) ), value( strdup(h.value) ) \{\};}
+\DoxyCodeLine{215         HeaderField() : type(NULL), value(NULL) \{\}; }
+\DoxyCodeLine{217         \textcolor{keyword}{const} HeaderField \&\mbox{\hyperlink{classLongvol_ae489541578d7703dbe9c4fcaa07bdbe5}{operator = }}(\textcolor{keyword}{const} HeaderField \&h) \{}
+\DoxyCodeLine{218             free( type );}
+\DoxyCodeLine{219             free( value );}
+\DoxyCodeLine{220             \textcolor{keywordflow}{if} (h.type != NULL) \{}
+\DoxyCodeLine{221                 type = strdup( h.type );}
+\DoxyCodeLine{222                 value = strdup( h.value );}
+\DoxyCodeLine{223             \}}
+\DoxyCodeLine{224             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{225         \}}
+\DoxyCodeLine{227         \textcolor{keywordtype}{char} *type;}
+\DoxyCodeLine{229         \textcolor{keywordtype}{char} *value;}
+\DoxyCodeLine{230     \};}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{233     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAX\_HEADERNUMLINES = 64;}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{236     HeaderField header[ MAX\_HEADERNUMLINES ];}
+\DoxyCodeLine{237     }
+\DoxyCodeLine{239     \textcolor{keywordtype}{int} getHeaderField( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *type ) \textcolor{keyword}{const};}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{242     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *requiredHeaders[];}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{245     \textcolor{keywordtype}{bool} state\_ok;}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{248     \textcolor{keyword}{struct }endian\_t \{}
+\DoxyCodeLine{250         \textcolor{keyword}{union }\{}
+\DoxyCodeLine{251             \textcolor{keywordtype}{int}     i;}
+\DoxyCodeLine{252             \textcolor{keywordtype}{char}    ci[ \textcolor{keyword}{sizeof}(int) + 1 ];}
+\DoxyCodeLine{253         \} i\_endian;}
+\DoxyCodeLine{254         }
+\DoxyCodeLine{256         \textcolor{keyword}{union }\{}
+\DoxyCodeLine{257             lvoxel  v;}
+\DoxyCodeLine{258             \textcolor{keywordtype}{char}    cv[ \textcolor{keyword}{sizeof}(lvoxel) + 1 ];}
+\DoxyCodeLine{259         \} v\_endian;}
+\DoxyCodeLine{260     \};}
+\DoxyCodeLine{261     \textcolor{keyword}{static} \textcolor{keyword}{const} endian\_t endian;}
+\DoxyCodeLine{262     \textcolor{keyword}{static} endian\_t initEndian();}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264     \textcolor{keywordtype}{int} cx, cy, cz;}
+\DoxyCodeLine{265     }
+\DoxyCodeLine{266     \textcolor{keyword}{static}  FILE *\textcolor{keyword}{const} debugFile;}
+\DoxyCodeLine{267     }
+\DoxyCodeLine{268 \};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{keyword}{inline}}
+\DoxyCodeLine{271 \mbox{\hyperlink{classLongvol}{Longvol}} operator\&( \mbox{\hyperlink{classLongvol}{Longvol}} v1, \textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&v2 ) \{}
+\DoxyCodeLine{272     v1 \&= v2;}
+\DoxyCodeLine{273     \textcolor{keywordflow}{return} v1;}
+\DoxyCodeLine{274 \}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 \textcolor{keyword}{inline}}
+\DoxyCodeLine{277 \mbox{\hyperlink{classLongvol}{Longvol}} operator|( \mbox{\hyperlink{classLongvol}{Longvol}} v1, \textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&v2 ) \{}
+\DoxyCodeLine{278     v1 |= v2;}
+\DoxyCodeLine{279     \textcolor{keywordflow}{return} v1;}
+\DoxyCodeLine{280 \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{keyword}{inline}}
+\DoxyCodeLine{283 \mbox{\hyperlink{classLongvol}{Longvol}} operator-\/( \mbox{\hyperlink{classLongvol}{Longvol}} v1, \textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&v2 ) \{}
+\DoxyCodeLine{284     v1 -\/= v2;}
+\DoxyCodeLine{285     \textcolor{keywordflow}{return} v1;}
+\DoxyCodeLine{286 \}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

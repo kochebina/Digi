@@ -1,0 +1,98 @@
+\hypertarget{classGateTotalDiscreteProcess}{}\doxysection{Gate\+Total\+Discrete\+Process Class Reference}
+\label{classGateTotalDiscreteProcess}\index{GateTotalDiscreteProcess@{GateTotalDiscreteProcess}}
+Inheritance diagram for Gate\+Total\+Discrete\+Process\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateTotalDiscreteProcess}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a0f4e3b18c280808f70c4bffcaf3c79a0}\label{classGateTotalDiscreteProcess_a0f4e3b18c280808f70c4bffcaf3c79a0}} 
+{\bfseries Gate\+Total\+Discrete\+Process} (const G4\+String \&name, G4\+Process\+Type type, G4int num\+\_\+processes, const G4\+Particle\+Definition $\ast$particle\+\_\+type, G4double min\+Energy, G4double max\+Energy, G4int bin\+Numbers)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_afcd594e23e5308b4acd1b52980973dfd}\label{classGateTotalDiscreteProcess_afcd594e23e5308b4acd1b52980973dfd}} 
+bool {\bfseries Add\+Discrete\+Process} (G4\+VDiscrete\+Process $\ast$p)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_afb63d53d906917994797f486eee47116}\label{classGateTotalDiscreteProcess_afb63d53d906917994797f486eee47116}} 
+G4\+VParticle\+Change $\ast$ {\bfseries Post\+Step\+Do\+It} (const G4\+Track \&track, const G4\+Step \&step\+Data)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a60050e214db4b958ae2eb2dd86937723}\label{classGateTotalDiscreteProcess_a60050e214db4b958ae2eb2dd86937723}} 
+G4double {\bfseries Post\+Step\+Get\+Physical\+Interaction\+Length} (const G4\+Track \&track, G4double previous\+Step\+Size, G4\+Force\+Condition $\ast$condition)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a1cfef14fe0e070c32291cbf3de1b5e5a}\label{classGateTotalDiscreteProcess_a1cfef14fe0e070c32291cbf3de1b5e5a}} 
+void {\bfseries Build\+Physics\+Table} (const G4\+Particle\+Definition \&)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a8adf03c5751c8c8cca2162d43ff367ad}\label{classGateTotalDiscreteProcess_a8adf03c5751c8c8cca2162d43ff367ad}} 
+G4double {\bfseries Get\+Number\+Of\+Interaction\+Length\+Left} () const
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_ad7b3586c3e1bff0ec3aa5cf8782fef70}\label{classGateTotalDiscreteProcess_ad7b3586c3e1bff0ec3aa5cf8782fef70}} 
+G4bool {\bfseries Is\+Applicable} (const G4\+Particle\+Definition \&)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_aaefd6d779366f8fd58edf70665bca41e}\label{classGateTotalDiscreteProcess_aaefd6d779366f8fd58edf70665bca41e}} 
+const \mbox{\hyperlink{classGateCrossSectionsTable}{Gate\+Cross\+Sections\+Table}} $\ast$ {\bfseries Get\+Total\+Cross\+Sections\+Table} () const
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a7aa1b526cd243ed9da505ab115d6e832}\label{classGateTotalDiscreteProcess_a7aa1b526cd243ed9da505ab115d6e832}} 
+G4\+VProcess $\ast$ {\bfseries Get\+Active\+Process} () const
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a3e174f591242fcc144278bbeddbc3332}\label{classGateTotalDiscreteProcess_a3e174f591242fcc144278bbeddbc3332}} 
+G4\+VProcess $\ast$ {\bfseries Sample\+Active\+Process} (G4\+Material $\ast$, G4double energy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a487f0b2fa40498f5af5d9d2553ee6f93}\label{classGateTotalDiscreteProcess_a487f0b2fa40498f5af5d9d2553ee6f93}} 
+G4double {\bfseries Get\+Mean\+Free\+Path} (const G4\+Track \&a\+Track, G4double previous\+Step\+Size, G4\+Force\+Condition $\ast$condition)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a662cc78f75c1a0250ba43c0c99b3a9ab}\label{classGateTotalDiscreteProcess_a662cc78f75c1a0250ba43c0c99b3a9ab}} 
+void {\bfseries Create\+Total\+Max\+Cross\+Section\+Table} (const std\+::vector$<$ G4\+Material $\ast$ $>$ \&)
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a9cdad31d23e31346a6251f09cade6b2b}\label{classGateTotalDiscreteProcess_a9cdad31d23e31346a6251f09cade6b2b}} 
+void {\bfseries Build\+Cross\+Sections\+Tables} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a1f19dc1280ad4971947658a4389eb233}\label{classGateTotalDiscreteProcess_a1f19dc1280ad4971947658a4389eb233}} 
+G4int {\bfseries m\+\_\+n\+Num\+Processes}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_acea120e7ccf94ac7f8ed8c37460f2940}\label{classGateTotalDiscreteProcess_acea120e7ccf94ac7f8ed8c37460f2940}} 
+G4int {\bfseries m\+\_\+n\+Max\+Num\+Processes}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_ab1950a5140f8609c0e91843048694603}\label{classGateTotalDiscreteProcess_ab1950a5140f8609c0e91843048694603}} 
+bool {\bfseries m\+\_\+n\+Initialized}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a268bf4fd4151b40abcfc3a70564e88e8}\label{classGateTotalDiscreteProcess_a268bf4fd4151b40abcfc3a70564e88e8}} 
+const G4\+Particle\+Definition $\ast$ {\bfseries p\+Particle\+Type}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a296ec355c5a274e48793d6a3554e8d2f}\label{classGateTotalDiscreteProcess_a296ec355c5a274e48793d6a3554e8d2f}} 
+std\+::vector$<$ G4\+VDiscrete\+Process $\ast$ $>$ {\bfseries m\+\_\+o\+Process\+Vec}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a9ed0b389df65880e888fef14cae11df4}\label{classGateTotalDiscreteProcess_a9ed0b389df65880e888fef14cae11df4}} 
+std\+::vector$<$ G4\+String $\ast$ $>$ {\bfseries m\+\_\+o\+Process\+Name\+Vec}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a77d46d63d0dd144f7801e8f34636682b}\label{classGateTotalDiscreteProcess_a77d46d63d0dd144f7801e8f34636682b}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateCrossSectionsTable}{Gate\+Cross\+Sections\+Table}} $\ast$ $>$ {\bfseries m\+\_\+o\+Cross\+Sections\+Table\+Vec}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_ae3d13f2bc08e1b5b9abfb8b7597adae2}\label{classGateTotalDiscreteProcess_ae3d13f2bc08e1b5b9abfb8b7597adae2}} 
+\mbox{\hyperlink{classGateCrossSectionsTable}{Gate\+Cross\+Sections\+Table}} $\ast$ {\bfseries m\+\_\+p\+Total\+Cross\+Sections\+Table}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_ae87cd44f338f6e0590b618ed3c07bf9e}\label{classGateTotalDiscreteProcess_ae87cd44f338f6e0590b618ed3c07bf9e}} 
+G4double {\bfseries m\+\_\+n\+Total\+Min\+Energy}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a03ae00422b1fa972b94f7cb7e62313da}\label{classGateTotalDiscreteProcess_a03ae00422b1fa972b94f7cb7e62313da}} 
+G4double {\bfseries m\+\_\+n\+Total\+Max\+Energy}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a5384d8ef19a1e78a8df160cec80eb7b4}\label{classGateTotalDiscreteProcess_a5384d8ef19a1e78a8df160cec80eb7b4}} 
+G4int {\bfseries m\+\_\+n\+Total\+Bin\+Number}
+\item 
+\mbox{\Hypertarget{classGateTotalDiscreteProcess_a17f16aeb4cfe6854704c88abf36096ba}\label{classGateTotalDiscreteProcess_a17f16aeb4cfe6854704c88abf36096ba}} 
+size\+\_\+t {\bfseries m\+\_\+n\+Process\+With\+Smallest\+PIL}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Total\+Discrete\+Process.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Total\+Discrete\+Process.\+cc\end{DoxyCompactItemize}

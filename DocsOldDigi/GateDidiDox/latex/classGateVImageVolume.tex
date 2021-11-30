@@ -1,0 +1,391 @@
+\hypertarget{classGateVImageVolume}{}\doxysection{Gate\+VImage\+Volume Class Reference}
+\label{classGateVImageVolume}\index{GateVImageVolume@{GateVImageVolume}}
+
+
+Base (abstract) class for volumes which represent the data provided by a 3D image of labels and a label to material correspondence table.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VImage\+Volume.\+hh$>$}
+
+Inheritance diagram for Gate\+VImage\+Volume\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.905160cm]{classGateVImageVolume}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}\label{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}} 
+typedef int {\bfseries Label\+Type}
+\begin{DoxyCompactList}\small\item\em The type of label. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_abaa713414d3b808c9410decdf8f3f69b}\label{classGateVImageVolume_abaa713414d3b808c9410decdf8f3f69b}} 
+typedef \mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries Image\+Type}
+\begin{DoxyCompactList}\small\item\em The type of label images. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_acf64b777c4f3d49d8d6f0342698e7dee}\label{classGateVImageVolume_acf64b777c4f3d49d8d6f0342698e7dee}} 
+typedef std\+::map$<$ \mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{Label\+Type}}, G4\+String $>$ {\bfseries Label\+To\+Material\+Name\+Type}
+\begin{DoxyCompactList}\small\item\em The type of label to material name correspondence table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a8f313e59d2a5f6bc954180ddacf82323}\label{classGateVImageVolume_a8f313e59d2a5f6bc954180ddacf82323}} 
+typedef std\+::pair$<$ std\+::pair$<$ G4double, G4double $>$, G4\+String $>$ {\bfseries Gate\+Voxel\+Material\+Translation\+Range}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ab1bda77ff31165b4a73101aa49c8d5e8}\label{classGateVImageVolume_ab1bda77ff31165b4a73101aa49c8d5e8}} 
+typedef std\+::vector$<$ Gate\+Voxel\+Material\+Translation\+Range $>$ {\bfseries Gate\+Voxel\+Material\+Translation\+Range\+Vector}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6a90efc5330eba97d320cc0e1f7122e9}\label{classGateVImageVolume_a6a90efc5330eba97d320cc0e1f7122e9}} 
+typedef std\+::map$<$ G4\+Material $\ast$, G4\+Vis\+Attributes $\ast$ $>$ {\bfseries Gate\+Voxel\+Attributes\+Translation\+Map}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual G4double \mbox{\hyperlink{classGateVImageVolume_a3854ce9bfd35c4a1f25dd86463c9c956}{Get\+Half\+Dimension}} (size\+\_\+t axis)
+\item 
+virtual G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateVImageVolume_a55671b3149f3fb82c4a1e94a73305125}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$, G4bool)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVImageVolume_a22e4dbf0d060bd8a63a6d65ebb06e3b7}{Destroy\+Own\+Solid\+And\+Logical\+Volume}} ()
+\item 
+\mbox{\hyperlink{classGateVImageVolume_adb8b31c4b866d728851be192d06e671f}{Gate\+VImage\+Volume}} (const G4\+String \&name, G4bool accepts\+Children, G4int depth)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_afe5e3775eb68716fe0b1cc6deefafc2c}\label{classGateVImageVolume_afe5e3775eb68716fe0b1cc6deefafc2c}} 
+virtual {\bfseries $\sim$\+Gate\+VImage\+Volume} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVImageVolume_a4447a24894aaa0b3172588490e8221fa}{Image\+And\+Table\+Filenames\+OK}} ()=0
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a2caf6644ab6ceee7c21cb638b6ac2ec8}\label{classGateVImageVolume_a2caf6644ab6ceee7c21cb638b6ac2ec8}} 
+void {\bfseries Update\+Position\+With\+Iso\+Center} ()
+\begin{DoxyCompactList}\small\item\em If user set the Iso\+Center, update the Position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6846f7e5f56a38bb6f2f6058208217e4}\label{classGateVImageVolume_a6846f7e5f56a38bb6f2f6058208217e4}} 
+void {\bfseries Set\+Image\+Filename} (const G4\+String \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the Image file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_ae7121bc72f4fde7880a2eb44ceb7930b}\label{classGateVImageVolume_ae7121bc72f4fde7880a2eb44ceb7930b}} 
+void {\bfseries Set\+Label\+To\+Material\+Table\+Filename} (const G4\+String \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the Label\+To\+Material file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a162c2e45039405c3c4c8f8a97636f6cc}\label{classGateVImageVolume_a162c2e45039405c3c4c8f8a97636f6cc}} 
+void {\bfseries Set\+HUTo\+Material\+Table\+Filename} (const G4\+String \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the HUTo\+Material file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_aa28bf259464f347ec58759c88742275e}\label{classGateVImageVolume_aa28bf259464f347ec58759c88742275e}} 
+void {\bfseries Set\+Range\+Material\+Table\+Filename} (const G4\+String \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the Range\+Material file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_acc8ab2ee212e1f3f40844aeb34b34125}\label{classGateVImageVolume_acc8ab2ee212e1f3f40844aeb34b34125}} 
+G4\+String {\bfseries Get\+Image\+Filename} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the Image file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a9ec770c2746dc92dba02e0d94f999409}\label{classGateVImageVolume_a9ec770c2746dc92dba02e0d94f999409}} 
+void {\bfseries Set\+Iso\+Center} (const G4\+Three\+Vector \&i)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6f223ddb7bfc3a4941bcf0176c1b607c}\label{classGateVImageVolume_a6f223ddb7bfc3a4941bcf0176c1b607c}} 
+G4\+Three\+Vector {\bfseries Get\+Iso\+Center} () const
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6788550fdf2a40b677a037f2ee340ad0}\label{classGateVImageVolume_a6788550fdf2a40b677a037f2ee340ad0}} 
+void {\bfseries Set\+Iso\+Center\+Rotation\+Flag} (G4bool b)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a37ac0aea82b289a690d149e61e394340}\label{classGateVImageVolume_a37ac0aea82b289a690d149e61e394340}} 
+G4\+Three\+Vector {\bfseries Get\+Half\+Size} () const
+\begin{DoxyCompactList}\small\item\em Returns the volume\textquotesingle{}s half size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a41a05c29becca9c6b45c94e0737017ab}\label{classGateVImageVolume_a41a05c29becca9c6b45c94e0737017ab}} 
+\mbox{\hyperlink{classGateVImageVolume_abaa713414d3b808c9410decdf8f3f69b}{Image\+Type}} $\ast$ {\bfseries Get\+Image} ()
+\begin{DoxyCompactList}\small\item\em Gets the Image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a776067c170e75f86b66d775af1e438a1}\label{classGateVImageVolume_a776067c170e75f86b66d775af1e438a1}} 
+const \mbox{\hyperlink{classGateVImageVolume_abaa713414d3b808c9410decdf8f3f69b}{Image\+Type}} $\ast$ {\bfseries Get\+Image} () const
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a71f03bdec9d6bf72c956780dd4ad1aa6}\label{classGateVImageVolume_a71f03bdec9d6bf72c956780dd4ad1aa6}} 
+G4\+Rotation\+Matrix {\bfseries Get\+Transform\+Matrix} () const
+\begin{DoxyCompactList}\small\item\em Returns the volume\textquotesingle{}s transform matrix. \end{DoxyCompactList}\item 
+G4\+String \mbox{\hyperlink{classGateVImageVolume_ad61710fa412b01dfa7d734537bb6a5b2}{Get\+Material\+Name\+From\+Label}} (\mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{Label\+Type}} l)
+\begin{DoxyCompactList}\small\item\em Returns the label at point p. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_aada339d1baf96d6c1bc5e48e6f4a7360}\label{classGateVImageVolume_aada339d1baf96d6c1bc5e48e6f4a7360}} 
+G4\+Vis\+Attributes $\ast$ {\bfseries Get\+Material\+Attributes} (G4\+Material $\ast$m)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_aae374cd3c01c1b44e987a36d7dcc5e04}\label{classGateVImageVolume_aae374cd3c01c1b44e987a36d7dcc5e04}} 
+void {\bfseries Build\+Label\+To\+G4\+Material\+Vector} (std\+::vector$<$ G4\+Material $\ast$ $>$ \&)
+\begin{DoxyCompactList}\small\item\em Builds a label to material map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a05b2b0e27dcc0cfbe0bcf7f87d2ed179}\label{classGateVImageVolume_a05b2b0e27dcc0cfbe0bcf7f87d2ed179}} 
+void {\bfseries Print\+Info} ()
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6e05a7c5a0dc44dc1defc7ea5170625c}\label{classGateVImageVolume_a6e05a7c5a0dc44dc1defc7ea5170625c}} 
+int {\bfseries Get\+Next\+Voxel} (const G4\+Three\+Vector \&position, const G4\+Three\+Vector \&direction)
+\begin{DoxyCompactList}\small\item\em Returns the material of the voxel of coordinates i,j,k. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVImageVolume_a707783f71ae768befa8f78b708211956}{Get\+Phys\+Vol\+For\+AVoxel}} (const G4int, const G4\+VTouchable \&, G4\+VPhysical\+Volume $\ast$$\ast$, G4\+Navigation\+History \&) const
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ad16a116246d6de06cdbcc7e3f1cb5b02}\label{classGateVImageVolume_ad16a116246d6de06cdbcc7e3f1cb5b02}} 
+G4\+VSolid $\ast$ {\bfseries Get\+Solid} ()
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ae670c944cccd26af83b11af660ef39dd}\label{classGateVImageVolume_ae670c944cccd26af83b11af660ef39dd}} 
+void {\bfseries Set\+Build\+Distance\+Transfo\+Filename} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ad384dfb0143a3f9b1275a87d65c866e2}\label{classGateVImageVolume_ad384dfb0143a3f9b1275a87d65c866e2}} 
+void {\bfseries Set\+Labeled\+Image\+Filename} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ab9d5d38ebfd59a63f1b178dd08da1d35}\label{classGateVImageVolume_ab9d5d38ebfd59a63f1b178dd08da1d35}} 
+void {\bfseries Set\+Density\+Image\+Filename} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a864605f0963e7f7b6a5811bf3d7ba6c3}\label{classGateVImageVolume_a864605f0963e7f7b6a5811bf3d7ba6c3}} 
+void {\bfseries Set\+Mass\+Image\+Filename} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a137a5c309ad7ae916a3ba2b21ef89376}\label{classGateVImageVolume_a137a5c309ad7ae916a3ba2b21ef89376}} 
+void {\bfseries Enable\+Bounding\+Box\+Only} (bool b)
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a56f3accfe2084b64329424233e7d8524}\label{classGateVImageVolume_a56f3accfe2084b64329424233e7d8524}} 
+void {\bfseries Set\+Max\+Out\+Of\+Range\+Fraction} (double f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ac9ac5fe3cc87eca16f542afe8a359505}\label{classGateVImageVolume_ac9ac5fe3cc87eca16f542afe8a359505}} 
+Gate\+Voxel\+Material\+Translation\+Range\+Vector {\bfseries m\+\_\+voxel\+Material\+Translation}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a32a3849d4cfb7f22e81fa9c81bf3d4e8}\label{classGateVImageVolume_a32a3849d4cfb7f22e81fa9c81bf3d4e8}} 
+Gate\+Voxel\+Attributes\+Translation\+Map {\bfseries m\+\_\+voxel\+Attributes\+Translation}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateVImageVolume_a7ab07374a1ff1ab9645afe045ea701fe}{Load\+Image}} (bool add1\+Voxel\+Margin)
+\begin{DoxyCompactList}\small\item\em Loads the image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6573596bb4a7699f767521af2e4b6bb6}\label{classGateVImageVolume_a6573596bb4a7699f767521af2e4b6bb6}} 
+void {\bfseries Load\+Image\+Materials\+Table} ()
+\begin{DoxyCompactList}\small\item\em Loads the Label\+To\+Material file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a24f5cb8759c06117be588ae39f81fe81}\label{classGateVImageVolume_a24f5cb8759c06117be588ae39f81fe81}} 
+void {\bfseries Load\+Image\+Materials\+From\+Hounsfield\+Table} ()
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_af4fbcd697373fe2a9d20eae31c217788}\label{classGateVImageVolume_af4fbcd697373fe2a9d20eae31c217788}} 
+void {\bfseries Load\+Image\+Materials\+From\+Label\+Table} ()
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a2489f5f767b5701f21d13ec893578ea8}\label{classGateVImageVolume_a2489f5f767b5701f21d13ec893578ea8}} 
+void {\bfseries Load\+Image\+Materials\+From\+Range\+Table} ()
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ad3dd8bc98165075bc22916970e96356f}\label{classGateVImageVolume_ad3dd8bc98165075bc22916970e96356f}} 
+void {\bfseries Build\+Labels\+Vector} (std\+::vector$<$ \mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{Label\+Type}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Builds a vector of the labels in the image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateVImageVolume_ad0b2e558b44e2b0dce0cb95d5e374240}{Remap\+Labels\+Contiguously}} (std\+::vector$<$ \mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{Label\+Type}} $>$ \&, bool margin\+Added)
+\begin{DoxyCompactList}\small\item\em Remaps the labels form 0 to Nb\+Labels-\/1. The vector is the vector of labels which has been computed by \mbox{\hyperlink{classGateVImageVolume_ad3dd8bc98165075bc22916970e96356f}{Build\+Labels\+Vector()}} \+: it is updated from 0 to Nb\+Labels-\/1. If margin\+Added is true then assigns the new label 0 to the label -\/1 which was created for margin voxels (see \mbox{\hyperlink{classGateVImageVolume_a7ab07374a1ff1ab9645afe045ea701fe}{Load\+Image()}}). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a20143efdcf0083a660a80a6c8c06619c}\label{classGateVImageVolume_a20143efdcf0083a660a80a6c8c06619c}} 
+void {\bfseries Build\+Distance\+Transfo} ()
+\begin{DoxyCompactList}\small\item\em Build distance map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a477503a90766446b36b2c94962dae2be}\label{classGateVImageVolume_a477503a90766446b36b2c94962dae2be}} 
+void {\bfseries Dump\+HLabel\+Image} ()
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6f0abb3b6a01a44e9d0c41d3fa12a05a}\label{classGateVImageVolume_a6f0abb3b6a01a44e9d0c41d3fa12a05a}} 
+void {\bfseries Dump\+Density\+Image} ()
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ad95a123591f64dba47564ab138fb3e66}\label{classGateVImageVolume_ad95a123591f64dba47564ab138fb3e66}} 
+void {\bfseries Dump\+Mass\+Image} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ac3af6cc70aa8a7ca581bb54e1004546d}\label{classGateVImageVolume_ac3af6cc70aa8a7ca581bb54e1004546d}} 
+G4\+String {\bfseries m\+Label\+To\+Image\+Material\+Table\+Filename}
+\begin{DoxyCompactList}\small\item\em The name of the Label\+To\+Material file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a05ac6647545bd688796cc2dc490294e5}\label{classGateVImageVolume_a05ac6647545bd688796cc2dc490294e5}} 
+G4\+String {\bfseries m\+Hounsfield\+To\+Image\+Material\+Table\+Filename}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a22a3480ac5f719c3fac11c8d2d639c42}\label{classGateVImageVolume_a22a3480ac5f719c3fac11c8d2d639c42}} 
+G4\+String {\bfseries m\+Range\+To\+Image\+Material\+Table\+Filename}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a7bc0429b4ba9b8bc1b2a42dde3513025}\label{classGateVImageVolume_a7bc0429b4ba9b8bc1b2a42dde3513025}} 
+bool {\bfseries m\+Load\+Image\+Materials\+From\+Hounsfield\+Table}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_afb861b9fd7c38d068b6fd54badae8758}\label{classGateVImageVolume_afb861b9fd7c38d068b6fd54badae8758}} 
+bool {\bfseries m\+Load\+Image\+Materials\+From\+Label\+Table}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a05b6a46d8563c28fae4c49dab36d7775}\label{classGateVImageVolume_a05b6a46d8563c28fae4c49dab36d7775}} 
+\mbox{\hyperlink{classGateHounsfieldMaterialTable}{Gate\+Hounsfield\+Material\+Table}} {\bfseries m\+Hounsfield\+Material\+Table}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_afd2fc168945c41fb0cdc0aa0487a13ae}\label{classGateVImageVolume_afd2fc168945c41fb0cdc0aa0487a13ae}} 
+\mbox{\hyperlink{classGateRangeMaterialTable}{Gate\+Range\+Material\+Table}} {\bfseries m\+Range\+Material\+Table}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a20ce5920293f409ce0cce620c5b43209}\label{classGateVImageVolume_a20ce5920293f409ce0cce620c5b43209}} 
+G4\+String {\bfseries m\+Distance\+Transfo\+Output}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a2b7db27abd9d1a238c42c41be9f831ff}\label{classGateVImageVolume_a2b7db27abd9d1a238c42c41be9f831ff}} 
+bool {\bfseries m\+Build\+Distance\+Transfo}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_adb157e763fa4175cbcc43ad9d1eced1b}\label{classGateVImageVolume_adb157e763fa4175cbcc43ad9d1eced1b}} 
+bool {\bfseries m\+Write\+HLabel\+Image}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a0dd78c22e75dfe26e4c487e97858a7df}\label{classGateVImageVolume_a0dd78c22e75dfe26e4c487e97858a7df}} 
+G4\+String {\bfseries m\+HLabel\+Image\+Filename}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a04eb8d0e0b098231d70dcb0089b7196a}\label{classGateVImageVolume_a04eb8d0e0b098231d70dcb0089b7196a}} 
+bool {\bfseries m\+Write\+Density\+Image}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_af1446b8231416666123b1e62658466a0}\label{classGateVImageVolume_af1446b8231416666123b1e62658466a0}} 
+G4\+String {\bfseries m\+Density\+Image\+Filename}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a4e66f1679d432222e829c49413d8b9f2}\label{classGateVImageVolume_a4e66f1679d432222e829c49413d8b9f2}} 
+G4\+String {\bfseries m\+Mass\+Image\+Filename}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a03621f9354e4c1a593c742031aaf57e4}\label{classGateVImageVolume_a03621f9354e4c1a593c742031aaf57e4}} 
+bool {\bfseries m\+Image\+Materials\+From\+Hounsfield\+Table\+Done}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a9a82e66865afdc8b992f2a1cd58bd3d9}\label{classGateVImageVolume_a9a82e66865afdc8b992f2a1cd58bd3d9}} 
+bool {\bfseries m\+Image\+Materials\+From\+Range\+Table\+Done}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a3e2e8a876b3d8495df5945d8211b886d}\label{classGateVImageVolume_a3e2e8a876b3d8495df5945d8211b886d}} 
+G4\+String {\bfseries m\+Image\+Filename}
+\begin{DoxyCompactList}\small\item\em The name of the Image file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_aef00c662b2eed872296e288626457a70}\label{classGateVImageVolume_aef00c662b2eed872296e288626457a70}} 
+\mbox{\hyperlink{classGateVImageVolume_abaa713414d3b808c9410decdf8f3f69b}{Image\+Type}} $\ast$ {\bfseries p\+Image}
+\begin{DoxyCompactList}\small\item\em Pointer on label image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_ae475c94c362d6602cf6f02907d214f95}\label{classGateVImageVolume_ae475c94c362d6602cf6f02907d214f95}} 
+\mbox{\hyperlink{classGateVImageVolume_acf64b777c4f3d49d8d6f0342698e7dee}{Label\+To\+Material\+Name\+Type}} {\bfseries m\+Label\+To\+Material\+Name}
+\begin{DoxyCompactList}\small\item\em Label\+To\+Material\+Name. \end{DoxyCompactList}\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGateVImageVolume_ac9a3bcb42ebf62b479bd3c6ae20b169c}{m\+Half\+Size}}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ade11193e628155c6dc7c0d1522290624}\label{classGateVImageVolume_ade11193e628155c6dc7c0d1522290624}} 
+G4\+Three\+Vector {\bfseries m\+Iso\+Center}
+\begin{DoxyCompactList}\small\item\em Iso\+Center. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageVolume_a68fb09add076c52cd9db9e63107a9da7}\label{classGateVImageVolume_a68fb09add076c52cd9db9e63107a9da7}} 
+G4bool {\bfseries m\+Iso\+Center\+Is\+Set\+By\+User}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a07aef4c2d0ad299755c992f6171a1738}\label{classGateVImageVolume_a07aef4c2d0ad299755c992f6171a1738}} 
+G4bool {\bfseries m\+Iso\+Center\+Rotation\+Flag}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a6a8ebce86cbd08c795a94fe7bb47dbdb}\label{classGateVImageVolume_a6a8ebce86cbd08c795a94fe7bb47dbdb}} 
+G4\+Three\+Vector {\bfseries m\+Initial\+Translation}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a276689eecdd67e6a2f1d1a660e7c68d0}\label{classGateVImageVolume_a276689eecdd67e6a2f1d1a660e7c68d0}} 
+G4\+Rotation\+Matrix {\bfseries m\+Transform\+Matrix}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a736a78e3ead0330175419cbecf5af17a}\label{classGateVImageVolume_a736a78e3ead0330175419cbecf5af17a}} 
+G4\+Box $\ast$ {\bfseries p\+Box\+Solid}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_adc4f9cf19f5807d26f6da4f8a9c54cf3}\label{classGateVImageVolume_adc4f9cf19f5807d26f6da4f8a9c54cf3}} 
+G4\+Logical\+Volume $\ast$ {\bfseries p\+Box\+Log}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_adfa95d744ce7f4acb15eedc82e7af893}\label{classGateVImageVolume_adfa95d744ce7f4acb15eedc82e7af893}} 
+G4\+VPhysical\+Volume $\ast$ {\bfseries p\+Box\+Phys}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a84f64f3ef913bab756a067ecab220987}\label{classGateVImageVolume_a84f64f3ef913bab756a067ecab220987}} 
+bool {\bfseries m\+Is\+Bounding\+Box\+Only\+Mode\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ac362d18704dfb310342cd51d424cb527}\label{classGateVImageVolume_ac362d18704dfb310342cd51d424cb527}} 
+unsigned int {\bfseries m\+Underflow}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_a58d8378bebfcac12b9e059b3ea7bf1d1}\label{classGateVImageVolume_a58d8378bebfcac12b9e059b3ea7bf1d1}} 
+unsigned int {\bfseries m\+Overflow}
+\item 
+\mbox{\Hypertarget{classGateVImageVolume_ad7fcda9c8cccd82ca277f90ea09fca3c}\label{classGateVImageVolume_ad7fcda9c8cccd82ca277f90ea09fca3c}} 
+double {\bfseries m\+Max\+Out\+Of\+Range\+Fraction}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base (abstract) class for volumes which represent the data provided by a 3D image of labels and a label to material correspondence table. 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateVImageVolume_adb8b31c4b866d728851be192d06e671f}\label{classGateVImageVolume_adb8b31c4b866d728851be192d06e671f}} 
+\index{GateVImageVolume@{GateVImageVolume}!GateVImageVolume@{GateVImageVolume}}
+\index{GateVImageVolume@{GateVImageVolume}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{GateVImageVolume()}{GateVImageVolume()}}
+{\footnotesize\ttfamily Gate\+VImage\+Volume\+::\+Gate\+VImage\+Volume (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name,  }\item[{G4bool}]{accepts\+Children,  }\item[{G4int}]{depth }\end{DoxyParamCaption})}
+
+Constructor with \+: the path to the volume to create (for commands) the name of the volume to create Creates the messenger associated to the volume 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVImageVolume_a55671b3149f3fb82c4a1e94a73305125}\label{classGateVImageVolume_a55671b3149f3fb82c4a1e94a73305125}} 
+\index{GateVImageVolume@{GateVImageVolume}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily virtual G4\+Logical\+Volume $\ast$ Gate\+VImage\+Volume\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pure virtual method, will be defined in concrete classes \mbox{\hyperlink{classGateBox}{Gate\+Box}}, \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} ... 
+
+Implements \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{Gate\+VVolume}}.
+
+
+
+Implemented in \mbox{\hyperlink{classGateImageNestedParametrisedVolume_abaff756803ef094479f786c0604fc29c}{Gate\+Image\+Nested\+Parametrised\+Volume}}, \mbox{\hyperlink{classGateImageRegionalizedVolume_abb0dda5a13fd5efc3b1b6b828aa4f86e}{Gate\+Image\+Regionalized\+Volume}}, and \mbox{\hyperlink{classGateImageRegularParametrisedVolume_a179de6ae71e03426b7f832ceca03d752}{Gate\+Image\+Regular\+Parametrised\+Volume}}.
+
+\mbox{\Hypertarget{classGateVImageVolume_a22e4dbf0d060bd8a63a6d65ebb06e3b7}\label{classGateVImageVolume_a22e4dbf0d060bd8a63a6d65ebb06e3b7}} 
+\index{GateVImageVolume@{GateVImageVolume}!DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}}
+\index{DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{DestroyOwnSolidAndLogicalVolume()}{DestroyOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Volume\+::\+Destroy\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateVImageVolume_a3854ce9bfd35c4a1f25dd86463c9c956}\label{classGateVImageVolume_a3854ce9bfd35c4a1f25dd86463c9c956}} 
+\index{GateVImageVolume@{GateVImageVolume}!GetHalfDimension@{GetHalfDimension}}
+\index{GetHalfDimension@{GetHalfDimension}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{GetHalfDimension()}{GetHalfDimension()}}
+{\footnotesize\ttfamily G4double Gate\+VImage\+Volume\+::\+Get\+Half\+Dimension (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pure virtual method (to be implemented in sub-\/classes) Must return an value for the half-\/size of a volume along an axis (X=0, Y=1, Z=2) 
+
+Implements \mbox{\hyperlink{classGateVVolume_a6b5af3dbb80ec1b182ad571560aa762b}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateVImageVolume_ad61710fa412b01dfa7d734537bb6a5b2}\label{classGateVImageVolume_ad61710fa412b01dfa7d734537bb6a5b2}} 
+\index{GateVImageVolume@{GateVImageVolume}!GetMaterialNameFromLabel@{GetMaterialNameFromLabel}}
+\index{GetMaterialNameFromLabel@{GetMaterialNameFromLabel}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{GetMaterialNameFromLabel()}{GetMaterialNameFromLabel()}}
+{\footnotesize\ttfamily G4\+String Gate\+VImage\+Volume\+::\+Get\+Material\+Name\+From\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{Label\+Type}}}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the label at point p. 
+
+Returns the label at voxel of index Returns the label at voxel of coordinates i,j,k Returns the material name corresponding to a label \mbox{\Hypertarget{classGateVImageVolume_a707783f71ae768befa8f78b708211956}\label{classGateVImageVolume_a707783f71ae768befa8f78b708211956}} 
+\index{GateVImageVolume@{GateVImageVolume}!GetPhysVolForAVoxel@{GetPhysVolForAVoxel}}
+\index{GetPhysVolForAVoxel@{GetPhysVolForAVoxel}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{GetPhysVolForAVoxel()}{GetPhysVolForAVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+Volume\+::\+Get\+Phys\+Vol\+For\+AVoxel (\begin{DoxyParamCaption}\item[{const}]{G4int,  }\item[{const G4\+VTouchable \&}]{,  }\item[{G4\+VPhysical\+Volume $\ast$$\ast$}]{,  }\item[{G4\+Navigation\+History \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateImageNestedParametrisedVolume_a225322e22249fc008afe04a32b1613cf}{Gate\+Image\+Nested\+Parametrised\+Volume}}.
+
+\mbox{\Hypertarget{classGateVImageVolume_a4447a24894aaa0b3172588490e8221fa}\label{classGateVImageVolume_a4447a24894aaa0b3172588490e8221fa}} 
+\index{GateVImageVolume@{GateVImageVolume}!ImageAndTableFilenamesOK@{ImageAndTableFilenamesOK}}
+\index{ImageAndTableFilenamesOK@{ImageAndTableFilenamesOK}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{ImageAndTableFilenamesOK()}{ImageAndTableFilenamesOK()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+Volume\+::\+Image\+And\+Table\+Filenames\+OK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Method which is called after the image file name and the label to material file name have been set 
+
+Implemented in \mbox{\hyperlink{classGateImageNestedParametrisedVolume_afa710338d41624bc117af36771e2bb55}{Gate\+Image\+Nested\+Parametrised\+Volume}}, \mbox{\hyperlink{classGateImageRegionalizedVolume_a2e802bee4097fc0e958eb0e5bf6685b9}{Gate\+Image\+Regionalized\+Volume}}, and \mbox{\hyperlink{classGateImageRegularParametrisedVolume_ac74335fed8c2f334ab6481f585de3eb9}{Gate\+Image\+Regular\+Parametrised\+Volume}}.
+
+\mbox{\Hypertarget{classGateVImageVolume_a7ab07374a1ff1ab9645afe045ea701fe}\label{classGateVImageVolume_a7ab07374a1ff1ab9645afe045ea701fe}} 
+\index{GateVImageVolume@{GateVImageVolume}!LoadImage@{LoadImage}}
+\index{LoadImage@{LoadImage}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{LoadImage()}{LoadImage()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Volume\+::\+Load\+Image (\begin{DoxyParamCaption}\item[{bool}]{add1\+Voxel\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Loads the image. 
+
+Loads the image If add1\+Voxel\+Margin is true then a margin of one voxel in each direction is added to the image (the margin voxels have the value -\/1). The volume\textquotesingle{}s half size is the half size of the initial image, even if a margin is added\mbox{\Hypertarget{classGateVImageVolume_ad0b2e558b44e2b0dce0cb95d5e374240}\label{classGateVImageVolume_ad0b2e558b44e2b0dce0cb95d5e374240}} 
+\index{GateVImageVolume@{GateVImageVolume}!RemapLabelsContiguously@{RemapLabelsContiguously}}
+\index{RemapLabelsContiguously@{RemapLabelsContiguously}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{RemapLabelsContiguously()}{RemapLabelsContiguously()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Volume\+::\+Remap\+Labels\+Contiguously (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{Label\+Type}} $>$ \&}]{labels,  }\item[{bool}]{margin\+Added }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Remaps the labels form 0 to Nb\+Labels-\/1. The vector is the vector of labels which has been computed by \mbox{\hyperlink{classGateVImageVolume_ad3dd8bc98165075bc22916970e96356f}{Build\+Labels\+Vector()}} \+: it is updated from 0 to Nb\+Labels-\/1. If margin\+Added is true then assigns the new label 0 to the label -\/1 which was created for margin voxels (see \mbox{\hyperlink{classGateVImageVolume_a7ab07374a1ff1ab9645afe045ea701fe}{Load\+Image()}}). 
+
+Remaps the labels form 0 to Nb\+Labels-\/1. If margin\+Added is true then assigns the new label 0 to the label -\/1 which was created for margin voxels (see Load\+Image). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGateVImageVolume_ac9a3bcb42ebf62b479bd3c6ae20b169c}\label{classGateVImageVolume_ac9a3bcb42ebf62b479bd3c6ae20b169c}} 
+\index{GateVImageVolume@{GateVImageVolume}!mHalfSize@{mHalfSize}}
+\index{mHalfSize@{mHalfSize}!GateVImageVolume@{GateVImageVolume}}
+\doxysubsubsection{\texorpdfstring{mHalfSize}{mHalfSize}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+VImage\+Volume\+::m\+Half\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+Half size of the volume $\ast$$\ast$$\ast$ BEWARE \+: this is less than Half Size of the image stored $\ast$$\ast$$\ast$ because a margin of 1 voxel in each direction is added to $\ast$$\ast$$\ast$ the image stored $\ast$$\ast$$\ast$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/\mbox{\hyperlink{GateVImageVolume_8hh}{Gate\+VImage\+Volume.\+hh}}\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/\mbox{\hyperlink{GateVImageVolume_8cc}{Gate\+VImage\+Volume.\+cc}}\end{DoxyCompactItemize}

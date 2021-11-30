@@ -1,0 +1,123 @@
+\hypertarget{GateImageT_8hh_source}{}\doxysection{Gate\+Image\+T.\+hh}
+\label{GateImageT_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateImageT.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateImageT.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef \_\_GATEIMAGET\_HH\_\_}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define \_\_GATEIMAGET\_HH\_\_}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// g4}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <globals.hh>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// std}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{// gate}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}GateVImage.hh"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateMachine.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}GateMHDImage.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}GateDICOMImage.hh"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}GateMiscFunctions.hh"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{// root}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}TH1.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}TH2.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}TH3.h"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45 \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType>}
+\DoxyCodeLine{46 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageT}{GateImageT}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImage}{GateVImage}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \mbox{\hyperlink{classGateImageT}{GateImageT}}();}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateImageT}{\string~GateImageT}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{comment}{// Define some iterator types}}
+\DoxyCodeLine{54   \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::vector<PixelType>::iterator iterator;}
+\DoxyCodeLine{55   \textcolor{keyword}{typedef} \textcolor{keyword}{typename} std::vector<PixelType>::const\_iterator const\_iterator;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}{Allocate}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{comment}{// Access to the image values}}
+\DoxyCodeLine{62 \textcolor{comment}{}  \textcolor{keyword}{inline} PixelType \mbox{\hyperlink{classGateImageT_a47a9b5b81077cd0a7a4807c1fe0d802e}{GetValue}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data[index]; \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65   \textcolor{keyword}{inline} PixelType\& \mbox{\hyperlink{classGateImageT_acb832a5850927b77952e725e33e6c26b}{GetValue}}(\textcolor{keywordtype}{int} index)       \{ \textcolor{keywordflow}{return} data[index]; \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68   \textcolor{keyword}{inline} PixelType \mbox{\hyperlink{classGateImageT_a412cde48646a159ad55c1058db89e7d8}{GetValue}}(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j, \textcolor{keywordtype}{int} k)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data[i+j*lineSize+k*planeSize]; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71   \textcolor{keyword}{inline} PixelType \mbox{\hyperlink{classGateImageT_a0fe7ee0891d432fbee7d938f3b720e3c}{GetValue}}(\textcolor{keyword}{const} G4ThreeVector\& position)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data[GetIndexFromPosition(position)]; \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74   \textcolor{keyword}{inline} PixelType\& \mbox{\hyperlink{classGateImageT_a955e6d71994e25ccb60201a90a99b429}{GetValue}}(\textcolor{keyword}{const} G4ThreeVector\& position) \{ \textcolor{keywordflow}{return} data[GetIndexFromPosition(position)]; \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_abd7234408a6bd7729256bef1d97a2677}{SetValue}} ( \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z, PixelType v ) \{ data[x+y*lineSize+z*planeSize]=v; \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_a3a3df0f03490ad5897e51bd02e6ec0c3}{SetValue}} ( \textcolor{keywordtype}{int} i, PixelType v ) \{ data[i]=v; \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_a80e299f953ee81102aaae73ac8f53e8e}{AddValue}}(\textcolor{keywordtype}{int} index, PixelType value) \{ data[index] += value; \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86   \textcolor{comment}{//  inline void Fill(PixelType v) \{ for (iterator i=begin(); i!=end(); ++i) (*i)=v; \}}}
+\DoxyCodeLine{87   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_a60bb0db1c0267d4f703de9295ae0910a}{Fill}}(PixelType v) \{ fill(data.begin(), data.end(), v); \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{keyword}{inline} PixelType GetMinValue()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} *std::min\_element(begin(), end()); \}}
+\DoxyCodeLine{90   \textcolor{keyword}{inline} PixelType GetMaxValue()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} *std::max\_element(begin(), end()); \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{keyword}{inline} PixelType GetOutsideValue()   \{ \textcolor{keywordflow}{return} mOutsideValue; \} \textcolor{comment}{//The HU value that must be considered not part of the phantom}}
+\DoxyCodeLine{93   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetOutsideValue( PixelType v ) \{ mOutsideValue=v; \}}
+\DoxyCodeLine{94   PixelType GetNeighborValueFromCoordinate(\textcolor{keyword}{const} ESide \& side, \textcolor{keyword}{const} G4ThreeVector \& coord);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} MergeDataByAddition(G4String filename);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   \textcolor{comment}{// iterators}}
+\DoxyCodeLine{99   iterator begin() \{ \textcolor{keywordflow}{return} data.begin(); \}}
+\DoxyCodeLine{100   iterator end()   \{ \textcolor{keywordflow}{return} data.end(); \}}
+\DoxyCodeLine{101   const\_iterator begin()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data.begin(); \}}
+\DoxyCodeLine{102   const\_iterator end()\textcolor{keyword}{ const  }\{ \textcolor{keywordflow}{return} data.end(); \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \textcolor{comment}{// IO}}
+\DoxyCodeLine{106 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}{Write}}(G4String filename, \textcolor{keyword}{const} G4String \& comment = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{109   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}{Read}}(G4String filename);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{113   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}{PrintInfo}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{117 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{118   std::vector<PixelType> data;}
+\DoxyCodeLine{119   PixelType mOutsideValue;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} ReadAscii(G4String filename);}
+\DoxyCodeLine{122   \textcolor{keywordtype}{void} ReadAnalyze(G4String filename);}
+\DoxyCodeLine{123   \textcolor{keywordtype}{void} ReadMHD(G4String filename);}
+\DoxyCodeLine{124   \textcolor{keywordtype}{void} ReadInterfile(G4String fileName);}
+\DoxyCodeLine{125   \textcolor{keywordtype}{void} ReadDICOM(G4String fileName);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{keywordtype}{void} WriteVox(std::ofstream \& os);}
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} WriteAscii(std::ofstream \& os, \textcolor{keyword}{const} G4String \& comment);}
+\DoxyCodeLine{129   \textcolor{keywordtype}{void} WriteBin(std::ofstream \& os);}
+\DoxyCodeLine{130   \textcolor{keywordtype}{void} WriteAnalyzeHeader(G4String filename);}
+\DoxyCodeLine{131   \textcolor{keywordtype}{void} WriteRoot(G4String filename);}
+\DoxyCodeLine{132   \textcolor{keywordtype}{void} WriteMHD(std::string filename);}
+\DoxyCodeLine{133   \textcolor{keywordtype}{void} WriteDICOM(std::string filename);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#include "{}GateImageT.icc"{}}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

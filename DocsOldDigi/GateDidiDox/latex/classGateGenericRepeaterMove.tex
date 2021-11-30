@@ -1,0 +1,103 @@
+\hypertarget{classGateGenericRepeaterMove}{}\doxysection{Gate\+Generic\+Repeater\+Move Class Reference}
+\label{classGateGenericRepeaterMove}\index{GateGenericRepeaterMove@{GateGenericRepeaterMove}}
+Inheritance diagram for Gate\+Generic\+Repeater\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateGenericRepeaterMove}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_ada8981b7c7736057097134ce0208cfef}\label{classGateGenericRepeaterMove_ada8981b7c7736057097134ce0208cfef}} 
+{\bfseries Gate\+Generic\+Repeater\+Move} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name)
+\item 
+virtual void \mbox{\hyperlink{classGateGenericRepeaterMove_a656d51155d227a4976588cfc837c3ef9}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateGenericRepeaterMove_ae1d0e23cf7ef1053d17da3994320a442}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_ae36fdbc4048551e78c0e67be3ff895ed}\label{classGateGenericRepeaterMove_ae36fdbc4048551e78c0e67be3ff895ed}} 
+void {\bfseries Set\+Filename} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_a9dc20154701add17e09247a010d0ac9f}\label{classGateGenericRepeaterMove_a9dc20154701add17e09247a010d0ac9f}} 
+void {\bfseries Enable\+Relative\+Translation} (bool b)
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_a5a9ef25d845e18acda95bb5534b91a8a}\label{classGateGenericRepeaterMove_a5a9ef25d845e18acda95bb5534b91a8a}} 
+void {\bfseries Get\+Placement\+List\+From\+Time} (double a\+Time, std\+::vector$<$ Gate\+Placement $>$ \&list)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_a91e56c8a8e493bd199757184f935f9eb}\label{classGateGenericRepeaterMove_a91e56c8a8e493bd199757184f935f9eb}} 
+\mbox{\hyperlink{classGateGenericRepeater}{Gate\+Generic\+Repeater}} $\ast$ {\bfseries m\+Generic\+Repeater}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_a0479ec63109e2f039eef8992ad3a8c2e}\label{classGateGenericRepeaterMove_a0479ec63109e2f039eef8992ad3a8c2e}} 
+\mbox{\hyperlink{classGateGenericRepeaterMoveMessenger}{Gate\+Generic\+Repeater\+Move\+Messenger}} $\ast$ {\bfseries m\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_a1d2245a327f2f6c8a02ed1299b53bd0a}\label{classGateGenericRepeaterMove_a1d2245a327f2f6c8a02ed1299b53bd0a}} 
+std\+::vector$<$ std\+::vector$<$ Gate\+Placement $>$ $>$ {\bfseries m\+List\+Of\+Placements\+List}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_ace92dcf322306c9d943ee8b83f3c1b3a}\label{classGateGenericRepeaterMove_ace92dcf322306c9d943ee8b83f3c1b3a}} 
+std\+::vector$<$ double $>$ {\bfseries m\+Time\+List}
+\item 
+\mbox{\Hypertarget{classGateGenericRepeaterMove_a15c7a3d41f438910971b6811cec99203}\label{classGateGenericRepeaterMove_a15c7a3d41f438910971b6811cec99203}} 
+bool {\bfseries m\+Use\+Relative\+Translation}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGenericRepeaterMove_ae1d0e23cf7ef1053d17da3994320a442}\label{classGateGenericRepeaterMove_ae1d0e23cf7ef1053d17da3994320a442}} 
+\index{GateGenericRepeaterMove@{GateGenericRepeaterMove}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateGenericRepeaterMove@{GateGenericRepeaterMove}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Repeater\+Move\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must print-\/out a short description of the repeater
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateGenericRepeaterMove_a656d51155d227a4976588cfc837c3ef9}\label{classGateGenericRepeaterMove_a656d51155d227a4976588cfc837c3ef9}} 
+\index{GateGenericRepeaterMove@{GateGenericRepeaterMove}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateGenericRepeaterMove@{GateGenericRepeaterMove}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Repeater\+Move\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must compute a series of placements (position+orientation) for a series of copies of the
+
+orignal volume. These placements must be stored in the placement queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Generic\+Repeater\+Move.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Generic\+Repeater\+Move.\+cc\end{DoxyCompactItemize}

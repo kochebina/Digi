@@ -1,0 +1,48 @@
+\hypertarget{GateClockDependent_8hh_source}{}\doxysection{Gate\+Clock\+Dependent.\+hh}
+\label{GateClockDependent_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateClockDependent.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateClockDependent.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateClockDependent\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateClockDependent\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateNamedObject.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 \textcolor{comment}{}\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClockDependent}{GateClockDependent}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32   \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{classGateClockDependent_a8124495c422df04847338f5ddd6228ce}{GateClockDependent}}(\textcolor{keyword}{const} G4String\& itsName,G4bool canBeDisabled=\textcolor{keyword}{true});}
+\DoxyCodeLine{37     \textcolor{keyword}{inline} \textcolor{keyword}{virtual}  \mbox{\hyperlink{classGateClockDependent}{\string~GateClockDependent}}() \{\}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{public}:}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{43      }
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{classGateClockDependent_ad1efb17a2ad6fe308a10289e12b43ee4}{GetCurrentTime}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateClockDependent_a9095dac9b225f585fb62151fb74f753c}{IsEnabled}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateClockDependent_a825e4423c20307fe90242034b78eae42}{bIsEnabled}};\}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateClockDependent_ad7f0716e4fd1657f7df73ab489c5b771}{Enable}}(G4bool val) \{ \mbox{\hyperlink{classGateClockDependent_a825e4423c20307fe90242034b78eae42}{bIsEnabled}} = val; \}  }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateClockDependent_a72d44c210105b4700905a2e022e1f8d8}{CanBeDisabled}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateClockDependent_ab8082076e7360f8a8bcb19b77b17e353}{bCanBeDisabled}};\}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56    \textcolor{keyword}{protected}:}
+\DoxyCodeLine{58     G4bool \mbox{\hyperlink{classGateClockDependent_a825e4423c20307fe90242034b78eae42}{bIsEnabled}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{63     G4bool \mbox{\hyperlink{classGateClockDependent_ab8082076e7360f8a8bcb19b77b17e353}{bCanBeDisabled}};}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 }
+
+\end{DoxyCode}

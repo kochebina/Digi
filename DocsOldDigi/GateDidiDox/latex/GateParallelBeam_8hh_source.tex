@@ -1,0 +1,113 @@
+\hypertarget{GateParallelBeam_8hh_source}{}\doxysection{Gate\+Parallel\+Beam.\+hh}
+\label{GateParallelBeam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParallelBeam.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParallelBeam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateParallelBeam\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateParallelBeam\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}vector"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4RotationMatrix.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateBoxReplicaPlacement.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHexagone}{GateHexagone}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrap}{GateTrap}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBoxReplicaPlacement}{GateBoxReplicaPlacement}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParallelBeamMessenger}{GateParallelBeamMessenger}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30    \textcolor{keyword}{public}:}
+\DoxyCodeLine{31      \textcolor{comment}{// Constructor1}}
+\DoxyCodeLine{32      \mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}}(\textcolor{keyword}{const} G4String\& itsName, G4bool acceptsChildren=\textcolor{keyword}{true}, G4int depth=0);}
+\DoxyCodeLine{33      }
+\DoxyCodeLine{34      \textcolor{comment}{// Constructor2}}
+\DoxyCodeLine{35      \mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{36                       G4double itsSeptalThickness,G4double itsInnerRadius,G4double itsHeight,}
+\DoxyCodeLine{37                   G4double itsDimensionX, G4double itsDimensionY);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateParallelBeam}{\string~GateParallelBeam}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41      FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}})}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResizeParallelBeam();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45      \textcolor{keywordtype}{void} PreComputeConstants();}
+\DoxyCodeLine{46      }
+\DoxyCodeLine{47      \mbox{\hyperlink{classGateBox}{GateBox}}* GetParallelBeamCreator()\textcolor{keyword}{ const}}
+\DoxyCodeLine{48 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateBox}{GateBox}}*) \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}(); \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50      \textcolor{keyword}{inline} G4double GetParallelBeamSeptalThickness()\textcolor{keyword}{ const}}
+\DoxyCodeLine{51 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_SeptalThickness; \}}
+\DoxyCodeLine{52      \textcolor{keyword}{inline} G4double GetParallelBeamInnerRadius()\textcolor{keyword}{ const}}
+\DoxyCodeLine{53 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_InnerRadius; \}}
+\DoxyCodeLine{54      \textcolor{keyword}{inline} G4double GetParallelBeamHeight()\textcolor{keyword}{ const}}
+\DoxyCodeLine{55 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_Height; \}}
+\DoxyCodeLine{56      \textcolor{keyword}{inline} G4double GetParallelBeamDimensionX()\textcolor{keyword}{ const}}
+\DoxyCodeLine{57 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_DimensionX; \}}
+\DoxyCodeLine{58      \textcolor{keyword}{inline} G4double GetParallelBeamDimensionY()\textcolor{keyword}{ const}}
+\DoxyCodeLine{59 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_DimensionY; \}}
+\DoxyCodeLine{60      \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\& GetParallelBeamMaterial()\textcolor{keyword}{ const}}
+\DoxyCodeLine{61 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} mMaterialName; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetParallelBeamSeptalThickness(G4double val)}
+\DoxyCodeLine{64     \{ m\_SeptalThickness = val; ResizeParallelBeam();\}}
+\DoxyCodeLine{65      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetParallelBeamInnerRadius(G4double val)}
+\DoxyCodeLine{66         \{ m\_InnerRadius = val; ResizeParallelBeam(); \}}
+\DoxyCodeLine{67      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetParallelBeamHeight(G4double val)}
+\DoxyCodeLine{68     \{ m\_Height = val; ResizeParallelBeam(); \}}
+\DoxyCodeLine{69      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetParallelBeamDimensionX(G4double val)}
+\DoxyCodeLine{70     \{ m\_DimensionX = val; ResizeParallelBeam(); \}}
+\DoxyCodeLine{71      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetParallelBeamDimensionY(G4double val)}
+\DoxyCodeLine{72     \{ m\_DimensionY = val; ResizeParallelBeam();\}}
+\DoxyCodeLine{73      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetParallelBeamMaterial(\textcolor{keyword}{const} G4String\& val)}
+\DoxyCodeLine{74     \{ mMaterialName = val; ResizeParallelBeam();\}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77    \textcolor{keyword}{protected}:}
+\DoxyCodeLine{78      G4double m\_SeptalThickness,m\_InnerRadius,m\_Height,m\_DimensionX,m\_DimensionY;}
+\DoxyCodeLine{79      G4double m\_DimensionXn,m\_DimensionYn;}
+\DoxyCodeLine{80      G4String mMaterialName;}
+\DoxyCodeLine{81      G4double b\_Delta,b\_Width,b\_Length;}
+\DoxyCodeLine{82      G4double l\_Delta,l\_Width;}
+\DoxyCodeLine{83      G4double m\_TrapSideSmall,m\_TrapSideBig,m\_TrapAngle;}
+\DoxyCodeLine{84      G4int    b\_N;}
+\DoxyCodeLine{85      G4int    l\_N;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87      G4ThreeVector  m\_Translation1;}
+\DoxyCodeLine{88      G4ThreeVector  m\_Translation2;}
+\DoxyCodeLine{89      G4ThreeVector  m\_Translation3;}
+\DoxyCodeLine{90      G4ThreeVector  m\_Translation4;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92      \mbox{\hyperlink{classGateBoxReplicaPlacement}{GateBoxReplicaPlacement}}* m\_lineInserter;}
+\DoxyCodeLine{93      \mbox{\hyperlink{classGateBoxReplicaPlacement}{GateBoxReplicaPlacement}}* m\_boxInserter;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95      \mbox{\hyperlink{classGateHexagone}{GateHexagone}}*         m\_CentralHole;}
+\DoxyCodeLine{96      \mbox{\hyperlink{classGateTrap}{GateTrap}}*             m\_SideTrap1;}
+\DoxyCodeLine{97      \mbox{\hyperlink{classGateTrap}{GateTrap}}*             m\_SideTrap2;}
+\DoxyCodeLine{98      \mbox{\hyperlink{classGateTrap}{GateTrap}}*             m\_SideTrap3;}
+\DoxyCodeLine{99      \mbox{\hyperlink{classGateTrap}{GateTrap}}*             m\_SideTrap4;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102      \mbox{\hyperlink{classGateParallelBeamMessenger}{GateParallelBeamMessenger}}* m\_messenger;}
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 MAKE\_AUTO\_CREATOR\_VOLUME(parallelbeam,\mbox{\hyperlink{classGateParallelBeam}{GateParallelBeam}})}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

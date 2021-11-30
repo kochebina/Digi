@@ -1,0 +1,120 @@
+\hypertarget{constantsLocateEvents_8h_source}{}\doxysection{constants\+Locate\+Events.\+h}
+\label{constantsLocateEvents_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/constantsLocateEvents.h@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/constantsLocateEvents.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{           List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{     -\/-\/  constantsLocateEvents.h  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{     Luc.Simon@iphe.unil.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{     Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{     Copyright (C) 2003 IPHE/UNIL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{     of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{     Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{     See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{     Description of constantsLocateEvents.h:}}
+\DoxyCodeLine{22 \textcolor{comment}{     Variables and constants used for the calculation of events position.}}
+\DoxyCodeLine{23 \textcolor{comment}{}}
+\DoxyCodeLine{24 \textcolor{comment}{}}
+\DoxyCodeLine{25 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/* Definitions of the constants and the structures used to calculate }}
+\DoxyCodeLine{28 \textcolor{comment}{   the elements 3D coordinates in the 3D laboratory system (x,y,z) */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifndef \_constants\_structuresGeometry\_h}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define \_constants\_structuresGeometry\_h}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/*** WARNING: If you modify this structure, you must also modify the functions: }}
+\DoxyCodeLine{34 \textcolor{comment}{     fillInStructScannerGeometry and locateSubstructureInStructure ****/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{37   \textcolor{comment}{/*=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/*/}}
+\DoxyCodeLine{38   \textcolor{keywordtype}{double} geometricalDesignType; \textcolor{comment}{/* geometricalDesignType=1 :}}
+\DoxyCodeLine{39 \textcolor{comment}{                   cylindrical scanner geometry */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{comment}{/*=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/*/}}
+\DoxyCodeLine{42   \textcolor{keywordtype}{double} ringDiameter;}
+\DoxyCodeLine{43   \textcolor{keywordtype}{double} azimuthalStep;     \textcolor{comment}{/* attached to the scanner rotation movement */}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{double} axialStep;     \textcolor{comment}{/* attached to the scanner translation movement */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{comment}{/*=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/ RSECTOR -\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/*/}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{double} rsectorAxialPitch;}
+\DoxyCodeLine{48   \textcolor{keywordtype}{double} rsectorAxialSize;}
+\DoxyCodeLine{49   \textcolor{keywordtype}{double} rsectorTangentialSize;}
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} rsectorAzimuthalPitch;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{comment}{/*=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/ MODULE =-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/*/}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{double} moduleAxialPitch;}
+\DoxyCodeLine{54   \textcolor{keywordtype}{double} moduleTangentialPitch;}
+\DoxyCodeLine{55   \textcolor{keywordtype}{double} moduleAxialSize;}
+\DoxyCodeLine{56   \textcolor{keywordtype}{double} moduleTangentialSize;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{comment}{/*=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/ SUBMODULE  =-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/*/}}
+\DoxyCodeLine{59   \textcolor{keywordtype}{double} submoduleAxialPitch;}
+\DoxyCodeLine{60   \textcolor{keywordtype}{double} submoduleTangentialPitch;}
+\DoxyCodeLine{61   \textcolor{keywordtype}{double} submoduleAxialSize;}
+\DoxyCodeLine{62   \textcolor{keywordtype}{double} submoduleTangentialSize;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{comment}{/*=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/ CRYSTAL -\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/=-\/*/}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{double} crystalAxialPitch;}
+\DoxyCodeLine{66   \textcolor{keywordtype}{double} crystalTangentialPitch;}
+\DoxyCodeLine{67   \textcolor{keywordtype}{double} crystalAxialSize;}
+\DoxyCodeLine{68   \textcolor{keywordtype}{double} crystalTangentialSize;}
+\DoxyCodeLine{69   \textcolor{keywordtype}{double} crystalRadialSize;}
+\DoxyCodeLine{70 \} \mbox{\hyperlink{structLMF__cch__scannerGeometry}{LMF\_cch\_scannerGeometry}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{74   \textcolor{keywordtype}{int} tangential;       \textcolor{comment}{/* id\_substructure modulo tangentialNumberOfSubstructures */}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{int} axial;            \textcolor{comment}{/* id\_substructure divided by the tangentialNumberOfSubstructures */}}
+\DoxyCodeLine{76 \} \mbox{\hyperlink{structgeneralSubstructureID}{generalSubstructureID}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{79   \textcolor{keywordtype}{double} radial;        \textcolor{comment}{/* the radial position in the tangential reference frame }}
+\DoxyCodeLine{80 \textcolor{comment}{                   or the x-\/coordinate in the 3D coordinates (x,y,z) system */}}
+\DoxyCodeLine{81   \textcolor{keywordtype}{double} tangential;        \textcolor{comment}{/* the tangential position in the tangential reference frame }}
+\DoxyCodeLine{82 \textcolor{comment}{                   or the y-\/coordinate in the 3D coordinates (x,y,z) system */}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{double} axial;         \textcolor{comment}{/* the axial position in the tangential reference frame }}
+\DoxyCodeLine{84 \textcolor{comment}{                   or the z-\/coordinate in the 3D coordinates (x,y,z) system */}}
+\DoxyCodeLine{85 \} \mbox{\hyperlink{structcoordinates}{coordinates}};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{88   \mbox{\hyperlink{structcoordinates}{coordinates}} substructureInRsector3DPosition;}
+\DoxyCodeLine{89   \mbox{\hyperlink{structcoordinates}{coordinates}} substructureInScanner3DPosition;}
+\DoxyCodeLine{90   \mbox{\hyperlink{structcoordinates}{coordinates}} rsectorInLaboratory3DPosition;}
+\DoxyCodeLine{91   \mbox{\hyperlink{structcoordinates}{coordinates}} eventInLaboratory3DPosition;}
+\DoxyCodeLine{92 \} \mbox{\hyperlink{structcalculOfEventPosition}{calculOfEventPosition}};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{/* error messages provide by the program used to calculate elements 3D coordinates in the 3D laboratory (x,y,z) system */}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#ifndef \_error\_messages\_geometry\_h}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define \_error\_messages\_geometry\_h}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY1 "{}ERROR: Initialization of variables used to calculate the 3D position of an event failed!\(\backslash\)n"{}}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY2 "{}ERROR: This program is available only with cylindric scanner geometry.\(\backslash\)n"{}}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY3 "{}ERROR: The 2 values: layer ID (=\%d) and/or radial number of layers (=\%d) are wrong.\(\backslash\)nTo continue this program, you must correct the radial number of layers.\(\backslash\)n"{}}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY4 "{}ERROR: The \(\backslash\)"{}\%s\(\backslash\)"{} must be defined to calculate the 3D position of an event.\(\backslash\)n"{}}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY5 "{}ERROR: The \(\backslash\)"{}\%s\(\backslash\)"{} and the \(\backslash\)"{}\%s\(\backslash\)"{} must be defined to calculate the 3D position of an event.\(\backslash\)n"{}}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY6 "{}ERROR: The \%s axial pitch and/or the \%s axial size are wrong.\(\backslash\)n"{}}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY7 "{}ERROR: The \%s tangential pitch and/or the \%s tangential size are wrong.\(\backslash\)n"{}}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY8 "{}ERROR: In the function \(\backslash\)"{}locateEventPosition\(\backslash\)"{}, allocation of memory failed !!"{}}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY9 "{}ERROR: In the function \(\backslash\)"{}fillInLayersInfoList\(\backslash\)"{}, allocation of memory failed !!"{}}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY10 "{}ERROR: The rsector azimuthal pitch (=\%f) and/or the number of sectors per ring (=\%c) are wrong.\(\backslash\)n"{}}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define ERROR\_GEOMETRY11 "{}ERROR: The crystal radial size and/or the layers radial size are wrong.\(\backslash\)n"{}}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

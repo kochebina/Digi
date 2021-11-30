@@ -1,0 +1,64 @@
+\hypertarget{isotope__info_8h_source}{}\doxysection{isotope\+\_\+info.\+h}
+\label{isotope__info_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/isotope\_info.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/isotope\_info.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*  @(\#)isotope\_info.h  2.4  5/4/92  */}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{\#static char sccsid[]="{}@(\#)isotope\_info.h   2.4 5/4/92  Copyright 1989-\/1991 CTI PET Systems, Inc."{};}}
+\DoxyCodeLine{5 \textcolor{comment}{*/}}
+\DoxyCodeLine{6     \textcolor{comment}{/* Isotope information */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define NumberOfIsotopes 16}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{struct }\mbox{\hyperlink{structfixed__item}{fixed\_item}}\{}
+\DoxyCodeLine{11     \textcolor{keywordtype}{char} *name;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{char} *halflife;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{char} *branch\_ratio;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{float} hl;}
+\DoxyCodeLine{15 \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{comment}{/* ALWAYS add new isotopes to the END of the following array to}}
+\DoxyCodeLine{18 \textcolor{comment}{       ensure backward compatibility */}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{static} \textcolor{keyword}{struct }\mbox{\hyperlink{structfixed__item}{fixed\_item}} isotope\_info[] = \{}
+\DoxyCodeLine{21     \{ \textcolor{stringliteral}{"{}Br-\/75"{}}, \textcolor{stringliteral}{"{}98.0 min"{}}, \textcolor{stringliteral}{"{}0.755"{}}, 5880.0\},}
+\DoxyCodeLine{22     \{ \textcolor{stringliteral}{"{}C-\/11"{}},  \textcolor{stringliteral}{"{}20.4 min"{}}, \textcolor{stringliteral}{"{}0.9976"{}}, 1224.0\},}
+\DoxyCodeLine{23     \{ \textcolor{stringliteral}{"{}Cu-\/62"{}},  \textcolor{stringliteral}{"{}9.73 min"{}}, \textcolor{stringliteral}{"{}0.980"{}}, 583.8\},}
+\DoxyCodeLine{24     \{ \textcolor{stringliteral}{"{}Cu-\/64"{}},  \textcolor{stringliteral}{"{}12.8 hours"{}}, \textcolor{stringliteral}{"{}0.184"{}}, 46080\},}
+\DoxyCodeLine{25     \{ \textcolor{stringliteral}{"{}F-\/18"{}},  \textcolor{stringliteral}{"{}1.83 hours"{}}, \textcolor{stringliteral}{"{}0.967"{}}, 6588.0\},}
+\DoxyCodeLine{26     \{ \textcolor{stringliteral}{"{}Fe-\/52"{}}, \textcolor{stringliteral}{"{}83.0 hours"{}}, \textcolor{stringliteral}{"{}0.57"{}}, 298800.0\},}
+\DoxyCodeLine{27     \{ \textcolor{stringliteral}{"{}Ga-\/68"{}}, \textcolor{stringliteral}{"{}68.3 min"{}}, \textcolor{stringliteral}{"{}0.891"{}}, 4098.0\},}
+\DoxyCodeLine{28     \{ \textcolor{stringliteral}{"{}Ge-\/68"{}}, \textcolor{stringliteral}{"{}275.0 days"{}}, \textcolor{stringliteral}{"{}0.891"{}}, 23760000.0\},}
+\DoxyCodeLine{29     \{ \textcolor{stringliteral}{"{}N-\/13"{}},  \textcolor{stringliteral}{"{}9.97 min"{}}, \textcolor{stringliteral}{"{}0.9981"{}}, 598.2\},}
+\DoxyCodeLine{30     \{ \textcolor{stringliteral}{"{}O-\/14"{}},  \textcolor{stringliteral}{"{}70.91 sec"{}}, \textcolor{stringliteral}{"{}1.0"{}}, 70.91\},}
+\DoxyCodeLine{31     \{ \textcolor{stringliteral}{"{}O-\/15"{}}, \textcolor{stringliteral}{"{}123.0 sec"{}}, \textcolor{stringliteral}{"{}0.9990"{}}, 123.0\},}
+\DoxyCodeLine{32     \{ \textcolor{stringliteral}{"{}Rb-\/82"{}}, \textcolor{stringliteral}{"{}78.0 sec"{}}, \textcolor{stringliteral}{"{}0.950"{}}, 78.0\},}
+\DoxyCodeLine{33     \{ \textcolor{stringliteral}{"{}Na-\/22"{}}, \textcolor{stringliteral}{"{}950 days"{}}, \textcolor{stringliteral}{"{}0.9055"{}}, 82080000.0\},}
+\DoxyCodeLine{34     \{ \textcolor{stringliteral}{"{}Zn-\/62"{}}, \textcolor{stringliteral}{"{}9.3 hours"{}}, \textcolor{stringliteral}{"{}0.152"{}}, 33480.0\},}
+\DoxyCodeLine{35     \{ \textcolor{stringliteral}{"{}Br-\/76"{}}, \textcolor{stringliteral}{"{}16.2 hours"{}}, \textcolor{stringliteral}{"{}0.57"{}}, 58320.0\},}
+\DoxyCodeLine{36     \{ \textcolor{stringliteral}{"{}K-\/38"{}}, \textcolor{stringliteral}{"{}7.636 min"{}}, \textcolor{stringliteral}{"{}1.0"{}}, 458.16\}}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{/*  define some descriptive indices */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define BR75    0}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define C11 1}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define CU62    2}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define CU64    3}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define F18 4}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define FE52    5}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define GA68    6}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define GE68    7}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define N13 8}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define O14 9}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define O15 10}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define RB82    11}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define NA22    12}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define ZN62    13}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define BR76    14}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define K38 15}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+
+\end{DoxyCode}

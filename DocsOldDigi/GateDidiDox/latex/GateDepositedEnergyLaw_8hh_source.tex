@@ -1,0 +1,34 @@
+\hypertarget{GateDepositedEnergyLaw_8hh_source}{}\doxysection{Gate\+Deposited\+Energy\+Law.\+hh}
+\label{GateDepositedEnergyLaw_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDepositedEnergyLaw.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDepositedEnergyLaw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef GateDepositedEnergyLaw\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GateDepositedEnergyLaw\_h 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GateVEffectiveEnergyLaw.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateDepositedEnergyLawMessenger.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateTools.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4VoxelLimits.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDepositedEnergyLaw}{GateDepositedEnergyLaw}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}} \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 public :}
+\DoxyCodeLine{17     \mbox{\hyperlink{classGateDepositedEnergyLaw}{GateDepositedEnergyLaw}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{18     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDepositedEnergyLaw}{\string~GateDepositedEnergyLaw}}() \{\textcolor{keyword}{delete} m\_messenger;\}}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} G4double ComputeEffectiveEnergy(\mbox{\hyperlink{classGatePulse}{GatePulse}} plse) \textcolor{keyword}{const};}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself (\textcolor{keywordtype}{size\_t} ident=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 private :}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateDepositedEnergyLawMessenger}{GateDepositedEnergyLawMessenger}}* m\_messenger;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

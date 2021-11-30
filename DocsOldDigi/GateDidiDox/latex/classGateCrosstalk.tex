@@ -1,0 +1,107 @@
+\hypertarget{classGateCrosstalk}{}\doxysection{Gate\+Crosstalk Class Reference}
+\label{classGateCrosstalk}\index{GateCrosstalk@{GateCrosstalk}}
+
+
+Pulse-\/processor for simulating an optical and/or an electronic crosstalk.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Crosstalk.\+hh$>$}
+
+Inheritance diagram for Gate\+Crosstalk\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCrosstalk}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrosstalk_a3dc2e6860d4df6fb5d8fdadd5c989cae}\label{classGateCrosstalk_a3dc2e6860d4df6fb5d8fdadd5c989cae}} 
+virtual {\bfseries $\sim$\+Gate\+Crosstalk} ()
+\begin{DoxyCompactList}\small\item\em Public Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrosstalk_a0a93861bf673a2bd7ff0679bfad84039}\label{classGateCrosstalk_a0a93861bf673a2bd7ff0679bfad84039}} 
+void {\bfseries Check\+Volume\+Name} (G4\+String val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGateCrosstalk}{Gate\+Crosstalk}} $\ast$ \mbox{\hyperlink{classGateCrosstalk_ac9c9eb3497a0b7c8df6339bc5acac283}{Get\+Instance}} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name, G4double its\+Edges\+Fraction, G4double its\+Corners\+Fraction)
+\begin{DoxyCompactList}\small\item\em This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateCrosstalk}{Gate\+Crosstalk}} singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{getters and setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrosstalk_a0a4049f1de4a32e3c849f271796d7859}\label{classGateCrosstalk_a0a4049f1de4a32e3c849f271796d7859}} 
+G4double {\bfseries Get\+Edges\+Fraction} ()
+\begin{DoxyCompactList}\small\item\em This function returns the fraction of the part of energy which goes in the edge crystals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrosstalk_aa0477eb56f419c759852e64126391459}\label{classGateCrosstalk_aa0477eb56f419c759852e64126391459}} 
+void {\bfseries Set\+Edges\+Fraction} (G4double val)
+\begin{DoxyCompactList}\small\item\em This function sets the fraction of the part of energy which goes in the edge crystals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrosstalk_a1c16a156ab3585905935b9901f1d3e47}\label{classGateCrosstalk_a1c16a156ab3585905935b9901f1d3e47}} 
+G4double {\bfseries Get\+Corners\+Fraction} ()
+\begin{DoxyCompactList}\small\item\em This function returns the fraction of the part of energy which goes in the corner crystals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrosstalk_ae161b3312b48bb518aa6c04dd382fea3}\label{classGateCrosstalk_ae161b3312b48bb518aa6c04dd382fea3}} 
+void {\bfseries Set\+Corners\+Fraction} (G4double val)
+\begin{DoxyCompactList}\small\item\em This function sets the fraction of the part of energy which goes in the corner crystals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrosstalk_af3d0512d14ad8ef1a361d40b83824324}\label{classGateCrosstalk_af3d0512d14ad8ef1a361d40b83824324}} 
+G4double {\bfseries Get\+XTPer\+Cent} ()
+\begin{DoxyCompactList}\small\item\em Return the rest crosstalk per cent. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCrosstalk_ae2392bd23542d0ad5c328c1d5bce5b01}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateCrosstalk_a716d0fa7b49ee01667076aca8ced9cb3}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating an optical and/or an electronic crosstalk. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateCrosstalk}{Gate\+Crosstalk}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (dec 2002)
+\item Pulse-\/processor for simulating an optical and/or an electronic crosstalk of the scintillation light between the neighbor crystals\+: if the input pulse arrives in a crystal array, pulses around it are created (in the edge and corner neighbor crystals). ATTENTION\+: this module functions only for a chosen volume which is an array repeater !!!
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCrosstalk_ae2392bd23542d0ad5c328c1d5bce5b01}\label{classGateCrosstalk_ae2392bd23542d0ad5c328c1d5bce5b01}} 
+\index{GateCrosstalk@{GateCrosstalk}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateCrosstalk@{GateCrosstalk}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Crosstalk\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the crosstalk 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateCrosstalk_ac9c9eb3497a0b7c8df6339bc5acac283}\label{classGateCrosstalk_ac9c9eb3497a0b7c8df6339bc5acac283}} 
+\index{GateCrosstalk@{GateCrosstalk}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GateCrosstalk@{GateCrosstalk}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateCrosstalk}{Gate\+Crosstalk}} $\ast$ Gate\+Crosstalk\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$}]{its\+Chain,  }\item[{const G4\+String \&}]{its\+Name,  }\item[{G4double}]{its\+Edges\+Fraction,  }\item[{G4double}]{its\+Corners\+Fraction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateCrosstalk}{Gate\+Crosstalk}} singleton. 
+
+If the \mbox{\hyperlink{classGateCrosstalk}{Gate\+Crosstalk}} already exists, Get\+Instance only returns a pointer to this singleton. If this singleton does not exist yet, Get\+Instance creates it by calling the private \mbox{\hyperlink{classGateCrosstalk}{Gate\+Crosstalk}} constructor \mbox{\Hypertarget{classGateCrosstalk_a716d0fa7b49ee01667076aca8ced9cb3}\label{classGateCrosstalk_a716d0fa7b49ee01667076aca8ced9cb3}} 
+\index{GateCrosstalk@{GateCrosstalk}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateCrosstalk@{GateCrosstalk}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Crosstalk\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Crosstalk.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Crosstalk.\+cc\end{DoxyCompactItemize}

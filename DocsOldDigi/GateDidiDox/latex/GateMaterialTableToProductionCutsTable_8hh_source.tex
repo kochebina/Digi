@@ -1,0 +1,52 @@
+\hypertarget{GateMaterialTableToProductionCutsTable_8hh_source}{}\doxysection{Gate\+Material\+Table\+To\+Production\+Cuts\+Table.\+hh}
+\label{GateMaterialTableToProductionCutsTable_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateMaterialTableToProductionCutsTable.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateMaterialTableToProductionCutsTable.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateMaterialTableToProductionCutsTable\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateMaterialTableToProductionCutsTable\_hh 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ios.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialTableToProductionCutsTable}{GateMaterialTableToProductionCutsTable}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22         \mbox{\hyperlink{classGateMaterialTableToProductionCutsTable}{GateMaterialTableToProductionCutsTable}}();}
+\DoxyCodeLine{23         \mbox{\hyperlink{classGateMaterialTableToProductionCutsTable}{\string~GateMaterialTableToProductionCutsTable}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} Update();}
+\DoxyCodeLine{26         \textcolor{keyword}{inline} G4int GetUpdateCounter() \textcolor{keyword}{const};}
+\DoxyCodeLine{27         \textcolor{keyword}{inline} G4int M2P\_nocheck ( G4int i ) \textcolor{keyword}{const};}
+\DoxyCodeLine{28         \textcolor{keyword}{inline} G4int P2M\_nocheck ( G4int i ) \textcolor{keyword}{const};}
+\DoxyCodeLine{29         G4int M2P ( G4int i ) \textcolor{keyword}{const};}
+\DoxyCodeLine{30         G4int P2M ( G4int i ) \textcolor{keyword}{const};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{private}:}
+\DoxyCodeLine{33         std::vector<G4int> m\_oM2PVec, m\_oP2MVec;}
+\DoxyCodeLine{34         G4int m\_nUpdateCounter;}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{inline} G4int GateMaterialTableToProductionCutsTable::M2P\_nocheck ( G4int i )\textcolor{keyword}{ const}}
+\DoxyCodeLine{38 \textcolor{keyword}{}\{}
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} m\_oM2PVec[i];}
+\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41 \textcolor{keyword}{inline} G4int GateMaterialTableToProductionCutsTable::P2M\_nocheck ( G4int i )\textcolor{keyword}{ const}}
+\DoxyCodeLine{42 \textcolor{keyword}{}\{}
+\DoxyCodeLine{43     \textcolor{keywordflow}{return} m\_oP2MVec[i];}
+\DoxyCodeLine{44 \}}
+\DoxyCodeLine{45 \textcolor{keyword}{inline} G4int GateMaterialTableToProductionCutsTable::GetUpdateCounter()\textcolor{keyword}{ const}}
+\DoxyCodeLine{46 \textcolor{keyword}{}\{}
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} m\_nUpdateCounter;}
+\DoxyCodeLine{48 \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,75 @@
+\hypertarget{GateDeadTime_8hh_source}{}\doxysection{Gate\+Dead\+Time.\+hh}
+\label{GateDeadTime_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDeadTime.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDeadTime.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDeadTime\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDeadTime\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateObjectStore.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDeadTimeMessenger}{GateDeadTimeMessenger}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDeadTime}{GateDeadTime}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDeadTime_a54cfba804967751dde27e4d7d3bec24c}{\string~GateDeadTime}}() ;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_a1a6588d4c531ddd64ee466ac5a1b7547}{CheckVolumeName}}(G4String val);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49   \mbox{\hyperlink{classGateDeadTime_ac39d1e2ebe460b619a66c45cd83f1503}{GateDeadTime}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain, \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{public}:}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{classGateDeadTime_ad16ac3fe595a63ec425c6aae001c1db5}{GetDeadTime}}() \{ \textcolor{keywordflow}{return} m\_deadTime; \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_ac9f7bb8de2c1fe999c4b37028f316f22}{SetDeadTime}}(G4double val) \{ m\_deadTime = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} int)(val/picosecond); \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_ac24acdb029721c796b98dc1b8acda231}{SetDeadTimeMode}}(G4String val);}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_a571141eef36a90dfc00fae40ce2668e4}{SetBufferMode}}(G4int val) \{ m\_bufferMode=val; \}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_a109c0d9b27191f2cffa44ccedd856067}{SetBufferSize}}(G4double val) \{ m\_bufferSize=val; \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_ac669987f4d3615ad751aa2a0ccecc5ad}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_a8aed3cb562c9cf9cef0c1c360e8dca76}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse, \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\&  outputPulseList);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDeadTime_a2199b5d37b4c515d2d6b8fe9a8d2317f}{FindLevelsParams}}(\mbox{\hyperlink{classGateObjectStore}{GateObjectStore}}* anInserterStore);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86   G4String m\_volumeName;  }
+\DoxyCodeLine{87   G4int m\_testVolume;     }
+\DoxyCodeLine{88   std::vector<int> numberOfComponentForLevel; }
+\DoxyCodeLine{89   G4int numberOfHigherLevels ;  }
+\DoxyCodeLine{90   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} m\_deadTime; }
+\DoxyCodeLine{91   \textcolor{comment}{// was :  G4String m\_deadTimeMode;   //!< dead time mode : paralysable nonparalysable}}
+\DoxyCodeLine{92   G4bool m\_isParalysable;   }
+\DoxyCodeLine{93   std::vector<unsigned long long int>  m\_deadTimeTable;  }
+\DoxyCodeLine{94   G4double m\_bufferSize;  }
+\DoxyCodeLine{95   std::vector<double> m\_bufferCurrentSize;  }
+\DoxyCodeLine{96   G4int m\_bufferMode; }
+\DoxyCodeLine{97   G4int m\_init\_done\_run\_id;}
+\DoxyCodeLine{98   \mbox{\hyperlink{classGateDeadTimeMessenger}{GateDeadTimeMessenger}} *m\_messenger;    }
+\DoxyCodeLine{99 \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

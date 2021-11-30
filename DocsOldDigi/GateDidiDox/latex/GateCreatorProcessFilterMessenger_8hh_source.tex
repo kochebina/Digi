@@ -1,0 +1,47 @@
+\hypertarget{GateCreatorProcessFilterMessenger_8hh_source}{}\doxysection{Gate\+Creator\+Process\+Filter\+Messenger.\+hh}
+\label{GateCreatorProcessFilterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateCreatorProcessFilterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateCreatorProcessFilterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{   \(\backslash\)class  GateCreatorProcessFilterMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{   \(\backslash\)author pierre.gueth@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{   */}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATECREATORPROCESSFILTERMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATECREATORPROCESSFILTERMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCreatorProcessFilter}{GateCreatorProcessFilter}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCreatorProcessFilterMessenger}{GateCreatorProcessFilterMessenger}} :}
+\DoxyCodeLine{26   \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28   \textcolor{keyword}{public}:}
+\DoxyCodeLine{29     \mbox{\hyperlink{classGateCreatorProcessFilterMessenger}{GateCreatorProcessFilterMessenger}}(\mbox{\hyperlink{classGateCreatorProcessFilter}{GateCreatorProcessFilter}}* filter);}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCreatorProcessFilterMessenger}{\string~GateCreatorProcessFilterMessenger}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{classGateCreatorProcessFilter}{GateCreatorProcessFilter}} *pFilter;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     G4UIcmdWithAString* pAddCreatorProcessCmd;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

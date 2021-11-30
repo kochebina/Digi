@@ -1,0 +1,148 @@
+\hypertarget{metaTubeGraph_8h_source}{}\doxysection{meta\+Tube\+Graph.\+h}
+\label{metaTubeGraph_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaTubeGraph.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaTubeGraph.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METATUBEGRAPH\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METATUBEGRAPH\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classTubeGraphPnt}{TubeGraphPnt}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classTubeGraphPnt}{TubeGraphPnt}}(\textcolor{keywordtype}{int} dim)}
+\DoxyCodeLine{46   \{}
+\DoxyCodeLine{47     m\_Dim = dim;}
+\DoxyCodeLine{48     m\_GraphNode = -\/1;}
+\DoxyCodeLine{49     m\_R = 0;}
+\DoxyCodeLine{50     m\_P = 0;}
+\DoxyCodeLine{51     m\_T = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[m\_Dim*m\_Dim];}
+\DoxyCodeLine{52   \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \mbox{\hyperlink{classTubeGraphPnt}{\string~TubeGraphPnt}}()}
+\DoxyCodeLine{55   \{}
+\DoxyCodeLine{56     \textcolor{keyword}{delete} [] m\_T;}
+\DoxyCodeLine{57   \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{60   \textcolor{keywordtype}{int}    m\_GraphNode;}
+\DoxyCodeLine{61   \textcolor{keywordtype}{float}  m\_R;}
+\DoxyCodeLine{62   \textcolor{keywordtype}{float}  m\_P;}
+\DoxyCodeLine{63   \textcolor{keywordtype}{float}* m\_T;}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaTubeGraph}{MetaTubeGraph}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{70   \{}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73   \textcolor{comment}{//}}
+\DoxyCodeLine{74   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{75   \textcolor{comment}{//}}
+\DoxyCodeLine{77 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79    \textcolor{keyword}{typedef} METAIO\_STL::vector<TubeGraphPnt*> PointListType;}
+\DoxyCodeLine{81     \textcolor{comment}{//}}
+\DoxyCodeLine{82     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{83     \textcolor{comment}{//}}
+\DoxyCodeLine{85 \textcolor{comment}{}    \mbox{\hyperlink{classMetaTubeGraph}{MetaTubeGraph}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \mbox{\hyperlink{classMetaTubeGraph}{MetaTubeGraph}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \mbox{\hyperlink{classMetaTubeGraph}{MetaTubeGraph}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaTubeGraph}{MetaTubeGraph}} *\_tube);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \mbox{\hyperlink{classMetaTubeGraph}{MetaTubeGraph}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \mbox{\hyperlink{classMetaTubeGraph}{\string~MetaTubeGraph}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{//    NPoints(...)}}
+\DoxyCodeLine{100     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{101     \textcolor{comment}{//       Number of points wich compose the tube}}
+\DoxyCodeLine{102     \textcolor{keywordtype}{void}  NPoints(\textcolor{keywordtype}{int} npnt);}
+\DoxyCodeLine{103     \textcolor{keywordtype}{int}   NPoints(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{//    PointDim(...)}}
+\DoxyCodeLine{106     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{107     \textcolor{comment}{//       Definition of points}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void}        PointDim(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pointDim);}
+\DoxyCodeLine{109     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* PointDim(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{//    Root(...)}}
+\DoxyCodeLine{112     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{113     \textcolor{comment}{//       Set if this tube is a root}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{void}  Root(\textcolor{keywordtype}{int} root);}
+\DoxyCodeLine{115     \textcolor{keywordtype}{int}   Root(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     PointListType \&  GetPoints(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{121     \textcolor{keyword}{const} PointListType \&  GetPoints(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     MET\_ValueEnumType ElementType(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void}  ElementType(MET\_ValueEnumType \_elementType);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{127   \textcolor{comment}{//}}
+\DoxyCodeLine{128   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{129   \textcolor{comment}{//}}
+\DoxyCodeLine{131 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keywordtype}{int} m\_Root;         \textcolor{comment}{// "{}Root = "{}            0}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keywordtype}{int} m\_NPoints;      \textcolor{comment}{// "{}NPoints = "{}         0}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordtype}{char} m\_PointDim[255]; \textcolor{comment}{// "{}PointDim = "{}       "{}x y z r"{}}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     PointListType m\_PointList;}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     MET\_ValueEnumType m\_ElementType;}
+\DoxyCodeLine{152   \};}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{155 \};}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

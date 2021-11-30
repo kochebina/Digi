@@ -1,0 +1,91 @@
+\hypertarget{GateCompressedVoxelParameterized_8hh_source}{}\doxysection{Gate\+Compressed\+Voxel\+Parameterized.\+hh}
+\label{GateCompressedVoxelParameterized_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelParameterized.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelParameterized.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateCompressedVoxelParameterized\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateCompressedVoxelParameterized\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateCompressedVoxelParameterizedMessenger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateCompressedVoxelParameterization.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4PVParameterised.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterList.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVolumePlacement.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateCompressedVoxelParam.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBox}{GateBox}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelParam}{GateCompressedVoxelParam}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  }}
+\DoxyCodeLine{31   \textcolor{comment}{//Constructor 1  }}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}}(\textcolor{keyword}{const} G4String\& name,}
+\DoxyCodeLine{33                        G4bool acceptsChildren=\textcolor{keyword}{false}, }
+\DoxyCodeLine{34                        G4int depth=0):\mbox{\hyperlink{classGateBox}{GateBox}}(name,\textcolor{stringliteral}{"{}G4\_Galactic"{}},1,1,1,acceptsChildren,depth),}
+\DoxyCodeLine{35     m\_name(name),}
+\DoxyCodeLine{36     m\_messenger(\textcolor{keyword}{new} \mbox{\hyperlink{classGateCompressedVoxelParameterizedMessenger}{GateCompressedVoxelParameterizedMessenger}}(\textcolor{keyword}{this})),}
+\DoxyCodeLine{37     m\_voxelReader(0),}
+\DoxyCodeLine{38     m\_voxelInserter(\textcolor{keyword}{new} \mbox{\hyperlink{classGateCompressedVoxelParam}{GateCompressedVoxelParam}}(name+\textcolor{stringliteral}{"{}Voxel"{}}, \textcolor{keyword}{this})),}
+\DoxyCodeLine{39     voxelNumber(G4ThreeVector(1,1,1)),}
+\DoxyCodeLine{40     voxelSize(G4ThreeVector(1,1,1))}
+\DoxyCodeLine{41   \{  }
+\DoxyCodeLine{42   }
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}()-\/>\mbox{\hyperlink{classGateVVolume_a61d344e92432ff4d34d6f33d62daf538}{GetTheChildList}}()-\/>AddChild(m\_voxelInserter);}
+\DoxyCodeLine{44   \}}
+\DoxyCodeLine{45     }
+\DoxyCodeLine{46 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  }}
+\DoxyCodeLine{47   \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{48   \mbox{\hyperlink{classGateCompressedVoxelParameterized}{\string~GateCompressedVoxelParameterized}}()\{}
+\DoxyCodeLine{49     \textcolor{keyword}{delete} m\_messenger;}
+\DoxyCodeLine{50   \}}
+\DoxyCodeLine{51 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  }}
+\DoxyCodeLine{52   }
+\DoxyCodeLine{53   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}})}
+\DoxyCodeLine{54   }
+\DoxyCodeLine{55   }
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCompressedVoxelParameterized_ab964b46053b12a6f89b33a09bb522105}{InsertReader}}(G4String readerType);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCompressedVoxelParameterized_a60da68509622e72b6c37a8e36b98a871}{RemoveReader}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* \mbox{\hyperlink{classGateCompressedVoxelParameterized_a91dc7ceccc6a0d44b49a8ca75da80e03}{GetReader}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{63 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} m\_voxelReader;\}}
+\DoxyCodeLine{64   }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCompressedVoxelParameterized_a6e2cf3deb92aa085f9862077103bb9f2}{AttachPhantomSD}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} AddOutput(G4String name);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} ConstructGeometry(G4LogicalVolume* mother\_log, G4bool flagUpdateOnly);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{private}:}
+\DoxyCodeLine{73   }
+\DoxyCodeLine{74   G4String m\_name;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \mbox{\hyperlink{classGateCompressedVoxelParameterizedMessenger}{GateCompressedVoxelParameterizedMessenger}}* m\_messenger;}
+\DoxyCodeLine{77   \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}*                   m\_voxelReader;}
+\DoxyCodeLine{78   \mbox{\hyperlink{classGateCompressedVoxelParam}{GateCompressedVoxelParam}}*                  m\_voxelInserter;}
+\DoxyCodeLine{79   }
+\DoxyCodeLine{80   G4ThreeVector                               voxelNumber;}
+\DoxyCodeLine{81   G4ThreeVector                               voxelSize;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 MAKE\_AUTO\_CREATOR\_VOLUME(compressedMatrix,\mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}})}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{88 }
+
+\end{DoxyCode}

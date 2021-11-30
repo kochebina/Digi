@@ -1,0 +1,88 @@
+\hypertarget{GateFileExceptions_8hh_source}{}\doxysection{Gate\+File\+Exceptions.\+hh}
+\label{GateFileExceptions_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/io/include/GateFileExceptions.hh@{/biomaps/physique/appli/GateOlga/src/source/io/include/GateFileExceptions.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by mdupont on 04/04/19.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFileException}{GateFileException}} : \textcolor{keyword}{public} std::runtime\_error \{}
+\DoxyCodeLine{10  \textcolor{keyword}{public}:}
+\DoxyCodeLine{11   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateFileException}{GateFileException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClosedFileException}{GateClosedFileException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFileException}{GateFileException}} \{}
+\DoxyCodeLine{17  \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateClosedFileException}{GateClosedFileException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateModeFileException}{GateModeFileException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFileException}{GateFileException}} \{}
+\DoxyCodeLine{23  \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateModeFileException}{GateModeFileException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHeaderException}{GateHeaderException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFileException}{GateFileException}} \{}
+\DoxyCodeLine{28  \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateHeaderException}{GateHeaderException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMissingHeaderException}{GateMissingHeaderException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateHeaderException}{GateHeaderException}} \{}
+\DoxyCodeLine{34  \textcolor{keyword}{public}:}
+\DoxyCodeLine{35   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateMissingHeaderException}{GateMissingHeaderException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMalFormedHeaderException}{GateMalFormedHeaderException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateHeaderException}{GateHeaderException}} \{}
+\DoxyCodeLine{40  \textcolor{keyword}{public}:}
+\DoxyCodeLine{41   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateMalFormedHeaderException}{GateMalFormedHeaderException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{class }\mbox{\hyperlink{classGateKeyAlreadyExistsException}{GateKeyAlreadyExistsException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateHeaderException}{GateHeaderException}} \{}
+\DoxyCodeLine{47  \textcolor{keyword}{public}:}
+\DoxyCodeLine{48   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateKeyAlreadyExistsException}{GateKeyAlreadyExistsException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{classGateKeyNotFoundInHeaderException}{GateKeyNotFoundInHeaderException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateHeaderException}{GateHeaderException}} \{}
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{54   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateKeyNotFoundInHeaderException}{GateKeyNotFoundInHeaderException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTypeMismatchHeaderException}{GateTypeMismatchHeaderException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateHeaderException}{GateHeaderException}} \{}
+\DoxyCodeLine{58 \textcolor{keyword}{public}:}
+\DoxyCodeLine{59   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateTypeMismatchHeaderException}{GateTypeMismatchHeaderException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNoTypeInHeaderException}{GateNoTypeInHeaderException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateHeaderException}{GateHeaderException}} \{}
+\DoxyCodeLine{64 \textcolor{keyword}{public}:}
+\DoxyCodeLine{65   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateNoTypeInHeaderException}{GateNoTypeInHeaderException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{class }\mbox{\hyperlink{classGateManagerException}{GateManagerException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFileException}{GateFileException}} \{}
+\DoxyCodeLine{72 \textcolor{keyword}{public}:}
+\DoxyCodeLine{73   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateManagerException}{GateManagerException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUnknownKindManagerException}{GateUnknownKindManagerException}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateManagerException}{GateManagerException}} \{}
+\DoxyCodeLine{77 \textcolor{keyword}{public}:}
+\DoxyCodeLine{78   \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateUnknownKindManagerException}{GateUnknownKindManagerException}}(\textcolor{keyword}{const} std::string \&arg);}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+
+\end{DoxyCode}

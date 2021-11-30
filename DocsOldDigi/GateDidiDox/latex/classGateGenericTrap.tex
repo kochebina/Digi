@@ -1,0 +1,118 @@
+\hypertarget{classGateGenericTrap}{}\doxysection{Gate\+Generic\+Trap Class Reference}
+\label{classGateGenericTrap}\index{GateGenericTrap@{GateGenericTrap}}
+Inheritance diagram for Gate\+Generic\+Trap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateGenericTrap}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_a226aeba5e820297fec5dedf368e9aedb}\label{classGateGenericTrap_a226aeba5e820297fec5dedf368e9aedb}} 
+{\bfseries Gate\+Generic\+Trap} (const G4\+String \&its\+Name, G4bool accepts\+Children=true, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateGenericTrap_a3cc7e0577b65d7011269b24d7a137547}\label{classGateGenericTrap_a3cc7e0577b65d7011269b24d7a137547}} 
+{\bfseries Gate\+Generic\+Trap} (const G4\+String \&its\+Name, const G4\+String \&its\+Material\+Name, std\+::vector$<$ G4\+Two\+Vector $>$ its\+Vertices, G4double its\+ZLength, G4bool accepts\+Children=true, G4int depth=0)
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_a31eae0f5e1f8c116f75fd598ee6b35f6}\label{classGateGenericTrap_a31eae0f5e1f8c116f75fd598ee6b35f6}} 
+virtual {\bfseries $\sim$\+Gate\+Generic\+Trap} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateGenericTrap_acbdeab0dcf09a6cdfa8e894062880e75}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$mater, G4bool flag\+Update\+Only)
+\item 
+virtual void \mbox{\hyperlink{classGateGenericTrap_a894289fcfb6540110d73fcc137343db7}{Destroy\+Own\+Solid\+And\+Logical\+Volume}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateGenericTrap_af8b41a0ed04888351cfaeebf80d8f9a9}{Describe\+Myself}} (size\+\_\+t level)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateGenericTrap_af8b41a0ed04888351cfaeebf80d8f9a9}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\item 
+G4double \mbox{\hyperlink{classGateGenericTrap_aa0803a9f847fb20ba5f3034b6af2259e}{Get\+Half\+Dimension}} (size\+\_\+t axis)
+\item 
+G4double \mbox{\hyperlink{classGateGenericTrap_ab4209056c453d74997bc225b20b8ff1f}{Compute\+My\+Own\+Volume}} () const
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_ab7bc4ff6bd162e1eb3766ac8b19b811f}\label{classGateGenericTrap_ab7bc4ff6bd162e1eb3766ac8b19b811f}} 
+std\+::vector$<$ G4\+Two\+Vector $>$ {\bfseries Get\+Generic\+Trap\+Vertices} ()
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_a0e35c134d95578ea43c6244852cc3965}\label{classGateGenericTrap_a0e35c134d95578ea43c6244852cc3965}} 
+G4double {\bfseries Get\+Generic\+Trap\+ZLength} ()
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_a0075e4c6ac4cae0dba9303235b7e3857}\label{classGateGenericTrap_a0075e4c6ac4cae0dba9303235b7e3857}} 
+void {\bfseries Set\+Generic\+Trap\+Vertices} (std\+::vector$<$ G4\+Two\+Vector $>$ val)
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_a28c30cee2d9d6d054dcfcdd7791a7f13}\label{classGateGenericTrap_a28c30cee2d9d6d054dcfcdd7791a7f13}} 
+void {\bfseries Set\+Generic\+Trap\+Vertex} (G4int index, G4\+Two\+Vector val)
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_aa1243a43fc7a12094342a87fe7795910}\label{classGateGenericTrap_aa1243a43fc7a12094342a87fe7795910}} 
+void {\bfseries Set\+Generic\+Trap\+Vertex} (G4int index, G4\+Three\+Vector val)
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_a7e55feed5b2c60d8bc79f9f5ccee6d17}\label{classGateGenericTrap_a7e55feed5b2c60d8bc79f9f5ccee6d17}} 
+void {\bfseries Set\+Generic\+Trap\+Vertex} (G4int index, G4double x, G4double y)
+\item 
+\mbox{\Hypertarget{classGateGenericTrap_a12b36db0136d558623685c7b3ecbeb40}\label{classGateGenericTrap_a12b36db0136d558623685c7b3ecbeb40}} 
+void {\bfseries Set\+Generic\+Trap\+ZLength} (G4double val)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGenericTrap_ab4209056c453d74997bc225b20b8ff1f}\label{classGateGenericTrap_ab4209056c453d74997bc225b20b8ff1f}} 
+\index{GateGenericTrap@{GateGenericTrap}!ComputeMyOwnVolume@{ComputeMyOwnVolume}}
+\index{ComputeMyOwnVolume@{ComputeMyOwnVolume}!GateGenericTrap@{GateGenericTrap}}
+\doxysubsubsection{\texorpdfstring{ComputeMyOwnVolume()}{ComputeMyOwnVolume()}}
+{\footnotesize\ttfamily G4double Gate\+Generic\+Trap\+::\+Compute\+My\+Own\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Overload of the dummy virtual method \mbox{\hyperlink{classGateGenericTrap_ab4209056c453d74997bc225b20b8ff1f}{Compute\+My\+Own\+Volume()}} defined by the base-\/class Returns the volume of the solid \mbox{\Hypertarget{classGateGenericTrap_acbdeab0dcf09a6cdfa8e894062880e75}\label{classGateGenericTrap_acbdeab0dcf09a6cdfa8e894062880e75}} 
+\index{GateGenericTrap@{GateGenericTrap}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateGenericTrap@{GateGenericTrap}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily G4\+Logical\+Volume $\ast$ Gate\+Generic\+Trap\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pure virtual method, will be defined in concrete classes \mbox{\hyperlink{classGateBox}{Gate\+Box}}, \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} ... 
+
+Implements \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateGenericTrap_af8b41a0ed04888351cfaeebf80d8f9a9}\label{classGateGenericTrap_af8b41a0ed04888351cfaeebf80d8f9a9}} 
+\index{GateGenericTrap@{GateGenericTrap}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateGenericTrap@{GateGenericTrap}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Trap\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateGenericTrap_af8b41a0ed04888351cfaeebf80d8f9a9}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the creator
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateGenericTrap_a894289fcfb6540110d73fcc137343db7}\label{classGateGenericTrap_a894289fcfb6540110d73fcc137343db7}} 
+\index{GateGenericTrap@{GateGenericTrap}!DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}}
+\index{DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}!GateGenericTrap@{GateGenericTrap}}
+\doxysubsubsection{\texorpdfstring{DestroyOwnSolidAndLogicalVolume()}{DestroyOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Trap\+::\+Destroy\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateGenericTrap_aa0803a9f847fb20ba5f3034b6af2259e}\label{classGateGenericTrap_aa0803a9f847fb20ba5f3034b6af2259e}} 
+\index{GateGenericTrap@{GateGenericTrap}!GetHalfDimension@{GetHalfDimension}}
+\index{GetHalfDimension@{GetHalfDimension}!GateGenericTrap@{GateGenericTrap}}
+\doxysubsubsection{\texorpdfstring{GetHalfDimension()}{GetHalfDimension()}}
+{\footnotesize\ttfamily G4double Gate\+Generic\+Trap\+::\+Get\+Half\+Dimension (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Pure virtual method (to be implemented in sub-\/classes) Must return an value for the half-\/size of a volume along an axis (X=0, Y=1, Z=2) 
+
+Implements \mbox{\hyperlink{classGateVVolume_a6b5af3dbb80ec1b182ad571560aa762b}{Gate\+VVolume}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Generic\+Trap.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Generic\+Trap.\+cc\end{DoxyCompactItemize}

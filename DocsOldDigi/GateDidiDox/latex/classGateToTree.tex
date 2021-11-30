@@ -1,0 +1,213 @@
+\hypertarget{classGateToTree}{}\doxysection{Gate\+To\+Tree Class Reference}
+\label{classGateToTree}\index{GateToTree@{GateToTree}}
+Inheritance diagram for Gate\+To\+Tree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateToTree}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToTree_adb3145d7dc0e1126d501b348fa43b533}\label{classGateToTree_adb3145d7dc0e1126d501b348fa43b533}} 
+{\bfseries Gate\+To\+Tree} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, Digi\+Mode digi\+Mode)
+\item 
+void \mbox{\hyperlink{classGateToTree_ac82131c0db98fcba5156715f6310e635}{Record\+Begin\+Of\+Acquisition}} () override
+\item 
+void \mbox{\hyperlink{classGateToTree_af4dd3284c4a841c8c296d049c64b86ed}{Record\+End\+Of\+Acquisition}} () override
+\item 
+void \mbox{\hyperlink{classGateToTree_acc518a6bad34b1c1dab87b2bbfbabd49}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$run) override
+\item 
+void \mbox{\hyperlink{classGateToTree_a7fd3a8525b4df0729a4e4ed356408776}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$run) override
+\item 
+void \mbox{\hyperlink{classGateToTree_acbe97e49bd279b3b492bbc7dd7d99037}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classGateToTree_a0286a184b8c38995f173340914688d46}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classGateToTree_aefac816631175f15579ac53af209dfab}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$v, const G4\+Step $\ast$step) override
+\item 
+void \mbox{\hyperlink{classGateToTree_a3414c901814eb53eb48f7f5859732764}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$store) override
+\item 
+void \mbox{\hyperlink{classGateToTree_a5570f8f02605ccdc325e2ca07f1b4fcc}{Register\+New\+Coincidence\+Digi\+Collection}} (const G4\+String \&string, G4bool a\+Bool) override
+\item 
+void \mbox{\hyperlink{classGateToTree_ae5937cc8ad24fefd286772f53a26628f}{Register\+New\+Single\+Digi\+Collection}} (const G4\+String \&string, G4bool a\+Bool) override
+\item 
+const G4\+String \& \mbox{\hyperlink{classGateToTree_ad285d36b6911c053a253effe94d02466}{Give\+Name\+Of\+File}} () override
+\item 
+\mbox{\Hypertarget{classGateToTree_a818114e62845aff0b6aa5599c9eabc04}\label{classGateToTree_a818114e62845aff0b6aa5599c9eabc04}} 
+void {\bfseries add\+File\+Name} (const G4\+String \&s)
+\item 
+\mbox{\Hypertarget{classGateToTree_a833cb57472267cd6a190e9ce434aee0e}\label{classGateToTree_a833cb57472267cd6a190e9ce434aee0e}} 
+G4bool {\bfseries get\+Hits\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classGateToTree_a80465f03a9596ed48ed393688959cf63}\label{classGateToTree_a80465f03a9596ed48ed393688959cf63}} 
+void {\bfseries set\+Hits\+Enabled} (G4bool m\+Hits\+Enabled)
+\item 
+\mbox{\Hypertarget{classGateToTree_a348f211bd12e4d765d77f6ecce1b6dd1}\label{classGateToTree_a348f211bd12e4d765d77f6ecce1b6dd1}} 
+void {\bfseries add\+Collection} (const std\+::string \&str)
+\item 
+\mbox{\Hypertarget{classGateToTree_a711a67e2e655aed4095fcc126ea6a3e1}\label{classGateToTree_a711a67e2e655aed4095fcc126ea6a3e1}} 
+G4bool {\bfseries get\+Optical\+Data\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classGateToTree_a4f581b029c039bfe2a4a665e4c7e8786}\label{classGateToTree_a4f581b029c039bfe2a4a665e4c7e8786}} 
+void {\bfseries set\+Optical\+Data\+Enabled} (G4bool m\+Optical\+Data\+Enabled)
+\item 
+\mbox{\Hypertarget{classGateToTree_a9d151e11404de1314741ae7492ce84cc}\label{classGateToTree_a9d151e11404de1314741ae7492ce84cc}} 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classSaveDataParam}{Save\+Data\+Param}} $>$ \& {\bfseries get\+Hits\+Params\+To\+Write} ()
+\item 
+\mbox{\Hypertarget{classGateToTree_aa5510a5c354b564a4d4c4e925efef9e2}\label{classGateToTree_aa5510a5c354b564a4d4c4e925efef9e2}} 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classSaveDataParam}{Save\+Data\+Param}} $>$ \& {\bfseries get\+Optical\+Params\+To\+Write} ()
+\item 
+\mbox{\Hypertarget{classGateToTree_a839e7efed2efd11276f2f235070c7270}\label{classGateToTree_a839e7efed2efd11276f2f235070c7270}} 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classSaveDataParam}{Save\+Data\+Param}} $>$ \& {\bfseries get\+Singles\+Params\+To\+Write} ()
+\item 
+\mbox{\Hypertarget{classGateToTree_a3199a454d2a8818afc4c4cd90537f4c8}\label{classGateToTree_a3199a454d2a8818afc4c4cd90537f4c8}} 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classSaveDataParam}{Save\+Data\+Param}} $>$ \& {\bfseries get\+Coincidences\+Params\+To\+Write} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToTree_a5bb3d8cc19b7e114696114bb00b59148}\label{classGateToTree_a5bb3d8cc19b7e114696114bb00b59148}} 
+static void {\bfseries Set\+Output\+IDName} (G4int id\+\_\+system, const char $\ast$an\+Output\+IDName, size\+\_\+t depth)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToTree_a893c8238ac7dbbc929625799c4e7e43a}\label{classGateToTree_a893c8238ac7dbbc929625799c4e7e43a}} 
+static const auto {\bfseries MAX\+\_\+\+NB\+\_\+\+SYSTEM} = 32
+\item 
+\mbox{\Hypertarget{classGateToTree_a4579e2caf40c78713757d451465b586a}\label{classGateToTree_a4579e2caf40c78713757d451465b586a}} 
+static const auto {\bfseries MAX\+\_\+\+DEPTH\+\_\+\+SYSTEM} = 6
+\item 
+\mbox{\Hypertarget{classGateToTree_ae11ec250ae26bdee395307741c4a703f}\label{classGateToTree_ae11ec250ae26bdee395307741c4a703f}} 
+static const auto {\bfseries MAX\+\_\+\+OUTPUTIDNAME\+\_\+\+SIZE} = 32
+\item 
+\mbox{\Hypertarget{classGateToTree_a6b1fe5b8c657ad1b72ccb97bb0cdc39b}\label{classGateToTree_a6b1fe5b8c657ad1b72ccb97bb0cdc39b}} 
+static char {\bfseries m\+\_\+output\+IDName} \mbox{[}MAX\+\_\+\+NB\+\_\+\+SYSTEM\mbox{]}\mbox{[}MAX\+\_\+\+DEPTH\+\_\+\+SYSTEM\mbox{]}\mbox{[}MAX\+\_\+\+OUTPUTIDNAME\+\_\+\+SIZE\mbox{]}
+\item 
+\mbox{\Hypertarget{classGateToTree_a2dad48e127d1b53dd24db5008dd9319f}\label{classGateToTree_a2dad48e127d1b53dd24db5008dd9319f}} 
+static bool {\bfseries m\+\_\+output\+IDHas\+Name} \mbox{[}Gate\+To\+Tree\+::\+MAX\+\_\+\+NB\+\_\+\+SYSTEM\mbox{]}\mbox{[}Gate\+To\+Tree\+::\+MAX\+\_\+\+DEPTH\+\_\+\+SYSTEM\mbox{]}
+\item 
+\mbox{\Hypertarget{classGateToTree_aba4818148a87cc8e98ff057d35340129}\label{classGateToTree_aba4818148a87cc8e98ff057d35340129}} 
+static G4int {\bfseries m\+\_\+max\+\_\+depth\+\_\+system} \mbox{[}MAX\+\_\+\+NB\+\_\+\+SYSTEM\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateToTree_ad285d36b6911c053a253effe94d02466}\label{classGateToTree_ad285d36b6911c053a253effe94d02466}} 
+\index{GateToTree@{GateToTree}!GiveNameOfFile@{GiveNameOfFile}}
+\index{GiveNameOfFile@{GiveNameOfFile}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{GiveNameOfFile()}{GiveNameOfFile()}}
+{\footnotesize\ttfamily const G4\+String \& Gate\+To\+Tree\+::\+Give\+Name\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_ac82131c0db98fcba5156715f6310e635}\label{classGateToTree_ac82131c0db98fcba5156715f6310e635}} 
+\index{GateToTree@{GateToTree}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_acbe97e49bd279b3b492bbc7dd7d99037}\label{classGateToTree_acbe97e49bd279b3b492bbc7dd7d99037}} 
+\index{GateToTree@{GateToTree}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_acc518a6bad34b1c1dab87b2bbfbabd49}\label{classGateToTree_acc518a6bad34b1c1dab87b2bbfbabd49}} 
+\index{GateToTree@{GateToTree}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{run }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_af4dd3284c4a841c8c296d049c64b86ed}\label{classGateToTree_af4dd3284c4a841c8c296d049c64b86ed}} 
+\index{GateToTree@{GateToTree}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_a0286a184b8c38995f173340914688d46}\label{classGateToTree_a0286a184b8c38995f173340914688d46}} 
+\index{GateToTree@{GateToTree}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_a7fd3a8525b4df0729a4e4ed356408776}\label{classGateToTree_a7fd3a8525b4df0729a4e4ed356408776}} 
+\index{GateToTree@{GateToTree}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{run }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_aefac816631175f15579ac53af209dfab}\label{classGateToTree_aefac816631175f15579ac53af209dfab}} 
+\index{GateToTree@{GateToTree}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_a3414c901814eb53eb48f7f5859732764}\label{classGateToTree_a3414c901814eb53eb48f7f5859732764}} 
+\index{GateToTree@{GateToTree}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_a5570f8f02605ccdc325e2ca07f1b4fcc}\label{classGateToTree_a5570f8f02605ccdc325e2ca07f1b4fcc}} 
+\index{GateToTree@{GateToTree}!RegisterNewCoincidenceDigiCollection@{RegisterNewCoincidenceDigiCollection}}
+\index{RegisterNewCoincidenceDigiCollection@{RegisterNewCoincidenceDigiCollection}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RegisterNewCoincidenceDigiCollection()}{RegisterNewCoincidenceDigiCollection()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Register\+New\+Coincidence\+Digi\+Collection (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{string,  }\item[{G4bool}]{a\+Bool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToTree_ae5937cc8ad24fefd286772f53a26628f}\label{classGateToTree_ae5937cc8ad24fefd286772f53a26628f}} 
+\index{GateToTree@{GateToTree}!RegisterNewSingleDigiCollection@{RegisterNewSingleDigiCollection}}
+\index{RegisterNewSingleDigiCollection@{RegisterNewSingleDigiCollection}!GateToTree@{GateToTree}}
+\doxysubsubsection{\texorpdfstring{RegisterNewSingleDigiCollection()}{RegisterNewSingleDigiCollection()}}
+{\footnotesize\ttfamily void Gate\+To\+Tree\+::\+Register\+New\+Single\+Digi\+Collection (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{string,  }\item[{G4bool}]{a\+Bool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+To\+Tree.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+To\+Tree.\+cc\end{DoxyCompactItemize}

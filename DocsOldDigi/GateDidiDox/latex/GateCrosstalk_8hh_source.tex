@@ -1,0 +1,104 @@
+\hypertarget{GateCrosstalk_8hh_source}{}\doxysection{Gate\+Crosstalk.\+hh}
+\label{GateCrosstalk_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrosstalk.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrosstalk.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCrosstalk\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCrosstalk\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrosstalkMessenger}{GateCrosstalkMessenger}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateArrayParamsFinder}{GateArrayParamsFinder}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrosstalk}{GateCrosstalk}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45     \textcolor{keyword}{static} \mbox{\hyperlink{classGateCrosstalk}{GateCrosstalk}}* \mbox{\hyperlink{classGateCrosstalk_ac9c9eb3497a0b7c8df6339bc5acac283}{GetInstance}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{46                       \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{47                       G4double itsEdgesFraction, G4double itsCornersFraction);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCrosstalk_a3dc2e6860d4df6fb5d8fdadd5c989cae}{\string~GateCrosstalk}}() ;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{private}:}
+\DoxyCodeLine{55     \mbox{\hyperlink{classGateCrosstalk}{GateCrosstalk}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{56                       \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{57                       G4double itsEdgesFraction, G4double itsCornersFraction) ;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{public}:}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} CheckVolumeName(G4String val);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     G4double \mbox{\hyperlink{classGateCrosstalk_a0a4049f1de4a32e3c849f271796d7859}{GetEdgesFraction}}()                \{ \textcolor{keywordflow}{return} m\_edgesCrosstalkFraction; \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrosstalk_aa0477eb56f419c759852e64126391459}{SetEdgesFraction}} (G4double val)       \{ m\_edgesCrosstalkFraction = val;  \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     G4double \mbox{\hyperlink{classGateCrosstalk_a1c16a156ab3585905935b9901f1d3e47}{GetCornersFraction}}()              \{ \textcolor{keywordflow}{return} m\_cornersCrosstalkFraction; \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrosstalk_ae161b3312b48bb518aa6c04dd382fea3}{SetCornersFraction}} (G4double val)     \{ m\_cornersCrosstalkFraction = val;  \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79     G4double \mbox{\hyperlink{classGateCrosstalk_af3d0512d14ad8ef1a361d40b83824324}{GetXTPerCent}}() \{ \textcolor{keywordflow}{return} m\_XtalkpCent; \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{84     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrosstalk_ae2392bd23542d0ad5c328c1d5bce5b01}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrosstalk_a716d0fa7b49ee01667076aca8ced9cb3}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \textcolor{keyword}{private}:}
+\DoxyCodeLine{94 \textcolor{comment}{//     //! Find the different parameters of the array of detection :}}
+\DoxyCodeLine{95 \textcolor{comment}{//     //! The numbers of rows in x, y and z}}
+\DoxyCodeLine{96 \textcolor{comment}{//     //! The position in this matrix of the hit}}
+\DoxyCodeLine{97 \textcolor{comment}{//     void FindArrayParams(GateVVolume* anInserter);}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{comment}{//     //! Get the VObjectReapeater from an VObjectInserter (if it isn't the right VObjectInserter return 0)}}
+\DoxyCodeLine{100 \textcolor{comment}{//     GateVGlobalPlacement* GetRepeater(GateVVolume* anInserter);}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{//     //! Get the ArrayRepeater from an VObjectReapeater (if it isn't an ArrayRepeater return 0)}}
+\DoxyCodeLine{103 \textcolor{comment}{//     GateArrayRepeater* GetArrayRepeater(GateVGlobalPlacement* aRepeater);}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{//     //! Find the different parameters of the input Pulse :}}
+\DoxyCodeLine{106 \textcolor{comment}{//     //! e.g. the position in this array of the hit}}
+\DoxyCodeLine{107 \textcolor{comment}{//     void FindInputPulseParams(const GateVolumeID* m\_volumeID);}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110     \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}} CreateVolumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}* m\_volumeID, G4int i, G4int j, G4int k);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{113     \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}} CreateOutputVolumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}} m\_volumeID);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{116     \mbox{\hyperlink{classGatePulse}{GatePulse}}* CreatePulse(G4double val, \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* pulse, G4int i, G4int j, G4int k);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keyword}{private}:}
+\DoxyCodeLine{120     \textcolor{keyword}{static} \mbox{\hyperlink{classGateCrosstalk}{GateCrosstalk}}* theGateCrosstalk;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     G4double m\_XtalkpCent;                                         }
+\DoxyCodeLine{123     G4double m\_edgesCrosstalkFraction, m\_cornersCrosstalkFraction; }
+\DoxyCodeLine{124     \mbox{\hyperlink{classGateCrosstalkMessenger}{GateCrosstalkMessenger}} *m\_messenger;                           }
+\DoxyCodeLine{125     G4String m\_volume;                                             }
+\DoxyCodeLine{126     G4int m\_testVolume;                                            }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \mbox{\hyperlink{classGateArrayParamsFinder}{GateArrayParamsFinder}}* ArrayFinder;}
+\DoxyCodeLine{129     \textcolor{keywordtype}{size\_t} m\_nbX, m\_nbY, m\_nbZ;                                    }
+\DoxyCodeLine{130     \textcolor{keywordtype}{size\_t} m\_i, m\_j, m\_k;                                          }
+\DoxyCodeLine{131     \textcolor{keywordtype}{size\_t} m\_depth;                                                }
+\DoxyCodeLine{132 \};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,188 @@
+\hypertarget{classGateSphereRepeater}{}\doxysection{Gate\+Sphere\+Repeater Class Reference}
+\label{classGateSphereRepeater}\index{GateSphereRepeater@{GateSphereRepeater}}
+
+
+The \mbox{\hyperlink{classGateSphereRepeater}{Gate\+Sphere\+Repeater}} models a repetition of an object along a spherical pattern.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Sphere\+Repeater.\+hh$>$}
+
+Inheritance diagram for Gate\+Sphere\+Repeater\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateSphereRepeater}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateSphereRepeater_af983baa98df80850efa7ee9bb02c6e37}{Gate\+Sphere\+Repeater}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name=\char`\"{}sphere\char`\"{}, G4int its\+Repeat\+Number\+With\+Phi=1, G4int its\+Repeat\+Number\+With\+Thete=1, G4double its\+Theta\+Angle=0. $\ast$deg, G4double its\+Phi\+Angle=0. $\ast$deg, G4double its\+Radius=10. $\ast$mm, G4bool its\+Flag\+Auto\+Center=true, G4bool its\+Flag\+Auto\+Rotation=true)
+\item 
+\mbox{\Hypertarget{classGateSphereRepeater_ad443dd79ae03fbda9c0929ad9c592900}\label{classGateSphereRepeater_ad443dd79ae03fbda9c0929ad9c592900}} 
+virtual {\bfseries $\sim$\+Gate\+Sphere\+Repeater} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSphereRepeater_ad6365ef17559235a78c26584e07ff3e2}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method \mbox{\hyperlink{classGateSphereRepeater_ad6365ef17559235a78c26584e07ff3e2}{Push\+My\+Placements()}}, to compute. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSphereRepeater_a738964d13db270608f0921dcac2284cd}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateSphereRepeater_a738964d13db270608f0921dcac2284cd}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSphereRepeater_ac7c144e4fd2a2c470526844b746f4eee}\label{classGateSphereRepeater_ac7c144e4fd2a2c470526844b746f4eee}} 
+G4int {\bfseries Get\+Repeat\+Number\+With\+Phi} ()
+\begin{DoxyCompactList}\small\item\em Get the number of repetitions involving phi angle (latitude) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_aed5300ccdb3b2db24609c9829a36afdc}\label{classGateSphereRepeater_aed5300ccdb3b2db24609c9829a36afdc}} 
+G4int {\bfseries Get\+Repeat\+Number\+With\+Theta} ()
+\begin{DoxyCompactList}\small\item\em Get the number of repetitions involving theta angle (in the plane) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a2a90877db127ae232cc8c01a44bdc26b}\label{classGateSphereRepeater_a2a90877db127ae232cc8c01a44bdc26b}} 
+G4bool {\bfseries Get\+Auto\+Center\+Flag} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the centering flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_ac45fe6c2e58acb35498927f1043941f4}\label{classGateSphereRepeater_ac45fe6c2e58acb35498927f1043941f4}} 
+G4bool {\bfseries Get\+Auto\+Rotation} () const
+\begin{DoxyCompactList}\small\item\em Get the value of the auto-\/rotation flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_aaea92f92d6ba2c6e9ded95026d4a2988}\label{classGateSphereRepeater_aaea92f92d6ba2c6e9ded95026d4a2988}} 
+G4double {\bfseries Get\+Theta\+Angle} () const
+\begin{DoxyCompactList}\small\item\em Get the theta angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a7948169e265e889fb755b198762c89c5}\label{classGateSphereRepeater_a7948169e265e889fb755b198762c89c5}} 
+G4double {\bfseries Get\+Phi\+Angle} () const
+\begin{DoxyCompactList}\small\item\em Get the phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a20ffecd4f2e59ef91163e9eb482db18d}\label{classGateSphereRepeater_a20ffecd4f2e59ef91163e9eb482db18d}} 
+G4double {\bfseries Get\+Radius} () const
+\begin{DoxyCompactList}\small\item\em Get the sphere radius. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a6c3c7df95fa2a0b6248906f8410f6301}\label{classGateSphereRepeater_a6c3c7df95fa2a0b6248906f8410f6301}} 
+G4double {\bfseries Get\+Axial\+Pitch} () const
+\begin{DoxyCompactList}\small\item\em Get axial pitch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a6b88e7e8110336acba67e5381231b4d0}\label{classGateSphereRepeater_a6b88e7e8110336acba67e5381231b4d0}} 
+void {\bfseries Set\+Repeat\+Number\+With\+Phi} (G4int val)
+\begin{DoxyCompactList}\small\item\em Set the number of repetitions involving phi angle (latitude) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a706bb51d662411aea782fe9bc0026c3d}\label{classGateSphereRepeater_a706bb51d662411aea782fe9bc0026c3d}} 
+void {\bfseries Set\+Repeat\+Number\+With\+Theta} (G4int val)
+\begin{DoxyCompactList}\small\item\em Set the number of repetitions involving theta angle (in the plane) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_ac7ff6df6cc1aa74cdcbd7169ba3b9013}\label{classGateSphereRepeater_ac7ff6df6cc1aa74cdcbd7169ba3b9013}} 
+void {\bfseries Set\+Auto\+Center\+Flag} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Set the value of the centering flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a5ba83e6b04988567c11432c6765df543}\label{classGateSphereRepeater_a5ba83e6b04988567c11432c6765df543}} 
+void {\bfseries Set\+Auto\+Rotation} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Set the value of the auto-\/rotation flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_ae1e020a9fd650dc70b640acae3311632}\label{classGateSphereRepeater_ae1e020a9fd650dc70b640acae3311632}} 
+void {\bfseries Set\+Theta\+Angle} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the theta angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a56d5fefb55cad86b1078fb0a564a755b}\label{classGateSphereRepeater_a56d5fefb55cad86b1078fb0a564a755b}} 
+void {\bfseries Set\+Phi\+Angle} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_abe82f1dd3b85be7428cd7ddec0b4574f}\label{classGateSphereRepeater_abe82f1dd3b85be7428cd7ddec0b4574f}} 
+void {\bfseries Set\+Radius} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the sphere radius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{Indent}\textbf{ repeater parameters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a2a23db38a63b612d5fe8f59ebfce4757}\label{classGateSphereRepeater_a2a23db38a63b612d5fe8f59ebfce4757}} 
+G4int {\bfseries m\+\_\+repeat\+Number\+With\+Phi}
+\begin{DoxyCompactList}\small\item\em Number of repetitions involving phi angle (latitude) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_ad72c036e2ef4cb584177dca068c1a699}\label{classGateSphereRepeater_ad72c036e2ef4cb584177dca068c1a699}} 
+G4int {\bfseries m\+\_\+repeat\+Number\+With\+Theta}
+\begin{DoxyCompactList}\small\item\em Number of repetitions involving theta angle (in the plane) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_ac769720908b630bd32ced2b55cddd89d}\label{classGateSphereRepeater_ac769720908b630bd32ced2b55cddd89d}} 
+G4double {\bfseries m\+\_\+theta\+Angle}
+\begin{DoxyCompactList}\small\item\em Angle theta of rotation along the ring, at each step. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a0d9cb30959935a0afb69645aec80279a}\label{classGateSphereRepeater_a0d9cb30959935a0afb69645aec80279a}} 
+G4double {\bfseries m\+\_\+phi\+Angle}
+\begin{DoxyCompactList}\small\item\em Angle phi of rotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_af4493b01334147abd86a460c1ae7edc0}\label{classGateSphereRepeater_af4493b01334147abd86a460c1ae7edc0}} 
+G4double {\bfseries m\+\_\+radius}
+\begin{DoxyCompactList}\small\item\em Radius of the sphere along which the volumes are replicated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a5f1cb6e92700748ccdb8613ceb90b956}\label{classGateSphereRepeater_a5f1cb6e92700748ccdb8613ceb90b956}} 
+G4bool {\bfseries m\+\_\+flag\+Auto\+Center}
+\begin{DoxyCompactList}\small\item\em Centering flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a6299ef6945c80d2afeb2e9ae31d9653f}\label{classGateSphereRepeater_a6299ef6945c80d2afeb2e9ae31d9653f}} 
+G4bool {\bfseries m\+\_\+flag\+Auto\+Rotation}
+\begin{DoxyCompactList}\small\item\em Auto-\/rotation flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSphereRepeater_a76911086bcfdad381107635130fa67c3}\label{classGateSphereRepeater_a76911086bcfdad381107635130fa67c3}} 
+\mbox{\hyperlink{classGateSphereRepeaterMessenger}{Gate\+Sphere\+Repeater\+Messenger}} $\ast$ {\bfseries m\+\_\+\+Messenger}
+\begin{DoxyCompactList}\small\item\em Messenger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateSphereRepeater}{Gate\+Sphere\+Repeater}} models a repetition of an object along a spherical pattern. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSphereRepeater}{Gate\+Sphere\+Repeater}} -\/ by \href{mailto:Delphine.Lazaro@imed.jussieu.fr}{\texttt{ Delphine.\+Lazaro@imed.\+jussieu.\+fr}}
+\item The sphere repeater uses five parameters\+:
+\begin{DoxyItemize}
+\item the numbers of repetitions along axial axis (Z by default) and azimuthal axis (Y by default)
+\end{DoxyItemize}
+\item the radius of the sphere
+\item the angles alpha and beta 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateSphereRepeater_af983baa98df80850efa7ee9bb02c6e37}\label{classGateSphereRepeater_af983baa98df80850efa7ee9bb02c6e37}} 
+\index{GateSphereRepeater@{GateSphereRepeater}!GateSphereRepeater@{GateSphereRepeater}}
+\index{GateSphereRepeater@{GateSphereRepeater}!GateSphereRepeater@{GateSphereRepeater}}
+\doxysubsubsection{\texorpdfstring{GateSphereRepeater()}{GateSphereRepeater()}}
+{\footnotesize\ttfamily Gate\+Sphere\+Repeater\+::\+Gate\+Sphere\+Repeater (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{its\+Object\+Inserter,  }\item[{const G4\+String \&}]{its\+Name = {\ttfamily \char`\"{}sphere\char`\"{}},  }\item[{G4int}]{its\+Repeat\+Number\+With\+Phi = {\ttfamily 1},  }\item[{G4int}]{its\+Repeat\+Number\+With\+Thete = {\ttfamily 1},  }\item[{G4double}]{its\+Theta\+Angle = {\ttfamily 0.~$\ast$~deg},  }\item[{G4double}]{its\+Phi\+Angle = {\ttfamily 0.~$\ast$~deg},  }\item[{G4double}]{its\+Radius = {\ttfamily 10.~$\ast$~mm},  }\item[{G4bool}]{its\+Flag\+Auto\+Center = {\ttfamily true},  }\item[{G4bool}]{its\+Flag\+Auto\+Rotation = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor The default repeater parameters are chosen so that, by default, the object is unchanged 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSphereRepeater_a738964d13db270608f0921dcac2284cd}\label{classGateSphereRepeater_a738964d13db270608f0921dcac2284cd}} 
+\index{GateSphereRepeater@{GateSphereRepeater}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateSphereRepeater@{GateSphereRepeater}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Sphere\+Repeater\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateSphereRepeater_a738964d13db270608f0921dcac2284cd}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the repeater
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateSphereRepeater_ad6365ef17559235a78c26584e07ff3e2}\label{classGateSphereRepeater_ad6365ef17559235a78c26584e07ff3e2}} 
+\index{GateSphereRepeater@{GateSphereRepeater}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateSphereRepeater@{GateSphereRepeater}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Sphere\+Repeater\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method \mbox{\hyperlink{classGateSphereRepeater_ad6365ef17559235a78c26584e07ff3e2}{Push\+My\+Placements()}}, to compute. 
+
+the position and orientation of all copies as a function of time. The series
+
+of placements thus obtained is placed into the repeater placement queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Sphere\+Repeater.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Sphere\+Repeater.\+cc\end{DoxyCompactItemize}

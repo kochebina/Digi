@@ -1,0 +1,151 @@
+\hypertarget{classGateDoseSourceActor}{}\doxysection{Gate\+Dose\+Source\+Actor Class Reference}
+\label{classGateDoseSourceActor}\index{GateDoseSourceActor@{GateDoseSourceActor}}
+Inheritance diagram for Gate\+Dose\+Source\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateDoseSourceActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSourceActor_ae185f7b7f14caf758f4414174d147b98}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Type name of the sensor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateDoseSourceActor_a96ff33a73d6a94526273ed633fa7cab0}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSourceActor_a6d9f47e52452202b5711530b0a72f7a3}{User\+Post\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSourceActor_a983172ef90d50f8245c69e6ea83ed50e}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateDoseSourceActor_ab72c18ac516919c3669356d778571767}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$e)
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSourceActor_a2895e56dac3ad792e8fa1b19744d6559}{Save\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSourceActor_a4f6005ac5686cf88b3445f897fe8478b}{Reset\+Data}} ()
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_ae1a8514e8461847151f6e8f14ed5dfa8}\label{classGateDoseSourceActor_ae1a8514e8461847151f6e8f14ed5dfa8}} 
+void {\bfseries Set\+Spot\+IDFrom\+Source} (G4\+String name\+Of\+Source)
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_a4f23ddb5932cc2fd5b7957c422d9954e}\label{classGateDoseSourceActor_a4f23ddb5932cc2fd5b7957c422d9954e}} 
+void {\bfseries Set\+Layer\+IDFrom\+Source} (G4\+String name\+Of\+Source)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_af5518e05dd811f8ba77d76dc97bd9b65}\label{classGateDoseSourceActor_af5518e05dd811f8ba77d76dc97bd9b65}} 
+{\bfseries Gate\+Dose\+Source\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_a51b086fe49695ce0ba7cca63400b679d}\label{classGateDoseSourceActor_a51b086fe49695ce0ba7cca63400b679d}} 
+\mbox{\hyperlink{classGateDoseSourceActorMessenger}{Gate\+Dose\+Source\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_a32349f19319dd765a1b6d5023956a37a}\label{classGateDoseSourceActor_a32349f19319dd765a1b6d5023956a37a}} 
+\mbox{\hyperlink{classGateSourceTPSPencilBeam}{Gate\+Source\+TPSPencil\+Beam}} $\ast$ {\bfseries tpspencilsource}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_ae9a7b847f00752802c948a254cb9139e}\label{classGateDoseSourceActor_ae9a7b847f00752802c948a254cb9139e}} 
+G4\+String {\bfseries b\+Source\+Name}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_a55ed251a1572cbb569da17acf5a3be3d}\label{classGateDoseSourceActor_a55ed251a1572cbb569da17acf5a3be3d}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries dose\+Source\+Image}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_a2d54c3f03913e95663d718374f0e1c2d}\label{classGateDoseSourceActor_a2d54c3f03913e95663d718374f0e1c2d}} 
+int {\bfseries b\+ID}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_a953514f430f43eea368ce48a0944bad8}\label{classGateDoseSourceActor_a953514f430f43eea368ce48a0944bad8}} 
+bool {\bfseries areweinityet}
+\item 
+\mbox{\Hypertarget{classGateDoseSourceActor_a719c398129496e718cd9b6186fbcb547}\label{classGateDoseSourceActor_a719c398129496e718cd9b6186fbcb547}} 
+bool {\bfseries Spot\+Or\+Not}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateDoseSourceActor_ab72c18ac516919c3669356d778571767}\label{classGateDoseSourceActor_ab72c18ac516919c3669356d778571767}} 
+\index{GateDoseSourceActor@{GateDoseSourceActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateDoseSourceActor@{GateDoseSourceActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Source\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateDoseSourceActor_ae185f7b7f14caf758f4414174d147b98}\label{classGateDoseSourceActor_ae185f7b7f14caf758f4414174d147b98}} 
+\index{GateDoseSourceActor@{GateDoseSourceActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateDoseSourceActor@{GateDoseSourceActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Source\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Type name of the sensor. 
+
+Constructs the sensor.
+
+Constructs the sensor 
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateDoseSourceActor_a4f6005ac5686cf88b3445f897fe8478b}\label{classGateDoseSourceActor_a4f6005ac5686cf88b3445f897fe8478b}} 
+\index{GateDoseSourceActor@{GateDoseSourceActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateDoseSourceActor@{GateDoseSourceActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Source\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateDoseSourceActor_a2895e56dac3ad792e8fa1b19744d6559}\label{classGateDoseSourceActor_a2895e56dac3ad792e8fa1b19744d6559}} 
+\index{GateDoseSourceActor@{GateDoseSourceActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateDoseSourceActor@{GateDoseSourceActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Source\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateDoseSourceActor_a6d9f47e52452202b5711530b0a72f7a3}\label{classGateDoseSourceActor_a6d9f47e52452202b5711530b0a72f7a3}} 
+\index{GateDoseSourceActor@{GateDoseSourceActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateDoseSourceActor@{GateDoseSourceActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Source\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateDoseSourceActor_a96ff33a73d6a94526273ed633fa7cab0}\label{classGateDoseSourceActor_a96ff33a73d6a94526273ed633fa7cab0}} 
+\index{GateDoseSourceActor@{GateDoseSourceActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateDoseSourceActor@{GateDoseSourceActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Source\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateDoseSourceActor_a983172ef90d50f8245c69e6ea83ed50e}\label{classGateDoseSourceActor_a983172ef90d50f8245c69e6ea83ed50e}} 
+\index{GateDoseSourceActor@{GateDoseSourceActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateDoseSourceActor@{GateDoseSourceActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Source\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Dose\+Source\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Dose\+Source\+Actor.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,295 @@
+\hypertarget{classGateLETActor}{}\doxysection{Gate\+LETActor Class Reference}
+\label{classGateLETActor}\index{GateLETActor@{GateLETActor}}
+
+
+{\ttfamily \#include $<$Gate\+LETActor.\+hh$>$}
+
+Inheritance diagram for Gate\+LETActor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateLETActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a249a222f9ea0404f468752b8529bcef3}\label{classGateLETActor_a249a222f9ea0404f468752b8529bcef3}} 
+virtual {\bfseries $\sim$\+Gate\+LETActor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateLETActor_af1fa1d9e93e12fbc84de1158169b9f18}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLETActor_a3d0a15e3ff8ecc23e5a5ae38061c7533}\label{classGateLETActor_a3d0a15e3ff8ecc23e5a5ae38061c7533}} 
+void {\bfseries Set\+LETto\+Water} (bool b)
+\item 
+\mbox{\Hypertarget{classGateLETActor_ac26aad594adf6050a552b527ffa84ae4}\label{classGateLETActor_ac26aad594adf6050a552b527ffa84ae4}} 
+void {\bfseries Set\+Parallel\+Calculation} (bool b)
+\item 
+\mbox{\Hypertarget{classGateLETActor_af9d564175d8dea2ceb49cc9e4d481cfe}\label{classGateLETActor_af9d564175d8dea2ceb49cc9e4d481cfe}} 
+void {\bfseries Set\+LETType} (G4\+String s)
+\item 
+\mbox{\Hypertarget{classGateLETActor_a65a5566c8c1d1771c66247780737f054}\label{classGateLETActor_a65a5566c8c1d1771c66247780737f054}} 
+void {\bfseries Set\+Material} (G4\+String s)
+\item 
+\mbox{\Hypertarget{classGateLETActor_a5cd0eec052470ea517a2d9124ac840a2}\label{classGateLETActor_a5cd0eec052470ea517a2d9124ac840a2}} 
+void {\bfseries Set\+Cut\+Val} (G4double d)
+\item 
+\mbox{\Hypertarget{classGateLETActor_aea5d3921ac807c51f0de9efaac30b6fd}\label{classGateLETActor_aea5d3921ac807c51f0de9efaac30b6fd}} 
+void {\bfseries Set\+LETthr\+Min} (G4double d)
+\item 
+\mbox{\Hypertarget{classGateLETActor_a01891e31c3c8068fb438080ba62c971a}\label{classGateLETActor_a01891e31c3c8068fb438080ba62c971a}} 
+void {\bfseries Set\+LETthr\+Max} (G4double d)
+\item 
+virtual void \mbox{\hyperlink{classGateLETActor_a731ef0207928bc29bcbf67c32268b3aa}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateLETActor_a07804143e075c4f66998c4114e54a66b}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateLETActor_afd43e83afc2506da067e370f11b650a9}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateLETActor_a7f99633b7cbbb5ef7e059ad96942ff5e}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateLETActor_a33e522389a52f25787fac1490ccedf6d}{User\+Post\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateLETActor_aa57f6d73dec9fd18eeb6d22c2dc70ebc}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Save datam\+Delta\+Restricted. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateLETActor_ae370d0d432c66082328240e12ca75685}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateLETActor_a77b5485e46045385e402a1ebeb92db54}{Initialize}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateLETActor_a27d848b2e0b714356e14f6066f84c58e}{End\+Of\+Event}} (G4\+HCof\+This\+Event $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a562e53d013a819d3c9d0d01e686dd49c}\label{classGateLETActor_a562e53d013a819d3c9d0d01e686dd49c}} 
+{\bfseries Gate\+LETActor} (G4\+String name, G4int depth=0)
+\item 
+\mbox{\Hypertarget{classGateLETActor_a03a2c270689fb01c1cd626768be07f5d}\label{classGateLETActor_a03a2c270689fb01c1cd626768be07f5d}} 
+virtual double {\bfseries polynomial} (double $\ast$coefs, int deg, double x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLETActor_ac8a0187308af5d5df2a7bbea8cbcae32}\label{classGateLETActor_ac8a0187308af5d5df2a7bbea8cbcae32}} 
+\mbox{\hyperlink{classGateLETActorMessenger}{Gate\+LETActor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a42b8a44567dcdf0cb47f32aa2d39f0cc}\label{classGateLETActor_a42b8a44567dcdf0cb47f32aa2d39f0cc}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateLETActor_ad3d1cf5b067ad1fa6fbf35dcceee49df}\label{classGateLETActor_ad3d1cf5b067ad1fa6fbf35dcceee49df}} 
+bool {\bfseries m\+Is\+LETto\+Water\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateLETActor_acf315f51aa88e134d554d1d0b48cc30f}\label{classGateLETActor_acf315f51aa88e134d554d1d0b48cc30f}} 
+G4\+String {\bfseries m\+Averaging\+Type}
+\item 
+\mbox{\Hypertarget{classGateLETActor_aca8fc5cd19b299dcc4ee4984d4e78b8b}\label{classGateLETActor_aca8fc5cd19b299dcc4ee4984d4e78b8b}} 
+G4\+String {\bfseries m\+Set\+Material}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a7df0be2ac23c6c6be5b1aa18e61b903b}\label{classGateLETActor_a7df0be2ac23c6c6be5b1aa18e61b903b}} 
+\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Double}} {\bfseries m\+Weighted\+LETImage}
+\item 
+\mbox{\Hypertarget{classGateLETActor_acf380f2dae019108b7d587fad0fbd017}\label{classGateLETActor_acf380f2dae019108b7d587fad0fbd017}} 
+\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Double}} {\bfseries m\+Normalization\+LETImage}
+\item 
+\mbox{\Hypertarget{classGateLETActor_afa90c833c9557ab97f04fa21f5a767aa}\label{classGateLETActor_afa90c833c9557ab97f04fa21f5a767aa}} 
+\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Double}} {\bfseries m\+Dose\+Track\+Average\+LETImage}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a6dcae71bed26699d17e3e02d7d3bf922}\label{classGateLETActor_a6dcae71bed26699d17e3e02d7d3bf922}} 
+G4\+String {\bfseries m\+LETFilename}
+\item 
+\mbox{\Hypertarget{classGateLETActor_afa7c744f68d2ebe69c53719f4fb77fd9}\label{classGateLETActor_afa7c744f68d2ebe69c53719f4fb77fd9}} 
+G4\+String {\bfseries numerator\+File\+Name}
+\item 
+\mbox{\Hypertarget{classGateLETActor_ab25d823a4c6fda3d4e20091231b73d85}\label{classGateLETActor_ab25d823a4c6fda3d4e20091231b73d85}} 
+G4\+String {\bfseries denominator\+File\+Name}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a16dd1739bc0b39dc0bf2dab0ad1a352e}\label{classGateLETActor_a16dd1739bc0b39dc0bf2dab0ad1a352e}} 
+G4\+String {\bfseries sigma\+Filename}
+\item 
+\mbox{\Hypertarget{classGateLETActor_af91b38d8d943fc0be80d975592b7b7e6}\label{classGateLETActor_af91b38d8d943fc0be80d975592b7b7e6}} 
+bool {\bfseries m\+KGrosswendt}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a7cf53a4b9d83a2b258b8540f9afc94bf}\label{classGateLETActor_a7cf53a4b9d83a2b258b8540f9afc94bf}} 
+G4double {\bfseries m\+Cut\+Val}
+\item 
+\mbox{\Hypertarget{classGateLETActor_affab3cb4cdecfe9d6f8eef370f3c9a0d}\label{classGateLETActor_affab3cb4cdecfe9d6f8eef370f3c9a0d}} 
+G4double {\bfseries m\+LETthr\+Min}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a1de2398c45890cb5a3e33337e620de26}\label{classGateLETActor_a1de2398c45890cb5a3e33337e620de26}} 
+G4double {\bfseries m\+LETthr\+Max}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a9c2fe32089ae3afbc6fc3315d951235a}\label{classGateLETActor_a9c2fe32089ae3afbc6fc3315d951235a}} 
+double {\bfseries k\+\_\+\+Fit\+Par\+WAir}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a43ebdbbe3c6ef312b06ca016247dc933}\label{classGateLETActor_a43ebdbbe3c6ef312b06ca016247dc933}} 
+bool {\bfseries m\+Is\+Swair\+Approx}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a7498ae8eb143f367264902c976ed0c28}\label{classGateLETActor_a7498ae8eb143f367264902c976ed0c28}} 
+bool {\bfseries m\+Is\+Mean\+Energy\+To\+Produce\+Ion\+Pair\+In\+Air}
+\item 
+\mbox{\Hypertarget{classGateLETActor_ad51d1eca8c0ffc246c781732fea36395}\label{classGateLETActor_ad51d1eca8c0ffc246c781732fea36395}} 
+bool {\bfseries m\+Is\+Mean\+Energy\+To\+Produce\+Ion\+Pair\+In\+Air\+AR}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a17130147bf45a0ef05b03a45d612ebbd}\label{classGateLETActor_a17130147bf45a0ef05b03a45d612ebbd}} 
+bool {\bfseries m\+Is\+Dose\+Averaged}
+\item 
+\mbox{\Hypertarget{classGateLETActor_af8194b86fac87f5c8766ada40ce45ff6}\label{classGateLETActor_af8194b86fac87f5c8766ada40ce45ff6}} 
+bool {\bfseries m\+Is\+Track\+Averaged}
+\item 
+\mbox{\Hypertarget{classGateLETActor_af9ac580b90fd99440ab74a09b22657a5}\label{classGateLETActor_af9ac580b90fd99440ab74a09b22657a5}} 
+bool {\bfseries m\+Is\+Track\+Average\+DEDX}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a1b13dc68b3cb6cce2919039ddb06d0ca}\label{classGateLETActor_a1b13dc68b3cb6cce2919039ddb06d0ca}} 
+bool {\bfseries m\+Is\+Track\+Average\+Edep\+DX}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a673272480d8d1b255ed7e503f0b43fad}\label{classGateLETActor_a673272480d8d1b255ed7e503f0b43fad}} 
+bool {\bfseries m\+Is\+Dose\+Average\+DEDX}
+\item 
+\mbox{\Hypertarget{classGateLETActor_aea7d3e49fcb52b8c038f4eb87d7c1816}\label{classGateLETActor_aea7d3e49fcb52b8c038f4eb87d7c1816}} 
+bool {\bfseries m\+Is\+Dose\+Average\+Edep\+DX}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a3174665655d8c7d59d21dbdf45836d6b}\label{classGateLETActor_a3174665655d8c7d59d21dbdf45836d6b}} 
+bool {\bfseries m\+Is\+Average\+Kin\+Energy}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a33208061d3eb80c35c6bc70cb34f0e94}\label{classGateLETActor_a33208061d3eb80c35c6bc70cb34f0e94}} 
+bool {\bfseries m\+Is\+Gqq0\+EBT31st\+Order}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a3f666d8b41d3b536e1ba5e1b94a2a34f}\label{classGateLETActor_a3f666d8b41d3b536e1ba5e1b94a2a34f}} 
+bool {\bfseries m\+Is\+Gqq0\+EBT34th\+Order}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a9fb7f99d1ed2e1268d654e629ae01f63}\label{classGateLETActor_a9fb7f99d1ed2e1268d654e629ae01f63}} 
+bool {\bfseries m\+Is\+Parallel\+Calculation\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a02b4f0d96009dfc960a176465fc5d150}\label{classGateLETActor_a02b4f0d96009dfc960a176465fc5d150}} 
+G4\+Em\+Calculator $\ast$ {\bfseries emcalc}
+\item 
+\mbox{\Hypertarget{classGateLETActor_a9bd6776b24df1548ae803bae5cf414f2}\label{classGateLETActor_a9bd6776b24df1548ae803bae5cf414f2}} 
+Step\+Hit\+Type {\bfseries m\+User\+Step\+Hit\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Compute LET (Linear Energy Transfer) at a voxel level. \begin{DoxyDate}{Date}
+2016 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateLETActor_a07804143e075c4f66998c4114e54a66b}\label{classGateLETActor_a07804143e075c4f66998c4114e54a66b}} 
+\index{GateLETActor@{GateLETActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+LETActor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateLETActor_a731ef0207928bc29bcbf67c32268b3aa}\label{classGateLETActor_a731ef0207928bc29bcbf67c32268b3aa}} 
+\index{GateLETActor@{GateLETActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+LETActor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateLETActor_af1fa1d9e93e12fbc84de1158169b9f18}\label{classGateLETActor_af1fa1d9e93e12fbc84de1158169b9f18}} 
+\index{GateLETActor@{GateLETActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+LETActor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateLETActor_a27d848b2e0b714356e14f6066f84c58e}\label{classGateLETActor_a27d848b2e0b714356e14f6066f84c58e}} 
+\index{GateLETActor@{GateLETActor}!EndOfEvent@{EndOfEvent}}
+\index{EndOfEvent@{EndOfEvent}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEvent()}{EndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+LETActor\+::\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateLETActor_a77b5485e46045385e402a1ebeb92db54}\label{classGateLETActor_a77b5485e46045385e402a1ebeb92db54}} 
+\index{GateLETActor@{GateLETActor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Gate\+LETActor\+::\+Initialize (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateLETActor_ae370d0d432c66082328240e12ca75685}\label{classGateLETActor_ae370d0d432c66082328240e12ca75685}} 
+\index{GateLETActor@{GateLETActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+LETActor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateLETActor_aa57f6d73dec9fd18eeb6d22c2dc70ebc}\label{classGateLETActor_aa57f6d73dec9fd18eeb6d22c2dc70ebc}} 
+\index{GateLETActor@{GateLETActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+LETActor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save datam\+Delta\+Restricted. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateLETActor_a33e522389a52f25787fac1490ccedf6d}\label{classGateLETActor_a33e522389a52f25787fac1490ccedf6d}} 
+\index{GateLETActor@{GateLETActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+LETActor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateLETActor_a7f99633b7cbbb5ef7e059ad96942ff5e}\label{classGateLETActor_a7f99633b7cbbb5ef7e059ad96942ff5e}} 
+\index{GateLETActor@{GateLETActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+LETActor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateLETActor_afd43e83afc2506da067e370f11b650a9}\label{classGateLETActor_afd43e83afc2506da067e370f11b650a9}} 
+\index{GateLETActor@{GateLETActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateLETActor@{GateLETActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+LETActor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+LETActor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+LETActor.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\hypertarget{GateEmCalculatorActorMessenger_8hh_source}{}\doxysection{Gate\+Em\+Calculator\+Actor\+Messenger.\+hh}
+\label{GateEmCalculatorActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEmCalculatorActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEmCalculatorActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateEmCalculatorActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author loic.grevillot@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATEEmCalculatorActorMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATEEmCalculatorActorMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcommand;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEmCalculatorActor}{GateEmCalculatorActor}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEmCalculatorActorMessenger}{GateEmCalculatorActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateEmCalculatorActorMessenger}{GateEmCalculatorActorMessenger}}(\mbox{\hyperlink{classGateEmCalculatorActor}{GateEmCalculatorActor}}* sensor);}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEmCalculatorActorMessenger}{\string~GateEmCalculatorActorMessenger}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateEmCalculatorActor}{GateEmCalculatorActor}} * pEmCalculatorActor;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   G4UIcmdWithADoubleAndUnit * pSetEnergyCmd;}
+\DoxyCodeLine{39   G4UIcmdWithAString * pSetParticleNameCmd;}
+\DoxyCodeLine{40   G4UIcommand * pIonCmd;}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEEmCalculatorActorMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

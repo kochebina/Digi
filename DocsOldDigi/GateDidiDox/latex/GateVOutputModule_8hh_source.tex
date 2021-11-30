@@ -1,0 +1,105 @@
+\hypertarget{GateVOutputModule_8hh_source}{}\doxysection{Gate\+VOutput\+Module.\+hh}
+\label{GateVOutputModule_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVOutputModule.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVOutputModule.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVOutputModule\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVOutputModule\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4Run;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4Step;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4Event;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{enum} DigiMode \{}
+\DoxyCodeLine{28   kruntimeMode,}
+\DoxyCodeLine{29   kofflineMode}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,DigiMode digiMode);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVOutputModule}{\string~GateVOutputModule}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordBeginOfAcquisition() = 0;}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordEndOfAcquisition() = 0;}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *) = 0;}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *) = 0;}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *) = 0;}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *) = 0;}
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v, \textcolor{keyword}{const} G4Step *) = 0;}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) = 0;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordTracks(\mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}}*)\{\} \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetVerboseLevel(G4int val) \{ nVerboseLevel = val; \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/*}}
+\DoxyCodeLine{54 \textcolor{comment}{ * Pure virtual method that return the name of the output fileName.}}
+\DoxyCodeLine{55 \textcolor{comment}{ * By default all output name for each module that has an output}}
+\DoxyCodeLine{56 \textcolor{comment}{ * file is "{} "{}. So this method will be call in startDAQ for each}}
+\DoxyCodeLine{57 \textcolor{comment}{ * OutputModule to check if the filenames are given or not.}}
+\DoxyCodeLine{58 \textcolor{comment}{*/}}
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& GiveNameOfFile() = 0;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keyword}{inline} G4String GetName()              \{ \textcolor{keywordflow}{return} m\_name; \}}
+\DoxyCodeLine{68   \textcolor{keyword}{inline} \textcolor{keywordtype}{void}     SetName(G4String name) \{ m\_name = name; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* GetOutputMgr() \{ \textcolor{keywordflow}{return} m\_outputMgr; \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keyword}{inline} DigiMode GetDigiMode()\textcolor{keyword}{ const     }\{ \textcolor{keywordflow}{return} m\_digiMode;\}}
+\DoxyCodeLine{73   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetDigiMode(DigiMode mode)  \{ m\_digiMode = mode; \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{comment}{/*virtual void RegisterNewCoincidenceDigiCollection(const G4String\& aCollectionName,G4bool outputFlag)}}
+\DoxyCodeLine{76 \textcolor{comment}{    \{;\}}}
+\DoxyCodeLine{77 \textcolor{comment}{    virtual void RegisterNewSingleDigiCollection(const G4String\& aCollectionName,G4bool outputFlag)}}
+\DoxyCodeLine{78 \textcolor{comment}{    \{;\}*/}}
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RegisterNewCoincidenceDigiCollection(\textcolor{keyword}{const} G4String\& ,G4bool )}
+\DoxyCodeLine{80   \{\}}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RegisterNewSingleDigiCollection(\textcolor{keyword}{const} G4String\& ,G4bool )}
+\DoxyCodeLine{82   \{\}}
+\DoxyCodeLine{84   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateVOutputModule_ace200152ed4c411bc56c8a6e2df71be6}{IsEnabled}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{85 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVOutputModule_a6e1b8f3dfbebfea45efef987c0ad168e}{m\_isEnabled}};\}}
+\DoxyCodeLine{87   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVOutputModule_a56652770ee1acc09b5aa23f0a56cfb2e}{Enable}}(G4bool val)}
+\DoxyCodeLine{88   \{ \mbox{\hyperlink{classGateVOutputModule_a6e1b8f3dfbebfea45efef987c0ad168e}{m\_isEnabled}} = val; \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   G4int                      nVerboseLevel;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}*             m\_outputMgr;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   G4String                   m\_name;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   DigiMode                   m\_digiMode;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{102   G4bool             \mbox{\hyperlink{classGateVOutputModule_a6e1b8f3dfbebfea45efef987c0ad168e}{m\_isEnabled}};}
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

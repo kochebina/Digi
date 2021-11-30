@@ -1,0 +1,70 @@
+\hypertarget{classGateImageRegionalizedSubVolumeSolid}{}\doxysection{Gate\+Image\+Regionalized\+Sub\+Volume\+Solid Class Reference}
+\label{classGateImageRegionalizedSubVolumeSolid}\index{GateImageRegionalizedSubVolumeSolid@{GateImageRegionalizedSubVolumeSolid}}
+
+
+A G4\+VSolid which represents the region of a certain label (set of voxels which share that label) within an image. Used by the sub-\/volumes (\mbox{\hyperlink{classGateImageRegionalizedSubVolume}{Gate\+Image\+Regionalized\+Sub\+Volume}}) of a \mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}}.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Image\+Regionalized\+Sub\+Volume\+Solid.\+hh$>$}
+
+Inheritance diagram for Gate\+Image\+Regionalized\+Sub\+Volume\+Solid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateImageRegionalizedSubVolumeSolid}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a97146fb6d64c4b5454e2965829df2cbb}\label{classGateImageRegionalizedSubVolumeSolid_a97146fb6d64c4b5454e2965829df2cbb}} 
+{\bfseries Gate\+Image\+Regionalized\+Sub\+Volume\+Solid} (const G4\+String \&name, \mbox{\hyperlink{classGateImageRegionalizedSubVolume}{Gate\+Image\+Regionalized\+Sub\+Volume}} $\ast$volume)
+\begin{DoxyCompactList}\small\item\em Builds the solid with its name and the volume which owns it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a60a0413765169ec2ced230f9c2b9a052}\label{classGateImageRegionalizedSubVolumeSolid_a60a0413765169ec2ced230f9c2b9a052}} 
+virtual {\bfseries $\sim$\+Gate\+Image\+Regionalized\+Sub\+Volume\+Solid} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a246d8a4ff40f662b84e74540b501f730}\label{classGateImageRegionalizedSubVolumeSolid_a246d8a4ff40f662b84e74540b501f730}} 
+EInside {\bfseries Inside} (const G4\+Three\+Vector \&p) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_ae3fdeb95eb2569de059eaab0a15f2463}\label{classGateImageRegionalizedSubVolumeSolid_ae3fdeb95eb2569de059eaab0a15f2463}} 
+G4\+Three\+Vector {\bfseries Surface\+Normal} (const G4\+Three\+Vector \&p) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_ab19e6f5d95dc59243cbf0669a4c33ed1}\label{classGateImageRegionalizedSubVolumeSolid_ab19e6f5d95dc59243cbf0669a4c33ed1}} 
+G4double {\bfseries Distance\+To\+In} (const G4\+Three\+Vector \&p, const G4\+Three\+Vector \&v) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a79a5834c55c3769f407a2ce21e9b61d8}\label{classGateImageRegionalizedSubVolumeSolid_a79a5834c55c3769f407a2ce21e9b61d8}} 
+G4double {\bfseries Distance\+To\+In} (const G4\+Three\+Vector \&p) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_afcca4de55ce07717bbd92fa162191d7f}\label{classGateImageRegionalizedSubVolumeSolid_afcca4de55ce07717bbd92fa162191d7f}} 
+G4double {\bfseries Distance\+To\+Out} (const G4\+Three\+Vector \&p, const G4\+Three\+Vector \&v, const G4bool calc\+Norm=false, G4bool $\ast$valid\+Norm=0, G4\+Three\+Vector $\ast$n=0) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a40035b06d469c64ef144b4ea25273c69}\label{classGateImageRegionalizedSubVolumeSolid_a40035b06d469c64ef144b4ea25273c69}} 
+G4double {\bfseries Distance\+To\+Out} (const G4\+Three\+Vector \&p) const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a739affe35f227a113a52053e0556c302}\label{classGateImageRegionalizedSubVolumeSolid_a739affe35f227a113a52053e0556c302}} 
+G4\+Geometry\+Type {\bfseries Get\+Entity\+Type} () const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a851a402a40f01d65a2ea29d2dddd016e}\label{classGateImageRegionalizedSubVolumeSolid_a851a402a40f01d65a2ea29d2dddd016e}} 
+G4\+Three\+Vector {\bfseries Get\+Point\+On\+Surface} () const
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a352465c8ab18d3cb717f1f4868ae9b6a}\label{classGateImageRegionalizedSubVolumeSolid_a352465c8ab18d3cb717f1f4868ae9b6a}} 
+std\+::ostream \& {\bfseries Stream\+Info} (std\+::ostream \&os) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageRegionalizedSubVolumeSolid_a23f17ecb0980dee8c11e9c8c64cfaf69}\label{classGateImageRegionalizedSubVolumeSolid_a23f17ecb0980dee8c11e9c8c64cfaf69}} 
+\mbox{\hyperlink{classGateImageRegionalizedSubVolume}{Gate\+Image\+Regionalized\+Sub\+Volume}} $\ast$ {\bfseries p\+Volume}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A G4\+VSolid which represents the region of a certain label (set of voxels which share that label) within an image. Used by the sub-\/volumes (\mbox{\hyperlink{classGateImageRegionalizedSubVolume}{Gate\+Image\+Regionalized\+Sub\+Volume}}) of a \mbox{\hyperlink{classGateImageRegionalizedVolume}{Gate\+Image\+Regionalized\+Volume}}. 
+
+Inherits from G4\+Box \+: its dimensions are those of the bounding box of the \mbox{\hyperlink{classGateImageRegionalizedSubVolume}{Gate\+Image\+Regionalized\+Sub\+Volume}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Image\+Regionalized\+Sub\+Volume\+Solid.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Image\+Regionalized\+Sub\+Volume\+Solid.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,182 @@
+\hypertarget{GateTreeFileManager_8hh_source}{}\doxysection{Gate\+Tree\+File\+Manager.\+hh}
+\label{GateTreeFileManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/io/include/GateTreeFileManager.hh@{/biomaps/physique/appli/GateOlga/src/source/io/include/GateTreeFileManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by mdupont on 12/03/18.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateTreeFile.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} \textcolor{keyword}{const} std::function<std::unique\_ptr<GateOutputTreeFile>()> TCreateOutputTreeFileMethod;}
+\DoxyCodeLine{16 \textcolor{keyword}{typedef} std::map<const std::string,TCreateOutputTreeFileMethod> CreateOutputTreeFileMethodMap;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputTreeFileFactory}{GateOutputTreeFileFactory}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \_register(\textcolor{keyword}{const} std::string name, TCreateOutputTreeFileMethod\& funcCreate);}
+\DoxyCodeLine{24   \textcolor{keyword}{static} std::unique\_ptr<GateOutputTreeFile> \_create(\textcolor{keyword}{const} std::string\& name);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateOutputTreeFileFactory}{GateOutputTreeFileFactory}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{28   \textcolor{keyword}{static} CreateOutputTreeFileMethodMap\& get\_methods\_map()}
+\DoxyCodeLine{29   \{}
+\DoxyCodeLine{30     \textcolor{keyword}{static} CreateOutputTreeFileMethodMap s\_methods;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} s\_methods;}
+\DoxyCodeLine{32   \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}}();}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}}(\mbox{\hyperlink{classGateOutputTreeFileManager}{GateOutputTreeFileManager}} \&\&m);}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOutputTreeFileManager}{\string~GateOutputTreeFileManager}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   std::unique\_ptr<GateOutputTreeFile> add\_file(\textcolor{keyword}{const} std::string \&file\_path, \textcolor{keyword}{const} std::string \&kind);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} T *p)}
+\DoxyCodeLine{49   \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\& f : m\_listOfTreeFile)}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52       f-\/>write\_variable(name, p, \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54   \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} std::string *p, \textcolor{keywordtype}{size\_t} nb\_char);}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p, \textcolor{keywordtype}{size\_t} nb\_char);}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{int} *p, \textcolor{keywordtype}{size\_t} sizeArray);}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} set\_tree\_name(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} fill();}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} close();}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} write\_header();}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} write();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{private}:}
+\DoxyCodeLine{69   std::vector<std::unique\_ptr<GateOutputTreeFile>> m\_listOfTreeFile;}
+\DoxyCodeLine{70   std::string m\_nameOfTree;}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} \textcolor{keyword}{const} std::function<std::unique\_ptr<GateInputTreeFile>()> TCreateInputTreeFileMethod;}
+\DoxyCodeLine{76 \textcolor{keyword}{typedef} std::map<const std::string,TCreateInputTreeFileMethod> CreateInTreeFileMethodMap;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{class }\mbox{\hyperlink{classGateInputTreeFileFactory}{GateInputTreeFileFactory}}}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81 \textcolor{keyword}{public}:}
+\DoxyCodeLine{82   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \_register(\textcolor{keyword}{const} std::string name, TCreateInputTreeFileMethod\& funcCreate);}
+\DoxyCodeLine{83   \textcolor{keyword}{static} std::unique\_ptr<GateInputTreeFile> \_create(\textcolor{keyword}{const} std::string\& name);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{private}:}
+\DoxyCodeLine{88   \mbox{\hyperlink{classGateInputTreeFileFactory}{GateInputTreeFileFactory}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{89   \textcolor{keyword}{static} CreateInTreeFileMethodMap\& get\_methods\_map()}
+\DoxyCodeLine{90   \{}
+\DoxyCodeLine{91     \textcolor{keyword}{static} CreateInTreeFileMethodMap s\_methods;}
+\DoxyCodeLine{92     \textcolor{keywordflow}{return} s\_methods;}
+\DoxyCodeLine{93   \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keyword}{class }\mbox{\hyperlink{classGateInputTreeFileManager}{GateInputTreeFileManager}}}
+\DoxyCodeLine{98 \{}
+\DoxyCodeLine{99 \textcolor{keyword}{public}:}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{//  static std::unique\_ptr<InputTreeFile> get\_file(const std::string \&file\_path, const std::string \&kind);}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \mbox{\hyperlink{classGateInputTreeFileManager}{GateInputTreeFileManager}}();}
+\DoxyCodeLine{104   std::unique\_ptr<GateInputTreeFile> set\_file(\textcolor{keyword}{const} std::string \&file\_path, \textcolor{keyword}{const} std::string \&kind);}
+\DoxyCodeLine{105   \textcolor{keywordtype}{bool} data\_to\_read();}
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} close();}
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} read\_next\_entrie();}
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} read\_entrie(\textcolor{keyword}{const} uint64\_t\& i);}
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} read\_header();}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} set\_tree\_name(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{111   uint64\_t nb\_elements();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{114   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string name, T *p)}
+\DoxyCodeLine{115   \{}
+\DoxyCodeLine{116     read\_variable(name, p, \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{117   \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char}* p);}
+\DoxyCodeLine{120   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, std::string *p);}
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char}* p, \textcolor{keywordtype}{size\_t} nb\_char);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \textcolor{keywordtype}{bool} has\_variable(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{124   std::type\_index get\_type\_of\_variable(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{keyword}{private}:}
+\DoxyCodeLine{129   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{void} *p, std::type\_index t\_index);}
+\DoxyCodeLine{130   std::unique\_ptr<GateInputTreeFile> m\_inputtreefile;}
+\DoxyCodeLine{131   std::string m\_nameOfTree;}
+\DoxyCodeLine{132 \};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keyword}{class }\mbox{\hyperlink{classGateInputTreeFileChain}{GateInputTreeFileChain}}}
+\DoxyCodeLine{136 \{}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{keyword}{public}:}
+\DoxyCodeLine{139   std::unique\_ptr<GateInputTreeFile> add\_file(\textcolor{keyword}{const} std::string \&file\_path, \textcolor{keyword}{const} std::string \&kind);}
+\DoxyCodeLine{140   \textcolor{keywordtype}{bool} data\_to\_read();}
+\DoxyCodeLine{141   \textcolor{keywordtype}{void} read\_entrie();}
+\DoxyCodeLine{142   \textcolor{keywordtype}{void} read\_header();}
+\DoxyCodeLine{143   \textcolor{keywordtype}{void} close();}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145   \mbox{\hyperlink{classGateInputTreeFileChain}{GateInputTreeFileChain}}();}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147   \textcolor{keywordtype}{void} set\_tree\_name(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{148   uint64\_t nb\_elements();}
+\DoxyCodeLine{149   \textcolor{keywordtype}{void} read\_entrie(\textcolor{keyword}{const} uint64\_t\& i);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{152   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string name, T *p)}
+\DoxyCodeLine{153   \{}
+\DoxyCodeLine{154     read\_variable(name, p, \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{155   \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char}* p);}
+\DoxyCodeLine{158   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, std::string *p);}
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char}* p, \textcolor{keywordtype}{size\_t} nb\_char);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161   \textcolor{keywordtype}{bool} has\_variable(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{162   std::type\_index get\_type\_of\_variable(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{keyword}{private}:}
+\DoxyCodeLine{166   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{void} *p, std::type\_index t\_index);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168   std::vector<std::unique\_ptr<GateInputTreeFile>> m\_listOfTreeFile;}
+\DoxyCodeLine{169   std::string m\_nameOfTree;}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+
+\end{DoxyCode}

@@ -1,0 +1,157 @@
+\hypertarget{classMetaOutput}{}\doxysection{Meta\+Output Class Reference}
+\label{classMetaOutput}\index{MetaOutput@{MetaOutput}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMetaOutput_1_1Field}{Field}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaOutput_acf7da876f51d974711ea2507174f613c}\label{classMetaOutput_acf7da876f51d974711ea2507174f613c}} 
+enum {\bfseries Type\+Enum\+Type} \{ \newline
+{\bfseries INT}
+, {\bfseries FLOAT}
+, {\bfseries CHAR}
+, {\bfseries STRING}
+, \newline
+{\bfseries LIST}
+, {\bfseries FLAG}
+, {\bfseries BOOL}
+ \}
+\item 
+\mbox{\Hypertarget{classMetaOutput_a6a4dacc44112fcaaa535bbfed888c9ec}\label{classMetaOutput_a6a4dacc44112fcaaa535bbfed888c9ec}} 
+typedef METAIO\+\_\+\+STL\+::vector$<$ \mbox{\hyperlink{structMetaOutput_1_1Field}{Field}} $>$ {\bfseries Field\+Vector}
+\item 
+\mbox{\Hypertarget{classMetaOutput_ab25e40d07036da7524aedbb958d53ff4}\label{classMetaOutput_ab25e40d07036da7524aedbb958d53ff4}} 
+typedef METAIO\+\_\+\+STL\+::vector$<$ \mbox{\hyperlink{classMetaOutputStream}{Meta\+Output\+Stream}} $\ast$ $>$ {\bfseries Stream\+Vector}
+\item 
+\mbox{\Hypertarget{classMetaOutput_ab8413c7e692b28d617aa17638b97f684}\label{classMetaOutput_ab8413c7e692b28d617aa17638b97f684}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ METAIO\+\_\+\+STL\+::string $>$ {\bfseries List\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMetaOutput_ab5b25f0cfd8e4ca55ce44f08da1f70d6}{Meta\+Output}} ()
+\item 
+\mbox{\hyperlink{classMetaOutput_a9109dd20b6812fed187f7de24e8d6a04}{$\sim$\+Meta\+Output}} ()
+\item 
+bool \mbox{\hyperlink{classMetaOutput_af11f30cf0fc975875fb5df09f527238f}{Add\+Field}} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string description, Type\+Enum\+Type type, METAIO\+\_\+\+STL\+::string value, METAIO\+\_\+\+STL\+::string range\+Min=\char`\"{}\char`\"{}, METAIO\+\_\+\+STL\+::string range\+Max=\char`\"{}\char`\"{})
+\item 
+bool \mbox{\hyperlink{classMetaOutput_ad3b3e963bbfffc0cecd7517e996c79a5}{Add\+Float\+Field}} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string description, float value, METAIO\+\_\+\+STL\+::string range\+Min=\char`\"{}\char`\"{}, METAIO\+\_\+\+STL\+::string range\+Max=\char`\"{}\char`\"{})
+\item 
+bool \mbox{\hyperlink{classMetaOutput_a80ff6d613e0a09b4ebe38a1d32f14913}{Add\+Int\+Field}} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string description, int value, METAIO\+\_\+\+STL\+::string range\+Min=\char`\"{}\char`\"{}, METAIO\+\_\+\+STL\+::string range\+Max=\char`\"{}\char`\"{})
+\item 
+bool \mbox{\hyperlink{classMetaOutput_aac417b67a839cad4a09f4ddf007fd224}{Add\+List\+Field}} (METAIO\+\_\+\+STL\+::string name, METAIO\+\_\+\+STL\+::string description, List\+Type list)
+\item 
+void \mbox{\hyperlink{classMetaOutput_afbcb70486dec91ed84c90cb05f536ef1}{Set\+Meta\+Command}} (\mbox{\hyperlink{classMetaCommand}{Meta\+Command}} $\ast$meta\+Command)
+\item 
+void \mbox{\hyperlink{classMetaOutput_a4c991638183832d103b3c068a34adcd2}{Write}} ()
+\item 
+void \mbox{\hyperlink{classMetaOutput_a697b76ba1c41ec9d657d046f833d4259}{Add\+Stream}} (const char $\ast$name, METAIO\+\_\+\+STREAM\+::ostream \&stream)
+\item 
+\mbox{\Hypertarget{classMetaOutput_a07a61f6ef25e03d00586512a3365e5e1}\label{classMetaOutput_a07a61f6ef25e03d00586512a3365e5e1}} 
+void {\bfseries Add\+Stream} (const char $\ast$name, \mbox{\hyperlink{classMetaOutputStream}{Meta\+Output\+Stream}} $\ast$stream)
+\item 
+void \mbox{\hyperlink{classMetaOutput_a3596ec1baed85d82b1c02f37dd074cd0}{Add\+Stream\+File}} (const char $\ast$name, const char $\ast$filename)
+\item 
+void \mbox{\hyperlink{classMetaOutput_a7eda9e5e91dce80c05401c7279a90424}{Enable\+Stream}} (const char $\ast$name)
+\item 
+void \mbox{\hyperlink{classMetaOutput_ab09f8f4b94dda96e06a81725890e798d}{Disable\+Stream}} (const char $\ast$name)
+\item 
+\mbox{\Hypertarget{classMetaOutput_a8d8307714a5bdb2a98eef12a711a6353}\label{classMetaOutput_a8d8307714a5bdb2a98eef12a711a6353}} 
+METAIO\+\_\+\+STL\+::string {\bfseries Get\+Hostname} (void)
+\item 
+\mbox{\Hypertarget{classMetaOutput_af2875879364ee393af82b96369f1510c}\label{classMetaOutput_af2875879364ee393af82b96369f1510c}} 
+METAIO\+\_\+\+STL\+::string {\bfseries Get\+Hostip} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMetaOutput_ab5b25f0cfd8e4ca55ce44f08da1f70d6}\label{classMetaOutput_ab5b25f0cfd8e4ca55ce44f08da1f70d6}} 
+\index{MetaOutput@{MetaOutput}!MetaOutput@{MetaOutput}}
+\index{MetaOutput@{MetaOutput}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{MetaOutput()}{MetaOutput()}}
+{\footnotesize\ttfamily Meta\+Output\+::\+Meta\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classMetaOutput_a9109dd20b6812fed187f7de24e8d6a04}\label{classMetaOutput_a9109dd20b6812fed187f7de24e8d6a04}} 
+\index{MetaOutput@{MetaOutput}!````~MetaOutput@{$\sim$MetaOutput}}
+\index{````~MetaOutput@{$\sim$MetaOutput}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{$\sim$MetaOutput()}{~MetaOutput()}}
+{\footnotesize\ttfamily Meta\+Output\+::$\sim$\+Meta\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetaOutput_af11f30cf0fc975875fb5df09f527238f}\label{classMetaOutput_af11f30cf0fc975875fb5df09f527238f}} 
+\index{MetaOutput@{MetaOutput}!AddField@{AddField}}
+\index{AddField@{AddField}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{AddField()}{AddField()}}
+{\footnotesize\ttfamily bool Meta\+Output\+::\+Add\+Field (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{description,  }\item[{Type\+Enum\+Type}]{type,  }\item[{METAIO\+\_\+\+STL\+::string}]{value,  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Min = {\ttfamily \char`\"{}\char`\"{}},  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Max = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Add a field \mbox{\Hypertarget{classMetaOutput_ad3b3e963bbfffc0cecd7517e996c79a5}\label{classMetaOutput_ad3b3e963bbfffc0cecd7517e996c79a5}} 
+\index{MetaOutput@{MetaOutput}!AddFloatField@{AddFloatField}}
+\index{AddFloatField@{AddFloatField}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{AddFloatField()}{AddFloatField()}}
+{\footnotesize\ttfamily bool Meta\+Output\+::\+Add\+Float\+Field (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{description,  }\item[{float}]{value,  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Min = {\ttfamily \char`\"{}\char`\"{}},  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Max = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Add a float field \mbox{\Hypertarget{classMetaOutput_a80ff6d613e0a09b4ebe38a1d32f14913}\label{classMetaOutput_a80ff6d613e0a09b4ebe38a1d32f14913}} 
+\index{MetaOutput@{MetaOutput}!AddIntField@{AddIntField}}
+\index{AddIntField@{AddIntField}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{AddIntField()}{AddIntField()}}
+{\footnotesize\ttfamily bool Meta\+Output\+::\+Add\+Int\+Field (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{description,  }\item[{int}]{value,  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Min = {\ttfamily \char`\"{}\char`\"{}},  }\item[{METAIO\+\_\+\+STL\+::string}]{range\+Max = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Add a int field \mbox{\Hypertarget{classMetaOutput_aac417b67a839cad4a09f4ddf007fd224}\label{classMetaOutput_aac417b67a839cad4a09f4ddf007fd224}} 
+\index{MetaOutput@{MetaOutput}!AddListField@{AddListField}}
+\index{AddListField@{AddListField}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{AddListField()}{AddListField()}}
+{\footnotesize\ttfamily bool Meta\+Output\+::\+Add\+List\+Field (\begin{DoxyParamCaption}\item[{METAIO\+\_\+\+STL\+::string}]{name,  }\item[{METAIO\+\_\+\+STL\+::string}]{description,  }\item[{List\+Type}]{list }\end{DoxyParamCaption})}
+
+Add list field \mbox{\Hypertarget{classMetaOutput_a697b76ba1c41ec9d657d046f833d4259}\label{classMetaOutput_a697b76ba1c41ec9d657d046f833d4259}} 
+\index{MetaOutput@{MetaOutput}!AddStream@{AddStream}}
+\index{AddStream@{AddStream}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{AddStream()}{AddStream()}}
+{\footnotesize\ttfamily void Meta\+Output\+::\+Add\+Stream (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{METAIO\+\_\+\+STREAM\+::ostream \&}]{stdstream }\end{DoxyParamCaption})}
+
+Add a standard stream
+
+Add a stream \mbox{\Hypertarget{classMetaOutput_a3596ec1baed85d82b1c02f37dd074cd0}\label{classMetaOutput_a3596ec1baed85d82b1c02f37dd074cd0}} 
+\index{MetaOutput@{MetaOutput}!AddStreamFile@{AddStreamFile}}
+\index{AddStreamFile@{AddStreamFile}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{AddStreamFile()}{AddStreamFile()}}
+{\footnotesize\ttfamily void Meta\+Output\+::\+Add\+Stream\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Add a stream file. Helper function \mbox{\Hypertarget{classMetaOutput_ab09f8f4b94dda96e06a81725890e798d}\label{classMetaOutput_ab09f8f4b94dda96e06a81725890e798d}} 
+\index{MetaOutput@{MetaOutput}!DisableStream@{DisableStream}}
+\index{DisableStream@{DisableStream}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{DisableStream()}{DisableStream()}}
+{\footnotesize\ttfamily void Meta\+Output\+::\+Disable\+Stream (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Disable a stream \mbox{\Hypertarget{classMetaOutput_a7eda9e5e91dce80c05401c7279a90424}\label{classMetaOutput_a7eda9e5e91dce80c05401c7279a90424}} 
+\index{MetaOutput@{MetaOutput}!EnableStream@{EnableStream}}
+\index{EnableStream@{EnableStream}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{EnableStream()}{EnableStream()}}
+{\footnotesize\ttfamily void Meta\+Output\+::\+Enable\+Stream (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Enable or Disable a stream
+
+Enable a stream \mbox{\Hypertarget{classMetaOutput_afbcb70486dec91ed84c90cb05f536ef1}\label{classMetaOutput_afbcb70486dec91ed84c90cb05f536ef1}} 
+\index{MetaOutput@{MetaOutput}!SetMetaCommand@{SetMetaCommand}}
+\index{SetMetaCommand@{SetMetaCommand}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{SetMetaCommand()}{SetMetaCommand()}}
+{\footnotesize\ttfamily void Meta\+Output\+::\+Set\+Meta\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMetaCommand}{Meta\+Command}} $\ast$}]{meta\+Command }\end{DoxyParamCaption})}
+
+Set the meta\+Command for parsing
+
+Add meta command \mbox{\Hypertarget{classMetaOutput_a4c991638183832d103b3c068a34adcd2}\label{classMetaOutput_a4c991638183832d103b3c068a34adcd2}} 
+\index{MetaOutput@{MetaOutput}!Write@{Write}}
+\index{Write@{Write}!MetaOutput@{MetaOutput}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void Meta\+Output\+::\+Write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Write the output to the connected streams 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Output.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Output.\+cxx\end{DoxyCompactItemize}

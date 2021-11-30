@@ -1,0 +1,54 @@
+\hypertarget{GateDistributionMessenger_8hh_source}{}\doxysection{Gate\+Distribution\+Messenger.\+hh}
+\label{GateDistributionMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDistributionMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDistributionMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateNamedObjectMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <G4UIcommand.hh>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionMessenger}{GateDistributionMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateNamedObjectMessenger}{GateNamedObjectMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateDistributionMessenger}{GateDistributionMessenger}}(\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* itsDistribution,}
+\DoxyCodeLine{25                      \textcolor{keyword}{const} G4String\& itsDirectoryName=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDistributionMessenger}{\string~GateDistributionMessenger}}();}
+\DoxyCodeLine{27     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* GetDistribution()\textcolor{keyword}{ const}}
+\DoxyCodeLine{28 \textcolor{keyword}{           }\{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}*)(\mbox{\hyperlink{classGateNamedObjectMessenger_ad8d352e004a023d150723808fb02b366}{GetNamedObject}}());\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} SetUnitX(\textcolor{keyword}{const} G4String\& unitX);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} SetUnitY(\textcolor{keyword}{const} G4String\& unitY);}
+\DoxyCodeLine{33     \textcolor{keyword}{inline} G4String UnitCategoryX()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_unitX.empty()?\textcolor{stringliteral}{"{}"{}}:G4UIcommand::CategoryOf(m\_unitX);\}}
+\DoxyCodeLine{34     \textcolor{keyword}{inline} G4String UnitCategoryY()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_unitY.empty()?\textcolor{stringliteral}{"{}"{}}:G4UIcommand::CategoryOf(m\_unitY);\}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keyword}{private}:}
+\DoxyCodeLine{37     G4String withUnity(G4double value,G4String category) \textcolor{keyword}{const};}
+\DoxyCodeLine{38     G4UIcmdWithoutParameter        *getMinX\_Cmd ;}
+\DoxyCodeLine{39     G4UIcmdWithoutParameter        *getMinY\_Cmd ;}
+\DoxyCodeLine{40     G4UIcmdWithoutParameter        *getMaxX\_Cmd ;}
+\DoxyCodeLine{41     G4UIcmdWithoutParameter        *getMaxY\_Cmd ;}
+\DoxyCodeLine{42     G4UIcmdWithoutParameter        *getRandom\_Cmd ;}
+\DoxyCodeLine{43     G4UIcmdWithADoubleAndUnit      *getValueCmd ;}
+\DoxyCodeLine{44     G4String                       m\_unitX;}
+\DoxyCodeLine{45     G4String                       m\_unitY;}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

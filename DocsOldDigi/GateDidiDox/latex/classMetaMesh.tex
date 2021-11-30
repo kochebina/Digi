@@ -1,0 +1,269 @@
+\hypertarget{classMetaMesh}{}\doxysection{Meta\+Mesh Class Reference}
+\label{classMetaMesh}\index{MetaMesh@{MetaMesh}}
+Inheritance diagram for Meta\+Mesh\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMetaMesh}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a3cc97b825970c36e5176a945134cb479}\label{classMetaMesh_a3cc97b825970c36e5176a945134cb479}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classMeshPoint}{Mesh\+Point}} $\ast$ $>$ {\bfseries Point\+List\+Type}
+\item 
+\mbox{\Hypertarget{classMetaMesh_aac96f71a95485817fd50406881634fcf}\label{classMetaMesh_aac96f71a95485817fd50406881634fcf}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classMeshCell}{Mesh\+Cell}} $\ast$ $>$ {\bfseries Cell\+List\+Type}
+\item 
+\mbox{\Hypertarget{classMetaMesh_abfe24c93f7e6524d3c49746f67d07812}\label{classMetaMesh_abfe24c93f7e6524d3c49746f67d07812}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classMeshCellLink}{Mesh\+Cell\+Link}} $\ast$ $>$ {\bfseries Cell\+Link\+List\+Type}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a21f34d9a7ed6bea94c221faee9b5f3e5}\label{classMetaMesh_a21f34d9a7ed6bea94c221faee9b5f3e5}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classMeshDataBase}{Mesh\+Data\+Base}} $\ast$ $>$ {\bfseries Point\+Data\+List\+Type}
+\item 
+\mbox{\Hypertarget{classMetaMesh_aaf0e2bbc1b49542202bb76d600877899}\label{classMetaMesh_aaf0e2bbc1b49542202bb76d600877899}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classMeshDataBase}{Mesh\+Data\+Base}} $\ast$ $>$ {\bfseries Cell\+Data\+List\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a0a832b227b71af17d96c47f99a7736d9}\label{classMetaMesh_a0a832b227b71af17d96c47f99a7736d9}} 
+{\bfseries Meta\+Mesh} (const char $\ast$\+\_\+header\+Name)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a3c222c7bdf54ee5a4ac9241cebdc9308}\label{classMetaMesh_a3c222c7bdf54ee5a4ac9241cebdc9308}} 
+{\bfseries Meta\+Mesh} (const \mbox{\hyperlink{classMetaMesh}{Meta\+Mesh}} $\ast$\+\_\+tube)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a76ffee86e686798f1de5bf9948dc32c3}\label{classMetaMesh_a76ffee86e686798f1de5bf9948dc32c3}} 
+{\bfseries Meta\+Mesh} (unsigned int dim)
+\item 
+\mbox{\hyperlink{classMetaMesh_ab7b89647879a6abde7b234b5a20ec29a}{$\sim$\+Meta\+Mesh}} (void)
+\item 
+void \mbox{\hyperlink{classMetaMesh_a06464ecb0931042fd7aafe7ea6228fd5}{Print\+Info}} (void) const
+\item 
+void \mbox{\hyperlink{classMetaMesh_aae6fb8da604c58ad4481dc5984d97f47}{Copy\+Info}} (const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$\+\_\+object)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a8372225320d064f24acea423736d2af0}\label{classMetaMesh_a8372225320d064f24acea423736d2af0}} 
+int {\bfseries NPoints} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_a7ba23494174781d165897db767143818}\label{classMetaMesh_a7ba23494174781d165897db767143818}} 
+int {\bfseries NCells} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_ace2e60966a7c228c66d58d23ca7e7563}\label{classMetaMesh_ace2e60966a7c228c66d58d23ca7e7563}} 
+int {\bfseries NCell\+Links} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_aaaa771b04710ac652603869a3a276913}\label{classMetaMesh_aaaa771b04710ac652603869a3a276913}} 
+void {\bfseries NCell\+Types} (int ncelltypes)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a8bac677375a56777e27411d2b0fd3342}\label{classMetaMesh_a8bac677375a56777e27411d2b0fd3342}} 
+int {\bfseries NCell\+Types} (void) const
+\item 
+void \mbox{\hyperlink{classMetaMesh_a0971d957c9566cf86f15100dfe5eb24a}{Clear}} (void)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a3fe961d1f707cab40e52e48ce4c18ebe}\label{classMetaMesh_a3fe961d1f707cab40e52e48ce4c18ebe}} 
+Point\+List\+Type \& {\bfseries Get\+Points} (void)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a932dd1f7db88e17b5f1881558aef7e45}\label{classMetaMesh_a932dd1f7db88e17b5f1881558aef7e45}} 
+const Point\+List\+Type \& {\bfseries Get\+Points} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_a254b6405238f518d517b3991ae5f7db9}\label{classMetaMesh_a254b6405238f518d517b3991ae5f7db9}} 
+Cell\+List\+Type \& {\bfseries Get\+Cells} (MET\+\_\+\+Cell\+Geometry geom)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a093a0b44d328685220d20241b04204a2}\label{classMetaMesh_a093a0b44d328685220d20241b04204a2}} 
+const Cell\+List\+Type \& {\bfseries Get\+Cells} (MET\+\_\+\+Cell\+Geometry geom) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_a5194b3b1f9c0e65d40af09c99f0844ea}\label{classMetaMesh_a5194b3b1f9c0e65d40af09c99f0844ea}} 
+Cell\+Link\+List\+Type \& {\bfseries Get\+Cell\+Links} (void)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a65d5a76eea1b68a0a2ff8e78ea6e375a}\label{classMetaMesh_a65d5a76eea1b68a0a2ff8e78ea6e375a}} 
+const Cell\+Link\+List\+Type \& {\bfseries Get\+Cell\+Links} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_add8d994e8e9b3c357694106c83ea28f0}\label{classMetaMesh_add8d994e8e9b3c357694106c83ea28f0}} 
+Point\+Data\+List\+Type \& {\bfseries Get\+Point\+Data} (void)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a88d2fd0e413e747f94e46bc49d590aa5}\label{classMetaMesh_a88d2fd0e413e747f94e46bc49d590aa5}} 
+const Point\+Data\+List\+Type \& {\bfseries Get\+Point\+Data} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_aae4ea3c24f584c1d647fad976577fe8a}\label{classMetaMesh_aae4ea3c24f584c1d647fad976577fe8a}} 
+Cell\+Data\+List\+Type \& {\bfseries Get\+Cell\+Data} (void)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a516412401c492eb51fefc16eec5b0280}\label{classMetaMesh_a516412401c492eb51fefc16eec5b0280}} 
+const Cell\+Data\+List\+Type \& {\bfseries Get\+Cell\+Data} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_ac2966b2b7ee7ff1e31b1464c1a391b72}\label{classMetaMesh_ac2966b2b7ee7ff1e31b1464c1a391b72}} 
+MET\+\_\+\+Value\+Enum\+Type {\bfseries Point\+Data\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_ac084a0bc119d19bdb37c7d3bd244a52b}\label{classMetaMesh_ac084a0bc119d19bdb37c7d3bd244a52b}} 
+void {\bfseries Point\+Data\+Type} (MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type)
+\item 
+\mbox{\Hypertarget{classMetaMesh_a942b9ba681c7f6380315a619dc6944b8}\label{classMetaMesh_a942b9ba681c7f6380315a619dc6944b8}} 
+MET\+\_\+\+Value\+Enum\+Type {\bfseries Cell\+Data\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classMetaMesh_a4363d341d3b3e9232675ddf3865f0112}\label{classMetaMesh_a4363d341d3b3e9232675ddf3865f0112}} 
+void {\bfseries Cell\+Data\+Type} (MET\+\_\+\+Value\+Enum\+Type \+\_\+element\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMetaMesh_ae3611be8d02a20a145434c319ba01183}{M\+\_\+\+Destroy}} (void)
+\item 
+void \mbox{\hyperlink{classMetaMesh_a6bc62355db576a23347940efdd404f97}{M\+\_\+\+Setup\+Read\+Fields}} (void)
+\item 
+void \mbox{\hyperlink{classMetaMesh_ab477796cfe6563ea807911eb3f814579}{M\+\_\+\+Setup\+Write\+Fields}} (void)
+\item 
+bool \mbox{\hyperlink{classMetaMesh_ab4d8fbdec2132437b0ab3e7212fea37c}{M\+\_\+\+Read}} (void)
+\item 
+bool \mbox{\hyperlink{classMetaMesh_ac8806f84ff8c1df69b2984d62dbb0a45}{M\+\_\+\+Write}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaMesh_afe5666a3584ce79dd12501e600cb93c0}\label{classMetaMesh_afe5666a3584ce79dd12501e600cb93c0}} 
+bool {\bfseries m\+\_\+\+Element\+Byte\+Order\+MSB}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a7f82ae79eae5705a8c5e5134b4840733}\label{classMetaMesh_a7f82ae79eae5705a8c5e5134b4840733}} 
+int {\bfseries m\+\_\+\+NPoints}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a347faa77304d32ccc7ed9486ec5db399}\label{classMetaMesh_a347faa77304d32ccc7ed9486ec5db399}} 
+int {\bfseries m\+\_\+\+NCells}
+\item 
+\mbox{\Hypertarget{classMetaMesh_ac4ed0281bb125a8d89aa11bc31c2b8d7}\label{classMetaMesh_ac4ed0281bb125a8d89aa11bc31c2b8d7}} 
+int {\bfseries m\+\_\+\+NCell\+Links}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a9d4c75916c31d5d318741a7cdb3e89a8}\label{classMetaMesh_a9d4c75916c31d5d318741a7cdb3e89a8}} 
+int {\bfseries m\+\_\+\+NPoint\+Data}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a8ed173ccb28f20dadb0747243952c7b3}\label{classMetaMesh_a8ed173ccb28f20dadb0747243952c7b3}} 
+int {\bfseries m\+\_\+\+NCell\+Data}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a64a8bc62b8846d775f2ae75c86ff209d}\label{classMetaMesh_a64a8bc62b8846d775f2ae75c86ff209d}} 
+char {\bfseries m\+\_\+\+Point\+Dim} \mbox{[}255\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a307a1492749697e898514057c4470afb}\label{classMetaMesh_a307a1492749697e898514057c4470afb}} 
+Point\+List\+Type {\bfseries m\+\_\+\+Point\+List}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a5038d869244dbbecddc9031b682f7a46}\label{classMetaMesh_a5038d869244dbbecddc9031b682f7a46}} 
+Cell\+List\+Type $\ast$ {\bfseries m\+\_\+\+Cell\+List\+Array} \mbox{[}MET\+\_\+\+NUM\+\_\+\+CELL\+\_\+\+TYPES\mbox{]}
+\item 
+\mbox{\Hypertarget{classMetaMesh_acff6111b631e30ec4d2c8be2dfc4998d}\label{classMetaMesh_acff6111b631e30ec4d2c8be2dfc4998d}} 
+Cell\+Link\+List\+Type {\bfseries m\+\_\+\+Cell\+Links}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a7730d683a320d4389260496a5dd5538f}\label{classMetaMesh_a7730d683a320d4389260496a5dd5538f}} 
+Point\+Data\+List\+Type {\bfseries m\+\_\+\+Point\+Data}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a063888f03f2a4487e0c5b3ba6ae4e9ac}\label{classMetaMesh_a063888f03f2a4487e0c5b3ba6ae4e9ac}} 
+Cell\+Data\+List\+Type {\bfseries m\+\_\+\+Cell\+Data}
+\item 
+\mbox{\Hypertarget{classMetaMesh_ac8f39c801c18132b0fabf507491f8cf9}\label{classMetaMesh_ac8f39c801c18132b0fabf507491f8cf9}} 
+MET\+\_\+\+Value\+Enum\+Type {\bfseries m\+\_\+\+Point\+Type}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a2f3f3d8a0be230bea7118047884fcd7b}\label{classMetaMesh_a2f3f3d8a0be230bea7118047884fcd7b}} 
+MET\+\_\+\+Value\+Enum\+Type {\bfseries m\+\_\+\+Point\+Data\+Type}
+\item 
+\mbox{\Hypertarget{classMetaMesh_a0fda5b31c8a12c6ce7c3501aa6bd512d}\label{classMetaMesh_a0fda5b31c8a12c6ce7c3501aa6bd512d}} 
+MET\+\_\+\+Value\+Enum\+Type {\bfseries m\+\_\+\+Cell\+Data\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMetaMesh_ab7b89647879a6abde7b234b5a20ec29a}\label{classMetaMesh_ab7b89647879a6abde7b234b5a20ec29a}} 
+\index{MetaMesh@{MetaMesh}!````~MetaMesh@{$\sim$MetaMesh}}
+\index{````~MetaMesh@{$\sim$MetaMesh}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$MetaMesh()}{~MetaMesh()}}
+{\footnotesize\ttfamily Meta\+Mesh\+::$\sim$\+Meta\+Mesh (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetaMesh_a0971d957c9566cf86f15100dfe5eb24a}\label{classMetaMesh_a0971d957c9566cf86f15100dfe5eb24a}} 
+\index{MetaMesh@{MetaMesh}!Clear@{Clear}}
+\index{Clear@{Clear}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Meta\+Mesh\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clear the meta\+Mesh
+
+Clear tube information 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaMesh_aae6fb8da604c58ad4481dc5984d97f47}\label{classMetaMesh_aae6fb8da604c58ad4481dc5984d97f47}} 
+\index{MetaMesh@{MetaMesh}!CopyInfo@{CopyInfo}}
+\index{CopyInfo@{CopyInfo}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{CopyInfo()}{CopyInfo()}}
+{\footnotesize\ttfamily void Meta\+Mesh\+::\+Copy\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$}]{\+\_\+object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaMesh_ae3611be8d02a20a145434c319ba01183}\label{classMetaMesh_ae3611be8d02a20a145434c319ba01183}} 
+\index{MetaMesh@{MetaMesh}!M\_Destroy@{M\_Destroy}}
+\index{M\_Destroy@{M\_Destroy}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{M\_Destroy()}{M\_Destroy()}}
+{\footnotesize\ttfamily void Meta\+Mesh\+::\+M\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Destroy tube information 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaMesh_ab4d8fbdec2132437b0ab3e7212fea37c}\label{classMetaMesh_ab4d8fbdec2132437b0ab3e7212fea37c}} 
+\index{MetaMesh@{MetaMesh}!M\_Read@{M\_Read}}
+\index{M\_Read@{M\_Read}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{M\_Read()}{M\_Read()}}
+{\footnotesize\ttfamily bool Meta\+Mesh\+::\+M\+\_\+\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaMesh_a6bc62355db576a23347940efdd404f97}\label{classMetaMesh_a6bc62355db576a23347940efdd404f97}} 
+\index{MetaMesh@{MetaMesh}!M\_SetupReadFields@{M\_SetupReadFields}}
+\index{M\_SetupReadFields@{M\_SetupReadFields}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{M\_SetupReadFields()}{M\_SetupReadFields()}}
+{\footnotesize\ttfamily void Meta\+Mesh\+::\+M\+\_\+\+Setup\+Read\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Set Read fields 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaMesh_ab477796cfe6563ea807911eb3f814579}\label{classMetaMesh_ab477796cfe6563ea807911eb3f814579}} 
+\index{MetaMesh@{MetaMesh}!M\_SetupWriteFields@{M\_SetupWriteFields}}
+\index{M\_SetupWriteFields@{M\_SetupWriteFields}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{M\_SetupWriteFields()}{M\_SetupWriteFields()}}
+{\footnotesize\ttfamily void Meta\+Mesh\+::\+M\+\_\+\+Setup\+Write\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaMesh_ac8806f84ff8c1df69b2984d62dbb0a45}\label{classMetaMesh_ac8806f84ff8c1df69b2984d62dbb0a45}} 
+\index{MetaMesh@{MetaMesh}!M\_Write@{M\_Write}}
+\index{M\_Write@{M\_Write}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{M\_Write()}{M\_Write()}}
+{\footnotesize\ttfamily bool Meta\+Mesh\+::\+M\+\_\+\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Then copy all points
+
+Then copy all cells
+
+Then copy all cell links
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaMesh_a06464ecb0931042fd7aafe7ea6228fd5}\label{classMetaMesh_a06464ecb0931042fd7aafe7ea6228fd5}} 
+\index{MetaMesh@{MetaMesh}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!MetaMesh@{MetaMesh}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily void Meta\+Mesh\+::\+Print\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Mesh.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Mesh.\+cxx\end{DoxyCompactItemize}

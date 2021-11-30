@@ -1,0 +1,247 @@
+\hypertarget{classGateProjectionSet}{}\doxysection{Gate\+Projection\+Set Class Reference}
+\label{classGateProjectionSet}\index{GateProjectionSet@{GateProjectionSet}}
+
+
+Structure to store the projection sets from a SPECT simulation.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Projection\+Set.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_a981be96b7b1dccb2ce950764d90e7d5f}\label{classGateProjectionSet_a981be96b7b1dccb2ce950764d90e7d5f}} 
+typedef unsigned short {\bfseries Projection\+Data\+Type}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_a6ba43a421c02052c5115a514c73fe41e}\label{classGateProjectionSet_a6ba43a421c02052c5115a514c73fe41e}} 
+typedef G4double {\bfseries ARFProjection\+Data\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_ae3c396ec41638eb7ebfdb90b7d7fcad7}\label{classGateProjectionSet_ae3c396ec41638eb7ebfdb90b7d7fcad7}} 
+{\bfseries Gate\+Projection\+Set} ()
+\begin{DoxyCompactList}\small\item\em Public constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_aba45a2c167bf367c0fe948a0244e59bf}\label{classGateProjectionSet_aba45a2c167bf367c0fe948a0244e59bf}} 
+virtual {\bfseries $\sim$\+Gate\+Projection\+Set} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a5d7c9a368c264366d316a88d9232ec70}\label{classGateProjectionSet_a5d7c9a368c264366d316a88d9232ec70}} 
+void {\bfseries Reset} (size\+\_\+t energy\+Window\+Number=0, size\+\_\+t head\+Number=0, size\+\_\+t projection\+Number=0)
+\begin{DoxyCompactList}\small\item\em Reset the matrix and prepare a new acquisition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_abdacb5132053484c0b1545fd3e60a375}\label{classGateProjectionSet_abdacb5132053484c0b1545fd3e60a375}} 
+void {\bfseries Clear\+Data} (size\+\_\+t projection\+ID)
+\begin{DoxyCompactList}\small\item\em Clear the matrix and prepare a new run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a0635cc875e069e8a4bbeb8c00ed63edb}\label{classGateProjectionSet_a0635cc875e069e8a4bbeb8c00ed63edb}} 
+void {\bfseries Fill} (G4int energy\+Window\+ID, G4int head\+ID, G4double x, G4double y)
+\begin{DoxyCompactList}\small\item\em Store a digi into a projection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a4b24f2240e110cf16d1a5c3edff9d988}\label{classGateProjectionSet_a4b24f2240e110cf16d1a5c3edff9d988}} 
+void {\bfseries Fill\+ARF} (G4int, G4double, G4double, G4double, bool add\+Em\+To\+Arf\+Count=false)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_a6e7b60ec26140b0e3a8756331bc4accc}\label{classGateProjectionSet_a6e7b60ec26140b0e3a8756331bc4accc}} 
+size\+\_\+t {\bfseries Get\+Energy\+Window\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of energy windows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a1d64e37024d31333d0419e678111fe86}\label{classGateProjectionSet_a1d64e37024d31333d0419e678111fe86}} 
+void {\bfseries Set\+Energy\+Window\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of energy windows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_ae31a54b5c52f0843eaf84d5ba3d9a24e}\label{classGateProjectionSet_ae31a54b5c52f0843eaf84d5ba3d9a24e}} 
+size\+\_\+t {\bfseries Get\+Head\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of heads. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_aba916fe248333ad1f69ec719ac42941a}\label{classGateProjectionSet_aba916fe248333ad1f69ec719ac42941a}} 
+void {\bfseries Set\+Head\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of heads. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a4acae2e9ca1b63a8e8b40d96ab596fee}\label{classGateProjectionSet_a4acae2e9ca1b63a8e8b40d96ab596fee}} 
+size\+\_\+t {\bfseries Get\+Projection\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of projections per head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_ac3027d84fc359bc391be8856f18c80a7}\label{classGateProjectionSet_ac3027d84fc359bc391be8856f18c80a7}} 
+void {\bfseries Set\+Projection\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of projections per head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a5b697cafbbdeba0ceaad50ed92fd6d6a}\label{classGateProjectionSet_a5b697cafbbdeba0ceaad50ed92fd6d6a}} 
+G4int {\bfseries Get\+Pixel\+NbX} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pixels along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a2a9017c484cfa8df5def3ce7d2f2542a}\label{classGateProjectionSet_a2a9017c484cfa8df5def3ce7d2f2542a}} 
+void {\bfseries Set\+Pixel\+NbX} (G4int a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of pixels along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a05408ae8c87cc7c3ebc82ea67f84dbf7}\label{classGateProjectionSet_a05408ae8c87cc7c3ebc82ea67f84dbf7}} 
+G4int {\bfseries Get\+Pixel\+NbY} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pixels along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a3e625126160482d27e60543f126348fa}\label{classGateProjectionSet_a3e625126160482d27e60543f126348fa}} 
+void {\bfseries Set\+Pixel\+NbY} (G4int a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of pixels along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_af237de4c4044f92f32dae01e1033d193}\label{classGateProjectionSet_af237de4c4044f92f32dae01e1033d193}} 
+G4double {\bfseries Get\+Pixel\+SizeX} () const
+\begin{DoxyCompactList}\small\item\em Returns the pixel size along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a60bf7569c53d038de99ee7869b332337}\label{classGateProjectionSet_a60bf7569c53d038de99ee7869b332337}} 
+void {\bfseries Set\+Pixel\+SizeX} (G4double a\+Size)
+\begin{DoxyCompactList}\small\item\em Set the pixel size along X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a211d2262578c2cc985f926b966523bc2}\label{classGateProjectionSet_a211d2262578c2cc985f926b966523bc2}} 
+G4double {\bfseries Get\+Pixel\+SizeY} () const
+\begin{DoxyCompactList}\small\item\em Returns the pixel size along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a7de71f3ae80b0f944ec34c82b34b0e86}\label{classGateProjectionSet_a7de71f3ae80b0f944ec34c82b34b0e86}} 
+void {\bfseries Set\+Pixel\+SizeY} (G4double a\+Size)
+\begin{DoxyCompactList}\small\item\em Set the pixel size along Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_af33c9a9a691da4a2f135ebf20ac797f1}\label{classGateProjectionSet_af33c9a9a691da4a2f135ebf20ac797f1}} 
+Projection\+Data\+Type $\ast$$\ast$$\ast$ {\bfseries Get\+Data} () const
+\begin{DoxyCompactList}\small\item\em Returns the data pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a6482219814f5cdbaa466c2914c31ef1d}\label{classGateProjectionSet_a6482219814f5cdbaa466c2914c31ef1d}} 
+virtual void {\bfseries Set\+Verbose\+Level} (G4int val)
+\begin{DoxyCompactList}\small\item\em Set the verbose level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a73a3f0447e07fa1d5f7836de3c969cc3}\label{classGateProjectionSet_a73a3f0447e07fa1d5f7836de3c969cc3}} 
+Projection\+Data\+Type $\ast$ {\bfseries Get\+Projection} (size\+\_\+t energy\+Window\+ID, size\+\_\+t head\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns a projection from the set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a9e42be2f4ee90e93ae55e826a65ba6b3}\label{classGateProjectionSet_a9e42be2f4ee90e93ae55e826a65ba6b3}} 
+G4int {\bfseries Pixels\+Per\+Projection} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pixels per projection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_ad70e1de2ed6645fd717cf28a8c897cea}\label{classGateProjectionSet_ad70e1de2ed6645fd717cf28a8c897cea}} 
+G4int {\bfseries Bytes\+Per\+Projection} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes per projection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a7fc8af9d82a63762ddae96c168884f49}\label{classGateProjectionSet_a7fc8af9d82a63762ddae96c168884f49}} 
+G4int {\bfseries Bytes\+Per\+Head} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes per head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a6055dc76989fdc4ecc162151135f0844}\label{classGateProjectionSet_a6055dc76989fdc4ecc162151135f0844}} 
+G4int {\bfseries Bytes\+Per\+Energy\+Window} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes per energy window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_ab293b4067d6487424c8a8fa6601548e3}\label{classGateProjectionSet_ab293b4067d6487424c8a8fa6601548e3}} 
+size\+\_\+t {\bfseries Bytes\+Per\+Pixel} () const
+\begin{DoxyCompactList}\small\item\em Returns the nb of bytes per pixel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_ab5873daa5734642c848e784ffe0214f3}\label{classGateProjectionSet_ab5873daa5734642c848e784ffe0214f3}} 
+Projection\+Data\+Type {\bfseries Get\+Max\+Counts} (size\+\_\+t head\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns the data-\/max counter for a head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a28d1edaa4f6c77f41172b26006923945}\label{classGateProjectionSet_a28d1edaa4f6c77f41172b26006923945}} 
+Projection\+Data\+Type {\bfseries Get\+Max\+Counts} (size\+\_\+t energy\+Window\+ID, size\+\_\+t head\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns the max data for an energy window for one head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a6420cd9eeb91f39ed9e7821b18fe6af5}\label{classGateProjectionSet_a6420cd9eeb91f39ed9e7821b18fe6af5}} 
+size\+\_\+t {\bfseries Get\+Current\+Projection\+ID} () const
+\begin{DoxyCompactList}\small\item\em Returns the data-\/max counter for a head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_aa0869892cd892d7a94c1a366121a0794}\label{classGateProjectionSet_aa0869892cd892d7a94c1a366121a0794}} 
+ARFProjection\+Data\+Type $\ast$$\ast$ {\bfseries Get\+ARFData} () const
+\begin{DoxyCompactList}\small\item\em Returns the ARF data pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_afcc2e6e8da366827e496db45db8dc4fe}\label{classGateProjectionSet_afcc2e6e8da366827e496db45db8dc4fe}} 
+ARFProjection\+Data\+Type $\ast$ {\bfseries Get\+ARFProjection} (size\+\_\+t head\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns a projection from the set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a5967d0ed287dcddb86cd690338634826}\label{classGateProjectionSet_a5967d0ed287dcddb86cd690338634826}} 
+G4int {\bfseries ARFBytes\+Per\+Projection} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes per projection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a22f46e2aae84cd8ccd7ff6de20d7309a}\label{classGateProjectionSet_a22f46e2aae84cd8ccd7ff6de20d7309a}} 
+G4int {\bfseries ARFBytes\+Per\+Head} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes per head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a3c14b9c42d4963336ac0c653ad39aee4}\label{classGateProjectionSet_a3c14b9c42d4963336ac0c653ad39aee4}} 
+size\+\_\+t {\bfseries ARFBytes\+Per\+Pixel} () const
+\begin{DoxyCompactList}\small\item\em Returns the nb of bytes per pixel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_aeaf8a698d069b8dec1a73f34f4978eb0}\label{classGateProjectionSet_aeaf8a698d069b8dec1a73f34f4978eb0}} 
+void {\bfseries Compute\+Low\+Edges} ()
+\begin{DoxyCompactList}\small\item\em Compute the low edge of the matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_aa869cf1094172d722cfe154b89bb8436}\label{classGateProjectionSet_aa869cf1094172d722cfe154b89bb8436}} 
+G4int {\bfseries Get\+Number\+Of\+Em\+Events} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes per head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a68b979a4052237326ef51e3e081394d3}\label{classGateProjectionSet_a68b979a4052237326ef51e3e081394d3}} 
+size\+\_\+t {\bfseries Get\+Number\+Of\+ARFFFDHeads} () const
+\item 
+void \mbox{\hyperlink{classGateProjectionSet_a219ff5c208b157d96c14013f097c25e3}{Stream\+Out}} (std\+::ofstream \&dest, size\+\_\+t energy\+Window\+ID, size\+\_\+t head\+ID)
+\begin{DoxyCompactList}\small\item\em Writes a head-\/projection onto an output stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_aa18840d86c833ab1198ab8d74ad716d8}\label{classGateProjectionSet_aa18840d86c833ab1198ab8d74ad716d8}} 
+void {\bfseries Stream\+Out\+ARFProjection} (std\+::ofstream \&, size\+\_\+t)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Public Attributes}
+\begin{Indent}\textbf{ Data fields}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_a4d921ffb4295479adce4e22aa56b8e93}\label{classGateProjectionSet_a4d921ffb4295479adce4e22aa56b8e93}} 
+size\+\_\+t {\bfseries m\+\_\+energy\+Window\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of energy windows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_aa0a50243a3a12c59f17bcd89fe0aa664}\label{classGateProjectionSet_aa0a50243a3a12c59f17bcd89fe0aa664}} 
+size\+\_\+t {\bfseries m\+\_\+head\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of scanner heads. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_abbea66d462da82b827b40e300078ea9f}\label{classGateProjectionSet_abbea66d462da82b827b40e300078ea9f}} 
+size\+\_\+t {\bfseries m\+\_\+projection\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of projections per head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a497f36e9564a910b4061c49739b58028}\label{classGateProjectionSet_a497f36e9564a910b4061c49739b58028}} 
+G4int {\bfseries m\+\_\+pixel\+NbX}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_a48fe5751a08e3eb55662ae3d47de78f6}\label{classGateProjectionSet_a48fe5751a08e3eb55662ae3d47de78f6}} 
+G4int {\bfseries m\+\_\+pixel\+NbY}
+\begin{DoxyCompactList}\small\item\em Nb of pixels per projection along X and Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_ac7579a155285ffe7d0ba127a9b5db502}\label{classGateProjectionSet_ac7579a155285ffe7d0ba127a9b5db502}} 
+G4double {\bfseries m\+\_\+pixel\+SizeX}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_ace9b723f51888544538ee8cff93424f8}\label{classGateProjectionSet_ace9b723f51888544538ee8cff93424f8}} 
+G4double {\bfseries m\+\_\+pixel\+SizeY}
+\begin{DoxyCompactList}\small\item\em Pixel sizes along X and Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a4432ff3f9d8a0049dc2fa57283bdfb99}\label{classGateProjectionSet_a4432ff3f9d8a0049dc2fa57283bdfb99}} 
+G4double {\bfseries m\+\_\+matrix\+Low\+EdgeX}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_ab6fd22ffe334c2b0b834ad8d3f415bfa}\label{classGateProjectionSet_ab6fd22ffe334c2b0b834ad8d3f415bfa}} 
+G4double {\bfseries m\+\_\+matrix\+Low\+EdgeY}
+\begin{DoxyCompactList}\small\item\em Low edge of the matrix (-\/n$\ast$dx/2) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a226addae387302db5de5b7e30afccbb8}\label{classGateProjectionSet_a226addae387302db5de5b7e30afccbb8}} 
+Projection\+Data\+Type $\ast$$\ast$$\ast$ {\bfseries m\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Array of data sets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a8fbc96ecab578d30adc5943e319caf88}\label{classGateProjectionSet_a8fbc96ecab578d30adc5943e319caf88}} 
+Projection\+Data\+Type $\ast$$\ast$ {\bfseries m\+\_\+data\+Max}
+\begin{DoxyCompactList}\small\item\em Max count for each projection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a4134b879d697515fa5f6ce0b2066fa02}\label{classGateProjectionSet_a4134b879d697515fa5f6ce0b2066fa02}} 
+G4int {\bfseries m\+\_\+current\+Projection\+ID}
+\begin{DoxyCompactList}\small\item\em ID of the current projection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateProjectionSet_a9f2b131658c9901dbdccb0c66d1e2324}\label{classGateProjectionSet_a9f2b131658c9901dbdccb0c66d1e2324}} 
+G4int {\bfseries m\+\_\+verbose\+Level}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_af9f93a3c5ce4c613d6b90e9d9f5ffee1}\label{classGateProjectionSet_af9f93a3c5ce4c613d6b90e9d9f5ffee1}} 
+ARFProjection\+Data\+Type $\ast$$\ast$ {\bfseries m\+\_\+\+ARFdata}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_a02f857742b66278322199685aa021233}\label{classGateProjectionSet_a02f857742b66278322199685aa021233}} 
+ARFProjection\+Data\+Type $\ast$ {\bfseries m\+\_\+\+ARFdata\+Max}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_aa5fc2b781f1a23cc2a6d819b7b1994ee}\label{classGateProjectionSet_aa5fc2b781f1a23cc2a6d819b7b1994ee}} 
+G4int {\bfseries m\+\_\+number\+Of\+Em\+Events}
+\item 
+\mbox{\Hypertarget{classGateProjectionSet_a05de82174dcccff9d184eebf2868b276}\label{classGateProjectionSet_a05de82174dcccff9d184eebf2868b276}} 
+size\+\_\+t {\bfseries m\+\_\+number\+Of\+ARFFFDHeads}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Structure to store the projection sets from a SPECT simulation. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateProjectionSet}{Gate\+Projection\+Set}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (Oct. 2002)
+\item This structure is generated during a SPECT simulation by \mbox{\hyperlink{classGateToProjectionSet}{Gate\+To\+Projection\+Set}}. It can be stored into an output file using a set-\/writer such as \mbox{\hyperlink{classGateToInterfile}{Gate\+To\+Interfile}}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateToProjectionSet}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToInterfile}{Gate\+To\+Interfile}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateProjectionSet_a219ff5c208b157d96c14013f097c25e3}\label{classGateProjectionSet_a219ff5c208b157d96c14013f097c25e3}} 
+\index{GateProjectionSet@{GateProjectionSet}!StreamOut@{StreamOut}}
+\index{StreamOut@{StreamOut}!GateProjectionSet@{GateProjectionSet}}
+\doxysubsubsection{\texorpdfstring{StreamOut()}{StreamOut()}}
+{\footnotesize\ttfamily void Gate\+Projection\+Set\+::\+Stream\+Out (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{dest,  }\item[{size\+\_\+t}]{energy\+Window\+ID,  }\item[{size\+\_\+t}]{head\+ID }\end{DoxyParamCaption})}
+
+
+
+Writes a head-\/projection onto an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & the destination stream \\
+\hline
+{\em energy\+Window\+ID} & the energy window whose projection to stream-\/out \\
+\hline
+{\em head\+ID} & the head whose projection to stream-\/out \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/\mbox{\hyperlink{GateProjectionSet_8hh}{Gate\+Projection\+Set.\+hh}}\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Projection\+Set.\+cc\end{DoxyCompactItemize}

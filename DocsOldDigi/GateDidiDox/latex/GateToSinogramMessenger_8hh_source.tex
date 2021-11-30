@@ -1,0 +1,61 @@
+\hypertarget{GateToSinogramMessenger_8hh_source}{}\doxysection{Gate\+To\+Sinogram\+Messenger.\+hh}
+\label{GateToSinogramMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToSinogramMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToSinogramMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{10 \textcolor{comment}{   Modifications history}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     Gate 6.2}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{    C. Comtat, CEA/SHFJ, 10/02/2011    Allows for virtual crystals, needed to simulate ecat like sinogram output for Biograph scanners}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GateToSinogramMessenger\_h}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GateToSinogramMessenger\_h 1}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToSinogram}{GateToSinogram}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToSinogramMessenger}{GateToSinogramMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{classGateToSinogramMessenger}{GateToSinogramMessenger}}(\mbox{\hyperlink{classGateToSinogram}{GateToSinogram}}* gateToSinogram);}
+\DoxyCodeLine{29    \mbox{\hyperlink{classGateToSinogramMessenger}{\string~GateToSinogramMessenger}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateToSinogram}{GateToSinogram}}*             m\_gateToSinogram;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     G4UIcmdWithAString*         \mbox{\hyperlink{classGateToSinogramMessenger_a73ca89f2d56b87e206751e4442d80c5d}{SetFileNameCmd}};          }
+\DoxyCodeLine{37     G4UIcmdWithABool*           \mbox{\hyperlink{classGateToSinogramMessenger_a56f99781a031c1c808455c595a3c5a8c}{TruesOnlyCmd}};        }
+\DoxyCodeLine{38     G4UIcmdWithAnInteger*       \mbox{\hyperlink{classGateToSinogramMessenger_a998f24ee2746940ee2c8e8197c66ca78}{SetRadialElemNbCmd}};    }
+\DoxyCodeLine{39     G4UIcmdWithABool*       \mbox{\hyperlink{classGateToSinogramMessenger_a75cd36c2f8628701b99ecfc77ac48e8e}{RawOutputCmd}};        }
+\DoxyCodeLine{40     G4UIcmdWithADoubleAndUnit*  \mbox{\hyperlink{classGateToSinogramMessenger_a3f78b1202e5319eceda8611683de31aa}{SetTangCrystalResolCmd}};  }
+\DoxyCodeLine{41     G4UIcmdWithADoubleAndUnit*  \mbox{\hyperlink{classGateToSinogramMessenger_a086dd5bd0055ffca08506ec18b067d55}{SetAxialCrystalResolCmd}}; }
+\DoxyCodeLine{42     G4UIcmdWithAString*         \mbox{\hyperlink{classGateToSinogramMessenger_a5e13a16370f2cda477e22f5c805df223}{SetInputDataCmd}};         }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{// 07.02.2006, C. Comtat, Store randoms and scatters sino}}
+\DoxyCodeLine{45     G4UIcmdWithABool*           \mbox{\hyperlink{classGateToSinogramMessenger_aeca38bb968bbb9fa5d6f0389a98c9181}{StoreDelayedsCmd}};        }
+\DoxyCodeLine{46     G4UIcmdWithABool*           \mbox{\hyperlink{classGateToSinogramMessenger_ae6106a4c85a4baf265b1ed9f5b576dbf}{StoreScattersCmd}};        }
+\DoxyCodeLine{47     G4UIcmdWithAString*         \mbox{\hyperlink{classGateToSinogramMessenger_ac4c12168d1895effd04836ff7e5d4ee2}{SetDataChannelCmd}};       }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{comment}{// C. Comtat, February 2011: Required to simulate Biograph output sinograms with virtual crystals}}
+\DoxyCodeLine{50     G4UIcmdWithAnInteger*       \mbox{\hyperlink{classGateToSinogramMessenger_a9e2a1491a5c67070d26dd86d993e5eec}{SetVirtualRingCmd}};       }
+\DoxyCodeLine{51     G4UIcmdWithAnInteger*       \mbox{\hyperlink{classGateToSinogramMessenger_a8619a3b03710d4992407d9e44e337d22}{SetVirtualCrystalCmd}};    }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\hypertarget{GatePhantomSD_8hh_source}{}\doxysection{Gate\+Phantom\+SD.\+hh}
+\label{GatePhantomSD_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePhantomSD.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePhantomSD.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GatePhantomSD\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GatePhantomSD\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4VSensitiveDetector.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePhantomHit.hh"{}}}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4Step;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4HCofThisEvent;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4TouchableHistory;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}} : \textcolor{keyword}{public} G4VSensitiveDetector}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21   \textcolor{keyword}{public}:}
+\DoxyCodeLine{22       \mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{23       \mbox{\hyperlink{classGatePhantomSD}{\string~GatePhantomSD}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25       \mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}* Clone() \textcolor{keyword}{const override};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27       \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*HCE) \textcolor{keyword}{override};}
+\DoxyCodeLine{28       G4bool ProcessHits(G4Step*aStep,G4TouchableHistory*ROhist) \textcolor{keyword}{override};}
+\DoxyCodeLine{29       \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*HCE) \textcolor{keyword}{override};}
+\DoxyCodeLine{31       \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGatePhantomSD_a706472a29d4b3f86770d55ef6eac060b}{GetPhantomCollectionName}}()}
+\DoxyCodeLine{32           \{ \textcolor{keywordflow}{return} thePhantomCollectionName; \}}
+\DoxyCodeLine{33       \textcolor{keywordtype}{void} clear() \textcolor{keyword}{override};}
+\DoxyCodeLine{34       \textcolor{keywordtype}{void} DrawAll() \textcolor{keyword}{override};}
+\DoxyCodeLine{35       \textcolor{keywordtype}{void} PrintAll() \textcolor{keyword}{override};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{private}:}
+\DoxyCodeLine{38       GatePhantomHitsCollection * phantomCollection;}
+\DoxyCodeLine{39       \textcolor{keyword}{static} \textcolor{keyword}{const} G4String thePhantomCollectionName; }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

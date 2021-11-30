@@ -1,0 +1,80 @@
+\hypertarget{GateProductionAndStoppingActor_8hh_source}{}\doxysection{Gate\+Production\+And\+Stopping\+Actor.\+hh}
+\label{GateProductionAndStoppingActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProductionAndStoppingActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProductionAndStoppingActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef GATEPRODANDSTOPACTOR\_HH}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define GATEPRODANDSTOPACTOR\_HH}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateProductionAndStoppingActorMessenger.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateProductionAndStoppingActor}{GateProductionAndStoppingActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{36   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateProductionAndStoppingActor_a5daadf80f9721e53f9ed70c4a2d5d0af}{\string~GateProductionAndStoppingActor}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateProductionAndStoppingActor}{GateProductionAndStoppingActor}})}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{43   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProductionAndStoppingActor_a6eb0d9683a3e5a93597f55bc18f3a038}{Construct}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const}  \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/})\{\}}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProductionAndStoppingActor_a066b33ee2af1b4b39a1c2954345c1cd2}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step) ;}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t) ;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProductionAndStoppingActor_af4afcbc437ab0070cf45e2b45e1ceb8a}{SaveData}}();}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} SetEnableCoordFrame()\{bEnableCoordFrame = \textcolor{keyword}{true};\}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{bool} GetEnableCoordFrame()\{\textcolor{keywordflow}{return} bEnableCoordFrame;\}}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} SetCoordFrame(G4String nameOfFrame)\{bCoordFrame=nameOfFrame;\}}
+\DoxyCodeLine{63   G4String GetCoordFrame()\{\textcolor{keywordflow}{return} bCoordFrame ;\}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66   \mbox{\hyperlink{classGateProductionAndStoppingActor}{GateProductionAndStoppingActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{67   GateProductionAndStoppingActorMessenger * pMessenger;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mProdImage;}
+\DoxyCodeLine{72   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mStopImage;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   G4String mProdFilename;}
+\DoxyCodeLine{75   G4String mStopFilename;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keywordtype}{bool} bEnableCoordFrame;}
+\DoxyCodeLine{78   G4String bCoordFrame;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 MAKE\_AUTO\_CREATOR\_ACTOR(ProductionAndStoppingActor,\mbox{\hyperlink{classGateProductionAndStoppingActor}{GateProductionAndStoppingActor}})}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESIMULATIONSTATISTICACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

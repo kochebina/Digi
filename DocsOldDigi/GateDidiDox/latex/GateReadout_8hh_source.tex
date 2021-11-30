@@ -1,0 +1,71 @@
+\hypertarget{GateReadout_8hh_source}{}\doxysection{Gate\+Readout.\+hh}
+\label{GateReadout_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateReadout.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateReadout.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateReadout\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateReadout\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVSystem.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateArrayComponent.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define READOUT\_POLICY\_WINNER 0}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define READOUT\_POLICY\_CENTROID 1}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateReadoutMessenger}{GateReadoutMessenger}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classGateReadout}{GateReadout}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42   \textcolor{keyword}{public}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \mbox{\hyperlink{classGateReadout_afbe6379c10c0cd52cb84bb3b604b387f}{GateReadout}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateReadout_ae0fa151af34cb7821d9b0bec524c20a5}{\string~GateReadout}}() ;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateReadout_a10df66505e3d40c154ab58e0592ef9db}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateReadout_ab2c590eb71960be50ab2b8d40606fba8}{GetDepth}}()\textcolor{keyword}{ const           }\{ \textcolor{keywordflow}{return} m\_depth; \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  \mbox{\hyperlink{classGateReadout_a4953e8aff35cdab56b2d8ed90af9dc9f}{SetDepth}}(G4int aDepth)         \{ m\_depth = aDepth; \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateReadout_a6b718b5555161a60626da27b7cdc5a34}{SetPolicy}}(\textcolor{keyword}{const} G4String\& aPolicy);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateReadout_a093d3d204131b20c6fbfb3d62dc305d7}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{70     \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateReadout_a36dfb3de4a8b33bfe1a53a0c253f5693}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keyword}{private}:}
+\DoxyCodeLine{77     G4int m\_depth;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80     G4int m\_policy;}
+\DoxyCodeLine{81     \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* m\_system;}
+\DoxyCodeLine{82     G4int m\_nbCrystalsX;}
+\DoxyCodeLine{83     G4int m\_nbCrystalsY;}
+\DoxyCodeLine{84     G4int m\_nbCrystalsZ;}
+\DoxyCodeLine{85     G4int m\_nbCrystalsXY;}
+\DoxyCodeLine{86     G4int m\_systemDepth;}
+\DoxyCodeLine{87     G4int m\_crystalDepth;}
+\DoxyCodeLine{88     \mbox{\hyperlink{classGateArrayComponent}{GateArrayComponent}}* m\_crystalComponent;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \mbox{\hyperlink{classGateReadoutMessenger}{GateReadoutMessenger}} *m\_messenger;    }
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

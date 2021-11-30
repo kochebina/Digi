@@ -1,0 +1,70 @@
+\hypertarget{GateLinearRepeater_8hh_source}{}\doxysection{Gate\+Linear\+Repeater.\+hh}
+\label{GateLinearRepeater_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateLinearRepeater.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateLinearRepeater.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateLinearRepeater\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateLinearRepeater\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLinearRepeaterMessenger}{GateLinearRepeaterMessenger}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLinearRepeater}{GateLinearRepeater}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38   \textcolor{keyword}{public}:}
+\DoxyCodeLine{41     \mbox{\hyperlink{classGateLinearRepeater_a3bf0eeb95d205b917545ee11eb65a06e}{GateLinearRepeater}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{42                        \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}linear"{}},}
+\DoxyCodeLine{43                        G4int itsRepeatNumber=1,}
+\DoxyCodeLine{44                        \textcolor{keyword}{const} G4ThreeVector\& itsRepeatVector=G4ThreeVector(),}
+\DoxyCodeLine{45                G4bool itsFlagAutoCenter=\textcolor{keyword}{true});}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLinearRepeater_afea013e2cde6804779a0163df743003d}{\string~GateLinearRepeater}}();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{public}:}
+\DoxyCodeLine{59      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLinearRepeater_aadc9d9250370b9d808940b87e0c5d464}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{60                            \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{61                        G4double aTime);}
+\DoxyCodeLine{67      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLinearRepeater_ad977d6f950ce73fd12d972e5aa12b8ad}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{68      }
+\DoxyCodeLine{69   \textcolor{keyword}{public}:}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73      \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateLinearRepeater_adef9156a5ae6fa40b517c7cef1ffa45d}{GetRepeatVector}}() }
+\DoxyCodeLine{74           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateLinearRepeater_a8ad5e79546df32edf5c2a40eb4e2fdef}{m\_repeatVector}}; \}}
+\DoxyCodeLine{76      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateLinearRepeater_a814b249adc2c3fa36dce746740faea0c}{GetRepeatNumber}}() }
+\DoxyCodeLine{77           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateLinearRepeater_a3f58f88b7e252b87a609408050fad971}{m\_repeatNumber}};\}}
+\DoxyCodeLine{79      \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateLinearRepeater_a7b1fbd02af380e7fa0efa4e03d3f7837}{GetAutoCenterFlag}}() }
+\DoxyCodeLine{80           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateLinearRepeater_ae82ee8dc2ae0213a1cc5e2ff02da8983}{m\_flagAutoCenter}};\}}
+\DoxyCodeLine{81  }
+\DoxyCodeLine{83      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLinearRepeater_aa15f830f0b893d412668280e073841e6}{SetRepeatVector}}(\textcolor{keyword}{const} G4ThreeVector\& val) }
+\DoxyCodeLine{84           \{ \mbox{\hyperlink{classGateLinearRepeater_a8ad5e79546df32edf5c2a40eb4e2fdef}{m\_repeatVector}} = val;  \}}
+\DoxyCodeLine{86      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLinearRepeater_ae5596368131b9d798963976644e53c9e}{SetRepeatNumber}}(G4int val) }
+\DoxyCodeLine{87           \{ \mbox{\hyperlink{classGateLinearRepeater_a3f58f88b7e252b87a609408050fad971}{m\_repeatNumber}} = val;  \}}
+\DoxyCodeLine{89      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLinearRepeater_a67b57ab4f8e8eff64a1142716d9ffa80}{SetAutoCenterFlag}}(G4bool val)}
+\DoxyCodeLine{90           \{ \mbox{\hyperlink{classGateLinearRepeater_ae82ee8dc2ae0213a1cc5e2ff02da8983}{m\_flagAutoCenter}} = val;    \}}
+\DoxyCodeLine{91  }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     G4ThreeVector \mbox{\hyperlink{classGateLinearRepeater_a8ad5e79546df32edf5c2a40eb4e2fdef}{m\_repeatVector}};         }
+\DoxyCodeLine{98     G4int         \mbox{\hyperlink{classGateLinearRepeater_a3f58f88b7e252b87a609408050fad971}{m\_repeatNumber}};         }
+\DoxyCodeLine{99     G4bool        \mbox{\hyperlink{classGateLinearRepeater_ae82ee8dc2ae0213a1cc5e2ff02da8983}{m\_flagAutoCenter}};     }
+\DoxyCodeLine{101     }
+\DoxyCodeLine{103     \mbox{\hyperlink{classGateLinearRepeaterMessenger}{GateLinearRepeaterMessenger}}* \mbox{\hyperlink{classGateLinearRepeater_aedbbc2f22676a6d39f4774401963e312}{m\_Messenger}}; }
+\DoxyCodeLine{104 \};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+
+\end{DoxyCode}

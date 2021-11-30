@@ -1,0 +1,102 @@
+\hypertarget{GateDMapdt_8h_source}{}\doxysection{Gate\+DMapdt.\+h}
+\label{GateDMapdt_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateDMapdt.h@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateDMapdt.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{/*******************************************************}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Copyright CNRS}}
+\DoxyCodeLine{4 \textcolor{comment}{ * David Coeurjolly}}
+\DoxyCodeLine{5 \textcolor{comment}{ * david.coeurjolly@liris.cnrs.fr}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * This software is a computer program whose purpose is to compute the}}
+\DoxyCodeLine{9 \textcolor{comment}{ * Euclidean distance transformation, the reverse Euclidean distance}}
+\DoxyCodeLine{10 \textcolor{comment}{ * transformation and the Discrete Medial Axis of a discrete object.}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * This software is governed by the CeCILL license under French law and}}
+\DoxyCodeLine{13 \textcolor{comment}{ * abiding by the rules of distribution of free software.  You can  use,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * modify and/ or redistribute the software under the terms of the CeCILL}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  * license as circulated by CEA, CNRS and INRIA at the following URL}}
+\DoxyCodeLine{16 \textcolor{comment}{ * "{}http://www.cecill.info"{}.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * As a counterpart to the access to the source code and  rights to copy,}}
+\DoxyCodeLine{19 \textcolor{comment}{ * modify and redistribute granted by the license, users are provided only}}
+\DoxyCodeLine{20 \textcolor{comment}{ * with a limited warranty  and the software's author,  the holder of the}}
+\DoxyCodeLine{21 \textcolor{comment}{ * economic rights,  and the successive licensors  have only  limited}}
+\DoxyCodeLine{22 \textcolor{comment}{ * liability.}}
+\DoxyCodeLine{23 \textcolor{comment}{ *}}
+\DoxyCodeLine{24 \textcolor{comment}{ * In this respect, the user's attention is drawn to the risks associated}}
+\DoxyCodeLine{25 \textcolor{comment}{ * with loading,  using,  modifying and/or developing or reproducing the}}
+\DoxyCodeLine{26 \textcolor{comment}{ * software by the user in light of its specific status of free software,}}
+\DoxyCodeLine{27 \textcolor{comment}{ * that may mean  that it is complicated to manipulate,  and  that  also}}
+\DoxyCodeLine{28 \textcolor{comment}{ * therefore means  that it is reserved for developers  and  experienced}}
+\DoxyCodeLine{29 \textcolor{comment}{ * professionals having in-\/depth computer knowledge. Users are therefore}}
+\DoxyCodeLine{30 \textcolor{comment}{ * encouraged to load and test the software's suitability as regards their}}
+\DoxyCodeLine{31 \textcolor{comment}{ * requirements in conditions enabling the security of their systems and/or}}
+\DoxyCodeLine{32 \textcolor{comment}{ * data to be ensured and,  more generally, to use and operate it in the}}
+\DoxyCodeLine{33 \textcolor{comment}{ * same conditions as regards security.}}
+\DoxyCodeLine{34 \textcolor{comment}{}}
+\DoxyCodeLine{35 \textcolor{comment}{ * The fact that you are presently reading this means that you have had}}
+\DoxyCodeLine{36 \textcolor{comment}{ * knowledge of the CeCILL license and that you accept its terms.}}
+\DoxyCodeLine{37 \textcolor{comment}{*******************************************************/}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifndef \_\_DT\_H}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define \_\_DT\_H}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{//\#define \_MULTITHREAD 1}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <GateDMapVol.h>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <GateDMaplongvol.h>}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_MULTITHREAD}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <pthread.h>}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{namespace }MyVersion\{}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{comment}{//Date Version Types}}
+\DoxyCodeLine{60     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} DATE[] = \textcolor{stringliteral}{"{}01"{}};}
+\DoxyCodeLine{61     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} MONTH[] = \textcolor{stringliteral}{"{}09"{}};}
+\DoxyCodeLine{62     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} YEAR[] = \textcolor{stringliteral}{"{}2008"{}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{//Software Status}}
+\DoxyCodeLine{65     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} STATUS[] = \textcolor{stringliteral}{"{}Alpha"{}};}
+\DoxyCodeLine{66     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} STATUS\_SHORT[] = \textcolor{stringliteral}{"{}a"{}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{//Standard Version Type}}
+\DoxyCodeLine{69     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{long} MAJOR = 0;}
+\DoxyCodeLine{70     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{long} MINOR = 5;}
+\DoxyCodeLine{71     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{long} BUILD = 3;}
+\DoxyCodeLine{72     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{long} REVISION = 0;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{//Miscellaneous Version Types}}
+\DoxyCodeLine{75     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} FULLVERSION\_STRING[] = \textcolor{stringliteral}{"{}0.5.3"{}};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \}}
+\DoxyCodeLine{79 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{89 \textcolor{keywordtype}{bool} computeSEDT(\textcolor{keyword}{const} \mbox{\hyperlink{classVol}{Vol}} \&input, \mbox{\hyperlink{classLongvol}{Longvol}} \&output, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isMultiregion=\textcolor{keyword}{false}, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isToric = \textcolor{keyword}{false}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} NbThreads=1);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{97 \textcolor{keywordtype}{bool} computeREDT(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&input, \mbox{\hyperlink{classVol}{Vol}} \&shape, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} value = 255);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{105 \textcolor{keywordtype}{bool} computeRDMA(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&LV, \mbox{\hyperlink{classLongvol}{Longvol}} \&rdma);}
+\DoxyCodeLine{111 \textcolor{keywordtype}{bool} computeRDMA(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&LV, \mbox{\hyperlink{classVol}{Vol}} \&rdma, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} value = 255);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{bool} computeDiscretePowerDiagram(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&V, \mbox{\hyperlink{classLongvol}{Longvol}} \&dx, \mbox{\hyperlink{classLongvol}{Longvol}} \&dy, \mbox{\hyperlink{classLongvol}{Longvol}} \&dz);}
+\DoxyCodeLine{121 \textcolor{keywordtype}{bool} computeDiscretePowerDiagram(\textcolor{keyword}{const} \mbox{\hyperlink{classLongvol}{Longvol}} \&V, \mbox{\hyperlink{classLongvol}{Longvol}} \&rdma, \mbox{\hyperlink{classLongvol}{Longvol}} \&dx, \mbox{\hyperlink{classLongvol}{Longvol}} \&dy, \mbox{\hyperlink{classLongvol}{Longvol}} \&dz);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 }
+
+\end{DoxyCode}

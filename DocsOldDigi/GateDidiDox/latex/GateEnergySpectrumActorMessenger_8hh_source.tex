@@ -1,0 +1,91 @@
+\hypertarget{GateEnergySpectrumActorMessenger_8hh_source}{}\doxysection{Gate\+Energy\+Spectrum\+Actor\+Messenger.\+hh}
+\label{GateEnergySpectrumActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergySpectrumActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergySpectrumActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{/*}}
+\DoxyCodeLine{13 \textcolor{comment}{  \(\backslash\)class  GateEnergySpectrumActorMessenger}}
+\DoxyCodeLine{14 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{15 \textcolor{comment}{  laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{16 \textcolor{comment}{  david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{17 \textcolor{comment}{  andreas.resch@meduniwien.ac.at}}
+\DoxyCodeLine{18 \textcolor{comment}{*/}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef GATEENERGYSPECTRUMACTORMESSENGER\_HH}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define GATEENERGYSPECTRUMACTORMESSENGER\_HH}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }GateEnergySpectrumActor;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{33 \textcolor{comment}{}\textcolor{keyword}{class }GateEnergySpectrumActorMessenger : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{39 \textcolor{comment}{}  GateEnergySpectrumActorMessenger(GateEnergySpectrumActor * v);}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \string~GateEnergySpectrumActorMessenger();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50   GateEnergySpectrumActor * pActor;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53   G4UIcmdWithADoubleAndUnit * pEmaxCmd;}
+\DoxyCodeLine{54   G4UIcmdWithADoubleAndUnit * pEminCmd;}
+\DoxyCodeLine{55   G4UIcmdWithADoubleAndUnit * pLETminCmd;}
+\DoxyCodeLine{56   G4UIcmdWithADoubleAndUnit * pLETmaxCmd;}
+\DoxyCodeLine{57   G4UIcmdWithAnInteger      * pNLETBinsCmd;}
+\DoxyCodeLine{58   G4UIcmdWithADoubleAndUnit * pQminCmd;}
+\DoxyCodeLine{59   G4UIcmdWithADoubleAndUnit * pQmaxCmd;}
+\DoxyCodeLine{60   G4UIcmdWithAnInteger      * pNQBinsCmd;}
+\DoxyCodeLine{61   G4UIcmdWithAnInteger      * pNBinsCmd;}
+\DoxyCodeLine{62   G4UIcmdWithADoubleAndUnit * pEdepmaxCmd;}
+\DoxyCodeLine{63   G4UIcmdWithADoubleAndUnit * pEdepminCmd; }
+\DoxyCodeLine{64   G4UIcmdWithAnInteger      * pEdepNBinsCmd;}
+\DoxyCodeLine{65   G4UIcmdWithABool          * pSaveAsText;}
+\DoxyCodeLine{66   G4UIcmdWithABool          * pSaveAsTextDiscreteEnergySpectrum;}
+\DoxyCodeLine{67   G4UIcmdWithABool          * pEnableLETSpectrumCmd;}
+\DoxyCodeLine{68   G4UIcmdWithABool          * pEnableLETFluenceSpectrumCmd;}
+\DoxyCodeLine{69   G4UIcmdWithABool          * pEnableLETtoMaterialFluenceSpectrumCmd;}
+\DoxyCodeLine{70   G4UIcmdWithAString * pSetOtherMaterialCmd;}
+\DoxyCodeLine{71   G4UIcmdWithABool          * pEnableQSpectrumCmd;}
+\DoxyCodeLine{72   G4UIcmdWithABool          * pEnableEnergySpectrumNbPartCmd;}
+\DoxyCodeLine{73   G4UIcmdWithABool          * pEnableEnergySpectrumFluenceCosCmd;}
+\DoxyCodeLine{74   G4UIcmdWithABool          * pEnableEnergySpectrumFluenceTrackCmd;}
+\DoxyCodeLine{75   G4UIcmdWithABool          * pEnableeEnergySpectrumEdepCmd;}
+\DoxyCodeLine{76   G4UIcmdWithABool          * pEnableEdepHistoCmd;}
+\DoxyCodeLine{77   G4UIcmdWithABool          * pEnableEdepTimeHistoCmd;}
+\DoxyCodeLine{78   G4UIcmdWithABool          * pEnableEdepTrackHistoCmd;}
+\DoxyCodeLine{79   G4UIcmdWithABool          * pEnableEdepStepHistoCmd;}
+\DoxyCodeLine{80   G4UIcmdWithABool          * pEnableElossHistoCmd;}
+\DoxyCodeLine{81   }
+\DoxyCodeLine{82   G4UIcmdWithABool          * pEnableLogBinningCMD;}
+\DoxyCodeLine{83   G4UIcmdWithABool          * pEnableEnergyPerUnitMassCMD;}
+\DoxyCodeLine{84   G4UIcmdWithABool          * pEnableRelativePrimEventsCMD;}
+\DoxyCodeLine{85   }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \}; \textcolor{comment}{// end class GateEnergySpectrumActorMessenger}}
+\DoxyCodeLine{88 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEENERGYSPECTRUMACTORMESSENGER\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

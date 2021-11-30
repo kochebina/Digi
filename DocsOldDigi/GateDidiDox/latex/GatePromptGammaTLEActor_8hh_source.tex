@@ -1,0 +1,94 @@
+\hypertarget{GatePromptGammaTLEActor_8hh_source}{}\doxysection{Gate\+Prompt\+Gamma\+TLEActor.\+hh}
+\label{GatePromptGammaTLEActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePromptGammaTLEActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePromptGammaTLEActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  GATE version name: gate\_v7}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GATEPROMPTGAMMAPRODUCTIONTLEACTOR\_HH}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GATEPROMPTGAMMAPRODUCTIONTLEACTOR\_HH}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GatePromptGammaTLEActorMessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateImageOfHistograms.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GatePromptGammaData.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateVImageVolume_8hh}{GateVImageVolume.hh}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <TFile.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <TH1.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <TH2.h>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePromptGammaTLEActor}{GatePromptGammaTLEActor}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePromptGammaTLEActor}{\string~GatePromptGammaTLEActor}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGatePromptGammaTLEActor}{GatePromptGammaTLEActor}})}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePromptGammaTLEActor_adfdc50b0f40802ed4eca7b3545db30a0}{Construct}}();}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePromptGammaTLEActor_af4f09ea83a1fba6ca8ee9a83e53d574f}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * e);}
+\DoxyCodeLine{39   \textcolor{comment}{//virtual void EndOfEventAction(const G4Event * e);}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} SetInputDataFilename(std::string filename);}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} EnableDebugOutput(\textcolor{keywordtype}{bool} b) \{ mIsDebugOutputEnabled = b; \}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} EnableOutputMatch(\textcolor{keywordtype}{bool} b) \{ mIsOutputMatchEnabled = b; \}}
+\DoxyCodeLine{47   \textcolor{comment}{//void EnableSysVarianceImage(bool b) \{ mIsSysVarianceImageEnabled = b; \}}}
+\DoxyCodeLine{48   \textcolor{comment}{//void EnableIntermediaryUncertaintyOutput(bool b) \{ mIsIntermediaryUncertaintyOutputEnabled = b; \}}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{51   \mbox{\hyperlink{classGatePromptGammaTLEActor}{GatePromptGammaTLEActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{52   \mbox{\hyperlink{classGatePromptGammaTLEActorMessenger}{GatePromptGammaTLEActorMessenger}} * pMessenger;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   std::string mInputDataFilename;}
+\DoxyCodeLine{55   \mbox{\hyperlink{classGatePromptGammaData}{GatePromptGammaData}} data;}
+\DoxyCodeLine{56   \textcolor{keywordtype}{bool} alreadyHere;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{bool} mIsDebugOutputEnabled;}
+\DoxyCodeLine{59   \textcolor{keywordtype}{bool} mIsOutputMatchEnabled;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{comment}{//helper functions}}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} SetTrackIoH(\mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}}*\&);}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} SetTLEIoH(\mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}}*\&);}
+\DoxyCodeLine{64   \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}* GetPhantom();}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} BuildVarianceOutput(); \textcolor{comment}{//converts trackl,tracklsq into mImageGamma and tlevar per voxel. Not used.}}
+\DoxyCodeLine{66   \textcolor{comment}{//void BuildSysVarianceOutput(); //converts trackl into mImageGamma and tlesysvarv. Not used.}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{comment}{//used and reset each track}}
+\DoxyCodeLine{69   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * tmptrackl;    \textcolor{comment}{//l\_i}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{comment}{//updated at end of event:}}
+\DoxyCodeLine{72   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * trackl;       \textcolor{comment}{//L\_i. also intermediate output: track length per voxel per E\_proton}}
+\DoxyCodeLine{73   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * tracklsq;     \textcolor{comment}{//L\_i\string^2. also intermediate output: track squared length per voxel per E\_proton}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{comment}{//output, calculated at end of simu}}
+\DoxyCodeLine{76   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * mImageGamma;  \textcolor{comment}{//oldstyle main output,}}
+\DoxyCodeLine{77   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * tle;          \textcolor{comment}{//main output (yield)}}
+\DoxyCodeLine{78   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * tlesysvar;    \textcolor{comment}{//systematic variance per voxel, per E\_gamma. Not used.}}
+\DoxyCodeLine{79   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}} * tlevariance;  \textcolor{comment}{//uncertainty per voxel, per E\_gamma. Not used.}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classGateImageT}{GateImageInt}} mLastHitEventImage;      \textcolor{comment}{//store eventID when last updated.}}
+\DoxyCodeLine{82   \textcolor{keywordtype}{int} mCurrentEvent;                    \textcolor{comment}{//monitor event. TODO: not sure if necesary}}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 MAKE\_AUTO\_CREATOR\_ACTOR(PromptGammaTLEActor,\mbox{\hyperlink{classGatePromptGammaTLEActor}{GatePromptGammaTLEActor}})}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// end GATEPROMPTGAMMAPRODUCTIONTLEACTOR}}
+
+\end{DoxyCode}

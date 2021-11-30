@@ -1,0 +1,48 @@
+\hypertarget{GateCoincidenceTimeDiffSelectorMessenger_8hh_source}{}\doxysection{Gate\+Coincidence\+Time\+Diff\+Selector\+Messenger.\+hh}
+\label{GateCoincidenceTimeDiffSelectorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceTimeDiffSelectorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceTimeDiffSelectorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceTimeDiffSelectorMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceTimeDiffSelectorMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceTimeDiffSelector}{GateCoincidenceTimeDiffSelector}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceTimeDiffSelectorMessenger}{GateCoincidenceTimeDiffSelectorMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateCoincidenceTimeDiffSelectorMessenger}{GateCoincidenceTimeDiffSelectorMessenger}}(\mbox{\hyperlink{classGateCoincidenceTimeDiffSelector}{GateCoincidenceTimeDiffSelector}}* itsTimeDiffSelector);}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidenceTimeDiffSelectorMessenger}{\string~GateCoincidenceTimeDiffSelectorMessenger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector}{GateCoincidenceTimeDiffSelector}}* GetTimeDiffSelector()\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCoincidenceTimeDiffSelector}{GateCoincidenceTimeDiffSelector}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{private}:}
+\DoxyCodeLine{38   G4UIcmdWithADoubleAndUnit *minTimeCmd; }
+\DoxyCodeLine{39   G4UIcmdWithADoubleAndUnit *maxTimeCmd; }
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

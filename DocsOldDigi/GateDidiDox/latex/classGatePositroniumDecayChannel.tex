@@ -1,0 +1,132 @@
+\hypertarget{classGatePositroniumDecayChannel}{}\doxysection{Gate\+Positronium\+Decay\+Channel Class Reference}
+\label{classGatePositroniumDecayChannel}\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+
+
+{\ttfamily \#include $<$Gate\+Positronium\+Decay\+Channel.\+hh$>$}
+
+Inheritance diagram for Gate\+Positronium\+Decay\+Channel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGatePositroniumDecayChannel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a266040c779753aa6445341bb39d39f14}\label{classGatePositroniumDecayChannel_a266040c779753aa6445341bb39d39f14}} 
+enum {\bfseries Positronium\+Kind} \{ {\bfseries Not\+Defined}
+, {\bfseries Para\+Positronium}
+, {\bfseries Ortho\+Positronium}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGatePositroniumDecayChannel_ab73f22f60c650d79749798bc7edf64f9}{Gate\+Positronium\+Decay\+Channel}} (const G4\+String \&the\+Parent\+Name, G4double the\+BR)
+\item 
+virtual G4\+Decay\+Products $\ast$ \mbox{\hyperlink{classGatePositroniumDecayChannel_a4eba77bd78cf94fa671e582a33ddb258}{Decay\+It}} (G4double) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G4\+Decay\+Products $\ast$ \mbox{\hyperlink{classGatePositroniumDecayChannel_a6c841e2ae170a4e8d5f723f38a278af5}{Decay\+Para\+Positronium}} ()
+\item 
+G4\+Decay\+Products $\ast$ \mbox{\hyperlink{classGatePositroniumDecayChannel_ac111ecdef6f85ce98cbddcda7af5d0dc}{Decay\+Ortho\+Positronium}} ()
+\item 
+G4double \mbox{\hyperlink{classGatePositroniumDecayChannel_a44a68ce8bf8e22e08ec0454a84b69cb7}{Get\+Ortho\+PsM}} (const G4double w1, const G4double w2, const G4double w3) const
+\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGatePositroniumDecayChannel_a480aa2a3799f7b7641bbebd69e635b37}{Get\+Polarization}} (const G4\+Three\+Vector \&momentum) const
+\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGatePositroniumDecayChannel_a44a853de0f37b766e6482bb9eaf515fb}{Get\+Perpendicular\+Vector}} (const G4\+Three\+Vector \&v) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a084b1d09a398e07c77850b6071341934}\label{classGatePositroniumDecayChannel_a084b1d09a398e07c77850b6071341934}} 
+const G4\+String {\bfseries k\+Para\+Positronium\+Name} = \char`\"{}p\+Ps\char`\"{}
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a19170891df06c8eacbc4196cb4c2ea4e}\label{classGatePositroniumDecayChannel_a19170891df06c8eacbc4196cb4c2ea4e}} 
+const G4\+String {\bfseries k\+Ortho\+Positronium\+Name} = \char`\"{}o\+Ps\char`\"{}
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a1c0597abc204f5ee3e8caa9bcb491e14}\label{classGatePositroniumDecayChannel_a1c0597abc204f5ee3e8caa9bcb491e14}} 
+const G4\+String {\bfseries k\+Daughter\+Name} = \char`\"{}gamma\char`\"{}
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a4ea85eb81ec9901557bd4b6e622288b0}\label{classGatePositroniumDecayChannel_a4ea85eb81ec9901557bd4b6e622288b0}} 
+const G4int {\bfseries k\+Para\+Positronium\+Annihilation\+Gammas\+Number} = 2
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a041074d55a2378bbeaad4e9f92eee5ac}\label{classGatePositroniumDecayChannel_a041074d55a2378bbeaad4e9f92eee5ac}} 
+const G4int {\bfseries k\+Ortho\+Positronium\+Annihilation\+Gammas\+Number} = 3
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_afd22ebce949e42fc852531f0e9c95cb8}\label{classGatePositroniumDecayChannel_afd22ebce949e42fc852531f0e9c95cb8}} 
+const G4double {\bfseries k\+Positronium\+Mass} = 2.\+0 $\ast$ electron\+\_\+mass\+\_\+c2
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_ab92cbdb28baf013002606a302f9feed0}\label{classGatePositroniumDecayChannel_ab92cbdb28baf013002606a302f9feed0}} 
+Positronium\+Kind {\bfseries f\+Positronium\+Kind} = Positronium\+Kind\+::\+Not\+Defined
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a176406ed18c70793475604f8e82c5228}\label{classGatePositroniumDecayChannel_a176406ed18c70793475604f8e82c5228}} 
+const G4double {\bfseries k\+Ortho\+Ps\+MMax} = 7.\+65928
+\begin{DoxyCompactList}\small\item\em This is maxiaml number which can be calculated by function \mbox{\hyperlink{classGatePositroniumDecayChannel_a44a68ce8bf8e22e08ec0454a84b69cb7}{Get\+Ortho\+Ps\+M()}} -\/ based on 10$^\wedge$7 iterations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a4c8f24f44c2df43ece5caa28d58a698c}\label{classGatePositroniumDecayChannel_a4c8f24f44c2df43ece5caa28d58a698c}} 
+const G4double {\bfseries k\+Electron\+Mass} = electron\+\_\+mass\+\_\+c2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\DoxyHorRuler{0}
+ Copyright (C)\+: Open\+GATE Collaboration This software is distributed under the terms of the GNU Lesser General Public Licence (LGPL) \hypertarget{classGatePositroniumDecayChannel_autotoc_md46}{}\doxysubsubsection{See LICENSE.\+md for further details}\label{classGatePositroniumDecayChannel_autotoc_md46}
+Author\+: Mateusz Bała Email\+: \href{mailto:bala.mateusz@gmail.com}{\texttt{ bala.\+mateusz@gmail.\+com}} Theorem author for o\+Ps decay\+: Daria Kamińska ( Eur. Phys. J. C (2016) 76\+:445 ) Organization\+: J-\/\+PET (\href{http://koza.if.uj.edu.pl/pet/}{\texttt{ http\+://koza.\+if.\+uj.\+edu.\+pl/pet/}}) About class\+: Implements decay of positronium ( p\+Ps and o\+Ps ). Provides support for polarization. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_ab73f22f60c650d79749798bc7edf64f9}\label{classGatePositroniumDecayChannel_ab73f22f60c650d79749798bc7edf64f9}} 
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\doxysubsubsection{\texorpdfstring{GatePositroniumDecayChannel()}{GatePositroniumDecayChannel()}}
+{\footnotesize\ttfamily Gate\+Positronium\+Decay\+Channel\+::\+Gate\+Positronium\+Decay\+Channel (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{the\+Parent\+Name,  }\item[{G4double}]{the\+BR }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Copyright (C)\+: Open\+GATE Collaboration This software is distributed under the terms of the GNU Lesser General Public Licence (LGPL) \hypertarget{classGatePositroniumDecayChannel_autotoc_md54}{}\doxysubsubsection{See LICENSE.\+md for further details}\label{classGatePositroniumDecayChannel_autotoc_md54}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePositroniumDecayChannel_a4eba77bd78cf94fa671e582a33ddb258}\label{classGatePositroniumDecayChannel_a4eba77bd78cf94fa671e582a33ddb258}} 
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!DecayIt@{DecayIt}}
+\index{DecayIt@{DecayIt}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\doxysubsubsection{\texorpdfstring{DecayIt()}{DecayIt()}}
+{\footnotesize\ttfamily G4\+Decay\+Products $\ast$ Gate\+Positronium\+Decay\+Channel\+::\+Decay\+It (\begin{DoxyParamCaption}\item[{G4double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return gammas from positronium decay \mbox{\Hypertarget{classGatePositroniumDecayChannel_ac111ecdef6f85ce98cbddcda7af5d0dc}\label{classGatePositroniumDecayChannel_ac111ecdef6f85ce98cbddcda7af5d0dc}} 
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!DecayOrthoPositronium@{DecayOrthoPositronium}}
+\index{DecayOrthoPositronium@{DecayOrthoPositronium}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\doxysubsubsection{\texorpdfstring{DecayOrthoPositronium()}{DecayOrthoPositronium()}}
+{\footnotesize\ttfamily G4\+Decay\+Products $\ast$ Gate\+Positronium\+Decay\+Channel\+::\+Decay\+Ortho\+Positronium (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Return gammas from ortho-\/positronium decay Polarization\mbox{\Hypertarget{classGatePositroniumDecayChannel_a6c841e2ae170a4e8d5f723f38a278af5}\label{classGatePositroniumDecayChannel_a6c841e2ae170a4e8d5f723f38a278af5}} 
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!DecayParaPositronium@{DecayParaPositronium}}
+\index{DecayParaPositronium@{DecayParaPositronium}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\doxysubsubsection{\texorpdfstring{DecayParaPositronium()}{DecayParaPositronium()}}
+{\footnotesize\ttfamily G4\+Decay\+Products $\ast$ Gate\+Positronium\+Decay\+Channel\+::\+Decay\+Para\+Positronium (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Return gammas from para-\/positronium decay Polarization\mbox{\Hypertarget{classGatePositroniumDecayChannel_a44a68ce8bf8e22e08ec0454a84b69cb7}\label{classGatePositroniumDecayChannel_a44a68ce8bf8e22e08ec0454a84b69cb7}} 
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!GetOrthoPsM@{GetOrthoPsM}}
+\index{GetOrthoPsM@{GetOrthoPsM}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\doxysubsubsection{\texorpdfstring{GetOrthoPsM()}{GetOrthoPsM()}}
+{\footnotesize\ttfamily G4double Gate\+Positronium\+Decay\+Channel\+::\+Get\+Ortho\+PsM (\begin{DoxyParamCaption}\item[{const G4double}]{w1,  }\item[{const G4double}]{w2,  }\item[{const G4double}]{w3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calculate cross section Mij matrix element Based on \char`\"{}\+Quantum electrodynamics\char`\"{} V. B. BERESTETSKY. Chapter\+: 89. Annihilation of positronium Exquantation\+: 89.\+14 \mbox{\Hypertarget{classGatePositroniumDecayChannel_a44a853de0f37b766e6482bb9eaf515fb}\label{classGatePositroniumDecayChannel_a44a853de0f37b766e6482bb9eaf515fb}} 
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!GetPerpendicularVector@{GetPerpendicularVector}}
+\index{GetPerpendicularVector@{GetPerpendicularVector}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\doxysubsubsection{\texorpdfstring{GetPerpendicularVector()}{GetPerpendicularVector()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Positronium\+Decay\+Channel\+::\+Get\+Perpendicular\+Vector (\begin{DoxyParamCaption}\item[{const G4\+Three\+Vector \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate perpendiculator vector ( to calculate orthogonal polarization ) \mbox{\Hypertarget{classGatePositroniumDecayChannel_a480aa2a3799f7b7641bbebd69e635b37}\label{classGatePositroniumDecayChannel_a480aa2a3799f7b7641bbebd69e635b37}} 
+\index{GatePositroniumDecayChannel@{GatePositroniumDecayChannel}!GetPolarization@{GetPolarization}}
+\index{GetPolarization@{GetPolarization}!GatePositroniumDecayChannel@{GatePositroniumDecayChannel}}
+\doxysubsubsection{\texorpdfstring{GetPolarization()}{GetPolarization()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Positronium\+Decay\+Channel\+::\+Get\+Polarization (\begin{DoxyParamCaption}\item[{const G4\+Three\+Vector \&}]{momentum }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calculate polarization orthogonal to momentum direction 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Positronium\+Decay\+Channel.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Positronium\+Decay\+Channel.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{GateCCCoincidencesFileReader_8hh_source}{}\doxysection{Gate\+CCCoincidences\+File\+Reader.\+hh}
+\label{GateCCCoincidencesFileReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidencesFileReader.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidencesFileReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateCCCoincidencesFileReader\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateCCCoincidencesFileReader\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <TROOT.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <TFile.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <TTree.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateCCRootDefs.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateCoincidencePulse.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }GateCCCoincidencesFileReader}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{static} GateCCCoincidencesFileReader* GetInstance(G4String filen);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \string~GateCCCoincidencesFileReader();       }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{private}:}
+\DoxyCodeLine{32     GateCCCoincidencesFileReader(G4String file);        }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} PrepareAcquisition();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     G4bool HasNextEvent();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     G4int PrepareNextEvent();}
+\DoxyCodeLine{42     \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* PrepareEndOfEvent();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} TerminateAfterAcquisition();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \textcolor{keyword}{const}  G4String\& GetFileName()             \{ \textcolor{keywordflow}{return} m\_fileName; \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Describe(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} LoadCoincData();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     G4String            m\_fileName;               }
+\DoxyCodeLine{64     G4String            m\_filePath;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     TFile*              m\_coincFile;              }
+\DoxyCodeLine{68     TTree*              m\_coincTree;              }
+\DoxyCodeLine{69     Stat\_t              m\_entries;                }
+\DoxyCodeLine{70     G4int               m\_currentEntry;           }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \mbox{\hyperlink{classGateCCRootCoincBuffer}{GateCCRootCoincBuffer}}       m\_coincBuffer;}
+\DoxyCodeLine{74     \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* m\_coincidencePulse;\textcolor{comment}{// Queue of waiting singles for the current coincID}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{private}:}
+\DoxyCodeLine{79     \textcolor{keyword}{static} GateCCCoincidencesFileReader*   instance;       }
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

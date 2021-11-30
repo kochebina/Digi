@@ -1,0 +1,47 @@
+\hypertarget{GateAnalysisMessenger_8hh_source}{}\doxysection{Gate\+Analysis\+Messenger.\+hh}
+\label{GateAnalysisMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateAnalysisMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateAnalysisMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateAnalysisMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateAnalysisMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAnalysis}{GateAnalysis}};}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAnalysisMessenger}{GateAnalysisMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29   \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{classGateAnalysisMessenger}{GateAnalysisMessenger}}(\mbox{\hyperlink{classGateAnalysis}{GateAnalysis}}* gateAnalysis);}
+\DoxyCodeLine{31    \mbox{\hyperlink{classGateAnalysisMessenger}{\string~GateAnalysisMessenger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{classGateAnalysis}{GateAnalysis}}*            m\_gateAnalysis;}
+\DoxyCodeLine{37     G4UIcmdWithAString*      SetSeptalVolumeNameCmd; \textcolor{comment}{// HDS : Tells in which volume to record septal penetration}}
+\DoxyCodeLine{38     G4UIcmdWithABool*        RecordSeptalCmd; \textcolor{comment}{// HDS: Flag to activate the recording of septal penetration in root trees}}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

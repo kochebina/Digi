@@ -1,0 +1,195 @@
+\hypertarget{classGatePositroniumDecayModel}{}\doxysection{Gate\+Positronium\+Decay\+Model Class Reference}
+\label{classGatePositroniumDecayModel}\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+
+
+{\ttfamily \#include $<$Gate\+Positronium\+Decay\+Model.\+hh$>$}
+
+Inheritance diagram for Gate\+Positronium\+Decay\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGatePositroniumDecayModel}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGatePositroniumDecayModel_1_1Positronium}{Positronium}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classGatePositroniumDecayModel_a706110e0f0b4ce08f6c6b58407db4b0a}{Positronium\+Kind}} \{ {\bfseries p\+Ps}
+, {\bfseries o\+Ps}
+ \}
+\item 
+enum \mbox{\hyperlink{classGatePositroniumDecayModel_a51ae6801c5fe5e33dc1d3e111e3f44da}{Decay\+Model}} \{ {\bfseries Standard}
+, {\bfseries With\+Prompt}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a4daf83d15da528fa8a85658e1e201d67}\label{classGatePositroniumDecayModel_a4daf83d15da528fa8a85658e1e201d67}} 
+void {\bfseries Set\+Positronium\+Kind} (\mbox{\hyperlink{classGatePositroniumDecayModel_a706110e0f0b4ce08f6c6b58407db4b0a}{Positronium\+Kind}} positronium\+\_\+kind)
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_aa459cf0e5718e43a91388a80fe69946c}\label{classGatePositroniumDecayModel_aa459cf0e5718e43a91388a80fe69946c}} 
+\mbox{\hyperlink{classGatePositroniumDecayModel_a706110e0f0b4ce08f6c6b58407db4b0a}{Positronium\+Kind}} {\bfseries Get\+Positronium\+Kind} () const
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a553458401411b1aff89c03e3ec24ebc7}\label{classGatePositroniumDecayModel_a553458401411b1aff89c03e3ec24ebc7}} 
+void {\bfseries Set\+Decay\+Model} (\mbox{\hyperlink{classGatePositroniumDecayModel_a51ae6801c5fe5e33dc1d3e111e3f44da}{Decay\+Model}} decay\+\_\+model)
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_ac5c12b3481491a3eb8c029322c27d77a}\label{classGatePositroniumDecayModel_ac5c12b3481491a3eb8c029322c27d77a}} 
+\mbox{\hyperlink{classGatePositroniumDecayModel_a51ae6801c5fe5e33dc1d3e111e3f44da}{Decay\+Model}} {\bfseries Get\+Decay\+Model} () const
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a6271e24a650a7bf42a4c680fc5240172}\label{classGatePositroniumDecayModel_a6271e24a650a7bf42a4c680fc5240172}} 
+void {\bfseries Set\+Postronium\+Lifetime} (G4\+String positronium\+\_\+name, G4double life\+\_\+time)
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_aaaa0320efccec29d387f265e9c690833}\label{classGatePositroniumDecayModel_aaaa0320efccec29d387f265e9c690833}} 
+void {\bfseries Set\+Prompt\+Gamma\+Energy} (G4double prompt\+\_\+energy)
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a3512d1064b2ca1a1a4f07bd5fd0af3c4}\label{classGatePositroniumDecayModel_a3512d1064b2ca1a1a4f07bd5fd0af3c4}} 
+G4double {\bfseries Get\+Prompt\+Gamma\+Energy} () const
+\item 
+void \mbox{\hyperlink{classGatePositroniumDecayModel_a73f085a5353ba5ab6bfce055d9956c9e}{Set\+Para\+Positronium\+Fraction}} (G4double fraction)
+\item 
+virtual G4int \mbox{\hyperlink{classGatePositroniumDecayModel_ac99bee5c3f6afdfa03cf3f7de4351e9c}{Generate\+Primary\+Vertices}} (G4\+Event $\ast$event, G4double \&particle\+\_\+time, G4\+Three\+Vector \&particle\+\_\+position) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGateEmittedGammaInformation}{Gate\+Emitted\+Gamma\+Information}} $\ast$ \mbox{\hyperlink{classGatePositroniumDecayModel_ab832b7bdca76f9d1aa34d9b1bd351c80}{Get\+Primary\+Particle\+Information}} (const G4\+Primary\+Particle $\ast$pp, const \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{Gate\+Emitted\+Gamma\+Information\+::\+Gamma\+Kind}} \&gamma\+\_\+kind) const override
+\item 
+void \mbox{\hyperlink{classGatePositroniumDecayModel_a6c2dea7214d1279ec05705172ecaac18}{Prepare\+Positronium\+Parametrization}} ()
+\item 
+G4\+Primary\+Vertex $\ast$ \mbox{\hyperlink{classGatePositroniumDecayModel_ae5a04125a7b09633c7068897606a24b8}{Get\+Primary\+Vertex\+From\+Deexcitation}} (const G4double \&particle\+\_\+time, const G4\+Three\+Vector \&particle\+\_\+position)
+\item 
+G4\+Primary\+Vertex $\ast$ \mbox{\hyperlink{classGatePositroniumDecayModel_a4c2e7abfdcf711be3b2ac9962d9fbb61}{Get\+Primary\+Vertex\+From\+Positronium\+Annihilation}} (const G4double \&particle\+\_\+time, const G4\+Three\+Vector \&particle\+\_\+position)
+\item 
+G4\+Primary\+Particle $\ast$ \mbox{\hyperlink{classGatePositroniumDecayModel_a453863ff316f9132f4c7ebc650fc0348}{Get\+Gamma\+From\+Deexcitation}} ()
+\item 
+std\+::vector$<$ G4\+Primary\+Particle $\ast$ $>$ \mbox{\hyperlink{classGatePositroniumDecayModel_ad6804e60e0b8ef421fa2fd1863cf9b6d}{Get\+Gammas\+From\+Positronium\+Annihilation}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a8310ee77df6b1fe4c4e5866e3265ba1f}\label{classGatePositroniumDecayModel_a8310ee77df6b1fe4c4e5866e3265ba1f}} 
+\mbox{\hyperlink{classGatePositroniumDecayModel_1_1Positronium}{Positronium}} {\bfseries f\+Para\+Ps} = \mbox{\hyperlink{classGatePositroniumDecayModel_1_1Positronium}{Positronium}}( \char`\"{}p\+Ps\char`\"{}, 0.\+1244 $\ast$ ns, 2 )
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_adeec264d464c8ea552770999b834914d}\label{classGatePositroniumDecayModel_adeec264d464c8ea552770999b834914d}} 
+\mbox{\hyperlink{classGatePositroniumDecayModel_1_1Positronium}{Positronium}} {\bfseries f\+Ortho\+Ps} = \mbox{\hyperlink{classGatePositroniumDecayModel_1_1Positronium}{Positronium}}( \char`\"{}o\+Ps\char`\"{}, 138.\+6 $\ast$ ns, 3 )
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a0546e5a81640bbc4138df630574c2e2e}\label{classGatePositroniumDecayModel_a0546e5a81640bbc4138df630574c2e2e}} 
+\mbox{\hyperlink{classGatePositroniumDecayModel_1_1Positronium}{Positronium}} $\ast$ {\bfseries p\+Info\+Ps} = nullptr
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_aab26933ae9ee552fed93b9b9d8ac8830}\label{classGatePositroniumDecayModel_aab26933ae9ee552fed93b9b9d8ac8830}} 
+const G4double {\bfseries k\+Sodium22\+Deexcitation\+Gamma\+Energy} = 1.\+022 $\ast$ MeV
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a0fc3ebbba1ffd8900cf9faebb7a42a56}\label{classGatePositroniumDecayModel_a0fc3ebbba1ffd8900cf9faebb7a42a56}} 
+\mbox{\hyperlink{classGatePositroniumDecayModel_a706110e0f0b4ce08f6c6b58407db4b0a}{Positronium\+Kind}} {\bfseries f\+Positronium\+Kind} = Positronium\+Kind\+::p\+Ps
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_ae4b7c542d0dc81a4791ae2e3f7d68d9f}\label{classGatePositroniumDecayModel_ae4b7c542d0dc81a4791ae2e3f7d68d9f}} 
+\mbox{\hyperlink{classGatePositroniumDecayModel_a51ae6801c5fe5e33dc1d3e111e3f44da}{Decay\+Model}} {\bfseries f\+Decay\+Model} = Decay\+Model\+::\+Standard
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a57f4ff4ee1381d0401c9d77cfc8c1cd2}\label{classGatePositroniumDecayModel_a57f4ff4ee1381d0401c9d77cfc8c1cd2}} 
+G4double {\bfseries f\+Prompt\+Gamma\+Energy} = k\+Sodium22\+Deexcitation\+Gamma\+Energy
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a1d199ed98406737b3cef2a22380d0357}\label{classGatePositroniumDecayModel_a1d199ed98406737b3cef2a22380d0357}} 
+G4double {\bfseries f\+Para\+Positronium\+Fraction} = 1.\+0
+\item 
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a25215f8983c66375a838e53e6c609059}\label{classGatePositroniumDecayModel_a25215f8983c66375a838e53e6c609059}} 
+G4bool {\bfseries f\+Use\+Positronium\+Fractions} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\DoxyHorRuler{0}
+ Copyright (C)\+: Open\+GATE Collaboration This software is distributed under the terms of the GNU Lesser General Public Licence (LGPL) \hypertarget{classGatePositroniumDecayModel_autotoc_md47}{}\doxysubsubsection{See LICENSE.\+md for further details}\label{classGatePositroniumDecayModel_autotoc_md47}
+Author\+: Mateusz Bała Email\+: \href{mailto:bala.mateusz@gmail.com}{\texttt{ bala.\+mateusz@gmail.\+com}} Organization\+: J-\/\+PET (\href{http://koza.if.uj.edu.pl/pet/}{\texttt{ http\+://koza.\+if.\+uj.\+edu.\+pl/pet/}}) About class\+: Class generate gammas from positronium decay with including deexcitation gamma ( prompt gamma ) if is required. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a51ae6801c5fe5e33dc1d3e111e3f44da}\label{classGatePositroniumDecayModel_a51ae6801c5fe5e33dc1d3e111e3f44da}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!DecayModel@{DecayModel}}
+\index{DecayModel@{DecayModel}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{DecayModel}{DecayModel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classGatePositroniumDecayModel_a51ae6801c5fe5e33dc1d3e111e3f44da}{Gate\+Positronium\+Decay\+Model\+::\+Decay\+Model}}}
+
+Decay model descibes decay of positronium. For example for Positronium\+Kind\+::p\+Ps we have decays\+: 1) Standard\+: p\+Ps -\/\texorpdfstring{$>$}{>} 2 gamma 2) With\+Prompt\+: p\+Ps$\ast$ -\/\texorpdfstring{$>$}{>} 2 gamma + prompt\+\_\+gamma Only prompt gamma has nod modified time, other gammas always has modified time. \mbox{\Hypertarget{classGatePositroniumDecayModel_a706110e0f0b4ce08f6c6b58407db4b0a}\label{classGatePositroniumDecayModel_a706110e0f0b4ce08f6c6b58407db4b0a}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!PositroniumKind@{PositroniumKind}}
+\index{PositroniumKind@{PositroniumKind}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{PositroniumKind}{PositroniumKind}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classGatePositroniumDecayModel_a706110e0f0b4ce08f6c6b58407db4b0a}{Gate\+Positronium\+Decay\+Model\+::\+Positronium\+Kind}}}
+
+\mbox{\hyperlink{classGatePositroniumDecayModel_1_1Positronium}{Positronium}} kind tells which positronium we will use. Depends on used Ps gammas number and time will be different. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePositroniumDecayModel_ac99bee5c3f6afdfa03cf3f7de4351e9c}\label{classGatePositroniumDecayModel_ac99bee5c3f6afdfa03cf3f7de4351e9c}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!GeneratePrimaryVertices@{GeneratePrimaryVertices}}
+\index{GeneratePrimaryVertices@{GeneratePrimaryVertices}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{GeneratePrimaryVertices()}{GeneratePrimaryVertices()}}
+{\footnotesize\ttfamily G4int Gate\+Positronium\+Decay\+Model\+::\+Generate\+Primary\+Vertices (\begin{DoxyParamCaption}\item[{G4\+Event $\ast$}]{event,  }\item[{G4double \&}]{particle\+\_\+time,  }\item[{G4\+Three\+Vector \&}]{particle\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Generate vertices and fill them with gammas. Vertices number depends on used Decay\+Model\+:
+\begin{DoxyItemize}
+\item one ( if Decay\+Model\+::\+Standard )
+\item two ( if Decay\+Model\+::\+With\+Prompt ) 
+\end{DoxyItemize}
+
+Reimplemented from \mbox{\hyperlink{classGateGammaEmissionModel_acf66f399281de77601acce985a05ca02}{Gate\+Gamma\+Emission\+Model}}.
+
+\mbox{\Hypertarget{classGatePositroniumDecayModel_a453863ff316f9132f4c7ebc650fc0348}\label{classGatePositroniumDecayModel_a453863ff316f9132f4c7ebc650fc0348}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!GetGammaFromDeexcitation@{GetGammaFromDeexcitation}}
+\index{GetGammaFromDeexcitation@{GetGammaFromDeexcitation}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{GetGammaFromDeexcitation()}{GetGammaFromDeexcitation()}}
+{\footnotesize\ttfamily G4\+Primary\+Particle $\ast$ Gate\+Positronium\+Decay\+Model\+::\+Get\+Gamma\+From\+Deexcitation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate deexcitation ( prompt ) gamma \mbox{\Hypertarget{classGatePositroniumDecayModel_ad6804e60e0b8ef421fa2fd1863cf9b6d}\label{classGatePositroniumDecayModel_ad6804e60e0b8ef421fa2fd1863cf9b6d}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!GetGammasFromPositroniumAnnihilation@{GetGammasFromPositroniumAnnihilation}}
+\index{GetGammasFromPositroniumAnnihilation@{GetGammasFromPositroniumAnnihilation}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{GetGammasFromPositroniumAnnihilation()}{GetGammasFromPositroniumAnnihilation()}}
+{\footnotesize\ttfamily std\+::vector$<$ G4\+Primary\+Particle $\ast$ $>$ Gate\+Positronium\+Decay\+Model\+::\+Get\+Gammas\+From\+Positronium\+Annihilation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate annihilation gammas \mbox{\Hypertarget{classGatePositroniumDecayModel_ab832b7bdca76f9d1aa34d9b1bd351c80}\label{classGatePositroniumDecayModel_ab832b7bdca76f9d1aa34d9b1bd351c80}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!GetPrimaryParticleInformation@{GetPrimaryParticleInformation}}
+\index{GetPrimaryParticleInformation@{GetPrimaryParticleInformation}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{GetPrimaryParticleInformation()}{GetPrimaryParticleInformation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateEmittedGammaInformation}{Gate\+Emitted\+Gamma\+Information}} $\ast$ Gate\+Positronium\+Decay\+Model\+::\+Get\+Primary\+Particle\+Information (\begin{DoxyParamCaption}\item[{const G4\+Primary\+Particle $\ast$}]{pp,  }\item[{const \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{Gate\+Emitted\+Gamma\+Information\+::\+Gamma\+Kind}} \&}]{gamma\+\_\+kind }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Provides additional information for user about gamma 
+
+Reimplemented from \mbox{\hyperlink{classGateGammaEmissionModel_a06a97459ff8c9444142c6807c0d18b2e}{Gate\+Gamma\+Emission\+Model}}.
+
+\mbox{\Hypertarget{classGatePositroniumDecayModel_ae5a04125a7b09633c7068897606a24b8}\label{classGatePositroniumDecayModel_ae5a04125a7b09633c7068897606a24b8}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!GetPrimaryVertexFromDeexcitation@{GetPrimaryVertexFromDeexcitation}}
+\index{GetPrimaryVertexFromDeexcitation@{GetPrimaryVertexFromDeexcitation}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{GetPrimaryVertexFromDeexcitation()}{GetPrimaryVertexFromDeexcitation()}}
+{\footnotesize\ttfamily G4\+Primary\+Vertex $\ast$ Gate\+Positronium\+Decay\+Model\+::\+Get\+Primary\+Vertex\+From\+Deexcitation (\begin{DoxyParamCaption}\item[{const G4double \&}]{particle\+\_\+time,  }\item[{const G4\+Three\+Vector \&}]{particle\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate vertex for deexcitation gamma ( prompt gamma ) -\/ position and time is the same as generted by source \mbox{\Hypertarget{classGatePositroniumDecayModel_a4c2e7abfdcf711be3b2ac9962d9fbb61}\label{classGatePositroniumDecayModel_a4c2e7abfdcf711be3b2ac9962d9fbb61}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!GetPrimaryVertexFromPositroniumAnnihilation@{GetPrimaryVertexFromPositroniumAnnihilation}}
+\index{GetPrimaryVertexFromPositroniumAnnihilation@{GetPrimaryVertexFromPositroniumAnnihilation}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{GetPrimaryVertexFromPositroniumAnnihilation()}{GetPrimaryVertexFromPositroniumAnnihilation()}}
+{\footnotesize\ttfamily G4\+Primary\+Vertex $\ast$ Gate\+Positronium\+Decay\+Model\+::\+Get\+Primary\+Vertex\+From\+Positronium\+Annihilation (\begin{DoxyParamCaption}\item[{const G4double \&}]{particle\+\_\+time,  }\item[{const G4\+Three\+Vector \&}]{particle\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate vertex for annihilation gammas -\/ position is the same as generted by source, but time is shifted by positronium lifetime ( T0 + f(lifetime)) \mbox{\Hypertarget{classGatePositroniumDecayModel_a6c2dea7214d1279ec05705172ecaac18}\label{classGatePositroniumDecayModel_a6c2dea7214d1279ec05705172ecaac18}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!PreparePositroniumParametrization@{PreparePositroniumParametrization}}
+\index{PreparePositroniumParametrization@{PreparePositroniumParametrization}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{PreparePositroniumParametrization()}{PreparePositroniumParametrization()}}
+{\footnotesize\ttfamily void Gate\+Positronium\+Decay\+Model\+::\+Prepare\+Positronium\+Parametrization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Depends on used model and setted fractions it chooses positronium which decay will be used to generate gammas \mbox{\Hypertarget{classGatePositroniumDecayModel_a73f085a5353ba5ab6bfce055d9956c9e}\label{classGatePositroniumDecayModel_a73f085a5353ba5ab6bfce055d9956c9e}} 
+\index{GatePositroniumDecayModel@{GatePositroniumDecayModel}!SetParaPositroniumFraction@{SetParaPositroniumFraction}}
+\index{SetParaPositroniumFraction@{SetParaPositroniumFraction}!GatePositroniumDecayModel@{GatePositroniumDecayModel}}
+\doxysubsubsection{\texorpdfstring{SetParaPositroniumFraction()}{SetParaPositroniumFraction()}}
+{\footnotesize\ttfamily void Gate\+Positronium\+Decay\+Model\+::\+Set\+Para\+Positronium\+Fraction (\begin{DoxyParamCaption}\item[{G4double}]{fraction }\end{DoxyParamCaption})}
+
+Set probability of gammas emission from para-\/positronium decay ( and ortho-\/positronium too ) 
+\begin{DoxyParams}{Parameters}
+{\em } & fraction -\/ number in range from 0.\+0 to 1.\+0 ( 0.\+0 -\/ generate only gammas from o\+Ps decay, 1.\+0 -\/ generate only gammas from p\+Ps decay ) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Positronium\+Decay\+Model.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Positronium\+Decay\+Model.\+cc\end{DoxyCompactItemize}

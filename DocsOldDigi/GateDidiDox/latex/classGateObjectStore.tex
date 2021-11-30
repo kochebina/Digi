@@ -1,0 +1,99 @@
+\hypertarget{classGateObjectStore}{}\doxysection{Gate\+Object\+Store Class Reference}
+\label{classGateObjectStore}\index{GateObjectStore@{GateObjectStore}}
+
+
+Stores the list of object creators\+: allows to retrieve creators/volumes.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Object\+Store.\+hh$>$}
+
+Inheritance diagram for Gate\+Object\+Store\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateObjectStore}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateObjectStore_aa65555a6a0e1f946c4d754ac2f22f5df}\label{classGateObjectStore_aa65555a6a0e1f946c4d754ac2f22f5df}} 
+virtual {\bfseries $\sim$\+Gate\+Object\+Store} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Methods to manage the creator list}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateObjectStore_a8fe1aed566154c0a5ed8c813ff4ac417}\label{classGateObjectStore_a8fe1aed566154c0a5ed8c813ff4ac417}} 
+virtual void {\bfseries Register\+Creator} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$new\+Creator)
+\begin{DoxyCompactList}\small\item\em Registers a new object-\/creator in the creator list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateObjectStore_aeadf9c3992635f48aff8889f2d835a8f}\label{classGateObjectStore_aeadf9c3992635f48aff8889f2d835a8f}} 
+virtual void {\bfseries Unregister\+Creator} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$creator)
+\begin{DoxyCompactList}\small\item\em Removes a deleted object-\/creator from the creator-\/list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateObjectStore_ad25be00fedfb2747c1029ece099b2391}\label{classGateObjectStore_ad25be00fedfb2747c1029ece099b2391}} 
+virtual void {\bfseries List\+Creators} ()
+\begin{DoxyCompactList}\small\item\em List the object creators stored in the creator list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Methods to retrieve a creator}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateObjectStore_a16d6d0266ea3d76862f13e1b9267242b}\label{classGateObjectStore_a16d6d0266ea3d76862f13e1b9267242b}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Find\+Creator} (const G4\+String \&name)
+\begin{DoxyCompactList}\small\item\em Retrieves a creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateObjectStore_a631b46013df99194f987d62399be6855}\label{classGateObjectStore_a631b46013df99194f987d62399be6855}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Find\+Volume\+Creator} (const G4\+String \&volume\+Name)
+\item 
+\mbox{\Hypertarget{classGateObjectStore_acf6101cf21b710b1cac64b44640190c7}\label{classGateObjectStore_acf6101cf21b710b1cac64b44640190c7}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Find\+Volume\+Creator} (G4\+VPhysical\+Volume $\ast$volume)
+\begin{DoxyCompactList}\small\item\em Retrieves the creator of a logical volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} $\ast$ \mbox{\hyperlink{classGateObjectStore_a868b491f637cbeb65f6f75ce8ac00b63}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Methods for accessing items of the store}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateObjectStore_aca50d4ef5309c34b9c84dfd076c2f457}\label{classGateObjectStore_aca50d4ef5309c34b9c84dfd076c2f457}} 
+const G4\+String \& {\bfseries Get\+Creator\+Name} (iterator iter)
+\begin{DoxyCompactList}\small\item\em Retrieves a creator name from a store-\/iterator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateObjectStore_ae37b90cf5e59b0dfabfe0b6a7a4a2f11}\label{classGateObjectStore_ae37b90cf5e59b0dfabfe0b6a7a4a2f11}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Get\+Creator} (iterator iter)
+\begin{DoxyCompactList}\small\item\em Retrieves a creator from a store-\/iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Stores the list of object creators\+: allows to retrieve creators/volumes. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (May 9 2002)
+\item The \mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} is a singleton. Its task is to provide tools for listing or retrieving object-\/creators
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateObjectStore_a868b491f637cbeb65f6f75ce8ac00b63}\label{classGateObjectStore_a868b491f637cbeb65f6f75ce8ac00b63}} 
+\index{GateObjectStore@{GateObjectStore}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GateObjectStore@{GateObjectStore}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} $\ast$ Gate\+Object\+Store\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} singleton. 
+
+\begin{DoxyVerb}If the GateObjectStore already exists, GetInstance only returns a pointer to this singleton.
+\end{DoxyVerb}
+ If this singleton does not exist yet, Get\+Instance creates it by calling the private \mbox{\hyperlink{classGateObjectStore}{Gate\+Object\+Store}} constructor 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Object\+Store.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Object\+Store.\+cc\end{DoxyCompactItemize}

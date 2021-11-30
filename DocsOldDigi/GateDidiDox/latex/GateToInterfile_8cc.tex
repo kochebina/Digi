@@ -1,0 +1,49 @@
+\hypertarget{GateToInterfile_8cc}{}\doxysection{/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/\+Gate\+To\+Interfile.cc File Reference}
+\label{GateToInterfile_8cc}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/src/GateToInterfile.cc@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/src/GateToInterfile.cc}}
+{\ttfamily \#include \char`\"{}Gate\+To\+Interfile.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+To\+Interfile\+Messenger.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}globals.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G4\+Run.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Output\+Mgr.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Tools.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+SPECTHead\+System.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+To\+Projection\+Set.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Projection\+Set.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Digitizer.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Thresholder.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Upholder.\+hh\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Log}
+\mbox{\hyperlink{GateToInterfile_8cc}{Gate\+To\+Interfile.\+cc}},v 
+\end{DoxyParagraph}
+
+
+Revision v6.\+2 2012/07/09 by \href{mailto:vesna.cuplov@gmail.com}{\texttt{ vesna.\+cuplov@gmail.\+com}} Fixed some text typos in the Write\+Gate\+Scanner\+Info()
+
+Revision 1.\+1.\+1.\+1.\+4.\+1 2011/03/10 16\+:32\+:35 henri Implemented multiple energy window interfile output
+
+Revision 1.\+1.\+1.\+1.\+4.\+2 2011/02/02 15\+:44\+:14 henri Corrected some keys
+
+Revision 1.\+1.\+1.\+1.\+4.\+1 2011/02/02 15\+:37\+:46 henri Added support for multiple energy windows
+
+Revision 1.\+8 2011/01/25 11\+:09\+:15 henri Maintenance update for some keys
+
+Revision 1.\+7 2010/12/10 18\+:26\+:31 henri Bug fix
+
+Revision 1.\+6 2010/12/07 16\+:46\+:00 henri Changed some keys
+
+Revision 1.\+5 2010/12/07 10\+:51\+:21 henri Commented the GATE specific part in the output interfile header.
+
+Revision 1.\+4 2010/12/06 13\+:25\+:47 henri Removed key \+: \char`\"{}camera zoom factor \+:= 1\char`\"{} in the produced interfile header (in file \mbox{\hyperlink{GateToInterfile_8cc}{Gate\+To\+Interfile.\+cc}}), because this key is not recognized in the i33 standard
+
+Revision 1.\+3 2010/12/01 17\+:11\+:23 henri Various bug fixes
+
+Revision 1.\+2 2010/11/30 17\+:58\+:52 henri Class \mbox{\hyperlink{classGateToInterfile}{Gate\+To\+Interfile}}
+
+Modifications in order to record more than 1 energy window (see class \mbox{\hyperlink{classGateProjectionSet}{Gate\+Projection\+Set}}, \mbox{\hyperlink{classGateToProjectionSet}{Gate\+To\+Projection\+Set}})
+
+Changes in \mbox{\hyperlink{GateToInterfile_8cc}{Gate\+To\+Interfile.\+cc}}$\ast$$\ast$ -\/\mbox{\hyperlink{classGateToInterfile_aa01d1199a179e6f41f47ca5a1902045d}{Gate\+To\+Interfile\+::\+Record\+End\+Of\+Run()}} \+: Added a loop to write the data for all energy window if ARF is not active Call to Gate\+Projection\+Set\+::\+Stream\+Out(ostream\&, size\+\_\+t energy\+Window, size\+\_\+t head) instead of Gate\+Projection\+Set\+::\+Stream\+Out(ostream\&, size\+\_\+t head) The frames are writen into the data file as it \+: ENERGY\+\_\+\+WINDOW HEAD CAMERA\+\_\+\+POSITION That means that the first subdivision is per energy window, then per head and finally each subdivision is composed by the projections
+
+-\/\mbox{\hyperlink{classGateToInterfile_a553cc7008cc08dc93b702d52c4eab393}{Gate\+To\+Interfile\+::\+Write\+General\+Info()}} \+: Changed some header info to be closer to the interfile 3.\+3 standard (for ex. \char`\"{}unsigned integer\char`\"{} instead of \char`\"{}\+UNSIGNED INTEGER\char`\"{}) Wrote the number of energy windows, and for all energy windows, check the bounds and record them Call to Get\+Max\+Counts(size\+\_\+t energy\+Window, size\+\_\+t head) instead of Get\+Max\+Counts(size\+\_\+t head) to write the header 

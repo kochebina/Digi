@@ -1,0 +1,428 @@
+\hypertarget{GateMessageManager_8hh_source}{}\doxysection{Gate\+Message\+Manager.\+hh}
+\label{GateMessageManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMessageManager.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMessageManager.hh}}
+\mbox{\hyperlink{GateMessageManager_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{62 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{71 \textcolor{comment}{}\textcolor{preprocessor}{\#ifndef \_\_GateMessageManager\_h\_INCLUDED\_\_}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define \_\_GateMessageManager\_h\_INCLUDED\_\_}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{75 \textcolor{comment}{// Remark :}}
+\DoxyCodeLine{76 \textcolor{comment}{// The do \{ \} while(0) statement in macros is made to "{}swallow the semicolon"{}}}
+\DoxyCodeLine{77 \textcolor{comment}{// see http://gcc.gnu.org/onlinedocs/cpp/Swallowing-\/the-\/Semicolon.html\#Swallowing-\/the-\/Semicolon}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#include "{}G4ExceptionHandler.hh"{}}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{// Uncomment out these symbols to force messages compilation}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define GATE\_COMPILE\_MESSAGES}}
+\DoxyCodeLine{88 \textcolor{comment}{//\#define GATE\_COMPILE\_DEBUG\_MESSAGES}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define GATE\_COMPILE\_WARNING\_MESSAGES}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define GATE\_COMPILE\_ERROR\_MESSAGES}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{// Uncomment next line if you want messages to be preprended}}
+\DoxyCodeLine{93 \textcolor{comment}{// by as many spaces as the message level}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define GATE\_PREPEND\_MESSAGE\_WITH\_SPACE}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define GATE\_PREPEND\_MESSAGE\_WITH\_TAB}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98 \textcolor{comment}{// Uncomment next line if you want messages to be preprended}}
+\DoxyCodeLine{99 \textcolor{comment}{// by the code of the type of message}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define GATE\_PREPEND\_MESSAGE\_WITH\_CODE}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define GATE\_PREPEND\_DEBUGMESSAGE\_WITH\_CODE}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{// Uncomment next line if you want messages to be preprended}}
+\DoxyCodeLine{104 \textcolor{comment}{// by the current tabulation stored in MessageManager}}
+\DoxyCodeLine{105 \textcolor{comment}{// Tabulation are increased/decreased by}}
+\DoxyCodeLine{106 \textcolor{comment}{// the macros which have 'Dec' or 'Inc' in their names}}
+\DoxyCodeLine{107 \textcolor{comment}{// Example :}}
+\DoxyCodeLine{108 \textcolor{comment}{// In a method X:}}
+\DoxyCodeLine{109 \textcolor{comment}{// X()}}
+\DoxyCodeLine{110 \textcolor{comment}{// \{}}
+\DoxyCodeLine{111 \textcolor{comment}{//   GateDebugMessageInc("{}Physics"{},3,"{}Begining of method X\(\backslash\)n"{});}}
+\DoxyCodeLine{112 \textcolor{comment}{//   ..}}
+\DoxyCodeLine{113 \textcolor{comment}{//   // This message will be tabulated with one more space}}
+\DoxyCodeLine{114 \textcolor{comment}{//   GateDebugMessage("{}Physics"{},5,"{}comment..."{});}}
+\DoxyCodeLine{115 \textcolor{comment}{//   ..}}
+\DoxyCodeLine{116 \textcolor{comment}{//   GateDebugMessageDec("{}Physics"{},3,"{}End of method X\(\backslash\)n"{});}}
+\DoxyCodeLine{117 \textcolor{comment}{// \}}}
+\DoxyCodeLine{118 \textcolor{comment}{// Gives :}}
+\DoxyCodeLine{119 \textcolor{comment}{// Begining of method X}}
+\DoxyCodeLine{120 \textcolor{comment}{//  comment}}
+\DoxyCodeLine{121 \textcolor{comment}{// End of method X}}
+\DoxyCodeLine{122 \textcolor{comment}{//}}
+\DoxyCodeLine{123 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define GateOnMessageLevel(key,value)           \(\backslash\)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{  int \_\_GateOnMessageLevelVariable =            \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{    GateMessageManager::GetMessageLevel(key);       \(\backslash\)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{  if ( \_\_GateOnMessageLevelVariable<0)          \(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{    \{                           \(\backslash\)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{      GateWarning("{}message type '"{}}<<key<<"{}' unknown"{});  \(\backslash\)}
+\DoxyCodeLine{132     \}                           \(\backslash\)}
+\DoxyCodeLine{133   else if (value<= \_\_GateOnMessageLevelVariable)}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#ifdef GATE\_PREPEND\_MESSAGE\_WITH\_CODE}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define GateMessageCode(key, value)         \(\backslash\)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{  "{}["{}} << key << "{}-\/"{} << value << "{}] "{}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define GateMessageCode(key, value) "{}"{}}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#ifdef GATE\_PREPEND\_DEBUGMESSAGE\_WITH\_CODE}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define GateDebugMessageCode(key, value)            \(\backslash\)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{  "{}[Debug-\/"{}} << key << "{}-\/"{} << value << "{}] "{}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define GateDebugMessageCode(key, value) "{}"{}}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#ifdef GATE\_PREPEND\_MESSAGE\_WITH\_TAB}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define GateMessageTab              \(\backslash\)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{  GateMessageManager::GetTab()}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define GateMessageTab "{}"{}}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#ifdef GATE\_PREPEND\_MESSAGE\_WITH\_SPACE}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define GateMessageSpace(value)         \(\backslash\)}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{  GateMessageManager::GetSpace(value)}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define GateMessageSpace(value) "{}"{}}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#ifdef GATE\_COMPILE\_MESSAGES}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{171 \textcolor{comment}{// Macro for messages}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define GateMessage(key,value,MESSAGE)      \(\backslash\)}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{  do \{                      \(\backslash\)}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{    GateOnMessageLevel(key,value)       \(\backslash\)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{      \{                     \(\backslash\)}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{    std::cout << GateMessageCode(key,value) \(\backslash\)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{          << GateMessageSpace(value)    \(\backslash\)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{          << MESSAGE;           \(\backslash\)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{      \}                     \(\backslash\)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{  \}                     \(\backslash\)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{184 \textcolor{comment}{// Macro for continuing a message (when one wants to split the macro}}
+\DoxyCodeLine{185 \textcolor{comment}{// call into multiple lines)}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define GateMessageCont(key,value,MESSAGE)  \(\backslash\)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{      std::cout << MESSAGE;         \(\backslash\)}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define GateMessageInc(key,value,MESSAGE)   \(\backslash\)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{      std::cout << GateMessageCode(key,value)   \(\backslash\)}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{            << GateMessageSpace(value)  \(\backslash\)}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{            << MESSAGE;         \(\backslash\)}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{      GateMessageManager::IncTab();     \(\backslash\)}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define GateMessageDec(key,value,MESSAGE)   \(\backslash\)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{      GateMessageManager::DecTab();     \(\backslash\)}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{      std::cout << GateMessageCode(key,value)   \(\backslash\)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{            << GateMessageSpace(value)  \(\backslash\)}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{            << MESSAGE;         \(\backslash\)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define GateDecTab(key,value)           \(\backslash\)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{      GateMessageManager::DecTab();     \(\backslash\)}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define GateIncTab(key,value)           \(\backslash\)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{      GateMessageManager::IncTab();     \(\backslash\)}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define GateResetTab()              \(\backslash\)}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{      GateMessageManager::ResetTab();       \(\backslash\)}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define GateMessage(key,value,MESSAGE)}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define GateMessageInc(key,value,MESSAGE)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define GateMessageDec(key,value,MESSAGE)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define GateMessageCont(key,value,MESSAGE)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define GateDecTab(key,value)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define GateIncTab(key,value)}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define GateResetTab()}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{258 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#ifdef GATE\_COMPILE\_DEBUG\_MESSAGES}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{264 \textcolor{comment}{// Macro for debug messages}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define GateDebugMessage(key,value,MESSAGE)     \(\backslash\)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{  do                            \(\backslash\)}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{    \{                           \(\backslash\)}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)         \(\backslash\)}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{      std::cout << GateDebugMessageCode(key,value)  \(\backslash\)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{            << GateMessageSpace(value)      \(\backslash\)}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{            << MESSAGE;             \(\backslash\)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{    \}                           \(\backslash\)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{278 \textcolor{comment}{// Macro for continuing a debug message (when one wants to split the}}
+\DoxyCodeLine{279 \textcolor{comment}{// macro call into multiple lines)}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define GateDebugMessageCont(key,value,MESSAGE) \(\backslash\)}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{      std::cout << MESSAGE;         \(\backslash\)}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define GateDebugMessageInc(key,value,MESSAGE)  \(\backslash\)}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{      std::cout << GateDebugMessageCode(key,value)  \(\backslash\)}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{            << GateMessageSpace(value)  \(\backslash\)}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{            << MESSAGE;         \(\backslash\)}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{      GateMessageManager::IncTab();     \(\backslash\)}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define GateDebugMessageDec(key,value,MESSAGE)  \(\backslash\)}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{      GateMessageManager::DecTab();     \(\backslash\)}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{      std::cout << GateDebugMessageCode(key,value)  \(\backslash\)}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{            << GateMessageSpace(value)  \(\backslash\)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{            << MESSAGE;         \(\backslash\)}}
+\DoxyCodeLine{312 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define GateDebugDecTab(key,value)      \(\backslash\)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{      GateMessageManager::DecTab();     \(\backslash\)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define GateDebugIncTab(key,value)      \(\backslash\)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{      GateOnMessageLevel(key,value)     \(\backslash\)}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{    \{                   \(\backslash\)}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{      GateMessageManager::IncTab();     \(\backslash\)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{    \}                   \(\backslash\)}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{334 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#define GateDebugResetTab()         \(\backslash\)}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{      GateMessageManager::ResetTab();       \(\backslash\)}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{    \}                       \(\backslash\)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{  while (0)}}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define GateDebugMessage(key,value,MESSAGE)}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define GateDebugMessageCont(key,value,MESSAGE)}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define GateDebugMessageInc(key,value,MESSAGE)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define GateDebugMessageDec(key,value,MESSAGE)}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define GateDebugDecTab(key,value)}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define GateDebugIncTab(key,value)}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{351 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#ifdef GATE\_COMPILE\_WARNING\_MESSAGES}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{357 \textcolor{comment}{// Macro for warning messages}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define GateWarning(MESSAGE)                        \(\backslash\)}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{  do                                    \(\backslash\)}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{    \{                                   \(\backslash\)}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{      int lev = GateMessageManager::GetMessageLevel("{}Warning"{}});     \(\backslash\)}
+\DoxyCodeLine{362       if (lev >0)                           \(\backslash\)}
+\DoxyCodeLine{363     \{                               \(\backslash\)}
+\DoxyCodeLine{364       std::cout << "{} <!> *** WARNING *** <!>  "{} << MESSAGE << Gateendl; \(\backslash\)}
+\DoxyCodeLine{365       if (lev >1)                           \(\backslash\)}
+\DoxyCodeLine{366         \{                               \(\backslash\)}
+\DoxyCodeLine{367           std::cout << "{} <!> *** WARNING *** <!>  In file '"{}<<\_\_FILE\_\_ \(\backslash\)}
+\DoxyCodeLine{368             <<"{}' ; Line "{}<<\_\_LINE\_\_<< Gateendl;     \(\backslash\)}
+\DoxyCodeLine{369         \}                               \(\backslash\)}
+\DoxyCodeLine{370     \}                               \(\backslash\)}
+\DoxyCodeLine{371     \}                                   \(\backslash\)}
+\DoxyCodeLine{372   while (0)}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define GateWarning(MESSAGE)}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{377 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 \textcolor{comment}{// LG : TO DO : DEFINE GATE\_GET\_CURRENT\_OBJECT\_NAME correctly}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define GATE\_GET\_CURRENT\_OBJECT\_NAME "{}Gate"{}}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#ifdef GATE\_COMPILE\_ERROR\_MESSAGES}}
+\DoxyCodeLine{384 \textcolor{comment}{// Macro for errors occuring within an object}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define \_\_SHORT\_FILE\_\_ (strrchr(\_\_FILE\_\_, '/') ? strrchr(\_\_FILE\_\_, '/') + 1 : \_\_FILE\_\_)}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define GateError(MESSAGE)          \(\backslash\)}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{      std::ostringstream s\_;            \(\backslash\)}}
+\DoxyCodeLine{390 \textcolor{preprocessor}{      s\_ << MESSAGE;                \(\backslash\)}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{      std::ostringstream f\_;            \(\backslash\)}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{      f\_ << \_\_SHORT\_FILE\_\_ << "{} (l."{}}<<\_\_LINE\_\_<<"{}): "{};\(\backslash\)}
+\DoxyCodeLine{393       G4String str\_f = f\_.str();        \(\backslash\)}
+\DoxyCodeLine{394       G4String str\_s = s\_.str();        \(\backslash\)}
+\DoxyCodeLine{395       std::cout << str\_f << str\_s << Gateendl; \(\backslash\)}
+\DoxyCodeLine{396       exit(-\/1);                 \(\backslash\)}
+\DoxyCodeLine{397       G4Exception(str\_f,str\_s,          \(\backslash\)}
+\DoxyCodeLine{398           FatalException,"{} "{});      \(\backslash\)}
+\DoxyCodeLine{399     \}                       \(\backslash\)}
+\DoxyCodeLine{400   while (0)}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{403 \textcolor{comment}{// Macro for errors occuring at global scope (or in static methods)}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define GateGlobalError(MESSAGE)        \(\backslash\)}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{  do                        \(\backslash\)}}
+\DoxyCodeLine{406 \textcolor{preprocessor}{    \{                       \(\backslash\)}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{      std::ostringstream s;         \(\backslash\)}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{      s << MESSAGE;             \(\backslash\)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{      std::ostringstream f;         \(\backslash\)}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{      f << \_\_SHORT\_FILE\_\_ << "{} (l."{}}<<\_\_LINE\_\_<<"{})"{}; \(\backslash\)}
+\DoxyCodeLine{411       G4String str\_f = f.str();         \(\backslash\)}
+\DoxyCodeLine{412       G4String str\_s = s.str();         \(\backslash\)}
+\DoxyCodeLine{413       G4Exception(str\_f,str\_s,          \(\backslash\)}
+\DoxyCodeLine{414           FatalException,"{} "{});      \(\backslash\)}
+\DoxyCodeLine{415     \}                       \(\backslash\)}
+\DoxyCodeLine{416   while (0)}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define GateError(MESSAGE)}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{421 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define Gateendl std::endl}}
+\DoxyCodeLine{425 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define DD(a) GateMessage("{}Core"{}}, 0 , \#a "{} = [ "{} << a << "{} ]\(\backslash\)n"{});}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define DDV(a,n) \{ GateMessage("{}Core"{}}, 0 , \#a "{} = [ "{}; for(unsigned int \_i\_=0; \_i\_<n; \_i\_++) \{ std::cout << a[\_i\_] << "{} "{}; \}; std::cout << "{} ]\(\backslash\)n"{});\}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define DDF() \{ std::cout << "{}-\/-\/> Function "{}} << \_\_func\_\_ << std::endl; \}}
+\DoxyCodeLine{431 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{433 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#include "{}GateMessageMessenger.hh"{}}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#include "{}G4UIsession.hh"{}}}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{438 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMessageManager}{GateMessageManager}} : \textcolor{keyword}{public} G4UIsession}
+\DoxyCodeLine{439 \{}
+\DoxyCodeLine{440 \textcolor{keyword}{public}:}
+\DoxyCodeLine{441   \mbox{\hyperlink{classGateMessageManager}{GateMessageManager}}();}
+\DoxyCodeLine{442   \mbox{\hyperlink{classGateMessageManager}{\string~GateMessageManager}}()\{\}}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444   \textcolor{keyword}{static} \mbox{\hyperlink{classGateMessageManager}{GateMessageManager}}* GetInstance();}
+\DoxyCodeLine{445   \textcolor{keyword}{static} \textcolor{keywordtype}{void} RegisterMessageType(std::string key,}
+\DoxyCodeLine{446                   std::string help,}
+\DoxyCodeLine{447                   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} default\_level = 9);}
+\DoxyCodeLine{448   \textcolor{keyword}{static} \textcolor{keywordtype}{void} SetMessageLevel(std::string key, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} level);}
+\DoxyCodeLine{449   \textcolor{keyword}{static} \textcolor{keywordtype}{int} GetMessageLevel(std::string key);}
+\DoxyCodeLine{450   \textcolor{keyword}{static} std::string\& GetTab() \{ \textcolor{keyword}{static} std::string s; \textcolor{keywordflow}{return} s; \}}
+\DoxyCodeLine{451   \textcolor{keyword}{static} std::string GetSpace(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{452   \textcolor{keyword}{static} \textcolor{keywordtype}{void} IncTab() \{ GetTab() += std::string(\textcolor{stringliteral}{"{}   "{}}); \}}
+\DoxyCodeLine{453   \textcolor{keyword}{static} \textcolor{keywordtype}{void} DecTab() \{ GetTab() = GetTab().substr(0,GetTab().length()-\/3); \}}
+\DoxyCodeLine{454   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ResetTab() \{ GetTab() = std::string(\textcolor{stringliteral}{"{}"{}}); \}}
+\DoxyCodeLine{455   \textcolor{keyword}{static} \textcolor{keywordtype}{void} PrintInfo();}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457   \textcolor{comment}{// the two follwing are overrided from G4UIsession to intercept}}
+\DoxyCodeLine{458   \textcolor{comment}{// all G4cout. In the main :}}
+\DoxyCodeLine{459   \textcolor{comment}{// G4UImanager::GetUIpointer()-\/>SetCoutDestination(new GateMessageManager);}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{  \#ifdef Geant496\_COMPATIBILITY}}
+\DoxyCodeLine{461     \textcolor{keyword}{virtual} G4int ReceiveG4cout(\textcolor{keyword}{const} G4String\& s);}
+\DoxyCodeLine{462     \textcolor{keyword}{virtual} G4int ReceiveG4cerr(\textcolor{keyword}{const} G4String\& s);}
+\DoxyCodeLine{463 \textcolor{preprocessor}{  \#else}}
+\DoxyCodeLine{464     \textcolor{keyword}{virtual} G4int ReceiveG4cout(G4String s);}
+\DoxyCodeLine{465     \textcolor{keyword}{virtual} G4int ReceiveG4cerr(G4String s);}
+\DoxyCodeLine{466 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468   \textcolor{keywordtype}{void} EnableG4Messages(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{471   \mbox{\hyperlink{classGateMessageMessenger}{GateMessageMessenger}} *pMessenger;}
+\DoxyCodeLine{472   std::map<std::string,int> mMessageLevel;}
+\DoxyCodeLine{473   std::map<std::string,std::string> mMessageHelp;}
+\DoxyCodeLine{474   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mMaxMessageLength;}
+\DoxyCodeLine{475   \textcolor{keywordtype}{int} mAllLevel;}
+\DoxyCodeLine{476   \textcolor{keywordtype}{int} mEnableG4Message;}
+\DoxyCodeLine{477 \};}
+\DoxyCodeLine{478 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{comment}{//\#include "{}GateException.hh"{}}}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

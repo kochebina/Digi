@@ -1,0 +1,87 @@
+\hypertarget{GateCCSinglesFileReader_8hh_source}{}\doxysection{Gate\+CCSingles\+File\+Reader.\+hh}
+\label{GateCCSinglesFileReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCSinglesFileReader.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCSinglesFileReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateCSinglesFileReader\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateCCSinglesFileReader\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <TROOT.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <TFile.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <TTree.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateCCRootDefs.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }GateCCSinglesFileReader }
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{static} GateCCSinglesFileReader* GetInstance(G4String filen);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \string~GateCCSinglesFileReader();       }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{private}:}
+\DoxyCodeLine{31   GateCCSinglesFileReader(G4String file);        }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} PrepareAcquisition();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37  }
+\DoxyCodeLine{38   G4bool HasNextEvent();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40  G4int PrepareNextEvent();}
+\DoxyCodeLine{43   \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* PrepareEndOfEvent();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} TerminateAfterAcquisition();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51   \textcolor{keyword}{const}  G4String\& GetFileName()             \{ \textcolor{keywordflow}{return} m\_fileName; \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Describe(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} LoadSinglesData();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   G4String            m\_fileName;             }
+\DoxyCodeLine{68   G4String             m\_filePath;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   TFile*              m\_singlesFile;              }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   TTree*              m\_singlesTree;              }
+\DoxyCodeLine{74   Stat\_t              m\_entries;              }
+\DoxyCodeLine{75   G4int               m\_currentEntry;         }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \mbox{\hyperlink{classGateCCRootSingleBuffer}{GateCCRootSingleBuffer}}       m\_singleBuffer;              }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   std::queue<GatePulse*> m\_singleQueue;   }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* pList; \textcolor{comment}{//}}
+\DoxyCodeLine{90   }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{keyword}{private}:}
+\DoxyCodeLine{93   \textcolor{keyword}{static} GateCCSinglesFileReader*   instance;       }
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

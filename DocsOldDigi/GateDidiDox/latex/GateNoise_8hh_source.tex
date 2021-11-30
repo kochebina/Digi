@@ -1,0 +1,59 @@
+\hypertarget{GateNoise_8hh_source}{}\doxysection{Gate\+Noise.\+hh}
+\label{GateNoise_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateNoise.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateNoise.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateNoise\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateNoise\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNoiseMessenger}{GateNoiseMessenger}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNoise}{GateNoise}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \mbox{\hyperlink{classGateNoise}{GateNoise}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{27          \textcolor{keyword}{const} G4String\& itsName=theTypeName) ;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateNoise_acc47951e284aabcd3202883e3fe102b9}{\string~GateNoise}}() ;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNoise_a9fbf7026538cfc4c183de10fd5477f60}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} SetEnergyDistribution(\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* energyDistrib) \{m\_energyDistrib=energyDistrib;\}}
+\DoxyCodeLine{37     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* GetEnergyDistribution()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_energyDistrib;\}}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} SetDeltaTDistribution(\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* deltaTDistrib) \{m\_deltaTDistrib=deltaTDistrib;\}}
+\DoxyCodeLine{39     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* GetDeltaTDistribution()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_deltaTDistrib;\}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateNoise_ae9e7166677f4b3797ac5d4e7a381613d}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNoise_a1d9f773f99e4a1fe1fe3aae56a4ace3d}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{49   \textcolor{keyword}{private}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* m\_deltaTDistrib;  }
+\DoxyCodeLine{51     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* m\_energyDistrib;  }
+\DoxyCodeLine{52     \mbox{\hyperlink{classGatePulseList}{GatePulseList}} m\_createdPulses;       }
+\DoxyCodeLine{53     \mbox{\hyperlink{classGateNoiseMessenger}{GateNoiseMessenger}} *m\_messenger;     }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keyword}{static} \textcolor{keyword}{const} G4String\& theTypeName;  }
+\DoxyCodeLine{56     G4double    m\_oldTime;                   }
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

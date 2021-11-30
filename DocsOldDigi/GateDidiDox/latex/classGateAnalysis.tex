@@ -1,0 +1,167 @@
+\hypertarget{classGateAnalysis}{}\doxysection{Gate\+Analysis Class Reference}
+\label{classGateAnalysis}\index{GateAnalysis@{GateAnalysis}}
+Inheritance diagram for Gate\+Analysis\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateAnalysis}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateAnalysis_a5c5e198515f6c1245d831917398fe826}\label{classGateAnalysis_a5c5e198515f6c1245d831917398fe826}} 
+{\bfseries Gate\+Analysis} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, Digi\+Mode digi\+Mode)
+\item 
+const G4\+String \& \mbox{\hyperlink{classGateAnalysis_a7bfd9bcc4b1090a967667436acea3b84}{Give\+Name\+Of\+File}} ()
+\item 
+void \mbox{\hyperlink{classGateAnalysis_a935b952b04e96c810316ca32162329c9}{Record\+Begin\+Of\+Acquisition}} ()
+\item 
+void \mbox{\hyperlink{classGateAnalysis_a34ce0c54b4a3a72b472151ba69352ab9}{Record\+End\+Of\+Acquisition}} ()
+\item 
+void \mbox{\hyperlink{classGateAnalysis_ae622a85b0dcacf497c06a84117adf3bf}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)
+\item 
+void \mbox{\hyperlink{classGateAnalysis_a050799ac7c1fa8ca1959c37fac5b150b}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)
+\item 
+void \mbox{\hyperlink{classGateAnalysis_a60e3ae1a5817a8ecfba276f241ad24f7}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)
+\item 
+void \mbox{\hyperlink{classGateAnalysis_a174ab7416ba82159fb527f66c76acfdc}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Here we do the first analysis of the events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateAnalysis_a8127a36ca6f477385e561f8c22a752e2}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$v, const G4\+Step $\ast$)
+\item 
+void \mbox{\hyperlink{classGateAnalysis_a32ca225001a56bc1670168eff357a70f}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)
+\begin{DoxyCompactList}\small\item\em saves the geometry voxel information \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateAnalysis_a55b04a6aa856c402fd912292843db508}{Set\+Verbose\+Level}} (G4int val)
+\item 
+\mbox{\Hypertarget{classGateAnalysis_a56a402b078a1eca83855259fa892bec6}\label{classGateAnalysis_a56a402b078a1eca83855259fa892bec6}} 
+const G4\+String \& {\bfseries Get\+Septal\+Phys\+Volume\+Name} () const
+\item 
+\mbox{\Hypertarget{classGateAnalysis_ae9ae9560dc1fa73321f22df786d05a46}\label{classGateAnalysis_ae9ae9560dc1fa73321f22df786d05a46}} 
+G4bool {\bfseries Get\+Record\+Septal\+Flag} () const
+\item 
+\mbox{\Hypertarget{classGateAnalysis_af8f07ff1d598dd26ffd006f0f4d611d7}\label{classGateAnalysis_af8f07ff1d598dd26ffd006f0f4d611d7}} 
+void {\bfseries Set\+Septal\+Phys\+Volume\+Name} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGateAnalysis_aa328da6f4207ebd5f82bbec2edc54495}\label{classGateAnalysis_aa328da6f4207ebd5f82bbec2edc54495}} 
+void {\bfseries Set\+Record\+Septal\+Flag} (G4bool flag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateAnalysis_a7bfd9bcc4b1090a967667436acea3b84}\label{classGateAnalysis_a7bfd9bcc4b1090a967667436acea3b84}} 
+\index{GateAnalysis@{GateAnalysis}!GiveNameOfFile@{GiveNameOfFile}}
+\index{GiveNameOfFile@{GiveNameOfFile}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{GiveNameOfFile()}{GiveNameOfFile()}}
+{\footnotesize\ttfamily const G4\+String \& Gate\+Analysis\+::\+Give\+Name\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a935b952b04e96c810316ca32162329c9}\label{classGateAnalysis_a935b952b04e96c810316ca32162329c9}} 
+\index{GateAnalysis@{GateAnalysis}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a60e3ae1a5817a8ecfba276f241ad24f7}\label{classGateAnalysis_a60e3ae1a5817a8ecfba276f241ad24f7}} 
+\index{GateAnalysis@{GateAnalysis}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_ae622a85b0dcacf497c06a84117adf3bf}\label{classGateAnalysis_ae622a85b0dcacf497c06a84117adf3bf}} 
+\index{GateAnalysis@{GateAnalysis}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a34ce0c54b4a3a72b472151ba69352ab9}\label{classGateAnalysis_a34ce0c54b4a3a72b472151ba69352ab9}} 
+\index{GateAnalysis@{GateAnalysis}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a174ab7416ba82159fb527f66c76acfdc}\label{classGateAnalysis_a174ab7416ba82159fb527f66c76acfdc}} 
+\index{GateAnalysis@{GateAnalysis}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Here we do the first analysis of the events. 
+
+It reconstruct the tree of the trajectories with the \mbox{\hyperlink{classGateTrajectoryNavigator}{Gate\+Trajectory\+Navigator}} and completes the hits information with global event info like the ID of the photon that generated the hit, or the number of compton diffusions of this photon. The source ID and source position are also retrieved and stored in the hits \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateTrajectoryNavigator}{Gate\+Trajectory\+Navigator}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a050799ac7c1fa8ca1959c37fac5b150b}\label{classGateAnalysis_a050799ac7c1fa8ca1959c37fac5b150b}} 
+\index{GateAnalysis@{GateAnalysis}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a8127a36ca6f477385e561f8c22a752e2}\label{classGateAnalysis_a8127a36ca6f477385e561f8c22a752e2}} 
+\index{GateAnalysis@{GateAnalysis}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a32ca225001a56bc1670168eff357a70f}\label{classGateAnalysis_a32ca225001a56bc1670168eff357a70f}} 
+\index{GateAnalysis@{GateAnalysis}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+saves the geometry voxel information 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateAnalysis_a55b04a6aa856c402fd912292843db508}\label{classGateAnalysis_a55b04a6aa856c402fd912292843db508}} 
+\index{GateAnalysis@{GateAnalysis}!SetVerboseLevel@{SetVerboseLevel}}
+\index{SetVerboseLevel@{SetVerboseLevel}!GateAnalysis@{GateAnalysis}}
+\doxysubsubsection{\texorpdfstring{SetVerboseLevel()}{SetVerboseLevel()}}
+{\footnotesize\ttfamily void Gate\+Analysis\+::\+Set\+Verbose\+Level (\begin{DoxyParamCaption}\item[{G4int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Analysis.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Analysis.\+cc\end{DoxyCompactItemize}

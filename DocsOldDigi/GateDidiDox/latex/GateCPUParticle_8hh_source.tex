@@ -1,0 +1,40 @@
+\hypertarget{GateCPUParticle_8hh_source}{}\doxysection{Gate\+CPUParticle.\+hh}
+\label{GateCPUParticle_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCPUParticle.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCPUParticle.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATECPUPARTICLE\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATECPUPARTICLE\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{struct }\mbox{\hyperlink{structGateCPUParticle}{GateCPUParticle}} \{}
+\DoxyCodeLine{14     \textcolor{keywordtype}{float}          *E;  \textcolor{comment}{// MeV}}
+\DoxyCodeLine{15     \textcolor{keywordtype}{float}          *dx; \textcolor{comment}{// direction (unary)}}
+\DoxyCodeLine{16     \textcolor{keywordtype}{float}          *dy; \textcolor{comment}{// direction (unary)}}
+\DoxyCodeLine{17     \textcolor{keywordtype}{float}          *dz; \textcolor{comment}{// direction (unary)}}
+\DoxyCodeLine{18     \textcolor{keywordtype}{float}          *px; \textcolor{comment}{// mm position}}
+\DoxyCodeLine{19     \textcolor{keywordtype}{float}          *py; \textcolor{comment}{// mm position}}
+\DoxyCodeLine{20     \textcolor{keywordtype}{float}          *pz; \textcolor{comment}{// mm position}}
+\DoxyCodeLine{21     \textcolor{keywordtype}{float}          *t;  \textcolor{comment}{// ns time}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int}            *parentID; \textcolor{comment}{// parent ID of the particle}}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int}            *eventID; \textcolor{comment}{// event ID of the particle}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int}            *trackID; \textcolor{comment}{// track ID of the particle}}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int}            *type; \textcolor{comment}{// gamma = 0 ; e-\/ = 1}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{float}          *hole;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}    size;}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \mbox{\hyperlink{structGateCPUParticle}{GateCPUParticle}}* GateCPUParticle\_new( \textcolor{keywordtype}{int} bufferParticleEntry );}
+\DoxyCodeLine{31 \textcolor{keywordtype}{void} GateCPUParticle\_delete( \mbox{\hyperlink{structGateCPUParticle}{GateCPUParticle}} *input );}
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} GateCPUParticle\_Print( \mbox{\hyperlink{structGateCPUParticle}{GateCPUParticle}} \textcolor{keyword}{const}* p, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} );}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

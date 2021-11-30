@@ -1,0 +1,46 @@
+\hypertarget{GateWedgeMessenger_8hh_source}{}\doxysection{Gate\+Wedge\+Messenger.\+hh}
+\label{GateWedgeMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateWedgeMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateWedgeMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateWedgeMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateWedgeMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWedge}{GateWedge}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWedgeMessenger}{GateWedgeMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateWedgeMessenger}{GateWedgeMessenger}}(\mbox{\hyperlink{classGateWedge}{GateWedge}}* itsCreator);}
+\DoxyCodeLine{25    \mbox{\hyperlink{classGateWedgeMessenger}{\string~GateWedgeMessenger}}();}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateWedge}{GateWedge}}* GetWedgeCreator() }
+\DoxyCodeLine{30       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateWedge}{GateWedge}}*)GetVolumeCreator(); \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{private}:}
+\DoxyCodeLine{33    G4UIcmdWithADoubleAndUnit* WedgeXLengthCmd;}
+\DoxyCodeLine{34    G4UIcmdWithADoubleAndUnit* WedgeNarrowerXLengthCmd;}
+\DoxyCodeLine{35    G4UIcmdWithADoubleAndUnit* WedgeYLengthCmd;}
+\DoxyCodeLine{36    G4UIcmdWithADoubleAndUnit* WedgeZLengthCmd;}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+
+\end{DoxyCode}

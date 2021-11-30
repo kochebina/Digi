@@ -1,0 +1,172 @@
+\hypertarget{classGateMDBFieldReader}{}\doxysection{Gate\+MDBField\+Reader Class Reference}
+\label{classGateMDBFieldReader}\index{GateMDBFieldReader@{GateMDBFieldReader}}
+Inheritance diagram for Gate\+MDBField\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateMDBFieldReader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a817d7a874d85f42e48a4316338cb4585}\label{classGateMDBFieldReader_a817d7a874d85f42e48a4316338cb4585}} 
+enum {\bfseries Element\+Type} \{ {\bfseries elementtype\+\_\+error}
+, {\bfseries elementtype\+\_\+scratch}
+, {\bfseries elementtype\+\_\+compound}
+ \}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a66730b6d1f81e1412a4224caf7a11e3a}\label{classGateMDBFieldReader_a66730b6d1f81e1412a4224caf7a11e3a}} 
+enum {\bfseries Material\+Type} \{ {\bfseries materialtype\+\_\+error}
+, {\bfseries materialtype\+\_\+scratch}
+, {\bfseries materialtype\+\_\+compound}
+ \}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a9f6ddbf97facbd2147fc3f0955cf798b}\label{classGateMDBFieldReader_a9f6ddbf97facbd2147fc3f0955cf798b}} 
+enum {\bfseries Component\+Type} \{ {\bfseries componenttype\+\_\+error}
+, {\bfseries componenttype\+\_\+elem}
+, {\bfseries componenttype\+\_\+mat}
+, {\bfseries componenttype\+\_\+iso}
+ \}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a7afb24f5e9319724a1769cb990a5c815}\label{classGateMDBFieldReader_a7afb24f5e9319724a1769cb990a5c815}} 
+enum {\bfseries Elem\+Component\+Type} \{ {\bfseries elemcomponent\+\_\+error}
+, {\bfseries elemcomponent\+\_\+by\+NAtoms}
+, {\bfseries elemcomponent\+\_\+by\+Fraction}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a500b17fb1063ee52ebb174dae5366011}\label{classGateMDBFieldReader_a500b17fb1063ee52ebb174dae5366011}} 
+Prefix\+Code {\bfseries Read\+Material\+Option\+Prefix} (const G4\+String \&material\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a38e33e2688c8a68a291c656b667bb010}\label{classGateMDBFieldReader_a38e33e2688c8a68a291c656b667bb010}} 
+Elem\+Component\+Type {\bfseries Evaluate\+Elem\+Component\+Type} (const G4\+String \&material\+Name, const G4\+String \&field, const G4\+String \&component\+Ordinal)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_aecb81d6f3895eeb1a9f2d9087ee0eee4}\label{classGateMDBFieldReader_aecb81d6f3895eeb1a9f2d9087ee0eee4}} 
+Component\+Type {\bfseries Evaluate\+Component\+Type} (const G4\+String \&material\+Name, G4\+String field, const G4\+String \&component\+Ordinal)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a742baf41aa6b2604159af01a564d9b72}\label{classGateMDBFieldReader_a742baf41aa6b2604159af01a564d9b72}} 
+Element\+Type {\bfseries Evaluate\+Element\+Type} (const G4\+String \&element\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ab6b92b830af48140445562afa7443a48}\label{classGateMDBFieldReader_ab6b92b830af48140445562afa7443a48}} 
+Material\+Type {\bfseries Evaluate\+Material\+Type} (const G4\+String \&material\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a51405161432c1e2eed2f890a1a9c86b7}\label{classGateMDBFieldReader_a51405161432c1e2eed2f890a1a9c86b7}} 
+G4\+String {\bfseries Read\+Element\+Symbol} (const G4\+String \&element\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a6aae83e97a971bc4072e47267e0116f5}\label{classGateMDBFieldReader_a6aae83e97a971bc4072e47267e0116f5}} 
+G4double {\bfseries Read\+Atomic\+Number} (const G4\+String \&element\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a380534f1d62cffb778a870e12af542e6}\label{classGateMDBFieldReader_a380534f1d62cffb778a870e12af542e6}} 
+G4double {\bfseries Read\+Nucleon\+Number} (const G4\+String \&element\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_af9988a8587957d9a7b14effc96c9ecff}\label{classGateMDBFieldReader_af9988a8587957d9a7b14effc96c9ecff}} 
+G4double {\bfseries Read\+Molar\+Mass} (const G4\+String \&element\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a29549e2a7e7405e7320bf6ee003e876d}\label{classGateMDBFieldReader_a29549e2a7e7405e7320bf6ee003e876d}} 
+G4double {\bfseries Read\+Density} (const G4\+String \&material\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a723d5d1f3773c8f9101afe988a6bb7fe}\label{classGateMDBFieldReader_a723d5d1f3773c8f9101afe988a6bb7fe}} 
+G4\+State {\bfseries Read\+Material\+State} (const G4\+String \&material\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a3a5d6663d3b1a70eecbd36079eb5e83f}\label{classGateMDBFieldReader_a3a5d6663d3b1a70eecbd36079eb5e83f}} 
+G4double {\bfseries Read\+Material\+Temp} (const G4\+String \&material\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_acc5cae83fc41d0ace59ad222f3d9b36f}\label{classGateMDBFieldReader_acc5cae83fc41d0ace59ad222f3d9b36f}} 
+G4double {\bfseries Read\+Material\+Pressure} (const G4\+String \&material\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a36fa56ccdf6f43ac9a8d30ec5b095b97}\label{classGateMDBFieldReader_a36fa56ccdf6f43ac9a8d30ec5b095b97}} 
+G4int {\bfseries Read\+Number\+Of\+Components} (const G4\+String \&material\+Name, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a94dcd09b3cbbe5df234425dd0f32c077}\label{classGateMDBFieldReader_a94dcd09b3cbbe5df234425dd0f32c077}} 
+G4\+String {\bfseries Read\+Component\+Name} (const G4\+String \&component\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ab88cb958be410722635b3ee1aeb72f93}\label{classGateMDBFieldReader_ab88cb958be410722635b3ee1aeb72f93}} 
+G4int {\bfseries Read\+Component\+NAtoms} (const G4\+String \&component\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ab51ee23204e59ab915e2770e388afa1e}\label{classGateMDBFieldReader_ab51ee23204e59ab915e2770e388afa1e}} 
+G4double {\bfseries Read\+Component\+Fraction} (const G4\+String \&component\+Name, const G4\+String \&component\+Ordinal, const G4\+String \&field)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a7542c83e6f9f2e67273e60c31791488c}\label{classGateMDBFieldReader_a7542c83e6f9f2e67273e60c31791488c}} 
+G4\+String {\bfseries Create\+Ordinal\+String} (G4int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a133c34bd6da9ffe78a93f7c7fc7c4241}\label{classGateMDBFieldReader_a133c34bd6da9ffe78a93f7c7fc7c4241}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Symbol\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+SYMBOLPREFIX,the\+Symbol\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ae4ffb9cca7fdcb87b7e68ac3e8003497}\label{classGateMDBFieldReader_ae4ffb9cca7fdcb87b7e68ac3e8003497}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Atomic\+Number\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+ATOMICNUMBERPREFIX,the\+Atomic\+Number\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_af5a2dc561a7a6d0f467e03dad03012fb}\label{classGateMDBFieldReader_af5a2dc561a7a6d0f467e03dad03012fb}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Nucleon\+Number\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+NUCLEONNUMBERPREFIX,the\+Nucleon\+Number\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a24855d0a0227d0f576c6e495776bf27a}\label{classGateMDBFieldReader_a24855d0a0227d0f576c6e495776bf27a}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Molar\+Mass\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+MOLARMASSPREFIX,the\+Molar\+Mass\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_af52f953bd3a6b1c75fce27455ab97e40}\label{classGateMDBFieldReader_af52f953bd3a6b1c75fce27455ab97e40}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Density\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+DENSITYPREFIX,the\+Density\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a147051b26c41b448eda42bf9c930af28}\label{classGateMDBFieldReader_a147051b26c41b448eda42bf9c930af28}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+State\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+STATEPREFIX,the\+State\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_adc1e561eac82965a296e0d7c60c21b5c}\label{classGateMDBFieldReader_adc1e561eac82965a296e0d7c60c21b5c}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Temp\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+TEMPPREFIX,the\+Temp\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a3048104353497222308f25ebce449291}\label{classGateMDBFieldReader_a3048104353497222308f25ebce449291}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Pressure\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+PRESSUREPREFIX,the\+Pressure\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_aa66803da22370fc8d59ce824675a7314}\label{classGateMDBFieldReader_aa66803da22370fc8d59ce824675a7314}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+NComponents\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+NCOMPONENTSSPREFIX,the\+NComponents\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_aeac22816246ed71ab3c1a68e21bdc7fb}\label{classGateMDBFieldReader_aeac22816246ed71ab3c1a68e21bdc7fb}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Name\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+NAMEPREFIX,the\+Name\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ae8888586ece904a0141148ff0f1ced08}\label{classGateMDBFieldReader_ae8888586ece904a0141148ff0f1ced08}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+NAtoms\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+NATOMSPREFIX,the\+NAtoms\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a2f02dbba8445b0c74f8fb1d49f4546e4}\label{classGateMDBFieldReader_a2f02dbba8445b0c74f8fb1d49f4546e4}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Fraction\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+FRACTIONPREFIX,the\+Fraction\+Prefix\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a7bc1903d06f5959bc1534d446571f311}\label{classGateMDBFieldReader_a7bc1903d06f5959bc1534d446571f311}} 
+static \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} {\bfseries the\+Atomic\+Number\+Unit\+Map} = \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}}(N\+\_\+\+ATOMICNUMBERUNIT,the\+Atomic\+Number\+Unit\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ac0f8e399c14b5eb4144e2c338ca8a6ae}\label{classGateMDBFieldReader_ac0f8e399c14b5eb4144e2c338ca8a6ae}} 
+static \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} {\bfseries the\+Nucleon\+Number\+Unit\+Map} = \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}}(N\+\_\+\+NUCLEONNUMBERUNIT,the\+Nucleon\+Number\+Unit\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_adb38adaac7c8a8a2672ee7e72b560aeb}\label{classGateMDBFieldReader_adb38adaac7c8a8a2672ee7e72b560aeb}} 
+static \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} {\bfseries the\+Molar\+Mass\+Unit\+Map} = \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}}(N\+\_\+\+MOLARMASSUNIT,the\+Molar\+Mass\+Unit\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a3d57413599c78f8efd37e741f7979d11}\label{classGateMDBFieldReader_a3d57413599c78f8efd37e741f7979d11}} 
+static \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} {\bfseries the\+Density\+Unit\+Map} = \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}}(N\+\_\+\+DENSITYUNIT,the\+Density\+Unit\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a22076fc1771d4a0c6cfa9a97875f3d17}\label{classGateMDBFieldReader_a22076fc1771d4a0c6cfa9a97875f3d17}} 
+static \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} {\bfseries the\+Temp\+Unit\+Map} = \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}}(N\+\_\+\+TEMPUNIT,the\+Temp\+Unit\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a53af7b42765f0ca0a31fcc1177319eac}\label{classGateMDBFieldReader_a53af7b42765f0ca0a31fcc1177319eac}} 
+static \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} {\bfseries the\+Pressure\+Unit\+Map} = \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}}(N\+\_\+\+PRESSUREUNIT,the\+Pressure\+Unit\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ab277fd0e11e34320d459d4bb2e24d872}\label{classGateMDBFieldReader_ab277fd0e11e34320d459d4bb2e24d872}} 
+static \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} {\bfseries the\+Fraction\+Unit\+Map} = \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}}(N\+\_\+\+FRACTIONUNIT,the\+Fraction\+Unit\+Table)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a1fb810102dfef49eee9e24e3adf6df23}\label{classGateMDBFieldReader_a1fb810102dfef49eee9e24e3adf6df23}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+FMFPrefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+FMFPREFIXMAPS,the\+FMFPrefix\+Map\+Array)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_ace55ef9badd8304a09591b940a6742ba}\label{classGateMDBFieldReader_ace55ef9badd8304a09591b940a6742ba}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+FEFPrefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+FMFPREFIXMAPS,the\+FEFPrefix\+Map\+Array)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a79acd2bdf27e7994565337b9d8f7aabd}\label{classGateMDBFieldReader_a79acd2bdf27e7994565337b9d8f7aabd}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Abundance\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+ABUNDANCEPREFIXMAPS,the\+Abundance\+Prefix\+Map\+Array)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldReader_a48ba20df93b80fc335db72ab08954ecb}\label{classGateMDBFieldReader_a48ba20df93b80fc335db72ab08954ecb}} 
+static \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} {\bfseries the\+Material\+Option\+Prefix\+Map} = \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}}(N\+\_\+\+MATERIALOPTIONPREFIXMAPS,the\+Material\+Option\+Prefix\+Map\+Array)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+MDBField\+Reader.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/\mbox{\hyperlink{GateMDBFieldReader_8cc}{Gate\+MDBField\+Reader.\+cc}}\end{DoxyCompactItemize}

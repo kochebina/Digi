@@ -1,0 +1,104 @@
+\hypertarget{GateProtonNuclearInformationActor_8hh_source}{}\doxysection{Gate\+Proton\+Nuclear\+Information\+Actor.\+hh}
+\label{GateProtonNuclearInformationActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProtonNuclearInformationActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProtonNuclearInformationActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{11 \textcolor{comment}{}\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATEPROTONNUCLEARINFORMATIONACTOR\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATEPROTONNUCLEARINFORMATIONACTOR\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <iomanip>}   }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// Gate }}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateImage.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateSourceMgr.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateVImageVolume_8hh}{GateVImageVolume.hh}}"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <G4VEmProcess.hh>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}GateProtonNuclearInformationActorMessenger.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{// Geant4}}
+\DoxyCodeLine{32 \textcolor{comment}{//\#include <G4VEMDataSet.hh>}}
+\DoxyCodeLine{33 \textcolor{comment}{//\#include <G4EmCalculator.hh>}}
+\DoxyCodeLine{34 \textcolor{comment}{//\#include <G4VDataSetAlgorithm.hh>}}
+\DoxyCodeLine{35 \textcolor{comment}{//\#include <G4LivermoreComptonModel.hh>}}
+\DoxyCodeLine{36 \textcolor{comment}{//\#include <G4LogLogInterpolation.hh>}}
+\DoxyCodeLine{37 \textcolor{comment}{//\#include <G4CompositeEMDataSet.hh>}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classGateProtonNuclearInformation}{GateProtonNuclearInformation}}:}
+\DoxyCodeLine{42     \textcolor{keyword}{public} G4VUserTrackInformation}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateProtonNuclearInformation}{GateProtonNuclearInformation}}():mOrder(0) \{\}}
+\DoxyCodeLine{46   \mbox{\hyperlink{classGateProtonNuclearInformation}{\string~GateProtonNuclearInformation}}() \{\}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} IncrementScatterOrder(\textcolor{keyword}{const} G4Track *track)}
+\DoxyCodeLine{49   \{}
+\DoxyCodeLine{50     \textcolor{comment}{// New particle}}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if}(track-\/>GetStep()==NULL)}
+\DoxyCodeLine{52       mOrder++;}
+\DoxyCodeLine{53     \textcolor{comment}{// Same particle}}
+\DoxyCodeLine{54     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(track-\/>GetStep()-\/>GetPostStepPoint()-\/>GetProcessDefinedStep()-\/>GetProcessName()!=(\textcolor{keyword}{const} G4String)\textcolor{stringliteral}{"{}Transportation"{}})}
+\DoxyCodeLine{55       mOrder++;}
+\DoxyCodeLine{56   \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetScatterProcess(\textcolor{keyword}{const} G4Track *track)}
+\DoxyCodeLine{59   \{}
+\DoxyCodeLine{60     mProcess = track-\/>GetStep()-\/>GetPostStepPoint()-\/>GetProcessDefinedStep()-\/>GetProcessName();}
+\DoxyCodeLine{61   \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4int GetScatterOrder()\{ \textcolor{keywordflow}{return} mOrder; \}}
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4String GetScatterProcess()\{ \textcolor{keywordflow}{return} mProcess; \}}
+\DoxyCodeLine{65   \textcolor{comment}{//virtual inline G4int SetScatterOrder(G4int \_order)\{ return order=\_order; \}}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{68   G4int    mOrder;}
+\DoxyCodeLine{69   G4String mProcess;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{74 \textcolor{keyword}{class }\mbox{\hyperlink{classGateProtonNuclearInformationActorMessenger}{GateProtonNuclearInformationActorMessenger}};}
+\DoxyCodeLine{75 \textcolor{keyword}{class }\mbox{\hyperlink{classGateProtonNuclearInformationActor}{GateProtonNuclearInformationActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77 \textcolor{keyword}{public}:}
+\DoxyCodeLine{78   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{79   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{80   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateProtonNuclearInformationActor}{GateProtonNuclearInformationActor}})}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \mbox{\hyperlink{classGateProtonNuclearInformationActor_a18df215afcabbf93fe99c3173a5bcb35}{GateProtonNuclearInformationActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{83   \mbox{\hyperlink{classGateProtonNuclearInformationActor_a86b5e10b21f06c525cad1698a58dca78}{\string~GateProtonNuclearInformationActor}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{comment}{// Constructs the actor}}
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProtonNuclearInformationActor_a8fe1a284fbce024c933a29183c739bde}{Construct}}();}
+\DoxyCodeLine{87   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData()\{\};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{90   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{93   \mbox{\hyperlink{classGateProtonNuclearInformationActorMessenger}{GateProtonNuclearInformationActorMessenger}} * pActorMessenger;}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 MAKE\_AUTO\_CREATOR\_ACTOR(ProtonNuclearInformationActor, \mbox{\hyperlink{classGateProtonNuclearInformationActor}{GateProtonNuclearInformationActor}})}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GateProtonNuclearInformationActor\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

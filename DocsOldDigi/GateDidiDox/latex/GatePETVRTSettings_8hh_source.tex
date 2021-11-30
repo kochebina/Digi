@@ -1,0 +1,108 @@
+\hypertarget{GatePETVRTSettings_8hh_source}{}\doxysection{Gate\+PETVRTSettings.\+hh}
+\label{GatePETVRTSettings_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePETVRTSettings.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePETVRTSettings.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GatePETVRTSettings\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GatePETVRTSettings\_hh 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4Region;}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVFictitiousMap.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} G4Region G4Envelope;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousFastSimulationModel}{GateFictitiousFastSimulationModel}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTotalDiscreteProcess}{GateTotalDiscreteProcess}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{namespace }GatePETVRT \{}
+\DoxyCodeLine{25         \textcolor{keyword}{enum} Approx \{kStepwiseTrace,kVolumeTrace,kDiscreteKleinNishina, kNotSet\};}
+\DoxyCodeLine{26 \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePETVRTSettings}{GatePETVRTSettings}}\{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \mbox{\hyperlink{classGatePETVRTSettings}{GatePETVRTSettings}}();}
+\DoxyCodeLine{32     \mbox{\hyperlink{classGatePETVRTSettings}{\string~GatePETVRTSettings}}();}
+\DoxyCodeLine{33     }
+\DoxyCodeLine{34     \textcolor{keyword}{enum} VerbosityLevel \{NoVerbose,Verbose,DetailedVerbose\};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} RegisterEnvelope(G4Envelope*);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} RegisterFictitiousMap(\mbox{\hyperlink{classGateVFictitiousMap}{GateVFictitiousMap}}*, \textcolor{keywordtype}{bool} deleteWithThis);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} RegisterFictitiousFastSimulationModel(\mbox{\hyperlink{classGateFictitiousFastSimulationModel}{GateFictitiousFastSimulationModel}}*, \textcolor{keywordtype}{bool} deleteWithThis);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} RegisterTotalDiscreteProcess(\mbox{\hyperlink{classGateTotalDiscreteProcess}{GateTotalDiscreteProcess}}*, \textcolor{keywordtype}{bool} deleteWithThis);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} RegisterPhantomSD(\mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}*, \textcolor{keywordtype}{bool} deleteWithThis);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} SetFictitiousEnergy(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} SetDiscardEnergy(\textcolor{keywordtype}{double}); \textcolor{comment}{//should be equal or below fictitious energy}}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} SetApproximations(GatePETVRT::Approx);}
+\DoxyCodeLine{44     }
+\DoxyCodeLine{45     \textcolor{keyword}{inline} G4Envelope* GetEnvelope() \textcolor{keyword}{const};}
+\DoxyCodeLine{46     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVFictitiousMap}{GateVFictitiousMap}}* GetFictitiousMap() \textcolor{keyword}{const};}
+\DoxyCodeLine{47     \mbox{\hyperlink{classGateTotalDiscreteProcess}{GateTotalDiscreteProcess}}* GetTotalDiscreteProcess() \textcolor{keyword}{const};}
+\DoxyCodeLine{48     \mbox{\hyperlink{classGateFictitiousFastSimulationModel}{GateFictitiousFastSimulationModel}}* GetFictitiousFastSimulationModel();}
+\DoxyCodeLine{49     \textcolor{keyword}{inline} GatePETVRT::Approx GetApproximations() \textcolor{keyword}{const};}
+\DoxyCodeLine{50     \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}* GetPhantomSD() \textcolor{keyword}{const};}
+\DoxyCodeLine{51     \textcolor{keyword}{inline} G4double GetFictitiousEnergy() \textcolor{keyword}{const};}
+\DoxyCodeLine{52     \textcolor{keyword}{inline} G4double GetDiscardEnergy() \textcolor{keyword}{const};}
+\DoxyCodeLine{53     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetVerbosity(VerbosityLevel);}
+\DoxyCodeLine{54     \textcolor{keyword}{inline} VerbosityLevel GetVerbosity() \textcolor{keyword}{const};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{private}:}
+\DoxyCodeLine{57     G4Envelope* pEnvelope;}
+\DoxyCodeLine{58     \mbox{\hyperlink{classGateVFictitiousMap}{GateVFictitiousMap}}* pFictitiousMap;}
+\DoxyCodeLine{59     \mbox{\hyperlink{classGateTotalDiscreteProcess}{GateTotalDiscreteProcess}}* pTotalDiscreteProcess;}
+\DoxyCodeLine{60     \textcolor{keywordtype}{bool} m\_nDeleteFictitiousMap, m\_nDeleteFictitiousFastSimulationModel,m\_nDeleteTotalDiscreteProcess,m\_nDeletePhantomSD;}
+\DoxyCodeLine{61     GatePETVRT::Approx m\_nApproximations;}
+\DoxyCodeLine{62     \mbox{\hyperlink{classGateFictitiousFastSimulationModel}{GateFictitiousFastSimulationModel}}* pFictitiousFastSimulationModel;}
+\DoxyCodeLine{63     \mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}* pPhantomSD;}
+\DoxyCodeLine{64     G4double m\_nFictitiousEnergy;}
+\DoxyCodeLine{65     G4double m\_nDiscardEnergy;}
+\DoxyCodeLine{66     VerbosityLevel m\_nVerbosityLevel;}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{inline} G4Envelope* GatePETVRTSettings::GetEnvelope()\textcolor{keyword}{ const}}
+\DoxyCodeLine{70 \textcolor{keyword}{}\{}
+\DoxyCodeLine{71     \textcolor{keywordflow}{return} pEnvelope;}
+\DoxyCodeLine{72 \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVFictitiousMap}{GateVFictitiousMap}}* GatePETVRTSettings::GetFictitiousMap()\textcolor{keyword}{ const}}
+\DoxyCodeLine{75 \textcolor{keyword}{}\{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} pFictitiousMap;}
+\DoxyCodeLine{77 \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{inline} GatePETVRT::Approx GatePETVRTSettings::GetApproximations()\textcolor{keyword}{ const}}
+\DoxyCodeLine{80 \textcolor{keyword}{}\{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{return} m\_nApproximations;}
+\DoxyCodeLine{82 \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}* GatePETVRTSettings::GetPhantomSD()\textcolor{keyword}{ const}}
+\DoxyCodeLine{85 \textcolor{keyword}{}\{}
+\DoxyCodeLine{86     \textcolor{keywordflow}{return} pPhantomSD;}
+\DoxyCodeLine{87 \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{inline} G4double GatePETVRTSettings::GetFictitiousEnergy()\textcolor{keyword}{ const}}
+\DoxyCodeLine{90 \textcolor{keyword}{}\{}
+\DoxyCodeLine{91     \textcolor{keywordflow}{return} m\_nFictitiousEnergy;}
+\DoxyCodeLine{92 \}}
+\DoxyCodeLine{93 \textcolor{keyword}{inline} G4double GatePETVRTSettings::GetDiscardEnergy()\textcolor{keyword}{ const}}
+\DoxyCodeLine{94 \textcolor{keyword}{}\{}
+\DoxyCodeLine{95     \textcolor{keywordflow}{return} m\_nDiscardEnergy;}
+\DoxyCodeLine{96 \}}
+\DoxyCodeLine{97     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} GatePETVRTSettings::SetVerbosity(GatePETVRTSettings::VerbosityLevel v)}
+\DoxyCodeLine{98 \{}
+\DoxyCodeLine{99     m\_nVerbosityLevel=v;}
+\DoxyCodeLine{100 \}}
+\DoxyCodeLine{101     \textcolor{keyword}{inline} GatePETVRTSettings::VerbosityLevel GatePETVRTSettings::GetVerbosity()\textcolor{keyword}{ const}}
+\DoxyCodeLine{102 \textcolor{keyword}{}\{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} m\_nVerbosityLevel;}
+\DoxyCodeLine{104 \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

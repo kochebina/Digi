@@ -1,0 +1,69 @@
+\hypertarget{lmf_8h_source}{}\doxysection{lmf.\+h}
+\label{lmf_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/lmf.h@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/lmf.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{           List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{     -\/-\/  lmf.h  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{     Luc.Simon@iphe.unil.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{     Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{     Copyright (C) 2003 IPHE/UNIL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{     of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{     Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{     See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{     Description of lmf.h:}}
+\DoxyCodeLine{22 \textcolor{comment}{     general header for LMF library.}}
+\DoxyCodeLine{23 \textcolor{comment}{}}
+\DoxyCodeLine{24 \textcolor{comment}{}}
+\DoxyCodeLine{25 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{27 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}lmf\_format.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef \_LMF\_CCS\_H}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define \_LMF\_CCS\_H}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef \_\_LMFBI\_H}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define \_\_LMFBI\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}structure\_LMF.h"{}}  \textcolor{comment}{/* LMF Record carriers structures declaration */}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifndef \_\_SYMBOLIC\_CONSTAN\_H}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define \_\_SYMBOLIC\_CONSTAN\_H}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}constantsLMF\_ccs.h"{}}   \textcolor{comment}{/* symbolic constant list for .ccs part */}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}constantsLMF\_cch.h"{}}   \textcolor{comment}{/* symbolic constant list for .cch part */}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}constantsLocateEvents.h"{}}  \textcolor{comment}{/* symbolic constant list for calculation of events position */}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef \_\_PROTOTYPE\_H}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define \_\_PROTOTYPE\_H}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include "{}dlist.h"{}}      \textcolor{comment}{/* doubly-\/linked list management    */}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}prototypesLMF\_cch.h"{}}  \textcolor{comment}{/* function prototypes for .cch part */}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include "{}prototypesLMF\_ccs.h"{}}  \textcolor{comment}{/* function prototypes for .ccs part */}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include "{}prototypesLocateEvents.h"{}} \textcolor{comment}{/*function prototypes for calculation of events position */}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{62 \}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

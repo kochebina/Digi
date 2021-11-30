@@ -1,0 +1,75 @@
+\hypertarget{GateCompressedVoxelOutput_8hh_source}{}\doxysection{Gate\+Compressed\+Voxel\+Output.\+hh}
+\label{GateCompressedVoxelOutput_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelOutput.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelOutput.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef GateCompressedVoxelOutput\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define GateCompressedVoxelOutput\_H}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateDetectorConstruction.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <valarray>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}}; }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelOutputMessenger}{GateCompressedVoxelOutputMessenger}}; }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelOutput}{GateCompressedVoxelOutput}} :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateCompressedVoxelOutput}{GateCompressedVoxelOutput}}(\textcolor{keyword}{const} G4String\& name, \textcolor{keyword}{const} G4String\& phantomName, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,DigiMode digiMode, \mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}}* inserter);}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCompressedVoxelOutput}{\string~GateCompressedVoxelOutput}}();}
+\DoxyCodeLine{32   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v, \textcolor{keyword}{const} G4Step *);}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetVerboseLevel(G4int val);}
+\DoxyCodeLine{45   }
+\DoxyCodeLine{47   \textcolor{keyword}{inline}  \textcolor{keyword}{const}  G4String\& \mbox{\hyperlink{classGateCompressedVoxelOutput_a363945b6cc2ac337681e837040ef242e}{GetFileName}}()\textcolor{keyword}{const }\{ \textcolor{keywordflow}{return} m\_fileName; \}}
+\DoxyCodeLine{48   }
+\DoxyCodeLine{50   \textcolor{keywordtype}{void}   \mbox{\hyperlink{classGateCompressedVoxelOutput_ab3891fb973a652c905d09a38c64917ba}{SetFileName}}(\textcolor{keyword}{const} G4String aName)    \{ m\_fileName = aName; \}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void}   SetSaveUncertainty(G4bool b) ;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   std::valarray<float>*              m\_array;            \textcolor{comment}{// the array for collecting energy deposits}}
+\DoxyCodeLine{58   std::valarray<float>*              m\_arraySquare;      \textcolor{comment}{// the array for square of energy deposits}}
+\DoxyCodeLine{59   std::valarray<unsigned int>*       m\_arrayCounts;      \textcolor{comment}{// the array for counts}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}}*           m\_trajectoryNavigator;}
+\DoxyCodeLine{62   \mbox{\hyperlink{classGateCompressedVoxelOutputMessenger}{GateCompressedVoxelOutputMessenger}}*          m\_outputMessenger;}
+\DoxyCodeLine{63   \mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}}* m\_inserter;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   G4String                           m\_fileName;}
+\DoxyCodeLine{66   G4bool                             m\_uncertainty;}
+\DoxyCodeLine{67   G4String                           m\_phantomName;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

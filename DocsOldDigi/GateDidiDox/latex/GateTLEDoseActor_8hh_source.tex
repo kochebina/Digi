@@ -1,0 +1,119 @@
+\hypertarget{GateTLEDoseActor_8hh_source}{}\doxysection{Gate\+TLEDose\+Actor.\+hh}
+\label{GateTLEDoseActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLEDoseActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLEDoseActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GATETLEDOSEACTOR\_HH}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GATETLEDOSEACTOR\_HH}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateTLEDoseActorMessenger.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateMaterialMuHandler.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateVoxelizedMass.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTLEDoseActor}{GateTLEDoseActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{34   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTLEDoseActor_a5c3326ce010c02580f5df46be6c06e02}{\string~GateTLEDoseActor}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateTLEDoseActor}{GateTLEDoseActor}})}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLEDoseActor_ae94ea88e100a26a2a800091865df5d9f}{Construct}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} EnableEdepImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepImageEnabled = b; \}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} EnableEdepSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepSquaredImageEnabled = b; \}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} EnableEdepUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} EnableDoseImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseImageEnabled = b; \}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} EnableDoseSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseSquaredImageEnabled = b; \}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} EnableDoseUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} EnableDoseNormalisationToMax(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} EnableDoseNormalisationToIntegral(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} SetDoseAlgorithmType(G4String b) \{ mDoseAlgorithmType = b; \}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} ImportMassImage(G4String b) \{ mImportMassImage = b; \}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} VolumeFilter(G4String b) \{ mVolumeFilter = b; \}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} MaterialFilter(G4String b) \{ mMaterialFilter = b; \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{comment}{//virtual void PostUserTrackingAction(const GateVVolume *, const G4Track* t);}}
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLEDoseActor_a64cb29a2ad4cb536a6c74480939f8822}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLEDoseActor_a7d5cfc7c7299b8259ac7f1aea3e66d18}{SaveData}}();}
+\DoxyCodeLine{67   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLEDoseActor_a506b314458f46a713218272c9a11593f}{clear}}()\{ResetData();\}}
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{73   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{76   \mbox{\hyperlink{classGateTLEDoseActor}{GateTLEDoseActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{77   \mbox{\hyperlink{classGateTLEDoseActorMessenger}{GateTLEDoseActorMessenger}} * pMessenger;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \mbox{\hyperlink{classGateVoxelizedMass}{GateVoxelizedMass}} mVoxelizedMass;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseImage;}
+\DoxyCodeLine{82   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mEdepImage;}
+\DoxyCodeLine{83   \mbox{\hyperlink{classGateImage}{GateImage}} mLastHitEventImage;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \mbox{\hyperlink{classGateMaterialMuHandler}{GateMaterialMuHandler}}* mMaterialHandler;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   G4String mDoseFilename;}
+\DoxyCodeLine{88   G4String mPDoseFilename;}
+\DoxyCodeLine{89   G4String mSDoseFilename;}
+\DoxyCodeLine{90   G4String mEdepFilename;}
+\DoxyCodeLine{91   G4String mDoseAlgorithmType;}
+\DoxyCodeLine{92   G4String mImportMassImage;}
+\DoxyCodeLine{93   G4String mVolumeFilter;}
+\DoxyCodeLine{94   G4String mMaterialFilter;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   G4double ConversionFactor;}
+\DoxyCodeLine{97   G4double VoxelVolume;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{bool} mIsEdepImageEnabled;}
+\DoxyCodeLine{100   \textcolor{keywordtype}{bool} mIsEdepSquaredImageEnabled;}
+\DoxyCodeLine{101   \textcolor{keywordtype}{bool} mIsEdepUncertaintyImageEnabled;}
+\DoxyCodeLine{102   \textcolor{keywordtype}{bool} mIsDoseImageEnabled;}
+\DoxyCodeLine{103   \textcolor{keywordtype}{bool} mIsDoseSquaredImageEnabled;}
+\DoxyCodeLine{104   \textcolor{keywordtype}{bool} mIsDoseUncertaintyImageEnabled;}
+\DoxyCodeLine{105   \textcolor{keywordtype}{bool} mIsDoseNormalisationEnabled;}
+\DoxyCodeLine{106   \textcolor{keywordtype}{bool} mIsLastHitEventImageEnabled;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{109   G4double outputEnergy;}
+\DoxyCodeLine{110   G4double totalEnergy;}
+\DoxyCodeLine{111   G4double mEdep;}
+\DoxyCodeLine{112   G4String lastMaterial;}
+\DoxyCodeLine{113   G4double lastedep;}
+\DoxyCodeLine{114   G4int lastindex;}
+\DoxyCodeLine{115   G4bool firstdeposit;}
+\DoxyCodeLine{116   G4int primaryindex;}
+\DoxyCodeLine{117   std::vector<G4double> primarydeposition;}
+\DoxyCodeLine{118   std::vector<G4double> secondarydeposition;}
+\DoxyCodeLine{119 \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 MAKE\_AUTO\_CREATOR\_ACTOR(TLEDoseActor,\mbox{\hyperlink{classGateTLEDoseActor}{GateTLEDoseActor}})}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATETLEDOSEACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

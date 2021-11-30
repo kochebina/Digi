@@ -1,0 +1,423 @@
+\hypertarget{GateFixedForcedDetectionActor_8hh_source}{}\doxysection{Gate\+Fixed\+Forced\+Detection\+Actor.\+hh}
+\label{GateFixedForcedDetectionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{ Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{ This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{ of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{ See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* \(\backslash\)class GateFixedForcedDetectionActor */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifdef GATE\_USE\_RTK}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEFIXEDFORCEDDECTECTIONACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEFIXEDFORCEDDECTECTIONACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/* Gate */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionActorMessenger.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateImage.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateSourceMgr.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateVImageVolume_8hh}{GateVImageVolume.hh}}"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionFunctors.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}GateEnergyResponseFunctor.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionProjector.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionProcessType.hh"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}GateARFSD.hh"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{/* itk */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <itkTimeProbe.h>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <itkBinShrinkImageFilter.h>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include <itkMultiplyImageFilter.h>}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/* rtk */}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <rtkConstantImageSource.h>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include <rtkThreeDCircularProjectionGeometry.h>}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <rtkImportImageFilter.h>}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{class }GateFixedForcedDetectionActorMessenger;}
+\DoxyCodeLine{47 \textcolor{keyword}{class }GateFixedForcedDetectionActor: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{48   \{}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{comment}{/* This macro initialize the CreatePrototype and CreateInstance */}}
+\DoxyCodeLine{52   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(GateFixedForcedDetectionActor)}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   GateFixedForcedDetectionActor(G4String name, G4int depth = 0);}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \string~GateFixedForcedDetectionActor();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{comment}{/*Constructs the actor */}}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Construct}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{comment}{/* Callbacks */}}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event*e = NULL);}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event*e = NULL);}
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{comment}{/* Saves the data collected to the file */}}
+\DoxyCodeLine{67   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData(\textcolor{keyword}{const} G4String prefix);}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{comment}{/* Typedef for rtk */}}
+\DoxyCodeLine{72   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Dimension = 3;}
+\DoxyCodeLine{73   \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} InputPixelType;}
+\DoxyCodeLine{74   \textcolor{keyword}{typedef} itk::Image<InputPixelType, Dimension> InputImageType;}
+\DoxyCodeLine{75   \textcolor{keyword}{typedef} itk::Image<int, Dimension> IntegerImageType;}
+\DoxyCodeLine{76   \textcolor{keyword}{typedef} itk::Image<double, Dimension> DoubleImageType;}
+\DoxyCodeLine{77   \textcolor{keyword}{typedef} itk::Image<std::complex<InputPixelType>, Dimension> ComplexImageType;}
+\DoxyCodeLine{78   \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} OutputPixelType;}
+\DoxyCodeLine{79   \textcolor{keyword}{typedef} itk::Image<OutputPixelType, Dimension> OutputImageType;}
+\DoxyCodeLine{80   \textcolor{keyword}{typedef} rtk::ThreeDCircularProjectionGeometry GeometryType;}
+\DoxyCodeLine{81   \textcolor{keyword}{typedef} GeometryType::PointType PointType;}
+\DoxyCodeLine{82   \textcolor{keyword}{typedef} GeometryType::VectorType VectorType;}
+\DoxyCodeLine{83   \textcolor{keyword}{typedef} rtk::ConstantImageSource<OutputImageType> ConstantImageSourceType;}
+\DoxyCodeLine{84   \textcolor{keyword}{typedef} itk::BinShrinkImageFilter<InputImageType, OutputImageType> BinShrinkFilterType;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{comment}{/* Resolution of the detector plane (2D only, z=1); */}}
+\DoxyCodeLine{87   \textcolor{keyword}{const} G4ThreeVector \& GetDetectorResolution()\textcolor{keyword}{ const}}
+\DoxyCodeLine{88 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{89     \textcolor{keywordflow}{return} mDetectorResolution;}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} SetDetectorResolution(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93     mDetectorResolution[0] = x;}
+\DoxyCodeLine{94     mDetectorResolution[1] = y;}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} SetDetectorVolumeName(G4String name)}
+\DoxyCodeLine{97     \{}
+\DoxyCodeLine{98     mDetectorName = name;}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} SetGeometryFilename(G4String name)}
+\DoxyCodeLine{101     \{}
+\DoxyCodeLine{102     mGeometryFilename = name;}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104   \textcolor{keywordtype}{void} SetPrimaryFilename(G4String name)}
+\DoxyCodeLine{105     \{}
+\DoxyCodeLine{106     mPrimaryFilename = name;}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} SetMaterialMuFilename(G4String name)}
+\DoxyCodeLine{109     \{}
+\DoxyCodeLine{110     mMaterialMuFilename = name;}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{void} SetAttenuationFilename(G4String name)}
+\DoxyCodeLine{113     \{}
+\DoxyCodeLine{114     mAttenuationFilename = name;}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116   \textcolor{keywordtype}{void} SetMaterialDeltaFilename(G4String name)}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118     mMaterialDeltaFilename = name;}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120   \textcolor{keywordtype}{void} SetFresnelFilename(G4String name)}
+\DoxyCodeLine{121     \{}
+\DoxyCodeLine{122     mFresnelFilename = name;}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124   \textcolor{keywordtype}{void} SetResponseDetectorFilename(G4String name)}
+\DoxyCodeLine{125     \{}
+\DoxyCodeLine{126     mResponseFilename = name;}
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} SetFlatFieldFilename(G4String name)}
+\DoxyCodeLine{129     \{}
+\DoxyCodeLine{130     mFlatFieldFilename = name;}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132   \textcolor{keywordtype}{void} SetComptonFilename(G4String name)}
+\DoxyCodeLine{133     \{}
+\DoxyCodeLine{134     mProcessImageFilenames[COMPTON] = name;}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136   \textcolor{keywordtype}{void} SetRayleighFilename(G4String name)}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138     mProcessImageFilenames[RAYLEIGH] = name;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140   \textcolor{keywordtype}{void} SetFluorescenceFilename(G4String name)}
+\DoxyCodeLine{141     \{}
+\DoxyCodeLine{142     mProcessImageFilenames[PHOTOELECTRIC] = name;}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144   \textcolor{keywordtype}{void} SetIsotropicPrimaryFilename(G4String name)}
+\DoxyCodeLine{145     \{}
+\DoxyCodeLine{146     mProcessImageFilenames[ISOTROPICPRIMARY] = name;}
+\DoxyCodeLine{147     \}}
+\DoxyCodeLine{148   \textcolor{keywordtype}{void} SetSourceType(G4String name)}
+\DoxyCodeLine{149     \{}
+\DoxyCodeLine{150     mSourceType = name;}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152   \textcolor{keywordtype}{void} SetGeneratePhotons(G4String name)}
+\DoxyCodeLine{153     \{}
+\DoxyCodeLine{154     \textcolor{keywordflow}{if} (name == \textcolor{stringliteral}{"{}true"{}} || name == \textcolor{stringliteral}{"{}True"{}})}
+\DoxyCodeLine{155       \{}
+\DoxyCodeLine{156       mGeneratePhotons = \textcolor{keyword}{true};}
+\DoxyCodeLine{157       \}}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160   \textcolor{keywordtype}{void} SetARF(G4String name)}
+\DoxyCodeLine{161     \{}
+\DoxyCodeLine{162     \textcolor{keywordflow}{if} (name == \textcolor{stringliteral}{"{}true"{}} || name == \textcolor{stringliteral}{"{}True"{}})}
+\DoxyCodeLine{163       \{}
+\DoxyCodeLine{164       mARF = \textcolor{keyword}{true};}
+\DoxyCodeLine{165       \}}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167   \textcolor{keywordtype}{void} SetSecondaryFilename(G4String name)}
+\DoxyCodeLine{168     \{}
+\DoxyCodeLine{169     mSecondaryFilename = name;}
+\DoxyCodeLine{170     \}}
+\DoxyCodeLine{171   \textcolor{keywordtype}{void} EnableSecondarySquaredImage(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{172     \{}
+\DoxyCodeLine{173     mIsSecondarySquaredImageEnabled = b;}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175   \textcolor{keywordtype}{void} EnableSecondaryUncertaintyImage(\textcolor{keywordtype}{bool} b)}
+\DoxyCodeLine{176     \{}
+\DoxyCodeLine{177     mIsSecondaryUncertaintyImageEnabled = b;}
+\DoxyCodeLine{178     \}}
+\DoxyCodeLine{179   \textcolor{keywordtype}{void} SetTotalFilename(G4String name)}
+\DoxyCodeLine{180     \{}
+\DoxyCodeLine{181     mTotalFilename = name;}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183   \textcolor{keywordtype}{void} SetPhaseSpaceFilename(G4String name)}
+\DoxyCodeLine{184     \{}
+\DoxyCodeLine{185     mPhaseSpaceFilename = name;}
+\DoxyCodeLine{186     \}}
+\DoxyCodeLine{187   \textcolor{keywordtype}{void} SetNoisePrimary(G4int n)}
+\DoxyCodeLine{188     \{}
+\DoxyCodeLine{189     mNoisePrimary = n;}
+\DoxyCodeLine{190     \}}
+\DoxyCodeLine{191   \textcolor{keyword}{const} BinShrinkFilterType::ShrinkFactorsType \& GetBinningFactor()\textcolor{keyword}{ const}}
+\DoxyCodeLine{192 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{193     \textcolor{keywordflow}{return} mBinningFactor;}
+\DoxyCodeLine{194     \}}
+\DoxyCodeLine{195   \textcolor{keywordtype}{void} SetBinningFactor(G4int x, G4int y)}
+\DoxyCodeLine{196     \{}
+\DoxyCodeLine{197     mBinningFactor[0] = x;}
+\DoxyCodeLine{198     mBinningFactor[1] = y;}
+\DoxyCodeLine{199     mBinShrinkFilter-\/>SetShrinkFactors(mBinningFactor);}
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{201   \textcolor{keywordtype}{void} SetInputRTKGeometryFilename(G4String name)}
+\DoxyCodeLine{202     \{}
+\DoxyCodeLine{203     mInputRTKGeometryFilename = name;}
+\DoxyCodeLine{204     \}}
+\DoxyCodeLine{205   \textcolor{keywordtype}{void} SetEnergyResolvedBinSize(\textcolor{keyword}{const} \textcolor{keywordtype}{double} e)}
+\DoxyCodeLine{206     \{}
+\DoxyCodeLine{207     mEnergyResolvedBinSize = e;}
+\DoxyCodeLine{208     \}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210   \textcolor{keywordtype}{void} SetGeometryFromInputRTKGeometryFile(\mbox{\hyperlink{classGateVSource}{GateVSource}} *source,}
+\DoxyCodeLine{211                                            \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *detector,}
+\DoxyCodeLine{212                                            \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} *ct,}
+\DoxyCodeLine{213                                            \textcolor{keyword}{const} G4Run *run);}
+\DoxyCodeLine{214   \textcolor{keywordtype}{void} ComputeGeometryInfoInImageCoordinateSystem(\mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} *image,}
+\DoxyCodeLine{215                                                   \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *detector,}
+\DoxyCodeLine{216                                                   \mbox{\hyperlink{classGateVSource}{GateVSource}} *src,}
+\DoxyCodeLine{217                                                   PointType \&primarySourcePosition,}
+\DoxyCodeLine{218                                                   PointType \&detectorPosition,}
+\DoxyCodeLine{219                                                   VectorType \&detectorRowVector,}
+\DoxyCodeLine{220                                                   VectorType \&detectorColVector);}
+\DoxyCodeLine{221   InputImageType::Pointer ConvertGateImageToITKImage(\mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} * gateImgVol);}
+\DoxyCodeLine{222   InputImageType::Pointer CreateVoidProjectionImage();}
+\DoxyCodeLine{223   InputImageType::Pointer FirstSliceProjection(InputImageType::Pointer \&input);}
+\DoxyCodeLine{224   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} CreatePhaseSpace(\textcolor{keyword}{const} G4String phaseSpaceFilename,}
+\DoxyCodeLine{225                                 TFile *\&phaseSpaceFile,}
+\DoxyCodeLine{226                                 TTree *\&phaseSpace);}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228   \textcolor{comment}{/* The actual forced detection functions */}}
+\DoxyCodeLine{229   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ForceDetectionOfInteraction(G4int eventID,}
+\DoxyCodeLine{230                                            G4String processName,}
+\DoxyCodeLine{231                                            G4ThreeVector pt,}
+\DoxyCodeLine{232                                            G4ThreeVector dir,}
+\DoxyCodeLine{233                                            \textcolor{keywordtype}{double} energy,}
+\DoxyCodeLine{234                                            \textcolor{keywordtype}{double} weight,}
+\DoxyCodeLine{235                                            \textcolor{keywordtype}{int} Z);}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237   \textcolor{keyword}{template}<ProcessType VProcess, \textcolor{keyword}{class} TProjectorType>}
+\DoxyCodeLine{238   \textcolor{keywordtype}{void} ForceDetectionOfInteraction(TProjectorType *projector,}
+\DoxyCodeLine{239                                    InputImageType::Pointer \&input);}
+\DoxyCodeLine{240   \textcolor{keywordtype}{void} TestSource(\mbox{\hyperlink{classGateSourceMgr}{GateSourceMgr}} * sm);}
+\DoxyCodeLine{241   \textcolor{keywordtype}{void} GetEnergyList(std::vector<double> \& energyList, std::vector<double> \& energyWeightList);}
+\DoxyCodeLine{242   \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}* SearchForVoxelisedVolume();}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244   \textcolor{keywordtype}{void} PrepareIsotropicPrimaryProjector(\mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}* gate\_image\_volume,}
+\DoxyCodeLine{245                                         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& nPixOneSlice,}
+\DoxyCodeLine{246                                         GeometryType::Pointer oneProjGeometry);}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248   \textcolor{keywordtype}{void} PrepareComptonProjector(\mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}* gate\_image\_volume,}
+\DoxyCodeLine{249                                \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& nPixOneSlice,}
+\DoxyCodeLine{250                                GeometryType::Pointer oneProjGeometry);}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252   \textcolor{keywordtype}{void} PrepareRayleighProjector(\mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}* gate\_image\_volume,}
+\DoxyCodeLine{253                                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& nPixOneSlice,}
+\DoxyCodeLine{254                                 GeometryType::Pointer oneProjGeometry);}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256   \textcolor{keywordtype}{void} PrepareFluorescenceProjector(\mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}* gate\_image\_volume,}
+\DoxyCodeLine{257                                     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& nPixOneSlice,}
+\DoxyCodeLine{258                                     GeometryType::Pointer oneProjGeometry);}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260   \textcolor{keywordtype}{void} PreparePrimaryProjector(GeometryType::Pointer oneProjGeometry,}
+\DoxyCodeLine{261                                std::vector<double> \& energyList,}
+\DoxyCodeLine{262                                std::vector<double> \& energyWeightList,}
+\DoxyCodeLine{263                                \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}* gate\_image\_volume,}
+\DoxyCodeLine{264                                \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& nPixOneSlice);}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266   \textcolor{keywordtype}{void} CalculatePropagatorImage(\textcolor{keyword}{const} \textcolor{keywordtype}{double} D, \textcolor{keywordtype}{double} magnification, std::vector<double> \& energyList);}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268   \textcolor{keywordtype}{void} CreateProjectionImages();}
+\DoxyCodeLine{269   \textcolor{keywordtype}{void} GeneratePhotons(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& numberOfThreads,}
+\DoxyCodeLine{270                        \textcolor{keyword}{const} std::vector<std::vector<newPhoton> > \& photonList);}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272   \textcolor{keywordtype}{void} ConnectARF(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& numberOfThreads,}
+\DoxyCodeLine{273                   \textcolor{keyword}{const} std::vector<std::vector<newPhoton> > \& photonList,}
+\DoxyCodeLine{274                   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} newHead = 1);}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276   \textcolor{keywordtype}{void} ComputeFlatField(std::vector<double> \& energyList, std::vector<double> \& energyWeightList);}
+\DoxyCodeLine{277 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{278   GateFixedForcedDetectionActorMessenger * pActorMessenger;}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280   G4String mDetectorName;}
+\DoxyCodeLine{281   G4EmCalculator * mEMCalculator;}
+\DoxyCodeLine{282   \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * mDetector;}
+\DoxyCodeLine{283   \mbox{\hyperlink{classGateVSource}{GateVSource}} * mSource;}
+\DoxyCodeLine{284   G4String mGeometryFilename;}
+\DoxyCodeLine{285   G4String mPrimaryFilename;}
+\DoxyCodeLine{286   G4String mMaterialMuFilename;}
+\DoxyCodeLine{287   G4String mAttenuationFilename;}
+\DoxyCodeLine{288   G4String mMaterialDeltaFilename;}
+\DoxyCodeLine{289   G4String mFresnelFilename;}
+\DoxyCodeLine{290   G4String mResponseFilename;}
+\DoxyCodeLine{291   G4String mFlatFieldFilename;}
+\DoxyCodeLine{292   G4String mSecondaryFilename;}
+\DoxyCodeLine{293   G4String mPerOrderImagesBaseName;}
+\DoxyCodeLine{294   \textcolor{keywordtype}{bool} mIsSecondarySquaredImageEnabled;}
+\DoxyCodeLine{295   \textcolor{keywordtype}{bool} mIsSecondaryUncertaintyImageEnabled;}
+\DoxyCodeLine{296   G4String mTotalFilename;}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298   \textcolor{comment}{/* Parameter for statistical noise */}}
+\DoxyCodeLine{299   G4int mNoisePrimary;}
+\DoxyCodeLine{300   \textcolor{comment}{/* Parameter for modeling pixel-\/binning */}}
+\DoxyCodeLine{301   BinShrinkFilterType::ShrinkFactorsType mBinningFactor;}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303   G4double mMinPrimaryEnergy;}
+\DoxyCodeLine{304   G4double mMaxPrimaryEnergy;}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306   G4ThreeVector mDetectorResolution;}
+\DoxyCodeLine{307   \mbox{\hyperlink{classGateEnergyResponseFunctor}{GateEnergyResponseFunctor}} mEnergyResponseDetector;}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309   G4String mInputRTKGeometryFilename;}
+\DoxyCodeLine{310   G4double mEnergyResolvedBinSize;}
+\DoxyCodeLine{311   GeometryType::Pointer mInputGeometry;}
+\DoxyCodeLine{312   GeometryType::Pointer mGeometry;}
+\DoxyCodeLine{313   InputImageType::Pointer mGateVolumeImage;}
+\DoxyCodeLine{314   rtk::ImportImageFilter<InputImageType>::Pointer mGateToITKImageFilter;}
+\DoxyCodeLine{315   InputImageType::Pointer mPrimaryImage;}
+\DoxyCodeLine{316   InputImageType::Pointer mDeltaImage;}
+\DoxyCodeLine{317   ComplexImageType::Pointer mPropagatorImage;}
+\DoxyCodeLine{318   InputImageType::Pointer mFlatFieldImage;}
+\DoxyCodeLine{319   InputImageType::Pointer mFlatFieldDeltaImage;}
+\DoxyCodeLine{320   std::map<ProcessType, InputImageType::Pointer> mProcessImage;}
+\DoxyCodeLine{321   std::map<ProcessType, InputImageType::Pointer> mSquaredImage;}
+\DoxyCodeLine{322   std::map<ProcessType, InputImageType::Pointer> mEventImage;}
+\DoxyCodeLine{323   InputImageType::Pointer mSecondarySquaredImage;}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325   std::map<G4String, ProcessType> mMapProcessNameWithType;}
+\DoxyCodeLine{326   std::map<ProcessType, G4String> mMapTypeWithProcessName;}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328   \textcolor{comment}{/* Geometry information initialized at the beginning of the run */}}
+\DoxyCodeLine{329   G4AffineTransform m\_WorldToCT;}
+\DoxyCodeLine{330   G4AffineTransform m\_WorldToDetector;}
+\DoxyCodeLine{331   G4AffineTransform m\_SourceToCT;}
+\DoxyCodeLine{332   G4AffineTransform m\_SourceToDetector;}
+\DoxyCodeLine{333   PointType mPrimarySourcePosition;}
+\DoxyCodeLine{334   PointType mDetectorPosition;}
+\DoxyCodeLine{335   VectorType mDetectorRowVector;}
+\DoxyCodeLine{336   VectorType mDetectorColVector;}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338   \textcolor{comment}{/* Accumulation type */}}
+\DoxyCodeLine{339   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{GateFixedForcedDetectionFunctor::VAccumulation}} AccumulationType;}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341   \textcolor{comment}{/* Primary stuff */}}
+\DoxyCodeLine{342   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumberOfEventsInRun;}
+\DoxyCodeLine{343   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}<}
+\DoxyCodeLine{344       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1PrimaryValueAccumulation}{GateFixedForcedDetectionFunctor::PrimaryValueAccumulation}}> PrimaryProjectionType;}
+\DoxyCodeLine{345   PrimaryProjectionType::Pointer mPrimaryProjector;}
+\DoxyCodeLine{346   \textcolor{comment}{/* Per process members */}}
+\DoxyCodeLine{347   std::map<ProcessType, bool> mDoFFDForThisProcess;}
+\DoxyCodeLine{348   std::map<ProcessType, itk::TimeProbe> mProcessTimeProbe;}
+\DoxyCodeLine{349   std::map<ProcessType, std::vector<InputImageType::Pointer> > mPerOrderImages;}
+\DoxyCodeLine{350   std::map<ProcessType, G4String> mProcessImageFilenames;}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352   \textcolor{comment}{/* Compton stuff */}}
+\DoxyCodeLine{353   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}<}
+\DoxyCodeLine{354       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1ComptonValueAccumulation}{GateFixedForcedDetectionFunctor::ComptonValueAccumulation}}> ComptonProjectionType;}
+\DoxyCodeLine{355   ComptonProjectionType::Pointer mComptonProjector;}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357   \textcolor{comment}{/* Rayleigh stuff */}}
+\DoxyCodeLine{358   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}<}
+\DoxyCodeLine{359       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1RayleighValueAccumulation}{GateFixedForcedDetectionFunctor::RayleighValueAccumulation}}> RayleighProjectionType;}
+\DoxyCodeLine{360   RayleighProjectionType::Pointer mRayleighProjector;}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362   \textcolor{comment}{/* Fluorescence stuff */}}
+\DoxyCodeLine{363   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}<}
+\DoxyCodeLine{364       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1FluorescenceValueAccumulation}{GateFixedForcedDetectionFunctor::FluorescenceValueAccumulation}}> FluorescenceProjectionType;}
+\DoxyCodeLine{365   FluorescenceProjectionType::Pointer mFluorescenceProjector;}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367   \textcolor{comment}{/* Isotropic Primaries stuff */}}
+\DoxyCodeLine{368   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}<}
+\DoxyCodeLine{369       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1IsotropicPrimaryValueAccumulation}{GateFixedForcedDetectionFunctor::IsotropicPrimaryValueAccumulation}}> IsotropicPrimaryProjectionType;}
+\DoxyCodeLine{370   IsotropicPrimaryProjectionType::Pointer mIsotropicPrimaryProjector;}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372   \textcolor{comment}{/* Pixel-\/binning stuff */}}
+\DoxyCodeLine{373   BinShrinkFilterType::Pointer mBinShrinkFilter;}
+\DoxyCodeLine{374   \textcolor{keyword}{typedef} itk::MultiplyImageFilter<OutputImageType, OutputImageType, OutputImageType> BinMultiplyFilterType;}
+\DoxyCodeLine{375   BinMultiplyFilterType::Pointer mBinMultiplyFilter;}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377   \textcolor{comment}{/* Phase space variables */}}
+\DoxyCodeLine{378   G4String mPhaseSpaceFilename;}
+\DoxyCodeLine{379   TFile *mPhaseSpaceFile;}
+\DoxyCodeLine{380   TTree *mPhaseSpace;}
+\DoxyCodeLine{381   G4ThreeVector mInteractionDirection;}
+\DoxyCodeLine{382   G4ThreeVector mInteractionPosition;}
+\DoxyCodeLine{383   PointType mInteractionITKPosition;}
+\DoxyCodeLine{384   \textcolor{keywordtype}{double} mInteractionEnergy;}
+\DoxyCodeLine{385   \textcolor{keywordtype}{double} mInteractionWeight;}
+\DoxyCodeLine{386   Char\_t mInteractionProductionProcessStep[256];}
+\DoxyCodeLine{387   \textcolor{keywordtype}{int} mInteractionEventId;}
+\DoxyCodeLine{388   \textcolor{keywordtype}{double} mInteractionTotalContribution;}
+\DoxyCodeLine{389   \textcolor{keywordtype}{double} mInteractionSquaredContribution;}
+\DoxyCodeLine{390   \textcolor{keywordtype}{int} mInteractionZ;}
+\DoxyCodeLine{391   \textcolor{keywordtype}{int} mInteractionOrder;}
+\DoxyCodeLine{392   \textcolor{keywordtype}{int} mInteractionChainCode;}
+\DoxyCodeLine{393   \textcolor{keywordtype}{double} mInteractionSquaredIntegralOverDetector;}
+\DoxyCodeLine{394   G4String mSourceType;}
+\DoxyCodeLine{395   \textcolor{keywordtype}{bool} mGeneratePhotons;}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397   \textcolor{keywordtype}{bool} mARF;}
+\DoxyCodeLine{398   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumberOfProcessedPrimaries;}
+\DoxyCodeLine{399   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumberOfProcessedSecondaries;}
+\DoxyCodeLine{400   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumberOfProcessedCompton;}
+\DoxyCodeLine{401   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumberOfProcessedRayleigh;}
+\DoxyCodeLine{402   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumberOfProcessedPE;}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404   \textcolor{comment}{/* Account for primary fluence weighting */}}
+\DoxyCodeLine{405   InputImageType::Pointer PrimaryFluenceWeighting(\textcolor{keyword}{const} InputImageType::Pointer input);}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407   \textcolor{comment}{/* Account for pixel-\/binning */}}
+\DoxyCodeLine{408   InputImageType::Pointer PixelBinning(\textcolor{keyword}{const} InputImageType::Pointer input, \textcolor{keywordtype}{bool} bSum = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} bSQRT = \textcolor{keyword}{false});}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410   G4String AddPrefix(G4String prefix, G4String filename);}
+\DoxyCodeLine{411   \};}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 MAKE\_AUTO\_CREATOR\_ACTOR(FixedForcedDetectionActor, GateFixedForcedDetectionActor)}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEFIXEDFORCEDDECTECTIONACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATE\_USE\_RTK */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

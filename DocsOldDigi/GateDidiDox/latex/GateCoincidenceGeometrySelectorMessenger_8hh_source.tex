@@ -1,0 +1,41 @@
+\hypertarget{GateCoincidenceGeometrySelectorMessenger_8hh_source}{}\doxysection{Gate\+Coincidence\+Geometry\+Selector\+Messenger.\+hh}
+\label{GateCoincidenceGeometrySelectorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceGeometrySelectorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceGeometrySelectorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceGeometrySelectorMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceGeometrySelectorMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceGeometrySelector}{GateCoincidenceGeometrySelector}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceGeometrySelectorMessenger}{GateCoincidenceGeometrySelectorMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateCoincidenceGeometrySelectorMessenger}{GateCoincidenceGeometrySelectorMessenger}}(\mbox{\hyperlink{classGateCoincidenceGeometrySelector}{GateCoincidenceGeometrySelector}}* itsGeometrySelector);}
+\DoxyCodeLine{24   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidenceGeometrySelectorMessenger}{\string~GateCoincidenceGeometrySelectorMessenger}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCoincidenceGeometrySelector}{GateCoincidenceGeometrySelector}}* GetGeometrySelector()\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCoincidenceGeometrySelector}{GateCoincidenceGeometrySelector}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{private}:}
+\DoxyCodeLine{31   G4UIcmdWithADoubleAndUnit *maxSCmd; }
+\DoxyCodeLine{32   G4UIcmdWithADoubleAndUnit *maxDeltaZCmd; }
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,185 @@
+\hypertarget{classGateGammaEmissionModel}{}\doxysection{Gate\+Gamma\+Emission\+Model Class Reference}
+\label{classGateGammaEmissionModel}\index{GateGammaEmissionModel@{GateGammaEmissionModel}}
+
+
+{\ttfamily \#include $<$Gate\+Gamma\+Emission\+Model.\+hh$>$}
+
+Inheritance diagram for Gate\+Gamma\+Emission\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateGammaEmissionModel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateGammaEmissionModel_a300fc2c32d24d89b2abb568658a596ac}{Gate\+Gamma\+Emission\+Model}} ()
+\item 
+void \mbox{\hyperlink{classGateGammaEmissionModel_aceaee19a9244581439a46e45c9e94ba3}{Set\+Fixed\+Emission\+Direction}} (const G4\+Three\+Vector \&momentum\+\_\+direction)
+\item 
+void \mbox{\hyperlink{classGateGammaEmissionModel_ae77975e83ea7d715733c0b3847b15da0}{Set\+Enable\+Fixed\+Emission\+Direction}} (const G4bool enable)
+\item 
+void \mbox{\hyperlink{classGateGammaEmissionModel_addfeec2c5cb529a428c0351f0ae1501e}{Set\+Emission\+Energy}} (const G4double \&energy)
+\item 
+G4double \mbox{\hyperlink{classGateGammaEmissionModel_a69fe269e4c1d9b8c2f22b5dbc88b1814}{Get\+Emission\+Energy}} () const
+\item 
+void \mbox{\hyperlink{classGateGammaEmissionModel_adc565c483bc5c962fbfdb285aca24ffe}{Set\+Seed}} (G4long seed)
+\item 
+G4long \mbox{\hyperlink{classGateGammaEmissionModel_a94b263758409887bf525b33c4a4f77b6}{Get\+Seed}} () const
+\item 
+virtual G4int \mbox{\hyperlink{classGateGammaEmissionModel_acf66f399281de77601acce985a05ca02}{Generate\+Primary\+Vertices}} (G4\+Event $\ast$event, G4double \&particle\+\_\+time, G4\+Three\+Vector \&particle\+\_\+position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGateEmittedGammaInformation}{Gate\+Emitted\+Gamma\+Information}} $\ast$ \mbox{\hyperlink{classGateGammaEmissionModel_a06a97459ff8c9444142c6807c0d18b2e}{Get\+Primary\+Particle\+Information}} (const G4\+Primary\+Particle $\ast$pp, const \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{Gate\+Emitted\+Gamma\+Information\+::\+Gamma\+Kind}} \&gamma\+\_\+kind) const
+\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGateGammaEmissionModel_a8bce051f65886f0281091c45c0bc7c1f}{Get\+Uniform\+On\+Sphere}} () const
+\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGateGammaEmissionModel_a007c57f3a1358adc2e1d1114437c54e1}{Get\+Polarization}} (const G4\+Three\+Vector \&momentum) const
+\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGateGammaEmissionModel_ad019ac51e7129075cd014ece5230e07b}{Get\+Perpendicular\+Vector}} (const G4\+Three\+Vector \&v) const
+\item 
+void \mbox{\hyperlink{classGateGammaEmissionModel_a27a4306be65def160387690b9aa9b623}{Set\+Model\+Name}} (const G4\+String model\+\_\+name)
+\item 
+void \mbox{\hyperlink{classGateGammaEmissionModel_ae34bedfd6d68eda75354da26a89645b3}{Notice\+Error}} (G4\+String method\+\_\+name, G4\+String exception\+\_\+description) const
+\item 
+G4\+Primary\+Particle $\ast$ \mbox{\hyperlink{classGateGammaEmissionModel_a9709f015e804d64270bdb387bf7bf2fc}{Get\+Single\+Gamma}} (const G4double \&energy) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGammaEmissionModel_a24e10c9cc84e45a3611b7ab338a4a9a5}\label{classGateGammaEmissionModel_a24e10c9cc84e45a3611b7ab338a4a9a5}} 
+G4\+Three\+Vector {\bfseries f\+Fixed\+Emission\+Direction} = G4\+Three\+Vector( 0.\+0, 0.\+0, 0.\+0 )
+\item 
+\mbox{\Hypertarget{classGateGammaEmissionModel_a1bd631f61973e00973f30f1c92ea433c}\label{classGateGammaEmissionModel_a1bd631f61973e00973f30f1c92ea433c}} 
+G4bool {\bfseries f\+Use\+Fixed\+Emission\+Direction} = false
+\item 
+\mbox{\Hypertarget{classGateGammaEmissionModel_a8d74859cfca725e19cb90fa02fed1440}\label{classGateGammaEmissionModel_a8d74859cfca725e19cb90fa02fed1440}} 
+G4double {\bfseries f\+Emission\+Energy} = 0.\+511 $\ast$ MeV
+\item 
+\mbox{\Hypertarget{classGateGammaEmissionModel_ab9b1e53b7bc92e0b54fd2a3efeaf6e32}\label{classGateGammaEmissionModel_ab9b1e53b7bc92e0b54fd2a3efeaf6e32}} 
+G4\+String {\bfseries f\+Model\+Name} = \char`\"{}Gate\+Gamma\+Emission\+Model\char`\"{}
+\item 
+\mbox{\Hypertarget{classGateGammaEmissionModel_a753e8b3ee30bbe6b460e719259ba91cb}\label{classGateGammaEmissionModel_a753e8b3ee30bbe6b460e719259ba91cb}} 
+G4\+Particle\+Definition $\ast$ {\bfseries p\+Gamma\+Definition} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\DoxyHorRuler{0}
+ Copyright (C)\+: Open\+GATE Collaboration This software is distributed under the terms of the GNU Lesser General Public Licence (LGPL) \hypertarget{classGateGammaEmissionModel_autotoc_md43}{}\doxysubsubsection{See LICENSE.\+md for further details}\label{classGateGammaEmissionModel_autotoc_md43}
+Author\+: Mateusz Bała Email\+: \href{mailto:bala.mateusz@gmail.com}{\texttt{ bala.\+mateusz@gmail.\+com}} Organization\+: J-\/\+PET (\href{http://koza.if.uj.edu.pl/pet/}{\texttt{ http\+://koza.\+if.\+uj.\+edu.\+pl/pet/}}) About class\+: Basic class for other model of gammas emission. Provides basic tools for calculation and can generate single gamma. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateGammaEmissionModel_a300fc2c32d24d89b2abb568658a596ac}\label{classGateGammaEmissionModel_a300fc2c32d24d89b2abb568658a596ac}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GateGammaEmissionModel()}{GateGammaEmissionModel()}}
+{\footnotesize\ttfamily Gate\+Gamma\+Emission\+Model\+::\+Gate\+Gamma\+Emission\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Copyright (C)\+: Open\+GATE Collaboration This software is distributed under the terms of the GNU Lesser General Public Licence (LGPL) \hypertarget{classGateGammaEmissionModel_autotoc_md51}{}\doxysubsubsection{See LICENSE.\+md for further details}\label{classGateGammaEmissionModel_autotoc_md51}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGammaEmissionModel_acf66f399281de77601acce985a05ca02}\label{classGateGammaEmissionModel_acf66f399281de77601acce985a05ca02}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GeneratePrimaryVertices@{GeneratePrimaryVertices}}
+\index{GeneratePrimaryVertices@{GeneratePrimaryVertices}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GeneratePrimaryVertices()}{GeneratePrimaryVertices()}}
+{\footnotesize\ttfamily G4int Gate\+Gamma\+Emission\+Model\+::\+Generate\+Primary\+Vertices (\begin{DoxyParamCaption}\item[{G4\+Event $\ast$}]{event,  }\item[{G4double \&}]{particle\+\_\+time,  }\item[{G4\+Three\+Vector \&}]{particle\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Generate single vertex with single gamma 
+
+Reimplemented in \mbox{\hyperlink{classGatePositroniumDecayModel_ac99bee5c3f6afdfa03cf3f7de4351e9c}{Gate\+Positronium\+Decay\+Model}}.
+
+\mbox{\Hypertarget{classGateGammaEmissionModel_a69fe269e4c1d9b8c2f22b5dbc88b1814}\label{classGateGammaEmissionModel_a69fe269e4c1d9b8c2f22b5dbc88b1814}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GetEmissionEnergy@{GetEmissionEnergy}}
+\index{GetEmissionEnergy@{GetEmissionEnergy}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GetEmissionEnergy()}{GetEmissionEnergy()}}
+{\footnotesize\ttfamily G4double Gate\+Gamma\+Emission\+Model\+::\+Get\+Emission\+Energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get single gamma kinematic energy. \mbox{\Hypertarget{classGateGammaEmissionModel_ad019ac51e7129075cd014ece5230e07b}\label{classGateGammaEmissionModel_ad019ac51e7129075cd014ece5230e07b}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GetPerpendicularVector@{GetPerpendicularVector}}
+\index{GetPerpendicularVector@{GetPerpendicularVector}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GetPerpendicularVector()}{GetPerpendicularVector()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Gamma\+Emission\+Model\+::\+Get\+Perpendicular\+Vector (\begin{DoxyParamCaption}\item[{const G4\+Three\+Vector \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate perpendicular vector ( required for polarization ) \mbox{\Hypertarget{classGateGammaEmissionModel_a007c57f3a1358adc2e1d1114437c54e1}\label{classGateGammaEmissionModel_a007c57f3a1358adc2e1d1114437c54e1}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GetPolarization@{GetPolarization}}
+\index{GetPolarization@{GetPolarization}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GetPolarization()}{GetPolarization()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Gamma\+Emission\+Model\+::\+Get\+Polarization (\begin{DoxyParamCaption}\item[{const G4\+Three\+Vector \&}]{momentum }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate gamma polarization \mbox{\Hypertarget{classGateGammaEmissionModel_a06a97459ff8c9444142c6807c0d18b2e}\label{classGateGammaEmissionModel_a06a97459ff8c9444142c6807c0d18b2e}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GetPrimaryParticleInformation@{GetPrimaryParticleInformation}}
+\index{GetPrimaryParticleInformation@{GetPrimaryParticleInformation}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GetPrimaryParticleInformation()}{GetPrimaryParticleInformation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateEmittedGammaInformation}{Gate\+Emitted\+Gamma\+Information}} $\ast$ Gate\+Gamma\+Emission\+Model\+::\+Get\+Primary\+Particle\+Information (\begin{DoxyParamCaption}\item[{const G4\+Primary\+Particle $\ast$}]{pp,  }\item[{const \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{Gate\+Emitted\+Gamma\+Information\+::\+Gamma\+Kind}} \&}]{gamma\+\_\+kind }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Provides additional information for user about gamma 
+
+Reimplemented in \mbox{\hyperlink{classGatePositroniumDecayModel_ab832b7bdca76f9d1aa34d9b1bd351c80}{Gate\+Positronium\+Decay\+Model}}.
+
+\mbox{\Hypertarget{classGateGammaEmissionModel_a94b263758409887bf525b33c4a4f77b6}\label{classGateGammaEmissionModel_a94b263758409887bf525b33c4a4f77b6}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GetSeed@{GetSeed}}
+\index{GetSeed@{GetSeed}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GetSeed()}{GetSeed()}}
+{\footnotesize\ttfamily G4long Gate\+Gamma\+Emission\+Model\+::\+Get\+Seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get seed for generators from \char`\"{}\+Randomize.\+hh\char`\"{} \mbox{\Hypertarget{classGateGammaEmissionModel_a9709f015e804d64270bdb387bf7bf2fc}\label{classGateGammaEmissionModel_a9709f015e804d64270bdb387bf7bf2fc}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GetSingleGamma@{GetSingleGamma}}
+\index{GetSingleGamma@{GetSingleGamma}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GetSingleGamma()}{GetSingleGamma()}}
+{\footnotesize\ttfamily G4\+Primary\+Particle $\ast$ Gate\+Gamma\+Emission\+Model\+::\+Get\+Single\+Gamma (\begin{DoxyParamCaption}\item[{const G4double \&}]{energy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate single gamma with desired energy Momentum
+
+Polarization\mbox{\Hypertarget{classGateGammaEmissionModel_a8bce051f65886f0281091c45c0bc7c1f}\label{classGateGammaEmissionModel_a8bce051f65886f0281091c45c0bc7c1f}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!GetUniformOnSphere@{GetUniformOnSphere}}
+\index{GetUniformOnSphere@{GetUniformOnSphere}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{GetUniformOnSphere()}{GetUniformOnSphere()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Gamma\+Emission\+Model\+::\+Get\+Uniform\+On\+Sphere (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generate random unit vector from uniform sphere distribution \mbox{\Hypertarget{classGateGammaEmissionModel_ae34bedfd6d68eda75354da26a89645b3}\label{classGateGammaEmissionModel_ae34bedfd6d68eda75354da26a89645b3}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!NoticeError@{NoticeError}}
+\index{NoticeError@{NoticeError}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{NoticeError()}{NoticeError()}}
+{\footnotesize\ttfamily void Gate\+Gamma\+Emission\+Model\+::\+Notice\+Error (\begin{DoxyParamCaption}\item[{G4\+String}]{method\+\_\+name,  }\item[{G4\+String}]{exception\+\_\+description }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Report error \mbox{\Hypertarget{classGateGammaEmissionModel_addfeec2c5cb529a428c0351f0ae1501e}\label{classGateGammaEmissionModel_addfeec2c5cb529a428c0351f0ae1501e}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!SetEmissionEnergy@{SetEmissionEnergy}}
+\index{SetEmissionEnergy@{SetEmissionEnergy}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{SetEmissionEnergy()}{SetEmissionEnergy()}}
+{\footnotesize\ttfamily void Gate\+Gamma\+Emission\+Model\+::\+Set\+Emission\+Energy (\begin{DoxyParamCaption}\item[{const G4double \&}]{energy }\end{DoxyParamCaption})}
+
+Set single gamma kinematic energy. \mbox{\Hypertarget{classGateGammaEmissionModel_ae77975e83ea7d715733c0b3847b15da0}\label{classGateGammaEmissionModel_ae77975e83ea7d715733c0b3847b15da0}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!SetEnableFixedEmissionDirection@{SetEnableFixedEmissionDirection}}
+\index{SetEnableFixedEmissionDirection@{SetEnableFixedEmissionDirection}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{SetEnableFixedEmissionDirection()}{SetEnableFixedEmissionDirection()}}
+{\footnotesize\ttfamily void Gate\+Gamma\+Emission\+Model\+::\+Set\+Enable\+Fixed\+Emission\+Direction (\begin{DoxyParamCaption}\item[{const G4bool}]{enable }\end{DoxyParamCaption})}
+
+Force gamma emissions in only one direction. When this method is f\+Use\+Fixed\+Emission\+Direction flag is switched to value=enable. \mbox{\Hypertarget{classGateGammaEmissionModel_aceaee19a9244581439a46e45c9e94ba3}\label{classGateGammaEmissionModel_aceaee19a9244581439a46e45c9e94ba3}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!SetFixedEmissionDirection@{SetFixedEmissionDirection}}
+\index{SetFixedEmissionDirection@{SetFixedEmissionDirection}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{SetFixedEmissionDirection()}{SetFixedEmissionDirection()}}
+{\footnotesize\ttfamily void Gate\+Gamma\+Emission\+Model\+::\+Set\+Fixed\+Emission\+Direction (\begin{DoxyParamCaption}\item[{const G4\+Three\+Vector \&}]{momentum\+\_\+direction }\end{DoxyParamCaption})}
+
+Force gamma emissions in only one direction. When this method is called f\+Use\+Fixed\+Emission\+Direction flag is switched to TRUE. \mbox{\Hypertarget{classGateGammaEmissionModel_a27a4306be65def160387690b9aa9b623}\label{classGateGammaEmissionModel_a27a4306be65def160387690b9aa9b623}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!SetModelName@{SetModelName}}
+\index{SetModelName@{SetModelName}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{SetModelName()}{SetModelName()}}
+{\footnotesize\ttfamily void Gate\+Gamma\+Emission\+Model\+::\+Set\+Model\+Name (\begin{DoxyParamCaption}\item[{const G4\+String}]{model\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Set model name ( class name ) \mbox{\Hypertarget{classGateGammaEmissionModel_adc565c483bc5c962fbfdb285aca24ffe}\label{classGateGammaEmissionModel_adc565c483bc5c962fbfdb285aca24ffe}} 
+\index{GateGammaEmissionModel@{GateGammaEmissionModel}!SetSeed@{SetSeed}}
+\index{SetSeed@{SetSeed}!GateGammaEmissionModel@{GateGammaEmissionModel}}
+\doxysubsubsection{\texorpdfstring{SetSeed()}{SetSeed()}}
+{\footnotesize\ttfamily void Gate\+Gamma\+Emission\+Model\+::\+Set\+Seed (\begin{DoxyParamCaption}\item[{G4long}]{seed }\end{DoxyParamCaption})}
+
+Set seed for generators from \char`\"{}\+Randomize.\+hh\char`\"{} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Gamma\+Emission\+Model.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Gamma\+Emission\+Model.\+cc\end{DoxyCompactItemize}

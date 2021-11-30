@@ -1,0 +1,248 @@
+\hypertarget{DiagMatrix_8h_source}{}\doxysection{Diag\+Matrix.\+h}
+\label{DiagMatrix_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/DiagMatrix.h@{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/Matrix/DiagMatrix.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// -\/*-\/ C++ -\/*-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{// CLASSDOC OFF}}
+\DoxyCodeLine{3 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// CLASSDOC ON}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// This file is a part of the CLHEP -\/ a Class Library for High Energy Physics.}}
+\DoxyCodeLine{7 \textcolor{comment}{// }}
+\DoxyCodeLine{8 \textcolor{comment}{// This software written by Nobu Katayama and Mike Smyth, Cornell University.}}
+\DoxyCodeLine{9 \textcolor{comment}{//}}
+\DoxyCodeLine{10 \textcolor{comment}{// DiagMatrix is a class for diagonal matrix. This is useful for a covariance}}
+\DoxyCodeLine{11 \textcolor{comment}{// matrix of measured quantities since they are uncorrelated to each other}}
+\DoxyCodeLine{12 \textcolor{comment}{// and therefore diagonal. It is obviously smaller and faster to manipulate.}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef \_DIAGMatrix\_H\_}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define \_DIAGMatrix\_H\_}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef GNUPRAGMA}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#pragma interface}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/defs.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/GenMatrix.h"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }CLHEP \{}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }HepRandom;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }HepMatrix;}
+\DoxyCodeLine{32 \textcolor{keyword}{class }HepSymMatrix;}
+\DoxyCodeLine{33 \textcolor{keyword}{class }HepVector;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}: \textcolor{keyword}{public} \mbox{\hyperlink{classCLHEP_1_1HepGenMatrix}{HepGenMatrix}} \{}
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}();}
+\DoxyCodeLine{42    \textcolor{comment}{// Default constructor. Gives 0x0 matrix. Another Matrix can be assigned}}
+\DoxyCodeLine{43    \textcolor{comment}{// to it.}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45    \textcolor{keyword}{explicit} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}(\textcolor{keywordtype}{int} p);}
+\DoxyCodeLine{46    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}(\textcolor{keywordtype}{int} p, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{47    \textcolor{comment}{// Constructor. Gives p x p diagonal matrix.}}
+\DoxyCodeLine{48    \textcolor{comment}{// With a second argument, either 0 or 1, the matrix is initialized.}}
+\DoxyCodeLine{49    \textcolor{comment}{// 0 means a zero matrix, 1 means the identity matrix.}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}(\textcolor{keywordtype}{int} p, HepRandom \&r);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1);}
+\DoxyCodeLine{54    \textcolor{comment}{// Copy constructor.}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56    \textcolor{keyword}{virtual} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{\string~HepDiagMatrix}}();}
+\DoxyCodeLine{57    \textcolor{comment}{// Destructor.}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} num\_row() \textcolor{keyword}{const};}
+\DoxyCodeLine{60    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} num\_col() \textcolor{keyword}{const};}
+\DoxyCodeLine{61    \textcolor{comment}{// Returns the number of rows/columns. (Should be equal.)}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63    \textcolor{keywordtype}{double} \&operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{64    \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&operator()(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const}; }
+\DoxyCodeLine{65    \textcolor{comment}{// Read or write a matrix element. row must be equal to col.}}
+\DoxyCodeLine{66    \textcolor{comment}{// ** Note that indexing starts from (1,1). **}}
+\DoxyCodeLine{67    }
+\DoxyCodeLine{68    \textcolor{keywordtype}{double} \&fast(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col);}
+\DoxyCodeLine{69    \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&fast(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const};}
+\DoxyCodeLine{70    \textcolor{comment}{// fast element access.}}
+\DoxyCodeLine{71    \textcolor{comment}{// Must be row>=col;}}
+\DoxyCodeLine{72    \textcolor{comment}{// ** Note that indexing starts from (1,1). **}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74    \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{75    \textcolor{comment}{// Assigns hm2 to d, assuming hm2 is a diagnal matrix.}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77    \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&hm2);}
+\DoxyCodeLine{78    \textcolor{comment}{// Assigns hm2 to d, assuming hm2 is a diagnal matrix.}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80    \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{81    \textcolor{comment}{// Another form of assignment. For consistency.}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \& operator*=(\textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{84    \textcolor{comment}{// Multiply a DiagMatrix by a floating number}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \& operator/=(\textcolor{keywordtype}{double} t); }
+\DoxyCodeLine{87    \textcolor{comment}{// Divide a DiagMatrix by a floating number}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \& operator+=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{90    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \& operator-\/=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{91    \textcolor{comment}{// Add or subtract a DiagMatrix.}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \& operator=( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{94    \textcolor{comment}{// Assignment operator. To assign SymMatrix to DiagMatrix, use d<<s.}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator-\/ () \textcolor{keyword}{const};}
+\DoxyCodeLine{97    \textcolor{comment}{// unary minus, ie. flip the sign of each element.}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} T() \textcolor{keyword}{const};}
+\DoxyCodeLine{100    \textcolor{comment}{// Returns the transpose of a DiagMatrix (which is itself).}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} apply(\textcolor{keywordtype}{double} (*f)(\textcolor{keywordtype}{double},}
+\DoxyCodeLine{103                            \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int})) \textcolor{keyword}{const};}
+\DoxyCodeLine{104    \textcolor{comment}{// Apply a function to all elements of the matrix.}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} similarity(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1) \textcolor{keyword}{const};}
+\DoxyCodeLine{107    \textcolor{comment}{// Returns hm1*s*hm1.T().}}
+\DoxyCodeLine{108    \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} similarityT(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1) \textcolor{keyword}{const};}
+\DoxyCodeLine{109    \textcolor{comment}{// Returns hm1.T()*s*hm1.}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111    \textcolor{keywordtype}{double} similarity(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{112    \textcolor{comment}{// Returns v.T()*s*v (This is a scaler).}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} sub(\textcolor{keywordtype}{int} min\_row, \textcolor{keywordtype}{int} max\_row) \textcolor{keyword}{const};}
+\DoxyCodeLine{115    \textcolor{comment}{// Returns a sub matrix of a SymMatrix.}}
+\DoxyCodeLine{116    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} sub(\textcolor{keywordtype}{int} min\_row, \textcolor{keywordtype}{int} max\_row);}
+\DoxyCodeLine{117    \textcolor{comment}{// SGI CC bug. I have to have both with/without const. I should not need}}
+\DoxyCodeLine{118    \textcolor{comment}{// one without const.}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120    \textcolor{keywordtype}{void} sub(\textcolor{keywordtype}{int} row, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1);}
+\DoxyCodeLine{121    \textcolor{comment}{// Sub matrix of this SymMatrix is replaced with hm1.}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123    \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} inverse(\textcolor{keywordtype}{int}\&ierr) \textcolor{keyword}{const};}
+\DoxyCodeLine{124    \textcolor{comment}{// Invert a Matrix. The matrix is not changed}}
+\DoxyCodeLine{125    \textcolor{comment}{// Returns 0 when successful, otherwise non-\/zero.}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127    \textcolor{keywordtype}{void} invert(\textcolor{keywordtype}{int}\&ierr);}
+\DoxyCodeLine{128    \textcolor{comment}{// Invert a Matrix.}}
+\DoxyCodeLine{129    \textcolor{comment}{// N.B. the contents of the matrix are replaced by the inverse.}}
+\DoxyCodeLine{130    \textcolor{comment}{// Returns ierr = 0 when successful, otherwise non-\/zero. }}
+\DoxyCodeLine{131    \textcolor{comment}{// This method has less overhead then inverse().}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} invert();}
+\DoxyCodeLine{134    \textcolor{comment}{// Invert a matrix. Throw std::runtime\_error on failure.}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} inverse() \textcolor{keyword}{const};}
+\DoxyCodeLine{137    \textcolor{comment}{// Invert a matrix. Throw std::runtime\_error on failure. }}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139    \textcolor{keywordtype}{double} determinant() \textcolor{keyword}{const};}
+\DoxyCodeLine{140    \textcolor{comment}{// calculate the determinant of the matrix.}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142    \textcolor{keywordtype}{double} trace() \textcolor{keyword}{const};}
+\DoxyCodeLine{143    \textcolor{comment}{// calculate the trace of the matrix (sum of diagonal elements).}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145    \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row}{HepDiagMatrix\_row}} \{}
+\DoxyCodeLine{146    \textcolor{keyword}{public}:}
+\DoxyCodeLine{147       \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row}{HepDiagMatrix\_row}}(\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}\&,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{148       \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int});}
+\DoxyCodeLine{149    \textcolor{keyword}{private}:}
+\DoxyCodeLine{150       \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}\& \_a;}
+\DoxyCodeLine{151       \textcolor{keywordtype}{int} \_r;}
+\DoxyCodeLine{152    \};}
+\DoxyCodeLine{153    \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row__const}{HepDiagMatrix\_row\_const}} \{}
+\DoxyCodeLine{154    \textcolor{keyword}{public}:}
+\DoxyCodeLine{155       \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row__const}{HepDiagMatrix\_row\_const}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}\&,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{156       \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& operator[](\textcolor{keywordtype}{int}) \textcolor{keyword}{const};}
+\DoxyCodeLine{157    \textcolor{keyword}{private}:}
+\DoxyCodeLine{158       \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}}\& \_a;}
+\DoxyCodeLine{159       \textcolor{keywordtype}{int} \_r;}
+\DoxyCodeLine{160    \};}
+\DoxyCodeLine{161    \textcolor{comment}{// helper classes to implement m[i][j]}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row}{HepDiagMatrix\_row}} operator[] (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{164    \textcolor{keyword}{inline} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row__const}{HepDiagMatrix\_row\_const}} operator[] (\textcolor{keywordtype}{int}) \textcolor{keyword}{const};}
+\DoxyCodeLine{165    \textcolor{comment}{// Read or write a matrix element.}}
+\DoxyCodeLine{166    \textcolor{comment}{// While it may not look like it, you simply do m[i][j] to get an}}
+\DoxyCodeLine{167    \textcolor{comment}{// element. }}
+\DoxyCodeLine{168    \textcolor{comment}{// ** Note that the indexing starts from [0][0]. **}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{171    \textcolor{keyword}{inline} \textcolor{keywordtype}{int} num\_size() \textcolor{keyword}{const};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{keyword}{private}:}
+\DoxyCodeLine{174    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row}{HepDiagMatrix\_row}};}
+\DoxyCodeLine{175    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix_1_1HepDiagMatrix__row__const}{HepDiagMatrix\_row\_const}};}
+\DoxyCodeLine{176    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}};}
+\DoxyCodeLine{177    \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1,}
+\DoxyCodeLine{180                    \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{181    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1,}
+\DoxyCodeLine{182                    \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{183    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1,}
+\DoxyCodeLine{184                    \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{185    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{186    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{187    \textcolor{keyword}{friend} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \&hm2);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#ifdef DISABLE\_ALLOC}}
+\DoxyCodeLine{190    std::vector<double > m;}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{192    std::vector<double,Alloc<double,25> > m;}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194    \textcolor{keywordtype}{int} nrow;}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#if defined(\_\_sun) || !defined(\_\_GNUG\_\_)}}
+\DoxyCodeLine{196 \textcolor{comment}{//}}
+\DoxyCodeLine{197 \textcolor{comment}{// Sun CC 4.0.1 has this bug.}}
+\DoxyCodeLine{198 \textcolor{comment}{//}}
+\DoxyCodeLine{199    \textcolor{keyword}{static} \textcolor{keywordtype}{double} zero;}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{201    \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} zero;}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{203 \};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 std::ostream\& operator<<(std::ostream \&s, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&q);}
+\DoxyCodeLine{206 \textcolor{comment}{// Write out Matrix, SymMatrix, DiagMatrix and Vector into ostream.}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm2);}
+\DoxyCodeLine{209 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{210 \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator*(\textcolor{keywordtype}{double} t, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d1);}
+\DoxyCodeLine{211 \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d1, \textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{212 \textcolor{comment}{// Multiplication operators}}
+\DoxyCodeLine{213 \textcolor{comment}{// Note that m *= hm1 is always faster than m = m * hm1}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1, \textcolor{keywordtype}{double} t);}
+\DoxyCodeLine{216 \textcolor{comment}{// d = d1 / t. (d /= t is faster if you can use it.)}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d2);}
+\DoxyCodeLine{219 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{220 \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d2);}
+\DoxyCodeLine{221 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d2);}
+\DoxyCodeLine{222 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s2);}
+\DoxyCodeLine{223 \textcolor{comment}{// Addition operators}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d2);}
+\DoxyCodeLine{226 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \&hm2);}
+\DoxyCodeLine{227 \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d2);}
+\DoxyCodeLine{228 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d2);}
+\DoxyCodeLine{229 \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&d1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \&s2);}
+\DoxyCodeLine{230 \textcolor{comment}{// Subtraction operators}}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} dsum(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&s1, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepDiagMatrix}{HepDiagMatrix}} \&s2);}
+\DoxyCodeLine{233 \textcolor{comment}{// Direct sum of two diagonal matricies;}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \}  \textcolor{comment}{// namespace CLHEP}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#ifdef ENABLE\_BACKWARDS\_COMPATIBILITY}}
+\DoxyCodeLine{238 \textcolor{comment}{//  backwards compatibility will be enabled ONLY in CLHEP 1.9}}
+\DoxyCodeLine{239 \textcolor{keyword}{using namespace }CLHEP;}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#ifndef HEP\_DEBUG\_INLINE}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/DiagMatrix.icc"{}}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

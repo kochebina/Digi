@@ -1,0 +1,76 @@
+\hypertarget{GateSourcePencilBeamMessenger_8hh_source}{}\doxysection{Gate\+Source\+Pencil\+Beam\+Messenger.\+hh}
+\label{GateSourcePencilBeamMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourcePencilBeamMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourcePencilBeamMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateSourcePencilBeamMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateSourcePencilBeamMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVSourceMessenger.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourcePencilBeam}{GateSourcePencilBeam}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4ParticleTable;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcommand;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{28 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{29 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{30 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{31 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSource}{GateVSource}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourcePencilBeamMessenger}{GateSourcePencilBeamMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSourceMessenger}{GateVSourceMessenger}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateSourcePencilBeamMessenger}{GateSourcePencilBeamMessenger}}(\mbox{\hyperlink{classGateSourcePencilBeam}{GateSourcePencilBeam}}* source);}
+\DoxyCodeLine{41     \mbox{\hyperlink{classGateSourcePencilBeamMessenger}{\string~GateSourcePencilBeamMessenger}}();}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{43   \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     \mbox{\hyperlink{classGateSourcePencilBeam}{GateSourcePencilBeam}} * pSourcePencilBeam;}
+\DoxyCodeLine{45     \textcolor{comment}{//Particle Type}}
+\DoxyCodeLine{46     G4UIcmdWithAString * pParticleTypeCmd;}
+\DoxyCodeLine{47     \textcolor{comment}{//Particle Properties If GenericIon}}
+\DoxyCodeLine{48     G4UIcommand * pIonCmd;}
+\DoxyCodeLine{49     \textcolor{comment}{//Energy}}
+\DoxyCodeLine{50     G4UIcmdWithADoubleAndUnit * pEnergyCmd;}
+\DoxyCodeLine{51     G4UIcmdWithADoubleAndUnit * pSigmaEnergyCmd;}
+\DoxyCodeLine{52     \textcolor{comment}{//Position}}
+\DoxyCodeLine{53     G4UIcmdWith3VectorAndUnit * pPositionCmd;}
+\DoxyCodeLine{54     G4UIcmdWithADoubleAndUnit * pSigmaXCmd;}
+\DoxyCodeLine{55     G4UIcmdWithADoubleAndUnit * pSigmaYCmd;}
+\DoxyCodeLine{56     \textcolor{comment}{//Direction}}
+\DoxyCodeLine{57     G4UIcmdWithADoubleAndUnit * pSigmaThetaCmd;}
+\DoxyCodeLine{58     G4UIcmdWithADoubleAndUnit * pSigmaPhiCmd;}
+\DoxyCodeLine{59     G4UIcmdWith3Vector * pRotationAxisCmd;}
+\DoxyCodeLine{60     G4UIcmdWithADoubleAndUnit * pRotationAngleCmd;}
+\DoxyCodeLine{61     \textcolor{comment}{//Correlation Position/Direction}}
+\DoxyCodeLine{62     G4UIcmdWithADoubleAndUnit * pEllipseXThetaAreaCmd;}
+\DoxyCodeLine{63     G4UIcmdWithADoubleAndUnit * pEllipseYPhiAreaCmd;}
+\DoxyCodeLine{64     G4UIcmdWithAString * pEllipseXThetaRotationNormCmd;}
+\DoxyCodeLine{65     G4UIcmdWithAString * pEllipseYPhiRotationNormCmd;}
+\DoxyCodeLine{66     \textcolor{comment}{//Tests}}
+\DoxyCodeLine{67     G4UIcmdWithABool* pTestCmd;}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

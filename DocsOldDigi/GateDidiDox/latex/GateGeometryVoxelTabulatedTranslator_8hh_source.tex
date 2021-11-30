@@ -1,0 +1,64 @@
+\hypertarget{GateGeometryVoxelTabulatedTranslator_8hh_source}{}\doxysection{Gate\+Geometry\+Voxel\+Tabulated\+Translator.\+hh}
+\label{GateGeometryVoxelTabulatedTranslator_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelTabulatedTranslator.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelTabulatedTranslator.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateGeometryVoxelTabulatedTranslator\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateGeometryVoxelTabulatedTranslator\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelTranslator.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4VisAttributes.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslatorMessenger}{GateGeometryVoxelTabulatedTranslatorMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator}{GateGeometryVoxelTabulatedTranslator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{GateVGeometryVoxelTranslator}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator}{GateGeometryVoxelTabulatedTranslator}}(\mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* voxelReader);}
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator}{\string~GateGeometryVoxelTabulatedTranslator}}();}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{25   \textcolor{keywordtype}{void}     ReadTranslationTable(G4String fileName);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keywordtype}{void}     Describe(G4int level);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{inline} G4VisAttributes* GetMaterialAttributes(G4Material* m)\{}
+\DoxyCodeLine{33     \textcolor{keywordflow}{return} m\_voxelAttributesTranslation[m];}
+\DoxyCodeLine{34   \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   G4String TranslateToMaterial(G4int voxelValue);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39   G4String \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator_aa508106f0d236b02cbb6764a53d374e4}{GetNextMaterial}}(G4bool doReset=\textcolor{keyword}{false});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator_a6e6a24c3741932184f8ef72dc258ab65}{GetCompleteListOfMaterials}}(std::vector<G4String>\& mat);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{typedef} std::map<G4int,G4String> GateVoxelMaterialTranslationMap;}
+\DoxyCodeLine{47   GateVoxelMaterialTranslationMap    m\_voxelMaterialTranslation;}
+\DoxyCodeLine{48  }
+\DoxyCodeLine{49  \textcolor{keyword}{typedef} std::map<G4Material*, G4VisAttributes*> GateVoxelAttributesTranslationMap;}
+\DoxyCodeLine{50   GateVoxelAttributesTranslationMap m\_voxelAttributesTranslation;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslatorMessenger}{GateGeometryVoxelTabulatedTranslatorMessenger}}* m\_messenger; }
+\DoxyCodeLine{53   }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55   \textcolor{comment}{// iterator for the GetNextMaterial function}}
+\DoxyCodeLine{56   GateVoxelMaterialTranslationMap::iterator anIterator;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

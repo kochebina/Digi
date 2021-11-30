@@ -1,0 +1,51 @@
+\hypertarget{GateVDigiMakerModule_8hh_source}{}\doxysection{Gate\+VDigi\+Maker\+Module.\+hh}
+\label{GateVDigiMakerModule_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVDigiMakerModule.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVDigiMakerModule.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVDigiMakerModule\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVDigiMakerModule\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDigiMakerModule}{GateVDigiMakerModule}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateVDigiMakerModule_a01904652b6288932fa8ff2738ed08e89}{GateVDigiMakerModule}}(\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* itsDigitizer,}
+\DoxyCodeLine{31              \textcolor{keyword}{const} G4String\& itsInputName);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateVDigiMakerModule_af27be7e3035f72f21703c5ce4733fe73}{\string~GateVDigiMakerModule}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVDigiMakerModule_a41ed8e7c532724d75482dc2a4ee74a27}{Digitize}}()=0;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVDigiMakerModule_ad5383b5a49bf4a52744ee13f30fb2682}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetInputName(\textcolor{keyword}{const} G4String\& inputName)}
+\DoxyCodeLine{44     \{ m\_inputName = inputName; \}}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& GetInputName()}
+\DoxyCodeLine{46     \{ \textcolor{keywordflow}{return} m\_inputName; \}}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& GetCollectionName()}
+\DoxyCodeLine{48     \{ \textcolor{keywordflow}{return} m\_collectionName; \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{51   \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}*    m\_digitizer;}
+\DoxyCodeLine{52   G4String       m\_inputName;}
+\DoxyCodeLine{53   G4String       m\_collectionName;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,146 @@
+\hypertarget{RandMultiGauss_8h_source}{}\doxysection{Rand\+Multi\+Gauss.\+h}
+\label{RandMultiGauss_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/RandomObjects/RandMultiGauss.h@{/biomaps/physique/appli/GateOlga/src/source/externals/clhep/include/CLHEP/RandomObjects/RandMultiGauss.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// \$Id: RandMultiGauss.h,v 1.3 2003/10/23 21:29:51 garren Exp \$}}
+\DoxyCodeLine{2 \textcolor{comment}{// -\/*-\/ C++ -\/*-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{//                             HEP Random}}
+\DoxyCodeLine{6 \textcolor{comment}{//                          -\/-\/-\/ RandMultiGauss -\/-\/-\/}}
+\DoxyCodeLine{7 \textcolor{comment}{//                          class header file}}
+\DoxyCodeLine{8 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// Class defining methods for firing multivariate gaussian distributed }}
+\DoxyCodeLine{11 \textcolor{comment}{// random values, given a vector of means and a covariance matrix}}
+\DoxyCodeLine{12 \textcolor{comment}{// Definitions are those from 1998 Review of Particle Physics, section 28.3.3.}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 \textcolor{comment}{// This utilizes the following other comonents of CLHEP:  }}
+\DoxyCodeLine{15 \textcolor{comment}{//  RandGauss from the Random package to get individual deviates}}
+\DoxyCodeLine{16 \textcolor{comment}{//  HepVector, HepSymMatrix and HepMatrix from the Matrix package}}
+\DoxyCodeLine{17 \textcolor{comment}{//  HepSymMatrix::similarity(HepMatrix)}}
+\DoxyCodeLine{18 \textcolor{comment}{//  diagonalize(HepSymMatrix *s)}}
+\DoxyCodeLine{19 \textcolor{comment}{// The author of this distribution relies on diagonalize() being correct.}}
+\DoxyCodeLine{20 \textcolor{comment}{//}}
+\DoxyCodeLine{21 \textcolor{comment}{// Although original distribution classes in the Random package return a }}
+\DoxyCodeLine{22 \textcolor{comment}{// double when fire() (or operator()) is done, RandMultiGauss returns a }}
+\DoxyCodeLine{23 \textcolor{comment}{// HepVector of values.}}
+\DoxyCodeLine{24 \textcolor{comment}{//    }}
+\DoxyCodeLine{25 \textcolor{comment}{// =======================================================================}}
+\DoxyCodeLine{26 \textcolor{comment}{// Mark Fischler  -\/ Created: 19th September 1999}}
+\DoxyCodeLine{27 \textcolor{comment}{// =======================================================================}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef RandMultiGauss\_h}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define RandMultiGauss\_h 1}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}CLHEP/RandomObjects/defs.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}CLHEP/Random/RandomEngine.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}CLHEP/RandomObjects/RandomVector.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/Vector.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/Matrix.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}CLHEP/Matrix/SymMatrix.h"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }CLHEP \{}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCLHEP_1_1HepRandomVector}{HepRandomVector}} \{}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} ( HepRandomEngine\& anEngine, }
+\DoxyCodeLine{50            \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}\& mu, }
+\DoxyCodeLine{51                    \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\& S );}
+\DoxyCodeLine{52         \textcolor{comment}{// The symmetric matrix S MUST BE POSITIVE DEFINITE}}
+\DoxyCodeLine{53         \textcolor{comment}{// and MUST MATCH THE SIZE OF MU.}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} ( HepRandomEngine* anEngine, }
+\DoxyCodeLine{56            \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}\& mu, }
+\DoxyCodeLine{57                    \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\& S );}
+\DoxyCodeLine{58         \textcolor{comment}{// The symmetric matrix S MUST BE POSITIVE DEFINITE}}
+\DoxyCodeLine{59         \textcolor{comment}{// and MUST MATCH THE SIZE OF MU.}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{comment}{// These constructors should be used to instantiate a RandMultiGauss}}
+\DoxyCodeLine{62   \textcolor{comment}{// distribution object defining a local engine for it.}}
+\DoxyCodeLine{63   \textcolor{comment}{// The static generator will be skipped using the non-\/static methods}}
+\DoxyCodeLine{64   \textcolor{comment}{// defined below.}}
+\DoxyCodeLine{65   \textcolor{comment}{// If the engine is passed by pointer the corresponding engine object}}
+\DoxyCodeLine{66   \textcolor{comment}{// will be deleted by the RandMultiGauss destructor.}}
+\DoxyCodeLine{67   \textcolor{comment}{// If the engine is passed by reference the corresponding engine object}}
+\DoxyCodeLine{68   \textcolor{comment}{// will not be deleted by the RandGauss destructor.}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{comment}{// The following are provided for convenience in the case where each}}
+\DoxyCodeLine{71   \textcolor{comment}{// random fired will have a different mu and S.  They set the default mu}}
+\DoxyCodeLine{72   \textcolor{comment}{// to the zero 2-\/vector, and the default S to the Unit 2x2 matrix.  }}
+\DoxyCodeLine{73   \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} ( HepRandomEngine\& anEngine );}
+\DoxyCodeLine{74   \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} ( HepRandomEngine* anEngine );}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{\string~RandMultiGauss}}();}
+\DoxyCodeLine{77   \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} fire();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} fire( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}\& mu, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\& S );}
+\DoxyCodeLine{82         \textcolor{comment}{// The symmetric matrix S MUST BE POSITIVE DEFINITE}}
+\DoxyCodeLine{83         \textcolor{comment}{// and MUST MATCH THE SIZE OF MU.}}
+\DoxyCodeLine{84   }
+\DoxyCodeLine{85   \textcolor{comment}{// A note on efficient usage when firing many vectors of Multivariate }}
+\DoxyCodeLine{86   \textcolor{comment}{// Gaussians:   For n > 2 the work needed to diagonalize S is significant.}}
+\DoxyCodeLine{87   \textcolor{comment}{// So if you only want a collection of uncorrelated Gaussians, it will be}}
+\DoxyCodeLine{88   \textcolor{comment}{// quicker to generate them one at a time.}}
+\DoxyCodeLine{89   \textcolor{comment}{//}}
+\DoxyCodeLine{90   \textcolor{comment}{// The class saves the diagonalizing matrix for the default S.  }}
+\DoxyCodeLine{91   \textcolor{comment}{// Thus generating vectors with that same S can be quite efficient.  }}
+\DoxyCodeLine{92   \textcolor{comment}{// If you require a small number of different S's, known in }}
+\DoxyCodeLine{93   \textcolor{comment}{// advance, consider instantiating RandMulitGauss for each different S,}}
+\DoxyCodeLine{94   \textcolor{comment}{// sharing the same engine.  }}
+\DoxyCodeLine{95   \textcolor{comment}{// }}
+\DoxyCodeLine{96   \textcolor{comment}{// If you require a random using the default S for a distribution but a }}
+\DoxyCodeLine{97   \textcolor{comment}{// different mu, it is most efficient to imply use the default fire() and }}
+\DoxyCodeLine{98   \textcolor{comment}{// add the difference of the mu's to the returned HepVector.}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} fireArray ( \textcolor{keyword}{const} \textcolor{keywordtype}{int} size, \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}* array);}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} fireArray ( \textcolor{keyword}{const} \textcolor{keywordtype}{int} size, \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}* array,}
+\DoxyCodeLine{102            \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}\& mu, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\& S );}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator()();}
+\DoxyCodeLine{105   \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} operator()( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}\& mu, \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}}\& S );}
+\DoxyCodeLine{106         \textcolor{comment}{// The symmetric matrix S MUST BE POSITIVE DEFINITE}}
+\DoxyCodeLine{107         \textcolor{comment}{// and MUST MATCH THE SIZE OF MU.}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keyword}{private}:}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \textcolor{comment}{// Private copy constructor. Defining it here disallows use.}}
+\DoxyCodeLine{112   \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1RandMultiGauss}{RandMultiGauss}} \&d);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114   HepRandomEngine* localEngine;}
+\DoxyCodeLine{115   \textcolor{keywordtype}{bool} deleteEngine;}
+\DoxyCodeLine{116   \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}    defaultMu;}
+\DoxyCodeLine{117   \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}}    defaultU;}
+\DoxyCodeLine{118   \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}}    defaultSigmas;  \textcolor{comment}{// Each sigma is sqrt(D[i,i])}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120   \textcolor{keywordtype}{bool} set;}
+\DoxyCodeLine{121   \textcolor{keywordtype}{double} nextGaussian;}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \textcolor{keyword}{static} \textcolor{keywordtype}{void} prepareUsigmas (  \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepSymMatrix}{HepSymMatrix}} \& S,}
+\DoxyCodeLine{124                 \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \& U,}
+\DoxyCodeLine{125                 \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& sigmas );}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{keyword}{static} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} deviates ( \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepMatrix}{HepMatrix}} \& U, }
+\DoxyCodeLine{128                       \textcolor{keyword}{const} \mbox{\hyperlink{classCLHEP_1_1HepVector}{HepVector}} \& sigmas, }
+\DoxyCodeLine{129                       HepRandomEngine * engine,}
+\DoxyCodeLine{130                       \textcolor{keywordtype}{bool}\& available,}
+\DoxyCodeLine{131                   \textcolor{keywordtype}{double}\& next);}
+\DoxyCodeLine{132   \textcolor{comment}{// Returns vector of gaussian randoms based on sigmas, rotated by U,}}
+\DoxyCodeLine{133   \textcolor{comment}{// with means of 0.}}
+\DoxyCodeLine{134                }
+\DoxyCodeLine{135 \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \}  \textcolor{comment}{// namespace CLHEP}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#ifdef ENABLE\_BACKWARDS\_COMPATIBILITY}}
+\DoxyCodeLine{140 \textcolor{comment}{//  backwards compatibility will be enabled ONLY in CLHEP 1.9}}
+\DoxyCodeLine{141 \textcolor{keyword}{using namespace }CLHEP;}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RandMultiGauss\_h }}
+
+\end{DoxyCode}

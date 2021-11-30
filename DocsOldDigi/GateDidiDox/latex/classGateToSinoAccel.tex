@@ -1,0 +1,316 @@
+\hypertarget{classGateToSinoAccel}{}\doxysection{Gate\+To\+Sino\+Accel Class Reference}
+\label{classGateToSinoAccel}\index{GateToSinoAccel@{GateToSinoAccel}}
+Inheritance diagram for Gate\+To\+Sino\+Accel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateToSinoAccel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a476daf654dd51a01f8386080708f8499}\label{classGateToSinoAccel_a476daf654dd51a01f8386080708f8499}} 
+{\bfseries Gate\+To\+Sino\+Accel} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$its\+System, Digi\+Mode digi\+Mode)
+\begin{DoxyCompactList}\small\item\em Public constructor (creates an empty, uninitialised, project set) \end{DoxyCompactList}\item 
+const G4\+String \& \mbox{\hyperlink{classGateToSinoAccel_a224b845724879ebe3f9bab090441c381}{Give\+Name\+Of\+File}} ()
+\item 
+void \mbox{\hyperlink{classGateToSinoAccel_af27cf38d3f4d87dd789128fa6acb62a4}{Record\+Begin\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em Initialisation of the projection set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_a9536e951c57220c10d5475a7122b4225}{Record\+End\+Of\+Acquisition}} ()
+\item 
+void \mbox{\hyperlink{classGateToSinoAccel_a78880eefb03c328e8be74ffee6482ebe}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Reset the projection data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_abab3153ad72651861bf5a7a2e88573f7}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Write 2D sinograms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_abded8b57b9bb4d3842aba22e6a8cc216}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Nothing to do. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_a314ba7ca603bc6e918cade9a846014ca}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Update the target projections with regards to the digis acquired for this event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_abfcc9a8682bc2726f36f14fd92cd0d34}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\begin{DoxyCompactList}\small\item\em Nothing to do for steps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_a43334e238e3f9d99af250050f691a99c}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Nothing to do. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_af1548b10fa740a992d55cffb41aa08fa}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_aa00d43955e2259f2396bbcc87c8d64f2}\label{classGateToSinoAccel_aa00d43955e2259f2396bbcc87c8d64f2}} 
+void {\bfseries Stream\+Out} (std\+::ofstream \&dest)
+\begin{DoxyCompactList}\small\item\em Writes the projection sets onto an output stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a03676bfd92afe1d23f62f281a9a8ba3c}\label{classGateToSinoAccel_a03676bfd92afe1d23f62f281a9a8ba3c}} 
+virtual G4bool {\bfseries Is\+Raw\+Output\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of the raw ouptut enabled/disabled status flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a02283b74e8f04b8f49405244845e5c02}\label{classGateToSinoAccel_a02283b74e8f04b8f49405244845e5c02}} 
+virtual void {\bfseries Raw\+Output\+Enable} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Enable the raw output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ab6261cc2a2ccd4ca9847a3461142e168}\label{classGateToSinoAccel_ab6261cc2a2ccd4ca9847a3461142e168}} 
+virtual G4bool {\bfseries Is\+Trues\+Only} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of the trues only status flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ad681b6652a9896dcb5c5c714eaea444c}\label{classGateToSinoAccel_ad681b6652a9896dcb5c5c714eaea444c}} 
+virtual void {\bfseries Trues\+Only} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Enable recording of true coincidences only. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a97c1f98e8b7c3fd7cde98e717917d0eb}\label{classGateToSinoAccel_a97c1f98e8b7c3fd7cde98e717917d0eb}} 
+const G4\+String \& {\bfseries Get\+File\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the output file name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a50fe18ab72ae0d610ad4c13b910c3d05}\label{classGateToSinoAccel_a50fe18ab72ae0d610ad4c13b910c3d05}} 
+void {\bfseries Set\+File\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Set the output file name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a64a00cbd30b875f1601d5fd882c6fcd3}\label{classGateToSinoAccel_a64a00cbd30b875f1601d5fd882c6fcd3}} 
+const G4\+String \& {\bfseries Get\+Input\+Data\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the input data channel name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a3bdf9ac78169298815041fa3524749e9}\label{classGateToSinoAccel_a3bdf9ac78169298815041fa3524749e9}} 
+void {\bfseries Set\+Output\+Data\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Set the output data channel name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToSinoAccel_a165c4807cb611c08b1e78ba8c0e1f359}{Set\+Verbose\+Level}} (G4int val)
+\begin{DoxyCompactList}\small\item\em Overload of the base-\/class\textquotesingle{} method\+: we command both our own verbosity and that of the sinogram. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a7da8bf58fd8dbebed8ac55ca53c61048}\label{classGateToSinoAccel_a7da8bf58fd8dbebed8ac55ca53c61048}} 
+G4double {\bfseries Get\+Study\+Duration} () const
+\begin{DoxyCompactList}\small\item\em Returns the study duration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_af2813b67fdafe1acb5e28dd2623cf094}\label{classGateToSinoAccel_af2813b67fdafe1acb5e28dd2623cf094}} 
+G4double {\bfseries Get\+Frame\+Duration} () const
+\begin{DoxyCompactList}\small\item\em Returns the frame duration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a9e23d732ac385b896cd8709f60aa561f}\label{classGateToSinoAccel_a9e23d732ac385b896cd8709f60aa561f}} 
+G4int {\bfseries Get\+Frame\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns thr number of frames. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a62d3c9eccffab2d877e2b8e2a7a89703}\label{classGateToSinoAccel_a62d3c9eccffab2d877e2b8e2a7a89703}} 
+\mbox{\hyperlink{classGateSinogram}{Gate\+Sinogram}} $\ast$ {\bfseries Get\+Sinogram} () const
+\begin{DoxyCompactList}\small\item\em Returns the 2D sinogram. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a3f5eddc958f97ef19af0d19a0f4b6feb}\label{classGateToSinoAccel_a3f5eddc958f97ef19af0d19a0f4b6feb}} 
+G4int {\bfseries Get\+Crystal\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of crystals per crystal ring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_afafed8208209478f3b9f16b942659236}\label{classGateToSinoAccel_afafed8208209478f3b9f16b942659236}} 
+void {\bfseries Set\+Crystal\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of crystals per crystal ring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ab45ce83196f62c1dda35a402b913ee28}\label{classGateToSinoAccel_ab45ce83196f62c1dda35a402b913ee28}} 
+G4int {\bfseries Get\+Ring\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of crystal rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_aeb1809425f493ac7ee90e0af43c8b23d}\label{classGateToSinoAccel_aeb1809425f493ac7ee90e0af43c8b23d}} 
+void {\bfseries Set\+Ring\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of crystal rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ab64527784ec30d90cd471de0a981f674}\label{classGateToSinoAccel_ab64527784ec30d90cd471de0a981f674}} 
+size\+\_\+t {\bfseries Get\+Radial\+Elem\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of radial sinogram bins. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_aeaf40c18e55cd8d9883ab87838be5e57}\label{classGateToSinoAccel_aeaf40c18e55cd8d9883ab87838be5e57}} 
+void {\bfseries Set\+Radial\+Elem\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of radial sinogram bin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a783daa778edcdb0d2125ff1221303743}\label{classGateToSinoAccel_a783daa778edcdb0d2125ff1221303743}} 
+G4double {\bfseries Get\+Tang\+Crystal\+Resolution} () const
+\begin{DoxyCompactList}\small\item\em Returns the FWHM of crystal location resolution in tangential direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a29c1533f88e0108b8580629c8c4093cc}\label{classGateToSinoAccel_a29c1533f88e0108b8580629c8c4093cc}} 
+void {\bfseries Set\+Tang\+Crystal\+Resolution} (G4double a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the FWHM of crystal location resolution in tangential direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_adc865563cc75834b6e7d5c7420db38bd}\label{classGateToSinoAccel_adc865563cc75834b6e7d5c7420db38bd}} 
+G4double {\bfseries Get\+Axial\+Crystal\+Resolution} () const
+\begin{DoxyCompactList}\small\item\em Returns the FWHM of crystal location resolution in axtial direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ac89eeaf85d41f4b005629c1eab889d63}\label{classGateToSinoAccel_ac89eeaf85d41f4b005629c1eab889d63}} 
+void {\bfseries Set\+Axial\+Crystal\+Resolution} (G4double a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the FWHM of crystal location resolution in axtial direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a5bc11dacd84ab23a3f982b981f84e011}\label{classGateToSinoAccel_a5bc11dacd84ab23a3f982b981f84e011}} 
+size\+\_\+t {\bfseries Bytes\+Per\+Pixel} () const
+\begin{DoxyCompactList}\small\item\em Returns the nb of bytes per pixel;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}\label{classGateToSinoAccel_af3a5fb33e19b6c497ed39bda669a9954}} 
+\mbox{\hyperlink{classGateSinogram}{Gate\+Sinogram}} $\ast$ {\bfseries m\+\_\+sinogram}
+\begin{DoxyCompactList}\small\item\em 2D sinogram for PET simulations \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a7889ac2e2f6ce61a625154c65e309ddb}\label{classGateToSinoAccel_a7889ac2e2f6ce61a625154c65e309ddb}} 
+size\+\_\+t {\bfseries m\+\_\+crystal\+Nb}
+\begin{DoxyCompactList}\small\item\em Total number of crystals per crystal ring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a823dd9968766eb1874530e22264ba4f2}\label{classGateToSinoAccel_a823dd9968766eb1874530e22264ba4f2}} 
+size\+\_\+t {\bfseries m\+\_\+ring\+Nb}
+\begin{DoxyCompactList}\small\item\em Number of crystal rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a5379c69c7cfbcb1f332c8e5e984230d8}\label{classGateToSinoAccel_a5379c69c7cfbcb1f332c8e5e984230d8}} 
+G4double {\bfseries m\+\_\+study\+Duration}
+\begin{DoxyCompactList}\small\item\em Total duration of the acquisition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a25967725c6e9dfc2528ee5320878caf7}\label{classGateToSinoAccel_a25967725c6e9dfc2528ee5320878caf7}} 
+G4double {\bfseries m\+\_\+frame\+Duration}
+\begin{DoxyCompactList}\small\item\em Total duration of one frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a8ceddf7858f673e3766e550664fba611}\label{classGateToSinoAccel_a8ceddf7858f673e3766e550664fba611}} 
+G4int {\bfseries m\+\_\+frame\+Nb}
+\begin{DoxyCompactList}\small\item\em Number of frames. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ab1d6e4fd26116117a40832ee328e18bb}\label{classGateToSinoAccel_ab1d6e4fd26116117a40832ee328e18bb}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Pointer to the system, used to get the system information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_acab474353ad7ed4154db7f1799a642bc}\label{classGateToSinoAccel_acab474353ad7ed4154db7f1799a642bc}} 
+G4bool {\bfseries m\+\_\+flag\+Trues\+Only}
+\begin{DoxyCompactList}\small\item\em Defines whether randoms are recorded or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ae52caf44ee3776ee72ee099e1fd50573}\label{classGateToSinoAccel_ae52caf44ee3776ee72ee099e1fd50573}} 
+size\+\_\+t {\bfseries m\+\_\+radial\+Elem\+Nb}
+\begin{DoxyCompactList}\small\item\em Total number of radial sinogram bins. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ad6bc3b9ceb8e67eb70fcbe67925bebad}\label{classGateToSinoAccel_ad6bc3b9ceb8e67eb70fcbe67925bebad}} 
+G4bool {\bfseries m\+\_\+flag\+Is\+Raw\+Output\+Enabled}
+\begin{DoxyCompactList}\small\item\em Defines whether the raw-\/file output is active or inactive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_ad6c740e87176bd30e8fa97516b0967f2}\label{classGateToSinoAccel_ad6c740e87176bd30e8fa97516b0967f2}} 
+G4\+String {\bfseries m\+\_\+file\+Name}
+\begin{DoxyCompactList}\small\item\em raw output files name \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a5078122eaf6ebf8afa344a197adedd84}\label{classGateToSinoAccel_a5078122eaf6ebf8afa344a197adedd84}} 
+G4double {\bfseries m\+\_\+tang\+Crystal\+Resolution}
+\begin{DoxyCompactList}\small\item\em FWHM of crystal location resolution in tangential direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a93ec6b3cced8277b92a71c544d884cab}\label{classGateToSinoAccel_a93ec6b3cced8277b92a71c544d884cab}} 
+G4double {\bfseries m\+\_\+axial\+Crystal\+Resolution}
+\begin{DoxyCompactList}\small\item\em FWHM of crystal location resolution in axial direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a395fc09608f6a2e56d622e00ffd883d9}\label{classGateToSinoAccel_a395fc09608f6a2e56d622e00ffd883d9}} 
+\mbox{\hyperlink{classGateToSinoAccelMessenger}{Gate\+To\+Sino\+Accel\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\item 
+\mbox{\Hypertarget{classGateToSinoAccel_a96a13bd2aefca5eb78c22a43f81df84b}\label{classGateToSinoAccel_a96a13bd2aefca5eb78c22a43f81df84b}} 
+G4\+String {\bfseries m\+\_\+input\+Data\+Channel}
+\begin{DoxyCompactList}\small\item\em Name of the coincidence-\/collection to store into the sinogram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateToSinoAccel_af1548b10fa740a992d55cffb41aa08fa}\label{classGateToSinoAccel_af1548b10fa740a992d55cffb41aa08fa}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!Describe@{Describe}}
+\index{Describe@{Describe}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_a224b845724879ebe3f9bab090441c381}\label{classGateToSinoAccel_a224b845724879ebe3f9bab090441c381}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!GiveNameOfFile@{GiveNameOfFile}}
+\index{GiveNameOfFile@{GiveNameOfFile}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{GiveNameOfFile()}{GiveNameOfFile()}}
+{\footnotesize\ttfamily const G4\+String \& Gate\+To\+Sino\+Accel\+::\+Give\+Name\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_af27cf38d3f4d87dd789128fa6acb62a4}\label{classGateToSinoAccel_af27cf38d3f4d87dd789128fa6acb62a4}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialisation of the projection set. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_abded8b57b9bb4d3842aba22e6a8cc216}\label{classGateToSinoAccel_abded8b57b9bb4d3842aba22e6a8cc216}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nothing to do. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_a78880eefb03c328e8be74ffee6482ebe}\label{classGateToSinoAccel_a78880eefb03c328e8be74ffee6482ebe}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the projection data. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_a9536e951c57220c10d5475a7122b4225}\label{classGateToSinoAccel_a9536e951c57220c10d5475a7122b4225}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+We leave the projection set as it is (so that it can be stored afterwards) but we still have to destroy the array of projection IDs 
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_a314ba7ca603bc6e918cade9a846014ca}\label{classGateToSinoAccel_a314ba7ca603bc6e918cade9a846014ca}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update the target projections with regards to the digis acquired for this event. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_abab3153ad72651861bf5a7a2e88573f7}\label{classGateToSinoAccel_abab3153ad72651861bf5a7a2e88573f7}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write 2D sinograms. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_abfcc9a8682bc2726f36f14fd92cd0d34}\label{classGateToSinoAccel_abfcc9a8682bc2726f36f14fd92cd0d34}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nothing to do for steps. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_a43334e238e3f9d99af250050f691a99c}\label{classGateToSinoAccel_a43334e238e3f9d99af250050f691a99c}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nothing to do. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToSinoAccel_a165c4807cb611c08b1e78ba8c0e1f359}\label{classGateToSinoAccel_a165c4807cb611c08b1e78ba8c0e1f359}} 
+\index{GateToSinoAccel@{GateToSinoAccel}!SetVerboseLevel@{SetVerboseLevel}}
+\index{SetVerboseLevel@{SetVerboseLevel}!GateToSinoAccel@{GateToSinoAccel}}
+\doxysubsubsection{\texorpdfstring{SetVerboseLevel()}{SetVerboseLevel()}}
+{\footnotesize\ttfamily void Gate\+To\+Sino\+Accel\+::\+Set\+Verbose\+Level (\begin{DoxyParamCaption}\item[{G4int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Overload of the base-\/class\textquotesingle{} method\+: we command both our own verbosity and that of the sinogram. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+To\+Sino\+Accel.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+To\+Sino\+Accel.\+cc\end{DoxyCompactItemize}

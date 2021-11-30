@@ -1,0 +1,49 @@
+\hypertarget{GateConeMessenger_8hh_source}{}\doxysection{Gate\+Cone\+Messenger.\+hh}
+\label{GateConeMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateConeMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateConeMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateConeMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateConeMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCone}{GateCone}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateConeMessenger}{GateConeMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateConeMessenger}{GateConeMessenger}}(\mbox{\hyperlink{classGateCone}{GateCone}}* itsCreator);}
+\DoxyCodeLine{25    \mbox{\hyperlink{classGateConeMessenger}{\string~GateConeMessenger}}();}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCone}{GateCone}}* GetConeCreator() }
+\DoxyCodeLine{30       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCone}{GateCone}}*)GetVolumeCreator(); \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     G4UIcmdWithADoubleAndUnit* ConeHeightCmd;}
+\DoxyCodeLine{34     G4UIcmdWithADoubleAndUnit* ConeRmin1Cmd;}
+\DoxyCodeLine{35     G4UIcmdWithADoubleAndUnit* ConeRmax1Cmd;}
+\DoxyCodeLine{36     G4UIcmdWithADoubleAndUnit* ConeRmin2Cmd;}
+\DoxyCodeLine{37     G4UIcmdWithADoubleAndUnit* ConeRmax2Cmd;}
+\DoxyCodeLine{38     G4UIcmdWithADoubleAndUnit* ConeSPhiCmd;}
+\DoxyCodeLine{39     G4UIcmdWithADoubleAndUnit* ConeDPhiCmd;}
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+
+\end{DoxyCode}

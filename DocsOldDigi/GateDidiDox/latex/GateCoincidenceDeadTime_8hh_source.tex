@@ -1,0 +1,79 @@
+\hypertarget{GateCoincidenceDeadTime_8hh_source}{}\doxysection{Gate\+Coincidence\+Dead\+Time.\+hh}
+\label{GateCoincidenceDeadTime_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceDeadTime.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceDeadTime.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceDeadTime\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceDeadTime\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateObjectStore.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVCoincidencePulseProcessor.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceDeadTimeMessenger}{GateCoincidenceDeadTimeMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceDeadTime}{GateCoincidenceDeadTime}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{GateVCoincidencePulseProcessor}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidenceDeadTime_aaefa29ea78750cab729f8c1987683faf}{\string~GateCoincidenceDeadTime}}() ;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateCoincidenceDeadTime_a3bed81973f33edbe7ff349fe999f528c}{GateCoincidenceDeadTime}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{37                           \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{classGateCoincidenceDeadTime_a9d5e985a3329f45bc76525787dc69293}{GetDeadTime}}() \{\textcolor{keywordflow}{return} m\_deadTime;\}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceDeadTime_a6355bbf1d1e67b28a64d69fa09ff827a}{SetDeadTime}}(G4double val)   \{ m\_deadTime = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} int )(val/picosecond);\}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceDeadTime_a10e8e7a95485ac98621ee090e69e76bb}{SetDeadTimeMode}}(G4String val);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceDeadTime_a40a1d0495b1316f8f5522331f545a177}{SetBufferMode}}(G4int val)\{m\_bufferMode=val;\}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceDeadTime_a8a5d9e24ec945e95094403e264ad8b7e}{SetBufferSize}}(G4double val)\{m\_bufferSize=val;\}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceDeadTime_a661e6fb872f56992b95b6d16bbb57510}{SetConserveAllEvent}}(G4bool val)\{m\_conserveAllEvent=val;\}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceDeadTime_ae40c2fa5da1d5242133546b4d8f90f11}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64   \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* \mbox{\hyperlink{classGateCoincidenceDeadTime_a4c3a151a20b48abb9ffe7c4bcccea751}{ProcessPulse}}(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* inputPulse,G4int iPulse);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{private}:}
+\DoxyCodeLine{69   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} m\_deadTime; }
+\DoxyCodeLine{70   G4bool m\_isParalysable;   }
+\DoxyCodeLine{71   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} m\_rebirthTime;  }
+\DoxyCodeLine{72   G4double m\_bufferSize;  }
+\DoxyCodeLine{73   G4double m\_bufferCurrentSize;  }
+\DoxyCodeLine{74   G4int   m\_bufferMode; }
+\DoxyCodeLine{75   G4int m\_oldEv1;}
+\DoxyCodeLine{76   G4int m\_oldEv2;}
+\DoxyCodeLine{77   G4String m\_oldName;}
+\DoxyCodeLine{78   G4bool m\_conserveAllEvent;}
+\DoxyCodeLine{79   G4bool m\_wasTaken;}
+\DoxyCodeLine{80   \mbox{\hyperlink{classGateCoincidenceDeadTimeMessenger}{GateCoincidenceDeadTimeMessenger}} *m\_messenger;    }
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

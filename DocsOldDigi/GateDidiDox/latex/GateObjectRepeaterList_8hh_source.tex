@@ -1,0 +1,63 @@
+\hypertarget{GateObjectRepeaterList_8hh_source}{}\doxysection{Gate\+Object\+Repeater\+List.\+hh}
+\label{GateObjectRepeaterList_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateObjectRepeaterList.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateObjectRepeaterList.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateObjectRepeaterList\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateObjectRepeaterList\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateModuleListManager.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//class GateVObjectMove;}}
+\DoxyCodeLine{19 \textcolor{comment}{//class GateVolumePlacement;}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateListMessenger}{GateListMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateModuleListManager}{GateModuleListManager}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateObjectRepeaterList}{GateObjectRepeaterList}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsInserter,}
+\DoxyCodeLine{26                          \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{27                          \textcolor{keyword}{const} G4String\& itsElementTypeName);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateObjectRepeaterList}{\string~GateObjectRepeaterList}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePlacementQueue}{GatePlacementQueue}}* ComputePlacements(\mbox{\hyperlink{classGatePlacementQueue}{GatePlacementQueue}}* pQueue);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AppendObjectRepeater(\mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}* newObjectRepeater);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeRepeaters(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListElements();}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}* FindInserter(\textcolor{keyword}{const} G4String\& name)}
+\DoxyCodeLine{37   \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}*) FindElement(name); \}}
+\DoxyCodeLine{38   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}* GetRepeater(\textcolor{keywordtype}{size\_t} i)}
+\DoxyCodeLine{39   \{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}*) GetElement(i);\}}
+\DoxyCodeLine{40   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* GetCreator()}
+\DoxyCodeLine{41   \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVVolume}{GateVVolume}}*) GetMotherObject() ;\}}
+\DoxyCodeLine{42       }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ComputeParameters();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4String MakeElementName(\textcolor{keyword}{const} G4String\& newBaseName)}
+\DoxyCodeLine{46   \{ \textcolor{keywordflow}{return} GetCreator()-\/>\mbox{\hyperlink{classGateNamedObject_a74cb2aaf869dcf59e7e22dd72cff6368}{GetObjectName}}() + \textcolor{stringliteral}{"{}/"{}} + newBaseName; \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49    }
+\DoxyCodeLine{50 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{51   \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}*   m\_messenger;}
+\DoxyCodeLine{52     }
+\DoxyCodeLine{53   G4String m\_typeName;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 }
+
+\end{DoxyCode}

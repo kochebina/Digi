@@ -1,0 +1,140 @@
+\hypertarget{classGateSecondaryProductionActor}{}\doxysection{Gate\+Secondary\+Production\+Actor Class Reference}
+\label{classGateSecondaryProductionActor}\index{GateSecondaryProductionActor@{GateSecondaryProductionActor}}
+
+
+{\ttfamily \#include $<$Gate\+Qvalue\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Secondary\+Production\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateSecondaryProductionActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_ad498169594d252d3c2e833434d670211}\label{classGateSecondaryProductionActor_ad498169594d252d3c2e833434d670211}} 
+virtual {\bfseries $\sim$\+Gate\+Secondary\+Production\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSecondaryProductionActor_a011583ffd040b01d7cf7e7560f35c865}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSecondaryProductionActor_a836fdf259308f94a3c468b90a540abd2}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateSecondaryProductionActor_a44c3d028f653704f55fe0ec1697562e1}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateSecondaryProductionActor_a85a5dfbe3c25c5618958fca5ebb0f3bc}{Pre\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateSecondaryProductionActor_a5f07478f1b82f2b553edac0e10e97baf}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSecondaryProductionActor_a7e4453f42a017fbeb948799af809075e}{Reset\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_aa1eace11d6ace8e5e42370f607a76235}\label{classGateSecondaryProductionActor_aa1eace11d6ace8e5e42370f607a76235}} 
+{\bfseries Gate\+Secondary\+Production\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a12b8b4a1da50f560bed75118e2f44f51}\label{classGateSecondaryProductionActor_a12b8b4a1da50f560bed75118e2f44f51}} 
+\mbox{\hyperlink{classGateActorMessenger}{Gate\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_ac98be27f9ab5bdc6c401ef60f195d723}\label{classGateSecondaryProductionActor_ac98be27f9ab5bdc6c401ef60f195d723}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_afd96237017355b8ed2afbd12ae5345ed}\label{classGateSecondaryProductionActor_afd96237017355b8ed2afbd12ae5345ed}} 
+G4\+String {\bfseries m\+Prod\+Filename}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a347e0217bea719ed77c1aeb603e01eae}\label{classGateSecondaryProductionActor_a347e0217bea719ed77c1aeb603e01eae}} 
+G4\+String {\bfseries m\+Secondaries\+Filename}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_abb8b89bcfbc5477e22d6521a8ff72438}\label{classGateSecondaryProductionActor_abb8b89bcfbc5477e22d6521a8ff72438}} 
+TFile $\ast$ {\bfseries p\+Tfile}
+\item 
+\mbox{\Hypertarget{classGateSecondaryProductionActor_afb312a49f764ef6a94bc5582a51db410}\label{classGateSecondaryProductionActor_afb312a49f764ef6a94bc5582a51db410}} 
+TH1F $\ast$ {\bfseries p\+Frag}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a44c3d028f653704f55fe0ec1697562e1}\label{classGateSecondaryProductionActor_a44c3d028f653704f55fe0ec1697562e1}} 
+\index{GateSecondaryProductionActor@{GateSecondaryProductionActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateSecondaryProductionActor@{GateSecondaryProductionActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Secondary\+Production\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a836fdf259308f94a3c468b90a540abd2}\label{classGateSecondaryProductionActor_a836fdf259308f94a3c468b90a540abd2}} 
+\index{GateSecondaryProductionActor@{GateSecondaryProductionActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateSecondaryProductionActor@{GateSecondaryProductionActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Secondary\+Production\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a011583ffd040b01d7cf7e7560f35c865}\label{classGateSecondaryProductionActor_a011583ffd040b01d7cf7e7560f35c865}} 
+\index{GateSecondaryProductionActor@{GateSecondaryProductionActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateSecondaryProductionActor@{GateSecondaryProductionActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Secondary\+Production\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a85a5dfbe3c25c5618958fca5ebb0f3bc}\label{classGateSecondaryProductionActor_a85a5dfbe3c25c5618958fca5ebb0f3bc}} 
+\index{GateSecondaryProductionActor@{GateSecondaryProductionActor}!PreUserTrackingAction@{PreUserTrackingAction}}
+\index{PreUserTrackingAction@{PreUserTrackingAction}!GateSecondaryProductionActor@{GateSecondaryProductionActor}}
+\doxysubsubsection{\texorpdfstring{PreUserTrackingAction()}{PreUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+Secondary\+Production\+Actor\+::\+Pre\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a7e4453f42a017fbeb948799af809075e}\label{classGateSecondaryProductionActor_a7e4453f42a017fbeb948799af809075e}} 
+\index{GateSecondaryProductionActor@{GateSecondaryProductionActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateSecondaryProductionActor@{GateSecondaryProductionActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Secondary\+Production\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSecondaryProductionActor_a5f07478f1b82f2b553edac0e10e97baf}\label{classGateSecondaryProductionActor_a5f07478f1b82f2b553edac0e10e97baf}} 
+\index{GateSecondaryProductionActor@{GateSecondaryProductionActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateSecondaryProductionActor@{GateSecondaryProductionActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Secondary\+Production\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Secondary\+Production\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Secondary\+Production\+Actor.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\hypertarget{GateUpholderMessenger_8hh_source}{}\doxysection{Gate\+Upholder\+Messenger.\+hh}
+\label{GateUpholderMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateUpholderMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateUpholderMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateUpholderMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateUpholderMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUpholder}{GateUpholder}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUpholderMessenger}{GateUpholderMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29   \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{classGateUpholderMessenger}{GateUpholderMessenger}}(\mbox{\hyperlink{classGateUpholder}{GateUpholder}}* itsUpholder);}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateUpholderMessenger}{\string~GateUpholderMessenger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateUpholder}{GateUpholder}}* GetUpholder()}
+\DoxyCodeLine{36       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateUpholder}{GateUpholder}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{private}:}
+\DoxyCodeLine{39     G4UIcmdWithADoubleAndUnit   *upholdCmd;}
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

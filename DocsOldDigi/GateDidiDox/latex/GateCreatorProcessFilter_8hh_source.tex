@@ -1,0 +1,55 @@
+\hypertarget{GateCreatorProcessFilter_8hh_source}{}\doxysection{Gate\+Creator\+Process\+Filter.\+hh}
+\label{GateCreatorProcessFilter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateCreatorProcessFilter.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateCreatorProcessFilter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{   \(\backslash\)class  GateCreatorProcessFilter}}
+\DoxyCodeLine{11 \textcolor{comment}{   \(\backslash\)author pierre.gueth@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{   */}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATECREATORPROCESSFILTER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATECREATORPROCESSFILTER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVFilter.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateCreatorProcessFilterMessenger.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class  }\mbox{\hyperlink{classGateCreatorProcessFilter}{GateCreatorProcessFilter}} : }
+\DoxyCodeLine{24   \textcolor{keyword}{public} \mbox{\hyperlink{classGateVFilter}{GateVFilter}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26   \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{classGateCreatorProcessFilter}{GateCreatorProcessFilter}}(G4String name);}
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCreatorProcessFilter}{\string~GateCreatorProcessFilter}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     FCT\_FOR\_AUTO\_CREATOR\_FILTER(\mbox{\hyperlink{classGateCreatorProcessFilter}{GateCreatorProcessFilter}})}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} AddCreatorProcess(\textcolor{keyword}{const} G4String\& processName);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{private}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{typedef} std::list<G4String> CreatorProcesses;}
+\DoxyCodeLine{41     CreatorProcesses creatorProcesses;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateCreatorProcessFilterMessenger}{GateCreatorProcessFilterMessenger}} * pMessenger;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 MAKE\_AUTO\_CREATOR\_FILTER(creatorProcessFilter,\mbox{\hyperlink{classGateCreatorProcessFilter}{GateCreatorProcessFilter}})}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

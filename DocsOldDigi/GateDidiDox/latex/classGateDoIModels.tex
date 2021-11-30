@@ -1,0 +1,88 @@
+\hypertarget{classGateDoIModels}{}\doxysection{Gate\+Do\+IModels Class Reference}
+\label{classGateDoIModels}\index{GateDoIModels@{GateDoIModels}}
+Inheritance diagram for Gate\+Do\+IModels\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateDoIModels}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateDoIModels_a122649e36fb0d39bd54a81d74a514e5d}{Gate\+Do\+IModels}} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\item 
+virtual \mbox{\hyperlink{classGateDoIModels_a5726bb9a3d0e5919fe40c3e72f91e5c7}{$\sim$\+Gate\+Do\+IModels}} ()
+\begin{DoxyCompactList}\small\item\em Like that it load correcty messenger values but after constuctor. \end{DoxyCompactList}\item 
+const G4\+Three\+Vector \& \mbox{\hyperlink{classGateDoIModels_a262870b40faac7cd523748e6247c6f36}{Get\+Do\+IAxis}} ()
+\item 
+\mbox{\Hypertarget{classGateDoIModels_a54ca4374b9a01b8da00ee4267ca07535}\label{classGateDoIModels_a54ca4374b9a01b8da00ee4267ca07535}} 
+void {\bfseries Set\+Do\+IAxis} (G4\+Three\+Vector val)
+\begin{DoxyCompactList}\small\item\em Set the threshold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDoIModels_a309bcc7ab30f0cef75a466a3a116f81e}\label{classGateDoIModels_a309bcc7ab30f0cef75a466a3a116f81e}} 
+\mbox{\hyperlink{classGateVDoILaw}{Gate\+VDo\+ILaw}} $\ast$ {\bfseries Get\+Do\+ILaw} ()
+\begin{DoxyCompactList}\small\item\em This function returns the effective energy law in use. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateDoIModels_a3955c5c527ddfebad7238d60565558cf}\label{classGateDoIModels_a3955c5c527ddfebad7238d60565558cf}} 
+void {\bfseries Set\+Do\+ILaw} (\mbox{\hyperlink{classGateVDoILaw}{Gate\+VDo\+ILaw}} $\ast$law)
+\item 
+virtual void \mbox{\hyperlink{classGateDoIModels_ab618506ea3b9c4545bbb30020b9db2a7}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateDoIModels_a4ffc0d976ba01a767a6b4d906bc2c2ca}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateDoIModels_a122649e36fb0d39bd54a81d74a514e5d}\label{classGateDoIModels_a122649e36fb0d39bd54a81d74a514e5d}} 
+\index{GateDoIModels@{GateDoIModels}!GateDoIModels@{GateDoIModels}}
+\index{GateDoIModels@{GateDoIModels}!GateDoIModels@{GateDoIModels}}
+\doxysubsubsection{\texorpdfstring{GateDoIModels()}{GateDoIModels()}}
+{\footnotesize\ttfamily Gate\+Do\+IModels\+::\+Gate\+Do\+IModels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$}]{its\+Chain,  }\item[{const G4\+String \&}]{its\+Name }\end{DoxyParamCaption})}
+
+Constructs a new Energy\+Thresholder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}} //I SEE HOW IT WORKS BUT I DO NOT UNDERSTAND \+: ASK it loads correcty messenger values \mbox{\Hypertarget{classGateDoIModels_a5726bb9a3d0e5919fe40c3e72f91e5c7}\label{classGateDoIModels_a5726bb9a3d0e5919fe40c3e72f91e5c7}} 
+\index{GateDoIModels@{GateDoIModels}!````~GateDoIModels@{$\sim$GateDoIModels}}
+\index{````~GateDoIModels@{$\sim$GateDoIModels}!GateDoIModels@{GateDoIModels}}
+\doxysubsubsection{\texorpdfstring{$\sim$GateDoIModels()}{~GateDoIModels()}}
+{\footnotesize\ttfamily Gate\+Do\+IModels\+::$\sim$\+Gate\+Do\+IModels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Like that it load correcty messenger values but after constuctor. 
+
+The setfunction call by the messegner load the value inserted in the constructor not the one in the mac Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateDoIModels_ab618506ea3b9c4545bbb30020b9db2a7}\label{classGateDoIModels_ab618506ea3b9c4545bbb30020b9db2a7}} 
+\index{GateDoIModels@{GateDoIModels}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateDoIModels@{GateDoIModels}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Do\+IModels\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the Energy\+Thresholder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateDoIModels_a262870b40faac7cd523748e6247c6f36}\label{classGateDoIModels_a262870b40faac7cd523748e6247c6f36}} 
+\index{GateDoIModels@{GateDoIModels}!GetDoIAxis@{GetDoIAxis}}
+\index{GetDoIAxis@{GetDoIAxis}!GateDoIModels@{GateDoIModels}}
+\doxysubsubsection{\texorpdfstring{GetDoIAxis()}{GetDoIAxis()}}
+{\footnotesize\ttfamily const G4\+Three\+Vector \& Gate\+Do\+IModels\+::\+Get\+Do\+IAxis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+!\+Only works for selecting one of hte three ortogonal directions (x, y or Z) not other bases Returns the threshold \mbox{\Hypertarget{classGateDoIModels_a4ffc0d976ba01a767a6b4d906bc2c2ca}\label{classGateDoIModels_a4ffc0d976ba01a767a6b4d906bc2c2ca}} 
+\index{GateDoIModels@{GateDoIModels}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateDoIModels@{GateDoIModels}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Do\+IModels\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Do\+IModels.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Do\+IModels.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\hypertarget{GateDoseActorMessenger_8hh_source}{}\doxysection{Gate\+Dose\+Actor\+Messenger.\+hh}
+\label{GateDoseActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateDoseActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{  laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{  david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEDOSEACTORMESSENGER\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoseActor}{GateDoseActor}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoseActorMessenger}{GateDoseActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateDoseActorMessenger}{GateDoseActorMessenger}}(\mbox{\hyperlink{classGateDoseActor}{GateDoseActor}}* sensor);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDoseActorMessenger}{\string~GateDoseActorMessenger}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseActorMessenger_aad9265748aa3b879d1c83f64eac2e4eb}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateDoseActor}{GateDoseActor}} * pDoseActor;}
+\DoxyCodeLine{35   \textcolor{comment}{//Edep}}
+\DoxyCodeLine{36   G4UIcmdWithABool * pEnableEdepCmd;}
+\DoxyCodeLine{37   G4UIcmdWithABool * pEnableEdepSquaredCmd;}
+\DoxyCodeLine{38   G4UIcmdWithABool * pEnableEdepUncertaintyCmd;}
+\DoxyCodeLine{39   \textcolor{comment}{//Dose}}
+\DoxyCodeLine{40   G4UIcmdWithABool * pEnableDoseCmd;}
+\DoxyCodeLine{41   G4UIcmdWithABool * pEnableDoseSquaredCmd;}
+\DoxyCodeLine{42   G4UIcmdWithABool * pEnableDoseUncertaintyCmd;}
+\DoxyCodeLine{43   G4UIcmdWithABool * pEnableDoseNormToMaxCmd;}
+\DoxyCodeLine{44   G4UIcmdWithABool * pEnableDoseNormToIntegralCmd;}
+\DoxyCodeLine{45     \textcolor{comment}{//Efficiency option}}
+\DoxyCodeLine{46   G4UIcmdWithAString * pSetDoseEfficiencyCmd;}
+\DoxyCodeLine{47     \textcolor{comment}{//Efficiency option by Z (by ion atomic number)}}
+\DoxyCodeLine{48   G4UIcmdWithAString * pSetDoseEfficiencyByZCmd;}
+\DoxyCodeLine{49   \textcolor{comment}{//DoseToWater}}
+\DoxyCodeLine{50   G4UIcmdWithABool * pEnableDoseToWaterCmd;}
+\DoxyCodeLine{51   G4UIcmdWithABool * pEnableDoseToWaterSquaredCmd;}
+\DoxyCodeLine{52   G4UIcmdWithABool * pEnableDoseToWaterUncertaintyCmd;}
+\DoxyCodeLine{53   G4UIcmdWithABool * pEnableDoseToWaterNormToMaxCmd;}
+\DoxyCodeLine{54   G4UIcmdWithABool * pEnableDoseToWaterNormToIntegralCmd;}
+\DoxyCodeLine{55   \textcolor{comment}{//DoseToOtherMaterial}}
+\DoxyCodeLine{56   G4UIcmdWithABool * pEnableDoseToOtherMaterialCmd;}
+\DoxyCodeLine{57   G4UIcmdWithABool * pEnableDoseToOtherMaterialSquaredCmd;}
+\DoxyCodeLine{58   G4UIcmdWithABool * pEnableDoseToOtherMaterialUncertaintyCmd;}
+\DoxyCodeLine{59   G4UIcmdWithABool * pEnableDoseToOtherMaterialNormToMaxCmd;}
+\DoxyCodeLine{60   G4UIcmdWithABool * pEnableDoseToOtherMaterialNormToIntegralCmd;}
+\DoxyCodeLine{61   G4UIcmdWithAString * pSetOtherMaterialCmd;}
+\DoxyCodeLine{62   \textcolor{comment}{//Others}}
+\DoxyCodeLine{63   G4UIcmdWithABool * pEnableNumberOfHitsCmd;}
+\DoxyCodeLine{64   G4UIcmdWithAString * pSetDoseAlgorithmCmd;}
+\DoxyCodeLine{65   G4UIcmdWithAString * pImportMassImageCmd;}
+\DoxyCodeLine{66   G4UIcmdWithAString * pExportMassImageCmd;}
+\DoxyCodeLine{67   G4UIcmdWithAString * pVolumeFilterCmd;}
+\DoxyCodeLine{68   G4UIcmdWithAString * pMaterialFilterCmd;}
+\DoxyCodeLine{69   G4UIcmdWithABool * pTestFlagCmd;}
+\DoxyCodeLine{70   \textcolor{comment}{//Regions}}
+\DoxyCodeLine{71   G4UIcmdWithAString * pDoseRegionInputCmd;}
+\DoxyCodeLine{72   G4UIcmdWithAString * pDoseRegionOutputCmd;}
+\DoxyCodeLine{73   G4UIcmdWithAString * pDoseRegionAddRegionCmd;}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEDOSEACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

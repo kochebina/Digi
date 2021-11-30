@@ -1,0 +1,164 @@
+\hypertarget{classGateMachine}{}\doxysection{Gate\+Machine Class Reference}
+\label{classGateMachine}\index{GateMachine@{GateMachine}}
+
+
+Handles the basic machine properties (e.\+g. endianness) and machine-\/dependent operations.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Machine.\+hh$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGateMachine_a35c5a45d3bdb3f4c1d6b41bf10081ee9}{Test\+Endians}} ()
+\begin{DoxyCompactList}\small\item\em Type of machine $\ast$/. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMachine_a56c0b02c870562cedecb69cd8f2c1c29}\label{classGateMachine_a56c0b02c870562cedecb69cd8f2c1c29}} 
+static bool {\bfseries Is\+Intel} ()
+\begin{DoxyCompactList}\small\item\em Is the machine an Intel like processor ? (equivalent to Is\+Little\+Endians) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMachine_a234e53ff02e6546a250d78a7620668cc}\label{classGateMachine_a234e53ff02e6546a250d78a7620668cc}} 
+static bool {\bfseries Is\+Little\+Endians} ()
+\begin{DoxyCompactList}\small\item\em Is the machine an Intel like processor ? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMachine_a2e95c3265261d13429284a00eeb3b259}\label{classGateMachine_a2e95c3265261d13429284a00eeb3b259}} 
+static bool {\bfseries Is\+Sun} ()
+\begin{DoxyCompactList}\small\item\em Is the machine a Sun like processor ? (== Is\+Big\+Endians) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMachine_ad2e78b73863353989c654e6024151b05}\label{classGateMachine_ad2e78b73863353989c654e6024151b05}} 
+static bool {\bfseries Is\+Big\+Endians} ()
+\begin{DoxyCompactList}\small\item\em Is the machine a Sun like processor ? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMachine_a6cd91c003ac6ddf0c758b8274041079f}\label{classGateMachine_a6cd91c003ac6ddf0c758b8274041079f}} 
+static void {\bfseries Change\+Endians} ()
+\item 
+\mbox{\Hypertarget{classGateMachine_aef54e78cd4348891e67fe6dd7c8ee88d}\label{classGateMachine_aef54e78cd4348891e67fe6dd7c8ee88d}} 
+static void {\bfseries Simulate\+Intel} ()
+\item 
+\mbox{\Hypertarget{classGateMachine_a613572db45acea916cbab2f299558509}\label{classGateMachine_a613572db45acea916cbab2f299558509}} 
+static void {\bfseries Simulate\+Sun} ()
+\item 
+\mbox{\Hypertarget{classGateMachine_a1785d10e55b0a77475802bb6a1de5dd6}\label{classGateMachine_a1785d10e55b0a77475802bb6a1de5dd6}} 
+static void {\bfseries Test\+Bus\+Size} ()
+\begin{DoxyCompactList}\small\item\em Test the size of the bus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMachine_a3e36dcbc327739abbffbe1bee1c0e837}\label{classGateMachine_a3e36dcbc327739abbffbe1bee1c0e837}} 
+static bool {\bfseries Is32bits} ()
+\begin{DoxyCompactList}\small\item\em Returns true iff the machine has a 32 bits processor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMachine_aa09996b5b7b4212461faaea04a96e1f4}\label{classGateMachine_aa09996b5b7b4212461faaea04a96e1f4}} 
+static bool {\bfseries Is64bits} ()
+\begin{DoxyCompactList}\small\item\em Returns true iff the machine has a 64 bits processor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{Swap\+Endians}} (bool \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_a09a32dc3fdbd6bf4b849b4ca958efaac}\label{classGateMachine_a09a32dc3fdbd6bf4b849b4ca958efaac}} 
+static void {\bfseries Swap\+Endians} (char \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_ab31b365e1b9d67e9df285071f6a5a281}\label{classGateMachine_ab31b365e1b9d67e9df285071f6a5a281}} 
+static void {\bfseries Swap\+Endians} (signed char \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_ac640e28caa77610830e1f38568c89268}\label{classGateMachine_ac640e28caa77610830e1f38568c89268}} 
+static void {\bfseries Swap\+Endians} (unsigned char \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_a7c56fa6e38920b62d52e8d77aa4171f7}\label{classGateMachine_a7c56fa6e38920b62d52e8d77aa4171f7}} 
+static void {\bfseries Swap\+Endians} (signed short \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_af600832604615eb994118706d964c7a7}\label{classGateMachine_af600832604615eb994118706d964c7a7}} 
+static void {\bfseries Swap\+Endians} (unsigned short \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_a8a1f5113c3acca952bd89bcfa6bfbb3d}\label{classGateMachine_a8a1f5113c3acca952bd89bcfa6bfbb3d}} 
+static void {\bfseries Swap\+Endians} (signed int \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_a2cb70f687ae9e05f11c8b87cd2c97283}\label{classGateMachine_a2cb70f687ae9e05f11c8b87cd2c97283}} 
+static void {\bfseries Swap\+Endians} (unsigned int \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_aafebb0c4297f5ea7c39ac751e1c5e87c}\label{classGateMachine_aafebb0c4297f5ea7c39ac751e1c5e87c}} 
+static void {\bfseries Swap\+Endians} (signed long \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_aec9eec3b2fb01c0db99d5381d84c77f1}\label{classGateMachine_aec9eec3b2fb01c0db99d5381d84c77f1}} 
+static void {\bfseries Swap\+Endians} (unsigned long \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_a147746fe85a7f74fac82d5f8ed91f499}\label{classGateMachine_a147746fe85a7f74fac82d5f8ed91f499}} 
+static void {\bfseries Swap\+Endians} (float \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_a2cfbf5ea6ab68d9b151c18f3840a6466}\label{classGateMachine_a2cfbf5ea6ab68d9b151c18f3840a6466}} 
+static void {\bfseries Swap\+Endians} (double \&)
+\item 
+\mbox{\Hypertarget{classGateMachine_a3d3131bc4767a5f6c9a7a9b58963d10b}\label{classGateMachine_a3d3131bc4767a5f6c9a7a9b58963d10b}} 
+static void {\bfseries Swap\+Endians} (bool $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_a10176a79423b2b5de691cc62cc527b30}\label{classGateMachine_a10176a79423b2b5de691cc62cc527b30}} 
+static void {\bfseries Swap\+Endians} (char $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_a7ec8e07510f751fb90a032a7178278fa}\label{classGateMachine_a7ec8e07510f751fb90a032a7178278fa}} 
+static void {\bfseries Swap\+Endians} (signed char $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_a193d5415f5a4d4dc473d6a57c36887f4}\label{classGateMachine_a193d5415f5a4d4dc473d6a57c36887f4}} 
+static void {\bfseries Swap\+Endians} (unsigned char $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_abd14a074ac1c3632ff69f76fed39a71e}\label{classGateMachine_abd14a074ac1c3632ff69f76fed39a71e}} 
+static void {\bfseries Swap\+Endians} (signed short $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_ab695de7a2082bc6c041dc449e2ea5896}\label{classGateMachine_ab695de7a2082bc6c041dc449e2ea5896}} 
+static void {\bfseries Swap\+Endians} (unsigned short $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_a63c1d74437c90f792305ba4ddd27d953}\label{classGateMachine_a63c1d74437c90f792305ba4ddd27d953}} 
+static void {\bfseries Swap\+Endians} (signed int $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_a6935ca25f81d5a660a3ecb2238ece669}\label{classGateMachine_a6935ca25f81d5a660a3ecb2238ece669}} 
+static void {\bfseries Swap\+Endians} (unsigned int $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_ad3627ee8470266b89ce0a4fb1f981c8e}\label{classGateMachine_ad3627ee8470266b89ce0a4fb1f981c8e}} 
+static void {\bfseries Swap\+Endians} (signed long $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_ab99002debfe652c2112cdf0ae2fd78cf}\label{classGateMachine_ab99002debfe652c2112cdf0ae2fd78cf}} 
+static void {\bfseries Swap\+Endians} (unsigned long $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_a4bee3c8501fe57868bcb5954d32fc3ca}\label{classGateMachine_a4bee3c8501fe57868bcb5954d32fc3ca}} 
+static void {\bfseries Swap\+Endians} (float $\ast$, long)
+\item 
+\mbox{\Hypertarget{classGateMachine_afce107bdcbd8b42f651ed5a4bad4b56a}\label{classGateMachine_afce107bdcbd8b42f651ed5a4bad4b56a}} 
+static void {\bfseries Swap\+Endians} (double $\ast$, long)
+\end{DoxyCompactItemize}
+
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMachine_a28f09364b9de6ecf3f371dd73938bbb7}\label{classGateMachine_a28f09364b9de6ecf3f371dd73938bbb7}} 
+static bool {\bfseries m\+\_\+\+Intel}
+\item 
+\mbox{\Hypertarget{classGateMachine_a3419fd261e0592365686407afcce60d7}\label{classGateMachine_a3419fd261e0592365686407afcce60d7}} 
+static bool {\bfseries m\+\_\+32}
+\item 
+\mbox{\Hypertarget{classGateMachine_a00a809d0d6df8a3904a5f45e13662bea}\label{classGateMachine_a00a809d0d6df8a3904a5f45e13662bea}} 
+static bool {\bfseries m\+\_\+64}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the basic machine properties (e.\+g. endianness) and machine-\/dependent operations. 
+
+By \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}}
+
+Handles the basic machine properties (e.\+g. endianness, bus size) and machine-\/dependent operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateMachine_afef222128d169e74fd6690453c1b781f}\label{classGateMachine_afef222128d169e74fd6690453c1b781f}} 
+\index{GateMachine@{GateMachine}!SwapEndians@{SwapEndians}}
+\index{SwapEndians@{SwapEndians}!GateMachine@{GateMachine}}
+\doxysubsubsection{\texorpdfstring{SwapEndians()}{SwapEndians()}}
+{\footnotesize\ttfamily static void Gate\+Machine\+::\+Swap\+Endians (\begin{DoxyParamCaption}\item[{bool \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+@\+Little/big endians swap methods \mbox{\Hypertarget{classGateMachine_a35c5a45d3bdb3f4c1d6b41bf10081ee9}\label{classGateMachine_a35c5a45d3bdb3f4c1d6b41bf10081ee9}} 
+\index{GateMachine@{GateMachine}!TestEndians@{TestEndians}}
+\index{TestEndians@{TestEndians}!GateMachine@{GateMachine}}
+\doxysubsubsection{\texorpdfstring{TestEndians()}{TestEndians()}}
+{\footnotesize\ttfamily void Gate\+Machine\+::\+Test\+Endians (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Type of machine $\ast$/. 
+
+Determines the type of Endians (little=Intel like / big=Sun like) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Machine.\+hh\end{DoxyCompactItemize}

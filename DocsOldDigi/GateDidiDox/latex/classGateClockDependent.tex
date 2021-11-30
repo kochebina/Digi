@@ -1,0 +1,97 @@
+\hypertarget{classGateClockDependent}{}\doxysection{Gate\+Clock\+Dependent Class Reference}
+\label{classGateClockDependent}\index{GateClockDependent@{GateClockDependent}}
+
+
+A \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} is a named object that can communicate with the clock.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Clock\+Dependent.\+hh$>$}
+
+Inheritance diagram for Gate\+Clock\+Dependent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateClockDependent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateClockDependent_a8124495c422df04847338f5ddd6228ce}{Gate\+Clock\+Dependent}} (const G4\+String \&its\+Name, G4bool can\+Be\+Disabled=true)
+\item 
+virtual void \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Describe}} (size\+\_\+t indent=0)
+\item 
+\mbox{\Hypertarget{classGateClockDependent_ad1efb17a2ad6fe308a10289e12b43ee4}\label{classGateClockDependent_ad1efb17a2ad6fe308a10289e12b43ee4}} 
+virtual double {\bfseries Get\+Current\+Time} ()
+\begin{DoxyCompactList}\small\item\em Asks the clock and return the current time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateClockDependent_a9095dac9b225f585fb62151fb74f753c}\label{classGateClockDependent_a9095dac9b225f585fb62151fb74f753c}} 
+virtual G4bool {\bfseries Is\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of the object enabled/disabled status flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateClockDependent_ad7f0716e4fd1657f7df73ab489c5b771}\label{classGateClockDependent_ad7f0716e4fd1657f7df73ab489c5b771}} 
+virtual void {\bfseries Enable} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Enable the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateClockDependent_a72d44c210105b4700905a2e022e1f8d8}\label{classGateClockDependent_a72d44c210105b4700905a2e022e1f8d8}} 
+virtual G4bool {\bfseries Can\+Be\+Disabled} () const
+\begin{DoxyCompactList}\small\item\em Tells whether the user is allowed to disable the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateClockDependent_a825e4423c20307fe90242034b78eae42}\label{classGateClockDependent_a825e4423c20307fe90242034b78eae42}} 
+G4bool {\bfseries b\+Is\+Enabled}
+\begin{DoxyCompactList}\small\item\em Flag telling whether the object is enabled (active) or disabled (off) \end{DoxyCompactList}\item 
+G4bool \mbox{\hyperlink{classGateClockDependent_ab8082076e7360f8a8bcb19b77b17e353}{b\+Can\+Be\+Disabled}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} is a named object that can communicate with the clock. 
+
+to ask for the current time, and that can be enabled or disabled
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} is based on \mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} and thus has all the properties of Gate named objects (a name and a type-\/name).
+\item In addition, it can ask the clock for the current time, and can be enabled or diabled 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateClockDependent_a8124495c422df04847338f5ddd6228ce}\label{classGateClockDependent_a8124495c422df04847338f5ddd6228ce}} 
+\index{GateClockDependent@{GateClockDependent}!GateClockDependent@{GateClockDependent}}
+\index{GateClockDependent@{GateClockDependent}!GateClockDependent@{GateClockDependent}}
+\doxysubsubsection{\texorpdfstring{GateClockDependent()}{GateClockDependent()}}
+{\footnotesize\ttfamily Gate\+Clock\+Dependent\+::\+Gate\+Clock\+Dependent (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{its\+Name,  }\item[{G4bool}]{can\+Be\+Disabled = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor. The flag \char`\"{}its\+Flag\+Can\+Be\+Disabled\char`\"{} tells whether the user is allowed to disable this object (this flag should be set to false for critical objects, such as the world volume for instance) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}\label{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}} 
+\index{GateClockDependent@{GateClockDependent}!Describe@{Describe}}
+\index{Describe@{Describe}!GateClockDependent@{GateClockDependent}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Clock\+Dependent\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method overloading \mbox{\hyperlink{classGateNamedObject_a6a4452f67031f801d3b33114cf370940}{Gate\+Named\+Object\+::\+Describe()}} Print-\/out a description of the object 
+
+Reimplemented from \mbox{\hyperlink{classGateNamedObject_a6a4452f67031f801d3b33114cf370940}{Gate\+Named\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateCoincidenceSorter_a45cd549043b39a3a5676b71ecdd8b5aa}{Gate\+Coincidence\+Sorter}}, \mbox{\hyperlink{classGateDigitizer_a658a2a5d943a46115437315b377aa5ed}{Gate\+Digitizer}}, \mbox{\hyperlink{classGateListManager_a8f764334b696a62374b6b1ca0f0db693}{Gate\+List\+Manager}}, \mbox{\hyperlink{classGateModuleListManager_a6840a2555e30f86bfbf4ee3a24d79d1d}{Gate\+Module\+List\+Manager}}, \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Gate\+CPETSystem}}, \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Gate\+Cylindrical\+PETSystem}}, \mbox{\hyperlink{classGateEcatAccelSystem_aed232a07e3ba697c692761000663dfe1}{Gate\+Ecat\+Accel\+System}}, \mbox{\hyperlink{classGateEcatSystem_a11818725a8dba26fcc84a4eab7482c66}{Gate\+Ecat\+System}}, \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Gate\+OPETSystem}}, \mbox{\hyperlink{classGateSystemComponent_a38422ecd55419e6fe46de983bda6d0ed}{Gate\+System\+Component}}, \mbox{\hyperlink{classGateVGlobalPlacement_af3d9c811a543bc1eafa6e78ced5eb780}{Gate\+VGlobal\+Placement}}, \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Gate\+VSystem}}, \mbox{\hyperlink{classGateVVolume_ae9d8af0c4db741aa305b694fabe37031}{Gate\+VVolume}}, \mbox{\hyperlink{classGateCoincidencePulseProcessorChain_ad232883f9a6bac98cfd3c15bd34b2fb7}{Gate\+Coincidence\+Pulse\+Processor\+Chain}}, \mbox{\hyperlink{classGatePulseProcessorChain_a55dae5f28ea5689d44317951054ab5ab}{Gate\+Pulse\+Processor\+Chain}}, \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ae0b0d279c11b7199d29af398ff669dfe}{Gate\+VCoincidence\+Pulse\+Processor}}, and \mbox{\hyperlink{classGateVPulseProcessor_ab45af3d01123ea7966b4ef931c082ec6}{Gate\+VPulse\+Processor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGateClockDependent_ab8082076e7360f8a8bcb19b77b17e353}\label{classGateClockDependent_ab8082076e7360f8a8bcb19b77b17e353}} 
+\index{GateClockDependent@{GateClockDependent}!bCanBeDisabled@{bCanBeDisabled}}
+\index{bCanBeDisabled@{bCanBeDisabled}!GateClockDependent@{GateClockDependent}}
+\doxysubsubsection{\texorpdfstring{bCanBeDisabled}{bCanBeDisabled}}
+{\footnotesize\ttfamily G4bool Gate\+Clock\+Dependent\+::b\+Can\+Be\+Disabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+This flag must be set to 1 if the object can be disabled This is meant to prevent the user from disabling critical objects such as the world volume 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Clock\+Dependent.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Clock\+Dependent.\+cc\end{DoxyCompactItemize}

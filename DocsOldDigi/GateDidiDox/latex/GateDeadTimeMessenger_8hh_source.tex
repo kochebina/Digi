@@ -1,0 +1,51 @@
+\hypertarget{GateDeadTimeMessenger_8hh_source}{}\doxysection{Gate\+Dead\+Time\+Messenger.\+hh}
+\label{GateDeadTimeMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDeadTimeMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDeadTimeMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDeadTimeMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDeadTimeMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDeadTime}{GateDeadTime}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDeadTimeMessenger}{GateDeadTimeMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateDeadTimeMessenger}{GateDeadTimeMessenger}}(\mbox{\hyperlink{classGateDeadTime}{GateDeadTime}}* itsDeadTime);}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDeadTimeMessenger}{\string~GateDeadTimeMessenger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateDeadTime}{GateDeadTime}}* GetDeadTime()\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateDeadTime}{GateDeadTime}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{private}:}
+\DoxyCodeLine{38   G4UIcmdWithADoubleAndUnit *deadTimeCmd; }
+\DoxyCodeLine{39   G4UIcmdWithAString   *newVolCmd;        }
+\DoxyCodeLine{40   G4UIcmdWithAString   *modeCmd;          }
+\DoxyCodeLine{41   G4UIcmdWithADoubleAndUnit   *bufferSizeCmd; }
+\DoxyCodeLine{42   G4UIcmdWithAnInteger   *bufferModeCmd;      }
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,63 @@
+\hypertarget{GateKermaActorMessenger_8hh_source}{}\doxysection{Gate\+Kerma\+Actor\+Messenger.\+hh}
+\label{GateKermaActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateKermaActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateKermaActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateKermaActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEKERMAACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEKERMAACTORMESSENGER\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateKermaActor}{GateKermaActor}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateKermaActorMessenger}{GateKermaActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateKermaActorMessenger}{GateKermaActorMessenger}}(\mbox{\hyperlink{classGateKermaActor}{GateKermaActor}}* sensor);}
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateKermaActorMessenger}{\string~GateKermaActorMessenger}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateKermaActorMessenger_a0c98d3bab82ab3d65af0b55a71b6b4ac}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateKermaActor}{GateKermaActor}} * pKermaActor;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   G4UIcmdWithABool * pEnableDoseCmd;}
+\DoxyCodeLine{38   G4UIcmdWithABool * pEnableDoseSquaredCmd;}
+\DoxyCodeLine{39   G4UIcmdWithABool * pEnableDoseUncertaintyCmd;}
+\DoxyCodeLine{40   G4UIcmdWithABool * pEnableDoseToWaterCmd;}
+\DoxyCodeLine{41   G4UIcmdWithABool * pEnableDoseToWaterSquaredCmd;}
+\DoxyCodeLine{42   G4UIcmdWithABool * pEnableDoseToWaterUncertaintyCmd;}
+\DoxyCodeLine{43   G4UIcmdWithABool * pEnableEdepCmd;}
+\DoxyCodeLine{44   G4UIcmdWithABool * pEnableEdepSquaredCmd;}
+\DoxyCodeLine{45   G4UIcmdWithABool * pEnableEdepUncertaintyCmd;}
+\DoxyCodeLine{46   G4UIcmdWithABool * pEnableNumberOfHitsCmd;}
+\DoxyCodeLine{47   G4UIcmdWithABool * pEnableDoseNormCmd;}
+\DoxyCodeLine{48   G4UIcmdWithABool * pEnableDoseToWaterNormCmd;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   G4UIcmdWithAString * pSetDoseAlgorithmCmd;}
+\DoxyCodeLine{51   G4UIcmdWithAString * pImportMassImageCmd;}
+\DoxyCodeLine{52   G4UIcmdWithAString * pExportMassImageCmd;}
+\DoxyCodeLine{53   G4UIcmdWithAString * pVolumeFilterCmd;}
+\DoxyCodeLine{54   G4UIcmdWithAString * pMaterialFilterCmd;}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEDOSEACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

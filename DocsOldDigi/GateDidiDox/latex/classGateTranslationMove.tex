@@ -1,0 +1,119 @@
+\hypertarget{classGateTranslationMove}{}\doxysection{Gate\+Translation\+Move Class Reference}
+\label{classGateTranslationMove}\index{GateTranslationMove@{GateTranslationMove}}
+
+
+The \mbox{\hyperlink{classGateTranslationMove}{Gate\+Translation\+Move}} models a constant speed translation movement.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Translation\+Move.\+hh$>$}
+
+Inheritance diagram for Gate\+Translation\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateTranslationMove}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateTranslationMove_a000e30678f01905d0c082a831f8b831a}{Gate\+Translation\+Move}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name, const G4\+Three\+Vector \&its\+Velocity=G4\+Three\+Vector())
+\item 
+\mbox{\Hypertarget{classGateTranslationMove_a0da3018b018b3a729c3e1f52ea649d10}\label{classGateTranslationMove_a0da3018b018b3a729c3e1f52ea649d10}} 
+virtual {\bfseries $\sim$\+Gate\+Translation\+Move} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateTranslationMove_a1393bf7f2a41a6b1140b47956946f271}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method Push\+My\+Placement(), to compute. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateTranslationMove_adae8c136a2940a4769e9759a701d1f74}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateTranslationMove_adae8c136a2940a4769e9759a701d1f74}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTranslationMove_a5cc60bf8a42108a9f6a95b59dcc7468d}\label{classGateTranslationMove_a5cc60bf8a42108a9f6a95b59dcc7468d}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the translation velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTranslationMove_a0ad0a1f435462c228a58e90518323121}\label{classGateTranslationMove_a0ad0a1f435462c228a58e90518323121}} 
+void {\bfseries Set\+Velocity} (const G4\+Three\+Vector \&val)
+\begin{DoxyCompactList}\small\item\em Set the translation velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTranslationMove_ad4dc89b05bb9956f69e3046e3eb7a0b0}\label{classGateTranslationMove_ad4dc89b05bb9956f69e3046e3eb7a0b0}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Current\+Translation} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the translation vector that was last computed by Push\+My\+Placement() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateTranslationMove}{Gate\+Translation\+Move}} models a constant speed translation movement. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateTranslationMove}{Gate\+Translation\+Move}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The movement equation modeled by this class is d\+M(t) = V x t where d\+M(t) is the translation vector at time t, V is the translation velocity, and t is the time 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateTranslationMove_a000e30678f01905d0c082a831f8b831a}\label{classGateTranslationMove_a000e30678f01905d0c082a831f8b831a}} 
+\index{GateTranslationMove@{GateTranslationMove}!GateTranslationMove@{GateTranslationMove}}
+\index{GateTranslationMove@{GateTranslationMove}!GateTranslationMove@{GateTranslationMove}}
+\doxysubsubsection{\texorpdfstring{GateTranslationMove()}{GateTranslationMove()}}
+{\footnotesize\ttfamily Gate\+Translation\+Move\+::\+Gate\+Translation\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{its\+Object\+Inserter,  }\item[{const G4\+String \&}]{its\+Name,  }\item[{const G4\+Three\+Vector \&}]{its\+Velocity = {\ttfamily G4ThreeVector()} }\end{DoxyParamCaption})}
+
+Constructor The default movement parameters are chosen so that, by default, the movement is null 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateTranslationMove_adae8c136a2940a4769e9759a701d1f74}\label{classGateTranslationMove_adae8c136a2940a4769e9759a701d1f74}} 
+\index{GateTranslationMove@{GateTranslationMove}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateTranslationMove@{GateTranslationMove}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Translation\+Move\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateTranslationMove_adae8c136a2940a4769e9759a701d1f74}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the movement
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateTranslationMove_a1393bf7f2a41a6b1140b47956946f271}\label{classGateTranslationMove_a1393bf7f2a41a6b1140b47956946f271}} 
+\index{GateTranslationMove@{GateTranslationMove}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateTranslationMove@{GateTranslationMove}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Translation\+Move\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method Push\+My\+Placement(), to compute. 
+
+a volume position and orientation as a function of time
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object Gate\+Placement combining the new position and the new orientation of the volume computed by the movement equation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Translation\+Move.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Translation\+Move.\+cc\end{DoxyCompactItemize}

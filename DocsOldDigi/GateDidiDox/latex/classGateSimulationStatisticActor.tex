@@ -1,0 +1,180 @@
+\hypertarget{classGateSimulationStatisticActor}{}\doxysection{Gate\+Simulation\+Statistic\+Actor Class Reference}
+\label{classGateSimulationStatisticActor}\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+
+
+Actor displaying nb events/tracks/step.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Simulation\+Statistic\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Simulation\+Statistic\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateSimulationStatisticActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_ae4bf268f76f675fc8ffa6d0b20c99b6a}\label{classGateSimulationStatisticActor_ae4bf268f76f675fc8ffa6d0b20c99b6a}} 
+virtual {\bfseries $\sim$\+Gate\+Simulation\+Statistic\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSimulationStatisticActor_a3e462faa806cd90e90728b15953603fa}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_aa418360f5e1fee0c47a796b352efcb1b}\label{classGateSimulationStatisticActor_aa418360f5e1fee0c47a796b352efcb1b}} 
+void {\bfseries Set\+Track\+Types\+Flag} (bool b)
+\item 
+virtual void \mbox{\hyperlink{classGateSimulationStatisticActor_a88a6326d3c129212e07a49436e6a6ee7}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateSimulationStatisticActor_a0c724af3d682148d4cecafa5521ccad4}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateSimulationStatisticActor_ad2ceeb28e652e7420fd2a13590be41fb}{Pre\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateSimulationStatisticActor_aa32ae05157aefc19aedb77dc8ccec264}{User\+Stepping\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateSimulationStatisticActor_acdce5e3f04fcd5ed47e1970bb3f91fb5}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSimulationStatisticActor_a366df7e2feec8f20580bb16ab8b6de96}{Reset\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_ae40c9a5cd4e24b01d3e217ae817cfeaf}\label{classGateSimulationStatisticActor_ae40c9a5cd4e24b01d3e217ae817cfeaf}} 
+{\bfseries Gate\+Simulation\+Statistic\+Actor} (G4\+String name, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructors (Prototype) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_ad50c9959c789760694fcd7bfdc5c4277}\label{classGateSimulationStatisticActor_ad50c9959c789760694fcd7bfdc5c4277}} 
+long int {\bfseries m\+Number\+Of\+Runs}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a0bbac1ae5aad1c3351425c10b9074811}\label{classGateSimulationStatisticActor_a0bbac1ae5aad1c3351425c10b9074811}} 
+long int {\bfseries m\+Number\+Of\+Events}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a4cf17e5a46595cabea0347358a66345f}\label{classGateSimulationStatisticActor_a4cf17e5a46595cabea0347358a66345f}} 
+long int {\bfseries m\+Number\+Of\+Track}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_aab75097c81c02afe2d3fde8c5b201a3b}\label{classGateSimulationStatisticActor_aab75097c81c02afe2d3fde8c5b201a3b}} 
+long long int {\bfseries m\+Number\+Of\+Steps}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_aa89a33c112c7e37da744e942a7bf0cef}\label{classGateSimulationStatisticActor_aa89a33c112c7e37da744e942a7bf0cef}} 
+long long int {\bfseries m\+Number\+Of\+Geometrical\+Steps}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a0205ff11db2188ccdf6fb0c7a64bf91e}\label{classGateSimulationStatisticActor_a0205ff11db2188ccdf6fb0c7a64bf91e}} 
+long long int {\bfseries m\+Number\+Of\+Physical\+Steps}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a55328beaaa7ea50a8217a814b0a11bca}\label{classGateSimulationStatisticActor_a55328beaaa7ea50a8217a814b0a11bca}} 
+timeval {\bfseries start}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a2fdbc21ccfcf2985592e37d3ca3d1fe4}\label{classGateSimulationStatisticActor_a2fdbc21ccfcf2985592e37d3ca3d1fe4}} 
+timeval {\bfseries start\+\_\+afterinit}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a898d7e449fae026218185fb45039e512}\label{classGateSimulationStatisticActor_a898d7e449fae026218185fb45039e512}} 
+std\+::string {\bfseries start\+Date\+Str}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_afee4a9a31811d90ef813b7e5a1ec24be}\label{classGateSimulationStatisticActor_afee4a9a31811d90ef813b7e5a1ec24be}} 
+bool {\bfseries m\+Track\+Types\+Flag}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_abe3d35d1322392e7a4a1a317819402de}\label{classGateSimulationStatisticActor_abe3d35d1322392e7a4a1a317819402de}} 
+std\+::map$<$ std\+::string, int $>$ {\bfseries m\+Track\+Types}
+\item 
+\mbox{\Hypertarget{classGateSimulationStatisticActor_aa48d0242dd83f42b49d87b186369ebe9}\label{classGateSimulationStatisticActor_aa48d0242dd83f42b49d87b186369ebe9}} 
+\mbox{\hyperlink{classGateSimulationStatisticActorMessenger}{Gate\+Simulation\+Statistic\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Actor displaying nb events/tracks/step. 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a0c724af3d682148d4cecafa5521ccad4}\label{classGateSimulationStatisticActor_a0c724af3d682148d4cecafa5521ccad4}} 
+\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Simulation\+Statistic\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a88a6326d3c129212e07a49436e6a6ee7}\label{classGateSimulationStatisticActor_a88a6326d3c129212e07a49436e6a6ee7}} 
+\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Simulation\+Statistic\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a3e462faa806cd90e90728b15953603fa}\label{classGateSimulationStatisticActor_a3e462faa806cd90e90728b15953603fa}} 
+\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Simulation\+Statistic\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSimulationStatisticActor_ad2ceeb28e652e7420fd2a13590be41fb}\label{classGateSimulationStatisticActor_ad2ceeb28e652e7420fd2a13590be41fb}} 
+\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}!PreUserTrackingAction@{PreUserTrackingAction}}
+\index{PreUserTrackingAction@{PreUserTrackingAction}!GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+\doxysubsubsection{\texorpdfstring{PreUserTrackingAction()}{PreUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+Simulation\+Statistic\+Actor\+::\+Pre\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSimulationStatisticActor_a366df7e2feec8f20580bb16ab8b6de96}\label{classGateSimulationStatisticActor_a366df7e2feec8f20580bb16ab8b6de96}} 
+\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Simulation\+Statistic\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSimulationStatisticActor_acdce5e3f04fcd5ed47e1970bb3f91fb5}\label{classGateSimulationStatisticActor_acdce5e3f04fcd5ed47e1970bb3f91fb5}} 
+\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Simulation\+Statistic\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateSimulationStatisticActor_aa32ae05157aefc19aedb77dc8ccec264}\label{classGateSimulationStatisticActor_aa32ae05157aefc19aedb77dc8ccec264}} 
+\index{GateSimulationStatisticActor@{GateSimulationStatisticActor}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GateSimulationStatisticActor@{GateSimulationStatisticActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}}
+{\footnotesize\ttfamily void Gate\+Simulation\+Statistic\+Actor\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Simulation\+Statistic\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Simulation\+Statistic\+Actor.\+cc\end{DoxyCompactItemize}

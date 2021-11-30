@@ -1,0 +1,79 @@
+\hypertarget{GateSimulationStatisticActor_8hh_source}{}\doxysection{Gate\+Simulation\+Statistic\+Actor.\+hh}
+\label{GateSimulationStatisticActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSimulationStatisticActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSimulationStatisticActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATESIMULATIONSTATISTICACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATESIMULATIONSTATISTICACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateSimulationStatisticActorMessenger.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <sys/time.h>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateSimulationStatisticActor}{GateSimulationStatisticActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}} \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSimulationStatisticActor_ae4bf268f76f675fc8ffa6d0b20c99b6a}{\string~GateSimulationStatisticActor}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{34     \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{35     FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateSimulationStatisticActor}{GateSimulationStatisticActor}})}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{38     \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSimulationStatisticActor_a3e462faa806cd90e90728b15953603fa}{Construct}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{// Options}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} SetTrackTypesFlag(\textcolor{keywordtype}{bool} b) \{ mTrackTypesFlag = b; \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{45     \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track *);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step *);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{56 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSimulationStatisticActor_acdce5e3f04fcd5ed47e1970bb3f91fb5}{SaveData}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61     \mbox{\hyperlink{classGateSimulationStatisticActor_ae40c9a5cd4e24b01d3e217ae817cfeaf}{GateSimulationStatisticActor}}(G4String name, G4int depth = 0);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mNumberOfRuns;}
+\DoxyCodeLine{64     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mNumberOfEvents;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mNumberOfTrack;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mNumberOfSteps;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mNumberOfGeometricalSteps;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} mNumberOfPhysicalSteps;}
+\DoxyCodeLine{69     timeval start;}
+\DoxyCodeLine{70     timeval start\_afterinit;}
+\DoxyCodeLine{71     std::string startDateStr;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{bool} mTrackTypesFlag;}
+\DoxyCodeLine{74     std::map<std::string, int> mTrackTypes;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \mbox{\hyperlink{classGateSimulationStatisticActorMessenger}{GateSimulationStatisticActorMessenger}} *pMessenger;}
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 MAKE\_AUTO\_CREATOR\_ACTOR(SimulationStatisticActor, \mbox{\hyperlink{classGateSimulationStatisticActor}{GateSimulationStatisticActor}})}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESIMULATIONSTATISTICACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

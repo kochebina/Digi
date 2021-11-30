@@ -1,0 +1,59 @@
+\hypertarget{GateFakePhysicsList_8hh_source}{}\doxysection{Gate\+Fake\+Physics\+List.\+hh}
+\label{GateFakePhysicsList_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateFakePhysicsList.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateFakePhysicsList.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEFAKEPHYSICSLIST\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEFAKEPHYSICSLIST\_HH}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/*}}
+\DoxyCodeLine{15 \textcolor{comment}{ * \(\backslash\)file  GateFakePhysicsList.hh}}
+\DoxyCodeLine{16 \textcolor{comment}{ * \(\backslash\)brief fGate Fake Physicslist class for development}}
+\DoxyCodeLine{17 \textcolor{comment}{ */}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4VUserPhysicsList.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFakePhysicsList}{GateFakePhysicsList}} : \textcolor{keyword}{public} G4VUserPhysicsList \{}
+\DoxyCodeLine{23   }
+\DoxyCodeLine{24   \textcolor{keyword}{public}: }
+\DoxyCodeLine{25     \textcolor{comment}{// Constructor}}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateFakePhysicsList}{GateFakePhysicsList}}():G4VUserPhysicsList() \{\}}
+\DoxyCodeLine{27   }
+\DoxyCodeLine{28     \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateFakePhysicsList}{\string~GateFakePhysicsList}}() \{\}}
+\DoxyCodeLine{30   }
+\DoxyCodeLine{31     \textcolor{comment}{// Construct process, particules and cuts}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} ConstructProcess();}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} ConstructParticle();}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} SetCuts();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{37     \textcolor{comment}{// these methods Construct particles }}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} ConstructBosons();}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} ConstructLeptons();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42     \textcolor{comment}{// these methods Construct physics processes and register them}}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} ConstructGeneral();}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} ConstructEM();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47   }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEFAKEPHYSICSLIST\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{52 \textcolor{comment}{// EOF}}
+\DoxyCodeLine{53 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+
+\end{DoxyCode}

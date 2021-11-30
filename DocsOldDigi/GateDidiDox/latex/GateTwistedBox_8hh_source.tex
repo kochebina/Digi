@@ -1,0 +1,84 @@
+\hypertarget{GateTwistedBox_8hh_source}{}\doxysection{Gate\+Twisted\+Box.\+hh}
+\label{GateTwistedBox_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedBox.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedBox.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateTwistedBox.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATETWISTEDBOX\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATETWISTEDBOX\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4TwistedBox;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedBoxMessenger}{GateTwistedBoxMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedBox}{GateTwistedBox}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateTwistedBox_a305badb76e7e447a0ac722981777bfe0}{GateTwistedBox}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{25                  G4int depth=0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateTwistedBox_a305badb76e7e447a0ac722981777bfe0}{GateTwistedBox}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{28                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                  G4double itsXLength,}
+\DoxyCodeLine{30                  G4double itsYLength,}
+\DoxyCodeLine{31                  G4double itsZLength,}
+\DoxyCodeLine{32                  G4double itsTwistAngle,}
+\DoxyCodeLine{33                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{34                  G4int depth=0);}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTwistedBox_a41462defbd3da0e92fb567d7564e0c59}{\string~GateTwistedBox}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateTwistedBox}{GateTwistedBox}})}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateTwistedBox_aff9a1ee07c41d1bff1509563d02ad11e}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTwistedBox_a26dee0b25d685737eeef70f083e4e003}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateTwistedBox_afd801ca3a2c8c2bbaf23771a2c92acc3}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} m\_Length[axis]/2.0;}
+\DoxyCodeLine{53   \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{57   G4double \mbox{\hyperlink{classGateTwistedBox_a86663ed920316d1168cabb859bba4aa5}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keyword}{inline} G4double GetTwistedBoxXLength()    \{ \textcolor{keywordflow}{return} m\_Length.x(); \}}
+\DoxyCodeLine{62   \textcolor{keyword}{inline} G4double GetTwistedBoxYLength()    \{ \textcolor{keywordflow}{return} m\_Length.y(); \}}
+\DoxyCodeLine{63   \textcolor{keyword}{inline} G4double GetTwistedBoxZLength()    \{ \textcolor{keywordflow}{return} m\_Length.z(); \}}
+\DoxyCodeLine{64   \textcolor{keyword}{inline} G4double GetTwistedBoxTwistAngle()     \{ \textcolor{keywordflow}{return} m\_twistAngle; \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} SetTwistedBoxXLength(G4double val)   \{ m\_Length.setX(val); \}}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} SetTwistedBoxYLength(G4double val)   \{ m\_Length.setY(val); \}}
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} SetTwistedBoxZLength(G4double val)   \{ m\_Length.setZ(val); \}}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} SetTwistedBoxTwistAngle(G4double val)    \{ m\_twistAngle = val; \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{private}:}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   G4TwistedBox*          m\_twistedbox\_solid;            }
+\DoxyCodeLine{78   G4LogicalVolume*   m\_twistedbox\_log;              }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   G4ThreeVector m\_Length;       }
+\DoxyCodeLine{84   G4double m\_twistAngle;    }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{88   \mbox{\hyperlink{classGateTwistedBoxMessenger}{GateTwistedBoxMessenger}}* m\_Messenger;}
+\DoxyCodeLine{89 \};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 MAKE\_AUTO\_CREATOR\_VOLUME(twistedbox,\mbox{\hyperlink{classGateTwistedBox}{GateTwistedBox}})}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATETWISTEDBOX\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

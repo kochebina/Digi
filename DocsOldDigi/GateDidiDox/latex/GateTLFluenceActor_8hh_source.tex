@@ -1,0 +1,100 @@
+\hypertarget{GateTLFluenceActor_8hh_source}{}\doxysection{Gate\+TLFluence\+Actor.\+hh}
+\label{GateTLFluenceActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLFluenceActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLFluenceActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATETLFLUENCEACTOR\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATETLFLUENCEACTOR\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateTLFluenceActorMessenger.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTLFluenceActor}{GateTLFluenceActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}} }
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTLFluenceActor_ac67fdea5ccb528d74c14cf71206776cb}{\string~GateTLFluenceActor}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateTLFluenceActor}{GateTLFluenceActor}}) }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLFluenceActor_a844087f30557fb061424be8f0459ee33}{Construct}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} EnableFluenceImage(\textcolor{keywordtype}{bool} b) \{ isFluenceImageEnabled = b; \}}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} EnableEnergyFluenceImage(\textcolor{keywordtype}{bool} b) \{ isEnergyFluenceImageEnabled = b; \}}
+\DoxyCodeLine{40   }
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} EnableFluenceSquaredImage(\textcolor{keywordtype}{bool} b) \{ isFluenceSquaredImageEnabled = b; \}}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} EnableEnergyFluenceSquaredImage(\textcolor{keywordtype}{bool} b) \{ isEnergyFluenceSquaredImageEnabled = b; \}}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} EnableFluenceUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ isFluenceUncertainyImageEnabled = b; \}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} EnableEnergyFluenceUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ isEnergyFluenceUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{comment}{//virtual void PostUserTrackingAction(const GateVVolume *, const G4Track* t);}}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLFluenceActor_a75b962c8a45fff7835ff8b9e0c240b81}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Step* \textcolor{comment}{/*step*/})\{\}}
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLFluenceActor_a74ba854a43043d22cf9545f7fe16deac}{SaveData}}();}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLFluenceActor_ad4826347b80dd05280845e3106fa8fa6}{clear}}()\{ResetData();\}}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66   \mbox{\hyperlink{classGateTLFluenceActor}{GateTLFluenceActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{67   \mbox{\hyperlink{classGateTLFluenceActorMessenger}{GateTLFluenceActorMessenger}} * pMessenger;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} fluenceImage; }
+\DoxyCodeLine{70   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} energyFluenceImage;}
+\DoxyCodeLine{71   \mbox{\hyperlink{classGateImageT}{GateImageInt}} lastHitEventImage;}
+\DoxyCodeLine{72 \textcolor{comment}{//  GateImage mLastHitEventImage; // Remove?}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   G4String fluenceFilename;}
+\DoxyCodeLine{75   G4String energyFluenceFilename;}
+\DoxyCodeLine{76   G4String fluenceSquaredFilename;}
+\DoxyCodeLine{77   G4String energyFluenceSquaredFilename;}
+\DoxyCodeLine{78   }
+\DoxyCodeLine{79   G4double voxelVolume;}
+\DoxyCodeLine{80   std::vector<G4double> voxelDimensions;}
+\DoxyCodeLine{81   }
+\DoxyCodeLine{82   }
+\DoxyCodeLine{83   \textcolor{keywordtype}{bool} isFluenceImageEnabled;}
+\DoxyCodeLine{84   \textcolor{keywordtype}{bool} isEnergyFluenceImageEnabled;}
+\DoxyCodeLine{85   \textcolor{keywordtype}{bool} isFluenceSquaredImageEnabled;}
+\DoxyCodeLine{86   \textcolor{keywordtype}{bool} isEnergyFluenceSquaredImageEnabled;}
+\DoxyCodeLine{87   \textcolor{keywordtype}{bool} isFluenceUncertainyImageEnabled;}
+\DoxyCodeLine{88   \textcolor{keywordtype}{bool} isEnergyFluenceUncertaintyImageEnabled;}
+\DoxyCodeLine{89   \textcolor{keywordtype}{bool} isLastHitEventImageEnabled;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keywordtype}{int} currentEvent;}
+\DoxyCodeLine{92   G4double nValuesPerVoxel;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \textcolor{comment}{// Helper methods}}
+\DoxyCodeLine{95 \textcolor{keyword}{private}:}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} storeFluenceAtCurrentIndex(\textcolor{keywordtype}{int} index,G4double fluence, G4double energyFluence);}
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 MAKE\_AUTO\_CREATOR\_ACTOR(TLFluenceActor,\mbox{\hyperlink{classGateTLFluenceActor}{GateTLFluenceActor}})}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATETLFluenceACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

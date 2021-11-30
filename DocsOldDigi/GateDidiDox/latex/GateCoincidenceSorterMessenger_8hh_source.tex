@@ -1,0 +1,64 @@
+\hypertarget{GateCoincidenceSorterMessenger_8hh_source}{}\doxysection{Gate\+Coincidence\+Sorter\+Messenger.\+hh}
+\label{GateCoincidenceSorterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceSorterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceSorterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{   }}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceSorterMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceSorterMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateClockDependentMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceSorter}{GateCoincidenceSorter}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{41 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{42 \textcolor{comment}{//    Modified 01/2016 by Jared.STRYDHORST@cea.fr to add control of the presort buffer size}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceSorterMessenger}{GateCoincidenceSorterMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{classGateCoincidenceSorterMessenger_aabeedee3f1f77d3e66ca567b49043ea2}{GateCoincidenceSorterMessenger}}(\mbox{\hyperlink{classGateCoincidenceSorter}{GateCoincidenceSorter}}* itsCoincidenceSorter);}
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateCoincidenceSorterMessenger_ab49c9f794f2a194b970c6f8efd29cc8d}{\string~GateCoincidenceSorterMessenger}}();}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{53     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorterMessenger_a7cc146857b02fe69afa34e101e944fd5}{SetNewValue}}(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{56     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCoincidenceSorter}{GateCoincidenceSorter}}* \mbox{\hyperlink{classGateCoincidenceSorterMessenger_a1941f805225679f99ca8745de469737a}{GetCoincidenceSorter}}()}
+\DoxyCodeLine{57     \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCoincidenceSorter}{GateCoincidenceSorter}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59 \textcolor{keyword}{private}:}
+\DoxyCodeLine{60     G4UIcmdWithADoubleAndUnit   *windowCmd;          }
+\DoxyCodeLine{61     G4UIcmdWithADoubleAndUnit   *offsetCmd;          }
+\DoxyCodeLine{62     G4UIcmdWithADoubleAndUnit   *windowJitterCmd;    }
+\DoxyCodeLine{63     G4UIcmdWithADoubleAndUnit   *offsetJitterCmd;    }
+\DoxyCodeLine{64     G4UIcmdWithAnInteger        *minSectorDiffCmd;   }
+\DoxyCodeLine{65     G4UIcmdWithAnInteger        *setDepthCmd;        }
+\DoxyCodeLine{66     G4UIcmdWithAnInteger        *setPresortBufferSizeCmd;  }
+\DoxyCodeLine{67     G4UIcmdWithAString          *SetInputNameCmd;    }
+\DoxyCodeLine{68     G4UIcmdWithAString          *MultiplePolicyCmd;  }
+\DoxyCodeLine{69     G4UIcmdWithAString          *SetAcceptancePolicy4CCCmd;  }
+\DoxyCodeLine{70     G4UIcmdWithABool            *AllPulseOpenCoincGateCmd;  }
+\DoxyCodeLine{71     G4UIcmdWithABool            *SetTriggerOnlyByAbsorberCmd;}
+\DoxyCodeLine{72     G4UIcmdWithABool            *SetEventIDCoincCmd;}
+\DoxyCodeLine{73     }
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,663 @@
+\hypertarget{matrix_8h_source}{}\doxysection{matrix.\+h}
+\label{matrix_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/matrix.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/matrix.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#)matrix.h 1.5 2/8/93 */}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/* prevent recursive definition */}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef     matrix\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define     matrix\_h}}
+\DoxyCodeLine{6 \textcolor{comment}{/*  19-\/sep-\/2002: }}
+\DoxyCodeLine{7 \textcolor{comment}{ * Merge with bug fixes and support for CYGWIN provided by Kris Thielemans@csc.mrc.ac.uk}}
+\DoxyCodeLine{8 \textcolor{comment}{ * 09-\/jan-\/2003:}}
+\DoxyCodeLine{9 \textcolor{comment}{ * in \#define W\_MODE, replace "{}wb"{} and "{}w"{} by "{}wb+"{} and "{}w+"{} respectively  for windows and unix}}
+\DoxyCodeLine{10 \textcolor{comment}{ * 12-\/sep-\/2003:}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Remove ntohs and ntohl declarations for Windows}}
+\DoxyCodeLine{12 \textcolor{comment}{ */}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{/*}}
+\DoxyCodeLine{18 \textcolor{comment}{\#define R\_MODE "{}rb"{}}}
+\DoxyCodeLine{19 \textcolor{comment}{\#define RW\_MODE "{}rb+"{}}}
+\DoxyCodeLine{20 \textcolor{comment}{\#define W\_MODE "{}wb+"{}}}
+\DoxyCodeLine{21 \textcolor{comment}{*/}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define swab \_swab}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define strdup \_strdup}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef \_\_CYGWIN\_\_}}
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char} *caddr\_t;}
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} u\_char;}
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} u\_short;}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_CYGWIN\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{30 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ntohs(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short});}
+\DoxyCodeLine{31 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ntohl(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long});}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* \_WIN32 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <netinet/in.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define     MatBLKSIZE 512}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define     MatFirstDirBlk 2}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define     MatMagic 0x67452301}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define V7 70}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define MagicNumLen 14}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define NameLen 32}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define IDLen 16}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define NumDataMasks 12}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define MAX\_FRAMES  512}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define MAX\_SLICES  1024}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define MAX\_GATES   32}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define MAX\_BED\_POS 32}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{52     NoData, Sinogram, PetImage, AttenCor, Normalization,}
+\DoxyCodeLine{53     PolarMap, ByteVolume, PetVolume, ByteProjection,}
+\DoxyCodeLine{54     PetProjection, ByteImage, Short3dSinogram, Byte3dSinogram, Norm3d,}
+\DoxyCodeLine{55     Float3dSinogram,InterfileImage, NumDataSetTypes}
+\DoxyCodeLine{56 \} DataSetType;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{59     UnknownMatDataType, ByteData, VAX\_Ix2, VAX\_Ix4,}
+\DoxyCodeLine{60     VAX\_Rx4, IeeeFloat, SunShort, SunLong, NumMatrixDataTypes, ColorData,}
+\DoxyCodeLine{61     BitData}
+\DoxyCodeLine{62 \} MatrixDataType;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{enum} CalibrationStatus \{Uncalibrated, Calibrated, Processed,}
+\DoxyCodeLine{65         NumCalibrationStatus\};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{enum} ScanType \{UndefScan, BlankScan,}
+\DoxyCodeLine{69         TransmissionScan, StaticEmission,}
+\DoxyCodeLine{70         DynamicEmission, GatedEmission,}
+\DoxyCodeLine{71         TransRectilinear, EmissionRectilinear,}
+\DoxyCodeLine{72         NumScanTypes\};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{enum} CurrentModels \{E921, E961, E953, E953B, E951, E951R,}
+\DoxyCodeLine{75                     E962, E925, NumEcatModels\};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{enum} OldDisplayUnits \{TotalCounts, UnknownEcfUnits, EcatCountsPerSec,}
+\DoxyCodeLine{79     UCiPerCC, LMRGlu, LMRGluUmol, LMRGluMg, NCiPerCC, WellCounts,}
+\DoxyCodeLine{80     BecquerelsPerCC, MlPerMinPer100g, MlPerMinPer1g, NumOldUnits\};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{enum} PatientOrientation \{FeetFirstProne, HeadFirstProne,}
+\DoxyCodeLine{83         FeetFirstSupine, HeadFirstSupine,}
+\DoxyCodeLine{84         FeetFirstRight, HeadFirstRight,}
+\DoxyCodeLine{85         FeetFirstLeft, HeadFirstLeft, UnknownOrientation, NumOrientations\};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{enum} SeptaPos \{SeptaExtended, SeptaRetracted, NoSeptaInstalled\};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{enum} Sino3dOrder \{ElAxVwRd, ElVwAxRd, NumSino3dOrders\};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{92         MAT\_OK,}
+\DoxyCodeLine{93         MAT\_READ\_ERROR,}
+\DoxyCodeLine{94         MAT\_WRITE\_ERROR,}
+\DoxyCodeLine{95         MAT\_INVALID\_DIRBLK,}
+\DoxyCodeLine{96         MAT\_ACS\_FILE\_NOT\_FOUND,}
+\DoxyCodeLine{97         MAT\_INTERFILE\_OPEN\_ERR,}
+\DoxyCodeLine{98         MAT\_FILE\_TYPE\_NOT\_MATCH,}
+\DoxyCodeLine{99         MAT\_READ\_FROM\_NILFPTR,}
+\DoxyCodeLine{100         MAT\_NOMHD\_FILE\_OBJECT,}
+\DoxyCodeLine{101         MAT\_NIL\_SHPTR,}
+\DoxyCodeLine{102         MAT\_NIL\_DATA\_PTR,}
+\DoxyCodeLine{103         MAT\_MATRIX\_NOT\_FOUND,}
+\DoxyCodeLine{104         MAT\_UNKNOWN\_FILE\_TYPE,}
+\DoxyCodeLine{105         MAT\_ACS\_CREATE\_ERR,}
+\DoxyCodeLine{106         MAT\_BAD\_ATTRIBUTE,}
+\DoxyCodeLine{107         MAT\_BAD\_FILE\_ACCESS\_MODE,}
+\DoxyCodeLine{108         MAT\_INVALID\_DIMENSION,}
+\DoxyCodeLine{109         MAT\_NO\_SLICES\_FOUND,}
+\DoxyCodeLine{110         MAT\_INVALID\_DATA\_TYPE,}
+\DoxyCodeLine{111         MAT\_INVALID\_MBED\_POSITION}
+\DoxyCodeLine{112     \}}
+\DoxyCodeLine{113 MatrixErrorCode;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{enum} ProcessingCode \{ NotProc=0, Norm=1, Atten\_Meas=2, Atten\_Calc=4,}
+\DoxyCodeLine{116     Smooth\_X=8, Smooth\_Y=16, Smooth\_Z=32, Scat2d=64, Scat3d=128,}
+\DoxyCodeLine{117     ArcPrc=256, DecayPrc=512, OnComPrc=1024 \};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} numDisplayUnits;}
+\DoxyCodeLine{121 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* datasettype[NumDataSetTypes];}
+\DoxyCodeLine{122 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* dstypecode[NumDataSetTypes];}
+\DoxyCodeLine{123 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* scantype[NumScanTypes];}
+\DoxyCodeLine{124 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* scantypecode[NumScanTypes];}
+\DoxyCodeLine{125 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* customDisplayUnits[];}
+\DoxyCodeLine{126 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} ecfconverter[NumOldUnits];}
+\DoxyCodeLine{127 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* calstatus[NumCalibrationStatus];}
+\DoxyCodeLine{128 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* sexcode;}
+\DoxyCodeLine{129 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* dexteritycode;}
+\DoxyCodeLine{130 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* typeFilterLabel[NumDataMasks];}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{keyword}{extern} MatrixErrorCode matrix\_errno;}
+\DoxyCodeLine{133 \textcolor{keyword}{extern} \textcolor{keywordtype}{char} matrix\_errtxt[];}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{comment}{/*}}
+\DoxyCodeLine{137 \textcolor{comment}{ ecat 6.4 compatibility definitions}}
+\DoxyCodeLine{138 \textcolor{comment}{*/}}
+\DoxyCodeLine{139 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{        \textcolor{comment}{/* matrix data types */}}
+\DoxyCodeLine{140         GENERIC,}
+\DoxyCodeLine{141         BYTE\_TYPE,}
+\DoxyCodeLine{142         VAX\_I2,}
+\DoxyCodeLine{143         VAX\_I4,}
+\DoxyCodeLine{144         VAX\_R4,}
+\DoxyCodeLine{145         SUN\_R4,}
+\DoxyCodeLine{146         SUN\_I2,}
+\DoxyCodeLine{147         SUN\_I4}
+\DoxyCodeLine{148           \}}
+\DoxyCodeLine{149 MatrixDataType\_64;}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define MAT\_SUB\_HEADER 255  }\textcolor{comment}{/* operation to sub-\/header only */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{        \textcolor{comment}{/* matrix file types */}}
+\DoxyCodeLine{154         MAT\_UNKNOWN\_FTYPE,}
+\DoxyCodeLine{155         MAT\_SCAN\_DATA,}
+\DoxyCodeLine{156         MAT\_IMAGE\_DATA,}
+\DoxyCodeLine{157         MAT\_ATTN\_DATA,}
+\DoxyCodeLine{158         MAT\_NORM\_DATA}
+\DoxyCodeLine{159           \}}
+\DoxyCodeLine{160 MatrixFileType\_64;}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{comment}{/*}}
+\DoxyCodeLine{163 \textcolor{comment}{    end of ecat 6.4 definitions}}
+\DoxyCodeLine{164 \textcolor{comment}{*/}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{keyword}{struct  }\mbox{\hyperlink{structMatDir}{MatDir}} \{}
+\DoxyCodeLine{167     \textcolor{keywordtype}{int} matnum;}
+\DoxyCodeLine{168     \textcolor{keywordtype}{int} strtblk;}
+\DoxyCodeLine{169     \textcolor{keywordtype}{int} endblk;}
+\DoxyCodeLine{170     \textcolor{keywordtype}{int} matstat; \};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{keyword}{struct }\mbox{\hyperlink{structmatdir}{matdir}}}
+\DoxyCodeLine{174     \{ \textcolor{keywordtype}{int}   nmats,}
+\DoxyCodeLine{175         nmax;}
+\DoxyCodeLine{176       \textcolor{keyword}{struct }\mbox{\hyperlink{structMatDir}{MatDir}} *entry;}
+\DoxyCodeLine{177     \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{keyword}{struct }\mbox{\hyperlink{structMatval}{Matval}} \{}
+\DoxyCodeLine{181     \textcolor{keywordtype}{int} frame, plane, gate, data, bed;}
+\DoxyCodeLine{182     \};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{keyword}{struct }\mbox{\hyperlink{structMatlimits}{Matlimits}} \{}
+\DoxyCodeLine{185         \textcolor{keywordtype}{int} framestart, frameend;}
+\DoxyCodeLine{186         \textcolor{keywordtype}{int} planestart, planeend;}
+\DoxyCodeLine{187         \textcolor{keywordtype}{int} gatestart , gateend;}
+\DoxyCodeLine{188         \textcolor{keywordtype}{int} datastart , dataend;}
+\DoxyCodeLine{189         \textcolor{keywordtype}{int} bedstart  , bedend;}
+\DoxyCodeLine{190     \};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{keyword}{typedef}}
+\DoxyCodeLine{194     \textcolor{keyword}{struct }\mbox{\hyperlink{structmatdirnode}{matdirnode}}}
+\DoxyCodeLine{195     \{}
+\DoxyCodeLine{196         \textcolor{keywordtype}{int}     matnum ;}
+\DoxyCodeLine{197         \textcolor{keywordtype}{int}     strtblk ;}
+\DoxyCodeLine{198         \textcolor{keywordtype}{int}     endblk ;}
+\DoxyCodeLine{199         \textcolor{keywordtype}{int}     matstat ;}
+\DoxyCodeLine{200         \textcolor{keyword}{struct }\mbox{\hyperlink{structmatdirnode}{matdirnode}} *next ;}
+\DoxyCodeLine{201     \}}
+\DoxyCodeLine{202 \mbox{\hyperlink{structmatdirnode}{MatDirNode}} ;}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{keyword}{typedef}}
+\DoxyCodeLine{205     \textcolor{keyword}{struct }\mbox{\hyperlink{structmatdirlist}{matdirlist}}}
+\DoxyCodeLine{206     \{}
+\DoxyCodeLine{207         \textcolor{keywordtype}{int} nmats ;}
+\DoxyCodeLine{208         \mbox{\hyperlink{structmatdirnode}{MatDirNode}} *first ;}
+\DoxyCodeLine{209         \mbox{\hyperlink{structmatdirnode}{MatDirNode}} *last ;}
+\DoxyCodeLine{210     \}}
+\DoxyCodeLine{211 \mbox{\hyperlink{structmatdirlist}{MatDirList}} ;}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{keyword}{typedef}}
+\DoxyCodeLine{214     \textcolor{keyword}{struct }\mbox{\hyperlink{structmatdirblk}{matdirblk}}}
+\DoxyCodeLine{215     \{}
+\DoxyCodeLine{216         \textcolor{keywordtype}{int} nfree, nextblk, prvblk, nused ;}
+\DoxyCodeLine{217         \textcolor{keyword}{struct  }\mbox{\hyperlink{structMatDir}{MatDir}} \mbox{\hyperlink{structmatdir}{matdir}}[31] ;}
+\DoxyCodeLine{218     \}}
+\DoxyCodeLine{219 \mbox{\hyperlink{structmatdirblk}{MatDirBlk}} ;}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{      \textcolor{comment}{/* matrix file access modes */}}
+\DoxyCodeLine{222         MAT\_READ\_WRITE,     \textcolor{comment}{/* allow read and/or write */}}
+\DoxyCodeLine{223         MAT\_READ\_ONLY,      \textcolor{comment}{/* only allow read */}}
+\DoxyCodeLine{224         MAT\_CREATE,     \textcolor{comment}{/* create if non-\/existant */}}
+\DoxyCodeLine{225         MAT\_OPEN\_EXISTING,  \textcolor{comment}{/* open existing file read/write */}}
+\DoxyCodeLine{226         MAT\_CREATE\_NEW\_FILE \textcolor{comment}{/* force new file creation */}}
+\DoxyCodeLine{227           \}}
+\DoxyCodeLine{228 MatrixFileAccessMode;}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{comment}{/* object creation attributes */}}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{233     \{}
+\DoxyCodeLine{234         MAT\_NULL,}
+\DoxyCodeLine{235         MAT\_XDIM,}
+\DoxyCodeLine{236         MAT\_YDIM,}
+\DoxyCodeLine{237         MAT\_ZDIM,}
+\DoxyCodeLine{238         MAT\_DATA\_TYPE,}
+\DoxyCodeLine{239         MAT\_SCALE\_FACTOR,}
+\DoxyCodeLine{240         MAT\_PIXEL\_SIZE,}
+\DoxyCodeLine{241         MAT\_Y\_SIZE,}
+\DoxyCodeLine{242         MAT\_Z\_SIZE,}
+\DoxyCodeLine{243         MAT\_DATA\_MAX,}
+\DoxyCodeLine{244         MAT\_DATA\_MIN,}
+\DoxyCodeLine{245         MAT\_PROTO}
+\DoxyCodeLine{246     \}}
+\DoxyCodeLine{247 MatrixObjectAttribute;}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}} \{}
+\DoxyCodeLine{250     \textcolor{keywordtype}{char} magic\_number[14];}
+\DoxyCodeLine{251     \textcolor{keywordtype}{char} original\_file\_name[32];}
+\DoxyCodeLine{252     \textcolor{keywordtype}{short} sw\_version;}
+\DoxyCodeLine{253     \textcolor{keywordtype}{short} system\_type;}
+\DoxyCodeLine{254     \textcolor{keywordtype}{short} file\_type;}
+\DoxyCodeLine{255     \textcolor{keywordtype}{char} serial\_number[10];}
+\DoxyCodeLine{256     \textcolor{keywordtype}{short} align\_0;                      \textcolor{comment}{/* 4 byte alignment purpose */}}
+\DoxyCodeLine{257     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} scan\_start\_time;}
+\DoxyCodeLine{258     \textcolor{keywordtype}{char} isotope\_code[8];}
+\DoxyCodeLine{259     \textcolor{keywordtype}{float} isotope\_halflife;}
+\DoxyCodeLine{260     \textcolor{keywordtype}{char} radiopharmaceutical[32];}
+\DoxyCodeLine{261     \textcolor{keywordtype}{float} gantry\_tilt;}
+\DoxyCodeLine{262     \textcolor{keywordtype}{float} gantry\_rotation;}
+\DoxyCodeLine{263     \textcolor{keywordtype}{float} bed\_elevation;}
+\DoxyCodeLine{264     \textcolor{keywordtype}{float} intrinsic\_tilt;}
+\DoxyCodeLine{265     \textcolor{keywordtype}{short} wobble\_speed;}
+\DoxyCodeLine{266     \textcolor{keywordtype}{short} transm\_source\_type;}
+\DoxyCodeLine{267     \textcolor{keywordtype}{float} distance\_scanned;}
+\DoxyCodeLine{268     \textcolor{keywordtype}{float} transaxial\_fov;}
+\DoxyCodeLine{269     \textcolor{keywordtype}{short} angular\_compression;}
+\DoxyCodeLine{270     \textcolor{keywordtype}{short} coin\_samp\_mode;}
+\DoxyCodeLine{271     \textcolor{keywordtype}{short} axial\_samp\_mode;}
+\DoxyCodeLine{272     \textcolor{keywordtype}{short} align\_1;}
+\DoxyCodeLine{273     \textcolor{keywordtype}{float} calibration\_factor;}
+\DoxyCodeLine{274     \textcolor{keywordtype}{short} calibration\_units;}
+\DoxyCodeLine{275     \textcolor{keywordtype}{short} calibration\_units\_label;}
+\DoxyCodeLine{276     \textcolor{keywordtype}{short} compression\_code;}
+\DoxyCodeLine{277     \textcolor{keywordtype}{char} study\_name[12];}
+\DoxyCodeLine{278     \textcolor{keywordtype}{char} patient\_id[16];}
+\DoxyCodeLine{279     \textcolor{keywordtype}{char} patient\_name[32];}
+\DoxyCodeLine{280     \textcolor{keywordtype}{char} patient\_sex[1];}
+\DoxyCodeLine{281     \textcolor{keywordtype}{char} patient\_dexterity[1];}
+\DoxyCodeLine{282     \textcolor{keywordtype}{float} patient\_age;}
+\DoxyCodeLine{283     \textcolor{keywordtype}{float} patient\_height;}
+\DoxyCodeLine{284     \textcolor{keywordtype}{float} patient\_weight;}
+\DoxyCodeLine{285     \textcolor{keywordtype}{int} patient\_birth\_date;}
+\DoxyCodeLine{286     \textcolor{keywordtype}{char} physician\_name[32];}
+\DoxyCodeLine{287     \textcolor{keywordtype}{char} operator\_name[32];}
+\DoxyCodeLine{288     \textcolor{keywordtype}{char} study\_description[32];}
+\DoxyCodeLine{289     \textcolor{keywordtype}{short} acquisition\_type;}
+\DoxyCodeLine{290     \textcolor{keywordtype}{short} patient\_orientation;}
+\DoxyCodeLine{291     \textcolor{keywordtype}{char} facility\_name[20];}
+\DoxyCodeLine{292     \textcolor{keywordtype}{short} num\_planes;}
+\DoxyCodeLine{293     \textcolor{keywordtype}{short} num\_frames;}
+\DoxyCodeLine{294     \textcolor{keywordtype}{short} num\_gates;}
+\DoxyCodeLine{295     \textcolor{keywordtype}{short} num\_bed\_pos;}
+\DoxyCodeLine{296     \textcolor{keywordtype}{float} init\_bed\_position;}
+\DoxyCodeLine{297     \textcolor{keywordtype}{float} bed\_offset[15];}
+\DoxyCodeLine{298     \textcolor{keywordtype}{float} plane\_separation;}
+\DoxyCodeLine{299     \textcolor{keywordtype}{short} lwr\_sctr\_thres;}
+\DoxyCodeLine{300     \textcolor{keywordtype}{short} lwr\_true\_thres;}
+\DoxyCodeLine{301     \textcolor{keywordtype}{short} upr\_true\_thres;}
+\DoxyCodeLine{302     \textcolor{keywordtype}{char} user\_process\_code[10];}
+\DoxyCodeLine{303     \textcolor{keywordtype}{short} acquisition\_mode;}
+\DoxyCodeLine{304     \textcolor{keywordtype}{short} align\_2;}
+\DoxyCodeLine{305     \textcolor{keywordtype}{float} bin\_size;}
+\DoxyCodeLine{306     \textcolor{keywordtype}{float} branching\_fraction;}
+\DoxyCodeLine{307     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dose\_start\_time;}
+\DoxyCodeLine{308     \textcolor{keywordtype}{float} dosage;}
+\DoxyCodeLine{309     \textcolor{keywordtype}{float} well\_counter\_factor;}
+\DoxyCodeLine{310     \textcolor{keywordtype}{char} data\_units[32];}
+\DoxyCodeLine{311     \textcolor{keywordtype}{short} septa\_state;}
+\DoxyCodeLine{312     \textcolor{keywordtype}{short} align\_3;}
+\DoxyCodeLine{313 \} \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}};}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXSCAN__SUB}{XSCAN\_SUB}} \{}
+\DoxyCodeLine{316     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{317     \textcolor{keywordtype}{short} num\_dimensions;}
+\DoxyCodeLine{318     \textcolor{keywordtype}{short} num\_r\_elements;}
+\DoxyCodeLine{319     \textcolor{keywordtype}{short} num\_angles;}
+\DoxyCodeLine{320     \textcolor{keywordtype}{short} corrections\_applied;}
+\DoxyCodeLine{321     \textcolor{keywordtype}{short} num\_z\_elements;}
+\DoxyCodeLine{322     \textcolor{keywordtype}{short} ring\_difference;}
+\DoxyCodeLine{323     \textcolor{keywordtype}{short} align\_0;}
+\DoxyCodeLine{324     \textcolor{keywordtype}{float} x\_resolution;}
+\DoxyCodeLine{325     \textcolor{keywordtype}{float} y\_resolution;}
+\DoxyCodeLine{326     \textcolor{keywordtype}{float} z\_resolution;}
+\DoxyCodeLine{327     \textcolor{keywordtype}{float} w\_resolution;}
+\DoxyCodeLine{328     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} gate\_duration;}
+\DoxyCodeLine{329     \textcolor{keywordtype}{int} r\_wave\_offset;}
+\DoxyCodeLine{330     \textcolor{keywordtype}{int} num\_accepted\_beats;}
+\DoxyCodeLine{331     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{332     \textcolor{keywordtype}{short} scan\_min;}
+\DoxyCodeLine{333     \textcolor{keywordtype}{short} scan\_max;}
+\DoxyCodeLine{334     \textcolor{keywordtype}{int} prompts;}
+\DoxyCodeLine{335     \textcolor{keywordtype}{int} delayed;}
+\DoxyCodeLine{336     \textcolor{keywordtype}{int} multiples;}
+\DoxyCodeLine{337     \textcolor{keywordtype}{int} net\_trues;}
+\DoxyCodeLine{338     \textcolor{keywordtype}{float} cor\_singles[16];}
+\DoxyCodeLine{339     \textcolor{keywordtype}{float} uncor\_singles[16];}
+\DoxyCodeLine{340     \textcolor{keywordtype}{float} tot\_avg\_cor;}
+\DoxyCodeLine{341     \textcolor{keywordtype}{float} tot\_avg\_uncor;}
+\DoxyCodeLine{342     \textcolor{keywordtype}{int} total\_coin\_rate;}
+\DoxyCodeLine{343     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_start\_time;}
+\DoxyCodeLine{344     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_duration;}
+\DoxyCodeLine{345     \textcolor{keywordtype}{float} loss\_correction\_fctr;}
+\DoxyCodeLine{346     \textcolor{keywordtype}{short} phy\_planes[8];}
+\DoxyCodeLine{347 \} \mbox{\hyperlink{structXSCAN__SUB}{Scan\_subheader}};}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structX3DSCAN__SUB}{X3DSCAN\_SUB}} \{}
+\DoxyCodeLine{350     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{351     \textcolor{keywordtype}{short} num\_dimensions;}
+\DoxyCodeLine{352     \textcolor{keywordtype}{short} num\_r\_elements;}
+\DoxyCodeLine{353     \textcolor{keywordtype}{short} num\_angles;}
+\DoxyCodeLine{354     \textcolor{keywordtype}{short} corrections\_applied;}
+\DoxyCodeLine{355     \textcolor{keywordtype}{short} num\_z\_elements[64];}
+\DoxyCodeLine{356     \textcolor{keywordtype}{short} ring\_difference;}
+\DoxyCodeLine{357     \textcolor{keywordtype}{short} storage\_order;}
+\DoxyCodeLine{358     \textcolor{keywordtype}{short} axial\_compression;}
+\DoxyCodeLine{359     \textcolor{keywordtype}{float} x\_resolution;}
+\DoxyCodeLine{360     \textcolor{keywordtype}{float} v\_resolution;}
+\DoxyCodeLine{361     \textcolor{keywordtype}{float} z\_resolution;}
+\DoxyCodeLine{362     \textcolor{keywordtype}{float} w\_resolution;}
+\DoxyCodeLine{363     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} gate\_duration;}
+\DoxyCodeLine{364     \textcolor{keywordtype}{int} r\_wave\_offset;}
+\DoxyCodeLine{365     \textcolor{keywordtype}{int} num\_accepted\_beats;}
+\DoxyCodeLine{366     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{367     \textcolor{keywordtype}{short} scan\_min;}
+\DoxyCodeLine{368     \textcolor{keywordtype}{short} scan\_max;}
+\DoxyCodeLine{369     \textcolor{keywordtype}{int} prompts;}
+\DoxyCodeLine{370     \textcolor{keywordtype}{int} delayed;}
+\DoxyCodeLine{371     \textcolor{keywordtype}{int} multiples;}
+\DoxyCodeLine{372     \textcolor{keywordtype}{int} net\_trues;}
+\DoxyCodeLine{373     \textcolor{keywordtype}{float} tot\_avg\_cor;}
+\DoxyCodeLine{374     \textcolor{keywordtype}{float} tot\_avg\_uncor;}
+\DoxyCodeLine{375     \textcolor{keywordtype}{int} total\_coin\_rate;}
+\DoxyCodeLine{376     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_start\_time;}
+\DoxyCodeLine{377     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_duration;}
+\DoxyCodeLine{378     \textcolor{keywordtype}{float} loss\_correction\_fctr;}
+\DoxyCodeLine{379     \textcolor{keywordtype}{float} uncor\_singles[128];}
+\DoxyCodeLine{380 \} \mbox{\hyperlink{structX3DSCAN__SUB}{Scan3D\_subheader}};}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXIMAGE__SUB}{XIMAGE\_SUB}} \{}
+\DoxyCodeLine{383     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{384     \textcolor{keywordtype}{short} num\_dimensions;}
+\DoxyCodeLine{385     \textcolor{keywordtype}{short} x\_dimension;}
+\DoxyCodeLine{386     \textcolor{keywordtype}{short} y\_dimension;}
+\DoxyCodeLine{387     \textcolor{keywordtype}{short} z\_dimension;}
+\DoxyCodeLine{388     \textcolor{keywordtype}{short} align\_0;}
+\DoxyCodeLine{389     \textcolor{keywordtype}{float} z\_offset;}
+\DoxyCodeLine{390     \textcolor{keywordtype}{float} x\_offset;}
+\DoxyCodeLine{391     \textcolor{keywordtype}{float} y\_offset;}
+\DoxyCodeLine{392     \textcolor{keywordtype}{float} recon\_zoom;}
+\DoxyCodeLine{393     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{394     \textcolor{keywordtype}{short} image\_min;}
+\DoxyCodeLine{395     \textcolor{keywordtype}{short} image\_max;}
+\DoxyCodeLine{396     \textcolor{keywordtype}{float} x\_pixel\_size;}
+\DoxyCodeLine{397     \textcolor{keywordtype}{float} y\_pixel\_size;}
+\DoxyCodeLine{398     \textcolor{keywordtype}{float} z\_pixel\_size;}
+\DoxyCodeLine{399     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_duration;}
+\DoxyCodeLine{400     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frame\_start\_time;}
+\DoxyCodeLine{401     \textcolor{keywordtype}{short} filter\_code;}
+\DoxyCodeLine{402     \textcolor{keywordtype}{short} align\_1;}
+\DoxyCodeLine{403     \textcolor{keywordtype}{float} x\_resolution;}
+\DoxyCodeLine{404     \textcolor{keywordtype}{float} y\_resolution;}
+\DoxyCodeLine{405     \textcolor{keywordtype}{float} z\_resolution;}
+\DoxyCodeLine{406     \textcolor{keywordtype}{float} num\_r\_elements;}
+\DoxyCodeLine{407     \textcolor{keywordtype}{float} num\_angles;}
+\DoxyCodeLine{408     \textcolor{keywordtype}{float} z\_rotation\_angle;}
+\DoxyCodeLine{409     \textcolor{keywordtype}{float} decay\_corr\_fctr;}
+\DoxyCodeLine{410     \textcolor{keywordtype}{int} processing\_code;}
+\DoxyCodeLine{411     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} gate\_duration;}
+\DoxyCodeLine{412     \textcolor{keywordtype}{int} r\_wave\_offset;}
+\DoxyCodeLine{413     \textcolor{keywordtype}{int} num\_accepted\_beats;}
+\DoxyCodeLine{414     \textcolor{keywordtype}{float} filter\_cutoff\_frequency;}
+\DoxyCodeLine{415     \textcolor{keywordtype}{float} filter\_resolution;}
+\DoxyCodeLine{416     \textcolor{keywordtype}{float} filter\_ramp\_slope;}
+\DoxyCodeLine{417     \textcolor{keywordtype}{short} filter\_order;}
+\DoxyCodeLine{418     \textcolor{keywordtype}{short} align\_2;}
+\DoxyCodeLine{419     \textcolor{keywordtype}{float} filter\_scatter\_fraction;}
+\DoxyCodeLine{420     \textcolor{keywordtype}{float} filter\_scatter\_slope;}
+\DoxyCodeLine{421     \textcolor{keywordtype}{char} annotation[40];}
+\DoxyCodeLine{422     \textcolor{keywordtype}{float} mt\_1\_1;}
+\DoxyCodeLine{423     \textcolor{keywordtype}{float} mt\_1\_2;}
+\DoxyCodeLine{424     \textcolor{keywordtype}{float} mt\_1\_3;}
+\DoxyCodeLine{425     \textcolor{keywordtype}{float} mt\_2\_1;}
+\DoxyCodeLine{426     \textcolor{keywordtype}{float} mt\_2\_2;}
+\DoxyCodeLine{427     \textcolor{keywordtype}{float} mt\_2\_3;}
+\DoxyCodeLine{428     \textcolor{keywordtype}{float} mt\_3\_1;}
+\DoxyCodeLine{429     \textcolor{keywordtype}{float} mt\_3\_2;}
+\DoxyCodeLine{430     \textcolor{keywordtype}{float} mt\_3\_3;}
+\DoxyCodeLine{431     \textcolor{keywordtype}{float} rfilter\_cutoff;}
+\DoxyCodeLine{432     \textcolor{keywordtype}{float} rfilter\_resolution;}
+\DoxyCodeLine{433     \textcolor{keywordtype}{short} rfilter\_code;}
+\DoxyCodeLine{434     \textcolor{keywordtype}{short} rfilter\_order;}
+\DoxyCodeLine{435     \textcolor{keywordtype}{float} zfilter\_cutoff;}
+\DoxyCodeLine{436     \textcolor{keywordtype}{float} zfilter\_resolution;}
+\DoxyCodeLine{437     \textcolor{keywordtype}{short} zfilter\_code;}
+\DoxyCodeLine{438     \textcolor{keywordtype}{short} zfilter\_order;}
+\DoxyCodeLine{439     \textcolor{keywordtype}{float} mt\_1\_4;}
+\DoxyCodeLine{440     \textcolor{keywordtype}{float} mt\_2\_4;}
+\DoxyCodeLine{441     \textcolor{keywordtype}{float} mt\_3\_4;}
+\DoxyCodeLine{442     \textcolor{keywordtype}{short} scatter\_type;}
+\DoxyCodeLine{443     \textcolor{keywordtype}{short} recon\_type;}
+\DoxyCodeLine{444     \textcolor{keywordtype}{short} recon\_views;}
+\DoxyCodeLine{445     \textcolor{keywordtype}{short} align\_3;}
+\DoxyCodeLine{446 \} \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}};}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXNORM__SUB}{XNORM\_SUB}} \{}
+\DoxyCodeLine{449     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{450     \textcolor{keywordtype}{short} num\_dimensions;}
+\DoxyCodeLine{451     \textcolor{keywordtype}{short} num\_r\_elements;}
+\DoxyCodeLine{452     \textcolor{keywordtype}{short} num\_angles;}
+\DoxyCodeLine{453     \textcolor{keywordtype}{short} num\_z\_elements;}
+\DoxyCodeLine{454     \textcolor{keywordtype}{short} ring\_difference;}
+\DoxyCodeLine{455     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{456     \textcolor{keywordtype}{float} norm\_min;}
+\DoxyCodeLine{457     \textcolor{keywordtype}{float} norm\_max;}
+\DoxyCodeLine{458     \textcolor{keywordtype}{float} fov\_source\_width;}
+\DoxyCodeLine{459     \textcolor{keywordtype}{float} norm\_quality\_factor;}
+\DoxyCodeLine{460     \textcolor{keywordtype}{short} norm\_quality\_factor\_code;}
+\DoxyCodeLine{461     \textcolor{keywordtype}{short} storage\_order;}
+\DoxyCodeLine{462     \textcolor{keywordtype}{short} span;}
+\DoxyCodeLine{463     \textcolor{keywordtype}{short} z\_elements[64];}
+\DoxyCodeLine{464     \textcolor{keywordtype}{short} align\_0;}
+\DoxyCodeLine{465 \} \mbox{\hyperlink{structXNORM__SUB}{Norm\_subheader}};}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structX3DNORM__SUB}{X3DNORM\_SUB}} \{}
+\DoxyCodeLine{468     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{469     \textcolor{keywordtype}{short} num\_r\_elements;}
+\DoxyCodeLine{470     \textcolor{keywordtype}{short} num\_transaxial\_crystals;}
+\DoxyCodeLine{471     \textcolor{keywordtype}{short} num\_crystal\_rings;}
+\DoxyCodeLine{472     \textcolor{keywordtype}{short} crystals\_per\_ring;}
+\DoxyCodeLine{473     \textcolor{keywordtype}{short} num\_geo\_corr\_planes;}
+\DoxyCodeLine{474     \textcolor{keywordtype}{short} uld;}
+\DoxyCodeLine{475     \textcolor{keywordtype}{short} lld;}
+\DoxyCodeLine{476     \textcolor{keywordtype}{short} scatter\_energy;}
+\DoxyCodeLine{477     \textcolor{keywordtype}{short} norm\_quality\_factor\_code;}
+\DoxyCodeLine{478     \textcolor{keywordtype}{float} norm\_quality\_factor;}
+\DoxyCodeLine{479     \textcolor{keywordtype}{float} ring\_dtcor1[32];}
+\DoxyCodeLine{480     \textcolor{keywordtype}{float} ring\_dtcor2[32];}
+\DoxyCodeLine{481     \textcolor{keywordtype}{float} crystal\_dtcor[8];}
+\DoxyCodeLine{482     \textcolor{keywordtype}{short} span;}
+\DoxyCodeLine{483     \textcolor{keywordtype}{short} max\_ring\_diff;}
+\DoxyCodeLine{484 \} \mbox{\hyperlink{structX3DNORM__SUB}{Norm3D\_subheader}};}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXATTEN__SUB}{XATTEN\_SUB}} \{}
+\DoxyCodeLine{487     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{488     \textcolor{keywordtype}{short} num\_dimensions;}
+\DoxyCodeLine{489     \textcolor{keywordtype}{short} attenuation\_type;}
+\DoxyCodeLine{490     \textcolor{keywordtype}{short} num\_r\_elements;}
+\DoxyCodeLine{491     \textcolor{keywordtype}{short} num\_angles;}
+\DoxyCodeLine{492     \textcolor{keywordtype}{short} num\_z\_elements;}
+\DoxyCodeLine{493     \textcolor{keywordtype}{short} ring\_difference;}
+\DoxyCodeLine{494     \textcolor{keywordtype}{short} align\_0;}
+\DoxyCodeLine{495     \textcolor{keywordtype}{float} x\_resolution;}
+\DoxyCodeLine{496     \textcolor{keywordtype}{float} y\_resolution;}
+\DoxyCodeLine{497     \textcolor{keywordtype}{float} z\_resolution;}
+\DoxyCodeLine{498     \textcolor{keywordtype}{float} w\_resolution;}
+\DoxyCodeLine{499     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{500     \textcolor{keywordtype}{float} x\_offset;}
+\DoxyCodeLine{501     \textcolor{keywordtype}{float} y\_offset;}
+\DoxyCodeLine{502     \textcolor{keywordtype}{float} x\_radius;}
+\DoxyCodeLine{503     \textcolor{keywordtype}{float} y\_radius;}
+\DoxyCodeLine{504     \textcolor{keywordtype}{float} tilt\_angle;}
+\DoxyCodeLine{505     \textcolor{keywordtype}{float} attenuation\_coeff;}
+\DoxyCodeLine{506     \textcolor{keywordtype}{float} attenuation\_min;}
+\DoxyCodeLine{507     \textcolor{keywordtype}{float} attenuation\_max;}
+\DoxyCodeLine{508     \textcolor{keywordtype}{float} skull\_thickness;}
+\DoxyCodeLine{509     \textcolor{keywordtype}{short} num\_additional\_atten\_coeff;}
+\DoxyCodeLine{510     \textcolor{keywordtype}{short} align\_1;}
+\DoxyCodeLine{511     \textcolor{keywordtype}{float} additional\_atten\_coeff[8];}
+\DoxyCodeLine{512     \textcolor{keywordtype}{float} edge\_finding\_threshold;}
+\DoxyCodeLine{513     \textcolor{keywordtype}{short} storage\_order;}
+\DoxyCodeLine{514     \textcolor{keywordtype}{short} span;}
+\DoxyCodeLine{515     \textcolor{keywordtype}{short} z\_elements[64];}
+\DoxyCodeLine{516 \} \mbox{\hyperlink{structXATTEN__SUB}{Attn\_subheader}};}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{ ECAT6, ECAT7, Interfile \} FileFormat;}
+\DoxyCodeLine{519 \textcolor{keyword}{typedef}}
+\DoxyCodeLine{520     \textcolor{keyword}{struct }\mbox{\hyperlink{structmatrix__file}{matrix\_file}}}
+\DoxyCodeLine{521     \{}
+\DoxyCodeLine{522         \textcolor{keywordtype}{char}        *fname ;    \textcolor{comment}{/* file path */}}
+\DoxyCodeLine{523         \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}  *mhptr ;    \textcolor{comment}{/* pointer to main header */}}
+\DoxyCodeLine{524         \mbox{\hyperlink{structmatdirlist}{MatDirList}}    *dirlist ;  \textcolor{comment}{/* directory */}}
+\DoxyCodeLine{525         FILE        *fptr ;     \textcolor{comment}{/* file ptr for I/O calls */}}
+\DoxyCodeLine{526         \textcolor{keywordtype}{int}     acs ;       \textcolor{comment}{/* ACS flag for ACS files */}}
+\DoxyCodeLine{527         FileFormat file\_format;}
+\DoxyCodeLine{528         \textcolor{keywordtype}{char} **interfile\_header;}
+\DoxyCodeLine{529     \}}
+\DoxyCodeLine{530 \mbox{\hyperlink{structmatrix__file}{MatrixFile}} ;}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 \textcolor{keyword}{typedef}}
+\DoxyCodeLine{533     \textcolor{keyword}{struct }\mbox{\hyperlink{structmatrixdata}{matrixdata}}}
+\DoxyCodeLine{534     \{}
+\DoxyCodeLine{535         \textcolor{keywordtype}{int}     matnum ;    \textcolor{comment}{/* matrix number */}}
+\DoxyCodeLine{536         \mbox{\hyperlink{structmatrix__file}{MatrixFile}}    *matfile ;  \textcolor{comment}{/* pointer to parent */}}
+\DoxyCodeLine{537         DataSetType mat\_type ;  \textcolor{comment}{/* type of matrix? */}}
+\DoxyCodeLine{538         MatrixDataType  data\_type ; \textcolor{comment}{/* type of data */}}
+\DoxyCodeLine{539         caddr\_t     shptr ;     \textcolor{comment}{/* pointer to sub-\/header */}}
+\DoxyCodeLine{540         caddr\_t     data\_ptr ;  \textcolor{comment}{/* pointer to data */}}
+\DoxyCodeLine{541         \textcolor{keywordtype}{int}     data\_size ; \textcolor{comment}{/* size of data in bytes */}}
+\DoxyCodeLine{542         \textcolor{keywordtype}{int}     xdim;       \textcolor{comment}{/* dimensions of data */}}
+\DoxyCodeLine{543         \textcolor{keywordtype}{int}     ydim;       \textcolor{comment}{/* y dimension */}}
+\DoxyCodeLine{544         \textcolor{keywordtype}{int}     zdim;       \textcolor{comment}{/* for volumes */}}
+\DoxyCodeLine{545         \textcolor{keywordtype}{float}       scale\_factor ;  \textcolor{comment}{/* valid if data is int? */}}
+\DoxyCodeLine{546         \textcolor{keywordtype}{float}       pixel\_size; \textcolor{comment}{/* xdim data spacing (cm) */}}
+\DoxyCodeLine{547         \textcolor{keywordtype}{float}       y\_size;     \textcolor{comment}{/* ydim data spacing (cm) */}}
+\DoxyCodeLine{548         \textcolor{keywordtype}{float}       z\_size;     \textcolor{comment}{/* zdim data spacing (cm) */}}
+\DoxyCodeLine{549         \textcolor{keywordtype}{float}       data\_min;   \textcolor{comment}{/* min value of data */}}
+\DoxyCodeLine{550         \textcolor{keywordtype}{float}       data\_max;   \textcolor{comment}{/* max value of data */}}
+\DoxyCodeLine{551         \textcolor{keywordtype}{float}       x\_origin;       \textcolor{comment}{/* x origin of data */}}
+\DoxyCodeLine{552         \textcolor{keywordtype}{float}       y\_origin;       \textcolor{comment}{/* y origin of data */}}
+\DoxyCodeLine{553         \textcolor{keywordtype}{float}       z\_origin;       \textcolor{comment}{/* z origin of data */}}
+\DoxyCodeLine{554     \}}
+\DoxyCodeLine{555 \mbox{\hyperlink{structmatrixdata}{MatrixData}} ;}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#if defined(sun) \&\& !defined(\_\_SVR4)       }\textcolor{comment}{/* sunos 4.1 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#define OLD\_C 1}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561 \textcolor{preprocessor}{\#if !defined(OLD\_C) || defined(\_\_cplusplus)}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#if defined(\_\_cplusplus)}}
+\DoxyCodeLine{563 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{564 \textcolor{comment}{/*}}
+\DoxyCodeLine{565 \textcolor{comment}{ * high level user functions}}
+\DoxyCodeLine{566 \textcolor{comment}{ */}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{568 \textcolor{keywordtype}{void} SWAB(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *from, \textcolor{keywordtype}{void} *to, \textcolor{keywordtype}{int} len);}
+\DoxyCodeLine{569 \textcolor{keywordtype}{void} SWAW(\textcolor{keyword}{const} \textcolor{keywordtype}{short} *from, \textcolor{keywordtype}{short} *to, \textcolor{keywordtype}{int} len);}
+\DoxyCodeLine{570 \textcolor{keywordtype}{int} find\_bmin(\textcolor{keyword}{const} u\_char*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{571 \textcolor{keywordtype}{int} find\_bmax(\textcolor{keyword}{const} u\_char*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{572 \textcolor{keywordtype}{int} find\_smin(\textcolor{keyword}{const} \textcolor{keywordtype}{short}*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{573 \textcolor{keywordtype}{int} find\_smax(\textcolor{keyword}{const} \textcolor{keywordtype}{short}*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{574 \textcolor{keywordtype}{int} find\_imin(\textcolor{keyword}{const} \textcolor{keywordtype}{int}*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{575 \textcolor{keywordtype}{int} find\_imax(\textcolor{keyword}{const} \textcolor{keywordtype}{int}*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{576 \textcolor{keywordtype}{float} find\_fmin(\textcolor{keyword}{const} \textcolor{keywordtype}{float}*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{577 \textcolor{keywordtype}{float} find\_fmax(\textcolor{keyword}{const} \textcolor{keywordtype}{float}*, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{578 \textcolor{keywordtype}{int} matspec(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* specs, \textcolor{keywordtype}{char}* fname ,\textcolor{keywordtype}{int}* matnum);}
+\DoxyCodeLine{579 \textcolor{keywordtype}{char}* is\_analyze(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* );}
+\DoxyCodeLine{580 \mbox{\hyperlink{structmatrix__file}{MatrixFile}}* matrix\_create(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*,\textcolor{keywordtype}{int},\mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{581 \mbox{\hyperlink{structmatrix__file}{MatrixFile}}* matrix\_open(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{582 \mbox{\hyperlink{structmatrixdata}{MatrixData}}* matrix\_read(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*, \textcolor{keywordtype}{int} matnum, \textcolor{keywordtype}{int} type);}
+\DoxyCodeLine{583 \mbox{\hyperlink{structmatrixdata}{MatrixData}}* matrix\_read\_slice(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*, \mbox{\hyperlink{structmatrixdata}{MatrixData}}* volume, \textcolor{keywordtype}{int} slice\_num,}
+\DoxyCodeLine{584     \textcolor{keywordtype}{int} segment);}
+\DoxyCodeLine{585 \mbox{\hyperlink{structmatrixdata}{MatrixData}}* matrix\_read\_view(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*, \mbox{\hyperlink{structmatrixdata}{MatrixData}}* volume, \textcolor{keywordtype}{int} view,}
+\DoxyCodeLine{586     \textcolor{keywordtype}{int} segment);}
+\DoxyCodeLine{587 \textcolor{keywordtype}{int} matrix\_write(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*, \textcolor{keywordtype}{int} matnum, \mbox{\hyperlink{structmatrixdata}{MatrixData}}*);}
+\DoxyCodeLine{588 \textcolor{keywordtype}{int} mat\_numcod(\textcolor{keywordtype}{int} frame, \textcolor{keywordtype}{int} plane, \textcolor{keywordtype}{int} gate, \textcolor{keywordtype}{int} data, \textcolor{keywordtype}{int} bed);}
+\DoxyCodeLine{589 \textcolor{keywordtype}{int} mat\_numdoc(\textcolor{keywordtype}{int}, \textcolor{keyword}{struct} \mbox{\hyperlink{structMatval}{Matval}}*);}
+\DoxyCodeLine{590 \textcolor{keywordtype}{void} free\_matrix\_data(\mbox{\hyperlink{structmatrixdata}{MatrixData}}*);}
+\DoxyCodeLine{591 \textcolor{keywordtype}{void} matrix\_perror(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{592 \textcolor{keywordtype}{int} matrix\_close(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*);}
+\DoxyCodeLine{593 \textcolor{keywordtype}{int} mh\_update(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*);}
+\DoxyCodeLine{594 \textcolor{keywordtype}{int} matrix\_find(\mbox{\hyperlink{structmatrix__file}{MatrixFile}}*, \textcolor{keywordtype}{int} matnum, \textcolor{keyword}{struct} \mbox{\hyperlink{structMatDir}{MatDir}}*);}
+\DoxyCodeLine{595 \textcolor{keywordtype}{int} crash(\textcolor{keywordtype}{char} *fmt, ...);}
+\DoxyCodeLine{596 \mbox{\hyperlink{structmatrixdata}{MatrixData}} *load\_volume7(\mbox{\hyperlink{structmatrix__file}{MatrixFile}} *\mbox{\hyperlink{structmatrix__file}{matrix\_file}}, \textcolor{keywordtype}{int} frame, \textcolor{keywordtype}{int} gate, \textcolor{keywordtype}{int} data, \textcolor{keywordtype}{int} bedstart, \textcolor{keywordtype}{int} bedend);}
+\DoxyCodeLine{597 \textcolor{keywordtype}{int} save\_volume7( \mbox{\hyperlink{structmatrix__file}{MatrixFile}} *mfile, \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}} *shptr, \textcolor{keywordtype}{float} *data\_ptr, \textcolor{keywordtype}{int} frame, \textcolor{keywordtype}{int} gate, \textcolor{keywordtype}{int} data, \textcolor{keywordtype}{int} bed );}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599 }
+\DoxyCodeLine{600 \textcolor{comment}{/*}}
+\DoxyCodeLine{601 \textcolor{comment}{ * low level functions prototypes, don't use}}
+\DoxyCodeLine{602 \textcolor{comment}{ */}}
+\DoxyCodeLine{603 \textcolor{keywordtype}{int} unmap64\_main\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *h);}
+\DoxyCodeLine{604 \textcolor{keywordtype}{int} unmap64\_scan\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXSCAN__SUB}{Scan\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{605 \textcolor{keywordtype}{int} unmap64\_attn\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXATTEN__SUB}{Attn\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{606 \textcolor{keywordtype}{int} unmap64\_image\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{607 \textcolor{keywordtype}{int} unmap64\_norm\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXNORM__SUB}{Norm\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{608 \textcolor{keywordtype}{int} map64\_main\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *h);}
+\DoxyCodeLine{609 \textcolor{keywordtype}{int} map64\_scan\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXSCAN__SUB}{Scan\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{610 \textcolor{keywordtype}{int} map64\_attn\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXATTEN__SUB}{Attn\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{611 \textcolor{keywordtype}{int} map64\_image\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{612 \textcolor{keywordtype}{int} map64\_norm\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXNORM__SUB}{Norm\_subheader}}*, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*);}
+\DoxyCodeLine{613 \textcolor{keywordtype}{int} unmap\_main\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *h);}
+\DoxyCodeLine{614 \textcolor{keywordtype}{int} unmap\_Scan3D\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structX3DSCAN__SUB}{Scan3D\_subheader}}*);}
+\DoxyCodeLine{615 \textcolor{keywordtype}{int} unmap\_scan\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXSCAN__SUB}{Scan\_subheader}}*);}
+\DoxyCodeLine{616 \textcolor{keywordtype}{int} unmap\_image\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}*);}
+\DoxyCodeLine{617 \textcolor{keywordtype}{int} unmap\_attn\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXATTEN__SUB}{Attn\_subheader}}*);}
+\DoxyCodeLine{618 \textcolor{keywordtype}{int} unmap\_norm3d\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structX3DNORM__SUB}{Norm3D\_subheader}}*);}
+\DoxyCodeLine{619 \textcolor{keywordtype}{int} unmap\_norm\_header(\textcolor{keywordtype}{char} *buf, \mbox{\hyperlink{structXNORM__SUB}{Norm\_subheader}}*);}
+\DoxyCodeLine{620 \textcolor{keywordtype}{int} mat\_read\_main\_header(FILE *fptr, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *h);}
+\DoxyCodeLine{621 \textcolor{keywordtype}{int} mat\_read\_scan\_subheader( FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXSCAN__SUB}{Scan\_subheader}}*);}
+\DoxyCodeLine{622 \textcolor{keywordtype}{int} mat\_read\_Scan3D\_subheader( FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structX3DSCAN__SUB}{Scan3D\_subheader}}*);}
+\DoxyCodeLine{623 \textcolor{keywordtype}{int} mat\_read\_image\_subheader(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}*);}
+\DoxyCodeLine{624 \textcolor{keywordtype}{int} mat\_read\_attn\_subheader(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXATTEN__SUB}{Attn\_subheader}}*);}
+\DoxyCodeLine{625 \textcolor{keywordtype}{int} mat\_read\_norm\_subheader(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXNORM__SUB}{Norm\_subheader}}*);}
+\DoxyCodeLine{626 \textcolor{keywordtype}{int} mat\_read\_norm3d\_subheader(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structX3DNORM__SUB}{Norm3D\_subheader}}*);}
+\DoxyCodeLine{627 \textcolor{keywordtype}{int} mat\_write\_main\_header(FILE *fptr, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *h);}
+\DoxyCodeLine{628 \textcolor{keywordtype}{int} mat\_write\_scan\_subheader( FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXSCAN__SUB}{Scan\_subheader}}*);}
+\DoxyCodeLine{629 \textcolor{keywordtype}{int} mat\_write\_Scan3D\_subheader( FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structX3DSCAN__SUB}{Scan3D\_subheader}}*);}
+\DoxyCodeLine{630 \textcolor{keywordtype}{int} mat\_write\_image\_subheader(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXIMAGE__SUB}{Image\_subheader}}*);}
+\DoxyCodeLine{631 \textcolor{keywordtype}{int} mat\_write\_attn\_subheader(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXATTEN__SUB}{Attn\_subheader}}*);}
+\DoxyCodeLine{632 \textcolor{keywordtype}{int} mat\_write\_norm\_subheader(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blknum, \mbox{\hyperlink{structXNORM__SUB}{Norm\_subheader}}*);}
+\DoxyCodeLine{633 \textcolor{keyword}{struct }\mbox{\hyperlink{structmatdir}{matdir}} *mat\_read\_dir(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{char} *selector);}
+\DoxyCodeLine{634 \textcolor{keywordtype}{int} mat\_read\_matrix\_data(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}}*, \textcolor{keywordtype}{int} blk, \textcolor{keywordtype}{int} nblks, \textcolor{keywordtype}{short}* bufr);}
+\DoxyCodeLine{635 \textcolor{keywordtype}{int} mat\_enter(FILE *, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *mhptr, \textcolor{keywordtype}{int} matnum, \textcolor{keywordtype}{int} nblks);}
+\DoxyCodeLine{636 \textcolor{keywordtype}{int} mat\_lookup(FILE *fptr, \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *mhptr, \textcolor{keywordtype}{int} matnum,  \textcolor{keyword}{struct} \mbox{\hyperlink{structMatDir}{MatDir}} *entry);}
+\DoxyCodeLine{637 \textcolor{keywordtype}{int} mat\_rblk(FILE *fptr, \textcolor{keywordtype}{int} blkno, \textcolor{keywordtype}{char} *bufr,  \textcolor{keywordtype}{int} nblks);}
+\DoxyCodeLine{638 \textcolor{keywordtype}{int} mat\_wblk(FILE *fptr, \textcolor{keywordtype}{int} blkno, \textcolor{keywordtype}{char} *bufr,  \textcolor{keywordtype}{int} nblks);}
+\DoxyCodeLine{639 \textcolor{keywordtype}{void} swaw(\textcolor{keywordtype}{short} *from, \textcolor{keywordtype}{short} *to, \textcolor{keywordtype}{int} length);}
+\DoxyCodeLine{640 \textcolor{keywordtype}{int} insert\_mdir(\textcolor{keyword}{struct} \mbox{\hyperlink{structMatDir}{MatDir}} \mbox{\hyperlink{structmatdir}{matdir}},\mbox{\hyperlink{structmatdirlist}{MatDirList}}   *dirlist);}
+\DoxyCodeLine{641 }
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#if defined(\_\_cplusplus)}}
+\DoxyCodeLine{643 \}}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{645 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{646 \textcolor{keyword}{extern} \textcolor{keywordtype}{float} find\_fmin(), find\_fmax();}
+\DoxyCodeLine{647 \textcolor{keyword}{extern} \mbox{\hyperlink{structmatrix__file}{MatrixFile}} *matrix\_open(), *matrix\_create();}
+\DoxyCodeLine{648 \textcolor{keyword}{extern} \mbox{\hyperlink{structmatrixdata}{MatrixData}} *matrix\_read(), *matrix\_object\_create();}
+\DoxyCodeLine{649 \textcolor{keyword}{extern} \mbox{\hyperlink{structmatrixdata}{MatrixData}} *matrix\_read\_slice(), *matrix\_read\_view();}
+\DoxyCodeLine{650 \textcolor{keyword}{extern} \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *matrix\_init\_main\_header();}
+\DoxyCodeLine{651 \textcolor{keyword}{extern} FILE* mat\_open();}
+\DoxyCodeLine{652 \textcolor{keyword}{extern} \mbox{\hyperlink{structmatdirlist}{MatDirList}} *mat\_read\_directory();}
+\DoxyCodeLine{653 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* is\_analyze();}
+\DoxyCodeLine{654 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} free\_matrix\_data();}
+\DoxyCodeLine{655 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{656 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} ecat\_default\_version;}
+\DoxyCodeLine{657 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*  matrix\_h */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

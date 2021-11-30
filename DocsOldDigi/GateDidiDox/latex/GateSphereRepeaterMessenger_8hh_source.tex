@@ -1,0 +1,59 @@
+\hypertarget{GateSphereRepeaterMessenger_8hh_source}{}\doxysection{Gate\+Sphere\+Repeater\+Messenger.\+hh}
+\label{GateSphereRepeaterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSphereRepeaterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSphereRepeaterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSphereRepeaterMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSphereRepeaterMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSphereRepeater}{GateSphereRepeater}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{43 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSphereRepeaterMessenger}{GateSphereRepeaterMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateObjectRepeaterMessenger}{GateObjectRepeaterMessenger}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45   \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \mbox{\hyperlink{classGateSphereRepeaterMessenger}{GateSphereRepeaterMessenger}}(\mbox{\hyperlink{classGateSphereRepeater}{GateSphereRepeater}}* itsSphereRepeater);}
+\DoxyCodeLine{47    \mbox{\hyperlink{classGateSphereRepeaterMessenger}{\string~GateSphereRepeaterMessenger}}();}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{public}:}
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSphereRepeater}{GateSphereRepeater}}* GetSphereRepeater() }
+\DoxyCodeLine{53       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSphereRepeater}{GateSphereRepeater}}*)GetObjectRepeater(); \}}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55   \textcolor{keyword}{private}:}
+\DoxyCodeLine{56     G4UIcmdWithAnInteger*      SetRepeatNumberWithPhiCmd;}
+\DoxyCodeLine{57     G4UIcmdWithAnInteger*      SetRepeatNumberWithThetaCmd;}
+\DoxyCodeLine{58     G4UIcmdWithABool*          AutoCenterCmd;}
+\DoxyCodeLine{59     G4UIcmdWithABool*           EnableAutoRotationCmd;}
+\DoxyCodeLine{60     G4UIcmdWithABool*           DisableAutoRotationCmd;}
+\DoxyCodeLine{61     G4UIcmdWithADoubleAndUnit* ThetaAngleCmd;}
+\DoxyCodeLine{62     G4UIcmdWithADoubleAndUnit* PhiAngleCmd;}
+\DoxyCodeLine{63     G4UIcmdWithADoubleAndUnit* RadiusCmd;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 }
+
+\end{DoxyCode}

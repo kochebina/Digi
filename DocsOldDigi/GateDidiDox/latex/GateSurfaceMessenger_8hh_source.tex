@@ -1,0 +1,45 @@
+\hypertarget{GateSurfaceMessenger_8hh_source}{}\doxysection{Gate\+Surface\+Messenger.\+hh}
+\label{GateSurfaceMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSurfaceMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSurfaceMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateSurfaceMessenger\_hh}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateSurfaceMessenger\_hh}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateClockDependentMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateSurface.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcommand;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }GateSurfaceMessenger : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34   \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     GateSurfaceMessenger(GateSurface* itsSurface);}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \string~GateSurfaceMessenger();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     GateSurface* GetSurface()}
+\DoxyCodeLine{42     \{ \textcolor{keywordflow}{return} (GateSurface*)\mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}();\}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateClockDependentMessenger_a0d98247de3cbf87686570f792149253a}{SetNewValue}}(G4UIcommand*, G4String newValue);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{private}:}
+\DoxyCodeLine{48     G4UIcmdWithAString* m\_setSurfaceCmd; }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,96 @@
+\hypertarget{GateHype_8hh_source}{}\doxysection{Gate\+Hype.\+hh}
+\label{GateHype_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHype.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHype.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateHype.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATEHYPE\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATEHYPE\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4Hype;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHypeMessenger}{GateHypeMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHype}{GateHype}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateHype_acee4314b5609c2a50b96cddf4c03c50e}{GateHype}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{25                  G4int depth=0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateHype_acee4314b5609c2a50b96cddf4c03c50e}{GateHype}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{28                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                  G4double itsInnerR,}
+\DoxyCodeLine{30                  G4double itsOuterR,}
+\DoxyCodeLine{31                  G4double itsInnerStereo,}
+\DoxyCodeLine{32                  G4double itsOuterStereo,}
+\DoxyCodeLine{33                  G4double itsZLength,}
+\DoxyCodeLine{34                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{35                  G4int depth=0);}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateHype_ad601dc3b6b9d28807651d37188794c63}{\string~GateHype}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateHype}{GateHype}})}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateHype_abcc8f09168205850985fd803771eab91}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateHype_acc507ece7df83a7aa1dbfabf579261d5}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateHype_ac99e22bbcc3c36669e272e81281641a9}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if} (axis==0) \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} m\_outerR;}
+\DoxyCodeLine{55     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==1) \{}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} m\_outerR;}
+\DoxyCodeLine{57     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==2) \{}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} m\_zLength/2.0;}
+\DoxyCodeLine{59     \}}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{61   \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{65   G4double \mbox{\hyperlink{classGateHype_a5f9430f50cff5cc434cb368c536bcedb}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keyword}{inline} G4double GetHypeInnerR()   \{ \textcolor{keywordflow}{return} m\_innerR; \}}
+\DoxyCodeLine{70   \textcolor{keyword}{inline} G4double GetHypeOuterR()   \{ \textcolor{keywordflow}{return} m\_outerR; \}}
+\DoxyCodeLine{71   \textcolor{keyword}{inline} G4double GetHypeInnerStereo()  \{ \textcolor{keywordflow}{return} m\_innerStereo; \}}
+\DoxyCodeLine{72   \textcolor{keyword}{inline} G4double GetHypeOuterStereo()  \{ \textcolor{keywordflow}{return} m\_outerStereo; \}}
+\DoxyCodeLine{73   \textcolor{keyword}{inline} G4double GetHypeZLength()  \{ \textcolor{keywordflow}{return} m\_zLength; \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} SetHypeInnerR(G4double val)  \{ m\_innerR = val; \}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetHypeOuterR(G4double val)  \{ m\_outerR = val; \}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} SetHypeInnerStereo(G4double val) \{ m\_innerStereo = val; \}}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} SetHypeOuterStereo(G4double val) \{ m\_outerStereo = val; \}}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} SetHypeZLength(G4double val) \{ m\_zLength = val; \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{private}:}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   G4Hype*          m\_hype\_solid;            }
+\DoxyCodeLine{87   G4LogicalVolume*   m\_hype\_log;                }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   G4double m\_innerR;        }
+\DoxyCodeLine{93   G4double m\_outerR;        }
+\DoxyCodeLine{94   G4double m\_innerStereo;   }
+\DoxyCodeLine{95   G4double m\_outerStereo;   }
+\DoxyCodeLine{96   G4double m\_zLength;       }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100   \mbox{\hyperlink{classGateHypeMessenger}{GateHypeMessenger}}* m\_Messenger;}
+\DoxyCodeLine{101 \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 MAKE\_AUTO\_CREATOR\_VOLUME(hypertube,\mbox{\hyperlink{classGateHype}{GateHype}})}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEHYPE\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

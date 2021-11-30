@@ -1,0 +1,123 @@
+\hypertarget{GateThermalActor_8hh_source}{}\doxysection{Gate\+Thermal\+Actor.\+hh}
+\label{GateThermalActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateThermalActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateThermalActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class GateThermalActor}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author vesna.cuplov@gmail.com}}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)brief Class GateThermalActor : This actor produces voxelised images of the heat diffusion in tissue.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATETHERMALACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATETHERMALACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <G4NistManager.hh>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateThermalActorMessenger.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{// itk}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifdef GATE\_USE\_ITK}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <itkImage.h>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <itkImageFileReader.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <itkImageFileWriter.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <itkImageIterator.h>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}itkRecursiveGaussianImageFilter.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}itkRescaleIntensityImageFilter.h"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}itkMultiplyImageFilter.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}itkAddImageFilter.h"{}}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateThermalActor}{GateThermalActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{49   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateThermalActor}{\string~GateThermalActor}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateThermalActor}{GateThermalActor}})}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{55   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{56   virtual \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateThermalActor_a28026455dc36fe12b247e448fb8239e7}{Construct}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   virtual \textcolor{keywordtype}{void} BeginOfRunAction(const G4Run*r);}
+\DoxyCodeLine{59   virtual \textcolor{keywordtype}{void} EndOfRunAction(const G4Run*); \textcolor{comment}{// default action (save)}}
+\DoxyCodeLine{60   virtual \textcolor{keywordtype}{void} BeginOfEventAction(const G4Event * event);}
+\DoxyCodeLine{61   virtual \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateThermalActor_a9a7c0f6e356b6789511c4311922363ab}{UserSteppingActionInVoxel}}(const \textcolor{keywordtype}{int} index, const G4Step* step);}
+\DoxyCodeLine{62   virtual \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(const \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, const G4Track* track);}
+\DoxyCodeLine{63   virtual \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(const \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, const G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{comment}{//  Saves the data collected to the file}}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{67   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{comment}{// Scorer related}}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} setTime(G4double t);}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} setDiffusivity(G4double diffusivity);}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} setBloodPerfusionRate(G4double bloodperfusionrate);}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} setBloodDensity(G4double blooddensity);}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} setBloodHeatCapacity(G4double bloodheatcapacity);}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} setTissueDensity(G4double tissuedensity);}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} setTissueHeatCapacity(G4double tissueheatcapacity);}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} setScale(G4double simuscale);}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} setNumberOfTimeFrames(G4int numtimeframe);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   G4double mTimeNow;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \mbox{\hyperlink{classGateThermalActor}{GateThermalActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{88   \mbox{\hyperlink{classGateThermalActorMessenger}{GateThermalActorMessenger}} * pMessenger;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{91   \textcolor{keywordtype}{int} counter;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   StepHitType mUserStepHitType;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mAbsorptionImage;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   G4String mAbsorptionFilename;}
+\DoxyCodeLine{98   G4String mHeatDiffusionFilename;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   G4double mUserDiffusionTime;}
+\DoxyCodeLine{101   G4double mUserMaterialDiffusivity;}
+\DoxyCodeLine{102   G4double mUserSimulationScale;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   G4int    mUserNumberOfTimeFrames;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   G4double deltaT;}
+\DoxyCodeLine{107   G4double mUserBloodPerfusionRate;}
+\DoxyCodeLine{108   G4double mUserBloodDensity;}
+\DoxyCodeLine{109   G4double mUserBloodHeatCapacity;}
+\DoxyCodeLine{110   G4double mUserTissueDensity;}
+\DoxyCodeLine{111   G4double mUserTissueHeatCapacity;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 MAKE\_AUTO\_CREATOR\_ACTOR(ThermalActor,\mbox{\hyperlink{classGateThermalActor}{GateThermalActor}})}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESIMULATIONSTATISTICACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

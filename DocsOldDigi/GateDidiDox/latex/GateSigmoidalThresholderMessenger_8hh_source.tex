@@ -1,0 +1,45 @@
+\hypertarget{GateSigmoidalThresholderMessenger_8hh_source}{}\doxysection{Gate\+Sigmoidal\+Thresholder\+Messenger.\+hh}
+\label{GateSigmoidalThresholderMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSigmoidalThresholderMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSigmoidalThresholderMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSigmoidalThresholderMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSigmoidalThresholderMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateSigmoidalThresholder.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSigmoidalThresholder}{GateSigmoidalThresholder}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSigmoidalThresholderMessenger}{GateSigmoidalThresholderMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateSigmoidalThresholderMessenger}{GateSigmoidalThresholderMessenger}}(\mbox{\hyperlink{classGateSigmoidalThresholder}{GateSigmoidalThresholder}}* itsSigThresholder);}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSigmoidalThresholderMessenger}{\string~GateSigmoidalThresholderMessenger}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSigmoidalThresholder}{GateSigmoidalThresholder}}* GetSigmoidalThresholder()}
+\DoxyCodeLine{31       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSigmoidalThresholder}{GateSigmoidalThresholder}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{private}:}
+\DoxyCodeLine{34     G4UIcmdWithADoubleAndUnit  *thresholdCmd;}
+\DoxyCodeLine{35     G4UIcmdWithADouble         *alphaCmd;}
+\DoxyCodeLine{36     G4UIcmdWithADouble         *perCentCmd;}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

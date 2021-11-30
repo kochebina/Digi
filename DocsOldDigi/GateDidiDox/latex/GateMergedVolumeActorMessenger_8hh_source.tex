@@ -1,0 +1,38 @@
+\hypertarget{GateMergedVolumeActorMessenger_8hh_source}{}\doxysection{Gate\+Merged\+Volume\+Actor\+Messenger.\+hh}
+\label{GateMergedVolumeActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMergedVolumeActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMergedVolumeActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATEMERGEDVOLUMEACTORMESSENGER}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATEMERGEDVOLUMEACTORMESSENGER}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMergedVolumeActor}{GateMergedVolumeActor}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMergedVolumeActorMessenger}{GateMergedVolumeActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateMergedVolumeActorMessenger}{GateMergedVolumeActorMessenger}}( \mbox{\hyperlink{classGateMergedVolumeActor}{GateMergedVolumeActor}}* sensor );}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMergedVolumeActorMessenger}{\string~GateMergedVolumeActorMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     \mbox{\hyperlink{classGateMergedVolumeActor}{GateMergedVolumeActor}}* pMergedVolumeActor;}
+\DoxyCodeLine{34     G4UIcmdWithAString* ListVolumeToMergeCmd;}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

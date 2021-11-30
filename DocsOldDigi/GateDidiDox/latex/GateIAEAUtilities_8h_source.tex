@@ -1,0 +1,145 @@
+\hypertarget{GateIAEAUtilities_8h_source}{}\doxysection{Gate\+IAEAUtilities.\+h}
+\label{GateIAEAUtilities_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAUtilities.h@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAUtilities.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright 2000-\/2003 Virginia Commonwealth University}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{   Advisory:}}
+\DoxyCodeLine{6 \textcolor{comment}{1. The authors make no claim of accuracy of the information in these files or the}}
+\DoxyCodeLine{7 \textcolor{comment}{   results derived from use of these files.}}
+\DoxyCodeLine{8 \textcolor{comment}{2. You are not allowed to re-\/distribute these files or the information contained within.}}
+\DoxyCodeLine{9 \textcolor{comment}{3. This methods and information contained in these files was interpreted by the authors}}
+\DoxyCodeLine{10 \textcolor{comment}{   from various sources.  It is the users sole responsibility to verify the accuracy}}
+\DoxyCodeLine{11 \textcolor{comment}{   of these files.}}
+\DoxyCodeLine{12 \textcolor{comment}{4. If you find a error within these files, we ask that you to contact the authors}}
+\DoxyCodeLine{13 \textcolor{comment}{   and the distributor of these files.}}
+\DoxyCodeLine{14 \textcolor{comment}{5. We ask that you acknowledge the source of these files in publications that use results}}
+\DoxyCodeLine{15 \textcolor{comment}{   derived from the input}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{   Please contact us if you have any questions}}
+\DoxyCodeLine{18 \textcolor{comment}{*/}}
+\DoxyCodeLine{19 \textcolor{comment}{/* Header File for General Utilities for CPP programs}}
+\DoxyCodeLine{20 \textcolor{comment}{    File Created:}}
+\DoxyCodeLine{21 \textcolor{comment}{        18-\/December-\/1995: Combined ok\_check.cpp and some open\_file}}
+\DoxyCodeLine{22 \textcolor{comment}{    Modification History:}}
+\DoxyCodeLine{23 \textcolor{comment}{         09-\/feb-\/1996: JVS: add pprintf}}
+\DoxyCodeLine{24 \textcolor{comment}{       07-\/Nov-\/1996: JVS: FAIL\_SAFE definition changed, NULL=0}}
+\DoxyCodeLine{25 \textcolor{comment}{       06-\/Jan-\/1998: JVS: Add array\_read}}
+\DoxyCodeLine{26 \textcolor{comment}{       07-\/May-\/1998: JVS: add myerrno}}
+\DoxyCodeLine{27 \textcolor{comment}{       11-\/Sept-\/1998: JVS: add max, min definitions}}
+\DoxyCodeLine{28 \textcolor{comment}{      // 28-\/Oct-\/1998: PJK: added MAX\_NUM\_FIELDS for output\_path in case\_info.h}}
+\DoxyCodeLine{29 \textcolor{comment}{      03-\/Dec-\/1998: JVS: Add \#ifndef UTILITIES\_H\_INCLUDED to ensure single inclusion of the file}}
+\DoxyCodeLine{30 \textcolor{comment}{                        All comments "{}c"{} compliant}}
+\DoxyCodeLine{31 \textcolor{comment}{       02-\/Mar-\/1999: JVS: Add eprintf\_mode}}
+\DoxyCodeLine{32 \textcolor{comment}{       Dec 3, 1999: JVS: Add check\_byte\_order}}
+\DoxyCodeLine{33 \textcolor{comment}{       April 24, 2001: JVS: Add cp}}
+\DoxyCodeLine{34 \textcolor{comment}{       August 24, 2001: JVS: Change OK from 1 to 0...so exit(OK) is unix standard normal...}}
+\DoxyCodeLine{35 \textcolor{comment}{       Feb 10, 2005: JVS:Add writeLittleEndianBinaryFile()}}
+\DoxyCodeLine{36 \textcolor{comment}{       April 21, 2005: JVS: Add readBinaryDataFromFile()}}
+\DoxyCodeLine{37 \textcolor{comment}{*/}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifndef UTILITIES\_H\_INCLUDED}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define UTILITIES\_H\_INCLUDED}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define OK     0}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define ERROR -\/1}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define FAIL  -\/1}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define ON     1}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define OFF    0}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define FAIL\_SAFE -\/999        }\textcolor{comment}{/* used to be NULL**JVS 11/7/96** */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define MAX\_STR\_LEN 512       }\textcolor{comment}{/* maximum length of a string */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define MAX\_BUFFER\_SIZE 16384 }\textcolor{comment}{/* maximum number of characters in the output buffer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define STR\_NULL   ((char) 0)}}
+\DoxyCodeLine{50 \textcolor{comment}{/* \#define MAX\_NUM\_FIELDS 100 */}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifndef N\_DATA}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define N\_DATA 4096 }\textcolor{comment}{/* maximum number of datapoints */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifdef MAIN}}
+\DoxyCodeLine{55 \textcolor{keywordtype}{int} myerrno = OK;}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{57 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} myerrno;}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifdef MAIN}}
+\DoxyCodeLine{60 \textcolor{keywordtype}{int} eprintf\_mode = ON;}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{62 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} eprintf\_mode;}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifndef MAIN}}
+\DoxyCodeLine{65 \textcolor{keyword}{extern} \textcolor{comment}{/* create global pbuffer */}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 \textcolor{keywordtype}{char} *pbuffer;  \textcolor{comment}{/* pointer to buffer for output of run info for failures */}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#ifndef ENDIAN\_H\_INCLUDED}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define ENDIAN\_H\_INCLUDED}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* Definitions for byte order, according to significance of bytes, from low}}
+\DoxyCodeLine{74 \textcolor{comment}{   addresses to high addresses.  The value is what you get by putting '4'}}
+\DoxyCodeLine{75 \textcolor{comment}{   in the most significant byte, '3' in the second most significant byte,}}
+\DoxyCodeLine{76 \textcolor{comment}{   '2' in the second least significant byte, and '1' in the least}}
+\DoxyCodeLine{77 \textcolor{comment}{   significant byte.  */}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define \_\_LITTLE\_ENDIAN 1234}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define \_\_BIG\_ENDIAN    4321}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define \_\_PDP\_ENDIAN    3412}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#ifndef LITTLE\_ENDIAN}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define LITTLE\_ENDIAN   \_\_LITTLE\_ENDIAN}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#ifndef BIG\_ENDIAN}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define BIG\_ENDIAN  \_\_BIG\_ENDIAN}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#ifndef PDP\_ENDIAN}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define PDP\_ENDIAN  \_\_PDP\_ENDIAN}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define UNKNOWN\_ENDIAN  0000}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* endian.h */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{/* \#define max and min */}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#ifndef MINMAX\_DEFINED}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define MINMAX\_DEFINED}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define min(a,b)    (((a) < (b)) ? (a) : (b))}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define max(a,b)    (((a) > (b)) ? (a) : (b))}}
+\DoxyCodeLine{105 \textcolor{comment}{//\#define \_\_max       max}}
+\DoxyCodeLine{106 \textcolor{comment}{//\#define \_\_min       min}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*MINMAX\_DEFINED */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/* *************************************************************************** */}}
+\DoxyCodeLine{110 \textcolor{keywordtype}{float} reverse\_float\_byte\_order(\textcolor{keywordtype}{float} xold);}
+\DoxyCodeLine{111 \textcolor{keywordtype}{short} reverse\_short\_byte\_order(\textcolor{keywordtype}{short} xold);}
+\DoxyCodeLine{112 \textcolor{keywordtype}{int} reverse\_int\_byte\_order(\textcolor{keywordtype}{int} xold);}
+\DoxyCodeLine{113 \textcolor{keywordtype}{int} advance(\textcolor{keywordtype}{char} *istr, \textcolor{keywordtype}{int} *sval, \textcolor{keywordtype}{int} len);}
+\DoxyCodeLine{114 \textcolor{keywordtype}{int} check\_byte\_order(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{115 \textcolor{keywordtype}{int} clean\_name(\textcolor{keywordtype}{char} *tmp\_path, \textcolor{keywordtype}{char} *opath);}
+\DoxyCodeLine{116 \textcolor{keywordtype}{int} clean\_name(\textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{117 \textcolor{keywordtype}{int} copy(\textcolor{keywordtype}{char} *SourceFile, \textcolor{keywordtype}{char} *DestinationFile);}
+\DoxyCodeLine{118 \textcolor{keywordtype}{int} eprintf(\textcolor{keywordtype}{char} *fmt, ... );}
+\DoxyCodeLine{119 \textcolor{keywordtype}{int} ok\_check(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{120 \textcolor{keywordtype}{int} ok\_checks(\textcolor{keywordtype}{char} *\textcolor{keywordtype}{string});}
+\DoxyCodeLine{121 FILE *open\_file(\textcolor{keywordtype}{char} *filename,\textcolor{keywordtype}{char}*extension, \textcolor{keywordtype}{char} *access);}
+\DoxyCodeLine{122 \textcolor{keywordtype}{int} pprintf(\textcolor{keywordtype}{char} *fmt, ... );}
+\DoxyCodeLine{123 \textcolor{keywordtype}{int} latex\_string(\textcolor{keywordtype}{char} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{char} *nstring);}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} print\_runtime\_info(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[]);}
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} allocate\_pbuffer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{126 \textcolor{keywordtype}{float} interpolate(\textcolor{keywordtype}{float} xh, \textcolor{keywordtype}{float} xl, \textcolor{keywordtype}{float} xm, \textcolor{keywordtype}{float} yh, \textcolor{keywordtype}{float} yl);}
+\DoxyCodeLine{127 \textcolor{keywordtype}{int} array\_read(FILE *istrm, \textcolor{keywordtype}{float} *array, \textcolor{keywordtype}{int} max\_array);}
+\DoxyCodeLine{128 \textcolor{keywordtype}{int} array\_read(\textcolor{keywordtype}{char} *in\_string, \textcolor{keywordtype}{float} *array, \textcolor{keywordtype}{int} max\_array);}
+\DoxyCodeLine{129 \textcolor{keywordtype}{int} view\_errors(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{130 \textcolor{keywordtype}{int} writeBigEndianBinaryFile(\textcolor{keywordtype}{char} *doseFileName,  \textcolor{keywordtype}{int} nDoseArray, \textcolor{keywordtype}{float} *doseArray);}
+\DoxyCodeLine{131 \textcolor{keywordtype}{int} writeLittleEndianBinaryFile(\textcolor{keywordtype}{char} *doseFileName,  \textcolor{keywordtype}{int} nDoseArray, \textcolor{keywordtype}{float} *doseArray);}
+\DoxyCodeLine{132 \textcolor{keywordtype}{int} writeBinaryFile(\textcolor{keywordtype}{char} *doseFileName, \textcolor{keywordtype}{int} nDoseArray, \textcolor{keywordtype}{float} *doseArray, \textcolor{keywordtype}{int} swab\_flag);}
+\DoxyCodeLine{133 \textcolor{keywordtype}{int} writeBinaryDataToFile(FILE *outputStream, \textcolor{keywordtype}{int} nArray, \textcolor{keywordtype}{float} *array, \textcolor{keywordtype}{int} swab\_flag);}
+\DoxyCodeLine{134 \textcolor{keywordtype}{int} readBinaryDataFromFile(FILE *iStream, \textcolor{keywordtype}{int} nItemsToRead, \textcolor{keywordtype}{float} **arrayToRead, \textcolor{keywordtype}{int} swab\_flag);}
+\DoxyCodeLine{135 \textcolor{keywordtype}{int} readBinaryDataFromFile(FILE *iStream, \textcolor{keywordtype}{int} nItemsToRead, \textcolor{keywordtype}{float} *inputArray, \textcolor{keywordtype}{int} swab\_flag);}
+\DoxyCodeLine{136 \textcolor{comment}{// RCN added}}
+\DoxyCodeLine{137 \textcolor{keywordtype}{int} fget\_c\_string(\textcolor{keywordtype}{char} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{int} Max\_Str\_Len, FILE *fspec);}
+\DoxyCodeLine{138 \textcolor{keywordtype}{int} get\_string(FILE *fspec, \textcolor{keywordtype}{char} *\textcolor{keywordtype}{string});}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

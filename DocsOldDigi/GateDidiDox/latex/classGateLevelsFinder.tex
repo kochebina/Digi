@@ -1,0 +1,44 @@
+\hypertarget{classGateLevelsFinder}{}\doxysection{Gate\+Levels\+Finder Class Reference}
+\label{classGateLevelsFinder}\index{GateLevelsFinder@{GateLevelsFinder}}
+
+
+{\ttfamily \#include $<$Gate\+Levels\+Finder.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLevelsFinder_a90e0290fce85c40da1f25d6282570029}\label{classGateLevelsFinder_a90e0290fce85c40da1f25d6282570029}} 
+{\bfseries Gate\+Levels\+Finder} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, std\+::vector$<$ size\+\_\+t $>$ \&)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classGateLevelsFinder}{Gate\+Levels\+Finder}}; m\+\_\+nbX, m\+\_\+nbY and m\+\_\+nbZ are the parameters of the matrix of detection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLevelsFinder_a1cbe9503d277eb70f5af360daa6e35e1}\label{classGateLevelsFinder_a1cbe9503d277eb70f5af360daa6e35e1}} 
+{\bfseries $\sim$\+Gate\+Levels\+Finder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classGateLevelsFinder_ad97c770b84404d50df09a287f39781aa}{Find\+Input\+Pulse\+Params}} (const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} $\ast$a\+Volume\+ID, const size\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateLevelsFinder}{Gate\+Levels\+Finder}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (sept. 2003)
+\item Find the number of copies for an Inserter and then go up the chain to find the number of copies of the Inserters above It allows also to find the levels params of a pulse (Give the copy number of all the volume where is the pulse)
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateLevelsFinder_ad97c770b84404d50df09a287f39781aa}\label{classGateLevelsFinder_ad97c770b84404d50df09a287f39781aa}} 
+\index{GateLevelsFinder@{GateLevelsFinder}!FindInputPulseParams@{FindInputPulseParams}}
+\index{FindInputPulseParams@{FindInputPulseParams}!GateLevelsFinder@{GateLevelsFinder}}
+\doxysubsubsection{\texorpdfstring{FindInputPulseParams()}{FindInputPulseParams()}}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Gate\+Levels\+Finder\+::\+Find\+Input\+Pulse\+Params (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} $\ast$}]{a\+Volume\+ID,  }\item[{const size\+\_\+t}]{depth }\end{DoxyParamCaption})}
+
+Find the different parameters of the input Pulse \+: e.\+g. the position in this array of the hit 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Levels\+Finder.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Levels\+Finder.\+cc\end{DoxyCompactItemize}

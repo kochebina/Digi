@@ -1,0 +1,44 @@
+\hypertarget{GatePulseAdderComptPhotIdealLocalMessenger_8hh_source}{}\doxysection{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local\+Messenger.\+hh}
+\label{GatePulseAdderComptPhotIdealLocalMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdderComptPhotIdealLocalMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdderComptPhotIdealLocalMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GatePulseAdderComptPhotIdealLocalMessenger\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GatePulseAdderComptPhotIdealLocalMessenger\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{9 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{10 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{11 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{12 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal}{GatePulseAdderComptPhotIdealLocal}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocalMessenger}{GatePulseAdderComptPhotIdealLocalMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocalMessenger}{GatePulseAdderComptPhotIdealLocalMessenger}}(\mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal}{GatePulseAdderComptPhotIdealLocal}}* itsPulseAdder);}
+\DoxyCodeLine{25      \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocalMessenger}{\string~GatePulseAdderComptPhotIdealLocalMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal}{GatePulseAdderComptPhotIdealLocal}}* GetPulseAdderComptPhotIdealLocal()}
+\DoxyCodeLine{30       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal}{GatePulseAdderComptPhotIdealLocal}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{private}:}
+\DoxyCodeLine{33       G4UIcmdWithAString   *newVolCmd;}
+\DoxyCodeLine{34       std::vector<G4String> m\_name;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

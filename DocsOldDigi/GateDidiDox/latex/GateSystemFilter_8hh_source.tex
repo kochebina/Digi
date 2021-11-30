@@ -1,0 +1,45 @@
+\hypertarget{GateSystemFilter_8hh_source}{}\doxysection{Gate\+System\+Filter.\+hh}
+\label{GateSystemFilter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSystemFilter.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSystemFilter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateSystemFilter\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateSystemFilter\_h 1}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemFilterMessenger}{GateSystemFilterMessenger}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemFilter}{GateSystemFilter}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \mbox{\hyperlink{classGateSystemFilter}{GateSystemFilter}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemFilter}{\string~GateSystemFilter}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{inline} G4String GetSystemName()                                  \{ \textcolor{keywordflow}{return} m\_systemName; \}}
+\DoxyCodeLine{31     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSystemName(G4String systemName)                   \{m\_systemName = systemName ;\}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} SetSystemToItsChain();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemFilter_af0b5986172449b4b1d4c45dd2777c12c}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{39      \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateSystemFilter_a486b84f6a472a35599cb038706b3fb6c}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemFilter_a55b3fff50e747994fe41f14d16ce5ad1}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{private}:}
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateSystemFilterMessenger}{GateSystemFilterMessenger}} *m\_messenger;     \textcolor{comment}{//Messenger}}
+\DoxyCodeLine{44     G4String m\_systemName;}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

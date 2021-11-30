@@ -1,0 +1,48 @@
+\hypertarget{GateDiffCrossSectionActorMessenger_8hh_source}{}\doxysection{Gate\+Diff\+Cross\+Section\+Actor\+Messenger.\+hh}
+\label{GateDiffCrossSectionActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDiffCrossSectionActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDiffCrossSectionActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateDiffCrossSectionActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author edward.romero@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATEDiffCrossSectionACTORMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATEDiffCrossSectionACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{comment}{//\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDiffCrossSectionActor}{GateDiffCrossSectionActor}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDiffCrossSectionActorMessenger}{GateDiffCrossSectionActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateDiffCrossSectionActorMessenger}{GateDiffCrossSectionActorMessenger}}(\mbox{\hyperlink{classGateDiffCrossSectionActor}{GateDiffCrossSectionActor}}* sensor);}
+\DoxyCodeLine{25   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDiffCrossSectionActorMessenger}{\string~GateDiffCrossSectionActorMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{28   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateDiffCrossSectionActor}{GateDiffCrossSectionActor}} * pDiffCrossSectionActor;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   G4UIcmdWithADoubleAndUnit* pSetEnergyCmd;}
+\DoxyCodeLine{34   G4UIcmdWithADoubleAndUnit* pSetAngleCmd;}
+\DoxyCodeLine{35   G4UIcmdWithAString* pReadListEnergyCmd;}
+\DoxyCodeLine{36   G4UIcmdWithAString* pReadListAngleCmd;}
+\DoxyCodeLine{37   G4UIcmdWithAString * pSetMaterialCmd;}
+\DoxyCodeLine{38   G4UIcmdWithAString * pReadMaterialListCmd;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

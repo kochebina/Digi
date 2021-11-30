@@ -1,0 +1,145 @@
+\hypertarget{GateTreeFile_8hh_source}{}\doxysection{Gate\+Tree\+File.\+hh}
+\label{GateTreeFile_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/io/include/GateTreeFile.hh@{/biomaps/physique/appli/GateOlga/src/source/io/include/GateTreeFile.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by mdupont on 12/03/18.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <typeindex>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateFile.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateData}{GateData}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateData}{GateData}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} * pointer\_to\_data,}
+\DoxyCodeLine{22        \textcolor{keyword}{const} std::string \_name,}
+\DoxyCodeLine{23        \textcolor{keyword}{const} std::type\_index type\_index}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25   ) : m\_pointer\_to\_data(pointer\_to\_data),}
+\DoxyCodeLine{26       m\_name(\_name),}
+\DoxyCodeLine{27       m\_type\_index(type\_index)}
+\DoxyCodeLine{28   \{}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{const} std::string \&name()\textcolor{keyword}{ const}}
+\DoxyCodeLine{33 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{return} m\_name;}
+\DoxyCodeLine{35   \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{const} \textcolor{keywordtype}{void} *m\_pointer\_to\_data;}
+\DoxyCodeLine{38   \textcolor{keyword}{const} std::string m\_name;}
+\DoxyCodeLine{39   std::type\_index m\_type\_index;}
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTree}{GateTree}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47   \textcolor{keyword}{static} std::string default\_tree\_name();}
+\DoxyCodeLine{48   \mbox{\hyperlink{classGateTree}{GateTree}}();}
+\DoxyCodeLine{49   \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{50   \textcolor{keyword}{static} std::unique\_ptr<T> \_create\_method() \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{return} std::unique\_ptr<T>(\textcolor{keyword}{new} T());}
+\DoxyCodeLine{52   \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *p, std::type\_index t\_index) = 0;}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} std::string *p, \textcolor{keywordtype}{size\_t} nb\_char) = 0;}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p, \textcolor{keywordtype}{size\_t} nb\_char) = 0;}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{int} *p, \textcolor{keywordtype}{size\_t} n) = 0;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{private}:}
+\DoxyCodeLine{62   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} add\_size()}
+\DoxyCodeLine{64   \{}
+\DoxyCodeLine{65     m\_tmapOfSize[\textcolor{keyword}{typeid}(T)] = \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{66   \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} add\_name(\textcolor{keyword}{const} std::string \&name)}
+\DoxyCodeLine{70   \{}
+\DoxyCodeLine{71 \textcolor{comment}{//    m\_tmapOfName[typeid(T)] = name;}}
+\DoxyCodeLine{72     m\_tmapOfName.emplace(\textcolor{keyword}{typeid}(T), name);}
+\DoxyCodeLine{73   \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{79   \textcolor{keyword}{const} std::string type\_to\_name(std::type\_index t\_index);}
+\DoxyCodeLine{80   std::unordered\_map<std::type\_index, std::size\_t> m\_tmapOfSize;}
+\DoxyCodeLine{81   std::unordered\_map<std::type\_index, std::string> m\_tmapOfName;}
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputTreeFile}{GateOutputTreeFile}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateFile}{GateFile}}}
+\DoxyCodeLine{87 \{}
+\DoxyCodeLine{88 \textcolor{keyword}{public}:}
+\DoxyCodeLine{89   \mbox{\hyperlink{classGateOutputTreeFile}{GateOutputTreeFile}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} open(\textcolor{keyword}{const} std::string\& s) = 0;}
+\DoxyCodeLine{92   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write\_header() = 0;}
+\DoxyCodeLine{93   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write() = 0;}
+\DoxyCodeLine{94   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} fill() = 0;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *p, std::type\_index t\_index) = 0;}
+\DoxyCodeLine{98   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} std::string *p, \textcolor{keywordtype}{size\_t} nb\_char) = 0;}
+\DoxyCodeLine{99   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p, \textcolor{keywordtype}{size\_t} nb\_char) = 0;}
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{int}  *p, \textcolor{keywordtype}{size\_t} n) = 0;}
+\DoxyCodeLine{101   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} set\_tree\_name(\textcolor{keyword}{const} std::string \&name) ;}
+\DoxyCodeLine{102   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOutputTreeFile}{\string~GateOutputTreeFile}}();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{105   std::string m\_nameOfTree;}
+\DoxyCodeLine{106 \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keyword}{class }\mbox{\hyperlink{classGateInputTreeFile}{GateInputTreeFile}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateFile}{GateFile}}}
+\DoxyCodeLine{110 \{}
+\DoxyCodeLine{111 \textcolor{keyword}{public}:}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \mbox{\hyperlink{classGateInputTreeFile}{GateInputTreeFile}}();}
+\DoxyCodeLine{114   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateInputTreeFile}{\string~GateInputTreeFile}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{115   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} open(\textcolor{keyword}{const} std::string\& s) = 0;}
+\DoxyCodeLine{116   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} read\_header() = 0;}
+\DoxyCodeLine{117   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} read\_next\_entrie() = 0;}
+\DoxyCodeLine{118   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} read\_entrie(\textcolor{keyword}{const} uint64\_t\& i) = 0;}
+\DoxyCodeLine{119   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} data\_to\_read() = 0;}
+\DoxyCodeLine{120   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} set\_tree\_name(\textcolor{keyword}{const} std::string \&name) ;}
+\DoxyCodeLine{121   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{void} *p, std::type\_index t\_index) = 0;}
+\DoxyCodeLine{122   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char}* p);}
+\DoxyCodeLine{123   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char}* p, \textcolor{keywordtype}{size\_t} nb\_char);}
+\DoxyCodeLine{124   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, std::string *p);}
+\DoxyCodeLine{125   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} has\_variable(\textcolor{keyword}{const} std::string \&name) = 0;}
+\DoxyCodeLine{126   \textcolor{keyword}{virtual} std::type\_index get\_type\_of\_variable(\textcolor{keyword}{const} std::string \&name) = 0;}
+\DoxyCodeLine{127   \textcolor{keyword}{virtual} uint64\_t nb\_elements() = 0;}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{131   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, T *p)}
+\DoxyCodeLine{132   \{}
+\DoxyCodeLine{133       read\_variable(name, p, \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{134   \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{137   std::string m\_nameOfTree;}
+\DoxyCodeLine{138 \};}
+\DoxyCodeLine{139 }
+
+\end{DoxyCode}

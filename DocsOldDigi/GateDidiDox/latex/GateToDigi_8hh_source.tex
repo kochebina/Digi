@@ -1,0 +1,56 @@
+\hypertarget{GateToDigi_8hh_source}{}\doxysection{Gate\+To\+Digi.\+hh}
+\label{GateToDigi_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToDigi.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToDigi.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateToDigi\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateToDigi\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{ \#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15  \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}};}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToDigi}{GateToDigi}} :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateToDigi}{GateToDigi}}(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,}
+\DoxyCodeLine{25              DigiMode digiMode);}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateToDigi}{\string~GateToDigi}}();}
+\DoxyCodeLine{27   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v, \textcolor{keyword}{const} G4Step *);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToDigi_a2a933593770efd89ee90fd3aabb5c8c5}{RecordVoxels}}(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}*   \mbox{\hyperlink{classGateToDigi_a0c08eadeb12e8c49e317ec22f9d9c9fc}{GetDigitizer}}()}
+\DoxyCodeLine{42       \{ \textcolor{keywordflow}{return} m\_digitizer; \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{private}:}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}* m\_digiMessenger;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* m\_digitizer;}
+\DoxyCodeLine{51   G4String       m\_noFileName;}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

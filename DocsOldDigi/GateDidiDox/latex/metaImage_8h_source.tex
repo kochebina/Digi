@@ -1,0 +1,353 @@
+\hypertarget{metaImage_8h_source}{}\doxysection{meta\+Image.\+h}
+\label{metaImage_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaImage.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaImage.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAIMAGE\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAIMAGE\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}metaImageTypes.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}metaImageUtils.h"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{60 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaImage}{MetaImage}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{64   \{}
+\DoxyCodeLine{65   \textcolor{keyword}{public}:}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{comment}{//}}
+\DoxyCodeLine{69     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{70     \textcolor{comment}{//}}
+\DoxyCodeLine{72 \textcolor{comment}{}    \mbox{\hyperlink{classMetaImage}{MetaImage}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \mbox{\hyperlink{classMetaImage}{MetaImage}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \mbox{\hyperlink{classMetaImage}{MetaImage}}(\mbox{\hyperlink{classMetaImage}{MetaImage}} *\_im);    \textcolor{comment}{// share memory}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \mbox{\hyperlink{classMetaImage}{MetaImage}}(\textcolor{keywordtype}{int} \_nDims,}
+\DoxyCodeLine{79               \textcolor{keyword}{const} \textcolor{keywordtype}{int} * \_dimSize,}
+\DoxyCodeLine{80               \textcolor{keyword}{const} \textcolor{keywordtype}{float} *\_elementSpacing,}
+\DoxyCodeLine{81               MET\_ValueEnumType \_elementType,}
+\DoxyCodeLine{82               \textcolor{keywordtype}{int} \_elementNumberOfChannels=1,}
+\DoxyCodeLine{83               \textcolor{keywordtype}{void} *\_elementData=NULL);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \mbox{\hyperlink{classMetaImage}{MetaImage}}(\textcolor{keywordtype}{int} \_x, \textcolor{keywordtype}{int} \_y,}
+\DoxyCodeLine{86               \textcolor{keywordtype}{float} \_elementSpacingX,}
+\DoxyCodeLine{87               \textcolor{keywordtype}{float} \_elementSpacingY,}
+\DoxyCodeLine{88               MET\_ValueEnumType \_elementType,}
+\DoxyCodeLine{89               \textcolor{keywordtype}{int} \_elementNumberOfChannels=1,}
+\DoxyCodeLine{90               \textcolor{keywordtype}{void} *\_elementData=NULL);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \mbox{\hyperlink{classMetaImage}{MetaImage}}(\textcolor{keywordtype}{int} \_x, \textcolor{keywordtype}{int} \_y, \textcolor{keywordtype}{int} \_z,}
+\DoxyCodeLine{93               \textcolor{keywordtype}{float} \_elementSpacingX,}
+\DoxyCodeLine{94               \textcolor{keywordtype}{float} \_elementSpacingY,}
+\DoxyCodeLine{95               \textcolor{keywordtype}{float} \_elementSpacingZ,}
+\DoxyCodeLine{96               MET\_ValueEnumType \_elementType,}
+\DoxyCodeLine{97               \textcolor{keywordtype}{int} \_elementNumberOfChannels=1,}
+\DoxyCodeLine{98               \textcolor{keywordtype}{void} *\_elementData=NULL);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \mbox{\hyperlink{classMetaImage}{\string~MetaImage}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keywordtype}{bool} InitializeEssential(\textcolor{keywordtype}{int} \_nDims,}
+\DoxyCodeLine{109                                      \textcolor{keyword}{const} \textcolor{keywordtype}{int} * \_dimSize,}
+\DoxyCodeLine{110                                      \textcolor{keyword}{const} \textcolor{keywordtype}{float} * \_elementSpacing,}
+\DoxyCodeLine{111                                      MET\_ValueEnumType \_elementType,}
+\DoxyCodeLine{112                                      \textcolor{keywordtype}{int} \_elementNumberOfChannels=1,}
+\DoxyCodeLine{113                                      \textcolor{keywordtype}{void} *\_elementData=NULL,}
+\DoxyCodeLine{114                                      \textcolor{keywordtype}{bool} \_allocElementMemory=\textcolor{keyword}{true});}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{//}}
+\DoxyCodeLine{117     \textcolor{comment}{//}}
+\DoxyCodeLine{118     \textcolor{comment}{//}}
+\DoxyCodeLine{119     \textcolor{keywordtype}{int}   HeaderSize(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void}  HeaderSize(\textcolor{keywordtype}{int} \_headerSize);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     MET\_ImageModalityEnumType  Modality(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void}                       Modality(MET\_ImageModalityEnumType \_modality);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{comment}{//    DimSize(...)}}
+\DoxyCodeLine{126     \textcolor{comment}{//       REQUIRED Field}}
+\DoxyCodeLine{127     \textcolor{comment}{//       Number of elements along each dimension}}
+\DoxyCodeLine{128     \textcolor{keyword}{const} \textcolor{keywordtype}{int} *  DimSize(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{129     \textcolor{keywordtype}{int}          DimSize(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{130     \textcolor{comment}{//void  DimSize(const int * \_dimSize);}}
+\DoxyCodeLine{131     \textcolor{comment}{//void  DimSize(int \_i, int \_value);}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{//    Quantity()}}
+\DoxyCodeLine{134     \textcolor{comment}{//       Not a field in file}}
+\DoxyCodeLine{135     \textcolor{comment}{//       Total number of elements in image (Prod(dimSize[i]))}}
+\DoxyCodeLine{136     METAIO\_STL::streamoff  Quantity(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{comment}{//    SubQuantity(...)}}
+\DoxyCodeLine{139     \textcolor{comment}{//       Not a field in file}}
+\DoxyCodeLine{140     \textcolor{comment}{//       Number of elements in image spanning sub-\/dimensions}}
+\DoxyCodeLine{141     \textcolor{comment}{//       E.g., elements per line, 2D sub-\/image, 3D sub-\/volume,}}
+\DoxyCodeLine{142     \textcolor{keyword}{const} METAIO\_STL::streamoff * SubQuantity(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{143     METAIO\_STL::streamoff SubQuantity(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{//    SequenceID(...)}}
+\DoxyCodeLine{146     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{147     \textcolor{comment}{//       DICOM designation of this image relative to other images}}
+\DoxyCodeLine{148     \textcolor{comment}{//         acquired at the same time}}
+\DoxyCodeLine{149     \textcolor{keyword}{const} \textcolor{keywordtype}{float} * SequenceID(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{150     \textcolor{keywordtype}{float}         SequenceID(\textcolor{keywordtype}{int} \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{151     \textcolor{keywordtype}{void}          SequenceID(\textcolor{keyword}{const} \textcolor{keywordtype}{float} * \_sequenceID);}
+\DoxyCodeLine{152     \textcolor{keywordtype}{void}          SequenceID(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{float} \_value);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{comment}{//    ElemSize(...)}}
+\DoxyCodeLine{155     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{156     \textcolor{comment}{//       Physical size (in MM) of each element in the image}}
+\DoxyCodeLine{157     \textcolor{comment}{//       (0 = xSize, 1 = ySize, 2 = zSize)}}
+\DoxyCodeLine{158     \textcolor{keywordtype}{bool}           ElementSizeValid(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{159     \textcolor{keywordtype}{void}           ElementSizeValid(\textcolor{keywordtype}{bool} \_elementSizeValid);}
+\DoxyCodeLine{160     \textcolor{keyword}{const} \textcolor{keywordtype}{float} *  ElementSize(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{161     \textcolor{keywordtype}{float}          ElementSize(\textcolor{keywordtype}{int} i) \textcolor{keyword}{const};}
+\DoxyCodeLine{162     \textcolor{keywordtype}{void}           ElementSize(\textcolor{keyword}{const} \textcolor{keywordtype}{float} * \_pointSize);}
+\DoxyCodeLine{163     \textcolor{keywordtype}{void}           ElementSize(\textcolor{keywordtype}{int} \_i, \textcolor{keywordtype}{float} \_value);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     MET\_ValueEnumType ElementType(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{166     \textcolor{keywordtype}{void}              ElementType(MET\_ValueEnumType \_elementType);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168     \textcolor{keywordtype}{int}   ElementNumberOfChannels(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{169     \textcolor{keywordtype}{void}  ElementNumberOfChannels(\textcolor{keywordtype}{int} \_elementNumberOfChannels);}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \textcolor{comment}{//    ElemMakeByteOrderMSB(), ElemMakeByteOrderLSB(),}}
+\DoxyCodeLine{172     \textcolor{comment}{//    ElemByteOrderSwap(), ElemByteOrderFix()}}
+\DoxyCodeLine{173     \textcolor{comment}{//       The following functions are available only after}}
+\DoxyCodeLine{174     \textcolor{comment}{//       ReadImageData() or if \_read\_and\_close=TRUE when read}}
+\DoxyCodeLine{175     \textcolor{comment}{//}}
+\DoxyCodeLine{176     \textcolor{comment}{// if streaming is used, then the size of buffer in total number}}
+\DoxyCodeLine{177     \textcolor{comment}{// of elements, should be passed as an argument, otherwise the}}
+\DoxyCodeLine{178     \textcolor{comment}{// internal value Quantity() will be used}}
+\DoxyCodeLine{179     \textcolor{keywordtype}{void}  ElementByteOrderSwap( METAIO\_STL::streamoff \_quantity = 0);}
+\DoxyCodeLine{180     \textcolor{keywordtype}{bool}  ElementByteOrderFix( METAIO\_STL::streamoff \_quantity = 0);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{comment}{//    Min(...) Max(...)}}
+\DoxyCodeLine{183     \textcolor{comment}{//       The default max returned is the largest allowed by}}
+\DoxyCodeLine{184     \textcolor{comment}{//         ElemNBytes (12 bit uint16\_t will give 4096 max).}}
+\DoxyCodeLine{185     \textcolor{comment}{//       This may not represent the true max.   Use \_reCalc=true}}
+\DoxyCodeLine{186     \textcolor{comment}{//         to force a calcuation of the actual max element value.}}
+\DoxyCodeLine{187     \textcolor{keywordtype}{bool}   ElementMinMaxValid(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{188     \textcolor{keywordtype}{void}   ElementMinMaxValid(\textcolor{keywordtype}{bool} \_elementMinMaxValid);}
+\DoxyCodeLine{189     \textcolor{keywordtype}{void}   ElementMinMaxRecalc(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{190     \textcolor{keywordtype}{double} ElementMin(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{191     \textcolor{keywordtype}{void}   ElementMin(\textcolor{keywordtype}{double} \_elementMin);}
+\DoxyCodeLine{192     \textcolor{keywordtype}{double} ElementMax(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{193     \textcolor{keywordtype}{void}   ElementMax(\textcolor{keywordtype}{double} \_elementMax);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \textcolor{comment}{//}}
+\DoxyCodeLine{196     \textcolor{comment}{//}}
+\DoxyCodeLine{197     \textcolor{comment}{//}}
+\DoxyCodeLine{198     \textcolor{keywordtype}{double} ElementToIntensityFunctionSlope(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{199     \textcolor{keywordtype}{void}   ElementToIntensityFunctionSlope(\textcolor{keywordtype}{double} \_slope);}
+\DoxyCodeLine{200     \textcolor{keywordtype}{double} ElementToIntensityFunctionOffset(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{201     \textcolor{keywordtype}{void}   ElementToIntensityFunctionOffset(\textcolor{keywordtype}{double} \_offset);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{comment}{//}}
+\DoxyCodeLine{204     \textcolor{comment}{//}}
+\DoxyCodeLine{205     \textcolor{comment}{//}}
+\DoxyCodeLine{206     \textcolor{keywordtype}{bool}   AutoFreeElementData(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{207     \textcolor{keywordtype}{void}   AutoFreeElementData(\textcolor{keywordtype}{bool} \_freeData);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     \textcolor{comment}{//}}
+\DoxyCodeLine{211     \textcolor{comment}{//}}
+\DoxyCodeLine{212     \textcolor{comment}{//}}
+\DoxyCodeLine{213     \textcolor{keyword}{const} \textcolor{keywordtype}{char} * ElementDataFileName(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{214     \textcolor{keywordtype}{void}         ElementDataFileName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_dataFileName);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216     \textcolor{comment}{//}}
+\DoxyCodeLine{217     \textcolor{comment}{//}}
+\DoxyCodeLine{218     \textcolor{comment}{//}}
+\DoxyCodeLine{219     \textcolor{keywordtype}{void} * ElementData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{220     \textcolor{keywordtype}{double} ElementData(METAIO\_STL::streamoff \_i) \textcolor{keyword}{const};}
+\DoxyCodeLine{221     \textcolor{keywordtype}{bool}   ElementData(METAIO\_STL::streamoff \_i, \textcolor{keywordtype}{double} \_v);}
+\DoxyCodeLine{222     \textcolor{keywordtype}{void}   ElementData(\textcolor{keywordtype}{void} * \_data, \textcolor{keywordtype}{bool} \_autoFreeElementData=\textcolor{keyword}{false});}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     \textcolor{comment}{//    ConverTo(...)}}
+\DoxyCodeLine{225     \textcolor{comment}{//       Converts to a new data type}}
+\DoxyCodeLine{226     \textcolor{comment}{//       Rescales using Min and Max (see above)}}
+\DoxyCodeLine{227     \textcolor{keywordtype}{bool}  ConvertElementDataTo(MET\_ValueEnumType \_elementType=MET\_USHORT,}
+\DoxyCodeLine{228                                \textcolor{keywordtype}{double} \_toMin=0, \textcolor{keywordtype}{double} \_toMax=0);}
+\DoxyCodeLine{229     \textcolor{keywordtype}{bool}  ConvertElementDataToIntensityData( MET\_ValueEnumType}
+\DoxyCodeLine{230                                              \_intensityType=MET\_SHORT);}
+\DoxyCodeLine{231     \textcolor{keywordtype}{bool}  ConvertIntensityDataToElementData( MET\_ValueEnumType}
+\DoxyCodeLine{232                                              \_elementType=MET\_USHORT);}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234     \textcolor{comment}{//}}
+\DoxyCodeLine{235     \textcolor{comment}{//}}
+\DoxyCodeLine{236     \textcolor{comment}{//}}
+\DoxyCodeLine{237     \textcolor{keywordtype}{bool} CanRead(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName=NULL) \textcolor{keyword}{const};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{keywordtype}{bool} Read(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName=NULL,}
+\DoxyCodeLine{240                       \textcolor{keywordtype}{bool} \_readElements=\textcolor{keyword}{true},}
+\DoxyCodeLine{241                       \textcolor{keywordtype}{void} * \_buffer=NULL);}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     \textcolor{keywordtype}{bool} ReadROI(\textcolor{keywordtype}{int} * \_indexMin, \textcolor{keywordtype}{int} * \_indexMax,}
+\DoxyCodeLine{244                          \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName=NULL,}
+\DoxyCodeLine{245                          \textcolor{keywordtype}{bool} \_readElements=\textcolor{keyword}{true},}
+\DoxyCodeLine{246                          \textcolor{keywordtype}{void} * \_buffer=NULL,}
+\DoxyCodeLine{247                          \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} subSamplingFactor=1}
+\DoxyCodeLine{248                          );}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251     \textcolor{keywordtype}{bool} CanReadStream(METAIO\_STREAM::ifstream * \_stream) \textcolor{keyword}{const};}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     \textcolor{keywordtype}{bool} ReadStream(\textcolor{keywordtype}{int} \_nDims,}
+\DoxyCodeLine{254                             METAIO\_STREAM::ifstream * \_stream,}
+\DoxyCodeLine{255                             \textcolor{keywordtype}{bool} \_readElements=\textcolor{keyword}{true},}
+\DoxyCodeLine{256                             \textcolor{keywordtype}{void} * \_buffer=NULL);}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keywordtype}{bool} ReadROIStream(\textcolor{keywordtype}{int} * \_indexMin, \textcolor{keywordtype}{int} * \_indexMax,}
+\DoxyCodeLine{259                                \textcolor{keywordtype}{int} \_nDims,}
+\DoxyCodeLine{260                                METAIO\_STREAM::ifstream * \_stream,}
+\DoxyCodeLine{261                                \textcolor{keywordtype}{bool} \_readElements=\textcolor{keyword}{true},}
+\DoxyCodeLine{262                                \textcolor{keywordtype}{void} * \_buffer=NULL,}
+\DoxyCodeLine{263                                \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} subSamplingFactor=1);}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265     \textcolor{keywordtype}{bool} Write(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headName=NULL,}
+\DoxyCodeLine{266                        \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_dataName=NULL,}
+\DoxyCodeLine{267                        \textcolor{keywordtype}{bool} \_writeElements=\textcolor{keyword}{true},}
+\DoxyCodeLine{268                        \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \_constElementData=NULL,}
+\DoxyCodeLine{269                        \textcolor{keywordtype}{bool} \_append=\textcolor{keyword}{false});}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271     \textcolor{keywordtype}{bool} WriteROI(\textcolor{keywordtype}{int} * \_indexMin, \textcolor{keywordtype}{int} * \_indexMax,}
+\DoxyCodeLine{272                           \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headName=NULL,}
+\DoxyCodeLine{273                           \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_dataName=NULL,}
+\DoxyCodeLine{274                           \textcolor{keywordtype}{bool} \_writeElements=\textcolor{keyword}{true},}
+\DoxyCodeLine{275                           \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \_constElementData=NULL,}
+\DoxyCodeLine{276                           \textcolor{keywordtype}{bool} \_append=\textcolor{keyword}{false}}
+\DoxyCodeLine{277                           );}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279     \textcolor{keywordtype}{bool} WriteStream(METAIO\_STREAM::ofstream * \_stream,}
+\DoxyCodeLine{280                              \textcolor{keywordtype}{bool} \_writeElements=\textcolor{keyword}{true},}
+\DoxyCodeLine{281                              \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \_constElementData=NULL);}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284     \textcolor{keywordtype}{bool} Append(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headName=NULL);}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     \textcolor{keyword}{typedef} METAIO\_STL::pair<long,long> CompressionOffsetType;}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{290   \textcolor{comment}{//}}
+\DoxyCodeLine{291   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{292   \textcolor{comment}{//}}
+\DoxyCodeLine{294 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296     MET\_ImageModalityEnumType m\_Modality;}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299     \mbox{\hyperlink{structMET__CompressionTable}{MET\_CompressionTableType}}*  m\_CompressionTable;}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     \textcolor{keywordtype}{int}                    m\_DimSize[10];}
+\DoxyCodeLine{302     METAIO\_STL::streamoff m\_SubQuantity[10];}
+\DoxyCodeLine{303     METAIO\_STL::streamoff m\_Quantity;}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \textcolor{keywordtype}{int}                m\_HeaderSize;}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307     \textcolor{keywordtype}{float}              m\_SequenceID[4];}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309     \textcolor{keywordtype}{bool}               m\_ElementSizeValid;}
+\DoxyCodeLine{310     \textcolor{keywordtype}{float}              m\_ElementSize[10];}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312     MET\_ValueEnumType  m\_ElementType;}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314     \textcolor{keywordtype}{int}                m\_ElementNumberOfChannels;}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316     \textcolor{keywordtype}{bool}               m\_ElementMinMaxValid;}
+\DoxyCodeLine{317     \textcolor{keywordtype}{double}             m\_ElementMin;}
+\DoxyCodeLine{318     \textcolor{keywordtype}{double}             m\_ElementMax;}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     \textcolor{keywordtype}{double}             m\_ElementToIntensityFunctionSlope;}
+\DoxyCodeLine{321     \textcolor{keywordtype}{double}             m\_ElementToIntensityFunctionOffset;}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     \textcolor{keywordtype}{bool}               m\_AutoFreeElementData;}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325     \textcolor{keywordtype}{void}  *            m\_ElementData;}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327     \textcolor{keywordtype}{char}               m\_ElementDataFileName[255];}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338     \textcolor{comment}{// \_dataQuantity is expressed in number of pixels. Internally it will be}}
+\DoxyCodeLine{339     \textcolor{comment}{// scaled by the number of components and number of bytes per component.}}
+\DoxyCodeLine{340     \textcolor{keywordtype}{bool}  M\_ReadElements(METAIO\_STREAM::ifstream * \_fstream,}
+\DoxyCodeLine{341                          \textcolor{keywordtype}{void} * \_data,}
+\DoxyCodeLine{342                          METAIO\_STL::streamoff \_dataQuantity);}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344     \textcolor{comment}{// \_totalDataQuantity and \_dataQuantity are expressed in number of pixels.}}
+\DoxyCodeLine{345     \textcolor{comment}{// Internally they will be scaled by the number of components and number of}}
+\DoxyCodeLine{346     \textcolor{comment}{// bytes per component.}}
+\DoxyCodeLine{347     \textcolor{keywordtype}{bool}  M\_ReadElementsROI(METAIO\_STREAM::ifstream * \_fstream,}
+\DoxyCodeLine{348                             \textcolor{keywordtype}{void} * \_data,}
+\DoxyCodeLine{349                             METAIO\_STL::streamoff \_dataQuantity,}
+\DoxyCodeLine{350                             \textcolor{keywordtype}{int} * \_indexMin,}
+\DoxyCodeLine{351                             \textcolor{keywordtype}{int}* \_indexMax,}
+\DoxyCodeLine{352                             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} subSamplingFactor=1,}
+\DoxyCodeLine{353                             METAIO\_STL::streamoff \_totalDataQuantity=0);}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355     \textcolor{keywordtype}{bool} M\_ReadElementData(METAIO\_STREAM::ifstream * \_fstream,}
+\DoxyCodeLine{356                            \textcolor{keywordtype}{void} * \_data,}
+\DoxyCodeLine{357                            METAIO\_STL::streamoff \_dataQuantity);}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359     \textcolor{keywordtype}{bool}  M\_WriteElements(METAIO\_STREAM::ofstream * \_fstream,}
+\DoxyCodeLine{360                           \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \_data,}
+\DoxyCodeLine{361                           METAIO\_STL::streamoff \_dataQuantity);}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363     \textcolor{keywordtype}{bool}  M\_WriteElementsROI(METAIO\_STREAM::ofstream * \_fstream,}
+\DoxyCodeLine{364                              \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \_data,}
+\DoxyCodeLine{365                              METAIO\_STL::streampos \_dataPos,}
+\DoxyCodeLine{366                              \textcolor{keywordtype}{int} * \_indexMin,}
+\DoxyCodeLine{367                              \textcolor{keywordtype}{int}* \_indexMax);}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369     \textcolor{keywordtype}{bool}  M\_WriteElementData(METAIO\_STREAM::ofstream * \_fstream,}
+\DoxyCodeLine{370                              \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \_data,}
+\DoxyCodeLine{371                              METAIO\_STL::streamoff \_dataQuantity);}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373     \textcolor{keywordtype}{bool} M\_FileExists(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename) \textcolor{keyword}{const};}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375     \textcolor{keywordtype}{bool} FileIsFullPath(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* in\_name) \textcolor{keyword}{const};}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377     METAIO\_STL::string M\_GetTagValue(\textcolor{keyword}{const} METAIO\_STL::string \& buffer,}
+\DoxyCodeLine{378                                      \textcolor{keyword}{const} \textcolor{keywordtype}{char}* tag) \textcolor{keyword}{const};}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380   \};}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{383 \};}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

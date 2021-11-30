@@ -1,0 +1,66 @@
+\hypertarget{GateCoincidenceTimeDiffSelector_8hh_source}{}\doxysection{Gate\+Coincidence\+Time\+Diff\+Selector.\+hh}
+\label{GateCoincidenceTimeDiffSelector_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceTimeDiffSelector.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceTimeDiffSelector.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceTimeDiffSelector\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceTimeDiffSelector\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateObjectStore.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVCoincidencePulseProcessor.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceTimeDiffSelectorMessenger}{GateCoincidenceTimeDiffSelectorMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceTimeDiffSelector}{GateCoincidenceTimeDiffSelector}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{GateVCoincidencePulseProcessor}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_aac0ab2dd8d0975f68f35c2792967897a}{\string~GateCoincidenceTimeDiffSelector}}() ;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_af97ebbed951d09a84a19d15364d07fd4}{GateCoincidenceTimeDiffSelector}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{37                                   \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   G4double \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_a4abb349c64a3b4e26f656e127b3c2597}{GetMinTime}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_minTime;\}}
+\DoxyCodeLine{43   G4double GetMaxTime()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_maxTime;\}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_a8ecf3fd2992aefb89e5a964cce7f205a}{SetMinTime}}(G4double val) \{ m\_minTime = val;\}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} SetMaxTime(G4double val) \{ m\_maxTime = val;\};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_a5c1a8b6b999e34694a63d55a781b3083}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56   \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_ad760836838d89a1773ce7c886ac8bd3e}{ProcessPulse}}(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* inputPulse,G4int iPulse);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{private}:}
+\DoxyCodeLine{61   G4double m\_minTime; }
+\DoxyCodeLine{62   G4double m\_maxTime;  }
+\DoxyCodeLine{63   \mbox{\hyperlink{classGateCoincidenceTimeDiffSelectorMessenger}{GateCoincidenceTimeDiffSelectorMessenger}} *m\_messenger;    }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

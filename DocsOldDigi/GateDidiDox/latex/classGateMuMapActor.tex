@@ -1,0 +1,183 @@
+\hypertarget{classGateMuMapActor}{}\doxysection{Gate\+Mu\+Map\+Actor Class Reference}
+\label{classGateMuMapActor}\index{GateMuMapActor@{GateMuMapActor}}
+Inheritance diagram for Gate\+Mu\+Map\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateMuMapActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a200ef491ee92068af79de948cc8ae1c8}\label{classGateMuMapActor_a200ef491ee92068af79de948cc8ae1c8}} 
+virtual {\bfseries $\sim$\+Gate\+Mu\+Map\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_a630abd514c1516ebc491ff7a71e25bae}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_a063b00a911ba6dcab773065aa11d1687}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_ae468271d454d14ff95484dfefcf1a262}{End\+Of\+Run\+Action}} (const G4\+Run $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_a69e51d1557689a4b4f2f06585838e790}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_a4c4ad9dd32418bc7760e12005440518f}{User\+Stepping\+Action\+In\+Voxel}} (const int, const G4\+Step $\ast$)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_a519b28bdd92be5567e80e812876f2ee7}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_a261e99fec3763f8f231ed775b53e2994}{User\+Post\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_aa3201dc2fce73746791abe752c17a9a2}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Save data. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateMuMapActor_a6f362d07e884a79f7f574a4a6df1f6c1}{Reset\+Data}} ()
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a761f83dbe981ee715be707c9962710f6}\label{classGateMuMapActor_a761f83dbe981ee715be707c9962710f6}} 
+void {\bfseries Set\+Energy} (G4double energy)
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a53a37ce39e3e7edf718379d7de1cc9e4}\label{classGateMuMapActor_a53a37ce39e3e7edf718379d7de1cc9e4}} 
+void {\bfseries Set\+Mu\+Unit} (G4double unit)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a9fd5b4d3562050468f6f8e8f220d4577}\label{classGateMuMapActor_a9fd5b4d3562050468f6f8e8f220d4577}} 
+{\bfseries Gate\+Mu\+Map\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a94bc3b348351c7ec0e53ad18c512dc2d}\label{classGateMuMapActor_a94bc3b348351c7ec0e53ad18c512dc2d}} 
+\mbox{\hyperlink{classGateMuMapActorMessenger}{Gate\+Mu\+Map\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a44e1c7d4b0746dcdb3185d935d456934}\label{classGateMuMapActor_a44e1c7d4b0746dcdb3185d935d456934}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Mu\+Map\+Image}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_aec89ca79cbcbd3c740cd073f2b35a0a6}\label{classGateMuMapActor_aec89ca79cbcbd3c740cd073f2b35a0a6}} 
+\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Int}} {\bfseries m\+Source\+Map\+Image}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_ae27b626c9008dd5ed71a9c30aaffaece}\label{classGateMuMapActor_ae27b626c9008dd5ed71a9c30aaffaece}} 
+G4double {\bfseries m\+Energy}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_af30936803770e9461a3f02a66fbd083a}\label{classGateMuMapActor_af30936803770e9461a3f02a66fbd083a}} 
+G4double {\bfseries m\+Mu\+Unit}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a2b11c33d3747a8371690d4b3dcb34192}\label{classGateMuMapActor_a2b11c33d3747a8371690d4b3dcb34192}} 
+G4\+String {\bfseries m\+Mu\+Map\+Filename}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_a267c73217a8da591b84be2f7ef39b593}\label{classGateMuMapActor_a267c73217a8da591b84be2f7ef39b593}} 
+G4\+String {\bfseries m\+Source\+Map\+Filename}
+\item 
+\mbox{\Hypertarget{classGateMuMapActor_aef718a71d53ae1d7072b35cb3dc625d7}\label{classGateMuMapActor_aef718a71d53ae1d7072b35cb3dc625d7}} 
+G4int {\bfseries m\+Current\+Event}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateMuMapActor_a69e51d1557689a4b4f2f06585838e790}\label{classGateMuMapActor_a69e51d1557689a4b4f2f06585838e790}} 
+\index{GateMuMapActor@{GateMuMapActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_a063b00a911ba6dcab773065aa11d1687}\label{classGateMuMapActor_a063b00a911ba6dcab773065aa11d1687}} 
+\index{GateMuMapActor@{GateMuMapActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_a630abd514c1516ebc491ff7a71e25bae}\label{classGateMuMapActor_a630abd514c1516ebc491ff7a71e25bae}} 
+\index{GateMuMapActor@{GateMuMapActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Constructor. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_ae468271d454d14ff95484dfefcf1a262}\label{classGateMuMapActor_ae468271d454d14ff95484dfefcf1a262}} 
+\index{GateMuMapActor@{GateMuMapActor}!EndOfRunAction@{EndOfRunAction}}
+\index{EndOfRunAction@{EndOfRunAction}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{EndOfRunAction()}{EndOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+End\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_a6f362d07e884a79f7f574a4a6df1f6c1}\label{classGateMuMapActor_a6f362d07e884a79f7f574a4a6df1f6c1}} 
+\index{GateMuMapActor@{GateMuMapActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_aa3201dc2fce73746791abe752c17a9a2}\label{classGateMuMapActor_aa3201dc2fce73746791abe752c17a9a2}} 
+\index{GateMuMapActor@{GateMuMapActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save data. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_a261e99fec3763f8f231ed775b53e2994}\label{classGateMuMapActor_a261e99fec3763f8f231ed775b53e2994}} 
+\index{GateMuMapActor@{GateMuMapActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Mu\+Map\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_a519b28bdd92be5567e80e812876f2ee7}\label{classGateMuMapActor_a519b28bdd92be5567e80e812876f2ee7}} 
+\index{GateMuMapActor@{GateMuMapActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateMuMapActor_a4c4ad9dd32418bc7760e12005440518f}\label{classGateMuMapActor_a4c4ad9dd32418bc7760e12005440518f}} 
+\index{GateMuMapActor@{GateMuMapActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateMuMapActor@{GateMuMapActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Mu\+Map\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Mu\+Map\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Mu\+Map\+Actor.\+cc\end{DoxyCompactItemize}

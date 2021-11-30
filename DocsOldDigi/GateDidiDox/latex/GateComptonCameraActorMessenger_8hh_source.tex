@@ -1,0 +1,93 @@
+\hypertarget{GateComptonCameraActorMessenger_8hh_source}{}\doxysection{Gate\+Compton\+Camera\+Actor\+Messenger.\+hh}
+\label{GateComptonCameraActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateComptonCameraActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateComptonCameraActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATECOMPTONCAMERAACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATECOMPTONCAMERAACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateComptonCameraActor}{GateComptonCameraActor}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateComptonCameraActorMessenger}{GateComptonCameraActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{34 \textcolor{comment}{}  \mbox{\hyperlink{classGateComptonCameraActorMessenger_ae632a3495f83813252ccd4a952c981f7}{GateComptonCameraActorMessenger}}(\mbox{\hyperlink{classGateComptonCameraActor}{GateComptonCameraActor}} * v);}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateComptonCameraActorMessenger_a51634a8d9a9b6d6dbae4a2ea81f598b4}{\string~GateComptonCameraActorMessenger}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateComptonCameraActorMessenger_a37fb6767806fd54c934c8793635867dd}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateComptonCameraActor}{GateComptonCameraActor}} * \mbox{\hyperlink{classGateComptonCameraActorMessenger_a7e3747b73aa270976d69d63e96906ce7}{pActor}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48   G4UIcmdWithABool          * \mbox{\hyperlink{classGateComptonCameraActorMessenger_a92258990899f65375f2ed8cb843d64bf}{pSaveHitsTree}};}
+\DoxyCodeLine{49   G4UIcmdWithABool          * pSaveSinglesTree;}
+\DoxyCodeLine{50   G4UIcmdWithABool          * pSaveCoincidencesTree;}
+\DoxyCodeLine{51   G4UIcmdWithABool          * pSaveCoincidenceChainsTree;}
+\DoxyCodeLine{52   G4UIcmdWithABool          * pSaveEventInfoTree;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{comment}{//Include flags for variables it affects to all the trees (hits, singles, coincidences)}}
+\DoxyCodeLine{56   \textcolor{comment}{//(only checked singles variables)}}
+\DoxyCodeLine{57   G4UIcmdWithABool* pEnableEnergyCmd;}
+\DoxyCodeLine{58   G4UIcmdWithABool* pEnableEnergyIniCmd;}
+\DoxyCodeLine{59   G4UIcmdWithABool* pEnableEnergyFinCmd;}
+\DoxyCodeLine{60   G4UIcmdWithABool* pEnableTimeCmd;}
+\DoxyCodeLine{61   G4UIcmdWithABool* pEnablePositionXCmd;}
+\DoxyCodeLine{62   G4UIcmdWithABool* pEnablePositionYCmd;}
+\DoxyCodeLine{63   G4UIcmdWithABool* pEnablePositionZCmd;}
+\DoxyCodeLine{64   G4UIcmdWithABool* pEnableLocalPositionXCmd;}
+\DoxyCodeLine{65   G4UIcmdWithABool* pEnableLocalPositionYCmd;}
+\DoxyCodeLine{66   G4UIcmdWithABool* pEnableLocalPositionZCmd;}
+\DoxyCodeLine{67   G4UIcmdWithABool* pEnableSourcePositionXCmd;}
+\DoxyCodeLine{68   G4UIcmdWithABool* pEnableSourcePositionYCmd;}
+\DoxyCodeLine{69   G4UIcmdWithABool* pEnableSourcePositionZCmd;}
+\DoxyCodeLine{70   \textcolor{comment}{//volume identification}}
+\DoxyCodeLine{71   G4UIcmdWithABool* pEnableVolumeIDCmd;}
+\DoxyCodeLine{72   \textcolor{comment}{//G4UIcmdWithABool* pEnableLayerNameCmd;}}
+\DoxyCodeLine{73   G4UIcmdWithABool* pEnableSourceEnergyCmd;}
+\DoxyCodeLine{74   G4UIcmdWithABool* pEnableSourcePDGCmd;}
+\DoxyCodeLine{75   G4UIcmdWithABool* pEnablenCrystalConvCmd;}
+\DoxyCodeLine{76   G4UIcmdWithABool* pEnablenCrystalComptCmd;}
+\DoxyCodeLine{77   G4UIcmdWithABool* pEnablenCrystalRaylCmd;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \textcolor{comment}{//}}
+\DoxyCodeLine{83   G4UIcmdWithAString        * pNameOfAbsorberSDVol;}
+\DoxyCodeLine{84   G4UIcmdWithAString        * pNameOfScattererSDVol;}
+\DoxyCodeLine{85   G4UIcmdWithAnInteger      * pNumberofDiffScattererLayers;}
+\DoxyCodeLine{86   G4UIcmdWithAnInteger      * pNumberofTotScattererLayers;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   G4UIcmdWithABool          * pSourceParentIDSpecification;}
+\DoxyCodeLine{90   G4UIcmdWithAString        * pFileName4SourceParentID;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \}; \textcolor{comment}{// end class GateComptonCameraActorMessenger}}
+\DoxyCodeLine{94 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATECOMPTONCAMERAACTORMESSENGER\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{97 \textcolor{comment}{//\#endif}}
+
+\end{DoxyCode}

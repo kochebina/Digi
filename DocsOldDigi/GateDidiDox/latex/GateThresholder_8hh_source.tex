@@ -1,0 +1,52 @@
+\hypertarget{GateThresholder_8hh_source}{}\doxysection{Gate\+Thresholder.\+hh}
+\label{GateThresholder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateThresholder.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateThresholder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateThresholder\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateThresholder\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateThresholderMessenger}{GateThresholderMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateThresholder}{GateThresholder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38   \textcolor{keyword}{public}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \mbox{\hyperlink{classGateThresholder_a21f360d49e1b926cc8891a404a7007c4}{GateThresholder}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{42                    \textcolor{keyword}{const} G4String\& itsName, G4double itsThreshold=0) ;}
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateThresholder_ab22d88ca1cab0ea2acbcd2e178c2039f}{\string~GateThresholder}}() ;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     G4double \mbox{\hyperlink{classGateThresholder_a5226e3aaed1e7bf65abed83e728b3fcf}{GetThreshold}}()           \{ \textcolor{keywordflow}{return} m\_threshold; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateThresholder_a1c80ac2dbc61245c2e23bab4c58a0af5}{SetThreshold}}(G4double val)   \{ m\_threshold = val;  \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateThresholder_ac4f88aecd0e738bb898728e64d605fdf}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateThresholder_ade00bf96b9c58986de656ef46065cbf1}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\&  outputPulseList);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{private}:}
+\DoxyCodeLine{64     G4double m\_threshold;                     }
+\DoxyCodeLine{65     \mbox{\hyperlink{classGateThresholderMessenger}{GateThresholderMessenger}} *m\_messenger;    }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

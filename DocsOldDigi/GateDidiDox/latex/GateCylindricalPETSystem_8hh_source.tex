@@ -1,0 +1,50 @@
+\hypertarget{GateCylindricalPETSystem_8hh_source}{}\doxysection{Gate\+Cylindrical\+PETSystem.\+hh}
+\label{GateCylindricalPETSystem_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCylindricalPETSystem.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCylindricalPETSystem.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCylindricalPETSystem\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCylindricalPETSystem\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVSystem.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylindricalPETSystemMessenger}{GateCylindricalPETSystemMessenger}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylindricalPETSystem}{GateCylindricalPETSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateCylindricalPETSystem_a702f946d1c778e23a0fe3018402d1e16}{GateCylindricalPETSystem}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCylindricalPETSystem_a27932d14a53fa488a5d5d351e946a8f8}{\string~GateCylindricalPETSystem}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);         }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{60     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylindricalPETSystem_a161957525535aba442ae54ed7f93f78c}{PrintToStream}}(std::ostream\& aStream,G4bool doPrintNumbers);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} AddNewRSECTOR( G4String );}
+\DoxyCodeLine{63     }
+\DoxyCodeLine{65     \textcolor{keyword}{virtual} G4double \mbox{\hyperlink{classGateCylindricalPETSystem_abec178035e8f6b02baeb69a39ed549ed}{ComputeInternalRadius}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67    \textcolor{keyword}{private}:}
+\DoxyCodeLine{68         G4int   m\_maxindex;}
+\DoxyCodeLine{69     G4int   m\_maxrsectorID;}
+\DoxyCodeLine{70     std::map< G4String , G4int > m\_rsectorID;}
+\DoxyCodeLine{71         \mbox{\hyperlink{classGateCylindricalPETSystemMessenger}{GateCylindricalPETSystemMessenger}}* m\_messenger2;}
+\DoxyCodeLine{72     \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}      *m\_messenger;   }
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+
+\end{DoxyCode}

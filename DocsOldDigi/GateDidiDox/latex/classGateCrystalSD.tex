@@ -1,0 +1,106 @@
+\hypertarget{classGateCrystalSD}{}\doxysection{Gate\+Crystal\+SD Class Reference}
+\label{classGateCrystalSD}\index{GateCrystalSD@{GateCrystalSD}}
+
+
+The \mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} is a sensitive detector , derived from G4\+VSensitive\+Detector,.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Crystal\+SD.\+hh$>$}
+
+Inheritance diagram for Gate\+Crystal\+SD\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateCrystalSD}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateCrystalSD_acadb88510de2c1217fdaa1063737b143}{Gate\+Crystal\+SD}} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_a3427a5fa6d8be54e91681042b4b563ff}\label{classGateCrystalSD_a3427a5fa6d8be54e91681042b4b563ff}} 
+{\bfseries $\sim$\+Gate\+Crystal\+SD} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrystalSD_ab93b67800d046853b9017a4e7f79919f}\label{classGateCrystalSD_ab93b67800d046853b9017a4e7f79919f}} 
+\mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} $\ast$ {\bfseries Clone} () const override
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_a06344216a740fb284a2dd642d7cf72a4}\label{classGateCrystalSD_a06344216a740fb284a2dd642d7cf72a4}} 
+void {\bfseries Initialize} (G4\+HCof\+This\+Event $\ast$HCE) override
+\begin{DoxyCompactList}\small\item\em Method overloading the virtual method \mbox{\hyperlink{classGateCrystalSD_a06344216a740fb284a2dd642d7cf72a4}{Initialize()}} of G4\+VSensitive\+Detector. \end{DoxyCompactList}\item 
+G4bool \mbox{\hyperlink{classGateCrystalSD_ae1b1b455449424a311e855527976a827}{Process\+Hits}} (G4\+Step $\ast$a\+Step, G4\+Touchable\+History $\ast$ROhist) override
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_aa881edbbe9d558391d4e38e739e27b30}\label{classGateCrystalSD_aa881edbbe9d558391d4e38e739e27b30}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries Get\+System} ()
+\begin{DoxyCompactList}\small\item\em Returns the system to which the SD is attached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrystalSD_a520f287ad8dfe42df1e0131fb3ccfd00}\label{classGateCrystalSD_a520f287ad8dfe42df1e0131fb3ccfd00}} 
+void {\bfseries Set\+System} (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$a\+System)
+\begin{DoxyCompactList}\small\item\em Set the system to which the SD is attached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrystalSD_a2e8f75a3fb5b223ddb3085ff9bd5ea58}\label{classGateCrystalSD_a2e8f75a3fb5b223ddb3085ff9bd5ea58}} 
+Gate\+System\+List $\ast$ {\bfseries Get\+System\+List} () const
+\begin{DoxyCompactList}\small\item\em next methods are for the multi-\/system approach \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCrystalSD_aef6f010388c6866841e591d6930ea0a5}\label{classGateCrystalSD_aef6f010388c6866841e591d6930ea0a5}} 
+void {\bfseries Add\+System} (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$a\+System)
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_ab1c0a65b9bb528ead8af34fc1460b67c}\label{classGateCrystalSD_ab1c0a65b9bb528ead8af34fc1460b67c}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries Find\+System} (\mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} volume\+ID)
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_afb4f72d9bfdedd103d121765acc2edfc}\label{classGateCrystalSD_afb4f72d9bfdedd103d121765acc2edfc}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries Find\+System} (G4\+String \&system\+Name)
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_a5f2fb1088a6a0a89aee6e5a0f277fd0a}\label{classGateCrystalSD_a5f2fb1088a6a0a89aee6e5a0f277fd0a}} 
+G4int {\bfseries Prepare\+Creator\+Attachment} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$a\+Creator)
+\begin{DoxyCompactList}\small\item\em Next method underwent an important modification to be compatible with the multi-\/system approach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_ad55c3de2ab14d265d8f6e520f1377b62}\label{classGateCrystalSD_ad55c3de2ab14d265d8f6e520f1377b62}} 
+static const G4\+String \& {\bfseries Get\+Crystal\+Collection\+Name} ()
+\begin{DoxyCompactList}\small\item\em Tool method returning the name of the hit-\/collection where the crystal hits are stored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_add3f55beefa05e427971881aea510cec}\label{classGateCrystalSD_add3f55beefa05e427971881aea510cec}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries m\+\_\+system}
+\item 
+\mbox{\Hypertarget{classGateCrystalSD_ae495a9ecb2cbffe0ea8ea7fae5e6bb50}\label{classGateCrystalSD_ae495a9ecb2cbffe0ea8ea7fae5e6bb50}} 
+Gate\+System\+List $\ast$ {\bfseries m\+\_\+system\+List}
+\begin{DoxyCompactList}\small\item\em System to which the SD is attached //mhadi\+\_\+obso obsollete, because we use the multi-\/system approach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} is a sensitive detector , derived from G4\+VSensitive\+Detector,. 
+
+to be attached to one or more volumes of a scanner
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} -\/ by \href{mailto:Giovanni.Santin@cern.ch}{\texttt{ Giovanni.\+Santin@cern.\+ch}}
+\item A \mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} can be attached to one or more volumes of a scanner. These volumes are essentially meant to be scintillating elements (crystals) but the \mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} can also be attached to non-\/scintillating elements such as collimators, shields or septa.
+\item A \mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} can be attached only to those volumes that belong to a system (i.\+e. that are connected to an object derived from \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}}). Once a \mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} has been attached to a volume that belongs to a given system, it is considered as attached to this system, and can be attached only to volumes that belong to the same system.
+\item The \mbox{\hyperlink{classGateCrystalSD}{Gate\+Crystal\+SD}} generates hits of the class \mbox{\hyperlink{classGateCrystalHit}{Gate\+Crystal\+Hit}}, which are stored in a regular hit collection. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateCrystalSD_acadb88510de2c1217fdaa1063737b143}\label{classGateCrystalSD_acadb88510de2c1217fdaa1063737b143}} 
+\index{GateCrystalSD@{GateCrystalSD}!GateCrystalSD@{GateCrystalSD}}
+\index{GateCrystalSD@{GateCrystalSD}!GateCrystalSD@{GateCrystalSD}}
+\doxysubsubsection{\texorpdfstring{GateCrystalSD()}{GateCrystalSD()}}
+{\footnotesize\ttfamily Gate\+Crystal\+SD\+::\+Gate\+Crystal\+SD (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name }\end{DoxyParamCaption})}
+
+Constructor. The argument is the name of the sensitive detector 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCrystalSD_ae1b1b455449424a311e855527976a827}\label{classGateCrystalSD_ae1b1b455449424a311e855527976a827}} 
+\index{GateCrystalSD@{GateCrystalSD}!ProcessHits@{ProcessHits}}
+\index{ProcessHits@{ProcessHits}!GateCrystalSD@{GateCrystalSD}}
+\doxysubsubsection{\texorpdfstring{ProcessHits()}{ProcessHits()}}
+{\footnotesize\ttfamily G4bool Gate\+Crystal\+SD\+::\+Process\+Hits (\begin{DoxyParamCaption}\item[{G4\+Step $\ast$}]{a\+Step,  }\item[{G4\+Touchable\+History $\ast$}]{ROhist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Implementation of the pure virtual method \mbox{\hyperlink{classGateCrystalSD_ae1b1b455449424a311e855527976a827}{Process\+Hits()}}. This methods generates a \mbox{\hyperlink{classGateCrystalHit}{Gate\+Crystal\+Hit}} and stores it into the SD\textquotesingle{}s hit collection 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Crystal\+SD.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Crystal\+SD.\+cc\end{DoxyCompactItemize}

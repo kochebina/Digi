@@ -1,0 +1,390 @@
+\hypertarget{GateToRoot_8hh_source}{}\doxysection{Gate\+To\+Root.\+hh}
+\label{GateToRoot_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToRoot.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToRoot.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*  Optical Photons: V. Cuplov -\/  2012}}
+\DoxyCodeLine{10 \textcolor{comment}{         -\/ New function RecordOpticalData(event).}}
+\DoxyCodeLine{11 \textcolor{comment}{         -\/ New ntuple for optical photon data is defined in GateToRoot class (previously was in GateFastAnalysis)}}
+\DoxyCodeLine{12 \textcolor{comment}{         -\/ Revision v6.2   2012/07/09  by vesna.cuplov@gmail.com}}
+\DoxyCodeLine{13 \textcolor{comment}{           output ROOT file is dedicated to optical photons}}
+\DoxyCodeLine{14 \textcolor{comment}{         -\/ Revision v6.2   2012/07/24  by vesna.cuplov@gmail.com}}
+\DoxyCodeLine{15 \textcolor{comment}{           Unique output file with Gate default trees (Hits,Singles,Coincidences...) + OpticalData Tree.}}
+\DoxyCodeLine{16 \textcolor{comment}{         -\/ Revision v6.2 2012/08/06  Added optical photon momentum direction (x,y,z) in tree.}}
+\DoxyCodeLine{17 \textcolor{comment}{         -\/ Revision 2012/09/17  /gate/output/root/setRootOpticalFlag functionality added.}}
+\DoxyCodeLine{18 \textcolor{comment}{           Set the flag for Optical ROOT output.}}
+\DoxyCodeLine{19 \textcolor{comment}{         -\/ Revision 2012/11/14  -\/ added new leaves: position (x,y,z) of fluorescent (OpticalWLS process) hits}}
+\DoxyCodeLine{20 \textcolor{comment}{                -\/ Scintillation counter bug-\/fixed}}
+\DoxyCodeLine{21 \textcolor{comment}{*/}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifndef GateToRoot\_H}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define GateToRoot\_H}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}TH1.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}TH2.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}TH3.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}TNtuple.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}TRandom.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}TDirectory.h"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}TBranch.h"{}}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}G4Run.hh"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}G4Step.hh"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include "{}GateRootDefs.hh"{}}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}GateActions.hh"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include "{}GateTrack.hh"{}}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{class }GateToRootMessenger;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{// v. cuplov -\/ optical photons}}
+\DoxyCodeLine{60 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}};}
+\DoxyCodeLine{61 \textcolor{comment}{// v. cuplov -\/ optical photons}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{class }ComptonRayleighData \{}
+\DoxyCodeLine{64 \textcolor{keyword}{public}:}
+\DoxyCodeLine{65     G4int photon1\_phantom\_Rayleigh, photon2\_phantom\_Rayleigh;}
+\DoxyCodeLine{66     G4int photon1\_phantom\_compton, photon2\_phantom\_compton;}
+\DoxyCodeLine{67     Char\_t theComptonVolumeName1[60], theComptonVolumeName2[60], theRayleighVolumeName1[60], theRayleighVolumeName2[60];}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     ComptonRayleighData(ComptonRayleighData \&);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     ComptonRayleighData \&operator=(\textcolor{keyword}{const} ComptonRayleighData \&);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     ComptonRayleighData();}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{77 \textcolor{keyword}{class }GateToRoot : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}} \{}
+\DoxyCodeLine{78 \textcolor{keyword}{public}:}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     GateToRoot(\textcolor{keyword}{const} G4String \&name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}} *outputMgr, DigiMode digiMode);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keyword}{virtual} \string~GateToRoot();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keyword}{const} G4String \&GiveNameOfFile();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *v, \textcolor{keyword}{const} G4Step *);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordtype}{void} RecordDigitizer(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{// v. cuplov -\/ optical photons}}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} RecordOpticalData(\textcolor{keyword}{const} G4Event *event);}
+\DoxyCodeLine{107 \textcolor{comment}{// v. cuplov -\/ optical photons}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} RecordVoxels(\textcolor{keyword}{const} G4Step *);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keywordtype}{void} Book();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} Store();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} Reset();}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     G4int GetRecordFlag() \{ \textcolor{keywordflow}{return} m\_recordFlag; \};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} SetRecordFlag(G4int flag) \{ m\_recordFlag = flag; \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} OpenTracksFile();}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} RecordTracks(\mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}} *);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{keywordtype}{void} RecordRecStepData(\textcolor{keyword}{const} G4Event *evt);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     G4int CheckEOF();}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \mbox{\hyperlink{classGateTrack}{GateTrack}} *GetCurrentTracksData();}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{keywordtype}{void} GetCurrentRecStepData(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     G4int GetHeadNo() \{ \textcolor{keywordflow}{return} m\_currentTracksData; \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordtype}{void} ReadForward() \{ m\_currentTracksData++; \};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keywordtype}{void} ReadBackward() \{}
+\DoxyCodeLine{140         \textcolor{keywordflow}{if} (tracksTuple != 0) \{}
+\DoxyCodeLine{141             \textcolor{keywordflow}{if} (m\_currentTracksData > 0) \{ m\_currentTracksData-\/-\/; \}}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143     \};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keywordtype}{void} CloseTracksRootFile();}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordtype}{void} RecordPHData(ComptonRayleighData aCRData);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordtype}{void} GetPHData(ComptonRayleighData \&aCRData);}
+\DoxyCodeLine{150     \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{153     \textcolor{keyword}{class }VOutputChannel \{}
+\DoxyCodeLine{154     \textcolor{keyword}{public}:}
+\DoxyCodeLine{155         \textcolor{keyword}{inline} VOutputChannel(\textcolor{keyword}{const} G4String \&aCollectionName, G4bool outputFlag)}
+\DoxyCodeLine{156                 : nVerboseLevel(0),}
+\DoxyCodeLine{157                   m\_outputFlag(outputFlag),}
+\DoxyCodeLine{158                   m\_collectionName(aCollectionName),}
+\DoxyCodeLine{159                   m\_collectionID(-\/1) \{\}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161         \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \string~VOutputChannel() \{\}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Clear() = 0;}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordDigitizer() = 0;}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Book() = 0;}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetOutputFlag(G4bool flag) \{ m\_outputFlag = flag; \};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetVerboseLevel(G4int val) \{ nVerboseLevel = val; \};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173         G4int nVerboseLevel;}
+\DoxyCodeLine{174         G4bool m\_outputFlag;}
+\DoxyCodeLine{175         G4String m\_collectionName;}
+\DoxyCodeLine{176         G4int m\_collectionID;}
+\DoxyCodeLine{177     \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{181     \textcolor{keyword}{class }SingleOutputChannel : \textcolor{keyword}{public} VOutputChannel \{}
+\DoxyCodeLine{182     \textcolor{keyword}{public}:}
+\DoxyCodeLine{183         \textcolor{keyword}{inline} SingleOutputChannel(\textcolor{keyword}{const} G4String \&aCollectionName, G4bool outputFlag)}
+\DoxyCodeLine{184                 : VOutputChannel(aCollectionName, outputFlag),}
+\DoxyCodeLine{185                   m\_tree(0) \{ m\_buffer.Clear(); \}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187         \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \string~SingleOutputChannel() \{\}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Clear() \{ m\_buffer.Clear(); \}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Book() \{}
+\DoxyCodeLine{192             m\_collectionID = -\/1;}
+\DoxyCodeLine{193             \textcolor{keywordflow}{if} (m\_outputFlag) \{}
+\DoxyCodeLine{194                 m\_tree = \textcolor{keyword}{new} GateSingleTree(m\_collectionName);}
+\DoxyCodeLine{195                 m\_tree-\/>Init(m\_buffer);}
+\DoxyCodeLine{196             \}}
+\DoxyCodeLine{197         \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199         \textcolor{keywordtype}{void} RecordDigitizer();}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201         GateRootSingleBuffer m\_buffer;}
+\DoxyCodeLine{202         GateSingleTree *m\_tree;}
+\DoxyCodeLine{203     \};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{207     \textcolor{keyword}{class }CoincidenceOutputChannel : \textcolor{keyword}{public} VOutputChannel \{}
+\DoxyCodeLine{208     \textcolor{keyword}{public}:}
+\DoxyCodeLine{209         \textcolor{keyword}{inline} CoincidenceOutputChannel(\textcolor{keyword}{const} G4String \&aCollectionName, G4bool outputFlag)}
+\DoxyCodeLine{210                 : VOutputChannel(aCollectionName, outputFlag),}
+\DoxyCodeLine{211                   m\_tree(0) \{ m\_buffer.Clear(); \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213         \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \string~CoincidenceOutputChannel() \{\}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Clear() \{ m\_buffer.Clear(); \}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Book() \{}
+\DoxyCodeLine{218             m\_collectionID = -\/1;}
+\DoxyCodeLine{219             \textcolor{keywordflow}{if} (m\_outputFlag) \{}
+\DoxyCodeLine{220                 m\_tree = \textcolor{keyword}{new} GateCoincTree(m\_collectionName);}
+\DoxyCodeLine{221                 m\_tree-\/>Init(m\_buffer);}
+\DoxyCodeLine{222             \}}
+\DoxyCodeLine{223         \}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225         \textcolor{keywordtype}{void} RecordDigitizer();}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227         GateRootCoincBuffer m\_buffer;}
+\DoxyCodeLine{228         GateCoincTree *m\_tree;}
+\DoxyCodeLine{229     \};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 }
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238     G4bool GetRootHitFlag() \{ \textcolor{keywordflow}{return} m\_rootHitFlag; \};}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \textcolor{keywordtype}{void} SetRootHitFlag(G4bool flag) \{ m\_rootHitFlag = flag; \};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     G4bool GetRootNtupleFlag() \{ \textcolor{keywordflow}{return} m\_rootNtupleFlag; \};}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     \textcolor{keywordtype}{void} SetRootNtupleFlag(G4bool flag) \{ m\_rootNtupleFlag = flag; \};}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     G4bool GetSaveRndmFlag() \{ \textcolor{keywordflow}{return} m\_saveRndmFlag; \};}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \textcolor{keywordtype}{void} SetSaveRndmFlag(G4bool flag) \{ m\_saveRndmFlag = flag; \};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250     G4bool GetRootOpticalFlag() \{ \textcolor{keywordflow}{return} m\_rootOpticalFlag; \};}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{keywordtype}{void} SetRootOpticalFlag(G4bool flag) \{ m\_rootOpticalFlag = flag; \};}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 }
+\DoxyCodeLine{256     \textcolor{keyword}{const} G4String \&GetFileName() \{ \textcolor{keywordflow}{return} m\_fileName; \};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{comment}{// v. cuplov -\/ m\_fileName from SetFileName is defined without "{}.root"{}}}
+\DoxyCodeLine{259 \textcolor{comment}{// Additionnal root files names will be of the form GateOutPut\_additionnalName.root.}}
+\DoxyCodeLine{260 \textcolor{comment}{// In the previous version of the code, file names would appear as GateOutPut.root\_additionnalName.root}}
+\DoxyCodeLine{262 \textcolor{comment}{}\textcolor{comment}{//  void   SetFileName(const G4String aName)   \{ m\_fileName = aName + "{}.root"{}; \};}}
+\DoxyCodeLine{263     \textcolor{keywordtype}{void} SetFileName(\textcolor{keyword}{const} G4String aName) \{ m\_fileName = aName; \};}
+\DoxyCodeLine{264 \textcolor{comment}{// v. cuplov}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{267     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *GetFilePath() \{ \textcolor{keywordflow}{return} m\_fileName.c\_str(); \};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     \textcolor{keywordtype}{void} SetRndmFreq(G4int val) \{ saveRndm = val; \}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271     G4int GetRndmFreq() \{ \textcolor{keywordflow}{return} saveRndm; \}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273     \textcolor{keywordtype}{void} RegisterNewSingleDigiCollection(\textcolor{keyword}{const} G4String \&aCollectionName, G4bool outputFlag);}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{keywordtype}{void} RegisterNewCoincidenceDigiCollection(\textcolor{keyword}{const} G4String \&aCollectionName, G4bool outputFlag);}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     \textcolor{keywordtype}{void} PrintRecStep();}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279     \textcolor{keywordtype}{void} SetVerboseLevel(G4int val) \{}
+\DoxyCodeLine{280         GateVOutputModule::SetVerboseLevel(val);}
+\DoxyCodeLine{281         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < m\_outputChannelList.size(); ++i)}
+\DoxyCodeLine{282             m\_outputChannelList[i]-\/>SetVerboseLevel(val);}
+\DoxyCodeLine{283     \};}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{keyword}{private}:}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     G4ThreeVector m\_ionDecayPos;}
+\DoxyCodeLine{288     G4ThreeVector m\_positronGenerationPos;}
+\DoxyCodeLine{289     G4ThreeVector m\_positronAnnihilPos;}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291     G4double dxg1, dyg1, dzg1, dxg2, dyg2, dzg2;}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     G4int saveRndm;}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295     G4double latestEventID; \textcolor{comment}{// Used by the gjs an d gjm programs (cluster mode)}}
+\DoxyCodeLine{296     G4double nbPrimaries;}
+\DoxyCodeLine{297     G4double mTimeStop;}
+\DoxyCodeLine{298     G4double mTimeStart;}
+\DoxyCodeLine{299     G4int m\_nb\_of\_hits;}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     G4double m\_positronKinEnergy;}
+\DoxyCodeLine{302     G4int m\_recordFlag;}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304     TFile *m\_hfile; \textcolor{comment}{// the file for histograms, tree ...}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306     GateHitTree *m\_treeHit; \textcolor{comment}{// the tree for hit quantities}}
+\DoxyCodeLine{307     TH1D *m\_total\_nb\_primaries\_hist; \textcolor{comment}{//histogram of total\_nb\_primaries}}
+\DoxyCodeLine{308     TH1D *m\_latest\_event\_ID\_hist;}
+\DoxyCodeLine{309     TDirectory *m\_working\_root\_directory;}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311     GateRootHitBuffer m\_hitBuffer;}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{comment}{// v. cuplov -\/ optical photons}}
+\DoxyCodeLine{314     \mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}} *m\_trajectoryNavigator;}
+\DoxyCodeLine{315     TTree *OpticalTree; \textcolor{comment}{// new tree}}
+\DoxyCodeLine{316     Char\_t NameOfProcessInCrystal[40];}
+\DoxyCodeLine{317     Char\_t NameOfProcessInPhantom[40];}
+\DoxyCodeLine{318 \textcolor{comment}{//  G4int nPhantomOpticalRayleigh;}}
+\DoxyCodeLine{319 \textcolor{comment}{//  G4int nPhantomOpticalMie;}}
+\DoxyCodeLine{320 \textcolor{comment}{//  G4int nPhantomOpticalAbsorption;}}
+\DoxyCodeLine{321 \textcolor{comment}{//  G4int nCrystalOpticalRayleigh;}}
+\DoxyCodeLine{322 \textcolor{comment}{//  G4int nCrystalOpticalMie;}}
+\DoxyCodeLine{323 \textcolor{comment}{//  G4int nCrystalOpticalAbsorption;}}
+\DoxyCodeLine{324     G4int nScintillation, nCrystalOpticalWLS, nPhantomOpticalWLS;}
+\DoxyCodeLine{325     G4int NumCrystalWLS, NumPhantomWLS;}
+\DoxyCodeLine{326     G4double CrystalLastHitPos\_X, CrystalLastHitPos\_Y, CrystalLastHitPos\_Z, CrystalLastHitEnergy;}
+\DoxyCodeLine{327 \textcolor{comment}{//  G4double CrystalAbsorbedPhotonHitPos\_X, CrystalAbsorbedPhotonHitPos\_Y,CrystalAbsorbedPhotonHitPos\_Z;}}
+\DoxyCodeLine{328     G4double PhantomLastHitPos\_X, PhantomLastHitPos\_Y, PhantomLastHitPos\_Z, PhantomLastHitEnergy;}
+\DoxyCodeLine{329 \textcolor{comment}{//  G4double PhantomAbsorbedPhotonHitPos\_X, PhantomAbsorbedPhotonHitPos\_Y,PhantomAbsorbedPhotonHitPos\_Z;}}
+\DoxyCodeLine{330     G4double PhantomWLSPos\_X, PhantomWLSPos\_Y, PhantomWLSPos\_Z;}
+\DoxyCodeLine{331     G4double MomentumDirectionx, MomentumDirectiony, MomentumDirectionz;}
+\DoxyCodeLine{332 \textcolor{comment}{// v. cuplov -\/ optical photons}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     G4int m\_updateROOTmodulo;}
+\DoxyCodeLine{335     G4bool m\_rootHitFlag;}
+\DoxyCodeLine{336     G4bool m\_rootSingleDigiFlag;}
+\DoxyCodeLine{337     G4bool m\_rootCoincDigiFlag;}
+\DoxyCodeLine{338     G4bool m\_rootNtupleFlag;}
+\DoxyCodeLine{339     G4bool m\_saveRndmFlag;}
+\DoxyCodeLine{340     G4bool m\_rootOpticalFlag;}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342     G4String m\_fileName;}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344     GateToRootMessenger *m\_rootMessenger;}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346     std::vector<VOutputChannel *> m\_outputChannelList;}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348     \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{349     G4double m\_positronKinEnergy\_copy;}
+\DoxyCodeLine{350     G4ThreeVector m\_ionDecayPos\_copy;}
+\DoxyCodeLine{351     G4ThreeVector m\_positronGenerationPos\_copy;}
+\DoxyCodeLine{352     G4ThreeVector m\_positronAnnihilPos\_copy;}
+\DoxyCodeLine{353     G4double dxg1\_copy, dyg1\_copy, dzg1\_copy, dxg2\_copy, dyg2\_copy, dzg2\_copy;}
+\DoxyCodeLine{354     G4int m\_RSEventID, m\_RSRunID;}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{357     G4int m\_currentTracksData; \textcolor{comment}{// stores the current index of the Tracks Data when reading Root file in detector mode}}
+\DoxyCodeLine{358     G4int m\_currentRSData; \textcolor{comment}{// stores the current index of the Record Stepping Data when reading Root file in detector mode}}
+\DoxyCodeLine{359     \mbox{\hyperlink{classGateTrack}{GateTrack}} *m\_currentGTrack;  \textcolor{comment}{// in detector mode contains all current Track Data}}
+\DoxyCodeLine{360     G4String fTracksFN;}
+\DoxyCodeLine{361     TFile *m\_TracksFile;}
+\DoxyCodeLine{362     TTree *tracksTuple;}
+\DoxyCodeLine{363     TTree *m\_RecStepTree;}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365     G4int fSkipRecStepData;}
+\DoxyCodeLine{366     Long64\_t last\_RSEventID;}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 \textcolor{comment}{//}}
+\DoxyCodeLine{370 \textcolor{comment}{}\textcolor{comment}{//}}
+\DoxyCodeLine{371     ComptonRayleighData theCRData;}
+\DoxyCodeLine{372     ComptonRayleighData theCRData\_copy;}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374     G4int m\_EOF;  \textcolor{comment}{// 1 if tracks root file end of file is reached}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377     G4int TrackID, ParentID, RunID, EventID;}
+\DoxyCodeLine{378     G4int PDGCode, m\_sourceID;}
+\DoxyCodeLine{379     G4int m\_wasKilled;}
+\DoxyCodeLine{380     G4double posx, posy, posz, MDirectionx, MDirectiony, MDirectionz, Momentumx, Momentumy, Momentumz;}
+\DoxyCodeLine{381     G4double VertexPositionx, VertexPositiony, VertexPositionz, VtxMomDirx, VtxMomDiry, VtxMomDirz, Polarizationx, Polarizationy, Polarizationz;}
+\DoxyCodeLine{382     G4double LTime, GTime, PTime, Energy, KinEnergy, Velocity, VertexKineticEnergy, Weight;}
+\DoxyCodeLine{383     G4double Wavelength;}
+\DoxyCodeLine{384     G4double m\_EventTime;}
+\DoxyCodeLine{385     G4String m\_particleName;}
+\DoxyCodeLine{386     Char\_t m\_volumeName[40], m\_processName[40], m\_parentparticleName[40];}
+\DoxyCodeLine{387     \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{388 \};}
+\DoxyCodeLine{389 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

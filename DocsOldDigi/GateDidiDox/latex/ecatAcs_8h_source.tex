@@ -1,0 +1,79 @@
+\hypertarget{ecatAcs_8h_source}{}\doxysection{ecat\+Acs.\+h}
+\label{ecatAcs_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/ecatAcs.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/ecatAcs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#)ecatAcs.h    1.1 4/13/91 */}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef ecatAcs\_defined}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define ecatAcs\_defined}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define ECAT\_ACS\_SERVER 600000035}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define ECAT\_ACS\_VERSION 1}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define FrameServer 600000037}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define FrameServerVersion 1}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{enum} ECAT\_ACS\_FUNCTIONS \{}
+\DoxyCodeLine{12     ACS\_MAGPIE = 1,}
+\DoxyCodeLine{13     ACS\_ALLOCATE = 1 + 1,}
+\DoxyCodeLine{14     ACS\_DEALLOCATE = 1 + 2,}
+\DoxyCodeLine{15     MCS\_ALLOCATE = 1 + 3,}
+\DoxyCodeLine{16     MCS\_DEALLOCATE = 1 + 4,}
+\DoxyCodeLine{17     ACS\_WHAT\_TIME\_IS\_IT = 1 + 5,}
+\DoxyCodeLine{18     ACS\_FRAME\_COMPLETE = 1 + 6,}
+\DoxyCodeLine{19     ACS\_FRAME\_TRANSFERRED = 1 + 7,}
+\DoxyCodeLine{20     IS\_THIS\_FRAME\_COMPLETE = 1 + 8,}
+\DoxyCodeLine{21     IS\_THIS\_FRAME\_TRANSFERRED = 1 + 9,}
+\DoxyCodeLine{22     RESET\_FRAME\_TRANSFERRED = 1 + 10,}
+\DoxyCodeLine{23     ACS\_IMAGE\_COMPLETE = 1 + 11,}
+\DoxyCodeLine{24     TELL\_ME\_ABOUT\_STUFF = 1 + 12,}
+\DoxyCodeLine{25     STOP\_TELLING\_ME = 1 + 13,}
+\DoxyCodeLine{26     INIT\_MY\_MCS = 1 + 14,}
+\DoxyCodeLine{27     ACQ\_STARTED = 1 + 15,}
+\DoxyCodeLine{28     RFA\_FORMAT\_COMPLETE = 1 + 16,}
+\DoxyCodeLine{29     RFA\_FORMAT\_STARTED = 1 + 17,}
+\DoxyCodeLine{30     IS\_FORMAT\_COMPLETE = 1 + 18,}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} ECAT\_ACS\_FUNCTIONS ECAT\_ACS\_FUNCTIONS;}
+\DoxyCodeLine{33 bool\_t xdr\_ECAT\_ACS\_FUNCTIONS();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{struct }\mbox{\hyperlink{structButtonId}{ButtonId}} \{}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} requestorPid;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{char} *requestedNode;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structButtonId}{ButtonId}} \mbox{\hyperlink{structButtonId}{ButtonId}};}
+\DoxyCodeLine{41 bool\_t xdr\_ButtonId();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{struct }\mbox{\hyperlink{structTIMEX__resp}{TIMEX\_resp}} \{}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} seconds;}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} minute;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} hour;}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} day;}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} month;}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} year;}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structTIMEX__resp}{TIMEX\_resp}} \mbox{\hyperlink{structTIMEX__resp}{TIMEX\_resp}};}
+\DoxyCodeLine{53 bool\_t xdr\_TIMEX\_resp();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{struct }\mbox{\hyperlink{structTELL__ME__args}{TELL\_ME\_args}} \{}
+\DoxyCodeLine{57     \textcolor{keywordtype}{char} *whoIam;}
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} tellMeAboutFrames;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} tellMeAboutImages;}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structTELL__ME__args}{TELL\_ME\_args}} \mbox{\hyperlink{structTELL__ME__args}{TELL\_ME\_args}};}
+\DoxyCodeLine{62 bool\_t xdr\_TELL\_ME\_args();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{struct }\mbox{\hyperlink{structSTOP__TELLING__ME__args}{STOP\_TELLING\_ME\_args}} \{}
+\DoxyCodeLine{66     \textcolor{keywordtype}{char} *whoIam;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} tellMeAboutFrames;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} tellMeAboutImages;}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structSTOP__TELLING__ME__args}{STOP\_TELLING\_ME\_args}} \mbox{\hyperlink{structSTOP__TELLING__ME__args}{STOP\_TELLING\_ME\_args}};}
+\DoxyCodeLine{71 bool\_t xdr\_STOP\_TELLING\_ME\_args();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif ecatAcs\_defined}}
+
+\end{DoxyCode}

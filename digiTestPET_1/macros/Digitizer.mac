@@ -1,0 +1,47 @@
+#/gate/digitizer/verbose 2
+#/gate/digitizer/convertor/verbose  2
+
+
+/gate/digitizer/Singles/insert                        adder
+#/gate/digitizer/Singles/adder/verbose 2
+#/gate/digitizer/Singles/adder/describe
+
+
+#### READOUT
+/gate/digitizer/Singles/insert                        readout
+/gate/digitizer/Singles/readout/setDepth              1
+/gate/digitizer/Singles/readout/setPolicy TakeEnergyWinner
+
+
+/gate/digitizer/Singles/insert                        blurring
+/gate/digitizer/Singles/blurring/setResolution        0.1
+/gate/digitizer/Singles/blurring/setEnergyOfReference 511. keV
+
+#/gate/digitizer/Singles/insert timeResolution 
+#/gate/digitizer/Singles/timeResolution/setTimeResolution 200 ns 
+
+#/gate/digitizer/Singles/insert spblurring 
+#/gate/digitizer/Singles/spblurring/setSpresolution 1 mm 
+#/gate/digitizer/Singles/spblurring/setSpresolutionY 1 mm
+#/gate/digitizer/Singles/spblurring/setSpresolutionZ 1 mm		
+#/gate/digitizer/Singles/spblurring/verbose 0 
+
+#/gate/digitizer/Singles/insert deadtime 
+#/gate/digitizer/Singles/deadtime/setDeadTime 5000. ns 
+#/gate/digitizer/Singles/deadtime/setMode nonparalysable 
+#/gate/digitizer/Singles/deadtime/chooseDTVolume submodule 
+
+#=====================================================
+#	C O I N C I D E N C E    S O R T E R
+#===================================================== 
+
+/gate/digitizer/Coincidences/setWindow          300. ns
+
+/gate/digitizer/Coincidences/minSectorDifference 1
+/gate/digitizer/Coincidences/MultiplesPolicy takeAllGoods
+
+/gate/digitizer/Coincidences/setOffset                 100. ns
+/gate/digitizer/Coincidences/setDepth                1
+
+
+

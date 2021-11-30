@@ -1,0 +1,125 @@
+\hypertarget{dlist_8h_source}{}\doxysection{dlist.\+h}
+\label{dlist_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/dlist.h@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/dlist.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{           List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{     -\/-\/  dlist.h  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{     Luc.Simon@iphe.unil.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{     Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{     Copyright (C) 2003 IPHE/UNIL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{     of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{     Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{     See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{    }}
+\DoxyCodeLine{22 \textcolor{comment}{     Warning : This file is an adaptation of dlist.h found in:}}
+\DoxyCodeLine{23 \textcolor{comment}{     }}
+\DoxyCodeLine{24 \textcolor{comment}{     "{}Mastering Algorithms with C"{}  by Kyle Loudon,  }}
+\DoxyCodeLine{25 \textcolor{comment}{     published by O'Reilly \& Associates.  This}}
+\DoxyCodeLine{26 \textcolor{comment}{     code is under copyright and cannot be included }}
+\DoxyCodeLine{27 \textcolor{comment}{     in any other book, publication,}}
+\DoxyCodeLine{28 \textcolor{comment}{     or  educational product  without  }}
+\DoxyCodeLine{29 \textcolor{comment}{     permission  from  O'Reilly \& Associates.}}
+\DoxyCodeLine{30 \textcolor{comment}{}}
+\DoxyCodeLine{31 \textcolor{comment}{}}
+\DoxyCodeLine{32 \textcolor{comment}{      Description of dlist.h:}}
+\DoxyCodeLine{33 \textcolor{comment}{     Declaration of stuctures used to manage}}
+\DoxyCodeLine{34 \textcolor{comment}{     the doubly-\/linked lists.}}
+\DoxyCodeLine{35 \textcolor{comment}{     }}
+\DoxyCodeLine{36 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{/*****************************************************************************}}
+\DoxyCodeLine{39 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{40 \textcolor{comment}{*  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ dlist.h -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  *}}
+\DoxyCodeLine{41 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{42 \textcolor{comment}{*****************************************************************************/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef DLIST\_H}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define DLIST\_H}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}lmf.h"{}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/*****************************************************************************}}
+\DoxyCodeLine{50 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{51 \textcolor{comment}{*  Define a structure for doubly-\/linked list elements.                       *}}
+\DoxyCodeLine{52 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{53 \textcolor{comment}{*****************************************************************************/}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structDListElmt__}{DListElmt\_}} \{}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} *data;}
+\DoxyCodeLine{58   \textcolor{keyword}{struct }\mbox{\hyperlink{structDListElmt__}{DListElmt\_}} *prev;}
+\DoxyCodeLine{59   \textcolor{keyword}{struct }\mbox{\hyperlink{structDListElmt__}{DListElmt\_}} *next;}
+\DoxyCodeLine{60   u8 CWN;           \textcolor{comment}{/* coincidence with next if 1 */}}
+\DoxyCodeLine{61 \} \mbox{\hyperlink{structDListElmt__}{ELEMENT}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \mbox{\hyperlink{structDListElmt__}{ELEMENT}} *\mbox{\hyperlink{structDListElmt__}{LINK}};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{/*****************************************************************************}}
+\DoxyCodeLine{66 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{67 \textcolor{comment}{*  Define a structure for doubly-\/linked lists.                               *}}
+\DoxyCodeLine{68 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{69 \textcolor{comment}{*****************************************************************************/}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structDList__}{DList\_}} \{}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   int (*match) (\textcolor{keyword}{const} \textcolor{keywordtype}{void} *key1, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *key2);}
+\DoxyCodeLine{76   void (*destroy) (\textcolor{keywordtype}{void} *data);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \mbox{\hyperlink{structDListElmt__}{ELEMENT}} *head;}
+\DoxyCodeLine{79   \mbox{\hyperlink{structDListElmt__}{ELEMENT}} *tail;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \} \mbox{\hyperlink{structDList__}{LIST}};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{comment}{/*****************************************************************************}}
+\DoxyCodeLine{84 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{85 \textcolor{comment}{*  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Public Interface -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  *}}
+\DoxyCodeLine{86 \textcolor{comment}{*                                                                            *}}
+\DoxyCodeLine{87 \textcolor{comment}{*****************************************************************************/}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{          /***    OREILLY Interface    ***/}}
+\DoxyCodeLine{93 \textcolor{keywordtype}{void} dlist\_init(\mbox{\hyperlink{structDList__}{LIST}} * list, \textcolor{keywordtype}{void} (*destroy) (\textcolor{keywordtype}{void} *data));}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{keywordtype}{void} dlist\_destroy(\mbox{\hyperlink{structDList__}{LIST}} * list);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keywordtype}{int} dlist\_ins\_next(\mbox{\hyperlink{structDList__}{LIST}} * list, \mbox{\hyperlink{structDListElmt__}{ELEMENT}} * element, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *data);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keywordtype}{int} dlist\_ins\_prev(\mbox{\hyperlink{structDList__}{LIST}} * list, \mbox{\hyperlink{structDListElmt__}{ELEMENT}} * element, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *data);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{keywordtype}{int} dlist\_remove(\mbox{\hyperlink{structDList__}{LIST}} * list, \mbox{\hyperlink{structDListElmt__}{ELEMENT}} * element, \textcolor{keywordtype}{void} **data);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define dlist\_size(list) ((list)-\/>size)}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define dlist\_head(list) ((list)-\/>head)}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define dlist\_tail(list) ((list)-\/>tail)}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define dlist\_is\_head(element) ((element)-\/>prev == NULL ? 1 : 0)}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define dlist\_is\_tail(element) ((element)-\/>next == NULL ? 1 : 0)}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define dlist\_data(element) ((element)-\/>data)}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define dlist\_next(element) ((element)-\/>next)}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define dlist\_prev(element) ((element)-\/>prev)}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

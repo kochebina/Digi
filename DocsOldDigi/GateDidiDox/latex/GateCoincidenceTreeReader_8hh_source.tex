@@ -1,0 +1,61 @@
+\hypertarget{GateCoincidenceTreeReader_8hh_source}{}\doxysection{Gate\+Coincidence\+Tree\+Reader.\+hh}
+\label{GateCoincidenceTreeReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceTreeReader.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceTreeReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateCoincidenceTreeReader\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateCoincidenceTreeReader\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GateComptonCameraCones.hh"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//root libraries , read Tree}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{11 \textcolor{comment}{//necesario en Ubuntu}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}TSystem.h"{}}}
+\DoxyCodeLine{13 \textcolor{comment}{//Los he tenido que incluir para el isZombie}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}TObject.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateCCRootDefs.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceTreeReader}{GateCoincidenceTreeReader}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{classGateCoincidenceTreeReader}{GateCoincidenceTreeReader}}(\textcolor{keyword}{const} std::string path);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} PrepareAcquisition();}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} LoadCoincData();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} hasNext();}
+\DoxyCodeLine{26     G4int PrepareNextEvent();}
+\DoxyCodeLine{27     \mbox{\hyperlink{classGateComptonCameraCones}{GateComptonCameraCones}} PrepareEndOfEvent();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{private}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{const} std::string filepath;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     TFile * f;}
+\DoxyCodeLine{36     TTree * m\_coincTree;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} nentries;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{int} currentEntry;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} oldCoincID;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \mbox{\hyperlink{classGateCCRootCoincBuffer}{GateCCRootCoincBuffer}}       m\_coincBuffer;}
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateComptonCameraCones}{GateComptonCameraCones}} aCone;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+
+\end{DoxyCode}

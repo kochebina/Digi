@@ -1,0 +1,210 @@
+\hypertarget{classGateExtendedVSource}{}\doxysection{Gate\+Extended\+VSource Class Reference}
+\label{classGateExtendedVSource}\index{GateExtendedVSource@{GateExtendedVSource}}
+
+
+{\ttfamily \#include $<$Gate\+Extended\+VSource.\+hh$>$}
+
+Inheritance diagram for Gate\+Extended\+VSource\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateExtendedVSource}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a7fedfc78be0b4d04ff0c5cc9a21efbad}\label{classGateExtendedVSource_a7fedfc78be0b4d04ff0c5cc9a21efbad}} 
+enum class {\bfseries Model\+Kind} \{ \newline
+{\bfseries Not\+Defined}
+, {\bfseries Single\+Gamma}
+, {\bfseries Para\+Positronium}
+, {\bfseries Ortho\+Positronium}
+, \newline
+{\bfseries Positronium}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateExtendedVSource_ada55d58a81abb1338a9fe04f08a5e7f1}{Gate\+Extended\+VSource}} (G4\+String name)
+\item 
+virtual G4int \mbox{\hyperlink{classGateExtendedVSource_aaab16990edd41786226606ae89a38b48}{Generate\+Primaries}} (G4\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_aaeabb378911a2e81dab2beee4db889f1}{Set\+Enable\+Deexcitation}} (const G4bool \&enable\+\_\+deexcitation)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_a2fd61b89273a1e91c5fe0a6f4b56c35f}{Set\+Fixed\+Emission\+Direction}} (const G4\+Three\+Vector \&fixed\+\_\+emission\+\_\+direction)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_afd36b336cacfc44997273fd05b611682}{Set\+Enable\+Fixed\+Emission\+Direction}} (const G4bool \&enable\+\_\+fixed\+\_\+emission\+\_\+direction)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_a8412f55138fbd438bc07ca31aefe4bc9}{Set\+Emission\+Energy}} (const G4double \&energy)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_acb963f344a1ff971116d1d4fb614206e}{Set\+Seed}} (const G4long \&seed)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_a19f100074fb64dcf222bb426f4f4e393}{Set\+Postronium\+Lifetime}} (const G4\+String \&positronium\+\_\+name, const G4double \&life\+\_\+time)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_aff6188daf4d633dcd5dd46be1b204da3}{Set\+Prompt\+Gamma\+Energy}} (const G4double \&energy)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_a1bdd458b2c34a45979ecb262c856e9fe}{Set\+Positronium\+Fraction}} (const G4\+String \&positronium\+\_\+kind, const G4double \&fraction)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_a66b1ae5db71ef4de5e64521764bc1596}{Set\+Model}} (const G4\+String \&model\+\_\+name)
+\item 
+void \mbox{\hyperlink{classGateExtendedVSource_a4acd206b963a4a0ae30e0325a2a45b0e}{Prepare\+Model}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a71c99a8f1546cee4c33eb19ade66af52}\label{classGateExtendedVSource_a71c99a8f1546cee4c33eb19ade66af52}} 
+\mbox{\hyperlink{classGateGammaEmissionModel}{Gate\+Gamma\+Emission\+Model}} $\ast$ {\bfseries p\+Model} = nullptr
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a544d973efe9c0a780421f2824728f7c0}\label{classGateExtendedVSource_a544d973efe9c0a780421f2824728f7c0}} 
+\mbox{\hyperlink{classGateExtendedVSourceMessenger}{Gate\+Extended\+VSource\+Messenger}} $\ast$ {\bfseries p\+Messenger} = nullptr
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a4e8145b2e21c61223d7a3ce7a5f80f10}\label{classGateExtendedVSource_a4e8145b2e21c61223d7a3ce7a5f80f10}} 
+Model\+Kind {\bfseries f\+Model\+Kind} = Model\+Kind\+::\+Not\+Defined
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_ab33c496176b331116d62d710a3978619}\label{classGateExtendedVSource_ab33c496176b331116d62d710a3978619}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4bool $>$ {\bfseries f\+Enable\+Deexcitation}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a712305e7c566c9f3ea8884a7456b7400}\label{classGateExtendedVSource_a712305e7c566c9f3ea8884a7456b7400}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4\+Three\+Vector $>$ {\bfseries f\+Fixed\+Emission\+Direction}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_acaacc961442cc4b432fb126ff37d92de}\label{classGateExtendedVSource_acaacc961442cc4b432fb126ff37d92de}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4bool $>$ {\bfseries f\+Enable\+Fixed\+Emission\+Direction}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a722a83c3af89bb93a094048138c19659}\label{classGateExtendedVSource_a722a83c3af89bb93a094048138c19659}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4double $>$ {\bfseries f\+Emission\+Energy}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a5e58bae0dd3e07c6fc905bd108c5cdb7}\label{classGateExtendedVSource_a5e58bae0dd3e07c6fc905bd108c5cdb7}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4long $>$ {\bfseries f\+Seed}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a6fcd06e8a4c193d7761e6c7e2162647f}\label{classGateExtendedVSource_a6fcd06e8a4c193d7761e6c7e2162647f}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4double $>$ {\bfseries f\+Para\+Postronium\+Lifetime}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_abe2a713490c3f6c4397724233f204dfa}\label{classGateExtendedVSource_abe2a713490c3f6c4397724233f204dfa}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4double $>$ {\bfseries f\+Ortho\+Postronium\+Lifetime}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_aa15ff40fcdc0885383ca8c242b575d0a}\label{classGateExtendedVSource_aa15ff40fcdc0885383ca8c242b575d0a}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4double $>$ {\bfseries f\+Prompt\+Gamma\+Energy}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a557bba9662e61513307d913459c9ea8b}\label{classGateExtendedVSource_a557bba9662e61513307d913459c9ea8b}} 
+\mbox{\hyperlink{classModelSetting}{Model\+Setting}}$<$ G4double $>$ {\bfseries f\+Para\+Positronium\+Fraction}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_ae62f2000c12dd592512de436e617c489}\label{classGateExtendedVSource_ae62f2000c12dd592512de436e617c489}} 
+const G4\+String {\bfseries k\+Para\+Positronium\+Name} = \char`\"{}p\+Ps\char`\"{}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a45b84370357abf7f51a8213d9482b070}\label{classGateExtendedVSource_a45b84370357abf7f51a8213d9482b070}} 
+const G4\+String {\bfseries k\+Ortho\+Positronium\+Name} = \char`\"{}o\+Ps\char`\"{}
+\item 
+\mbox{\Hypertarget{classGateExtendedVSource_a365f780ed72ea5995788bc60cc789bfc}\label{classGateExtendedVSource_a365f780ed72ea5995788bc60cc789bfc}} 
+G4bool {\bfseries f\+Behave\+Like\+VSource} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Author\+: Mateusz Bała Email\+: \href{mailto:bala.mateusz@gmail.com}{\texttt{ bala.\+mateusz@gmail.\+com}} Organization\+: J-\/\+PET (\href{http://koza.if.uj.edu.pl/pet/}{\texttt{ http\+://koza.\+if.\+uj.\+edu.\+pl/pet/}}) About class\+: Extended version of \mbox{\hyperlink{classGateVSource}{Gate\+VSource}}. It focuses on generating gammas from positronium decay. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateExtendedVSource_ada55d58a81abb1338a9fe04f08a5e7f1}\label{classGateExtendedVSource_ada55d58a81abb1338a9fe04f08a5e7f1}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!GateExtendedVSource@{GateExtendedVSource}}
+\index{GateExtendedVSource@{GateExtendedVSource}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{GateExtendedVSource()}{GateExtendedVSource()}}
+{\footnotesize\ttfamily Gate\+Extended\+VSource\+::\+Gate\+Extended\+VSource (\begin{DoxyParamCaption}\item[{G4\+String}]{name }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Copyright (C)\+: Open\+GATE Collaboration This software is distributed under the terms of the GNU Lesser General Public Licence (LGPL) \hypertarget{classGateExtendedVSource_autotoc_md49}{}\doxysubsubsection{See LICENSE.\+md for further details}\label{classGateExtendedVSource_autotoc_md49}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateExtendedVSource_aaab16990edd41786226606ae89a38b48}\label{classGateExtendedVSource_aaab16990edd41786226606ae89a38b48}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!GeneratePrimaries@{GeneratePrimaries}}
+\index{GeneratePrimaries@{GeneratePrimaries}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{GeneratePrimaries()}{GeneratePrimaries()}}
+{\footnotesize\ttfamily G4int Gate\+Extended\+VSource\+::\+Generate\+Primaries (\begin{DoxyParamCaption}\item[{G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Generate gammas for event 
+
+Reimplemented from \mbox{\hyperlink{classGateVSource_a985e7b0a62bff42b400c97ef3bf71bab}{Gate\+VSource}}.
+
+\mbox{\Hypertarget{classGateExtendedVSource_a4acd206b963a4a0ae30e0325a2a45b0e}\label{classGateExtendedVSource_a4acd206b963a4a0ae30e0325a2a45b0e}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!PrepareModel@{PrepareModel}}
+\index{PrepareModel@{PrepareModel}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{PrepareModel()}{PrepareModel()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Prepare\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prepare model to work -\/ set all settings from user to model \mbox{\Hypertarget{classGateExtendedVSource_a8412f55138fbd438bc07ca31aefe4bc9}\label{classGateExtendedVSource_a8412f55138fbd438bc07ca31aefe4bc9}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetEmissionEnergy@{SetEmissionEnergy}}
+\index{SetEmissionEnergy@{SetEmissionEnergy}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetEmissionEnergy()}{SetEmissionEnergy()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Emission\+Energy (\begin{DoxyParamCaption}\item[{const G4double \&}]{energy }\end{DoxyParamCaption})}
+
+Set single gamma kinetic energy \mbox{\Hypertarget{classGateExtendedVSource_aaeabb378911a2e81dab2beee4db889f1}\label{classGateExtendedVSource_aaeabb378911a2e81dab2beee4db889f1}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetEnableDeexcitation@{SetEnableDeexcitation}}
+\index{SetEnableDeexcitation@{SetEnableDeexcitation}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetEnableDeexcitation()}{SetEnableDeexcitation()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Enable\+Deexcitation (\begin{DoxyParamCaption}\item[{const G4bool \&}]{enable\+\_\+deexcitation }\end{DoxyParamCaption})}
+
+Set enable emission of additional gamma -\/ from deexcitation ( prompt gamma ) \mbox{\Hypertarget{classGateExtendedVSource_afd36b336cacfc44997273fd05b611682}\label{classGateExtendedVSource_afd36b336cacfc44997273fd05b611682}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetEnableFixedEmissionDirection@{SetEnableFixedEmissionDirection}}
+\index{SetEnableFixedEmissionDirection@{SetEnableFixedEmissionDirection}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetEnableFixedEmissionDirection()}{SetEnableFixedEmissionDirection()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Enable\+Fixed\+Emission\+Direction (\begin{DoxyParamCaption}\item[{const G4bool \&}]{enable\+\_\+fixed\+\_\+emission\+\_\+direction }\end{DoxyParamCaption})}
+
+Set enable/disable emission of single gamma with fixed direction \mbox{\Hypertarget{classGateExtendedVSource_a2fd61b89273a1e91c5fe0a6f4b56c35f}\label{classGateExtendedVSource_a2fd61b89273a1e91c5fe0a6f4b56c35f}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetFixedEmissionDirection@{SetFixedEmissionDirection}}
+\index{SetFixedEmissionDirection@{SetFixedEmissionDirection}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetFixedEmissionDirection()}{SetFixedEmissionDirection()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Fixed\+Emission\+Direction (\begin{DoxyParamCaption}\item[{const G4\+Three\+Vector \&}]{fixed\+\_\+emission\+\_\+direction }\end{DoxyParamCaption})}
+
+Set fixed direction of single gamma ( or prompt gamma ) \mbox{\Hypertarget{classGateExtendedVSource_a66b1ae5db71ef4de5e64521764bc1596}\label{classGateExtendedVSource_a66b1ae5db71ef4de5e64521764bc1596}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetModel@{SetModel}}
+\index{SetModel@{SetModel}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetModel()}{SetModel()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Model (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{model\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Set model used for this source. If is not defined then this class will behave like \mbox{\hyperlink{classGateVSource}{Gate\+VSource}}. \mbox{\Hypertarget{classGateExtendedVSource_a1bdd458b2c34a45979ecb262c856e9fe}\label{classGateExtendedVSource_a1bdd458b2c34a45979ecb262c856e9fe}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetPositroniumFraction@{SetPositroniumFraction}}
+\index{SetPositroniumFraction@{SetPositroniumFraction}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetPositroniumFraction()}{SetPositroniumFraction()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Positronium\+Fraction (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{positronium\+\_\+kind,  }\item[{const G4double \&}]{fraction }\end{DoxyParamCaption})}
+
+Set propability of gammas emission from different positronium. 
+\begin{DoxyParams}{Parameters}
+{\em } & positronium\+\_\+kind -\/ positronium name\+: p\+Ps, o\+Ps \\
+\hline
+{\em } & fraction -\/ number in range from 0.\+0 to 1.\+0 You have to call this method for only one kind of positronium -\/ for the second one propability will be calculated as\+: 1.\+0 -\/ fraction. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateExtendedVSource_a19f100074fb64dcf222bb426f4f4e393}\label{classGateExtendedVSource_a19f100074fb64dcf222bb426f4f4e393}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetPostroniumLifetime@{SetPostroniumLifetime}}
+\index{SetPostroniumLifetime@{SetPostroniumLifetime}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetPostroniumLifetime()}{SetPostroniumLifetime()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Postronium\+Lifetime (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{positronium\+\_\+name,  }\item[{const G4double \&}]{life\+\_\+time }\end{DoxyParamCaption})}
+
+Set positronium lifetime -\/ which is included as constant for exponential distribution ( G4\+Rand\+Exponential ) 
+\begin{DoxyParams}{Parameters}
+{\em } & positronium\+\_\+name -\/ for example\+: p\+Ps, o\+Ps \\
+\hline
+{\em } & life\+\_\+time -\/ in ns Lifetime value will have inpact of vertex time set for annihilation gammas \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateExtendedVSource_aff6188daf4d633dcd5dd46be1b204da3}\label{classGateExtendedVSource_aff6188daf4d633dcd5dd46be1b204da3}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetPromptGammaEnergy@{SetPromptGammaEnergy}}
+\index{SetPromptGammaEnergy@{SetPromptGammaEnergy}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetPromptGammaEnergy()}{SetPromptGammaEnergy()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Prompt\+Gamma\+Energy (\begin{DoxyParamCaption}\item[{const G4double \&}]{energy }\end{DoxyParamCaption})}
+
+Set prompt gamma energy ( deexcictation energy ). If user set enable emission of prompt gamma without set prompt energy then il wii be default value used ( deexcitation of Na22 ) \mbox{\Hypertarget{classGateExtendedVSource_acb963f344a1ff971116d1d4fb614206e}\label{classGateExtendedVSource_acb963f344a1ff971116d1d4fb614206e}} 
+\index{GateExtendedVSource@{GateExtendedVSource}!SetSeed@{SetSeed}}
+\index{SetSeed@{SetSeed}!GateExtendedVSource@{GateExtendedVSource}}
+\doxysubsubsection{\texorpdfstring{SetSeed()}{SetSeed()}}
+{\footnotesize\ttfamily void Gate\+Extended\+VSource\+::\+Set\+Seed (\begin{DoxyParamCaption}\item[{const G4long \&}]{seed }\end{DoxyParamCaption})}
+
+Set seed for Randomize.\+hh generatores 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Extended\+VSource.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Extended\+VSource.\+cc\end{DoxyCompactItemize}

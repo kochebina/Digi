@@ -1,0 +1,56 @@
+\hypertarget{GateMultiMaterialThermalActorMessenger_8hh_source}{}\doxysection{Gate\+Multi\+Material\+Thermal\+Actor\+Messenger.\+hh}
+\label{GateMultiMaterialThermalActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMultiMaterialThermalActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMultiMaterialThermalActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class GateMultiMaterialThermalActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)brief This class is the GateMultiMaterialThermalActor messenger. }}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)author fsmekens@gmail.com}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATEMULTIMATERIALTHERMALACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATEMULTIMATERIALTHERMALACTORMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiMaterialThermalActor}{GateMultiMaterialThermalActor}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiMaterialThermalActorMessenger}{GateMultiMaterialThermalActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateMultiMaterialThermalActorMessenger}{GateMultiMaterialThermalActorMessenger}}(\mbox{\hyperlink{classGateMultiMaterialThermalActor}{GateMultiMaterialThermalActor}}* sensor);}
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMultiMaterialThermalActorMessenger}{\string~GateMultiMaterialThermalActorMessenger}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMultiMaterialThermalActorMessenger_ab41045168747bc0022e865da433bd4f7}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateMultiMaterialThermalActor}{GateMultiMaterialThermalActor}} * pThermalActor;}
+\DoxyCodeLine{36   }
+\DoxyCodeLine{37   G4UIcmdWithADoubleAndUnit* pRelaxationTimeCmd;}
+\DoxyCodeLine{38   G4UIcmdWithADouble* pDiffusivityCmd;}
+\DoxyCodeLine{39   G4UIcmdWithABool* pSetPerfusionRateByMaterialCmd;}
+\DoxyCodeLine{40   G4UIcmdWithADouble* pSetPerfusionRateByConstantCmd;}
+\DoxyCodeLine{41   G4UIcmdWithAString* pSetPerfusionRateByImageCmd;}
+\DoxyCodeLine{42   G4UIcmdWithADoubleAndUnit* pBloodDensityCmd;}
+\DoxyCodeLine{43   G4UIcmdWithADouble* pBloodHeatCapacityCmd;}
+\DoxyCodeLine{44   G4UIcmdWithADouble* pTissueHeatCapacityCmd;}
+\DoxyCodeLine{45   G4UIcmdWithABool* pEnableStepDiffusionCmd;}
+\DoxyCodeLine{46   G4UIcmdWithAString* pSetMeasurementFilenameCmd;}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEMULTIMATERIALTHERMALACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{50 }
+
+\end{DoxyCode}

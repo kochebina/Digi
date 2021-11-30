@@ -1,0 +1,40 @@
+\hypertarget{GateRunManagerMessenger_8hh_source}{}\doxysection{Gate\+Run\+Manager\+Messenger.\+hh}
+\label{GateRunManagerMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRunManagerMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRunManagerMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateRunManagerMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateRunManagerMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRunManager}{GateRunManager}};}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRunManagerMessenger}{GateRunManagerMessenger}} : \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20   public :}
+\DoxyCodeLine{21     \mbox{\hyperlink{classGateRunManagerMessenger}{GateRunManagerMessenger}}(\mbox{\hyperlink{classGateRunManager}{GateRunManager}}* );}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateRunManagerMessenger}{\string~GateRunManagerMessenger}}();}
+\DoxyCodeLine{23     }
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{25     }
+\DoxyCodeLine{26   private :}
+\DoxyCodeLine{27     \mbox{\hyperlink{classGateRunManager}{GateRunManager}}* pRunManager;    }
+\DoxyCodeLine{28     G4UIcmdWithoutParameter* pRunInitCmd;}
+\DoxyCodeLine{29     G4UIcmdWithoutParameter* pRunGeomUpdateCmd;}
+\DoxyCodeLine{30     G4UIcmdWithABool* pRunEnableGlobalOutputCmd;  }
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

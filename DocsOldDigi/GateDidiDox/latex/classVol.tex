@@ -1,0 +1,199 @@
+\hypertarget{classVol}{}\doxysection{Vol Class Reference}
+\label{classVol}\index{Vol@{Vol}}
+
+
+{\ttfamily \#include $<$Gate\+DMap\+Vol.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVol_af271014507849fb54d0f66db897073d7}{Vol}} (int sx, int sy, int sz, voxel tcolor)
+\item 
+\mbox{\hyperlink{classVol_ae12b7af1af7ea881638c001c6ac1cc73}{Vol}} (const char $\ast$fname)
+\item 
+\mbox{\Hypertarget{classVol_a415e3971666c4cc9f00ae051e475991f}\label{classVol_a415e3971666c4cc9f00ae051e475991f}} 
+{\bfseries Vol} (const char $\ast$fname, int sx, int sy, int sz, voxel default\+Alpha=0)
+\begin{DoxyCompactList}\small\item\em Constructor to build a volume from a .raw file {\itshape without} size informations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a61caef0dc1ad494474fbf43bf91629fc}\label{classVol_a61caef0dc1ad494474fbf43bf91629fc}} 
+{\bfseries Vol} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a4faf3b5711efac14fbb90b0b85b3e32f}\label{classVol_a4faf3b5711efac14fbb90b0b85b3e32f}} 
+{\bfseries $\sim$\+Vol} ()
+\begin{DoxyCompactList}\small\item\em Destructor (not virtual, so don\textquotesingle{}t inherit this class !) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_af3b2fa886e122086fa69702faaee9dda}\label{classVol_af3b2fa886e122086fa69702faaee9dda}} 
+voxel $\ast$ {\bfseries get\+Data\+Pointer} ()
+\item 
+\mbox{\Hypertarget{classVol_a18d28dc3151c42bc2493124a251ae335}\label{classVol_a18d28dc3151c42bc2493124a251ae335}} 
+{\bfseries Vol} (const \mbox{\hyperlink{classVol}{Vol}} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a8448b70d6bcb1e314f6450a0450909ce}\label{classVol_a8448b70d6bcb1e314f6450a0450909ce}} 
+const \mbox{\hyperlink{classVol}{Vol}} \& {\bfseries operator=} (const \mbox{\hyperlink{classVol}{Vol}} \&)
+\begin{DoxyCompactList}\small\item\em Assignement operator. \end{DoxyCompactList}\item 
+voxel \& \mbox{\hyperlink{classVol_a1d803d35b5234957da4d940a60e8f346}{operator()}} (int x, int y, int z)
+\begin{DoxyCompactList}\small\item\em Operator to access a pixel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_ad2db526bbd7639fddcaa8045ccb66bed}\label{classVol_ad2db526bbd7639fddcaa8045ccb66bed}} 
+voxel {\bfseries operator()} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Operateur to access a pixel when object is const. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_ae97e1cfd62457823b944235948aac6d6}\label{classVol_ae97e1cfd62457823b944235948aac6d6}} 
+voxel {\bfseries get} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Some people could prefer this syntax to get/set a voxel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a5448b3884711fe9bfebe5d86b74ab74e}\label{classVol_a5448b3884711fe9bfebe5d86b74ab74e}} 
+void {\bfseries set} (int x, int y, int z, voxel c)
+\item 
+int \mbox{\hyperlink{classVol_a04b3d2715e0eec5778605ab22134ab40}{dump\+Vol}} (const char $\ast$filename)
+\item 
+int \mbox{\hyperlink{classVol_ab5e9be0d1f96af484e7638461eb19d8d}{dump\+Raw}} (const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classVol_a9a3366835f84a598096e21b56b3decb8}\label{classVol_a9a3366835f84a598096e21b56b3decb8}} 
+bool {\bfseries is\+OK} ()
+\begin{DoxyCompactList}\small\item\em Returns the state of the object (false \+: bad, true \+: ok) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a4d6f3ce27c4ac156e7a4c307467c5a0e}\label{classVol_a4d6f3ce27c4ac156e7a4c307467c5a0e}} 
+\mbox{\hyperlink{classVol}{Vol}} \& {\bfseries operator$\vert$=} (const \mbox{\hyperlink{classVol}{Vol}} \&)
+\begin{DoxyCompactList}\small\item\em vol union \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_aaae7150e54976112eaa9e448ddd39ada}\label{classVol_aaae7150e54976112eaa9e448ddd39ada}} 
+\mbox{\hyperlink{classVol}{Vol}} \& {\bfseries operator\&=} (const \mbox{\hyperlink{classVol}{Vol}} \&)
+\begin{DoxyCompactList}\small\item\em vol and \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_acb980e749289d29c80b7d09be56eede9}\label{classVol_acb980e749289d29c80b7d09be56eede9}} 
+\mbox{\hyperlink{classVol}{Vol}} \& {\bfseries operator-\/=} (const \mbox{\hyperlink{classVol}{Vol}} \&v)
+\begin{DoxyCompactList}\small\item\em vol minus \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a624b180f57c4b1141bef6bac859b24bd}\label{classVol_a624b180f57c4b1141bef6bac859b24bd}} 
+const char $\ast$ {\bfseries get\+Header\+Value} (const char $\ast$type) const
+\begin{DoxyCompactList}\small\item\em Returns NULL if this field is not found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_afea49192846cadfe1e06046aa6804af4}\label{classVol_afea49192846cadfe1e06046aa6804af4}} 
+int {\bfseries get\+Header\+Value\+As\+Double} (const char $\ast$type, double $\ast$dest) const
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero if failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a5a32b33ddd3bf203cf6bc613185fcf8f}\label{classVol_a5a32b33ddd3bf203cf6bc613185fcf8f}} 
+int {\bfseries get\+Header\+Value\+As\+Int} (const char $\ast$type, int $\ast$dest) const
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero if failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_abaff573017451bc30f67e99fe0273d20}\label{classVol_abaff573017451bc30f67e99fe0273d20}} 
+int {\bfseries set\+Header\+Value} (const char $\ast$type, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero on failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a8e2e2d76a2e606a848e51f681b0d03ca}\label{classVol_a8e2e2d76a2e606a848e51f681b0d03ca}} 
+int {\bfseries set\+Header\+Value} (const char $\ast$type, int value)
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero on failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_ab242b5b15b6919e1eb8e2a9716ef97bc}\label{classVol_ab242b5b15b6919e1eb8e2a9716ef97bc}} 
+int {\bfseries set\+Header\+Value} (const char $\ast$type, double value)
+\begin{DoxyCompactList}\small\item\em Returns non-\/zero on failure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVol_a57a5f7d1e1175ecd3c82381e9d99e6a2}{set\+Volume\+Center}} (int x, int y, int z)
+\item 
+\mbox{\Hypertarget{classVol_a7898974e2c9133e9b6f320791ad3622e}\label{classVol_a7898974e2c9133e9b6f320791ad3622e}} 
+void {\bfseries draw\+Axis} ()
+\begin{DoxyCompactList}\small\item\em Draw Axis X, Y and Z. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_af8f82566b4ab855f986d0cf30146f772}\label{classVol_af8f82566b4ab855f986d0cf30146f772}} 
+void {\bfseries invert} ()
+\begin{DoxyCompactList}\small\item\em vol invert (/!\textbackslash{} All colors are lost) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a891d181f50d3a36208716dd7eef1c631}\label{classVol_a891d181f50d3a36208716dd7eef1c631}} 
+void {\bfseries rotate} (double rx, double ry, double rz)
+\begin{DoxyCompactList}\small\item\em rotate image in volume \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a50c57c20fd823e1b162e492b4a8c5613}\label{classVol_a50c57c20fd823e1b162e492b4a8c5613}} 
+void {\bfseries symetry} (int maxx, int maxy, int maxz)
+\begin{DoxyCompactList}\small\item\em will compute the symetry of all positives points in the volume. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVol_ab9f75dba78beb0eed731e92004221c5a}{translate}} (int vx, int vy, int vz)
+\item 
+\mbox{\Hypertarget{classVol_a9357e480f95fc63c9414d0a896a94b61}\label{classVol_a9357e480f95fc63c9414d0a896a94b61}} 
+int {\bfseries sizeX} () const
+\begin{DoxyCompactList}\small\item\em X-\/size of the 3D volume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a1043171995d6f8c7b375d01682f1229f}\label{classVol_a1043171995d6f8c7b375d01682f1229f}} 
+int {\bfseries sizeY} () const
+\begin{DoxyCompactList}\small\item\em Y-\/size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a159e0174c994d10ef9c42eb17a75a69c}\label{classVol_a159e0174c994d10ef9c42eb17a75a69c}} 
+int {\bfseries sizeZ} () const
+\begin{DoxyCompactList}\small\item\em Z-\/sizw. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_ae8d38bb759c88e874181a3861ce1d5dd}\label{classVol_ae8d38bb759c88e874181a3861ce1d5dd}} 
+int {\bfseries minX} () const
+\begin{DoxyCompactList}\small\item\em The least x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a570af113c55d122a9ca38cd2770d9aeb}\label{classVol_a570af113c55d122a9ca38cd2770d9aeb}} 
+int {\bfseries minY} () const
+\begin{DoxyCompactList}\small\item\em The least y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a87ae774c0be621f727da347f8bed7635}\label{classVol_a87ae774c0be621f727da347f8bed7635}} 
+int {\bfseries minZ} () const
+\begin{DoxyCompactList}\small\item\em The least z. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a1c575ca2fc9ebf9b89cba621b033cad6}\label{classVol_a1c575ca2fc9ebf9b89cba621b033cad6}} 
+int {\bfseries maxX} () const
+\begin{DoxyCompactList}\small\item\em The greatest X ( warning \+: it is not included in bounds ) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a928d3513fd8ac6ef4f903ed6ee8fc524}\label{classVol_a928d3513fd8ac6ef4f903ed6ee8fc524}} 
+int {\bfseries maxY} () const
+\begin{DoxyCompactList}\small\item\em The greatest Y ( warning \+: it is not included in bounds ) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a8b0489eeb6af53a554673ad7bc5e9c5c}\label{classVol_a8b0489eeb6af53a554673ad7bc5e9c5c}} 
+int {\bfseries maxZ} () const
+\begin{DoxyCompactList}\small\item\em The greatest Z ( warning \+: it is not included in bounds ) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a7e95a7a5267d98b0ecc60e2643c05cf4}\label{classVol_a7e95a7a5267d98b0ecc60e2643c05cf4}} 
+int {\bfseries cX} () const
+\begin{DoxyCompactList}\small\item\em The X-\/coordinate of the center. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a139e61dce52bcf4dec97e7d2ab3c2bd7}\label{classVol_a139e61dce52bcf4dec97e7d2ab3c2bd7}} 
+int {\bfseries cY} () const
+\begin{DoxyCompactList}\small\item\em The Y-\/coordinate of the center. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a1fea86268970f2dcc8874796948df553}\label{classVol_a1fea86268970f2dcc8874796948df553}} 
+int {\bfseries cZ} () const
+\begin{DoxyCompactList}\small\item\em The Z-\/coordinates of the center. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a4e11507be4709607fe9efead96e6c9bc}\label{classVol_a4e11507be4709607fe9efead96e6c9bc}} 
+bool {\bfseries in\+Bounds} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Returns true if the point is valid for this volume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a9eea7757a41a4eaba0b59955e9ed2f6f}\label{classVol_a9eea7757a41a4eaba0b59955e9ed2f6f}} 
+voxel {\bfseries alpha} () const
+\begin{DoxyCompactList}\small\item\em Returns alpha color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVol_a55744205055cbc6339df22297ce7f3e1}\label{classVol_a55744205055cbc6339df22297ce7f3e1}} 
+int {\bfseries pos\+Of} (int x, int y, int z) const
+\begin{DoxyCompactList}\small\item\em Position of a point in the voxel array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles voxel 3D pictures. It can save them to disk and read them. See test.\+cc for an example of use of this class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVol_af271014507849fb54d0f66db897073d7}\label{classVol_af271014507849fb54d0f66db897073d7}} 
+\index{Vol@{Vol}!Vol@{Vol}}
+\index{Vol@{Vol}!Vol@{Vol}}
+\doxysubsubsection{\texorpdfstring{Vol()}{Vol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vol\+::\+Vol (\begin{DoxyParamCaption}\item[{int}]{sx,  }\item[{int}]{sy,  }\item[{int}]{sz,  }\item[{voxel}]{tcolor }\end{DoxyParamCaption})}
+
+Constructor to create \textquotesingle{}from scratch\textquotesingle{} a new volume. No file is created. \mbox{\Hypertarget{classVol_ae12b7af1af7ea881638c001c6ac1cc73}\label{classVol_ae12b7af1af7ea881638c001c6ac1cc73}} 
+\index{Vol@{Vol}!Vol@{Vol}}
+\index{Vol@{Vol}!Vol@{Vol}}
+\doxysubsubsection{\texorpdfstring{Vol()}{Vol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vol\+::\+Vol (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname }\end{DoxyParamCaption})}
+
+Constructor to build a volume from a .vol file. If filename is \char`\"{}\char`\"{}, stdin is used. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVol_ab5e9be0d1f96af484e7638461eb19d8d}\label{classVol_ab5e9be0d1f96af484e7638461eb19d8d}} 
+\index{Vol@{Vol}!dumpRaw@{dumpRaw}}
+\index{dumpRaw@{dumpRaw}!Vol@{Vol}}
+\doxysubsubsection{\texorpdfstring{dumpRaw()}{dumpRaw()}}
+{\footnotesize\ttfamily int Vol\+::dump\+Raw (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Write this volume object into a .raw file If filanem is \char`\"{}\char`\"{}, stdout is used. Return \texorpdfstring{$>$}{>} 0 if error \mbox{\Hypertarget{classVol_a04b3d2715e0eec5778605ab22134ab40}\label{classVol_a04b3d2715e0eec5778605ab22134ab40}} 
+\index{Vol@{Vol}!dumpVol@{dumpVol}}
+\index{dumpVol@{dumpVol}!Vol@{Vol}}
+\doxysubsubsection{\texorpdfstring{dumpVol()}{dumpVol()}}
+{\footnotesize\ttfamily int Vol\+::dump\+Vol (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Write this volume object into a .vol file. If filename is \char`\"{}\char`\"{}, stdout is used. Return \texorpdfstring{$>$}{>} 0 if error. \mbox{\Hypertarget{classVol_a1d803d35b5234957da4d940a60e8f346}\label{classVol_a1d803d35b5234957da4d940a60e8f346}} 
+\index{Vol@{Vol}!operator()@{operator()}}
+\index{operator()@{operator()}!Vol@{Vol}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily voxel \& Vol\+::operator() (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+Operator to access a pixel. 
+
+Usage \+: myvolume(0, 0, 0) = mycolor; \mbox{\Hypertarget{classVol_a57a5f7d1e1175ecd3c82381e9d99e6a2}\label{classVol_a57a5f7d1e1175ecd3c82381e9d99e6a2}} 
+\index{Vol@{Vol}!setVolumeCenter@{setVolumeCenter}}
+\index{setVolumeCenter@{setVolumeCenter}!Vol@{Vol}}
+\doxysubsubsection{\texorpdfstring{setVolumeCenter()}{setVolumeCenter()}}
+{\footnotesize\ttfamily void Vol\+::set\+Volume\+Center (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+You can set the coordinates of the center of the volume. By default, center is (0, 0, 0). \mbox{\Hypertarget{classVol_ab9f75dba78beb0eed731e92004221c5a}\label{classVol_ab9f75dba78beb0eed731e92004221c5a}} 
+\index{Vol@{Vol}!translate@{translate}}
+\index{translate@{translate}!Vol@{Vol}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void Vol\+::translate (\begin{DoxyParamCaption}\item[{int}]{vx,  }\item[{int}]{vy,  }\item[{int}]{vz }\end{DoxyParamCaption})}
+
+Translate contents of the volume New voxels are transparents 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+DMap\+Vol.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+DMapreadvol.\+cc\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+DMap\+Vol.\+cc\end{DoxyCompactItemize}

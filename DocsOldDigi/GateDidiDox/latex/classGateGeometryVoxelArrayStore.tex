@@ -1,0 +1,253 @@
+\hypertarget{classGateGeometryVoxelArrayStore}{}\doxysection{Gate\+Geometry\+Voxel\+Array\+Store Class Reference}
+\label{classGateGeometryVoxelArrayStore}\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+
+
+This class can read a file with the material info for a matrix of voxels (digital image)  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Geometry\+Voxel\+Array\+Store.\+hh$>$}
+
+Inheritance diagram for Gate\+Geometry\+Voxel\+Array\+Store\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.472868cm]{classGateGeometryVoxelArrayStore}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a7d5525faca03891a6cc12ca4fefeee43}\label{classGateGeometryVoxelArrayStore_a7d5525faca03891a6cc12ca4fefeee43}} 
+{\bfseries Gate\+Geometry\+Voxel\+Array\+Store} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$inserter)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ae62e06af88c5703a126590ca7aba08e5}{Add\+Voxel}} (G4int ix, G4int iy, G4int iz, G4\+Material $\ast$material)
+\begin{DoxyCompactList}\small\item\em it adds an entry in the voxel store \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a85e85e7e08156f5fb232430eddb979a7}{Set\+Voxel\+Material}} (G4int ix, G4int iy, G4int iz, G4\+Material $\ast$material)
+\begin{DoxyCompactList}\small\item\em it sets the material of the voxel in the logical position (ix,iy,iz) \end{DoxyCompactList}\item 
+virtual G4\+Material $\ast$ \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ad4649a45870c315ecbc5d62eee1912fa}{Get\+Voxel\+Material}} (G4int ix, G4int iy, G4int iz)
+\begin{DoxyCompactList}\small\item\em it gives the material of the voxel in the logical position (ix,iy,iz) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a588ae2fec31c38dca8bec0aabae402c0}\label{classGateGeometryVoxelArrayStore_a588ae2fec31c38dca8bec0aabae402c0}} 
+virtual G4\+Material $\ast$ {\bfseries Get\+Voxel\+Material\+\_\+no\+Check} (G4int ix, G4int iy, G4int iz) const
+\begin{DoxyCompactList}\small\item\em it gives the material of the voxel in the logical position (ix,iy,iz) NO CHECK of indices!! \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ G4int $>$ \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a2dfeb02eadad7c0a8d9bdd6c10d50124}{Get\+Voxel}} (G4int index)
+\begin{DoxyCompactList}\small\item\em useful when the voxels have a non cubic distribution\+: in a loop, with this first you get the 3 indices, then with the 3 indices you ask the material \end{DoxyCompactList}\item 
+virtual G4int \mbox{\hyperlink{classGateGeometryVoxelArrayStore_acfae66795d204e19c784ac45c42549d2}{Get\+Number\+Of\+Voxels}} ()
+\begin{DoxyCompactList}\small\item\em give the number of the stored voxels \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ad7f52dcc81b903d197f61b3dfab8af28}{Set\+Voxel\+Nx}} (G4int n)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ac09d9def204daf2e602a45da0e1be11e}{Set\+Voxel\+Ny}} (G4int n)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a397c3b2acf9ad7ada5787a3ec511b158}{Set\+Voxel\+Nz}} (G4int n)
+\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ac637afff0948dde684d35d07bf201a7c}{Describe}} (G4int level)
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a3db77e9601ab498b3a8e3639432069b6}\label{classGateGeometryVoxelArrayStore_a3db77e9601ab498b3a8e3639432069b6}} 
+void {\bfseries Create\+Compressor} ()
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a1dc869c14d7d4c64979ad6726492b105}\label{classGateGeometryVoxelArrayStore_a1dc869c14d7d4c64979ad6726492b105}} 
+void {\bfseries Compress} ()
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a01b10185c9ff49a1f0b981a12f14ba47}\label{classGateGeometryVoxelArrayStore_a01b10185c9ff49a1f0b981a12f14ba47}} 
+const \mbox{\hyperlink{classGateVoxelCompressor}{Gate\+Voxel\+Compressor}} \& {\bfseries Get\+Compressor} () const
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a0489f1be6e055664010f0d1693560c0d}\label{classGateGeometryVoxelArrayStore_a0489f1be6e055664010f0d1693560c0d}} 
+\mbox{\hyperlink{classGateVoxelCompressor}{Gate\+Voxel\+Compressor}} $\ast$ {\bfseries Get\+Compressor\+Ptr} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a5d459d1a1c215cc6694f6d70f0793e52}\label{classGateGeometryVoxelArrayStore_a5d459d1a1c215cc6694f6d70f0793e52}} 
+typedef G4\+Material $\ast$$\ast$ {\bfseries Gate\+Voxel\+Material\+Array}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a5f3b462aaac54f2b5e5122aa03358360}\label{classGateGeometryVoxelArrayStore_a5f3b462aaac54f2b5e5122aa03358360}} 
+G4int {\bfseries Real\+Array\+Index} (G4int ix, G4int iy, G4int iz, G4int nx, G4int ny, G4int nz)
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a4965ad92c6b28a077446ef75b21e05ea}\label{classGateGeometryVoxelArrayStore_a4965ad92c6b28a077446ef75b21e05ea}} 
+G4int {\bfseries Real\+Array\+Index\+\_\+no\+Check} (G4int ix, G4int iy, G4int iz) const
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_accdd6d2bc2699609ff75bc7d668e4106}\label{classGateGeometryVoxelArrayStore_accdd6d2bc2699609ff75bc7d668e4106}} 
+virtual void {\bfseries Update\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em updates the sizes n\+X/n\+Y/nZ. used after reading the file \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a16c0fb44325695c6fe927185b9914869}{Empty\+Store}} ()
+\begin{DoxyCompactList}\small\item\em it deletes all the voxels in the stores, e.\+g. before reading a new file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_afff982f55bafd63d5994ef46cefd644d}\label{classGateGeometryVoxelArrayStore_afff982f55bafd63d5994ef46cefd644d}} 
+virtual void {\bfseries Init\+Store} (Gate\+Voxel\+Material\+Array store, G4int nx, G4int ny, G4int nz)
+\begin{DoxyCompactList}\small\item\em it initializes all the voxels in the stores \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a17476ccbd873c268ce32f064ab76a8f2}\label{classGateGeometryVoxelArrayStore_a17476ccbd873c268ce32f064ab76a8f2}} 
+Gate\+Voxel\+Material\+Array {\bfseries m\+\_\+geometry\+Voxel\+Materials}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_af0a094a1bc5cd63dd0a55befcf6cceef}\label{classGateGeometryVoxelArrayStore_af0a094a1bc5cd63dd0a55befcf6cceef}} 
+\mbox{\hyperlink{classGateVoxelCompressor}{Gate\+Voxel\+Compressor}} $\ast$ {\bfseries m\+\_\+compressor}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a71ca6f650f21d0c53dc2d12877eb4982}\label{classGateGeometryVoxelArrayStore_a71ca6f650f21d0c53dc2d12877eb4982}} 
+class {\bfseries Gate\+Voxel\+Compressor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class can read a file with the material info for a matrix of voxels (digital image) 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateGeometryVoxelArrayStore}{Gate\+Geometry\+Voxel\+Array\+Store}} -\/ by \href{mailto:Giovanni.Santin@cern.ch}{\texttt{ Giovanni.\+Santin@cern.\+ch}}
+\item It reads the image file, asks the translator to convert the digital info into material info, and stores the material information. This material info is used by the Gate\+Voxel\+Replica\+Matrix\+Inserter at the moment of the matrix construction
+\item The translator has to be inserted befor reading the image file
+\item The material information is a 3D array, to speed-\/up the computation
+
+\begin{DoxySeeAlso}{See also}
+Gate\+Geometry\+Voxel\+Array\+Store\+Messenger 
+
+\mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelReader}{Gate\+VSource\+Voxel\+Reader}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_ae62e06af88c5703a126590ca7aba08e5}\label{classGateGeometryVoxelArrayStore_ae62e06af88c5703a126590ca7aba08e5}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!AddVoxel@{AddVoxel}}
+\index{AddVoxel@{AddVoxel}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{AddVoxel()}{AddVoxel()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Array\+Store\+::\+Add\+Voxel (\begin{DoxyParamCaption}\item[{G4int}]{ix,  }\item[{G4int}]{iy,  }\item[{G4int}]{iz,  }\item[{G4\+Material $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+it adds an entry in the voxel store 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelStore_a3b367494c9faf9f0ad661e4234b9cadc}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_ac637afff0948dde684d35d07bf201a7c}\label{classGateGeometryVoxelArrayStore_ac637afff0948dde684d35d07bf201a7c}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!Describe@{Describe}}
+\index{Describe@{Describe}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Array\+Store\+::\+Describe (\begin{DoxyParamCaption}\item[{G4int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a16c0fb44325695c6fe927185b9914869}\label{classGateGeometryVoxelArrayStore_a16c0fb44325695c6fe927185b9914869}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!EmptyStore@{EmptyStore}}
+\index{EmptyStore@{EmptyStore}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{EmptyStore()}{EmptyStore()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Array\+Store\+::\+Empty\+Store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+it deletes all the voxels in the stores, e.\+g. before reading a new file 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelStore_ac4fa447b36d2bc74a25a102c532e9ee8}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_acfae66795d204e19c784ac45c42549d2}\label{classGateGeometryVoxelArrayStore_acfae66795d204e19c784ac45c42549d2}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!GetNumberOfVoxels@{GetNumberOfVoxels}}
+\index{GetNumberOfVoxels@{GetNumberOfVoxels}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfVoxels()}{GetNumberOfVoxels()}}
+{\footnotesize\ttfamily virtual G4int Gate\+Geometry\+Voxel\+Array\+Store\+::\+Get\+Number\+Of\+Voxels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+give the number of the stored voxels 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a2dfeb02eadad7c0a8d9bdd6c10d50124}\label{classGateGeometryVoxelArrayStore_a2dfeb02eadad7c0a8d9bdd6c10d50124}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!GetVoxel@{GetVoxel}}
+\index{GetVoxel@{GetVoxel}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{GetVoxel()}{GetVoxel()}}
+{\footnotesize\ttfamily std\+::vector$<$ G4int $>$ Gate\+Geometry\+Voxel\+Array\+Store\+::\+Get\+Voxel (\begin{DoxyParamCaption}\item[{G4int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+useful when the voxels have a non cubic distribution\+: in a loop, with this first you get the 3 indices, then with the 3 indices you ask the material 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelStore_aeaf848e7a1adfbd31b9bacb2f75b9d2a}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_ad4649a45870c315ecbc5d62eee1912fa}\label{classGateGeometryVoxelArrayStore_ad4649a45870c315ecbc5d62eee1912fa}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!GetVoxelMaterial@{GetVoxelMaterial}}
+\index{GetVoxelMaterial@{GetVoxelMaterial}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{GetVoxelMaterial()}{GetVoxelMaterial()}}
+{\footnotesize\ttfamily G4\+Material $\ast$ Gate\+Geometry\+Voxel\+Array\+Store\+::\+Get\+Voxel\+Material (\begin{DoxyParamCaption}\item[{G4int}]{ix,  }\item[{G4int}]{iy,  }\item[{G4int}]{iz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+it gives the material of the voxel in the logical position (ix,iy,iz) 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelStore_acaf5e6b32e105c5923ef1c1efdbc373f}{Gate\+VGeometry\+Voxel\+Store}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateVGeometryVoxelReader_a05e5366c9792d187b7cc703762022743}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a85e85e7e08156f5fb232430eddb979a7}\label{classGateGeometryVoxelArrayStore_a85e85e7e08156f5fb232430eddb979a7}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!SetVoxelMaterial@{SetVoxelMaterial}}
+\index{SetVoxelMaterial@{SetVoxelMaterial}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{SetVoxelMaterial()}{SetVoxelMaterial()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Array\+Store\+::\+Set\+Voxel\+Material (\begin{DoxyParamCaption}\item[{G4int}]{ix,  }\item[{G4int}]{iy,  }\item[{G4int}]{iz,  }\item[{G4\+Material $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+it sets the material of the voxel in the logical position (ix,iy,iz) 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelStore_a0fb092c6487833ffda3f5c696cc2d01c}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_ad7f52dcc81b903d197f61b3dfab8af28}\label{classGateGeometryVoxelArrayStore_ad7f52dcc81b903d197f61b3dfab8af28}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!SetVoxelNx@{SetVoxelNx}}
+\index{SetVoxelNx@{SetVoxelNx}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{SetVoxelNx()}{SetVoxelNx()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Array\+Store\+::\+Set\+Voxel\+Nx (\begin{DoxyParamCaption}\item[{G4int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_ac09d9def204daf2e602a45da0e1be11e}\label{classGateGeometryVoxelArrayStore_ac09d9def204daf2e602a45da0e1be11e}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!SetVoxelNy@{SetVoxelNy}}
+\index{SetVoxelNy@{SetVoxelNy}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{SetVoxelNy()}{SetVoxelNy()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Array\+Store\+::\+Set\+Voxel\+Ny (\begin{DoxyParamCaption}\item[{G4int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelArrayStore_a397c3b2acf9ad7ada5787a3ec511b158}\label{classGateGeometryVoxelArrayStore_a397c3b2acf9ad7ada5787a3ec511b158}} 
+\index{GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}!SetVoxelNz@{SetVoxelNz}}
+\index{SetVoxelNz@{SetVoxelNz}!GateGeometryVoxelArrayStore@{GateGeometryVoxelArrayStore}}
+\doxysubsubsection{\texorpdfstring{SetVoxelNz()}{SetVoxelNz()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Array\+Store\+::\+Set\+Voxel\+Nz (\begin{DoxyParamCaption}\item[{G4int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Geometry\+Voxel\+Array\+Store.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Geometry\+Voxel\+Array\+Store.\+cc\end{DoxyCompactItemize}

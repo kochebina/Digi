@@ -1,0 +1,97 @@
+\hypertarget{GateGenericWrapperProcess_8hh_source}{}\doxysection{Gate\+Generic\+Wrapper\+Process.\+hh}
+\label{GateGenericWrapperProcess_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateGenericWrapperProcess.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateGenericWrapperProcess.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GenericWrapperProcess}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEGENERICWRAPPERPROCESS\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEGENERICWRAPPERPROCESS\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4WrapperProcess.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateFilterManager.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4EmCalculator.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4MaterialCutsCouple;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGenericWrapperProcess}{GenericWrapperProcess}} : \textcolor{keyword}{public} G4WrapperProcess}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGenericWrapperProcess}{GenericWrapperProcess}}(G4String t);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGenericWrapperProcess}{\string~GenericWrapperProcess}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} G4VParticleChange* \mbox{\hyperlink{classGenericWrapperProcess_a048f93d4b7dded72306c2a59b1cb5323}{PostStepDoIt}}(\textcolor{keyword}{const} G4Track\& track, \textcolor{keyword}{const} G4Step\& step);}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} G4double PostStepGetPhysicalInteractionLength(}
+\DoxyCodeLine{36                              \textcolor{keyword}{const} G4Track\& track,}
+\DoxyCodeLine{37                              G4double   previousStepSize,}
+\DoxyCodeLine{38                              G4ForceCondition* condition}
+\DoxyCodeLine{39                             ) ;  }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} SetSplitFactor(G4double);}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} SetCSEFactor(G4double);}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} SetIsActive(G4bool);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} SetKeepSec(G4bool b)\{mkeepSec=b;\}}
+\DoxyCodeLine{45  \textcolor{comment}{// G4bool AddFilter(G4String filterType );}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47    G4bool GetIsActive();}
+\DoxyCodeLine{48    G4int GetFactor();}
+\DoxyCodeLine{49    G4int GetNSecondaries();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \mbox{\hyperlink{classGateFilterManager}{GateFilterManager}} * GetFilterManagerPrimary()\{\textcolor{keywordflow}{return} pFilterManagerPrimary;\}}
+\DoxyCodeLine{52   \mbox{\hyperlink{classGateFilterManager}{GateFilterManager}} * GetFilterManagerSecondary()\{\textcolor{keywordflow}{return} pFilterManagerSecondary;\}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} IncFilterManagerSecondary()\{mNFilterSecondary++;\}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} IncFilterManagerPrimary()\{mNFilterPrimary++;\}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} SetGenericWrapperProcess(G4String t);}
+\DoxyCodeLine{58   \textcolor{comment}{//G4String GetName()\{return name;\}}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} Initialisation(G4String particleName);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{private}:}
+\DoxyCodeLine{63   \mbox{\hyperlink{classGateFilterManager}{GateFilterManager}} * pFilterManagerPrimary;}
+\DoxyCodeLine{64   \mbox{\hyperlink{classGateFilterManager}{GateFilterManager}} * pFilterManagerSecondary;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   G4EmCalculator * emcalc;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{bool} mCSEnhancement;}
+\DoxyCodeLine{69   \textcolor{keywordtype}{bool} mSplitting;}
+\DoxyCodeLine{70   \textcolor{keywordtype}{bool} mInitCS;}
+\DoxyCodeLine{71   \textcolor{keywordtype}{bool} mRR;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   std::map<G4String,std::vector<double> > theListOfBranchRatioFactor;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   G4int mSplitFactor;}
+\DoxyCodeLine{76   G4int mNSecondaries;}
+\DoxyCodeLine{77   G4bool mActive;}
+\DoxyCodeLine{78   G4double mWeight;}
+\DoxyCodeLine{79   G4int mNFilterPrimary;}
+\DoxyCodeLine{80   G4int mNFilterSecondary;}
+\DoxyCodeLine{81   \textcolor{comment}{//G4String name;}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   G4double mCSEFactor;}
+\DoxyCodeLine{84   G4bool mkeepSec;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keywordtype}{int} mNbins; \textcolor{comment}{//number of bins of the table of cross section ratios in function of energy}}
+\DoxyCodeLine{87   \textcolor{keywordtype}{double} mEneMax; \textcolor{comment}{//maximum energy of the table of cross section ratios in function of energy}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\hypertarget{GateHypeMessenger_8hh_source}{}\doxysection{Gate\+Hype\+Messenger.\+hh}
+\label{GateHypeMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHypeMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHypeMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateHypeMessenger.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATEHYPEMESSENGER\_HH\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATEHYPEMESSENGER\_HH\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHype}{GateHype}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHypeMessenger}{GateHypeMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19   \mbox{\hyperlink{classGateHypeMessenger}{GateHypeMessenger}}(\mbox{\hyperlink{classGateHype}{GateHype}}* itsCreator);}
+\DoxyCodeLine{20   \mbox{\hyperlink{classGateHypeMessenger}{\string~GateHypeMessenger}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateHype}{GateHype}}* GetHypeCreator()}
+\DoxyCodeLine{24     \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateHype}{GateHype}}*)GetVolumeCreator(); \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27   G4UIcmdWithADoubleAndUnit* HypeInnerRCmd;}
+\DoxyCodeLine{28   G4UIcmdWithADoubleAndUnit* HypeOuterRCmd;}
+\DoxyCodeLine{29   G4UIcmdWithADoubleAndUnit* HypeInnerStereoCmd;}
+\DoxyCodeLine{30   G4UIcmdWithADoubleAndUnit* HypeOuterStereoCmd;}
+\DoxyCodeLine{31   G4UIcmdWithADoubleAndUnit* HypeZLengthCmd;}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEHYPEMESSENGER\_HH\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

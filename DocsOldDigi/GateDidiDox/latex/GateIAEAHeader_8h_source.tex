@@ -1,0 +1,162 @@
+\hypertarget{GateIAEAHeader_8h_source}{}\doxysection{Gate\+IAEAHeader.\+h}
+\label{GateIAEAHeader_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAHeader.h@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIAEAHeader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef IAEA\_HEADER}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define IAEA\_HEADER}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* *********************************************************************** */}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}GateIAEARecord.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{// defines}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define SEGMENT\_BEG\_TOKEN '\$'}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define SEGMENT\_END\_TOKEN ':'}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef MAX\_STR\_LEN}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{  \#define MAX\_STR\_LEN 512   }\textcolor{comment}{/* maximum length of a string */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define MAX\_NUMB\_LINES 30   }\textcolor{comment}{/* maximum number of lines in a block */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MAX\_NUMB\_EXTRALONG\_TYPES 3 }\textcolor{comment}{/* maximum number of extra long allowed */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{16 \textcolor{comment}{//  0: User defined generic type}}
+\DoxyCodeLine{17 \textcolor{comment}{//  1: Incremental history number n\_hist}}
+\DoxyCodeLine{18 \textcolor{comment}{//     n\_hist = 0 if previous primary particle scored}}
+\DoxyCodeLine{19 \textcolor{comment}{//     n\_hist > 0 indicates how many primary particle read before the current one}}
+\DoxyCodeLine{20 \textcolor{comment}{//  2: LATCH (EGS)}}
+\DoxyCodeLine{21 \textcolor{comment}{//  3: ILB (PENELOPE) }}
+\DoxyCodeLine{22 \textcolor{comment}{//  more to be defined}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define MAX\_NUMB\_EXTRAFLOAT\_TYPES 3 }\textcolor{comment}{/* maximum number of extra float allowed */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{25  \textcolor{comment}{//  0: User defined generic type}}
+\DoxyCodeLine{26  \textcolor{comment}{//  1: XLAST (x coord. of the last interaction)  }}
+\DoxyCodeLine{27  \textcolor{comment}{//  2: YLAST (y coord. of the last interaction)  }}
+\DoxyCodeLine{28  \textcolor{comment}{//  3: ZLAST (z coord. of the last interaction)  }}
+\DoxyCodeLine{29  \textcolor{comment}{//  more to be defined}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{struct }\mbox{\hyperlink{structiaea__header__type}{iaea\_header\_type}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34   FILE *fheader;}
+\DoxyCodeLine{35   \textcolor{comment}{// ******************************************************************************}}
+\DoxyCodeLine{36   \textcolor{comment}{// 1. PHSP format}}
+\DoxyCodeLine{37   }
+\DoxyCodeLine{38   \textcolor{keywordtype}{int} file\_type;            \textcolor{comment}{// 0 = phsp file ;  1 = phsp generator }}
+\DoxyCodeLine{39   \textcolor{keywordtype}{int} byte\_order;           \textcolor{comment}{// as defined by get\_byte\_order routine}}
+\DoxyCodeLine{40   \textcolor{keywordtype}{int} record\_contents[9];   \textcolor{comment}{// record\_contents[i] = 1 or 0 (variable or constant)}}
+\DoxyCodeLine{41                             \textcolor{comment}{// correspond to the following logical variables :}}
+\DoxyCodeLine{42                             \textcolor{comment}{//             ix,iy,iz,iu.iv,iw;}}
+\DoxyCodeLine{43                             \textcolor{comment}{//       iweight,iextrafloat,iextralong;  }}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{float} record\_constant[7]; \textcolor{comment}{// if record\_contents[i<7] = 0}}
+\DoxyCodeLine{46                             \textcolor{comment}{// then record\_constant[i] contents the constant value}}
+\DoxyCodeLine{47                             \textcolor{comment}{// extra floats and longs are always variable}}
+\DoxyCodeLine{48                             \textcolor{comment}{// so no need to store them}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{comment}{// contains the keyword describing each stored extrafloat}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{int} extrafloat\_contents[NUM\_EXTRA\_FLOAT];}
+\DoxyCodeLine{52   }
+\DoxyCodeLine{53   \textcolor{comment}{// contains the keyword describing each stored extralong}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{int} extralong\_contents[NUM\_EXTRA\_LONG];   }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{int} record\_length;}
+\DoxyCodeLine{57   \textcolor{comment}{//  record\_length = 1 +                                     (particle)}}
+\DoxyCodeLine{58   \textcolor{comment}{//                  4 +                                     (energy)}}
+\DoxyCodeLine{59   \textcolor{comment}{//                  SUM(i=0;i<3) \{record\_contents[i]*4\}     (ix,iy,iz)}}
+\DoxyCodeLine{60   \textcolor{comment}{//                  SUM(i=3;i<6) \{record\_contents[i]*4\}     (iu,iv,iw)}}
+\DoxyCodeLine{61   \textcolor{comment}{//                  record\_contents[6]*4 +                  (iweigth)}}
+\DoxyCodeLine{62   \textcolor{comment}{//                  record\_contents[7]*4 +                  (iextrafloat)}}
+\DoxyCodeLine{63   \textcolor{comment}{//                  record\_contents[8]*4 +                  (iextralong)}}
+\DoxyCodeLine{64   IAEA\_I64 checksum;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{comment}{// ******************************************************************************}}
+\DoxyCodeLine{67   \textcolor{comment}{// 2. Mandatory description of the phsp}}
+\DoxyCodeLine{68   }
+\DoxyCodeLine{69   \textcolor{keywordtype}{char} coordinate\_system\_description[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{comment}{// Counters for phsp file}}
+\DoxyCodeLine{72   IAEA\_I64 orig\_histories;  }
+\DoxyCodeLine{73   IAEA\_I64 nParticles;}
+\DoxyCodeLine{74   IAEA\_I64 particle\_number[MAX\_NUM\_PARTICLES];}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{comment}{// Event generator input file}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{char} input\_file\_for\_event\_generator[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{78   }
+\DoxyCodeLine{79   \textcolor{comment}{// ******************************************************************************}}
+\DoxyCodeLine{80   \textcolor{comment}{// 3. Mandatory additional information}}
+\DoxyCodeLine{81   }
+\DoxyCodeLine{82   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} iaea\_index; \textcolor{comment}{// Agency ID}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{char} title[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{84   }
+\DoxyCodeLine{85   \textcolor{keywordtype}{char} machine\_type[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{86   }
+\DoxyCodeLine{87   \textcolor{keywordtype}{char} MC\_code\_and\_version[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{88   }
+\DoxyCodeLine{89   \textcolor{keywordtype}{float} global\_photon\_energy\_cutoff;}
+\DoxyCodeLine{90   }
+\DoxyCodeLine{91   \textcolor{keywordtype}{float} global\_particle\_energy\_cutoff;}
+\DoxyCodeLine{92   }
+\DoxyCodeLine{93   \textcolor{keywordtype}{char} transport\_parameters[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{comment}{// ******************************************************************************}}
+\DoxyCodeLine{96   \textcolor{comment}{// 4. Optional description}}
+\DoxyCodeLine{97   }
+\DoxyCodeLine{98   \textcolor{keywordtype}{char} beam\_name[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{99   }
+\DoxyCodeLine{100   \textcolor{keywordtype}{char} field\_size[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{101   }
+\DoxyCodeLine{102   \textcolor{keywordtype}{char} nominal\_SSD[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{103   }
+\DoxyCodeLine{104   \textcolor{keywordtype}{char} variance\_reduction\_techniques[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{105   }
+\DoxyCodeLine{106   \textcolor{keywordtype}{char} initial\_source\_description[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108   \textcolor{comment}{// Documentation sub-\/section}}
+\DoxyCodeLine{109   \textcolor{keywordtype}{char} MC\_input\_filename[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{110   }
+\DoxyCodeLine{111   \textcolor{comment}{// Assumed to be the preferred citation}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{char} published\_reference[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1]; }
+\DoxyCodeLine{113   \textcolor{keywordtype}{char} authors[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{114   }
+\DoxyCodeLine{115   \textcolor{keywordtype}{char} institution[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{116   }
+\DoxyCodeLine{117   \textcolor{keywordtype}{char} link\_validation[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \textcolor{keywordtype}{char} additional\_notes[MAX\_STR\_LEN*MAX\_NUMB\_LINES+1];}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{comment}{// ******************************************************************************}}
+\DoxyCodeLine{122   \textcolor{comment}{// 5. Optional statistical information}}
+\DoxyCodeLine{123   \textcolor{keywordtype}{double} averageKineticEnergy[MAX\_NUM\_PARTICLES];}
+\DoxyCodeLine{124   \textcolor{keywordtype}{double} sumParticleWeight[MAX\_NUM\_PARTICLES];}
+\DoxyCodeLine{125   \textcolor{keywordtype}{double} maximumKineticEnergy[MAX\_NUM\_PARTICLES];}
+\DoxyCodeLine{126   \textcolor{keywordtype}{double} minimumKineticEnergy[MAX\_NUM\_PARTICLES];}
+\DoxyCodeLine{127   \textcolor{keywordtype}{double} minimumX, maximumX;}
+\DoxyCodeLine{128   \textcolor{keywordtype}{double} minimumY, maximumY;}
+\DoxyCodeLine{129   \textcolor{keywordtype}{double} minimumZ, maximumZ;  }
+\DoxyCodeLine{130   \textcolor{keywordtype}{double} minimumWeight[MAX\_NUM\_PARTICLES];}
+\DoxyCodeLine{131   \textcolor{keywordtype}{double} maximumWeight[MAX\_NUM\_PARTICLES];  }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133   IAEA\_I64 read\_indep\_histories;  }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{// CLASS FUNCTIONS}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{public}:}
+\DoxyCodeLine{138       \textcolor{keywordtype}{int} read\_header();}
+\DoxyCodeLine{139       \textcolor{keywordtype}{int} write\_header();}
+\DoxyCodeLine{140       \textcolor{keywordtype}{int} print\_header();}
+\DoxyCodeLine{141       \textcolor{keywordtype}{int} set\_record\_contents(\mbox{\hyperlink{structiaea__record__type}{iaea\_record\_type}} *p\_iaea\_record);}
+\DoxyCodeLine{142       \textcolor{keywordtype}{int} get\_record\_contents(\mbox{\hyperlink{structiaea__record__type}{iaea\_record\_type}} *p\_iaea\_record);}
+\DoxyCodeLine{143       \textcolor{keywordtype}{void} initialize\_counters();}
+\DoxyCodeLine{144       \textcolor{keywordtype}{void} update\_counters(\mbox{\hyperlink{structiaea__record__type}{iaea\_record\_type}} *p\_iaea\_record);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{keyword}{private}:}
+\DoxyCodeLine{147       \textcolor{keywordtype}{int} read\_block(\textcolor{keywordtype}{char} *lineread,\textcolor{keywordtype}{char} *blockname);}
+\DoxyCodeLine{148       \textcolor{keywordtype}{int} get\_block(\textcolor{keywordtype}{char} *lineread);}
+\DoxyCodeLine{149       \textcolor{keywordtype}{int} get\_blockname(\textcolor{keywordtype}{char} *\mbox{\hyperlink{structline}{line}}, \textcolor{keywordtype}{char} *blockname);}
+\DoxyCodeLine{150       \textcolor{keywordtype}{int} write\_blockname(\textcolor{keywordtype}{char} *blockname);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152       \textcolor{keywordtype}{int} check\_byte\_order();}
+\DoxyCodeLine{153       \textcolor{keywordtype}{void} print\_statistics();}
+\DoxyCodeLine{154 \};}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

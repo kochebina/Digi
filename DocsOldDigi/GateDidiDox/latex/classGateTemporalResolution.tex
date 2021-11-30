@@ -1,0 +1,83 @@
+\hypertarget{classGateTemporalResolution}{}\doxysection{Gate\+Temporal\+Resolution Class Reference}
+\label{classGateTemporalResolution}\index{GateTemporalResolution@{GateTemporalResolution}}
+
+
+Pulse-\/processor modeling a \mbox{\hyperlink{classGaussian}{Gaussian}} blurring on the time of the pulse.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Temporal\+Resolution.\+hh$>$}
+
+Inheritance diagram for Gate\+Temporal\+Resolution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateTemporalResolution}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTemporalResolution_af66238a2e8bf50835e0234de9c9b590b}\label{classGateTemporalResolution_af66238a2e8bf50835e0234de9c9b590b}} 
+{\bfseries Gate\+Temporal\+Resolution} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name=the\+Type\+Name, G4double its\+Time\+Resolution=0.)
+\begin{DoxyCompactList}\small\item\em Constructs a new temporal resolution attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTemporalResolution_a1b610a6a036295fc23fb63c7a64252db}\label{classGateTemporalResolution_a1b610a6a036295fc23fb63c7a64252db}} 
+virtual {\bfseries $\sim$\+Gate\+Temporal\+Resolution} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTemporalResolution_a027db634eb3974b006a5e1215ce868cf}\label{classGateTemporalResolution_a027db634eb3974b006a5e1215ce868cf}} 
+G4double {\bfseries Get\+Time\+Resolution} ()
+\begin{DoxyCompactList}\small\item\em Returns the time resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTemporalResolution_abb4817158ef39bf933489459a7f7ec97}\label{classGateTemporalResolution_abb4817158ef39bf933489459a7f7ec97}} 
+void {\bfseries Set\+Time\+Resolution} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the time resolution. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateTemporalResolution_a29ca2b4e351630293c113444e27e74e0}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateTemporalResolution_a3692b376cb98e4ac8696438cb484ec0a}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modeling a \mbox{\hyperlink{classGaussian}{Gaussian}} blurring on the time of the pulse. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateTemporalResolution}{Gate\+Temporal\+Resolution}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (July 2003)
+\item The operator chooses the time resolution of the detection chain. This resolution is equivalent to the FWHM of the \mbox{\hyperlink{classGaussian}{Gaussian}} distribution.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateTemporalResolution_a29ca2b4e351630293c113444e27e74e0}\label{classGateTemporalResolution_a29ca2b4e351630293c113444e27e74e0}} 
+\index{GateTemporalResolution@{GateTemporalResolution}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateTemporalResolution@{GateTemporalResolution}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Temporal\+Resolution\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the time\+Resolutioner 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateTemporalResolution_a3692b376cb98e4ac8696438cb484ec0a}\label{classGateTemporalResolution_a3692b376cb98e4ac8696438cb484ec0a}} 
+\index{GateTemporalResolution@{GateTemporalResolution}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateTemporalResolution@{GateTemporalResolution}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Temporal\+Resolution\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Temporal\+Resolution.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Temporal\+Resolution.\+cc\end{DoxyCompactItemize}

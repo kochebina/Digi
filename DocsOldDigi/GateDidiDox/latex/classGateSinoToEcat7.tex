@@ -1,0 +1,218 @@
+\hypertarget{classGateSinoToEcat7}{}\doxysection{Gate\+Sino\+To\+Ecat7 Class Reference}
+\label{classGateSinoToEcat7}\index{GateSinoToEcat7@{GateSinoToEcat7}}
+Inheritance diagram for Gate\+Sino\+To\+Ecat7\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateSinoToEcat7}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_a1d154b8657c29e12177a833979e3fe93}\label{classGateSinoToEcat7_a1d154b8657c29e12177a833979e3fe93}} 
+{\bfseries Gate\+Sino\+To\+Ecat7} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, \mbox{\hyperlink{classGateEcatSystem}{Gate\+Ecat\+System}} $\ast$its\+System, Digi\+Mode digi\+Mode)
+\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_ac9d6209b3600758970206c13c131eb02}\label{classGateSinoToEcat7_ac9d6209b3600758970206c13c131eb02}} 
+virtual {\bfseries $\sim$\+Gate\+Sino\+To\+Ecat7} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const G4\+String \& \mbox{\hyperlink{classGateSinoToEcat7_a22b42dfcdb75808c64b82cf758a50b07}{Give\+Name\+Of\+File}} ()
+\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_af3235d8b963de7acdfe15f1b06ee7cef}{Record\+Begin\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em It opens the ECAT7 file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_a254bb87b50226d93b0349f559e48ca07}{Record\+End\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em It closes the ECAT7 file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_ade8aa336615263e2a7d5de0b266f765d}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Reset the data array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_a8566dd35c6d6f2dc2b388dea224b7d7d}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Saves the latest results. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_ac5ae127ea8636f8b99ca27a9825148b6}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)
+\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_a42271faa321734d1c990784394294253}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)
+\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_a48ea8cf82db0b1b7ffe84ceae5220a3c}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_aef1c5cd7d703700bca88a96970902440}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)
+\begin{DoxyCompactList}\small\item\em saves the geometry voxel information \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_a6b6e749f80629f42a4ff42a1ca2c0d16}\label{classGateSinoToEcat7_a6b6e749f80629f42a4ff42a1ca2c0d16}} 
+const G4\+String \& {\bfseries Get\+File\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the output file name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_abf0935635fa55ca5108d2adb3854e248}\label{classGateSinoToEcat7_abf0935635fa55ca5108d2adb3854e248}} 
+void {\bfseries Set\+File\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Set the output file name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_a6365534a4470edbed9be122faa3b338f}\label{classGateSinoToEcat7_a6365534a4470edbed9be122faa3b338f}} 
+void {\bfseries Set\+Mashing} (const G4int a\+Number)
+\begin{DoxyCompactList}\small\item\em Set azimutal mashing factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_a64767214ac8dca2cd167d2d04e1d32b5}\label{classGateSinoToEcat7_a64767214ac8dca2cd167d2d04e1d32b5}} 
+void {\bfseries Set\+Span} (const G4int a\+Number)
+\begin{DoxyCompactList}\small\item\em Set span factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_a81d7aba4ca0955a40df0ceaaca62b84b}\label{classGateSinoToEcat7_a81d7aba4ca0955a40df0ceaaca62b84b}} 
+void {\bfseries Set\+Max\+Ring\+Diff} (const G4int a\+Number)
+\begin{DoxyCompactList}\small\item\em Set maximum ring difference. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_a9934bcf7c43fcac4f87f08f34341c631}\label{classGateSinoToEcat7_a9934bcf7c43fcac4f87f08f34341c631}} 
+void {\bfseries Set\+Ecat\+Camera\+Number} (const G4int a\+Number)
+\begin{DoxyCompactList}\small\item\em Set ECAT camera number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_af3a39a715002b429ddc27be0d30c739a}\label{classGateSinoToEcat7_af3a39a715002b429ddc27be0d30c739a}} 
+void {\bfseries Set\+Isotope\+Code} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Set the isotope code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_ad7760864eb5d2e9577a76ba9f92f2763}\label{classGateSinoToEcat7_ad7760864eb5d2e9577a76ba9f92f2763}} 
+void {\bfseries Set\+Isotope\+Halflife} (const G4double a\+Number)
+\begin{DoxyCompactList}\small\item\em Set the isotope half-\/life. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_a64f0ada00be667fd4c5f2b01a1ea12e4}\label{classGateSinoToEcat7_a64f0ada00be667fd4c5f2b01a1ea12e4}} 
+void {\bfseries Set\+Isotope\+Branching\+Fraction} (const G4double a\+Number)
+\begin{DoxyCompactList}\small\item\em Set the isotope branching fraction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_a4b32ef88f4ba4f1a260dc42b78e21178}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinoToEcat7_acd2c89899b1024fb665046643c287c4b}\label{classGateSinoToEcat7_acd2c89899b1024fb665046643c287c4b}} 
+void {\bfseries Fill\+Main\+Header} ()
+\begin{DoxyCompactList}\small\item\em Fill the main header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSinoToEcat7_ac05bc8df2d281d5ef8f0800e35f4438e}{Fill\+Data}} (\mbox{\hyperlink{classGateSinogram}{Gate\+Sinogram}} $\ast$m\+\_\+sinogram)
+\begin{DoxyCompactList}\small\item\em Write the GATE specific scanner information into the main header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSinoToEcat7_a4b32ef88f4ba4f1a260dc42b78e21178}\label{classGateSinoToEcat7_a4b32ef88f4ba4f1a260dc42b78e21178}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!Describe@{Describe}}
+\index{Describe@{Describe}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_ac05bc8df2d281d5ef8f0800e35f4438e}\label{classGateSinoToEcat7_ac05bc8df2d281d5ef8f0800e35f4438e}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!FillData@{FillData}}
+\index{FillData@{FillData}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{FillData()}{FillData()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Fill\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateSinogram}{Gate\+Sinogram}} $\ast$}]{m\+\_\+sinogram }\end{DoxyParamCaption})}
+
+
+
+Write the GATE specific scanner information into the main header. 
+
+Fill the sub-\/header and data \mbox{\Hypertarget{classGateSinoToEcat7_a22b42dfcdb75808c64b82cf758a50b07}\label{classGateSinoToEcat7_a22b42dfcdb75808c64b82cf758a50b07}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!GiveNameOfFile@{GiveNameOfFile}}
+\index{GiveNameOfFile@{GiveNameOfFile}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{GiveNameOfFile()}{GiveNameOfFile()}}
+{\footnotesize\ttfamily const G4\+String \& Gate\+Sino\+To\+Ecat7\+::\+Give\+Name\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_af3235d8b963de7acdfe15f1b06ee7cef}\label{classGateSinoToEcat7_af3235d8b963de7acdfe15f1b06ee7cef}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+It opens the ECAT7 file. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_ac5ae127ea8636f8b99ca27a9825148b6}\label{classGateSinoToEcat7_ac5ae127ea8636f8b99ca27a9825148b6}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_ade8aa336615263e2a7d5de0b266f765d}\label{classGateSinoToEcat7_ade8aa336615263e2a7d5de0b266f765d}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the data array. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_a254bb87b50226d93b0349f559e48ca07}\label{classGateSinoToEcat7_a254bb87b50226d93b0349f559e48ca07}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+It closes the ECAT7 file. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_a42271faa321734d1c990784394294253}\label{classGateSinoToEcat7_a42271faa321734d1c990784394294253}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_a8566dd35c6d6f2dc2b388dea224b7d7d}\label{classGateSinoToEcat7_a8566dd35c6d6f2dc2b388dea224b7d7d}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the latest results. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_a48ea8cf82db0b1b7ffe84ceae5220a3c}\label{classGateSinoToEcat7_a48ea8cf82db0b1b7ffe84ceae5220a3c}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateSinoToEcat7_aef1c5cd7d703700bca88a96970902440}\label{classGateSinoToEcat7_aef1c5cd7d703700bca88a96970902440}} 
+\index{GateSinoToEcat7@{GateSinoToEcat7}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateSinoToEcat7@{GateSinoToEcat7}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily void Gate\+Sino\+To\+Ecat7\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+saves the geometry voxel information 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Sino\+To\+Ecat7.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Sino\+To\+Ecat7.\+cc\end{DoxyCompactItemize}

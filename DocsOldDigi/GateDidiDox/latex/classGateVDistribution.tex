@@ -1,0 +1,62 @@
+\hypertarget{classGateVDistribution}{}\doxysection{Gate\+VDistribution Class Reference}
+\label{classGateVDistribution}\index{GateVDistribution@{GateVDistribution}}
+
+
+A generic one variable distribution.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VDistribution.\+hh$>$}
+
+Inheritance diagram for Gate\+VDistribution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.574713cm]{classGateVDistribution}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVDistribution_ab53954748b03df7883088cc5fcf52cd2}\label{classGateVDistribution_ab53954748b03df7883088cc5fcf52cd2}} 
+{\bfseries Gate\+VDistribution} (const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVDistribution_a8ad754e3c015ac55ea3d34ade7db40c9}\label{classGateVDistribution_a8ad754e3c015ac55ea3d34ade7db40c9}} 
+virtual {\bfseries $\sim$\+Gate\+VDistribution} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVDistribution_a2e0f0a9c2f6184af36140fdb10b4b3a0}\label{classGateVDistribution_a2e0f0a9c2f6184af36140fdb10b4b3a0}} 
+virtual G4double {\bfseries MinX} () const =0
+\item 
+\mbox{\Hypertarget{classGateVDistribution_a9ad733d1ff787b93de84b7bb92980ce3}\label{classGateVDistribution_a9ad733d1ff787b93de84b7bb92980ce3}} 
+virtual G4double {\bfseries MinY} () const =0
+\item 
+\mbox{\Hypertarget{classGateVDistribution_ae30a097ea11aa51b0eb8f4504afb2c87}\label{classGateVDistribution_ae30a097ea11aa51b0eb8f4504afb2c87}} 
+virtual G4double {\bfseries MaxX} () const =0
+\item 
+\mbox{\Hypertarget{classGateVDistribution_a45f9812801b07581a919aacf3387137c}\label{classGateVDistribution_a45f9812801b07581a919aacf3387137c}} 
+virtual G4double {\bfseries MaxY} () const =0
+\item 
+\mbox{\Hypertarget{classGateVDistribution_a132564e141fabb0fe5ae7f9a27fd1c60}\label{classGateVDistribution_a132564e141fabb0fe5ae7f9a27fd1c60}} 
+virtual G4double {\bfseries Value} (G4double x) const =0
+\item 
+\mbox{\Hypertarget{classGateVDistribution_aadf584f0eb72ddc2e28b4b66154d0036}\label{classGateVDistribution_aadf584f0eb72ddc2e28b4b66154d0036}} 
+virtual G4double {\bfseries Shoot\+Random} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A generic one variable distribution. 
+
+\mbox{\hyperlink{classGateVDistribution}{Gate\+VDistribution}} -\/ by \href{mailto:dguez@cea.fr}{\texttt{ dguez@cea.\+fr}} This class is the basic class for any distribution description All distribution classes must be able to provide
+\begin{DoxyItemize}
+\item a definition domain \mbox{[} Min\+X() ; Max\+X() \mbox{]}
+\item an image range \mbox{[} Min\+Y() ; Max\+Y() \mbox{]}
+\item the value @ each point of the definition domain \+: Get\+Value()
+\item shoot a random value according to the described distribution \+: Shoot\+Random() in case of non-\/normalized distribution, the shoot must be done following the normalized version.... 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+VDistribution.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+VDistribution.\+cc\end{DoxyCompactItemize}

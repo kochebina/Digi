@@ -1,0 +1,73 @@
+\hypertarget{GateEccentRotMove_8hh_source}{}\doxysection{Gate\+Eccent\+Rot\+Move.\+hh}
+\label{GateEccentRotMove_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEccentRotMove.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEccentRotMove.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateEccentRotMove\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateEccentRotMove\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4Point3D.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4Transform3D.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEccentRotMoveMessenger}{GateEccentRotMoveMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEccentRotMove}{GateEccentRotMove}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43   \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{classGateEccentRotMove_a93384761ef33b4c6eb00ae8e2e146bc1}{GateEccentRotMove}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{49               \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}EccentRot"{}},}
+\DoxyCodeLine{50               \textcolor{keyword}{const} G4ThreeVector\& itsShift=G4ThreeVector(0.,0.,0.),}
+\DoxyCodeLine{51               \textcolor{keywordtype}{double} itsVelocity=0.);}
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEccentRotMove_a45487e35cf4fbde08d044ce24af7e558}{\string~GateEccentRotMove}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{65      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEccentRotMove_ac2c39f5db4a8692d104afc05bbe752d1}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{66                                       \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{67                           G4double aTime);}
+\DoxyCodeLine{73      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEccentRotMove_acb13a62a1b091cf45380225b68bd51bb}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{74      }
+\DoxyCodeLine{75   \textcolor{keyword}{public}:}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateEccentRotMove_aac3d0424e6d4c06c65fbae8f66cdcc6b}{GetShift}}() }
+\DoxyCodeLine{81           \{ \textcolor{keywordflow}{return} m\_shift;\}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateEccentRotMove_a566e831796c21ffb257c54133d4c362e}{GetVelocity}}() }
+\DoxyCodeLine{85           \{ \textcolor{keywordflow}{return} m\_velocity;\}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{88     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateEccentRotMove_afa14524c1c574957ac83999d40872c94}{GetCurrentAngle}}() }
+\DoxyCodeLine{89           \{ \textcolor{keywordflow}{return} m\_currentAngle;\}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEccentRotMove_a5e9ec1eaab7644c586262a40685abd19}{SetShift}}(\textcolor{keyword}{const} G4ThreeVector\& val) }
+\DoxyCodeLine{94           \{ m\_shift = val; \}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEccentRotMove_a983c6102e56f94c2b45327c7850afbc2}{SetVelocity}}(\textcolor{keywordtype}{double} val) }
+\DoxyCodeLine{97           \{ m\_velocity = val;  \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keyword}{private}:}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     G4ThreeVector m\_shift;                }
+\DoxyCodeLine{104     G4double m\_velocity;                  }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107     }
+\DoxyCodeLine{109     G4double m\_currentAngle;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112     \mbox{\hyperlink{classGateEccentRotMoveMessenger}{GateEccentRotMoveMessenger}}* m\_Messenger; }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 }
+
+\end{DoxyCode}

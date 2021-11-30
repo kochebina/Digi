@@ -1,0 +1,70 @@
+\hypertarget{GateVDistributionArray_8hh_source}{}\doxysection{Gate\+VDistribution\+Array.\+hh}
+\label{GateVDistributionArray_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVDistributionArray.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVDistributionArray.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVDistributionArray\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVDistributionArray\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVDistribution.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistributionArray}{GateVDistributionArray}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18   \textcolor{keyword}{public}:}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21     \mbox{\hyperlink{classGateVDistributionArray_afb8456d08da663b1f0b90ef2df57c59d}{GateVDistributionArray}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVDistributionArray_ab20c75c133ed2989ba6c950b3eecec69}{\string~GateVDistributionArray}}() ;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{27     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVDistributionArray_ab4982945ca64084e5fc5102dff7a4d97}{SetFactorX}}(G4double factor) \{m\_factorX=factor;\}}
+\DoxyCodeLine{28     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetFactorY(G4double factor) \{m\_factorY=factor;\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     G4double Integral()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_arrayRepartition.back();\}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} G4double MinX() \textcolor{keyword}{const};}
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} G4double MinY() \textcolor{keyword}{const};}
+\DoxyCodeLine{34     \textcolor{keyword}{virtual} G4double MaxX() \textcolor{keyword}{const};}
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} G4double MaxY() \textcolor{keyword}{const};}
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} G4double Value(G4double x) \textcolor{keyword}{const};}
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} G4double RepartitionValue(G4double x) \textcolor{keyword}{const};}
+\DoxyCodeLine{38     \textcolor{comment}{// Returns a random number following the current distribution}}
+\DoxyCodeLine{39     \textcolor{comment}{// should be optimised according to each distrbution type}}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} G4double ShootRandom() \textcolor{keyword}{const};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{size\_t} GetSize()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_arrayX.size();\}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} Clear();}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} SetAutoStart(G4int start) \{m\_autoStart=start;\}}
+\DoxyCodeLine{45   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} InsertPoint(G4double x,G4double y);}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} InsertPoint(G4double y);}
+\DoxyCodeLine{49     G4int \mbox{\hyperlink{classGateVDistributionArray_a730ab3c1cdedf3a80c19cd798a0c28e8}{FindIdxBefore}}(G4double x}
+\DoxyCodeLine{50             ,\textcolor{keyword}{const} std::vector<G4double>\& array) \textcolor{keyword}{const};}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void}  FillRepartition();}
+\DoxyCodeLine{52     std::vector<G4double>\& GetArrayX() \{\textcolor{keywordflow}{return} m\_arrayX;\}}
+\DoxyCodeLine{53     std::vector<G4double>\& GetArrayY() \{\textcolor{keywordflow}{return} m\_arrayY;\}}
+\DoxyCodeLine{54     std::vector<G4double>\& GetArrayRepartition() \{\textcolor{keywordflow}{return} m\_arrayRepartition;\}}
+\DoxyCodeLine{55   \textcolor{keyword}{private}:}
+\DoxyCodeLine{57     std::vector<G4double> m\_arrayX;}
+\DoxyCodeLine{58     std::vector<G4double> m\_arrayY;}
+\DoxyCodeLine{59     G4double m\_minX;}
+\DoxyCodeLine{60     G4double m\_minY;}
+\DoxyCodeLine{61     G4double m\_maxX;}
+\DoxyCodeLine{62     G4double m\_maxY;}
+\DoxyCodeLine{63     std::vector<G4double> m\_arrayRepartition; }
+\DoxyCodeLine{64     G4double m\_factorX;}
+\DoxyCodeLine{65     G4double m\_factorY;}
+\DoxyCodeLine{66     G4int m\_autoStart;}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

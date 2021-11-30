@@ -1,0 +1,86 @@
+\hypertarget{GateUIcmdWith2Vector_8hh_source}{}\doxysection{Gate\+UIcmd\+With2\+Vector.\+hh}
+\label{GateUIcmdWith2Vector_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateUIcmdWith2Vector.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateUIcmdWith2Vector.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{//}}
+\DoxyCodeLine{10 \textcolor{comment}{// ********************************************************************}}
+\DoxyCodeLine{11 \textcolor{comment}{// * License and Disclaimer                                           *}}
+\DoxyCodeLine{12 \textcolor{comment}{// *                                                                  *}}
+\DoxyCodeLine{13 \textcolor{comment}{// * The  Geant4 software  is  copyright of the Copyright Holders  of *}}
+\DoxyCodeLine{14 \textcolor{comment}{// * the Geant4 Collaboration.  It is provided  under  the terms  and *}}
+\DoxyCodeLine{15 \textcolor{comment}{// * conditions of the Geant4 Software License,  included in the file *}}
+\DoxyCodeLine{16 \textcolor{comment}{// * LICENSE and available at  http://cern.ch/geant4/license .  These *}}
+\DoxyCodeLine{17 \textcolor{comment}{// * include a list of copyright holders.                             *}}
+\DoxyCodeLine{18 \textcolor{comment}{// *                                                                  *}}
+\DoxyCodeLine{19 \textcolor{comment}{// * Neither the authors of this software system, nor their employing *}}
+\DoxyCodeLine{20 \textcolor{comment}{// * institutes,nor the agencies providing financial support for this *}}
+\DoxyCodeLine{21 \textcolor{comment}{// * work  make  any representation or  warranty, express or implied, *}}
+\DoxyCodeLine{22 \textcolor{comment}{// * regarding  this  software system or assume any liability for its *}}
+\DoxyCodeLine{23 \textcolor{comment}{// * use.  Please see the license in the file  LICENSE  and URL above *}}
+\DoxyCodeLine{24 \textcolor{comment}{// * for the full disclaimer and the limitation of liability.         *}}
+\DoxyCodeLine{25 \textcolor{comment}{// *                                                                  *}}
+\DoxyCodeLine{26 \textcolor{comment}{// * This  code  implementation is the result of  the  scientific and *}}
+\DoxyCodeLine{27 \textcolor{comment}{// * technical work of the GEANT4 collaboration.                      *}}
+\DoxyCodeLine{28 \textcolor{comment}{// * By using,  copying,  modifying or  distributing the software (or *}}
+\DoxyCodeLine{29 \textcolor{comment}{// * any work based  on the software)  you  agree  to acknowledge its *}}
+\DoxyCodeLine{30 \textcolor{comment}{// * use  in  resulting  scientific  publications,  and indicate your *}}
+\DoxyCodeLine{31 \textcolor{comment}{// * acceptance of all terms of the Geant4 Software license.          *}}
+\DoxyCodeLine{32 \textcolor{comment}{// ********************************************************************}}
+\DoxyCodeLine{33 \textcolor{comment}{//}}
+\DoxyCodeLine{34 \textcolor{comment}{//}}
+\DoxyCodeLine{35 \textcolor{comment}{// \$Id: G4UIcmdWith3Vector.hh,v 1.7 2006-\/06-\/29 19:07:47 gunter Exp \$}}
+\DoxyCodeLine{36 \textcolor{comment}{// GEANT4 tag \$Name: not supported by cvs2svn \$}}
+\DoxyCodeLine{37 \textcolor{comment}{//}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// ==> G4UIcmdWith3Vector modified into GateUIcmdWith2Vector}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef GateUIcmdWith2Vector\_H}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define GateUIcmdWith2Vector\_H 1}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}G4UIcommand.hh"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{// class description:}}
+\DoxyCodeLine{49 \textcolor{comment}{//  A concrete class of G4UIcommand. The command defined by this class}}
+\DoxyCodeLine{50 \textcolor{comment}{// takes three double values.}}
+\DoxyCodeLine{51 \textcolor{comment}{//  General information of G4UIcommand is given in G4UIcommand.hh.}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUIcmdWith2Vector}{GateUIcmdWith2Vector}} : \textcolor{keyword}{public} G4UIcommand}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55   \textcolor{keyword}{public}: \textcolor{comment}{// with description}}
+\DoxyCodeLine{56     \mbox{\hyperlink{classGateUIcmdWith2Vector}{GateUIcmdWith2Vector}}}
+\DoxyCodeLine{57     (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theCommandPath,G4UImessenger * theMessenger);}
+\DoxyCodeLine{58     \textcolor{comment}{//  Constructor. The command string with full path directory}}
+\DoxyCodeLine{59     \textcolor{comment}{// and the pointer to the messenger must be given.}}
+\DoxyCodeLine{60     \textcolor{keyword}{static} G4ThreeVector GetNew2VectorValue(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* paramString);}
+\DoxyCodeLine{61     \textcolor{comment}{//  Convert string which represents three double values to}}
+\DoxyCodeLine{62     \textcolor{comment}{// G4ThreeVector.}}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} SetParameterName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theNameX,\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theNameY,}
+\DoxyCodeLine{64                         G4bool omittable,G4bool currentAsDefault=\textcolor{keyword}{false});}
+\DoxyCodeLine{65     \textcolor{comment}{//  Set the parameter names for three parameters. Names are used by}}
+\DoxyCodeLine{66     \textcolor{comment}{// the range checking routine.}}
+\DoxyCodeLine{67     \textcolor{comment}{//  If "{}omittable"{} is set as true, the user of this command can ommit}}
+\DoxyCodeLine{68     \textcolor{comment}{// the value(s) when he/she applies the command. If "{}omittable"{} is false,}}
+\DoxyCodeLine{69     \textcolor{comment}{// the user must supply all three values.}}
+\DoxyCodeLine{70     \textcolor{comment}{//  "{}currentAsDefault"{} flag is valid only if "{}omittable"{} is true. If this}}
+\DoxyCodeLine{71     \textcolor{comment}{// flag is true, the current values are used as the default values when the}}
+\DoxyCodeLine{72     \textcolor{comment}{// user ommit some of the parameters. If this flag is false, the values}}
+\DoxyCodeLine{73     \textcolor{comment}{// given by the next SetDefaultValue() method are used.}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} SetDefaultValue(G4ThreeVector defVal);}
+\DoxyCodeLine{75     \textcolor{comment}{//  Set the default values of the parameters. These default values are used}}
+\DoxyCodeLine{76     \textcolor{comment}{// when the user of this command ommits some of the parameter values, and}}
+\DoxyCodeLine{77     \textcolor{comment}{// "{}ommitable"{} is true and "{}currentAsDefault"{} is false.}}
+\DoxyCodeLine{78 \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

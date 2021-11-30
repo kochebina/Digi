@@ -1,0 +1,220 @@
+\hypertarget{classGateImageT}{}\doxysection{Gate\+ImageT\texorpdfstring{$<$}{<} Pixel\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classGateImageT}\index{GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}}
+
+
+3D images of Pixel\+Type values  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Image\+T.\+hh$>$}
+
+Inheritance diagram for Gate\+ImageT\texorpdfstring{$<$}{<} Pixel\+Type \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateImageT}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageT_a0e87b46f460e901aaabb81b3f98d4db4}\label{classGateImageT_a0e87b46f460e901aaabb81b3f98d4db4}} 
+typedef std\+::vector$<$ Pixel\+Type $>$\+::iterator {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{classGateImageT_aa693b9208ce1ae80700bf82f87820303}\label{classGateImageT_aa693b9208ce1ae80700bf82f87820303}} 
+typedef std\+::vector$<$ Pixel\+Type $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}{Allocate}} ()
+\begin{DoxyCompactList}\small\item\em Allocates the data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a47a9b5b81077cd0a7a4807c1fe0d802e}\label{classGateImageT_a47a9b5b81077cd0a7a4807c1fe0d802e}} 
+Pixel\+Type {\bfseries Get\+Value} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the value of the image at voxel of index provided. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_acb832a5850927b77952e725e33e6c26b}\label{classGateImageT_acb832a5850927b77952e725e33e6c26b}} 
+Pixel\+Type \& {\bfseries Get\+Value} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference on the value of the image at voxel of index provided. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a412cde48646a159ad55c1058db89e7d8}\label{classGateImageT_a412cde48646a159ad55c1058db89e7d8}} 
+Pixel\+Type {\bfseries Get\+Value} (int i, int j, int k) const
+\begin{DoxyCompactList}\small\item\em Returns the value of the image at voxel of coordinates provided. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a0fe7ee0891d432fbee7d938f3b720e3c}\label{classGateImageT_a0fe7ee0891d432fbee7d938f3b720e3c}} 
+Pixel\+Type {\bfseries Get\+Value} (const G4\+Three\+Vector \&position) const
+\begin{DoxyCompactList}\small\item\em Returns the value of the image at voxel of position provided. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a955e6d71994e25ccb60201a90a99b429}\label{classGateImageT_a955e6d71994e25ccb60201a90a99b429}} 
+Pixel\+Type \& {\bfseries Get\+Value} (const G4\+Three\+Vector \&position)
+\begin{DoxyCompactList}\small\item\em Returns a reference on the value of the image at voxel of position provided. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_abd7234408a6bd7729256bef1d97a2677}\label{classGateImageT_abd7234408a6bd7729256bef1d97a2677}} 
+void {\bfseries Set\+Value} (int x, int y, int z, Pixel\+Type v)
+\begin{DoxyCompactList}\small\item\em Sets the value of the voxel of coordinates x,y,z. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a3a3df0f03490ad5897e51bd02e6ec0c3}\label{classGateImageT_a3a3df0f03490ad5897e51bd02e6ec0c3}} 
+void {\bfseries Set\+Value} (int i, Pixel\+Type v)
+\begin{DoxyCompactList}\small\item\em Sets the value of the voxel of index i. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a80e299f953ee81102aaae73ac8f53e8e}\label{classGateImageT_a80e299f953ee81102aaae73ac8f53e8e}} 
+void {\bfseries Add\+Value} (int index, Pixel\+Type value)
+\begin{DoxyCompactList}\small\item\em Adds a value to the voxel of index provided. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a60bb0db1c0267d4f703de9295ae0910a}\label{classGateImageT_a60bb0db1c0267d4f703de9295ae0910a}} 
+void {\bfseries Fill} (Pixel\+Type v)
+\begin{DoxyCompactList}\small\item\em Fills the image with a value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageT_a4bb038a8c2d661652a68269790404145}\label{classGateImageT_a4bb038a8c2d661652a68269790404145}} 
+Pixel\+Type {\bfseries Get\+Min\+Value} () const
+\item 
+\mbox{\Hypertarget{classGateImageT_a0e90a5d5f589cc5f9a7f926d95358feb}\label{classGateImageT_a0e90a5d5f589cc5f9a7f926d95358feb}} 
+Pixel\+Type {\bfseries Get\+Max\+Value} () const
+\item 
+\mbox{\Hypertarget{classGateImageT_afb1b0a977881513d0dea6d7c8d593a9f}\label{classGateImageT_afb1b0a977881513d0dea6d7c8d593a9f}} 
+Pixel\+Type {\bfseries Get\+Outside\+Value} ()
+\item 
+\mbox{\Hypertarget{classGateImageT_a73962b93252b1040580f3282728d4055}\label{classGateImageT_a73962b93252b1040580f3282728d4055}} 
+void {\bfseries Set\+Outside\+Value} (Pixel\+Type v)
+\item 
+\mbox{\Hypertarget{classGateImageT_a67b76218d193630a3601f02dd9526ec8}\label{classGateImageT_a67b76218d193630a3601f02dd9526ec8}} 
+Pixel\+Type {\bfseries Get\+Neighbor\+Value\+From\+Coordinate} (const ESide \&side, const G4\+Three\+Vector \&coord)
+\item 
+\mbox{\Hypertarget{classGateImageT_a3b324e3c3cdf91f20d349940da53ffa4}\label{classGateImageT_a3b324e3c3cdf91f20d349940da53ffa4}} 
+void {\bfseries Merge\+Data\+By\+Addition} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateImageT_a64e99e01db1fedffdfadf686562a2af1}\label{classGateImageT_a64e99e01db1fedffdfadf686562a2af1}} 
+iterator {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classGateImageT_a8a1403d226a0c24c03f0fa94709d3ff5}\label{classGateImageT_a8a1403d226a0c24c03f0fa94709d3ff5}} 
+iterator {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{classGateImageT_ad7c5f000bf091c77e6752b7515606af0}\label{classGateImageT_ad7c5f000bf091c77e6752b7515606af0}} 
+const\+\_\+iterator {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{classGateImageT_af09ea412455d86664481ac384752dcd4}\label{classGateImageT_af09ea412455d86664481ac384752dcd4}} 
+const\+\_\+iterator {\bfseries end} () const
+\item 
+virtual void \mbox{\hyperlink{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}{Write}} (G4\+String filename, const G4\+String \&comment=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Writes the image to a file with comment (the format is detected automatically) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}{Read}} (G4\+String filename)
+\begin{DoxyCompactList}\small\item\em Reads the image from a file (the format is detected automatically) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}{Print\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Displays info about the image to standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageT_a024733ec512420ddbcc2e6b66f6f0bf3}\label{classGateImageT_a024733ec512420ddbcc2e6b66f6f0bf3}} 
+void {\bfseries Read\+Ascii} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateImageT_abed7aedd1505004668e8db66a5302b65}\label{classGateImageT_abed7aedd1505004668e8db66a5302b65}} 
+void {\bfseries Read\+Analyze} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateImageT_aa6c9cffcb1d6533f68eb427f7ad35ec6}\label{classGateImageT_aa6c9cffcb1d6533f68eb427f7ad35ec6}} 
+void {\bfseries Read\+MHD} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateImageT_a22c37390ff0f6774d9f759efef43cd00}\label{classGateImageT_a22c37390ff0f6774d9f759efef43cd00}} 
+void {\bfseries Read\+Interfile} (G4\+String file\+Name)
+\item 
+\mbox{\Hypertarget{classGateImageT_a05d0ee88cd99f8e480c504463f0a43f6}\label{classGateImageT_a05d0ee88cd99f8e480c504463f0a43f6}} 
+void {\bfseries Read\+DICOM} (G4\+String file\+Name)
+\item 
+\mbox{\Hypertarget{classGateImageT_ac56f14722fbcd2feb97a4cf9d9d64a46}\label{classGateImageT_ac56f14722fbcd2feb97a4cf9d9d64a46}} 
+void {\bfseries Write\+Vox} (std\+::ofstream \&os)
+\item 
+\mbox{\Hypertarget{classGateImageT_ab5c498cc8433998f78d32cc496e78ecf}\label{classGateImageT_ab5c498cc8433998f78d32cc496e78ecf}} 
+void {\bfseries Write\+Ascii} (std\+::ofstream \&os, const G4\+String \&comment)
+\item 
+\mbox{\Hypertarget{classGateImageT_a17e66a8bcc382c863f7a31771010baad}\label{classGateImageT_a17e66a8bcc382c863f7a31771010baad}} 
+void {\bfseries Write\+Bin} (std\+::ofstream \&os)
+\item 
+\mbox{\Hypertarget{classGateImageT_a43df81cddd386889a9c53fbd1efdee27}\label{classGateImageT_a43df81cddd386889a9c53fbd1efdee27}} 
+void {\bfseries Write\+Analyze\+Header} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateImageT_a8dd2ed860afe56c4e30fe1bc518d29c1}\label{classGateImageT_a8dd2ed860afe56c4e30fe1bc518d29c1}} 
+void {\bfseries Write\+Root} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateImageT_afce9e85a950487748be804873576a9ac}\label{classGateImageT_afce9e85a950487748be804873576a9ac}} 
+void {\bfseries Write\+MHD} (std\+::string filename)
+\item 
+\mbox{\Hypertarget{classGateImageT_a99e9e937d8985b6225ed46625f33a8d6}\label{classGateImageT_a99e9e937d8985b6225ed46625f33a8d6}} 
+void {\bfseries Write\+DICOM} (std\+::string filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageT_aee6824186956caa14aad29dffb98bda5}\label{classGateImageT_aee6824186956caa14aad29dffb98bda5}} 
+std\+::vector$<$ Pixel\+Type $>$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{classGateImageT_abad8eb2a2b40264c972b19828298fad8}\label{classGateImageT_abad8eb2a2b40264c972b19828298fad8}} 
+Pixel\+Type {\bfseries m\+Outside\+Value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Pixel\+Type$>$\newline
+class Gate\+Image\+T$<$ Pixel\+Type $>$}
+3D images of Pixel\+Type values 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}\label{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}} 
+\index{GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}}
+\doxysubsubsection{\texorpdfstring{Allocate()}{Allocate()}}
+{\footnotesize\ttfamily template$<$class Pixel\+Type $>$ \\
+virtual void \mbox{\hyperlink{classGateImageT}{Gate\+ImageT}}$<$ Pixel\+Type $>$\+::Allocate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Allocates the data. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImage_ac2b40a9c3f7bd0b5c030f44d00a4a82f}{Gate\+VImage}}.
+
+\mbox{\Hypertarget{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}\label{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}} 
+\index{GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily template$<$class Pixel\+Type $>$ \\
+virtual void \mbox{\hyperlink{classGateImageT}{Gate\+ImageT}}$<$ Pixel\+Type $>$\+::Print\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays info about the image to standard output. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImage_a037887a44e3e3b049d82738daa498f37}{Gate\+VImage}}.
+
+\mbox{\Hypertarget{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}\label{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}} 
+\index{GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}!Read@{Read}}
+\index{Read@{Read}!GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily template$<$class Pixel\+Type $>$ \\
+virtual void \mbox{\hyperlink{classGateImageT}{Gate\+ImageT}}$<$ Pixel\+Type $>$\+::Read (\begin{DoxyParamCaption}\item[{G4\+String}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reads the image from a file (the format is detected automatically) 
+
+
+
+Implements \mbox{\hyperlink{classGateVImage_aab825e7a0a33552a9a1514283a4b8f8b}{Gate\+VImage}}.
+
+\mbox{\Hypertarget{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}\label{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}} 
+\index{GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}!Write@{Write}}
+\index{Write@{Write}!GateImageT$<$ PixelType $>$@{GateImageT$<$ PixelType $>$}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily template$<$class Pixel\+Type $>$ \\
+virtual void \mbox{\hyperlink{classGateImageT}{Gate\+ImageT}}$<$ Pixel\+Type $>$\+::Write (\begin{DoxyParamCaption}\item[{G4\+String}]{filename,  }\item[{const G4\+String \&}]{comment = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the image to a file with comment (the format is detected automatically) 
+
+
+
+Implements \mbox{\hyperlink{classGateVImage_af62bfa8766718e09282ff0440a299192}{Gate\+VImage}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Image\+T.\+hh\end{DoxyCompactItemize}

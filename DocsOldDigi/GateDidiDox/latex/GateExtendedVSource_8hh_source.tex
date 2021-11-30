@@ -1,0 +1,85 @@
+\hypertarget{GateExtendedVSource_8hh_source}{}\doxysection{Gate\+Extended\+VSource.\+hh}
+\label{GateExtendedVSource_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateExtendedVSource.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateExtendedVSource.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef GateExtendedVSource\_hh}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define GateExtendedVSource\_hh}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateExtendedVSourceMessenger.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateGammaEmissionModel.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{16 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classModelSetting}{ModelSetting}} }
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19  \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \textcolor{keywordtype}{void} Set( T value )}
+\DoxyCodeLine{21   \{ }
+\DoxyCodeLine{22    fValue = value;}
+\DoxyCodeLine{23    fIsSetted = \textcolor{keyword}{true};}
+\DoxyCodeLine{24   \}}
+\DoxyCodeLine{25   T Get()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} fValue; \}}
+\DoxyCodeLine{26   \textcolor{keywordtype}{bool} IsSetted()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} fIsSetted; \}}
+\DoxyCodeLine{27  \textcolor{keyword}{private}:}
+\DoxyCodeLine{28   T fValue;}
+\DoxyCodeLine{29   \textcolor{keywordtype}{bool} fIsSetted = \textcolor{keyword}{false};}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateExtendedVSource}{GateExtendedVSource}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{enum class} ModelKind \{ }
+\DoxyCodeLine{42    NotDefined, \textcolor{comment}{//by default -\/ in this case this clas will behave like GateVSource}}
+\DoxyCodeLine{43    SingleGamma, \textcolor{comment}{// generate single gamma}}
+\DoxyCodeLine{44    ParaPositronium, \textcolor{comment}{//generate gammas from para-\/positronium decay}}
+\DoxyCodeLine{45    OrthoPositronium, \textcolor{comment}{//generate gammas from ortho-\/positronium decay}}
+\DoxyCodeLine{46    Positronium \textcolor{comment}{//generate gammas from mixed model ( from pPs and oPs decay with setted ratio )}}
+\DoxyCodeLine{47   \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \mbox{\hyperlink{classGateExtendedVSource_ada55d58a81abb1338a9fe04f08a5e7f1}{GateExtendedVSource}}( G4String name );}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateExtendedVSource}{\string~GateExtendedVSource}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateExtendedVSource_aaab16990edd41786226606ae89a38b48}{GeneratePrimaries}}( G4Event* event ) \textcolor{keyword}{override};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_aaeabb378911a2e81dab2beee4db889f1}{SetEnableDeexcitation}}( \textcolor{keyword}{const} G4bool\& enable\_deexcitation );}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_a2fd61b89273a1e91c5fe0a6f4b56c35f}{SetFixedEmissionDirection}}( \textcolor{keyword}{const} G4ThreeVector\& fixed\_emission\_direction );}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_afd36b336cacfc44997273fd05b611682}{SetEnableFixedEmissionDirection}}( \textcolor{keyword}{const} G4bool\& enable\_fixed\_emission\_direction );}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_a8412f55138fbd438bc07ca31aefe4bc9}{SetEmissionEnergy}}( \textcolor{keyword}{const} G4double\& energy );}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_acb963f344a1ff971116d1d4fb614206e}{SetSeed}}( \textcolor{keyword}{const} G4long\& seed );}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_a19f100074fb64dcf222bb426f4f4e393}{SetPostroniumLifetime}}( \textcolor{keyword}{const} G4String\& positronium\_name ,\textcolor{keyword}{const} G4double\& life\_time );}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_aff6188daf4d633dcd5dd46be1b204da3}{SetPromptGammaEnergy}}( \textcolor{keyword}{const} G4double\& energy );}
+\DoxyCodeLine{86   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_a1bdd458b2c34a45979ecb262c856e9fe}{SetPositroniumFraction}}( \textcolor{keyword}{const} G4String\& positronium\_kind, \textcolor{keyword}{const} G4double\& fraction );}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_a66b1ae5db71ef4de5e64521764bc1596}{SetModel}}( \textcolor{keyword}{const} G4String\& model\_name );}
+\DoxyCodeLine{94   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateExtendedVSource_a4acd206b963a4a0ae30e0325a2a45b0e}{PrepareModel}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{97   \textcolor{comment}{//Gamma emission model}}
+\DoxyCodeLine{98   \mbox{\hyperlink{classGateGammaEmissionModel}{GateGammaEmissionModel}}* pModel = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{99   \textcolor{comment}{//Source messanger}}
+\DoxyCodeLine{100   \mbox{\hyperlink{classGateExtendedVSourceMessenger}{GateExtendedVSourceMessenger}}* pMessenger = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{101   \textcolor{comment}{//User settings:}}
+\DoxyCodeLine{102   ModelKind fModelKind = ModelKind::NotDefined;}
+\DoxyCodeLine{103   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4bool>}} fEnableDeexcitation;}
+\DoxyCodeLine{104   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4ThreeVector>}} fFixedEmissionDirection;}
+\DoxyCodeLine{105   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4bool>}} fEnableFixedEmissionDirection;}
+\DoxyCodeLine{106   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4double>}} fEmissionEnergy;}
+\DoxyCodeLine{107   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4long>}} fSeed;}
+\DoxyCodeLine{108   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4double>}} fParaPostroniumLifetime;}
+\DoxyCodeLine{109   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4double>}} fOrthoPostroniumLifetime;}
+\DoxyCodeLine{110   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4double>}} fPromptGammaEnergy;}
+\DoxyCodeLine{111   \mbox{\hyperlink{classModelSetting}{ModelSetting<G4double>}} fParaPositroniumFraction;}
+\DoxyCodeLine{112   \textcolor{comment}{//Constants for Set(...) methods}}
+\DoxyCodeLine{113   \textcolor{keyword}{const} G4String kParaPositroniumName = \textcolor{stringliteral}{"{}pPs"{}};}
+\DoxyCodeLine{114   \textcolor{keyword}{const} G4String kOrthoPositroniumName = \textcolor{stringliteral}{"{}oPs"{}};}
+\DoxyCodeLine{115   \textcolor{comment}{//Set by PrepareModel() and used in GeneratePrimaries()}}
+\DoxyCodeLine{116   G4bool fBehaveLikeVSource = \textcolor{keyword}{false};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

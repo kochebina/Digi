@@ -1,0 +1,69 @@
+\hypertarget{GateSurface_8hh_source}{}\doxysection{Gate\+Surface.\+hh}
+\label{GateSurface_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSurface.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSurface.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateSurface\_hh}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateSurface\_hh}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }GateSurfaceMessenger;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4LogicalBorderSurface;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4OpticalSurface;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }GateSurface : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40   \textcolor{keyword}{public}:}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{46     GateSurface(\textcolor{keyword}{const} G4String\& itsName, \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* inserter);}
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \string~GateSurface();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* GetInserter1()\textcolor{keyword}{ const}}
+\DoxyCodeLine{52 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_inserter1;\}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} SetInserter2(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* inserter);}
+\DoxyCodeLine{57     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* GetInserter2()\textcolor{keyword}{ const}}
+\DoxyCodeLine{58 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_inserter2;\}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} SetOpticalSurfaceName(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{63     \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string\& GetOpticalSurfaceName()\textcolor{keyword}{ const}}
+\DoxyCodeLine{64 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_opticalsurfacename;\}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} BuildSurfaces();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keyword}{private}:}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} DeleteSurfaces();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     G4OpticalSurface* ReadOpticalSurface(\textcolor{keyword}{const} G4String\& name) \textcolor{keyword}{const};}
+\DoxyCodeLine{76     }
+\DoxyCodeLine{77   \textcolor{keyword}{private}:}
+\DoxyCodeLine{78     G4String                             m\_opticalsurfacename; }
+\DoxyCodeLine{79     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*                 m\_inserter1;          }
+\DoxyCodeLine{80     \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*                 m\_inserter2;          }
+\DoxyCodeLine{81     std::vector<G4LogicalBorderSurface*> m\_surfaces;           }
+\DoxyCodeLine{82     G4OpticalSurface*                    m\_opticalsurface;     }
+\DoxyCodeLine{83     GateSurfaceMessenger*                m\_messenger;          }
+\DoxyCodeLine{84 \};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

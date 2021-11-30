@@ -1,0 +1,38 @@
+\hypertarget{GateHounsfieldDensityTable_8hh_source}{}\doxysection{Gate\+Hounsfield\+Density\+Table.\+hh}
+\label{GateHounsfieldDensityTable_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldDensityTable.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldDensityTable.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef \_\_GateHounsfieldDensityTable\_\_hh\_\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define \_\_GateHounsfieldDensityTable\_\_hh\_\_}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateHounsfieldMaterialProperties.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateMiscFunctions.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHounsfieldDensityTable}{GateHounsfieldDensityTable}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateHounsfieldDensityTable}{GateHounsfieldDensityTable}}();}
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateHounsfieldDensityTable}{\string~GateHounsfieldDensityTable}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keywordtype}{double} GetDensityFromH(\textcolor{keywordtype}{double} H);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{double} FindMaxDensityDifference(\textcolor{keywordtype}{double} HMin, \textcolor{keywordtype}{double} HMax);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} Read(G4String filename);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{34   std::vector<double> mH;}
+\DoxyCodeLine{35   std::vector<double> mD;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

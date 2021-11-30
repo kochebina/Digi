@@ -1,0 +1,53 @@
+\hypertarget{GateLocalEfficiency_8hh_source}{}\doxysection{Gate\+Local\+Efficiency.\+hh}
+\label{GateLocalEfficiency_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEfficiency.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEfficiency.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateLocalEfficiency\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateLocalEfficiency\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEfficiencyMessenger}{GateLocalEfficiencyMessenger}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEfficiency}{GateLocalEfficiency}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22   \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateLocalEfficiency}{GateLocalEfficiency}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{25          \textcolor{keyword}{const} G4String\& itsName=theTypeName) ;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalEfficiency_ae4e00789436e6d1761b3ac1b9a1f6190}{\string~GateLocalEfficiency}}() ;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalEfficiency_a5483fc61c2c24268e3349bb55afaf915}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} SetMode(\textcolor{keywordtype}{size\_t} i,G4bool val);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} SetEfficiency(\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* dist) \{m\_efficiency = dist;\}}
+\DoxyCodeLine{33     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* GetEfficiency()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_efficiency;\}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalEfficiency_aa1fefc8990e5bd39e5ec85db9bbd395d}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} ComputeSizes();}
+\DoxyCodeLine{42   \textcolor{keyword}{private}:}
+\DoxyCodeLine{43     std::vector<G4bool> m\_enabled;        }
+\DoxyCodeLine{44     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* m\_efficiency;          }
+\DoxyCodeLine{45     \mbox{\hyperlink{classGateLocalEfficiencyMessenger}{GateLocalEfficiencyMessenger}} *m\_messenger;   }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keyword}{static} \textcolor{keyword}{const} G4String\& theTypeName;   }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

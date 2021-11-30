@@ -1,0 +1,126 @@
+\hypertarget{GateActorManager_8hh_source}{}\doxysection{Gate\+Actor\+Manager.\+hh}
+\label{GateActorManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateActorManager.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateActorManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/*}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)class  GateActorManager}}
+\DoxyCodeLine{12 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{          david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{15 \textcolor{comment}{*/}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{19 \textcolor{comment}{}\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef GATEACTORMANAGER\_HH}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define GATEACTORMANAGER\_HH}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <G4String.hh>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <G4SDManager.hh>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <G4MultiFunctionalDetector.hh>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <G4Run.hh>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <G4Event.hh>}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}GateVFilter.hh"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}GateActorManagerMessenger.hh"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}GateObjectChildList.hh"{}}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVActor}{GateVActor}};}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{class }\mbox{\hyperlink{classGateActorManager}{GateActorManager}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46   \mbox{\hyperlink{classGateActorManager}{\string~GateActorManager}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{static} \mbox{\hyperlink{classGateActorManager}{GateActorManager}} *GetInstance()}
+\DoxyCodeLine{49   \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (singleton\_ActorManager == 0)}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52       \textcolor{comment}{//std::cout << "{}creating GateActorManager...\(\backslash\)n"{};}}
+\DoxyCodeLine{53       singleton\_ActorManager = \textcolor{keyword}{new} \mbox{\hyperlink{classGateActorManager}{GateActorManager}};}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55     \textcolor{comment}{//else std::cout << "{}GateActorManager already created!\(\backslash\)n"{};}}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} singleton\_ActorManager;}
+\DoxyCodeLine{57   \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} SetResetAfterSaving(\textcolor{keywordtype}{bool} reset);}
+\DoxyCodeLine{60   \textcolor{keywordtype}{bool} GetResetAfterSaving() \textcolor{keyword}{const};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} AddActor(G4String actorType, G4String actorName, \textcolor{keywordtype}{int} depth=0);}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} CreateListsOfEnabledActors();}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} PrintListOfActors() \textcolor{keyword}{const};}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} PrintListOfActorTypes() \textcolor{keyword}{const};}
+\DoxyCodeLine{66   \mbox{\hyperlink{classGateVActor}{GateVActor}}*  GetActor(\textcolor{keyword}{const} G4String \&actorType, \textcolor{keyword}{const} G4String \&actorName);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   std::vector<GateVActor*> ReturnListOfActors();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{72 \textcolor{comment}{}  G4bool AddFilter(G4String filterType,G4String actorName );}
+\DoxyCodeLine{73   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{77 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateActorManager_a4444c29ee0b8a6da31402f3f2199bcbb}{BeginOfRunAction}}(\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateActorManager_afb75b155424e3a2a0273bb86d974672e}{EndOfRunAction}}(\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateActorManager_a0c527a652dad1827f0f192d74537e95b}{BeginOfEventAction}}(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateActorManager_a0ca2288d39dcdb7ceb183aa7193d2487}{EndOfEventAction}}(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{85   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateActorManager_a97b95e5ab61cd79580d9a43517b63918}{PreUserTrackingAction}}(\textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateActorManager_a9163b38a214e42df23e898c0ec989d11}{PostUserTrackingAction}}(\textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{89   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateActorManager_a3247e544e6b16275c6d6524540b1f60a}{UserSteppingAction}}(\textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{90   \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{91   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateVActor}{GateVActor}} *(*maker\_actor)(G4String name, G4int depth);}
+\DoxyCodeLine{94   std::map<G4String,maker\_actor> theListOfActorPrototypes;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateVFilter}{GateVFilter}} *(*maker\_filter)(G4String name);}
+\DoxyCodeLine{97   std::map<G4String,maker\_filter> theListOfFilterPrototypes;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} SetMultiFunctionalDetector(\mbox{\hyperlink{classGateVActor}{GateVActor}} * actor, \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * volume);}
+\DoxyCodeLine{100   std::vector<GateMultiSensitiveDetector*> theListOfMultiSensitiveDetector;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   std::vector<GateVActor*> \& GetTheListOfActors() \{ \textcolor{keywordflow}{return} theListOfActors; \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   G4int GetCurrentEventId()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mCurrentEventId; \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{107   \textcolor{comment}{//std::vector<GateMultiSensitiveDetector*> theListOfMultiSensitiveDetector;}}
+\DoxyCodeLine{108   std::vector<GateVActor*> theListOfActors;}
+\DoxyCodeLine{109   std::vector<GateVActor*> theListOfActorsEnabledForBeginOfRun;}
+\DoxyCodeLine{110   std::vector<GateVActor*> theListOfActorsEnabledForEndOfRun;}
+\DoxyCodeLine{111   std::vector<GateVActor*> theListOfActorsEnabledForBeginOfEvent;}
+\DoxyCodeLine{112   std::vector<GateVActor*> theListOfActorsEnabledForEndOfEvent;}
+\DoxyCodeLine{113   std::vector<GateVActor*> theListOfActorsEnabledForPreUserTrackingAction;}
+\DoxyCodeLine{114   std::vector<GateVActor*> theListOfActorsEnabledForPostUserTrackingAction;}
+\DoxyCodeLine{115   std::vector<GateVActor*> theListOfActorsEnabledForUserSteppingAction;}
+\DoxyCodeLine{116   std::vector<GateVActor*> theListOfActorsEnabledForRecordEndOfAcquisition;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \mbox{\hyperlink{classGateActorManagerMessenger}{GateActorManagerMessenger}}* pActorManagerMessenger;  \textcolor{comment}{//pointer to the Messenger}}
+\DoxyCodeLine{119   G4int mCurrentEventId;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{private}:}
+\DoxyCodeLine{122   \textcolor{keywordtype}{int} IsInitialized;}
+\DoxyCodeLine{123   \textcolor{keywordtype}{bool} resetAfterSaving;}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125   \mbox{\hyperlink{classGateActorManager}{GateActorManager}}();}
+\DoxyCodeLine{126   \textcolor{keyword}{static} \mbox{\hyperlink{classGateActorManager}{GateActorManager}} *singleton\_ActorManager;}
+\DoxyCodeLine{127 \};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEACTORMANAGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+\hypertarget{GateCrystalSD_8hh_source}{}\doxysection{Gate\+Crystal\+SD.\+hh}
+\label{GateCrystalSD_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrystalSD.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrystalSD.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCrystalSD\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCrystalSD\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4VSensitiveDetector.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateCrystalHit.hh"{}}}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4Step;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4HCofThisEvent;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4TouchableHistory;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23 \textcolor{keyword}{typedef} std::vector<GateVSystem*> GateSystemList;}
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} GateSystemList::iterator GateSystemIterator;}
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} GateSystemList::const\_iterator GateSystemConstIterator;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{45 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalSD}{GateCrystalSD}} : \textcolor{keyword}{public} G4VSensitiveDetector}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{public}:}
+\DoxyCodeLine{53       \mbox{\hyperlink{classGateCrystalSD_acadb88510de2c1217fdaa1063737b143}{GateCrystalSD}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{55       \mbox{\hyperlink{classGateCrystalSD_a3427a5fa6d8be54e91681042b4b563ff}{\string~GateCrystalSD}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57       \mbox{\hyperlink{classGateCrystalSD}{GateCrystalSD}}* Clone() \textcolor{keyword}{const override};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60       \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrystalSD_a06344216a740fb284a2dd642d7cf72a4}{Initialize}}(G4HCofThisEvent*HCE) \textcolor{keyword}{override};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{64       G4bool \mbox{\hyperlink{classGateCrystalSD_ae1b1b455449424a311e855527976a827}{ProcessHits}}(G4Step*aStep,G4TouchableHistory*ROhist) \textcolor{keyword}{override};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67       \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateCrystalSD_ad55c3de2ab14d265d8f6e520f1377b62}{GetCrystalCollectionName}}()}
+\DoxyCodeLine{68           \{ \textcolor{keywordflow}{return} theCrystalCollectionName; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71       \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* \mbox{\hyperlink{classGateCrystalSD_aa881edbbe9d558391d4e38e739e27b30}{GetSystem}}()}
+\DoxyCodeLine{72           \{ \textcolor{keywordflow}{return} m\_system;\}}
+\DoxyCodeLine{74       \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrystalSD_a520f287ad8dfe42df1e0131fb3ccfd00}{SetSystem}}(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* aSystem); \textcolor{comment}{// mhadi\_obso, obsolete, because we now use a system list.}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77       \textcolor{keyword}{inline} GateSystemList* \mbox{\hyperlink{classGateCrystalSD_a2e8f75a3fb5b223ddb3085ff9bd5ea58}{GetSystemList}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCrystalSD_ae495a9ecb2cbffe0ea8ea7fae5e6bb50}{m\_systemList}}; \}}
+\DoxyCodeLine{78       \textcolor{keywordtype}{void} AddSystem(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* aSystem);}
+\DoxyCodeLine{79       \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* FindSystem(\mbox{\hyperlink{classGateVolumeID}{GateVolumeID}} volumeID);}
+\DoxyCodeLine{80       \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* FindSystem(G4String\& systemName);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82       G4int \mbox{\hyperlink{classGateCrystalSD_a5f2fb1088a6a0a89aee6e5a0f277fd0a}{PrepareCreatorAttachment}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* aCreator);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{85      \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* m\_system;                           }
+\DoxyCodeLine{86      GateSystemList* \mbox{\hyperlink{classGateCrystalSD_ae495a9ecb2cbffe0ea8ea7fae5e6bb50}{m\_systemList}};                    }
+\DoxyCodeLine{87   \textcolor{keyword}{private}:}
+\DoxyCodeLine{88       GateCrystalHitsCollection * crystalCollection;  }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90       \textcolor{keyword}{static} \textcolor{keyword}{const} G4String theCrystalCollectionName; }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

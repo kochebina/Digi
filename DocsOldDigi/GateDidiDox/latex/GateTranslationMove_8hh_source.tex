@@ -1,0 +1,60 @@
+\hypertarget{GateTranslationMove_8hh_source}{}\doxysection{Gate\+Translation\+Move.\+hh}
+\label{GateTranslationMove_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTranslationMove.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTranslationMove.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateTranslationMove\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateTranslationMove\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTranslationMoveMessenger}{GateTranslationMoveMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTranslationMove}{GateTranslationMove}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateTranslationMove_a000e30678f01905d0c082a831f8b831a}{GateTranslationMove}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{35                                   \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{36                   \textcolor{keyword}{const} G4ThreeVector\& itsVelocity=G4ThreeVector());}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTranslationMove_a0da3018b018b3a729c3e1f52ea649d10}{\string~GateTranslationMove}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{50      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTranslationMove_a1393bf7f2a41a6b1140b47956946f271}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{51                                       \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{52                                   G4double aTime);}
+\DoxyCodeLine{58      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTranslationMove_adae8c136a2940a4769e9759a701d1f74}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{59      }
+\DoxyCodeLine{60   \textcolor{keyword}{public}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateTranslationMove_a5cc60bf8a42108a9f6a95b59dcc7468d}{GetVelocity}}() }
+\DoxyCodeLine{65           \{ \textcolor{keywordflow}{return} m\_velocity;\}}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTranslationMove_a0ad0a1f435462c228a58e90518323121}{SetVelocity}}(\textcolor{keyword}{const} G4ThreeVector\& val) }
+\DoxyCodeLine{68           \{ m\_velocity = val;  \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateTranslationMove_ad4dc89b05bb9956f69e3046e3eb7a0b0}{GetCurrentTranslation}}() }
+\DoxyCodeLine{72           \{ \textcolor{keywordflow}{return} m\_currentTranslation;\}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keyword}{private}:}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     G4ThreeVector m\_velocity;   }
+\DoxyCodeLine{80     }
+\DoxyCodeLine{82     G4ThreeVector m\_currentTranslation;}
+\DoxyCodeLine{83     }
+\DoxyCodeLine{85     \mbox{\hyperlink{classGateTranslationMoveMessenger}{GateTranslationMoveMessenger}}* m\_Messenger; }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+
+\end{DoxyCode}

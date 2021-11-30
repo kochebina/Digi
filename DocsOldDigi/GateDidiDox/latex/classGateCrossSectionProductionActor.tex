@@ -1,0 +1,313 @@
+\hypertarget{classGateCrossSectionProductionActor}{}\doxysection{Gate\+Cross\+Section\+Production\+Actor Class Reference}
+\label{classGateCrossSectionProductionActor}\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+Inheritance diagram for Gate\+Cross\+Section\+Production\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCrossSectionProductionActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a378c9c69be747f07a5382b7f208140b8}\label{classGateCrossSectionProductionActor_a378c9c69be747f07a5382b7f208140b8}} 
+virtual {\bfseries $\sim$\+Gate\+Cross\+Section\+Production\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_ac8f07238d082e9ef4b7f3dd4ef949790}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_a82d871d5d00be2d6f8ece48b6141fa51}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_a4e4e6b59b9b8eb5e2b11e9b9bc946d16}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_a8a0944a0e3a350d0aa0da6def61fe323}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_ac9290a2c52849619a180c247f2601087}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_aa3dd4e402d73607cbd6664086ebaeb24}{User\+Post\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_a8ffcf3ab9febf6235969254e5bde8657}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_ac0da296acd2636fccae6fd45a9eb0275}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_a82a316d617f82fedcb817c480a0427d1}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Scorer related. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_a1b819c982b65ba460cfcb87d8056b85f}{Initialize}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_a0d555fcf9a4698e423b8ff3c5b30d05c}{End\+Of\+Event}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ad8a15772a59ad777faf50bec7fc74799}\label{classGateCrossSectionProductionActor_ad8a15772a59ad777faf50bec7fc74799}} 
+void {\bfseries Set\+Filename} (G4\+String f)
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a6e72e5e8fe9a547072ec2e37d529ec4a}\label{classGateCrossSectionProductionActor_a6e72e5e8fe9a547072ec2e37d529ec4a}} 
+void {\bfseries Active\+C11} (bool b)
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a9e4ed380e2c5072cbf1973acba37ca70}\label{classGateCrossSectionProductionActor_a9e4ed380e2c5072cbf1973acba37ca70}} 
+void {\bfseries Active\+O15} (bool b)
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_affa0786b1fa94d749f7d0932c2347c8a}{End\+Of\+Event\+Action}} (const G4\+Event $\ast$eve)
+\item 
+virtual void \mbox{\hyperlink{classGateCrossSectionProductionActor_afaf8373223b4919fe762f1e652cd2c8b}{Pre\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$t)
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ab3815e70bdd212b3a31c526df14a9d82}\label{classGateCrossSectionProductionActor_ab3815e70bdd212b3a31c526df14a9d82}} 
+float {\bfseries Interpol\+Lin} (float xa, float ya, float xb, float yb, float X)
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ae929697f968890b01490796fc6483b2d}\label{classGateCrossSectionProductionActor_ae929697f968890b01490796fc6483b2d}} 
+double {\bfseries Get\+Section\+Efficace} (double nrj, std\+::map$<$ float, float $>$ \&Map\+Sigma)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_acb590d60dc4cc5fbc5de2a891ef6c4e0}\label{classGateCrossSectionProductionActor_acb590d60dc4cc5fbc5de2a891ef6c4e0}} 
+{\bfseries Gate\+Cross\+Section\+Production\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ad2557af04b485a41399cd1e0d8cc1b6e}\label{classGateCrossSectionProductionActor_ad2557af04b485a41399cd1e0d8cc1b6e}} 
+\mbox{\hyperlink{classGateCrossSectionProductionActorMessenger}{Gate\+Cross\+Section\+Production\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a9df357cbbbcac50599fd46d58758278a}\label{classGateCrossSectionProductionActor_a9df357cbbbcac50599fd46d58758278a}} 
+std\+::map$<$ float, float $>$ {\bfseries Section\+Table\+C11\+\_\+\+C12}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a7454553ecde591f547c2f8d4d7e590bb}\label{classGateCrossSectionProductionActor_a7454553ecde591f547c2f8d4d7e590bb}} 
+std\+::map$<$ float, float $>$ {\bfseries Section\+Table\+C11\+\_\+\+O16}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a5dd4dbac7224a5aafaa80eca683c4f55}\label{classGateCrossSectionProductionActor_a5dd4dbac7224a5aafaa80eca683c4f55}} 
+std\+::map$<$ float, float $>$ {\bfseries Section\+Table\+O15\+\_\+\+O16}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a2a5ebb6b17c886f2fc7490069130b14f}\label{classGateCrossSectionProductionActor_a2a5ebb6b17c886f2fc7490069130b14f}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ab53347718f3075028beefab0b8428ea8}\label{classGateCrossSectionProductionActor_ab53347718f3075028beefab0b8428ea8}} 
+G4int {\bfseries nb\+\_\+elemt\+\_\+\+C12\+\_\+in\+\_\+table}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a4de84353481a140b8b16326217c14063}\label{classGateCrossSectionProductionActor_a4de84353481a140b8b16326217c14063}} 
+G4int {\bfseries nb\+\_\+elemt\+\_\+\+O16\+\_\+in\+\_\+table}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_af187a204328603a3fbea3b8844c3e684}\label{classGateCrossSectionProductionActor_af187a204328603a3fbea3b8844c3e684}} 
+bool {\bfseries new\+Track}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_af606f47214ec5be8e9d5f148165572c6}\label{classGateCrossSectionProductionActor_af606f47214ec5be8e9d5f148165572c6}} 
+std\+::map$<$ int, int $>$ {\bfseries Pixel\+Value\+Per\+Event}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a47ad68a187f6440024d6c3ec47363ad8}\label{classGateCrossSectionProductionActor_a47ad68a187f6440024d6c3ec47363ad8}} 
+std\+::map$<$ int, int $>$ {\bfseries Pixel\+Value\+Per\+Event\+\_\+secondary}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_af5018309cbf6a0564b425a809cd8d4ae}\label{classGateCrossSectionProductionActor_af5018309cbf6a0564b425a809cd8d4ae}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} $\ast$ {\bfseries m\+Isotope\+Image}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ad6d335d7692f82be07ccbb4b2db03a20}\label{classGateCrossSectionProductionActor_ad6d335d7692f82be07ccbb4b2db03a20}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Energy\+Image}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a4a07d186d43184f2221bbb4f5781f2ef}\label{classGateCrossSectionProductionActor_a4a07d186d43184f2221bbb4f5781f2ef}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Stat\+Image}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a5903e422eb3631c81ac3cf451dec59db}\label{classGateCrossSectionProductionActor_a5903e422eb3631c81ac3cf451dec59db}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Step\+Length\+Image}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a82b08a976fb3c93f236692df08ac040e}\label{classGateCrossSectionProductionActor_a82b08a976fb3c93f236692df08ac040e}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Step\+Length\+Image\+\_\+secondary}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a4c819942d69c0315d3b8e3db930f9e52}\label{classGateCrossSectionProductionActor_a4c819942d69c0315d3b8e3db930f9e52}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Energy\+Image\+\_\+secondary}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ab718d3a709c032f90240d879ea806fc8}\label{classGateCrossSectionProductionActor_ab718d3a709c032f90240d879ea806fc8}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Stat\+Image\+\_\+secondary}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a5269a7cf83ad4044fb86435b620f264c}\label{classGateCrossSectionProductionActor_a5269a7cf83ad4044fb86435b620f264c}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Density\+Image}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a0a559c7bfbc3e36ae4c7eb0f3c0b708d}\label{classGateCrossSectionProductionActor_a0a559c7bfbc3e36ae4c7eb0f3c0b708d}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries mfraction\+C12\+Image}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a0502ed1340f4a5ad363cfd3d6add20a2}\label{classGateCrossSectionProductionActor_a0502ed1340f4a5ad363cfd3d6add20a2}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries mfraction\+O16\+Image}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ad004037d135e46fa0e7a5ff2638a6498}\label{classGateCrossSectionProductionActor_ad004037d135e46fa0e7a5ff2638a6498}} 
+G4\+String {\bfseries m\+Isotope\+Filename}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a339c800a788831929be1c0bd0c65c87c}\label{classGateCrossSectionProductionActor_a339c800a788831929be1c0bd0c65c87c}} 
+G4\+String {\bfseries m\+Energy\+Filename}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a380a2c19ad8a808671b2b8242648b5cb}\label{classGateCrossSectionProductionActor_a380a2c19ad8a808671b2b8242648b5cb}} 
+G4\+String {\bfseries m\+Stat\+Filename}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_af720707fc3a8cddd32a71de51b35ee48}\label{classGateCrossSectionProductionActor_af720707fc3a8cddd32a71de51b35ee48}} 
+G4double {\bfseries threshold\+\_\+energy\+\_\+\+C12}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a14e8a05ee40c7a00f76a5c4d8a1420fa}\label{classGateCrossSectionProductionActor_a14e8a05ee40c7a00f76a5c4d8a1420fa}} 
+G4double {\bfseries A\+\_\+12}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a3bc898a783bffe86856dd136ba594210}\label{classGateCrossSectionProductionActor_a3bc898a783bffe86856dd136ba594210}} 
+G4double {\bfseries A\+\_\+16}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a560afe79300e092769da15a4a51e2aa5}\label{classGateCrossSectionProductionActor_a560afe79300e092769da15a4a51e2aa5}} 
+G4double {\bfseries max\+\_\+energy\+\_\+cross\+\_\+section}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a1e7b0f0100c14086ffdb1b54e87d780d}\label{classGateCrossSectionProductionActor_a1e7b0f0100c14086ffdb1b54e87d780d}} 
+bool {\bfseries m\+\_\+\+Is\+C11}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_aa51518b5a91c21fee6408a0f1f02e278}\label{classGateCrossSectionProductionActor_aa51518b5a91c21fee6408a0f1f02e278}} 
+bool {\bfseries m\+\_\+\+Is\+O15}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_acdd56106d5459a8ad153da6cb2c23057}\label{classGateCrossSectionProductionActor_acdd56106d5459a8ad153da6cb2c23057}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} $\ast$ {\bfseries m\+Isotope\+Image\+\_\+\+O15}
+\item 
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ad58b83f49b576fe168211c7274b23b25}\label{classGateCrossSectionProductionActor_ad58b83f49b576fe168211c7274b23b25}} 
+G4double {\bfseries threshold\+\_\+energy\+\_\+\+O16}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a4e4e6b59b9b8eb5e2b11e9b9bc946d16}\label{classGateCrossSectionProductionActor_a4e4e6b59b9b8eb5e2b11e9b9bc946d16}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a82d871d5d00be2d6f8ece48b6141fa51}\label{classGateCrossSectionProductionActor_a82d871d5d00be2d6f8ece48b6141fa51}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a82a316d617f82fedcb817c480a0427d1}\label{classGateCrossSectionProductionActor_a82a316d617f82fedcb817c480a0427d1}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!clear@{clear}}
+\index{clear@{clear}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily virtual void Gate\+Cross\+Section\+Production\+Actor\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Scorer related. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ac8f07238d082e9ef4b7f3dd4ef949790}\label{classGateCrossSectionProductionActor_ac8f07238d082e9ef4b7f3dd4ef949790}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a0d555fcf9a4698e423b8ff3c5b30d05c}\label{classGateCrossSectionProductionActor_a0d555fcf9a4698e423b8ff3c5b30d05c}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!EndOfEvent@{EndOfEvent}}
+\index{EndOfEvent@{EndOfEvent}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEvent()}{EndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+Cross\+Section\+Production\+Actor\+::\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_affa0786b1fa94d749f7d0932c2347c8a}\label{classGateCrossSectionProductionActor_affa0786b1fa94d749f7d0932c2347c8a}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!EndOfEventAction@{EndOfEventAction}}
+\index{EndOfEventAction@{EndOfEventAction}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEventAction()}{EndOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+End\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{eve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a1b819c982b65ba460cfcb87d8056b85f}\label{classGateCrossSectionProductionActor_a1b819c982b65ba460cfcb87d8056b85f}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Gate\+Cross\+Section\+Production\+Actor\+::\+Initialize (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_afaf8373223b4919fe762f1e652cd2c8b}\label{classGateCrossSectionProductionActor_afaf8373223b4919fe762f1e652cd2c8b}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!PreUserTrackingAction@{PreUserTrackingAction}}
+\index{PreUserTrackingAction@{PreUserTrackingAction}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{PreUserTrackingAction()}{PreUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+Pre\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Computes the voxel in which to store the data and invokes User\+Hit\+Action which is responsible for voxel data updating 
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_aeae1614284240d030f53a4e38db63c80}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ac0da296acd2636fccae6fd45a9eb0275}\label{classGateCrossSectionProductionActor_ac0da296acd2636fccae6fd45a9eb0275}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a8ffcf3ab9febf6235969254e5bde8657}\label{classGateCrossSectionProductionActor_a8ffcf3ab9febf6235969254e5bde8657}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_aa3dd4e402d73607cbd6664086ebaeb24}\label{classGateCrossSectionProductionActor_aa3dd4e402d73607cbd6664086ebaeb24}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Cross\+Section\+Production\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_ac9290a2c52849619a180c247f2601087}\label{classGateCrossSectionProductionActor_ac9290a2c52849619a180c247f2601087}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Cross\+Section\+Production\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCrossSectionProductionActor_a8a0944a0e3a350d0aa0da6def61fe323}\label{classGateCrossSectionProductionActor_a8a0944a0e3a350d0aa0da6def61fe323}} 
+\index{GateCrossSectionProductionActor@{GateCrossSectionProductionActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateCrossSectionProductionActor@{GateCrossSectionProductionActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Cross\+Section\+Production\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Cross\+Section\+Production\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Cross\+Section\+Production\+Actor.\+cc\end{DoxyCompactItemize}

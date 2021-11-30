@@ -1,0 +1,47 @@
+\hypertarget{GateProductionActor_8hh_source}{}\doxysection{Gate\+Production\+Actor.\+hh}
+\label{GateProductionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProductionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProductionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef GATEPRODUCTIONACTOR\_HH}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define GATEPRODUCTIONACTOR\_HH}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateProductionActorMessenger.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateProductionActor}{GateProductionActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateProductionActor_a1adb4dfb9e8db80f2a2bb8fe78b47ef2}{\string~GateProductionActor}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{21   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{22   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateProductionActor}{GateProductionActor}})}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{25   \textcolor{comment}{// Contruct sensor}}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProductionActor_a93cf86cbdfd408c537534f02f4069417}{Construct}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29   \textcolor{comment}{// Save production image}}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{34   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProductionActor_a22b26496b3a1c8843bc4af20e16d6d99}{UserPreTrackActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* track);}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProductionActor_a29b0cc7bbb5752317d4501bde2135dc6}{UserSteppingActionInVoxel}}(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} G4Step*) \{ assert(\textcolor{keyword}{false}); \}}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keywordtype}{int}, \textcolor{keyword}{const} G4Track*) \{ assert(\textcolor{keyword}{false}); \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateProductionActor_a6ae2d26e489672d9fd85edc4d24edc19}{GateProductionActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateProductionActorMessenger}{GateProductionActorMessenger}} *pMessenger;}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 MAKE\_AUTO\_CREATOR\_ACTOR(ProductionActor,\mbox{\hyperlink{classGateProductionActor}{GateProductionActor}})}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEPRODUCTIONACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,234 @@
+\hypertarget{GateDetectorConstruction_8hh_source}{}\doxysection{Gate\+Detector\+Construction.\+hh}
+\label{GateDetectorConstruction_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateDetectorConstruction.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateDetectorConstruction.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDetectorConstruction\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDetectorConstruction\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4VUserDetectorConstruction.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateMaterialDatabase.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateCrystalSD.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GatePhantomSD.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateObjectMoveListMessenger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GatePhysicsList.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateRTPhantomMgr.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4FieldManager.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4MagIntegratorDriver.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4MagIntegratorStepper.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4ChordFinder.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4TransportationManager.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4PropagatorInField.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}G4ExplicitEuler.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}G4ImplicitEuler.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}G4SimpleRunge.hh"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}G4SimpleHeum.hh"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}G4NystromRK4.hh"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}G4ClassicalRK4.hh"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}G4HelixHeum.hh"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}G4HelixExplicitEuler.hh"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}G4HelixImplicitEuler.hh"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}G4HelixSimpleRunge.hh"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}G4CashKarpRKF45.hh"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}G4RKG3\_Stepper.hh"{}}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}G4Mag\_UsualEqRhs.hh"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}G4EqMagElectricField.hh"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}G4UniformMagField.hh"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}G4UniformElectricField.hh"{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}G4MagneticField.hh"{}}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include "{}G4ElectricField.hh"{}}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{class }G4UniformMagField;}
+\DoxyCodeLine{51 \textcolor{keyword}{class }G4UniformElectricField;}
+\DoxyCodeLine{52 \textcolor{keyword}{class }G4MagneticField;}
+\DoxyCodeLine{53 \textcolor{keyword}{class }G4EqMagElectricField;}
+\DoxyCodeLine{54 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectStore}{GateObjectStore}};}
+\DoxyCodeLine{55 \textcolor{keyword}{class }G4Box;}
+\DoxyCodeLine{56 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{57 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{58 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDetectorMessenger}{GateDetectorMessenger}};}
+\DoxyCodeLine{60 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{61 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBox}{GateBox}};}
+\DoxyCodeLine{62 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}};}
+\DoxyCodeLine{63 \textcolor{keyword}{class }GateARFSD;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define theMaterialDatabase GateDetectorConstruction::GetGateDetectorConstruction()-\/>mMaterialDatabase}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDetectorConstruction}{GateDetectorConstruction}} : \textcolor{keyword}{public} G4VUserDetectorConstruction}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{public}:}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \mbox{\hyperlink{classGateDetectorConstruction}{GateDetectorConstruction}}();}
+\DoxyCodeLine{73   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDetectorConstruction}{\string~GateDetectorConstruction}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} G4VPhysicalVolume* Construct();}
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UpdateGeometry();}
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetMagField (G4ThreeVector);}
+\DoxyCodeLine{78   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetMagFieldTabulatedFile (G4String);}
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetElectField (G4ThreeVector);}
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetElectFieldTabulatedFile (G4String);}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetElectMagFieldTabulatedFile (G4String);}
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BuildField ();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} SetMagStepMinimum(G4double);}
+\DoxyCodeLine{85   \textcolor{keywordtype}{void} SetMagDeltaChord(G4double);}
+\DoxyCodeLine{86   \textcolor{keywordtype}{void} SetMagDeltaOneStep(G4double);}
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} SetMagDeltaIntersection(G4double);}
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} SetMagMinimumEpsilonStep(G4double);}
+\DoxyCodeLine{89   \textcolor{keywordtype}{void} SetMagMaximumEpsilonStep(G4double);}
+\DoxyCodeLine{90   \textcolor{keywordtype}{void} SetMagIntegratorStepper(G4String);}
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} SetField ();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{94   GateARFSD* GetARFSD()\{ \textcolor{keywordflow}{return} m\_ARFSD;\};}
+\DoxyCodeLine{95   \textcolor{keywordtype}{void} insertARFSD( G4String , G4int );}
+\DoxyCodeLine{96   \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BuildSurfaces();}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \textcolor{comment}{// Material DB}}
+\DoxyCodeLine{105 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDetectorConstruction_aca655f7d2e46e245b54bdab8c106dff6}{AddFileToMaterialDatabase}}(\textcolor{keyword}{const} G4String\& f);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keyword}{static} \mbox{\hyperlink{classGateDetectorConstruction}{GateDetectorConstruction}}* GetGateDetectorConstruction()}
+\DoxyCodeLine{108   \{}
+\DoxyCodeLine{109     \textcolor{keywordflow}{return} pTheGateDetectorConstruction;}
+\DoxyCodeLine{110   \};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{keyword}{inline} G4VPhysicalVolume*   GetWorldVolume()}
+\DoxyCodeLine{113   \{ \textcolor{keywordflow}{return} pworldPhysicalVolume; \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateObjectStore}{GateObjectStore}}* GetObjectStore()}
+\DoxyCodeLine{116   \{ \textcolor{keywordflow}{return} pcreatorStore; \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keyword}{enum} GeometryStatus \{}
+\DoxyCodeLine{119     geometry\_is\_uptodate = 0,}
+\DoxyCodeLine{120     geometry\_needs\_update = 1,}
+\DoxyCodeLine{121     geometry\_needs\_rebuild = 2}
+\DoxyCodeLine{122   \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   \textcolor{comment}{//  virtual void GeometryHasChanged(GeometryStatus changeLevel);}}
+\DoxyCodeLine{125   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ClockHasChanged();}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetAutoUpdateFlag(G4bool val)}
+\DoxyCodeLine{128   \{ flagAutoUpdate = val; \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4bool GetAutoUpdateFlag()}
+\DoxyCodeLine{131   \{ \textcolor{keywordflow}{return} flagAutoUpdate; \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetGeometryStatusFlag(GeometryStatus val)}
+\DoxyCodeLine{134   \{ nGeometryStatus = val; \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4bool GetGeometryStatusFlag()}
+\DoxyCodeLine{137   \{ \textcolor{keywordflow}{return} nGeometryStatus; \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetFlagMove(G4bool val)  \{ \mbox{\hyperlink{classGateDetectorConstruction_acabcb50904d65e184b9f305b5ec1d250}{moveFlag}} = val; \};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4bool GetFlagMove()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDetectorConstruction_acabcb50904d65e184b9f305b5ec1d250}{moveFlag}}; \};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{144   \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}} \mbox{\hyperlink{classGateDetectorConstruction_ae66f862b6790334166cf7f3ecf0c520f}{mMaterialDatabase}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCrystalSD}{GateCrystalSD}}* GetCrystalSD()}
+\DoxyCodeLine{147   \{ \textcolor{keywordflow}{return} m\_crystalSD; \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150   \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}*   GetPhantomSD()}
+\DoxyCodeLine{151   \{ \textcolor{keywordflow}{return} m\_phantomSD; \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153   \textcolor{comment}{//private:}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyGeometry();}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   \textcolor{comment}{//void SetIonisationPotential(G4String n, G4double v)\{mMaterialDatabase.SetMaterialIoniPotential(n,v);\}}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} SetMaterialIoniPotential(G4String n,G4double v)\{theListOfIonisationPotential[n]=v;\}}
+\DoxyCodeLine{160   G4double GetMaterialIoniPotential(G4String n)\{ \textcolor{keywordflow}{return} theListOfIonisationPotential[n];\}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 private :}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166   \mbox{\hyperlink{classGateBox}{GateBox}}* pworld;}
+\DoxyCodeLine{167   G4VPhysicalVolume* pworldPhysicalVolume;}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169   GeometryStatus nGeometryStatus;}
+\DoxyCodeLine{170   G4bool flagAutoUpdate;}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172   \mbox{\hyperlink{classGateCrystalSD}{GateCrystalSD}}*   m\_crystalSD;}
+\DoxyCodeLine{173   \mbox{\hyperlink{classGatePhantomSD}{GatePhantomSD}}*   m\_phantomSD;}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175   \mbox{\hyperlink{classGateObjectStore}{GateObjectStore}}* pcreatorStore;}
+\DoxyCodeLine{176   \mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}}*  psystemStore;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178   \textcolor{comment}{// Pour utiliser le DetectorMessenger}}
+\DoxyCodeLine{179   \mbox{\hyperlink{classGateDetectorMessenger}{GateDetectorMessenger}}* pdetectorMessenger;  \textcolor{comment}{//pointer to the Messenger}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181   \textcolor{keyword}{static} \mbox{\hyperlink{classGateDetectorConstruction}{GateDetectorConstruction}}* pTheGateDetectorConstruction;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 protected :}
+\DoxyCodeLine{185   G4bool \mbox{\hyperlink{classGateDetectorConstruction_acabcb50904d65e184b9f305b5ec1d250}{moveFlag}};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   std::map<G4String,G4double> theListOfIonisationPotential;}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{keyword}{private}:}
+\DoxyCodeLine{192   G4UniformMagField* m\_magField;}
+\DoxyCodeLine{193   G4ThreeVector      m\_magFieldValue;}
+\DoxyCodeLine{194   G4String           m\_magFieldTabulatedFile;}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196   G4ThreeVector      e\_electFieldValue;}
+\DoxyCodeLine{197   G4String           e\_electFieldTabulatedFile;}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199   G4String           em\_electmagFieldTabulatedFile;}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201   G4bool             m\_magFieldUniform;}
+\DoxyCodeLine{202   G4bool             m\_magFieldTabulated;}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204   G4bool             e\_electFieldUniform;}
+\DoxyCodeLine{205   G4bool             e\_electFieldTabulated;}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207   G4bool             em\_electmagFieldTabulated;}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209   G4MagneticField*   m\_MagField;}
+\DoxyCodeLine{210   G4ElectricField*   e\_ElecField;}
+\DoxyCodeLine{211   G4ElectroMagneticField*   em\_ElecMagField; }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213   G4Mag\_UsualEqRhs* fEquation\_B;}
+\DoxyCodeLine{214   G4EqMagElectricField* fEquation\_E;}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216   G4FieldManager * fFieldMgr;}
+\DoxyCodeLine{217   G4MagIntegratorStepper * fStepper;}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219   G4double fMinStep;}
+\DoxyCodeLine{220   G4double fDeltaChord;}
+\DoxyCodeLine{221   G4double fDeltaIntersection;}
+\DoxyCodeLine{222   G4double fDeltaOneStep;}
+\DoxyCodeLine{223   G4double fMinimumEpsilonStep;}
+\DoxyCodeLine{224   G4double fMaximumEpsilonStep;}
+\DoxyCodeLine{225   G4String fIntegratorStepper;}
+\DoxyCodeLine{226   G4int nvarOfIntegratorStepper;}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228   GateARFSD* m\_ARFSD; \textcolor{comment}{// PY Descourt 8/09/2009}}
+\DoxyCodeLine{229   \mbox{\hyperlink{classGateRTPhantomMgr}{GateRTPhantomMgr}}* m\_RTPhantomMgr; \textcolor{comment}{// PY Descourt 08/09/2009}}
+\DoxyCodeLine{230 \};}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

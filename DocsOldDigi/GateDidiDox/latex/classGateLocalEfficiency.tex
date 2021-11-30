@@ -1,0 +1,70 @@
+\hypertarget{classGateLocalEfficiency}{}\doxysection{Gate\+Local\+Efficiency Class Reference}
+\label{classGateLocalEfficiency}\index{GateLocalEfficiency@{GateLocalEfficiency}}
+Inheritance diagram for Gate\+Local\+Efficiency\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateLocalEfficiency}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLocalEfficiency_a649afcbe70a392fec3363b00de84a294}\label{classGateLocalEfficiency_a649afcbe70a392fec3363b00de84a294}} 
+{\bfseries Gate\+Local\+Efficiency} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name=the\+Type\+Name)
+\item 
+\mbox{\Hypertarget{classGateLocalEfficiency_ae4e00789436e6d1761b3ac1b9a1f6190}\label{classGateLocalEfficiency_ae4e00789436e6d1761b3ac1b9a1f6190}} 
+virtual {\bfseries $\sim$\+Gate\+Local\+Efficiency} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateLocalEfficiency_a5483fc61c2c24268e3349bb55afaf915}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Pure virtual method Decribe\+Myself() \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLocalEfficiency_aa361b78791d238ac655563eb5e3575ba}\label{classGateLocalEfficiency_aa361b78791d238ac655563eb5e3575ba}} 
+void {\bfseries Set\+Mode} (size\+\_\+t i, G4bool val)
+\item 
+\mbox{\Hypertarget{classGateLocalEfficiency_ac66674e1e42006b95cbb4bc4e606db91}\label{classGateLocalEfficiency_ac66674e1e42006b95cbb4bc4e606db91}} 
+void {\bfseries Set\+Efficiency} (\mbox{\hyperlink{classGateVDistribution}{Gate\+VDistribution}} $\ast$dist)
+\item 
+\mbox{\Hypertarget{classGateLocalEfficiency_a5149afc4651f563064228df856df57ad}\label{classGateLocalEfficiency_a5149afc4651f563064228df856df57ad}} 
+\mbox{\hyperlink{classGateVDistribution}{Gate\+VDistribution}} $\ast$ {\bfseries Get\+Efficiency} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateLocalEfficiency_aa1fefc8990e5bd39e5ec85db9bbd395d}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\Hypertarget{classGateLocalEfficiency_ac9e97f7dfee84cd931ba2dd4bdabc52b}\label{classGateLocalEfficiency_ac9e97f7dfee84cd931ba2dd4bdabc52b}} 
+void {\bfseries Compute\+Sizes} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateLocalEfficiency_a5483fc61c2c24268e3349bb55afaf915}\label{classGateLocalEfficiency_a5483fc61c2c24268e3349bb55afaf915}} 
+\index{GateLocalEfficiency@{GateLocalEfficiency}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateLocalEfficiency@{GateLocalEfficiency}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Local\+Efficiency\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method Decribe\+Myself() 
+
+
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateLocalEfficiency_aa1fefc8990e5bd39e5ec85db9bbd395d}\label{classGateLocalEfficiency_aa1fefc8990e5bd39e5ec85db9bbd395d}} 
+\index{GateLocalEfficiency@{GateLocalEfficiency}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateLocalEfficiency@{GateLocalEfficiency}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Local\+Efficiency\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Local\+Efficiency.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Local\+Efficiency.\+cc\end{DoxyCompactItemize}

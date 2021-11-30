@@ -1,0 +1,44 @@
+\hypertarget{GateHounsfieldToMaterialsBuilderMessenger_8hh_source}{}\doxysection{Gate\+Hounsfield\+To\+Materials\+Builder\+Messenger.\+hh}
+\label{GateHounsfieldToMaterialsBuilderMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldToMaterialsBuilderMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldToMaterialsBuilderMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef \_\_GateHounsfieldToMaterialsBuilderMessenger\_\_hh\_\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define \_\_GateHounsfieldToMaterialsBuilderMessenger\_\_hh\_\_}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHounsfieldToMaterialsBuilder}{GateHounsfieldToMaterialsBuilder}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHounsfieldToMaterialsBuilderMessenger}{GateHounsfieldToMaterialsBuilderMessenger}}: \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateHounsfieldToMaterialsBuilderMessenger}{GateHounsfieldToMaterialsBuilderMessenger}}(\mbox{\hyperlink{classGateHounsfieldToMaterialsBuilder}{GateHounsfieldToMaterialsBuilder}} * m);}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateHounsfieldToMaterialsBuilderMessenger}{\string~GateHounsfieldToMaterialsBuilderMessenger}}();}
+\DoxyCodeLine{31   }
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateHounsfieldToMaterialsBuilder}{GateHounsfieldToMaterialsBuilder}} * mBuilder;}
+\DoxyCodeLine{36   G4UIcmdWithoutParameter* pGenerateCmd;}
+\DoxyCodeLine{37   G4UIcmdWithAString * pSetMaterialTable;}
+\DoxyCodeLine{38   G4UIcmdWithAString * pSetDensityTable;}
+\DoxyCodeLine{39   G4UIcmdWithAString * pSetOutputMaterialDatabaseFilename;}
+\DoxyCodeLine{40   G4UIcmdWithAString * pSetOutputHUMaterialFilename;}
+\DoxyCodeLine{41   G4UIcmdWithADoubleAndUnit * pSetDensityTolerance;}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

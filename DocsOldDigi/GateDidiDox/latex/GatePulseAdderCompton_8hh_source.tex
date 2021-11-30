@@ -1,0 +1,61 @@
+\hypertarget{GatePulseAdderCompton_8hh_source}{}\doxysection{Gate\+Pulse\+Adder\+Compton.\+hh}
+\label{GatePulseAdderCompton_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdderCompton.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePulseAdderCompton.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Daniel Strul <daniel.strul@iphe.unil.ch>}}
+\DoxyCodeLine{5 \textcolor{comment}{   JB Michaud <jbmichaud@videotron.ca>}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{   Copyright (C) 2002,2003 UNIL/IPHE, CH-\/1015 Lausanne}}
+\DoxyCodeLine{8 \textcolor{comment}{   Copyright (C) 2009 Universite de Sherbrooke}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{11 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{12 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{13 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GatePulseAdderCompton\_h}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GatePulseAdderCompton\_h 1}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4Types.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdderComptonMessenger}{GatePulseAdderComptonMessenger}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseAdderCompton}{GatePulseAdderCompton}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46   \textcolor{keyword}{public}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \mbox{\hyperlink{classGatePulseAdderCompton_a7f1f39869d581ab88a5475738a13a32e}{GatePulseAdderCompton}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseAdderCompton_a81c63ab94500671c0954050555567a17}{\string~GatePulseAdderCompton}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{56     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePulseAdderCompton_abd41cc2210c309b63a1a55887e684f18}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{//redefined because need to call repack() after last pulse}}
+\DoxyCodeLine{59     \textcolor{comment}{//GatePulseList* ProcessPulseList(const GatePulseList* inputPulseList);}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePulseAdderCompton_a2090fa24a5f6c7acdf418bbc76f1ec8c}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{private}:}
+\DoxyCodeLine{69     \mbox{\hyperlink{classGatePulseAdderComptonMessenger}{GatePulseAdderComptonMessenger}} *m\_messenger;     }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{//several functions needed for special processing of electronic pulses}}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} PulsePushBack(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse, \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{73     \textcolor{comment}{//void DifferentVolumeIDs(const GatePulse* InputPulse, GatePulseList\& outputPulseList);}}
+\DoxyCodeLine{74     \textcolor{comment}{//void repackLastVolumeID(GatePulseList\& outputPulseList);}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

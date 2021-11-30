@@ -1,0 +1,86 @@
+\hypertarget{classGateSourceVoxelRangeTranslator}{}\doxysection{Gate\+Source\+Voxel\+Range\+Translator Class Reference}
+\label{classGateSourceVoxelRangeTranslator}\index{GateSourceVoxelRangeTranslator@{GateSourceVoxelRangeTranslator}}
+Inheritance diagram for Gate\+Source\+Voxel\+Range\+Translator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateSourceVoxelRangeTranslator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a1fd14d5a5bae8539cc0d46ebef1584de}\label{classGateSourceVoxelRangeTranslator_a1fd14d5a5bae8539cc0d46ebef1584de}} 
+{\bfseries Gate\+Source\+Voxel\+Range\+Translator} (\mbox{\hyperlink{classGateVSourceVoxelReader}{Gate\+VSource\+Voxel\+Reader}} $\ast$voxel\+Reader)
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a1e9a930eff78d255ae3f0191ff2dac93}\label{classGateSourceVoxelRangeTranslator_a1e9a930eff78d255ae3f0191ff2dac93}} 
+void {\bfseries Read\+Translation\+Table} (G4\+String file\+Name)
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a3577677b6215180e6222c8efd4b9dfb1}\label{classGateSourceVoxelRangeTranslator_a3577677b6215180e6222c8efd4b9dfb1}} 
+void {\bfseries Add\+Translation\+Range} (G4double rmin, G4double rmax)
+\item 
+void \mbox{\hyperlink{classGateSourceVoxelRangeTranslator_a86cc6e921201bb84f9b6c80437f0a521}{Describe}} (G4int level)
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a3b1b5629af7852e384e52357633977bc}\label{classGateSourceVoxelRangeTranslator_a3b1b5629af7852e384e52357633977bc}} 
+G4double {\bfseries Translate\+To\+Activity} (G4int voxel\+Value)
+\item 
+G4double \mbox{\hyperlink{classGateSourceVoxelRangeTranslator_abf3ad5e5343a9a966a8648cf64517f95}{Translate\+To\+Activity}} (G4double voxel\+Value)
+\item 
+void \mbox{\hyperlink{classGateSourceVoxelRangeTranslator_a641276d723eba744163694f6ce2aaafa}{Update\+Activity}} (G4double, G4double, G4double)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a470f3f3f8441b113cf3b2ffd8ed57f72}\label{classGateSourceVoxelRangeTranslator_a470f3f3f8441b113cf3b2ffd8ed57f72}} 
+typedef std\+::pair$<$ std\+::pair$<$ G4double, G4double $>$, G4double $>$ {\bfseries Gate\+Voxel\+Activity\+Translation\+Range}
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a6f3b3ddb5ee8d5af7cdc2fb59adf2a98}\label{classGateSourceVoxelRangeTranslator_a6f3b3ddb5ee8d5af7cdc2fb59adf2a98}} 
+typedef std\+::vector$<$ Gate\+Voxel\+Activity\+Translation\+Range $>$ {\bfseries Gate\+Voxel\+Activity\+Translation\+Range\+Vector}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_ae83dc5954c4ac8b07ea102a87a8919fe}\label{classGateSourceVoxelRangeTranslator_ae83dc5954c4ac8b07ea102a87a8919fe}} 
+Gate\+Voxel\+Activity\+Translation\+Range\+Vector {\bfseries m\+\_\+voxel\+Activity\+Translation}
+\item 
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a78f46390245c8ad27c902b448150a054}\label{classGateSourceVoxelRangeTranslator_a78f46390245c8ad27c902b448150a054}} 
+\mbox{\hyperlink{classGateSourceVoxelRangeTranslatorMessenger}{Gate\+Source\+Voxel\+Range\+Translator\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a86cc6e921201bb84f9b6c80437f0a521}\label{classGateSourceVoxelRangeTranslator_a86cc6e921201bb84f9b6c80437f0a521}} 
+\index{GateSourceVoxelRangeTranslator@{GateSourceVoxelRangeTranslator}!Describe@{Describe}}
+\index{Describe@{Describe}!GateSourceVoxelRangeTranslator@{GateSourceVoxelRangeTranslator}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Source\+Voxel\+Range\+Translator\+::\+Describe (\begin{DoxyParamCaption}\item[{G4int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}}.
+
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_abf3ad5e5343a9a966a8648cf64517f95}\label{classGateSourceVoxelRangeTranslator_abf3ad5e5343a9a966a8648cf64517f95}} 
+\index{GateSourceVoxelRangeTranslator@{GateSourceVoxelRangeTranslator}!TranslateToActivity@{TranslateToActivity}}
+\index{TranslateToActivity@{TranslateToActivity}!GateSourceVoxelRangeTranslator@{GateSourceVoxelRangeTranslator}}
+\doxysubsubsection{\texorpdfstring{TranslateToActivity()}{TranslateToActivity()}}
+{\footnotesize\ttfamily G4double Gate\+Source\+Voxel\+Range\+Translator\+::\+Translate\+To\+Activity (\begin{DoxyParamCaption}\item[{G4double}]{voxel\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}}.
+
+\mbox{\Hypertarget{classGateSourceVoxelRangeTranslator_a641276d723eba744163694f6ce2aaafa}\label{classGateSourceVoxelRangeTranslator_a641276d723eba744163694f6ce2aaafa}} 
+\index{GateSourceVoxelRangeTranslator@{GateSourceVoxelRangeTranslator}!UpdateActivity@{UpdateActivity}}
+\index{UpdateActivity@{UpdateActivity}!GateSourceVoxelRangeTranslator@{GateSourceVoxelRangeTranslator}}
+\doxysubsubsection{\texorpdfstring{UpdateActivity()}{UpdateActivity()}}
+{\footnotesize\ttfamily void Gate\+Source\+Voxel\+Range\+Translator\+::\+Update\+Activity (\begin{DoxyParamCaption}\item[{G4double}]{activmin,  }\item[{G4double}]{activmax,  }\item[{G4double}]{Updated\+\_\+\+Activity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Source\+Voxel\+Range\+Translator.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Source\+Voxel\+Range\+Translator.\+cc\end{DoxyCompactItemize}

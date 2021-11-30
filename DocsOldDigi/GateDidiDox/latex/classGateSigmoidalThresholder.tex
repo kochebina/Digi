@@ -1,0 +1,98 @@
+\hypertarget{classGateSigmoidalThresholder}{}\doxysection{Gate\+Sigmoidal\+Thresholder Class Reference}
+\label{classGateSigmoidalThresholder}\index{GateSigmoidalThresholder@{GateSigmoidalThresholder}}
+
+
+Pulse-\/processor modelling a threshold discriminator based on a sigmoidal function.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Sigmoidal\+Thresholder.\+hh$>$}
+
+Inheritance diagram for Gate\+Sigmoidal\+Thresholder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateSigmoidalThresholder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a19fb039fbc0bdc65a5d53887ef67642e}\label{classGateSigmoidalThresholder_a19fb039fbc0bdc65a5d53887ef67642e}} 
+{\bfseries Gate\+Sigmoidal\+Thresholder} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name, G4double its\+Threshold=0., G4double its\+Alpha=1., G4double its\+Acceptance=0.\+5)
+\begin{DoxyCompactList}\small\item\em Constructs a new sigmoide thresholder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a1d75f53292e83002b19eac058327ce69}\label{classGateSigmoidalThresholder_a1d75f53292e83002b19eac058327ce69}} 
+virtual {\bfseries $\sim$\+Gate\+Sigmoidal\+Thresholder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a1d8cfe955a31ac68ebee3ebe3db3a6dc}\label{classGateSigmoidalThresholder_a1d8cfe955a31ac68ebee3ebe3db3a6dc}} 
+G4double {\bfseries Get\+Threshold} ()
+\begin{DoxyCompactList}\small\item\em Returns the threshold params. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a887f64313245815c6acac2bb67a8d998}\label{classGateSigmoidalThresholder_a887f64313245815c6acac2bb67a8d998}} 
+G4double {\bfseries Get\+Threshold\+Alpha} ()
+\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a486f26f368693f28a2348f52adb1f8a2}\label{classGateSigmoidalThresholder_a486f26f368693f28a2348f52adb1f8a2}} 
+G4double {\bfseries Get\+Threshold\+Per\+Cent} ()
+\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_ac4e2ac3d3f0d6348c62f8bcb74fc132f}\label{classGateSigmoidalThresholder_ac4e2ac3d3f0d6348c62f8bcb74fc132f}} 
+void {\bfseries Set\+Threshold} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the threshold param. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_ae7e7540e54cc8e22791ab05e20988a3f}\label{classGateSigmoidalThresholder_ae7e7540e54cc8e22791ab05e20988a3f}} 
+void {\bfseries Set\+Threshold\+Alpha} (G4double val)
+\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_aa52329905af0c9098651257dd20999ac}\label{classGateSigmoidalThresholder_aa52329905af0c9098651257dd20999ac}} 
+void {\bfseries Set\+Threshold\+Per\+Cent} (G4double val)
+\item 
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a7bd3bcb06b33575613a3b36956d4cb45}\label{classGateSigmoidalThresholder_a7bd3bcb06b33575613a3b36956d4cb45}} 
+G4double {\bfseries Sigmoide\+Fct} (G4double nu)
+\begin{DoxyCompactList}\small\item\em Sigmoide function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSigmoidalThresholder_a13a9df2cb0d977119bbedec76c745ae4}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateSigmoidalThresholder_a6ec850ca90afca57297dc5bdf8ceae10}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modelling a threshold discriminator based on a sigmoidal function. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSigmoidalThresholder}{Gate\+Sigmoidal\+Thresholder}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (mars 2003)
+\item The method Process\+One\+Pulse of this class models a threshold discriminator based on a sigmoidal function (sigmoidal is a symmetrical function included between 0 and 1)\+: \[\sigma(E)=\frac{1}{1+exp\big(\alpha;\frac{E-E_0}{E_0}\big)}\] The operator choose the threshold, the percentage of acceptance for this threshold and the alpha parameter (which is proportionnel of the slope @ symmetrical point Eo); with these parameters and the input pulse energy the function is calculated and if it\textquotesingle{}s bigger than a random number included between 0 and 1, the pulse is copied into the output pulse-\/list. On the contrary, the input pulse is discarded.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a13a9df2cb0d977119bbedec76c745ae4}\label{classGateSigmoidalThresholder_a13a9df2cb0d977119bbedec76c745ae4}} 
+\index{GateSigmoidalThresholder@{GateSigmoidalThresholder}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateSigmoidalThresholder@{GateSigmoidalThresholder}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Sigmoidal\+Thresholder\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the thresholder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateSigmoidalThresholder_a6ec850ca90afca57297dc5bdf8ceae10}\label{classGateSigmoidalThresholder_a6ec850ca90afca57297dc5bdf8ceae10}} 
+\index{GateSigmoidalThresholder@{GateSigmoidalThresholder}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateSigmoidalThresholder@{GateSigmoidalThresholder}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Sigmoidal\+Thresholder\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Sigmoidal\+Thresholder.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Sigmoidal\+Thresholder.\+cc\end{DoxyCompactItemize}

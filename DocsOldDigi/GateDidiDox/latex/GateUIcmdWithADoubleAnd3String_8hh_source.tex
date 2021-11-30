@@ -1,0 +1,57 @@
+\hypertarget{GateUIcmdWithADoubleAnd3String_8hh_source}{}\doxysection{Gate\+UIcmd\+With\+ADouble\+And3\+String.\+hh}
+\label{GateUIcmdWithADoubleAnd3String_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateUIcmdWithADoubleAnd3String.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateUIcmdWithADoubleAnd3String.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateUIcmdWithADoubleAnd3String}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEUICMDWITHADOUBLEAND3STRING\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEUICMDWITHADOUBLEAND3STRING\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcommand.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUIcmdWithADoubleAnd3String}{GateUIcmdWithADoubleAnd3String}} : \textcolor{keyword}{public} G4UIcommand}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keyword}{public}: \textcolor{comment}{// with description}}
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateUIcmdWithADoubleAnd3String}{GateUIcmdWithADoubleAnd3String}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theCommandPath,G4UImessenger * theMessenger);}
+\DoxyCodeLine{26     \textcolor{comment}{//  Constructor. The command string with full path directory}}
+\DoxyCodeLine{27     \textcolor{comment}{// and the pointer to the messenger must be given.}}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateUIcmdWithADoubleAnd3String}{\string~GateUIcmdWithADoubleAnd3String}}()\{;\}}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} SetParameterName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theName1, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * theName2,\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theName3, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * theName4,}
+\DoxyCodeLine{30                           G4bool omittable1, G4bool omittable2, G4bool omittable3, G4bool omittable4,}
+\DoxyCodeLine{31                           G4bool currentAsDefault=\textcolor{keyword}{false});}
+\DoxyCodeLine{32     \textcolor{comment}{//  Set the parameter name.}}
+\DoxyCodeLine{33     \textcolor{comment}{//  If "{}omittable"{} is set as true, the user of this command can ommit}}
+\DoxyCodeLine{34     \textcolor{comment}{// the value when he/she applies the command. If "{}omittable"{} is false,}}
+\DoxyCodeLine{35     \textcolor{comment}{// the user must supply the parameter string.}}
+\DoxyCodeLine{36     \textcolor{comment}{//  "{}currentAsDefault"{} flag is valid only if "{}omittable"{} is true. If this}}
+\DoxyCodeLine{37     \textcolor{comment}{// flag is true, the current value is used as the default value when the }}
+\DoxyCodeLine{38     \textcolor{comment}{// user ommit the parameter. If this flag is false, the value given by the }}
+\DoxyCodeLine{39     \textcolor{comment}{// next SetDefaultValue() method is used.}}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} SetCandidates(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * candidateList1, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * candidateList2,}
+\DoxyCodeLine{41                           \textcolor{keyword}{const} \textcolor{keywordtype}{char} * candidateList3, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * candidateList4);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{//  Defines the candidates of the parameter string. Candidates listed in}}
+\DoxyCodeLine{44     \textcolor{comment}{// the argument must be separated by space(s).}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} SetDefaultValue(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * defVal1, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * defVal2, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * defVal3, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * defVal4);}
+\DoxyCodeLine{46     \textcolor{comment}{//  Set the default value of the parameter. This default value is used}}
+\DoxyCodeLine{47     \textcolor{comment}{// when the user of this command ommits the parameter value, and}}
+\DoxyCodeLine{48     \textcolor{comment}{// "{}ommitable"{} is true and "{}curreutAsDefault"{} is false.}}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

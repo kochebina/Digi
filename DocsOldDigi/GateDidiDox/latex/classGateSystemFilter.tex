@@ -1,0 +1,89 @@
+\hypertarget{classGateSystemFilter}{}\doxysection{Gate\+System\+Filter Class Reference}
+\label{classGateSystemFilter}\index{GateSystemFilter@{GateSystemFilter}}
+
+
+Pulse processor module to separate between pulses arriving from systems in multi-\/system approach.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+System\+Filter.\+hh$>$}
+
+Inheritance diagram for Gate\+System\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateSystemFilter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemFilter_aed2cbbddd4b37be2f56c67cdcf87e800}\label{classGateSystemFilter_aed2cbbddd4b37be2f56c67cdcf87e800}} 
+{\bfseries Gate\+System\+Filter} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\item 
+\mbox{\Hypertarget{classGateSystemFilter_a55f1b5703f0aceaf660c4fb67657e23b}\label{classGateSystemFilter_a55f1b5703f0aceaf660c4fb67657e23b}} 
+G4\+String {\bfseries Get\+System\+Name} ()
+\item 
+\mbox{\Hypertarget{classGateSystemFilter_afd43bf16edb6b1b3c84656d784e3760d}\label{classGateSystemFilter_afd43bf16edb6b1b3c84656d784e3760d}} 
+void {\bfseries Set\+System\+Name} (G4\+String system\+Name)
+\item 
+\mbox{\Hypertarget{classGateSystemFilter_aa9a4a98e54dd560dc9542066eb95172d}\label{classGateSystemFilter_aa9a4a98e54dd560dc9542066eb95172d}} 
+void {\bfseries Set\+System\+To\+Its\+Chain} ()
+\item 
+virtual void \mbox{\hyperlink{classGateSystemFilter_af0b5986172449b4b1d4c45dd2777c12c}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGateSystemFilter_a486b84f6a472a35599cb038706b3fb6c}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\item 
+void \mbox{\hyperlink{classGateSystemFilter_a55b3fff50e747994fe41f14d16ce5ad1}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse processor module to separate between pulses arriving from systems in multi-\/system approach. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSystemFilter}{Gate\+System\+Filter}} -\/ \href{mailto:Abdul-Fattah.Mohamad-Hadi@subatech.in2p3.fr}{\texttt{ Abdul-\/\+Fattah.\+Mohamad-\/\+Hadi@subatech.\+in2p3.\+fr}} 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSystemFilter_af0b5986172449b4b1d4c45dd2777c12c}\label{classGateSystemFilter_af0b5986172449b4b1d4c45dd2777c12c}} 
+\index{GateSystemFilter@{GateSystemFilter}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateSystemFilter@{GateSystemFilter}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+System\+Filter\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the system filter 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateSystemFilter_a55b3fff50e747994fe41f14d16ce5ad1}\label{classGateSystemFilter_a55b3fff50e747994fe41f14d16ce5ad1}} 
+\index{GateSystemFilter@{GateSystemFilter}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateSystemFilter@{GateSystemFilter}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+System\+Filter\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Pure virtual function for processing one input-\/pulse This function is called by \mbox{\hyperlink{classGateSystemFilter_a486b84f6a472a35599cb038706b3fb6c}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing must be incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateSystemFilter_a486b84f6a472a35599cb038706b3fb6c}\label{classGateSystemFilter_a486b84f6a472a35599cb038706b3fb6c}} 
+\index{GateSystemFilter@{GateSystemFilter}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GateSystemFilter@{GateSystemFilter}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+System\+Filter\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default function for pulse-\/list processing This function reads an input pulse-\/list. It then calls sequantially the method \mbox{\hyperlink{classGateSystemFilter_a55b3fff50e747994fe41f14d16ce5ad1}{Process\+One\+Pulse()}}, once for each of the input pulses. The method returns the output pulse-\/list resulting from this processing 
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+System\+Filter.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+System\+Filter.\+cc\end{DoxyCompactItemize}

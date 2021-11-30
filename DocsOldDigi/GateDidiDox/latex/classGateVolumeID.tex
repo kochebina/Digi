@@ -1,0 +1,174 @@
+\hypertarget{classGateVolumeID}{}\doxysection{Gate\+Volume\+ID Class Reference}
+\label{classGateVolumeID}\index{GateVolumeID@{GateVolumeID}}
+
+
+The \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} stores all the navigation information needed for reaching and.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Volume\+ID.\+hh$>$}
+
+Inheritance diagram for Gate\+Volume\+ID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateVolumeID}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVolumeID_a72bb27723313ce664803886ecf14789f}\label{classGateVolumeID_a72bb27723313ce664803886ecf14789f}} 
+{\bfseries Gate\+Volume\+ID} (const G4\+Touchable\+History $\ast$touchable)
+\begin{DoxyCompactList}\small\item\em Compute the \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} for a touchable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_adb548d37080512bcf1491a5f2401e55d}\label{classGateVolumeID_adb548d37080512bcf1491a5f2401e55d}} 
+{\bfseries Gate\+Volume\+ID} ()
+\begin{DoxyCompactList}\small\item\em Creates an empty volume\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_abee8cbc471d4d5a47d0e2e476a476951}\label{classGateVolumeID_abee8cbc471d4d5a47d0e2e476a476951}} 
+{\bfseries Gate\+Volume\+ID} (G4int $\ast$daughter\+ID, size\+\_\+t array\+Size)
+\begin{DoxyCompactList}\small\item\em Recreate a volume\+ID from data stored in a hit file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_aa6e78af67e9c7230e9fbab94a1230a31}\label{classGateVolumeID_aa6e78af67e9c7230e9fbab94a1230a31}} 
+G4bool {\bfseries Is\+Valid} () const
+\begin{DoxyCompactList}\small\item\em Returns true for a valid (i.\+e. not empty) volume\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_afdeb40b034ae5096240cf634ab3d8eed}\label{classGateVolumeID_afdeb40b034ae5096240cf634ab3d8eed}} 
+G4bool {\bfseries Is\+Invalid} () const
+\begin{DoxyCompactList}\small\item\em Returns true for an invalid (i.\+e. empty) volume\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_aadb2f0cf48361a6e3edb24cab85e1aa1}\label{classGateVolumeID_aadb2f0cf48361a6e3edb24cab85e1aa1}} 
+G4bool {\bfseries Is\+Valid\+Depth} (size\+\_\+t depth) const
+\begin{DoxyCompactList}\small\item\em Check whether a depth is within the vector range. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_a2e21b8d22a9b1345cb0db68ddab2e0d8}\label{classGateVolumeID_a2e21b8d22a9b1345cb0db68ddab2e0d8}} 
+G4int {\bfseries Get\+Daughter\+ID} (size\+\_\+t depth) const
+\begin{DoxyCompactList}\small\item\em Get daughter ID at a position in the vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_a8350872c63f71b79a5d7682a4c27dd11}\label{classGateVolumeID_a8350872c63f71b79a5d7682a4c27dd11}} 
+G4\+VPhysical\+Volume $\ast$ {\bfseries Get\+Volume} (size\+\_\+t depth) const
+\begin{DoxyCompactList}\small\item\em Retrieves a physical volume within the path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_aa38c054e3828e1049013803b7311a42e}\label{classGateVolumeID_aa38c054e3828e1049013803b7311a42e}} 
+G4\+VPhysical\+Volume $\ast$ {\bfseries Get\+Top\+Volume} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the world volume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_a46adb500038b34ffefb7788a092f7f45}\label{classGateVolumeID_a46adb500038b34ffefb7788a092f7f45}} 
+G4\+VPhysical\+Volume $\ast$ {\bfseries Get\+Bottom\+Volume} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the bottom physical volume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_aac7cdb7d89e0a9b572b0615faa194020}\label{classGateVolumeID_aac7cdb7d89e0a9b572b0615faa194020}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Get\+Creator} (size\+\_\+t depth) const
+\begin{DoxyCompactList}\small\item\em Retrieves a volume creator within the path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_aadaa6764d97964ad908f4f92a021f7d6}\label{classGateVolumeID_aadaa6764d97964ad908f4f92a021f7d6}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Get\+Bottom\+Creator} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the bottom creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_a524f89115ff9a99cb225edbf948f279c}\label{classGateVolumeID_a524f89115ff9a99cb225edbf948f279c}} 
+G4int {\bfseries Get\+Creator\+Depth} (G4\+String name) const
+\begin{DoxyCompactList}\small\item\em Retrieves the depth of requested creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_af2f8822814f50bfa97206e5b506f634a}\label{classGateVolumeID_af2f8822814f50bfa97206e5b506f634a}} 
+G4int {\bfseries Get\+Copy\+No} (size\+\_\+t depth) const
+\begin{DoxyCompactList}\small\item\em Retrieves a copy no within the path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_ad43ee35e1d8269658288887cd4f0809f}\label{classGateVolumeID_ad43ee35e1d8269658288887cd4f0809f}} 
+const \mbox{\hyperlink{classGateVolumeSelector}{Gate\+Volume\+Selector}} \& {\bfseries Get\+Selector} (size\+\_\+t depth) const
+\begin{DoxyCompactList}\small\item\em Get volume selector at a position in the vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_a0a7766e22824fbb536ef62bb2f446343}\label{classGateVolumeID_a0a7766e22824fbb536ef62bb2f446343}} 
+void {\bfseries Insert\+Volume\+Level} (G4\+VPhysical\+Volume $\ast$volume)
+\begin{DoxyCompactList}\small\item\em Appends a new level at the end of the vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_ae2df511cf2a76340d2ac937cf2baee74}\label{classGateVolumeID_ae2df511cf2a76340d2ac937cf2baee74}} 
+void {\bfseries Store\+Daughter\+IDs} (G4int $\ast$dest, size\+\_\+t dest\+Size) const
+\begin{DoxyCompactList}\small\item\em Store the daughter\+IDs into an array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_a4f423cebd9709300836cc1ac1474ee79}\label{classGateVolumeID_a4f423cebd9709300836cc1ac1474ee79}} 
+G4\+Affine\+Transform {\bfseries Compute\+Affine\+Transform} (G4int ancestor\+Depth) const
+\begin{DoxyCompactList}\small\item\em Retrieves the affine transformation connecting connecting the bottom volume to one of its ancestors. \end{DoxyCompactList}\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGateVolumeID_acb397f1228c00cbabe83c1f981eb2ed5}{Move\+To\+Ancestor\+Volume\+Frame}} (G4\+Three\+Vector position, G4int ancestor\+Level=0) const
+\begin{DoxyCompactList}\small\item\em Move a position from the reference frame of the bottom-\/volume into the reference frame of one of its ancestors. \end{DoxyCompactList}\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGateVolumeID_ab33596f033382bc624fb4f5b7d10b1a7}{Move\+To\+Bottom\+Volume\+Frame}} (G4\+Three\+Vector position, G4int ancestor\+Level=0) const
+\begin{DoxyCompactList}\small\item\em Move a position from the reference frame of an ancestor into the reference frame of the bottom-\/volume. \end{DoxyCompactList}\item 
+G4\+Three\+Vector \mbox{\hyperlink{classGateVolumeID_a91c16e173e4be3983384bb12ab00e411}{Move\+To\+Frame\+By\+Transform}} (G4\+Three\+Vector position, const G4\+Affine\+Transform \&transform, G4bool flag\+Direct) const
+\begin{DoxyCompactList}\small\item\em Move a position from one reference frame into another. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumeID_a0b3529839b2dfda2b00f7188a3470a87}\label{classGateVolumeID_a0b3529839b2dfda2b00f7188a3470a87}} 
+G4\+Three\+Vector {\bfseries Move\+To\+Mother\+Frame} (G4\+Three\+Vector position, G4\+VPhysical\+Volume $\ast$physical\+Volume) const
+\begin{DoxyCompactList}\small\item\em Transfers a local position, given in the reference frame of a volume, into the reference frame of its mother volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVolumeID_a36593561d702d7a594dadd322039022c}\label{classGateVolumeID_a36593561d702d7a594dadd322039022c}} 
+static G4\+Affine\+Transform {\bfseries Get\+Volume\+Affine\+Transform} (G4\+VPhysical\+Volume $\ast$physical\+Volume)
+\begin{DoxyCompactList}\small\item\em Tool function\+: returns the affine transform linking a volume\textquotesingle{}s reference frame to its mother\textquotesingle{}s reference frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVolumeID_ab0b34e9588c0dacc7e7ebe7a34f69f71}\label{classGateVolumeID_ab0b34e9588c0dacc7e7ebe7a34f69f71}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} \&volume\+ID)
+\begin{DoxyCompactList}\small\item\em Printing methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} stores all the navigation information needed for reaching and. 
+
+identifying a specific real-\/space volume (i.\+e. a touchable)
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (May 7 2002)
+\item A \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} stores a navigation path to a specific real-\/space volume as a vector of \mbox{\hyperlink{classGateVolumeSelector}{Gate\+Volume\+Selector}}.
+\item Once a \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} has been created for a touchable, it can provide the following services\+:
+\begin{DoxyItemize}
+\item Get any volume of the path (i.\+e. the touchable itself or any of its ancestors)
+\item Transfer a position from a volume\textquotesingle{}s reference frame into another volume\textquotesingle{}s reference frame
+\item Return a \char`\"{}daughter\+ID\char`\"{} for each level 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVolumeID_acb397f1228c00cbabe83c1f981eb2ed5}\label{classGateVolumeID_acb397f1228c00cbabe83c1f981eb2ed5}} 
+\index{GateVolumeID@{GateVolumeID}!MoveToAncestorVolumeFrame@{MoveToAncestorVolumeFrame}}
+\index{MoveToAncestorVolumeFrame@{MoveToAncestorVolumeFrame}!GateVolumeID@{GateVolumeID}}
+\doxysubsubsection{\texorpdfstring{MoveToAncestorVolumeFrame()}{MoveToAncestorVolumeFrame()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Volume\+ID\+::\+Move\+To\+Ancestor\+Volume\+Frame (\begin{DoxyParamCaption}\item[{G4\+Three\+Vector}]{position,  }\item[{G4int}]{ancestor\+Level = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Move a position from the reference frame of the bottom-\/volume into the reference frame of one of its ancestors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the position to be transfered into the ancestor\textquotesingle{}s reference frame \\
+\hline
+{\em ancestor\+Level} & The level of an ancestor of the bottom-\/volume, located somewhere between the top and the bottom. If no level is specified, the world-\/level is selected \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateVolumeID_ab33596f033382bc624fb4f5b7d10b1a7}\label{classGateVolumeID_ab33596f033382bc624fb4f5b7d10b1a7}} 
+\index{GateVolumeID@{GateVolumeID}!MoveToBottomVolumeFrame@{MoveToBottomVolumeFrame}}
+\index{MoveToBottomVolumeFrame@{MoveToBottomVolumeFrame}!GateVolumeID@{GateVolumeID}}
+\doxysubsubsection{\texorpdfstring{MoveToBottomVolumeFrame()}{MoveToBottomVolumeFrame()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Volume\+ID\+::\+Move\+To\+Bottom\+Volume\+Frame (\begin{DoxyParamCaption}\item[{G4\+Three\+Vector}]{position,  }\item[{G4int}]{ancestor\+Level = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Move a position from the reference frame of an ancestor into the reference frame of the bottom-\/volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the local position to be transfered into the descendant\textquotesingle{}s reference frame \\
+\hline
+{\em ancestor\+Level} & The level of an ancestor of the bottom-\/volume, located somewhere between the top and the bottom. If no level is specified, the world-\/level is selected \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateVolumeID_a91c16e173e4be3983384bb12ab00e411}\label{classGateVolumeID_a91c16e173e4be3983384bb12ab00e411}} 
+\index{GateVolumeID@{GateVolumeID}!MoveToFrameByTransform@{MoveToFrameByTransform}}
+\index{MoveToFrameByTransform@{MoveToFrameByTransform}!GateVolumeID@{GateVolumeID}}
+\doxysubsubsection{\texorpdfstring{MoveToFrameByTransform()}{MoveToFrameByTransform()}}
+{\footnotesize\ttfamily G4\+Three\+Vector Gate\+Volume\+ID\+::\+Move\+To\+Frame\+By\+Transform (\begin{DoxyParamCaption}\item[{G4\+Three\+Vector}]{position,  }\item[{const G4\+Affine\+Transform \&}]{transform,  }\item[{G4bool}]{flag\+Direct }\end{DoxyParamCaption}) const}
+
+
+
+Move a position from one reference frame into another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & a position to be transfered into another reference frame \\
+\hline
+{\em transform} & the transformation linking the two reference frames \\
+\hline
+{\em flag\+Direct} & if true, apply the transform. If false, apply its inverse. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Volume\+ID.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Volume\+ID.\+cc\end{DoxyCompactItemize}

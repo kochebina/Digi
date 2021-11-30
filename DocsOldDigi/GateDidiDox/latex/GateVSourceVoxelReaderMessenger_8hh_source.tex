@@ -1,0 +1,54 @@
+\hypertarget{GateVSourceVoxelReaderMessenger_8hh_source}{}\doxysection{Gate\+VSource\+Voxel\+Reader\+Messenger.\+hh}
+\label{GateVSourceVoxelReaderMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVSourceVoxelReaderMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVSourceVoxelReaderMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEVSOURCEVOXELREADERMESSENGER\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEVSOURCEVOXELREADERMESSENGER\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClock}{GateClock}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSourceVoxelReaderMessenger}{GateVSourceVoxelReaderMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateMessenger}{GateMessenger}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateVSourceVoxelReaderMessenger}{GateVSourceVoxelReaderMessenger}}(\mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}* voxelReader);}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateVSourceVoxelReaderMessenger}{\string~GateVSourceVoxelReaderMessenger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* , G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}*             m\_voxelReader;}
+\DoxyCodeLine{37   G4UIcmdWith3VectorAndUnit*          PositionCmd;}
+\DoxyCodeLine{38   G4UIcmdWith3VectorAndUnit*          VoxelSizeCmd;}
+\DoxyCodeLine{39   \mbox{\hyperlink{classGateUIcmdWithAVector}{GateUIcmdWithAVector<G4String>}}*     InsertTranslatorCmd;}
+\DoxyCodeLine{40   G4UIcmdWithoutParameter*            RemoveTranslatorCmd;}
+\DoxyCodeLine{41   G4UIcmdWithAnInteger*               VerboseCmd;}
+\DoxyCodeLine{42   G4UIcmdWithAString*                 TimeActivTablesCmd;}
+\DoxyCodeLine{43   G4UIcmdWithAString*                 ActivityImageCmd;}
+\DoxyCodeLine{44   G4UIcmdWithADoubleAndUnit*          SetTimeSamplingCmd;}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

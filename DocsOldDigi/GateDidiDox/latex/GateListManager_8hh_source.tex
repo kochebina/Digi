@@ -1,0 +1,69 @@
+\hypertarget{GateListManager_8hh_source}{}\doxysection{Gate\+List\+Manager.\+hh}
+\label{GateListManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateListManager.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateListManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateListManager\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateListManager\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }GateVObjectCreator;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateListManager}{GateListManager}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateListManager}{GateListManager}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{25                 \textcolor{keyword}{const} G4String\& itsElementTypeName,}
+\DoxyCodeLine{26                 G4bool canBeDisabled=\textcolor{keyword}{true},}
+\DoxyCodeLine{27                 G4bool acceptNewElements=\textcolor{keyword}{true});}
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateListManager}{\string~GateListManager}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{public}:}
+\DoxyCodeLine{31      \textcolor{keyword}{virtual}  \textcolor{keywordtype}{void} TheListElements(\textcolor{keywordtype}{size\_t} indent=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{32      \textcolor{comment}{//virtual  void ListElements(size\_t indent=0) const;}}
+\DoxyCodeLine{33      }
+\DoxyCodeLine{34      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}* FindElement(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{35      \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}* GetElement(\textcolor{keywordtype}{size\_t} i)}
+\DoxyCodeLine{36           \{\textcolor{keywordflow}{return} (i<theListOfNamedObject.size()) ? theListOfNamedObject[i] : 0; \}}
+\DoxyCodeLine{37      \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} size()\textcolor{keyword}{ const}}
+\DoxyCodeLine{38 \textcolor{keyword}{          }\{\textcolor{keywordflow}{return} theListOfNamedObject.size(); \}}
+\DoxyCodeLine{39      \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}* FindElementByBaseName(\textcolor{keyword}{const} G4String\& baseName)}
+\DoxyCodeLine{40        \{ \textcolor{keywordflow}{return} FindElement( MakeElementName(baseName) ) ; \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42      \textcolor{keyword}{inline} G4bool AcceptNewElements()\textcolor{keyword}{ const }}
+\DoxyCodeLine{43 \textcolor{keyword}{          }\{ \textcolor{keywordflow}{return} bAcceptNewElements;\}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45      \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\&  GetElementTypeName()}
+\DoxyCodeLine{46           \{ \textcolor{keywordflow}{return} mElementTypeName;\}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4String MakeElementName(\textcolor{keyword}{const} G4String\& newBaseName)}
+\DoxyCodeLine{49       \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateNamedObject_a74cb2aaf869dcf59e7e22dd72cff6368}{GetObjectName}}() + \textcolor{stringliteral}{"{}/"{}} + newBaseName; \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateListManager_a8f764334b696a62374b6b1ca0f0db693}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{54      }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{57     G4String mElementTypeName;}
+\DoxyCodeLine{58     G4bool   bAcceptNewElements;}
+\DoxyCodeLine{59     }
+\DoxyCodeLine{60     \textcolor{keyword}{typedef} std::vector<GateNamedObject*> GateListOfNamedObject;}
+\DoxyCodeLine{61     GateListOfNamedObject   theListOfNamedObject;}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{65 }
+
+\end{DoxyCode}

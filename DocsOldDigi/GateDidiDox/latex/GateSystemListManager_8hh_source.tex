@@ -1,0 +1,92 @@
+\hypertarget{GateSystemListManager_8hh_source}{}\doxysection{Gate\+System\+List\+Manager.\+hh}
+\label{GateSystemListManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemListManager.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemListManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSystemListManager\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSystemListManager\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateListManager.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemListMessenger}{GateSystemListMessenger}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{34 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{35 \textcolor{comment}{//    Last modification in 07/2012 by vesna.cuplov@gmail.com, for the OPTICAL system.}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateListManager}{GateListManager}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39   \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \textcolor{keyword}{static} \mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}}* \mbox{\hyperlink{classGateSystemListManager_a25f1f35e42e8569f357e93b74769e7a7}{GetInstance}}(); }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemListManager_a88a0751f40855bbae63ba4ae6f3dac95}{\string~GateSystemListManager}}(); }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{private}:}
+\DoxyCodeLine{51     \mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}}();   }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{public}:}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemListManager_a28670e3ca1e98c2865154d9b63cd2310}{RegisterSystem}}(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* newSystem);   }
+\DoxyCodeLine{58     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemListManager_afb35395085e940282909b0c5d80b5d91}{UnregisterSystem}}(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* system);    }
+\DoxyCodeLine{59     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemListManager_a4ef5a0b649b83d8e920d96ef1b96a710}{ListSystems}}() const                        }
+\DoxyCodeLine{60       \{ TheListElements();\}}
+\DoxyCodeLine{61       \textcolor{comment}{//\{ TheListElements();\}}}
+\DoxyCodeLine{63 \textcolor{comment}{}        }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* \mbox{\hyperlink{classGateSystemListManager_a594399a568df18e7b81d7d49444f13f2}{FindSystem}}(\textcolor{keyword}{const} G4String\& name)                 }
+\DoxyCodeLine{69       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVSystem}{GateVSystem}}*) FindElement(name); \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{78     \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* \mbox{\hyperlink{classGateSystemListManager_a741980ff3e33226c54512a8d5e1142f6}{FindSystemOfCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* \mbox{\hyperlink{classGateSystemListManager_a07fd43c839159a150bd8abc4463e7053}{GetSystem}}(\textcolor{keywordtype}{size\_t} i) }
+\DoxyCodeLine{85       \{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVSystem}{GateVSystem}}*) GetElement(i);\}              }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemListManager_a2999071fe825c7b2c78a7e35e51235d5}{CheckScannerAutoCreation}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* newChildCreator);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{104     G4int \mbox{\hyperlink{classGateSystemListManager_ad7b8ee5f5a1a4156599841ed24b246de}{DecodeTypeName}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{112     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* \mbox{\hyperlink{classGateSystemListManager_adee2fb983b52d3b2b895819a1a07092c}{InsertNewSystem}}(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateSystemListManager_a8453c13f282e9120a8e9d38e817dc8e8}{DumpChoices}}();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{120     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemListManager_ac6a601a35939b42fd99d9150b21de6c1}{ListChoices}}() }
+\DoxyCodeLine{121       \{ G4cout << \textcolor{stringliteral}{"{}The available choices are: "{}} << \mbox{\hyperlink{classGateSystemListManager_a8453c13f282e9120a8e9d38e817dc8e8}{DumpChoices}}() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}}; \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// Get the list of inserted systems names}}
+\DoxyCodeLine{124     \textcolor{keyword}{inline} std::vector<G4String>* GetInsertedSystemsNames()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} theInsertedSystemsNames;\}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{127     \mbox{\hyperlink{classGateSystemListMessenger}{GateSystemListMessenger}}* \mbox{\hyperlink{classGateSystemListManager_ad625d0fe88aadb07be2fc403223f6c63}{m\_messenger}};    }
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129   \textcolor{keyword}{private}:}
+\DoxyCodeLine{131     std::vector<G4String>* theInsertedSystemsNames;}
+\DoxyCodeLine{133     \textcolor{keyword}{static} \mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}}* theGateSystemListManager;}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{keyword}{static} \textcolor{keyword}{const} G4String       theSystemNameList[];  }
+\DoxyCodeLine{136 \};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{140 }
+
+\end{DoxyCode}

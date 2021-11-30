@@ -1,0 +1,38 @@
+\hypertarget{GateVBlurringLaw_8hh_source}{}\doxysection{Gate\+VBlurring\+Law.\+hh}
+\label{GateVBlurringLaw_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVBlurringLaw.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVBlurringLaw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVBlurringLaw\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVBlurringLaw\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateNamedObject.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVBlurringLaw}{GateVBlurringLaw}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}} \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     public :}
+\DoxyCodeLine{27         \mbox{\hyperlink{classGateVBlurringLaw}{GateVBlurringLaw}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVBlurringLaw}{\string~GateVBlurringLaw}}() \{\}}
+\DoxyCodeLine{30         \textcolor{keyword}{virtual} G4double ComputeResolution(G4double energy) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{comment}{// Implementation of the virtual method in GateNamedObject class}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVBlurringLaw_a77e713f59f6b85843aaea4df7165c55f}{Describe}} (\textcolor{keywordtype}{size\_t} ident=0);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{comment}{// Pure virtual method called in Describe()}}
+\DoxyCodeLine{36         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself (\textcolor{keywordtype}{size\_t} ident = 0) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

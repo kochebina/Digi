@@ -1,0 +1,81 @@
+\hypertarget{classGateListManager}{}\doxysection{Gate\+List\+Manager Class Reference}
+\label{classGateListManager}\index{GateListManager@{GateListManager}}
+Inheritance diagram for Gate\+List\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.343096cm]{classGateListManager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateListManager_ac22c6e4efe545c11d07f670de43d7f9f}\label{classGateListManager_ac22c6e4efe545c11d07f670de43d7f9f}} 
+{\bfseries Gate\+List\+Manager} (const G4\+String \&its\+Name, const G4\+String \&its\+Element\+Type\+Name, G4bool can\+Be\+Disabled=true, G4bool accept\+New\+Elements=true)
+\item 
+\mbox{\Hypertarget{classGateListManager_abe291c7ef2715e3a4773ae97df60152f}\label{classGateListManager_abe291c7ef2715e3a4773ae97df60152f}} 
+virtual void {\bfseries The\+List\+Elements} (size\+\_\+t indent=0) const
+\item 
+\mbox{\Hypertarget{classGateListManager_ab9814e01bf149e19c01e66151197aceb}\label{classGateListManager_ab9814e01bf149e19c01e66151197aceb}} 
+virtual \mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$ {\bfseries Find\+Element} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGateListManager_a7659f82474d518e098df49914cfdaacf}\label{classGateListManager_a7659f82474d518e098df49914cfdaacf}} 
+virtual \mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$ {\bfseries Get\+Element} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{classGateListManager_af119992c85c9adde70813571f5772252}\label{classGateListManager_af119992c85c9adde70813571f5772252}} 
+virtual size\+\_\+t {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classGateListManager_a08f7857cc57654b1b87243ba7bf0a291}\label{classGateListManager_a08f7857cc57654b1b87243ba7bf0a291}} 
+virtual \mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$ {\bfseries Find\+Element\+By\+Base\+Name} (const G4\+String \&base\+Name)
+\item 
+\mbox{\Hypertarget{classGateListManager_ae8a5ac77c76151cde049bab1797421c4}\label{classGateListManager_ae8a5ac77c76151cde049bab1797421c4}} 
+G4bool {\bfseries Accept\+New\+Elements} () const
+\item 
+\mbox{\Hypertarget{classGateListManager_aeb941bef29c65b14fd95f7db225b0f50}\label{classGateListManager_aeb941bef29c65b14fd95f7db225b0f50}} 
+const G4\+String \& {\bfseries Get\+Element\+Type\+Name} ()
+\item 
+\mbox{\Hypertarget{classGateListManager_a927b4657b63b2859bc725f62be663cc5}\label{classGateListManager_a927b4657b63b2859bc725f62be663cc5}} 
+virtual G4\+String {\bfseries Make\+Element\+Name} (const G4\+String \&new\+Base\+Name)
+\item 
+virtual void \mbox{\hyperlink{classGateListManager_a8f764334b696a62374b6b1ca0f0db693}{Describe}} (size\+\_\+t indent=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateListManager_a01a7811945882d1689ae2ed376777fcb}\label{classGateListManager_a01a7811945882d1689ae2ed376777fcb}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$ $>$ {\bfseries Gate\+List\+Of\+Named\+Object}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateListManager_a38d5fd7c4ec6fcb8e0b81a133b8340bf}\label{classGateListManager_a38d5fd7c4ec6fcb8e0b81a133b8340bf}} 
+G4\+String {\bfseries m\+Element\+Type\+Name}
+\item 
+\mbox{\Hypertarget{classGateListManager_ac1aef4760d6985727ed23573e1bd9dc4}\label{classGateListManager_ac1aef4760d6985727ed23573e1bd9dc4}} 
+G4bool {\bfseries b\+Accept\+New\+Elements}
+\item 
+\mbox{\Hypertarget{classGateListManager_a0eb647abc39c65b242855b0d8e521b06}\label{classGateListManager_a0eb647abc39c65b242855b0d8e521b06}} 
+Gate\+List\+Of\+Named\+Object {\bfseries the\+List\+Of\+Named\+Object}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateListManager_a8f764334b696a62374b6b1ca0f0db693}\label{classGateListManager_a8f764334b696a62374b6b1ca0f0db693}} 
+\index{GateListManager@{GateListManager}!Describe@{Describe}}
+\index{Describe@{Describe}!GateListManager@{GateListManager}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+List\+Manager\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method overloading \mbox{\hyperlink{classGateNamedObject_a6a4452f67031f801d3b33114cf370940}{Gate\+Named\+Object\+::\+Describe()}} Print-\/out a description of the object 
+
+Reimplemented from \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateModuleListManager_a6840a2555e30f86bfbf4ee3a24d79d1d}{Gate\+Module\+List\+Manager}}, \mbox{\hyperlink{classGateCoincidencePulseProcessorChain_ad232883f9a6bac98cfd3c15bd34b2fb7}{Gate\+Coincidence\+Pulse\+Processor\+Chain}}, and \mbox{\hyperlink{classGatePulseProcessorChain_a55dae5f28ea5689d44317951054ab5ab}{Gate\+Pulse\+Processor\+Chain}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+List\+Manager.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+List\+Manager.\+cc\end{DoxyCompactItemize}

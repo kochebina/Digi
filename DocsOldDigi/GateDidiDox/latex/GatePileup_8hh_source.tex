@@ -1,0 +1,60 @@
+\hypertarget{GatePileup_8hh_source}{}\doxysection{Gate\+Pileup.\+hh}
+\label{GatePileup_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePileup.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePileup.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePileup\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePileup\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePileupMessenger}{GatePileupMessenger}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePileup}{GatePileup}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42     \mbox{\hyperlink{classGatePileup_ac51381039777adecb9971bf4f6f25185}{GatePileup}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePileup_a77a7ccce032f5a5e5b608a2dd1e57282}{\string~GatePileup}}() ;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePileup_a418eb4ad2ac2f47633c992f78b6d6b06}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGatePileup_a2064a6db0045809c7f5eb904f9de7a12}{GetDepth}}()\textcolor{keyword}{ const           }\{ \textcolor{keywordflow}{return} m\_depth; \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  \mbox{\hyperlink{classGatePileup_af517eb741d4f87d40d3fd3e44c74fe56}{SetDepth}}(G4int aDepth)         \{ m\_depth = aDepth; \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58     \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGatePileup_afa074c8811a284b3696e5c8eb6456388}{GetPileup}}()\textcolor{keyword}{ const              }\{ \textcolor{keywordflow}{return} m\_pileup; \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  \mbox{\hyperlink{classGatePileup_a83a67e09c58a04afdf74babb28a4c546}{SetPileup}}(G4double aPileup)         \{ m\_pileup = aPileup; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{68     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGatePileup_af93d01442f9dd0c843fd2d2e1f056d45}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{69     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePileup_a55eb46fee95e02dd0b96ee3fb8a8a7cb}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     G4int m\_depth;}
+\DoxyCodeLine{77     G4double m\_pileup;}
+\DoxyCodeLine{78     \mbox{\hyperlink{classGatePulseList}{GatePulseList}} m\_waiting;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \mbox{\hyperlink{classGatePileupMessenger}{GatePileupMessenger}} *m\_messenger;      }
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

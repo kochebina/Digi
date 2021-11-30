@@ -1,0 +1,76 @@
+\hypertarget{GateTrajectoryNavigator_8hh_source}{}\doxysection{Gate\+Trajectory\+Navigator.\+hh}
+\label{GateTrajectoryNavigator_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTrajectoryNavigator.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTrajectoryNavigator.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateTrajectoryNavigator\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateTrajectoryNavigator\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4TrajectoryContainer;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4Trajectory;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateTrajectoryNavigator}{GateTrajectoryNavigator}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTrajectoryNavigator}{\string~GateTrajectoryNavigator}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   G4int         FindSourceIndex();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   G4ThreeVector FindSourcePosition();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   G4int         FindPositronTrackID();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   std::vector<G4int> FindAnnihilationGammasTrackID();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   G4int         FindPhotonID(G4int trackID);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   G4int         FindPrimaryID(G4int trackID);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void}          Initialize();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordtype}{void}                          SetTrajectoryContainer(G4TrajectoryContainer* trajectoryContainer);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{inline} G4TrajectoryContainer* GetTrajectoryContainer()   \{ \textcolor{keywordflow}{return} m\_trajectoryContainer; \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{inline} std::vector<G4int>          GetPhotonIDVec()           \{ \textcolor{keywordflow}{return} m\_photonIDVec; \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{inline} G4int                  GetPositronTrackID()       \{ \textcolor{keywordflow}{return} m\_positronTrackID; \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keywordtype}{void}                          SetIonID();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void}                          SetVerboseLevel(G4int val) \{ nVerboseLevel = val; \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59   G4TrajectoryContainer* m\_trajectoryContainer;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   std::vector<G4int>          m\_photonIDVec;}
+\DoxyCodeLine{62   G4int                  m\_positronTrackID;}
+\DoxyCodeLine{63   G4Trajectory*          m\_positronTrj;}
+\DoxyCodeLine{64   G4int                  m\_ionID;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   G4int                  nVerboseLevel;}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

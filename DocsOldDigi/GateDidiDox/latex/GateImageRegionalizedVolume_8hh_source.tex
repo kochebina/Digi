@@ -1,0 +1,159 @@
+\hypertarget{GateImageRegionalizedVolume_8hh_source}{}\doxysection{Gate\+Image\+Regionalized\+Volume.\+hh}
+\label{GateImageRegionalizedVolume_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageRegionalizedVolume.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateImageRegionalizedVolume.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef \_\_GateImageRegionalizedVolume\_\_hh\_\_}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define \_\_GateImageRegionalizedVolume\_\_hh\_\_}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateVImageVolume_8hh}{GateVImageVolume.hh}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateImageRegionalizedVolumeSolid.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define TODO int}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageRegionalizedVolumeMessenger}{GateImageRegionalizedVolumeMessenger}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageRegionalizedSubVolume}{GateImageRegionalizedSubVolume}};}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{52 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateImageRegionalizedVolume}{GateImageRegionalizedVolume}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{58 \textcolor{comment}{}  \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{GateVImageVolume::LabelType}} \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{LabelType}};}
+\DoxyCodeLine{60   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateImage}{GateVImageVolume::ImageType}} \mbox{\hyperlink{classGateImageRegionalizedVolume_a0d219f3dcba6342dd9681142117ff3af}{ImageType}};}
+\DoxyCodeLine{62   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateVImageVolume_acf64b777c4f3d49d8d6f0342698e7dee}{GateVImageVolume::LabelToMaterialNameType}} \mbox{\hyperlink{classGateImageRegionalizedVolume_a2576005a6179d2815a829be5e89aa742}{LabelToMaterialNameType}};}
+\DoxyCodeLine{64   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateImage}{GateImage}} \mbox{\hyperlink{classGateImageRegionalizedVolume_a72f9bc193172e4ae4db119de78065207}{DistanceMapType}};}
+\DoxyCodeLine{66   \textcolor{comment}{//typedef TODO NormalsImageType;}}
+\DoxyCodeLine{67   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{74 \textcolor{comment}{}  \mbox{\hyperlink{classGateImageRegionalizedVolume_a3dd5a9cfe2f272ca5eb353967a0399f3}{GateImageRegionalizedVolume}}(\textcolor{keyword}{const} G4String\& name,G4bool acceptsChildren,G4int depth);}
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateImageRegionalizedVolume_a6944dfaadcee0336a4d95836859e6bac}{\string~GateImageRegionalizedVolume}}();}
+\DoxyCodeLine{77   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{78   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateImageRegionalizedVolume}{GateImageRegionalizedVolume}})}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{83 \textcolor{comment}{}  virtual G4String \mbox{\hyperlink{classGateImageRegionalizedVolume_a1ab31c80311bb0b2065797541b867f33}{GetTypeName}}() \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ImageRegionalized"{}}; \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86    \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateImageRegionalizedVolume_abb0dda5a13fd5efc3b1b6b828aa4f86e}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{93 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegionalizedVolume_a2e802bee4097fc0e958eb0e5bf6685b9}{ImageAndTableFilenamesOK}}();}
+\DoxyCodeLine{94   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{98   \textcolor{comment}{// Methods used by SubVolumeSolids (through SubVolumes)}}
+\DoxyCodeLine{99   EInside Inside(\textcolor{keyword}{const} G4ThreeVector\& p, \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{LabelType}} l);}
+\DoxyCodeLine{100   G4double DistanceToIn(\textcolor{keyword}{const} G4ThreeVector\& p, \textcolor{keyword}{const} G4ThreeVector\& v, \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{LabelType}} l);}
+\DoxyCodeLine{101   G4double DistanceToIn(\textcolor{keyword}{const} G4ThreeVector\& p, \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{LabelType}} l);}
+\DoxyCodeLine{102   G4double DistanceToOut(\textcolor{keyword}{const} G4ThreeVector\& p, \textcolor{keyword}{const} G4ThreeVector\& v,}
+\DoxyCodeLine{103                          \textcolor{keyword}{const} G4bool calcNorm, G4bool *validNorm, G4ThreeVector *n,}
+\DoxyCodeLine{104                          \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{LabelType}} l);}
+\DoxyCodeLine{105   G4double DistanceToOut(\textcolor{keyword}{const} G4ThreeVector\& p, \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{LabelType}} l);}
+\DoxyCodeLine{106   G4ThreeVector SurfaceNormal(\textcolor{keyword}{const} G4ThreeVector\& p, \mbox{\hyperlink{classGateImageRegionalizedVolume_aa88fce1ac6146b3989a78cb14bcc77b6}{LabelType}} l);}
+\DoxyCodeLine{107   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{111   \textcolor{comment}{// Methods used by GateImageRegionalizedVolumeNavigation}}
+\DoxyCodeLine{112   G4double ComputeSafety(\textcolor{keyword}{const} G4ThreeVector\& p);}
+\DoxyCodeLine{113   G4double ComputeStep(\textcolor{keyword}{const} G4ThreeVector\& position,}
+\DoxyCodeLine{114                \textcolor{keyword}{const} G4ThreeVector\& direction,}
+\DoxyCodeLine{115                \textcolor{keyword}{const} G4double currentProposedStepLength,}
+\DoxyCodeLine{116                \textcolor{comment}{//G4double\& newSafety,}}
+\DoxyCodeLine{117                \textcolor{comment}{//              G4NavigationHistory\& history,}}
+\DoxyCodeLine{118                G4bool\& validExitNormal,}
+\DoxyCodeLine{119                G4ThreeVector\& exitNormal,}
+\DoxyCodeLine{120                G4bool\& exiting,}
+\DoxyCodeLine{121                G4bool\& entering,}
+\DoxyCodeLine{122                G4VPhysicalVolume *(*pBlockedPhysical));}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{129   \textcolor{comment}{// Used by navigation to know the next entered subvolume}}
+\DoxyCodeLine{130   \textcolor{comment}{// returns 0 if the particle exits the volume}}
+\DoxyCodeLine{131   G4VPhysicalVolume* GetEnteredPhysicalVolume( \textcolor{keyword}{const} G4ThreeVector\& globalPoint,}
+\DoxyCodeLine{132                            \textcolor{keyword}{const} G4ThreeVector* globalDirection );}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{135   \textcolor{comment}{// See GateVVolume for explanation}}
+\DoxyCodeLine{136   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegionalizedVolume_ac71915f90a6aebf343afbc23061094b8}{PropagateSensitiveDetectorToChild}}(\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}} *);}
+\DoxyCodeLine{137   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegionalizedVolume_a0c9d9cc5d1b90c4479f31cd327e6faa4}{AttachPhantomSD}}();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{141 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateImageRegionalizedVolume_a09fa295eaab739f48776b0cd3e4787f7}{SetDistanceMapFilename}}(\textcolor{keyword}{const} G4String\& name) \{ mDistanceMapFilename = name; \}}
+\DoxyCodeLine{142   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{146 \textcolor{keyword}{private}:}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{150 \textcolor{comment}{}  \mbox{\hyperlink{classGateImageRegionalizedVolumeMessenger}{GateImageRegionalizedVolumeMessenger}}* pMessenger;}
+\DoxyCodeLine{151   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{155 \textcolor{comment}{}  \mbox{\hyperlink{classGateImageRegionalizedVolume_a72f9bc193172e4ae4db119de78065207}{DistanceMapType}}* pDistanceMap;}
+\DoxyCodeLine{156   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{159   \textcolor{comment}{// Tolerance to surface}}
+\DoxyCodeLine{160   G4double kCarTolerance;}
+\DoxyCodeLine{161   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{164   \textcolor{comment}{// Data to compute efficiently Inside and DistanceToIn (SubVolumeSolid)}}
+\DoxyCodeLine{166 \textcolor{comment}{}  G4ThreeVector mLastInsidePoint;}
+\DoxyCodeLine{168   G4bool mLastInsidePointIsValid;}
+\DoxyCodeLine{170   G4bool mInsideComputedByLastDTO;}
+\DoxyCodeLine{172   G4int mLastTrackID;}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{175   G4ThreeVector mLastDTIPoint;}
+\DoxyCodeLine{177   G4ThreeVector mLastDTIDirection;}
+\DoxyCodeLine{179   G4bool mLastDTIPointIsValid;}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{182   std::vector<EInside> mInside;}
+\DoxyCodeLine{184   std::vector<G4double> mDistanceToIn;}
+\DoxyCodeLine{185   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{189 \textcolor{comment}{}  \textcolor{keywordtype}{void} CreateSubVolumes();}
+\DoxyCodeLine{190   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{194 \textcolor{comment}{}  std::vector<GateImageRegionalizedSubVolume*> mSubVolume;}
+\DoxyCodeLine{195   std::map<LabelType,GateImageRegionalizedSubVolume*> mLabelToSubVolume;}
+\DoxyCodeLine{196   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{201 \textcolor{comment}{} \textcolor{comment}{// void ComputeInterfacesNormals();}}
+\DoxyCodeLine{202   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{206 \textcolor{comment}{}  \textcolor{keywordtype}{void} LoadDistanceMap();}
+\DoxyCodeLine{207   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{209 \textcolor{comment}{}  G4String mDistanceMapFilename;}
+\DoxyCodeLine{210   \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{211 \};}
+\DoxyCodeLine{212 \textcolor{comment}{// EO class GateImageRegionalizedVolume}}
+\DoxyCodeLine{213 \textcolor{comment}{//====================================================================}}
+\DoxyCodeLine{214 MAKE\_AUTO\_CREATOR\_VOLUME(ImageRegionalizedVolume,\mbox{\hyperlink{classGateImageRegionalizedVolume}{GateImageRegionalizedVolume}})}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

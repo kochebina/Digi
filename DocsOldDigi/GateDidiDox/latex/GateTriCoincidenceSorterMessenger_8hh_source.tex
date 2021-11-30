@@ -1,0 +1,39 @@
+\hypertarget{GateTriCoincidenceSorterMessenger_8hh_source}{}\doxysection{Gate\+Tri\+Coincidence\+Sorter\+Messenger.\+hh}
+\label{GateTriCoincidenceSorterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTriCoincidenceSorterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTriCoincidenceSorterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  03/2012}}
+\DoxyCodeLine{3 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef GateTriCoincidenceSorterMessenger\_h}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define GateTriCoincidenceSorterMessenger\_h 1}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{12 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{14 \textcolor{comment}{//class G4UIcmdWithABool;}}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTriCoincidenceSorter}{GateTriCoincidenceSorter}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTriCoincidenceSorterMessenger}{GateTriCoincidenceSorterMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateTriCoincidenceSorterMessenger}{GateTriCoincidenceSorterMessenger}}(\mbox{\hyperlink{classGateTriCoincidenceSorter}{GateTriCoincidenceSorter}}* itsProcessor);}
+\DoxyCodeLine{22   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTriCoincidenceSorterMessenger}{\string~GateTriCoincidenceSorterMessenger}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27    \mbox{\hyperlink{classGateTriCoincidenceSorter}{GateTriCoincidenceSorter}}*   m\_itsProcessor;}
+\DoxyCodeLine{28    G4UIcmdWithAString*         m\_SetInputSPLNameCmd;}
+\DoxyCodeLine{29    G4UIcmdWithADoubleAndUnit*  m\_triCoincWindowCmd;}
+\DoxyCodeLine{30    G4UIcmdWithAnInteger*       m\_SetWSPulseListSizeCmd;}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

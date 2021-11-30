@@ -1,0 +1,123 @@
+\hypertarget{GateVSourceVoxelReader_8hh_source}{}\doxysection{Gate\+VSource\+Voxel\+Reader.\+hh}
+\label{GateVSourceVoxelReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVSourceVoxelReader.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVSourceVoxelReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEVSOURCEVOXELREADER\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEVSOURCEVOXELREADER\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSource}{GateVSource}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSourceVoxelTranslator}{GateVSourceVoxelTranslator}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}(\mbox{\hyperlink{classGateVSource}{GateVSource}}* source);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVSourceVoxelReader}{\string~GateVSourceVoxelReader}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ReadFile(G4String fileName) = 0;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSourceVoxelReader_acbe444edfb3e73889f721038200ee1f0}{GetNextSource}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \mbox{\hyperlink{classGateVSource}{GateVSource}}* GetSource() \{ \textcolor{keywordflow}{return} m\_source; \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   G4String GetName()      \{ \textcolor{keywordflow}{return} m\_name; \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} G4double GetTotalActivity() \{ \textcolor{keywordflow}{return} m\_activityTotal; \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} G4double GetTempTotalActivity() \{ \textcolor{keywordflow}{return} m\_tactivityTotal; \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetTempTotalActivity(G4double value) \{ m\_tactivityTotal = value; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetVerboseLevel(G4int value) \{ nVerboseLevel = value; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddVoxel(G4int ix, G4int iy, G4int iz, G4double activity);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} SetTimeActivTables( G4String );}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} SetTimeSampling ( G4double );}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   G4double GetTimeSampling ();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ReadRTFile(G4String header\_fileName, G4String fileName) = 0;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} UpdateActivities();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} UpdateActivities(G4String,G4String);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   G4ThreeVector ComputeSourcePositionFromIsoCenter(G4ThreeVector p);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}          SetVoxelSize(G4ThreeVector size) \{ m\_voxelSize = size; \};}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} G4ThreeVector GetVoxelSize()                   \{ \textcolor{keywordflow}{return} m\_voxelSize; \};}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}          SetArraySize(G4ThreeVector arraySize) \{ m\_voxelNx = arraySize[0]; m\_voxelNy = arraySize[1]; m\_voxelNz = arraySize[2]; m\_sourceVoxelActivities.resize(m\_voxelNx*m\_voxelNy*m\_voxelNz); \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}          SetPosition(G4ThreeVector pos) \{ m\_position = pos; \};}
+\DoxyCodeLine{73   \textcolor{keyword}{virtual} G4ThreeVector GetPosition()                  \{ \textcolor{keywordflow}{return} m\_position; \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} InsertTranslator(G4String translatorType);}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} RemoveTranslator();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Dump(G4int level);}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} ExportSourceActivityImage(G4String activityImageFileName);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keyword}{typedef} std::vector<G4double> GateSourceActivityMap;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   GateSourceActivityMap GetSourceActivityMap() \{ \textcolor{keywordflow}{return} m\_sourceVoxelActivities; \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{86   G4int nVerboseLevel;}
+\DoxyCodeLine{87   G4String                       m\_name;}
+\DoxyCodeLine{88   G4String                       m\_fileName;}
+\DoxyCodeLine{89   \mbox{\hyperlink{classGateVSource}{GateVSource}}*                   m\_source;}
+\DoxyCodeLine{90   \textcolor{keyword}{typedef} std::map<G4double,G4int >  GateSourceIntegratedActivityMap;}
+\DoxyCodeLine{91   GateSourceActivityMap           m\_sourceVoxelActivities;}
+\DoxyCodeLine{92   GateSourceIntegratedActivityMap m\_sourceVoxelIntegratedActivities;}
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} PrepareIntegratedActivityMap();}
+\DoxyCodeLine{94   G4ThreeVector                  m\_voxelSize;}
+\DoxyCodeLine{95   G4int                          m\_voxelNx;}
+\DoxyCodeLine{96   G4int                          m\_voxelNy;}
+\DoxyCodeLine{97   G4int                          m\_voxelNz;}
+\DoxyCodeLine{98   G4ThreeVector                  m\_position;}
+\DoxyCodeLine{99   G4double                       m\_activityTotal;}
+\DoxyCodeLine{100   G4double                       m\_tactivityTotal;}
+\DoxyCodeLine{101   G4String                       m\_type;}
+\DoxyCodeLine{102   \mbox{\hyperlink{classGateVSourceVoxelTranslator}{GateVSourceVoxelTranslator}}*    m\_voxelTranslator;}
+\DoxyCodeLine{103   G4ThreeVector                  m\_image\_origin;}
+\DoxyCodeLine{104   G4double m\_TS; \textcolor{comment}{// time sampling for time dependent activities}}
+\DoxyCodeLine{105   G4int cK;}
+\DoxyCodeLine{106   G4bool IsFirstTime;}
+\DoxyCodeLine{107   std::map< std::pair<G4double,G4double> , std::vector<std::pair<G4double,G4double> >  > m\_TimeActivTables; \textcolor{comment}{// for time activity curves}}
+\DoxyCodeLine{108 \textcolor{keyword}{public}:}
+\DoxyCodeLine{109   \textcolor{keyword}{inline} G4int RealArrayIndex(G4int ix, G4int iy, G4int iz)\textcolor{keyword}{ const}}
+\DoxyCodeLine{110 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{111       \textcolor{keywordflow}{return} ix + iy*m\_voxelNx + iz*m\_voxelNx*m\_voxelNy;}
+\DoxyCodeLine{112   \}}
+\DoxyCodeLine{113   \textcolor{keyword}{inline} G4ThreeVector GetVoxelIndices(G4int arrayIndex) \{}
+\DoxyCodeLine{114       \textcolor{keywordflow}{return} G4ThreeVector( arrayIndex \% m\_voxelNx, (arrayIndex / m\_voxelNx) \% m\_voxelNy, arrayIndex / (m\_voxelNx*m\_voxelNy));}
+\DoxyCodeLine{115   \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \};}
+\DoxyCodeLine{118 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

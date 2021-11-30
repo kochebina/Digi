@@ -1,0 +1,179 @@
+\hypertarget{classGateImageNestedParametrisedVolume}{}\doxysection{Gate\+Image\+Nested\+Parametrised\+Volume Class Reference}
+\label{classGateImageNestedParametrisedVolume}\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+
+
+Descendent of \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} which represent the image using a G4\+VPVParametrisation (Gate\+Image\+Parametrisation)  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Image\+Nested\+Parametrised\+Volume.\+hh$>$}
+
+Inheritance diagram for Gate\+Image\+Nested\+Parametrised\+Volume\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classGateImageNestedParametrisedVolume}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_aaf5b74c80a1bdcdbcddf6ec9e4dfc872}\label{classGateImageNestedParametrisedVolume_aaf5b74c80a1bdcdbcddf6ec9e4dfc872}} 
+typedef \mbox{\hyperlink{classGateVImageVolume_ac48a45ef7c3e99fd7e7cfe9a229ed893}{Gate\+VImage\+Volume\+::\+Label\+Type}} {\bfseries Label\+Type}
+\begin{DoxyCompactList}\small\item\em The type of label. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_af7948af20c259dce56dd176edb453029}\label{classGateImageNestedParametrisedVolume_af7948af20c259dce56dd176edb453029}} 
+typedef \mbox{\hyperlink{classGateVImageVolume_abaa713414d3b808c9410decdf8f3f69b}{Gate\+VImage\+Volume\+::\+Image\+Type}} {\bfseries Image\+Type}
+\begin{DoxyCompactList}\small\item\em The type of label images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateImageNestedParametrisedVolume_ac38d8db96177bdc74c430b79ad2ec173}{Gate\+Image\+Nested\+Parametrised\+Volume}} (const G4\+String \&name, G4bool accepts\+Children, G4int depth)
+\item 
+virtual \mbox{\hyperlink{classGateImageNestedParametrisedVolume_ab7e36f562efe52a95f3d59b29c014ad6}{$\sim$\+Gate\+Image\+Nested\+Parametrised\+Volume}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual G4\+String \mbox{\hyperlink{classGateImageNestedParametrisedVolume_af461590e67d27b75eaddd9e7254959ae}{Get\+Type\+Name}} ()
+\item 
+virtual G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateImageNestedParametrisedVolume_abaff756803ef094479f786c0604fc29c}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$, G4bool)
+\item 
+virtual void \mbox{\hyperlink{classGateImageNestedParametrisedVolume_afa710338d41624bc117af36771e2bb55}{Image\+And\+Table\+Filenames\+OK}} ()
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a283dd65b9dc3cc6b703f2e203b315cb1}\label{classGateImageNestedParametrisedVolume_a283dd65b9dc3cc6b703f2e203b315cb1}} 
+virtual void {\bfseries Construct\+Solid} ()
+\begin{DoxyCompactList}\small\item\em Constructs the solid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a03a9b92e0c7616cecd29d71efd6181d6}\label{classGateImageNestedParametrisedVolume_a03a9b92e0c7616cecd29d71efd6181d6}} 
+void {\bfseries Print\+Info} ()
+\begin{DoxyCompactList}\small\item\em Constructs the volume and sub-\/volumes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateImageNestedParametrisedVolume_a225322e22249fc008afe04a32b1613cf}{Get\+Phys\+Vol\+For\+AVoxel}} (const G4int index, const G4\+VTouchable \&p\+Touchable, G4\+VPhysical\+Volume $\ast$$\ast$p\+Phys\+Vol, G4\+Navigation\+History \&history) const
+\item 
+virtual void \mbox{\hyperlink{classGateImageNestedParametrisedVolume_aafa215f83090f98b1b4a016025f94fd1}{Propagate\+Sensitive\+Detector\+To\+Child}} (\mbox{\hyperlink{classGateMultiSensitiveDetector}{Gate\+Multi\+Sensitive\+Detector}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateImageNestedParametrisedVolume_ab41f6625d47455041a1add4c5f90a02d}{Propagate\+Global\+Sensitive\+Detector}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_ad25b2c8b7109f0e036e8d6d4769f2f10}\label{classGateImageNestedParametrisedVolume_ad25b2c8b7109f0e036e8d6d4769f2f10}} 
+\mbox{\hyperlink{classGateImageNestedParametrisedVolumeMessenger}{Gate\+Image\+Nested\+Parametrised\+Volume\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\begin{DoxyCompactList}\small\item\em its messenger \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a48aae95f9017fda2d55cfd865edf0fd5}\label{classGateImageNestedParametrisedVolume_a48aae95f9017fda2d55cfd865edf0fd5}} 
+\mbox{\hyperlink{classGateImageNestedParametrisation}{Gate\+Image\+Nested\+Parametrisation}} $\ast$ {\bfseries m\+Voxel\+Parametrisation}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a8abe55702d61af96d5a31865d8e1d1fe}\label{classGateImageNestedParametrisedVolume_a8abe55702d61af96d5a31865d8e1d1fe}} 
+G4\+VPhysical\+Volume $\ast$ {\bfseries m\+Phys\+VolX}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a916ec76c1d509d96ced5642065a01c36}\label{classGateImageNestedParametrisedVolume_a916ec76c1d509d96ced5642065a01c36}} 
+G4\+VPhysical\+Volume $\ast$ {\bfseries m\+Phys\+VolY}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_aff99fa370c4ab85aa8e1587c67786c74}\label{classGateImageNestedParametrisedVolume_aff99fa370c4ab85aa8e1587c67786c74}} 
+G4\+VPhysical\+Volume $\ast$ {\bfseries m\+Phys\+VolZ}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a1f35e54a147c4127b38a8e91df7524d8}\label{classGateImageNestedParametrisedVolume_a1f35e54a147c4127b38a8e91df7524d8}} 
+G4\+Logical\+Volume $\ast$ {\bfseries log\+XRep}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a227c9aa3651d899fa0edd4bfff16c2fa}\label{classGateImageNestedParametrisedVolume_a227c9aa3651d899fa0edd4bfff16c2fa}} 
+G4\+Logical\+Volume $\ast$ {\bfseries log\+YRep}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a605052a7637d820feda725c2f27069fc}\label{classGateImageNestedParametrisedVolume_a605052a7637d820feda725c2f27069fc}} 
+G4\+Logical\+Volume $\ast$ {\bfseries log\+ZRep}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Descendent of \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} which represent the image using a G4\+VPVParametrisation (Gate\+Image\+Parametrisation) 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_ac38d8db96177bdc74c430b79ad2ec173}\label{classGateImageNestedParametrisedVolume_ac38d8db96177bdc74c430b79ad2ec173}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{GateImageNestedParametrisedVolume()}{GateImageNestedParametrisedVolume()}}
+{\footnotesize\ttfamily Gate\+Image\+Nested\+Parametrised\+Volume\+::\+Gate\+Image\+Nested\+Parametrised\+Volume (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name,  }\item[{G4bool}]{accepts\+Children,  }\item[{G4int}]{depth }\end{DoxyParamCaption})}
+
+Constructor with \+: the path to the volume to create (for commands) the name of the volume to create Creates the messenger associated to the volume
+
+/file /brief Implementation of \mbox{\hyperlink{classGateImageNestedParametrisedVolume}{Gate\+Image\+Nested\+Parametrised\+Volume}} \DoxyHorRuler{0}
+ Constructor with \+: the path to the volume to create (for commands) the name of the volume to create Creates the messenger associated to the volume \mbox{\Hypertarget{classGateImageNestedParametrisedVolume_ab7e36f562efe52a95f3d59b29c014ad6}\label{classGateImageNestedParametrisedVolume_ab7e36f562efe52a95f3d59b29c014ad6}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!````~GateImageNestedParametrisedVolume@{$\sim$GateImageNestedParametrisedVolume}}
+\index{````~GateImageNestedParametrisedVolume@{$\sim$GateImageNestedParametrisedVolume}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{$\sim$GateImageNestedParametrisedVolume()}{~GateImageNestedParametrisedVolume()}}
+{\footnotesize\ttfamily Gate\+Image\+Nested\+Parametrised\+Volume\+::$\sim$\+Gate\+Image\+Nested\+Parametrised\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\DoxyHorRuler{0}
+ \DoxyHorRuler{0}
+ Destructor ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_abaff756803ef094479f786c0604fc29c}\label{classGateImageNestedParametrisedVolume_abaff756803ef094479f786c0604fc29c}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily G4\+Logical\+Volume $\ast$ Gate\+Image\+Nested\+Parametrised\+Volume\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{mater,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\DoxyHorRuler{0}
+ \DoxyHorRuler{0}
+ Constructs 
+
+Implements \mbox{\hyperlink{classGateVImageVolume_a55671b3149f3fb82c4a1e94a73305125}{Gate\+VImage\+Volume}}.
+
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_a225322e22249fc008afe04a32b1613cf}\label{classGateImageNestedParametrisedVolume_a225322e22249fc008afe04a32b1613cf}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!GetPhysVolForAVoxel@{GetPhysVolForAVoxel}}
+\index{GetPhysVolForAVoxel@{GetPhysVolForAVoxel}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{GetPhysVolForAVoxel()}{GetPhysVolForAVoxel()}}
+{\footnotesize\ttfamily void Gate\+Image\+Nested\+Parametrised\+Volume\+::\+Get\+Phys\+Vol\+For\+AVoxel (\begin{DoxyParamCaption}\item[{const G4int}]{index,  }\item[{const G4\+VTouchable \&}]{p\+Touchable,  }\item[{G4\+VPhysical\+Volume $\ast$$\ast$}]{pp\+Phys\+Vol,  }\item[{G4\+Navigation\+History \&}]{history }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Compute and return a Phys\+Vol with properties (dimension, transformation and material) of the voxel \textquotesingle{}index\textquotesingle{}. Used by the optimized navigator 
+
+Reimplemented from \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}}.
+
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_af461590e67d27b75eaddd9e7254959ae}\label{classGateImageNestedParametrisedVolume_af461590e67d27b75eaddd9e7254959ae}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!GetTypeName@{GetTypeName}}
+\index{GetTypeName@{GetTypeName}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{GetTypeName()}{GetTypeName()}}
+{\footnotesize\ttfamily virtual G4\+String Gate\+Image\+Nested\+Parametrised\+Volume\+::\+Get\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns a string describing the type of volume and which is used for commands \mbox{\Hypertarget{classGateImageNestedParametrisedVolume_afa710338d41624bc117af36771e2bb55}\label{classGateImageNestedParametrisedVolume_afa710338d41624bc117af36771e2bb55}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!ImageAndTableFilenamesOK@{ImageAndTableFilenamesOK}}
+\index{ImageAndTableFilenamesOK@{ImageAndTableFilenamesOK}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{ImageAndTableFilenamesOK()}{ImageAndTableFilenamesOK()}}
+{\footnotesize\ttfamily virtual void Gate\+Image\+Nested\+Parametrised\+Volume\+::\+Image\+And\+Table\+Filenames\+OK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Method which is called after the image file name and the label to material file name have been set (callback from \mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}}) 
+
+Implements \mbox{\hyperlink{classGateVImageVolume_a4447a24894aaa0b3172588490e8221fa}{Gate\+VImage\+Volume}}.
+
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_ab41f6625d47455041a1add4c5f90a02d}\label{classGateImageNestedParametrisedVolume_ab41f6625d47455041a1add4c5f90a02d}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!PropagateGlobalSensitiveDetector@{PropagateGlobalSensitiveDetector}}
+\index{PropagateGlobalSensitiveDetector@{PropagateGlobalSensitiveDetector}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{PropagateGlobalSensitiveDetector()}{PropagateGlobalSensitiveDetector()}}
+{\footnotesize\ttfamily void Gate\+Image\+Nested\+Parametrised\+Volume\+::\+Propagate\+Global\+Sensitive\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateImageNestedParametrisedVolume_aafa215f83090f98b1b4a016025f94fd1}\label{classGateImageNestedParametrisedVolume_aafa215f83090f98b1b4a016025f94fd1}} 
+\index{GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}!PropagateSensitiveDetectorToChild@{PropagateSensitiveDetectorToChild}}
+\index{PropagateSensitiveDetectorToChild@{PropagateSensitiveDetectorToChild}!GateImageNestedParametrisedVolume@{GateImageNestedParametrisedVolume}}
+\doxysubsubsection{\texorpdfstring{PropagateSensitiveDetectorToChild()}{PropagateSensitiveDetectorToChild()}}
+{\footnotesize\ttfamily void Gate\+Image\+Nested\+Parametrised\+Volume\+::\+Propagate\+Sensitive\+Detector\+To\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateMultiSensitiveDetector}{Gate\+Multi\+Sensitive\+Detector}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+You should override this method in sub-\/class if the described volume contains sub-\/volumes in order that actor associated with the volume are propagated to the sub-\/volumes. This is your responsability to do that (see \mbox{\hyperlink{classGateImageNestedParametrisedVolume}{Gate\+Image\+Nested\+Parametrised\+Volume}} for exemple). 
+
+Reimplemented from \mbox{\hyperlink{classGateVVolume_ac0e11270420cf5e755570dc0cc5863ee}{Gate\+VVolume}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Image\+Nested\+Parametrised\+Volume.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Image\+Nested\+Parametrised\+Volume.\+cc\end{DoxyCompactItemize}

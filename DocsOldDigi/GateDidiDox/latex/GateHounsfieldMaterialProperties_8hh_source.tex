@@ -1,0 +1,41 @@
+\hypertarget{GateHounsfieldMaterialProperties_8hh_source}{}\doxysection{Gate\+Hounsfield\+Material\+Properties.\+hh}
+\label{GateHounsfieldMaterialProperties_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldMaterialProperties.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateHounsfieldMaterialProperties.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef \_\_GateHounsfieldMaterialProperties\_\_hh\_\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define \_\_GateHounsfieldMaterialProperties\_\_hh\_\_}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4Material.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHounsfieldMaterialProperties}{GateHounsfieldMaterialProperties}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateHounsfieldMaterialProperties}{GateHounsfieldMaterialProperties}}();}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateHounsfieldMaterialProperties}{\string~GateHounsfieldMaterialProperties}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keywordtype}{int} GetNumberOfElements();}
+\DoxyCodeLine{28   G4Element * GetElements(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{29   \textcolor{keywordtype}{double} GetElementsFraction(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{30   G4String GetName();}
+\DoxyCodeLine{31   \textcolor{keywordtype}{double} GetH();}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} Read(std::ifstream \& is, std::vector<G4String> \& el);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} ReadAndStoreElementFraction(std::ifstream \& is, G4String name);}
+\DoxyCodeLine{36   std::vector<G4Element*> mElementsList;}
+\DoxyCodeLine{37   std::vector<double> mElementsFractionList;}
+\DoxyCodeLine{38   G4String mName;}
+\DoxyCodeLine{39   \textcolor{keywordtype}{double} mH;}
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

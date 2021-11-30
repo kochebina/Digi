@@ -1,0 +1,115 @@
+\hypertarget{GateCylinder_8hh_source}{}\doxysection{Gate\+Cylinder.\+hh}
+\label{GateCylinder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCylinder.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCylinder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCylinder\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCylinder\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4Tubs;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4PVPlacement;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylinderMessenger}{GateCylinderMessenger}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylinder}{GateCylinder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29   }
+\DoxyCodeLine{30    public : }
+\DoxyCodeLine{31    }
+\DoxyCodeLine{32    \mbox{\hyperlink{classGateCylinder}{GateCylinder}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{33                G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{34                G4int depth=0);}
+\DoxyCodeLine{35    \textcolor{comment}{// Constructor}}
+\DoxyCodeLine{36     \mbox{\hyperlink{classGateCylinder}{GateCylinder}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{37                          G4double itsRmax, G4double itsHeight,}
+\DoxyCodeLine{38                  G4double itsRmin=0.,}
+\DoxyCodeLine{39                      G4double itsSPhi=0., G4double itsDPhi=twopi,}
+\DoxyCodeLine{40              G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{41                  G4int depth=0);}
+\DoxyCodeLine{42   }
+\DoxyCodeLine{43     \textcolor{comment}{//Destructor }}
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCylinder}{\string~GateCylinder}}();}
+\DoxyCodeLine{45     }
+\DoxyCodeLine{46     FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateCylinder}{GateCylinder}})}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateCylinder_a91b7a37734c06e486f392261448e2b5d}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool);}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{50     }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylinder_a9b2568317fd14d7cc700c94a592ade2b}{DestroyOwnSolidAndLogicalVolume}}();  }
+\DoxyCodeLine{54    }
+\DoxyCodeLine{56     \textcolor{comment}{//  \(\backslash\)brief a description of the creator }}
+\DoxyCodeLine{57 \textcolor{comment}{//    virtual void DescribeMyself(size\_t indent); }}
+\DoxyCodeLine{58   }
+\DoxyCodeLine{62      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCylinder_a249388869099109ae0cbde2e0c4aecb1}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) }
+\DoxyCodeLine{63      \{ \textcolor{keywordflow}{if} (axis==2)}
+\DoxyCodeLine{64           \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCylinder_aeea6a9bc647e214404d5766513126971}{GetCylinderHalfHeight}}();}
+\DoxyCodeLine{65        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{66           \textcolor{keywordflow}{return} mCylinderRmax;}
+\DoxyCodeLine{67      \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{71 \textcolor{comment}{//     G4double ComputeMyOwnVolume()  const;     }}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCylinder_ad92a2649833a22b293294c3f3d2ea7e5}{GetCylinderHeight}}()      \{\textcolor{keywordflow}{return} mCylinderHeight;\};}
+\DoxyCodeLine{80      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCylinder_aeea6a9bc647e214404d5766513126971}{GetCylinderHalfHeight}}()  \{\textcolor{keywordflow}{return} mCylinderHeight/2.;\};}
+\DoxyCodeLine{82      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCylinder_a47a1dd2e7668d5ec62b832fa7e9f6a05}{GetCylinderRmin}}()        \{\textcolor{keywordflow}{return} mCylinderRmin;\};}
+\DoxyCodeLine{84      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCylinder_aae8b6192a2b3397aff7e0a5e8a5c83b2}{GetCylinderRmax}}()        \{\textcolor{keywordflow}{return} mCylinderRmax;\};}
+\DoxyCodeLine{86      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCylinder_a5f56aa9e040f05a346fd090c9700f3b5}{GetCylinderSPhi}}()        \{\textcolor{keywordflow}{return} mCylinderSPhi;\};}
+\DoxyCodeLine{88      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCylinder_a2cb49277aa5c536e182a9a4478d7d2b8}{GetCylinderDPhi}}()        \{\textcolor{keywordflow}{return} mCylinderDPhi;\};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{91      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylinder_ac223619fec6df387bd5a0f0b64e74b3d}{SetCylinderHeight}}   (G4double val) }
+\DoxyCodeLine{92         \textcolor{comment}{//\{ pcylinderHeight = val; ComputeParameters(); \}}}
+\DoxyCodeLine{93     \{ mCylinderHeight = val;\}}
+\DoxyCodeLine{95      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylinder_aeca6a34c0a74ec4e1ab91c1507057c9c}{SetCylinderRmin}}  (G4double val) }
+\DoxyCodeLine{96         \textcolor{comment}{//\{ pcylinderRmin = val; ComputeParameters(); \}}}
+\DoxyCodeLine{97     \{ mCylinderRmin = val;\}}
+\DoxyCodeLine{99      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylinder_a8cc089bba88727cbe6aaef058dac55ea}{SetCylinderRmax}}  (G4double val) }
+\DoxyCodeLine{100         \textcolor{comment}{//\{  pcylinderRmax = val; ComputeParameters(); \}}}
+\DoxyCodeLine{101     \{  mCylinderRmax = val;\}}
+\DoxyCodeLine{103      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylinder_adbab0059d545610595a8bc6296d7c41a}{SetCylinderSPhi}}  (G4double val) }
+\DoxyCodeLine{104         \textcolor{comment}{//\{  pcylinderSPhi = val; ComputeParameters(); \}}}
+\DoxyCodeLine{105      \{  mCylinderSPhi = val;\}}
+\DoxyCodeLine{107      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCylinder_a6a4b940a0901f5d1b6787539951f0827}{SetCylinderDPhi}}  (G4double val) }
+\DoxyCodeLine{108         \textcolor{comment}{//\{  pcylinderDPhi = val; ComputeParameters(); \}}}
+\DoxyCodeLine{109      \{  mCylinderDPhi = val;\}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113    private :}
+\DoxyCodeLine{114    }
+\DoxyCodeLine{115    G4Tubs* pCylinderSolid;}
+\DoxyCodeLine{116    G4LogicalVolume* pCylinderLog;}
+\DoxyCodeLine{117 \textcolor{comment}{//   G4VPhysicalVolume* pCylinderPhys; }}
+\DoxyCodeLine{118    }
+\DoxyCodeLine{120    G4double mCylinderHeight;                }
+\DoxyCodeLine{121    G4double mCylinderRmin;                          }
+\DoxyCodeLine{122    G4double mCylinderRmax;                          }
+\DoxyCodeLine{123    G4double mCylinderSPhi;                          }
+\DoxyCodeLine{124    G4double mCylinderDPhi;                          }
+\DoxyCodeLine{126   }
+\DoxyCodeLine{128    \mbox{\hyperlink{classGateCylinderMessenger}{GateCylinderMessenger}}* pMessenger;  }
+\DoxyCodeLine{129 \};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 MAKE\_AUTO\_CREATOR\_VOLUME(cylinder,\mbox{\hyperlink{classGateCylinder}{GateCylinder}})}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,190 @@
+\hypertarget{classGatePromptGammaTLEActor}{}\doxysection{Gate\+Prompt\+Gamma\+TLEActor Class Reference}
+\label{classGatePromptGammaTLEActor}\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+Inheritance diagram for Gate\+Prompt\+Gamma\+TLEActor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGatePromptGammaTLEActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaTLEActor_adfdc50b0f40802ed4eca7b3545db30a0}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Type name of the sensor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaTLEActor_a40a329e92fdcc784a718249536951f24}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaTLEActor_a03d619e5d4b66aa241dce0caad26f6c2}{User\+Post\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaTLEActor_af4f09ea83a1fba6ca8ee9a83e53d574f}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaTLEActor_a2be7e0220bf41148a15c1714aab5f3b1}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$e)
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_ad77fd878f1f1418cd03cfe30c19423fa}\label{classGatePromptGammaTLEActor_ad77fd878f1f1418cd03cfe30c19423fa}} 
+void {\bfseries Set\+Input\+Data\+Filename} (std\+::string filename)
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaTLEActor_a8c7b25afc45ce4f558e3db7405bb8434}{Save\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGatePromptGammaTLEActor_acc45bc30f183aae2a6e208f9474daef0}{Reset\+Data}} ()
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a3af2629479091ed8b0e57cffc5675cbd}\label{classGatePromptGammaTLEActor_a3af2629479091ed8b0e57cffc5675cbd}} 
+void {\bfseries Enable\+Debug\+Output} (bool b)
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a6a4fd914bd75a66b508502714e4d0985}\label{classGatePromptGammaTLEActor_a6a4fd914bd75a66b508502714e4d0985}} 
+void {\bfseries Enable\+Output\+Match} (bool b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_ad46fc63cb978a84c6e6d44f2f2ebd4f0}\label{classGatePromptGammaTLEActor_ad46fc63cb978a84c6e6d44f2f2ebd4f0}} 
+{\bfseries Gate\+Prompt\+Gamma\+TLEActor} (G4\+String name, G4int depth=0)
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a88e0f775d7ff5e2c57dd4b665844e01c}\label{classGatePromptGammaTLEActor_a88e0f775d7ff5e2c57dd4b665844e01c}} 
+void {\bfseries Set\+Track\+IoH} (\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$\&)
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a95b611ba12e5a37a3791bc458e26e82c}\label{classGatePromptGammaTLEActor_a95b611ba12e5a37a3791bc458e26e82c}} 
+void {\bfseries Set\+TLEIoH} (\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$\&)
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a9fc6e073f9bce82b93e7558136d79f6d}\label{classGatePromptGammaTLEActor_a9fc6e073f9bce82b93e7558136d79f6d}} 
+\mbox{\hyperlink{classGateVImageVolume}{Gate\+VImage\+Volume}} $\ast$ {\bfseries Get\+Phantom} ()
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a092483d3fc59027fbd1cace1220a9e3c}\label{classGatePromptGammaTLEActor_a092483d3fc59027fbd1cace1220a9e3c}} 
+void {\bfseries Build\+Variance\+Output} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_aeb16066f344eb22bab33aaa7e93effd4}\label{classGatePromptGammaTLEActor_aeb16066f344eb22bab33aaa7e93effd4}} 
+\mbox{\hyperlink{classGatePromptGammaTLEActorMessenger}{Gate\+Prompt\+Gamma\+TLEActor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a9567dbf5f05f3c3d2afc374c392050db}\label{classGatePromptGammaTLEActor_a9567dbf5f05f3c3d2afc374c392050db}} 
+std\+::string {\bfseries m\+Input\+Data\+Filename}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a4e2dfa0bbe35e20855be12c5c6a505dd}\label{classGatePromptGammaTLEActor_a4e2dfa0bbe35e20855be12c5c6a505dd}} 
+\mbox{\hyperlink{classGatePromptGammaData}{Gate\+Prompt\+Gamma\+Data}} {\bfseries data}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a0887f5b2eec69503915d518263bad8f8}\label{classGatePromptGammaTLEActor_a0887f5b2eec69503915d518263bad8f8}} 
+bool {\bfseries already\+Here}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_ac85fe012f60699fe2cd06edde71f98bb}\label{classGatePromptGammaTLEActor_ac85fe012f60699fe2cd06edde71f98bb}} 
+bool {\bfseries m\+Is\+Debug\+Output\+Enabled}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a10d283d9cad69532838d9449f856c9c6}\label{classGatePromptGammaTLEActor_a10d283d9cad69532838d9449f856c9c6}} 
+bool {\bfseries m\+Is\+Output\+Match\+Enabled}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_af1d48edf139509b61aed3c2f121f07ae}\label{classGatePromptGammaTLEActor_af1d48edf139509b61aed3c2f121f07ae}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries tmptrackl}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a2f6101033f29a828d5270139a6afb2de}\label{classGatePromptGammaTLEActor_a2f6101033f29a828d5270139a6afb2de}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries trackl}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a44fcb1c348c518ef398d0487d6b72b10}\label{classGatePromptGammaTLEActor_a44fcb1c348c518ef398d0487d6b72b10}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries tracklsq}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_aa213000da41528eb36d72891a54e4fb5}\label{classGatePromptGammaTLEActor_aa213000da41528eb36d72891a54e4fb5}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries m\+Image\+Gamma}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a27a15a29be22538bc54aed967293f28c}\label{classGatePromptGammaTLEActor_a27a15a29be22538bc54aed967293f28c}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries tle}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a1d6fd749bece67741f5981caf611a7c7}\label{classGatePromptGammaTLEActor_a1d6fd749bece67741f5981caf611a7c7}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries tlesysvar}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_ac47f3cb19ba168f545921d3d649df2df}\label{classGatePromptGammaTLEActor_ac47f3cb19ba168f545921d3d649df2df}} 
+\mbox{\hyperlink{classGateImageOfHistograms}{Gate\+Image\+Of\+Histograms}} $\ast$ {\bfseries tlevariance}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a57ca643e36a7b4f04a635d62d9bdfa29}\label{classGatePromptGammaTLEActor_a57ca643e36a7b4f04a635d62d9bdfa29}} 
+\mbox{\hyperlink{classGateImageT}{Gate\+Image\+Int}} {\bfseries m\+Last\+Hit\+Event\+Image}
+\item 
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a33f6761344803bee99bd53e6417f2a61}\label{classGatePromptGammaTLEActor_a33f6761344803bee99bd53e6417f2a61}} 
+int {\bfseries m\+Current\+Event}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a2be7e0220bf41148a15c1714aab5f3b1}\label{classGatePromptGammaTLEActor_a2be7e0220bf41148a15c1714aab5f3b1}} 
+\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+TLEActor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_adfdc50b0f40802ed4eca7b3545db30a0}\label{classGatePromptGammaTLEActor_adfdc50b0f40802ed4eca7b3545db30a0}} 
+\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+TLEActor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Type name of the sensor. 
+
+Constructs the sensor.
+
+Constructs the sensor 
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_acc45bc30f183aae2a6e208f9474daef0}\label{classGatePromptGammaTLEActor_acc45bc30f183aae2a6e208f9474daef0}} 
+\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+TLEActor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a8c7b25afc45ce4f558e3db7405bb8434}\label{classGatePromptGammaTLEActor_a8c7b25afc45ce4f558e3db7405bb8434}} 
+\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+TLEActor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a03d619e5d4b66aa241dce0caad26f6c2}\label{classGatePromptGammaTLEActor_a03d619e5d4b66aa241dce0caad26f6c2}} 
+\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+TLEActor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_a40a329e92fdcc784a718249536951f24}\label{classGatePromptGammaTLEActor_a40a329e92fdcc784a718249536951f24}} 
+\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+TLEActor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGatePromptGammaTLEActor_af4f09ea83a1fba6ca8ee9a83e53d574f}\label{classGatePromptGammaTLEActor_af4f09ea83a1fba6ca8ee9a83e53d574f}} 
+\index{GatePromptGammaTLEActor@{GatePromptGammaTLEActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GatePromptGammaTLEActor@{GatePromptGammaTLEActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Prompt\+Gamma\+TLEActor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Prompt\+Gamma\+TLEActor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Prompt\+Gamma\+TLEActor.\+cc\end{DoxyCompactItemize}

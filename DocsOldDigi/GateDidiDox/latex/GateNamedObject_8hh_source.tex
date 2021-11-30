@@ -1,0 +1,49 @@
+\hypertarget{GateNamedObject_8hh_source}{}\doxysection{Gate\+Named\+Object.\+hh}
+\label{GateNamedObject_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateNamedObject.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateNamedObject.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateNamedObject\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateNamedObject\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateNamedObject_a93360a098168f4172f3749ed85717793}{GateNamedObject}}(\textcolor{keyword}{const} G4String\& itsName)}
+\DoxyCodeLine{31     : \mbox{\hyperlink{classGateNamedObject_ac4588cc8590148a29ede7d7486ac23ac}{mName}}(itsName), \mbox{\hyperlink{classGateNamedObject_afa560ec62f123b2e2c0b4c00f1bd31f8}{nVerboseLevel}}(0)}
+\DoxyCodeLine{32   \{\}}
+\DoxyCodeLine{33   \textcolor{comment}{//| Destructor}}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateNamedObject}{\string~GateNamedObject}}() \{\}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateNamedObject_a74cb2aaf869dcf59e7e22dd72cff6368}{GetObjectName}}()\textcolor{keyword}{ const     }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateNamedObject_ac4588cc8590148a29ede7d7486ac23ac}{mName}};\}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateNamedObject_a2ec7085ee7cfa9c8fb61c0441e0caedf}{GetVerbosity}}()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateNamedObject_afa560ec62f123b2e2c0b4c00f1bd31f8}{nVerboseLevel}}; \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  \mbox{\hyperlink{classGateNamedObject_a07533b5bf3ffeed08d4a444d261f930c}{SetVerbosity}}(G4int val)      \{  \mbox{\hyperlink{classGateNamedObject_afa560ec62f123b2e2c0b4c00f1bd31f8}{nVerboseLevel}} = val; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50      }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNamedObject_a6a4452f67031f801d3b33114cf370940}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{56      }
+\DoxyCodeLine{57 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{58   G4String \mbox{\hyperlink{classGateNamedObject_ac4588cc8590148a29ede7d7486ac23ac}{mName}};                      }
+\DoxyCodeLine{59   G4int \mbox{\hyperlink{classGateNamedObject_afa560ec62f123b2e2c0b4c00f1bd31f8}{nVerboseLevel}};                 }
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+
+\end{DoxyCode}

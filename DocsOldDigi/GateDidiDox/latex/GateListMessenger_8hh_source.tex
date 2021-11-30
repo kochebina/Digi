@@ -1,0 +1,82 @@
+\hypertarget{GateListMessenger_8hh_source}{}\doxysection{Gate\+List\+Messenger.\+hh}
+\label{GateListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateListMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateListMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateClockDependentMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateListManager.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{46 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{class }\mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50   \textcolor{keyword}{public}:}
+\DoxyCodeLine{52     \mbox{\hyperlink{classGateListMessenger_ab402af2dce0034cf06c25f44f3d190ad}{GateListMessenger}}(\mbox{\hyperlink{classGateListManager}{GateListManager}}* itsListManager);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateListMessenger_a937d73ed6ea2954f411d7bc84e44a5fb}{\string~GateListMessenger}}();}
+\DoxyCodeLine{56     }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateListMessenger_a135fd33fa1ded1c47078c194315ff1c4}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateListManager}{GateListManager}}* \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}() }
+\DoxyCodeLine{62       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateListManager}{GateListManager}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateListMessenger_ad335005e7183b9f3a17182edd72f569d}{GetNewInsertionBaseName}}() }
+\DoxyCodeLine{66       \{ \textcolor{keywordflow}{return} mNewInsertionBaseName; \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateListMessenger_a8d979e7893cfe2d610b9a4b9555d1646}{SetSystemType}}(\textcolor{keyword}{const} G4String\& val) \{ mSystemType = val; \}}
+\DoxyCodeLine{70     \textcolor{keyword}{inline} G4String GetSystemType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mSystemType; \}}
+\DoxyCodeLine{71     }
+\DoxyCodeLine{73     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateListMessenger_a258c249cffc90560936c5e53c8ec13a5}{SetNewInsertionBaseName}}(\textcolor{keyword}{const} G4String\& val) }
+\DoxyCodeLine{74       \{ mNewInsertionBaseName = val; \}}
+\DoxyCodeLine{75       }
+\DoxyCodeLine{78     \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateListMessenger_aecfa42a240638fc5bf42126f21609660}{CheckNameConflict}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{82     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateListMessenger_a50d64a16ffced3880d88223ea28115de}{AvoidNameConflicts}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keyword}{private}:}
+\DoxyCodeLine{87     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& DumpMap() =0;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{90     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListChoices() }
+\DoxyCodeLine{91       \{ G4cout << \textcolor{stringliteral}{"{}The available choices are: "{}} << DumpMap() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}}; \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DoInsertion(\textcolor{keyword}{const} G4String\& typeName)=0;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     G4UIcmdWithAString*         \mbox{\hyperlink{classGateListMessenger_aaae0bba0f9be4f4f407d0d66a0ae5385}{pSystemTypeCmd}};       }
+\DoxyCodeLine{99     G4UIcmdWithAString*         \mbox{\hyperlink{classGateListMessenger_ac9bdc1cfb39b24ead2f1293b65b5fe3d}{pDefineNameCmd}};         }
+\DoxyCodeLine{100     G4UIcmdWithoutParameter*    \mbox{\hyperlink{classGateListMessenger_ae5cdcdb3687f287723011916736cd4fc}{pListChoicesCmd}};       }
+\DoxyCodeLine{101     G4UIcmdWithoutParameter*    \mbox{\hyperlink{classGateListMessenger_a0091eead315c503d80111d7fe5fff913}{pListCmd}};         }
+\DoxyCodeLine{102     G4UIcmdWithAString*         \mbox{\hyperlink{classGateListMessenger_ac352872f0c6fe8e428fb6bbc469f608b}{pInsertCmd}};         }
+\DoxyCodeLine{103     }
+\DoxyCodeLine{104   \textcolor{keyword}{private}:}
+\DoxyCodeLine{105     \textcolor{keyword}{static} G4String             mSystemType;    }
+\DoxyCodeLine{106     G4String            mNewInsertionBaseName;  }
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{111 }
+
+\end{DoxyCode}

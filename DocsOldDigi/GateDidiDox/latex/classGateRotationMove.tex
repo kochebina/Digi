@@ -1,0 +1,129 @@
+\hypertarget{classGateRotationMove}{}\doxysection{Gate\+Rotation\+Move Class Reference}
+\label{classGateRotationMove}\index{GateRotationMove@{GateRotationMove}}
+
+
+The \mbox{\hyperlink{classGateRotationMove}{Gate\+Rotation\+Move}} models a rotation movement ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Rotation\+Move.\+hh$>$}
+
+Inheritance diagram for Gate\+Rotation\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateRotationMove}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateRotationMove_a2c67700077c7450bcca4aafde0921af8}{Gate\+Rotation\+Move}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name, const G4\+Three\+Vector \&its\+Rotation\+Axis=G4\+Three\+Vector(0., 0., 1.), double its\+Velocity=0.)
+\item 
+\mbox{\Hypertarget{classGateRotationMove_af39deafd071cf8e4f3086abd3bcd5e8b}\label{classGateRotationMove_af39deafd071cf8e4f3086abd3bcd5e8b}} 
+virtual {\bfseries $\sim$\+Gate\+Rotation\+Move} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateRotationMove_abffa9c56ba5a5d7a760484e828751f5c}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method Push\+My\+Placement(), to compute. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateRotationMove_ae1f78674c823afc10e4c04ffda0e982c}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateRotationMove_ae1f78674c823afc10e4c04ffda0e982c}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRotationMove_a050778e8f7bdec16fca7660296d259e2}\label{classGateRotationMove_a050778e8f7bdec16fca7660296d259e2}} 
+virtual const G4\+Three\+Vector \& {\bfseries Get\+Rotation\+Axis} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRotationMove_afcc97f8838d244c39b13635a42fc2b90}\label{classGateRotationMove_afcc97f8838d244c39b13635a42fc2b90}} 
+virtual G4double {\bfseries Get\+Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRotationMove_a0edc697e1417f092eb92fcc1431477f3}\label{classGateRotationMove_a0edc697e1417f092eb92fcc1431477f3}} 
+virtual void {\bfseries Set\+Rotation\+Axis} (const G4\+Three\+Vector \&val)
+\begin{DoxyCompactList}\small\item\em Set the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRotationMove_a9acf4db1f5c2de2b5d4fd9a6c291052b}\label{classGateRotationMove_a9acf4db1f5c2de2b5d4fd9a6c291052b}} 
+virtual void {\bfseries Set\+Velocity} (double val)
+\begin{DoxyCompactList}\small\item\em Set the rotation speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateRotationMove_afe086ffd9f5234f30249a848b362906d}\label{classGateRotationMove_afe086ffd9f5234f30249a848b362906d}} 
+virtual G4double {\bfseries Get\+Current\+Angle} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the rotation angle that was last computed by Push\+My\+Placement() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateRotationMove}{Gate\+Rotation\+Move}} models a rotation movement ~\newline
+ 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateRotationMove}{Gate\+Rotation\+Move}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} ~\newline
+
+\item The movement equation modeled by this class is theta(t) = V x t where theta(t) is the rotation angle around an axis at time t, and V is the angular rotation speed. ~\newline
+ 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateRotationMove_a2c67700077c7450bcca4aafde0921af8}\label{classGateRotationMove_a2c67700077c7450bcca4aafde0921af8}} 
+\index{GateRotationMove@{GateRotationMove}!GateRotationMove@{GateRotationMove}}
+\index{GateRotationMove@{GateRotationMove}!GateRotationMove@{GateRotationMove}}
+\doxysubsubsection{\texorpdfstring{GateRotationMove()}{GateRotationMove()}}
+{\footnotesize\ttfamily Gate\+Rotation\+Move\+::\+Gate\+Rotation\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{its\+Object\+Inserter,  }\item[{const G4\+String \&}]{its\+Name,  }\item[{const G4\+Three\+Vector \&}]{its\+Rotation\+Axis = {\ttfamily G4ThreeVector(0.,0.,1.)},  }\item[{double}]{its\+Velocity = {\ttfamily 0.} }\end{DoxyParamCaption})}
+
+Constructor The default movement parameters are chosen so that, by default, the rotation is around the Z axis whilst the rotation speed is zero 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateRotationMove_ae1f78674c823afc10e4c04ffda0e982c}\label{classGateRotationMove_ae1f78674c823afc10e4c04ffda0e982c}} 
+\index{GateRotationMove@{GateRotationMove}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateRotationMove@{GateRotationMove}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Rotation\+Move\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateRotationMove_ae1f78674c823afc10e4c04ffda0e982c}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the movement
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateRotationMove_abffa9c56ba5a5d7a760484e828751f5c}\label{classGateRotationMove_abffa9c56ba5a5d7a760484e828751f5c}} 
+\index{GateRotationMove@{GateRotationMove}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateRotationMove@{GateRotationMove}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Rotation\+Move\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method Push\+My\+Placement(), to compute. 
+
+a volume position and orientation as a function of time
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object Gate\+Placement combining the new position and the new orientation of the volume computed by the movement equation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Rotation\+Move.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Rotation\+Move.\+cc\end{DoxyCompactItemize}

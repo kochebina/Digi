@@ -1,0 +1,106 @@
+\hypertarget{classGateGeometryVoxelTabulatedTranslator}{}\doxysection{Gate\+Geometry\+Voxel\+Tabulated\+Translator Class Reference}
+\label{classGateGeometryVoxelTabulatedTranslator}\index{GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}}
+Inheritance diagram for Gate\+Geometry\+Voxel\+Tabulated\+Translator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateGeometryVoxelTabulatedTranslator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_afa91f0dbf75f0baafbfcbe26d2422236}\label{classGateGeometryVoxelTabulatedTranslator_afa91f0dbf75f0baafbfcbe26d2422236}} 
+{\bfseries Gate\+Geometry\+Voxel\+Tabulated\+Translator} (\mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}} $\ast$voxel\+Reader)
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a2af8d9e9f7c252c11165272ed06a2361}\label{classGateGeometryVoxelTabulatedTranslator_a2af8d9e9f7c252c11165272ed06a2361}} 
+void {\bfseries Read\+Translation\+Table} (G4\+String file\+Name)
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a5e28686b2b42ac801dbcaac7ae0aedb2}\label{classGateGeometryVoxelTabulatedTranslator_a5e28686b2b42ac801dbcaac7ae0aedb2}} 
+void {\bfseries Describe} (G4int level)
+\item 
+G4\+Vis\+Attributes $\ast$ \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator_a453c201e596ea640dbd8a1447448af96}{Get\+Material\+Attributes}} (G4\+Material $\ast$m)
+\item 
+G4\+String \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator_a41c038c1d4c249b04d058950c44f6f15}{Translate\+To\+Material}} (G4int voxel\+Value)
+\item 
+G4\+String \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator_aa508106f0d236b02cbb6764a53d374e4}{Get\+Next\+Material}} (G4bool do\+Reset=false)
+\begin{DoxyCompactList}\small\item\em Modif DS\+: Method to iterate through the material\textquotesingle{}s list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslator_a6e6a24c3741932184f8ef72dc258ab65}{Get\+Complete\+List\+Of\+Materials}} (std\+::vector$<$ G4\+String $>$ \&mat)
+\begin{DoxyCompactList}\small\item\em Used by \mbox{\hyperlink{classGateRegularParameterization}{Gate\+Regular\+Parameterization}} to get the different materials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_abb66561504982d05e7fcebe7ca10ae4b}\label{classGateGeometryVoxelTabulatedTranslator_abb66561504982d05e7fcebe7ca10ae4b}} 
+typedef std\+::map$<$ G4int, G4\+String $>$ {\bfseries Gate\+Voxel\+Material\+Translation\+Map}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_ae6e1c1bedffb6f632ceefd685341522b}\label{classGateGeometryVoxelTabulatedTranslator_ae6e1c1bedffb6f632ceefd685341522b}} 
+typedef std\+::map$<$ G4\+Material $\ast$, G4\+Vis\+Attributes $\ast$ $>$ {\bfseries Gate\+Voxel\+Attributes\+Translation\+Map}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a0c5186ae06946899d9c047457389fb9c}\label{classGateGeometryVoxelTabulatedTranslator_a0c5186ae06946899d9c047457389fb9c}} 
+Gate\+Voxel\+Material\+Translation\+Map {\bfseries m\+\_\+voxel\+Material\+Translation}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a21792a76bdb5f71b7e124a23a7c8635f}\label{classGateGeometryVoxelTabulatedTranslator_a21792a76bdb5f71b7e124a23a7c8635f}} 
+Gate\+Voxel\+Attributes\+Translation\+Map {\bfseries m\+\_\+voxel\+Attributes\+Translation}
+\item 
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a953103a0b32d4b87e0d610511ee26316}\label{classGateGeometryVoxelTabulatedTranslator_a953103a0b32d4b87e0d610511ee26316}} 
+\mbox{\hyperlink{classGateGeometryVoxelTabulatedTranslatorMessenger}{Gate\+Geometry\+Voxel\+Tabulated\+Translator\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a6e6a24c3741932184f8ef72dc258ab65}\label{classGateGeometryVoxelTabulatedTranslator_a6e6a24c3741932184f8ef72dc258ab65}} 
+\index{GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}!GetCompleteListOfMaterials@{GetCompleteListOfMaterials}}
+\index{GetCompleteListOfMaterials@{GetCompleteListOfMaterials}!GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}}
+\doxysubsubsection{\texorpdfstring{GetCompleteListOfMaterials()}{GetCompleteListOfMaterials()}}
+{\footnotesize\ttfamily void Gate\+Geometry\+Voxel\+Tabulated\+Translator\+::\+Get\+Complete\+List\+Of\+Materials (\begin{DoxyParamCaption}\item[{std\+::vector$<$ G4\+String $>$ \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used by \mbox{\hyperlink{classGateRegularParameterization}{Gate\+Regular\+Parameterization}} to get the different materials. 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelTranslator_a305a4fd958e0b098fc1479bf63c4adad}{Gate\+VGeometry\+Voxel\+Translator}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a453c201e596ea640dbd8a1447448af96}\label{classGateGeometryVoxelTabulatedTranslator_a453c201e596ea640dbd8a1447448af96}} 
+\index{GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}!GetMaterialAttributes@{GetMaterialAttributes}}
+\index{GetMaterialAttributes@{GetMaterialAttributes}!GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}}
+\doxysubsubsection{\texorpdfstring{GetMaterialAttributes()}{GetMaterialAttributes()}}
+{\footnotesize\ttfamily G4\+Vis\+Attributes $\ast$ Gate\+Geometry\+Voxel\+Tabulated\+Translator\+::\+Get\+Material\+Attributes (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_aa508106f0d236b02cbb6764a53d374e4}\label{classGateGeometryVoxelTabulatedTranslator_aa508106f0d236b02cbb6764a53d374e4}} 
+\index{GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}!GetNextMaterial@{GetNextMaterial}}
+\index{GetNextMaterial@{GetNextMaterial}!GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}}
+\doxysubsubsection{\texorpdfstring{GetNextMaterial()}{GetNextMaterial()}}
+{\footnotesize\ttfamily G4\+String Gate\+Geometry\+Voxel\+Tabulated\+Translator\+::\+Get\+Next\+Material (\begin{DoxyParamCaption}\item[{G4bool}]{do\+Reset = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Modif DS\+: Method to iterate through the material\textquotesingle{}s list. 
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelTranslator_a6af50c355882f6e50bc671ca753e69d1}{Gate\+VGeometry\+Voxel\+Translator}}.
+
+\mbox{\Hypertarget{classGateGeometryVoxelTabulatedTranslator_a41c038c1d4c249b04d058950c44f6f15}\label{classGateGeometryVoxelTabulatedTranslator_a41c038c1d4c249b04d058950c44f6f15}} 
+\index{GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}!TranslateToMaterial@{TranslateToMaterial}}
+\index{TranslateToMaterial@{TranslateToMaterial}!GateGeometryVoxelTabulatedTranslator@{GateGeometryVoxelTabulatedTranslator}}
+\doxysubsubsection{\texorpdfstring{TranslateToMaterial()}{TranslateToMaterial()}}
+{\footnotesize\ttfamily G4\+String Gate\+Geometry\+Voxel\+Tabulated\+Translator\+::\+Translate\+To\+Material (\begin{DoxyParamCaption}\item[{G4int}]{voxel\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Geometry\+Voxel\+Tabulated\+Translator.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Geometry\+Voxel\+Tabulated\+Translator.\+cc\end{DoxyCompactItemize}

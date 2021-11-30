@@ -1,0 +1,78 @@
+\hypertarget{GateVFictitiousMap_8hh_source}{}\doxysection{Gate\+VFictitious\+Map.\+hh}
+\label{GateVFictitiousMap_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVFictitiousMap.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVFictitiousMap.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateVFictitiousMap\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateVFictitiousMap\_hh}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4ios.hh"{}}}
+\DoxyCodeLine{13 \textcolor{keyword}{class }G4Step;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4Region;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4VSolid;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4FastTrack;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4Box;}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}};}
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} G4Region G4Envelope;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVFictitiousMap}{GateVFictitiousMap}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateVFictitiousMap}{GateVFictitiousMap}}( G4Envelope* envelope);}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVFictitiousMap}{\string~GateVFictitiousMap}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{comment}{//virtual const G4double operator()(G4double x, G4double y, G4double z, G4double energy)const =0;}}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} G4double GetCrossSection(\textcolor{keyword}{const} G4ThreeVector\& pos, G4double kin\_en) \textcolor{keyword}{const}  =0;}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} G4double GetMaxCrossSection(G4double kin\_en) \textcolor{keyword}{const} =0;}
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} G4Material* GetMaterial(\textcolor{keyword}{const} G4ThreeVector\& pos) \textcolor{keyword}{const} =0;}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} GetMaterials(std::vector<G4Material*>\&) \textcolor{keyword}{const} =0;}
+\DoxyCodeLine{41   \textcolor{comment}{// check if everything is correctly initialized, otherwise throw exception    }}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Check() \textcolor{keyword}{const} =0;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44  \textcolor{comment}{// void RegisterMaxMaterial( G4Material*);}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} RegisterCrossSectionsTable ( \textcolor{keyword}{const} \mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}}*, \textcolor{keywordtype}{bool} deleteWithThis);}
+\DoxyCodeLine{46 \textcolor{comment}{// inline const G4Material* GetMaxMaterial() const;}}
+\DoxyCodeLine{47   \textcolor{keyword}{inline} \textcolor{keyword}{const} G4VSolid* GetSolid() \textcolor{keyword}{const};}
+\DoxyCodeLine{48   \textcolor{keyword}{inline} \textcolor{keyword}{const} G4Envelope* GetEnvelope() \textcolor{keyword}{const};}
+\DoxyCodeLine{49   \textcolor{keyword}{inline} \textcolor{keyword}{const} G4LogicalVolume* GetLogicalVolume() \textcolor{keyword}{const};}
+\DoxyCodeLine{50   \textcolor{keyword}{inline} \textcolor{keyword}{const} G4Box* GetBox() \textcolor{keyword}{const};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{53 \textcolor{comment}{//  const G4Material* pMaxMaterial;}}
+\DoxyCodeLine{54   \textcolor{keyword}{const} G4VSolid* pSolid;}
+\DoxyCodeLine{55   \textcolor{keyword}{const} \mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}}* pCrossSectionsTable;}
+\DoxyCodeLine{56   G4Envelope* pEnvelope;}
+\DoxyCodeLine{57   \textcolor{keyword}{const} G4LogicalVolume* pLogicalVolume;}
+\DoxyCodeLine{58   \textcolor{keyword}{const} G4Box* pBox; \textcolor{comment}{// NULL if envelope is not G4Box (but treated here, because this will be probably the case in most cases)}}
+\DoxyCodeLine{59   \textcolor{keywordtype}{bool} m\_nDeleteCrossSectionTable;}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{//inline const G4Material* GateVFictitiousMap::GetMaxMaterial() const}}
+\DoxyCodeLine{63  \textcolor{comment}{// \{return pMaxMaterial;\}}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{inline} \textcolor{keyword}{const} G4VSolid* GateVFictitiousMap::GetSolid()\textcolor{keyword}{ const}}
+\DoxyCodeLine{66 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} pSolid;\}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{inline} \textcolor{keyword}{const} G4Envelope* GateVFictitiousMap::GetEnvelope()\textcolor{keyword}{ const}}
+\DoxyCodeLine{69 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} pEnvelope;\}}
+\DoxyCodeLine{70 \textcolor{keyword}{inline} \textcolor{keyword}{const} G4LogicalVolume* GateVFictitiousMap::GetLogicalVolume()\textcolor{keyword}{ const}}
+\DoxyCodeLine{71 \textcolor{keyword}{  }\{\textcolor{keywordflow}{return} pLogicalVolume;\}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{inline} \textcolor{keyword}{const} G4Box* GateVFictitiousMap::GetBox()\textcolor{keyword}{ const}}
+\DoxyCodeLine{74 \textcolor{keyword}{  }\{\textcolor{keywordflow}{return} pBox;\}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

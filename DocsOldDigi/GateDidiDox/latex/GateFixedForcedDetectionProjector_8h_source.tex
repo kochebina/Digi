@@ -1,0 +1,49 @@
+\hypertarget{GateFixedForcedDetectionProjector_8h_source}{}\doxysection{Gate\+Fixed\+Forced\+Detection\+Projector.\+h}
+\label{GateFixedForcedDetectionProjector_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionProjector.h@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionProjector.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GATEFIXEDFORCEDDETECTIONPROJECTOR\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GATEFIXEDFORCEDDETECTIONPROJECTOR\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <rtkJosephForwardProjectionImageFilter.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionFunctors.hh"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{template}<\textcolor{keyword}{class} TProjectedValueAccumulation>}
+\DoxyCodeLine{8 \textcolor{keyword}{class }ITK\_EXPORT \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}: \textcolor{keyword}{public} rtk::JosephForwardProjectionImageFilter<}
+\DoxyCodeLine{9     itk::Image<float, 3>, itk::Image<float, 3>,}
+\DoxyCodeLine{10     GateFixedForcedDetectionFunctor::InterpolationWeightMultiplication, TProjectedValueAccumulation>}
+\DoxyCodeLine{11   \{}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}} \mbox{\hyperlink{classGateFixedForcedDetectionProjector_a48ab20569b17dc5fa311beb8ad721cbb}{Self}};}
+\DoxyCodeLine{15   \textcolor{keyword}{typedef} rtk::JosephForwardProjectionImageFilter<itk::Image<float, 3>, itk::Image<float, 3>,}
+\DoxyCodeLine{16       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1InterpolationWeightMultiplication}{GateFixedForcedDetectionFunctor::InterpolationWeightMultiplication}},}
+\DoxyCodeLine{17       TProjectedValueAccumulation> Superclass;}
+\DoxyCodeLine{18   \textcolor{keyword}{typedef} itk::SmartPointer<Self> Pointer;}
+\DoxyCodeLine{19   \textcolor{keyword}{typedef} itk::SmartPointer<const Self> ConstPointer;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22   \textcolor{keyword}{typedef} itk::Image<float, 3> \mbox{\hyperlink{classGateFixedForcedDetectionProjector_ad573df18b42bbd52a99ddb38e8548d63}{ImageType}};}
+\DoxyCodeLine{23   \textcolor{keyword}{typedef} ImageType::Pointer ImagePointer;}
+\DoxyCodeLine{24   \textcolor{keyword}{typedef} itk::ImageRegionIterator<ImageType> RegionIteratorType;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateFixedForcedDetectionProjector_a63de879c857ec90e670d7230d688ccff}{itkNewMacro}}(\mbox{\hyperlink{classGateFixedForcedDetectionProjector}{Self}})}
+\DoxyCodeLine{28   ;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateFixedForcedDetectionProjector_ac21cfa1de7ed498f13cd40e167f68f66}{itkTypeMacro}}(\mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}, JosephForwardProjectionImageFilter)}
+\DoxyCodeLine{32   ;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}()}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{\string~GateFixedForcedDetectionProjector}}()}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{private}:}
+\DoxyCodeLine{43   \mbox{\hyperlink{classGateFixedForcedDetectionProjector}{GateFixedForcedDetectionProjector}}(\textcolor{keyword}{const} Self\&); \textcolor{comment}{//purposely not implemented}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} operator=(\textcolor{keyword}{const} Self\&);                     \textcolor{comment}{//purposely not implemented}}
+\DoxyCodeLine{45   \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

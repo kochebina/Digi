@@ -1,0 +1,414 @@
+\hypertarget{metaUtils_8h_source}{}\doxysection{meta\+Utils.\+h}
+\label{metaUtils_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaUtils.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaUtils.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAUTILS\_H}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define ITKMetaIO\_METAUTILS\_H}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#pragma warning( disable:4251 )}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#pragma warning( disable:4511 )}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#pragma warning( disable:4512 )}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#pragma warning( disable:4284 )}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#pragma warning( disable:4702 )}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma warning( disable:4786 )}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma warning( disable:4996 )}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{53 \textcolor{comment}{//\#include <iomanip>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{58 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} META\_DEBUG;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{// Types used for storing the compression table}}
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structMET__CompressionOffset}{MET\_CompressionOffset}}}
+\DoxyCodeLine{65   \{}
+\DoxyCodeLine{66   METAIO\_STL::streamoff uncompressedOffset;}
+\DoxyCodeLine{67   METAIO\_STL::streamoff compressedOffset;}
+\DoxyCodeLine{68   \} \mbox{\hyperlink{structMET__CompressionOffset}{MET\_CompressionOffsetType}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} METAIO\_STL::vector<MET\_CompressionOffsetType>}
+\DoxyCodeLine{71                                                  MET\_CompressionOffsetListType;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structMET__CompressionTable}{MET\_CompressionTable}}}
+\DoxyCodeLine{74   \{}
+\DoxyCodeLine{75   MET\_CompressionOffsetListType offsetList;}
+\DoxyCodeLine{76   \mbox{\hyperlink{structz__stream__s}{z\_stream}}* compressedStream;}
+\DoxyCodeLine{77   \textcolor{keywordtype}{char}*     buffer;}
+\DoxyCodeLine{78   METAIO\_STL::streamoff bufferSize;}
+\DoxyCodeLine{79   \} \mbox{\hyperlink{structMET__CompressionTable}{MET\_CompressionTableType}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{83 METAIO\_EXPORT \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}} *}
+\DoxyCodeLine{84   MET\_GetFieldRecord(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fieldName,}
+\DoxyCodeLine{85                            METAIO\_STL::vector<MET\_FieldRecordType *> * \_fields);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 METAIO\_EXPORT}
+\DoxyCodeLine{88 \textcolor{keywordtype}{int} MET\_GetFieldRecordNumber(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fieldName,}
+\DoxyCodeLine{89                            METAIO\_STL::vector<MET\_FieldRecordType *> * \_fields);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 METAIO\_EXPORT}
+\DoxyCodeLine{92 \textcolor{keywordtype}{bool} MET\_SizeOfType(MET\_ValueEnumType \_type, \textcolor{keywordtype}{int} *\_size);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95 \textcolor{comment}{// Byte Order}}
+\DoxyCodeLine{97 \textcolor{comment}{}METAIO\_EXPORT}
+\DoxyCodeLine{98 \textcolor{keywordtype}{bool} MET\_SystemByteOrderMSB(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{keyword}{inline}}
+\DoxyCodeLine{101 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} MET\_ByteOrderSwapShort(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} x)}
+\DoxyCodeLine{102     \{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short})((\textcolor{keywordtype}{unsigned} short)(x<<8) | (\textcolor{keywordtype}{unsigned} short)(x>>8));}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keyword}{inline}}
+\DoxyCodeLine{107 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} MET\_ByteOrderSwapLong(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} x)}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109     \textcolor{keywordflow}{return} (((x<<24) \& 0xff000000) |}
+\DoxyCodeLine{110             ((x<<8)  \& 0x00ff0000) |}
+\DoxyCodeLine{111             ((x>>8)  \& 0x0000ff00) |}
+\DoxyCodeLine{112             ((x>>24) \& 0x000000ff));}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{inline}}
+\DoxyCodeLine{116 \textcolor{keywordtype}{void} MET\_ByteOrderSwap2(\textcolor{keywordtype}{void}* x)}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118     \textcolor{keywordtype}{char} one\_byte;}
+\DoxyCodeLine{119     \textcolor{keywordtype}{char} *p = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(x);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     one\_byte    = p[0];}
+\DoxyCodeLine{122     p[0] = p[1];}
+\DoxyCodeLine{123     p[1] = one\_byte;}
+\DoxyCodeLine{124     \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keyword}{inline}}
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} MET\_ByteOrderSwap4(\textcolor{keywordtype}{void}* x)}
+\DoxyCodeLine{128     \{}
+\DoxyCodeLine{129     \textcolor{keywordtype}{char} one\_byte;}
+\DoxyCodeLine{130     \textcolor{keywordtype}{char} *p = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(x);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     one\_byte    = p[0];}
+\DoxyCodeLine{133     p[0] = p[3];}
+\DoxyCodeLine{134     p[3] = one\_byte;}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     one\_byte    = p[1];}
+\DoxyCodeLine{137     p[1] = p[2];}
+\DoxyCodeLine{138     p[2] = one\_byte;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{keyword}{inline}}
+\DoxyCodeLine{142 \textcolor{keywordtype}{void} MET\_ByteOrderSwap8(\textcolor{keywordtype}{void}* x)}
+\DoxyCodeLine{143     \{}
+\DoxyCodeLine{144     \textcolor{keywordtype}{char} one\_byte;}
+\DoxyCodeLine{145     \textcolor{keywordtype}{char}* p = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(x);}
+\DoxyCodeLine{146     one\_byte    = p[0];}
+\DoxyCodeLine{147     p[0] = p[7];}
+\DoxyCodeLine{148     p[7] = one\_byte;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     one\_byte    = p[1];}
+\DoxyCodeLine{151     p[1] = p[6];}
+\DoxyCodeLine{152     p[6] = one\_byte;}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     one\_byte    = p[2];}
+\DoxyCodeLine{155     p[2] = p[5];}
+\DoxyCodeLine{156     p[5] = one\_byte;}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     one\_byte    = p[3];}
+\DoxyCodeLine{159     p[3] = p[4];}
+\DoxyCodeLine{160     p[4] = one\_byte;}
+\DoxyCodeLine{161     \}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{164 \textcolor{keywordtype}{void} MET\_SwapByteIfSystemMSB(\textcolor{keywordtype}{void}* val, MET\_ValueEnumType \_type);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 }
+\DoxyCodeLine{168 \textcolor{comment}{// STRINGS AND TYPES}}
+\DoxyCodeLine{170 \textcolor{comment}{}METAIO\_EXPORT}
+\DoxyCodeLine{171 \textcolor{keywordtype}{bool} MET\_StringToWordArray(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *s, \textcolor{keywordtype}{int} *n, \textcolor{keywordtype}{char} ***val);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{174 \textcolor{keywordtype}{void} MET\_StringToVector( \textcolor{keyword}{const} METAIO\_STL::string \& s,}
+\DoxyCodeLine{175                          METAIO\_STL::vector< T > \& vec )}
+\DoxyCodeLine{176 \{}
+\DoxyCodeLine{177   vec.clear();}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179   METAIO\_STL::string::size\_type prevPos = 0;}
+\DoxyCodeLine{180   METAIO\_STL::string::size\_type pos = s.find(\textcolor{stringliteral}{"{},"{}}, prevPos);}
+\DoxyCodeLine{181   T tVal;}
+\DoxyCodeLine{182   \textcolor{keywordflow}{while}( pos != METAIO\_STL::string::npos )}
+\DoxyCodeLine{183     \{}
+\DoxyCodeLine{184     METAIO\_STL::stringstream ss;}
+\DoxyCodeLine{185     METAIO\_STL::string tmpString = s.substr( prevPos, (pos-\/prevPos) );}
+\DoxyCodeLine{186     ss << tmpString;}
+\DoxyCodeLine{187     ss >> tVal;}
+\DoxyCodeLine{188     vec.push\_back( tVal );}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     prevPos = pos+1;}
+\DoxyCodeLine{191     pos = s.find(\textcolor{stringliteral}{"{},"{}}, prevPos);}
+\DoxyCodeLine{192     \}}
+\DoxyCodeLine{193   METAIO\_STL::stringstream ss;}
+\DoxyCodeLine{194   METAIO\_STL::string tmpString = s.substr( prevPos, (s.size()-\/prevPos) );}
+\DoxyCodeLine{195   ss << tmpString;}
+\DoxyCodeLine{196   ss >> tVal;}
+\DoxyCodeLine{197   vec.push\_back( tVal );}
+\DoxyCodeLine{198 \}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 METAIO\_EXPORT}
+\DoxyCodeLine{201 \textcolor{keywordtype}{bool} MET\_StringToType(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_str, MET\_ValueEnumType *\_type);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 METAIO\_EXPORT}
+\DoxyCodeLine{204 \textcolor{keywordtype}{bool} MET\_TypeToString(MET\_ValueEnumType \_type, \textcolor{keywordtype}{char} *\_str);}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 METAIO\_EXPORT}
+\DoxyCodeLine{207 \textcolor{keywordtype}{bool} MET\_StringToInterpolationType(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_str,}
+\DoxyCodeLine{208                                 MET\_InterpolationEnumType * \_type);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 METAIO\_EXPORT}
+\DoxyCodeLine{211 \textcolor{keywordtype}{bool} MET\_InterpolationTypeToString(MET\_InterpolationEnumType \_type,}
+\DoxyCodeLine{212                                 \textcolor{keywordtype}{char} * \_str);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 \textcolor{keyword}{inline}}
+\DoxyCodeLine{215 MET\_ValueEnumType MET\_GetPixelType(\textcolor{keyword}{const} METAIO\_STL::type\_info \& ptype)}
+\DoxyCodeLine{216     \{}
+\DoxyCodeLine{217     \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_UCHAR\_TYPE) )}
+\DoxyCodeLine{218       \{}
+\DoxyCodeLine{219       \textcolor{keywordflow}{return} MET\_UCHAR;}
+\DoxyCodeLine{220       \}}
+\DoxyCodeLine{221     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_CHAR\_TYPE) )}
+\DoxyCodeLine{222       \{}
+\DoxyCodeLine{223       \textcolor{keywordflow}{return} MET\_CHAR;}
+\DoxyCodeLine{224       \}}
+\DoxyCodeLine{225     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_USHORT\_TYPE))}
+\DoxyCodeLine{226       \{}
+\DoxyCodeLine{227       \textcolor{keywordflow}{return} MET\_USHORT;}
+\DoxyCodeLine{228       \}}
+\DoxyCodeLine{229     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_SHORT\_TYPE) )}
+\DoxyCodeLine{230       \{}
+\DoxyCodeLine{231       \textcolor{keywordflow}{return} MET\_SHORT;}
+\DoxyCodeLine{232       \}}
+\DoxyCodeLine{233     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_UINT\_TYPE) )}
+\DoxyCodeLine{234       \{}
+\DoxyCodeLine{235       \textcolor{keywordflow}{return} MET\_UINT;}
+\DoxyCodeLine{236       \}}
+\DoxyCodeLine{237     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_INT\_TYPE) )}
+\DoxyCodeLine{238       \{}
+\DoxyCodeLine{239       \textcolor{keywordflow}{return} MET\_INT;}
+\DoxyCodeLine{240       \}}
+\DoxyCodeLine{241     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_ULONG\_TYPE))}
+\DoxyCodeLine{242       \{}
+\DoxyCodeLine{243       \textcolor{keywordflow}{return} MET\_ULONG;}
+\DoxyCodeLine{244       \}}
+\DoxyCodeLine{245     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_LONG\_TYPE) )}
+\DoxyCodeLine{246       \{}
+\DoxyCodeLine{247       \textcolor{keywordflow}{return} MET\_LONG;}
+\DoxyCodeLine{248       \}}
+\DoxyCodeLine{249     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_ULONG\_LONG\_TYPE) )}
+\DoxyCodeLine{250       \{}
+\DoxyCodeLine{251       \textcolor{keywordflow}{return} MET\_ULONG\_LONG;}
+\DoxyCodeLine{252       \}}
+\DoxyCodeLine{253     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_LONG\_LONG\_TYPE) )}
+\DoxyCodeLine{254       \{}
+\DoxyCodeLine{255       \textcolor{keywordflow}{return} MET\_LONG\_LONG;}
+\DoxyCodeLine{256       \}}
+\DoxyCodeLine{257     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_FLOAT\_TYPE) )}
+\DoxyCodeLine{258       \{}
+\DoxyCodeLine{259       \textcolor{keywordflow}{return} MET\_FLOAT;}
+\DoxyCodeLine{260       \}}
+\DoxyCodeLine{261     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ptype == \textcolor{keyword}{typeid}(MET\_DOUBLE\_TYPE) )}
+\DoxyCodeLine{262       \{}
+\DoxyCodeLine{263       \textcolor{keywordflow}{return} MET\_DOUBLE;}
+\DoxyCodeLine{264       \}}
+\DoxyCodeLine{265     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{266       \{}
+\DoxyCodeLine{267       METAIO\_STREAM::cerr << \textcolor{stringliteral}{"{}MET\_GetPixelType: Couldn't convert pixel type : "{}}}
+\DoxyCodeLine{268                 << ptype.name() << METAIO\_STREAM::endl;}
+\DoxyCodeLine{269       \textcolor{keywordflow}{return} MET\_NONE;}
+\DoxyCodeLine{270       \}}
+\DoxyCodeLine{271     \}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{keyword}{inline}}
+\DoxyCodeLine{274 MET\_ValueEnumType MET\_GetValueEnumType(\textcolor{keyword}{const} METAIO\_STL::type\_info \& ptype)}
+\DoxyCodeLine{275     \{}
+\DoxyCodeLine{276     \textcolor{keywordflow}{return} MET\_GetPixelType( ptype );}
+\DoxyCodeLine{277     \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 \textcolor{keyword}{inline}}
+\DoxyCodeLine{280 \textcolor{keywordtype}{void} MET\_StringStripEnd(MET\_CHAR\_TYPE * str)}
+\DoxyCodeLine{281     \{}
+\DoxyCodeLine{282     \textcolor{comment}{// note the post-\/decrement in the condition}}
+\DoxyCodeLine{283     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} j = strlen(str); j-\/-\/ > 0;)}
+\DoxyCodeLine{284       \{}
+\DoxyCodeLine{285       \textcolor{keywordflow}{if}(isprint(str[j]) \&\& !isspace(str[j]))}
+\DoxyCodeLine{286         \{}
+\DoxyCodeLine{287         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{288         \}}
+\DoxyCodeLine{289       str[j] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{290       \}}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 }
+\DoxyCodeLine{295 \textcolor{comment}{// VALUES}}
+\DoxyCodeLine{297 \textcolor{comment}{}METAIO\_EXPORT}
+\DoxyCodeLine{298 \textcolor{keywordtype}{bool} MET\_ValueToDouble(MET\_ValueEnumType \_pType,}
+\DoxyCodeLine{299                               \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\_data,}
+\DoxyCodeLine{300                               METAIO\_STL::streamoff \_index,}
+\DoxyCodeLine{301                               \textcolor{keywordtype}{double} *\_value);}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 METAIO\_EXPORT}
+\DoxyCodeLine{304 \textcolor{keywordtype}{bool} MET\_DoubleToValue(\textcolor{keywordtype}{double} \_value,}
+\DoxyCodeLine{305                               MET\_ValueEnumType \_type,}
+\DoxyCodeLine{306                               \textcolor{keywordtype}{void} *\_data,}
+\DoxyCodeLine{307                               METAIO\_STL::streamoff \_index);}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 METAIO\_EXPORT}
+\DoxyCodeLine{310 \textcolor{keywordtype}{bool} MET\_ValueToValue(MET\_ValueEnumType \_fromType,}
+\DoxyCodeLine{311                              \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\_fromData,}
+\DoxyCodeLine{312                              METAIO\_STL::streamoff \_index,}
+\DoxyCodeLine{313                              MET\_ValueEnumType \_toType,}
+\DoxyCodeLine{314                              \textcolor{keywordtype}{void}  *\_toData,}
+\DoxyCodeLine{315                              \textcolor{keywordtype}{double} \_fromMin=0, \textcolor{keywordtype}{double} \_fromMax=0,}
+\DoxyCodeLine{316                              \textcolor{keywordtype}{double} \_toMin=0, \textcolor{keywordtype}{double} \_toMax=0);}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 METAIO\_EXPORT}
+\DoxyCodeLine{319 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} * MET\_PerformCompression(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} * source,}
+\DoxyCodeLine{320                                        METAIO\_STL::streamoff sourceSize,}
+\DoxyCodeLine{321                                        METAIO\_STL::streamoff * compressedDataSize);}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 METAIO\_EXPORT}
+\DoxyCodeLine{324 \textcolor{keywordtype}{bool} MET\_PerformUncompression(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} * sourceCompressed,}
+\DoxyCodeLine{325                               METAIO\_STL::streamoff sourceCompressedSize,}
+\DoxyCodeLine{326                               \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} * uncompressedData,}
+\DoxyCodeLine{327                               METAIO\_STL::streamoff uncompressedDataSize);}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 \textcolor{comment}{// Uncompress a stream given an uncompressedSeekPosition}}
+\DoxyCodeLine{330 METAIO\_EXPORT}
+\DoxyCodeLine{331 METAIO\_STL::streamoff MET\_UncompressStream(METAIO\_STREAM::ifstream * stream,}
+\DoxyCodeLine{332                           METAIO\_STL::streamoff uncompressedSeekPosition,}
+\DoxyCodeLine{333                           \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} * uncompressedData,}
+\DoxyCodeLine{334                           METAIO\_STL::streamoff uncompressedDataSize,}
+\DoxyCodeLine{335                           METAIO\_STL::streamoff compressedDataSize,}
+\DoxyCodeLine{336                           \mbox{\hyperlink{structMET__CompressionTable}{MET\_CompressionTableType}} * compressionTable);}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338 }
+\DoxyCodeLine{340 \textcolor{comment}{// FILES NAMES}}
+\DoxyCodeLine{342 \textcolor{comment}{}METAIO\_EXPORT}
+\DoxyCodeLine{343 \textcolor{keywordtype}{bool} MET\_GetFilePath(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_fName, \textcolor{keywordtype}{char} *\_fPath);}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 METAIO\_EXPORT}
+\DoxyCodeLine{346 \textcolor{keywordtype}{bool} MET\_GetFileSuffixPtr(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_fName, \textcolor{keywordtype}{int} *i);}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348 METAIO\_EXPORT}
+\DoxyCodeLine{349 \textcolor{keywordtype}{bool} MET\_SetFileSuffix(\textcolor{keywordtype}{char} *\_fName, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_suf);}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{353 METAIO\_EXPORT}
+\DoxyCodeLine{354 \textcolor{keywordtype}{bool} MET\_InitWriteField(\mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}} * \_mf,}
+\DoxyCodeLine{355                                    \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_name,}
+\DoxyCodeLine{356                                    MET\_ValueEnumType \_type,}
+\DoxyCodeLine{357                                    \textcolor{keywordtype}{double} \_v=0);}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{360 \textcolor{keywordtype}{bool} MET\_InitWriteField(\mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}} * \_mf,}
+\DoxyCodeLine{361                                    \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_name,}
+\DoxyCodeLine{362                                    MET\_ValueEnumType \_type,}
+\DoxyCodeLine{363                                    \textcolor{keywordtype}{size\_t} \_length,}
+\DoxyCodeLine{364                                    T *\_v)}
+\DoxyCodeLine{365   \{}
+\DoxyCodeLine{366   strncpy(\_mf-\/>name, \_name,254);}
+\DoxyCodeLine{367   \_mf-\/>name[254] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{368   \_mf-\/>type = \_type;}
+\DoxyCodeLine{369   \_mf-\/>defined = \textcolor{keyword}{true};}
+\DoxyCodeLine{370   \_mf-\/>length = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\_length);}
+\DoxyCodeLine{371   \_mf-\/>dependsOn = -\/1;}
+\DoxyCodeLine{372   \_mf-\/>required = \textcolor{keyword}{false};}
+\DoxyCodeLine{373   \_mf-\/>terminateRead = \textcolor{keyword}{false};}
+\DoxyCodeLine{374   \textcolor{keywordflow}{if}(\_type == MET\_FLOAT\_MATRIX)}
+\DoxyCodeLine{375     \{}
+\DoxyCodeLine{376     \textcolor{keywordtype}{size\_t} i;}
+\DoxyCodeLine{377     \textcolor{keywordflow}{for}(i=0; i < MET\_MAX\_NUMBER\_OF\_FIELD\_VALUES \&\& i < \_length*\_length; i++)}
+\DoxyCodeLine{378       \{}
+\DoxyCodeLine{379       \_mf-\/>value[i] = (double)(\_v[i]);}
+\DoxyCodeLine{380       \}}
+\DoxyCodeLine{381     \}}
+\DoxyCodeLine{382   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\_type != MET\_STRING)}
+\DoxyCodeLine{383     \{}
+\DoxyCodeLine{384     \textcolor{keywordtype}{size\_t} i;}
+\DoxyCodeLine{385     \textcolor{keywordflow}{for}(i=0; i < MET\_MAX\_NUMBER\_OF\_FIELD\_VALUES \&\& i < \_length; i++)}
+\DoxyCodeLine{386       \{}
+\DoxyCodeLine{387       \_mf-\/>value[i] = (double)(\_v[i]);}
+\DoxyCodeLine{388       \}}
+\DoxyCodeLine{389     \}}
+\DoxyCodeLine{390   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{391     \{}
+\DoxyCodeLine{392     strncpy((\textcolor{keywordtype}{char} *)(\_mf-\/>value), (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)\_v,}
+\DoxyCodeLine{393             (\textcolor{keyword}{sizeof}(\_mf-\/>value)-\/1));}
+\DoxyCodeLine{394     ((\textcolor{keywordtype}{char} *)(\_mf-\/>value))[(\textcolor{keyword}{sizeof}(\_mf-\/>value)-\/1)] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{395     \}}
+\DoxyCodeLine{396   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{397   \}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{401 METAIO\_EXPORT}
+\DoxyCodeLine{402 \textcolor{keywordtype}{bool} MET\_Write(METAIO\_STREAM::ostream \&fp,}
+\DoxyCodeLine{403             METAIO\_STL::vector<MET\_FieldRecordType *> * fields,}
+\DoxyCodeLine{404             \textcolor{keywordtype}{char} \_sepChar=\textcolor{charliteral}{'='});}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 METAIO\_EXPORT}
+\DoxyCodeLine{407 \textcolor{keywordtype}{bool} MET\_WriteFieldToFile(METAIO\_STREAM::ostream \&\_fp, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_fieldName,}
+\DoxyCodeLine{408                        MET\_ValueEnumType \_pType, \textcolor{keywordtype}{size\_t} \_n, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\_v);}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410 METAIO\_EXPORT}
+\DoxyCodeLine{411 \textcolor{keywordtype}{bool} MET\_WriteFieldToFile(METAIO\_STREAM::ostream \&\_fp, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_fieldName,}
+\DoxyCodeLine{412                        MET\_ValueEnumType \_pType, \textcolor{keywordtype}{double} \_v);}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414 }
+\DoxyCodeLine{417 METAIO\_EXPORT}
+\DoxyCodeLine{418 \textcolor{keywordtype}{bool} MET\_InitReadField(\mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}} * \_mf,}
+\DoxyCodeLine{419                                   \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_name,}
+\DoxyCodeLine{420                                   MET\_ValueEnumType \_type,}
+\DoxyCodeLine{421                                   \textcolor{keywordtype}{bool} \_required=\textcolor{keyword}{true},}
+\DoxyCodeLine{422                                   \textcolor{keywordtype}{int} \_dependsOn=-\/1,}
+\DoxyCodeLine{423                                   \textcolor{keywordtype}{size\_t} \_length=0);}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{427 METAIO\_EXPORT}
+\DoxyCodeLine{428 \textcolor{keywordtype}{bool} MET\_Read(METAIO\_STREAM::istream \&fp,}
+\DoxyCodeLine{429            METAIO\_STL::vector<MET\_FieldRecordType *> * fields,}
+\DoxyCodeLine{430            \textcolor{keywordtype}{char} \_sepChar=\textcolor{charliteral}{'='}, \textcolor{keywordtype}{bool} oneLine=\textcolor{keyword}{false},}
+\DoxyCodeLine{431            \textcolor{keywordtype}{bool} display\_warnings=\textcolor{keyword}{true},}
+\DoxyCodeLine{432            METAIO\_STL::vector<MET\_FieldRecordType *> * newFields=NULL);}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 }
+\DoxyCodeLine{437 METAIO\_EXPORT}
+\DoxyCodeLine{438 METAIO\_STL::string MET\_ReadForm(METAIO\_STREAM::istream \& \_fp);}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 METAIO\_EXPORT}
+\DoxyCodeLine{441 METAIO\_STL::string MET\_ReadType(METAIO\_STREAM::istream \& \_fp);}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443 METAIO\_EXPORT}
+\DoxyCodeLine{444 \textcolor{keywordtype}{char} * MET\_ReadSubType(METAIO\_STREAM::istream \& \_fp);}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{447 \};}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

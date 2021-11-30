@@ -1,0 +1,182 @@
+\hypertarget{classGateToOpticalRaw}{}\doxysection{Gate\+To\+Optical\+Raw Class Reference}
+\label{classGateToOpticalRaw}\index{GateToOpticalRaw@{GateToOpticalRaw}}
+Inheritance diagram for Gate\+To\+Optical\+Raw\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateToOpticalRaw}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToOpticalRaw_ac20a98ecdf4fb2480c40a48d9d96cac8}\label{classGateToOpticalRaw_ac20a98ecdf4fb2480c40a48d9d96cac8}} 
+{\bfseries Gate\+To\+Optical\+Raw} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, \mbox{\hyperlink{classGateOpticalSystem}{Gate\+Optical\+System}} $\ast$its\+System, Digi\+Mode digi\+Mode)
+\item 
+const G4\+String \& \mbox{\hyperlink{classGateToOpticalRaw_ade4757af47461b19bee3f3b177156779}{Give\+Name\+Of\+File}} ()
+\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_a6552a711655d3224f2bff9149ef2f163}{Record\+Begin\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em It opens the raw files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_a4fb3fffb27a89cec84ce51f8949809ad}{Record\+End\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em It closes the raw files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_a6f7fedaa79afacc795f29c65e2786481}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em SReset the data array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_a3476b567e98f13079b59afa3a4894ba1}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Saves the latest results. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_a89bba76f475d2c86d8df50ce5a9c420c}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)
+\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_ad89685d03131e77677a24a3e57c3ba68}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)
+\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_a5332c4b1b850edd394fe89927d8c27d5}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_a0fdfe8e61dcf72ca56e78e9ba7c639d6}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)
+\begin{DoxyCompactList}\small\item\em saves the geometry voxel information \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToOpticalRaw_a210c755c7d00f5238a3f680ffc392606}\label{classGateToOpticalRaw_a210c755c7d00f5238a3f680ffc392606}} 
+const G4\+String \& {\bfseries Get\+File\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the output file name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToOpticalRaw_a12aca82dfa4f91e6c4dd11f03b8a05d4}\label{classGateToOpticalRaw_a12aca82dfa4f91e6c4dd11f03b8a05d4}} 
+void {\bfseries Set\+File\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Set the output file name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToOpticalRaw_ab7614d2292c99fdd8ba1847262048643}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToOpticalRaw_a2ac7b08b6ecfc9561e0b5a978a4cd87e}\label{classGateToOpticalRaw_a2ac7b08b6ecfc9561e0b5a978a4cd87e}} 
+void {\bfseries Write\+General\+Info} ()
+\begin{DoxyCompactList}\small\item\em Write the general RAW information into the header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateToOpticalRaw_ab7614d2292c99fdd8ba1847262048643}\label{classGateToOpticalRaw_ab7614d2292c99fdd8ba1847262048643}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!Describe@{Describe}}
+\index{Describe@{Describe}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_ade4757af47461b19bee3f3b177156779}\label{classGateToOpticalRaw_ade4757af47461b19bee3f3b177156779}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!GiveNameOfFile@{GiveNameOfFile}}
+\index{GiveNameOfFile@{GiveNameOfFile}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{GiveNameOfFile()}{GiveNameOfFile()}}
+{\footnotesize\ttfamily const G4\+String \& Gate\+To\+Optical\+Raw\+::\+Give\+Name\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_a6552a711655d3224f2bff9149ef2f163}\label{classGateToOpticalRaw_a6552a711655d3224f2bff9149ef2f163}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+It opens the raw files. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_a89bba76f475d2c86d8df50ce5a9c420c}\label{classGateToOpticalRaw_a89bba76f475d2c86d8df50ce5a9c420c}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_a6f7fedaa79afacc795f29c65e2786481}\label{classGateToOpticalRaw_a6f7fedaa79afacc795f29c65e2786481}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+SReset the data array. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_a4fb3fffb27a89cec84ce51f8949809ad}\label{classGateToOpticalRaw_a4fb3fffb27a89cec84ce51f8949809ad}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+It closes the raw files. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_ad89685d03131e77677a24a3e57c3ba68}\label{classGateToOpticalRaw_ad89685d03131e77677a24a3e57c3ba68}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_a3476b567e98f13079b59afa3a4894ba1}\label{classGateToOpticalRaw_a3476b567e98f13079b59afa3a4894ba1}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the latest results. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_a5332c4b1b850edd394fe89927d8c27d5}\label{classGateToOpticalRaw_a5332c4b1b850edd394fe89927d8c27d5}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToOpticalRaw_a0fdfe8e61dcf72ca56e78e9ba7c639d6}\label{classGateToOpticalRaw_a0fdfe8e61dcf72ca56e78e9ba7c639d6}} 
+\index{GateToOpticalRaw@{GateToOpticalRaw}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateToOpticalRaw@{GateToOpticalRaw}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily void Gate\+To\+Optical\+Raw\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+saves the geometry voxel information 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/\mbox{\hyperlink{GateToOpticalRaw_8hh}{Gate\+To\+Optical\+Raw.\+hh}}\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/\mbox{\hyperlink{GateToOpticalRaw_8cc}{Gate\+To\+Optical\+Raw.\+cc}}\end{DoxyCompactItemize}

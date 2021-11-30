@@ -1,0 +1,99 @@
+\hypertarget{GateAugerDetectorActor_8hh_source}{}\doxysection{Gate\+Auger\+Detector\+Actor.\+hh}
+\label{GateAugerDetectorActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateAugerDetectorActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateAugerDetectorActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATEAUGERDETECTORACTOR\_HH}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATEAUGERDETECTORACTOR\_HH}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <TFile.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <TH1.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{struct }AugerDeposition}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21   G4ThreeVector position;}
+\DoxyCodeLine{22   G4double energy;}
+\DoxyCodeLine{23   G4double time;}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} std::list<AugerDeposition> AugerDepositions;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }GateAugerDetectorActor : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \string~GateAugerDetectorActor();}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} setMinTOF(G4double tof);}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} setMaxTOF(G4double tof);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} setMinEdep(G4double edep);}
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} setMaxEdep(G4double edep);}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} setProjectionDirection(\textcolor{keyword}{const} G4ThreeVector\& dir);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} setMinimumProfileAxis(G4double min);}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} setMaximumProfileAxis(G4double max);}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} setProfileSize(\textcolor{keywordtype}{int} nbpts);}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} setProfileNoiseFWHM(G4double noise\_fwhm);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{46   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{47   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(GateAugerDetectorActor)}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{50   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Construct}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{54   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run * r);}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *) ;}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*) ;}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*) ;}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{63   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{65 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{comment}{//  virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{73   GateAugerDetectorActor(G4String name, G4int depth=0);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   G4double GetTotalDepositedEnergy() \textcolor{keyword}{const};}
+\DoxyCodeLine{76   G4ThreeVector GetWeighedBarycenterPosition() \textcolor{keyword}{const};}
+\DoxyCodeLine{77   G4double GetWeighedBarycenterTime() \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   TFile* pTfile;}
+\DoxyCodeLine{80   TH1D* pProfileHisto;}
+\DoxyCodeLine{81   TH1D* pEnergyDepositionHisto;}
+\DoxyCodeLine{82   TH1D* pTimeOfFlightHisto;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}} * pMessenger;}
+\DoxyCodeLine{85   AugerDepositions depositions;}
+\DoxyCodeLine{86   G4double min\_time\_of\_flight;}
+\DoxyCodeLine{87   G4double max\_time\_of\_flight;}
+\DoxyCodeLine{88   G4double min\_energy\_deposition;}
+\DoxyCodeLine{89   G4double max\_energy\_deposition;}
+\DoxyCodeLine{90   G4ThreeVector projection\_direction;}
+\DoxyCodeLine{91   G4double profile\_min;}
+\DoxyCodeLine{92   G4double profile\_max;}
+\DoxyCodeLine{93   \textcolor{keywordtype}{int} profile\_nbpts;}
+\DoxyCodeLine{94   G4double profile\_noise\_fwhm;}
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 MAKE\_AUTO\_CREATOR\_ACTOR(AugerDetectorActor,GateAugerDetectorActor)}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEAUGERDETECTORACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,97 @@
+\hypertarget{classGateMessageManager}{}\doxysection{Gate\+Message\+Manager Class Reference}
+\label{classGateMessageManager}\index{GateMessageManager@{GateMessageManager}}
+
+
+Manages the messages displayed by Gate.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Message\+Manager.\+hh$>$}
+
+Inheritance diagram for Gate\+Message\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateMessageManager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a677758dde42070d7c6d9da6206d9adfa}\label{classGateMessageManager_a677758dde42070d7c6d9da6206d9adfa}} 
+virtual G4int {\bfseries Receive\+G4cout} (G4\+String s)
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a687d7c4cb947c1a7a759455f4eeafdba}\label{classGateMessageManager_a687d7c4cb947c1a7a759455f4eeafdba}} 
+virtual G4int {\bfseries Receive\+G4cerr} (G4\+String s)
+\item 
+\mbox{\Hypertarget{classGateMessageManager_ac68ee8ec7c6c9892653af9fda2e07cf9}\label{classGateMessageManager_ac68ee8ec7c6c9892653af9fda2e07cf9}} 
+void {\bfseries Enable\+G4\+Messages} (bool b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a06b616a29f9250765a1273018e6fe542}\label{classGateMessageManager_a06b616a29f9250765a1273018e6fe542}} 
+static \mbox{\hyperlink{classGateMessageManager}{Gate\+Message\+Manager}} $\ast$ {\bfseries Get\+Instance} ()
+\item 
+\mbox{\Hypertarget{classGateMessageManager_af41d0f7ac0966def6bfd42e7c7412471}\label{classGateMessageManager_af41d0f7ac0966def6bfd42e7c7412471}} 
+static void {\bfseries Register\+Message\+Type} (std\+::string key, std\+::string help, unsigned char default\+\_\+level=9)
+\item 
+\mbox{\Hypertarget{classGateMessageManager_ab6d407c5811de35d068aebf37a57e617}\label{classGateMessageManager_ab6d407c5811de35d068aebf37a57e617}} 
+static void {\bfseries Set\+Message\+Level} (std\+::string key, unsigned char level)
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a2f38c8ed7e1af4ad86fb2a9548dd28ed}\label{classGateMessageManager_a2f38c8ed7e1af4ad86fb2a9548dd28ed}} 
+static int {\bfseries Get\+Message\+Level} (std\+::string key)
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a4b5c9a273523d072d0af0c30dbcaf185}\label{classGateMessageManager_a4b5c9a273523d072d0af0c30dbcaf185}} 
+static std\+::string \& {\bfseries Get\+Tab} ()
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a4dec4336f8b92b6711bcdce28ffdff13}\label{classGateMessageManager_a4dec4336f8b92b6711bcdce28ffdff13}} 
+static std\+::string {\bfseries Get\+Space} (int n)
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a7f0eae26a8e26950952e979e16b9e59a}\label{classGateMessageManager_a7f0eae26a8e26950952e979e16b9e59a}} 
+static void {\bfseries Inc\+Tab} ()
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a1570dc05722b08fa43f39fd041fb187d}\label{classGateMessageManager_a1570dc05722b08fa43f39fd041fb187d}} 
+static void {\bfseries Dec\+Tab} ()
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a07714899930922b1298f59a7f34569da}\label{classGateMessageManager_a07714899930922b1298f59a7f34569da}} 
+static void {\bfseries Reset\+Tab} ()
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a5e4dd74b787c7e15ca5a15b439324c55}\label{classGateMessageManager_a5e4dd74b787c7e15ca5a15b439324c55}} 
+static void {\bfseries Print\+Info} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a4f1cb482873a24560e6819874357af77}\label{classGateMessageManager_a4f1cb482873a24560e6819874357af77}} 
+\mbox{\hyperlink{classGateMessageMessenger}{Gate\+Message\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_aa644d4281e3caff5e403212293005713}\label{classGateMessageManager_aa644d4281e3caff5e403212293005713}} 
+std\+::map$<$ std\+::string, int $>$ {\bfseries m\+Message\+Level}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_accd52a7b3d47774f6da99f8245fc224f}\label{classGateMessageManager_accd52a7b3d47774f6da99f8245fc224f}} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries m\+Message\+Help}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a140feb06110a8b4dc46ab8748a7f8aba}\label{classGateMessageManager_a140feb06110a8b4dc46ab8748a7f8aba}} 
+unsigned int {\bfseries m\+Max\+Message\+Length}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_adbd2be8aa2d52d101fd9f9e8f469b415}\label{classGateMessageManager_adbd2be8aa2d52d101fd9f9e8f469b415}} 
+int {\bfseries m\+All\+Level}
+\item 
+\mbox{\Hypertarget{classGateMessageManager_a72f995e231544cf258839a0739956c03}\label{classGateMessageManager_a72f995e231544cf258839a0739956c03}} 
+int {\bfseries m\+Enable\+G4\+Message}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the messages displayed by Gate. 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/\mbox{\hyperlink{GateMessageManager_8hh}{Gate\+Message\+Manager.\+hh}}\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/\mbox{\hyperlink{GateMessageManager_8cc}{Gate\+Message\+Manager.\+cc}}\end{DoxyCompactItemize}

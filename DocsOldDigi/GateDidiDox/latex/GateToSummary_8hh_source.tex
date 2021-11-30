@@ -1,0 +1,65 @@
+\hypertarget{GateToSummary_8hh_source}{}\doxysection{Gate\+To\+Summary.\+hh}
+\label{GateToSummary_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToSummary.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToSummary.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATETOSUMMARY\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATETOSUMMARY\_H}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_FILE}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }GateToSummaryMessenger;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }GateToSummary :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   GateToSummary(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr, DigiMode digiMode);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \string~GateToSummary();}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *) \{\}}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *) \{\}}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * , \textcolor{keyword}{const} G4Step *) \{\}}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{const}  G4String\& GetFileName() \{ \textcolor{keywordflow}{return} m\_fileName; \};}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} SetFileName(\textcolor{keyword}{const} G4String aName) \{ m\_fileName = aName; \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} addCollection(\textcolor{keyword}{const} std::string \& str);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{private}:}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   GateToSummaryMessenger* m\_summaryMessenger;}
+\DoxyCodeLine{47   G4String m\_fileName;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   G4int m\_nb\_of\_hits;}
+\DoxyCodeLine{50   G4int m\_nb\_of\_events;}
+\DoxyCodeLine{51   G4int m\_nb\_of\_runs;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   std::vector<std::string> m\_collection\_names;}
+\DoxyCodeLine{54   std::map<std::string, G4int> m\_collection\_nb;}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

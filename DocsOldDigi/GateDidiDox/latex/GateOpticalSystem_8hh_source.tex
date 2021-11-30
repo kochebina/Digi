@@ -1,0 +1,54 @@
+\hypertarget{GateOpticalSystem_8hh_source}{}\doxysection{Gate\+Optical\+System.\+hh}
+\label{GateOpticalSystem_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOpticalSystem.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateOpticalSystem.hh}}
+\mbox{\hyperlink{GateOpticalSystem_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GateOpticalSystem\_h}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GateOpticalSystem\_h 1}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVSystem.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToOpticalRaw}{GateToOpticalRaw}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOpticalSystem}{GateOpticalSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30   \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \mbox{\hyperlink{classGateOpticalSystem_a581e0bba851e7834044d662d8b23e7de}{GateOpticalSystem}}(\textcolor{keyword}{const} G4String\& itsName);   }
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOpticalSystem_a7b0441a512ad7b050962f73e997515ff}{\string~GateOpticalSystem}}();             }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}}*  \mbox{\hyperlink{classGateOpticalSystem_a06f0ee82783a461f94c5947604bd177f}{GetProjectionSetMaker}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{36 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_gateToProjectionSet; \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39   \mbox{\hyperlink{classGateToOpticalRaw}{GateToOpticalRaw}}*  \mbox{\hyperlink{classGateOpticalSystem_ac3e97b102115739b568575924a58d633}{GetOpticalRawWriter}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{40 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_gateToOpticalRaw; \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43   \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*  \mbox{\hyperlink{classGateOpticalSystem_aacdb09f42f91cf95127bc5a7abc8e7ca}{GetCrystalComponent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{44 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_crystalComponent; \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47   \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*  \mbox{\hyperlink{classGateOpticalSystem_a79b528cf05b80b134945548d975adcc6}{GetPixelComponent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{48 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_pixelComponent; \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50    \textcolor{keyword}{private}:}
+\DoxyCodeLine{51     \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}      *m\_messenger;     }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}          *m\_crystalComponent;}
+\DoxyCodeLine{54     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}          *m\_pixelComponent;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}}          *m\_gateToProjectionSet;}
+\DoxyCodeLine{57     \mbox{\hyperlink{classGateToOpticalRaw}{GateToOpticalRaw}}            *m\_gateToOpticalRaw;}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 }
+
+\end{DoxyCode}

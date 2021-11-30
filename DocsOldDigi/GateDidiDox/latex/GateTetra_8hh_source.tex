@@ -1,0 +1,96 @@
+\hypertarget{GateTetra_8hh_source}{}\doxysection{Gate\+Tetra.\+hh}
+\label{GateTetra_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTetra.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTetra.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateTetra.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATETETRA\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATETETRA\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4VisExtent.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4Tet.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4Tet;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTetraMessenger}{GateTetraMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTetra}{GateTetra}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateTetra_a00e6f46108b2717375172cdf4af5a0b8}{GateTetra}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{26                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{27                  G4int depth=0);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateTetra_a00e6f46108b2717375172cdf4af5a0b8}{GateTetra}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{30                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{31                  G4ThreeVector itsP1,}
+\DoxyCodeLine{32                  G4ThreeVector itsP2,}
+\DoxyCodeLine{33                  G4ThreeVector itsP3,}
+\DoxyCodeLine{34                  G4ThreeVector itsP4,}
+\DoxyCodeLine{35                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{36                  G4int depth=0);}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTetra_ab1a12eae7825ae51cdb246a92ac00e10}{\string~GateTetra}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateTetra}{GateTetra}})}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateTetra_a0f04e763b2cdb9b2f7fddd7d2cc18906}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTetra_a9e5b23317cd624ae59b5fcb7cacda134}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateTetra_a0317d507762d4202ab89e467111075ac}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{54     G4VisExtent extent = m\_tetra\_solid-\/>GetExtent();}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if} (axis==0) \{}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} 0.5*(extent.GetXmax() -\/ extent.GetXmin());}
+\DoxyCodeLine{57     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==1) \{}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} 0.5*(extent.GetYmax() -\/ extent.GetYmin());}
+\DoxyCodeLine{59     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==2) \{}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} 0.5*(extent.GetZmax() -\/ extent.GetZmin());}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{67   G4double \mbox{\hyperlink{classGateTetra_a70a04b5cef7b793d1541128be7f8f0d7}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keyword}{inline} G4ThreeVector GetTetraP1()     \{ \textcolor{keywordflow}{return} m\_p1; \}}
+\DoxyCodeLine{72   \textcolor{keyword}{inline} G4ThreeVector GetTetraP2()     \{ \textcolor{keywordflow}{return} m\_p2; \}}
+\DoxyCodeLine{73   \textcolor{keyword}{inline} G4ThreeVector GetTetraP3()     \{ \textcolor{keywordflow}{return} m\_p3; \}}
+\DoxyCodeLine{74   \textcolor{keyword}{inline} G4ThreeVector GetTetraP4()     \{ \textcolor{keywordflow}{return} m\_p4; \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetTetraP1(G4ThreeVector val)    \{ m\_p1 = val; \}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} SetTetraP2(G4ThreeVector val)    \{ m\_p2 = val; \}}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} SetTetraP3(G4ThreeVector val)    \{ m\_p3 = val; \}}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} SetTetraP4(G4ThreeVector val)    \{ m\_p4 = val; \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   G4Tet*          m\_tetra\_solid;            }
+\DoxyCodeLine{88   G4LogicalVolume*   m\_tetra\_log;               }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   G4ThreeVector m\_p1;       }
+\DoxyCodeLine{94   G4ThreeVector m\_p2;       }
+\DoxyCodeLine{95   G4ThreeVector m\_p3;       }
+\DoxyCodeLine{96   G4ThreeVector m\_p4;       }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100   \mbox{\hyperlink{classGateTetraMessenger}{GateTetraMessenger}}* m\_Messenger;}
+\DoxyCodeLine{101 \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 MAKE\_AUTO\_CREATOR\_VOLUME(tetra,\mbox{\hyperlink{classGateTetra}{GateTetra}})}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATETETRA\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,63 @@
+\hypertarget{GateSigmoidalThresholder_8hh_source}{}\doxysection{Gate\+Sigmoidal\+Thresholder.\+hh}
+\label{GateSigmoidalThresholder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSigmoidalThresholder.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSigmoidalThresholder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSigmoidalThresholder\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSigmoidalThresholder\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSigmoidalThresholderMessenger}{GateSigmoidalThresholderMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSigmoidalThresholder}{GateSigmoidalThresholder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42   \textcolor{keyword}{public}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateSigmoidalThresholder_a19fb039fbc0bdc65a5d53887ef67642e}{GateSigmoidalThresholder}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{46                \textcolor{keyword}{const} G4String\& itsName, G4double itsThreshold = 0.,}
+\DoxyCodeLine{47                G4double itsAlpha = 1., G4double itsAcceptance = 0.5) ;}
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSigmoidalThresholder_a1d75f53292e83002b19eac058327ce69}{\string~GateSigmoidalThresholder}}() ;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     G4double \mbox{\hyperlink{classGateSigmoidalThresholder_a1d8cfe955a31ac68ebee3ebe3db3a6dc}{GetThreshold}}()           \{ \textcolor{keywordflow}{return} m\_threshold; \}}
+\DoxyCodeLine{53     G4double GetThresholdAlpha()   \{ \textcolor{keywordflow}{return} m\_alpha; \}}
+\DoxyCodeLine{54     G4double GetThresholdPerCent()   \{ \textcolor{keywordflow}{return} m\_perCent; \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSigmoidalThresholder_ac4e2ac3d3f0d6348c62f8bcb74fc132f}{SetThreshold}}(G4double val)   \{ m\_threshold = val;  \}}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} SetThresholdAlpha(G4double val)   \{ m\_alpha = val;  \}}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} SetThresholdPerCent(G4double val)   \{ m\_perCent = val;  \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     G4double \mbox{\hyperlink{classGateSigmoidalThresholder_a7bd3bcb06b33575613a3b36956d4cb45}{SigmoideFct}}(G4double nu) \{ \textcolor{keywordflow}{return} 1./(1+exp(-\/nu)); \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{66     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSigmoidalThresholder_a13a9df2cb0d977119bbedec76c745ae4}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSigmoidalThresholder_a6ec850ca90afca57297dc5bdf8ceae10}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\&  outputPulseList);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     G4double m\_threshold;                     }
+\DoxyCodeLine{77     G4double m\_perCent;                       }
+\DoxyCodeLine{78     G4double m\_centSigm;                      }
+\DoxyCodeLine{79     G4double m\_alpha;                         }
+\DoxyCodeLine{80     G4bool m\_check;}
+\DoxyCodeLine{81     \mbox{\hyperlink{classGateSigmoidalThresholderMessenger}{GateSigmoidalThresholderMessenger}} *m\_messenger;    }
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

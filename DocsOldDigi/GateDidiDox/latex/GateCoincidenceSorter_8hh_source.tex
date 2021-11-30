@@ -1,0 +1,192 @@
+\hypertarget{GateCoincidenceSorter_8hh_source}{}\doxysection{Gate\+Coincidence\+Sorter.\+hh}
+\label{GateCoincidenceSorter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceSorter.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceSorter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceSorter\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceSorter\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateCoincidencePulse.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceSorterMessenger}{GateCoincidenceSorterMessenger}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{38 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{//    01/2016 Rewritten completely by Jared.STRYDHORST@cea.fr}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{kKillAll,}
+\DoxyCodeLine{43               kTakeAllGoods,}
+\DoxyCodeLine{44               kKillAllIfMultipleGoods,}
+\DoxyCodeLine{45               kTakeWinnerOfGoods,}
+\DoxyCodeLine{46               kTakeWinnerIfIsGood,}
+\DoxyCodeLine{47               kTakeWinnerIfAllAreGoods,}
+\DoxyCodeLine{48               kKeepIfAllAreGoods,}
+\DoxyCodeLine{49               kKeepIfOnlyOneGood,}
+\DoxyCodeLine{50               kKeepIfAnyIsGood,}
+\DoxyCodeLine{51               kKeepAll\} multiple\_policy\_t;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{kKeepAll\_CC,}
+\DoxyCodeLine{56               kkeepIfMultipleVolumeIDsInvolved\_CC,}
+\DoxyCodeLine{57               kkeepIfMultipleVolumeNamesInvolved\_CC\} acceptance\_policy\_4CC\_t;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceSorter}{GateCoincidenceSorter}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64     \mbox{\hyperlink{classGateCoincidenceSorter_a5cb463e28bac3b87da30ac683a909664}{GateCoincidenceSorter}}(\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* itsDigitizer,}
+\DoxyCodeLine{65                           \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{66                           G4double itsWindow,}
+\DoxyCodeLine{67                           \textcolor{keyword}{const} G4String\& itsInputName=\textcolor{stringliteral}{"{}Singles"{}}, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \&IsCCSorter=\textcolor{keyword}{false});}
+\DoxyCodeLine{69     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidenceSorter_a758ca556952dc62e3464eb27b8047892}{\string~GateCoincidenceSorter}}() ;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{73     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_a45cd549043b39a3a5676b71ecdd8b5aa}{Describe}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateCoincidenceSorter_a84197ccde2edab6b6767c00ac5cffb6a}{GetWindow}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{80 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCoincidenceSorter_a40f25e681b75d2a9ae7a3fcaefc85006}{m\_coincidenceWindow}};\}}
+\DoxyCodeLine{82     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_af0e4777c45cd64492e51f8288ad839b6}{SetWindow}}(G4double val)}
+\DoxyCodeLine{83     \{  \mbox{\hyperlink{classGateCoincidenceSorter_a40f25e681b75d2a9ae7a3fcaefc85006}{m\_coincidenceWindow}} = val; \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_a72c4d4331fc5b6a61e963354ba0b5477}{SetWindowJitter}}(G4double val)}
+\DoxyCodeLine{87     \{  \mbox{\hyperlink{classGateCoincidenceSorter_aaca5d09adb14fbc14384122c3beb311a}{m\_coincidenceWindowJitter}} = val;\}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_a251d3982b22c34a70a3e83362b8c3dc4}{SetOffset}}(G4double val)}
+\DoxyCodeLine{91     \{ \mbox{\hyperlink{classGateCoincidenceSorter_a7c7699ca8858e6a75b905aff18e9ec36}{m\_offset}} = val;\}}
+\DoxyCodeLine{93     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_a50e7c4ec896fe8671d8a76ca8ac2126c}{SetOffsetJitter}}(G4double val)}
+\DoxyCodeLine{94     \{ \mbox{\hyperlink{classGateCoincidenceSorter_a38f49bb6848837005b55430086efd6c9}{m\_offsetJitter}} = val;\}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateCoincidenceSorter_acb3d54b09137b48e249dd833732ca8db}{GetMinSectorDifference}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{98 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCoincidenceSorter_a90ff2eef948cf051b514466209950150}{m\_minSectorDifference}}; \}}
+\DoxyCodeLine{100     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_ac4fb4959abed520703c5572ff1aa4952}{SetMinSectorDifference}}(G4int diff)}
+\DoxyCodeLine{101     \{ \mbox{\hyperlink{classGateCoincidenceSorter_a90ff2eef948cf051b514466209950150}{m\_minSectorDifference}} = diff; \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateCoincidenceSorter_a9bded94fcaee90d8736e6712c91dd1e0}{GetDepth}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{105 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCoincidenceSorter_afe1610debe1ba6ce90a2934bb8aa86ee}{m\_depth}}; \}}
+\DoxyCodeLine{107     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_ab72dac42cd0e122dbfa39b9c7c9a72f5}{SetDepth}}(G4int depth)}
+\DoxyCodeLine{108     \{ \mbox{\hyperlink{classGateCoincidenceSorter_afe1610debe1ba6ce90a2934bb8aa86ee}{m\_depth}} = depth; \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{keyword}{inline} G4bool GetAllPulseOpenCoincGate()\textcolor{keyword}{ const}}
+\DoxyCodeLine{111 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCoincidenceSorter_a00ec27ca0fc8d8bc16fca111c5c96f46}{m\_allPulseOpenCoincGate}}; \}}
+\DoxyCodeLine{112     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetAllPulseOpenCoincGate(G4bool b)}
+\DoxyCodeLine{113     \{ \mbox{\hyperlink{classGateCoincidenceSorter_a00ec27ca0fc8d8bc16fca111c5c96f46}{m\_allPulseOpenCoincGate}} = b; \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{keyword}{inline} G4bool GetIfTriggerOnlyByAbsorber()\textcolor{keyword}{ const}}
+\DoxyCodeLine{117 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_triggerOnlyByAbsorber; \}}
+\DoxyCodeLine{118     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetIfTriggerOnlyByAbsorber(G4bool b)}
+\DoxyCodeLine{119     \{ m\_triggerOnlyByAbsorber = b; \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keyword}{inline} G4bool GetIfEventIDCoinc()\textcolor{keyword}{ const}}
+\DoxyCodeLine{123 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_eventIDCoinc; \}}
+\DoxyCodeLine{124     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetIfEventIDCoinc(G4bool b)}
+\DoxyCodeLine{125     \{ m\_eventIDCoinc = b; \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keyword}{const} G4String\& GetInputName()\textcolor{keyword}{ const}}
+\DoxyCodeLine{129 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_inputName; \}}
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} SetInputName(\textcolor{keyword}{const} G4String\& anInputName)}
+\DoxyCodeLine{131     \{  m\_inputName = anInputName; \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{keyword}{const} G4String\& GetOutputName()\textcolor{keyword}{ const}}
+\DoxyCodeLine{134 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_outputName; \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{keywordtype}{void} SetPresortBufferSize(G4int size)}
+\DoxyCodeLine{137     \{ m\_presortBufferSize = size; \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetAbsorberSDVol(G4String val)}
+\DoxyCodeLine{140     \{ m\_absorberSD = val;}
+\DoxyCodeLine{141         \textcolor{comment}{// G4cout<<"{}m\_absorDepth2 "{}<<m\_absorberDepth2Name<<G4endl;}}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{152     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCoincidenceSorter_a8a93ce8ddb949fcc72bf874067130237}{ProcessSinglePulseList}}(\mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inp=0);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* GetSystem()\textcolor{keyword}{ const}}
+\DoxyCodeLine{156 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCoincidenceSorter_acf795364c371eaeb765f7de46fccf96d}{m\_system}};\}}
+\DoxyCodeLine{157     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSystem(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* aSystem)}
+\DoxyCodeLine{158     \{ \mbox{\hyperlink{classGateCoincidenceSorter_acf795364c371eaeb765f7de46fccf96d}{m\_system}} = aSystem; \}}
+\DoxyCodeLine{159     \textcolor{keywordtype}{void} SetSystem(G4String\& inputName); \textcolor{comment}{//This method was added for the multi-\/system approach}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keywordtype}{void} SetMultiplesPolicy(\textcolor{keyword}{const} G4String\& policy);}
+\DoxyCodeLine{162     \textcolor{keywordtype}{void} SetAcceptancePolicy4CC(\textcolor{keyword}{const} G4String\& policy);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}       *m\_digitizer;}
+\DoxyCodeLine{170     \mbox{\hyperlink{classGateVSystem}{GateVSystem}}         *\mbox{\hyperlink{classGateCoincidenceSorter_acf795364c371eaeb765f7de46fccf96d}{m\_system}};                      }
+\DoxyCodeLine{171     G4String            m\_outputName;}
+\DoxyCodeLine{172     G4String            m\_inputName;}
+\DoxyCodeLine{173     G4double            \mbox{\hyperlink{classGateCoincidenceSorter_a40f25e681b75d2a9ae7a3fcaefc85006}{m\_coincidenceWindow}};            }
+\DoxyCodeLine{174     G4double            \mbox{\hyperlink{classGateCoincidenceSorter_aaca5d09adb14fbc14384122c3beb311a}{m\_coincidenceWindowJitter}};      }
+\DoxyCodeLine{175     G4double            \mbox{\hyperlink{classGateCoincidenceSorter_a7c7699ca8858e6a75b905aff18e9ec36}{m\_offset}};                       }
+\DoxyCodeLine{176     G4double            \mbox{\hyperlink{classGateCoincidenceSorter_a38f49bb6848837005b55430086efd6c9}{m\_offsetJitter}};                 }
+\DoxyCodeLine{177     G4int               \mbox{\hyperlink{classGateCoincidenceSorter_a90ff2eef948cf051b514466209950150}{m\_minSectorDifference}};          }
+\DoxyCodeLine{178     multiple\_policy\_t   \mbox{\hyperlink{classGateCoincidenceSorter_a205b4911cc1fbd95e3125e1c38a888b2}{m\_multiplesPolicy}};              }
+\DoxyCodeLine{179     acceptance\_policy\_4CC\_t m\_acceptance\_policy\_4CC;    }
+\DoxyCodeLine{180     G4bool              \mbox{\hyperlink{classGateCoincidenceSorter_a00ec27ca0fc8d8bc16fca111c5c96f46}{m\_allPulseOpenCoincGate}};        }
+\DoxyCodeLine{181     G4int               \mbox{\hyperlink{classGateCoincidenceSorter_afe1610debe1ba6ce90a2934bb8aa86ee}{m\_depth}};                        }
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183     G4int coincID\_CC;}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{keyword}{private}:}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191     std::list<GatePulse*> m\_presortBuffer;      \textcolor{comment}{// incoming pulses are presorted and buffered}}
+\DoxyCodeLine{192     G4int                 m\_presortBufferSize;}
+\DoxyCodeLine{193     G4bool                m\_presortWarning;     \textcolor{comment}{// avoid repeat warnings}}
+\DoxyCodeLine{194     \textcolor{keywordtype}{bool}                m\_CCSorter;     \textcolor{comment}{// compton camera sorter}}
+\DoxyCodeLine{195     G4bool             m\_triggerOnlyByAbsorber; }
+\DoxyCodeLine{196     G4String      m\_absorberSD;\textcolor{comment}{// absorber "{}SD' volume name CC}}
+\DoxyCodeLine{197     G4bool             m\_eventIDCoinc; \textcolor{comment}{//}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     std::deque<GateCoincidencePulse*> m\_coincidencePulses;  \textcolor{comment}{// open coincidence windows}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{keywordtype}{void} ProcessCompletedCoincidenceWindow(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}*);}
+\DoxyCodeLine{203     \textcolor{keywordtype}{void} ProcessCompletedCoincidenceWindow4CC(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}} *);}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     G4bool IsForbiddenCoincidence(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* pulse1,\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* pulse2);}
+\DoxyCodeLine{206     G4bool IsCoincidenceGood4CC(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* coincidence);}
+\DoxyCodeLine{207     \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* CreateSubPulse(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* coincidence, G4int i, G4int j);}
+\DoxyCodeLine{208     G4int ComputeSectorID(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& pulse);}
+\DoxyCodeLine{209     \textcolor{keyword}{static} G4int          gm\_coincSectNum;     \textcolor{comment}{// internal use}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \mbox{\hyperlink{classGateCoincidenceSorterMessenger}{GateCoincidenceSorterMessenger}} *m\_messenger;      }
+\DoxyCodeLine{215 \};}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

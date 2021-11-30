@@ -1,0 +1,73 @@
+\hypertarget{GateXMLDocument_8hh_source}{}\doxysection{Gate\+XMLDocument.\+hh}
+\label{GateXMLDocument_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateXMLDocument.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateXMLDocument.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateXMLDocument\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateXMLDocument\_hh}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <libxml/xmlmemory.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <libxml/parser.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4MaterialPropertiesTable;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23 \textcolor{keyword}{struct }GateXMLDocumentState}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25   xmlNodePtr cur;}
+\DoxyCodeLine{26   G4bool     reset;}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }GateXMLDocument}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32   \textcolor{keyword}{public}:}
+\DoxyCodeLine{33     GateXMLDocument(\textcolor{keyword}{const} G4String\& filename);}
+\DoxyCodeLine{34     \string~GateXMLDocument();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     G4bool Ok() \textcolor{keyword}{const};}
+\DoxyCodeLine{37     }
+\DoxyCodeLine{38     G4String GetName();}
+\DoxyCodeLine{39     G4String GetProperty(\textcolor{keyword}{const} G4String\& property);}
+\DoxyCodeLine{40     G4bool   HasProperty(\textcolor{keyword}{const} G4String\& property);}
+\DoxyCodeLine{41     G4String GetValue();}
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void}   Reset();}
+\DoxyCodeLine{44     G4bool Enter();}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void}   Leave();}
+\DoxyCodeLine{46     G4bool Next();}
+\DoxyCodeLine{47     G4bool Previous();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void}   First();}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{50     G4bool Find(\textcolor{keyword}{const} G4String\& tag);}
+\DoxyCodeLine{51     G4bool Find(\textcolor{keyword}{const} G4String\& tag, \textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{52     G4bool Find(\textcolor{keyword}{const} G4String\& tag, \textcolor{keyword}{const} G4String\& property, \textcolor{keyword}{const} G4String\& value);}
+\DoxyCodeLine{53     }
+\DoxyCodeLine{54     GateXMLDocumentState GetState();}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} SetState(GateXMLDocumentState state);}
+\DoxyCodeLine{56       }
+\DoxyCodeLine{57   \textcolor{keyword}{private}:}
+\DoxyCodeLine{58     G4bool     m\_ok;}
+\DoxyCodeLine{59     xmlDocPtr  m\_doc;}
+\DoxyCodeLine{60     xmlNodePtr m\_cur;}
+\DoxyCodeLine{61     G4bool     m\_reset;}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{69 G4MaterialPropertiesTable* ReadMaterialPropertiesTable(GateXMLDocument* doc);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

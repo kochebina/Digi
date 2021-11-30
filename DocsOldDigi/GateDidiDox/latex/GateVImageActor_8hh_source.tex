@@ -1,0 +1,108 @@
+\hypertarget{GateVImageActor_8hh_source}{}\doxysection{Gate\+VImage\+Actor.\+hh}
+\label{GateVImageActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVImageActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateVImageActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEVIMAGEACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEVIMAGEACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateImage.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}Randomize.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 public :}
+\DoxyCodeLine{31   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{32   \textcolor{keyword}{enum} StepHitType \{PreStepHitType, PostStepHitType, MiddleStepHitType, RandomStepHitType, RandomStepHitTypeCylindricalCS, PostStepHitTypeCylindricalCS\};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{36 \textcolor{comment}{}  \mbox{\hyperlink{classGateVImageActor_a14de8c5e94100ce075b73d932dae3338}{GateVImageActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVImageActor_a910c800a245f0fd965a3c3f3b70b1adc}{\string~GateVImageActor}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Construct}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{comment}{// When a image is managed by the actor, you must initialize the}}
+\DoxyCodeLine{47   \textcolor{comment}{// coordinate system with this function}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} SetOriginTransformAndFlagToImage(\mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} \& image);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetOriginTransformAndFlagToImage(\mbox{\hyperlink{classGateVImage}{GateVImage}} \& image);}
+\DoxyCodeLine{50   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{54 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImageActor_af0fbceb18881a72a5aedcc52edf655fb}{SetResolution}}(G4ThreeVector v);}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} SetVoxelSize(G4ThreeVector v);}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} SetHalfSize(G4ThreeVector v);}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} SetSize(G4ThreeVector v);}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} SetPosition(G4ThreeVector v);}
+\DoxyCodeLine{59   \textcolor{comment}{//void SetPosition(GateVVolume * v);}}
+\DoxyCodeLine{61 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImageActor_a20e85939e6f19dcf3d56642bd11ee710}{SetStepHitType}}(G4String t);}
+\DoxyCodeLine{62   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keywordtype}{double} GetDoselVolume()\{\textcolor{keywordflow}{return} mVoxelSize.x()*mVoxelSize.y()*mVoxelSize.z();\}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{comment}{// Retreive the image voxel size (vc)}}
+\DoxyCodeLine{67   G4ThreeVector \mbox{\hyperlink{classGateVImageActor_a0aae1c8e0e05f44e7db65753c2184a01}{GetVoxelSize}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{72 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImageActor_aeae1614284240d030f53a4e38db63c80}{PreUserTrackingAction}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v, \textcolor{keyword}{const} G4Track*t);}
+\DoxyCodeLine{73   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v, \textcolor{keyword}{const} G4Track*t);}
+\DoxyCodeLine{74   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{75   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{79 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step) = 0;}
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t) = 0;}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track* t) = 0;}
+\DoxyCodeLine{82   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keyword}{static} \textcolor{keywordtype}{int} GetIndexFromStepPosition2(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *,}
+\DoxyCodeLine{87                                        \textcolor{keyword}{const} G4Step  * step,}
+\DoxyCodeLine{88                                        \textcolor{keyword}{const} \mbox{\hyperlink{classGateImage}{GateImage}} \& image,}
+\DoxyCodeLine{89                                        \textcolor{keyword}{const} \textcolor{keywordtype}{bool} mPositionIsSet,}
+\DoxyCodeLine{90                                        \textcolor{keyword}{const} G4ThreeVector mPosition,}
+\DoxyCodeLine{91                                        \textcolor{keyword}{const} StepHitType mStepHitType);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{96   \textcolor{comment}{// The messenger}}
+\DoxyCodeLine{97   \textcolor{comment}{//GateImageActorMessenger * pMessenger;}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{comment}{// image information}}
+\DoxyCodeLine{100   G4ThreeVector  mVoxelSize;}
+\DoxyCodeLine{101   G4ThreeVector  mResolution;}
+\DoxyCodeLine{102   G4ThreeVector  mHalfSize;}
+\DoxyCodeLine{103   G4ThreeVector  mPosition;}
+\DoxyCodeLine{104   G4ThreeVector  mOrigin;}
+\DoxyCodeLine{105   StepHitType    mStepHitType;}
+\DoxyCodeLine{106   G4String       mStepHitTypeName;}
+\DoxyCodeLine{107   \mbox{\hyperlink{classGateImage}{GateImage}}      mImage;}
+\DoxyCodeLine{108   \textcolor{keywordtype}{bool}           mVoxelSizeIsSet;}
+\DoxyCodeLine{109   \textcolor{keywordtype}{bool}           mResolutionIsSet;}
+\DoxyCodeLine{110   \textcolor{keywordtype}{bool}           mHalfSizeIsSet;}
+\DoxyCodeLine{111   \textcolor{keywordtype}{bool}           mPositionIsSet;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{keywordtype}{int} GetIndexFromTrackPosition(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track * track);}
+\DoxyCodeLine{114   \textcolor{keywordtype}{int} GetIndexFromStepPosition(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step  * step);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \}; \textcolor{comment}{// end class GateVImageActor}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEVIMAGEACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

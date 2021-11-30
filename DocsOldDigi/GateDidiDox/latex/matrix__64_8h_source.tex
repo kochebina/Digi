@@ -1,0 +1,187 @@
+\hypertarget{matrix__64_8h_source}{}\doxysection{matrix\+\_\+64.\+h}
+\label{matrix__64_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/matrix\_64.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/matrix\_64.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#)matrix.h 1.5 2/8/93 Copyright 1989 CTI, Inc."{};*/}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/* prevent recursive definition */}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{/*}}
+\DoxyCodeLine{6 \textcolor{comment}{ * modification by Sibomana@topo.ucl.ac.be      19-\/sep-\/1994}}
+\DoxyCodeLine{7 \textcolor{comment}{ * used to convert 6.4 image files in 7.0 format.}}
+\DoxyCodeLine{8 \textcolor{comment}{ *}}
+\DoxyCodeLine{9 \textcolor{comment}{*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef     matrix\_64\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define     matrix\_64\_h}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}matrix.h"{}}}
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} word;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmat__main__header}{mat\_main\_header}} \{}
+\DoxyCodeLine{18     \textcolor{keywordtype}{char}        original\_file\_name[20];}
+\DoxyCodeLine{19     word        sw\_version;}
+\DoxyCodeLine{20     word        data\_type;}
+\DoxyCodeLine{21     word        system\_type;}
+\DoxyCodeLine{22     word        file\_type;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{char}        node\_id[10];}
+\DoxyCodeLine{24     word        scan\_start\_day,}
+\DoxyCodeLine{25             scan\_start\_month,}
+\DoxyCodeLine{26             scan\_start\_year,}
+\DoxyCodeLine{27             scan\_start\_hour,}
+\DoxyCodeLine{28             scan\_start\_minute,}
+\DoxyCodeLine{29             scan\_start\_second;}
+\DoxyCodeLine{30     \textcolor{keywordtype}{char}        isotope\_code[8];}
+\DoxyCodeLine{31     \textcolor{keywordtype}{float}       isotope\_halflife;}
+\DoxyCodeLine{32     \textcolor{keywordtype}{char}        radiopharmaceutical[32];}
+\DoxyCodeLine{33     \textcolor{keywordtype}{float}       gantry\_tilt,}
+\DoxyCodeLine{34             gantry\_rotation,}
+\DoxyCodeLine{35             bed\_elevation;}
+\DoxyCodeLine{36     word        rot\_source\_speed,}
+\DoxyCodeLine{37             wobble\_speed,}
+\DoxyCodeLine{38             transm\_source\_type;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{float}       axial\_fov,}
+\DoxyCodeLine{40             transaxial\_fov;}
+\DoxyCodeLine{41     word        transaxial\_samp\_mode,}
+\DoxyCodeLine{42             coin\_samp\_mode,}
+\DoxyCodeLine{43             axial\_samp\_mode;}
+\DoxyCodeLine{44     \textcolor{keywordtype}{float}       calibration\_factor;}
+\DoxyCodeLine{45     word        calibration\_units,}
+\DoxyCodeLine{46             compression\_code;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{char}        study\_name[12],}
+\DoxyCodeLine{48             patient\_id[16],}
+\DoxyCodeLine{49             patient\_name[32],}
+\DoxyCodeLine{50             patient\_sex,}
+\DoxyCodeLine{51             patient\_age[10],}
+\DoxyCodeLine{52             patient\_height[10],}
+\DoxyCodeLine{53             patient\_weight[10],}
+\DoxyCodeLine{54             patient\_dexterity,}
+\DoxyCodeLine{55             physician\_name[32],}
+\DoxyCodeLine{56             operator\_name[32],}
+\DoxyCodeLine{57             study\_description[32];}
+\DoxyCodeLine{58     word        acquisition\_type,}
+\DoxyCodeLine{59             bed\_type,}
+\DoxyCodeLine{60             septa\_type;}
+\DoxyCodeLine{61     \textcolor{keywordtype}{char}        facility\_name[20];}
+\DoxyCodeLine{62     word        num\_planes,}
+\DoxyCodeLine{63             num\_frames,}
+\DoxyCodeLine{64             num\_gates,}
+\DoxyCodeLine{65             num\_bed\_pos;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{float}       init\_bed\_position,}
+\DoxyCodeLine{67             bed\_offset[15],}
+\DoxyCodeLine{68             plane\_separation;}
+\DoxyCodeLine{69     word        lwr\_sctr\_thres,}
+\DoxyCodeLine{70             lwr\_true\_thres,}
+\DoxyCodeLine{71             upr\_true\_thres;}
+\DoxyCodeLine{72     \textcolor{keywordtype}{float}       collimator;}
+\DoxyCodeLine{73     \textcolor{keywordtype}{char}        user\_process\_code[10];}
+\DoxyCodeLine{74     word        acquisition\_mode;}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 \mbox{\hyperlink{structmat__main__header}{Main\_header\_64}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmat__scan__subheader}{mat\_scan\_subheader}}\{}
+\DoxyCodeLine{79     word        data\_type,}
+\DoxyCodeLine{80             dimension\_1,}
+\DoxyCodeLine{81             dimension\_2,}
+\DoxyCodeLine{82             smoothing,}
+\DoxyCodeLine{83             processing\_code;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{float}       sample\_distance,}
+\DoxyCodeLine{85             isotope\_halflife;}
+\DoxyCodeLine{86     word        frame\_duration\_sec;}
+\DoxyCodeLine{87     \textcolor{keywordtype}{int}     gate\_duration,}
+\DoxyCodeLine{88             r\_wave\_offset;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{float}       scale\_factor;}
+\DoxyCodeLine{90     word        scan\_min,}
+\DoxyCodeLine{91             scan\_max;}
+\DoxyCodeLine{92     \textcolor{keywordtype}{int}     prompts,}
+\DoxyCodeLine{93             delayed,}
+\DoxyCodeLine{94             multiples,}
+\DoxyCodeLine{95             net\_trues;}
+\DoxyCodeLine{96     \textcolor{keywordtype}{float}       cor\_singles[16],}
+\DoxyCodeLine{97             uncor\_singles[16],}
+\DoxyCodeLine{98             tot\_avg\_cor,}
+\DoxyCodeLine{99             tot\_avg\_uncor;}
+\DoxyCodeLine{100     \textcolor{keywordtype}{int}     total\_coin\_rate,}
+\DoxyCodeLine{101             frame\_start\_time,}
+\DoxyCodeLine{102             frame\_duration;}
+\DoxyCodeLine{103     \textcolor{keywordtype}{float}       loss\_correction\_fctr;}
+\DoxyCodeLine{104     \textcolor{keywordtype}{int}     phy\_planes[8];}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106 \mbox{\hyperlink{structmat__scan__subheader}{Scan\_subheader\_64}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmat__image__subheader}{mat\_image\_subheader}}\{}
+\DoxyCodeLine{109     word        data\_type,}
+\DoxyCodeLine{110             num\_dimensions,}
+\DoxyCodeLine{111             dimension\_1,}
+\DoxyCodeLine{112             dimension\_2;}
+\DoxyCodeLine{113     \textcolor{keywordtype}{float}       x\_origin,}
+\DoxyCodeLine{114             y\_origin,}
+\DoxyCodeLine{115             recon\_scale,            \textcolor{comment}{/* Image ZOOM from reconstruction */}}
+\DoxyCodeLine{116             quant\_scale;            \textcolor{comment}{/* Scale Factor */}}
+\DoxyCodeLine{117     word        image\_min,}
+\DoxyCodeLine{118             image\_max;}
+\DoxyCodeLine{119     \textcolor{keywordtype}{float}       pixel\_size,}
+\DoxyCodeLine{120             slice\_width;}
+\DoxyCodeLine{121     \textcolor{keywordtype}{int}     frame\_duration,}
+\DoxyCodeLine{122             frame\_start\_time;}
+\DoxyCodeLine{123     word        slice\_location,}
+\DoxyCodeLine{124             recon\_start\_hour,}
+\DoxyCodeLine{125             recon\_start\_minute,}
+\DoxyCodeLine{126             recon\_start\_sec;}
+\DoxyCodeLine{127     \textcolor{keywordtype}{int}     recon\_duration;}
+\DoxyCodeLine{128     word        filter\_code;}
+\DoxyCodeLine{129     \textcolor{keywordtype}{int}     scan\_matrix\_num,}
+\DoxyCodeLine{130             norm\_matrix\_num,}
+\DoxyCodeLine{131             atten\_cor\_matrix\_num;}
+\DoxyCodeLine{132     \textcolor{keywordtype}{float}       image\_rotation,}
+\DoxyCodeLine{133             plane\_eff\_corr\_fctr,}
+\DoxyCodeLine{134             decay\_corr\_fctr,}
+\DoxyCodeLine{135             loss\_corr\_fctr,}
+\DoxyCodeLine{136             intrinsic\_tilt ;}
+\DoxyCodeLine{137     word        processing\_code,}
+\DoxyCodeLine{138             quant\_units,}
+\DoxyCodeLine{139             recon\_start\_day,}
+\DoxyCodeLine{140             recon\_start\_month,}
+\DoxyCodeLine{141             recon\_start\_year;}
+\DoxyCodeLine{142     \textcolor{keywordtype}{float}       ecat\_calibration\_fctr,}
+\DoxyCodeLine{143             well\_counter\_cal\_fctr,}
+\DoxyCodeLine{144             filter\_params[6];}
+\DoxyCodeLine{145     \textcolor{keywordtype}{char}        annotation[40];}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147 \mbox{\hyperlink{structmat__image__subheader}{Image\_subheader\_64}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmat__norm__subheader}{mat\_norm\_subheader}}\{}
+\DoxyCodeLine{150     word        data\_type,}
+\DoxyCodeLine{151             dimension\_1,}
+\DoxyCodeLine{152             dimension\_2;}
+\DoxyCodeLine{153     \textcolor{keywordtype}{float}       scale\_factor;}
+\DoxyCodeLine{154     word        norm\_hour,}
+\DoxyCodeLine{155             norm\_minute,}
+\DoxyCodeLine{156             norm\_second,}
+\DoxyCodeLine{157             norm\_day,}
+\DoxyCodeLine{158             norm\_month,}
+\DoxyCodeLine{159             norm\_year;}
+\DoxyCodeLine{160     \textcolor{keywordtype}{float}       fov\_source\_width;}
+\DoxyCodeLine{161     \textcolor{keywordtype}{float}       ecat\_calib\_factor;}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163 \mbox{\hyperlink{structmat__norm__subheader}{Norm\_subheader\_64}};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmat__attn__subheader}{mat\_attn\_subheader}}\{}
+\DoxyCodeLine{166     word        data\_type,}
+\DoxyCodeLine{167             attenuation\_type,}
+\DoxyCodeLine{168             dimension\_1,}
+\DoxyCodeLine{169             dimension\_2;}
+\DoxyCodeLine{170     \textcolor{keywordtype}{float}       scale\_factor,}
+\DoxyCodeLine{171             x\_origin,}
+\DoxyCodeLine{172             y\_origin,}
+\DoxyCodeLine{173             x\_radius,}
+\DoxyCodeLine{174             y\_radius,}
+\DoxyCodeLine{175             tilt\_angle,}
+\DoxyCodeLine{176             attenuation\_coeff,}
+\DoxyCodeLine{177             sample\_distance;}
+\DoxyCodeLine{178     \}}
+\DoxyCodeLine{179 \mbox{\hyperlink{structmat__attn__subheader}{Attn\_subheader\_64}};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/*  matrix\_64\_h */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,66 @@
+\hypertarget{GateAngularRepeaterMessenger_8hh_source}{}\doxysection{Gate\+Angular\+Repeater\+Messenger.\+hh}
+\label{GateAngularRepeaterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateAngularRepeaterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateAngularRepeaterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateAngularRepeaterMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateAngularRepeaterMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAngularRepeater}{GateAngularRepeater}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAngularRepeaterMessenger}{GateAngularRepeaterMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateObjectRepeaterMessenger}{GateObjectRepeaterMessenger}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48   \mbox{\hyperlink{classGateAngularRepeaterMessenger}{GateAngularRepeaterMessenger}}(\mbox{\hyperlink{classGateAngularRepeater}{GateAngularRepeater}}* itsAngularRepeater);}
+\DoxyCodeLine{49   \mbox{\hyperlink{classGateAngularRepeaterMessenger}{\string~GateAngularRepeaterMessenger}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateAngularRepeater}{GateAngularRepeater}}* GetAngularRepeater()}
+\DoxyCodeLine{55   \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateAngularRepeater}{GateAngularRepeater}}*)GetObjectRepeater(); \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{private}:}
+\DoxyCodeLine{58   G4UIcmdWithAnInteger*       SetRepeatNumberCmd;}
+\DoxyCodeLine{59   G4UIcmdWith3Vector*         Point1Cmd;}
+\DoxyCodeLine{60   G4UIcmdWith3Vector*         Point2Cmd;}
+\DoxyCodeLine{61   G4UIcmdWithABool*             EnableAutoRotationCmd;}
+\DoxyCodeLine{62   G4UIcmdWithABool*             DisableAutoRotationCmd;}
+\DoxyCodeLine{63   G4UIcmdWithADoubleAndUnit*    FirstAngleCmd;}
+\DoxyCodeLine{64   G4UIcmdWithADoubleAndUnit*    AngularSpanCmd;}
+\DoxyCodeLine{65   G4UIcmdWithAnInteger*       SetModuloNumberCmd;}
+\DoxyCodeLine{66   G4UIcmdWithADoubleAndUnit*  Shift1Cmd;}
+\DoxyCodeLine{67   G4UIcmdWithADoubleAndUnit*  Shift2Cmd;}
+\DoxyCodeLine{68   G4UIcmdWithADoubleAndUnit*  Shift3Cmd;}
+\DoxyCodeLine{69   G4UIcmdWithADoubleAndUnit*  Shift4Cmd;}
+\DoxyCodeLine{70   G4UIcmdWithADoubleAndUnit*  Shift5Cmd;}
+\DoxyCodeLine{71   G4UIcmdWithADoubleAndUnit*  Shift6Cmd;}
+\DoxyCodeLine{72   G4UIcmdWithADoubleAndUnit*  Shift7Cmd;}
+\DoxyCodeLine{73   G4UIcmdWithADoubleAndUnit*  Shift8Cmd;}
+\DoxyCodeLine{74   G4UIcmdWithABool*           CombineWithRotationFirstCmd;}
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

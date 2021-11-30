@@ -1,0 +1,50 @@
+\hypertarget{GateVolumeManager_8hh_source}{}\doxysection{Gate\+Volume\+Manager.\+hh}
+\label{GateVolumeManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumeManager.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumeManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEVOLUMEMANAGER\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEVOLUMEMANAGER\_HH 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeManager}{GateVolumeManager}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21    public :}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVolumeManager}{\string~GateVolumeManager}}()\{ singleton\_VolumeManager = 0;\}   }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24    \textcolor{keyword}{static} \mbox{\hyperlink{classGateVolumeManager}{GateVolumeManager}} *GetInstance()}
+\DoxyCodeLine{25   \{   }
+\DoxyCodeLine{26     \textcolor{keywordflow}{if} (singleton\_VolumeManager == 0)}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28       singleton\_VolumeManager = \textcolor{keyword}{new} \mbox{\hyperlink{classGateVolumeManager}{GateVolumeManager}};}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30     }
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} singleton\_VolumeManager;}
+\DoxyCodeLine{32   \};}
+\DoxyCodeLine{33    }
+\DoxyCodeLine{34    \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *(*maker\_volume)(\textcolor{keyword}{const} G4String\& itsName, G4bool acceptsChildren, G4int depth);}
+\DoxyCodeLine{35    std::map<G4String,maker\_volume> theListOfVolumePrototypes;}
+\DoxyCodeLine{36    }
+\DoxyCodeLine{37    private :}
+\DoxyCodeLine{38    \mbox{\hyperlink{classGateVolumeManager}{GateVolumeManager}}();}
+\DoxyCodeLine{39    \textcolor{keyword}{static} \mbox{\hyperlink{classGateVolumeManager}{GateVolumeManager}} *singleton\_VolumeManager;}
+\DoxyCodeLine{40    }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43    }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

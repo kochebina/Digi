@@ -1,0 +1,140 @@
+\hypertarget{GateRootTreeFile_8hh_source}{}\doxysection{Gate\+Root\+Tree\+File.\+hh}
+\label{GateRootTreeFile_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/io/include/GateRootTreeFile.hh@{/biomaps/physique/appli/GateOlga/src/source/io/include/GateRootTreeFile.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by mdupont on 13/03/18.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateTreeFile.hh"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateTreeFileManager.hh"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }TFile;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }TTree;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRootTree}{GateRootTree}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateTree}{GateTree}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \mbox{\hyperlink{classGateRootTree}{GateRootTree}}();}
+\DoxyCodeLine{19   \textcolor{keyword}{static} std::string \_get\_factory\_name() \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}root"{}}; \}}
+\DoxyCodeLine{20   \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *p, std::type\_index t\_index) \textcolor{keyword}{override};}
+\DoxyCodeLine{21   \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} std::string *p, \textcolor{keywordtype}{size\_t} nb\_char) \textcolor{keyword}{override};}
+\DoxyCodeLine{22   \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p, \textcolor{keywordtype}{size\_t} nb\_char) \textcolor{keyword}{override};}
+\DoxyCodeLine{23   \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{int} *p, \textcolor{keywordtype}{size\_t} n) \textcolor{keyword}{override};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{26   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{27   \textcolor{keywordtype}{void} register\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} T *p)}
+\DoxyCodeLine{28   \{}
+\DoxyCodeLine{29       register\_variable(name, p, \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{30   \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} close();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   TFile * m\_file;}
+\DoxyCodeLine{35   TTree *m\_ttree;}
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} add\_leaflist(\textcolor{keyword}{const} std::string \&key, \textcolor{keyword}{const} std::string \&long\_key)}
+\DoxyCodeLine{41   \{}
+\DoxyCodeLine{42     m\_tmapOfDefinition.emplace(\textcolor{keyword}{typeid}(T), key);}
+\DoxyCodeLine{43     m\_tmapOfTindexToLongDefinition.emplace(\textcolor{keyword}{typeid}(T), long\_key);}
+\DoxyCodeLine{44     \textcolor{keywordflow}{if}(std::is\_fundamental<T>::value)}
+\DoxyCodeLine{45       m\_tmapOfLongDefinitionToIndex.emplace(long\_key, \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{46   \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{49   std::unordered\_map<std::type\_index, std::string> m\_tmapOfDefinition;}
+\DoxyCodeLine{50   std::unordered\_map<std::type\_index, std::string> m\_tmapOfTindexToLongDefinition;}
+\DoxyCodeLine{51   std::unordered\_map<std::string, std::type\_index> m\_tmapOfLongDefinitionToIndex;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputRootTreeFile}{GateOutputRootTreeFile}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateRootTree}{GateRootTree}}, \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputTreeFile}{GateOutputTreeFile}}}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60  \textcolor{keyword}{public}:}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} open(\textcolor{keyword}{const} std::string\& s) \textcolor{keyword}{override} ;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{bool} is\_open() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} close() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} write\_header() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} write() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} fill() \textcolor{keyword}{override};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} set\_tree\_name(\textcolor{keyword}{const} std::string \&name) \textcolor{keyword}{override} ;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *p, std::type\_index t\_index) \textcolor{keyword}{override};}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} std::string *p, \textcolor{keywordtype}{size\_t} nb\_char)\textcolor{keyword}{override} ;}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p, \textcolor{keywordtype}{size\_t} nb\_char) \textcolor{keyword}{override}  ;}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{int} *p, \textcolor{keywordtype}{size\_t} n) \textcolor{keyword}{override}  ;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T >}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} write\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} T *p)}
+\DoxyCodeLine{81   \{}
+\DoxyCodeLine{82       register\_variable(name, p);}
+\DoxyCodeLine{83   \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86   std::unordered\_map<const std::string*, char*> m\_mapConstStringToRootString;}
+\DoxyCodeLine{87   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} s\_registered;}
+\DoxyCodeLine{88 \};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{class }\mbox{\hyperlink{classGateInputRootTreeFile}{GateInputRootTreeFile}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateRootTree}{GateRootTree}}, \textcolor{keyword}{public} \mbox{\hyperlink{classGateInputTreeFile}{GateInputTreeFile}}}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93  \textcolor{keyword}{public}:}
+\DoxyCodeLine{94   \mbox{\hyperlink{classGateInputRootTreeFile}{GateInputRootTreeFile}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} open(\textcolor{keyword}{const} std::string\& s) \textcolor{keyword}{override} ;}
+\DoxyCodeLine{97   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateInputRootTreeFile}{\string~GateInputRootTreeFile}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{bool} is\_open() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} close() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{101   uint64\_t nb\_elements() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \textcolor{keywordtype}{bool} data\_to\_read() \textcolor{keyword}{override} ;}
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} read\_header() \textcolor{keyword}{override};}
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} read\_next\_entrie() \textcolor{keyword}{override};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} read\_entrie(\textcolor{keyword}{const} uint64\_t \&i) \textcolor{keyword}{override};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} set\_tree\_name(\textcolor{keyword}{const} std::string \&name) \textcolor{keyword}{override} ;}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{keywordtype}{bool} has\_variable(\textcolor{keyword}{const} std::string \&name) \textcolor{keyword}{override};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114   std::type\_index get\_type\_of\_variable(\textcolor{keyword}{const} std::string \&name) \textcolor{keyword}{override};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   \textcolor{keyword}{using} GateInputTreeFile::read\_variable; \textcolor{comment}{//call templated version}}
+\DoxyCodeLine{118   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, std::string *p) \textcolor{keyword}{override} ;}
+\DoxyCodeLine{119   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char}* p) \textcolor{keyword}{override} ;}
+\DoxyCodeLine{120   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{void} *p, std::type\_index t\_index) \textcolor{keyword}{override} ;}
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} read\_variable(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{char} *p, \textcolor{keywordtype}{size\_t} nb\_char) \textcolor{keyword}{override};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keyword}{private}:}
+\DoxyCodeLine{125   \textcolor{keywordtype}{void} check\_existence\_and\_kind(\textcolor{keyword}{const} std::string \&name, std::type\_index t\_index);}
+\DoxyCodeLine{126   int64\_t m\_current\_entry;}
+\DoxyCodeLine{127   std::unordered\_map<char*, std::string*> m\_mapNewStringToRefString;}
+\DoxyCodeLine{128   \textcolor{keywordtype}{bool} m\_read\_header\_called;}
+\DoxyCodeLine{129   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} s\_registered;}
+\DoxyCodeLine{130 \};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+
+\end{DoxyCode}

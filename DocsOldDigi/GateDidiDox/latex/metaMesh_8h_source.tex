@@ -1,0 +1,282 @@
+\hypertarget{metaMesh_8h_source}{}\doxysection{meta\+Mesh.\+h}
+\label{metaMesh_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaMesh.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaMesh.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAMESH\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAMESH\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{41 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define MET\_NUM\_CELL\_TYPES 9}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{enum} MET\_CellGeometry \{MET\_VERTEX\_CELL=0, MET\_LINE\_CELL, MET\_TRIANGLE\_CELL, MET\_QUADRILATERAL\_CELL,}
+\DoxyCodeLine{48         MET\_POLYGON\_CELL, MET\_TETRAHEDRON\_CELL, MET\_HEXAHEDRON\_CELL,}
+\DoxyCodeLine{49         MET\_QUADRATIC\_EDGE\_CELL, MET\_QUADRATIC\_TRIANGLE\_CELL\};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} MET\_CellSize[MET\_NUM\_VALUE\_TYPES] = \{}
+\DoxyCodeLine{52   1,2,3,4,5,4,8,3,6\};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{const} \textcolor{keywordtype}{char} MET\_CellTypeName[MET\_NUM\_VALUE\_TYPES][4] = \{}
+\DoxyCodeLine{55    \{\textcolor{charliteral}{'V'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{56    \{\textcolor{charliteral}{'L'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{57    \{\textcolor{charliteral}{'T'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{58    \{\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{59    \{\textcolor{charliteral}{'P'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{60    \{\textcolor{charliteral}{'T'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{61    \{\textcolor{charliteral}{'H'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'X'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{62    \{\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{63    \{\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'}\}\};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMeshPoint}{MeshPoint}}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69 \textcolor{keyword}{public}:}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \mbox{\hyperlink{classMeshPoint}{MeshPoint}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{72   \mbox{\hyperlink{classMeshPoint}{\string~MeshPoint}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{75   \textcolor{keywordtype}{float}* m\_X;}
+\DoxyCodeLine{76   \textcolor{keywordtype}{int} m\_Id;}
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{83 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMeshCell}{MeshCell}}}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85 \textcolor{keyword}{public}:}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \mbox{\hyperlink{classMeshCell}{MeshCell}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{88   \mbox{\hyperlink{classMeshCell}{\string~MeshCell}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{keywordtype}{int} m\_Id;}
+\DoxyCodeLine{91   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{92   \textcolor{keywordtype}{int}* m\_PointsId;}
+\DoxyCodeLine{93 \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{98 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMeshCellLink}{MeshCellLink}}}
+\DoxyCodeLine{99 \{}
+\DoxyCodeLine{100 \textcolor{keyword}{public}:}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   \mbox{\hyperlink{classMeshCellLink}{MeshCellLink}}()}
+\DoxyCodeLine{103     \{}
+\DoxyCodeLine{104     m\_Id = 0;}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106   \mbox{\hyperlink{classMeshCellLink}{\string~MeshCellLink}}()}
+\DoxyCodeLine{107     \{}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keywordtype}{int} m\_Id; \textcolor{comment}{// id of the cell link}}
+\DoxyCodeLine{111   METAIO\_STL::list<int> m\_Links;}
+\DoxyCodeLine{112 \};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMeshDataBase}{MeshDataBase}}}
+\DoxyCodeLine{116 \{}
+\DoxyCodeLine{117 \textcolor{keyword}{public}:}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   \mbox{\hyperlink{classMeshDataBase}{MeshDataBase}}()}
+\DoxyCodeLine{120     \{}
+\DoxyCodeLine{121     m\_Id = -\/1;}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123   \textcolor{keyword}{virtual} \mbox{\hyperlink{classMeshDataBase}{\string~MeshDataBase}}()}
+\DoxyCodeLine{124     \{}
+\DoxyCodeLine{125     \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Write( METAIO\_STREAM::ofstream* stream) = 0;}
+\DoxyCodeLine{128   \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetSize(\textcolor{keywordtype}{void}) = 0;}
+\DoxyCodeLine{129   \textcolor{keyword}{virtual} MET\_ValueEnumType GetMetaType() = 0;}
+\DoxyCodeLine{130   \textcolor{keywordtype}{int} m\_Id;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   METAIO\_STREAM::ifstream* m\_ReadStream;}
+\DoxyCodeLine{135   METAIO\_STREAM::ofstream* m\_WriteStream;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{140 \textcolor{keyword}{template}<\textcolor{keyword}{typename} TElementType>}
+\DoxyCodeLine{141 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMeshData}{MeshData}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMeshDataBase}{MeshDataBase}}}
+\DoxyCodeLine{142 \{}
+\DoxyCodeLine{143 \textcolor{keyword}{public}:}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145   \mbox{\hyperlink{classMeshData}{MeshData}}() \{m\_Id=-\/1;\}}
+\DoxyCodeLine{146   \mbox{\hyperlink{classMeshData}{\string~MeshData}}() \{\}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148   \textcolor{keyword}{virtual} MET\_ValueEnumType GetMetaType()}
+\DoxyCodeLine{149     \{}
+\DoxyCodeLine{150     \textcolor{keywordflow}{return} MET\_GetPixelType(\textcolor{keyword}{typeid}(TElementType));}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Write( METAIO\_STREAM::ofstream* stream)}
+\DoxyCodeLine{154     \{}
+\DoxyCodeLine{155     \textcolor{comment}{//char* id = new char[sizeof(int)];}}
+\DoxyCodeLine{156     \textcolor{comment}{// The file is written as LSB by default}}
+\DoxyCodeLine{157     \textcolor{keywordtype}{int} mid = m\_Id;}
+\DoxyCodeLine{158     MET\_SwapByteIfSystemMSB(\&mid,MET\_INT);}
+\DoxyCodeLine{159     \textcolor{comment}{//MET\_DoubleToValue((double)m\_Id,MET\_INT,id,0);}}
+\DoxyCodeLine{160     stream-\/>write((\textcolor{keywordtype}{char} *)\&mid,\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{161     \textcolor{comment}{//delete [] id;}}
+\DoxyCodeLine{162     \textcolor{comment}{//char* data = new char[sizeof(m\_Data)];}}
+\DoxyCodeLine{163     \textcolor{comment}{//double mdata = m\_Data;}}
+\DoxyCodeLine{164     \textcolor{comment}{//MET\_DoubleToValue((double)m\_Data,GetMetaType(),data,0);}}
+\DoxyCodeLine{165     TElementType data = m\_Data;}
+\DoxyCodeLine{166     MET\_SwapByteIfSystemMSB(\&data,GetMetaType());}
+\DoxyCodeLine{167     stream-\/>write((\textcolor{keywordtype}{char} *)\&data,\textcolor{keyword}{sizeof}(data));}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170   \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetSize(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{171     \{}
+\DoxyCodeLine{172     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size = \textcolor{keyword}{sizeof}(int);}
+\DoxyCodeLine{173     size += \textcolor{keyword}{sizeof}(m\_Data);}
+\DoxyCodeLine{174     \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177   TElementType m\_Data;}
+\DoxyCodeLine{178 \};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaMesh}{MetaMesh}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{182   \{}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{185   \textcolor{comment}{//}}
+\DoxyCodeLine{186   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{187   \textcolor{comment}{//}}
+\DoxyCodeLine{189 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191    \textcolor{keyword}{typedef} METAIO\_STL::list<MeshPoint*> PointListType;}
+\DoxyCodeLine{192    \textcolor{keyword}{typedef} METAIO\_STL::list<MeshCell*>  CellListType;}
+\DoxyCodeLine{193    \textcolor{keyword}{typedef} METAIO\_STL::list<MeshCellLink*>  CellLinkListType;}
+\DoxyCodeLine{194    \textcolor{keyword}{typedef} METAIO\_STL::list<MeshDataBase*> PointDataListType;}
+\DoxyCodeLine{195    \textcolor{keyword}{typedef} METAIO\_STL::list<MeshDataBase*> CellDataListType;}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{198     \textcolor{comment}{//}}
+\DoxyCodeLine{199     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{200     \textcolor{comment}{//}}
+\DoxyCodeLine{202 \textcolor{comment}{}    \mbox{\hyperlink{classMetaMesh}{MetaMesh}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     \mbox{\hyperlink{classMetaMesh}{MetaMesh}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \mbox{\hyperlink{classMetaMesh}{MetaMesh}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaMesh}{MetaMesh}} *\_tube);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \mbox{\hyperlink{classMetaMesh}{MetaMesh}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     \mbox{\hyperlink{classMetaMesh}{\string~MetaMesh}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216     \textcolor{comment}{//    NPoints(...)}}
+\DoxyCodeLine{217     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{218     \textcolor{comment}{//       Number of points wich compose the mesh}}
+\DoxyCodeLine{219     \textcolor{keywordtype}{int}   NPoints(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \textcolor{comment}{//    NCells(...)}}
+\DoxyCodeLine{222     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{223     \textcolor{comment}{//       Number of cells wich compose the mesh}}
+\DoxyCodeLine{224     \textcolor{keywordtype}{int}   NCells(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226     \textcolor{comment}{//    NCellLinks(...)}}
+\DoxyCodeLine{227     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{228     \textcolor{comment}{//       Number of cellLinks wich compose the mesh}}
+\DoxyCodeLine{229     \textcolor{keywordtype}{int}   NCellLinks(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231     \textcolor{comment}{//    NCellTypes(...)}}
+\DoxyCodeLine{232     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{233     \textcolor{comment}{//       Number of celles wich compose the mesh}}
+\DoxyCodeLine{234     \textcolor{keywordtype}{void}  NCellTypes(\textcolor{keywordtype}{int} ncelltypes);}
+\DoxyCodeLine{235     \textcolor{keywordtype}{int}   NCellTypes(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{238     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     PointListType \& GetPoints(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{241     \textcolor{keyword}{const} PointListType \& GetPoints(\textcolor{keywordtype}{void})\textcolor{keyword}{ const  }\{\textcolor{keywordflow}{return} m\_PointList;\}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     CellListType \& GetCells(MET\_CellGeometry geom) \{\textcolor{keywordflow}{return} *(m\_CellListArray[geom]);\}}
+\DoxyCodeLine{244     \textcolor{keyword}{const} CellListType \& GetCells(MET\_CellGeometry geom)\textcolor{keyword}{ const  }\{\textcolor{keywordflow}{return} *(m\_CellListArray[geom]);\}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     CellLinkListType \& GetCellLinks(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_CellLinks;\}}
+\DoxyCodeLine{247     \textcolor{keyword}{const} CellLinkListType \& GetCellLinks(\textcolor{keywordtype}{void})\textcolor{keyword}{ const  }\{\textcolor{keywordflow}{return} m\_CellLinks;\}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     PointDataListType \& GetPointData(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_PointData;\}}
+\DoxyCodeLine{250     \textcolor{keyword}{const} PointDataListType \& GetPointData(\textcolor{keywordtype}{void})\textcolor{keyword}{ const  }\{\textcolor{keywordflow}{return} m\_PointData;\}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     CellDataListType \& GetCellData(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_CellData;\}}
+\DoxyCodeLine{253     \textcolor{keyword}{const} CellDataListType \& GetCellData(\textcolor{keywordtype}{void})\textcolor{keyword}{ const  }\{\textcolor{keywordflow}{return} m\_CellData;\}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     MET\_ValueEnumType PointDataType(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_PointDataType;\}}
+\DoxyCodeLine{256     \textcolor{keywordtype}{void}  PointDataType(MET\_ValueEnumType \_elementType)\{m\_PointDataType = \_elementType;\}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     MET\_ValueEnumType CellDataType(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_CellDataType;\}}
+\DoxyCodeLine{259     \textcolor{keywordtype}{void}  CellDataType(MET\_ValueEnumType \_elementType)\{m\_CellDataType = \_elementType;\}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{262   \textcolor{comment}{//}}
+\DoxyCodeLine{263   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{264   \textcolor{comment}{//}}
+\DoxyCodeLine{266 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     \textcolor{keywordtype}{bool}  m\_ElementByteOrderMSB;}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280     \textcolor{keywordtype}{int} m\_NPoints;}
+\DoxyCodeLine{281     \textcolor{keywordtype}{int} m\_NCells;}
+\DoxyCodeLine{282     \textcolor{keywordtype}{int} m\_NCellLinks;}
+\DoxyCodeLine{283     \textcolor{keywordtype}{int} m\_NPointData;}
+\DoxyCodeLine{284     \textcolor{keywordtype}{int} m\_NCellData;}
+\DoxyCodeLine{285     \textcolor{keywordtype}{char} m\_PointDim[255]; \textcolor{comment}{// "{}PointDim = "{}       "{}x y z r"{}}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     PointListType m\_PointList;}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289     \textcolor{comment}{// We store the Cell lists in a vector}}
+\DoxyCodeLine{290     CellListType* m\_CellListArray[MET\_NUM\_CELL\_TYPES];}
+\DoxyCodeLine{291     CellLinkListType m\_CellLinks;}
+\DoxyCodeLine{292     PointDataListType m\_PointData;}
+\DoxyCodeLine{293     CellDataListType m\_CellData;}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295     MET\_ValueEnumType m\_PointType;}
+\DoxyCodeLine{296     MET\_ValueEnumType m\_PointDataType;}
+\DoxyCodeLine{297     MET\_ValueEnumType m\_CellDataType;}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299   \};}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{302 \};}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,181 @@
+\hypertarget{constantsLMF__ccs_8h_source}{}\doxysection{constants\+LMF\+\_\+ccs.\+h}
+\label{constantsLMF__ccs_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/constantsLMF\_ccs.h@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/constantsLMF\_ccs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{           List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{     -\/-\/  constantsLMF\_ccs.h  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{     Luc.Simon@iphe.unil.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{     Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{     Copyright (C) 2003 IPHE/UNIL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{     This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{     of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{     Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{     See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{     Description of constantsLMF\_ccs.h:}}
+\DoxyCodeLine{22 \textcolor{comment}{     symbolic constants used for the binary part of LMF.}}
+\DoxyCodeLine{23 \textcolor{comment}{}}
+\DoxyCodeLine{24 \textcolor{comment}{}}
+\DoxyCodeLine{25 \textcolor{comment}{}}
+\DoxyCodeLine{26 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{/* allows to be linked with a C++ compiler */}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{31 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#ifndef VERSION\_LMF}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define VERSION\_LMF 1}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define SUBVERSION\_LMF 0}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifndef FALSE}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define FALSE 0}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef TRUE}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define TRUE 1}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifndef MAXNEIGH}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define MAXNEIGH (21)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif              }\textcolor{comment}{/* maximum number of crystal neighbours */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifndef \_SETSCAN\_H}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define \_SETSCAN\_H}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{/*     tag for different records */}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define EVENT\_RECORD\_TAG (0)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define COUNT\_RATE\_RECORD\_TAG (8)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define GATE\_DIGI\_RECORD\_TAG (12)}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/*   how the id is made !        -\/=-\/=-\/=-\/=-\/       */}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define BITS\_FOR\_RSECTORS (4)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define BITS\_FOR\_MODULES (2)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define BITS\_FOR\_SUBMODULES (2)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define BITS\_FOR\_CRYSTALS (6)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define BITS\_FOR\_LAYERS (2)}}
+\DoxyCodeLine{69 \textcolor{comment}{/* The sum of these 5 last constants must be 16 ! */}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define NUMBER\_OF\_RINGS (1)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define NUMBER\_OF\_SECTORS (8)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define AXIAL\_NUMBER\_OF\_MODULES (1)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define TANGENTIAL\_NUMBER\_OF\_MODULES (3)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define AXIAL\_NUMBER\_OF\_SUBMODULES (4)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define TANGENTIAL\_NUMBER\_OF\_SUBMODULES (1)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define AXIAL\_NUMBER\_OF\_CRYSTALS (8)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define TANGENTIAL\_NUMBER\_OF\_CRYSTALS (8)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define AXIAL\_NUMBER\_OF\_LAYERS (1)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define RADIAL\_NUMBER\_OF\_LAYERS (2)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#ifndef \_NAME\_FILES     }\textcolor{comment}{/* name of .ccs files */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define \_NAME\_FILES}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define COINCIDENCE\_FILE "{}./testlmfCoinci.ccs"{}}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define REWRITE\_FILE "{}./testInvert.ccs"{}}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define WRITE\_FILE "{}./testlmf2.ccs"{}}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define WRITE\_FILE2 "{}./testlmf2bis.ccs"{}}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{comment}{/* constants used by builder (generateER.c) */}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#ifndef \_BUILD\_REAL}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define \_BUILD\_REAL}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define ACTIVITY\_FOR\_TEST 10000000  }\textcolor{comment}{/*  Bq */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define DEAD\_TIME\_FOR\_TEST 10000    }\textcolor{comment}{/*  ps */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define READING\_TIME\_FOR\_TEST 1}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define DETECTOR\_YIELD 0.7}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \textcolor{comment}{/* constants used by coincidence sorter */}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifndef \_COINCIDENCE\_SORTER\_CONDTANT}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define \_COINCIDENCE\_SORTER\_CONDTANT}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define NULL\_UP NULL}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define NULL\_DOWN NULL}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define COINCIDENCE\_WINDOW (10) }\textcolor{comment}{/* DELTA TAU */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define STACK\_CUT\_TIME (1000000000) }\textcolor{comment}{/* DELTA T */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define CS\_VERBOSE\_LEVEL (3)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define SAVE\_MULTIPLE\_BOOL (0)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define SAVE\_AUTO\_COINCI\_BOOL (0)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define HIGH\_ACTIVITY\_CUT\_NUMBER (200000)   }\textcolor{comment}{/* used in cleanListP1 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define SIZE\_FOR\_CRYSTAL (1)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define SIZE\_FOR\_ENERGY (1)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define CONVERT\_TIME\_COINCI (1.E-\/9) }\textcolor{comment}{/* from pico to milli seconds */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define CONVERT\_TIME\_OF\_FLIGHT (1.E-\/6)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define CONVERT\_TOF 390625   }\textcolor{comment}{/* DAQ time step in femto seconds, used for time-\/of-\/flight encoding */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define DEFAULT\_DELAY\_BY\_RSECYOR (20000)}}
+\DoxyCodeLine{120   \textcolor{comment}{/* in delayModule.c the default delay is }}
+\DoxyCodeLine{121 \textcolor{comment}{     rsectorID*20000 Ex: rsector3 delayed 60000ps */}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define CPUFPGA\_SHIFT       200000000   }\textcolor{comment}{// cpu-\/fpga clocks delay value in 400psec unit for 2.5GHZ CPU}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define FULL\_FPGA\_DYNAMIC   0x3E7FFFFFC1    }\textcolor{comment}{// cpu-\/fpga Clok's ratios (=62.5) x 0xFFFFFFFF}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define CLK2NSSHIFT     6   }\textcolor{comment}{// Clock period (25ns)/TimeMarkResolution(25/64 ns) CLK2NSFACTOR = 64}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#ifndef GATE\_LMF\_TIME\_STEP\_PICOS}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define GATE\_LMF\_TIME\_STEP\_PICOS 1}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define GATE\_LMF\_TIME\_STEP\_COINCI 250}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define ASCII2LMF\_TIME\_STEP\_PICOS 1}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifndef GATE\_LMF\_ENERGY\_STEP\_KEV}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define GATE\_LMF\_ENERGY\_STEP\_KEV 3}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define ASCII2LMF\_ENERGY\_STEP\_KEV 3}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#ifndef ENERGY\_REF}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define ENERGY\_REF 511.}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#ifndef BIT\_DEF}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define BIT\_DEF}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define MAX16BIT (65535)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define BIT1 (1)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define BIT2 (2)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define BIT3 (4)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define BIT4 (8)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define BIT5 (16)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define BIT6 (32)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define BIT7 (64)}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define BIT7ET8 (192)}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define BIT8 (128)}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define BIT9 (256)}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define BIT10 (512)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define BIT10ET11 (1536)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define BIT11 (1024)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define BIT12 (2048)}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define BIT13 (4096)}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define BIT14 (8192)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define BIT15 (16384)}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define BIT16 (32768)}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{174 \}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,71 @@
+\hypertarget{GateClustering_8hh_source}{}\doxysection{Gate\+Clustering.\+hh}
+\label{GateClustering_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateClustering.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateClustering.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef GateClustering\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define GateClustering\_h 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{10 \textcolor{comment}{//\#include "{}G4Types.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClusteringMessenger}{GateClusteringMessenger}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClustering}{GateClustering}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{24     \mbox{\hyperlink{classGateClustering_a20e5a081b6eeec0f7c772870899293d7}{GateClustering}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateClustering_a78591c22798a3abd20a8e6c89901b7ac}{\string~GateClustering}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateClustering_af1641d5810f9aee28914605c052f9d5d}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateClustering_a3d7cdfd7300706c0b3e8a1462b656b7f}{SetAcceptedDistance}}(G4double val) \{  m\_acceptedDistance = val;  \};}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} SetRejectionFlag(G4bool flgval)\{m\_flgMRejection=flgval;\};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateClustering_ae105e61c888e18c3de24d6e6927bac2a}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateClustering_a3cff8969564191e06738d868ab090a1f}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \mbox{\hyperlink{classGateClusteringMessenger}{GateClusteringMessenger}} *\mbox{\hyperlink{classGateClustering_a555d19f3ae3d5bbbdc9eeb3e6e5be78b}{m\_messenger}};     }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{double} getDistance(  G4ThreeVector pos1,G4ThreeVector pos2 );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} checkClusterCentersDistance( \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{61     \textcolor{comment}{//std::vector<int > index4Clusters;}}
+\DoxyCodeLine{62     \textcolor{comment}{//several functions needed for special processing of electronic pulses}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} PulsePushBack(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse, \mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} same\_volumeID(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* pulse1, \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* pulse2 );}
+\DoxyCodeLine{66 \textcolor{keyword}{private}:}
+\DoxyCodeLine{67     G4double m\_acceptedDistance;}
+\DoxyCodeLine{68     G4bool m\_flgMRejection;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

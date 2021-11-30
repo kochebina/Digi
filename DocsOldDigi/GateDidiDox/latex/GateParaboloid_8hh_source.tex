@@ -1,0 +1,88 @@
+\hypertarget{GateParaboloid_8hh_source}{}\doxysection{Gate\+Paraboloid.\+hh}
+\label{GateParaboloid_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParaboloid.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParaboloid.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateParaboloid.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATEPARABOLOID\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATEPARABOLOID\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4Paraboloid;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParaboloidMessenger}{GateParaboloidMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParaboloid}{GateParaboloid}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateParaboloid_ad089f62d6fd91b8a19aff5891a09399f}{GateParaboloid}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{24                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{25                  G4int depth=0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateParaboloid_ad089f62d6fd91b8a19aff5891a09399f}{GateParaboloid}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{28                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                  G4double itsNegR,}
+\DoxyCodeLine{30                  G4double itsPosR,}
+\DoxyCodeLine{31                  G4double itsZLength,}
+\DoxyCodeLine{32                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{33                  G4int depth=0);}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateParaboloid_aef474dfddad9ab793f4b362fc4d6e71c}{\string~GateParaboloid}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateParaboloid}{GateParaboloid}})}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateParaboloid_a68de7d1ed0138359b0b18d836449c8b8}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateParaboloid_a1d161ea9b678dba685845c7dfc3ad785}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateParaboloid_a14a6dc03ae2676ae4fab2291fdf998de}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if} (axis==0) \{}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} m\_posR;}
+\DoxyCodeLine{53     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==1) \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} m\_posR;}
+\DoxyCodeLine{55     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==2) \{}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} m\_zLength/2.0;}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{59   \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{63   G4double \mbox{\hyperlink{classGateParaboloid_abde1dcac88f949b268d5ccb681fe46af}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keyword}{inline} G4double GetParaboloidNegativeR()  \{ \textcolor{keywordflow}{return} m\_negR; \}}
+\DoxyCodeLine{68   \textcolor{keyword}{inline} G4double GetParaboloidPositiveR()  \{ \textcolor{keywordflow}{return} m\_posR; \}}
+\DoxyCodeLine{69   \textcolor{keyword}{inline} G4double GetParaboloidZLength()    \{ \textcolor{keywordflow}{return} m\_zLength; \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} SetParaboloidNegativeR(G4double val) \{ m\_negR = val; \}}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} SetParaboloidPositiveR(G4double val) \{ m\_posR = val; \}}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetParaboloidZLength(G4double val)   \{ m\_zLength = val; \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{private}:}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   G4Paraboloid*          m\_paraboloid\_solid;            }
+\DoxyCodeLine{81   G4LogicalVolume*   m\_paraboloid\_log;              }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   G4double m\_negR;      }
+\DoxyCodeLine{87   G4double m\_posR;      }
+\DoxyCodeLine{88   G4double m\_zLength;       }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{92   \mbox{\hyperlink{classGateParaboloidMessenger}{GateParaboloidMessenger}}* m\_Messenger;}
+\DoxyCodeLine{93 \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 MAKE\_AUTO\_CREATOR\_VOLUME(paraboloid,\mbox{\hyperlink{classGateParaboloid}{GateParaboloid}})}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEPARABOLOID\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

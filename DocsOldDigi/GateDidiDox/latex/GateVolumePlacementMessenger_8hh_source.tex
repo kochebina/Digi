@@ -1,0 +1,63 @@
+\hypertarget{GateVolumePlacementMessenger_8hh_source}{}\doxysection{Gate\+Volume\+Placement\+Messenger.\+hh}
+\label{GateVolumePlacementMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumePlacementMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumePlacementMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GateVolumePlacementMessenger\_h}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GateVolumePlacementMessenger\_h 1}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{44 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumePlacementMessenger}{GateVolumePlacementMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateObjectRepeaterMessenger}{GateObjectRepeaterMessenger}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47   \textcolor{keyword}{public}:}
+\DoxyCodeLine{49     \mbox{\hyperlink{classGateVolumePlacementMessenger_ace912e2bbe967a71b0fc39088ca6c9f5}{GateVolumePlacementMessenger}}(\mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}}* itsPlacementMove);}
+\DoxyCodeLine{51    \mbox{\hyperlink{classGateVolumePlacementMessenger_a61e735061cf877424cdab8b4f8910f8e}{\string~GateVolumePlacementMessenger}}();}
+\DoxyCodeLine{52     }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacementMessenger_ab1f47163cae540cd7e16ec182419bfbb}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}}* \mbox{\hyperlink{classGateVolumePlacementMessenger_a92f1b69416bd2990edc0367534bcd424}{GetVolumePlacement}}() }
+\DoxyCodeLine{58       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}}*)GetObjectRepeater(); \}}
+\DoxyCodeLine{59     }
+\DoxyCodeLine{60   \textcolor{keyword}{private}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     G4UIcmdWith3VectorAndUnit*  TranslationCmd;   }
+\DoxyCodeLine{64     G4UIcmdWithADoubleAndUnit*  RotationAngleCmd; }
+\DoxyCodeLine{65     G4UIcmdWith3Vector*         RotationAxisCmd;  }
+\DoxyCodeLine{66     G4UIcmdWithoutParameter*    AlignToXCmd;      }
+\DoxyCodeLine{67     G4UIcmdWithoutParameter*    AlignToYCmd;      }
+\DoxyCodeLine{68     G4UIcmdWithoutParameter*    AlignToZCmd;      }
+\DoxyCodeLine{69     G4UIcmdWithADoubleAndUnit*  SetPhiCmd;        }
+\DoxyCodeLine{70     G4UIcmdWithADoubleAndUnit*  SetThetaCmd;      }
+\DoxyCodeLine{71     G4UIcmdWithADoubleAndUnit*  SetMagCmd;        }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78 }
+
+\end{DoxyCode}

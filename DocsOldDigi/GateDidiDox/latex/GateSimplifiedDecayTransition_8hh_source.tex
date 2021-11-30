@@ -1,0 +1,112 @@
+\hypertarget{GateSimplifiedDecayTransition_8hh_source}{}\doxysection{Gate\+Simplified\+Decay\+Transition.\+hh}
+\label{GateSimplifiedDecayTransition_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSimplifiedDecayTransition.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSimplifiedDecayTransition.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSimplifiedDecayTransition\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSimplifiedDecayTransition\_H 1}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}Randomize.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <G4PhysicalConstants.hh>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSimplifiedDecay}{GateSimplifiedDecay}};}
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} std::pair<std::string,double> psd;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSimplifiedDecayTransition}{GateSimplifiedDecayTransition}} \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classGateSimplifiedDecay}{GateSimplifiedDecay}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28  \textcolor{keyword}{public}:}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateSimplifiedDecayTransition}{GateSimplifiedDecayTransition}}(\textcolor{keywordtype}{int} cs, \textcolor{keywordtype}{int} ns, \textcolor{keywordtype}{double} pr,  std::function<psd(\mbox{\hyperlink{classGateSimplifiedDecayTransition}{GateSimplifiedDecayTransition}}*)> act, \textcolor{keywordtype}{double} en=0, \textcolor{keywordtype}{double} ampl=0, \textcolor{keywordtype}{double} norm=0, \textcolor{keywordtype}{int} Z=0):}
+\DoxyCodeLine{31     currentState(cs),}
+\DoxyCodeLine{32     nextState(ns),}
+\DoxyCodeLine{33     probability(pr),}
+\DoxyCodeLine{34     action(act),}
+\DoxyCodeLine{35     energy(en),}
+\DoxyCodeLine{36     amplitude(ampl),}
+\DoxyCodeLine{37     normalisationFactor(norm),}
+\DoxyCodeLine{38     atomicNumber(Z)\{;\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateSimplifiedDecayTransition}{\string~GateSimplifiedDecayTransition}}()\{;\}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{inline} psd issueGamma()\{}
+\DoxyCodeLine{43     \textcolor{keywordflow}{return} psd(\textcolor{stringliteral}{"{}gamma"{}},energy);}
+\DoxyCodeLine{44   \}}
+\DoxyCodeLine{45   \textcolor{keyword}{inline} psd issuePositron()\{}
+\DoxyCodeLine{46     \textcolor{comment}{//    return  psd("{}e+"{},majoredHitAndMiss());}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{return}  psd(\textcolor{stringliteral}{"{}e+"{}},simpleHitAndMiss());}
+\DoxyCodeLine{48   \}}
+\DoxyCodeLine{49   \textcolor{keyword}{inline} psd issueNone()\{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{return}  psd(\textcolor{stringliteral}{"{}none"{}},0);}
+\DoxyCodeLine{51   \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} print()\{}
+\DoxyCodeLine{56     std::cout}
+\DoxyCodeLine{57      << currentState << \textcolor{stringliteral}{"{}, "{}}}
+\DoxyCodeLine{58      <<  nextState << \textcolor{stringliteral}{"{}, "{}}}
+\DoxyCodeLine{59      <<  probability << \textcolor{stringliteral}{"{}, "{}}}
+\DoxyCodeLine{60      <<  energy << \textcolor{stringliteral}{"{}, "{}}}
+\DoxyCodeLine{61      <<  amplitude << \textcolor{stringliteral}{"{}, "{}}}
+\DoxyCodeLine{62      <<  normalisationFactor << \textcolor{stringliteral}{"{}, "{}}}
+\DoxyCodeLine{63      <<  atomicNumber}
+\DoxyCodeLine{64      <<  std::endl;}
+\DoxyCodeLine{65   \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \mbox{\hyperlink{classGateSimplifiedDecayTransition}{GateSimplifiedDecayTransition}}* sample(\textcolor{keywordtype}{int} n)\{}
+\DoxyCodeLine{68     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; i++) std::cout << majoredHitAndMiss() << std::endl;}
+\DoxyCodeLine{69     \textcolor{keywordflow}{return} \textcolor{keyword}{this};}
+\DoxyCodeLine{70   \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73  \textcolor{keyword}{private}:}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keywordtype}{double} fermiFunction(\textcolor{keywordtype}{double} eKin);}
+\DoxyCodeLine{76   \textcolor{keywordtype}{double} simpleHitAndMiss();}
+\DoxyCodeLine{77   \textcolor{keywordtype}{double} majoredHitAndMiss();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \textcolor{keyword}{inline} \textcolor{keywordtype}{double} majoringFunction(\textcolor{keywordtype}{double} x)\{}
+\DoxyCodeLine{80     \textcolor{keywordflow}{return} amplitude*sin(pi*x/energy);}
+\DoxyCodeLine{81   \}}
+\DoxyCodeLine{82   \textcolor{keyword}{inline} \textcolor{keywordtype}{double} majoringInverseCDF(\textcolor{keywordtype}{double} x)\{}
+\DoxyCodeLine{83     \textcolor{keywordflow}{return} energy/pi*acos(-\/pi*x/(energy * amplitude));}
+\DoxyCodeLine{84   \}}
+\DoxyCodeLine{85   \textcolor{keyword}{inline} \textcolor{keywordtype}{double} CDFRandom()\{}
+\DoxyCodeLine{86     \textcolor{keywordflow}{return} majoringInverseCDF( energy * amplitude/pi * (2*G4UniformRand()-\/1) );}
+\DoxyCodeLine{87   \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89  \textcolor{keyword}{private}:}
+\DoxyCodeLine{90   \textcolor{keywordtype}{int}    sequenceNumber;}
+\DoxyCodeLine{91   \textcolor{keywordtype}{int}    currentState;}
+\DoxyCodeLine{92   \textcolor{keywordtype}{int}    nextState;}
+\DoxyCodeLine{93   \textcolor{keywordtype}{double} probability;}
+\DoxyCodeLine{94   std::function<psd(\mbox{\hyperlink{classGateSimplifiedDecayTransition}{GateSimplifiedDecayTransition}}*)> action;}
+\DoxyCodeLine{95   \textcolor{keywordtype}{double} energy;                                    \textcolor{comment}{//  Maximum energy (inMeV)}}
+\DoxyCodeLine{96   \textcolor{keywordtype}{double} amplitude;                                 \textcolor{comment}{//  Majoring function amplitude (for positrons)}}
+\DoxyCodeLine{97   \textcolor{keywordtype}{double} normalisationFactor;                       \textcolor{comment}{//  normalisation factor for PDF (for positrons)}}
+\DoxyCodeLine{98   \textcolor{keywordtype}{int}    atomicNumber;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keyword}{static}  \textcolor{keywordtype}{double} kAlphaSquared;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

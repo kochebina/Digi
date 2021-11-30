@@ -1,0 +1,98 @@
+\hypertarget{GateParameterisedHole_8hh_source}{}\doxysection{Gate\+Parameterised\+Hole.\+hh}
+\label{GateParameterisedHole_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParameterisedHole.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateParameterisedHole.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateParameterisedHole\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateParameterisedHole\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateHoleParameterisation.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateTrap.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHoleParameterisation}{GateHoleParameterisation}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParameterisedHole}{GateParameterisedHole}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateTrap}{GateTrap}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24      \mbox{\hyperlink{classGateParameterisedHole}{GateParameterisedHole}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{25       G4double itsFocalDistanceX,G4double itsFocalDistanceY,G4double itsSeptalThickness,}
+\DoxyCodeLine{26       G4double itsInnerRadius,G4double itsHeight,G4double itsDimensionX,G4double itsDimensionY);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateParameterisedHole}{\string~GateParameterisedHole}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30      \mbox{\hyperlink{classGateTrap}{GateTrap}}* GetHoleCreator()\textcolor{keyword}{ const}}
+\DoxyCodeLine{31 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateTrap}{GateTrap}}*) \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}(); \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33      \mbox{\hyperlink{classGateHoleParameterisation}{GateHoleParameterisation}}* GetHoleParameterisation()\textcolor{keyword}{ const}}
+\DoxyCodeLine{34 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateHoleParameterisation}{GateHoleParameterisation}}*) \mbox{\hyperlink{classGateParameterisedHole_a532ee581abd771cc3d6781b0daac48b7}{GetParameterisation}}(); \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36      \textcolor{keywordtype}{void} PreComputeConstants();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38      \textcolor{keywordtype}{void} ResizeHole(G4double FocalDistanceX,G4double FocalDistanceY,G4double SeptalThickness,}
+\DoxyCodeLine{39       G4double InnerRadius,G4double Height,G4double DimensionX,G4double DimensionY);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41      \textcolor{keyword}{inline} G4double GetHoleFocalDistanceX()\textcolor{keyword}{ const}}
+\DoxyCodeLine{42 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_FocalDistanceX; \}}
+\DoxyCodeLine{43      \textcolor{keyword}{inline} G4double GetHoleFocalDistanceY()\textcolor{keyword}{ const}}
+\DoxyCodeLine{44 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_FocalDistanceY; \}}
+\DoxyCodeLine{45      \textcolor{keyword}{inline} G4double GetHoleSeptalThickness()\textcolor{keyword}{ const}}
+\DoxyCodeLine{46 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_SeptalThickness; \}}
+\DoxyCodeLine{47      \textcolor{keyword}{inline} G4double GetHoleInnerRadius()\textcolor{keyword}{ const}}
+\DoxyCodeLine{48 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_InnerRadius; \}}
+\DoxyCodeLine{49      \textcolor{keyword}{inline} G4double GetHoleHeight()\textcolor{keyword}{ const}}
+\DoxyCodeLine{50 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_Height; \}}
+\DoxyCodeLine{51      \textcolor{keyword}{inline} G4double GetHoleDimensionX()\textcolor{keyword}{ const}}
+\DoxyCodeLine{52 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_DimensionX; \}}
+\DoxyCodeLine{53      \textcolor{keyword}{inline} G4double GetHoleDimensionY()\textcolor{keyword}{ const}}
+\DoxyCodeLine{54 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_DimensionY; \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHoleFocalDistanceX(G4double val)}
+\DoxyCodeLine{57     \{ m\_FocalDistanceX = val; \}}
+\DoxyCodeLine{58      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHoleFocalDistanceY(G4double val)}
+\DoxyCodeLine{59     \{ m\_FocalDistanceY = val; \}}
+\DoxyCodeLine{60      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHoleSeptalThickness(G4double val)}
+\DoxyCodeLine{61     \{ m\_SeptalThickness = val; \}}
+\DoxyCodeLine{62      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHoleInnerRadius(G4double val)}
+\DoxyCodeLine{63         \{ m\_InnerRadius = val; \}}
+\DoxyCodeLine{64      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHoleHeight(G4double val)}
+\DoxyCodeLine{65     \{ m\_Height = val; \}}
+\DoxyCodeLine{66      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHoleDimensionX(G4double val)}
+\DoxyCodeLine{67     \{ m\_DimensionX = val; \}}
+\DoxyCodeLine{68      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHoleDimensionY(G4double val)}
+\DoxyCodeLine{69     \{ m\_DimensionY = val; \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{77      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateParameterisedHole_aca84dd68ee14b0019eb8cc123a6810d1}{ConstructOwnPhysicalVolume}}(G4bool flagUpdateOnly);}
+\DoxyCodeLine{78      }
+\DoxyCodeLine{80      \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePVParameterisation}{GatePVParameterisation}}* \mbox{\hyperlink{classGateParameterisedHole_a532ee581abd771cc3d6781b0daac48b7}{GetParameterisation}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{81 \textcolor{keyword}{        }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateParameterisedHole_a2fcc58fc3f5d92d202356209842ee611}{m\_parameterisation}}; \}}
+\DoxyCodeLine{83      \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateParameterisedHole_a132f5c36bbbcbc96ed545856e4d78187}{SetParameterisation}}(\mbox{\hyperlink{classGatePVParameterisation}{GatePVParameterisation}}* aParameterisation) }
+\DoxyCodeLine{84         \{ \mbox{\hyperlink{classGateParameterisedHole_a2fcc58fc3f5d92d202356209842ee611}{m\_parameterisation}} = aParameterisation; \}}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{86   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88      G4double m\_FocalDistanceX,m\_FocalDistanceY,m\_SeptalThickness,m\_InnerRadius,m\_Height,m\_DimensionX,m\_DimensionY;}
+\DoxyCodeLine{89      G4double Coll\_FDx,Coll\_FDy;}
+\DoxyCodeLine{90      G4double Trap\_Dx,Trap\_Dy,Trap\_OffsetX,Trap\_OffsetY1,Trap\_OffsetY2;}
+\DoxyCodeLine{91      G4double Trap\_Dz,Trap\_Dy1,Trap\_Dy2,Trap\_Dx1,Trap\_Dx2,Trap\_Dx3,Trap\_Dx4;}
+\DoxyCodeLine{92      G4int    Trap\_Nx,Trap\_Ny;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95      \mbox{\hyperlink{classGatePVParameterisation}{GatePVParameterisation}}*   \mbox{\hyperlink{classGateParameterisedHole_a2fcc58fc3f5d92d202356209842ee611}{m\_parameterisation}};   }
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

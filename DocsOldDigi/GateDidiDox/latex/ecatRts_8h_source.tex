@@ -1,0 +1,517 @@
+\hypertarget{ecatRts_8h_source}{}\doxysection{ecat\+Rts.\+h}
+\label{ecatRts_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/ecatRts.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/ecatRts.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* @(\#)ecatRts.h    1.1 4/13/91 */}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef ecatRts\_defined}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define ecatRts\_defined}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define RTS\_SERVER 600000032}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define RTS\_SERVER\_VERSION 1}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define RTS\_INFO\_SERVER 600000036}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define RTS\_INFO\_VERSION 1}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{enum} RTS\_FUNCTIONS \{}
+\DoxyCodeLine{12     CONF = 1,}
+\DoxyCodeLine{13     DPLN = 1 + 1,}
+\DoxyCodeLine{14     DFRM = 1 + 2,}
+\DoxyCodeLine{15     SINM = 1 + 3,}
+\DoxyCodeLine{16     RESO = 1 + 4,}
+\DoxyCodeLine{17     STRT = 1 + 5,}
+\DoxyCodeLine{18     STOP = 1 + 6,}
+\DoxyCodeLine{19     FCLR = 1 + 7,}
+\DoxyCodeLine{20     INFO = 1 + 8,}
+\DoxyCodeLine{21     STOR = 1 + 9,}
+\DoxyCodeLine{22     GANT = 1 + 10,}
+\DoxyCodeLine{23     RGAN = 1 + 11,}
+\DoxyCodeLine{24     SNGL = 1 + 12,}
+\DoxyCodeLine{25     DBUG = 1 + 13,}
+\DoxyCodeLine{26     CREF = 1 + 14,}
+\DoxyCodeLine{27     DCRF = 1 + 15,}
+\DoxyCodeLine{28     REMS = 1 + 16,}
+\DoxyCodeLine{29     MODL = 1 + 17,}
+\DoxyCodeLine{30     GIMI = 1 + 18,}
+\DoxyCodeLine{31     THRT = 1 + 19,}
+\DoxyCodeLine{32     CONT = 1 + 20,}
+\DoxyCodeLine{33     RMHD = 1 + 21,}
+\DoxyCodeLine{34     WMHD = 1 + 22,}
+\DoxyCodeLine{35     RSHD = 1 + 23,}
+\DoxyCodeLine{36     WSHD = 1 + 24,}
+\DoxyCodeLine{37     RDAT = 1 + 25,}
+\DoxyCodeLine{38     WDAT = 1 + 26,}
+\DoxyCodeLine{39     FDEL = 1 + 27,}
+\DoxyCodeLine{40     ASTR = 1 + 28,}
+\DoxyCodeLine{41     DFOV = 1 + 29,}
+\DoxyCodeLine{42     MASH = 1 + 30,}
+\DoxyCodeLine{43     RBLK = 1 + 31,}
+\DoxyCodeLine{44     WBLK = 1 + 32,}
+\DoxyCodeLine{45     RECT = 1 + 33,}
+\DoxyCodeLine{46     GLOG = 1 + 34,}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} RTS\_FUNCTIONS RTS\_FUNCTIONS;}
+\DoxyCodeLine{49 bool\_t xdr\_RTS\_FUNCTIONS();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{enum} RTS\_INFO\_FUNCTIONS \{}
+\DoxyCodeLine{53     INFO\_STRT = 1,}
+\DoxyCodeLine{54     INFO\_STOP = 1 + 1,}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} RTS\_INFO\_FUNCTIONS RTS\_INFO\_FUNCTIONS;}
+\DoxyCodeLine{57 bool\_t xdr\_RTS\_INFO\_FUNCTIONS();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{struct }\mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}} \{}
+\DoxyCodeLine{61     \textcolor{keywordtype}{char} original\_file\_name[20];}
+\DoxyCodeLine{62     \textcolor{keywordtype}{short} sw\_version;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{64     \textcolor{keywordtype}{short} system\_type;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{short} file\_type;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{char} node\_id[10];}
+\DoxyCodeLine{67     \textcolor{keywordtype}{short} scan\_start\_day;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{short} scan\_start\_month;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{short} scan\_start\_year;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{short} scan\_start\_hour;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{short} scan\_start\_minute;}
+\DoxyCodeLine{72     \textcolor{keywordtype}{short} scan\_start\_second;}
+\DoxyCodeLine{73     \textcolor{keywordtype}{char} isotope\_code[8];}
+\DoxyCodeLine{74     \textcolor{keywordtype}{float} isotope\_halflife;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{char} radiopharmaceutical[32];}
+\DoxyCodeLine{76     \textcolor{keywordtype}{float} gantry\_tilt;}
+\DoxyCodeLine{77     \textcolor{keywordtype}{float} gantry\_rotation;}
+\DoxyCodeLine{78     \textcolor{keywordtype}{float} bed\_elevation;}
+\DoxyCodeLine{79     \textcolor{keywordtype}{short} rot\_source\_speed;}
+\DoxyCodeLine{80     \textcolor{keywordtype}{short} wobble\_speed;}
+\DoxyCodeLine{81     \textcolor{keywordtype}{short} transm\_source\_type;}
+\DoxyCodeLine{82     \textcolor{keywordtype}{float} axial\_fov;}
+\DoxyCodeLine{83     \textcolor{keywordtype}{float} transaxial\_fov;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{short} transaxial\_samp\_mode;}
+\DoxyCodeLine{85     \textcolor{keywordtype}{short} coin\_samp\_mode;}
+\DoxyCodeLine{86     \textcolor{keywordtype}{short} axial\_samp\_mode;}
+\DoxyCodeLine{87     \textcolor{keywordtype}{float} calibration\_factor;}
+\DoxyCodeLine{88     \textcolor{keywordtype}{short} calibration\_units;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{short} compression\_code;}
+\DoxyCodeLine{90     \textcolor{keywordtype}{char} study\_name[12];}
+\DoxyCodeLine{91     \textcolor{keywordtype}{char} patient\_id[16];}
+\DoxyCodeLine{92     \textcolor{keywordtype}{char} patient\_name[32];}
+\DoxyCodeLine{93     \textcolor{keywordtype}{char} patient\_sex[1];}
+\DoxyCodeLine{94     \textcolor{keywordtype}{char} patient\_age[10];}
+\DoxyCodeLine{95     \textcolor{keywordtype}{char} patient\_height[10];}
+\DoxyCodeLine{96     \textcolor{keywordtype}{char} patient\_weight[10];}
+\DoxyCodeLine{97     \textcolor{keywordtype}{char} patient\_dexterity[1];}
+\DoxyCodeLine{98     \textcolor{keywordtype}{char} physician\_name[32];}
+\DoxyCodeLine{99     \textcolor{keywordtype}{char} operator\_name[32];}
+\DoxyCodeLine{100     \textcolor{keywordtype}{char} study\_description[32];}
+\DoxyCodeLine{101     \textcolor{keywordtype}{short} acquisition\_type;}
+\DoxyCodeLine{102     \textcolor{keywordtype}{short} bed\_type;}
+\DoxyCodeLine{103     \textcolor{keywordtype}{short} septa\_type;}
+\DoxyCodeLine{104     \textcolor{keywordtype}{char} facility\_name[20];}
+\DoxyCodeLine{105     \textcolor{keywordtype}{short} num\_planes;}
+\DoxyCodeLine{106     \textcolor{keywordtype}{short} num\_frames;}
+\DoxyCodeLine{107     \textcolor{keywordtype}{short} num\_gates;}
+\DoxyCodeLine{108     \textcolor{keywordtype}{short} num\_bed\_pos;}
+\DoxyCodeLine{109     \textcolor{keywordtype}{float} init\_bed\_position;}
+\DoxyCodeLine{110     \textcolor{keywordtype}{float} bed\_offset[15];}
+\DoxyCodeLine{111     \textcolor{keywordtype}{float} plane\_separation;}
+\DoxyCodeLine{112     \textcolor{keywordtype}{short} lwr\_sctr\_thres;}
+\DoxyCodeLine{113     \textcolor{keywordtype}{short} lwr\_true\_thres;}
+\DoxyCodeLine{114     \textcolor{keywordtype}{short} upr\_true\_thres;}
+\DoxyCodeLine{115     \textcolor{keywordtype}{float} collimator;}
+\DoxyCodeLine{116     \textcolor{keywordtype}{char} user\_process\_code[10];}
+\DoxyCodeLine{117 \};}
+\DoxyCodeLine{118 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}} \mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}};}
+\DoxyCodeLine{119 bool\_t xdr\_XMAIN\_HEAD();}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{keyword}{struct }\mbox{\hyperlink{structXSCAN__SUB}{XSCAN\_SUB}} \{}
+\DoxyCodeLine{123     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{124     \textcolor{keywordtype}{short} dimension\_1;}
+\DoxyCodeLine{125     \textcolor{keywordtype}{short} dimension\_2;}
+\DoxyCodeLine{126     \textcolor{keywordtype}{short} smoothing;}
+\DoxyCodeLine{127     \textcolor{keywordtype}{short} processing\_code;}
+\DoxyCodeLine{128     \textcolor{keywordtype}{float} sample\_distance;}
+\DoxyCodeLine{129     \textcolor{keywordtype}{float} isotope\_halflife;}
+\DoxyCodeLine{130     \textcolor{keywordtype}{short} frame\_duration\_sec;}
+\DoxyCodeLine{131     \textcolor{keywordtype}{int} gate\_duration;}
+\DoxyCodeLine{132     \textcolor{keywordtype}{int} r\_wave\_offset;}
+\DoxyCodeLine{133     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{134     \textcolor{keywordtype}{short} scan\_min;}
+\DoxyCodeLine{135     \textcolor{keywordtype}{short} scan\_max;}
+\DoxyCodeLine{136     \textcolor{keywordtype}{int} prompts;}
+\DoxyCodeLine{137     \textcolor{keywordtype}{int} delayed;}
+\DoxyCodeLine{138     \textcolor{keywordtype}{int} multiples;}
+\DoxyCodeLine{139     \textcolor{keywordtype}{int} net\_trues;}
+\DoxyCodeLine{140     \textcolor{keywordtype}{float} cor\_singles[16];}
+\DoxyCodeLine{141     \textcolor{keywordtype}{float} uncor\_singles[16];}
+\DoxyCodeLine{142     \textcolor{keywordtype}{float} tot\_avg\_cor;}
+\DoxyCodeLine{143     \textcolor{keywordtype}{float} tot\_avg\_uncor;}
+\DoxyCodeLine{144     \textcolor{keywordtype}{int} total\_coin\_rate;}
+\DoxyCodeLine{145     \textcolor{keywordtype}{int} frame\_start\_time;}
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} frame\_duration;}
+\DoxyCodeLine{147     \textcolor{keywordtype}{float} loss\_correction\_fctr;}
+\DoxyCodeLine{148 \};}
+\DoxyCodeLine{149 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXSCAN__SUB}{XSCAN\_SUB}} \mbox{\hyperlink{structXSCAN__SUB}{XSCAN\_SUB}};}
+\DoxyCodeLine{150 bool\_t xdr\_XSCAN\_SUB();}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keyword}{struct }\mbox{\hyperlink{structXIMAGE__SUB}{XIMAGE\_SUB}} \{}
+\DoxyCodeLine{154     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{155     \textcolor{keywordtype}{short} num\_dimensions;}
+\DoxyCodeLine{156     \textcolor{keywordtype}{short} dimension\_1;}
+\DoxyCodeLine{157     \textcolor{keywordtype}{short} dimension\_2;}
+\DoxyCodeLine{158     \textcolor{keywordtype}{float} x\_origin;}
+\DoxyCodeLine{159     \textcolor{keywordtype}{float} y\_origin;}
+\DoxyCodeLine{160     \textcolor{keywordtype}{float} recon\_scale;}
+\DoxyCodeLine{161     \textcolor{keywordtype}{float} quant\_scale;}
+\DoxyCodeLine{162     \textcolor{keywordtype}{short} image\_min;}
+\DoxyCodeLine{163     \textcolor{keywordtype}{short} intimage\_max;}
+\DoxyCodeLine{164     \textcolor{keywordtype}{float} pixel\_size;}
+\DoxyCodeLine{165     \textcolor{keywordtype}{float} slice\_width;}
+\DoxyCodeLine{166     \textcolor{keywordtype}{int} frame\_duration;}
+\DoxyCodeLine{167     \textcolor{keywordtype}{int} frame\_start\_time;}
+\DoxyCodeLine{168     \textcolor{keywordtype}{short} slice\_location;}
+\DoxyCodeLine{169     \textcolor{keywordtype}{short} recon\_start\_hour;}
+\DoxyCodeLine{170     \textcolor{keywordtype}{short} intrecon\_start\_minute;}
+\DoxyCodeLine{171     \textcolor{keywordtype}{short} recon\_start\_sec;}
+\DoxyCodeLine{172     \textcolor{keywordtype}{int} recon\_duration;}
+\DoxyCodeLine{173     \textcolor{keywordtype}{short} filter\_code;}
+\DoxyCodeLine{174     \textcolor{keywordtype}{int} scan\_matrix\_num;}
+\DoxyCodeLine{175     \textcolor{keywordtype}{int} norm\_matrix\_num;}
+\DoxyCodeLine{176     \textcolor{keywordtype}{int} atten\_cor\_matrix\_num;}
+\DoxyCodeLine{177     \textcolor{keywordtype}{float} image\_rotation;}
+\DoxyCodeLine{178     \textcolor{keywordtype}{float} plane\_eff\_corr\_fctr;}
+\DoxyCodeLine{179     \textcolor{keywordtype}{float} decay\_corr\_fctr;}
+\DoxyCodeLine{180     \textcolor{keywordtype}{float} loss\_corr\_fctr;}
+\DoxyCodeLine{181     \textcolor{keywordtype}{short} processing\_code;}
+\DoxyCodeLine{182     \textcolor{keywordtype}{short} quant\_units;}
+\DoxyCodeLine{183     \textcolor{keywordtype}{short} recon\_start\_day;}
+\DoxyCodeLine{184     \textcolor{keywordtype}{short} recon\_start\_month;}
+\DoxyCodeLine{185     \textcolor{keywordtype}{short} recon\_start\_year;}
+\DoxyCodeLine{186     \textcolor{keywordtype}{float} ecat\_calibration\_fctr;}
+\DoxyCodeLine{187     \textcolor{keywordtype}{float} well\_counter\_cal\_fctr;}
+\DoxyCodeLine{188     \textcolor{keywordtype}{float} filter\_params[6];}
+\DoxyCodeLine{189     \textcolor{keywordtype}{char} annotation[40];}
+\DoxyCodeLine{190 \};}
+\DoxyCodeLine{191 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXIMAGE__SUB}{XIMAGE\_SUB}} \mbox{\hyperlink{structXIMAGE__SUB}{XIMAGE\_SUB}};}
+\DoxyCodeLine{192 bool\_t xdr\_XIMAGE\_SUB();}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{keyword}{struct }\mbox{\hyperlink{structXNORM__SUB}{XNORM\_SUB}} \{}
+\DoxyCodeLine{196     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{197     \textcolor{keywordtype}{short} dimension\_1;}
+\DoxyCodeLine{198     \textcolor{keywordtype}{short} dimension\_2;}
+\DoxyCodeLine{199     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{200     \textcolor{keywordtype}{short} norm\_hour;}
+\DoxyCodeLine{201     \textcolor{keywordtype}{short} norm\_minute;}
+\DoxyCodeLine{202     \textcolor{keywordtype}{short} norm\_second;}
+\DoxyCodeLine{203     \textcolor{keywordtype}{short} norm\_day;}
+\DoxyCodeLine{204     \textcolor{keywordtype}{short} norm\_month;}
+\DoxyCodeLine{205     \textcolor{keywordtype}{short} norm\_year;}
+\DoxyCodeLine{206     \textcolor{keywordtype}{float} fov\_source\_width;}
+\DoxyCodeLine{207 \};}
+\DoxyCodeLine{208 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXNORM__SUB}{XNORM\_SUB}} \mbox{\hyperlink{structXNORM__SUB}{XNORM\_SUB}};}
+\DoxyCodeLine{209 bool\_t xdr\_XNORM\_SUB();}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{keyword}{struct }\mbox{\hyperlink{structXATTEN__SUB}{XATTEN\_SUB}} \{}
+\DoxyCodeLine{213     \textcolor{keywordtype}{short} data\_type;}
+\DoxyCodeLine{214     \textcolor{keywordtype}{short} attenuation\_type;}
+\DoxyCodeLine{215     \textcolor{keywordtype}{short} dimension\_1;}
+\DoxyCodeLine{216     \textcolor{keywordtype}{short} dimension\_2;}
+\DoxyCodeLine{217     \textcolor{keywordtype}{float} scale\_factor;}
+\DoxyCodeLine{218     \textcolor{keywordtype}{float} x\_origin;}
+\DoxyCodeLine{219     \textcolor{keywordtype}{float} y\_origin;}
+\DoxyCodeLine{220     \textcolor{keywordtype}{float} x\_radius;}
+\DoxyCodeLine{221     \textcolor{keywordtype}{float} y\_radius;}
+\DoxyCodeLine{222     \textcolor{keywordtype}{float} tilt\_angle;}
+\DoxyCodeLine{223     \textcolor{keywordtype}{float} attenuation\_coeff;}
+\DoxyCodeLine{224     \textcolor{keywordtype}{float} sample\_distance;}
+\DoxyCodeLine{225 \};}
+\DoxyCodeLine{226 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structXATTEN__SUB}{XATTEN\_SUB}} \mbox{\hyperlink{structXATTEN__SUB}{XATTEN\_SUB}};}
+\DoxyCodeLine{227 bool\_t xdr\_XATTEN\_SUB();}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{keyword}{struct }\mbox{\hyperlink{structCREF__args}{CREF\_args}} \{}
+\DoxyCodeLine{231     \textcolor{keywordtype}{char} *file\_name;}
+\DoxyCodeLine{232     \mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}} mhead;}
+\DoxyCodeLine{233     \textcolor{keywordtype}{int} data\_size;}
+\DoxyCodeLine{234 \};}
+\DoxyCodeLine{235 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structCREF__args}{CREF\_args}} \mbox{\hyperlink{structCREF__args}{CREF\_args}};}
+\DoxyCodeLine{236 bool\_t xdr\_CREF\_args();}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{keyword}{struct }\mbox{\hyperlink{structDPLN__args}{DPLN\_args}} \{}
+\DoxyCodeLine{240     \textcolor{keywordtype}{int} log\_plane;}
+\DoxyCodeLine{241     \textcolor{keywordtype}{int} phy\_plane[4];}
+\DoxyCodeLine{242 \};}
+\DoxyCodeLine{243 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structDPLN__args}{DPLN\_args}} \mbox{\hyperlink{structDPLN__args}{DPLN\_args}};}
+\DoxyCodeLine{244 bool\_t xdr\_DPLN\_args();}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{keyword}{struct }\mbox{\hyperlink{structDFRM__args}{DFRM\_args}} \{}
+\DoxyCodeLine{248     \textcolor{keywordtype}{int} nframes;}
+\DoxyCodeLine{249     \textcolor{keywordtype}{int} delay;}
+\DoxyCodeLine{250     \textcolor{keywordtype}{int} duration;}
+\DoxyCodeLine{251     \textcolor{keywordtype}{int} nsegs;}
+\DoxyCodeLine{252 \};}
+\DoxyCodeLine{253 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structDFRM__args}{DFRM\_args}} \mbox{\hyperlink{structDFRM__args}{DFRM\_args}};}
+\DoxyCodeLine{254 bool\_t xdr\_DFRM\_args();}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{keyword}{struct }\mbox{\hyperlink{structMODL__args}{MODL\_args}} \{}
+\DoxyCodeLine{258     \textcolor{keywordtype}{int} model;}
+\DoxyCodeLine{259     \textcolor{keywordtype}{int} number\_of\_rings;}
+\DoxyCodeLine{260 \};}
+\DoxyCodeLine{261 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structMODL__args}{MODL\_args}} \mbox{\hyperlink{structMODL__args}{MODL\_args}};}
+\DoxyCodeLine{262 bool\_t xdr\_MODL\_args();}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \textcolor{keyword}{struct }\mbox{\hyperlink{structCFRM__args}{CFRM\_args}} \{}
+\DoxyCodeLine{266     \textcolor{keywordtype}{int} frame;}
+\DoxyCodeLine{267     \textcolor{keywordtype}{int} delay;}
+\DoxyCodeLine{268     \textcolor{keywordtype}{int} duration;}
+\DoxyCodeLine{269 \};}
+\DoxyCodeLine{270 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structCFRM__args}{CFRM\_args}} \mbox{\hyperlink{structCFRM__args}{CFRM\_args}};}
+\DoxyCodeLine{271 bool\_t xdr\_CFRM\_args();}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 \textcolor{keyword}{struct }\mbox{\hyperlink{structCONF__args}{CONF\_args}} \{}
+\DoxyCodeLine{275     \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig__s}{config}};}
+\DoxyCodeLine{276     \textcolor{keywordtype}{float} pile\_up\_factor;}
+\DoxyCodeLine{277     \textcolor{keywordtype}{float} plane\_factor;}
+\DoxyCodeLine{278 \};}
+\DoxyCodeLine{279 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structCONF__args}{CONF\_args}} \mbox{\hyperlink{structCONF__args}{CONF\_args}};}
+\DoxyCodeLine{280 bool\_t xdr\_CONF\_args();}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{keyword}{struct }\mbox{\hyperlink{structSTRT__args}{STRT\_args}} \{}
+\DoxyCodeLine{284     \textcolor{keywordtype}{int} numberFrames;}
+\DoxyCodeLine{285     \textcolor{keywordtype}{int} acqType;}
+\DoxyCodeLine{286 \};}
+\DoxyCodeLine{287 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structSTRT__args}{STRT\_args}} \mbox{\hyperlink{structSTRT__args}{STRT\_args}};}
+\DoxyCodeLine{288 bool\_t xdr\_STRT\_args();}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{keyword}{struct }\mbox{\hyperlink{structRECT__args}{RECT\_args}} \{}
+\DoxyCodeLine{292     \textcolor{keywordtype}{int} frame;}
+\DoxyCodeLine{293     \textcolor{keywordtype}{int} plane;}
+\DoxyCodeLine{294     \textcolor{keywordtype}{int} segment;}
+\DoxyCodeLine{295     \textcolor{keywordtype}{int} data;}
+\DoxyCodeLine{296     \textcolor{keywordtype}{int} startView;}
+\DoxyCodeLine{297     \textcolor{keywordtype}{int} endView;}
+\DoxyCodeLine{298 \};}
+\DoxyCodeLine{299 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRECT__args}{RECT\_args}} \mbox{\hyperlink{structRECT__args}{RECT\_args}};}
+\DoxyCodeLine{300 bool\_t xdr\_RECT\_args();}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 \textcolor{keyword}{struct }\mbox{\hyperlink{structSTOR__args}{STOR\_args}} \{}
+\DoxyCodeLine{304     \textcolor{keywordtype}{char} *filename;}
+\DoxyCodeLine{305     \textcolor{keywordtype}{int} frame;}
+\DoxyCodeLine{306     \textcolor{keywordtype}{int} matframe;}
+\DoxyCodeLine{307     \textcolor{keywordtype}{int} bed;}
+\DoxyCodeLine{308 \};}
+\DoxyCodeLine{309 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structSTOR__args}{STOR\_args}} \mbox{\hyperlink{structSTOR__args}{STOR\_args}};}
+\DoxyCodeLine{310 bool\_t xdr\_STOR\_args();}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{keyword}{struct }\mbox{\hyperlink{structASTR__args}{ASTR\_args}} \{}
+\DoxyCodeLine{314     \textcolor{keywordtype}{char} *file\_name;}
+\DoxyCodeLine{315     \textcolor{keywordtype}{int} auto\_store;}
+\DoxyCodeLine{316 \};}
+\DoxyCodeLine{317 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structASTR__args}{ASTR\_args}} \mbox{\hyperlink{structASTR__args}{ASTR\_args}};}
+\DoxyCodeLine{318 bool\_t xdr\_ASTR\_args();}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{keyword}{struct }\mbox{\hyperlink{structGLOG__args}{GLOG\_args}} \{}
+\DoxyCodeLine{322     \textcolor{keywordtype}{char} *filename;}
+\DoxyCodeLine{323     \textcolor{keywordtype}{int} frame;}
+\DoxyCodeLine{324     \textcolor{keywordtype}{int} plane;}
+\DoxyCodeLine{325     \textcolor{keywordtype}{int} segment;}
+\DoxyCodeLine{326     \textcolor{keywordtype}{int} data;}
+\DoxyCodeLine{327     \textcolor{keywordtype}{int} bed;}
+\DoxyCodeLine{328 \};}
+\DoxyCodeLine{329 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structGLOG__args}{GLOG\_args}} \mbox{\hyperlink{structGLOG__args}{GLOG\_args}};}
+\DoxyCodeLine{330 bool\_t xdr\_GLOG\_args();}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{keyword}{struct }\mbox{\hyperlink{structGIMI__args}{GIMI\_args}} \{}
+\DoxyCodeLine{334     \textcolor{keywordtype}{int} frame;}
+\DoxyCodeLine{335     \textcolor{keywordtype}{int} plane;}
+\DoxyCodeLine{336     \textcolor{keywordtype}{int} segment;}
+\DoxyCodeLine{337     \textcolor{keywordtype}{int} data;}
+\DoxyCodeLine{338     \textcolor{keywordtype}{int} bed;}
+\DoxyCodeLine{339 \};}
+\DoxyCodeLine{340 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structGIMI__args}{GIMI\_args}} \mbox{\hyperlink{structGIMI__args}{GIMI\_args}};}
+\DoxyCodeLine{341 bool\_t xdr\_GIMI\_args();}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{keyword}{struct }\mbox{\hyperlink{structSNGL__args}{SNGL\_args}} \{}
+\DoxyCodeLine{345     \textcolor{keywordtype}{int} start\_bucket;}
+\DoxyCodeLine{346     \textcolor{keywordtype}{int} end\_bucket;}
+\DoxyCodeLine{347     \textcolor{keywordtype}{int} frequency;}
+\DoxyCodeLine{348     \textcolor{keywordtype}{int} timeout;}
+\DoxyCodeLine{349     \textcolor{keywordtype}{int} num\_ipcs;}
+\DoxyCodeLine{350 \};}
+\DoxyCodeLine{351 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structSNGL__args}{SNGL\_args}} \mbox{\hyperlink{structSNGL__args}{SNGL\_args}};}
+\DoxyCodeLine{352 bool\_t xdr\_SNGL\_args();}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{keyword}{struct }\mbox{\hyperlink{structRBLK__args}{RBLK\_args}} \{}
+\DoxyCodeLine{356     \textcolor{keywordtype}{char} *filename;}
+\DoxyCodeLine{357     \textcolor{keywordtype}{int} block\_number;}
+\DoxyCodeLine{358 \};}
+\DoxyCodeLine{359 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRBLK__args}{RBLK\_args}} \mbox{\hyperlink{structRBLK__args}{RBLK\_args}};}
+\DoxyCodeLine{360 bool\_t xdr\_RBLK\_args();}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363 \textcolor{keyword}{struct }\mbox{\hyperlink{structWBLK__args}{WBLK\_args}} \{}
+\DoxyCodeLine{364     \textcolor{keywordtype}{char} *filename;}
+\DoxyCodeLine{365     \textcolor{keywordtype}{int} block\_number;}
+\DoxyCodeLine{366     \textcolor{keywordtype}{char} wblk[512];}
+\DoxyCodeLine{367 \};}
+\DoxyCodeLine{368 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structWBLK__args}{WBLK\_args}} \mbox{\hyperlink{structWBLK__args}{WBLK\_args}};}
+\DoxyCodeLine{369 bool\_t xdr\_WBLK\_args();}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 \textcolor{keyword}{struct }\mbox{\hyperlink{structGIMI__resp}{GIMI\_resp}} \{}
+\DoxyCodeLine{373     \textcolor{keywordtype}{int} time;}
+\DoxyCodeLine{374     \textcolor{keywordtype}{int} start\_time;}
+\DoxyCodeLine{375     \textcolor{keywordtype}{int} nproj;}
+\DoxyCodeLine{376     \textcolor{keywordtype}{int} nview;}
+\DoxyCodeLine{377     \textcolor{keywordtype}{int} minval;}
+\DoxyCodeLine{378     \textcolor{keywordtype}{int} maxval;}
+\DoxyCodeLine{379     \textcolor{keywordtype}{int} prompts;}
+\DoxyCodeLine{380     \textcolor{keywordtype}{int} delayeds;}
+\DoxyCodeLine{381     \textcolor{keywordtype}{int} multiples;}
+\DoxyCodeLine{382     \textcolor{keywordtype}{int} corrected\_sing[32];}
+\DoxyCodeLine{383     \textcolor{keywordtype}{int} uncorrected\_sing[32];}
+\DoxyCodeLine{384     \textcolor{keywordtype}{int} total\_ipc\_prompts;}
+\DoxyCodeLine{385     \textcolor{keywordtype}{int} total\_ipc\_delayeds;}
+\DoxyCodeLine{386     \textcolor{keywordtype}{int} total\_ipc\_multiples;}
+\DoxyCodeLine{387     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{388 \};}
+\DoxyCodeLine{389 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structGIMI__resp}{GIMI\_resp}} \mbox{\hyperlink{structGIMI__resp}{GIMI\_resp}};}
+\DoxyCodeLine{390 bool\_t xdr\_GIMI\_resp();}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393 \textcolor{keyword}{struct }\mbox{\hyperlink{structGLOG__resp}{GLOG\_resp}} \{}
+\DoxyCodeLine{394     \textcolor{keywordtype}{int} time;}
+\DoxyCodeLine{395     \textcolor{keywordtype}{int} start\_time;}
+\DoxyCodeLine{396     \textcolor{keywordtype}{int} minval;}
+\DoxyCodeLine{397     \textcolor{keywordtype}{int} maxval;}
+\DoxyCodeLine{398     \textcolor{keywordtype}{int} prompts;}
+\DoxyCodeLine{399     \textcolor{keywordtype}{int} delayeds;}
+\DoxyCodeLine{400     \textcolor{keywordtype}{int} multiples;}
+\DoxyCodeLine{401     \textcolor{keywordtype}{int} net\_trues;}
+\DoxyCodeLine{402     \textcolor{keywordtype}{float} dtcor;}
+\DoxyCodeLine{403     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{404 \};}
+\DoxyCodeLine{405 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structGLOG__resp}{GLOG\_resp}} \mbox{\hyperlink{structGLOG__resp}{GLOG\_resp}};}
+\DoxyCodeLine{406 bool\_t xdr\_GLOG\_resp();}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409 \textcolor{keyword}{struct }\mbox{\hyperlink{structINFO__resp}{INFO\_resp}} \{}
+\DoxyCodeLine{410     \textcolor{keywordtype}{int} acq\_status;}
+\DoxyCodeLine{411     \textcolor{keywordtype}{int} total\_time;}
+\DoxyCodeLine{412     \textcolor{keywordtype}{int} prompt\_events;}
+\DoxyCodeLine{413     \textcolor{keywordtype}{int} delayed\_events;}
+\DoxyCodeLine{414     \textcolor{keywordtype}{int} multiple\_events;}
+\DoxyCodeLine{415     \textcolor{keywordtype}{int} current\_frame;}
+\DoxyCodeLine{416     \textcolor{keywordtype}{int} total\_frames;}
+\DoxyCodeLine{417     \textcolor{keywordtype}{int} frame\_time;}
+\DoxyCodeLine{418     \textcolor{keywordtype}{int} frame\_end\_time;}
+\DoxyCodeLine{419     \textcolor{keywordtype}{int} scan\_end\_time;}
+\DoxyCodeLine{420     \textcolor{keywordtype}{int} singles\_Kcps\_corrected;}
+\DoxyCodeLine{421     \textcolor{keywordtype}{int} singles\_Kcps\_uncorrected;}
+\DoxyCodeLine{422     \textcolor{keywordtype}{int} total\_ipc\_prompt\_rate;}
+\DoxyCodeLine{423     \textcolor{keywordtype}{int} total\_ipc\_delayed\_rate;}
+\DoxyCodeLine{424     \textcolor{keywordtype}{int} total\_ipc\_multiple\_rate;}
+\DoxyCodeLine{425     \textcolor{keywordtype}{int} contig\_disk\_space;}
+\DoxyCodeLine{426 \};}
+\DoxyCodeLine{427 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structINFO__resp}{INFO\_resp}} \mbox{\hyperlink{structINFO__resp}{INFO\_resp}};}
+\DoxyCodeLine{428 bool\_t xdr\_INFO\_resp();}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431 \textcolor{keyword}{struct }\mbox{\hyperlink{structRBLK__resp}{RBLK\_resp}} \{}
+\DoxyCodeLine{432     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{433     \textcolor{keywordtype}{char} rblk[512];}
+\DoxyCodeLine{434 \};}
+\DoxyCodeLine{435 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRBLK__resp}{RBLK\_resp}} \mbox{\hyperlink{structRBLK__resp}{RBLK\_resp}};}
+\DoxyCodeLine{436 bool\_t xdr\_RBLK\_resp();}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 \textcolor{keyword}{struct }\mbox{\hyperlink{structRMHD__resp}{RMHD\_resp}} \{}
+\DoxyCodeLine{440     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{441     \mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}} xmain\_head;}
+\DoxyCodeLine{442 \};}
+\DoxyCodeLine{443 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRMHD__resp}{RMHD\_resp}} \mbox{\hyperlink{structRMHD__resp}{RMHD\_resp}};}
+\DoxyCodeLine{444 bool\_t xdr\_RMHD\_resp();}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447 \textcolor{keyword}{struct }\mbox{\hyperlink{structWMHD__args}{WMHD\_args}} \{}
+\DoxyCodeLine{448     \textcolor{keywordtype}{char} *file\_name;}
+\DoxyCodeLine{449     \mbox{\hyperlink{structXMAIN__HEAD}{XMAIN\_HEAD}} xmain\_head;}
+\DoxyCodeLine{450 \};}
+\DoxyCodeLine{451 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structWMHD__args}{WMHD\_args}} \mbox{\hyperlink{structWMHD__args}{WMHD\_args}};}
+\DoxyCodeLine{452 bool\_t xdr\_WMHD\_args();}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455 \textcolor{keyword}{struct }\mbox{\hyperlink{structRSHD__args}{RSHD\_args}} \{}
+\DoxyCodeLine{456     \textcolor{keywordtype}{char} *file\_name;}
+\DoxyCodeLine{457     \textcolor{keywordtype}{int} matnum;}
+\DoxyCodeLine{458 \};}
+\DoxyCodeLine{459 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRSHD__args}{RSHD\_args}} \mbox{\hyperlink{structRSHD__args}{RSHD\_args}};}
+\DoxyCodeLine{460 bool\_t xdr\_RSHD\_args();}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 \textcolor{keyword}{struct }\mbox{\hyperlink{structRSHD__resp}{RSHD\_resp}} \{}
+\DoxyCodeLine{464     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{465     \textcolor{keywordtype}{char} rhdat[512];}
+\DoxyCodeLine{466 \};}
+\DoxyCodeLine{467 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRSHD__resp}{RSHD\_resp}} \mbox{\hyperlink{structRSHD__resp}{RSHD\_resp}};}
+\DoxyCodeLine{468 bool\_t xdr\_RSHD\_resp();}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471 \textcolor{keyword}{struct }\mbox{\hyperlink{structWSHD__args}{WSHD\_args}} \{}
+\DoxyCodeLine{472     \textcolor{keywordtype}{char} *file\_name;}
+\DoxyCodeLine{473     \textcolor{keywordtype}{int} matnum;}
+\DoxyCodeLine{474     \textcolor{keywordtype}{char} whdat[512];}
+\DoxyCodeLine{475 \};}
+\DoxyCodeLine{476 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structWSHD__args}{WSHD\_args}} \mbox{\hyperlink{structWSHD__args}{WSHD\_args}};}
+\DoxyCodeLine{477 bool\_t xdr\_WSHD\_args();}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{keyword}{struct }\mbox{\hyperlink{structRDAT__args}{RDAT\_args}} \{}
+\DoxyCodeLine{481     \textcolor{keywordtype}{char} *file\_name;}
+\DoxyCodeLine{482     \textcolor{keywordtype}{int} matnum;}
+\DoxyCodeLine{483 \};}
+\DoxyCodeLine{484 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRDAT__args}{RDAT\_args}} \mbox{\hyperlink{structRDAT__args}{RDAT\_args}};}
+\DoxyCodeLine{485 bool\_t xdr\_RDAT\_args();}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 \textcolor{keyword}{struct }\mbox{\hyperlink{structRDAT__resp}{RDAT\_resp}} \{}
+\DoxyCodeLine{489     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{490     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{491         u\_int rdat\_len;}
+\DoxyCodeLine{492         \textcolor{keywordtype}{char} *rdat\_val;}
+\DoxyCodeLine{493     \} rdat;}
+\DoxyCodeLine{494 \};}
+\DoxyCodeLine{495 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structRDAT__resp}{RDAT\_resp}} \mbox{\hyperlink{structRDAT__resp}{RDAT\_resp}};}
+\DoxyCodeLine{496 bool\_t xdr\_RDAT\_resp();}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 \textcolor{keyword}{struct }\mbox{\hyperlink{structWDAT__args}{WDAT\_args}} \{}
+\DoxyCodeLine{500     \textcolor{keywordtype}{char} *file\_name;}
+\DoxyCodeLine{501     \textcolor{keywordtype}{int} matnum;}
+\DoxyCodeLine{502     \textcolor{keywordtype}{int} data\_type;}
+\DoxyCodeLine{503     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{504         u\_int wdat\_len;}
+\DoxyCodeLine{505         \textcolor{keywordtype}{char} *wdat\_val;}
+\DoxyCodeLine{506     \} wdat;}
+\DoxyCodeLine{507 \};}
+\DoxyCodeLine{508 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structWDAT__args}{WDAT\_args}} \mbox{\hyperlink{structWDAT__args}{WDAT\_args}};}
+\DoxyCodeLine{509 bool\_t xdr\_WDAT\_args();}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#endif ecatRts\_defined}}
+
+\end{DoxyCode}

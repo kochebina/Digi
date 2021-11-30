@@ -1,0 +1,60 @@
+\hypertarget{classGatePVParameterisation}{}\doxysection{Gate\+PVParameterisation Class Reference}
+\label{classGatePVParameterisation}\index{GatePVParameterisation@{GatePVParameterisation}}
+
+
+Base-\/class for GATE physical volume parameterisations.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+PVParameterisation.\+hh$>$}
+
+Inheritance diagram for Gate\+PVParameterisation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.314050cm]{classGatePVParameterisation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePVParameterisation_a18f39fa44be159aee6fa53fe83446dc9}\label{classGatePVParameterisation_a18f39fa44be159aee6fa53fe83446dc9}} 
+{\bfseries Gate\+PVParameterisation} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classGatePVParameterisation_ae8ab4ccac5d3e91259e041f87aea036d}{Get\+Nb\+Of\+Copies}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base-\/class for GATE physical volume parameterisations. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGatePVParameterisation}{Gate\+PVParameterisation}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} \& \href{mailto:Giovani.Santin@cern.ch}{\texttt{ Giovani.\+Santin@cern.\+ch}}
+\item This class is meant to allow the use of parameterised volumes in GATE
+\item It declares a pure virtual method \mbox{\hyperlink{classGatePVParameterisation_ae8ab4ccac5d3e91259e041f87aea036d}{Get\+Nb\+Of\+Copies()}} to return the number of copies to be made of the volume. This method must be implemented in concrete classes derived from \mbox{\hyperlink{classGatePVParameterisation}{Gate\+PVParameterisation}}.
+\item Note that this base-\/class does not implement the pure virtual method Compute\+Transformation() declared by G4\+VPVParameterisation; this method must be implemented in concrete classes derived from \mbox{\hyperlink{classGatePVParameterisation}{Gate\+PVParameterisation}}.
+
+\begin{DoxySeeAlso}{See also}
+Gate\+VParameterised\+Inserter 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePVParameterisation_ae8ab4ccac5d3e91259e041f87aea036d}\label{classGatePVParameterisation_ae8ab4ccac5d3e91259e041f87aea036d}} 
+\index{GatePVParameterisation@{GatePVParameterisation}!GetNbOfCopies@{GetNbOfCopies}}
+\index{GetNbOfCopies@{GetNbOfCopies}!GatePVParameterisation@{GatePVParameterisation}}
+\doxysubsubsection{\texorpdfstring{GetNbOfCopies()}{GetNbOfCopies()}}
+{\footnotesize\ttfamily virtual int Gate\+PVParameterisation\+::\+Get\+Nb\+Of\+Copies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pure virtual method, to be implemented in concrete classes derived from G4\+VPVParameterisation This method must provide the number of copies of the volume 
+
+Implemented in \mbox{\hyperlink{classGateCompressedVoxelParameterization_a129647e84c5b7aa69bfb017c99809403}{Gate\+Compressed\+Voxel\+Parameterization}}, \mbox{\hyperlink{classGateHoleParameterisation_a71e7e252140f962109e4f8fa928ffd0a}{Gate\+Hole\+Parameterisation}}, and \mbox{\hyperlink{classGateVoxelBoxParameterization_a5a5099474f166659be7359c69a0f4cd7}{Gate\+Voxel\+Box\+Parameterization}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+PVParameterisation.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+PVParameterisation.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\hypertarget{GateSurfaceListMessenger_8hh_source}{}\doxysection{Gate\+Surface\+List\+Messenger.\+hh}
+\label{GateSurfaceListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSurfaceListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSurfaceListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef GATE\_USE\_OPTICAL}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateSurfaceListMessenger\_hh}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateSurfaceListMessenger\_hh 1}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateListMessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateSurfaceList.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }GateSurfaceListMessenger: \textcolor{keyword}{public} \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34   \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     GateSurfaceListMessenger(GateSurfaceList* itsChildList);}
+\DoxyCodeLine{36    \string~GateSurfaceListMessenger();}
+\DoxyCodeLine{37     }
+\DoxyCodeLine{38   \textcolor{keyword}{private}:}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& DumpMap();}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DoInsertion(\textcolor{keyword}{const} G4String\& surfaceName);}
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListChoices() ;}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateListMessenger_aecfa42a240638fc5bf42126f21609660}{CheckNameConflict}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} GateSurfaceList* GetSurfaceList()}
+\DoxyCodeLine{49     \{ \textcolor{keywordflow}{return} (GateSurfaceList*) \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}(); \}}
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}* GetCreator()}
+\DoxyCodeLine{52     \{ \textcolor{keywordflow}{return} GetSurfaceList()-\/>\mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}();\}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{private}:}
+\DoxyCodeLine{55   }
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

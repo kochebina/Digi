@@ -1,0 +1,85 @@
+\hypertarget{classGateVBlurringLaw}{}\doxysection{Gate\+VBlurring\+Law Class Reference}
+\label{classGateVBlurringLaw}\index{GateVBlurringLaw@{GateVBlurringLaw}}
+
+
+Law giving the resolution in energy.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VBlurring\+Law.\+hh$>$}
+
+Inheritance diagram for Gate\+VBlurring\+Law\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateVBlurringLaw}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVBlurringLaw_a89fd45e2e4b9c080f2143da3d4ad1335}\label{classGateVBlurringLaw_a89fd45e2e4b9c080f2143da3d4ad1335}} 
+{\bfseries Gate\+VBlurring\+Law} (const G4\+String \&its\+Name)
+\item 
+\mbox{\Hypertarget{classGateVBlurringLaw_a37d2aeaf7599f960df9f96295f71050a}\label{classGateVBlurringLaw_a37d2aeaf7599f960df9f96295f71050a}} 
+virtual G4double {\bfseries Compute\+Resolution} (G4double energy) const =0
+\item 
+void \mbox{\hyperlink{classGateVBlurringLaw_a77e713f59f6b85843aaea4df7165c55f}{Describe}} (size\+\_\+t ident=0)
+\begin{DoxyCompactList}\small\item\em Virtual method to print-\/out a description of the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVBlurringLaw_a9a248c7a3dd1ada82e12a0e282b1ed69}\label{classGateVBlurringLaw_a9a248c7a3dd1ada82e12a0e282b1ed69}} 
+virtual void {\bfseries Describe\+Myself} (size\+\_\+t ident=0) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Law giving the resolution in energy. 
+
+Abstract class for the law giving the energy resolution.
+
+\begin{DoxySeeAlso}{See also}
+Gate\+Bluring
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVBlurringLaw}{Gate\+VBlurring\+Law}} -\/ by \href{mailto:Henri.Dersarkissian@gmail.com}{\texttt{ Henri.\+Dersarkissian@gmail.\+com}}
+\item \mbox{\hyperlink{classGateVBlurringLaw}{Gate\+VBlurring\+Law}} is the abstract base-\/class for all energy resolution blurring laws. These laws are describing the behaviour of the resolution of the gaussion in energy blurring functions to the energy
+\item When developping a new energy blurring law, one should\+:
+\begin{DoxyItemize}
+\item overload the pure virtual Compute\+Resolution method;
+\item develop a messenger for this blurring law;
+\item add the new blurring law to the list of choices available in \mbox{\hyperlink{classGateBlurringMessenger}{Gate\+Blurring\+Messenger}}.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateBlurring}{Gate\+Blurring}}, \mbox{\hyperlink{classGateLinearBlurringLaw}{Gate\+Linear\+Blurring\+Law}}, \mbox{\hyperlink{classGateInverseSquareBlurringLaw}{Gate\+Inverse\+Square\+Blurring\+Law}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVBlurringLaw_a77e713f59f6b85843aaea4df7165c55f}\label{classGateVBlurringLaw_a77e713f59f6b85843aaea4df7165c55f}} 
+\index{GateVBlurringLaw@{GateVBlurringLaw}!Describe@{Describe}}
+\index{Describe@{Describe}!GateVBlurringLaw@{GateVBlurringLaw}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+VBlurring\+Law\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual method to print-\/out a description of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateNamedObject_a6a4452f67031f801d3b33114cf370940}{Gate\+Named\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+VBlurring\+Law.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+VBlurring\+Law.\+cc\end{DoxyCompactItemize}

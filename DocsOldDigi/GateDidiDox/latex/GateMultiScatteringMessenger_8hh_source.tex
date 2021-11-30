@@ -1,0 +1,41 @@
+\hypertarget{GateMultiScatteringMessenger_8hh_source}{}\doxysection{Gate\+Multi\+Scattering\+Messenger.\+hh}
+\label{GateMultiScatteringMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateMultiScatteringMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateMultiScatteringMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEGENERALSCATTERINGPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEGENERALSCATTERINGPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateEMStandardProcessMessenger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVProcess.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateUIcmdWith2String.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAStringAndADouble.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiScatteringMessenger}{GateMultiScatteringMessenger}}:\textcolor{keyword}{public} \mbox{\hyperlink{classGateEMStandardProcessMessenger}{GateEMStandardProcessMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateMultiScatteringMessenger}{GateMultiScatteringMessenger}}(\mbox{\hyperlink{classGateVProcess}{GateVProcess}} *pb);}
+\DoxyCodeLine{25   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMultiScatteringMessenger}{\string~GateMultiScatteringMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} * pSetDistanceToBoundary;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

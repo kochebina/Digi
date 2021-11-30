@@ -1,0 +1,46 @@
+\hypertarget{GateNanoAbsorption_8hh_source}{}\doxysection{Gate\+Nano\+Absorption.\+hh}
+\label{GateNanoAbsorption_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateNanoAbsorption.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateNanoAbsorption.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateNanoAbsorption\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateNanoAbsorption\_h 1}}
+\DoxyCodeLine{12  }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}templates.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}Randomize.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4Step.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4VDiscreteProcess.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4DynamicParticle.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4Material.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4OpticalPhoton.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4OpAbsorption.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNanoAbsorption}{GateNanoAbsorption}} : \textcolor{keyword}{public} G4OpAbsorption}
+\DoxyCodeLine{24  }
+\DoxyCodeLine{25 \{   }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27  \textcolor{keyword}{public}:}
+\DoxyCodeLine{28  }
+\DoxyCodeLine{30          \textcolor{comment}{// Constructors and Destructor}}
+\DoxyCodeLine{32 \textcolor{comment}{} }
+\DoxyCodeLine{33          \mbox{\hyperlink{classGateNanoAbsorption}{GateNanoAbsorption}}(\textcolor{keyword}{const} G4String\& processName = \textcolor{stringliteral}{"{}NanoAbsorption"{}}, G4ProcessType type = fOptical):G4OpAbsorption(processName, type)}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   }
+\DoxyCodeLine{38      G4double GetMeanFreePath(\textcolor{keyword}{const} G4Track\& aTrack,G4double ,G4ForceCondition* ); }
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

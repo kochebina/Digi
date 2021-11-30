@@ -1,0 +1,97 @@
+\hypertarget{GateVoxelBoxParameterized_8hh_source}{}\doxysection{Gate\+Voxel\+Box\+Parameterized.\+hh}
+\label{GateVoxelBoxParameterized_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelBoxParameterized.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelBoxParameterized.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVoxelBoxParameterized\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVoxelBoxParameterized\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{15 \textcolor{comment}{//\#include "{}GateVParameterisedInserter.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVoxelBoxParameterizedMessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVoxelBoxParameterization.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4PVParameterised.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterList.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVolumePlacement.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVoxelBoxParam.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \textcolor{comment}{// Constructor1}}
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}}(\textcolor{keyword}{const} G4String\& name,}
+\DoxyCodeLine{29                     G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{30                     G4int depth=0)}
+\DoxyCodeLine{31   : \mbox{\hyperlink{classGateBox}{GateBox}}(name,\textcolor{stringliteral}{"{}G4\_Galactic"{}},1,1,1,acceptsChildren,depth),}
+\DoxyCodeLine{32     m\_name(name),}
+\DoxyCodeLine{33     m\_messenger(\textcolor{keyword}{new} \mbox{\hyperlink{classGateVoxelBoxParameterizedMessenger}{GateVoxelBoxParameterizedMessenger}}(\textcolor{keyword}{this})),}
+\DoxyCodeLine{34     m\_voxelReader(0),}
+\DoxyCodeLine{35     m\_voxelInserter(\textcolor{keyword}{new} \mbox{\hyperlink{classGateVoxelBoxParam}{GateVoxelBoxParam}}(name+\textcolor{stringliteral}{"{}Voxel"{}}, \textcolor{keyword}{this})),}
+\DoxyCodeLine{36     voxelNumber(G4ThreeVector(1,1,1)),}
+\DoxyCodeLine{37     voxelSize(G4ThreeVector(1,1,1))}
+\DoxyCodeLine{38   \{ }
+\DoxyCodeLine{39     \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}()-\/>\mbox{\hyperlink{classGateVVolume_a61d344e92432ff4d34d6f33d62daf538}{GetTheChildList}}()-\/>AddChild(m\_voxelInserter);}
+\DoxyCodeLine{40   \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{comment}{// Constructor2}}
+\DoxyCodeLine{43   \mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}}(\textcolor{keyword}{const} G4String\& name):\mbox{\hyperlink{classGateBox}{GateBox}}(name,\textcolor{stringliteral}{"{}G4\_Galactic"{}},1,1,1,\textcolor{keyword}{false},\textcolor{keyword}{false}),}
+\DoxyCodeLine{44                               m\_name(name),}
+\DoxyCodeLine{45                               m\_messenger(\textcolor{keyword}{new} \mbox{\hyperlink{classGateVoxelBoxParameterizedMessenger}{GateVoxelBoxParameterizedMessenger}}(\textcolor{keyword}{this})),}
+\DoxyCodeLine{46                               m\_voxelReader(0),}
+\DoxyCodeLine{47                               m\_voxelInserter(\textcolor{keyword}{new} \mbox{\hyperlink{classGateVoxelBoxParam}{GateVoxelBoxParam}}(name+\textcolor{stringliteral}{"{}Voxel"{}}, \textcolor{keyword}{this})),}
+\DoxyCodeLine{48                               voxelNumber(G4ThreeVector(1,1,1)),}
+\DoxyCodeLine{49                               voxelSize(G4ThreeVector(1,1,1))}
+\DoxyCodeLine{50   \{ }
+\DoxyCodeLine{51     \mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}()-\/>\mbox{\hyperlink{classGateVVolume_a61d344e92432ff4d34d6f33d62daf538}{GetTheChildList}}()-\/>AddChild(m\_voxelInserter);}
+\DoxyCodeLine{52   \}}
+\DoxyCodeLine{53   }
+\DoxyCodeLine{54   \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{55   \mbox{\hyperlink{classGateVoxelBoxParameterized}{\string~GateVoxelBoxParameterized}}()\{}
+\DoxyCodeLine{56     \textcolor{keyword}{delete} m\_messenger;}
+\DoxyCodeLine{57   \}}
+\DoxyCodeLine{58   }
+\DoxyCodeLine{59   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}})}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   }
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVoxelBoxParameterized_a27add8373d5b89d0cd745dd032989051}{InsertReader}}(G4String readerType);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVoxelBoxParameterized_ab401187a5a26573c1e78a5ec66a375a8}{RemoveReader}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}* \mbox{\hyperlink{classGateVoxelBoxParameterized_ae6827c4b7e036f743763d181b785c511}{GetReader}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{69 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} m\_voxelReader;\}}
+\DoxyCodeLine{70   }
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVoxelBoxParameterized_aaf73a55c4e882eda8d86df60e28805af}{AttachPhantomSD}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} AddOutput(G4String name);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} ConstructGeometry(G4LogicalVolume* mother\_log, G4bool flagUpdateOnly);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{private}:}
+\DoxyCodeLine{80   }
+\DoxyCodeLine{81   G4String m\_name;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \mbox{\hyperlink{classGateVoxelBoxParameterizedMessenger}{GateVoxelBoxParameterizedMessenger}}* m\_messenger;}
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}*                   m\_voxelReader;}
+\DoxyCodeLine{85   \mbox{\hyperlink{classGateVoxelBoxParam}{GateVoxelBoxParam}}*                  m\_voxelInserter;}
+\DoxyCodeLine{86   }
+\DoxyCodeLine{87   G4ThreeVector                               voxelNumber;}
+\DoxyCodeLine{88   G4ThreeVector                               voxelSize;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 MAKE\_AUTO\_CREATOR\_VOLUME(parameterizedBoxMatrix,\mbox{\hyperlink{classGateVoxelBoxParameterized}{GateVoxelBoxParameterized}})}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,229 @@
+\hypertarget{classGateCylindricalEdepActor}{}\doxysection{Gate\+Cylindrical\+Edep\+Actor Class Reference}
+\label{classGateCylindricalEdepActor}\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+
+
+{\ttfamily \#include $<$Gate\+Cylindrical\+Edep\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Cylindrical\+Edep\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCylindricalEdepActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a9570fd78387e9d090e744e558cb8a590}\label{classGateCylindricalEdepActor_a9570fd78387e9d090e744e558cb8a590}} 
+virtual {\bfseries $\sim$\+Gate\+Cylindrical\+Edep\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_af4a62332079498aa3c8aa20e7761cdbb}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a1f25f49833b9ba83ff136b3ce38770f9}\label{classGateCylindricalEdepActor_a1f25f49833b9ba83ff136b3ce38770f9}} 
+void {\bfseries Enable\+Edep\+Image} (bool b)
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a2b32bd3af824da0830016e07e46d4875}\label{classGateCylindricalEdepActor_a2b32bd3af824da0830016e07e46d4875}} 
+void {\bfseries Enable\+Fluence\+Image} (bool b)
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a8dbc205f417f9b1262f6bc9617781482}\label{classGateCylindricalEdepActor_a8dbc205f417f9b1262f6bc9617781482}} 
+void {\bfseries Enable\+Dose\+Image} (bool b)
+\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_a78536c908d2401283292e2ee46f74bf8}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_af7c5a71a19f8a86533e1432718ca1e55}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_adfdb9ce464d11e9953c2ac25277b6c48}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_a7d2b9b3603e3d98001f14fb94ab95fbc}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$track)
+\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_a0915e61d2dad61fab1f0aa8b17d3c5d7}{User\+Post\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_a97a3e4e08d601c89c2a84e3d901befe5}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Save data. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_a0a74c423a4275be1252b0cd33e2cef70}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_abc089a1f6a723ef2e0079c299c2555bd}{Initialize}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateCylindricalEdepActor_a3946b777c0133c5aee355c0f61984863}{End\+Of\+Event}} (G4\+HCof\+This\+Event $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a6fdb62b69a31399a372de44da5a2d3f5}\label{classGateCylindricalEdepActor_a6fdb62b69a31399a372de44da5a2d3f5}} 
+{\bfseries Gate\+Cylindrical\+Edep\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a2eb81a5984948a44dc4fd58392dff236}\label{classGateCylindricalEdepActor_a2eb81a5984948a44dc4fd58392dff236}} 
+\mbox{\hyperlink{classGateCylindricalEdepActorMessenger}{Gate\+Cylindrical\+Edep\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_ac0c0a913420bbe1584d604a01d843a9d}\label{classGateCylindricalEdepActor_ac0c0a913420bbe1584d604a01d843a9d}} 
+\mbox{\hyperlink{classGateVoxelizedMass}{Gate\+Voxelized\+Mass}} {\bfseries m\+Voxelized\+Mass}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_abd4fd45c7d1fc8006c7736e88cc5e599}\label{classGateCylindricalEdepActor_abd4fd45c7d1fc8006c7736e88cc5e599}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_afdb5d3dd6b1e5f3b93eb99a5bc12b78b}\label{classGateCylindricalEdepActor_afdb5d3dd6b1e5f3b93eb99a5bc12b78b}} 
+Step\+Hit\+Type {\bfseries m\+User\+Step\+Hit\+Type}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_ac41b05a44fd50689ed76ea2897a9b20c}\label{classGateCylindricalEdepActor_ac41b05a44fd50689ed76ea2897a9b20c}} 
+bool {\bfseries m\+Is\+Cylindrical\+Symmetry\+Image}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_ae5722edfaaffbf6bdb0b3c0c86e8a832}\label{classGateCylindricalEdepActor_ae5722edfaaffbf6bdb0b3c0c86e8a832}} 
+bool {\bfseries m\+Is\+Edep\+Image\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a7045e305ccf0e4b7c99ec98b8cb56130}\label{classGateCylindricalEdepActor_a7045e305ccf0e4b7c99ec98b8cb56130}} 
+bool {\bfseries m\+Is\+Fluence\+Image\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_ab685b0a9a9f5413dffd58d2234df3182}\label{classGateCylindricalEdepActor_ab685b0a9a9f5413dffd58d2234df3182}} 
+bool {\bfseries m\+Is\+Dose\+Image\+Enabled}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a6cdfae917d5a1ae8c723bd0db63f32a6}\label{classGateCylindricalEdepActor_a6cdfae917d5a1ae8c723bd0db63f32a6}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} {\bfseries m\+Edep\+Image}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_ac0edc7df21275858f5417be1619de701}\label{classGateCylindricalEdepActor_ac0edc7df21275858f5417be1619de701}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} {\bfseries m\+Fluence\+Image}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a7b8374a815e990c4962af95557fecbfe}\label{classGateCylindricalEdepActor_a7b8374a815e990c4962af95557fecbfe}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} {\bfseries m\+Dose\+Image}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_afb14242ffb4e658a153998b27637e514}\label{classGateCylindricalEdepActor_afb14242ffb4e658a153998b27637e514}} 
+G4\+String {\bfseries m\+Edep\+Filename}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_ac133c66281b64875324d95bc73e57fe5}\label{classGateCylindricalEdepActor_ac133c66281b64875324d95bc73e57fe5}} 
+G4\+String {\bfseries m\+Fluence\+Filename}
+\item 
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a24b2587090d49242fade2c7254087267}\label{classGateCylindricalEdepActor_a24b2587090d49242fade2c7254087267}} 
+G4\+String {\bfseries m\+Dose\+Filename}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+A.\+Resch based on \mbox{\hyperlink{classGateDoseActor}{Gate\+Dose\+Actor}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2011 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCylindricalEdepActor_af7c5a71a19f8a86533e1432718ca1e55}\label{classGateCylindricalEdepActor_af7c5a71a19f8a86533e1432718ca1e55}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+Edep\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a78536c908d2401283292e2ee46f74bf8}\label{classGateCylindricalEdepActor_a78536c908d2401283292e2ee46f74bf8}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+Edep\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_af4a62332079498aa3c8aa20e7761cdbb}\label{classGateCylindricalEdepActor_af4a62332079498aa3c8aa20e7761cdbb}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+Edep\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a3946b777c0133c5aee355c0f61984863}\label{classGateCylindricalEdepActor_a3946b777c0133c5aee355c0f61984863}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!EndOfEvent@{EndOfEvent}}
+\index{EndOfEvent@{EndOfEvent}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEvent()}{EndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+Cylindrical\+Edep\+Actor\+::\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_abc089a1f6a723ef2e0079c299c2555bd}\label{classGateCylindricalEdepActor_abc089a1f6a723ef2e0079c299c2555bd}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Gate\+Cylindrical\+Edep\+Actor\+::\+Initialize (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a0a74c423a4275be1252b0cd33e2cef70}\label{classGateCylindricalEdepActor_a0a74c423a4275be1252b0cd33e2cef70}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+Edep\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a97a3e4e08d601c89c2a84e3d901befe5}\label{classGateCylindricalEdepActor_a97a3e4e08d601c89c2a84e3d901befe5}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+Edep\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save data. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a0915e61d2dad61fab1f0aa8b17d3c5d7}\label{classGateCylindricalEdepActor_a0915e61d2dad61fab1f0aa8b17d3c5d7}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Cylindrical\+Edep\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_a7d2b9b3603e3d98001f14fb94ab95fbc}\label{classGateCylindricalEdepActor_a7d2b9b3603e3d98001f14fb94ab95fbc}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+Edep\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{track }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateCylindricalEdepActor_adfdb9ce464d11e9953c2ac25277b6c48}\label{classGateCylindricalEdepActor_adfdb9ce464d11e9953c2ac25277b6c48}} 
+\index{GateCylindricalEdepActor@{GateCylindricalEdepActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateCylindricalEdepActor@{GateCylindricalEdepActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+Edep\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Cylindrical\+Edep\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Cylindrical\+Edep\+Actor.\+cc\end{DoxyCompactItemize}

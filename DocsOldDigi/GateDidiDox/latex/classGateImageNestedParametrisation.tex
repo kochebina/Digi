@@ -1,0 +1,69 @@
+\hypertarget{classGateImageNestedParametrisation}{}\doxysection{Gate\+Image\+Nested\+Parametrisation Class Reference}
+\label{classGateImageNestedParametrisation}\index{GateImageNestedParametrisation@{GateImageNestedParametrisation}}
+
+
+Parametrisation for Gate\+Image\+Parametrised\+Volume.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Image\+Nested\+Parametrisation.\+hh$>$}
+
+Inheritance diagram for Gate\+Image\+Nested\+Parametrisation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateImageNestedParametrisation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a26150a320975e022b6c9ddec7c3da70d}\label{classGateImageNestedParametrisation_a26150a320975e022b6c9ddec7c3da70d}} 
+{\bfseries Gate\+Image\+Nested\+Parametrisation} (\mbox{\hyperlink{classGateImageNestedParametrisedVolume}{Gate\+Image\+Nested\+Parametrised\+Volume}} $\ast$volume)
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a03de288f0633b20dc64b6af9a1f4724d}\label{classGateImageNestedParametrisation_a03de288f0633b20dc64b6af9a1f4724d}} 
+void {\bfseries Compute\+Transformation} (const G4int copy\+No, G4\+VPhysical\+Volume $\ast$phys\+Vol) const
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_afe69ae4dd0691442e58ca4c0014f5548}\label{classGateImageNestedParametrisation_afe69ae4dd0691442e58ca4c0014f5548}} 
+virtual G4\+Material $\ast$ {\bfseries Compute\+Material} (G4\+VPhysical\+Volume $\ast$current\+Vol, const G4int rep\+No, const G4\+VTouchable $\ast$parent\+Touch=0)
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a497c754cd02838a4740b84805e519f87}\label{classGateImageNestedParametrisation_a497c754cd02838a4740b84805e519f87}} 
+virtual G4\+Material $\ast$ {\bfseries Compute\+Material} (const G4int rep\+No, G4\+VPhysical\+Volume $\ast$current\+Vol, const G4\+VTouchable $\ast$parent\+Touch)
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a2f84c48c638f8fb22e609ab5a9afff40}\label{classGateImageNestedParametrisation_a2f84c48c638f8fb22e609ab5a9afff40}} 
+virtual G4int {\bfseries Get\+Number\+Of\+Materials} () const
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a00ef0b0c284b7dd75fff4bc8b9cf1782}\label{classGateImageNestedParametrisation_a00ef0b0c284b7dd75fff4bc8b9cf1782}} 
+virtual G4\+Material $\ast$ {\bfseries Get\+Material} (G4int idx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_aa65b4ebb67c152562991eb61e8b95d55}\label{classGateImageNestedParametrisation_aa65b4ebb67c152562991eb61e8b95d55}} 
+\mbox{\hyperlink{classGateImageNestedParametrisedVolume}{Gate\+Image\+Nested\+Parametrised\+Volume}} $\ast$ {\bfseries p\+Volume}
+\begin{DoxyCompactList}\small\item\em associated Nested\+Parametrised volume \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a32461f811f53d2b85f00dbc8fd432d01}\label{classGateImageNestedParametrisation_a32461f811f53d2b85f00dbc8fd432d01}} 
+std\+::vector$<$ G4\+Material $\ast$ $>$ {\bfseries m\+Vector\+Label2\+Material}
+\begin{DoxyCompactList}\small\item\em vector of label to material correspondance \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a6c7c862a4ab830a2180aa81cb4cb07dd}\label{classGateImageNestedParametrisation_a6c7c862a4ab830a2180aa81cb4cb07dd}} 
+G4\+Material $\ast$ {\bfseries m\+Air\+Material}
+\begin{DoxyCompactList}\small\item\em Dummy material (Air) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateImageNestedParametrisation_a200e33a827db74ba895115a3f91ce5b2}\label{classGateImageNestedParametrisation_a200e33a827db74ba895115a3f91ce5b2}} 
+std\+::vector$<$ G4double $>$ {\bfseries fpZ}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parametrisation for Gate\+Image\+Parametrised\+Volume. 
+
+Messenger of Gate\+Image\+Parametrised\+Volume.
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Image\+Nested\+Parametrisation.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/\mbox{\hyperlink{GateImageNestedParametrisation_8cc}{Gate\+Image\+Nested\+Parametrisation.\+cc}}\end{DoxyCompactItemize}

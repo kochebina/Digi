@@ -1,0 +1,49 @@
+\hypertarget{timeOrder_8hh_source}{}\doxysection{time\+Order.\+hh}
+\label{timeOrder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/timeOrder.hh@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/timeOrder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{List Mode Format }}
+\DoxyCodeLine{4 \textcolor{comment}{                        }}
+\DoxyCodeLine{5 \textcolor{comment}{-\/-\/  timeOrder.hh  -\/-\/                      }}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{Martin.Rey@epfl.ch}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Crystal Clear Collaboration}}
+\DoxyCodeLine{10 \textcolor{comment}{Copyright (C) 2005 LPHE/EPFL, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{This software is distributed under the terms }}
+\DoxyCodeLine{13 \textcolor{comment}{of the GNU Lesser General }}
+\DoxyCodeLine{14 \textcolor{comment}{Public Licence (LGPL)}}
+\DoxyCodeLine{15 \textcolor{comment}{See LMF/LICENSE.txt for further details}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{Description of timeOrder class}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{class which allows to choose the EVENT\_RECORD one of two}}
+\DoxyCodeLine{24 \textcolor{comment}{with an earlier time.}}
+\DoxyCodeLine{25 \textcolor{comment}{}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef TIMEORDER\_HH}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define TIMEORDER\_HH}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}lmf.h"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classtimeOrder}{timeOrder}} \{}
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38   \textcolor{keywordtype}{int} operator() (\mbox{\hyperlink{structLMF__ccs__eventRecord}{EVENT\_RECORD}} * x, \mbox{\hyperlink{structLMF__ccs__eventRecord}{EVENT\_RECORD}} * y)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} (u8ToU64(x-\/>timeStamp) < u8ToU64(y-\/>timeStamp));}
+\DoxyCodeLine{40   \};}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

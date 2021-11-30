@@ -1,0 +1,71 @@
+\hypertarget{classGateOutputVolumeID}{}\doxysection{Gate\+Output\+Volume\+ID Class Reference}
+\label{classGateOutputVolumeID}\index{GateOutputVolumeID@{GateOutputVolumeID}}
+
+
+Class for storing an identifier of a volume as a vector of integer.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Output\+Volume\+ID.\+hh$>$}
+
+Inheritance diagram for Gate\+Output\+Volume\+ID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateOutputVolumeID}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOutputVolumeID_a9811a647efb9b1feb6d2e92816614b07}\label{classGateOutputVolumeID_a9811a647efb9b1feb6d2e92816614b07}} 
+{\bfseries Gate\+Output\+Volume\+ID} (size\+\_\+t its\+Size=OUTPUTVOLUMEID\+\_\+\+SIZE)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputVolumeID_a9688429754d74fefc89d0a872256d303}\label{classGateOutputVolumeID_a9688429754d74fefc89d0a872256d303}} 
+virtual {\bfseries $\sim$\+Gate\+Output\+Volume\+ID} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputVolumeID_a13edfc3899e6b6d4b2c27ae142ea3f90}\label{classGateOutputVolumeID_a13edfc3899e6b6d4b2c27ae142ea3f90}} 
+G4bool {\bfseries Is\+Valid} () const
+\begin{DoxyCompactList}\small\item\em Check whether the ID is valid, i.\+e. not empty and with no negative element. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOutputVolumeID_afbdfc1095cb5da9c0c10fd564a73a28e}\label{classGateOutputVolumeID_afbdfc1095cb5da9c0c10fd564a73a28e}} 
+G4bool {\bfseries Is\+Invalid} () const
+\begin{DoxyCompactList}\small\item\em Check whether the ID is invalid, i.\+e. either empty or with at least one negative element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} \mbox{\hyperlink{classGateOutputVolumeID_ac90c691f6e1520d1c675328f52f7da05}{Top}} (size\+\_\+t depth) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOutputVolumeID_a432f2a3b0961e1b8672893c8344b2464}\label{classGateOutputVolumeID_a432f2a3b0961e1b8672893c8344b2464}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, const \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} \&volume\+ID)
+\begin{DoxyCompactList}\small\item\em Friend function\+: inserts (prints) a \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} into a stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for storing an identifier of a volume as a vector of integer. 
+
+This volume ID can be stored into output files for analysis and image reconstruction
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item Output volume IDs are created by systems (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}}) after analysis of a hit\+: Each output volume ID identifies a volume according to the geometry model defined by the system
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateOutputVolumeID_ac90c691f6e1520d1c675328f52f7da05}\label{classGateOutputVolumeID_ac90c691f6e1520d1c675328f52f7da05}} 
+\index{GateOutputVolumeID@{GateOutputVolumeID}!Top@{Top}}
+\index{Top@{Top}!GateOutputVolumeID@{GateOutputVolumeID}}
+\doxysubsubsection{\texorpdfstring{Top()}{Top()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} Gate\+Output\+Volume\+ID\+::\+Top (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{depth }\end{DoxyParamCaption}) const}
+
+Extract the topmost elements of the ID, down to the level \textquotesingle{}depth\textquotesingle{} Returns an ID with (depth+1) elements 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Output\+Volume\+ID.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Output\+Volume\+ID.\+cc\end{DoxyCompactItemize}

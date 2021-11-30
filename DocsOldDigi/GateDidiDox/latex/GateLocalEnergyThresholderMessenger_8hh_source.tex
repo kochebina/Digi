@@ -1,0 +1,58 @@
+\hypertarget{GateLocalEnergyThresholderMessenger_8hh_source}{}\doxysection{Gate\+Local\+Energy\+Thresholder\+Messenger.\+hh}
+\label{GateLocalEnergyThresholderMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEnergyThresholderMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEnergyThresholderMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateLocalEnergyThresholderMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateLocalEnergyThresholderMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVEffectiveEnergyLaw.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEnergyThresholder}{GateLocalEnergyThresholder}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEnergyThresholderMessenger}{GateLocalEnergyThresholderMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30   \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \mbox{\hyperlink{classGateLocalEnergyThresholderMessenger}{GateLocalEnergyThresholderMessenger}}(\mbox{\hyperlink{classGateLocalEnergyThresholder}{GateLocalEnergyThresholder}}* itsEnergyThresholder);}
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalEnergyThresholderMessenger}{\string~GateLocalEnergyThresholderMessenger}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{35       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue2(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateLocalEnergyThresholder}{GateLocalEnergyThresholder}}* GetLocalEnergyThresholder()}
+\DoxyCodeLine{38       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateLocalEnergyThresholder}{GateLocalEnergyThresholder}}*) GetPulseProcessor(); \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{private}:}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}}* CreateEffectiveEnergyLaw(\textcolor{keyword}{const} G4String\& law, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{43     G4UIcmdWithAString   *newVolCmd;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     std::vector<G4UIdirectory*> m\_volDirectory;}
+\DoxyCodeLine{46     std::vector<G4UIcmdWithAString*>  lawCmd;}
+\DoxyCodeLine{47     std::vector<G4UIcmdWithADoubleAndUnit*> thresholdCmd;}
+\DoxyCodeLine{48     std::vector<G4String> m\_name;}
+\DoxyCodeLine{49     G4int m\_count;}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

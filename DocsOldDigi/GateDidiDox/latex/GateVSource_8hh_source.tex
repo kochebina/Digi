@@ -1,0 +1,225 @@
+\hypertarget{GateVSource_8hh_source}{}\doxysection{Gate\+VSource.\+hh}
+\label{GateVSource_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVSource.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVSource.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATEVSOURCE\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATEVSOURCE\_H 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4SingleParticleSource.hh"{}}}
+\DoxyCodeLine{17 \textcolor{comment}{//\#include "{}G4VPrimaryGenerator.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4PrimaryParticle.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateSimplifiedDecay.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateSPSPosDistribution.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateSPSEneDistribution.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateSPSAngDistribution.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateVSourceMessenger.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateSingleParticleSourceMessenger.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateImage.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4Colour.hh"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{31 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSource}{GateVSource}} : \textcolor{keyword}{public} G4SingleParticleSource}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateVSource}{GateVSource}}( G4String name );}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVSource}{\string~GateVSource}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{virtual}  \textcolor{keywordtype}{void} Initialize()\{\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetName( G4String value ) \{ m\_name = value; \}}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} G4String GetName()             \{ \textcolor{keywordflow}{return} m\_name; \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetType( G4String value ) \{ m\_type = value; \}}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} G4String GetType()             \{ \textcolor{keywordflow}{return} m\_type; \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetSourceID(G4int value)  \{ m\_sourceID = value; \}}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} G4int GetSourceID()            \{ \textcolor{keywordflow}{return} m\_sourceID; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetActivity(G4double value) \{ m\_activity = value; \}}
+\DoxyCodeLine{50   \textcolor{comment}{//virtual void SetActivity();}}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} G4double GetActivity()           \{ \textcolor{keywordflow}{return} m\_activity; \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetStartTime(G4double value) \{ m\_startTime = value; \}}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} G4double GetStartTime()           \{ \textcolor{keywordflow}{return} m\_startTime; \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetTime(G4double value) \{ m\_time = value; \}}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} G4double GetTime()           \{ \textcolor{keywordflow}{return} m\_time; \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNeedInit(G4bool value) \{ m\_needInit = value; \}}
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} G4bool GetNeedInit()           \{ \textcolor{keywordflow}{return} m\_needInit; \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetForcedUnstableFlag( G4bool value ) \{ m\_forcedUnstableFlag = value; \}}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} G4bool GetForcedUnstableFlag()             \{ \textcolor{keywordflow}{return} m\_forcedUnstableFlag; \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetAccolinearityFlag( G4bool value ) \{ m\_accolinearityFlag = value; \}}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} G4bool GetAccolinearityFlag()            \{ \textcolor{keywordflow}{return} m\_accolinearityFlag; \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetAccoValue( G4double value ) \{ m\_accoValue = value; \}}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} G4double GetAccoValue()             \{ \textcolor{keywordflow}{return} m\_accoValue; \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetIfSourceVoxelized( G4bool value ) \{ mIsSourceVoxelized = value; \};      \textcolor{comment}{// added by I. Martinez-\/Rovira (immamartinez@gmail.com)}}
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} G4bool GetIfSourceVoxelized() \{ \textcolor{keywordflow}{return} mIsSourceVoxelized; \};    \textcolor{comment}{// added by I. Martinez-\/Rovira (immamartinez@gmail.com)}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{comment}{// getter and setter for T\_1/2, without introducing one more variable}}
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetForcedHalfLife( G4double value ) \{ m\_forcedLifeTime =  value / log( 2. ); \}}
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} G4double GetForcedHalfLife()             \{ \textcolor{keywordflow}{return} m\_forcedLifeTime * log( 2. ); \};}
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetIonDefaultHalfLife();}
+\DoxyCodeLine{78   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Update(\textcolor{keywordtype}{double} time);}
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} G4double GetNextTime( G4double timeStart );}
+\DoxyCodeLine{80   \textcolor{comment}{//virtual G4double GetNextTimeInSuccessiveSourceMode(G4double timeStart, G4int mNbOfParticleInTheCurrentRun);}}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Dump( G4int level );}
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetVerboseLevel( G4int value ) \{ nVerboseLevel = value; \}}
+\DoxyCodeLine{83   \textcolor{keyword}{virtual} G4int GetVerboseLevel()             \{ \textcolor{keywordflow}{return} nVerboseLevel; \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{comment}{// Main functions}}
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSource_a985e7b0a62bff42b400c97ef3bf71bab}{GeneratePrimaries}}(G4Event* event);}
+\DoxyCodeLine{87   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} GeneratePrimaryVertex(G4Event* event);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{keywordtype}{void} GeneratePrimariesForBackToBackSource(G4Event* event);}
+\DoxyCodeLine{90   \textcolor{keywordtype}{void} GeneratePrimariesForFastI124Source(G4Event* event);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSPSPosDistribution}{GateSPSPosDistribution}}* GetPosDist() \{ \textcolor{keywordflow}{return} m\_posSPS ; \}}
+\DoxyCodeLine{93   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSPSEneDistribution}{GateSPSEneDistribution}}* GetEneDist() \{ \textcolor{keywordflow}{return} m\_eneSPS ; \}}
+\DoxyCodeLine{94   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSPSAngDistribution}{GateSPSAngDistribution}}* GetAngDist() \{ \textcolor{keywordflow}{return} m\_angSPS ; \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{virtual} G4ThreeVector getRotX() \{ \textcolor{keywordflow}{return} mRotX ; \}}
+\DoxyCodeLine{97   \textcolor{keyword}{virtual} G4ThreeVector getRotY() \{ \textcolor{keywordflow}{return} mRotY ; \}}
+\DoxyCodeLine{98   \textcolor{keyword}{virtual} G4ThreeVector getRotZ() \{ \textcolor{keywordflow}{return} mRotZ ; \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   G4String GetRelativePlacementVolume();}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} SetRelativePlacementVolume(G4String volname);}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} EnableRegularActivity(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{103   \textcolor{comment}{//  void SetTimeInterval(double time);}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} SetNumberOfParticles(\textcolor{keywordtype}{int} n)\{m\_NbOfParticles=n;\}}
+\DoxyCodeLine{106   G4int GetNumberOfParticles()\{\textcolor{keywordflow}{return} m\_NbOfParticles;\}}
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} SetSourceWeight(\textcolor{keywordtype}{double} v)\{m\_weight=v;\}}
+\DoxyCodeLine{108   G4double GetSourceWeight()\{\textcolor{keywordflow}{return} m\_weight;\}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} SetTimeActivityFilename(G4String filename);}
+\DoxyCodeLine{111   \textcolor{comment}{//void AddTimeSlicesFromFile(G4String filename);}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{comment}{// Class function related to the userFluenceImage source}}
+\DoxyCodeLine{114   \textcolor{comment}{// -\/ initialization and 2D biased random engine}}
+\DoxyCodeLine{115   \textcolor{keywordtype}{void} SetUserFluenceFilename( G4String s ) \{ mUserFluenceFilename = s; \}}
+\DoxyCodeLine{116   \textcolor{keywordtype}{void} InitializeUserFluence();}
+\DoxyCodeLine{117   G4ThreeVector UserFluencePosGenerateOne();}
+\DoxyCodeLine{118   \textcolor{comment}{// -\/ copy of useful functions from G4SPSPosDistribution (unreachable G4 class)}}
+\DoxyCodeLine{119   \textcolor{keywordtype}{void} SetPosRot1(G4ThreeVector);}
+\DoxyCodeLine{120   \textcolor{keywordtype}{void} SetPosRot2(G4ThreeVector);}
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} SetCentreCoords(G4ThreeVector);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// Class function related to the userFocused angDist type}}
+\DoxyCodeLine{124   \textcolor{keywordtype}{void} InitializeUserFocalShape();}
+\DoxyCodeLine{125   G4ThreeVector UserFocalShapeGenerateOne();}
+\DoxyCodeLine{126   G4SPSPosDistribution *GetUserFocalShape() \{ \textcolor{keywordflow}{return} mUserFocalShape; \}}
+\DoxyCodeLine{127   \textcolor{keywordtype}{void} SetUserFocalShapeFlag(G4bool b) \{ mUserFocalShapeInitialisation = b; \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129   \textcolor{comment}{//void AddTimeSlices(double time, int nParticles);}}
+\DoxyCodeLine{130   \textcolor{comment}{//std::vector<double> GetTimePerSlice() \{return mTimePerSlice;\}}}
+\DoxyCodeLine{131   \textcolor{comment}{//std::vector<int> GetNumberOfParticlesPerSlice() \{return mNumberOfParticlesPerSlice;\}}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133   \textcolor{keywordtype}{void} SetIntensity(G4double value)\{m\_intensity = value;\}}
+\DoxyCodeLine{134   G4double GetIntensity()\{\textcolor{keywordflow}{return} m\_intensity ;\}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136   \textcolor{keywordtype}{void} Visualize( G4String parms);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \textcolor{keywordtype}{void} TrigMat();}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{keyword}{private}:}
+\DoxyCodeLine{141   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4Colour>}} \mbox{\hyperlink{classGateMap}{GateColorMap}} ;}
+\DoxyCodeLine{142   \textcolor{keyword}{typedef} GateColorMap::MapPair GateColorPair ;}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144   \textcolor{keyword}{static} GateColorPair theColorTable[];}
+\DoxyCodeLine{145   \textcolor{keyword}{static} \mbox{\hyperlink{classGateMap}{GateColorMap}} theColorMap;}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{148   \mbox{\hyperlink{classGateVSourceMessenger}{GateVSourceMessenger}}*               m\_sourceMessenger;}
+\DoxyCodeLine{149   \mbox{\hyperlink{classGateSingleParticleSourceMessenger}{GateSingleParticleSourceMessenger}}*  m\_SPSMessenger ;}
+\DoxyCodeLine{150   \mbox{\hyperlink{classGateSPSPosDistribution}{GateSPSPosDistribution}}*             m\_posSPS;}
+\DoxyCodeLine{151   \mbox{\hyperlink{classGateSPSEneDistribution}{GateSPSEneDistribution}}*             m\_eneSPS;}
+\DoxyCodeLine{152   \mbox{\hyperlink{classGateSPSAngDistribution}{GateSPSAngDistribution}}*             m\_angSPS;}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154   \textcolor{keywordtype}{void} ChangeParticlePositionRelativeToAttachedVolume(G4ThreeVector \& position);}
+\DoxyCodeLine{155   \textcolor{keywordtype}{void} ChangeParticleMomentumRelativeToAttachedVolume(G4ParticleMomentum \& momentum);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   G4String   m\_name;         \textcolor{comment}{// source name}}
+\DoxyCodeLine{158   G4String   m\_type;         \textcolor{comment}{// source type}}
+\DoxyCodeLine{159   G4int      m\_sourceID;     \textcolor{comment}{// source progressive number}}
+\DoxyCodeLine{160   G4double   m\_activity;     \textcolor{comment}{// activity of the source (e.g. \# becquerel)}}
+\DoxyCodeLine{161   G4double   m\_startTime;}
+\DoxyCodeLine{162   G4double   m\_time;}
+\DoxyCodeLine{163   G4bool     m\_needInit;}
+\DoxyCodeLine{164   G4int      nVerboseLevel;}
+\DoxyCodeLine{165   G4bool     m\_forcedUnstableFlag;}
+\DoxyCodeLine{166   G4double   m\_forcedLifeTime;}
+\DoxyCodeLine{167   G4bool     m\_accolinearityFlag;}
+\DoxyCodeLine{168   G4double   m\_accoValue;}
+\DoxyCodeLine{169   G4String   mRelativePlacementVolumeName;}
+\DoxyCodeLine{170   G4String   m\_materialName;}
+\DoxyCodeLine{171   \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * mVolume;}
+\DoxyCodeLine{172   G4bool    mIsSourceVoxelized;  \textcolor{comment}{// added by I. Martinez-\/Rovira (immamartinez@gmail.com)}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174   G4double mEnergy;}
+\DoxyCodeLine{175   \textcolor{keywordtype}{bool} mEnableRegularActivity;}
+\DoxyCodeLine{176   G4double m\_timeInterval;}
+\DoxyCodeLine{177   G4double m\_weight;}
+\DoxyCodeLine{178   G4int m\_NbOfParticles;}
+\DoxyCodeLine{179   G4double m\_intensity;}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182   G4double mSourceTime;}
+\DoxyCodeLine{183   \textcolor{comment}{//std::vector<double> mTimePerSlice;}}
+\DoxyCodeLine{184   \textcolor{comment}{//std::vector<int> mNumberOfParticlesPerSlice;}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186   \textcolor{comment}{// Class members related to the userFluenceImage source}}
+\DoxyCodeLine{187   \textcolor{comment}{// -\/ initialization and 2D biased random engine}}
+\DoxyCodeLine{188   G4bool mIsUserFluenceActive;}
+\DoxyCodeLine{189   G4String mUserFluenceFilename;}
+\DoxyCodeLine{190   G4ThreeVector mUserFluenceVoxelSize;}
+\DoxyCodeLine{191   std::vector<double> mUserPosX;}
+\DoxyCodeLine{192   std::vector<double> mUserPosY;}
+\DoxyCodeLine{193   G4SPSRandomGenerator *mUserPosGenX;}
+\DoxyCodeLine{194   std::vector<G4SPSRandomGenerator*> mUserPosGenY;}
+\DoxyCodeLine{195   \textcolor{comment}{// -\/ copy of useful members from G4SPSPosDistribution (unreachable G4 class)}}
+\DoxyCodeLine{196   G4ThreeVector mCentreCoords;}
+\DoxyCodeLine{197   G4ThreeVector mRotX;}
+\DoxyCodeLine{198   G4ThreeVector mRotY;}
+\DoxyCodeLine{199   G4ThreeVector mRotZ;}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201     \textcolor{comment}{//userFocalShape}}
+\DoxyCodeLine{202   G4bool mIsUserFocalShapeActive;}
+\DoxyCodeLine{203   G4bool mUserFocalShapeInitialisation;}
+\DoxyCodeLine{204   G4double mUserFocalRadius;}
+\DoxyCodeLine{205   G4SPSPosDistribution *mUserFocalShape;}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207   std::vector<double> mTimeList;}
+\DoxyCodeLine{208   std::vector<double> mActivityList;}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210   \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{211     G4bool fAbortNow; \textcolor{comment}{// detector mode}}
+\DoxyCodeLine{212   G4ThreeVector fPosition;\textcolor{comment}{// for detector mode because G4Trajectory does not allow to set first trajectory point position !!!}}
+\DoxyCodeLine{213   G4ParticleDefinition* m\_pd;}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \};}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{keyword}{typedef} std::vector<GateVSource*> GateVSourceVector;}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

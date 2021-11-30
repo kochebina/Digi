@@ -1,0 +1,70 @@
+\hypertarget{GateVoxelCompressor_8hh_source}{}\doxysection{Gate\+Voxel\+Compressor.\+hh}
+\label{GateVoxelCompressor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelCompressor.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVoxelCompressor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GateVoxelCompressor\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GateVoxelCompressor\_H 1}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateCompressedVoxel.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVoxelCompressorMessenger.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelArrayStore}{GateGeometryVoxelArrayStore}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{bool} operator == (\textcolor{keyword}{const} std::valarray<unsigned short int>\& lhs, \textcolor{keyword}{const} std::valarray<unsigned short int>\& rhs);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelCompressor}{GateVoxelCompressor}}\{}
+\DoxyCodeLine{25   }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   }
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateVoxelCompressor}{GateVoxelCompressor}}(\mbox{\hyperlink{classGateGeometryVoxelArrayStore}{GateGeometryVoxelArrayStore}}* s);}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateVoxelCompressor}{\string~GateVoxelCompressor}}();}
+\DoxyCodeLine{30   }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} Initialize();\textcolor{comment}{/* PY Descourt 08/09/2009 */}  }
+\DoxyCodeLine{32     }
+\DoxyCodeLine{33   \textcolor{keywordtype}{void}      Compress();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{const} \mbox{\hyperlink{classGateCompressedVoxel}{GateCompressedVoxel}}\& GetVoxel(\textcolor{keywordtype}{int} copyNo)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (*m\_voxelSet)[copyNo]; \}}
+\DoxyCodeLine{36   \textcolor{keywordtype}{int}                        GetNbOfCopies()\textcolor{keyword}{      const }\{ \textcolor{keywordflow}{return} m\_voxelSet-\/>size();    \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{double} GetCompressionRatio() \textcolor{keyword}{const};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void}   MakeExclusionList(G4String s);}
+\DoxyCodeLine{41   }
+\DoxyCodeLine{42   G4String GetObjectName() \textcolor{keyword}{const};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} Print()\{}
+\DoxyCodeLine{45     \textcolor{keywordflow}{for} (voxelSet::iterator it=m\_voxelSet-\/>begin(); it!=m\_voxelSet-\/>end();it++) std::cout << (*it) << Gateendl;}
+\DoxyCodeLine{46   \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{private}:}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} runLength(\textcolor{keywordtype}{int} x1, \textcolor{keywordtype}{int} x2, voxelSet\& vs);}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} runLength2nd(voxelSet\& vs, \textcolor{keyword}{const} std::valarray<unsigned short int>\& chk, \textcolor{keywordtype}{int} fusion);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} AddMaterial(G4String m);}
+\DoxyCodeLine{53   \textcolor{keywordtype}{bool} isNotExcluded(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \textcolor{keywordtype}{int} n)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return}  m\_exclusionList-\/>find( n )==m\_exclusionList-\/>end();\}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{private}:}
+\DoxyCodeLine{56   }
+\DoxyCodeLine{57   \mbox{\hyperlink{classGateGeometryVoxelArrayStore}{GateGeometryVoxelArrayStore}}*   m\_array;}
+\DoxyCodeLine{58   voxelSet*                      m\_voxelSet;}
+\DoxyCodeLine{59   std::set<unsigned short int>*  m\_exclusionList;}
+\DoxyCodeLine{60   \mbox{\hyperlink{classGateVoxelCompressorMessenger}{GateVoxelCompressorMessenger}}*  m\_messenger;}
+\DoxyCodeLine{61   }
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

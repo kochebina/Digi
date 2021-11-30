@@ -1,0 +1,88 @@
+\hypertarget{GateBox_8hh_source}{}\doxysection{Gate\+Box.\+hh}
+\label{GateBox_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateBox.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateBox.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateBox\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateBox\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateObjectChildList.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4Box;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBoxMessenger}{GateBoxMessenger}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBox}{GateBox}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 public : }
+\DoxyCodeLine{30    \mbox{\hyperlink{classGateBox}{GateBox}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{31          G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{32          G4int depth=0); }
+\DoxyCodeLine{33   \textcolor{comment}{// Constructor}}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateBox}{GateBox}}(\textcolor{keyword}{const} G4String\& itsName, \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{35                 G4double itsXLength, G4double itsYLength, G4double itsZLength,}
+\DoxyCodeLine{36         G4bool itsFlagAcceptChildren=\textcolor{keyword}{true}, G4int depth=0);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{comment}{//Destructor}}
+\DoxyCodeLine{39    }
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateBox}{\string~GateBox}}();}
+\DoxyCodeLine{41    }
+\DoxyCodeLine{42   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateBox}{GateBox}})}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateBox_abf6fecd11a634bc00b391708b1f30dbe}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly); }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{47    }
+\DoxyCodeLine{50   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a09dd3f6805707ca57bc03bd1b07f218f}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis)   \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a094b89e36a2365f2fa9211fde7da4da2}{GetBoxHalfLength}}(axis); \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBox_add0afa54e0f28179f98ded0286e92ecc}{SetBoxXLength}} (G4double lengthXChoice);       }
+\DoxyCodeLine{54     }
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBox_aa37e5114bbdfb9cb8b99171dbbb3cb4d}{SetBoxYLength}} (G4double lengthYChoice);      }
+\DoxyCodeLine{57     }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBox_a007b4c3bc565878e6cbb803ff8a2e3b3}{SetBoxZLength}} (G4double lengthZChoice);   }
+\DoxyCodeLine{60     }
+\DoxyCodeLine{62   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a620bf69b70b41108767f62a6f3445180}{GetBoxLength}}(\textcolor{keywordtype}{size\_t} axis)      \{\textcolor{keywordflow}{return} mBoxLength[axis];\}}
+\DoxyCodeLine{64   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a0363ffd07850a081855e54a36e74275a}{GetBoxXLength}}()                 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a620bf69b70b41108767f62a6f3445180}{GetBoxLength}}(0);\}}
+\DoxyCodeLine{66   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a7876d4539444bb2a18bf219ab62dec2b}{GetBoxYLength}}()                 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a620bf69b70b41108767f62a6f3445180}{GetBoxLength}}(1);\}}
+\DoxyCodeLine{68   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a3facc6bd90cf64b20e5eb56d7f9b40be}{GetBoxZLength}}()                 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a620bf69b70b41108767f62a6f3445180}{GetBoxLength}}(2);\}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a094b89e36a2365f2fa9211fde7da4da2}{GetBoxHalfLength}}(\textcolor{keywordtype}{size\_t} axis)   \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a620bf69b70b41108767f62a6f3445180}{GetBoxLength}}(axis)/2.;\}}
+\DoxyCodeLine{73   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_ab4f732d72ecc2dc3d554497fedcbb6c9}{GetBoxXHalfLength}}()              \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a094b89e36a2365f2fa9211fde7da4da2}{GetBoxHalfLength}}(0);\}}
+\DoxyCodeLine{75   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a4ac5e23fc1af5b7fcf51b14d35496ded}{GetBoxYHalfLength}}()              \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a094b89e36a2365f2fa9211fde7da4da2}{GetBoxHalfLength}}(1);\}}
+\DoxyCodeLine{77   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateBox_a56481e04c6a757c543b22439f2b427f6}{GetBoxZHalfLength}}()              \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateBox_a094b89e36a2365f2fa9211fde7da4da2}{GetBoxHalfLength}}(2);\}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 protected :}
+\DoxyCodeLine{81    }
+\DoxyCodeLine{82   G4Box* pBoxSolid;}
+\DoxyCodeLine{83   G4LogicalVolume* pBoxLog;}
+\DoxyCodeLine{84   G4VPhysicalVolume* pBoxPhys; }
+\DoxyCodeLine{85   }
+\DoxyCodeLine{86    }
+\DoxyCodeLine{87 private :}
+\DoxyCodeLine{88    }
+\DoxyCodeLine{89   G4double mBoxLength[3];                       }
+\DoxyCodeLine{90    }
+\DoxyCodeLine{91   \mbox{\hyperlink{classGateBoxMessenger}{GateBoxMessenger}}* pMessenger; }
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 MAKE\_AUTO\_CREATOR\_VOLUME(box,\mbox{\hyperlink{classGateBox}{GateBox}})}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

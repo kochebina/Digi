@@ -1,0 +1,359 @@
+\hypertarget{classGateVImage}{}\doxysection{Gate\+VImage Class Reference}
+\label{classGateVImage}\index{GateVImage@{GateVImage}}
+
+
+3D images of Pixel\+Type values  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VImage.\+hh$>$}
+
+Inheritance diagram for Gate\+VImage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.696970cm]{classGateVImage}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImage_ad59b05034f80c1abe4f7783c15c0ab6e}\label{classGateVImage_ad59b05034f80c1abe4f7783c15c0ab6e}} 
+enum {\bfseries ESide} \{ \newline
+{\bfseries k\+Undefined}
+, {\bfseries k\+PX}
+, {\bfseries k\+MX}
+, {\bfseries k\+PY}
+, \newline
+{\bfseries k\+MY}
+, {\bfseries k\+PZ}
+, {\bfseries k\+MZ}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImage_a5aa8874f973bc99c23474970ae3c6b01}\label{classGateVImage_a5aa8874f973bc99c23474970ae3c6b01}} 
+void {\bfseries Set\+Resolution\+And\+Half\+Size} (G4\+Three\+Vector r, G4\+Three\+Vector h)
+\begin{DoxyCompactList}\small\item\em Sets the image dimensions from resolution and half size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a8fc12796e372361098acb234ea4b88be}\label{classGateVImage_a8fc12796e372361098acb234ea4b88be}} 
+void {\bfseries Set\+Resolution\+And\+Half\+Size} (G4\+Three\+Vector r, G4\+Three\+Vector h, G4\+Three\+Vector position)
+\item 
+\mbox{\Hypertarget{classGateVImage_a5c07236bf972ed5c157242a65c2c5d9e}\label{classGateVImage_a5c07236bf972ed5c157242a65c2c5d9e}} 
+void {\bfseries Set\+Resolution\+And\+Voxel\+Size} (G4\+Three\+Vector r, G4\+Three\+Vector v)
+\begin{DoxyCompactList}\small\item\em Sets the image dimensions from resolution and voxel size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_af375afb98a27272442e663ca997891df}\label{classGateVImage_af375afb98a27272442e663ca997891df}} 
+void {\bfseries Set\+Resolution\+And\+Voxel\+Size} (G4\+Three\+Vector r, G4\+Three\+Vector v, G4\+Three\+Vector position)
+\item 
+\mbox{\Hypertarget{classGateVImage_a6d1fd4fbc83efbb4c2d172aeb08e101a}\label{classGateVImage_a6d1fd4fbc83efbb4c2d172aeb08e101a}} 
+void {\bfseries Set\+Resolution\+And\+Half\+Size\+Cylinder} (G4\+Three\+Vector r, G4\+Three\+Vector h, G4\+Three\+Vector position)
+\begin{DoxyCompactList}\small\item\em Sets the image dimensions from resolution and half size for cylindrical symmetry. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_afb9b10f9a6d0382e0d98fae73dfcb5ef}\label{classGateVImage_afb9b10f9a6d0382e0d98fae73dfcb5ef}} 
+void {\bfseries Set\+Resolution\+And\+Half\+Size\+Cylinder} (G4\+Three\+Vector r, G4\+Three\+Vector h)
+\item 
+virtual void \mbox{\hyperlink{classGateVImage_ac2b40a9c3f7bd0b5c030f44d00a4a82f}{Allocate}} ()=0
+\begin{DoxyCompactList}\small\item\em Allocates the data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_ac9a2ffb74097469b343e881df49759c7}\label{classGateVImage_ac9a2ffb74097469b343e881df49759c7}} 
+G4\+Three\+Vector {\bfseries Get\+Size} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a65948ac4ab270a51de6a3568271ffd99}\label{classGateVImage_a65948ac4ab270a51de6a3568271ffd99}} 
+G4\+Three\+Vector {\bfseries Get\+Half\+Size} () const
+\begin{DoxyCompactList}\small\item\em Returns the half size of the image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_afd8c33a20bbd18f62e5f8ee2c5b2f378}\label{classGateVImage_afd8c33a20bbd18f62e5f8ee2c5b2f378}} 
+G4\+Three\+Vector {\bfseries Get\+Resolution} () const
+\begin{DoxyCompactList}\small\item\em Returns the resolution of the image (number of voxels in x,y and z directions, i.\+e. number of columns, lines and planes) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_aa436d982d6775e762bf648ddad0f10ac}\label{classGateVImage_aa436d982d6775e762bf648ddad0f10ac}} 
+G4\+Three\+Vector {\bfseries Get\+Voxel\+Size} () const
+\begin{DoxyCompactList}\small\item\em Returns the voxels size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a051181d14b59b5cfb4e15224a7e33df7}\label{classGateVImage_a051181d14b59b5cfb4e15224a7e33df7}} 
+G4double {\bfseries Get\+Voxel\+Volume} () const
+\begin{DoxyCompactList}\small\item\em Returns the volume of the voxels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_aabf2c611165eba1abc611c5b612bbbc9}\label{classGateVImage_aabf2c611165eba1abc611c5b612bbbc9}} 
+int {\bfseries Get\+Number\+Of\+Values} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of values in the image (i.\+e. the number of voxels) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_af8aec410e74fb87153774e2e982683bc}\label{classGateVImage_af8aec410e74fb87153774e2e982683bc}} 
+int {\bfseries Get\+Line\+Size} () const
+\begin{DoxyCompactList}\small\item\em Returns the line size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a9ef34be4305a402b50e91a1b140dbc35}\label{classGateVImage_a9ef34be4305a402b50e91a1b140dbc35}} 
+int {\bfseries Get\+Plane\+Size} () const
+\begin{DoxyCompactList}\small\item\em Returns the plane size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a5bd2785be70a4c87c5f337de10f0017e}\label{classGateVImage_a5bd2785be70a4c87c5f337de10f0017e}} 
+G4\+Three\+Vector {\bfseries Get\+Origin} () const
+\begin{DoxyCompactList}\small\item\em Returns origin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a958d72aa92b0fa1b237ce548f8cba89f}\label{classGateVImage_a958d72aa92b0fa1b237ce548f8cba89f}} 
+void {\bfseries Set\+Origin} (G4\+Three\+Vector o)
+\item 
+\mbox{\Hypertarget{classGateVImage_abe920c5ad9a75adf60a9f1cf042177ce}\label{classGateVImage_abe920c5ad9a75adf60a9f1cf042177ce}} 
+const G4\+Rotation\+Matrix \& {\bfseries Get\+Transform\+Matrix} () const
+\item 
+\mbox{\Hypertarget{classGateVImage_a3d092e62dd0d9e2d9d3447bb6a2a3b74}\label{classGateVImage_a3d092e62dd0d9e2d9d3447bb6a2a3b74}} 
+void {\bfseries Set\+Transform\+Matrix} (const G4\+Rotation\+Matrix \&trans\+Matrix)
+\item 
+\mbox{\Hypertarget{classGateVImage_a5af0cde381b672dd3e58e052572e2651}\label{classGateVImage_a5af0cde381b672dd3e58e052572e2651}} 
+bool {\bfseries Has\+Same\+Resolution\+Than} (const \mbox{\hyperlink{classGateVImage}{Gate\+VImage}} \&image) const
+\item 
+\mbox{\Hypertarget{classGateVImage_ab8892ebccb4f18851656827205a6bda3}\label{classGateVImage_ab8892ebccb4f18851656827205a6bda3}} 
+bool {\bfseries Has\+Same\+Resolution\+Than} (const \mbox{\hyperlink{classGateVImage}{Gate\+VImage}} $\ast$p\+Image) const
+\item 
+\mbox{\Hypertarget{classGateVImage_a8bfeba4c947fdaa8b89c3c4b01a2d628}\label{classGateVImage_a8bfeba4c947fdaa8b89c3c4b01a2d628}} 
+G4\+Three\+Vector {\bfseries Get\+Coordinates\+From\+Index} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the voxel\textquotesingle{}s coordinates from its index \+: OK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a8866a9a736124ce229e0dc37241e0a72}\label{classGateVImage_a8866a9a736124ce229e0dc37241e0a72}} 
+int {\bfseries Get\+Index\+From\+Coordinates} (const G4\+Three\+Vector \&coords) const
+\begin{DoxyCompactList}\small\item\em Returns the voxel\textquotesingle{}s index from its coordinates \+: OK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a3eb86c39af3c5da55f55b3cf7f8f8a08}\label{classGateVImage_a3eb86c39af3c5da55f55b3cf7f8f8a08}} 
+G4\+Three\+Vector {\bfseries Get\+Voxel\+Center\+From\+Coordinates} (G4\+Three\+Vector coords) const
+\begin{DoxyCompactList}\small\item\em Returns the position of the center of the voxel from the coordinates \+: OK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a8dbcf903958f44f8fc4703f937e1d823}\label{classGateVImage_a8dbcf903958f44f8fc4703f937e1d823}} 
+G4\+Three\+Vector {\bfseries Get\+Voxel\+Center\+From\+Index} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the position of the center of the voxel from the index \+: OK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a1274e4aee513f8d10f1be9a4eae1ee86}\label{classGateVImage_a1274e4aee513f8d10f1be9a4eae1ee86}} 
+G4\+Three\+Vector {\bfseries Get\+Voxel\+Corner\+From\+Coordinates} (G4\+Three\+Vector coords) const
+\begin{DoxyCompactList}\small\item\em Returns the position of the corner of the voxel from the coordinates \+: OK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a72d3ff121b5c5d290407d43676fb14c0}\label{classGateVImage_a72d3ff121b5c5d290407d43676fb14c0}} 
+G4\+Three\+Vector {\bfseries Get\+Voxel\+Corner\+From\+Index} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the position of the corner of the voxel from the index \+: OK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a1f7d72a17b02091102dd0f2f84831fe7}\label{classGateVImage_a1f7d72a17b02091102dd0f2f84831fe7}} 
+G4double {\bfseries Get\+XVoxel\+Corner\+From\+XCoordinate} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns the x of the corner of the voxel given the x coordinate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a0555a59dcf4fb360c1326b25aae29f62}\label{classGateVImage_a0555a59dcf4fb360c1326b25aae29f62}} 
+G4double {\bfseries Get\+YVoxel\+Corner\+From\+YCoordinate} (int j) const
+\begin{DoxyCompactList}\small\item\em Returns the y of the corner of the voxel given the y coordinate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_a028d1c8bd1bfbdadcb6f55c92faf54c8}\label{classGateVImage_a028d1c8bd1bfbdadcb6f55c92faf54c8}} 
+G4double {\bfseries Get\+ZVoxel\+Corner\+From\+ZCoordinate} (int k) const
+\begin{DoxyCompactList}\small\item\em Returns the z of the corner of the voxel given the z coordinate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImage_ae0957dee79150b299cc933cc22c3fc31}\label{classGateVImage_ae0957dee79150b299cc933cc22c3fc31}} 
+G4int {\bfseries Get\+Voxel\+Nx} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_ab2daa094400bc868c678c0fb832ec9f5}\label{classGateVImage_ab2daa094400bc868c678c0fb832ec9f5}} 
+G4int {\bfseries Get\+Voxel\+Ny} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_aba1c904e73e851e96f3626568c47d322}\label{classGateVImage_aba1c904e73e851e96f3626568c47d322}} 
+G4int {\bfseries Get\+Voxel\+Nz} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_a9289824eda9f192806596870418e2c1b}\label{classGateVImage_a9289824eda9f192806596870418e2c1b}} 
+int {\bfseries Get\+Index\+From\+Position} (const G4\+Three\+Vector \&position) const
+\item 
+\mbox{\Hypertarget{classGateVImage_a81f38da6e2bff6f3fcdf4b8762d2789a}\label{classGateVImage_a81f38da6e2bff6f3fcdf4b8762d2789a}} 
+int {\bfseries Get\+Index\+From\+Position\+And\+Direction} (const G4\+Three\+Vector \&position, const G4\+Three\+Vector \&direction) const
+\item 
+\mbox{\Hypertarget{classGateVImage_abe78d8111ea07caba98533aae89f4e99}\label{classGateVImage_abe78d8111ea07caba98533aae89f4e99}} 
+int {\bfseries Get\+Index\+From\+Post\+Position\+And\+Direction} (const G4\+Three\+Vector \&position, const G4\+Three\+Vector \&direction) const
+\item 
+\mbox{\Hypertarget{classGateVImage_a337f1f7ad9ebba8e767609bc06f8aac1}\label{classGateVImage_a337f1f7ad9ebba8e767609bc06f8aac1}} 
+int {\bfseries Get\+Index\+From\+Post\+Position} (const G4\+Three\+Vector \&pre, const G4\+Three\+Vector \&post) const
+\item 
+\mbox{\Hypertarget{classGateVImage_ac3f33fef618530798540b69f40ea89e7}\label{classGateVImage_ac3f33fef618530798540b69f40ea89e7}} 
+int {\bfseries Get\+Index\+From\+Pre\+Position} (const G4\+Three\+Vector \&pre, const G4\+Three\+Vector \&post) const
+\item 
+\mbox{\Hypertarget{classGateVImage_ab558e8967815e824e220a9dfd250f160}\label{classGateVImage_ab558e8967815e824e220a9dfd250f160}} 
+int {\bfseries Get\+Index\+From\+Position\+Cylindrical\+CS} (const G4\+Three\+Vector \&position) const
+\item 
+\mbox{\Hypertarget{classGateVImage_a82fce2239d06456a122f3accbab4b8af}\label{classGateVImage_a82fce2239d06456a122f3accbab4b8af}} 
+int {\bfseries Get\+Index\+From\+Post\+Position} (const double t, const double pret, const double postt, const double resolutiont) const
+\item 
+\mbox{\Hypertarget{classGateVImage_a932e4c195620c2b8cb5c86af5a41cbf1}\label{classGateVImage_a932e4c195620c2b8cb5c86af5a41cbf1}} 
+int {\bfseries Get\+Index\+From\+Pre\+Position} (const double t, const double pret, const double postt, const double resolutiont) const
+\item 
+\mbox{\Hypertarget{classGateVImage_a344c4968d945274584ff2fc14889a1c6}\label{classGateVImage_a344c4968d945274584ff2fc14889a1c6}} 
+G4\+Three\+Vector {\bfseries Get\+Coordinates\+From\+Position} (const G4\+Three\+Vector \&position)
+\item 
+\mbox{\Hypertarget{classGateVImage_a88912e4c6371be63974d620d11b5a07f}\label{classGateVImage_a88912e4c6371be63974d620d11b5a07f}} 
+void {\bfseries Get\+Coordinates\+From\+Position} (const G4\+Three\+Vector \&position, int \&i, int \&j, int \&k)
+\item 
+\mbox{\Hypertarget{classGateVImage_aa31003827e810668d2f7f31e71c971c6}\label{classGateVImage_aa31003827e810668d2f7f31e71c971c6}} 
+G4\+Three\+Vector {\bfseries Get\+Non\+Integer\+Coordinates\+From\+Position} (G4\+Three\+Vector position)
+\item 
+\mbox{\Hypertarget{classGateVImage_a14fb552ef0abe4cef2e05578d873a30a}\label{classGateVImage_a14fb552ef0abe4cef2e05578d873a30a}} 
+ESide {\bfseries Get\+Side\+From\+Point\+And\+Coordinate} (const G4\+Three\+Vector \&p, const G4\+Three\+Vector \&c)
+\item 
+virtual void \mbox{\hyperlink{classGateVImage_af62bfa8766718e09282ff0440a299192}{Write}} (G4\+String filename, const G4\+String \&comment=\char`\"{}\char`\"{})=0
+\begin{DoxyCompactList}\small\item\em Writes the image to a file with comment (the format is detected automatically) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVImage_aab825e7a0a33552a9a1514283a4b8f8b}{Read}} (G4\+String filename)=0
+\begin{DoxyCompactList}\small\item\em Reads the image from a file (the format is detected automatically) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVImage_a037887a44e3e3b049d82738daa498f37}{Print\+Info}} ()=0
+\begin{DoxyCompactList}\small\item\em Displays info about the image to standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImage_a86c3b8d0a1459c670cb3b7f73f762426}\label{classGateVImage_a86c3b8d0a1459c670cb3b7f73f762426}} 
+void {\bfseries Update\+Number\+Of\+Values} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_a099cd493cb857a5b6d6ebed0a00242d9}\label{classGateVImage_a099cd493cb857a5b6d6ebed0a00242d9}} 
+void {\bfseries Update\+Sizes\+From\+Resolution\+And\+Half\+Size} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_a8cdc83d669f1b0926d89c57fc9ae1500}\label{classGateVImage_a8cdc83d669f1b0926d89c57fc9ae1500}} 
+void {\bfseries Update\+Sizes\+From\+Resolution\+And\+Voxel\+Size} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_af3a2d4b6671aa2992c263845c9b6cabf}\label{classGateVImage_af3a2d4b6671aa2992c263845c9b6cabf}} 
+void {\bfseries Update\+Sizes\+From\+Resolution\+And\+Half\+Size\+Cylinder} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_a28576e2ae3f9c2c148905b50afd2c860}\label{classGateVImage_a28576e2ae3f9c2c148905b50afd2c860}} 
+void {\bfseries Update\+Sizes\+From\+Resolution\+And\+Voxel\+Size\+Cylinder} ()
+\item 
+\mbox{\Hypertarget{classGateVImage_ada6ff4dd4d0ed32695d85203b9e0464a}\label{classGateVImage_ada6ff4dd4d0ed32695d85203b9e0464a}} 
+void {\bfseries Update\+Data\+For\+Root\+Output} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImage_a5b1fe6294ef27c3454fae5335ca7e594}\label{classGateVImage_a5b1fe6294ef27c3454fae5335ca7e594}} 
+int {\bfseries nb\+Of\+Values}
+\item 
+\mbox{\Hypertarget{classGateVImage_a5bf385dc50976aba54da5d165de309ea}\label{classGateVImage_a5bf385dc50976aba54da5d165de309ea}} 
+G4\+Three\+Vector {\bfseries size}
+\item 
+\mbox{\Hypertarget{classGateVImage_a1f3b884423cea208f8ed65d58c9904ad}\label{classGateVImage_a1f3b884423cea208f8ed65d58c9904ad}} 
+G4\+Three\+Vector {\bfseries half\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImage_a778c083621c12855c26a8727ea70764f}\label{classGateVImage_a778c083621c12855c26a8727ea70764f}} 
+G4\+Three\+Vector {\bfseries resolution}
+\item 
+\mbox{\Hypertarget{classGateVImage_a550c43613e2d06ca562510c11438dee3}\label{classGateVImage_a550c43613e2d06ca562510c11438dee3}} 
+G4\+Three\+Vector {\bfseries voxel\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImage_a9c86fc1ab4abcca9fa4627aa6c9ded94}\label{classGateVImage_a9c86fc1ab4abcca9fa4627aa6c9ded94}} 
+G4\+Three\+Vector {\bfseries origin}
+\item 
+\mbox{\Hypertarget{classGateVImage_aa7ce339404153833bc1557e0339456e8}\label{classGateVImage_aa7ce339404153833bc1557e0339456e8}} 
+G4\+Rotation\+Matrix {\bfseries transform\+Matrix}
+\item 
+\mbox{\Hypertarget{classGateVImage_af2f0a472a2bffd1892d1549a7ff4f482}\label{classGateVImage_af2f0a472a2bffd1892d1549a7ff4f482}} 
+G4double {\bfseries voxel\+Volume}
+\item 
+\mbox{\Hypertarget{classGateVImage_a08b8319ea686c79b4821721e68e32b34}\label{classGateVImage_a08b8319ea686c79b4821721e68e32b34}} 
+G4double {\bfseries k\+Car\+Tolerance}
+\item 
+\mbox{\Hypertarget{classGateVImage_a4604d49c6b69bc59ad4b1edfc9e6a76a}\label{classGateVImage_a4604d49c6b69bc59ad4b1edfc9e6a76a}} 
+G4\+Three\+Vector {\bfseries half\+Size\+Minus\+Voxel\+Center}
+\item 
+\mbox{\Hypertarget{classGateVImage_ac57ccf712b46d5de4d9f0edaf1483b61}\label{classGateVImage_ac57ccf712b46d5de4d9f0edaf1483b61}} 
+int {\bfseries plane\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImage_a4de95f12192d8a4e486eab63eabd70be}\label{classGateVImage_a4de95f12192d8a4e486eab63eabd70be}} 
+int {\bfseries line\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImage_aecfc7adbec0f4eb4c479408413b11b60}\label{classGateVImage_aecfc7adbec0f4eb4c479408413b11b60}} 
+G4\+Three\+Vector {\bfseries m\+Position}
+\item 
+\mbox{\Hypertarget{classGateVImage_a124bc69451cc56006d61dd947ed8eba4}\label{classGateVImage_a124bc69451cc56006d61dd947ed8eba4}} 
+G4int {\bfseries m\+\_\+voxel\+Nx}
+\item 
+\mbox{\Hypertarget{classGateVImage_ac4f2dc9f439525172e8782a6781e3549}\label{classGateVImage_ac4f2dc9f439525172e8782a6781e3549}} 
+G4int {\bfseries m\+\_\+voxel\+Ny}
+\item 
+\mbox{\Hypertarget{classGateVImage_a930b527866d98ab9d5d97962831d89f2}\label{classGateVImage_a930b527866d98ab9d5d97962831d89f2}} 
+G4int {\bfseries m\+\_\+voxel\+Nz}
+\item 
+\mbox{\Hypertarget{classGateVImage_ae640de94032f6c36d540b5eff1bcdd90}\label{classGateVImage_ae640de94032f6c36d540b5eff1bcdd90}} 
+int {\bfseries m\+Root\+Histo\+Dim}
+\item 
+\mbox{\Hypertarget{classGateVImage_aae8be0316ba62bc7ca49a888941d9aaa}\label{classGateVImage_aae8be0316ba62bc7ca49a888941d9aaa}} 
+int {\bfseries m\+Root\+Histo\+Binx\+Nb}
+\item 
+\mbox{\Hypertarget{classGateVImage_a280f4aa7643e1989d20ee30777c1e03e}\label{classGateVImage_a280f4aa7643e1989d20ee30777c1e03e}} 
+double {\bfseries m\+Root\+Histo\+Binx\+Low}
+\item 
+\mbox{\Hypertarget{classGateVImage_aa5734e9e794a63e46f64c72daa267d46}\label{classGateVImage_aa5734e9e794a63e46f64c72daa267d46}} 
+double {\bfseries m\+Root\+Histo\+Binx\+Up}
+\item 
+\mbox{\Hypertarget{classGateVImage_a74dbd1e5118098fa3cde1c026a4fbe32}\label{classGateVImage_a74dbd1e5118098fa3cde1c026a4fbe32}} 
+double {\bfseries m\+Root\+Histo\+Binx\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImage_a5f49d5bc58e2be25ac88f9565c9437b5}\label{classGateVImage_a5f49d5bc58e2be25ac88f9565c9437b5}} 
+int {\bfseries m\+Root\+Histo\+Biny\+Nb}
+\item 
+\mbox{\Hypertarget{classGateVImage_a90f1c477596ec556b7e7f39a180dbcde}\label{classGateVImage_a90f1c477596ec556b7e7f39a180dbcde}} 
+double {\bfseries m\+Root\+Histo\+Biny\+Low}
+\item 
+\mbox{\Hypertarget{classGateVImage_ac99c10a6767f01c6ce7d2fe5d29c482c}\label{classGateVImage_ac99c10a6767f01c6ce7d2fe5d29c482c}} 
+double {\bfseries m\+Root\+Histo\+Biny\+Up}
+\item 
+\mbox{\Hypertarget{classGateVImage_a699fc2913a010a3823f193181a6e3968}\label{classGateVImage_a699fc2913a010a3823f193181a6e3968}} 
+double {\bfseries m\+Root\+Histo\+Biny\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImage_a5dce51d5990d8a66303a90a1313ab876}\label{classGateVImage_a5dce51d5990d8a66303a90a1313ab876}} 
+int {\bfseries m\+Root\+Histo\+Binz\+Nb}
+\item 
+\mbox{\Hypertarget{classGateVImage_a6b87dbcd7405373f24b83a4122c2a2ce}\label{classGateVImage_a6b87dbcd7405373f24b83a4122c2a2ce}} 
+double {\bfseries m\+Root\+Histo\+Binz\+Low}
+\item 
+\mbox{\Hypertarget{classGateVImage_a25f0953c98186fed5d999d9cf5f9cf55}\label{classGateVImage_a25f0953c98186fed5d999d9cf5f9cf55}} 
+double {\bfseries m\+Root\+Histo\+Binz\+Up}
+\item 
+\mbox{\Hypertarget{classGateVImage_a94db3d7f3b772d311f92f81c5ec5a3d8}\label{classGateVImage_a94db3d7f3b772d311f92f81c5ec5a3d8}} 
+double {\bfseries m\+Root\+Histo\+Binz\+Size}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+3D images of Pixel\+Type values 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVImage_ac2b40a9c3f7bd0b5c030f44d00a4a82f}\label{classGateVImage_ac2b40a9c3f7bd0b5c030f44d00a4a82f}} 
+\index{GateVImage@{GateVImage}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!GateVImage@{GateVImage}}
+\doxysubsubsection{\texorpdfstring{Allocate()}{Allocate()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+::\+Allocate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Allocates the data. 
+
+
+
+Implemented in \mbox{\hyperlink{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}{Gate\+Image\+T$<$ Pixel\+Type $>$}}, \mbox{\hyperlink{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}{Gate\+Image\+T$<$ float $>$}}, \mbox{\hyperlink{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}{Gate\+Image\+T$<$ int $>$}}, and \mbox{\hyperlink{classGateImageT_a67dd2d46d498a0060bcb04d729b5be3f}{Gate\+Image\+T$<$ double $>$}}.
+
+\mbox{\Hypertarget{classGateVImage_a037887a44e3e3b049d82738daa498f37}\label{classGateVImage_a037887a44e3e3b049d82738daa498f37}} 
+\index{GateVImage@{GateVImage}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!GateVImage@{GateVImage}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+::\+Print\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Displays info about the image to standard output. 
+
+
+
+Implemented in \mbox{\hyperlink{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}{Gate\+Image\+T$<$ Pixel\+Type $>$}}, \mbox{\hyperlink{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}{Gate\+Image\+T$<$ float $>$}}, \mbox{\hyperlink{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}{Gate\+Image\+T$<$ int $>$}}, and \mbox{\hyperlink{classGateImageT_a8a3fef39e4441ee5c0ec3395b2ba3d8a}{Gate\+Image\+T$<$ double $>$}}.
+
+\mbox{\Hypertarget{classGateVImage_aab825e7a0a33552a9a1514283a4b8f8b}\label{classGateVImage_aab825e7a0a33552a9a1514283a4b8f8b}} 
+\index{GateVImage@{GateVImage}!Read@{Read}}
+\index{Read@{Read}!GateVImage@{GateVImage}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+::\+Read (\begin{DoxyParamCaption}\item[{G4\+String}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reads the image from a file (the format is detected automatically) 
+
+
+
+Implemented in \mbox{\hyperlink{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}{Gate\+Image\+T$<$ Pixel\+Type $>$}}, \mbox{\hyperlink{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}{Gate\+Image\+T$<$ float $>$}}, \mbox{\hyperlink{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}{Gate\+Image\+T$<$ int $>$}}, and \mbox{\hyperlink{classGateImageT_ac43d1b7d4e8106fafc5688d51ef74b41}{Gate\+Image\+T$<$ double $>$}}.
+
+\mbox{\Hypertarget{classGateVImage_af62bfa8766718e09282ff0440a299192}\label{classGateVImage_af62bfa8766718e09282ff0440a299192}} 
+\index{GateVImage@{GateVImage}!Write@{Write}}
+\index{Write@{Write}!GateVImage@{GateVImage}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+::\+Write (\begin{DoxyParamCaption}\item[{G4\+String}]{filename,  }\item[{const G4\+String \&}]{comment = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Writes the image to a file with comment (the format is detected automatically) 
+
+
+
+Implemented in \mbox{\hyperlink{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}{Gate\+Image\+T$<$ Pixel\+Type $>$}}, \mbox{\hyperlink{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}{Gate\+Image\+T$<$ float $>$}}, \mbox{\hyperlink{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}{Gate\+Image\+T$<$ int $>$}}, and \mbox{\hyperlink{classGateImageT_aad02f558ee79fdd688497717b1fcfeeb}{Gate\+Image\+T$<$ double $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+VImage.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/\mbox{\hyperlink{GateVImage_8cc}{Gate\+VImage.\+cc}}\end{DoxyCompactItemize}

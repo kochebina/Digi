@@ -1,0 +1,373 @@
+\hypertarget{GateMessageManager_8hh}{}\doxysection{/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/\+Gate\+Message\+Manager.hh File Reference}
+\label{GateMessageManager_8hh}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMessageManager.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMessageManager.hh}}
+
+
+Class \mbox{\hyperlink{classGateMessageManager}{Gate\+Message\+Manager}} and Macros for outputing messages in Gate.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}G4\+Exception\+Handler.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Configuration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Message\+Messenger.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G4\+UIsession.\+hh\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGateMessageManager}{Gate\+Message\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages the messages displayed by Gate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_ae2c969e22a72e01624bd94965d1a244c}\label{GateMessageManager_8hh_ae2c969e22a72e01624bd94965d1a244c}} 
+\#define {\bfseries GATE\+\_\+\+COMPILE\+\_\+\+MESSAGES}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a5553a294c8207041d4db106e15df8517}\label{GateMessageManager_8hh_a5553a294c8207041d4db106e15df8517}} 
+\#define {\bfseries GATE\+\_\+\+COMPILE\+\_\+\+WARNING\+\_\+\+MESSAGES}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_ac4d9a808fe5497b7894be1454ca394a7}\label{GateMessageManager_8hh_ac4d9a808fe5497b7894be1454ca394a7}} 
+\#define {\bfseries GATE\+\_\+\+COMPILE\+\_\+\+ERROR\+\_\+\+MESSAGES}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a65d76220e4fbbe6de96a8696df1c4b53}\label{GateMessageManager_8hh_a65d76220e4fbbe6de96a8696df1c4b53}} 
+\#define {\bfseries GATE\+\_\+\+PREPEND\+\_\+\+MESSAGE\+\_\+\+WITH\+\_\+\+SPACE}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a0d1b991a4d4b7c3847e22c80c12521d3}\label{GateMessageManager_8hh_a0d1b991a4d4b7c3847e22c80c12521d3}} 
+\#define {\bfseries GATE\+\_\+\+PREPEND\+\_\+\+MESSAGE\+\_\+\+WITH\+\_\+\+TAB}
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a1090214ebdc243b9fbc1a454ac6a1227}{GATE\+\_\+\+PREPEND\+\_\+\+MESSAGE\+\_\+\+WITH\+\_\+\+CODE}}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a051dcb99e18f8ab63609841b98ada145}\label{GateMessageManager_8hh_a051dcb99e18f8ab63609841b98ada145}} 
+\#define {\bfseries GATE\+\_\+\+PREPEND\+\_\+\+DEBUGMESSAGE\+\_\+\+WITH\+\_\+\+CODE}
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a8e6cbdfe62138e8bc30d88ec7aa189e5}{Gate\+On\+Message\+Level}}(key,  value)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_aad452976c3cd8dbd01d814b6c09cddfe}\label{GateMessageManager_8hh_aad452976c3cd8dbd01d814b6c09cddfe}} 
+\#define {\bfseries Gate\+Message\+Code}(key,  value)~  \char`\"{}\mbox{[}\char`\"{} $<$$<$ key $<$$<$ \char`\"{}-\/\char`\"{} $<$$<$ value $<$$<$ \char`\"{}\mbox{]} \char`\"{}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a6833d8eb66cf1dfb54844b06c62606d8}\label{GateMessageManager_8hh_a6833d8eb66cf1dfb54844b06c62606d8}} 
+\#define {\bfseries Gate\+Debug\+Message\+Code}(key,  value)~  \char`\"{}\mbox{[}Debug-\/\char`\"{} $<$$<$ key $<$$<$ \char`\"{}-\/\char`\"{} $<$$<$ value $<$$<$ \char`\"{}\mbox{]} \char`\"{}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_aecf8185eafba9f1a8f84c04437f790e8}\label{GateMessageManager_8hh_aecf8185eafba9f1a8f84c04437f790e8}} 
+\#define {\bfseries Gate\+Message\+Tab}~  Gate\+Message\+Manager\+::\+Get\+Tab()
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_ac8907cf478023c73b64f006ef60ab3cb}\label{GateMessageManager_8hh_ac8907cf478023c73b64f006ef60ab3cb}} 
+\#define {\bfseries Gate\+Message\+Space}(value)~  Gate\+Message\+Manager\+::\+Get\+Space(value)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_ad3cac42dbb34fe5016b5a350e45af136}{Gate\+Message}}(key,  value,  MESSAGE)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a6f4ac358a214436b957496d7e8d8249f}{Gate\+Message\+Cont}}(key,  value,  MESSAGE)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a33833a24fcb539e0088b42018dfedcbe}{Gate\+Message\+Inc}}(key,  value,  MESSAGE)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_aabbe6579ca6deace7b952b56019c9921}{Gate\+Message\+Dec}}(key,  value,  MESSAGE)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a32d1f0fc5d484a3889dc24f4641d6dd1}{Gate\+Dec\+Tab}}(key,  value)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_aaf9cb86fa7df8e947f08dd61c394d977}{Gate\+Inc\+Tab}}(key,  value)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a798e026d7f3b6d9a063607e94d8eb8c4}{Gate\+Reset\+Tab}}()
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a3a33d67e68545766faea668bb576f8f6}\label{GateMessageManager_8hh_a3a33d67e68545766faea668bb576f8f6}} 
+\#define {\bfseries Gate\+Debug\+Message}(key,  value,  MESSAGE)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a81ee39bdf8de921efec353c7a7056bb5}\label{GateMessageManager_8hh_a81ee39bdf8de921efec353c7a7056bb5}} 
+\#define {\bfseries Gate\+Debug\+Message\+Cont}(key,  value,  MESSAGE)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a7d8ef1b15e0bf8547a0669f72bdc8464}\label{GateMessageManager_8hh_a7d8ef1b15e0bf8547a0669f72bdc8464}} 
+\#define {\bfseries Gate\+Debug\+Message\+Inc}(key,  value,  MESSAGE)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_afe8d30152fbb6d2ca2172c2eb85df773}\label{GateMessageManager_8hh_afe8d30152fbb6d2ca2172c2eb85df773}} 
+\#define {\bfseries Gate\+Debug\+Message\+Dec}(key,  value,  MESSAGE)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a036d181e1d00588a081b150f15d811f5}\label{GateMessageManager_8hh_a036d181e1d00588a081b150f15d811f5}} 
+\#define {\bfseries Gate\+Debug\+Dec\+Tab}(key,  value)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a54fe5b416a59bbbc4c06f54ab6cb3a3e}\label{GateMessageManager_8hh_a54fe5b416a59bbbc4c06f54ab6cb3a3e}} 
+\#define {\bfseries Gate\+Debug\+Inc\+Tab}(key,  value)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_ad8fbb424bbe6dc0f76bf7f6a2331266f}{Gate\+Warning}}(MESSAGE)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_afe5b204e74201475fb11c503a099c42d}\label{GateMessageManager_8hh_afe5b204e74201475fb11c503a099c42d}} 
+\#define {\bfseries GATE\+\_\+\+GET\+\_\+\+CURRENT\+\_\+\+OBJECT\+\_\+\+NAME}~\char`\"{}Gate\char`\"{}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a42617cfd690fdcad76942009fb503b2f}\label{GateMessageManager_8hh_a42617cfd690fdcad76942009fb503b2f}} 
+\#define {\bfseries \+\_\+\+\_\+\+SHORT\+\_\+\+FILE\+\_\+\+\_\+}~(strrchr(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) ? strrchr(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) + 1 \+: \+\_\+\+\_\+\+FILE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a5ddcdba0d574a921fc6a6f52c732f577}{Gate\+Error}}(MESSAGE)
+\item 
+\#define \mbox{\hyperlink{GateMessageManager_8hh_a8d2f35b64c6a8d50e66fef518355305a}{Gate\+Global\+Error}}(MESSAGE)
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_aefc935a769cda99831916c42837128c0}\label{GateMessageManager_8hh_aefc935a769cda99831916c42837128c0}} 
+\#define {\bfseries Gateendl}~std\+::endl
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_abaa59d4473672186c7bdf5c07f694153}\label{GateMessageManager_8hh_abaa59d4473672186c7bdf5c07f694153}} 
+\#define {\bfseries DD}(a)~Gate\+Message(\char`\"{}Core\char`\"{}, 0 , \#a \char`\"{} = \mbox{[} \char`\"{} $<$$<$ a $<$$<$ \char`\"{} \mbox{]}\textbackslash{}n\char`\"{});
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_ac0cc238864006abbe6ebca8534b5ade8}\label{GateMessageManager_8hh_ac0cc238864006abbe6ebca8534b5ade8}} 
+\#define {\bfseries DDV}(a,  n)~\{ Gate\+Message(\char`\"{}Core\char`\"{}, 0 , \#a \char`\"{} = \mbox{[} \char`\"{}; for(unsigned int \+\_\+i\+\_\+=0; \+\_\+i\+\_\+$<$n; \+\_\+i\+\_\+++) \{ std\+::cout $<$$<$ a\mbox{[}\+\_\+i\+\_\+\mbox{]} $<$$<$ \char`\"{} \char`\"{}; \}; std\+::cout $<$$<$ \char`\"{} \mbox{]}\textbackslash{}n\char`\"{});\}
+\item 
+\mbox{\Hypertarget{GateMessageManager_8hh_a779790dd3f3e143e4769be027249ff44}\label{GateMessageManager_8hh_a779790dd3f3e143e4769be027249ff44}} 
+\#define {\bfseries DDF}()~\{ std\+::cout $<$$<$ \char`\"{}-\/-\/$>$ Function \char`\"{} $<$$<$ \+\_\+\+\_\+func\+\_\+\+\_\+ $<$$<$ std\+::endl; \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{classGateMessageManager}{Gate\+Message\+Manager}} and Macros for outputing messages in Gate. 
+
+There are 4 kinds of messages \+:
+\begin{DoxyItemize}
+\item Messages (normal messages)
+\item Debug messages (not compiled in release)
+\item Warnings
+\item Errors
+\end{DoxyItemize}
+
+There are also \char`\"{}types\char`\"{} of messages which are strings which identify the nature of the message (for example \+: \char`\"{}\+Core\char`\"{} messages are generated by the core classes of the library, there can be a type of message for each type of Node, and so on...)
+
+A type of message must be declared by registering it into the Message\+Manager. This is done by a line like \+: Gate\+::\+Message\+Manager\+::\+Register\+Message\+Type(\char`\"{}\+Core\char`\"{},\char`\"{}\+Messages generated by the core classes of the library\char`\"{},5); where \+:
+
+-\/The first string is the type of the message (the keyword which will be used to generate a message of this type) -\/The second string is help string -\/The integer is the initial level for the messages of this type (see below).
+
+To generate a message of a known type then use one of the macros \+: Gate\+Message, Gate\+Debug\+Message, Gate\+Warning, Gate\+Error or their variants.
+
+example \+:
+
+Gate\+Message(\char`\"{}\+Core\char`\"{},4,\char`\"{}problem with \char`\"{}\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}Get\+Name()\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} Gateendl);
+
+will push the 3rd argument in std\+::cout if the message level of \char`\"{}\+Core\char`\"{} messages is greater or equal to 4. which means that it generates a message of level 4 (0 \+: very important/always displayed ... 9 \+: deep debug message).
+
+At run time, one is able to change the level of the messages displayed by using a command like \+:
+
+Gate\+::\+Message\+Manager\+::\+Set\+Message\+Level(\char`\"{}\+Core\char`\"{},5);
+
+which tells the manager to display all Core messages of level up to 5.
+
+Variants \+: Gate$\ast$\+Cont \+: continues a previous Gate\+Message on the same line (without rewriting the type and level) Gate$\ast$\+Inc / Dec \+: displays the message and then increments/decrement the messages tabulation \mbox{[}Debug\mbox{]}Inc\+Tab / \mbox{[}Debug\mbox{]}Dec\+Tab \+: increment/decrement tabulation without dispalying message 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{GateMessageManager_8hh_a1090214ebdc243b9fbc1a454ac6a1227}\label{GateMessageManager_8hh_a1090214ebdc243b9fbc1a454ac6a1227}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GATE\_PREPEND\_MESSAGE\_WITH\_CODE@{GATE\_PREPEND\_MESSAGE\_WITH\_CODE}}
+\index{GATE\_PREPEND\_MESSAGE\_WITH\_CODE@{GATE\_PREPEND\_MESSAGE\_WITH\_CODE}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GATE\_PREPEND\_MESSAGE\_WITH\_CODE}{GATE\_PREPEND\_MESSAGE\_WITH\_CODE}}
+{\footnotesize\ttfamily \#define GATE\+\_\+\+PREPEND\+\_\+\+MESSAGE\+\_\+\+WITH\+\_\+\+CODE}
+
+\DoxyHorRuler{0}
+ \mbox{\Hypertarget{GateMessageManager_8hh_a32d1f0fc5d484a3889dc24f4641d6dd1}\label{GateMessageManager_8hh_a32d1f0fc5d484a3889dc24f4641d6dd1}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateDecTab@{GateDecTab}}
+\index{GateDecTab@{GateDecTab}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateDecTab}{GateDecTab}}
+{\footnotesize\ttfamily \#define Gate\+Dec\+Tab(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      GateOnMessageLevel(key,value)     \(\backslash\)}
+\DoxyCodeLine{    \{                   \(\backslash\)}
+\DoxyCodeLine{      GateMessageManager::DecTab();     \(\backslash\)}
+\DoxyCodeLine{    \}                   \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_a5ddcdba0d574a921fc6a6f52c732f577}\label{GateMessageManager_8hh_a5ddcdba0d574a921fc6a6f52c732f577}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateError@{GateError}}
+\index{GateError@{GateError}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateError}{GateError}}
+{\footnotesize\ttfamily \#define Gate\+Error(\begin{DoxyParamCaption}\item[{}]{MESSAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      std::ostringstream s\_;            \(\backslash\)}
+\DoxyCodeLine{      s\_ << MESSAGE;                \(\backslash\)}
+\DoxyCodeLine{      std::ostringstream f\_;            \(\backslash\)}
+\DoxyCodeLine{      f\_ << \_\_SHORT\_FILE\_\_ << \textcolor{stringliteral}{"{} (l."{}}<<\_\_LINE\_\_<<\textcolor{stringliteral}{"{}): "{}};\(\backslash\)}
+\DoxyCodeLine{      G4String str\_f = f\_.str();        \(\backslash\)}
+\DoxyCodeLine{      G4String str\_s = s\_.str();        \(\backslash\)}
+\DoxyCodeLine{      std::cout << str\_f << str\_s << Gateendl; \(\backslash\)}
+\DoxyCodeLine{      exit(-\/1);                 \(\backslash\)}
+\DoxyCodeLine{      G4Exception(str\_f,str\_s,          \(\backslash\)}
+\DoxyCodeLine{          FatalException,\textcolor{stringliteral}{"{} "{}});      \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_a8d2f35b64c6a8d50e66fef518355305a}\label{GateMessageManager_8hh_a8d2f35b64c6a8d50e66fef518355305a}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateGlobalError@{GateGlobalError}}
+\index{GateGlobalError@{GateGlobalError}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateGlobalError}{GateGlobalError}}
+{\footnotesize\ttfamily \#define Gate\+Global\+Error(\begin{DoxyParamCaption}\item[{}]{MESSAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      std::ostringstream s;         \(\backslash\)}
+\DoxyCodeLine{      s << MESSAGE;             \(\backslash\)}
+\DoxyCodeLine{      std::ostringstream f;         \(\backslash\)}
+\DoxyCodeLine{      f << \_\_SHORT\_FILE\_\_ << \textcolor{stringliteral}{"{} (l."{}}<<\_\_LINE\_\_<<\textcolor{stringliteral}{"{})"{}}; \(\backslash\)}
+\DoxyCodeLine{      G4String str\_f = f.str();         \(\backslash\)}
+\DoxyCodeLine{      G4String str\_s = s.str();         \(\backslash\)}
+\DoxyCodeLine{      G4Exception(str\_f,str\_s,          \(\backslash\)}
+\DoxyCodeLine{          FatalException,\textcolor{stringliteral}{"{} "{}});      \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_aaf9cb86fa7df8e947f08dd61c394d977}\label{GateMessageManager_8hh_aaf9cb86fa7df8e947f08dd61c394d977}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateIncTab@{GateIncTab}}
+\index{GateIncTab@{GateIncTab}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateIncTab}{GateIncTab}}
+{\footnotesize\ttfamily \#define Gate\+Inc\+Tab(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      GateOnMessageLevel(key,value)     \(\backslash\)}
+\DoxyCodeLine{    \{                   \(\backslash\)}
+\DoxyCodeLine{      GateMessageManager::IncTab();     \(\backslash\)}
+\DoxyCodeLine{    \}                   \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_ad3cac42dbb34fe5016b5a350e45af136}\label{GateMessageManager_8hh_ad3cac42dbb34fe5016b5a350e45af136}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateMessage@{GateMessage}}
+\index{GateMessage@{GateMessage}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateMessage}{GateMessage}}
+{\footnotesize\ttfamily \#define Gate\+Message(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value,  }\item[{}]{MESSAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do} \{                      \(\backslash\)}
+\DoxyCodeLine{    GateOnMessageLevel(key,value)       \(\backslash\)}
+\DoxyCodeLine{      \{                     \(\backslash\)}
+\DoxyCodeLine{    std::cout << GateMessageCode(key,value) \(\backslash\)}
+\DoxyCodeLine{          << GateMessageSpace(value)    \(\backslash\)}
+\DoxyCodeLine{          << MESSAGE;           \(\backslash\)}
+\DoxyCodeLine{      \}                     \(\backslash\)}
+\DoxyCodeLine{  \}                     \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_a6f4ac358a214436b957496d7e8d8249f}\label{GateMessageManager_8hh_a6f4ac358a214436b957496d7e8d8249f}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateMessageCont@{GateMessageCont}}
+\index{GateMessageCont@{GateMessageCont}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateMessageCont}{GateMessageCont}}
+{\footnotesize\ttfamily \#define Gate\+Message\+Cont(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value,  }\item[{}]{MESSAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      GateOnMessageLevel(key,value)     \(\backslash\)}
+\DoxyCodeLine{    \{                   \(\backslash\)}
+\DoxyCodeLine{      std::cout << MESSAGE;         \(\backslash\)}
+\DoxyCodeLine{    \}                   \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_aabbe6579ca6deace7b952b56019c9921}\label{GateMessageManager_8hh_aabbe6579ca6deace7b952b56019c9921}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateMessageDec@{GateMessageDec}}
+\index{GateMessageDec@{GateMessageDec}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateMessageDec}{GateMessageDec}}
+{\footnotesize\ttfamily \#define Gate\+Message\+Dec(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value,  }\item[{}]{MESSAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      GateOnMessageLevel(key,value)     \(\backslash\)}
+\DoxyCodeLine{    \{                   \(\backslash\)}
+\DoxyCodeLine{      GateMessageManager::DecTab();     \(\backslash\)}
+\DoxyCodeLine{      std::cout << GateMessageCode(key,value)   \(\backslash\)}
+\DoxyCodeLine{            << GateMessageSpace(value)  \(\backslash\)}
+\DoxyCodeLine{            << MESSAGE;         \(\backslash\)}
+\DoxyCodeLine{    \}                   \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_a33833a24fcb539e0088b42018dfedcbe}\label{GateMessageManager_8hh_a33833a24fcb539e0088b42018dfedcbe}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateMessageInc@{GateMessageInc}}
+\index{GateMessageInc@{GateMessageInc}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateMessageInc}{GateMessageInc}}
+{\footnotesize\ttfamily \#define Gate\+Message\+Inc(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value,  }\item[{}]{MESSAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      GateOnMessageLevel(key,value)     \(\backslash\)}
+\DoxyCodeLine{    \{                   \(\backslash\)}
+\DoxyCodeLine{      std::cout << GateMessageCode(key,value)   \(\backslash\)}
+\DoxyCodeLine{            << GateMessageSpace(value)  \(\backslash\)}
+\DoxyCodeLine{            << MESSAGE;         \(\backslash\)}
+\DoxyCodeLine{      GateMessageManager::IncTab();     \(\backslash\)}
+\DoxyCodeLine{    \}                   \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_a8e6cbdfe62138e8bc30d88ec7aa189e5}\label{GateMessageManager_8hh_a8e6cbdfe62138e8bc30d88ec7aa189e5}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateOnMessageLevel@{GateOnMessageLevel}}
+\index{GateOnMessageLevel@{GateOnMessageLevel}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateOnMessageLevel}{GateOnMessageLevel}}
+{\footnotesize\ttfamily \#define Gate\+On\+Message\+Level(\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordtype}{int} \_\_GateOnMessageLevelVariable =            \(\backslash\)}
+\DoxyCodeLine{    GateMessageManager::GetMessageLevel(key);       \(\backslash\)}
+\DoxyCodeLine{  if ( \_\_GateOnMessageLevelVariable<0)          \(\backslash\)}
+\DoxyCodeLine{    \{                           \(\backslash\)}
+\DoxyCodeLine{      GateWarning(\textcolor{stringliteral}{"{}message type '"{}}<<key<<\textcolor{stringliteral}{"{}' unknown"{}});  \(\backslash\)}
+\DoxyCodeLine{    \}                           \(\backslash\)}
+\DoxyCodeLine{  else \textcolor{keywordflow}{if} (value<= \_\_GateOnMessageLevelVariable)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_a798e026d7f3b6d9a063607e94d8eb8c4}\label{GateMessageManager_8hh_a798e026d7f3b6d9a063607e94d8eb8c4}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateResetTab@{GateResetTab}}
+\index{GateResetTab@{GateResetTab}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateResetTab}{GateResetTab}}
+{\footnotesize\ttfamily \#define Gate\+Reset\+Tab(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                        \(\backslash\)}
+\DoxyCodeLine{    \{                       \(\backslash\)}
+\DoxyCodeLine{      GateMessageManager::ResetTab();       \(\backslash\)}
+\DoxyCodeLine{    \}                       \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{GateMessageManager_8hh_ad8fbb424bbe6dc0f76bf7f6a2331266f}\label{GateMessageManager_8hh_ad8fbb424bbe6dc0f76bf7f6a2331266f}} 
+\index{GateMessageManager.hh@{GateMessageManager.hh}!GateWarning@{GateWarning}}
+\index{GateWarning@{GateWarning}!GateMessageManager.hh@{GateMessageManager.hh}}
+\doxysubsubsection{\texorpdfstring{GateWarning}{GateWarning}}
+{\footnotesize\ttfamily \#define Gate\+Warning(\begin{DoxyParamCaption}\item[{}]{MESSAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do}                                    \(\backslash\)}
+\DoxyCodeLine{    \{                                   \(\backslash\)}
+\DoxyCodeLine{      int lev = GateMessageManager::GetMessageLevel(\textcolor{stringliteral}{"{}Warning"{}});     \(\backslash\)}
+\DoxyCodeLine{      if (lev >0)                           \(\backslash\)}
+\DoxyCodeLine{    \{                               \(\backslash\)}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"{} <!> *** WARNING *** <!>  "{}} << MESSAGE << Gateendl; \(\backslash\)}
+\DoxyCodeLine{      if (lev >1)                           \(\backslash\)}
+\DoxyCodeLine{        \{                               \(\backslash\)}
+\DoxyCodeLine{          std::cout << \textcolor{stringliteral}{"{} <!> *** WARNING *** <!>  In file '"{}}<<\_\_FILE\_\_ \(\backslash\)}
+\DoxyCodeLine{            <<\textcolor{stringliteral}{"{}' ; Line "{}}<<\_\_LINE\_\_<< Gateendl;     \(\backslash\)}
+\DoxyCodeLine{        \}                               \(\backslash\)}
+\DoxyCodeLine{    \}                               \(\backslash\)}
+\DoxyCodeLine{    \}                                   \(\backslash\)}
+\DoxyCodeLine{  while (0)}
+
+\end{DoxyCode}

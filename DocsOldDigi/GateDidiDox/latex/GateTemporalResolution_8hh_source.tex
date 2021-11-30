@@ -1,0 +1,56 @@
+\hypertarget{GateTemporalResolution_8hh_source}{}\doxysection{Gate\+Temporal\+Resolution.\+hh}
+\label{GateTemporalResolution_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTemporalResolution.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTemporalResolution.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateTemporalResolution\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateTemporalResolution\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTemporalResolutionMessenger}{GateTemporalResolutionMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTemporalResolution}{GateTemporalResolution}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateTemporalResolution_af66238a2e8bf50835e0234de9c9b590b}{GateTemporalResolution}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{41                    \textcolor{keyword}{const} G4String\& itsName=theTypeName,}
+\DoxyCodeLine{42                    G4double itsTimeResolution=0.) ;}
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTemporalResolution_a1b610a6a036295fc23fb63c7a64252db}{\string~GateTemporalResolution}}() ;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     G4double \mbox{\hyperlink{classGateTemporalResolution_a027db634eb3974b006a5e1215ce868cf}{GetTimeResolution}}()             \{ \textcolor{keywordflow}{return} m\_timeResolution; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTemporalResolution_abb4817158ef39bf933489459a7f7ec97}{SetTimeResolution}}(G4double val)   \{ m\_timeResolution = val;  \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTemporalResolution_a29ca2b4e351630293c113444e27e74e0}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTemporalResolution_a3692b376cb98e4ac8696438cb484ec0a}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\&  outputPulseList);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{private}:}
+\DoxyCodeLine{64     G4double m\_timeResolution;                    }
+\DoxyCodeLine{65     \mbox{\hyperlink{classGateTemporalResolutionMessenger}{GateTemporalResolutionMessenger}} *m\_messenger;    }
+\DoxyCodeLine{66    \textcolor{keyword}{static} \textcolor{keyword}{const} G4String\& theTypeName;   }
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

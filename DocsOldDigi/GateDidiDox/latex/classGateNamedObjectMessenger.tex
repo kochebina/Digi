@@ -1,0 +1,73 @@
+\hypertarget{classGateNamedObjectMessenger}{}\doxysection{Gate\+Named\+Object\+Messenger Class Reference}
+\label{classGateNamedObjectMessenger}\index{GateNamedObjectMessenger@{GateNamedObjectMessenger}}
+
+
+Base class for Gate\+Named\+Volume messengers.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Named\+Object\+Messenger.\+hh$>$}
+
+Inheritance diagram for Gate\+Named\+Object\+Messenger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.248276cm]{classGateNamedObjectMessenger}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateNamedObjectMessenger_ace4a33c9953390d913ea50678cf0c908}{Gate\+Named\+Object\+Messenger}} (\mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$its\+Named\+Volume, const G4\+String \&its\+Directory\+Name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classGateNamedObjectMessenger_ae4efa43fb6d2eec3ad9083b2c751cca4}\label{classGateNamedObjectMessenger_ae4efa43fb6d2eec3ad9083b2c751cca4}} 
+{\bfseries $\sim$\+Gate\+Named\+Object\+Messenger} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateNamedObjectMessenger_ae42ae9fa82c286a14abfa02b98c708e9}\label{classGateNamedObjectMessenger_ae42ae9fa82c286a14abfa02b98c708e9}} 
+void {\bfseries Set\+New\+Value} (G4\+UIcommand $\ast$, G4\+String)
+\begin{DoxyCompactList}\small\item\em UI command interpreter method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateNamedObjectMessenger_ad8d352e004a023d150723808fb02b366}\label{classGateNamedObjectMessenger_ad8d352e004a023d150723808fb02b366}} 
+\mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$ {\bfseries Get\+Named\+Object} () const
+\begin{DoxyCompactList}\small\item\em Get the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateNamedObjectMessenger_af9328a19aeeff059ffb6eaf3560e361d}\label{classGateNamedObjectMessenger_af9328a19aeeff059ffb6eaf3560e361d}} 
+\mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$ {\bfseries p\+Named\+Volume}
+\begin{DoxyCompactList}\small\item\em The named object for this messenger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateNamedObjectMessenger_a0d1bfda6b632110ed0ffcf58ec2bb9cd}\label{classGateNamedObjectMessenger_a0d1bfda6b632110ed0ffcf58ec2bb9cd}} 
+G4\+UIcmd\+Without\+Parameter $\ast$ {\bfseries p\+Describe\+Cmd}
+\begin{DoxyCompactList}\small\item\em The UI command \char`\"{}describe\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateNamedObjectMessenger_aa0015f39eff3e29b9c519cfb0aa3e001}\label{classGateNamedObjectMessenger_aa0015f39eff3e29b9c519cfb0aa3e001}} 
+G4\+UIcmd\+With\+AString $\ast$ {\bfseries p\+Define\+Name\+Cmd}
+\begin{DoxyCompactList}\small\item\em The command \char`\"{}name\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateNamedObjectMessenger_afb3d07e0945340e634614c4a8cc46891}\label{classGateNamedObjectMessenger_afb3d07e0945340e634614c4a8cc46891}} 
+G4\+UIcmd\+With\+An\+Integer $\ast$ {\bfseries p\+Verbosity\+Cmd}
+\begin{DoxyCompactList}\small\item\em UI command \textquotesingle{}verbose\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for Gate\+Named\+Volume messengers. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateNamedObjectMessenger}{Gate\+Named\+Object\+Messenger}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The main function of a \mbox{\hyperlink{classGateNamedObjectMessenger}{Gate\+Named\+Object\+Messenger}} is to create/manage a (new) UI directory for a \mbox{\hyperlink{classGateNamedObjectMessenger}{Gate\+Named\+Object\+Messenger}}
+\item It also proposes/handles the UI command \textquotesingle{}describe\textquotesingle{}.
+\item Note that, since the \mbox{\hyperlink{classGateNamedObjectMessenger}{Gate\+Named\+Object\+Messenger}} is based on the \mbox{\hyperlink{classGateMessenger}{Gate\+Messenger}} base-\/class, it inherits the methods Gate\+Messenger\+::\+Tell\+Geometry\+To\+Update() and Gate\+Messenger\+::\+Tell\+Geometry\+To\+Rebuild() that allow messengers to command the geometry updating. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateNamedObjectMessenger_ace4a33c9953390d913ea50678cf0c908}\label{classGateNamedObjectMessenger_ace4a33c9953390d913ea50678cf0c908}} 
+\index{GateNamedObjectMessenger@{GateNamedObjectMessenger}!GateNamedObjectMessenger@{GateNamedObjectMessenger}}
+\index{GateNamedObjectMessenger@{GateNamedObjectMessenger}!GateNamedObjectMessenger@{GateNamedObjectMessenger}}
+\doxysubsubsection{\texorpdfstring{GateNamedObjectMessenger()}{GateNamedObjectMessenger()}}
+{\footnotesize\ttfamily Gate\+Named\+Object\+Messenger\+::\+Gate\+Named\+Object\+Messenger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateNamedObject}{Gate\+Named\+Object}} $\ast$}]{its\+Named\+Volume,  }\item[{const G4\+String \&}]{its\+Directory\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Constructor The flag \textquotesingle{}its\+Flag\+Describe\textquotesingle{} tells whether this messenger should propose a command \char`\"{}\+Describe\char`\"{} The flag \textquotesingle{}flag\+Create\+Directory\textquotesingle{} is passed to the base-\/class \mbox{\hyperlink{classGateMessenger}{Gate\+Messenger}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Named\+Object\+Messenger.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Named\+Object\+Messenger.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\hypertarget{GateFictitiousVoxelMapParameterizedMessenger_8hh_source}{}\doxysection{Gate\+Fictitious\+Voxel\+Map\+Parameterized\+Messenger.\+hh}
+\label{GateFictitiousVoxelMapParameterizedMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMapParameterizedMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMapParameterizedMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateFictitiousVoxelMapParameterizedMessenger\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateFictitiousVoxelMapParameterizedMessenger\_hh 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParameterizedMessenger}{GateFictitiousVoxelMapParameterizedMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateMessenger}{GateMessenger}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterizedMessenger_a32aa39b6b0a496177922756317883690}{GateFictitiousVoxelMapParameterizedMessenger}}(\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}* itsInserter);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterizedMessenger_aa81bf0bba73166d0a773f47ef6e3854e}{\string~GateFictitiousVoxelMapParameterizedMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterizedMessenger_a139d157705ce80cc11694f5da72f964b}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}* \mbox{\hyperlink{classGateFictitiousVoxelMapParameterizedMessenger_a30e22551b58a8c12d3132ed95740064c}{GetFictitiousVoxelMapParameterized}}()}
+\DoxyCodeLine{32       \{ \textcolor{keywordflow}{return} m\_inserter; \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     G4UIcmdWithoutParameter*        AttachPhantomSDCmd;}
+\DoxyCodeLine{37     G4UIcmdWithAString*             InsertReaderCmd;}
+\DoxyCodeLine{38     G4UIcmdWithoutParameter*        RemoveReaderCmd;}
+\DoxyCodeLine{39     G4UIcmdWithAString*             AddOutputCmd;}
+\DoxyCodeLine{40     G4UIcmdWithAnInteger*           VerboseCmd;}
+\DoxyCodeLine{41     G4UIcmdWithABool*               SkipEqualMaterialsCmd;}
+\DoxyCodeLine{42     G4UIcmdWithADoubleAndUnit*      FictitiousEnergyCmd;}
+\DoxyCodeLine{43     G4UIcmdWithADoubleAndUnit*      DiscardEnergyCmd;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}*  m\_inserter;}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

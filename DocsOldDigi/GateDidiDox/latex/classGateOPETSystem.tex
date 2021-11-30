@@ -1,0 +1,102 @@
+\hypertarget{classGateOPETSystem}{}\doxysection{Gate\+OPETSystem Class Reference}
+\label{classGateOPETSystem}\index{GateOPETSystem@{GateOPETSystem}}
+
+
+The \mbox{\hyperlink{classGateOPETSystem}{Gate\+OPETSystem}} models the UCLA\textquotesingle{}s OPET system.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+OPETSystem.\+hh$>$}
+
+Inheritance diagram for Gate\+OPETSystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateOPETSystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateOPETSystem_aa09f78a55a3b324636b8e420258b2f4f}\label{classGateOPETSystem_aa09f78a55a3b324636b8e420258b2f4f}} 
+{\bfseries Gate\+OPETSystem} (const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOPETSystem_a3009a94b9fdb5e61c20732bba7b31d5f}\label{classGateOPETSystem_a3009a94b9fdb5e61c20732bba7b31d5f}} 
+virtual {\bfseries $\sim$\+Gate\+OPETSystem} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Describe()}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateOPETSystem_ac6ee1ef69d2a44f4d7871381f21c6f71}{Print\+To\+Stream}} (std\+::ostream \&a\+Stream, G4bool do\+Print\+Numbers)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Describe()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateOPETSystem_a60991d06ed772995507bb6bb10c23e94}\label{classGateOPETSystem_a60991d06ed772995507bb6bb10c23e94}} 
+virtual G4double {\bfseries Compute\+Internal\+Radius} ()
+\begin{DoxyCompactList}\small\item\em Compute the internal radius of the crystal ring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateOPETSystem}{Gate\+OPETSystem}} models the UCLA\textquotesingle{}s OPET system. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateOPETSystem}{Gate\+OPETSystem}} -\/ by Fernando R. Rannou
+\item A \mbox{\hyperlink{classGateOPETSystem}{Gate\+OPETSystem}} models a scanner that obeys to the convention that were defined by the Clear\+PET software group. It comprises a hierarchy of components ranging from the rsectors (detector panels, arranged in several rings) down to the layers (individual crystals of a phoswich column).
+\item This system overloads two methods of the \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} base-\/class, \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Describe()}} and \mbox{\hyperlink{classGateOPETSystem_ac6ee1ef69d2a44f4d7871381f21c6f71}{Print\+To\+Stream()}}
+\item Beside the standard system methods, it also provides the method \mbox{\hyperlink{classGateOPETSystem_a60991d06ed772995507bb6bb10c23e94}{Compute\+Internal\+Radius()}} to compute the internal radius of the scanner 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}\label{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}} 
+\index{GateOPETSystem@{GateOPETSystem}!Describe@{Describe}}
+\index{Describe@{Describe}!GateOPETSystem@{GateOPETSystem}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+OPETSystem\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Describe()}}. 
+
+This methods prints-\/out a description of the system, which is
+
+optimised for creating LMF header files
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Gate\+VSystem}}.
+
+\mbox{\Hypertarget{classGateOPETSystem_ac6ee1ef69d2a44f4d7871381f21c6f71}\label{classGateOPETSystem_ac6ee1ef69d2a44f4d7871381f21c6f71}} 
+\index{GateOPETSystem@{GateOPETSystem}!PrintToStream@{PrintToStream}}
+\index{PrintToStream@{PrintToStream}!GateOPETSystem@{GateOPETSystem}}
+\doxysubsubsection{\texorpdfstring{PrintToStream()}{PrintToStream()}}
+{\footnotesize\ttfamily void Gate\+OPETSystem\+::\+Print\+To\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{a\+Stream,  }\item[{G4bool}]{do\+Print\+Numbers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Describe()}}. 
+
+This methods prints out description of the system to a stream.
+
+It is essentially to be used by the class Gate\+To\+LMF, but it may also be used by \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Describe()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Stream} & the output stream \\
+\hline
+{\em do\+Print\+Numbers} & tells whether we print-\/out the volume numbers in addition to their dimensions \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSystem_a0f2ca5a41d87527ede0dd8d6183f93ef}{Gate\+VSystem}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+OPETSystem.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+OPETSystem.\+cc\end{DoxyCompactItemize}

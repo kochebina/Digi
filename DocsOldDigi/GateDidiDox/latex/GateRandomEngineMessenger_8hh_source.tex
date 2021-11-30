@@ -1,0 +1,45 @@
+\hypertarget{GateRandomEngineMessenger_8hh_source}{}\doxysection{Gate\+Random\+Engine\+Messenger.\+hh}
+\label{GateRandomEngineMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRandomEngineMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRandomEngineMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateRandomEngineMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateRandomEngineMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateRandomEngine.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}CLHEP/Random/RandomEngine.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRandomEngineMessenger}{GateRandomEngineMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateMessenger}{GateMessenger}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateRandomEngineMessenger_a6e82bd9835cd43eeb43fb575575fba21}{GateRandomEngineMessenger}}(\mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}}* gateRandomEngine);}
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateRandomEngineMessenger_ac5b01991a9a02e8f3bbddfd9530524c4}{\string~GateRandomEngineMessenger}}();}
+\DoxyCodeLine{28   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRandomEngineMessenger_a51ffca3d91a9167799c708a14fb33cb0}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{private}:}
+\DoxyCodeLine{31   G4UIcmdWithAString* GetEngineNameCmd;}
+\DoxyCodeLine{32   G4UIcmdWithAString* GetEngineSeedCmd;}
+\DoxyCodeLine{33   G4UIcmdWithAString* GetEngineFromFileCmd; \textcolor{comment}{//TC}}
+\DoxyCodeLine{34   G4UIcmdWithAnInteger* GetEngineVerboseCmd;}
+\DoxyCodeLine{35   G4UIcmdWithoutParameter* ShowEngineStatus;}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}}* m\_gateRandomEngine;}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

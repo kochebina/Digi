@@ -1,0 +1,90 @@
+\hypertarget{GateQuadrantRepeater_8hh_source}{}\doxysection{Gate\+Quadrant\+Repeater.\+hh}
+\label{GateQuadrantRepeater_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateQuadrantRepeater.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateQuadrantRepeater.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateQuadrantRepeater\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateQuadrantRepeater\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateQuadrantRepeaterMessenger}{GateQuadrantRepeaterMessenger}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateQuadrantRepeater}{GateQuadrantRepeater}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46   \textcolor{keyword}{public}:}
+\DoxyCodeLine{49     \mbox{\hyperlink{classGateQuadrantRepeater_a702f62fafb26b1d0bff85dd84ffb1bbb}{GateQuadrantRepeater}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{50                        \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}linear"{}},}
+\DoxyCodeLine{51                        G4int itsLineNumber=1,}
+\DoxyCodeLine{52                        G4double itsOrientation=0.,}
+\DoxyCodeLine{53                G4double itsCopySpacing=0.);}
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateQuadrantRepeater_a95d17c331ad2f676296b6e46f6650a05}{\string~GateQuadrantRepeater}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{public}:}
+\DoxyCodeLine{67      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuadrantRepeater_a8872c89ec4354aaf4059948746b2003b}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{68                            \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{69                        G4double aTime);}
+\DoxyCodeLine{75      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuadrantRepeater_a7a44de7875d7f5cee01ff954ab7f2ba3}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{76      }
+\DoxyCodeLine{77   \textcolor{keyword}{public}:}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuadrantRepeater_aa41ec6cf1add4b8bf918d22526701d47}{SetLineNumber}}(G4int aLineNumber) }
+\DoxyCodeLine{82           \{ \mbox{\hyperlink{classGateQuadrantRepeater_a574826d13cee9998f3523110741387fb}{m\_lineNumber}} = aLineNumber; \}}
+\DoxyCodeLine{84      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateQuadrantRepeater_af2f670529d84fbedf1e5cdeecb78a050}{GetLineNumber}}()\textcolor{keyword}{  const}}
+\DoxyCodeLine{85 \textcolor{keyword}{          }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateQuadrantRepeater_a574826d13cee9998f3523110741387fb}{m\_lineNumber}};\}}
+\DoxyCodeLine{86  }
+\DoxyCodeLine{88      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuadrantRepeater_afa1f52fc6c00b73adbd9031b4ecb4050}{SetOrientation}}(G4double val) }
+\DoxyCodeLine{89           \{ \mbox{\hyperlink{classGateQuadrantRepeater_aa41bb1a939de8b1cbaf3d67b2d5af1d0}{m\_orientation}} = val;  \mbox{\hyperlink{classGateQuadrantRepeater_a28f5333f3945afa8287399796ace7ad9}{ComputeRepetitionVectors}}(); \}}
+\DoxyCodeLine{91      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateQuadrantRepeater_a4bafce08f66fcd784710d8ad6d17d72d}{GetOrientation}}()\textcolor{keyword}{  const}}
+\DoxyCodeLine{92 \textcolor{keyword}{          }\{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateQuadrantRepeater_aa41bb1a939de8b1cbaf3d67b2d5af1d0}{m\_orientation}};  \}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuadrantRepeater_ab9652bfdb82b4b173c3f91ae7ed87afa}{SetCopySpacing}}(G4double val) }
+\DoxyCodeLine{96           \{ \mbox{\hyperlink{classGateQuadrantRepeater_a7589db5b0c28fbf258a4d3ef6f205661}{m\_copySpacing}} = val; \mbox{\hyperlink{classGateQuadrantRepeater_a28f5333f3945afa8287399796ace7ad9}{ComputeRepetitionVectors}}(); \}}
+\DoxyCodeLine{98      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateQuadrantRepeater_ab696e8a8996766c370171bd8648357ff}{GetCopySpacing}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{99 \textcolor{keyword}{          }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateQuadrantRepeater_a7589db5b0c28fbf258a4d3ef6f205661}{m\_copySpacing}};\}}
+\DoxyCodeLine{100  }
+\DoxyCodeLine{102      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuadrantRepeater_aad99fc38324464fff01ecddd3923dff1}{SetMaxRange}}(G4double val) }
+\DoxyCodeLine{103           \{ \mbox{\hyperlink{classGateQuadrantRepeater_a969da97d1f5edcf355191c115469c953}{m\_maxRange}} = val; \}}
+\DoxyCodeLine{105      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateQuadrantRepeater_a2a9cb6c537761da68cfcc76457155ef0}{GetMaxRange}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{106 \textcolor{keyword}{          }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateQuadrantRepeater_a969da97d1f5edcf355191c115469c953}{m\_maxRange}};\}}
+\DoxyCodeLine{107  }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateQuadrantRepeater_a28f5333f3945afa8287399796ace7ad9}{ComputeRepetitionVectors}}()}
+\DoxyCodeLine{113     \{}
+\DoxyCodeLine{114       \mbox{\hyperlink{classGateQuadrantRepeater_a0a3e72ffb58579ddb7e116ad9db9d186}{m\_lineSpacingVector}}      = G4ThreeVector( cos(\mbox{\hyperlink{classGateQuadrantRepeater_aa41bb1a939de8b1cbaf3d67b2d5af1d0}{m\_orientation}}-\/30.*deg),sin(\mbox{\hyperlink{classGateQuadrantRepeater_aa41bb1a939de8b1cbaf3d67b2d5af1d0}{m\_orientation}}-\/30.*deg),0.)* \mbox{\hyperlink{classGateQuadrantRepeater_a7589db5b0c28fbf258a4d3ef6f205661}{m\_copySpacing}} ;}
+\DoxyCodeLine{115       \mbox{\hyperlink{classGateQuadrantRepeater_a843ab22e2692499d6f962cdc2addcdb7}{m\_orthogonalRepeatVector}} = G4ThreeVector( cos(\mbox{\hyperlink{classGateQuadrantRepeater_aa41bb1a939de8b1cbaf3d67b2d5af1d0}{m\_orientation}}+90.*deg),sin(\mbox{\hyperlink{classGateQuadrantRepeater_aa41bb1a939de8b1cbaf3d67b2d5af1d0}{m\_orientation}}+90.*deg),0.)* \mbox{\hyperlink{classGateQuadrantRepeater_a7589db5b0c28fbf258a4d3ef6f205661}{m\_copySpacing}} ;}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     G4int         \mbox{\hyperlink{classGateQuadrantRepeater_a574826d13cee9998f3523110741387fb}{m\_lineNumber}};       }
+\DoxyCodeLine{122     G4double      \mbox{\hyperlink{classGateQuadrantRepeater_aa41bb1a939de8b1cbaf3d67b2d5af1d0}{m\_orientation}};     }
+\DoxyCodeLine{123     G4double      \mbox{\hyperlink{classGateQuadrantRepeater_a7589db5b0c28fbf258a4d3ef6f205661}{m\_copySpacing}};         }
+\DoxyCodeLine{124     G4double      \mbox{\hyperlink{classGateQuadrantRepeater_a969da97d1f5edcf355191c115469c953}{m\_maxRange}};           }
+\DoxyCodeLine{126     }
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     G4ThreeVector \mbox{\hyperlink{classGateQuadrantRepeater_a0a3e72ffb58579ddb7e116ad9db9d186}{m\_lineSpacingVector}};         }
+\DoxyCodeLine{130     G4ThreeVector \mbox{\hyperlink{classGateQuadrantRepeater_a843ab22e2692499d6f962cdc2addcdb7}{m\_orthogonalRepeatVector}};   }
+\DoxyCodeLine{132     }
+\DoxyCodeLine{134     \mbox{\hyperlink{classGateQuadrantRepeaterMessenger}{GateQuadrantRepeaterMessenger}}* \mbox{\hyperlink{classGateQuadrantRepeater_a24d3647fdad279c721abb04159177361}{m\_Messenger}}; }
+\DoxyCodeLine{135 \};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{138 }
+
+\end{DoxyCode}

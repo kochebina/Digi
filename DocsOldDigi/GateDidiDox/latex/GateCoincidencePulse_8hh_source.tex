@@ -1,0 +1,76 @@
+\hypertarget{GateCoincidencePulse_8hh_source}{}\doxysection{Gate\+Coincidence\+Pulse.\+hh}
+\label{GateCoincidencePulse_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidencePulse.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidencePulse.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidencePulse\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidencePulse\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateCrystalHit.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// define the minimum offset for a delayed coincidence window in sec}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define  MIN\_COINC\_OFFSET 500.0E-\/09 }\textcolor{comment}{// why??? why can't it be any (non-\/negative) value?}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21   \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{23                                 \mbox{\hyperlink{classGatePulse}{GatePulse}} *firstPulse,}
+\DoxyCodeLine{24                                 G4double itsCoincidenceWindow,}
+\DoxyCodeLine{25                                 G4double itsOffsetWindow)}
+\DoxyCodeLine{26       : \mbox{\hyperlink{classGatePulseList}{GatePulseList}}(itsName)}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         push\_back(firstPulse);}
+\DoxyCodeLine{29         m\_coincID=-\/1;}
+\DoxyCodeLine{30         m\_startTime = firstPulse-\/>GetTime() + itsOffsetWindow;}
+\DoxyCodeLine{31         m\_endTime = m\_startTime + itsCoincidenceWindow;}
+\DoxyCodeLine{32         \textcolor{keywordflow}{if}(itsOffsetWindow > 0.0)}
+\DoxyCodeLine{33           m\_delayed = \textcolor{keyword}{true};}
+\DoxyCodeLine{34         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{35           m\_delayed = \textcolor{keyword}{false};}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}\& src);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidencePulse}{\string~GateCoincidencePulse}}()\{\}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{inline} G4double GetStartTime()\textcolor{keyword}{ const}}
+\DoxyCodeLine{43 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_startTime; \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{inline} G4double GetTime()\textcolor{keyword}{ const}}
+\DoxyCodeLine{46 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_endTime; \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48    \textcolor{keyword}{inline} G4int GetCoincID()\textcolor{keyword}{ const}}
+\DoxyCodeLine{49 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_coincID; \}}
+\DoxyCodeLine{50    \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetCoincID(\textcolor{keywordtype}{int} coincID) }
+\DoxyCodeLine{51       \{ m\_coincID=coincID; \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} G4bool IsInCoincidence(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* newPulse) \textcolor{keyword}{const};}
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} G4bool IsAfterWindow(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* newPulse) \textcolor{keyword}{const};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keyword}{inline} G4bool IsDelayed()\textcolor{keyword}{ const}}
+\DoxyCodeLine{57 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} m\_delayed;\}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{comment}{//printing methods}}
+\DoxyCodeLine{60     \textcolor{comment}{//}}
+\DoxyCodeLine{61     \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\&, \textcolor{keyword}{const} \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}\&);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{private}:}
+\DoxyCodeLine{64     G4double m\_startTime;}
+\DoxyCodeLine{65     G4double m\_endTime;}
+\DoxyCodeLine{66     G4bool m\_delayed;}
+\DoxyCodeLine{67     G4int m\_coincID;}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

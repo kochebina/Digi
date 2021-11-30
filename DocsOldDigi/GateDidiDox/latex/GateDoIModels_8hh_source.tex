@@ -1,0 +1,58 @@
+\hypertarget{GateDoIModels_8hh_source}{}\doxysection{Gate\+Do\+IModels.\+hh}
+\label{GateDoIModels_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoIModels.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoIModels.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef GateDoIModels\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GateDoIModels\_h 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVDoILaw.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoIModelsMessenger}{GateDoIModelsMessenger}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoIModels}{GateDoIModels}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21   \textcolor{keyword}{public}:}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26      \mbox{\hyperlink{classGateDoIModels_a122649e36fb0d39bd54a81d74a514e5d}{GateDoIModels}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,  \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{28     \textcolor{comment}{//GateDoIModels(GatePulseProcessorChain* itsChain,  const G4String\& itsName, const G4ThreeVector\& itsDoIAxis=G4ThreeVector(0.,0.,1.)) ;}}
+\DoxyCodeLine{30 \textcolor{comment}{}    \textcolor{comment}{//GateDoIModels(GatePulseProcessorChain* itsChain,  const G4String\& itsName, const G4ThreeVector itsDoIAxis=G4ThreeVector(0.,0.,1.)) ;}}
+\DoxyCodeLine{32 \textcolor{comment}{}    \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDoIModels_a5726bb9a3d0e5919fe40c3e72f91e5c7}{\string~GateDoIModels}}() ;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{36        \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateDoIModels_a262870b40faac7cd523748e6247c6f36}{GetDoIAxis}}() \{\textcolor{keywordflow}{return} m\_DoIaxis;\}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39       \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoIModels_a54ca4374b9a01b8da00ee4267ca07535}{SetDoIAxis}}( G4ThreeVector val);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42         \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVDoILaw}{GateVDoILaw}}* \mbox{\hyperlink{classGateDoIModels_a309bcc7ab30f0cef75a466a3a116f81e}{GetDoILaw}}()           \{ \textcolor{keywordflow}{return} m\_DoILaw; \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetDoILaw(\mbox{\hyperlink{classGateVDoILaw}{GateVDoILaw}}* law)   \{ m\_DoILaw = law; \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoIModels_ab618506ea3b9c4545bbb30020b9db2a7}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoIModels_a4ffc0d976ba01a767a6b4d906bc2c2ca}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\&  outputPulseList);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{private}:}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \mbox{\hyperlink{classGateVDoILaw}{GateVDoILaw}}* m\_DoILaw;}
+\DoxyCodeLine{61     G4ThreeVector m\_DoIaxis;}
+\DoxyCodeLine{62     \mbox{\hyperlink{classGateDoIModelsMessenger}{GateDoIModelsMessenger}} *m\_messenger;    }
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} flgCorrectAxis;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,111 @@
+\hypertarget{GateDetectionProfileActor_8hh_source}{}\doxysection{Gate\+Detection\+Profile\+Actor.\+hh}
+\label{GateDetectionProfileActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDetectionProfileActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDetectionProfileActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <GateConfiguration.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <TFile.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <TH1D.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <TH2D.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateDetectionProfileActorMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }GateDetectionProfileActor : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19   \textcolor{keyword}{enum} DetectionPosition \{ Beam, Particle, Middle \};}
+\DoxyCodeLine{20   \textcolor{keywordtype}{void} SetTimer(\textcolor{keyword}{const} G4String \&timerName);}
+\DoxyCodeLine{21   \textcolor{keywordtype}{void} SetDistanceThreshold(\textcolor{keywordtype}{double} distance);}
+\DoxyCodeLine{22   \textcolor{keywordtype}{void} SetDeltaEnergyThreshold(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{23   \textcolor{keywordtype}{void} SetDetectionPosition(DetectionPosition type);}
+\DoxyCodeLine{24   \textcolor{keywordtype}{void} SetUseCristalNormal(\textcolor{keywordtype}{bool} state);}
+\DoxyCodeLine{25   \textcolor{keywordtype}{void} SetUseCristalPosition(\textcolor{keywordtype}{bool} state);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \string~GateDetectionProfileActor();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(GateDetectionProfileActor)}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Construct}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step *step);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track *track);}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Track *track);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{40   GateDetectionProfileActor(G4String name, G4int depth=0);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateDetectionProfileActorMessenger}{GateDetectionProfileActorMessenger}} *messenger;}
+\DoxyCodeLine{43   GateDetectionProfilePrimaryTimerActor *timerActor;}
+\DoxyCodeLine{44   \textcolor{keywordtype}{bool} firstStepForTrack;}
+\DoxyCodeLine{45   \textcolor{keywordtype}{bool} detectedSomething;}
+\DoxyCodeLine{46   \textcolor{keywordtype}{bool} useCristalNormal;}
+\DoxyCodeLine{47   \textcolor{keywordtype}{bool} useCristalPosition;}
+\DoxyCodeLine{48   G4double detectedEnergy;}
+\DoxyCodeLine{49   G4double detectedDeltaEnergy;}
+\DoxyCodeLine{50   G4double detectedWeight;}
+\DoxyCodeLine{51   G4double detectedTime;}
+\DoxyCodeLine{52   \textcolor{keywordtype}{int} detectedIndex;}
+\DoxyCodeLine{53   G4double distanceThreshold;}
+\DoxyCodeLine{54   G4double deltaEnergyThreshold;}
+\DoxyCodeLine{55   DetectionPosition detectionPosition;}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 MAKE\_AUTO\_CREATOR\_ACTOR(DetectionProfileActor,GateDetectionProfileActor)}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{class }GateDetectionProfilePrimaryTimerActor : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62 \textcolor{keyword}{public}:}
+\DoxyCodeLine{63   \textcolor{keyword}{struct }TriggerData \{}
+\DoxyCodeLine{64     G4double time;}
+\DoxyCodeLine{65     G4String name;}
+\DoxyCodeLine{66     G4ThreeVector position;}
+\DoxyCodeLine{67     G4ThreeVector direction;}
+\DoxyCodeLine{68   \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keywordtype}{bool} IsTriggered() \textcolor{keyword}{const};}
+\DoxyCodeLine{71   \textcolor{keyword}{const} TriggerData \&GetTriggerData() \textcolor{keyword}{const};}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} AddReportForDetector(\textcolor{keyword}{const} G4String \&detectorName);}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetDetectionSize(\textcolor{keywordtype}{double} size);}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} ReportDetectedParticle(\textcolor{keyword}{const} G4String \&detectorName, \textcolor{keywordtype}{double} time, \textcolor{keywordtype}{double} energy, \textcolor{keywordtype}{double} deltaEnergy, \textcolor{keywordtype}{double} weight);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} \string~GateDetectionProfilePrimaryTimerActor();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(GateDetectionProfilePrimaryTimerActor)}
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Construct}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event *) ;}
+\DoxyCodeLine{82   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step *);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{88   GateDetectionProfilePrimaryTimerActor(G4String name, G4int depth=0);}
+\DoxyCodeLine{89   TFile *rootFile;}
+\DoxyCodeLine{90   \textcolor{keywordtype}{double} detectionSize;}
+\DoxyCodeLine{91   \mbox{\hyperlink{classGateDetectionProfilePrimaryTimerActorMessenger}{GateDetectionProfilePrimaryTimerActorMessenger}} *messenger;}
+\DoxyCodeLine{92   \textcolor{keywordtype}{bool} triggered;}
+\DoxyCodeLine{93   TriggerData data;}
+\DoxyCodeLine{94   TH1D *histoTime;}
+\DoxyCodeLine{95   TH1D *histoDirz;}
+\DoxyCodeLine{96   TH2D *histoPosition;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   \textcolor{keyword}{typedef} std::map<G4String,TH2D*> ActorHistos;}
+\DoxyCodeLine{99   ActorHistos histosTimeEnergy;}
+\DoxyCodeLine{100   ActorHistos histosTimeDeltaEnergy;}
+\DoxyCodeLine{101   ActorHistos histosEnergyDeltaEnergy;}
+\DoxyCodeLine{102   ActorHistos histosEnergyDeltaEnergyPercent;}
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 MAKE\_AUTO\_CREATOR\_ACTOR(DetectionProfilePrimaryTimerActor,GateDetectionProfilePrimaryTimerActor)}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

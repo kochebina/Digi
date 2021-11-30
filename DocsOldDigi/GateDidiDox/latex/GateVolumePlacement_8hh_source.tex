@@ -1,0 +1,99 @@
+\hypertarget{GateVolumePlacement_8hh_source}{}\doxysection{Gate\+Volume\+Placement.\+hh}
+\label{GateVolumePlacement_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumePlacement.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVolumePlacement.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVolumePlacement\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVolumePlacement\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4Point3D.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4RotationMatrix.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumePlacementMessenger}{GateVolumePlacementMessenger}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumePlacement}{GateVolumePlacement}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateVolumePlacement_a624aec40800d07f087c3c919d7112aaa}{GateVolumePlacement}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{43                       \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{44                       \textcolor{keyword}{const} G4ThreeVector\& itsTranslation=G4ThreeVector(),}
+\DoxyCodeLine{45                       \textcolor{keyword}{const} G4ThreeVector itsRotationAxis=G4ThreeVector(),}
+\DoxyCodeLine{46                       G4double itsRotationAngle=0.);}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVolumePlacement_a94d8062a79308543eaf466379c1aec8d}{\string~GateVolumePlacement}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a2add39f47364a4fecc22884f344d242e}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{62                                 \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{63                                 G4double aTime);}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a1627fbb7adeb6de1889ec523494915cf}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{70      }
+\DoxyCodeLine{71 \textcolor{keyword}{public}:}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateVolumePlacement_a68644dd51ee8e32e73cf29f833b1ea3b}{GetTranslation}}() }
+\DoxyCodeLine{76   \{ \textcolor{keywordflow}{return} m\_translation;\}}
+\DoxyCodeLine{78   \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateVolumePlacement_a540a3eff93c2bf27ada71b0f34dd7ee3}{GetRotationAxis}}() }
+\DoxyCodeLine{79   \{ \textcolor{keywordflow}{return} m\_rotationAxis;\}}
+\DoxyCodeLine{81   \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{classGateVolumePlacement_acac02204358b044c734d822a38e09345}{GetRotationAngle}}() }
+\DoxyCodeLine{82   \{ \textcolor{keywordflow}{return} m\_rotationAngle;\}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a83904c3dbd6870bdd616bc0c9307d31f}{SetTranslation}}(\textcolor{keyword}{const} G4ThreeVector\& val) }
+\DoxyCodeLine{86   \{ m\_translation = val; \}}
+\DoxyCodeLine{88   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a9e92d2b69599635b15014e8ea82acc9d}{SetRotationAxis}}(\textcolor{keyword}{const} G4ThreeVector\& val) }
+\DoxyCodeLine{89   \{ m\_rotationAxis = val; \}}
+\DoxyCodeLine{91   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a71177c0ca096f3be0ccb7c7fa326a98b}{SetRotationAngle}}(\textcolor{keywordtype}{double} val) }
+\DoxyCodeLine{92   \{ m\_rotationAngle = val; \}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a3b33ecc74ea1655444c05be3d16d5aa7}{SetPhi}}(G4double val) }
+\DoxyCodeLine{96   \{ m\_translation.setPhi(val);  \}}
+\DoxyCodeLine{98   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a07768e4b2c5637d0a1b60ccf9672fec3}{SetTheta}}(G4double val) }
+\DoxyCodeLine{99   \{ m\_translation.setTheta(val);  \}}
+\DoxyCodeLine{101   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_ad78ab57937bb3ced814e89d9ddd9b173}{SetMag}}(G4double val) }
+\DoxyCodeLine{102   \{ m\_translation.setMag(val);  \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_a106177d393f4f4190b68b3199e999b13}{AlignToZ}}() }
+\DoxyCodeLine{110   \{ m\_rotationAngle = 0; \}}
+\DoxyCodeLine{113   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_ab11d8a311d9058a7d5a1b7a376e0e52a}{AlignToY}}() }
+\DoxyCodeLine{114   \{ m\_rotationAxis = G4ThreeVector(1,0,0) ; }
+\DoxyCodeLine{115     m\_rotationAngle = -\/90 * degree; }
+\DoxyCodeLine{116   \}}
+\DoxyCodeLine{119   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVolumePlacement_ad44b69c3611a839f7961113277f03468}{AlignToX}}() }
+\DoxyCodeLine{120   \{ m\_rotationAxis = G4ThreeVector(0,1,0) ; }
+\DoxyCodeLine{121     m\_rotationAngle = +90 * degree; }
+\DoxyCodeLine{122   \}}
+\DoxyCodeLine{124       }
+\DoxyCodeLine{125 \textcolor{keyword}{private}:}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   G4ThreeVector m\_translation;            }
+\DoxyCodeLine{129   G4ThreeVector m\_rotationAxis;   }
+\DoxyCodeLine{130   G4double m\_rotationAngle;           }
+\DoxyCodeLine{132     }
+\DoxyCodeLine{134   \mbox{\hyperlink{classGateVolumePlacementMessenger}{GateVolumePlacementMessenger}}* m\_Messenger; }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \};}
+\DoxyCodeLine{137 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{140 }
+
+\end{DoxyCode}

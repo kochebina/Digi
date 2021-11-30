@@ -1,0 +1,60 @@
+\hypertarget{GateSPECTHeadSystem_8hh_source}{}\doxysection{Gate\+SPECTHead\+System.\+hh}
+\label{GateSPECTHeadSystem_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSPECTHeadSystem.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSPECTHeadSystem.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GateSPECTHeadSystem\_h}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GateSPECTHeadSystem\_h 1}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVSystem.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}};}
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}};}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToInterfile}{GateToInterfile}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{48 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSPECTHeadSystem}{GateSPECTHeadSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50   \textcolor{keyword}{public}:}
+\DoxyCodeLine{51     \mbox{\hyperlink{classGateSPECTHeadSystem_a74c9f81ad5ebb4464463eb3b7c437bae}{GateSPECTHeadSystem}}(\textcolor{keyword}{const} G4String\& itsName);   }
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSPECTHeadSystem_a3db3d85fd3a75148dbcaf39e3abe16f8}{\string~GateSPECTHeadSystem}}();             }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}}*  \mbox{\hyperlink{classGateSPECTHeadSystem_a86915ab8a7831c351116da883cd47e8d}{GetProjectionSetMaker}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{56 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_gateToProjectionSet; \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59   \mbox{\hyperlink{classGateToInterfile}{GateToInterfile}}*  \mbox{\hyperlink{classGateSPECTHeadSystem_a699eaec90ea660c2b93c8d89d59d23a0}{GetInterfileWriter}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{60 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_gateToInterfile; \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63   \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*  \mbox{\hyperlink{classGateSPECTHeadSystem_aaf4262081beaddc905fd6d85337d7f23}{GetCrystalComponent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{64 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_crystalComponent; \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67   \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}*  \mbox{\hyperlink{classGateSPECTHeadSystem_a82d37d96363c66ff4495971830df0e8c}{GetPixelComponent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{68 \textcolor{keyword}{    }\{ \textcolor{keywordflow}{return} m\_pixelComponent; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{/* PY Descourt 08/09/2009 */}  }
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} setARFStage(G4String);}
+\DoxyCodeLine{72   G4int GetARFStage()\{ \textcolor{keywordflow}{return} m\_ARFStage; \};}
+\DoxyCodeLine{73 \textcolor{comment}{/* PY Descourt 08/09/2009 */}  }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75    \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}      *m\_messenger;     }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}          *m\_crystalComponent;}
+\DoxyCodeLine{79     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}          *m\_pixelComponent;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}}          *m\_gateToProjectionSet;}
+\DoxyCodeLine{82     \mbox{\hyperlink{classGateToInterfile}{GateToInterfile}}              *m\_gateToInterfile;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     G4int m\_ARFStage;\textcolor{comment}{/* PY Descourt 08/09/2009 */} }
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{88 }
+
+\end{DoxyCode}

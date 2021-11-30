@@ -1,0 +1,102 @@
+\hypertarget{classGatePileup}{}\doxysection{Gate\+Pileup Class Reference}
+\label{classGatePileup}\index{GatePileup@{GatePileup}}
+
+
+Pulse-\/processor modelling a pileup (maximum energy wins) of a crystal-\/block.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Pileup.\+hh$>$}
+
+Inheritance diagram for Gate\+Pileup\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGatePileup}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePileup_ac51381039777adecb9971bf4f6f25185}\label{classGatePileup_ac51381039777adecb9971bf4f6f25185}} 
+{\bfseries Gate\+Pileup} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new Pileup attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePileup_a77a7ccce032f5a5e5b608a2dd1e57282}\label{classGatePileup_a77a7ccce032f5a5e5b608a2dd1e57282}} 
+virtual {\bfseries $\sim$\+Gate\+Pileup} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGatePileup_a418eb4ad2ac2f47633c992f78b6d6b06}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+\mbox{\Hypertarget{classGatePileup_a2064a6db0045809c7f5eb904f9de7a12}\label{classGatePileup_a2064a6db0045809c7f5eb904f9de7a12}} 
+G4int {\bfseries Get\+Depth} () const
+\begin{DoxyCompactList}\small\item\em Returns the depth of the Pileup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePileup_af517eb741d4f87d40d3fd3e44c74fe56}\label{classGatePileup_af517eb741d4f87d40d3fd3e44c74fe56}} 
+void {\bfseries Set\+Depth} (G4int a\+Depth)
+\begin{DoxyCompactList}\small\item\em Set the depth of the Pileup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePileup_afa074c8811a284b3696e5c8eb6456388}\label{classGatePileup_afa074c8811a284b3696e5c8eb6456388}} 
+G4double {\bfseries Get\+Pileup} () const
+\begin{DoxyCompactList}\small\item\em Returns the time of the Pileup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePileup_a83a67e09c58a04afdf74babb28a4c546}\label{classGatePileup_a83a67e09c58a04afdf74babb28a4c546}} 
+void {\bfseries Set\+Pileup} (G4double a\+Pileup)
+\begin{DoxyCompactList}\small\item\em Set the time of the Pileup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGatePileup_af93d01442f9dd0c843fd2d2e1f056d45}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\item 
+virtual void \mbox{\hyperlink{classGatePileup_a55eb46fee95e02dd0b96ee3fb8a8a7cb}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modelling a pileup (maximum energy wins) of a crystal-\/block. 
+
+
+\begin{DoxyItemize}
+\item The Pileup is parameterised by its \textquotesingle{}depth\textquotesingle{}\+: pulses will be summed up if their volume IDs are identical up to this depth. For instance, the default depth is 1\+: this means that pulses will be considered as taking place in a same block if the first two figures of their volume IDs are identical
+\item A second parameter is added \+: the width of the pilup window
+\item The class is largely inspired from the \mbox{\hyperlink{classGateReadout}{Gate\+Readout}} class, but is aimed to work by time and not by event.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePileup_a418eb4ad2ac2f47633c992f78b6d6b06}\label{classGatePileup_a418eb4ad2ac2f47633c992f78b6d6b06}} 
+\index{GatePileup@{GatePileup}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GatePileup@{GatePileup}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Pileup\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the Pileup 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGatePileup_a55eb46fee95e02dd0b96ee3fb8a8a7cb}\label{classGatePileup_a55eb46fee95e02dd0b96ee3fb8a8a7cb}} 
+\index{GatePileup@{GatePileup}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GatePileup@{GatePileup}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Pileup\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Pure virtual function for processing one input-\/pulse This function is called by \mbox{\hyperlink{classGatePileup_af93d01442f9dd0c843fd2d2e1f056d45}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing must be incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGatePileup_af93d01442f9dd0c843fd2d2e1f056d45}\label{classGatePileup_af93d01442f9dd0c843fd2d2e1f056d45}} 
+\index{GatePileup@{GatePileup}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GatePileup@{GatePileup}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+Pileup\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGatePileup_af93d01442f9dd0c843fd2d2e1f056d45}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Pileup.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Pileup.\+cc\end{DoxyCompactItemize}

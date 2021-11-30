@@ -1,0 +1,66 @@
+\hypertarget{GateSpblurring_8hh_source}{}\doxysection{Gate\+Spblurring.\+hh}
+\label{GateSpblurring_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSpblurring.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSpblurring.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSpblurring\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSpblurring\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4VoxelLimits.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSpblurringMessenger}{GateSpblurringMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSpblurring}{GateSpblurring}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39     \mbox{\hyperlink{classGateSpblurring_a01887a68631508bc09ee2dd5f6858d63}{GateSpblurring}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{40                    \textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{41             G4double itsSpblurring=0) ;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSpblurring_a1c571e09ae1013c60483876f5a0e6353}{\string~GateSpblurring}}() ;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     G4double \mbox{\hyperlink{classGateSpblurring_a712dcdb337210f4097d4a004267b93b2}{GetSpresolution}}()              \{ \textcolor{keywordflow}{return} m\_spresolution; \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSpblurring_a26570f39378158a7178e91b05d601879}{SetSpresolution}}(G4double val)   \{ m\_spresolution = val;  \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{62     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSpblurring_a0aba03968d81524fed0d88947e7882c5}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSpblurring_ae534899da5b0625be57acd6747aa41b2}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{keyword}{private}:}
+\DoxyCodeLine{72     G4double m\_spresolution;              }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \mbox{\hyperlink{classGateSpblurringMessenger}{GateSpblurringMessenger}} *m\_messenger;  }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     G4VoxelLimits limits;}
+\DoxyCodeLine{77     G4double Xmin, Xmax, Ymin, Ymax, Zmin, Zmax;}
+\DoxyCodeLine{78     G4AffineTransform at;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

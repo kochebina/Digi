@@ -1,0 +1,102 @@
+\hypertarget{GateTrap_8hh_source}{}\doxysection{Gate\+Trap.\+hh}
+\label{GateTrap_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTrap.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTrap.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateTrap\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateTrap\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4Trap.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4VVisManager.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrapMessenger}{GateTrapMessenger}};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrap}{GateTrap}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28   }
+\DoxyCodeLine{29     \mbox{\hyperlink{classGateTrap}{GateTrap}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{30          G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{31          G4int depth=0); }
+\DoxyCodeLine{32          }
+\DoxyCodeLine{33          }
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateTrap}{GateTrap}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{35                 G4double itsDz,G4double itsTheta, G4double itsPhi,}
+\DoxyCodeLine{36             G4double itsDy1,G4double itsDx1,G4double itsDx2,G4double itsAlp1,}
+\DoxyCodeLine{37             G4double itsDy2,G4double itsDx3,G4double itsDx4,G4double itsAlp2);}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTrap}{\string~GateTrap}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateTrap}{GateTrap}})}
+\DoxyCodeLine{41     }
+\DoxyCodeLine{42   \textcolor{keyword}{public}:}
+\DoxyCodeLine{43      \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateTrap_a98e4023c3848b5919ef5528ff4197fcc}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool flagUpdateOnly);     }
+\DoxyCodeLine{44      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{45      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{46      }
+\DoxyCodeLine{47      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateTrap_a0a101d9ccbf71b8f22839e80d228a3a4}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) }
+\DoxyCodeLine{48      \{ \textcolor{keywordflow}{if} (axis==2)}
+\DoxyCodeLine{49           \textcolor{keywordflow}{return} m\_TrapDz;}
+\DoxyCodeLine{50        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{51        \{ \textcolor{keywordflow}{if} (axis==1)}
+\DoxyCodeLine{52              \textcolor{keywordflow}{return} m\_TrapDy1;}
+\DoxyCodeLine{53      \textcolor{keywordflow}{else}}
+\DoxyCodeLine{54          \textcolor{keywordflow}{return} m\_TrapDx1;}
+\DoxyCodeLine{55        \}}
+\DoxyCodeLine{56      \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{public}:}
+\DoxyCodeLine{59      \textcolor{keyword}{inline} G4double GetTrapDz()                  \{\textcolor{keywordflow}{return} m\_TrapDz;\}}
+\DoxyCodeLine{60      \textcolor{keyword}{inline} G4double GetTrapTheta()                   \{\textcolor{keywordflow}{return} m\_TrapTheta;\}}
+\DoxyCodeLine{61      \textcolor{keyword}{inline} G4double GetTrapPhi()                 \{\textcolor{keywordflow}{return} m\_TrapPhi;\}}
+\DoxyCodeLine{62      \textcolor{keyword}{inline} G4double GetTrapDy1()                 \{\textcolor{keywordflow}{return} m\_TrapDy1;\}}
+\DoxyCodeLine{63      \textcolor{keyword}{inline} G4double GetTrapDx1()                 \{\textcolor{keywordflow}{return} m\_TrapDx1;\}}
+\DoxyCodeLine{64      \textcolor{keyword}{inline} G4double GetTrapDx2()                 \{\textcolor{keywordflow}{return} m\_TrapDx2;\}}
+\DoxyCodeLine{65      \textcolor{keyword}{inline} G4double GetTrapAlp1()                    \{\textcolor{keywordflow}{return} m\_TrapAlp1;\}}
+\DoxyCodeLine{66      \textcolor{keyword}{inline} G4double GetTrapDy2()                 \{\textcolor{keywordflow}{return} m\_TrapDy2;\}}
+\DoxyCodeLine{67      \textcolor{keyword}{inline} G4double GetTrapDx3()                 \{\textcolor{keywordflow}{return} m\_TrapDx3;\}}
+\DoxyCodeLine{68      \textcolor{keyword}{inline} G4double GetTrapDx4()                 \{\textcolor{keywordflow}{return} m\_TrapDx4;\}}
+\DoxyCodeLine{69      \textcolor{keyword}{inline} G4double GetTrapAlp2()                    \{\textcolor{keywordflow}{return} m\_TrapAlp2;\}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapDz(G4double val)              \{m\_TrapDz  = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{72      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapTheta(G4double val)       \{m\_TrapTheta  = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{73      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapPhi(G4double val)             \{m\_TrapPhi  = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{74      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapDy1(G4double val)             \{m\_TrapDy1 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{75      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapDx1(G4double val)             \{m\_TrapDx1 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{76      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapDx2(G4double val)             \{m\_TrapDx2 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{77      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapAlp1(G4double val)            \{m\_TrapAlp1 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{78      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapDy2(G4double val)             \{m\_TrapDy2 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{79      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapDx3(G4double val)             \{m\_TrapDx3 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{80      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapDx4(G4double val)             \{m\_TrapDx4 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{81      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrapAlp2(G4double val)            \{m\_TrapAlp2 = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keyword}{private}:}
+\DoxyCodeLine{85      G4double m\_TrapDz,m\_TrapTheta,m\_TrapPhi,m\_TrapDy1,m\_TrapDx1,m\_TrapDx2,m\_TrapAlp1;}
+\DoxyCodeLine{86      G4double m\_TrapDy2,m\_TrapDx3,m\_TrapDx4,m\_TrapAlp2;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88      G4Trap*              m\_Trap\_solid;}
+\DoxyCodeLine{89      G4LogicalVolume*     m\_Trap\_log;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91      \mbox{\hyperlink{classGateTrapMessenger}{GateTrapMessenger}}* m\_Messenger;}
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 MAKE\_AUTO\_CREATOR\_VOLUME(trap,\mbox{\hyperlink{classGateTrap}{GateTrap}})}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{96 }
+
+\end{DoxyCode}

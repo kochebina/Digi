@@ -1,0 +1,52 @@
+\hypertarget{GateUpholder_8hh_source}{}\doxysection{Gate\+Upholder.\+hh}
+\label{GateUpholder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateUpholder.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateUpholder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateUpholder\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateUpholder\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUpholderMessenger}{GateUpholderMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUpholder}{GateUpholder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38   \textcolor{keyword}{public}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \mbox{\hyperlink{classGateUpholder_a84bb5ec565d7eb1d49017054ee482108}{GateUpholder}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{42                    \textcolor{keyword}{const} G4String\& itsName, G4double itsUphold=0) ;}
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateUpholder_adb729d9a181f8984a5c42f8f25f7bd46}{\string~GateUpholder}}() ;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     G4double \mbox{\hyperlink{classGateUpholder_a975d2aa23da8a4060c7cb04c006e2854}{GetUphold}}()             \{ \textcolor{keywordflow}{return} m\_uphold; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateUpholder_ac3949811f807bb29589d9525e55d3270}{SetUphold}}(G4double val)   \{ m\_uphold = val;  \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateUpholder_a50f5bdb9b0e324eade6cbf2939ac392d}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateUpholder_a29f6b81014a7a899c9103780b858404e}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{private}:}
+\DoxyCodeLine{64     G4double m\_uphold;                    }
+\DoxyCodeLine{65     \mbox{\hyperlink{classGateUpholderMessenger}{GateUpholderMessenger}} *m\_messenger;       }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

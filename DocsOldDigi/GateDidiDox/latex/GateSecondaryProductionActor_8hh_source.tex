@@ -1,0 +1,79 @@
+\hypertarget{GateSecondaryProductionActor_8hh_source}{}\doxysection{Gate\+Secondary\+Production\+Actor.\+hh}
+\label{GateSecondaryProductionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSecondaryProductionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSecondaryProductionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATESECONDARYPRODACTOR\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATESECONDARYPRODACTOR\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}TH1.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}TH2.h"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSecondaryProductionActor}{GateSecondaryProductionActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36  \textcolor{keyword}{public}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{39   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSecondaryProductionActor_ad498169594d252d3c2e833434d670211}{\string~GateSecondaryProductionActor}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateSecondaryProductionActor}{GateSecondaryProductionActor}})}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{46   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSecondaryProductionActor_a011583ffd040b01d7cf7e7560f35c865}{Construct}}();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSecondaryProductionActor_a5f07478f1b82f2b553edac0e10e97baf}{SaveData}}();}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61   \mbox{\hyperlink{classGateSecondaryProductionActor}{GateSecondaryProductionActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{62   \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}} * pMessenger;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   G4String mProdFilename;}
+\DoxyCodeLine{69   G4String mSecondariesFilename;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   TFile * pTfile;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   TH1F * pFrag;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 MAKE\_AUTO\_CREATOR\_ACTOR(SecondaryProductionActor,\mbox{\hyperlink{classGateSecondaryProductionActor}{GateSecondaryProductionActor}})}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

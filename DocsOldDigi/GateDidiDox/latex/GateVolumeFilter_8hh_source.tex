@@ -1,0 +1,65 @@
+\hypertarget{GateVolumeFilter_8hh_source}{}\doxysection{Gate\+Volume\+Filter.\+hh}
+\label{GateVolumeFilter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVolumeFilter.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVolumeFilter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateVolumeFilter}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEVOLUMEFILTER\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEVOLUMEFILTER\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVFilter.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateVolumeFilterMessenger.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4LogicalVolume.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class  }\mbox{\hyperlink{classGateVolumeFilter}{GateVolumeFilter}} : }
+\DoxyCodeLine{29   \textcolor{keyword}{public} \mbox{\hyperlink{classGateVFilter}{GateVFilter}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateVolumeFilter}{GateVolumeFilter}}(G4String name);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVolumeFilter}{\string~GateVolumeFilter}}()\{\textcolor{keyword}{delete} pVolumeFilterMessenger;\}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   FCT\_FOR\_AUTO\_CREATOR\_FILTER(\mbox{\hyperlink{classGateVolumeFilter}{GateVolumeFilter}})}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} addVolume(G4String volName);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} Initialize();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{private}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   std::vector<G4String> theTempoListOfVolumeName;}
+\DoxyCodeLine{49   std::vector<GateVVolume *> theListOfVolume;}
+\DoxyCodeLine{50   std::vector<G4LogicalVolume*> theListOfLogicalVolume;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keywordtype}{bool} IsInitialized;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \mbox{\hyperlink{classGateVolumeFilterMessenger}{GateVolumeFilterMessenger}} * pVolumeFilterMessenger;}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 MAKE\_AUTO\_CREATOR\_FILTER(volumeFilter,\mbox{\hyperlink{classGateVolumeFilter}{GateVolumeFilter}})}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEVOLUMEFILTER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

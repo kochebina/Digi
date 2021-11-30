@@ -1,0 +1,203 @@
+\hypertarget{classGateSinogram}{}\doxysection{Gate\+Sinogram Class Reference}
+\label{classGateSinogram}\index{GateSinogram@{GateSinogram}}
+
+
+Structure to store the sinogram sets from a PET simulation.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Sinogram.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSinogram_af751b86881d4621b3f352f915c45284f}\label{classGateSinogram_af751b86881d4621b3f352f915c45284f}} 
+typedef unsigned short {\bfseries Sinogram\+Data\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSinogram_aef964738f13971e21ccc7bc9ea00c449}\label{classGateSinogram_aef964738f13971e21ccc7bc9ea00c449}} 
+{\bfseries Gate\+Sinogram} ()
+\begin{DoxyCompactList}\small\item\em Public constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a47a0f5e52ae66c4a4f538676661826d9}\label{classGateSinogram_a47a0f5e52ae66c4a4f538676661826d9}} 
+virtual {\bfseries $\sim$\+Gate\+Sinogram} ()
+\begin{DoxyCompactList}\small\item\em Public destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_ad3b71d91edc356855c9e2613f3de7006}\label{classGateSinogram_ad3b71d91edc356855c9e2613f3de7006}} 
+void {\bfseries Reset} (size\+\_\+t ring\+Number=0, size\+\_\+t crystal\+Number=0, size\+\_\+t radial\+Elem\+Nb=0, size\+\_\+t virtual\+Ring\+Number=0, size\+\_\+t virtual\+Crystal\+Per\+Block\+Number=0)
+\begin{DoxyCompactList}\small\item\em Reset the sinogrames and prepare a new acquisition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_abe9caa831e9faa929f563ba9bc4c62dc}\label{classGateSinogram_abe9caa831e9faa929f563ba9bc4c62dc}} 
+void {\bfseries Clear\+Data} (size\+\_\+t frame\+ID, size\+\_\+t gate\+ID, size\+\_\+t data\+ID, size\+\_\+t bed\+ID)
+\begin{DoxyCompactList}\small\item\em Clear the matrix and prepare a new run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a702c6e199a53f530c26d460ffc89cae4}\label{classGateSinogram_a702c6e199a53f530c26d460ffc89cae4}} 
+void {\bfseries Crystal\+Blurring} (G4int $\ast$ring\+ID, G4int $\ast$crystal\+ID, G4double ring\+Resolution, G4double crystal\+Resolution)
+\begin{DoxyCompactList}\small\item\em Apply spatial blurring to hited crystal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a8714503fae192b8830fa72e01994d571}\label{classGateSinogram_a8714503fae192b8830fa72e01994d571}} 
+G4int {\bfseries Fill} (G4int ring1\+ID, G4int ring2\+ID, G4int crystal1\+ID, G4int crystal2\+ID, int signe)
+\begin{DoxyCompactList}\small\item\em Store a digi into a projection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_af1b09ee1a06ef0f323097900d9e75572}\label{classGateSinogram_af1b09ee1a06ef0f323097900d9e75572}} 
+G4int {\bfseries Fill\+Randoms} (G4int ring1\+ID, G4int ring2\+ID)
+\begin{DoxyCompactList}\small\item\em Store a digi into randoms array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a655f3b93cc33cac84935db10ec27c58d}\label{classGateSinogram_a655f3b93cc33cac84935db10ec27c58d}} 
+G4int {\bfseries Get\+Sino\+ID} (G4int ring1\+ID, G4int ring2\+ID)
+\begin{DoxyCompactList}\small\item\em Returns the 2D sino ID for a given pair of rings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSinogram_aff604cb4bd4fbe83021b53dc68720277}\label{classGateSinogram_aff604cb4bd4fbe83021b53dc68720277}} 
+size\+\_\+t {\bfseries Get\+Ring\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of crystal rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a287adc5a63aa6da45163c5f10094e48e}\label{classGateSinogram_a287adc5a63aa6da45163c5f10094e48e}} 
+void {\bfseries Set\+Ring\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a5c03be5f54424ab0aa7a517d9e712cee}\label{classGateSinogram_a5c03be5f54424ab0aa7a517d9e712cee}} 
+size\+\_\+t {\bfseries Get\+Virtual\+Ring\+Per\+Block\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of virtual crystal rings per block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a908b39a211c0636007f490fc0fc467ad}\label{classGateSinogram_a908b39a211c0636007f490fc0fc467ad}} 
+void {\bfseries Set\+Virtual\+Ring\+Per\+Block\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a241a02777db735a96d70967c90f0acb5}\label{classGateSinogram_a241a02777db735a96d70967c90f0acb5}} 
+size\+\_\+t {\bfseries Get\+Virtual\+Crystal\+Per\+Block\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of virtual transaxial crystal per block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_ae731f0c9d23944fa6c8d114df1cfb75a}\label{classGateSinogram_ae731f0c9d23944fa6c8d114df1cfb75a}} 
+void {\bfseries Set\+Virtual\+Crystal\+Per\+Block\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_abbb652392fec20d787fcdcac99333503}\label{classGateSinogram_abbb652392fec20d787fcdcac99333503}} 
+size\+\_\+t {\bfseries Get\+Radial\+Elem\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of radial sinogram bins. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_aeae423effa8dfe6e0cf255224d9fee87}\label{classGateSinogram_aeae423effa8dfe6e0cf255224d9fee87}} 
+void {\bfseries Set\+Radial\+Elem\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of radial sinogram bin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_ab171ae8929baa4f08fc7fdd8303a0a81}\label{classGateSinogram_ab171ae8929baa4f08fc7fdd8303a0a81}} 
+size\+\_\+t {\bfseries Get\+Sinogram\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of 2D sinograms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_acc0599cb84e45579b588cdec0b9753a4}\label{classGateSinogram_acc0599cb84e45579b588cdec0b9753a4}} 
+void {\bfseries Set\+Sinogram\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of radial sinogram bin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_aad48ec7557604c23135a91ca5f946688}\label{classGateSinogram_aad48ec7557604c23135a91ca5f946688}} 
+size\+\_\+t {\bfseries Get\+Crystal\+Nb} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of crystals per crystal ring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_aff30a2a4c6406ec7373f3cbf8af62e2e}\label{classGateSinogram_aff30a2a4c6406ec7373f3cbf8af62e2e}} 
+void {\bfseries Set\+Crystal\+Nb} (size\+\_\+t a\+Nb)
+\begin{DoxyCompactList}\small\item\em Set the number of crystals per crystal ring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a67f2c492497784a64418d45db050fa38}\label{classGateSinogram_a67f2c492497784a64418d45db050fa38}} 
+Sinogram\+Data\+Type $\ast$$\ast$ {\bfseries Get\+Data} () const
+\begin{DoxyCompactList}\small\item\em Returns the data pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a705fedde52a806d80ce9944dcb79e942}\label{classGateSinogram_a705fedde52a806d80ce9944dcb79e942}} 
+Sinogram\+Data\+Type $\ast$ {\bfseries Get\+Randoms} () const
+\begin{DoxyCompactList}\small\item\em Returns the randoms pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a44f438225f5c7eebbea2d8e189f16188}\label{classGateSinogram_a44f438225f5c7eebbea2d8e189f16188}} 
+virtual void {\bfseries Set\+Verbose\+Level} (G4int val)
+\begin{DoxyCompactList}\small\item\em Set the verbose level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_af39eaf612a8297e71cf2577482d5bcbf}\label{classGateSinogram_af39eaf612a8297e71cf2577482d5bcbf}} 
+Sinogram\+Data\+Type $\ast$ {\bfseries Get\+Sinogram} (size\+\_\+t sino\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns a 2D sinogram from the set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a7ff74b9db7813124ad79eb27bd887ce7}\label{classGateSinogram_a7ff74b9db7813124ad79eb27bd887ce7}} 
+G4int {\bfseries Pixels\+Per\+Sinogram} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pixels per 2D sinogram. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a926de05813ff38ea3689a45ee665ab1f}\label{classGateSinogram_a926de05813ff38ea3689a45ee665ab1f}} 
+G4int {\bfseries Bytes\+Per\+Sinogram} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes per 2D sinogram. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a2e8926eb3d8826fbbe9edc65014f4a85}\label{classGateSinogram_a2e8926eb3d8826fbbe9edc65014f4a85}} 
+size\+\_\+t {\bfseries Bytes\+Per\+Pixel} () const
+\begin{DoxyCompactList}\small\item\em Returns the nb of bytes per pixel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_aa8e8eab769dfa11a6c7d0844f9249f1a}\label{classGateSinogram_aa8e8eab769dfa11a6c7d0844f9249f1a}} 
+size\+\_\+t {\bfseries Get\+Current\+Frame\+ID} () const
+\begin{DoxyCompactList}\small\item\em Returns the current frame ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a50440f0d947f01ff8890bc541e15a7fa}\label{classGateSinogram_a50440f0d947f01ff8890bc541e15a7fa}} 
+size\+\_\+t {\bfseries Get\+Current\+Gate\+ID} () const
+\begin{DoxyCompactList}\small\item\em Returns the current gate ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a26ce367534c195a7ed6160afcdc97db0}\label{classGateSinogram_a26ce367534c195a7ed6160afcdc97db0}} 
+size\+\_\+t {\bfseries Get\+Current\+Data\+ID} () const
+\begin{DoxyCompactList}\small\item\em Returns the current data ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a7057b6888eb4a2bd4ba43118b3798038}\label{classGateSinogram_a7057b6888eb4a2bd4ba43118b3798038}} 
+size\+\_\+t {\bfseries Get\+Current\+Bed\+ID} () const
+\begin{DoxyCompactList}\small\item\em Returns the current bed ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSinogram_a1c2a939edc177718431886b7973194ef}{Stream\+Out}} (std\+::ofstream \&dest, size\+\_\+t sino\+ID, size\+\_\+t seek\+ID)
+\begin{DoxyCompactList}\small\item\em Writes a 2D sinogram onto an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Public Attributes}
+\begin{Indent}\textbf{ Data fields}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSinogram_af6a56cfb6905dda1f54503e651311c56}\label{classGateSinogram_af6a56cfb6905dda1f54503e651311c56}} 
+size\+\_\+t {\bfseries m\+\_\+ring\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of crystal rings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_acd257fd3515fd63d077e937923f7fb20}\label{classGateSinogram_acd257fd3515fd63d077e937923f7fb20}} 
+size\+\_\+t {\bfseries m\+\_\+crystal\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of crystals per crystal ring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a369626e7336d2bbfdcb9c2343f25978a}\label{classGateSinogram_a369626e7336d2bbfdcb9c2343f25978a}} 
+Sinogram\+Data\+Type $\ast$$\ast$ {\bfseries m\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Array of 2D sinograms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a9c8a301281d5e80262a58151af05a7aa}\label{classGateSinogram_a9c8a301281d5e80262a58151af05a7aa}} 
+G4int {\bfseries m\+\_\+current\+Frame\+ID}
+\begin{DoxyCompactList}\small\item\em ID of the current frame (dynamique acquisitions) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_aca0f4144eecb3d3e4ef651f1eaa77b65}\label{classGateSinogram_aca0f4144eecb3d3e4ef651f1eaa77b65}} 
+G4int {\bfseries m\+\_\+current\+Gate\+ID}
+\begin{DoxyCompactList}\small\item\em ID of the current gate (synchronized acquisitions) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a0d0198c22a48961abd0b8e20c59b401a}\label{classGateSinogram_a0d0198c22a48961abd0b8e20c59b401a}} 
+G4int {\bfseries m\+\_\+current\+Data\+ID}
+\begin{DoxyCompactList}\small\item\em ID of the current coincidence type (prompts or trues, delayed, Low\+Energy, ...) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a7256502ac6b65a3e1db30f0cbd71cc03}\label{classGateSinogram_a7256502ac6b65a3e1db30f0cbd71cc03}} 
+G4int {\bfseries m\+\_\+current\+Bed\+ID}
+\begin{DoxyCompactList}\small\item\em ID of the current bed position (multi-\/bed acquisitions) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a6b57b7ab45b6db98193327992333e659}\label{classGateSinogram_a6b57b7ab45b6db98193327992333e659}} 
+G4int {\bfseries n\+Verbose\+Level}
+\item 
+\mbox{\Hypertarget{classGateSinogram_a27c18ce0890afd3eae20c70a51c975c5}\label{classGateSinogram_a27c18ce0890afd3eae20c70a51c975c5}} 
+Sinogram\+Data\+Type $\ast$ {\bfseries m\+\_\+randoms\+Nb}
+\begin{DoxyCompactList}\small\item\em Total number of randoms per 2D sinogram. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a278cc16d059b99e5a66049e1204b755a}\label{classGateSinogram_a278cc16d059b99e5a66049e1204b755a}} 
+size\+\_\+t {\bfseries m\+\_\+radial\+Elem\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of radial sinogram bins. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_ae4b32953ce8331cfd11430c427e371e5}\label{classGateSinogram_ae4b32953ce8331cfd11430c427e371e5}} 
+size\+\_\+t {\bfseries m\+\_\+sinogram\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of 2D sinograms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a123db145031dec887e8e8c25e20798bd}\label{classGateSinogram_a123db145031dec887e8e8c25e20798bd}} 
+size\+\_\+t {\bfseries m\+\_\+virtual\+Ring\+Per\+Block\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of virtual crystal rings per block, used for sinogram output bin identifacation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSinogram_a4f2a889fce94511e55779e9a56dc8424}\label{classGateSinogram_a4f2a889fce94511e55779e9a56dc8424}} 
+size\+\_\+t {\bfseries m\+\_\+virtual\+Crystal\+Per\+Block\+Nb}
+\begin{DoxyCompactList}\small\item\em Nb of virtual crystals in transaxial direction per block, used for sinogram output bin identifacation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Structure to store the sinogram sets from a PET simulation. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSinogram}{Gate\+Sinogram}} -\/ by By \href{mailto:jan@shfj.cea.fr}{\texttt{ jan@shfj.\+cea.\+fr}} \& \href{mailto:comtat@shfj.cea.fr}{\texttt{ comtat@shfj.\+cea.\+fr}} (december 2002)
+\item This structure is generated during a PET simulation by \mbox{\hyperlink{classGateToSinogram}{Gate\+To\+Sinogram}}. It can be stored into an output file using a set-\/writer such as \mbox{\hyperlink{classGateSinoToEcat7}{Gate\+Sino\+To\+Ecat7}}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateToSinogram}{Gate\+To\+Sinogram}}, \mbox{\hyperlink{classGateSinoToEcat7}{Gate\+Sino\+To\+Ecat7}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSinogram_a1c2a939edc177718431886b7973194ef}\label{classGateSinogram_a1c2a939edc177718431886b7973194ef}} 
+\index{GateSinogram@{GateSinogram}!StreamOut@{StreamOut}}
+\index{StreamOut@{StreamOut}!GateSinogram@{GateSinogram}}
+\doxysubsubsection{\texorpdfstring{StreamOut()}{StreamOut()}}
+{\footnotesize\ttfamily void Gate\+Sinogram\+::\+Stream\+Out (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{dest,  }\item[{size\+\_\+t}]{sino\+ID,  }\item[{size\+\_\+t}]{seek\+ID }\end{DoxyParamCaption})}
+
+
+
+Writes a 2D sinogram onto an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & the destination stream \\
+\hline
+{\em sino\+ID} & the 2D sinogram to stream-\/out \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Sinogram.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Sinogram.\+cc\end{DoxyCompactItemize}

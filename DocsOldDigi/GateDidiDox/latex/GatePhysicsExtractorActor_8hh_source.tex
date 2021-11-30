@@ -1,0 +1,64 @@
+\hypertarget{GatePhysicsExtractorActor_8hh_source}{}\doxysection{Gate\+Physics\+Extractor\+Actor.\+hh}
+\label{GatePhysicsExtractorActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePhysicsExtractorActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePhysicsExtractorActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GATEPHYSICSEXTRACTORACTOR\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GATEPHYSICSEXTRACTORACTOR\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GatePhysicsExtractorActorMessenger.hh"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <G4EmCalculator.hh>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <G4ParticleDefinition.hh>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <G4Material.hh>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhysicsExtractorActor}{GatePhysicsExtractorActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keyword}{public}:}
+\DoxyCodeLine{16         \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePhysicsExtractorActor}{\string~GatePhysicsExtractorActor}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGatePhysicsExtractorActor}{GatePhysicsExtractorActor}})}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGatePhysicsExtractorActor_af21f444c41512e400558aabf54696c37}{Construct}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{23         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event*) ;}
+\DoxyCodeLine{24         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{27         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*, \textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{28         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{31         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetProcessName(\textcolor{keyword}{const} G4String\& name) \{ pProcessName = name; \};}
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} SetParticleName(\textcolor{keyword}{const} G4String\& particleName);}
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} SetMaterialName(\textcolor{keyword}{const} G4String\& materialName);}
+\DoxyCodeLine{36         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyCutThreshold(\textcolor{keywordtype}{double} thresh) \{ pCutThreshold = thresh; \};}
+\DoxyCodeLine{37         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetMinEnergy(\textcolor{keywordtype}{double} energy) \{ pMinEnergy = energy; \};}
+\DoxyCodeLine{38         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetMaxEnergy(\textcolor{keywordtype}{double} energy) \{ pMaxEnergy = energy; \};}
+\DoxyCodeLine{39         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNumberOfPointsPerOrderOfMagnitude(\textcolor{keywordtype}{double} nbPoints) \{ pNbPoints = nbPoints; \};}
+\DoxyCodeLine{40     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41         \mbox{\hyperlink{classGatePhysicsExtractorActor}{GatePhysicsExtractorActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         G4EmCalculator* pCalculator;}
+\DoxyCodeLine{44         \textcolor{keyword}{const} G4ParticleDefinition* pParticleDefinition;}
+\DoxyCodeLine{45         \textcolor{keyword}{const} G4Material* pMaterial;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         G4String pProcessName;}
+\DoxyCodeLine{48         \textcolor{keywordtype}{double} pMinEnergy;}
+\DoxyCodeLine{49         \textcolor{keywordtype}{double} pMaxEnergy;}
+\DoxyCodeLine{50         \textcolor{keywordtype}{double} pNbPoints;}
+\DoxyCodeLine{51         \textcolor{keywordtype}{double} pCutThreshold;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         GatePhysicsExtractorActorMessenger* pMessenger;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 MAKE\_AUTO\_CREATOR\_ACTOR(PhysicsExtractorActor,\mbox{\hyperlink{classGatePhysicsExtractorActor}{GatePhysicsExtractorActor}})}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,226 @@
+\hypertarget{classGateTimeActor}{}\doxysection{Gate\+Time\+Actor Class Reference}
+\label{classGateTimeActor}\index{GateTimeActor@{GateTimeActor}}
+Inheritance diagram for Gate\+Time\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateTimeActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a7818ba0a55ccf62d07cf4cbf97bae7ab}\label{classGateTimeActor_a7818ba0a55ccf62d07cf4cbf97bae7ab}} 
+virtual {\bfseries $\sim$\+Gate\+Time\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a2f6b15c481b99c93a90423371ba6f67d}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a2629d3c83b00ffaf6d7839a76d2dbe48}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a1ba1811e305dbb6359cf8d48d9d3f24c}{End\+Of\+Run\+Action}} (const G4\+Run $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a67394572ab664703d2363de0c8bf71ef}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a353522661de329678d7d1b7882e68b29}{End\+Of\+Event\+Action}} (const G4\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a7eac8e4764b2bf558e4c18eb107e87db}{Pre\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a4b79c6374cfece0fe0adec431150bdeb}{Post\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a062ca12e1cd0ea57ab5f5eb7500a706a}{User\+Stepping\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a3da1a88ffe6326837129703f306eaafe}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateTimeActor_a349d869428d9d7f3d83df552dd074919}{Reset\+Data}} ()
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a15e146a3b2c6ca2033a1330bb6247bd2}\label{classGateTimeActor_a15e146a3b2c6ca2033a1330bb6247bd2}} 
+void {\bfseries Enable\+Detailed\+Stats} (bool b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a53b13ffebb0cba5b06c84a0587624aba}\label{classGateTimeActor_a53b13ffebb0cba5b06c84a0587624aba}} 
+typedef std\+::map$<$ G4\+String, double $>$ {\bfseries Map\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a6805cf97fc40185750f1f1fe6e8c28ec}\label{classGateTimeActor_a6805cf97fc40185750f1f1fe6e8c28ec}} 
+{\bfseries Gate\+Time\+Actor} (G4\+String name, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTimeActor_aa4f1c9c7fbf6b770a249955605b4d466}\label{classGateTimeActor_aa4f1c9c7fbf6b770a249955605b4d466}} 
+void {\bfseries Update\+Current\+Text\+Output} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_afc2e824990ad514d459f999ccd5bd75e}\label{classGateTimeActor_afc2e824990ad514d459f999ccd5bd75e}} 
+G4\+Timer {\bfseries m\+Current\+Run\+Timer}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a7d0d1618bad4990602b5615c971f93e9}\label{classGateTimeActor_a7d0d1618bad4990602b5615c971f93e9}} 
+G4\+Timer {\bfseries m\+Current\+Event\+Timer}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a3702272916cf7c486b01c6a38c7320d6}\label{classGateTimeActor_a3702272916cf7c486b01c6a38c7320d6}} 
+G4\+Timer {\bfseries m\+Current\+Track\+Timer}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a253c979f3d866b3e708c8025eb8fe987}\label{classGateTimeActor_a253c979f3d866b3e708c8025eb8fe987}} 
+G4\+Timer {\bfseries m\+Current\+Step\+Timer}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a3a495c1d07811fae8790058803ea3065}\label{classGateTimeActor_a3a495c1d07811fae8790058803ea3065}} 
+double {\bfseries m\+Total\+Event\+User\+Time}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_ae87a3899d16e819f035ec30559edff0a}\label{classGateTimeActor_ae87a3899d16e819f035ec30559edff0a}} 
+double {\bfseries m\+Total\+Track\+User\+Time}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a97020f5b15ccd5ff1392482ef9ea14ca}\label{classGateTimeActor_a97020f5b15ccd5ff1392482ef9ea14ca}} 
+double {\bfseries m\+Total\+Step\+User\+Time}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a9eded468635cca2c669c6852ca020f24}\label{classGateTimeActor_a9eded468635cca2c669c6852ca020f24}} 
+long {\bfseries m\+Number\+Of\+Events}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a938166eee74d8c44c6dd69b6ded6d189}\label{classGateTimeActor_a938166eee74d8c44c6dd69b6ded6d189}} 
+long {\bfseries m\+Number\+Of\+Tracks}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a79873574ec2925b6d33bf333db9e93be}\label{classGateTimeActor_a79873574ec2925b6d33bf333db9e93be}} 
+long {\bfseries m\+Number\+Of\+Steps}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a3d75e57742d9217f7e29367e1332a65b}\label{classGateTimeActor_a3d75e57742d9217f7e29367e1332a65b}} 
+bool {\bfseries m\+Detailed\+Stat\+Flag}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a92bf871287ffd61a0ecc7a240315d02e}\label{classGateTimeActor_a92bf871287ffd61a0ecc7a240315d02e}} 
+Map\+Type {\bfseries m\+Time\+Per\+Particle}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_aa0aba9076ff56bbb0f67984a19c25446}\label{classGateTimeActor_aa0aba9076ff56bbb0f67984a19c25446}} 
+Map\+Type {\bfseries m\+Track\+Per\+Particle}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a7af343ca4b126969d6f9f5f265b6a762}\label{classGateTimeActor_a7af343ca4b126969d6f9f5f265b6a762}} 
+G4\+String {\bfseries m\+Current\+Particle\+Name}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a71e7ce2f4e3f2f5ce47595f148dec944}\label{classGateTimeActor_a71e7ce2f4e3f2f5ce47595f148dec944}} 
+Map\+Type {\bfseries m\+Number\+Of\+Limiting\+Process}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_ab89cb6e20f93cf1b743845b97d1e37e8}\label{classGateTimeActor_ab89cb6e20f93cf1b743845b97d1e37e8}} 
+Map\+Type {\bfseries m\+Number\+Of\+Along\+By\+Process}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a4a2159feb15546d2a91baa83fdd995cd}\label{classGateTimeActor_a4a2159feb15546d2a91baa83fdd995cd}} 
+std\+::string {\bfseries m\+Current\+Text\+Output}
+\item 
+\mbox{\Hypertarget{classGateTimeActor_a28b46ced38f8787283f1c1ae8338afed}\label{classGateTimeActor_a28b46ced38f8787283f1c1ae8338afed}} 
+\mbox{\hyperlink{classGateTimeActorMessenger}{Gate\+Time\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateTimeActor_a67394572ab664703d2363de0c8bf71ef}\label{classGateTimeActor_a67394572ab664703d2363de0c8bf71ef}} 
+\index{GateTimeActor@{GateTimeActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a2629d3c83b00ffaf6d7839a76d2dbe48}\label{classGateTimeActor_a2629d3c83b00ffaf6d7839a76d2dbe48}} 
+\index{GateTimeActor@{GateTimeActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a2f6b15c481b99c93a90423371ba6f67d}\label{classGateTimeActor_a2f6b15c481b99c93a90423371ba6f67d}} 
+\index{GateTimeActor@{GateTimeActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a353522661de329678d7d1b7882e68b29}\label{classGateTimeActor_a353522661de329678d7d1b7882e68b29}} 
+\index{GateTimeActor@{GateTimeActor}!EndOfEventAction@{EndOfEventAction}}
+\index{EndOfEventAction@{EndOfEventAction}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEventAction()}{EndOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+End\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a1ba1811e305dbb6359cf8d48d9d3f24c}\label{classGateTimeActor_a1ba1811e305dbb6359cf8d48d9d3f24c}} 
+\index{GateTimeActor@{GateTimeActor}!EndOfRunAction@{EndOfRunAction}}
+\index{EndOfRunAction@{EndOfRunAction}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{EndOfRunAction()}{EndOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+End\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a4b79c6374cfece0fe0adec431150bdeb}\label{classGateTimeActor_a4b79c6374cfece0fe0adec431150bdeb}} 
+\index{GateTimeActor@{GateTimeActor}!PostUserTrackingAction@{PostUserTrackingAction}}
+\index{PostUserTrackingAction@{PostUserTrackingAction}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{PostUserTrackingAction()}{PostUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+Post\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Track $\ast$}]{track }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a7eac8e4764b2bf558e4c18eb107e87db}\label{classGateTimeActor_a7eac8e4764b2bf558e4c18eb107e87db}} 
+\index{GateTimeActor@{GateTimeActor}!PreUserTrackingAction@{PreUserTrackingAction}}
+\index{PreUserTrackingAction@{PreUserTrackingAction}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{PreUserTrackingAction()}{PreUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+Pre\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a349d869428d9d7f3d83df552dd074919}\label{classGateTimeActor_a349d869428d9d7f3d83df552dd074919}} 
+\index{GateTimeActor@{GateTimeActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a3da1a88ffe6326837129703f306eaafe}\label{classGateTimeActor_a3da1a88ffe6326837129703f306eaafe}} 
+\index{GateTimeActor@{GateTimeActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateTimeActor_a062ca12e1cd0ea57ab5f5eb7500a706a}\label{classGateTimeActor_a062ca12e1cd0ea57ab5f5eb7500a706a}} 
+\index{GateTimeActor@{GateTimeActor}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GateTimeActor@{GateTimeActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}}
+{\footnotesize\ttfamily void Gate\+Time\+Actor\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Time\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Time\+Actor.\+cc\end{DoxyCompactItemize}

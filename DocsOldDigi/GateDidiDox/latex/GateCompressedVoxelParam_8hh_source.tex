@@ -1,0 +1,43 @@
+\hypertarget{GateCompressedVoxelParam_8hh_source}{}\doxysection{Gate\+Compressed\+Voxel\+Param.\+hh}
+\label{GateCompressedVoxelParam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelParam.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCompressedVoxelParam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateCompressedVoxelParam\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateCompressedVoxelParam\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateCompressedVoxelParameterization.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompressedVoxelParam}{GateCompressedVoxelParam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateCompressedVoxelParam_a138313a26afaa02982b5888c271f81d4}{GateCompressedVoxelParam}}( \textcolor{keyword}{const} G4String\& itsName, \mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}}* vpi);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCompressedVoxelParam_a34968573599f17dbc376ee876907aae8}{\string~GateCompressedVoxelParam}}();}
+\DoxyCodeLine{29  }
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} ConstructOwnPhysicalVolume(G4bool flagUpdate);}
+\DoxyCodeLine{31   }
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} DestroyGeometry();}
+\DoxyCodeLine{33 \textcolor{keyword}{private}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateCompressedVoxelParameterized}{GateCompressedVoxelParameterized}}*         itsInserter;}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateCompressedVoxelParameterization}{GateCompressedVoxelParameterization}}*      m\_parameterization;}
+\DoxyCodeLine{36   G4VPhysicalVolume*                        m\_pvParameterized;}
+\DoxyCodeLine{37 \};  }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

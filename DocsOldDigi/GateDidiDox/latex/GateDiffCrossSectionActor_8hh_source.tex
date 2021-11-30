@@ -1,0 +1,96 @@
+\hypertarget{GateDiffCrossSectionActor_8hh_source}{}\doxysection{Gate\+Diff\+Cross\+Section\+Actor.\+hh}
+\label{GateDiffCrossSectionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDiffCrossSectionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDiffCrossSectionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}TNtuple.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}TBranch.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}TString.h"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifndef GateDiffCrossSectionActor\_HH}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define GateDiffCrossSectionActor\_HH}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateDiffCrossSectionActorMessenger.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}G4EmCalculator.hh"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}G4Electron.hh"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }G4VEMDataSet;}
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDiffCrossSectionActor}{GateDiffCrossSectionActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39  \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{42   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDiffCrossSectionActor_a2cece823da344d86684770c722cd100e}{\string~GateDiffCrossSectionActor}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateDiffCrossSectionActor}{GateDiffCrossSectionActor}})}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{48   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDiffCrossSectionActor_ab5323eb7976bcd7b5904c5219ea8f630}{Construct}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run* run);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDiffCrossSectionActor_a36156b3a72001eace8cd0ec404a3f8ed}{SaveData}}();}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialise();}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} SetEnergy( G4double value);}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} ReadListEnergy( G4String filename);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} SetAngle( G4double value);}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} ReadListAngle( G4String filename);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} SetMaterial(G4String name);}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} ReadMaterialList(G4String filename);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   std::ofstream PointerToFileDataOutSF;}
+\DoxyCodeLine{68   std::ofstream PointerToFileDataOutFF;}
+\DoxyCodeLine{69   std::ofstream PointerToFileDataOutDCScompton;}
+\DoxyCodeLine{70   std::ofstream PointerToFileDataOutDCSrayleigh;}
+\DoxyCodeLine{71   std::stringstream DriverDataOutSF;}
+\DoxyCodeLine{72   std::stringstream DriverDataOutFF;}
+\DoxyCodeLine{73   std::stringstream DriverDataOutDCScompton;}
+\DoxyCodeLine{74   std::stringstream DriverDataOutDCSrayleigh;}
+\DoxyCodeLine{75   std::string DataOutSF;}
+\DoxyCodeLine{76   std::string DataOutFF;}
+\DoxyCodeLine{77   std::string DataOutDCScompton;}
+\DoxyCodeLine{78   std::string DataOutDCSrayleigh;}
+\DoxyCodeLine{79 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{80   \mbox{\hyperlink{classGateDiffCrossSectionActor}{GateDiffCrossSectionActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{81   \mbox{\hyperlink{classGateDiffCrossSectionActorMessenger}{GateDiffCrossSectionActorMessenger}} * pMessenger;}
+\DoxyCodeLine{82   G4double mUserEnergy;}
+\DoxyCodeLine{83   G4double mUserAngle;}
+\DoxyCodeLine{84   G4String mUserMaterial;}
+\DoxyCodeLine{85   G4String mExitFileNameSF, mExitFileNameFF, mExitFileNameDCScompton, mExitFileNameDCSrayleigh;}
+\DoxyCodeLine{86   std::vector<G4double > mUserEnergyList;}
+\DoxyCodeLine{87   std::vector<G4double > mUserAngleList;}
+\DoxyCodeLine{88   std::vector<G4String > mUserMaterialList;}
+\DoxyCodeLine{89   G4VEMDataSet* scatterFunctionData;}
+\DoxyCodeLine{90   G4VEMDataSet* formFactorData;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 MAKE\_AUTO\_CREATOR\_ACTOR(DiffCrossSectionActor,\mbox{\hyperlink{classGateDiffCrossSectionActor}{GateDiffCrossSectionActor}})}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

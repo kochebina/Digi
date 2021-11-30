@@ -1,0 +1,196 @@
+\hypertarget{GateToLMF_8hh_source}{}\doxysection{Gate\+To\+LMF.\+hh}
+\label{GateToLMF_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToLMF.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToLMF.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Luc Simon <luc.simon@iphe.unil.ch>}}
+\DoxyCodeLine{5 \textcolor{comment}{   Daniel Strul <daniel.strul@iphe.unil.ch>}}
+\DoxyCodeLine{6 \textcolor{comment}{   Giovanni Santin <giovanni.santin@cern.ch>}}
+\DoxyCodeLine{7 \textcolor{comment}{   Claude Comtat <comtat@ieee.org>}}
+\DoxyCodeLine{8 \textcolor{comment}{   Jean-\/Marc Vieira <jean-\/marc.vieira@epfl.ch>}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{   Copyright (C) 2002,2003 UNIL/IPHE, CH-\/1015 Lausanne}}
+\DoxyCodeLine{11 \textcolor{comment}{   Copyright (C) 2003 CEA/SHFJ, F-\/91401 Orsay}}
+\DoxyCodeLine{12 \textcolor{comment}{   Copyright (C) 2003 EPFL/LPHE, CH-\/1015 Lausanne}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{15 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{16 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{17 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef GateToLMF\_h}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define GateToLMF\_h 1}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifdef GATE\_USE\_LMF}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4UserEventAction.hh"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateSingleDigi.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}lmf\_gate.h"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToLMFMessenger}{GateToLMFMessenger}};}
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }GateToLMF : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 public :}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   GateToLMF(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,\mbox{\hyperlink{classGateVSystem}{GateVSystem}} *pSystem,DigiMode digiMode); }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \string~GateToLMF(); }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 public :}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} RecordBeginOfAcquisition();             }
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} RecordEndOfAcquisition();               }
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *);        }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *) \{\};       }
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *) \{\}; }
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *);      }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} RecordStep(\textcolor{keyword}{const} G4Step *) \{\};          }
+\DoxyCodeLine{55     \textcolor{keyword}{const} G4String\& GiveNameOfFile()\{ \textcolor{keywordflow}{return} m\_nameOfFile; \};          }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step *) \{\}; }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62   u8 GetEnergy(u8 \textcolor{keywordtype}{id})\{ \textcolor{keywordflow}{return} m\_LMFEnergy[id]; \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} SetEnergy(u8 \textcolor{keywordtype}{id}, G4double value) \{}
+\DoxyCodeLine{67     m\_LMFEnergy[id] = (u8)(((value/GATE\_LMF\_ENERGY\_STEP\_KEV)/keV)+0.5); \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70   u8 *GetTime(u8 \textcolor{keywordtype}{id}) \{\textcolor{keywordflow}{return} (m\_pLMFTime[\textcolor{keywordtype}{id}]); \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} SetTime(u8 \textcolor{keywordtype}{id}, G4double value);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   u16 GetGantryAxialPos();   }
+\DoxyCodeLine{77   u16 GetGantryAngularPos(); }
+\DoxyCodeLine{78   u16 GetSourceAxialPos(); }
+\DoxyCodeLine{79   u16 GetSourceAngularPos(); }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} SetGantryAxialPos(G4int value);}
+\DoxyCodeLine{82   \textcolor{keywordtype}{void} SetGantryAngularPos(G4int value);}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} SetSourceAxialPos(G4int value);}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} SetSourceAngularPos(G4int value);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   u16 GetLayerID(u8 \textcolor{keywordtype}{id}) \{ \textcolor{keywordflow}{return} m\_LMFLayerID[id]; \};         }
+\DoxyCodeLine{87   u16 GetCrystalID(u8 \textcolor{keywordtype}{id}) \{ \textcolor{keywordflow}{return} m\_LMFCrystalID[id]; \};     }
+\DoxyCodeLine{88   u16 GetSubmoduleID(u8 \textcolor{keywordtype}{id}) \{ \textcolor{keywordflow}{return} m\_LMFSubmoduleID[id]; \}; }
+\DoxyCodeLine{89   u16 GetModuleID(u8 \textcolor{keywordtype}{id}) \{ \textcolor{keywordflow}{return} m\_LMFModuleID[id]; \};       }
+\DoxyCodeLine{90   u16 GetRsectorID(u8 \textcolor{keywordtype}{id}) \{ \textcolor{keywordflow}{return} m\_LMFRsectorID[id]; \};     }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} SetLayerID(u8 \textcolor{keywordtype}{id}, G4int value) \{ m\_LMFLayerID[id] = (u16) value; \};         }
+\DoxyCodeLine{94   \textcolor{keywordtype}{void} SetCrystalID(u8 \textcolor{keywordtype}{id}, G4int value) \{ m\_LMFCrystalID[id] = (u16) value; \};     }
+\DoxyCodeLine{95   \textcolor{keywordtype}{void} SetSubmoduleID(u8 \textcolor{keywordtype}{id}, G4int value) \{ m\_LMFSubmoduleID[id] = (u16) value; \}; }
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} SetModuleID(u8 \textcolor{keywordtype}{id}, G4int value) \{ m\_LMFModuleID[id] = (u16) value; \};       }
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} SetRsectorID(u8 \textcolor{keywordtype}{id}, G4int value) \{ m\_LMFRsectorID[id] = (u16) value; \};     }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} SetOutputFileName(G4String ofname);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104   \textcolor{keyword}{const}  G4String\& GetInputDataName()}
+\DoxyCodeLine{105     \{ \textcolor{keywordflow}{return} m\_inputDataChannel;       \};}
+\DoxyCodeLine{107   \textcolor{keywordtype}{void}   SetOutputDataName(\textcolor{keyword}{const} G4String\& aName)}
+\DoxyCodeLine{108     \{ m\_inputDataChannel = aName;      \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{116   \textcolor{keywordtype}{void} SetCoincidenceBool(G4bool value);}
+\DoxyCodeLine{122   \textcolor{keywordtype}{void} SetDetectorIDBool(G4bool value);}
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} SetEnergyBool(G4bool value);}
+\DoxyCodeLine{134   \textcolor{keywordtype}{void} SetNeighbourBool(G4bool value);}
+\DoxyCodeLine{141   \textcolor{keywordtype}{void} SetNeighbourhoodOrder(G4int value);}
+\DoxyCodeLine{147    \textcolor{keywordtype}{void} SetGantryAxialPosBool(G4bool value);}
+\DoxyCodeLine{153   \textcolor{keywordtype}{void} SetGantryAngularPosBool(G4bool value);}
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} SetSourcePosBool(G4bool value);}
+\DoxyCodeLine{165   \textcolor{keywordtype}{void} SetGateDigiBool(G4bool value);}
+\DoxyCodeLine{171   \textcolor{keywordtype}{void} SetComptonBool(G4bool value);}
+\DoxyCodeLine{177   \textcolor{keywordtype}{void} SetComptonDetectorBool(G4bool value);}
+\DoxyCodeLine{183   \textcolor{keywordtype}{void} SetSourceIDBool(G4bool value);}
+\DoxyCodeLine{189   \textcolor{keywordtype}{void} SetSourceXYZPosBool(G4bool value);}
+\DoxyCodeLine{195   \textcolor{keywordtype}{void} SetGlobalXYZPosBool(G4bool value);}
+\DoxyCodeLine{201   \textcolor{keywordtype}{void} SetEventIDBool(G4bool value);}
+\DoxyCodeLine{207   \textcolor{keywordtype}{void} SetRunIDBool(G4bool value);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{210   \textcolor{keywordtype}{void} showOneLMFDigi();}
+\DoxyCodeLine{212   \textcolor{keywordtype}{void} buildLMFEventRecord();}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 }
+\DoxyCodeLine{219   \textcolor{keywordtype}{void} createLMF\_ASCIIfile(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 public :}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{234   \textcolor{keywordtype}{void} StoreTheDigiInLMF(\mbox{\hyperlink{classGateSingleDigi}{GateSingleDigi}} *digi);}
+\DoxyCodeLine{236   \textcolor{keywordtype}{void} StoreMoreDigiInLMF\_GDR(\mbox{\hyperlink{classGateSingleDigi}{GateSingleDigi}} *digi);}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238   \textcolor{keywordtype}{void} StoreTheCoinciDigiInLMF(\mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}} *digi);}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 private :}
+\DoxyCodeLine{242   u8 m\_LMFEnergy[2];}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{249   u8 m\_pLMFTime[8][2];}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252   u16 m\_LMFLayerID[2]; }
+\DoxyCodeLine{253   u16 m\_LMFCrystalID[2]; }
+\DoxyCodeLine{254   u16 m\_LMFSubmoduleID[2]; }
+\DoxyCodeLine{255   u16 m\_LMFModuleID[2];  }
+\DoxyCodeLine{256   u16 m\_LMFRsectorID[2];  }
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260   u16 m\_LMFgantryAxialPos;  }
+\DoxyCodeLine{261   u16 m\_LMFgantryAngularPos; }
+\DoxyCodeLine{262   u16 m\_LMFsourceAngularPos;}
+\DoxyCodeLine{263   u16 m\_LMFsourceAxialPos;  }
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267   G4double m\_azimuthalStep;         }
+\DoxyCodeLine{268   G4double m\_axialStep;                 }
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270   \textcolor{comment}{// eccentric rotation parameters}}
+\DoxyCodeLine{271   G4double m\_shiftX;                    }
+\DoxyCodeLine{272   G4double m\_shiftY;                    }
+\DoxyCodeLine{273   G4double m\_shiftZ;                    }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275   G4double m\_pZshift\_vector[256] ;}
+\DoxyCodeLine{276   G4int    m\_RingModuloNumber;}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279   \mbox{\hyperlink{structLMF__ccs__encodingHeader}{ENCODING\_HEADER}} *pEncoH ; \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{280   \mbox{\hyperlink{structLMF__ccs__eventHeader}{EVENT\_HEADER}} *pEH ;       \textcolor{comment}{// Declaration of|}}
+\DoxyCodeLine{281   \mbox{\hyperlink{structLMF__ccs__gateDigiHeader}{GATE\_DIGI\_HEADER}} *pGDH ;   \textcolor{comment}{//               |}}
+\DoxyCodeLine{282   \mbox{\hyperlink{structLMF__ccs__countRateHeader}{COUNT\_RATE\_HEADER}} *pCRH ;  \textcolor{comment}{//  a LMF Record |}}
+\DoxyCodeLine{283   \mbox{\hyperlink{structLMF__ccs__currentContent}{CURRENT\_CONTENT}} *pcC ;    \textcolor{comment}{//    Carrier    |}}
+\DoxyCodeLine{284   \mbox{\hyperlink{structLMF__ccs__eventRecord}{EVENT\_RECORD}} *pER[2] ;       \textcolor{comment}{//               |}}
+\DoxyCodeLine{285   \mbox{\hyperlink{structLMF__ccs__eventRecord}{EVENT\_RECORD}} *pERC ;       \textcolor{comment}{//               |}}
+\DoxyCodeLine{286   \mbox{\hyperlink{structLMF__ccs__countRateRecord}{COUNT\_RATE\_RECORD}} *pCRR ;  \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289   FILE *m\_pfile,*m\_pASCIIfile;}
+\DoxyCodeLine{290   G4String m\_nameOfFile,m\_nameOfASCIIfile,m\_name;}
+\DoxyCodeLine{298   \mbox{\hyperlink{classGateToLMFMessenger}{GateToLMFMessenger}} *m\_LMFMessenger;}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 }
+\DoxyCodeLine{302 }
+\DoxyCodeLine{307   \mbox{\hyperlink{classGateVSystem}{GateVSystem}} *m\_pSystem;}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309   G4String m\_inputDataChannel;    }
+\DoxyCodeLine{310   G4int    m\_inputDataChannelID;      }
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 \};}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

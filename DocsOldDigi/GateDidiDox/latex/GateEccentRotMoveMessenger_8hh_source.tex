@@ -1,0 +1,53 @@
+\hypertarget{GateEccentRotMoveMessenger_8hh_source}{}\doxysection{Gate\+Eccent\+Rot\+Move\+Messenger.\+hh}
+\label{GateEccentRotMoveMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEccentRotMoveMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateEccentRotMoveMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateEccentRotMoveMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateEccentRotMoveMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterMessenger.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateEccentRotMove.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEccentRotMoveMessenger}{GateEccentRotMoveMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateObjectRepeaterMessenger}{GateObjectRepeaterMessenger}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46   \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{classGateEccentRotMoveMessenger_acb83dc5920a3e38a3630a275b2167c62}{GateEccentRotMoveMessenger}}(\mbox{\hyperlink{classGateEccentRotMove}{GateEccentRotMove}}* itsMove);}
+\DoxyCodeLine{50    \mbox{\hyperlink{classGateEccentRotMoveMessenger_ac7acbd141240212347bfd829bb3fcaf5}{\string~GateEccentRotMoveMessenger}}();}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEccentRotMoveMessenger_aa22bb5032cedddc0e642c29f191ce56d}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateEccentRotMove}{GateEccentRotMove}}* \mbox{\hyperlink{classGateEccentRotMoveMessenger_ae38132a1982721732ad3365e189c08f2}{GetEccentRotMove}}() }
+\DoxyCodeLine{57       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateEccentRotMove}{GateEccentRotMove}}*)GetObjectRepeater(); \}}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59   \textcolor{keyword}{private}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     G4UIcmdWith3VectorAndUnit*        ShiftCmd;     }
+\DoxyCodeLine{63     G4UIcmdWithADoubleAndUnit*        VelocityCmd;   }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,304 @@
+\hypertarget{GateRootDefs_8hh_source}{}\doxysection{Gate\+Root\+Defs.\+hh}
+\label{GateRootDefs_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRootDefs.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRootDefs.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*  Update for Optical Photons: V. Cuplov   15 Feb. 2012}}
+\DoxyCodeLine{10 \textcolor{comment}{            -\/ Added ROOT structure to store phantom hits}}
+\DoxyCodeLine{11 \textcolor{comment}{*/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateRootHitBuffer\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateRootHitBuffer\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}TTree.h"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}};}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSingleDigi}{GateSingleDigi}};}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define ROOT\_VOLUMEIDSIZE 10}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define ROOT\_OUTPUTIDSIZE 6}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{47 \textcolor{keyword}{namespace }GateRootDefs}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetDefaultOutputIDNames();}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} SetOutputIDName(\textcolor{keywordtype}{char} * anOutputIDName, \textcolor{keywordtype}{size\_t} depth);}
+\DoxyCodeLine{51   G4bool GetRecordSeptalFlag(); \textcolor{comment}{// HDS : record septal penetration}}
+\DoxyCodeLine{52 \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{62 \textcolor{keyword}{class }GateRootHitBuffer}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64   \textcolor{keyword}{public}:}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keyword}{inline} GateRootHitBuffer() \{Clear();\}                 }
+\DoxyCodeLine{67     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \string~GateRootHitBuffer() \{\}            }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} Clear();                                 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} Fill(\mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}}* aHit);}
+\DoxyCodeLine{71     \mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}}* CreateHit();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77     \textcolor{keyword}{inline} G4double GetTime()\textcolor{keyword}{ const}}
+\DoxyCodeLine{78 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} time * second;\}}
+\DoxyCodeLine{80     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTime(G4double aTime)}
+\DoxyCodeLine{81       \{ time = aTime / second;\}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84     \textcolor{keyword}{inline} G4double GetTrackLocalTime()\textcolor{keyword}{ const}}
+\DoxyCodeLine{85 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} trackLocalTime * second;\}}
+\DoxyCodeLine{87     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrackLocalTime(G4double aTime)}
+\DoxyCodeLine{88       \{ trackLocalTime = aTime / second;\}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{92     \textcolor{keyword}{inline} G4double GetEdep()\textcolor{keyword}{ const}}
+\DoxyCodeLine{93 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} edep * MeV;\}}
+\DoxyCodeLine{95     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEdep(G4double anEnergy)}
+\DoxyCodeLine{96       \{ edep = anEnergy / MeV;\}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99     \textcolor{keyword}{inline} G4double GetStepLength()\textcolor{keyword}{ const}}
+\DoxyCodeLine{100 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} stepLength * mm;\}}
+\DoxyCodeLine{102     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetStepLength(G4double aLength)}
+\DoxyCodeLine{103       \{ stepLength = aLength / mm;\}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107     \textcolor{keyword}{inline} G4double GetTrackLength()\textcolor{keyword}{ const}}
+\DoxyCodeLine{108 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} trackLength * mm;\}}
+\DoxyCodeLine{110     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTrackLength(G4double aLength)}
+\DoxyCodeLine{111       \{ trackLength = aLength / mm;\}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115     \textcolor{keyword}{inline} G4ThreeVector GetPos()\textcolor{keyword}{ const}}
+\DoxyCodeLine{116 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} G4ThreeVector(posX,posY,posZ) * mm ;\}}
+\DoxyCodeLine{118     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetPos(\textcolor{keyword}{const} G4ThreeVector\& aPosition)}
+\DoxyCodeLine{119       \{ }
+\DoxyCodeLine{120         posX = aPosition.x() / mm; }
+\DoxyCodeLine{121     posY = aPosition.y() / mm; }
+\DoxyCodeLine{122     posZ = aPosition.z() / mm; }
+\DoxyCodeLine{123       \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{126     \textcolor{keyword}{inline} G4ThreeVector GetLocalPos()\textcolor{keyword}{ const}}
+\DoxyCodeLine{127 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} G4ThreeVector(localPosX,localPosY,localPosZ) * mm ;\}}
+\DoxyCodeLine{129     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetLocalPos(\textcolor{keyword}{const} G4ThreeVector\& aPosition)}
+\DoxyCodeLine{130       \{ }
+\DoxyCodeLine{131         localPosX = aPosition.x() / mm; }
+\DoxyCodeLine{132     localPosY = aPosition.y() / mm; }
+\DoxyCodeLine{133     localPosZ = aPosition.z() / mm; }
+\DoxyCodeLine{134       \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137     \textcolor{keyword}{inline} G4ThreeVector GetSourcePos()\textcolor{keyword}{ const}}
+\DoxyCodeLine{138 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} G4ThreeVector(sourcePosX,sourcePosY,sourcePosZ) * mm ;\}}
+\DoxyCodeLine{140     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetSourcePos(\textcolor{keyword}{const} G4ThreeVector\& aPosition)}
+\DoxyCodeLine{141       \{ }
+\DoxyCodeLine{142         sourcePosX = aPosition.x() / mm; }
+\DoxyCodeLine{143     sourcePosY = aPosition.y() / mm; }
+\DoxyCodeLine{144     sourcePosZ = aPosition.z() / mm; }
+\DoxyCodeLine{145       \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148     \textcolor{keyword}{inline} G4double GetAxialPos()\textcolor{keyword}{ const}}
+\DoxyCodeLine{149 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} axialPos * mm;\}}
+\DoxyCodeLine{151     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetAxialPos(G4double anAxialPos)}
+\DoxyCodeLine{152       \{ axialPos = anAxialPos / mm;\}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{155     \textcolor{keyword}{inline} G4double GetRotationAngle()\textcolor{keyword}{ const}}
+\DoxyCodeLine{156 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} rotationAngle * degree;\}}
+\DoxyCodeLine{158     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetRotationAngle(G4double anAngle)}
+\DoxyCodeLine{159       \{ rotationAngle = anAngle / degree;\}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     Int\_t    PDGEncoding;                       }
+\DoxyCodeLine{166     Int\_t    trackID;                           }
+\DoxyCodeLine{167     Int\_t    parentID;                          }
+\DoxyCodeLine{168     Double\_t time;                              }
+\DoxyCodeLine{169     Double\_t trackLocalTime;                        }
+\DoxyCodeLine{170     Float\_t  edep;                              }
+\DoxyCodeLine{171     Float\_t  stepLength;                        }
+\DoxyCodeLine{172     Float\_t  trackLength;                       }
+\DoxyCodeLine{173     Float\_t  posX,posY,posZ;                    }
+\DoxyCodeLine{174     Float\_t  momDirX,momDirY,momDirZ;              }
+\DoxyCodeLine{175     Float\_t  localPosX, localPosY, localPosZ;   }
+\DoxyCodeLine{176     Int\_t    outputID[ROOT\_OUTPUTIDSIZE];   }
+\DoxyCodeLine{177     Int\_t    photonID;                          }
+\DoxyCodeLine{178     Int\_t    nPhantomCompton;                   }
+\DoxyCodeLine{179     Int\_t    nCrystalCompton;                   }
+\DoxyCodeLine{180     Int\_t    nPhantomRayleigh;                  }
+\DoxyCodeLine{181     Int\_t    nCrystalRayleigh;                  }
+\DoxyCodeLine{182     Int\_t    primaryID;                         }
+\DoxyCodeLine{183     Float\_t  sourcePosX,sourcePosY,sourcePosZ;  }
+\DoxyCodeLine{184     Int\_t    sourceID;                          }
+\DoxyCodeLine{185     Int\_t    eventID;                           }
+\DoxyCodeLine{186     Int\_t    runID;                             }
+\DoxyCodeLine{187     Float\_t  axialPos;                          }
+\DoxyCodeLine{188     Float\_t  rotationAngle;                     }
+\DoxyCodeLine{189     Char\_t   processName[40];                   }
+\DoxyCodeLine{190     Char\_t   comptonVolumeName[40];             }
+\DoxyCodeLine{191     Char\_t   RayleighVolumeName[40];            }
+\DoxyCodeLine{192     Int\_t    volumeID[ROOT\_VOLUMEIDSIZE];       }
+\DoxyCodeLine{193     Int\_t    septalNb;                          }
+\DoxyCodeLine{194     Int\_t sourceType = 0; \textcolor{comment}{//Type of gamma source (check ExtendedVSource)}}
+\DoxyCodeLine{195     Int\_t decayType = 0; \textcolor{comment}{//Type of positronium decay (check ExtendedVSource)}}
+\DoxyCodeLine{196     Int\_t gammaType = 0; \textcolor{comment}{//Gamma type -\/ single, annhilation, prompt (check ExtendedVSource)}}
+\DoxyCodeLine{198 \textcolor{comment}{}}
+\DoxyCodeLine{199 \};}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 }
+\DoxyCodeLine{210 \textcolor{keyword}{class }GateHitTree : \textcolor{keyword}{public}  TTree}
+\DoxyCodeLine{211 \{}
+\DoxyCodeLine{212   \textcolor{keyword}{public}:}
+\DoxyCodeLine{213     \textcolor{keyword}{inline} GateHitTree( \textcolor{keyword}{const} G4String\& treeName,}
+\DoxyCodeLine{214                 \textcolor{keyword}{const} G4String\& treeDescription=\textcolor{stringliteral}{"{}The root tree for hits"{}})}
+\DoxyCodeLine{215       : TTree(treeName,treeDescription)}
+\DoxyCodeLine{216       \{\}}
+\DoxyCodeLine{217     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \string~GateHitTree() \{\}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219     \textcolor{keywordtype}{void} Init(GateRootHitBuffer\& buffer);}
+\DoxyCodeLine{220     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SetBranchAddresses(TTree* hitTree,GateRootHitBuffer\& buffer);}
+\DoxyCodeLine{221 \};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 }
+\DoxyCodeLine{232 \textcolor{keyword}{class }GateRootSingleBuffer}
+\DoxyCodeLine{233 \{}
+\DoxyCodeLine{234   \textcolor{keyword}{public}:}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     \textcolor{keyword}{inline} GateRootSingleBuffer() \{Clear();\}              }
+\DoxyCodeLine{237     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \string~GateRootSingleBuffer() \{\}             }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{keywordtype}{void} Clear();                                 }
+\DoxyCodeLine{240     \textcolor{keywordtype}{void} Fill(\mbox{\hyperlink{classGateSingleDigi}{GateSingleDigi}}* aDigi);}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245     Int\_t    runID;}
+\DoxyCodeLine{246     Int\_t    eventID;}
+\DoxyCodeLine{247     Int\_t    sourceID;}
+\DoxyCodeLine{248     Float\_t  sourcePosX;}
+\DoxyCodeLine{249     Float\_t  sourcePosY;}
+\DoxyCodeLine{250     Float\_t  sourcePosZ;}
+\DoxyCodeLine{251     Double\_t time;}
+\DoxyCodeLine{252     Float\_t  energy;}
+\DoxyCodeLine{253     Float\_t  globalPosX;}
+\DoxyCodeLine{254     Float\_t  globalPosY;}
+\DoxyCodeLine{255     Float\_t  globalPosZ;}
+\DoxyCodeLine{256     Int\_t    outputID[ROOT\_OUTPUTIDSIZE];}
+\DoxyCodeLine{257     Int\_t    comptonPhantom; }
+\DoxyCodeLine{258     Int\_t    comptonCrystal;    }
+\DoxyCodeLine{259     Int\_t    RayleighPhantom; }
+\DoxyCodeLine{260     Int\_t    RayleighCrystal;    }
+\DoxyCodeLine{261     Float\_t  axialPos;}
+\DoxyCodeLine{262     Float\_t  rotationAngle;    }
+\DoxyCodeLine{263     Char\_t   comptonVolumeName[40];}
+\DoxyCodeLine{264     Char\_t   RayleighVolumeName[40];}
+\DoxyCodeLine{265     Int\_t    septalNb;                          }
+\DoxyCodeLine{267 \};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{277 \textcolor{keyword}{class }GateSingleTree : \textcolor{keyword}{public}  TTree}
+\DoxyCodeLine{278 \{}
+\DoxyCodeLine{279   \textcolor{keyword}{public}:}
+\DoxyCodeLine{280     \textcolor{keyword}{inline} GateSingleTree( \textcolor{keyword}{const} G4String\& treeName,}
+\DoxyCodeLine{281                 \textcolor{keyword}{const} G4String\& treeDescription=\textcolor{stringliteral}{"{}The root tree for singles"{}})}
+\DoxyCodeLine{282       : TTree(treeName,treeDescription)}
+\DoxyCodeLine{283       \{\}}
+\DoxyCodeLine{284     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \string~GateSingleTree() \{\}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286     \textcolor{keywordtype}{void} Init(GateRootSingleBuffer\& buffer);}
+\DoxyCodeLine{287 \};}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 }
+\DoxyCodeLine{298 \textcolor{keyword}{class }GateRootCoincBuffer}
+\DoxyCodeLine{299 \{}
+\DoxyCodeLine{300   \textcolor{keyword}{public}:}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302     \textcolor{keyword}{inline} GateRootCoincBuffer() \{Clear();\}       }
+\DoxyCodeLine{303     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \string~GateRootCoincBuffer() \{\}              }
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \textcolor{keywordtype}{void} Clear();                                 }
+\DoxyCodeLine{306     \textcolor{keywordtype}{void} Fill(\mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}}* aDigi);}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308     G4double ComputeSinogramTheta();}
+\DoxyCodeLine{309     G4double ComputeSinogramS();}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314     Int\_t    runID;}
+\DoxyCodeLine{315     Float\_t  axialPos;}
+\DoxyCodeLine{316     Float\_t  rotationAngle;    }
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318     Int\_t    eventID1;}
+\DoxyCodeLine{319     Int\_t    sourceID1;}
+\DoxyCodeLine{320     Float\_t  sourcePosX1;}
+\DoxyCodeLine{321     Float\_t  sourcePosY1;}
+\DoxyCodeLine{322     Float\_t  sourcePosZ1;}
+\DoxyCodeLine{323     Double\_t time1;}
+\DoxyCodeLine{324     Float\_t  energy1;}
+\DoxyCodeLine{325     Float\_t  globalPosX1;}
+\DoxyCodeLine{326     Float\_t  globalPosY1;}
+\DoxyCodeLine{327     Float\_t  globalPosZ1;}
+\DoxyCodeLine{328     Int\_t    outputID1[ROOT\_OUTPUTIDSIZE];}
+\DoxyCodeLine{329     Int\_t    comptonPhantom1;}
+\DoxyCodeLine{330     Int\_t    comptonCrystal1;   }
+\DoxyCodeLine{331     Int\_t    RayleighPhantom1;}
+\DoxyCodeLine{332     Int\_t    RayleighCrystal1;   }
+\DoxyCodeLine{333     Char\_t   comptonVolumeName1[40];}
+\DoxyCodeLine{334     Char\_t   RayleighVolumeName1[40];}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336     Int\_t    eventID2;}
+\DoxyCodeLine{337     Int\_t    sourceID2;}
+\DoxyCodeLine{338     Float\_t  sourcePosX2;}
+\DoxyCodeLine{339     Float\_t  sourcePosY2;}
+\DoxyCodeLine{340     Float\_t  sourcePosZ2;}
+\DoxyCodeLine{341     Double\_t time2;}
+\DoxyCodeLine{342     Float\_t  energy2;}
+\DoxyCodeLine{343     Float\_t  globalPosX2;}
+\DoxyCodeLine{344     Float\_t  globalPosY2;}
+\DoxyCodeLine{345     Float\_t  globalPosZ2;}
+\DoxyCodeLine{346     Int\_t    outputID2[ROOT\_OUTPUTIDSIZE];}
+\DoxyCodeLine{347     Int\_t    comptonPhantom2;}
+\DoxyCodeLine{348     Int\_t    comptonCrystal2;    }
+\DoxyCodeLine{349     Int\_t    RayleighPhantom2;}
+\DoxyCodeLine{350     Int\_t    RayleighCrystal2;    }
+\DoxyCodeLine{351     Char\_t   comptonVolumeName2[40];}
+\DoxyCodeLine{352     Char\_t   RayleighVolumeName2[40];}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354     Float\_t  sinogramTheta;}
+\DoxyCodeLine{355     Float\_t  sinogramS;}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 \};}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 }
+\DoxyCodeLine{369 \textcolor{keyword}{class }GateCoincTree : \textcolor{keyword}{public}  TTree}
+\DoxyCodeLine{370 \{}
+\DoxyCodeLine{371   \textcolor{keyword}{public}:}
+\DoxyCodeLine{372     \textcolor{keyword}{inline} GateCoincTree( \textcolor{keyword}{const} G4String\& treeName,}
+\DoxyCodeLine{373                   \textcolor{keyword}{const} G4String\& treeDescription=\textcolor{stringliteral}{"{}The root tree for coincidences"{}})}
+\DoxyCodeLine{374       : TTree(treeName,treeDescription)}
+\DoxyCodeLine{375       \{\}}
+\DoxyCodeLine{376     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \string~GateCoincTree() \{\}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378     \textcolor{keywordtype}{void} Init(GateRootCoincBuffer\& buffer);}
+\DoxyCodeLine{379 \};}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

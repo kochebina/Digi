@@ -1,0 +1,105 @@
+\hypertarget{classGateCylindricalPETSystem}{}\doxysection{Gate\+Cylindrical\+PETSystem Class Reference}
+\label{classGateCylindricalPETSystem}\index{GateCylindricalPETSystem@{GateCylindricalPETSystem}}
+
+
+The \mbox{\hyperlink{classGateCylindricalPETSystem}{Gate\+Cylindrical\+PETSystem}} models a Clear\+PET-\/like scanner.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Cylindrical\+PETSystem.\+hh$>$}
+
+Inheritance diagram for Gate\+Cylindrical\+PETSystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCylindricalPETSystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCylindricalPETSystem_a702f946d1c778e23a0fe3018402d1e16}\label{classGateCylindricalPETSystem_a702f946d1c778e23a0fe3018402d1e16}} 
+{\bfseries Gate\+Cylindrical\+PETSystem} (const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCylindricalPETSystem_a27932d14a53fa488a5d5d351e946a8f8}\label{classGateCylindricalPETSystem_a27932d14a53fa488a5d5d351e946a8f8}} 
+virtual {\bfseries $\sim$\+Gate\+Cylindrical\+PETSystem} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe()}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCylindricalPETSystem_a161957525535aba442ae54ed7f93f78c}{Print\+To\+Stream}} (std\+::ostream \&a\+Stream, G4bool do\+Print\+Numbers)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCylindricalPETSystem_a872591f052295fb2c8c474b7683a1500}\label{classGateCylindricalPETSystem_a872591f052295fb2c8c474b7683a1500}} 
+void {\bfseries Add\+New\+RSECTOR} (G4\+String)
+\item 
+\mbox{\Hypertarget{classGateCylindricalPETSystem_abec178035e8f6b02baeb69a39ed549ed}\label{classGateCylindricalPETSystem_abec178035e8f6b02baeb69a39ed549ed}} 
+virtual G4double {\bfseries Compute\+Internal\+Radius} ()
+\begin{DoxyCompactList}\small\item\em Compute the internal radius of the crystal ring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateCylindricalPETSystem}{Gate\+Cylindrical\+PETSystem}} models a Clear\+PET-\/like scanner. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateCylindricalPETSystem}{Gate\+Cylindrical\+PETSystem}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item A \mbox{\hyperlink{classGateCylindricalPETSystem}{Gate\+Cylindrical\+PETSystem}} models a scanner that obeys to the convention that were defined by the Clear\+PET software group. It comprises a hierarchy of components ranging from the rsectors (detector panels, arranged in several rings) down to the layers (individual crystals of a phoswich column).
+\item This system overloads two methods of the \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} base-\/class, \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe()}} and \mbox{\hyperlink{classGateCylindricalPETSystem_a161957525535aba442ae54ed7f93f78c}{Print\+To\+Stream()}}
+\item Beside the standard system methods, it also provides the method \mbox{\hyperlink{classGateCylindricalPETSystem_abec178035e8f6b02baeb69a39ed549ed}{Compute\+Internal\+Radius()}} to compute the internal radius of the scanner 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}\label{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}} 
+\index{GateCylindricalPETSystem@{GateCylindricalPETSystem}!Describe@{Describe}}
+\index{Describe@{Describe}!GateCylindricalPETSystem@{GateCylindricalPETSystem}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+PETSystem\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe()}}. 
+
+This methods prints-\/out a description of the system, which is
+
+optimised for creating LMF header files
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Gate\+VSystem}}.
+
+\mbox{\Hypertarget{classGateCylindricalPETSystem_a161957525535aba442ae54ed7f93f78c}\label{classGateCylindricalPETSystem_a161957525535aba442ae54ed7f93f78c}} 
+\index{GateCylindricalPETSystem@{GateCylindricalPETSystem}!PrintToStream@{PrintToStream}}
+\index{PrintToStream@{PrintToStream}!GateCylindricalPETSystem@{GateCylindricalPETSystem}}
+\doxysubsubsection{\texorpdfstring{PrintToStream()}{PrintToStream()}}
+{\footnotesize\ttfamily void Gate\+Cylindrical\+PETSystem\+::\+Print\+To\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{a\+Stream,  }\item[{G4bool}]{do\+Print\+Numbers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe()}}. 
+
+This methods prints out description of the system to a stream.
+
+It is essentially to be used by the class Gate\+To\+LMF, but it may also be used by \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Describe()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Stream} & the output stream \\
+\hline
+{\em do\+Print\+Numbers} & tells whether we print-\/out the volume numbers in addition to their dimensions \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVSystem_a0f2ca5a41d87527ede0dd8d6183f93ef}{Gate\+VSystem}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Cylindrical\+PETSystem.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Cylindrical\+PETSystem.\+cc\end{DoxyCompactItemize}

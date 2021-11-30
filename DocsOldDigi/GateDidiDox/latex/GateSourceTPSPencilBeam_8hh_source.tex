@@ -1,0 +1,161 @@
+\hypertarget{GateSourceTPSPencilBeam_8hh_source}{}\doxysection{Gate\+Source\+TPSPencil\+Beam.\+hh}
+\label{GateSourceTPSPencilBeam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceTPSPencilBeam.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceTPSPencilBeam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATESOURCETPSPENCILBEAM\_HH}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATESOURCETPSPENCILBEAM\_HH}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// std}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{// geant4}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// CLHEP}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}CLHEP/Random/RandGauss.h"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// GATE}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4Event;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceTPSPencilBeamMessenger}{GateSourceTPSPencilBeamMessenger}};}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourcePencilBeam}{GateSourcePencilBeam}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceTPSPencilBeam}{GateSourceTPSPencilBeam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keyword}{typedef} CLHEP::RandGeneral RandGeneral;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \mbox{\hyperlink{classGateSourceTPSPencilBeam}{GateSourceTPSPencilBeam}}( G4String name);}
+\DoxyCodeLine{39   \mbox{\hyperlink{classGateSourceTPSPencilBeam}{\string~GateSourceTPSPencilBeam}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   G4int GeneratePrimaries( G4Event* event );}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} GenerateVertex( G4Event* );}
+\DoxyCodeLine{43   \textcolor{comment}{//Particle Type}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} SetParticleType(G4String ParticleType) \{mParticleType=ParticleType;\}}
+\DoxyCodeLine{45   \textcolor{comment}{//Particle Properties If GenericIon}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} SetIonParameter(G4String ParticleParameters) \{mParticleParameters=ParticleParameters;\}}
+\DoxyCodeLine{47   \textcolor{comment}{//Specify how to define the particle type}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} SetIsGenericIon(\textcolor{keywordtype}{bool} IsGenericIon) \{mIsGenericIon=IsGenericIon;\}}
+\DoxyCodeLine{49   \textcolor{comment}{//Test Flag}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} SetTestFlag(\textcolor{keywordtype}{bool} b) \{mTestFlag=b;\}}
+\DoxyCodeLine{51   \textcolor{comment}{//Flag to switch between sorted and random spot selection}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} SetSortedSpotGenerationFlag(\textcolor{keywordtype}{bool} b) \{mSortedSpotGenerationFlag=b;\}}
+\DoxyCodeLine{53   \textcolor{comment}{//Flag to switch between absolute (MeV) and relative (\%) energy spread specification}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} SetSigmaEnergyInMeVFlag(\textcolor{keywordtype}{bool} b) \{mSigmaEnergyInMeVFlag=b;\}}
+\DoxyCodeLine{55   \textcolor{comment}{//Treatment Plan file (plan description file)}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} SetPlan(G4String plan) \{mPlan=plan;\}}
+\DoxyCodeLine{57   \textcolor{comment}{//FlatGenerationFlag}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} SetGeneFlatFlag(\textcolor{keywordtype}{bool} b) \{mFlatGenerationFlag=b;\}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{comment}{//Pencil beam parameters calculation}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{double} GetEnergy(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{62   \textcolor{keywordtype}{double} GetSigmaEnergy(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{63   \textcolor{keywordtype}{double} GetSigmaX(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{64   \textcolor{keywordtype}{double} GetSigmaY(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{65   \textcolor{keywordtype}{double} GetSigmaTheta(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{66   \textcolor{keywordtype}{double} GetSigmaPhi(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{67   \textcolor{keywordtype}{double} GetEllipseXThetaArea(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{68   \textcolor{keywordtype}{double} GetEllipseYPhiArea(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{69   \textcolor{keywordtype}{double} GetMonitorCalibration(\textcolor{keywordtype}{double} energy);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{comment}{//List of not allowed fields}}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} SetNotAllowedField (\textcolor{keywordtype}{int} fieldID) \{mNotAllowedFields.push\_back(fieldID);\}}
+\DoxyCodeLine{73   \textcolor{comment}{//List of allowed fields}}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} SetAllowedField (\textcolor{keywordtype}{int} fieldID) \{mAllowedFields.push\_back(fieldID);\}}
+\DoxyCodeLine{75   \textcolor{comment}{// Select a single Layer}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SelectLayerID (\textcolor{keywordtype}{int} layerID) \{ mSelectedLayerID = layerID;\}}
+\DoxyCodeLine{77   \textcolor{comment}{// Select a single spot}}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} SelectSpot (\textcolor{keywordtype}{int} spot) \{ mSelectedSpot = spot;\}}
+\DoxyCodeLine{79   \textcolor{comment}{//select beam descriptionfile}}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} SetSourceDescriptionFile(G4String FileName)\{mSourceDescriptionFile=FileName; mIsASourceDescriptionFile=\textcolor{keyword}{true};\}}
+\DoxyCodeLine{81   \textcolor{comment}{//load plan description file}}
+\DoxyCodeLine{82   \textcolor{keywordtype}{void} LoadClinicalBeamProperties();}
+\DoxyCodeLine{83   \textcolor{comment}{//Configuration of spot intensity}}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} SetSpotIntensity(\textcolor{keywordtype}{bool} b) \{mSpotIntensityAsNbIons=b;\}}
+\DoxyCodeLine{85   \textcolor{comment}{//Convergent or divergent beam model}}
+\DoxyCodeLine{86   \textcolor{keywordtype}{void} SetBeamConvergence(\textcolor{keywordtype}{bool} c) \{mConvergentSourceXTheta=c; mConvergentSourceYPhi=c;\}}
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} SetBeamConvergenceXTheta(\textcolor{keywordtype}{bool} c) \{mConvergentSourceXTheta=c;\}}
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} SetBeamConvergenceYPhi(\textcolor{keywordtype}{bool} c) \{mConvergentSourceYPhi=c;\}        }
+\DoxyCodeLine{89   \textcolor{comment}{//Others}}
+\DoxyCodeLine{90   \textcolor{keywordtype}{int} GetCurrentSpotID() \{\textcolor{keywordflow}{return} mCurrentSpot;\}}
+\DoxyCodeLine{91   \textcolor{keywordtype}{int} GetTotalNumberOfSpots() \{\textcolor{keywordflow}{return} mTotalNumberOfSpots;\}}
+\DoxyCodeLine{92   \textcolor{keywordtype}{int} GetCurrentLayerID() \{\textcolor{keywordflow}{return} mCurrentLayer;\}}
+\DoxyCodeLine{93   \textcolor{keywordtype}{int} GetTotalNumberOfLayers() \{\textcolor{keywordflow}{return} mTotalNumberOfLayers;\}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} ConfigurePencilBeam();}
+\DoxyCodeLine{98   \mbox{\hyperlink{classGateSourceTPSPencilBeamMessenger}{GateSourceTPSPencilBeamMessenger}} * pMessenger;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \textcolor{keywordtype}{bool} mIsInitialized;}
+\DoxyCodeLine{101   \textcolor{keywordtype}{int} mCurrentSpot, mTotalNumberOfSpots;}
+\DoxyCodeLine{102   \textcolor{keywordtype}{int} mCurrentLayer, mTotalNumberOfLayers;}
+\DoxyCodeLine{103   \textcolor{keywordtype}{double} mTotalNbIons;}
+\DoxyCodeLine{104   \textcolor{keywordtype}{bool} mIsASourceDescriptionFile;}
+\DoxyCodeLine{105   G4String mSourceDescriptionFile;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \mbox{\hyperlink{classGateSourcePencilBeam}{GateSourcePencilBeam}}* mPencilBeam;}
+\DoxyCodeLine{108   \textcolor{keywordtype}{double} mDistanceSMXToIsocenter;}
+\DoxyCodeLine{109   \textcolor{keywordtype}{double} mDistanceSMYToIsocenter;}
+\DoxyCodeLine{110   \textcolor{keywordtype}{double} mDistanceSourcePatient;}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{comment}{//Particle Type}}
+\DoxyCodeLine{113   G4String mParticleType;}
+\DoxyCodeLine{114   \textcolor{comment}{//Particle Properties If GenericIon}}
+\DoxyCodeLine{115   G4String mParticleParameters;}
+\DoxyCodeLine{116   \textcolor{comment}{//ParticleDefinitionMethod;}}
+\DoxyCodeLine{117   \textcolor{keywordtype}{bool} mIsGenericIon;}
+\DoxyCodeLine{118   \textcolor{comment}{//Test flag (for verbosity)}}
+\DoxyCodeLine{119   \textcolor{keywordtype}{bool} mTestFlag;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{comment}{//generate ions sorted by spot, or randomly}}
+\DoxyCodeLine{122   \textcolor{keywordtype}{bool} mSortedSpotGenerationFlag;}
+\DoxyCodeLine{123   \textcolor{comment}{//sigma energy definition (MeV or \%)}}
+\DoxyCodeLine{124   \textcolor{keywordtype}{bool} mSigmaEnergyInMeVFlag;}
+\DoxyCodeLine{125   \textcolor{comment}{//Treatment Plan file}}
+\DoxyCodeLine{126   G4String mPlan;}
+\DoxyCodeLine{127   \textcolor{comment}{//Others}}
+\DoxyCodeLine{128   \textcolor{keywordtype}{double} mparticle\_time ;}
+\DoxyCodeLine{129   \textcolor{keywordtype}{int} mCurrentParticleNumber;}
+\DoxyCodeLine{130   \textcolor{comment}{//Flag for flat spot delivery}}
+\DoxyCodeLine{131   \textcolor{keywordtype}{bool} mFlatGenerationFlag;}
+\DoxyCodeLine{132   \textcolor{comment}{//Distribution of the spot sources}}
+\DoxyCodeLine{133   \textcolor{keywordtype}{double} *mPDF;}
+\DoxyCodeLine{134   RandGeneral * mDistriGeneral;}
+\DoxyCodeLine{135   \textcolor{comment}{//Disallowed fields}}
+\DoxyCodeLine{136   std::vector<int> mNotAllowedFields;}
+\DoxyCodeLine{137   \textcolor{comment}{//Allowed fields}}
+\DoxyCodeLine{138   std::vector<int> mAllowedFields;}
+\DoxyCodeLine{139   \textcolor{comment}{//clinical beam parameters (polynomial equations)}}
+\DoxyCodeLine{140   std::vector<double> mEnergy, mEnergySpread, mX, mY, mTheta, mPhi, mXThetaEmittance, mYPhiEmittance, mMonitorCalibration;}
+\DoxyCodeLine{141   \textcolor{comment}{//Configuration of spot intensity}}
+\DoxyCodeLine{142   \textcolor{keywordtype}{bool} mSpotIntensityAsNbIons;}
+\DoxyCodeLine{143   \textcolor{comment}{//Convergent or divergent beam model}}
+\DoxyCodeLine{144   \textcolor{keywordtype}{bool} mConvergentSourceXTheta, mConvergentSourceYPhi;}
+\DoxyCodeLine{145   \textcolor{keywordtype}{int} mSelectedLayerID;}
+\DoxyCodeLine{146   \textcolor{keywordtype}{int} mSelectedSpot;}
+\DoxyCodeLine{147   std::vector<int> mSpotLayer; \textcolor{comment}{//in which layer is this spot?}}
+\DoxyCodeLine{148   std::vector<double> mSpotEnergy;}
+\DoxyCodeLine{149   std::vector<double> mSpotWeight; \textcolor{comment}{// (proportional to) the expected number (for each bin in a multinomial distribution)}}
+\DoxyCodeLine{150   std::vector<int> mNbIonsToGenerate; \textcolor{comment}{// the actual number (for each bin in a multinomial distribution)}}
+\DoxyCodeLine{151   std::vector<G4ThreeVector> mSpotPosition, mSpotRotation;}
+\DoxyCodeLine{152 \};}
+\DoxyCodeLine{153 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{154 \textcolor{comment}{// vim: ai sw=2 ts=2 et}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

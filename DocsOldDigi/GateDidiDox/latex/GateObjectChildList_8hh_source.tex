@@ -1,0 +1,64 @@
+\hypertarget{GateObjectChildList_8hh_source}{}\doxysection{Gate\+Object\+Child\+List.\+hh}
+\label{GateObjectChildList_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateObjectChildList.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateObjectChildList.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateObjectChildList\_hh}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateObjectChildList\_hh 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateModuleListManager.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectChildListMessenger}{GateObjectChildListMessenger}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateObjectChildList}{GateObjectChildList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateModuleListManager}{GateModuleListManager}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateObjectChildList_a49f54799f7093c549d198b6f9f443411}{GateObjectChildList}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsCreator, G4bool acceptsNewChildren=\textcolor{keyword}{true});}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateObjectChildList_a4add2c5e9ba482113d8213249c84c573}{\string~GateObjectChildList}}();}
+\DoxyCodeLine{36   }
+\DoxyCodeLine{37   \textcolor{comment}{// Construct the child geometry}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ConstructChildGeometry(G4LogicalVolume*, G4bool);}
+\DoxyCodeLine{39   }
+\DoxyCodeLine{40   \textcolor{comment}{// Destroy the geometry of chldren}}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyChildGeometry();}
+\DoxyCodeLine{42   }
+\DoxyCodeLine{43   \textcolor{comment}{// Insert a new object child  }}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddChild(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* newChildCreator);}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeChildren(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{46      }
+\DoxyCodeLine{47 \textcolor{comment}{//  virtual void ComputeParameters();}}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49      }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListElements();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*       \mbox{\hyperlink{classGateObjectChildList_a70ca0bc7933eebd768a87fb307dc3cf1}{FindVolume}}(\textcolor{keyword}{const} G4String\& name) \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVVolume}{GateVVolume}}*) FindElement(name); \}}
+\DoxyCodeLine{55   }
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*       \mbox{\hyperlink{classGateObjectChildList_aad9277bd868e6566a44dc023cca1384f}{GetVolume}}(\textcolor{keywordtype}{size\_t} i) \{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVVolume}{GateVVolume}}*) GetElement(i);\}}
+\DoxyCodeLine{58   }
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*       GetCreator()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVVolume}{GateVVolume}}*) GetMotherObject() ;\}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} G4int GetChildNo(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anInserter, G4int copyNo);}
+\DoxyCodeLine{64   }
+\DoxyCodeLine{65 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66   \mbox{\hyperlink{classGateObjectChildListMessenger}{GateObjectChildListMessenger}}*    \mbox{\hyperlink{classGateObjectChildList_a070131700d432fea9cdcbd382834a894}{pMessenger}};  }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,57 @@
+\hypertarget{GateFakePrimaryGeneratorAction_8hh_source}{}\doxysection{Gate\+Fake\+Primary\+Generator\+Action.\+hh}
+\label{GateFakePrimaryGeneratorAction_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFakePrimaryGeneratorAction.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFakePrimaryGeneratorAction.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEFAKEPRIMARYGENERATORACTION\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEFAKEPRIMARYGENERATORACTION\_HH}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/*}}
+\DoxyCodeLine{15 \textcolor{comment}{ * \(\backslash\)file  GateFakePrimaryGeneratorAction.hh}}
+\DoxyCodeLine{16 \textcolor{comment}{ * \(\backslash\)brief Fake PrimaryGeneratorAction class for development}}
+\DoxyCodeLine{17 \textcolor{comment}{ */}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4VUserPrimaryGeneratorAction.hh"{}}}
+\DoxyCodeLine{21 \textcolor{comment}{//\#include "{}GateFakeDetectorConstruction.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateDetectorConstruction.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4ParticleGun.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4GeneralParticleSource.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFakePrimaryGeneratorAction}{GateFakePrimaryGeneratorAction}} : \textcolor{keyword}{public} G4VUserPrimaryGeneratorAction}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \textcolor{comment}{//    GateFakePrimaryGeneratorAction(GateFakeDetectorConstruction*);}}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateFakePrimaryGeneratorAction}{GateFakePrimaryGeneratorAction}}(\mbox{\hyperlink{classGateDetectorConstruction}{GateDetectorConstruction}}*);}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateFakePrimaryGeneratorAction}{\string~GateFakePrimaryGeneratorAction}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} GeneratePrimaries(G4Event*);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{private}:}
+\DoxyCodeLine{42   G4GeneralParticleSource *                particleGun;   \textcolor{comment}{//pointer a to G4  class}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEFAKEPRIMARYGENERATORACTION\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{50 \textcolor{comment}{// EOF}}
+\DoxyCodeLine{51 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+
+\end{DoxyCode}

@@ -1,0 +1,121 @@
+\hypertarget{inflate_8h_source}{}\doxysection{inflate.\+h}
+\label{inflate_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/inflate.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/inflate.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* inflate.h -\/-\/ internal inflate state definition}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 1995-\/2004 Mark Adler}}
+\DoxyCodeLine{3 \textcolor{comment}{ * For conditions of distribution and use, see copyright notice in zlib.h}}
+\DoxyCodeLine{4 \textcolor{comment}{ */}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{/* WARNING: this file should *not* be used by applications. It is}}
+\DoxyCodeLine{7 \textcolor{comment}{   part of the implementation of the compression library and is}}
+\DoxyCodeLine{8 \textcolor{comment}{   subject to change. Applications should only use zlib.h.}}
+\DoxyCodeLine{9 \textcolor{comment}{ */}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* define NO\_GZIP when compiling if you want to disable gzip header and}}
+\DoxyCodeLine{12 \textcolor{comment}{   trailer decoding by inflate().  NO\_GZIP would be used to avoid linking in}}
+\DoxyCodeLine{13 \textcolor{comment}{   the crc code when it is not needed.  For shared libraries, gzip decoding}}
+\DoxyCodeLine{14 \textcolor{comment}{   should be left enabled. */}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef NO\_GZIP}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#  define GUNZIP}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/* Possible inflate modes between inflate() calls */}}
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{21     HEAD,       \textcolor{comment}{/* i: waiting for magic header */}}
+\DoxyCodeLine{22     FLAGS,      \textcolor{comment}{/* i: waiting for method and flags (gzip) */}}
+\DoxyCodeLine{23     TIME,       \textcolor{comment}{/* i: waiting for modification time (gzip) */}}
+\DoxyCodeLine{24     OS,         \textcolor{comment}{/* i: waiting for extra flags and operating system (gzip) */}}
+\DoxyCodeLine{25     EXLEN,      \textcolor{comment}{/* i: waiting for extra length (gzip) */}}
+\DoxyCodeLine{26     EXTRA,      \textcolor{comment}{/* i: waiting for extra bytes (gzip) */}}
+\DoxyCodeLine{27     NAME,       \textcolor{comment}{/* i: waiting for end of file name (gzip) */}}
+\DoxyCodeLine{28     COMMENT,    \textcolor{comment}{/* i: waiting for end of comment (gzip) */}}
+\DoxyCodeLine{29     HCRC,       \textcolor{comment}{/* i: waiting for header crc (gzip) */}}
+\DoxyCodeLine{30     DICTID,     \textcolor{comment}{/* i: waiting for dictionary check value */}}
+\DoxyCodeLine{31     DICT,       \textcolor{comment}{/* waiting for inflateSetDictionary() call */}}
+\DoxyCodeLine{32         TYPE,       \textcolor{comment}{/* i: waiting for type bits, including last-\/flag bit */}}
+\DoxyCodeLine{33         TYPEDO,     \textcolor{comment}{/* i: same, but skip check to exit inflate on new block */}}
+\DoxyCodeLine{34         STORED,     \textcolor{comment}{/* i: waiting for stored size (length and complement) */}}
+\DoxyCodeLine{35         COPY,       \textcolor{comment}{/* i/o: waiting for input or output to copy stored block */}}
+\DoxyCodeLine{36         TABLE,      \textcolor{comment}{/* i: waiting for dynamic block table lengths */}}
+\DoxyCodeLine{37         LENLENS,    \textcolor{comment}{/* i: waiting for code length code lengths */}}
+\DoxyCodeLine{38         CODELENS,   \textcolor{comment}{/* i: waiting for length/lit and distance code lengths */}}
+\DoxyCodeLine{39             LEN,        \textcolor{comment}{/* i: waiting for length/lit code */}}
+\DoxyCodeLine{40             LENEXT,     \textcolor{comment}{/* i: waiting for length extra bits */}}
+\DoxyCodeLine{41             DIST,       \textcolor{comment}{/* i: waiting for distance code */}}
+\DoxyCodeLine{42             DISTEXT,    \textcolor{comment}{/* i: waiting for distance extra bits */}}
+\DoxyCodeLine{43             MATCH,      \textcolor{comment}{/* o: waiting for output space to copy string */}}
+\DoxyCodeLine{44             LIT,        \textcolor{comment}{/* o: waiting for output space to write literal */}}
+\DoxyCodeLine{45     CHECK,      \textcolor{comment}{/* i: waiting for 32-\/bit check value */}}
+\DoxyCodeLine{46     LENGTH,     \textcolor{comment}{/* i: waiting for 32-\/bit length (gzip) */}}
+\DoxyCodeLine{47     DONE,       \textcolor{comment}{/* finished check, done -\/-\/ remain here until reset */}}
+\DoxyCodeLine{48     BAD,        \textcolor{comment}{/* got a data error -\/-\/ remain here until reset */}}
+\DoxyCodeLine{49     MEM,        \textcolor{comment}{/* got an inflate() memory error -\/-\/ remain here until reset */}}
+\DoxyCodeLine{50     SYNC        \textcolor{comment}{/* looking for synchronization bytes to restart inflate() */}}
+\DoxyCodeLine{51 \} inflate\_mode;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/*}}
+\DoxyCodeLine{54 \textcolor{comment}{    State transitions between above modes -\/}}
+\DoxyCodeLine{55 \textcolor{comment}{}}
+\DoxyCodeLine{56 \textcolor{comment}{    (most modes can go to the BAD or MEM mode -\/-\/ not shown for clarity)}}
+\DoxyCodeLine{57 \textcolor{comment}{}}
+\DoxyCodeLine{58 \textcolor{comment}{    Process header:}}
+\DoxyCodeLine{59 \textcolor{comment}{        HEAD -\/> (gzip) or (zlib)}}
+\DoxyCodeLine{60 \textcolor{comment}{        (gzip) -\/> FLAGS -\/> TIME -\/> OS -\/> EXLEN -\/> EXTRA -\/> NAME}}
+\DoxyCodeLine{61 \textcolor{comment}{        NAME -\/> COMMENT -\/> HCRC -\/> TYPE}}
+\DoxyCodeLine{62 \textcolor{comment}{        (zlib) -\/> DICTID or TYPE}}
+\DoxyCodeLine{63 \textcolor{comment}{        DICTID -\/> DICT -\/> TYPE}}
+\DoxyCodeLine{64 \textcolor{comment}{    Read deflate blocks:}}
+\DoxyCodeLine{65 \textcolor{comment}{            TYPE -\/> STORED or TABLE or LEN or CHECK}}
+\DoxyCodeLine{66 \textcolor{comment}{            STORED -\/> COPY -\/> TYPE}}
+\DoxyCodeLine{67 \textcolor{comment}{            TABLE -\/> LENLENS -\/> CODELENS -\/> LEN}}
+\DoxyCodeLine{68 \textcolor{comment}{    Read deflate codes:}}
+\DoxyCodeLine{69 \textcolor{comment}{                LEN -\/> LENEXT or LIT or TYPE}}
+\DoxyCodeLine{70 \textcolor{comment}{                LENEXT -\/> DIST -\/> DISTEXT -\/> MATCH -\/> LEN}}
+\DoxyCodeLine{71 \textcolor{comment}{                LIT -\/> LEN}}
+\DoxyCodeLine{72 \textcolor{comment}{    Process trailer:}}
+\DoxyCodeLine{73 \textcolor{comment}{        CHECK -\/> LENGTH -\/> DONE}}
+\DoxyCodeLine{74 \textcolor{comment}{ */}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{/* state maintained between inflate() calls.  Approximately 7K bytes. */}}
+\DoxyCodeLine{77 \textcolor{keyword}{struct }\mbox{\hyperlink{structinflate__state}{inflate\_state}} \{}
+\DoxyCodeLine{78     inflate\_mode mode;          \textcolor{comment}{/* current inflate mode */}}
+\DoxyCodeLine{79     \textcolor{keywordtype}{int} last;                   \textcolor{comment}{/* true if processing last block */}}
+\DoxyCodeLine{80     \textcolor{keywordtype}{int} wrap;                   \textcolor{comment}{/* bit 0 true for zlib, bit 1 true for gzip */}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} havedict;               \textcolor{comment}{/* true if dictionary provided */}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{int} flags;                  \textcolor{comment}{/* gzip header method and flags (0 if zlib) */}}
+\DoxyCodeLine{83     \textcolor{keywordtype}{unsigned} dmax;              \textcolor{comment}{/* zlib header max distance (INFLATE\_STRICT) */}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} check;        \textcolor{comment}{/* protected copy of check value */}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} total;        \textcolor{comment}{/* protected copy of output count */}}
+\DoxyCodeLine{86     gz\_headerp head;            \textcolor{comment}{/* where to save gzip header information */}}
+\DoxyCodeLine{87         \textcolor{comment}{/* sliding window */}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{unsigned} wbits;             \textcolor{comment}{/* log base 2 of requested window size */}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{unsigned} wsize;             \textcolor{comment}{/* window size or zero if not using window */}}
+\DoxyCodeLine{90     \textcolor{keywordtype}{unsigned} whave;             \textcolor{comment}{/* valid bytes in the window */}}
+\DoxyCodeLine{91     \textcolor{keywordtype}{unsigned} write;             \textcolor{comment}{/* window write index */}}
+\DoxyCodeLine{92     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} FAR *window;  \textcolor{comment}{/* allocated sliding window, if needed */}}
+\DoxyCodeLine{93         \textcolor{comment}{/* bit accumulator */}}
+\DoxyCodeLine{94     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} hold;         \textcolor{comment}{/* input bit accumulator */}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{unsigned} bits;              \textcolor{comment}{/* number of bits in "{}in"{} */}}
+\DoxyCodeLine{96         \textcolor{comment}{/* for string and stored block copying */}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{unsigned} length;            \textcolor{comment}{/* literal or length of data to copy */}}
+\DoxyCodeLine{98     \textcolor{keywordtype}{unsigned} offset;            \textcolor{comment}{/* distance back to copy string from */}}
+\DoxyCodeLine{99         \textcolor{comment}{/* for table and code decoding */}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{unsigned} extra;             \textcolor{comment}{/* extra bits needed */}}
+\DoxyCodeLine{101         \textcolor{comment}{/* fixed and dynamic code tables */}}
+\DoxyCodeLine{102     \mbox{\hyperlink{structcode}{code}} \textcolor{keyword}{const} FAR *lencode;    \textcolor{comment}{/* starting table for length/literal codes */}}
+\DoxyCodeLine{103     \mbox{\hyperlink{structcode}{code}} \textcolor{keyword}{const} FAR *distcode;   \textcolor{comment}{/* starting table for distance codes */}}
+\DoxyCodeLine{104     \textcolor{keywordtype}{unsigned} lenbits;           \textcolor{comment}{/* index bits for lencode */}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{unsigned} distbits;          \textcolor{comment}{/* index bits for distcode */}}
+\DoxyCodeLine{106         \textcolor{comment}{/* dynamic table building */}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{unsigned} ncode;             \textcolor{comment}{/* number of code length code lengths */}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{unsigned} nlen;              \textcolor{comment}{/* number of length code lengths */}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{unsigned} ndist;             \textcolor{comment}{/* number of distance code lengths */}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{unsigned} have;              \textcolor{comment}{/* number of code lengths in lens[] */}}
+\DoxyCodeLine{111     \mbox{\hyperlink{structcode}{code}} FAR *next;             \textcolor{comment}{/* next available space in codes[] */}}
+\DoxyCodeLine{112     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} lens[320];   \textcolor{comment}{/* temporary storage for code lengths */}}
+\DoxyCodeLine{113     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} work[288];   \textcolor{comment}{/* work area for code table building */}}
+\DoxyCodeLine{114     \mbox{\hyperlink{structcode}{code}} codes[ENOUGH];         \textcolor{comment}{/* space for code tables */}}
+\DoxyCodeLine{115 \};}
+
+\end{DoxyCode}

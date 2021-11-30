@@ -1,0 +1,133 @@
+\hypertarget{GateNTLEDoseActor_8hh_source}{}\doxysection{Gate\+NTLEDose\+Actor.\+hh}
+\label{GateNTLEDoseActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateNTLEDoseActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateNTLEDoseActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATENTLEDOSEACTOR\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATENTLEDOSEACTOR\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateNTLEDoseActorMessenger.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateKermaFactorHandler.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <G4UnitsTable.hh>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <TMultiGraph.h>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateNTLEDoseActor}{GateNTLEDoseActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{33   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateNTLEDoseActor}{\string~GateNTLEDoseActor}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateNTLEDoseActor}{GateNTLEDoseActor}})}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{39   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNTLEDoseActor_afda430f477c77e8a97dc1ead42312a26}{Construct}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} EnableEdepImage            (\textcolor{keywordtype}{bool} b) \{ mIsEdepImageEnabled              = b; \}}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} EnableEdepSquaredImage     (\textcolor{keywordtype}{bool} b) \{ mIsEdepSquaredImageEnabled       = b; \}}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} EnableEdepUncertaintyImage (\textcolor{keywordtype}{bool} b) \{ mIsEdepUncertaintyImageEnabled   = b; \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} EnableDoseImage            (\textcolor{keywordtype}{bool} b) \{ mIsDoseImageEnabled              = b; \}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} EnableDoseSquaredImage     (\textcolor{keywordtype}{bool} b) \{ mIsDoseSquaredImageEnabled       = b; \}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} EnableDoseUncertaintyImage (\textcolor{keywordtype}{bool} b) \{ mIsDoseUncertaintyImageEnabled   = b; \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} EnableFluxImage            (\textcolor{keywordtype}{bool} b) \{ mIsFluxImageEnabled              = b; \}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} EnableFluxSquaredImage     (\textcolor{keywordtype}{bool} b) \{ mIsFluxSquaredImageEnabled       = b; \}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} EnableFluxUncertaintyImage (\textcolor{keywordtype}{bool} b) \{ mIsFluxUncertaintyImageEnabled   = b; \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} EnableDoseCorrection       (\textcolor{keywordtype}{bool} b) \{ mIsDoseCorrectionEnabled         = b; \}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} EnableDoseCorrectionTLE    (\textcolor{keywordtype}{bool} b) \{ mIsDoseCorrectionTLEEnabled      = b; \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} EnableKFExtrapolation      (\textcolor{keywordtype}{bool} b) \{ mIsKFExtrapolated                = b; \}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} EnableKFDA                 (\textcolor{keywordtype}{bool} b) \{ mIsKFDA                          = b; \}}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} EnableKermaFactorDump      (\textcolor{keywordtype}{bool} b) \{ mIsKermaFactorDumped             = b; \}}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} EnableKillSecondary        (\textcolor{keywordtype}{bool} b) \{ mIsKillSecondaryEnabled          = b; \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} EnableKermaEquivalentFactor      (\textcolor{keywordtype}{bool} b) \{ mIsKermaEquivalentFactorEnabled       = b; \}}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} EnablePhotonKermaEquivalentFactor(\textcolor{keywordtype}{bool} b) \{ mIsPhotonKermaEquivalentFactorEnabled = b; \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction  (\textcolor{keyword}{const} G4Run*);}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event*);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNTLEDoseActor_a081e0fa01b3bf6f7668b63185cd4f631}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int}  , \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int}  , \textcolor{keyword}{const} G4Track*) \{\}}
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} , \textcolor{keyword}{const} G4Track*) \{\}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNTLEDoseActor_a62e3d082176c9ff39a4fde6f9eae443f}{SaveData}}();}
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateNTLEDoseActor_a27587f09f977e97b87444173b41dfcce}{clear}}()\{ResetData();\}}
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateNTLEDoseActor}{GateNTLEDoseActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{85   \mbox{\hyperlink{classGateNTLEDoseActorMessenger}{GateNTLEDoseActorMessenger}} * pMessenger;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mEdepImage;}
+\DoxyCodeLine{88   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseImage;}
+\DoxyCodeLine{89   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mFluxImage;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \mbox{\hyperlink{classGateImage}{GateImage}} mLastHitEventImage;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \mbox{\hyperlink{classGateKermaFactorHandler}{GateKermaFactorHandler}}* mKFHandler;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   G4String mEdepFilename;}
+\DoxyCodeLine{96   G4String mDoseFilename;}
+\DoxyCodeLine{97   G4String mFluxFilename;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{bool} mIsLastHitEventImageEnabled;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{bool} mIsEdepImageEnabled;}
+\DoxyCodeLine{102   \textcolor{keywordtype}{bool} mIsEdepSquaredImageEnabled;}
+\DoxyCodeLine{103   \textcolor{keywordtype}{bool} mIsEdepUncertaintyImageEnabled;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   \textcolor{keywordtype}{bool} mIsDoseImageEnabled;}
+\DoxyCodeLine{106   \textcolor{keywordtype}{bool} mIsDoseSquaredImageEnabled;}
+\DoxyCodeLine{107   \textcolor{keywordtype}{bool} mIsDoseUncertaintyImageEnabled;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keywordtype}{bool} mIsFluxImageEnabled;}
+\DoxyCodeLine{110   \textcolor{keywordtype}{bool} mIsFluxSquaredImageEnabled;}
+\DoxyCodeLine{111   \textcolor{keywordtype}{bool} mIsFluxUncertaintyImageEnabled;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{keywordtype}{bool} mIsDoseCorrectionEnabled;}
+\DoxyCodeLine{114   \textcolor{keywordtype}{bool} mIsDoseCorrectionTLEEnabled;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{keywordtype}{bool} mIsKFExtrapolated;}
+\DoxyCodeLine{117   \textcolor{keywordtype}{bool} mIsKFDA;}
+\DoxyCodeLine{118   \textcolor{keywordtype}{bool} mIsKermaFactorDumped;}
+\DoxyCodeLine{119   \textcolor{keywordtype}{bool} mIsKillSecondaryEnabled;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{keywordtype}{bool} mIsKermaEquivalentFactorEnabled;}
+\DoxyCodeLine{122   \textcolor{keywordtype}{bool} mIsPhotonKermaEquivalentFactorEnabled;}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126   std::vector<G4String> mMaterialList;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \textcolor{keywordtype}{bool} NeutronParent(\textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130   TMultiGraph* mg;}
+\DoxyCodeLine{131 \};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 MAKE\_AUTO\_CREATOR\_ACTOR(NTLEDoseActor,\mbox{\hyperlink{classGateNTLEDoseActor}{GateNTLEDoseActor}})}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

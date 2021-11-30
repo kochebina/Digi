@@ -1,0 +1,115 @@
+\hypertarget{classGateCylinderComponent}{}\doxysection{Gate\+Cylinder\+Component Class Reference}
+\label{classGateCylinderComponent}\index{GateCylinderComponent@{GateCylinderComponent}}
+
+
+A \mbox{\hyperlink{classGateCylinderComponent}{Gate\+Cylinder\+Component}} is a subtype of \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Cylinder\+Component.\+hh$>$}
+
+Inheritance diagram for Gate\+Cylinder\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCylinderComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateCylinderComponent_a934850ecdb0db5d9ccc3278bb1318901}{Gate\+Cylinder\+Component}} (const G4\+String \&its\+Name, \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$its\+Mother\+Component, \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$its\+System)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCylinderComponent_a1e54372c5133c314d1974bfd5f7080b0}\label{classGateCylinderComponent_a1e54372c5133c314d1974bfd5f7080b0}} 
+virtual {\bfseries $\sim$\+Gate\+Cylinder\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual G4bool \mbox{\hyperlink{classGateCylinderComponent_a40ba8844e3bc84be9437a546442a6719}{Is\+Valid\+Attachment\+Request}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator) const
+\item 
+\mbox{\Hypertarget{classGateCylinderComponent_a2b5b8a9b0ee2372cb595fde3f0dd7c52}\label{classGateCylinderComponent_a2b5b8a9b0ee2372cb595fde3f0dd7c52}} 
+\mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} $\ast$ {\bfseries Get\+Cylinder\+Creator} () const
+\begin{DoxyCompactList}\small\item\em Return the cylinder creator attached to our own creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCylinderComponent_ae5fe3155fa3ca93544e8b4c12d30d0aa}\label{classGateCylinderComponent_ae5fe3155fa3ca93544e8b4c12d30d0aa}} 
+G4double {\bfseries Get\+Cylinder\+Height} () const
+\item 
+\mbox{\Hypertarget{classGateCylinderComponent_ab0e90e56a1e3e1cb6ea461a494876eec}\label{classGateCylinderComponent_ab0e90e56a1e3e1cb6ea461a494876eec}} 
+G4double {\bfseries Get\+Cylinder\+Rmin} () const
+\item 
+\mbox{\Hypertarget{classGateCylinderComponent_ab7ae6d5ba056c753e7bb25306b7a576b}\label{classGateCylinderComponent_ab7ae6d5ba056c753e7bb25306b7a576b}} 
+G4double {\bfseries Get\+Cylinder\+Rmax} () const
+\item 
+\mbox{\Hypertarget{classGateCylinderComponent_ab8cbd4de6d3303855621013f2fd176b0}\label{classGateCylinderComponent_ab8cbd4de6d3303855621013f2fd176b0}} 
+G4double {\bfseries Get\+Cylinder\+SPhi} () const
+\item 
+\mbox{\Hypertarget{classGateCylinderComponent_a4d612b9c1afbef4bfab81a954860b126}\label{classGateCylinderComponent_a4d612b9c1afbef4bfab81a954860b126}} 
+G4double {\bfseries Get\+Cylinder\+DPhi} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCylinderComponent_a1d5fb02e79435674dde9153864102681}\label{classGateCylinderComponent_a1d5fb02e79435674dde9153864102681}} 
+static \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} $\ast$ {\bfseries Get\+Cylinder\+Creator} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator)
+\begin{DoxyCompactList}\small\item\em Tool method\+: return the creator attached to an creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCylinderComponent_a424b514b783d655a48a4b8112d944c43}\label{classGateCylinderComponent_a424b514b783d655a48a4b8112d944c43}} 
+static \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} $\ast$ {\bfseries Cast\+To\+Cylinder\+Creator} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$creator)
+\begin{DoxyCompactList}\small\item\em Tool method\+: try to cast a creator into a cylinder creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classGateCylinderComponent}{Gate\+Cylinder\+Component}} is a subtype of \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}. 
+
+It is meant to be connected to cylinder creators, such as gantries
+
+or curved crystal
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateCylinderComponent}{Gate\+Cylinder\+Component}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item A \mbox{\hyperlink{classGateCylinderComponent}{Gate\+Cylinder\+Component}} is derived from \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}, and thus inherits all the properties of system-\/components. In addition, it includes some methods that are specific to cylinder creators
+\item There is also a method \mbox{\hyperlink{classGateCylinderComponent_a40ba8844e3bc84be9437a546442a6719}{Is\+Valid\+Attachment\+Request()}}, that overloads the method from the \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} base-\/class\+: this overloading allows to check that the creator is indeed connected to a cylinder creator
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}, \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateCylinderComponent_a934850ecdb0db5d9ccc3278bb1318901}\label{classGateCylinderComponent_a934850ecdb0db5d9ccc3278bb1318901}} 
+\index{GateCylinderComponent@{GateCylinderComponent}!GateCylinderComponent@{GateCylinderComponent}}
+\index{GateCylinderComponent@{GateCylinderComponent}!GateCylinderComponent@{GateCylinderComponent}}
+\doxysubsubsection{\texorpdfstring{GateCylinderComponent()}{GateCylinderComponent()}}
+{\footnotesize\ttfamily Gate\+Cylinder\+Component\+::\+Gate\+Cylinder\+Component (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{its\+Name,  }\item[{\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$}]{its\+Mother\+Component,  }\item[{\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$}]{its\+System }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em its\+Name} & the name chosen for this system-\/component \\
+\hline
+{\em its\+Mother\+Component} & the mother of the component (0 if top of a tree) \\
+\hline
+{\em its\+System} & the system to which the component belongs \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCylinderComponent_a40ba8844e3bc84be9437a546442a6719}\label{classGateCylinderComponent_a40ba8844e3bc84be9437a546442a6719}} 
+\index{GateCylinderComponent@{GateCylinderComponent}!IsValidAttachmentRequest@{IsValidAttachmentRequest}}
+\index{IsValidAttachmentRequest@{IsValidAttachmentRequest}!GateCylinderComponent@{GateCylinderComponent}}
+\doxysubsubsection{\texorpdfstring{IsValidAttachmentRequest()}{IsValidAttachmentRequest()}}
+{\footnotesize\ttfamily G4bool Gate\+Cylinder\+Component\+::\+Is\+Valid\+Attachment\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method overloading the method \mbox{\hyperlink{classGateCylinderComponent_a40ba8844e3bc84be9437a546442a6719}{Is\+Valid\+Attachment\+Request()}} of the base-\/class \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} It tells whether an creator may be attached to this component In addition to the test performed by the base-\/class\textquotesingle{} method, it also checks that the creator is indeed connected to a cylinder creator 
+
+Reimplemented from \mbox{\hyperlink{classGateSystemComponent_a1548a571dbb344360098842f178a3e2e}{Gate\+System\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Cylinder\+Component.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Cylinder\+Component.\+cc\end{DoxyCompactItemize}

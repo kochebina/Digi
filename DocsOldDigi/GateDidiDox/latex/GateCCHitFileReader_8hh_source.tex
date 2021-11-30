@@ -1,0 +1,96 @@
+\hypertarget{GateCCHitFileReader_8hh_source}{}\doxysection{Gate\+CCHit\+File\+Reader.\+hh}
+\label{GateCCHitFileReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCHitFileReader.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCHitFileReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateCCHitFileReader\_h}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateCCHitFileReader\_h 1}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <G4Event.hh>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <TROOT.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <TFile.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <TTree.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateCCRootDefs.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateCrystalHit.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }G4Event;}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}};}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCHitFileReaderMessenger}{GateCCHitFileReaderMessenger}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{43 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \textcolor{keyword}{static} \mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}}* GetInstance(G4String filen);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \mbox{\hyperlink{classGateCCHitFileReader}{\string~GateCCHitFileReader}}();       }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{private}:}
+\DoxyCodeLine{58     \mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}}();        }
+\DoxyCodeLine{59     \mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}}(G4String file);        }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} PrepareAcquisition();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71     G4int PrepareNextEvent();}
+\DoxyCodeLine{72     G4bool HasNextEvent();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{//GateCrystalHitsCollection* PrepareEndOfEvent();}}
+\DoxyCodeLine{75     std::vector<GateCrystalHit*> PrepareEndOfEvent();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} TerminateAfterAcquisition();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80     \textcolor{keyword}{const}  G4String\& GetFileName()             \{ \textcolor{keywordflow}{return} m\_fileName; \};}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void}   SetFileName(\textcolor{keyword}{const} G4String aName)   \{ m\_fileName = aName; \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{88     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Describe(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} LoadHitData();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     G4String              m\_fileName;             }
+\DoxyCodeLine{98     G4String             m\_filePath;}
+\DoxyCodeLine{99     \textcolor{keywordtype}{bool} IsCCDigi;}
+\DoxyCodeLine{100     TFile*              m\_hitFile;                }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     TTree*              m\_hitTree;                }
+\DoxyCodeLine{103     Stat\_t                m\_entries;              }
+\DoxyCodeLine{104     G4int                 m\_currentEntry;         }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \mbox{\hyperlink{classGateCCRootHitBuffer}{GateCCRootHitBuffer}}        m\_hitBuffer;                }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{//std::queue<GateCrystalHit> m\_hitQueue;   //!< Queue of waiting hits for the current event}}
+\DoxyCodeLine{116 \textcolor{comment}{}}
+\DoxyCodeLine{117     \mbox{\hyperlink{classGateCCHitFileReaderMessenger}{GateCCHitFileReaderMessenger}} *m\_messenger;    }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     std::vector<GateCrystalHit*> vHitsCollection; \textcolor{comment}{//Hit collection}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{private}:}
+\DoxyCodeLine{124     \textcolor{keyword}{static} \mbox{\hyperlink{classGateCCHitFileReader}{GateCCHitFileReader}}*   instance;       }
+\DoxyCodeLine{125 \};}
+\DoxyCodeLine{126 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

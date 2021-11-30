@@ -1,0 +1,57 @@
+\hypertarget{GateHitConvertor_8hh_source}{}\doxysection{Gate\+Hit\+Convertor.\+hh}
+\label{GateHitConvertor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateHitConvertor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateHitConvertor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateHitConvertor\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateHitConvertor\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateCrystalHit.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHitConvertorMessenger}{GateHitConvertorMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHitConvertor}{GateHitConvertor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26   \textcolor{keyword}{private}:}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \mbox{\hyperlink{classGateHitConvertor}{GateHitConvertor}}() ;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{public}:}
+\DoxyCodeLine{31      \textcolor{keyword}{static} \mbox{\hyperlink{classGateHitConvertor}{GateHitConvertor}}* GetInstance();}
+\DoxyCodeLine{32      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateHitConvertor}{\string~GateHitConvertor}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* ProcessHits(\textcolor{keyword}{const} GateCrystalHitsCollection* hitCollection);}
+\DoxyCodeLine{35      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* ProcessHits(std::vector<GateCrystalHit*> vhitCollection);}
+\DoxyCodeLine{36      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38      \textcolor{keyword}{static}  \textcolor{keyword}{const} G4String\& GetOutputAlias()}
+\DoxyCodeLine{39      \{\textcolor{keywordflow}{return} theOutputAlias;\}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{private}:}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ProcessOneHit(\textcolor{keyword}{const} \mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}}* hit,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}* pulseList);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{private}:}
+\DoxyCodeLine{45     \mbox{\hyperlink{classGateHitConvertorMessenger}{GateHitConvertorMessenger}} *m\_messenger;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keyword}{static} \textcolor{keyword}{const} G4String theOutputAlias;}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

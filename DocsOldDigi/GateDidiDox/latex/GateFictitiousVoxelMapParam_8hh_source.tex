@@ -1,0 +1,47 @@
+\hypertarget{GateFictitiousVoxelMapParam_8hh_source}{}\doxysection{Gate\+Fictitious\+Voxel\+Map\+Param.\+hh}
+\label{GateFictitiousVoxelMapParam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMapParam.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateFictitiousVoxelMapParam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATEFICTITIOUSVOXELMAPPARAM\_HH}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATEFICTITIOUSVOXELMAPPARAM\_HH 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateRegularParameterization.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4PVParameterised;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParam}{GateFictitiousVoxelMapParam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateFictitiousVoxelMapParam_a3ef7801cfc5e62ac15f093a4c2580c76}{GateFictitiousVoxelMapParam}}(\textcolor{keyword}{const} G4String\& itsName, \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}* rpi);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateFictitiousVoxelMapParam_aeb5cd836285fdd819d4c319df05c90eb}{\string~GateFictitiousVoxelMapParam}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateFictitiousVoxelMapParam_a1318b88640ea0579129a72f8c8c9be9c}{ConstructOwnPhysicalVolume}}(G4bool flagUpdate);}
+\DoxyCodeLine{32 \textcolor{comment}{//    void DestroyOwnPhysicalVolumes();}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} DestroyGeometry();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateRegularParameterization}{GateRegularParameterization}}* \mbox{\hyperlink{classGateFictitiousVoxelMapParam_a93bd0de363e6a5e4f8266245563b5358}{GetParameterization}}() \{\textcolor{keywordflow}{return} m\_parameterization;\}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{private}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}*  itsInserter;}
+\DoxyCodeLine{41     \mbox{\hyperlink{classGateRegularParameterization}{GateRegularParameterization}}*       m\_parameterization;}
+\DoxyCodeLine{42     G4PVParameterised*                 m\_pvParameterized;}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

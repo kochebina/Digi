@@ -1,0 +1,105 @@
+\hypertarget{classGateVCoincidencePulseProcessor}{}\doxysection{Gate\+VCoincidence\+Pulse\+Processor Class Reference}
+\label{classGateVCoincidencePulseProcessor}\index{GateVCoincidencePulseProcessor@{GateVCoincidencePulseProcessor}}
+
+
+Abstract base-\/class for coincidence pulse-\/processor components of the digitizer.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VCoincidence\+Pulse\+Processor.\+hh$>$}
+
+Inheritance diagram for Gate\+VCoincidence\+Pulse\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.409692cm]{classGateVCoincidencePulseProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ constructors and destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_afd80c98da4edcd5f354d8529cada0840}\label{classGateVCoincidencePulseProcessor_afd80c98da4edcd5f354d8529cada0840}} 
+{\bfseries Gate\+VCoincidence\+Pulse\+Processor} (\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{Gate\+Coincidence\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new pulse-\/processor attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_ad4e0c01c2323ec791caac68c0007660d}\label{classGateVCoincidencePulseProcessor_ad4e0c01c2323ec791caac68c0007660d}} 
+virtual {\bfseries $\sim$\+Gate\+VCoincidence\+Pulse\+Processor} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ pulse-\/processing functions}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ \mbox{\hyperlink{classGateVCoincidencePulseProcessor_a5b4b8b13be7cb4c6365eff0c12221843}{Process\+Pulse}} (\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$input\+Pulse, G4int i\+Pulse)=0
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{getters and setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_ae511682b143027108fe247f066f90435}\label{classGateVCoincidencePulseProcessor_ae511682b143027108fe247f066f90435}} 
+\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{Gate\+Coincidence\+Pulse\+Processor\+Chain}} $\ast$ {\bfseries m\+\_\+chain}
+\item 
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_ad1beb1eddcdf9d5773899b63ff055cc7}\label{classGateVCoincidencePulseProcessor_ad1beb1eddcdf9d5773899b63ff055cc7}} 
+\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{Gate\+Coincidence\+Pulse\+Processor\+Chain}} $\ast$ {\bfseries Get\+Chain} ()
+\item 
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_a99d395fe5195048ed609bb4341577abe}\label{classGateVCoincidencePulseProcessor_a99d395fe5195048ed609bb4341577abe}} 
+virtual bool {\bfseries Is\+Tri\+Coinc\+Processor} () const
+\item 
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_a8724e548f821202d5f19f02f5b4d7d40}\label{classGateVCoincidencePulseProcessor_a8724e548f821202d5f19f02f5b4d7d40}} 
+virtual void {\bfseries Collect\+Singles} ()
+\item 
+virtual void \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ae0b0d279c11b7199d29af398ff669dfe}{Describe}} (size\+\_\+t indent=0)
+\item 
+virtual void \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}{Describe\+Myself}} (size\+\_\+t indent=0)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method Decribe\+Myself() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base-\/class for coincidence pulse-\/processor components of the digitizer. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}} -\/ by \href{mailto:davguez@yahoo.fr}{\texttt{ davguez@yahoo.\+fr}} Mostly made as a simple copy-\/paste of the \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} class, so take a look to this class\textquotesingle{} doc for more details... 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_ae0b0d279c11b7199d29af398ff669dfe}\label{classGateVCoincidencePulseProcessor_ae0b0d279c11b7199d29af398ff669dfe}} 
+\index{GateVCoincidencePulseProcessor@{GateVCoincidencePulseProcessor}!Describe@{Describe}}
+\index{Describe@{Describe}!GateVCoincidencePulseProcessor@{GateVCoincidencePulseProcessor}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+VCoincidence\+Pulse\+Processor\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method overloading \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent\+::\+Describe()}} Print-\/out a description of the component Calls the pure virtual method Decribe\+Myself() 
+
+Reimplemented from \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent}}.
+
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}\label{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}} 
+\index{GateVCoincidencePulseProcessor@{GateVCoincidencePulseProcessor}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateVCoincidencePulseProcessor@{GateVCoincidencePulseProcessor}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily virtual void Gate\+VCoincidence\+Pulse\+Processor\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method Decribe\+Myself() 
+
+
+
+Implemented in \mbox{\hyperlink{classGateCCCoincidenceSequenceRecon_ad101129992aa8b0640a8a69c9b3a5c2b}{Gate\+CCCoincidence\+Sequence\+Recon}}, \mbox{\hyperlink{classGateCoincidenceBuffer_a1d297b10537908ccbf466fd96d30dea0}{Gate\+Coincidence\+Buffer}}, \mbox{\hyperlink{classGateCoincidenceDeadTime_ae40c2fa5da1d5242133546b4d8f90f11}{Gate\+Coincidence\+Dead\+Time}}, \mbox{\hyperlink{classGateCoincidenceGeometrySelector_af2d53b226aa5b6255d4db0d62e5b9513}{Gate\+Coincidence\+Geometry\+Selector}}, \mbox{\hyperlink{classGateCoincidenceMultiplesKiller_a90c2068816f46371828b72c8ee918d87}{Gate\+Coincidence\+Multiples\+Killer}}, \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_a5c1a8b6b999e34694a63d55a781b3083}{Gate\+Coincidence\+Time\+Diff\+Selector}}, and \mbox{\hyperlink{classGateTriCoincidenceSorter_aa28bfb995ea742c5f8c53ed69117f06d}{Gate\+Tri\+Coincidence\+Sorter}}.
+
+\mbox{\Hypertarget{classGateVCoincidencePulseProcessor_a5b4b8b13be7cb4c6365eff0c12221843}\label{classGateVCoincidencePulseProcessor_a5b4b8b13be7cb4c6365eff0c12221843}} 
+\index{GateVCoincidencePulseProcessor@{GateVCoincidencePulseProcessor}!ProcessPulse@{ProcessPulse}}
+\index{ProcessPulse@{ProcessPulse}!GateVCoincidencePulseProcessor@{GateVCoincidencePulseProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessPulse()}{ProcessPulse()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ Gate\+VCoincidence\+Pulse\+Processor\+::\+Process\+Pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{G4int}]{i\+Pulse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateCoincidenceBuffer_a2efc161d47d4ea83b3cb1864c0e9e5d9}{Gate\+Coincidence\+Buffer}}, \mbox{\hyperlink{classGateCoincidenceDeadTime_a4c3a151a20b48abb9ffe7c4bcccea751}{Gate\+Coincidence\+Dead\+Time}}, \mbox{\hyperlink{classGateCoincidenceGeometrySelector_ac447eb8865da2bfd618c7175f4f507d2}{Gate\+Coincidence\+Geometry\+Selector}}, \mbox{\hyperlink{classGateCoincidenceMultiplesKiller_ada497e127d4b2611b43de119cf7836f9}{Gate\+Coincidence\+Multiples\+Killer}}, \mbox{\hyperlink{classGateCoincidenceTimeDiffSelector_ad760836838d89a1773ce7c886ac8bd3e}{Gate\+Coincidence\+Time\+Diff\+Selector}}, \mbox{\hyperlink{classGateTriCoincidenceSorter_a99696be06f2a503670e2e98f4cf5db3f}{Gate\+Tri\+Coincidence\+Sorter}}, and \mbox{\hyperlink{classGateCCCoincidenceSequenceRecon_a69d5dc635bf94ff7ee38d3da61d53d37}{Gate\+CCCoincidence\+Sequence\+Recon}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+VCoincidence\+Pulse\+Processor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+VCoincidence\+Pulse\+Processor.\+cc\end{DoxyCompactItemize}

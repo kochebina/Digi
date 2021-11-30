@@ -1,0 +1,72 @@
+\hypertarget{GateMultiSensitiveDetector_8hh_source}{}\doxysection{Gate\+Multi\+Sensitive\+Detector.\+hh}
+\label{GateMultiSensitiveDetector_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMultiSensitiveDetector.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMultiSensitiveDetector.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateMultiSensitiveDetector}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEMSD\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEMSD\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateNamedObject.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4String.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <iomanip>}   }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4SDManager.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}G4VSensitiveDetector.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}G4MultiFunctionalDetector.hh"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}} : \textcolor{keyword}{public} G4VSensitiveDetector, \textcolor{keyword}{public} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}} }
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateMultiSensitiveDetector}{GateMultiSensitiveDetector}}(G4String name);}
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateMultiSensitiveDetector}{\string~GateMultiSensitiveDetector}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*);}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*);}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DrawAll();}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PrintAll();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetSensitiveDetector(G4VSensitiveDetector * sd) \{pSensitiveDetector = sd;\}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} SetMultiFunctionalDetector(G4MultiFunctionalDetector * mfd) \{pMultiFunctionalDetector = mfd;\}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} SetMultiFunctionalDetector(G4String detectorName);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} SetActor(\mbox{\hyperlink{classGateVActor}{GateVActor}} * actor);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   G4VSensitiveDetector * GetSensitiveDetector() \{\textcolor{keywordflow}{return} pSensitiveDetector;\}}
+\DoxyCodeLine{55   G4MultiFunctionalDetector* GetMultiFunctionalDetector() \{\textcolor{keywordflow}{return} pMultiFunctionalDetector;\}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} G4bool ProcessHits(G4Step *aStep,G4TouchableHistory *ROhist);}
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} G4int GetCollectionID(G4int i)\{\textcolor{keywordflow}{return} i;\}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{62   G4VSensitiveDetector * pSensitiveDetector;}
+\DoxyCodeLine{63   G4MultiFunctionalDetector* pMultiFunctionalDetector;}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEMSD\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

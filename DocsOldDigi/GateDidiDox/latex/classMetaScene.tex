@@ -1,0 +1,212 @@
+\hypertarget{classMetaScene}{}\doxysection{Meta\+Scene Class Reference}
+\label{classMetaScene}\index{MetaScene@{MetaScene}}
+
+
+{\ttfamily \#include $<$meta\+Scene.\+h$>$}
+
+Inheritance diagram for Meta\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMetaScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaScene_aa75e57b515d2cc4f259a5a9f1f4561cd}\label{classMetaScene_aa75e57b515d2cc4f259a5a9f1f4561cd}} 
+typedef METAIO\+\_\+\+STL\+::list$<$ \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$ $>$ {\bfseries Object\+List\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaScene_afa5686156b1f5a0d3d8972eaff6a6c44}\label{classMetaScene_afa5686156b1f5a0d3d8972eaff6a6c44}} 
+{\bfseries Meta\+Scene} (const \mbox{\hyperlink{classMetaScene}{Meta\+Scene}} $\ast$\+\_\+scene)
+\item 
+\mbox{\Hypertarget{classMetaScene_a674bf60857939b2f0faa9ab2e5ac714c}\label{classMetaScene_a674bf60857939b2f0faa9ab2e5ac714c}} 
+{\bfseries Meta\+Scene} (unsigned int dim)
+\item 
+\mbox{\hyperlink{classMetaScene_a8304df9b4c68941c9c23deef1b4eef81}{$\sim$\+Meta\+Scene}} (void)
+\item 
+void \mbox{\hyperlink{classMetaScene_a8858f4de10bdaf844ddf84f8eb48fc96}{Print\+Info}} (void) const
+\item 
+void \mbox{\hyperlink{classMetaScene_a041bc9e9963713de4fad50245b63e458}{Copy\+Info}} (const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$\+\_\+object)
+\item 
+\mbox{\Hypertarget{classMetaScene_a7c7d0652662f14087eb1a68f24af8ee9}\label{classMetaScene_a7c7d0652662f14087eb1a68f24af8ee9}} 
+void {\bfseries Add\+Object} (\mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$object)
+\item 
+bool \mbox{\hyperlink{classMetaScene_a102bfecae2c0ef0cdc9b488d9cce927c}{Read}} (const char $\ast$\+\_\+header\+Name=NULL)
+\item 
+bool \mbox{\hyperlink{classMetaScene_ab7d13ede6d9510d05bf462f08a8203f2}{Write}} (const char $\ast$\+\_\+head\+Name=NULL)
+\item 
+bool \mbox{\hyperlink{classMetaScene_ade37ac372d92f20a6f8e2e00ccbc4f0a}{Append}} (const char $\ast$=NULL)
+\item 
+void \mbox{\hyperlink{classMetaScene_af3574a1d9417c8013227d96db79d5a4b}{Clear}} (void)
+\item 
+\mbox{\Hypertarget{classMetaScene_ab0bdb9ca9816101ed5f55dcaccb21575}\label{classMetaScene_ab0bdb9ca9816101ed5f55dcaccb21575}} 
+void {\bfseries NObjects} (int nobjects)
+\item 
+\mbox{\Hypertarget{classMetaScene_a9dea52d67c8c578ef2452e88c52028ae}\label{classMetaScene_a9dea52d67c8c578ef2452e88c52028ae}} 
+int {\bfseries NObjects} (void) const
+\item 
+\mbox{\Hypertarget{classMetaScene_ae2c3d798fa187ce0958a0f781f305679}\label{classMetaScene_ae2c3d798fa187ce0958a0f781f305679}} 
+Object\+List\+Type $\ast$ {\bfseries Get\+Object\+List} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMetaScene_a41d6efaade5c25ac668969342d53e2b0}{M\+\_\+\+Destroy}} (void)
+\item 
+void \mbox{\hyperlink{classMetaScene_a7f2e79a8ddce7b27ac93d14471cee86f}{M\+\_\+\+Setup\+Read\+Fields}} (void)
+\item 
+void \mbox{\hyperlink{classMetaScene_a808d9ef5e217e4776fe0d21f45beef0c}{M\+\_\+\+Setup\+Write\+Fields}} (void)
+\item 
+bool \mbox{\hyperlink{classMetaScene_aa8087e0aef6b2f9273c046d10699aefd}{M\+\_\+\+Read}} (void)
+\item 
+bool \mbox{\hyperlink{classMetaScene_ac4b3d3d20fbe71c4eb8cac0d90d183fb}{M\+\_\+\+Write}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMetaScene_ae2623fec696f79c07f02f28e8a858842}\label{classMetaScene_ae2623fec696f79c07f02f28e8a858842}} 
+bool {\bfseries m\+\_\+\+Element\+Byte\+Order\+MSB}
+\item 
+\mbox{\Hypertarget{classMetaScene_abc2591c7e161bc0e9da46b41e358a182}\label{classMetaScene_abc2591c7e161bc0e9da46b41e358a182}} 
+int {\bfseries m\+\_\+\+NObjects}
+\item 
+\mbox{\Hypertarget{classMetaScene_a380238b8642de6798272e7eb63157fd0}\label{classMetaScene_a380238b8642de6798272e7eb63157fd0}} 
+Object\+List\+Type {\bfseries m\+\_\+\+Object\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classMetaScene}{Meta\+Scene}} (.h and .cpp)
+
+Description\+: Reads and Writes Meta\+Tube\+Files.
+
+\begin{DoxyAuthor}{Author}
+Julien Jomier
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+July, 2002 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMetaScene_a8304df9b4c68941c9c23deef1b4eef81}\label{classMetaScene_a8304df9b4c68941c9c23deef1b4eef81}} 
+\index{MetaScene@{MetaScene}!````~MetaScene@{$\sim$MetaScene}}
+\index{````~MetaScene@{$\sim$MetaScene}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{$\sim$MetaScene()}{~MetaScene()}}
+{\footnotesize\ttfamily Meta\+Scene\+::$\sim$\+Meta\+Scene (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMetaScene_ade37ac372d92f20a6f8e2e00ccbc4f0a}\label{classMetaScene_ade37ac372d92f20a6f8e2e00ccbc4f0a}} 
+\index{MetaScene@{MetaScene}!Append@{Append}}
+\index{Append@{Append}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{Append()}{Append()}}
+{\footnotesize\ttfamily bool Meta\+Scene\+::\+Append (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_af3574a1d9417c8013227d96db79d5a4b}\label{classMetaScene_af3574a1d9417c8013227d96db79d5a4b}} 
+\index{MetaScene@{MetaScene}!Clear@{Clear}}
+\index{Clear@{Clear}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Meta\+Scene\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clear tube information 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_a041bc9e9963713de4fad50245b63e458}\label{classMetaScene_a041bc9e9963713de4fad50245b63e458}} 
+\index{MetaScene@{MetaScene}!CopyInfo@{CopyInfo}}
+\index{CopyInfo@{CopyInfo}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{CopyInfo()}{CopyInfo()}}
+{\footnotesize\ttfamily void Meta\+Scene\+::\+Copy\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMetaObject}{Meta\+Object}} $\ast$}]{\+\_\+object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_a41d6efaade5c25ac668969342d53e2b0}\label{classMetaScene_a41d6efaade5c25ac668969342d53e2b0}} 
+\index{MetaScene@{MetaScene}!M\_Destroy@{M\_Destroy}}
+\index{M\_Destroy@{M\_Destroy}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{M\_Destroy()}{M\_Destroy()}}
+{\footnotesize\ttfamily void Meta\+Scene\+::\+M\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Destroy tube information 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_aa8087e0aef6b2f9273c046d10699aefd}\label{classMetaScene_aa8087e0aef6b2f9273c046d10699aefd}} 
+\index{MetaScene@{MetaScene}!M\_Read@{M\_Read}}
+\index{M\_Read@{M\_Read}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{M\_Read()}{M\_Read()}}
+{\footnotesize\ttfamily bool Meta\+Scene\+::\+M\+\_\+\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_a7f2e79a8ddce7b27ac93d14471cee86f}\label{classMetaScene_a7f2e79a8ddce7b27ac93d14471cee86f}} 
+\index{MetaScene@{MetaScene}!M\_SetupReadFields@{M\_SetupReadFields}}
+\index{M\_SetupReadFields@{M\_SetupReadFields}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{M\_SetupReadFields()}{M\_SetupReadFields()}}
+{\footnotesize\ttfamily void Meta\+Scene\+::\+M\+\_\+\+Setup\+Read\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Set Read fields 
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_a808d9ef5e217e4776fe0d21f45beef0c}\label{classMetaScene_a808d9ef5e217e4776fe0d21f45beef0c}} 
+\index{MetaScene@{MetaScene}!M\_SetupWriteFields@{M\_SetupWriteFields}}
+\index{M\_SetupWriteFields@{M\_SetupWriteFields}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{M\_SetupWriteFields()}{M\_SetupWriteFields()}}
+{\footnotesize\ttfamily void Meta\+Scene\+::\+M\+\_\+\+Setup\+Write\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_ac4b3d3d20fbe71c4eb8cac0d90d183fb}\label{classMetaScene_ac4b3d3d20fbe71c4eb8cac0d90d183fb}} 
+\index{MetaScene@{MetaScene}!M\_Write@{M\_Write}}
+\index{M\_Write@{M\_Write}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{M\_Write()}{M\_Write()}}
+{\footnotesize\ttfamily bool Meta\+Scene\+::\+M\+\_\+\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_a8858f4de10bdaf844ddf84f8eb48fc96}\label{classMetaScene_a8858f4de10bdaf844ddf84f8eb48fc96}} 
+\index{MetaScene@{MetaScene}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily void Meta\+Scene\+::\+Print\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMetaObject}{Meta\+Object}}.
+
+\mbox{\Hypertarget{classMetaScene_a102bfecae2c0ef0cdc9b488d9cce927c}\label{classMetaScene_a102bfecae2c0ef0cdc9b488d9cce927c}} 
+\index{MetaScene@{MetaScene}!Read@{Read}}
+\index{Read@{Read}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily bool Meta\+Scene\+::\+Read (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+header\+Name = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Objects should be added here\mbox{\Hypertarget{classMetaScene_ab7d13ede6d9510d05bf462f08a8203f2}\label{classMetaScene_ab7d13ede6d9510d05bf462f08a8203f2}} 
+\index{MetaScene@{MetaScene}!Write@{Write}}
+\index{Write@{Write}!MetaScene@{MetaScene}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily bool Meta\+Scene\+::\+Write (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+head\+Name = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Then we write all the objects in the scene
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Scene.\+h\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/externals/itk-\/mhd/src/meta\+Scene.\+cxx\end{DoxyCompactItemize}

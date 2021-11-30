@@ -1,0 +1,73 @@
+\hypertarget{classGateMDBFieldDecoder}{}\doxysection{Gate\+MDBField\+Decoder Class Reference}
+\label{classGateMDBFieldDecoder}\index{GateMDBFieldDecoder@{GateMDBFieldDecoder}}
+Inheritance diagram for Gate\+MDBField\+Decoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateMDBFieldDecoder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_ad447b6e52edd675d21fae5d8a8d8c885}\label{classGateMDBFieldDecoder_ad447b6e52edd675d21fae5d8a8d8c885}} 
+enum {\bfseries Prefix\+Code} \{ \newline
+{\bfseries prefix\+\_\+symbol}
+, {\bfseries prefix\+\_\+atomicnumber}
+, {\bfseries prefix\+\_\+nucleonnumber}
+, {\bfseries prefix\+\_\+molarmass}
+, \newline
+{\bfseries prefix\+\_\+density}
+, {\bfseries prefix\+\_\+state}
+, {\bfseries prefix\+\_\+temp}
+, {\bfseries prefix\+\_\+pressure}
+, \newline
+{\bfseries prefix\+\_\+ncomponents}
+, {\bfseries prefix\+\_\+name}
+, {\bfseries prefix\+\_\+fraction}
+, {\bfseries prefix\+\_\+natoms}
+, \newline
+{\bfseries prefix\+\_\+error}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_abec098759595489fdd4ceb33014f49c1}\label{classGateMDBFieldDecoder_abec098759595489fdd4ceb33014f49c1}} 
+static char {\bfseries the\+Prefix\+Separator} = \textquotesingle{}=\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_a149d22b77e7da31c72cea1b475f05212}\label{classGateMDBFieldDecoder_a149d22b77e7da31c72cea1b475f05212}} 
+static char {\bfseries the\+Unit\+Optional\+Prefix\+Char} = \textquotesingle{}$\ast$\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_a6ec1f29e3677d4dfe3b54ffb30315c0a}\label{classGateMDBFieldDecoder_a6ec1f29e3677d4dfe3b54ffb30315c0a}} 
+G4double {\bfseries Decode\+Numeric\+Field} (const G4\+String \&element\+Name, G4\+String field, const G4\+String \&field\+Name, \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} \&prefix\+Map, \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} \&unit\+Map)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_a5ab3abaf962de2a8a34670ef87e3abe4}\label{classGateMDBFieldDecoder_a5ab3abaf962de2a8a34670ef87e3abe4}} 
+G4int {\bfseries Decode\+Integer\+Field} (const G4\+String \&element\+Name, G4\+String field, const G4\+String \&field\+Name, \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} \&prefix\+Map)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_adcd901b2961086334ea4e100c5ff2f80}\label{classGateMDBFieldDecoder_adcd901b2961086334ea4e100c5ff2f80}} 
+G4\+String {\bfseries Decode\+Text\+Field} (const G4\+String \&element\+Name, G4\+String field, const G4\+String \&field\+Name, \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} \&prefix\+Map)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_a8cfe85b2842cb474516e271cc0719ce0}\label{classGateMDBFieldDecoder_a8cfe85b2842cb474516e271cc0719ce0}} 
+Prefix\+Code {\bfseries Decode\+Field\+Prefix} (const G4\+String \&element\+Name, G4\+String field, const G4\+String \&field\+Name, \mbox{\hyperlink{classGateCodeMap}{Gate\+Code\+Map}} \&prefix\+Map, G4\+String \&field\+After\+Prefix)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_a8a0dc811edab0a14df7fbe178a464fff}\label{classGateMDBFieldDecoder_a8a0dc811edab0a14df7fbe178a464fff}} 
+G4double {\bfseries Decode\+Field\+Floating\+Value} (const G4\+String \&element\+Name, G4\+String field\+After\+Prefix, const G4\+String \&field\+Name, G4\+String \&unit\+String)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_a7a989dafd332689d82106aadcfc86bc1}\label{classGateMDBFieldDecoder_a7a989dafd332689d82106aadcfc86bc1}} 
+G4int {\bfseries Decode\+Field\+Integer\+Value} (const G4\+String \&element\+Name, G4\+String field\+After\+Prefix, const G4\+String \&field\+Name)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_af327647a047c00751112b0b3ef326fb0}\label{classGateMDBFieldDecoder_af327647a047c00751112b0b3ef326fb0}} 
+G4double {\bfseries Decode\+Field\+Unit} (const G4\+String \&element\+Name, G4\+String unit\+String, const G4\+String \&field\+Name, \mbox{\hyperlink{classGateUnitMap}{Gate\+Unit\+Map}} \&unit\+Map)
+\item 
+\mbox{\Hypertarget{classGateMDBFieldDecoder_af6100cabb11cef5882c7e6440ed86b7f}\label{classGateMDBFieldDecoder_af6100cabb11cef5882c7e6440ed86b7f}} 
+void {\bfseries Decoding\+Exception} (const G4\+String \&element\+Name, const G4\+String \&error\+Msg)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+MDBField\+Decoder.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+MDBField\+Decoder.\+cc\end{DoxyCompactItemize}

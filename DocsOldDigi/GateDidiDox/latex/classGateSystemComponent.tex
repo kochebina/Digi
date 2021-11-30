@@ -1,0 +1,440 @@
+\hypertarget{classGateSystemComponent}{}\doxysection{Gate\+System\+Component Class Reference}
+\label{classGateSystemComponent}\index{GateSystemComponent@{GateSystemComponent}}
+
+
+A \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} is a level of a system (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}})  
+
+
+
+
+{\ttfamily \#include $<$Gate\+System\+Component.\+hh$>$}
+
+Inheritance diagram for Gate\+System\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classGateSystemComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateSystemComponent_a1953aa611af2e5258dab3b63e679deb4}{Gate\+System\+Component}} (const G4\+String \&its\+Name, \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$its\+Mother\+Component, \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$its\+System)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a8a597bf610e3e2f99cb6bcd23f410519}\label{classGateSystemComponent_a8a597bf610e3e2f99cb6bcd23f410519}} 
+virtual {\bfseries $\sim$\+Gate\+System\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Description/print-\/out methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateSystemComponent_a38422ecd55419e6fe46de983bda6d0ed}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateSystemComponent_a38422ecd55419e6fe46de983bda6d0ed}{Describe()}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a872d6da9e0e664cc24ca3a6508df5fe6}\label{classGateSystemComponent_a872d6da9e0e664cc24ca3a6508df5fe6}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries Get\+System} () const
+\begin{DoxyCompactList}\small\item\em Get the system to which the component belongs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a0c3344c0ae303eb467127eabfbfe4ba8}\label{classGateSystemComponent_a0c3344c0ae303eb467127eabfbfe4ba8}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Get\+Mother\+Component} () const
+\begin{DoxyCompactList}\small\item\em Get the mother of the component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_aa7b4a281c8e375f8f6f08862613a5677}\label{classGateSystemComponent_aa7b4a281c8e375f8f6f08862613a5677}} 
+void {\bfseries Set\+Mother\+Component} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$a\+Component)
+\begin{DoxyCompactList}\small\item\em Set the mother of the component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_ab1de6103dd0217adbeff075583c01b75}\label{classGateSystemComponent_ab1de6103dd0217adbeff075583c01b75}} 
+G4bool {\bfseries Is\+Active} () const
+\begin{DoxyCompactList}\small\item\em Check whether we\textquotesingle{}re active, i.\+e. connected to an creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_ae42a7974fb3a8dd952a7dd62e8359996}\label{classGateSystemComponent_ae42a7974fb3a8dd952a7dd62e8359996}} 
+virtual G4int {\bfseries Compute\+Output\+Offset} ()
+\begin{DoxyCompactList}\small\item\em Compute the total number of volumes handled by the \textquotesingle{}younger\textquotesingle{} sister-\/components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a3e548a97d536504441d9be75fc6e4790}\label{classGateSystemComponent_a3e548a97d536504441d9be75fc6e4790}} 
+void {\bfseries Setmin\+Sector\+Diff} (G4int aI)
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_aa03cad5ca3b6641bea6df67e0ed56288}\label{classGateSystemComponent_aa03cad5ca3b6641bea6df67e0ed56288}} 
+G4int {\bfseries Getmin\+Sector\+Diff} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a069abadefc54685ff1bce12cfd589df2}\label{classGateSystemComponent_a069abadefc54685ff1bce12cfd589df2}} 
+void {\bfseries set\+In\+Coincidence\+With} (G4\+String)
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a043ecd5afe56865c595878a3e99c6526}\label{classGateSystemComponent_a043ecd5afe56865c595878a3e99c6526}} 
+G4int {\bfseries Is\+In\+Coincidence\+With} (G4\+String)
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a9296b93b4ef1a2bd82ea8a0a117937d8}\label{classGateSystemComponent_a9296b93b4ef1a2bd82ea8a0a117937d8}} 
+void {\bfseries Set\+Ring\+ID} (G4int aR)
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_ae9fb7609cd42b3ce3d4cbc130867b8cc}\label{classGateSystemComponent_ae9fb7609cd42b3ce3d4cbc130867b8cc}} 
+G4int {\bfseries Get\+Ring\+ID} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to creator properties}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_abc9aa14eb5143d0f70fc959f62ee8f71}\label{classGateSystemComponent_abc9aa14eb5143d0f70fc959f62ee8f71}} 
+virtual \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Get\+Creator} () const
+\begin{DoxyCompactList}\small\item\em Returns the creator attached to the component. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSystemComponent_aef02bce7c6407b301f557c266767069b}{Set\+Creator}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator)
+\item 
+G4bool \mbox{\hyperlink{classGateSystemComponent_a3b50fae67122e4bdd591c57994b05cef}{Check\+Connection\+To\+Creator}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator)
+\begin{DoxyCompactList}\small\item\em Check whether an creator is connected to the component tree. \end{DoxyCompactList}\item 
+virtual G4bool \mbox{\hyperlink{classGateSystemComponent_a1548a571dbb344360098842f178a3e2e}{Is\+Valid\+Attachment\+Request}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator) const
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a3b81d0892ed1c1ede7991a420887653a}\label{classGateSystemComponent_a3b81d0892ed1c1ede7991a420887653a}} 
+virtual size\+\_\+t {\bfseries Get\+Volume\+Number} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of physical volumes created by the creator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class C $>$ }\\C $\ast$ \mbox{\hyperlink{classGateSystemComponent_ad63ff4868a4c119b72b87dc269a660d6}{Find\+Move}} () const
+\item 
+{\footnotesize template$<$class C $>$ }\\C $\ast$ \mbox{\hyperlink{classGateSystemComponent_a1cdad2011826b43616ca50d2e953eb75}{Find\+Repeater}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to physical volumes\textquotesingle{} properties}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a46de5d871342c1af68c67716a7c429b7}\label{classGateSystemComponent_a46de5d871342c1af68c67716a7c429b7}} 
+virtual G4\+VPhysical\+Volume $\ast$ {\bfseries Get\+Physical\+Volume} (size\+\_\+t copy\+Number=0) const
+\begin{DoxyCompactList}\small\item\em Returns one of the physical volumes created by the creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_ab1a533febf764c37ddc04bc54e01b7d0}\label{classGateSystemComponent_ab1a533febf764c37ddc04bc54e01b7d0}} 
+virtual G4\+Three\+Vector {\bfseries Get\+Current\+Translation} (size\+\_\+t copy\+Number=0) const
+\begin{DoxyCompactList}\small\item\em Returns the translation vector for one of the physical volumes created by the creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_af93fdb1e0b29e8d3d08aa5660f515df9}\label{classGateSystemComponent_af93fdb1e0b29e8d3d08aa5660f515df9}} 
+virtual G4\+Rotation\+Matrix $\ast$ {\bfseries Get\+Current\+Rotation} (size\+\_\+t copy\+Number=0) const
+\begin{DoxyCompactList}\small\item\em Returns the rotation matrix for one of the physical volumes created by the creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the placement move properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_ad507c7de1b88077f1f88bc62b4f0f85d}\label{classGateSystemComponent_ad507c7de1b88077f1f88bc62b4f0f85d}} 
+\mbox{\hyperlink{classGateVolumePlacement}{Gate\+Volume\+Placement}} $\ast$ {\bfseries Find\+Placement\+Move} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s placement move, if one can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the translation move properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_ab49119262e7929986c527175c24bea62}\label{classGateSystemComponent_ab49119262e7929986c527175c24bea62}} 
+\mbox{\hyperlink{classGateTranslationMove}{Gate\+Translation\+Move}} $\ast$ {\bfseries Find\+Translation\+Move} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s translation move, if one can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_aeba4e9ac59f180288758165012c9136f}\label{classGateSystemComponent_aeba4e9ac59f180288758165012c9136f}} 
+G4\+Three\+Vector {\bfseries Get\+Translation\+Velocity} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s translation velocity, if a translation can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the rotation move properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a7ddfce1bc235f3f23a17ca9f651e6d98}\label{classGateSystemComponent_a7ddfce1bc235f3f23a17ca9f651e6d98}} 
+\mbox{\hyperlink{classGateRotationMove}{Gate\+Rotation\+Move}} $\ast$ {\bfseries Find\+Rotation\+Move} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s rotation move, if one can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a09f1229beb100098bbb9afcf28d65104}\label{classGateSystemComponent_a09f1229beb100098bbb9afcf28d65104}} 
+G4double {\bfseries Get\+Rotation\+Velocity} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s rotation velocity, if a rotation can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the orbiting move properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_ac33066580225cc4d8d86ba830c6dc09f}\label{classGateSystemComponent_ac33066580225cc4d8d86ba830c6dc09f}} 
+\mbox{\hyperlink{classGateOrbitingMove}{Gate\+Orbiting\+Move}} $\ast$ {\bfseries Find\+Orbiting\+Move} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s orbiting move, if one can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_afc72a6765f2668083552764d326d8d93}\label{classGateSystemComponent_afc72a6765f2668083552764d326d8d93}} 
+G4double {\bfseries Get\+Orbiting\+Velocity} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s orbiting velocity, if an orbiting can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the Eccent\+Rot move properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a2eb402a70571f58ae0b80c59a0414098}\label{classGateSystemComponent_a2eb402a70571f58ae0b80c59a0414098}} 
+\mbox{\hyperlink{classGateEccentRotMove}{Gate\+Eccent\+Rot\+Move}} $\ast$ {\bfseries Find\+Eccent\+Rot\+Move} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s Eccent\+Rot\+Move move, if one can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_adece57f103f32c014bc2280430b15656}\label{classGateSystemComponent_adece57f103f32c014bc2280430b15656}} 
+G4double {\bfseries Get\+Eccent\+Rot\+Velocity} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s Eccent\+Rot velocity, if an orbiting can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_acaee8e175ff9808fb6f3899c56ab265d}\label{classGateSystemComponent_acaee8e175ff9808fb6f3899c56ab265d}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Eccent\+Rot\+Shift} () const
+\begin{DoxyCompactList}\small\item\em The function returns the creator\textquotesingle{}s shift position, if a Eccent\+Rot can be find was found in the creator\textquotesingle{}s move list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the linear repeater properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_af973647f34da9140da9f96b359e6870f}\label{classGateSystemComponent_af973647f34da9140da9f96b359e6870f}} 
+\mbox{\hyperlink{classGateLinearRepeater}{Gate\+Linear\+Repeater}} $\ast$ {\bfseries Find\+Linear\+Repeater} ()
+\begin{DoxyCompactList}\small\item\em Finds the first linear-\/repeater in the creator\textquotesingle{}s repeater list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a92562dc8580d86df0dddfbbaa675ca48}\label{classGateSystemComponent_a92562dc8580d86df0dddfbbaa675ca48}} 
+G4int {\bfseries Get\+Linear\+Repeat\+Number} ()
+\begin{DoxyCompactList}\small\item\em Finds the first linear-\/repeater\textquotesingle{}s repeat number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a9674c3ecb7fa62ea0b4249c9bd8c2690}\label{classGateSystemComponent_a9674c3ecb7fa62ea0b4249c9bd8c2690}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Linear\+Repeat\+Vector} ()
+\begin{DoxyCompactList}\small\item\em Finds the first linear-\/repeater\textquotesingle{}s repeat vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the angular repeater properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a39b698fc15b822ca91fbfd001805368a}\label{classGateSystemComponent_a39b698fc15b822ca91fbfd001805368a}} 
+\mbox{\hyperlink{classGateAngularRepeater}{Gate\+Angular\+Repeater}} $\ast$ {\bfseries Find\+Angular\+Repeater} ()
+\begin{DoxyCompactList}\small\item\em Finds the first angular-\/repeater in the creator\textquotesingle{}s repeater list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_ac42a9296a59111b341516618c56ca859}\label{classGateSystemComponent_ac42a9296a59111b341516618c56ca859}} 
+G4int {\bfseries Get\+Angular\+Repeat\+Number} ()
+\begin{DoxyCompactList}\small\item\em Finds the first angular-\/repeater\textquotesingle{}s repeat number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a56f7b97d8b1ba992e8209ce2c46d1034}\label{classGateSystemComponent_a56f7b97d8b1ba992e8209ce2c46d1034}} 
+G4double {\bfseries Get\+Angular\+Repeat\+Pitch} ()
+\begin{DoxyCompactList}\small\item\em Finds the first angular-\/repeater\textquotesingle{}s repeat angular pitch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_acfebf4f5ba13d02cd5425f3b8914a4fc}\label{classGateSystemComponent_acfebf4f5ba13d02cd5425f3b8914a4fc}} 
+G4int {\bfseries Get\+Angular\+Modulo\+Number} ()
+\begin{DoxyCompactList}\small\item\em Finds the first angular-\/repeater\textquotesingle{}s modulo number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a78234ca23a017f30a7cfac0d5f6a18af}\label{classGateSystemComponent_a78234ca23a017f30a7cfac0d5f6a18af}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift1} ()
+\begin{DoxyCompactList}\small\item\em Finds the first angular-\/repeater\textquotesingle{}s repeat Z1..Z8 shift. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a2476bdeb142ac5aff80e39997b0df980}\label{classGateSystemComponent_a2476bdeb142ac5aff80e39997b0df980}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift2} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a1d858ca33da56d15637f64c62ba7d717}\label{classGateSystemComponent_a1d858ca33da56d15637f64c62ba7d717}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift3} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a3e910d5d370e7dc726bcb385717dc1be}\label{classGateSystemComponent_a3e910d5d370e7dc726bcb385717dc1be}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift4} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_acd256a144025d6beb386d018af683a0f}\label{classGateSystemComponent_acd256a144025d6beb386d018af683a0f}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift5} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a23ebc03fc16d86efc74af243119ec267}\label{classGateSystemComponent_a23ebc03fc16d86efc74af243119ec267}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift6} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a0d328ca67e517ef73d70ae69d672a60f}\label{classGateSystemComponent_a0d328ca67e517ef73d70ae69d672a60f}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift7} ()
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a45543aad6d0fc9cadef1999759969fc9}\label{classGateSystemComponent_a45543aad6d0fc9cadef1999759969fc9}} 
+G4double {\bfseries Get\+Angular\+Repeat\+ZShift8} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the sphere repeater properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a2836fd18d67d8052f423be0af50b9534}\label{classGateSystemComponent_a2836fd18d67d8052f423be0af50b9534}} 
+\mbox{\hyperlink{classGateSphereRepeater}{Gate\+Sphere\+Repeater}} $\ast$ {\bfseries Find\+Sphere\+Repeater} ()
+\begin{DoxyCompactList}\small\item\em Finds the first sphere-\/repeater in the creator\textquotesingle{}s repeater list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a2d6455c46e26b4f940d5f9cd165874f4}\label{classGateSystemComponent_a2d6455c46e26b4f940d5f9cd165874f4}} 
+G4double {\bfseries Get\+Sphere\+Axial\+Repeat\+Pitch} ()
+\begin{DoxyCompactList}\small\item\em Finds the first sphere-\/repeater\textquotesingle{}s repeat axial pitch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a2134eeeeb56c55b99e5f8febb8f88de3}\label{classGateSystemComponent_a2134eeeeb56c55b99e5f8febb8f88de3}} 
+G4double {\bfseries Get\+Sphere\+Azimuthal\+Repeat\+Pitch} ()
+\begin{DoxyCompactList}\small\item\em Finds the first sphere-\/repeater\textquotesingle{}s repeat azimuthal pitch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a858b8d0f75baccf2a543f112097c00e7}\label{classGateSystemComponent_a858b8d0f75baccf2a543f112097c00e7}} 
+G4int {\bfseries Get\+Sphere\+Axial\+Repeat\+Number} ()
+\begin{DoxyCompactList}\small\item\em Finds the first sphere-\/repeater\textquotesingle{}s axial repeat number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_ab24d6504810860981eb0c5dca1eb3ccd}\label{classGateSystemComponent_ab24d6504810860981eb0c5dca1eb3ccd}} 
+G4int {\bfseries Get\+Sphere\+Azimuthal\+Repeat\+Number} ()
+\begin{DoxyCompactList}\small\item\em Finds the first sphere-\/repeater\textquotesingle{}s azimuthal repeat number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a890f8a27b889b83d29d45d267695a2fd}\label{classGateSystemComponent_a890f8a27b889b83d29d45d267695a2fd}} 
+G4double {\bfseries Get\+Sphere\+Radius} ()
+\begin{DoxyCompactList}\small\item\em Finds the first sphere-\/repeater\textquotesingle{}s radius of replication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access to the generic repeater properties (if any)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a1c0e963e878450b9d985620fadcf93cc}\label{classGateSystemComponent_a1c0e963e878450b9d985620fadcf93cc}} 
+\mbox{\hyperlink{classGateGenericRepeater}{Gate\+Generic\+Repeater}} $\ast$ {\bfseries Find\+Generic\+Repeater} ()
+\begin{DoxyCompactList}\small\item\em Finds the first generic repeater in the creator\textquotesingle{}s repeater list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a0792316e6f6145b52bae6122d7d349c3}\label{classGateSystemComponent_a0792316e6f6145b52bae6122d7d349c3}} 
+G4int {\bfseries Get\+Generic\+Repeat\+Number} ()
+\begin{DoxyCompactList}\small\item\em Finds the first generic repeater\textquotesingle{}s repeat number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Computation of offsets to get radiuses}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}\label{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}} 
+enum \mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}} \{ {\bfseries align\+\_\+right} =-\/1
+, {\bfseries align\+\_\+center} = 0
+, {\bfseries align\+\_\+left} =+1
+, {\bfseries align\+\_\+unknown} =999
+ \}
+\begin{DoxyCompactList}\small\item\em Alignment constants used by \mbox{\hyperlink{classGateSystemComponent_abc5b9fc20eccfd7bfb7bff407df7b9d8}{Compute\+Offset()}} \end{DoxyCompactList}\item 
+G4double \mbox{\hyperlink{classGateSystemComponent_abc5b9fc20eccfd7bfb7bff407df7b9d8}{Compute\+Offset}} (size\+\_\+t axis, \mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}} alignment=align\+\_\+center, \mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}} reference\+Alignment=align\+\_\+center) const
+\begin{DoxyCompactList}\small\item\em Compute the offset (displacement) between a feature of the creator and a feature of its mother creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Access to properties and objects of the component tree}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_a2909c2632c9d7a230758694e9156750f}\label{classGateSystemComponent_a2909c2632c9d7a230758694e9156750f}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em System to which the component belongs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}\label{classGateSystemComponent_a2940816c97672f8d8336a53a3b075d3b}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries m\+\_\+creator}
+\begin{DoxyCompactList}\small\item\em Creator attached to the component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_ab62ae71494114e07f669d43985368d58}\label{classGateSystemComponent_ab62ae71494114e07f669d43985368d58}} 
+\mbox{\hyperlink{classGateSystemComponentMessenger}{Gate\+System\+Component\+Messenger}} $\ast$ {\bfseries m\+\_\+messenger}
+\begin{DoxyCompactList}\small\item\em Messenger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_aac9bafcaf62a39a045cb17b40e8adaa3}\label{classGateSystemComponent_aac9bafcaf62a39a045cb17b40e8adaa3}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries m\+\_\+mother\+Component}
+\begin{DoxyCompactList}\small\item\em Mother of the component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}\label{classGateSystemComponent_a40316d414d9d2932ed2eb66bb26d0bf6}} 
+\mbox{\hyperlink{classGateSystemComponentList}{Gate\+System\+Component\+List}} $\ast$ {\bfseries m\+\_\+child\+Component\+List}
+\begin{DoxyCompactList}\small\item\em List of daughter components (next level of the component tree) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_adaf77a0a175ff844336dd977e9482f86}\label{classGateSystemComponent_adaf77a0a175ff844336dd977e9482f86}} 
+G4int {\bfseries m\+\_\+min\+Sector\+Diff}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_adbac01d08542d22bbcd27809c2cf874d}\label{classGateSystemComponent_adbac01d08542d22bbcd27809c2cf874d}} 
+std\+::vector$<$ G4\+String $>$ {\bfseries m\+\_\+coincidence\+\_\+rsector}
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_aa7c52191a178ccb822ec939e0f4716b2}\label{classGateSystemComponent_aa7c52191a178ccb822ec939e0f4716b2}} 
+G4int {\bfseries m\+\_\+ring\+ID}
+\item 
+size\+\_\+t \mbox{\hyperlink{classGateSystemComponent_a1464bdbe4fa798a2005b9d461914bebf}{Get\+Tree\+Depth}} () const
+\item 
+\mbox{\Hypertarget{classGateSystemComponent_aba54330ab75586d03cde16ce096a4a31}\label{classGateSystemComponent_aba54330ab75586d03cde16ce096a4a31}} 
+size\+\_\+t {\bfseries Get\+Child\+Number} () const
+\begin{DoxyCompactList}\small\item\em Return the number of daughters in the child list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_acf49f022e70881968ee5ceb260c37051}\label{classGateSystemComponent_acf49f022e70881968ee5ceb260c37051}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Get\+Child\+Component} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Return one of the daughter-\/components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a15252b6ceb1209f777d718aa59a0d2ab}\label{classGateSystemComponent_a15252b6ceb1209f777d718aa59a0d2ab}} 
+void {\bfseries Insert\+Child\+Component} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$a\+Component)
+\begin{DoxyCompactList}\small\item\em Append a new component at the end of the child-\/list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_ad203d55698a87ba2c0b64cf4f086db03}\label{classGateSystemComponent_ad203d55698a87ba2c0b64cf4f086db03}} 
+size\+\_\+t {\bfseries Get\+Active\+Child\+Number} () const
+\begin{DoxyCompactList}\small\item\em Compute the number of active daughter-\/components (i.\+e. components that are linked to an creator) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponent_a3b105a0be26e8294c8415df4682fa34d}\label{classGateSystemComponent_a3b105a0be26e8294c8415df4682fa34d}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Find\+System\+Component} (const G4\+String \&component\+Name)
+\begin{DoxyCompactList}\small\item\em Finds a component in the component tree from its name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} is a level of a system (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}}) 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (Oct 2002)
+\item A system component is part of of a component tree\+: it handles a tree of subcomponents, and may be a daughter of some higher-\/level component. The whole tree defines a \textquotesingle{}system\textquotesingle{}, i.\+e. a geometry model\+: in this model, each component has a predefined role (detector head, crystal matrix, collimator...)
+\item A component tree provides a pre-\/defined model of a geometry, such as a scanner or a detector block. In this model, each component has a specific role (detector head, crystal matrix, collimator...)
+\item System components are activated when they are connected to an creator of the geometry. Once a component is thus connected, it can read the creator properties, such as its dimensions, position, movement parameters, number of copies...
+\item For example, a typical PET scanner would incorporate a component for the detector blocks (\textquotesingle{}rsector\textquotesingle{}, \textquotesingle{}block\textquotesingle{}, \textquotesingle{}bucket\textquotesingle{}...). This component would then be connected to the one geometry creator that models this detector block. Once this connection is done, one can read the scanner properties that are related to the blocks\+: number of rings, number of blocks per ring, internal diameter... Along with all its subcomponents, thus block-\/component would allow to read all the detector properties.
+\item Note that the component methods are of two distinct types\+: for some of them, the component just answers for itself; for others, it recursively calls the methods of all its subcomponents
+\item Note\+: from July to Oct. 2002, a system was a vector of system-\/levels, each level managing a vector of components. On Oct. 2002, the whole system (which was too complex) was redesigned, and the current mechanism (tree of system-\/components) replaced the previous one (vector of system-\/levels)
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateSystemComponent_a1953aa611af2e5258dab3b63e679deb4}\label{classGateSystemComponent_a1953aa611af2e5258dab3b63e679deb4}} 
+\index{GateSystemComponent@{GateSystemComponent}!GateSystemComponent@{GateSystemComponent}}
+\index{GateSystemComponent@{GateSystemComponent}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{GateSystemComponent()}{GateSystemComponent()}}
+{\footnotesize\ttfamily Gate\+System\+Component\+::\+Gate\+System\+Component (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{its\+Name,  }\item[{\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$}]{its\+Mother\+Component,  }\item[{\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$}]{its\+System }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em its\+Name} & the name chosen for this system-\/component \\
+\hline
+{\em its\+Mother\+Component} & the mother of the component (0 if top of a tree) \\
+\hline
+{\em its\+System} & the system to which the component belongs \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSystemComponent_a3b50fae67122e4bdd591c57994b05cef}\label{classGateSystemComponent_a3b50fae67122e4bdd591c57994b05cef}} 
+\index{GateSystemComponent@{GateSystemComponent}!CheckConnectionToCreator@{CheckConnectionToCreator}}
+\index{CheckConnectionToCreator@{CheckConnectionToCreator}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{CheckConnectionToCreator()}{CheckConnectionToCreator()}}
+{\footnotesize\ttfamily G4bool Gate\+System\+Component\+::\+Check\+Connection\+To\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption})}
+
+
+
+Check whether an creator is connected to the component tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+Creator} & the creator we want to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the creator is attached to one of the components of the component-\/tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGateSystemComponent_abc5b9fc20eccfd7bfb7bff407df7b9d8}\label{classGateSystemComponent_abc5b9fc20eccfd7bfb7bff407df7b9d8}} 
+\index{GateSystemComponent@{GateSystemComponent}!ComputeOffset@{ComputeOffset}}
+\index{ComputeOffset@{ComputeOffset}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{ComputeOffset()}{ComputeOffset()}}
+{\footnotesize\ttfamily G4double Gate\+System\+Component\+::\+Compute\+Offset (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{axis,  }\item[{\mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}}}]{alignment = {\ttfamily align\+\_\+center},  }\item[{\mbox{\hyperlink{classGateSystemComponent_ad733451cbbd7fc11e67df09fc65c3d80}{Alignment1D}}}]{reference\+Alignment = {\ttfamily align\+\_\+center} }\end{DoxyParamCaption}) const}
+
+
+
+Compute the offset (displacement) between a feature of the creator and a feature of its mother creator. 
+
+By default, all alignments are set to align\+\_\+center, so that we compute the offset between the creator\textquotesingle{}s center and the center of its mother\textquotesingle{}s reference frame We could select align\+\_\+left for both alignments\+: in that case, we would compute the offset between the left edge of the creator and the left edge of its mother To compute an internal ring diameter from a block position, we actually select align\+\_\+left for the block and align\+\_\+center for its mother\+: thus, we compute the distance between the block\textquotesingle{}s left edge and its mother\textquotesingle{}s center \begin{DoxyVerb}\param  axis:                 the axis along which we want to compute the offset
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em alignment} & the feature of the creator for which we want to compute the offset it can be its center (align\+\_\+center), its left border (align\+\_\+left) or its right border (align\+\_\+right) \\
+\hline
+{\em reference\+Alignment} & the feature of the mother volume, with regards to which we compute the offset it can be its center (align\+\_\+center), its left border (align\+\_\+left) or its right border (align\+\_\+right)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the offset along the requested axis between the creator\textquotesingle{}s feature considered and the mother\textquotesingle{}s feature considered 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGateSystemComponent_a38422ecd55419e6fe46de983bda6d0ed}\label{classGateSystemComponent_a38422ecd55419e6fe46de983bda6d0ed}} 
+\index{GateSystemComponent@{GateSystemComponent}!Describe@{Describe}}
+\index{Describe@{Describe}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+System\+Component\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateSystemComponent_a38422ecd55419e6fe46de983bda6d0ed}{Describe()}}. 
+
+This methods prints-\/out a description of the system component
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent}}.
+
+\mbox{\Hypertarget{classGateSystemComponent_ad63ff4868a4c119b72b87dc269a660d6}\label{classGateSystemComponent_ad63ff4868a4c119b72b87dc269a660d6}} 
+\index{GateSystemComponent@{GateSystemComponent}!FindMove@{FindMove}}
+\index{FindMove@{FindMove}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{FindMove()}{FindMove()}}
+{\footnotesize\ttfamily template$<$class C $>$ \\
+C $\ast$ Gate\+System\+Component\+::\+Find\+Move}
+
+Tenplate for finding moves of a specific type\+: the function returns a non-\/zero pointer only if a move of the requested type was found in the creator\textquotesingle{}s move list \mbox{\Hypertarget{classGateSystemComponent_a1cdad2011826b43616ca50d2e953eb75}\label{classGateSystemComponent_a1cdad2011826b43616ca50d2e953eb75}} 
+\index{GateSystemComponent@{GateSystemComponent}!FindRepeater@{FindRepeater}}
+\index{FindRepeater@{FindRepeater}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{FindRepeater()}{FindRepeater()}}
+{\footnotesize\ttfamily template$<$class C $>$ \\
+C $\ast$ Gate\+System\+Component\+::\+Find\+Repeater}
+
+Tenplate for finding repeaters of a specific type\+: the function returns a non-\/zero pointer only if a repeater of the requested type was found in the creator\textquotesingle{}s repeater list \mbox{\Hypertarget{classGateSystemComponent_a1464bdbe4fa798a2005b9d461914bebf}\label{classGateSystemComponent_a1464bdbe4fa798a2005b9d461914bebf}} 
+\index{GateSystemComponent@{GateSystemComponent}!GetTreeDepth@{GetTreeDepth}}
+\index{GetTreeDepth@{GetTreeDepth}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{GetTreeDepth()}{GetTreeDepth()}}
+{\footnotesize\ttfamily size\+\_\+t Gate\+System\+Component\+::\+Get\+Tree\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute the total depth of the component tree This depth is at least 1 (the \textquotesingle{}depth\textquotesingle{} of the component on its own) If the component has children, the depth is 1 + the distance between the component and its deepest descendant \mbox{\Hypertarget{classGateSystemComponent_a1548a571dbb344360098842f178a3e2e}\label{classGateSystemComponent_a1548a571dbb344360098842f178a3e2e}} 
+\index{GateSystemComponent@{GateSystemComponent}!IsValidAttachmentRequest@{IsValidAttachmentRequest}}
+\index{IsValidAttachmentRequest@{IsValidAttachmentRequest}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{IsValidAttachmentRequest()}{IsValidAttachmentRequest()}}
+{\footnotesize\ttfamily G4bool Gate\+System\+Component\+::\+Is\+Valid\+Attachment\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Tells whether an creator may be attached to this component This virtual method makes a number of tests\+: is the creator pointer valid, does the creator owns a movement-\/list, does it own a repeater-\/list... It can be and should be overloaded when we want to do specific tests (for specific components) 
+
+Reimplemented in \mbox{\hyperlink{classGateBoxComponent_a846e143acd3b2f9771efbf4370ca6011}{Gate\+Box\+Component}}, \mbox{\hyperlink{classGateCylinderComponent_a40ba8844e3bc84be9437a546442a6719}{Gate\+Cylinder\+Component}}, and \mbox{\hyperlink{classGateWedgeComponent_a3fa25b1a54cdfce9bb6b58ebb0e80a9c}{Gate\+Wedge\+Component}}.
+
+\mbox{\Hypertarget{classGateSystemComponent_aef02bce7c6407b301f557c266767069b}\label{classGateSystemComponent_aef02bce7c6407b301f557c266767069b}} 
+\index{GateSystemComponent@{GateSystemComponent}!SetCreator@{SetCreator}}
+\index{SetCreator@{SetCreator}!GateSystemComponent@{GateSystemComponent}}
+\doxysubsubsection{\texorpdfstring{SetCreator()}{SetCreator()}}
+{\footnotesize\ttfamily void Gate\+System\+Component\+::\+Set\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Attach an creator to the component, provided that the attachment request is valid (calls \mbox{\hyperlink{classGateSystemComponent_a1548a571dbb344360098842f178a3e2e}{Is\+Valid\+Attachment\+Request()}} to check the request validity) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+System\+Component.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+System\+Component.\+cc\end{DoxyCompactItemize}

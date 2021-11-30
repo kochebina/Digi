@@ -1,0 +1,57 @@
+\hypertarget{GateLocalTimeResolution_8hh_source}{}\doxysection{Gate\+Local\+Time\+Resolution.\+hh}
+\label{GateLocalTimeResolution_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalTimeResolution.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalTimeResolution.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GateLocalTimeResolution\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GateLocalTimeResolution\_h 1}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalTimeResolutionMessenger}{GateLocalTimeResolutionMessenger}};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalTimeResolution}{GateLocalTimeResolution}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16   \textcolor{keyword}{public}:}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{19     \mbox{\hyperlink{classGateLocalTimeResolution_aca6562db9450a827568b73c8a62b2d16}{GateLocalTimeResolution}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{20                    \textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalTimeResolution_aae2dfa60a3e9877d98d2331d32c6a894}{\string~GateLocalTimeResolution}}() ;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     G4int \mbox{\hyperlink{classGateLocalTimeResolution_a60a752bcaa7fed851dee13c3b0877059}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalTimeResolution_a7e92fa19f4efb130c89323f61a586fb0}{SetTimeResolution}}(G4String name, G4double val)   \{ m\_table[name].resol = val;  \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalTimeResolution_a6586556f10add0026447665dd2f11345}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalTimeResolution_adad26c60d34ba10e6148cad033e9f974}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{private}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{struct }param \{}
+\DoxyCodeLine{52       G4double resol;}
+\DoxyCodeLine{53     \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55    param m\_param;                                 }
+\DoxyCodeLine{56     G4String m\_name;                               }
+\DoxyCodeLine{57     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} m\_table ;  }
+\DoxyCodeLine{58     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} ::iterator im;  }
+\DoxyCodeLine{59     \mbox{\hyperlink{classGateLocalTimeResolutionMessenger}{GateLocalTimeResolutionMessenger}} *m\_messenger;       }
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

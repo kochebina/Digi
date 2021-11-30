@@ -1,0 +1,56 @@
+\hypertarget{GateOutputModuleMessenger_8hh_source}{}\doxysection{Gate\+Output\+Module\+Messenger.\+hh}
+\label{GateOutputModuleMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateOutputModuleMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateOutputModuleMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateOutputModuleMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateOutputModuleMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateMessenger}{GateMessenger}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}(\mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}* outputModule);}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOutputModuleMessenger}{\string~GateOutputModuleMessenger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36   \textcolor{keyword}{inline} G4UIcmdWithoutParameter* GetDescribeCmd() \{\textcolor{keywordflow}{return} DescribeCmd;\}}
+\DoxyCodeLine{37   \textcolor{keyword}{inline} G4UIcmdWithAnInteger*    GetVerboseCmd()  \{\textcolor{keywordflow}{return} VerboseCmd;\}}
+\DoxyCodeLine{38   \textcolor{keyword}{inline} G4UIcmdWithoutParameter* GetEnableCmd()   \{\textcolor{keywordflow}{return} EnableCmd;\}}
+\DoxyCodeLine{39   \textcolor{keyword}{inline} G4UIcmdWithoutParameter* GetDisableCmd()  \{\textcolor{keywordflow}{return} DisableCmd;\}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{private}:}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}*                       m\_outputModule;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   G4UIcmdWithoutParameter*                 DescribeCmd;}
+\DoxyCodeLine{45   G4UIcmdWithAnInteger*                    VerboseCmd;}
+\DoxyCodeLine{46   G4UIcmdWithoutParameter*                 EnableCmd;    }
+\DoxyCodeLine{47   G4UIcmdWithoutParameter*                 DisableCmd;   }
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

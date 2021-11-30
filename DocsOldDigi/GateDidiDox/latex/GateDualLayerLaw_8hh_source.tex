@@ -1,0 +1,50 @@
+\hypertarget{GateDualLayerLaw_8hh_source}{}\doxysection{Gate\+Dual\+Layer\+Law.\+hh}
+\label{GateDualLayerLaw_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDualLayerLaw.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDualLayerLaw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef GateDualLayerLaw\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GateDualLayerLaw\_h 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GateVDoILaw.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateDualLayerLawMessenger.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateTools.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4VoxelLimits.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4Transform3D.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4VSolid.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDualLayerLaw}{GateDualLayerLaw}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVDoILaw}{GateVDoILaw}} \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 public :}
+\DoxyCodeLine{21     \mbox{\hyperlink{classGateDualLayerLaw}{GateDualLayerLaw}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDualLayerLaw}{\string~GateDualLayerLaw}}() \{\textcolor{keyword}{delete} m\_messenger;\}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ComputeDoI(\mbox{\hyperlink{classGatePulse}{GatePulse}} *plse, G4ThreeVector axis);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself (\textcolor{keywordtype}{size\_t} ident=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 private :}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \mbox{\hyperlink{classGateDualLayerLawMessenger}{GateDualLayerLawMessenger}}* m\_messenger;}
+\DoxyCodeLine{31     G4VoxelLimits limits;}
+\DoxyCodeLine{32     G4double DoImin, DoImax;}
+\DoxyCodeLine{33     G4AffineTransform at;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     G4ThreeVector xAxis;}
+\DoxyCodeLine{38     G4ThreeVector yAxis;}
+\DoxyCodeLine{39     G4ThreeVector zAxis;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

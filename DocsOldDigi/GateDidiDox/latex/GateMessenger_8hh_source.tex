@@ -1,0 +1,65 @@
+\hypertarget{GateMessenger_8hh_source}{}\doxysection{Gate\+Messenger.\+hh}
+\label{GateMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMessenger}{GateMessenger}}: \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42   \textcolor{keyword}{public}:}
+\DoxyCodeLine{45     \mbox{\hyperlink{classGateMessenger_abe5cf6d733a35b1c4aa07378b759aed3}{GateMessenger}}(\textcolor{keyword}{const} G4String\& itsName,G4bool createDirectory=\textcolor{keyword}{true});}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMessenger}{\string~GateMessenger}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMessenger_a4c39412b12e7df9fc05062a47485e6e3}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateMessenger_a38ff6bd962757bf687292de821fc99dd}{GetName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{53 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} mName; \}}
+\DoxyCodeLine{55     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateMessenger_adb2442f2fede13e91e31e945b1335153}{GetDirectoryName}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{56 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateMessenger_a01bc96aaf641877c3142d6bcff71a309}{mDirName}}; \}}
+\DoxyCodeLine{58     \textcolor{keyword}{inline} G4UIdirectory* \mbox{\hyperlink{classGateMessenger_af99b74c8fb7488bf5ce863fd0d475369}{GetDirectory}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{59 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} pDir; \}}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMessenger_af42593930a9ca97e78b2248c83033073}{SetDirectoryGuidance}}(\textcolor{keyword}{const} G4String\& guidance);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66 \textcolor{comment}{//    virtual void TellGeometryToUpdate();}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{70 \textcolor{comment}{//    virtual void TellGeometryToRebuild();}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     \textcolor{keyword}{inline} \textcolor{keyword}{static} G4String \mbox{\hyperlink{classGateMessenger_a1ad520afd5257e93e770054de83d8bf3}{ComputeDirectoryName}}(\textcolor{keyword}{const} G4String\& name)}
+\DoxyCodeLine{74       \{ \textcolor{keywordflow}{return} G4String(\textcolor{stringliteral}{"{}/gate/"{}}) + name + \textcolor{stringliteral}{"{}/"{}} ; \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{77     G4String                  mName;        \textcolor{comment}{//|< Directory base-\/name}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     G4String                  \mbox{\hyperlink{classGateMessenger_a01bc96aaf641877c3142d6bcff71a309}{mDirName}};    }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     G4UIdirectory*            pDir;         }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

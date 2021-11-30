@@ -1,0 +1,49 @@
+\hypertarget{GateSPSAngDistribution_8hh_source}{}\doxysection{Gate\+SPSAng\+Distribution.\+hh}
+\label{GateSPSAngDistribution_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSPSAngDistribution.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSPSAngDistribution.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{12 \textcolor{comment}{ *  Class Description :                                                    *}}
+\DoxyCodeLine{13 \textcolor{comment}{ *                                                                         *  }}
+\DoxyCodeLine{14 \textcolor{comment}{ *  To generate the direction of a primary vertex according to the defined *}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  distribution                                                           *}}
+\DoxyCodeLine{16 \textcolor{comment}{ *                                                                         * }}
+\DoxyCodeLine{17 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */} }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef GateSPSAngDistribution\_h}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define GateSPSAngDistribution\_h 1}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4SPSAngDistribution.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSPSAngDistribution}{GateSPSAngDistribution}} : \textcolor{keyword}{public} G4SPSAngDistribution}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27  public :}
+\DoxyCodeLine{28  }
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateSPSAngDistribution}{GateSPSAngDistribution}} () ;}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateSPSAngDistribution}{\string~GateSPSAngDistribution}} () ; }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{comment}{// FocusPointCopy is a copy of the private member FocusPoint in G4SPSAngDistribution}}
+\DoxyCodeLine{33   \textcolor{comment}{// that cannot be accessed from get because there is no GetFocusPoint and the member}}
+\DoxyCodeLine{34   \textcolor{comment}{// is private. Every call to GateSPSAngDistribution::SetFocusPoint is doubled with a}}
+\DoxyCodeLine{35   \textcolor{comment}{// call to GateSPSAngDistribution::SetFocusPointCopy to be able to access its value.}}
+\DoxyCodeLine{36   G4ThreeVector GetFocusPointCopy();  }
+\DoxyCodeLine{37   \textcolor{keywordtype}{void}  SetFocusPointCopy (G4ThreeVector);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39  private :}
+\DoxyCodeLine{40   G4ThreeVector FocusPointCopy;}
+\DoxyCodeLine{41 \} ;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

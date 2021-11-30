@@ -1,0 +1,82 @@
+\hypertarget{classGateLocalTimeDelay}{}\doxysection{Gate\+Local\+Time\+Delay Class Reference}
+\label{classGateLocalTimeDelay}\index{GateLocalTimeDelay@{GateLocalTimeDelay}}
+
+
+Pulse-\/processor for simulating a local Time\+Delay.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Local\+Time\+Delay.\+hh$>$}
+
+Inheritance diagram for Gate\+Local\+Time\+Delay\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateLocalTimeDelay}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLocalTimeDelay_a3cb4c5cfd687070c0c4147a74f892010}\label{classGateLocalTimeDelay_a3cb4c5cfd687070c0c4147a74f892010}} 
+{\bfseries Gate\+Local\+Time\+Delay} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new Time\+Delay attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLocalTimeDelay_a3c52070645621103f366ea2cd6898f4f}\label{classGateLocalTimeDelay_a3c52070645621103f366ea2cd6898f4f}} 
+virtual {\bfseries $\sim$\+Gate\+Local\+Time\+Delay} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLocalTimeDelay_a04c72495f0364de48f67cc284b95ed26}\label{classGateLocalTimeDelay_a04c72495f0364de48f67cc284b95ed26}} 
+G4int {\bfseries Choose\+Volume} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Adds volume to the hashmap and returns 1 if it exists. If it does not exist, returns 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLocalTimeDelay_a7ecac821e0f4023c5da344c955fb9b01}\label{classGateLocalTimeDelay_a7ecac821e0f4023c5da344c955fb9b01}} 
+void {\bfseries Set\+Delay} (G4\+String name, G4double val)
+\begin{DoxyCompactList}\small\item\em This function set a Time\+Delay for a volume called \textquotesingle{}name\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateLocalTimeDelay_aba583186ff77cf320c07faae39f8ec11}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateLocalTimeDelay_a55d244dcda4d8b9791f683fc63e4a508}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating a local Time\+Delay. 
+
+
+\begin{DoxyItemize}
+\item The user can choose a specific Time\+Delay for each tracked volume.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateLocalTimeDelay_aba583186ff77cf320c07faae39f8ec11}\label{classGateLocalTimeDelay_aba583186ff77cf320c07faae39f8ec11}} 
+\index{GateLocalTimeDelay@{GateLocalTimeDelay}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateLocalTimeDelay@{GateLocalTimeDelay}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Local\+Time\+Delay\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the Time\+Delay 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateLocalTimeDelay_a55d244dcda4d8b9791f683fc63e4a508}\label{classGateLocalTimeDelay_a55d244dcda4d8b9791f683fc63e4a508}} 
+\index{GateLocalTimeDelay@{GateLocalTimeDelay}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateLocalTimeDelay@{GateLocalTimeDelay}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Local\+Time\+Delay\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Local\+Time\+Delay.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Local\+Time\+Delay.\+cc\end{DoxyCompactItemize}

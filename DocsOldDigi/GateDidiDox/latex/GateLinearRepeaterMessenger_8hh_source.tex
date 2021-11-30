@@ -1,0 +1,54 @@
+\hypertarget{GateLinearRepeaterMessenger_8hh_source}{}\doxysection{Gate\+Linear\+Repeater\+Messenger.\+hh}
+\label{GateLinearRepeaterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateLinearRepeaterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateLinearRepeaterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateLinearRepeaterMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateLinearRepeaterMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateObjectRepeaterMessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLinearRepeater}{GateLinearRepeater}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{43 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLinearRepeaterMessenger}{GateLinearRepeaterMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateObjectRepeaterMessenger}{GateObjectRepeaterMessenger}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45   \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \mbox{\hyperlink{classGateLinearRepeaterMessenger}{GateLinearRepeaterMessenger}}(\mbox{\hyperlink{classGateLinearRepeater}{GateLinearRepeater}}* itsLinearRepeater);}
+\DoxyCodeLine{47    \mbox{\hyperlink{classGateLinearRepeaterMessenger}{\string~GateLinearRepeaterMessenger}}();}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keyword}{public}:}
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateLinearRepeater}{GateLinearRepeater}}* GetLinearRepeater() }
+\DoxyCodeLine{53       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateLinearRepeater}{GateLinearRepeater}}*)GetObjectRepeater(); \}}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55   \textcolor{keyword}{private}:}
+\DoxyCodeLine{56     G4UIcmdWith3VectorAndUnit* SetRepeatVectorCmd;}
+\DoxyCodeLine{57     G4UIcmdWithAnInteger*      SetRepeatNumberCmd;}
+\DoxyCodeLine{58     G4UIcmdWithABool*          AutoCenterCmd;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+
+\end{DoxyCode}

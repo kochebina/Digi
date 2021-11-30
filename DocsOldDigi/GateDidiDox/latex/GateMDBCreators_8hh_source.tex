@@ -1,0 +1,223 @@
+\hypertarget{GateMDBCreators_8hh_source}{}\doxysection{Gate\+MDBCreators.\+hh}
+\label{GateMDBCreators_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMDBCreators.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMDBCreators.hh}}
+\mbox{\hyperlink{GateMDBCreators_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GateMDBCreators\_hh}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define GateMDBCreators\_hh}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4Material.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateIsotopeCreator}{GateIsotopeCreator}} \{}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateIsotopeCreator}{GateIsotopeCreator}}(\textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{37     : name(itsName),molarMass(0),atomicNumber(0),nucleonNumber(0) \{\}}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateIsotopeCreator}{\string~GateIsotopeCreator}}() \{\}}
+\DoxyCodeLine{39   G4Isotope* Construct();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   G4String                      name;}
+\DoxyCodeLine{43   G4double                      molarMass;}
+\DoxyCodeLine{44   G4double                      atomicNumber;}
+\DoxyCodeLine{45   G4double                      nucleonNumber;}
+\DoxyCodeLine{46 \} ;}
+\DoxyCodeLine{47 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{classGateElementCreator}{GateElementCreator}} \{}
+\DoxyCodeLine{52 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateElementCreator}{GateElementCreator}}(\textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) }
+\DoxyCodeLine{54     : name(itsName),symbol(\textcolor{stringliteral}{"{}"{}}) \{\}}
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateElementCreator}{\string~GateElementCreator}}() \{\}}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} G4Element* Construct() =0;}
+\DoxyCodeLine{57       }
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59   G4String                      name;}
+\DoxyCodeLine{60   G4String                      symbol;}
+\DoxyCodeLine{61 \} ;   }
+\DoxyCodeLine{62 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{66 \textcolor{keyword}{class }\mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}} \{}
+\DoxyCodeLine{67 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}}(  \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) : \mbox{\hyperlink{classGateComponentCreator_a8efa1b120814e1290ac6e47de481413f}{mDatabase}}(db), name(itsName) \{\}}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateComponentCreator}{\string~GateComponentCreator}}() \{\}}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToMaterial(G4Material* material) = 0;}
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToElement(G4Element* element) = 0;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74   \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* \mbox{\hyperlink{classGateComponentCreator_a8efa1b120814e1290ac6e47de481413f}{mDatabase}};}
+\DoxyCodeLine{75   G4String        name;}
+\DoxyCodeLine{76 \} ;   }
+\DoxyCodeLine{77 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{81 \textcolor{keyword}{class }\mbox{\hyperlink{classGateScratchElementCreator}{GateScratchElementCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateElementCreator}{GateElementCreator}} \{}
+\DoxyCodeLine{82 \textcolor{keyword}{public}:}
+\DoxyCodeLine{83   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateScratchElementCreator}{GateScratchElementCreator}}(\textcolor{keyword}{const} G4String\& itsName)}
+\DoxyCodeLine{84     : \mbox{\hyperlink{classGateElementCreator}{GateElementCreator}}(itsName), molarMass(0.),atomicNumber(0.) \{\}}
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateScratchElementCreator}{\string~GateScratchElementCreator}}() \{\}}
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} G4Element* Construct();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   G4double                      molarMass;}
+\DoxyCodeLine{89   G4double                      atomicNumber;}
+\DoxyCodeLine{90 \} ;}
+\DoxyCodeLine{91 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{95 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompoundElementCreator}{GateCompoundElementCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateElementCreator}{GateElementCreator}} \{}
+\DoxyCodeLine{96 \textcolor{keyword}{public}:}
+\DoxyCodeLine{97   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCompoundElementCreator}{GateCompoundElementCreator}}(\textcolor{keyword}{const} G4String\& itsName)}
+\DoxyCodeLine{98     : \mbox{\hyperlink{classGateElementCreator}{GateElementCreator}}(itsName), nComponents(0),components() \{\}}
+\DoxyCodeLine{99   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCompoundElementCreator}{\string~GateCompoundElementCreator}}();}
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} G4Element* Construct();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   G4int                         nComponents;}
+\DoxyCodeLine{103   std::vector<GateComponentCreator*>     components;}
+\DoxyCodeLine{104 \} ;}
+\DoxyCodeLine{105 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{109 \textcolor{keyword}{class }\mbox{\hyperlink{classGateIsotopeComponentCreator}{GateIsotopeComponentCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}} \{}
+\DoxyCodeLine{110 \textcolor{keyword}{public}:}
+\DoxyCodeLine{111   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateIsotopeComponentCreator}{GateIsotopeComponentCreator}}( \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) : \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}}(db,itsName) \{\}}
+\DoxyCodeLine{112   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateIsotopeComponentCreator}{\string~GateIsotopeComponentCreator}}() \{\}}
+\DoxyCodeLine{113   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToMaterial(G4Material* material) \{UNUSED(material);\}}
+\DoxyCodeLine{114   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToElement(G4Element* element)=0;}
+\DoxyCodeLine{115 \} ;}
+\DoxyCodeLine{116 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{120 \textcolor{keyword}{class }\mbox{\hyperlink{classGateElemComponentCreator}{GateElemComponentCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}} \{}
+\DoxyCodeLine{121 \textcolor{keyword}{public}:}
+\DoxyCodeLine{122   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateElemComponentCreator}{GateElemComponentCreator}}( \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) : \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}}(db,itsName) \{\}}
+\DoxyCodeLine{123   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateElemComponentCreator}{\string~GateElemComponentCreator}}() \{\}}
+\DoxyCodeLine{124   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToMaterial(G4Material* material)=0;}
+\DoxyCodeLine{125   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToElement(G4Element* element) \{UNUSED(element);\}}
+\DoxyCodeLine{126 \} ;}
+\DoxyCodeLine{127 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{131 \textcolor{keyword}{class }\mbox{\hyperlink{classGateIByFComponentCreator}{GateIByFComponentCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateIsotopeComponentCreator}{GateIsotopeComponentCreator}} \{}
+\DoxyCodeLine{132 \textcolor{keyword}{public}:}
+\DoxyCodeLine{133   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateIByFComponentCreator}{GateIByFComponentCreator}}( \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) : \mbox{\hyperlink{classGateIsotopeComponentCreator}{GateIsotopeComponentCreator}}(db,itsName),fraction(0.) \{\}}
+\DoxyCodeLine{134   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateIByFComponentCreator}{\string~GateIByFComponentCreator}}() \{\}}
+\DoxyCodeLine{135   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToElement(G4Element* element);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{public}:}
+\DoxyCodeLine{138   G4double        fraction;}
+\DoxyCodeLine{139 \} ;   }
+\DoxyCodeLine{140 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{144 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEByFComponentCreator}{GateEByFComponentCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateElemComponentCreator}{GateElemComponentCreator}} \{}
+\DoxyCodeLine{145 \textcolor{keyword}{public}:}
+\DoxyCodeLine{146   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateEByFComponentCreator}{GateEByFComponentCreator}}( \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) : \mbox{\hyperlink{classGateElemComponentCreator}{GateElemComponentCreator}}(db,itsName),fraction(0.) \{\}}
+\DoxyCodeLine{147   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateEByFComponentCreator}{\string~GateEByFComponentCreator}}() \{\}}
+\DoxyCodeLine{148   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToMaterial(G4Material* material);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{keyword}{public}:}
+\DoxyCodeLine{151   G4double        fraction;}
+\DoxyCodeLine{152 \} ;   }
+\DoxyCodeLine{153 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{156 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEByNComponentCreator}{GateEByNComponentCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateElemComponentCreator}{GateElemComponentCreator}} \{}
+\DoxyCodeLine{157 \textcolor{keyword}{public}:}
+\DoxyCodeLine{158   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateEByNComponentCreator}{GateEByNComponentCreator}}( \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) : \mbox{\hyperlink{classGateElemComponentCreator}{GateElemComponentCreator}}(db,itsName),nAtoms(0) \{\}}
+\DoxyCodeLine{159   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateEByNComponentCreator}{\string~GateEByNComponentCreator}}() \{\}}
+\DoxyCodeLine{160   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToMaterial(G4Material* material);}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{keyword}{public}:}
+\DoxyCodeLine{163   G4int           nAtoms;}
+\DoxyCodeLine{164 \} ;   }
+\DoxyCodeLine{165 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{170 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMatComponentCreator}{GateMatComponentCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}} \{}
+\DoxyCodeLine{171 \textcolor{keyword}{public}:}
+\DoxyCodeLine{172   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMatComponentCreator}{GateMatComponentCreator}}( \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}* db, \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}"{}}) : \mbox{\hyperlink{classGateComponentCreator}{GateComponentCreator}}(db,itsName),fraction(0.) \{\}}
+\DoxyCodeLine{173   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMatComponentCreator}{\string~GateMatComponentCreator}}() \{\}}
+\DoxyCodeLine{174   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToMaterial(G4Material* material);}
+\DoxyCodeLine{175   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddToElement(G4Element* element) \{UNUSED(element);\}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{keyword}{public}:}
+\DoxyCodeLine{178   G4double        fraction;}
+\DoxyCodeLine{179 \} ;   }
+\DoxyCodeLine{180 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{184 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}} \{}
+\DoxyCodeLine{185 \textcolor{keyword}{public}:}
+\DoxyCodeLine{186   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}}(\textcolor{keyword}{const} G4String\& itsName) }
+\DoxyCodeLine{187     : name(itsName), density(0.), state(kStateUndefined), temp(STP\_Temperature), pressure(STP\_Pressure) \{\}}
+\DoxyCodeLine{188   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateMaterialCreator}{\string~GateMaterialCreator}}() \{\}}
+\DoxyCodeLine{189   \textcolor{keyword}{virtual} G4Material* Construct()=0;}
+\DoxyCodeLine{190       }
+\DoxyCodeLine{191   G4String                      name;}
+\DoxyCodeLine{192   G4double                      density;}
+\DoxyCodeLine{193   G4State                       state;}
+\DoxyCodeLine{194   G4double                      temp;}
+\DoxyCodeLine{195   G4double                      pressure;}
+\DoxyCodeLine{196 \} ;   }
+\DoxyCodeLine{197 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{200 \textcolor{keyword}{class }\mbox{\hyperlink{classGateScratchMaterialCreator}{GateScratchMaterialCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}} \{}
+\DoxyCodeLine{201 \textcolor{keyword}{public}:}
+\DoxyCodeLine{202   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateScratchMaterialCreator}{GateScratchMaterialCreator}}(\textcolor{keyword}{const} G4String\& itsName) }
+\DoxyCodeLine{203     : \mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}}(itsName), molarMass(0.), atomicNumber(0.) \{\}}
+\DoxyCodeLine{204   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateScratchMaterialCreator}{\string~GateScratchMaterialCreator}}() \{\}}
+\DoxyCodeLine{205   \textcolor{keyword}{virtual} G4Material* Construct();}
+\DoxyCodeLine{206       }
+\DoxyCodeLine{207   G4double                      molarMass;}
+\DoxyCodeLine{208   G4double                      atomicNumber;}
+\DoxyCodeLine{209 \} ;   }
+\DoxyCodeLine{210 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{213 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCompoundMaterialCreator}{GateCompoundMaterialCreator}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}} \{}
+\DoxyCodeLine{214 \textcolor{keyword}{public}:}
+\DoxyCodeLine{215   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCompoundMaterialCreator}{GateCompoundMaterialCreator}}(\textcolor{keyword}{const} G4String\& itsName) }
+\DoxyCodeLine{216     : \mbox{\hyperlink{classGateMaterialCreator}{GateMaterialCreator}}(itsName), nComponents(0),components() \{\}}
+\DoxyCodeLine{217   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCompoundMaterialCreator}{\string~GateCompoundMaterialCreator}}();}
+\DoxyCodeLine{218   \textcolor{keyword}{virtual} G4Material* Construct();}
+\DoxyCodeLine{219       }
+\DoxyCodeLine{220   G4int                         nComponents;}
+\DoxyCodeLine{221   std::vector<GateComponentCreator*>     components;}
+\DoxyCodeLine{222 \} ;   }
+\DoxyCodeLine{223 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

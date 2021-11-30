@@ -1,0 +1,205 @@
+\hypertarget{metaTypes_8h_source}{}\doxysection{meta\+Types.\+h}
+\label{metaTypes_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaTypes.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaTypes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}localMetaConfiguration.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METATYPES\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METATYPES\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{32 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char}                MET\_ASCII\_CHAR\_TYPE;}
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char}                MET\_CHAR\_TYPE;}
+\DoxyCodeLine{37 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}       MET\_UCHAR\_TYPE;}
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keywordtype}{short}               MET\_SHORT\_TYPE;}
+\DoxyCodeLine{39 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}      MET\_USHORT\_TYPE;}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int}                 MET\_INT\_TYPE;}
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}        MET\_UINT\_TYPE;}
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int}                 MET\_LONG\_TYPE;}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}       MET\_ULONG\_TYPE;}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#if defined(\_WIN32) \&\& !defined(\_\_CYGWIN\_\_) \&\& !defined(\_\_MING\_W32\_\_)}}
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \_\_int64             MET\_LONG\_LONG\_TYPE;}
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64    MET\_ULONG\_LONG\_TYPE;}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}           MET\_LONG\_LONG\_TYPE;}
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}  MET\_ULONG\_LONG\_TYPE;}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keywordtype}{float}               MET\_FLOAT\_TYPE;}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keywordtype}{double}              MET\_DOUBLE\_TYPE;}
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char} *              MET\_STRING\_TYPE;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{// Value types for the variables in a metaFile}}
+\DoxyCodeLine{57 \textcolor{comment}{// Format for variables defined in a metaFile is}}
+\DoxyCodeLine{58 \textcolor{comment}{//    <variable> = <value>}}
+\DoxyCodeLine{59 \textcolor{comment}{//       where <variable> is a designated fieldname/keyword (e.g., NDims)}}
+\DoxyCodeLine{60 \textcolor{comment}{//          and value is an instance of that fieldname's associated valueType}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define MET\_NUM\_VALUE\_TYPES 29}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{64    \{}
+\DoxyCodeLine{65    MET\_NONE,}
+\DoxyCodeLine{66    MET\_ASCII\_CHAR,}
+\DoxyCodeLine{67    MET\_CHAR,}
+\DoxyCodeLine{68    MET\_UCHAR,}
+\DoxyCodeLine{69    MET\_SHORT,}
+\DoxyCodeLine{70    MET\_USHORT,}
+\DoxyCodeLine{71    MET\_INT,}
+\DoxyCodeLine{72    MET\_UINT,}
+\DoxyCodeLine{73    MET\_LONG,}
+\DoxyCodeLine{74    MET\_ULONG,}
+\DoxyCodeLine{75    MET\_LONG\_LONG,}
+\DoxyCodeLine{76    MET\_ULONG\_LONG,}
+\DoxyCodeLine{77    MET\_FLOAT,}
+\DoxyCodeLine{78    MET\_DOUBLE,}
+\DoxyCodeLine{79    MET\_STRING,}
+\DoxyCodeLine{80    MET\_CHAR\_ARRAY,}
+\DoxyCodeLine{81    MET\_UCHAR\_ARRAY,}
+\DoxyCodeLine{82    MET\_SHORT\_ARRAY,}
+\DoxyCodeLine{83    MET\_USHORT\_ARRAY,}
+\DoxyCodeLine{84    MET\_INT\_ARRAY,}
+\DoxyCodeLine{85    MET\_UINT\_ARRAY,}
+\DoxyCodeLine{86    MET\_LONG\_ARRAY,}
+\DoxyCodeLine{87    MET\_ULONG\_ARRAY,}
+\DoxyCodeLine{88    MET\_LONG\_LONG\_ARRAY,}
+\DoxyCodeLine{89    MET\_ULONG\_LONG\_ARRAY,}
+\DoxyCodeLine{90    MET\_FLOAT\_ARRAY,}
+\DoxyCodeLine{91    MET\_DOUBLE\_ARRAY,}
+\DoxyCodeLine{92    MET\_FLOAT\_MATRIX,}
+\DoxyCodeLine{93    MET\_OTHER}
+\DoxyCodeLine{94    \} MET\_ValueEnumType;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} MET\_ValueTypeSize[MET\_NUM\_VALUE\_TYPES] = \{}
+\DoxyCodeLine{97    0, 1, 1, 1, 2, 2, 4, 4, 4, 4, 8, 8, 4, 8, 1, 1, 1, 2, 2, 4, 4, 4, 4, 8, 8, 4, 8, 4, 0 \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{const} \textcolor{keywordtype}{char} MET\_ValueTypeName[MET\_NUM\_VALUE\_TYPES][21] = \{}
+\DoxyCodeLine{100    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{101    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{102    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{103    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{104    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{105    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{106    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{107    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{108    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{109    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{110    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{111    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{112    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'F'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{113    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'B'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{114    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{115    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{116    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{117    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{118    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{119    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{120    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{121    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{122    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{123    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{124    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{125    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'F'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{126    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'B'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{127    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'F'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'X'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{128    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\}\};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{comment}{//}}
+\DoxyCodeLine{132 \textcolor{comment}{//}}
+\DoxyCodeLine{133 \textcolor{comment}{//}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define MET\_NUM\_ORIENTATION\_TYPES 7}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{ MET\_ORIENTATION\_RL,}
+\DoxyCodeLine{137                MET\_ORIENTATION\_LR,}
+\DoxyCodeLine{138                MET\_ORIENTATION\_AP,}
+\DoxyCodeLine{139                MET\_ORIENTATION\_PA,}
+\DoxyCodeLine{140                MET\_ORIENTATION\_SI,}
+\DoxyCodeLine{141                MET\_ORIENTATION\_IS,}
+\DoxyCodeLine{142                MET\_ORIENTATION\_UNKNOWN \} MET\_OrientationEnumType;}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{keyword}{const} \textcolor{keywordtype}{char} MET\_OrientationTypeName[MET\_NUM\_ORIENTATION\_TYPES][3] = \{}
+\DoxyCodeLine{145    \{\textcolor{charliteral}{'R'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{146    \{\textcolor{charliteral}{'L'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{147    \{\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{148    \{\textcolor{charliteral}{'P'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{149    \{\textcolor{charliteral}{'S'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{150    \{\textcolor{charliteral}{'I'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{151    \{\textcolor{charliteral}{'?'},\textcolor{charliteral}{'?'},\textcolor{charliteral}{'\(\backslash\)0'}\}\};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{comment}{//}}
+\DoxyCodeLine{154 \textcolor{comment}{//}}
+\DoxyCodeLine{155 \textcolor{comment}{//}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define MET\_NUM\_DISTANCE\_UNITS\_TYPES 4}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{ MET\_DISTANCE\_UNITS\_UNKNOWN,}
+\DoxyCodeLine{159                MET\_DISTANCE\_UNITS\_UM,}
+\DoxyCodeLine{160                MET\_DISTANCE\_UNITS\_MM,}
+\DoxyCodeLine{161                MET\_DISTANCE\_UNITS\_CM \} MET\_DistanceUnitsEnumType;}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{keyword}{const} \textcolor{keywordtype}{char} MET\_DistanceUnitsTypeName[MET\_NUM\_DISTANCE\_UNITS\_TYPES][3] = \{}
+\DoxyCodeLine{164     \{\textcolor{charliteral}{'?'}, \textcolor{charliteral}{'\(\backslash\)0'}, \textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{165     \{\textcolor{charliteral}{'u'}, \textcolor{charliteral}{'m'}, \textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{166     \{\textcolor{charliteral}{'m'}, \textcolor{charliteral}{'m'}, \textcolor{charliteral}{'\(\backslash\)0'}\},}
+\DoxyCodeLine{167     \{\textcolor{charliteral}{'c'}, \textcolor{charliteral}{'m'}, \textcolor{charliteral}{'\(\backslash\)0'}\}\};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{//}}
+\DoxyCodeLine{170 \textcolor{comment}{//}}
+\DoxyCodeLine{171 \textcolor{comment}{//}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define MET\_NUM\_INTERPOLATION\_TYPES 4}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{ MET\_NO\_INTERPOLATION,}
+\DoxyCodeLine{175                MET\_EXPLICIT\_INTERPOLATION,}
+\DoxyCodeLine{176                MET\_BEZIER\_INTERPOLATION,}
+\DoxyCodeLine{177                MET\_LINEAR\_INTERPOLATION \} MET\_InterpolationEnumType;}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{keyword}{const} \textcolor{keywordtype}{char} MET\_InterpolationTypeName[MET\_NUM\_INTERPOLATION\_TYPES][17] = \{}
+\DoxyCodeLine{180    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{181    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'X'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{182    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'B'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'Z'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{183    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\}\};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define MET\_MAX\_NUMBER\_OF\_FIELD\_VALUES 4096}}
+\DoxyCodeLine{187 \textcolor{comment}{//}}
+\DoxyCodeLine{188 \textcolor{comment}{//}}
+\DoxyCodeLine{189 \textcolor{comment}{// Structure used to define a field}}
+\DoxyCodeLine{190 \textcolor{comment}{// (variable = value definition) in a MetaFile}}
+\DoxyCodeLine{191 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{192    \{}
+\DoxyCodeLine{193    \textcolor{keywordtype}{char}           name[255];  \textcolor{comment}{// Fieldname / keyword to designate a variable}}
+\DoxyCodeLine{194    MET\_ValueEnumType  type;   \textcolor{comment}{// Expected value type of the field}}
+\DoxyCodeLine{195    \textcolor{keywordtype}{bool}           required;   \textcolor{comment}{// Is this field a required field in a metaFile}}
+\DoxyCodeLine{196    \textcolor{keywordtype}{int}            dependsOn;  \textcolor{comment}{// If value type is an array, the size of this}}
+\DoxyCodeLine{197                               \textcolor{comment}{//    array can be defined by a different field}}
+\DoxyCodeLine{198                               \textcolor{comment}{//    (e.g., DimSize array depends on NDims)}}
+\DoxyCodeLine{199    \textcolor{keywordtype}{bool}           defined;    \textcolor{comment}{// Has this field already been defined in the}}
+\DoxyCodeLine{200                               \textcolor{comment}{//    MetaFile being parsed}}
+\DoxyCodeLine{201    \textcolor{keywordtype}{int}            length;     \textcolor{comment}{// Actual/expect length of an array}}
+\DoxyCodeLine{202    \textcolor{keywordtype}{double}         value[MET\_MAX\_NUMBER\_OF\_FIELD\_VALUES];}
+\DoxyCodeLine{203                               \textcolor{comment}{// Memory and pointers for the field's value(s).}}
+\DoxyCodeLine{204    \textcolor{keywordtype}{bool}           terminateRead;  \textcolor{comment}{// Set to true if field indicates end of}}
+\DoxyCodeLine{205                                   \textcolor{comment}{//   meta data}}
+\DoxyCodeLine{206    \} \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{209 \};}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,126 @@
+\hypertarget{classGateEmCalculatorActor}{}\doxysection{Gate\+Em\+Calculator\+Actor Class Reference}
+\label{classGateEmCalculatorActor}\index{GateEmCalculatorActor@{GateEmCalculatorActor}}
+
+
+Actor displaying stopping powers.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Em\+Calculator\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Em\+Calculator\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateEmCalculatorActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_af842d7eb8c1c89dd4cf021eccb0953e8}\label{classGateEmCalculatorActor_af842d7eb8c1c89dd4cf021eccb0953e8}} 
+virtual {\bfseries $\sim$\+Gate\+Em\+Calculator\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateEmCalculatorActor_a7953d9257be7c7bf7513ae9242e67013}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_ae1f8eb1c84a87aac37b21c38bfe3ede3}\label{classGateEmCalculatorActor_ae1f8eb1c84a87aac37b21c38bfe3ede3}} 
+void {\bfseries Set\+Energy} (double E)
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_a0f8869a0f63f7011c810365730a9c5ad}\label{classGateEmCalculatorActor_a0f8869a0f63f7011c810365730a9c5ad}} 
+void {\bfseries Set\+Particle\+Name} (G4\+String Name)
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_ac79a70a947e6ddde641afae6812456b0}\label{classGateEmCalculatorActor_ac79a70a947e6ddde641afae6812456b0}} 
+void {\bfseries Set\+Ion\+Parameter} (G4\+String Particle\+Parameters)
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_aef33ad9a2b708505a8817f66cd8352f8}\label{classGateEmCalculatorActor_aef33ad9a2b708505a8817f66cd8352f8}} 
+void {\bfseries Set\+Is\+Generic\+Ion} (bool Is\+Generic\+Ion)
+\item 
+virtual void \mbox{\hyperlink{classGateEmCalculatorActor_abeec2d29f24bd158405020b2eb823ab5}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateEmCalculatorActor_a56ac430b957ecbb34118b1c4bbfe2af2}{Reset\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_ab41f0426ea0b35a5c2a105c081a355bd}\label{classGateEmCalculatorActor_ab41f0426ea0b35a5c2a105c081a355bd}} 
+const G4\+Particle\+Definition $\ast$ {\bfseries Get\+Ion\+Definition} ()
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_a221e8013b54ec5f019c3ab37f9eced6d}\label{classGateEmCalculatorActor_a221e8013b54ec5f019c3ab37f9eced6d}} 
+{\bfseries Gate\+Em\+Calculator\+Actor} (G4\+String name, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructors (Prototype) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_a91015bb0a574faf6d7fc674b6d2be85f}\label{classGateEmCalculatorActor_a91015bb0a574faf6d7fc674b6d2be85f}} 
+double {\bfseries m\+Energy}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_a62a44e0435b11a86c626873388e42296}\label{classGateEmCalculatorActor_a62a44e0435b11a86c626873388e42296}} 
+G4\+String {\bfseries m\+Part\+Name}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_aab6c9daef8bcbf2559c3f6c3525691a9}\label{classGateEmCalculatorActor_aab6c9daef8bcbf2559c3f6c3525691a9}} 
+G4\+String {\bfseries m\+Particle\+Parameters}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_aa9f4179eaecd8baaef4c82be22729dc0}\label{classGateEmCalculatorActor_aa9f4179eaecd8baaef4c82be22729dc0}} 
+bool {\bfseries m\+Is\+Generic\+Ion}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_a2f43eac690ad2916378bfda208402b03}\label{classGateEmCalculatorActor_a2f43eac690ad2916378bfda208402b03}} 
+G4\+Em\+Calculator $\ast$ {\bfseries emcalc}
+\item 
+\mbox{\Hypertarget{classGateEmCalculatorActor_acdd2614cb8b1cbf2292b955e52252cad}\label{classGateEmCalculatorActor_acdd2614cb8b1cbf2292b955e52252cad}} 
+\mbox{\hyperlink{classGateEmCalculatorActorMessenger}{Gate\+Em\+Calculator\+Actor\+Messenger}} $\ast$ {\bfseries p\+Actor\+Messenger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Actor displaying stopping powers. 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:loic.grevillot@creatis.insa-lyon.fr}{\texttt{ loic.\+grevillot@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateEmCalculatorActor_a7953d9257be7c7bf7513ae9242e67013}\label{classGateEmCalculatorActor_a7953d9257be7c7bf7513ae9242e67013}} 
+\index{GateEmCalculatorActor@{GateEmCalculatorActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateEmCalculatorActor@{GateEmCalculatorActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Em\+Calculator\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateEmCalculatorActor_a56ac430b957ecbb34118b1c4bbfe2af2}\label{classGateEmCalculatorActor_a56ac430b957ecbb34118b1c4bbfe2af2}} 
+\index{GateEmCalculatorActor@{GateEmCalculatorActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateEmCalculatorActor@{GateEmCalculatorActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Em\+Calculator\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateEmCalculatorActor_abeec2d29f24bd158405020b2eb823ab5}\label{classGateEmCalculatorActor_abeec2d29f24bd158405020b2eb823ab5}} 
+\index{GateEmCalculatorActor@{GateEmCalculatorActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateEmCalculatorActor@{GateEmCalculatorActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Em\+Calculator\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Em\+Calculator\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Em\+Calculator\+Actor.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\hypertarget{GateSinoAccelToEcat7_8hh_source}{}\doxysection{Gate\+Sino\+Accel\+To\+Ecat7.\+hh}
+\label{GateSinoAccelToEcat7_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSinoAccelToEcat7.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSinoAccelToEcat7.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifdef GATE\_USE\_ECAT7}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GateSinoAccelToEcat7\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GateSinoAccelToEcat7\_H}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}fstream"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4Timer.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//ECAT7 include file}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}matrix.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}machine\_indep.h"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }GateSinoAccelToEcat7Messenger;}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEcatAccelSystem}{GateEcatAccelSystem}};}
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToSinoAccel}{GateToSinoAccel}};}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSinogram}{GateSinogram}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }GateSinoAccelToEcat7 :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37   GateSinoAccelToEcat7(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,\mbox{\hyperlink{classGateEcatAccelSystem}{GateEcatAccelSystem}}* itsSystem,DigiMode digiMode);}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} \string~GateSinoAccelToEcat7(); }
+\DoxyCodeLine{39   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} RecordBeginOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} RecordEndOfRun(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} RecordBeginOfEvent(\textcolor{keyword}{const} G4Event *) \{\}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} RecordEndOfEvent(\textcolor{keyword}{const} G4Event *) \{\}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} RecordStepWithVolume(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * , \textcolor{keyword}{const} G4Step *) \{\}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} RecordVoxels(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60   \textcolor{keyword}{const}  G4String\& GetFileName()                \{ \textcolor{keywordflow}{return} m\_fileName;       \};}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void}   SetFileName(\textcolor{keyword}{const} G4String\& aName)     \{ m\_fileName = aName;      \};}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} SetMashing(\textcolor{keyword}{const} G4int aNumber)          \{ m\_mashing = aNumber;     \};}
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} SetSpan(\textcolor{keyword}{const} G4int aNumber)             \{ m\_span = aNumber;        \};}
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} SetMaxRingDiff(\textcolor{keyword}{const} G4int aNumber)      \{ m\_maxRingDiff = aNumber; \};}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} SetEcatAccelCameraNumber(\textcolor{keyword}{const} G4int aNumber) \{ m\_ecatAccelCameraNumber = aNumber; \} ;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} FillMainHeader();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} FillData();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86   GateSinoAccelToEcat7Messenger* m\_asciiMessenger;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89   \mbox{\hyperlink{classGateEcatAccelSystem}{GateEcatAccelSystem}} *m\_system;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   G4String m\_fileName;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \mbox{\hyperlink{structmatrix__file}{MatrixFile}} *m\_ptr;}
+\DoxyCodeLine{94   \mbox{\hyperlink{structXMAIN__HEAD}{Main\_header}} *mh;}
+\DoxyCodeLine{95   \mbox{\hyperlink{structX3DSCAN__SUB}{Scan3D\_subheader}} *sh;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   G4int                m\_mashing;           }
+\DoxyCodeLine{98   G4int                m\_span;              }
+\DoxyCodeLine{99   G4int                m\_maxRingDiff;       }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   G4int                m\_segmentNb;}
+\DoxyCodeLine{102   G4int                *m\_delRingMinSeg;}
+\DoxyCodeLine{103   G4int                *m\_delRingMaxSeg;}
+\DoxyCodeLine{104   G4int                *m\_zMinSeg;}
+\DoxyCodeLine{105   G4int                *m\_zMaxSeg;}
+\DoxyCodeLine{106   G4int                *m\_segment;}
+\DoxyCodeLine{107   G4int                 m\_ecatAccelCameraNumber;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{comment}{//G4std::ofstream                 m\_headerFile;               //!< Output stream for the header file}}
+\DoxyCodeLine{110   \textcolor{comment}{//G4std::ofstream                 m\_dataFile;                 //!< Output stream for the data file}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

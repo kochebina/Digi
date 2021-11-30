@@ -1,0 +1,106 @@
+\hypertarget{classGateTransferEfficiency}{}\doxysection{Gate\+Transfer\+Efficiency Class Reference}
+\label{classGateTransferEfficiency}\index{GateTransferEfficiency@{GateTransferEfficiency}}
+
+
+Pulse-\/processor for simulating the transfer efficiency on each crystal.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Transfer\+Efficiency.\+hh$>$}
+
+Inheritance diagram for Gate\+Transfer\+Efficiency\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateTransferEfficiency}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTransferEfficiency_aca36143606ba359f30d399fd2b4aeca3}\label{classGateTransferEfficiency_aca36143606ba359f30d399fd2b4aeca3}} 
+virtual {\bfseries $\sim$\+Gate\+Transfer\+Efficiency} ()
+\begin{DoxyCompactList}\small\item\em Public Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTransferEfficiency_a53f71cd219eeae69ad49287964f021be}\label{classGateTransferEfficiency_a53f71cd219eeae69ad49287964f021be}} 
+G4int {\bfseries Choose\+Volume} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Adds volume to the hashmap and returns 1 if it exists. If it does not exist, returns 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGateTransferEfficiency}{Gate\+Transfer\+Efficiency}} $\ast$ \mbox{\hyperlink{classGateTransferEfficiency_a647fc13750d798f588a3496874795ae4}{Get\+Instance}} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateTransferEfficiency}{Gate\+Transfer\+Efficiency}} singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{setters and getters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTransferEfficiency_afc7974e5576336f816ec6c59d8800944}\label{classGateTransferEfficiency_afc7974e5576336f816ec6c59d8800944}} 
+void {\bfseries Set\+TECoeff} (G4\+String name, G4double val)
+\begin{DoxyCompactList}\small\item\em Set the transfer efficiency for the crystal called \textquotesingle{}name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTransferEfficiency_a6f92326cbc6cd903799f9f2ac154cc6c}\label{classGateTransferEfficiency_a6f92326cbc6cd903799f9f2ac154cc6c}} 
+G4double {\bfseries Get\+TECryst\+Coeff} (G4\+String name)
+\begin{DoxyCompactList}\small\item\em Get the light output for crystal called \textquotesingle{}name (Nph/\+MeV) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTransferEfficiency_a15c4c5a43f1e6b75b1e6b86c985ac62e}\label{classGateTransferEfficiency_a15c4c5a43f1e6b75b1e6b86c985ac62e}} 
+G4double {\bfseries Get\+TECoeff} ()
+\begin{DoxyCompactList}\small\item\em Get the actual transfer efficiency. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTransferEfficiency_a675c355b36fd493f00bf4e1ad0099be9}\label{classGateTransferEfficiency_a675c355b36fd493f00bf4e1ad0099be9}} 
+G4double {\bfseries Get\+TEMin} ()
+\begin{DoxyCompactList}\small\item\em Get the minimum transfer efficiency. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateTransferEfficiency_ae953d910a56d734cab91300ca5b27c66}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateTransferEfficiency_a762ab36463f1d925c120d8c7e874abe8}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating the transfer efficiency on each crystal. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateTransferEfficiency}{Gate\+Transfer\+Efficiency}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (jan 2003)
+\item Allows to specify a transfer coefficient for each type of crystals.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateTransferEfficiency_ae953d910a56d734cab91300ca5b27c66}\label{classGateTransferEfficiency_ae953d910a56d734cab91300ca5b27c66}} 
+\index{GateTransferEfficiency@{GateTransferEfficiency}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateTransferEfficiency@{GateTransferEfficiency}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Transfer\+Efficiency\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the blurring 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateTransferEfficiency_a647fc13750d798f588a3496874795ae4}\label{classGateTransferEfficiency_a647fc13750d798f588a3496874795ae4}} 
+\index{GateTransferEfficiency@{GateTransferEfficiency}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GateTransferEfficiency@{GateTransferEfficiency}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateTransferEfficiency}{Gate\+Transfer\+Efficiency}} $\ast$ Gate\+Transfer\+Efficiency\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$}]{its\+Chain,  }\item[{const G4\+String \&}]{its\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function allows to retrieve the current instance of the \mbox{\hyperlink{classGateTransferEfficiency}{Gate\+Transfer\+Efficiency}} singleton. 
+
+\begin{DoxyVerb}If the GateTransferEfficiency already exists, GetInstance only returns a pointer to this singleton.
+\end{DoxyVerb}
+ If this singleton does not exist yet, Get\+Instance creates it by calling the private \mbox{\hyperlink{classGateTransferEfficiency}{Gate\+Transfer\+Efficiency}} constructor \mbox{\Hypertarget{classGateTransferEfficiency_a762ab36463f1d925c120d8c7e874abe8}\label{classGateTransferEfficiency_a762ab36463f1d925c120d8c7e874abe8}} 
+\index{GateTransferEfficiency@{GateTransferEfficiency}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateTransferEfficiency@{GateTransferEfficiency}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Transfer\+Efficiency\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Transfer\+Efficiency.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Transfer\+Efficiency.\+cc\end{DoxyCompactItemize}

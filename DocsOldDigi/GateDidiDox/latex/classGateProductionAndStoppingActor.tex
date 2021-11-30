@@ -1,0 +1,211 @@
+\hypertarget{classGateProductionAndStoppingActor}{}\doxysection{Gate\+Production\+And\+Stopping\+Actor Class Reference}
+\label{classGateProductionAndStoppingActor}\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+
+
+{\ttfamily \#include $<$Gate\+Production\+And\+Stopping\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Production\+And\+Stopping\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateProductionAndStoppingActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a5daadf80f9721e53f9ed70c4a2d5d0af}\label{classGateProductionAndStoppingActor_a5daadf80f9721e53f9ed70c4a2d5d0af}} 
+virtual {\bfseries $\sim$\+Gate\+Production\+And\+Stopping\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_a6eb0d9683a3e5a93597f55bc18f3a038}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_a3533b7febe8c93a0b420c3bcf66e03a5}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_a455c3b7026ef5dd718fec3e547900dfe}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_a87aa5aa531c2817343ceae93360996d3}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int, const G4\+Track $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_a066b33ee2af1b4b39a1c2954345c1cd2}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_ad82546042c352183524372e8c616f818}{User\+Post\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_af4afcbc437ab0070cf45e2b45e1ceb8a}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_af9bd71b6a2d98daf60e5863d13ed1251}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_a20ae673c28d2aed179d440520fb39873}{Initialize}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateProductionAndStoppingActor_a7c6e95391cbd19691b103ee3223521d9}{End\+Of\+Event}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a7dfa863abbc2864803a79d34254e52ef}\label{classGateProductionAndStoppingActor_a7dfa863abbc2864803a79d34254e52ef}} 
+void {\bfseries Set\+Enable\+Coord\+Frame} ()
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a1ab55dc957b92f7e8b963dc3b41e2016}\label{classGateProductionAndStoppingActor_a1ab55dc957b92f7e8b963dc3b41e2016}} 
+bool {\bfseries Get\+Enable\+Coord\+Frame} ()
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a01050cead1bc0ddd37a2c62beb13901b}\label{classGateProductionAndStoppingActor_a01050cead1bc0ddd37a2c62beb13901b}} 
+void {\bfseries Set\+Coord\+Frame} (G4\+String name\+Of\+Frame)
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_ac1683755007318b42b745643b14f3926}\label{classGateProductionAndStoppingActor_ac1683755007318b42b745643b14f3926}} 
+G4\+String {\bfseries Get\+Coord\+Frame} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a7b06899d6528d772739e1f51431670b4}\label{classGateProductionAndStoppingActor_a7b06899d6528d772739e1f51431670b4}} 
+{\bfseries Gate\+Production\+And\+Stopping\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a8489294fe5240bda66abe28cc7603848}\label{classGateProductionAndStoppingActor_a8489294fe5240bda66abe28cc7603848}} 
+Gate\+Production\+And\+Stopping\+Actor\+Messenger $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_ac3946db01c28e0ab91482bd440ffc179}\label{classGateProductionAndStoppingActor_ac3946db01c28e0ab91482bd440ffc179}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a946d897791e7b999c65e81c5c59d8e29}\label{classGateProductionAndStoppingActor_a946d897791e7b999c65e81c5c59d8e29}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} {\bfseries m\+Prod\+Image}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a91e33c7692e9a61ddbaadf259da1654d}\label{classGateProductionAndStoppingActor_a91e33c7692e9a61ddbaadf259da1654d}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} {\bfseries m\+Stop\+Image}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a47618e1b236ed115087463f897a04718}\label{classGateProductionAndStoppingActor_a47618e1b236ed115087463f897a04718}} 
+G4\+String {\bfseries m\+Prod\+Filename}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_adff4739803bff115dba1fd2fce5cb253}\label{classGateProductionAndStoppingActor_adff4739803bff115dba1fd2fce5cb253}} 
+G4\+String {\bfseries m\+Stop\+Filename}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a1965f3c93be77001f31a78f3643a38a8}\label{classGateProductionAndStoppingActor_a1965f3c93be77001f31a78f3643a38a8}} 
+bool {\bfseries b\+Enable\+Coord\+Frame}
+\item 
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a205640328865ab21b602faa28d61005d}\label{classGateProductionAndStoppingActor_a205640328865ab21b602faa28d61005d}} 
+G4\+String {\bfseries b\+Coord\+Frame}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}}
+\end{DoxyAuthor}
+modified by I. Martinez-\/\+Rovira (\href{mailto:immamartinez@gmail.com}{\texttt{ immamartinez@gmail.\+com}}) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a455c3b7026ef5dd718fec3e547900dfe}\label{classGateProductionAndStoppingActor_a455c3b7026ef5dd718fec3e547900dfe}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Production\+And\+Stopping\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a3533b7febe8c93a0b420c3bcf66e03a5}\label{classGateProductionAndStoppingActor_a3533b7febe8c93a0b420c3bcf66e03a5}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Production\+And\+Stopping\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a6eb0d9683a3e5a93597f55bc18f3a038}\label{classGateProductionAndStoppingActor_a6eb0d9683a3e5a93597f55bc18f3a038}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Production\+And\+Stopping\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a7c6e95391cbd19691b103ee3223521d9}\label{classGateProductionAndStoppingActor_a7c6e95391cbd19691b103ee3223521d9}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!EndOfEvent@{EndOfEvent}}
+\index{EndOfEvent@{EndOfEvent}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEvent()}{EndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+Production\+And\+Stopping\+Actor\+::\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a20ae673c28d2aed179d440520fb39873}\label{classGateProductionAndStoppingActor_a20ae673c28d2aed179d440520fb39873}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Gate\+Production\+And\+Stopping\+Actor\+::\+Initialize (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_af9bd71b6a2d98daf60e5863d13ed1251}\label{classGateProductionAndStoppingActor_af9bd71b6a2d98daf60e5863d13ed1251}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Production\+And\+Stopping\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_af4afcbc437ab0070cf45e2b45e1ceb8a}\label{classGateProductionAndStoppingActor_af4afcbc437ab0070cf45e2b45e1ceb8a}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Production\+And\+Stopping\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_ad82546042c352183524372e8c616f818}\label{classGateProductionAndStoppingActor_ad82546042c352183524372e8c616f818}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Production\+And\+Stopping\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a87aa5aa531c2817343ceae93360996d3}\label{classGateProductionAndStoppingActor_a87aa5aa531c2817343ceae93360996d3}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Production\+And\+Stopping\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionAndStoppingActor_a066b33ee2af1b4b39a1c2954345c1cd2}\label{classGateProductionAndStoppingActor_a066b33ee2af1b4b39a1c2954345c1cd2}} 
+\index{GateProductionAndStoppingActor@{GateProductionAndStoppingActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateProductionAndStoppingActor@{GateProductionAndStoppingActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Production\+And\+Stopping\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Production\+And\+Stopping\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Production\+And\+Stopping\+Actor.\+cc\end{DoxyCompactItemize}

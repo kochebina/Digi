@@ -1,0 +1,104 @@
+\hypertarget{classGateListMessenger}{}\doxysection{Gate\+List\+Messenger Class Reference}
+\label{classGateListMessenger}\index{GateListMessenger@{GateListMessenger}}
+
+
+Abstract base class for managing an attachment list (\mbox{\hyperlink{classGateListManager}{Gate\+List\+Manager}}) and for inserting new objects.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+List\+Messenger.\+hh$>$}
+
+Inheritance diagram for Gate\+List\+Messenger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateListMessenger}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateListMessenger_ab402af2dce0034cf06c25f44f3d190ad}\label{classGateListMessenger_ab402af2dce0034cf06c25f44f3d190ad}} 
+{\bfseries Gate\+List\+Messenger} (\mbox{\hyperlink{classGateListManager}{Gate\+List\+Manager}} $\ast$its\+List\+Manager)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_a937d73ed6ea2954f411d7bc84e44a5fb}\label{classGateListMessenger_a937d73ed6ea2954f411d7bc84e44a5fb}} 
+virtual {\bfseries $\sim$\+Gate\+List\+Messenger} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_a135fd33fa1ded1c47078c194315ff1c4}\label{classGateListMessenger_a135fd33fa1ded1c47078c194315ff1c4}} 
+void {\bfseries Set\+New\+Value} (G4\+UIcommand $\ast$, G4\+String)
+\begin{DoxyCompactList}\small\item\em UI command interpreter method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}\label{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}} 
+\mbox{\hyperlink{classGateListManager}{Gate\+List\+Manager}} $\ast$ {\bfseries Get\+List\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Get a pointer to the list manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_ad335005e7183b9f3a17182edd72f569d}\label{classGateListMessenger_ad335005e7183b9f3a17182edd72f569d}} 
+const G4\+String \& {\bfseries Get\+New\+Insertion\+Base\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the current value of the insertion name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_a8d979e7893cfe2d610b9a4b9555d1646}\label{classGateListMessenger_a8d979e7893cfe2d610b9a4b9555d1646}} 
+void {\bfseries Set\+System\+Type} (const G4\+String \&val)
+\begin{DoxyCompactList}\small\item\em Setter and getter for the system type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_a637a1118990ead06633aacef840f8977}\label{classGateListMessenger_a637a1118990ead06633aacef840f8977}} 
+G4\+String {\bfseries Get\+System\+Type} () const
+\item 
+\mbox{\Hypertarget{classGateListMessenger_a258c249cffc90560936c5e53c8ec13a5}\label{classGateListMessenger_a258c249cffc90560936c5e53c8ec13a5}} 
+void {\bfseries Set\+New\+Insertion\+Base\+Name} (const G4\+String \&val)
+\begin{DoxyCompactList}\small\item\em Set the value of the insertion name. \end{DoxyCompactList}\item 
+virtual G4bool \mbox{\hyperlink{classGateListMessenger_aecfa42a240638fc5bf42126f21609660}{Check\+Name\+Conflict}} (const G4\+String \&name)
+\item 
+virtual void \mbox{\hyperlink{classGateListMessenger_a50d64a16ffced3880d88223ea28115de}{Avoid\+Name\+Conflicts}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateListMessenger_aaae0bba0f9be4f4f407d0d66a0ae5385}\label{classGateListMessenger_aaae0bba0f9be4f4f407d0d66a0ae5385}} 
+G4\+UIcmd\+With\+AString $\ast$ {\bfseries p\+System\+Type\+Cmd}
+\begin{DoxyCompactList}\small\item\em the UI command \textquotesingle{}system\+Type\textquotesingle{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_ac9bdc1cfb39b24ead2f1293b65b5fe3d}\label{classGateListMessenger_ac9bdc1cfb39b24ead2f1293b65b5fe3d}} 
+G4\+UIcmd\+With\+AString $\ast$ {\bfseries p\+Define\+Name\+Cmd}
+\begin{DoxyCompactList}\small\item\em the UI command \textquotesingle{}name\textquotesingle{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_ae5cdcdb3687f287723011916736cd4fc}\label{classGateListMessenger_ae5cdcdb3687f287723011916736cd4fc}} 
+G4\+UIcmd\+Without\+Parameter $\ast$ {\bfseries p\+List\+Choices\+Cmd}
+\begin{DoxyCompactList}\small\item\em the UI command \textquotesingle{}info\textquotesingle{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_a0091eead315c503d80111d7fe5fff913}\label{classGateListMessenger_a0091eead315c503d80111d7fe5fff913}} 
+G4\+UIcmd\+Without\+Parameter $\ast$ {\bfseries p\+List\+Cmd}
+\begin{DoxyCompactList}\small\item\em the UI command \textquotesingle{}list\textquotesingle{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateListMessenger_ac352872f0c6fe8e428fb6bbc469f608b}\label{classGateListMessenger_ac352872f0c6fe8e428fb6bbc469f608b}} 
+G4\+UIcmd\+With\+AString $\ast$ {\bfseries p\+Insert\+Cmd}
+\begin{DoxyCompactList}\small\item\em the UI command \textquotesingle{}insert\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for managing an attachment list (\mbox{\hyperlink{classGateListManager}{Gate\+List\+Manager}}) and for inserting new objects. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateListMessenger}{Gate\+List\+Messenger}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The \mbox{\hyperlink{classGateListMessenger}{Gate\+List\+Messenger}} inherits from the abilities/responsabilities of the \mbox{\hyperlink{classGateClockDependentMessenger}{Gate\+Clock\+Dependent\+Messenger}} base-\/class, i.\+e. the creation and management of a Gate UI directory for a Gate object
+\item In addition, the main responsability of this messenger is to handle an attachment list, and to allow the insertion of new attachments.
+\item It proposes and manages commands specific to the attachment lists definition of the name of a new attachment, listing of possible choices, list of already created attachments, and insertion of a new attachment
+\item The class contains two pure virtual methods\+: Dump\+Map() and Do\+Insertion() These methods must be implemented in derived concrete classes. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateListMessenger_a50d64a16ffced3880d88223ea28115de}\label{classGateListMessenger_a50d64a16ffced3880d88223ea28115de}} 
+\index{GateListMessenger@{GateListMessenger}!AvoidNameConflicts@{AvoidNameConflicts}}
+\index{AvoidNameConflicts@{AvoidNameConflicts}!GateListMessenger@{GateListMessenger}}
+\doxysubsubsection{\texorpdfstring{AvoidNameConflicts()}{AvoidNameConflicts()}}
+{\footnotesize\ttfamily void Gate\+List\+Messenger\+::\+Avoid\+Name\+Conflicts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Check and solves name conflict between a new attachment and already existing ones \mbox{\Hypertarget{classGateListMessenger_aecfa42a240638fc5bf42126f21609660}\label{classGateListMessenger_aecfa42a240638fc5bf42126f21609660}} 
+\index{GateListMessenger@{GateListMessenger}!CheckNameConflict@{CheckNameConflict}}
+\index{CheckNameConflict@{CheckNameConflict}!GateListMessenger@{GateListMessenger}}
+\doxysubsubsection{\texorpdfstring{CheckNameConflict()}{CheckNameConflict()}}
+{\footnotesize\ttfamily G4bool Gate\+List\+Messenger\+::\+Check\+Name\+Conflict (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Check whether there is a name conflict between a new attachment and an already existing one 
+
+Reimplemented in \mbox{\hyperlink{classGateObjectChildListMessenger_a30c187f110de6e8e397441f14c089c1c}{Gate\+Object\+Child\+List\+Messenger}}, \mbox{\hyperlink{classGateCoincidencePulseProcessorChainMessenger_a9465aa5af3fe5518d96016bd8a0b30ca}{Gate\+Coincidence\+Pulse\+Processor\+Chain\+Messenger}}, and \mbox{\hyperlink{classGatePulseProcessorChainMessenger_aefd25fd94ab93cec39dc8caefac1cf0f}{Gate\+Pulse\+Processor\+Chain\+Messenger}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+List\+Messenger.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+List\+Messenger.\+cc\end{DoxyCompactItemize}

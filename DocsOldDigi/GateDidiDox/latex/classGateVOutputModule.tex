@@ -1,0 +1,203 @@
+\hypertarget{classGateVOutputModule}{}\doxysection{Gate\+VOutput\+Module Class Reference}
+\label{classGateVOutputModule}\index{GateVOutputModule@{GateVOutputModule}}
+Inheritance diagram for Gate\+VOutput\+Module\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateVOutputModule}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_ab2dd7f68dc6b024a1ef392954ea6d7d2}\label{classGateVOutputModule_ab2dd7f68dc6b024a1ef392954ea6d7d2}} 
+{\bfseries Gate\+VOutput\+Module} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, Digi\+Mode digi\+Mode)
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_a652b8bd4627a97ed67da989f660b953e}{Record\+Begin\+Of\+Acquisition}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_a4eec60697e74b87292187c2859388b8d}{Record\+End\+Of\+Acquisition}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_ae0649d889150df6d9bc096fe5a177caf}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_afbfda1cbce688cf7bdf36fbd528e28c2}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_aac5f72f9df59422e23a2101685a68269}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_a81b478066f3f824878d69c1e26e59d77}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_a69cf829ee9335eda7e7ffb4a4735b9b1}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$v, const G4\+Step $\ast$)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_a749f00ef65b6dcd9f0a46ed4d13bdd6b}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)=0
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_abd200a0aa8b4c5bd3fe49866864d62dd}\label{classGateVOutputModule_abd200a0aa8b4c5bd3fe49866864d62dd}} 
+virtual void {\bfseries Record\+Tracks} (\mbox{\hyperlink{classGateSteppingAction}{Gate\+Stepping\+Action}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_a76d47af8c64dbd3c2c78ecd638f11651}{Set\+Verbose\+Level}} (G4int val)
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_ae6cee7ce1ad46ee5c936d09b39f7c1eb}\label{classGateVOutputModule_ae6cee7ce1ad46ee5c936d09b39f7c1eb}} 
+virtual const G4\+String \& {\bfseries Give\+Name\+Of\+File} ()=0
+\item 
+virtual void \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Virtual method to print-\/out a description of the module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVOutputModule_a96442d9a0060899ba9c4b11e70699345}\label{classGateVOutputModule_a96442d9a0060899ba9c4b11e70699345}} 
+G4\+String {\bfseries Get\+Name} ()
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a28fb3450669e1164cd6c307ab84efbd1}\label{classGateVOutputModule_a28fb3450669e1164cd6c307ab84efbd1}} 
+void {\bfseries Set\+Name} (G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_aec70b010875d9c2dbd2285112add191f}\label{classGateVOutputModule_aec70b010875d9c2dbd2285112add191f}} 
+\mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$ {\bfseries Get\+Output\+Mgr} ()
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a415652b526b885c752e48338d6bdfdc0}\label{classGateVOutputModule_a415652b526b885c752e48338d6bdfdc0}} 
+Digi\+Mode {\bfseries Get\+Digi\+Mode} () const
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a7789fb6e1e48651f39804a61c66c613c}\label{classGateVOutputModule_a7789fb6e1e48651f39804a61c66c613c}} 
+void {\bfseries Set\+Digi\+Mode} (Digi\+Mode mode)
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a41b446e166e53b7f599378a556284f5d}\label{classGateVOutputModule_a41b446e166e53b7f599378a556284f5d}} 
+virtual void {\bfseries Register\+New\+Coincidence\+Digi\+Collection} (const G4\+String \&, G4bool)
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a10ae99fe8c053ab40c885f2fccebd65e}\label{classGateVOutputModule_a10ae99fe8c053ab40c885f2fccebd65e}} 
+virtual void {\bfseries Register\+New\+Single\+Digi\+Collection} (const G4\+String \&, G4bool)
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_ace200152ed4c411bc56c8a6e2df71be6}\label{classGateVOutputModule_ace200152ed4c411bc56c8a6e2df71be6}} 
+virtual G4bool {\bfseries Is\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of the object enabled/disabled status flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVOutputModule_a56652770ee1acc09b5aa23f0a56cfb2e}\label{classGateVOutputModule_a56652770ee1acc09b5aa23f0a56cfb2e}} 
+virtual void {\bfseries Enable} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Enable the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a207a45c3c60b72ecb004c5fdc11b0d41}\label{classGateVOutputModule_a207a45c3c60b72ecb004c5fdc11b0d41}} 
+G4int {\bfseries n\+Verbose\+Level}
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_afe6a927e762aa756899c6f489609dcc0}\label{classGateVOutputModule_afe6a927e762aa756899c6f489609dcc0}} 
+\mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$ {\bfseries m\+\_\+output\+Mgr}
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a3d4e594fcde3e0513c0be272177a4e58}\label{classGateVOutputModule_a3d4e594fcde3e0513c0be272177a4e58}} 
+G4\+String {\bfseries m\+\_\+name}
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a05c35ed27ff0c497204b3286d2d71382}\label{classGateVOutputModule_a05c35ed27ff0c497204b3286d2d71382}} 
+Digi\+Mode {\bfseries m\+\_\+digi\+Mode}
+\item 
+\mbox{\Hypertarget{classGateVOutputModule_a6e1b8f3dfbebfea45efef987c0ad168e}\label{classGateVOutputModule_a6e1b8f3dfbebfea45efef987c0ad168e}} 
+G4bool {\bfseries m\+\_\+is\+Enabled}
+\begin{DoxyCompactList}\small\item\em Flag telling whether the object is enabled (active) or disabled (off) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}\label{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}} 
+\index{GateVOutputModule@{GateVOutputModule}!Describe@{Describe}}
+\index{Describe@{Describe}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+VOutput\+Module\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual method to print-\/out a description of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classGateSinoToEcat7_a4b32ef88f4ba4f1a260dc42b78e21178}{Gate\+Sino\+To\+Ecat7}}, \mbox{\hyperlink{classGateToInterfile_a9f0ff01306a2c42313f077f3cb31b91d}{Gate\+To\+Interfile}}, \mbox{\hyperlink{classGateToOpticalRaw_ab7614d2292c99fdd8ba1847262048643}{Gate\+To\+Optical\+Raw}}, \mbox{\hyperlink{classGateToProjectionSet_ae13b3b2ddbeb63ceb850d26d8c951985}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_af1548b10fa740a992d55cffb41aa08fa}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_a3caf3e30da94f01be56b735307487c93}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_a652b8bd4627a97ed67da989f660b953e}\label{classGateVOutputModule_a652b8bd4627a97ed67da989f660b953e}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateSinoToEcat7_af3235d8b963de7acdfe15f1b06ee7cef}{Gate\+Sino\+To\+Ecat7}}, \mbox{\hyperlink{classGateToInterfile_a77005d1e0d281a2f5c34d76a99e51e67}{Gate\+To\+Interfile}}, \mbox{\hyperlink{classGateToOpticalRaw_a6552a711655d3224f2bff9149ef2f163}{Gate\+To\+Optical\+Raw}}, \mbox{\hyperlink{classGateToProjectionSet_a1ef91b4eb159255544745791f7553623}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_af27cf38d3f4d87dd789128fa6acb62a4}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_a688f9b3c952311b7c0b4be8decbf8c41}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_aac5f72f9df59422e23a2101685a68269}\label{classGateVOutputModule_aac5f72f9df59422e23a2101685a68269}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateToProjectionSet_a3270bef05a22a8ff633217773685c1e3}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_abded8b57b9bb4d3842aba22e6a8cc216}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_aa0814ce074f58fd7c1b63ecbcbdd929d}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_ae0649d889150df6d9bc096fe5a177caf}\label{classGateVOutputModule_ae0649d889150df6d9bc096fe5a177caf}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateSinoToEcat7_ade8aa336615263e2a7d5de0b266f765d}{Gate\+Sino\+To\+Ecat7}}, \mbox{\hyperlink{classGateToInterfile_acd13ef15ee82228d6281a459d22360a5}{Gate\+To\+Interfile}}, \mbox{\hyperlink{classGateToOpticalRaw_a6f7fedaa79afacc795f29c65e2786481}{Gate\+To\+Optical\+Raw}}, \mbox{\hyperlink{classGateToProjectionSet_a88bdb091de20780aa98943fbe9b21668}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_a78880eefb03c328e8be74ffee6482ebe}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_a76648dd17890a2a83f1dda3a2d0e5124}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_a4eec60697e74b87292187c2859388b8d}\label{classGateVOutputModule_a4eec60697e74b87292187c2859388b8d}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateSinoToEcat7_a254bb87b50226d93b0349f559e48ca07}{Gate\+Sino\+To\+Ecat7}}, \mbox{\hyperlink{classGateToInterfile_a6ef4676af82fec11557619ee15300be9}{Gate\+To\+Interfile}}, \mbox{\hyperlink{classGateToOpticalRaw_a4fb3fffb27a89cec84ce51f8949809ad}{Gate\+To\+Optical\+Raw}}, \mbox{\hyperlink{classGateToProjectionSet_ad6f380c68ec49313ada669d0d31edc09}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_a9536e951c57220c10d5475a7122b4225}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_ab1f575391041a14382161f479804a0cf}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_a81b478066f3f824878d69c1e26e59d77}\label{classGateVOutputModule_a81b478066f3f824878d69c1e26e59d77}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateAnalysis_a174ab7416ba82159fb527f66c76acfdc}{Gate\+Analysis}}, \mbox{\hyperlink{classGateToProjectionSet_a53ea31146205bfed1505d6fc572f5633}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_a314ba7ca603bc6e918cade9a846014ca}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_a864938563103f71db9bf71ac873c63c5}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_afbfda1cbce688cf7bdf36fbd528e28c2}\label{classGateVOutputModule_afbfda1cbce688cf7bdf36fbd528e28c2}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateSinoToEcat7_a8566dd35c6d6f2dc2b388dea224b7d7d}{Gate\+Sino\+To\+Ecat7}}, \mbox{\hyperlink{classGateToInterfile_aa01d1199a179e6f41f47ca5a1902045d}{Gate\+To\+Interfile}}, \mbox{\hyperlink{classGateToOpticalRaw_a3476b567e98f13079b59afa3a4894ba1}{Gate\+To\+Optical\+Raw}}, \mbox{\hyperlink{classGateToProjectionSet_abe281d4da37ed50315f737fa0cd04c36}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_abab3153ad72651861bf5a7a2e88573f7}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_a630b24ad04919740a25cf100a359fd6b}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_a69cf829ee9335eda7e7ffb4a4735b9b1}\label{classGateVOutputModule_a69cf829ee9335eda7e7ffb4a4735b9b1}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateToProjectionSet_a6b0f2e450cd1f0a417b6aaa967725f93}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_abfcc9a8682bc2726f36f14fd92cd0d34}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_abc0741bc2fe18c3b3402458424de2a29}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_a749f00ef65b6dcd9f0a46ed4d13bdd6b}\label{classGateVOutputModule_a749f00ef65b6dcd9f0a46ed4d13bdd6b}} 
+\index{GateVOutputModule@{GateVOutputModule}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateAnalysis_a32ca225001a56bc1670168eff357a70f}{Gate\+Analysis}}, \mbox{\hyperlink{classGateSinoToEcat7_aef1c5cd7d703700bca88a96970902440}{Gate\+Sino\+To\+Ecat7}}, \mbox{\hyperlink{classGateToDigi_a2a933593770efd89ee90fd3aabb5c8c5}{Gate\+To\+Digi}}, \mbox{\hyperlink{classGateToInterfile_aafc4dc2ae44fa943fef238f753be8cd1}{Gate\+To\+Interfile}}, \mbox{\hyperlink{classGateToOpticalRaw_a0fdfe8e61dcf72ca56e78e9ba7c639d6}{Gate\+To\+Optical\+Raw}}, \mbox{\hyperlink{classGateToProjectionSet_a8c079bbf468a38282394546aeb48da2b}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_a43334e238e3f9d99af250050f691a99c}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_ad59880bf54569e00d1056668dfb74789}{Gate\+To\+Sinogram}}.
+
+\mbox{\Hypertarget{classGateVOutputModule_a76d47af8c64dbd3c2c78ecd638f11651}\label{classGateVOutputModule_a76d47af8c64dbd3c2c78ecd638f11651}} 
+\index{GateVOutputModule@{GateVOutputModule}!SetVerboseLevel@{SetVerboseLevel}}
+\index{SetVerboseLevel@{SetVerboseLevel}!GateVOutputModule@{GateVOutputModule}}
+\doxysubsubsection{\texorpdfstring{SetVerboseLevel()}{SetVerboseLevel()}}
+{\footnotesize\ttfamily virtual void Gate\+VOutput\+Module\+::\+Set\+Verbose\+Level (\begin{DoxyParamCaption}\item[{G4int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateToProjectionSet_a9c162eb771c0e557fc58626e578d1b77}{Gate\+To\+Projection\+Set}}, \mbox{\hyperlink{classGateToSinoAccel_a165c4807cb611c08b1e78ba8c0e1f359}{Gate\+To\+Sino\+Accel}}, and \mbox{\hyperlink{classGateToSinogram_a28215c5ebafe3a43127afd2f3269525b}{Gate\+To\+Sinogram}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+VOutput\+Module.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+VOutput\+Module.\+cc\end{DoxyCompactItemize}

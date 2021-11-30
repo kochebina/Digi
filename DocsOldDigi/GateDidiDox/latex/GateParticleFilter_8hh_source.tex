@@ -1,0 +1,70 @@
+\hypertarget{GateParticleFilter_8hh_source}{}\doxysection{Gate\+Particle\+Filter.\+hh}
+\label{GateParticleFilter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateParticleFilter.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateParticleFilter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{4 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{5 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{6 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/*}}
+\DoxyCodeLine{9 \textcolor{comment}{  \(\backslash\)class  GateParticleFilter}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{11 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{    david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{    brent.huisman@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEPARTICLEFILTER\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEPARTICLEFILTER\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateVFilter.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateParticleFilterMessenger.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class  }\mbox{\hyperlink{classGateParticleFilter}{GateParticleFilter}} :}
+\DoxyCodeLine{30   \textcolor{keyword}{public} \mbox{\hyperlink{classGateVFilter}{GateVFilter}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGateParticleFilter}{GateParticleFilter}}(G4String name);}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateParticleFilter}{\string~GateParticleFilter}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   FCT\_FOR\_AUTO\_CREATOR\_FILTER(\mbox{\hyperlink{classGateParticleFilter}{GateParticleFilter}})}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Track *);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} Add(\textcolor{keyword}{const} G4String \&particleName);}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} AddZ(\textcolor{keyword}{const} G4int \&particleZ);}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} AddA(\textcolor{keyword}{const} G4int \&particleA);}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} AddPDG(\textcolor{keyword}{const} G4int \&particlePDG);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} AddParent(\textcolor{keyword}{const} G4String \&particleName);}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} AddDirectParent(\textcolor{keyword}{const} G4String \&particleName);}
+\DoxyCodeLine{46   \textcolor{comment}{// add the particle into acceptable particle list.}}
+\DoxyCodeLine{47   \textcolor{comment}{//}}
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51   std::vector<G4String> thePdef;}
+\DoxyCodeLine{52   std::vector<G4int> thePdefZ;}
+\DoxyCodeLine{53   std::vector<G4int> thePdefA;}
+\DoxyCodeLine{54   std::vector<G4int> thePdefPDG;}
+\DoxyCodeLine{55   std::vector<G4String> theParentPdef;}
+\DoxyCodeLine{56   std::vector<G4String> theDirectParentPdef;}
+\DoxyCodeLine{57   \mbox{\hyperlink{classGateParticleFilterMessenger}{GateParticleFilterMessenger}} *pPartMessenger;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{int} nFilteredParticles;}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 MAKE\_AUTO\_CREATOR\_FILTER(particleFilter, \mbox{\hyperlink{classGateParticleFilter}{GateParticleFilter}})}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEPARTICLEFILTER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

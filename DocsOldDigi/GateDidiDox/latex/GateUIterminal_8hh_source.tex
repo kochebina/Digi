@@ -1,0 +1,56 @@
+\hypertarget{GateUIterminal_8hh_source}{}\doxysection{Gate\+UIterminal.\+hh}
+\label{GateUIterminal_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateUIterminal.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateUIterminal.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{  GATE -\/ Geant4 Application for Tomographic Emission}}
+\DoxyCodeLine{13 \textcolor{comment}{  OpenGATE Collaboration}}
+\DoxyCodeLine{14 \textcolor{comment}{}}
+\DoxyCodeLine{15 \textcolor{comment}{  Daniel Strul <daniel.strul@iphe.unil.ch>}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{  Copyright (C) 2002 UNIL/IPHE, CH-\/1015 Lausanne}}
+\DoxyCodeLine{18 \textcolor{comment}{}}
+\DoxyCodeLine{19 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{20 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{21 \textcolor{comment}{  See GATE/LICENSE.txt fGeant496\_COMPATIBILITYor further details}}
+\DoxyCodeLine{22 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef GateUIterminal\_h}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define GateUIterminal\_h 1}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4UIterminal.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUIterminal}{GateUIterminal}} : \textcolor{keyword}{public} G4UIterminal}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateUIterminal}{GateUIterminal}}(G4VUIshell* aShell=0)}
+\DoxyCodeLine{35     : G4UIterminal(aShell)}
+\DoxyCodeLine{36   \{\}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \mbox{\hyperlink{classGateUIterminal}{\string~GateUIterminal}}() \{\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifdef Geant496\_COMPATIBILITY}}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} G4int ReceiveG4cout( \textcolor{keyword}{const} G4String\& coutString);}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} G4int ReceiveG4cerr( \textcolor{keyword}{const} G4String\& cerrString);}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} G4int ReceiveG4cout( G4String coutString);}
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} G4int ReceiveG4cerr( G4String cerrString);}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

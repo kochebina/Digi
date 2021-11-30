@@ -1,0 +1,1235 @@
+\hypertarget{GateFixedForcedDetectionFunctors_8hh_source}{}\doxysection{Gate\+Fixed\+Forced\+Detection\+Functors.\+hh}
+\label{GateFixedForcedDetectionFunctors_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionFunctors.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionFunctors.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GATEFIXEDFORCEDDETECTIONACTORFUNCTORS\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GATEFIXEDFORCEDDETECTIONACTORFUNCTORS\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* Geant4 */}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <G4VEMDataSet.hh>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <G4EmCalculator.hh>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <G4VDataSetAlgorithm.hh>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <G4LivermoreComptonModel.hh>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <G4LogLogInterpolation.hh>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <G4CompositeEMDataSet.hh>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <G4CrossSectionHandler.hh>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <G4Poisson.hh>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <G4Gamma.hh>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{/* Gate */}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateEnergyResponseFunctor.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{/* ITK */}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <itkImage.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <itkImageRegionIterator.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <itkTimeProbe.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <itkForwardFFTImageFilter.h>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/* RTK */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <rtkConfiguration.h>}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/* XRAYLIB */}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifdef GATE\_USE\_XRAYLIB}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <xraylib.h>}}
+\DoxyCodeLine{30 \textcolor{comment}{// xraylib defines ZMAX which interfers with another Geant4 dev, undefine.}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#  ifdef ZMAX}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#    undef ZMAX}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef ITK\_MAX\_THREADS}}
+\DoxyCodeLine{37 \textcolor{keyword}{using} itk::ITK\_MAX\_THREADS;}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{struct }\mbox{\hyperlink{structnewPhoton}{newPhoton}}}
+\DoxyCodeLine{41   \{}
+\DoxyCodeLine{42   G4ThreeVector direction;}
+\DoxyCodeLine{43   G4ThreeVector position;}
+\DoxyCodeLine{44   \textcolor{keywordtype}{double} weight;}
+\DoxyCodeLine{45   \textcolor{keywordtype}{double} energy;}
+\DoxyCodeLine{46   \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{namespace }GateFixedForcedDetectionFunctor}
+\DoxyCodeLine{49   \{}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{/* Handling of the interpolation weight in primary: store the weights and}}
+\DoxyCodeLine{52 \textcolor{comment}{     the material indices in vectors and return nada. The integral is computed in the}}
+\DoxyCodeLine{53 \textcolor{comment}{     ProjectedValueAccumulation since one has to repeat the same ray cast for each}}
+\DoxyCodeLine{54 \textcolor{comment}{     and every energy of the primary. */}}
+\DoxyCodeLine{55     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1InterpolationWeightMultiplication}{InterpolationWeightMultiplication}}}
+\DoxyCodeLine{56       \{}
+\DoxyCodeLine{57     \textcolor{keyword}{public}:}
+\DoxyCodeLine{58       \textcolor{keyword}{typedef} itk::Vector<double, 3> VectorType;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1InterpolationWeightMultiplication}{InterpolationWeightMultiplication}}()}
+\DoxyCodeLine{61         \{}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1InterpolationWeightMultiplication}{\string~InterpolationWeightMultiplication}}()}
+\DoxyCodeLine{65         \{}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68       \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1InterpolationWeightMultiplication}{InterpolationWeightMultiplication}} \&)\textcolor{keyword}{ const}}
+\DoxyCodeLine{69 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{70         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72       \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1InterpolationWeightMultiplication}{InterpolationWeightMultiplication}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{73 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{74         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} != other);}
+\DoxyCodeLine{75         \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77       \textcolor{keyword}{inline} \textcolor{keywordtype}{double} operator()(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{78                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} stepLengthInVoxel,}
+\DoxyCodeLine{79                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} weight,}
+\DoxyCodeLine{80                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} *p,}
+\DoxyCodeLine{81                                \textcolor{keyword}{const} \textcolor{keywordtype}{int} i)}
+\DoxyCodeLine{82         \{}
+\DoxyCodeLine{83         m\_InterpolationWeights[threadId][(int) (p[i])] += stepLengthInVoxel * weight;}
+\DoxyCodeLine{84         \textcolor{keywordflow}{return} 0.;}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87       std::vector<double>* GetInterpolationWeights()}
+\DoxyCodeLine{88         \{}
+\DoxyCodeLine{89         \textcolor{keywordflow}{return} m\_InterpolationWeights;}
+\DoxyCodeLine{90         \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keyword}{private}:}
+\DoxyCodeLine{93       std::vector<double> m\_InterpolationWeights[ITK\_MAX\_THREADS];}
+\DoxyCodeLine{94       \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{/* Mother class for accumulation. Purely virtual (FIXME). */}}
+\DoxyCodeLine{97     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}}}
+\DoxyCodeLine{98       \{}
+\DoxyCodeLine{99     \textcolor{keyword}{public}:}
+\DoxyCodeLine{100       \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Dimension = 3;}
+\DoxyCodeLine{101       \textcolor{keyword}{typedef} itk::Vector<double, Dimension> VectorType;}
+\DoxyCodeLine{102       \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} InputPixelType;}
+\DoxyCodeLine{103       \textcolor{keyword}{typedef} itk::Image<InputPixelType, Dimension> InputImageType;}
+\DoxyCodeLine{104       \textcolor{keyword}{typedef} itk::Image<double, 2> MaterialMuImageType;}
+\DoxyCodeLine{105       \textcolor{keyword}{typedef} itk::Image<double, 2> MaterialDeltaImageType;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}}() :}
+\DoxyCodeLine{108           m\_NumberOfPrimaries(0),}
+\DoxyCodeLine{109           m\_MuToDeltaImageOffset(0),}
+\DoxyCodeLine{110           m\_EnergyResolvedBinSize(0.),}
+\DoxyCodeLine{111           m\_generatePhotons(\textcolor{keyword}{false}),}
+\DoxyCodeLine{112           m\_ARF(\textcolor{keyword}{false})}
+\DoxyCodeLine{113         \{}
+\DoxyCodeLine{114         \textcolor{keywordflow}{for} (itk::ThreadIdType i = 0; i < ITK\_MAX\_THREADS; i++)}
+\DoxyCodeLine{115           \{}
+\DoxyCodeLine{116           m\_IntegralOverDetector[i] = 0.;}
+\DoxyCodeLine{117           m\_SquaredIntegralOverDetector[i] = 0.;}
+\DoxyCodeLine{118           \}}
+\DoxyCodeLine{119         \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121       \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}} \&)\textcolor{keyword}{ const}}
+\DoxyCodeLine{122 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{123         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{124         \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126       \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{127 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{128         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} != other);}
+\DoxyCodeLine{129         \}}
+\DoxyCodeLine{130       \textcolor{keywordtype}{void} SetVolumeSpacing(\textcolor{keyword}{const} VectorType \&\_arg)}
+\DoxyCodeLine{131         \{}
+\DoxyCodeLine{132         m\_VolumeSpacing = \_arg;}
+\DoxyCodeLine{133         \}}
+\DoxyCodeLine{134       \textcolor{keywordtype}{void} SetInterpolationWeights(std::vector<double> *\_arg)}
+\DoxyCodeLine{135         \{}
+\DoxyCodeLine{136         m\_InterpolationWeights = \_arg;}
+\DoxyCodeLine{137         \}}
+\DoxyCodeLine{138       \textcolor{keywordtype}{void} SetEnergyWeightList(std::vector<double> *\_arg)}
+\DoxyCodeLine{139         \{}
+\DoxyCodeLine{140         m\_EnergyWeightList = \_arg;}
+\DoxyCodeLine{141         \}}
+\DoxyCodeLine{142       \textcolor{keywordtype}{void} SetMuToDeltaImageOffset(\textcolor{keyword}{const} std::ptrdiff\_t o)}
+\DoxyCodeLine{143         \{}
+\DoxyCodeLine{144         m\_MuToDeltaImageOffset = o;}
+\DoxyCodeLine{145         \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147       \textcolor{keywordtype}{void} Init(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nthreads)}
+\DoxyCodeLine{148         \{}
+\DoxyCodeLine{149         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < nthreads; i++)}
+\DoxyCodeLine{150           \{}
+\DoxyCodeLine{151           m\_InterpolationWeights[i].resize(m\_MaterialMu-\/>GetLargestPossibleRegion().GetSize()[0]);}
+\DoxyCodeLine{152           std::fill(m\_InterpolationWeights[i].begin(), m\_InterpolationWeights[i].end(), 0.);}
+\DoxyCodeLine{153           \}}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156       \textcolor{comment}{/* Solid angle from the source to pixel vector in voxels */}}
+\DoxyCodeLine{157       \textcolor{keywordtype}{void} SetSolidAngleParameters(\textcolor{keyword}{const} InputImageType::Pointer proj,}
+\DoxyCodeLine{158                                    \textcolor{keyword}{const} VectorType \& u,}
+\DoxyCodeLine{159                                    \textcolor{keyword}{const} VectorType \& v)}
+\DoxyCodeLine{160         \{}
+\DoxyCodeLine{161         m\_DetectorOrientationTimesPixelSurface = proj-\/>GetSpacing()[0]}
+\DoxyCodeLine{162                                                  * proj-\/>GetSpacing()[1]}
+\DoxyCodeLine{163                                                  * itk::CrossProduct(u, v);}
+\DoxyCodeLine{164         \}}
+\DoxyCodeLine{165       \textcolor{keywordtype}{double} GetSolidAngle(\textcolor{keyword}{const} VectorType \& sourceToPixelInVox)\textcolor{keyword}{ const}}
+\DoxyCodeLine{166 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{167         VectorType sourceToPixelInMM;}
+\DoxyCodeLine{168         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{169           \{}
+\DoxyCodeLine{170           sourceToPixelInMM[i] = sourceToPixelInVox[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{171           \}}
+\DoxyCodeLine{172         \textcolor{keywordflow}{return} std::abs(sourceToPixelInMM * m\_DetectorOrientationTimesPixelSurface}
+\DoxyCodeLine{173                         / pow(sourceToPixelInMM.GetNorm(), 3.));}
+\DoxyCodeLine{174         \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176       MaterialMuImageType *GetMaterialMu()}
+\DoxyCodeLine{177         \{}
+\DoxyCodeLine{178         \textcolor{keywordflow}{return} m\_MaterialMu.GetPointer();}
+\DoxyCodeLine{179         \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181       MaterialDeltaImageType *GetMaterialDelta()}
+\DoxyCodeLine{182         \{}
+\DoxyCodeLine{183         \textcolor{keywordflow}{return} m\_MaterialDelta.GetPointer();}
+\DoxyCodeLine{184         \}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186       \textcolor{keywordtype}{void} CreateMaterialMuMap(G4EmCalculator *emCalculator,}
+\DoxyCodeLine{187                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} energySpacing,}
+\DoxyCodeLine{188                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} energyMax,}
+\DoxyCodeLine{189                                \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} * gateImageVolume)}
+\DoxyCodeLine{190         \{}
+\DoxyCodeLine{191         std::vector<double> energyList;}
+\DoxyCodeLine{192         energyList.push\_back(0.);}
+\DoxyCodeLine{193         \textcolor{keywordflow}{while} (energyList.back() < energyMax)}
+\DoxyCodeLine{194           \{}
+\DoxyCodeLine{195           energyList.push\_back(energyList.back() + energySpacing);}
+\DoxyCodeLine{196           \}}
+\DoxyCodeLine{197         CreateMaterialMuMap(emCalculator, energyList, gateImageVolume);}
+\DoxyCodeLine{198         MaterialMuImageType::PointType origin;}
+\DoxyCodeLine{199         origin.Fill(0.);}
+\DoxyCodeLine{200         m\_MaterialMu-\/>SetOrigin(origin);}
+\DoxyCodeLine{201         \}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203       \textcolor{keywordtype}{void} CreateMaterialMuMap(G4EmCalculator *emCalculator,}
+\DoxyCodeLine{204                                \textcolor{keyword}{const} std::vector<double> \& energyList,}
+\DoxyCodeLine{205                                \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} * gateImageVolume)}
+\DoxyCodeLine{206         \{}
+\DoxyCodeLine{207         m\_EnergyList = energyList;}
+\DoxyCodeLine{208         itk::TimeProbe muProbe;}
+\DoxyCodeLine{209         muProbe.Start();}
+\DoxyCodeLine{210         \textcolor{comment}{/* Get image materials + world */}}
+\DoxyCodeLine{211         std::vector<G4Material*> imageWorldMaterials;}
+\DoxyCodeLine{212         gateImageVolume-\/>\mbox{\hyperlink{classGateVImageVolume_aae374cd3c01c1b44e987a36d7dcc5e04}{BuildLabelToG4MaterialVector}}(imageWorldMaterials);}
+\DoxyCodeLine{213         \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *volume = gateImageVolume;}
+\DoxyCodeLine{214         \textcolor{keywordflow}{while} (volume-\/>GetLogicalVolumeName() != \textcolor{stringliteral}{"{}world\_log"{}})}
+\DoxyCodeLine{215           \{}
+\DoxyCodeLine{216           volume = volume-\/>GetParentVolume();}
+\DoxyCodeLine{217           \}}
+\DoxyCodeLine{218         imageWorldMaterials.push\_back(\textcolor{keyword}{const\_cast<}G4Material*\textcolor{keyword}{>}(volume-\/>GetMaterial()));}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220         \textcolor{comment}{/* Get the list of involved processes (Rayleigh, Compton, PhotoElectric) */}}
+\DoxyCodeLine{221         G4ParticleDefinition* particle = G4ParticleTable::GetParticleTable()-\/>FindParticle(\textcolor{stringliteral}{"{}gamma"{}});}
+\DoxyCodeLine{222         G4ProcessVector* processList = particle-\/>GetProcessManager()-\/>GetProcessList();}
+\DoxyCodeLine{223         std::vector<G4String> processNameVector;}
+\DoxyCodeLine{224         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} process = 0; process < processList-\/>size(); process++)}
+\DoxyCodeLine{225           \{}
+\DoxyCodeLine{226           G4ProcessType type = (*processList)[process]-\/>GetProcessType();}
+\DoxyCodeLine{227           std::string name = (*processList)[process]-\/>GetProcessName();}
+\DoxyCodeLine{228           \textcolor{keywordflow}{if} ((type == fElectromagnetic) \&\& (name != \textcolor{stringliteral}{"{}msc"{}}))}
+\DoxyCodeLine{229             \{}
+\DoxyCodeLine{230             processNameVector.push\_back(name);}
+\DoxyCodeLine{231             \}}
+\DoxyCodeLine{232           \}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234         MaterialMuImageType::RegionType region;}
+\DoxyCodeLine{235         region.SetSize(0, imageWorldMaterials.size());}
+\DoxyCodeLine{236         region.SetSize(1, energyList.size());}
+\DoxyCodeLine{237         m\_MaterialMu = MaterialMuImageType::New();}
+\DoxyCodeLine{238         m\_MaterialMu-\/>SetRegions(region);}
+\DoxyCodeLine{239         m\_MaterialMu-\/>Allocate();}
+\DoxyCodeLine{240         itk::ImageRegionIterator<MaterialMuImageType> it(m\_MaterialMu, region);}
+\DoxyCodeLine{241         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} energy = 0; energy < energyList.size(); energy++)}
+\DoxyCodeLine{242           \{}
+\DoxyCodeLine{243           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < imageWorldMaterials.size(); i++)}
+\DoxyCodeLine{244             \{}
+\DoxyCodeLine{245             G4Material * mat = imageWorldMaterials[i];}
+\DoxyCodeLine{246             \textcolor{keywordtype}{double} mu = 0;}
+\DoxyCodeLine{247             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} process = 0; process < processNameVector.size(); process++)}
+\DoxyCodeLine{248               \{}
+\DoxyCodeLine{249               \textcolor{comment}{/* Note: the G4EmCalculator retrive the correct G4VProcess}}
+\DoxyCodeLine{250 \textcolor{comment}{               (standard, Penelope, Livermore) from the processName. */}}
+\DoxyCodeLine{251               \textcolor{keywordtype}{double} crossSection = emCalculator-\/>ComputeCrossSectionPerVolume(energyList[energy],}
+\DoxyCodeLine{252                                                                                \textcolor{stringliteral}{"{}gamma"{}},}
+\DoxyCodeLine{253                                                                                processNameVector[process],}
+\DoxyCodeLine{254                                                                                mat-\/>GetName());}
+\DoxyCodeLine{255               \textcolor{comment}{/* In (length unit)\string^\{-\/1\} according to}}
+\DoxyCodeLine{256 \textcolor{comment}{               http://www.lcsim.org/software/geant4/doxygen/html/classG4EmCalculator.html\#a870d5fffaca35f6e2946da432034bd4c */}}
+\DoxyCodeLine{257               mu += crossSection;}
+\DoxyCodeLine{258               \}}
+\DoxyCodeLine{259             it.Set(mu);}
+\DoxyCodeLine{260             ++it;}
+\DoxyCodeLine{261             \}}
+\DoxyCodeLine{262           \}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264         muProbe.Stop();}
+\DoxyCodeLine{265         G4cout}
+\DoxyCodeLine{266         << \textcolor{stringliteral}{"{}Computation of the mu lookup table took "{}}}
+\DoxyCodeLine{267         << muProbe.GetTotal() << \textcolor{charliteral}{' '}}
+\DoxyCodeLine{268         << muProbe.GetUnit()}
+\DoxyCodeLine{269         << G4endl;}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271         MaterialMuImageType::SpacingType spacing;}
+\DoxyCodeLine{272         spacing[0] = 1.;}
+\DoxyCodeLine{273         \textcolor{keywordflow}{if}(energyList.size()>1)}
+\DoxyCodeLine{274           spacing[1] = energyList[1]-\/energyList[0];}
+\DoxyCodeLine{275         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{276           spacing[1] = 1.*keV;}
+\DoxyCodeLine{277         m\_MaterialMu-\/>SetSpacing(spacing);}
+\DoxyCodeLine{278         \}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280       \textcolor{keywordtype}{void} CreateMaterialDeltaMap(\textcolor{keyword}{const} \textcolor{keywordtype}{double} energySpacing,}
+\DoxyCodeLine{281                                   \textcolor{keyword}{const} \textcolor{keywordtype}{double} energyMax,}
+\DoxyCodeLine{282                                   \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} * gateImageVolume)}
+\DoxyCodeLine{283         \{}
+\DoxyCodeLine{284         std::vector<double> energyList;}
+\DoxyCodeLine{285         energyList.push\_back(0.);}
+\DoxyCodeLine{286         \textcolor{keywordflow}{while} (energyList.back() < energyMax)}
+\DoxyCodeLine{287           \{}
+\DoxyCodeLine{288           energyList.push\_back(energyList.back() + energySpacing);}
+\DoxyCodeLine{289           \}}
+\DoxyCodeLine{290         CreateMaterialDeltaMap(energyList, gateImageVolume);}
+\DoxyCodeLine{291         MaterialDeltaImageType::PointType origin;}
+\DoxyCodeLine{292         origin.Fill(0.);}
+\DoxyCodeLine{293         m\_MaterialDelta-\/>SetOrigin(origin);}
+\DoxyCodeLine{294         \}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296       \textcolor{keywordtype}{void} CreateMaterialDeltaMap(\textcolor{keyword}{const} std::vector<double> \& energyList,}
+\DoxyCodeLine{297                                   \mbox{\hyperlink{classGateVImageVolume}{GateVImageVolume}} * gateImageVolume)}
+\DoxyCodeLine{298         \{}
+\DoxyCodeLine{299         m\_EnergyList = energyList;}
+\DoxyCodeLine{300         itk::TimeProbe deltaProbe;}
+\DoxyCodeLine{301         deltaProbe.Start();}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303         \textcolor{comment}{/* Get image materials + world */}}
+\DoxyCodeLine{304         std::vector<G4Material*> imageWorldMaterials;}
+\DoxyCodeLine{305         gateImageVolume-\/>\mbox{\hyperlink{classGateVImageVolume_aae374cd3c01c1b44e987a36d7dcc5e04}{BuildLabelToG4MaterialVector}}(imageWorldMaterials);}
+\DoxyCodeLine{306         \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *volume = gateImageVolume;}
+\DoxyCodeLine{307         \textcolor{keywordflow}{while} (volume-\/>GetLogicalVolumeName() != \textcolor{stringliteral}{"{}world\_log"{}})}
+\DoxyCodeLine{308           \{}
+\DoxyCodeLine{309           volume = volume-\/>GetParentVolume();}
+\DoxyCodeLine{310           \}}
+\DoxyCodeLine{311         imageWorldMaterials.push\_back(\textcolor{keyword}{const\_cast<}G4Material*\textcolor{keyword}{>}(volume-\/>GetMaterial()));}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313         MaterialDeltaImageType::RegionType region;}
+\DoxyCodeLine{314         region.SetSize(0, imageWorldMaterials.size());}
+\DoxyCodeLine{315         region.SetSize(1, energyList.size());}
+\DoxyCodeLine{316         m\_MaterialDelta = MaterialDeltaImageType::New();}
+\DoxyCodeLine{317         m\_MaterialDelta-\/>SetRegions(region);}
+\DoxyCodeLine{318         m\_MaterialDelta-\/>Allocate();}
+\DoxyCodeLine{319         itk::ImageRegionIterator<MaterialDeltaImageType> it(m\_MaterialDelta, region);}
+\DoxyCodeLine{320         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} energy = 0; energy < energyList.size(); energy++)}
+\DoxyCodeLine{321           \{}
+\DoxyCodeLine{322           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < imageWorldMaterials.size(); i++)}
+\DoxyCodeLine{323             \{}
+\DoxyCodeLine{324             G4Material * mat = imageWorldMaterials[i];}
+\DoxyCodeLine{325             \textcolor{keywordtype}{double} delta = 0.0;}
+\DoxyCodeLine{326             \textcolor{keywordtype}{double} Density = mat-\/>GetDensity() / (g/cm3);}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#ifdef GATE\_USE\_XRAYLIB}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#if XRAYLIB\_MAJOR > 3}}
+\DoxyCodeLine{329         xrl\_error *error = NULL;}
+\DoxyCodeLine{330             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < mat-\/>GetElementVector()-\/>size(); ++i)}
+\DoxyCodeLine{331               \{}
+\DoxyCodeLine{332         delta += (1 -\/ Refractive\_Index\_Re(mat-\/>GetElementVector()-\/>at(i)-\/>GetSymbol(), energyList[energy]/(keV), 1.0, \&error)) * mat-\/>GetFractionVector()[i];}
+\DoxyCodeLine{333         \textcolor{keywordflow}{if} (error != NULL) \{}
+\DoxyCodeLine{334           G4cerr << \textcolor{stringliteral}{"{}error message: "{}} << error-\/>message << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{335           xrl\_clear\_error(\&error); }
+\DoxyCodeLine{336         \}}
+\DoxyCodeLine{337               \}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{339             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < mat-\/>GetElementVector()-\/>size(); ++i)}
+\DoxyCodeLine{340               delta += (1 -\/ Refractive\_Index\_Re(mat-\/>GetElementVector()-\/>at(i)-\/>GetSymbol(), energyList[energy]/(keV), 1.0)) * mat-\/>GetFractionVector()[i];}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#endif        }}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{343             G4Exception( \textcolor{stringliteral}{"{}GateFixedForcedDetectionFunctors::CreateMaterialDeltaMap"{}}, \textcolor{stringliteral}{"{}CreateMaterialDeltaMap"{}}, FatalException, \textcolor{stringliteral}{"{}Xraylib is not available\(\backslash\)n"{}});}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{345             delta *= Density;}
+\DoxyCodeLine{346             it.Set(delta);}
+\DoxyCodeLine{347             ++it;}
+\DoxyCodeLine{348             \}}
+\DoxyCodeLine{349           \}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351         deltaProbe.Stop();}
+\DoxyCodeLine{352         G4cout}
+\DoxyCodeLine{353         << \textcolor{stringliteral}{"{}Computation of the delta lookup table took "{}}}
+\DoxyCodeLine{354         << deltaProbe.GetTotal() << \textcolor{charliteral}{' '}}
+\DoxyCodeLine{355         << deltaProbe.GetUnit()}
+\DoxyCodeLine{356         << G4endl;}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358         MaterialDeltaImageType::SpacingType spacing;}
+\DoxyCodeLine{359         spacing[0] = 1.;}
+\DoxyCodeLine{360         \textcolor{keywordflow}{if}(energyList.size()>1)}
+\DoxyCodeLine{361           spacing[1] = energyList[1]-\/energyList[0];}
+\DoxyCodeLine{362         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{363           spacing[1] = 1.*keV;}
+\DoxyCodeLine{364         m\_MaterialDelta-\/>SetSpacing(spacing);}
+\DoxyCodeLine{365         \}}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368       MaterialMuImageType::Pointer GetMaterialMuMap()}
+\DoxyCodeLine{369         \{}
+\DoxyCodeLine{370         \textcolor{keywordflow}{return} m\_MaterialMu;}
+\DoxyCodeLine{371         \}}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374       MaterialDeltaImageType::Pointer GetMaterialDeltaMap()}
+\DoxyCodeLine{375         \{}
+\DoxyCodeLine{376         \textcolor{keywordflow}{return} m\_MaterialDelta;}
+\DoxyCodeLine{377         \}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379       \textcolor{keywordtype}{double} GetIntegralOverDetectorAndReset()}
+\DoxyCodeLine{380         \{}
+\DoxyCodeLine{381         \textcolor{keywordtype}{double} result = 0.;}
+\DoxyCodeLine{382         \textcolor{keywordflow}{for} (itk::ThreadIdType i = 0; i < ITK\_MAX\_THREADS; i++)}
+\DoxyCodeLine{383           \{}
+\DoxyCodeLine{384           result += m\_IntegralOverDetector[i];}
+\DoxyCodeLine{385           m\_IntegralOverDetector[i] = 0.;}
+\DoxyCodeLine{386           \}}
+\DoxyCodeLine{387         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{388         \}}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390       \textcolor{keywordtype}{double} GetSquaredIntegralOverDetectorAndReset()}
+\DoxyCodeLine{391         \{}
+\DoxyCodeLine{392         \textcolor{keywordtype}{double} result = 0.;}
+\DoxyCodeLine{393         \textcolor{keywordflow}{for} (itk::ThreadIdType i = 0; i < ITK\_MAX\_THREADS; i++)}
+\DoxyCodeLine{394           \{}
+\DoxyCodeLine{395           result += m\_SquaredIntegralOverDetector[i];}
+\DoxyCodeLine{396           m\_SquaredIntegralOverDetector[i] = 0.;}
+\DoxyCodeLine{397           \}}
+\DoxyCodeLine{398         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{399         \}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401       \textcolor{keywordtype}{void} SetNumberOfPrimaries(G4int i)}
+\DoxyCodeLine{402         \{}
+\DoxyCodeLine{403         m\_NumberOfPrimaries = i;}
+\DoxyCodeLine{404         \}}
+\DoxyCodeLine{405       \textcolor{keywordtype}{void} SetResponseDetector(\mbox{\hyperlink{classGateEnergyResponseFunctor}{GateEnergyResponseFunctor}} *\_arg)}
+\DoxyCodeLine{406         \{}
+\DoxyCodeLine{407         m\_ResponseDetector = \_arg;}
+\DoxyCodeLine{408         \}}
+\DoxyCodeLine{409       \textcolor{keywordtype}{void} SetEnergyResolvedParameters(\textcolor{keyword}{const} \textcolor{keywordtype}{double} bin, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} slice)}
+\DoxyCodeLine{410         \{}
+\DoxyCodeLine{411         m\_EnergyResolvedBinSize = bin;}
+\DoxyCodeLine{412         m\_EnergyResolvedSliceSize = slice;}
+\DoxyCodeLine{413         \}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415       \textcolor{keywordtype}{void} PreparePhotonsList(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& numberOfThreads)}
+\DoxyCodeLine{416         \{}
+\DoxyCodeLine{417         m\_PhotonList.resize(numberOfThreads);}
+\DoxyCodeLine{418         \}}
+\DoxyCodeLine{419       std::vector<newPhoton> GetPhotonListPerThread(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& thread)}
+\DoxyCodeLine{420         \{}
+\DoxyCodeLine{421         \textcolor{keywordflow}{return} m\_PhotonList[thread];}
+\DoxyCodeLine{422         \}}
+\DoxyCodeLine{423       std::vector<std::vector<newPhoton> > GetPhotonList()}
+\DoxyCodeLine{424         \{}
+\DoxyCodeLine{425         \textcolor{keywordflow}{return} m\_PhotonList;}
+\DoxyCodeLine{426         \}}
+\DoxyCodeLine{427       \textcolor{keywordtype}{void} ClearPhotonListPerThread(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& thread)}
+\DoxyCodeLine{428         \{}
+\DoxyCodeLine{429         m\_PhotonList[thread].clear();}
+\DoxyCodeLine{430         \}}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432       \textcolor{keywordtype}{void} ClearPhotonList()}
+\DoxyCodeLine{433         \{}
+\DoxyCodeLine{434         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} thread = 0; thread < m\_PhotonList.size(); thread++)}
+\DoxyCodeLine{435           \{}
+\DoxyCodeLine{436           m\_PhotonList[thread].clear();}
+\DoxyCodeLine{437           \}}
+\DoxyCodeLine{438         \}}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440       \textcolor{keywordtype}{void} SavePhotonsparameters(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{441                                  \textcolor{keyword}{const} VectorType \& photonPosition,}
+\DoxyCodeLine{442                                  \textcolor{keyword}{const} VectorType \& photonDirection,}
+\DoxyCodeLine{443                                  \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& weight,}
+\DoxyCodeLine{444                                  \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& energy)}
+\DoxyCodeLine{445         \{}
+\DoxyCodeLine{446         \mbox{\hyperlink{structnewPhoton}{newPhoton}} photon;}
+\DoxyCodeLine{447         photon.weight = weight;}
+\DoxyCodeLine{448         photon.energy = energy;}
+\DoxyCodeLine{449         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{450           \{}
+\DoxyCodeLine{451           photon.position[i] = photonPosition[i];}
+\DoxyCodeLine{452           photon.direction[i] = photonDirection[i];}
+\DoxyCodeLine{453           \}}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455         m\_PhotonList[threadId].push\_back(photon);}
+\DoxyCodeLine{456         \}}
+\DoxyCodeLine{457       \textcolor{keywordtype}{void} setGeneratePhotons(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} \& \textcolor{keywordtype}{boolean})}
+\DoxyCodeLine{458         \{}
+\DoxyCodeLine{459         m\_generatePhotons = boolean;}
+\DoxyCodeLine{460         \}}
+\DoxyCodeLine{461       \textcolor{keywordtype}{void} setGenerateARF(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} \& \textcolor{keywordtype}{boolean})}
+\DoxyCodeLine{462         \{}
+\DoxyCodeLine{463         m\_ARF = boolean;}
+\DoxyCodeLine{464         \}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{467       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Accumulate(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{468                              \textcolor{keywordtype}{float} \& output,}
+\DoxyCodeLine{469                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} valueToAccumulate,}
+\DoxyCodeLine{470                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} energy)}
+\DoxyCodeLine{471         \{}
+\DoxyCodeLine{472         \textcolor{keywordflow}{if} (m\_EnergyResolvedBinSize > 0)}
+\DoxyCodeLine{473           \{}
+\DoxyCodeLine{474           \textcolor{keyword}{const} std::ptrdiff\_t offset = m\_EnergyResolvedSliceSize}
+\DoxyCodeLine{475                                         * itk::Math::Floor<unsigned int>(energy}
+\DoxyCodeLine{476                                                                          / m\_EnergyResolvedBinSize}
+\DoxyCodeLine{477                                                                          + 0.5);}
+\DoxyCodeLine{478           *(\&output + offset) += valueToAccumulate;}
+\DoxyCodeLine{479           \}}
+\DoxyCodeLine{480         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{481           \{}
+\DoxyCodeLine{482           output += valueToAccumulate;}
+\DoxyCodeLine{483           \}}
+\DoxyCodeLine{484         m\_IntegralOverDetector[threadId] += valueToAccumulate;}
+\DoxyCodeLine{485         m\_SquaredIntegralOverDetector[threadId] += valueToAccumulate * valueToAccumulate;}
+\DoxyCodeLine{486         \}}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} AccumulatePhase(\textcolor{keywordtype}{float} \& output,}
+\DoxyCodeLine{489                                   \textcolor{keyword}{const} \textcolor{keywordtype}{double} valueToAccumulate,}
+\DoxyCodeLine{490                                   \textcolor{keyword}{const} \textcolor{keywordtype}{double} energy)}
+\DoxyCodeLine{491         \{}
+\DoxyCodeLine{492         \textcolor{keywordflow}{if} (m\_EnergyResolvedBinSize > 0)}
+\DoxyCodeLine{493           \{}
+\DoxyCodeLine{494           \textcolor{keyword}{const} std::ptrdiff\_t offset = m\_EnergyResolvedSliceSize}
+\DoxyCodeLine{495                                         * itk::Math::Floor<unsigned int>(energy}
+\DoxyCodeLine{496                                                                          / m\_EnergyResolvedBinSize}
+\DoxyCodeLine{497                                                                          + 0.5);}
+\DoxyCodeLine{498           *(\&output + offset + m\_MuToDeltaImageOffset) += valueToAccumulate;}
+\DoxyCodeLine{499           \}}
+\DoxyCodeLine{500         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{501           \{}
+\DoxyCodeLine{502           *(\&output + m\_MuToDeltaImageOffset) += valueToAccumulate;}
+\DoxyCodeLine{503           \}}
+\DoxyCodeLine{504         \}}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506       VectorType m\_VolumeSpacing;}
+\DoxyCodeLine{507       std::vector<double> *m\_InterpolationWeights;}
+\DoxyCodeLine{508       std::vector<double> *m\_EnergyWeightList;}
+\DoxyCodeLine{509       MaterialMuImageType::Pointer m\_MaterialMu;}
+\DoxyCodeLine{510       MaterialDeltaImageType::Pointer m\_MaterialDelta;}
+\DoxyCodeLine{511       VectorType m\_DetectorOrientationTimesPixelSurface;}
+\DoxyCodeLine{512       \textcolor{keywordtype}{double} m\_IntegralOverDetector[ITK\_MAX\_THREADS];}
+\DoxyCodeLine{513       \textcolor{keywordtype}{double} m\_SquaredIntegralOverDetector[ITK\_MAX\_THREADS];}
+\DoxyCodeLine{514       G4int m\_NumberOfPrimaries;}
+\DoxyCodeLine{515       \mbox{\hyperlink{classGateEnergyResponseFunctor}{GateEnergyResponseFunctor}} *m\_ResponseDetector;}
+\DoxyCodeLine{516       std::vector<double> m\_EnergyList;}
+\DoxyCodeLine{517       std::ptrdiff\_t m\_MuToDeltaImageOffset;}
+\DoxyCodeLine{518       \textcolor{keywordtype}{double} m\_EnergyResolvedBinSize;}
+\DoxyCodeLine{519       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_EnergyResolvedSliceSize;}
+\DoxyCodeLine{520       std::vector<std::vector<newPhoton> > m\_PhotonList;}
+\DoxyCodeLine{521       \textcolor{keywordtype}{bool} m\_generatePhotons;}
+\DoxyCodeLine{522       \textcolor{keywordtype}{bool} m\_ARF;}
+\DoxyCodeLine{523       \};}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525     \textcolor{comment}{/* Most of the computation for the primary is done in this functor. After a ray}}
+\DoxyCodeLine{526 \textcolor{comment}{     has been cast, it loops over the energies, computes the ray line integral for}}
+\DoxyCodeLine{527 \textcolor{comment}{     that energy and takes the exponential of the opposite and add. */}}
+\DoxyCodeLine{528     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1PrimaryValueAccumulation}{PrimaryValueAccumulation}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}}}
+\DoxyCodeLine{529       \{}
+\DoxyCodeLine{530     \textcolor{keyword}{public}:}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1PrimaryValueAccumulation}{PrimaryValueAccumulation}}()}
+\DoxyCodeLine{533         \{}
+\DoxyCodeLine{534         \}}
+\DoxyCodeLine{535       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1PrimaryValueAccumulation}{\string~PrimaryValueAccumulation}}()}
+\DoxyCodeLine{536         \{}
+\DoxyCodeLine{537         \}}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{540                              \textcolor{keyword}{const} \textcolor{keywordtype}{float} \&itkNotUsed(input),}
+\DoxyCodeLine{541                              \textcolor{keywordtype}{float} \& output,}
+\DoxyCodeLine{542                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& itkNotUsed(rayCastValue),}
+\DoxyCodeLine{543                              \textcolor{keyword}{const} VectorType \& stepInMM,}
+\DoxyCodeLine{544                              \textcolor{keyword}{const} VectorType \& itkNotUsed(source),}
+\DoxyCodeLine{545                              \textcolor{keyword}{const} VectorType \& sourceToPixel,}
+\DoxyCodeLine{546                              \textcolor{keyword}{const} VectorType \& nearestPoint,}
+\DoxyCodeLine{547                              \textcolor{keyword}{const} VectorType \& farthestPoint)}
+\DoxyCodeLine{548         \{}
+\DoxyCodeLine{549         \textcolor{keywordtype}{double} *p = m\_MaterialMu-\/>GetPixelContainer()-\/>GetBufferPointer();}
+\DoxyCodeLine{550         \textcolor{comment}{/* Multiply interpolation weights by step norm in MM to convert voxel}}
+\DoxyCodeLine{551 \textcolor{comment}{         intersection length to MM. */}}
+\DoxyCodeLine{552         \textcolor{keyword}{const} \textcolor{keywordtype}{double} stepInMMNorm = stepInMM.GetNorm();}
+\DoxyCodeLine{553         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size() -\/ 1; j++)}
+\DoxyCodeLine{554           \{}
+\DoxyCodeLine{555           m\_InterpolationWeights[threadId][j] *= stepInMMNorm;}
+\DoxyCodeLine{556           \}}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558         \textcolor{comment}{/* The last material is the world material. One must fill the weight with}}
+\DoxyCodeLine{559 \textcolor{comment}{         the length from source to nearest point and farthest point to pixel}}
+\DoxyCodeLine{560 \textcolor{comment}{         point. */}}
+\DoxyCodeLine{561         VectorType worldVector = sourceToPixel + nearestPoint -\/ farthestPoint;}
+\DoxyCodeLine{562         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{563           \{}
+\DoxyCodeLine{564           worldVector[i] *= m\_VolumeSpacing[i];}
+\DoxyCodeLine{565           \}}
+\DoxyCodeLine{566         m\_InterpolationWeights[threadId].back() += worldVector.GetNorm();}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568         \textcolor{comment}{/* Loops over energy, multiply weights by mu, accumulate using Beer Lambert */}}
+\DoxyCodeLine{569         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < m\_EnergyWeightList-\/>size(); i++)}
+\DoxyCodeLine{570           \{}
+\DoxyCodeLine{571           \textcolor{keywordtype}{double} rayIntegral = 0.;}
+\DoxyCodeLine{572           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size(); j++)}
+\DoxyCodeLine{573             \{}
+\DoxyCodeLine{574             rayIntegral += m\_InterpolationWeights[threadId][j] * *p++;}
+\DoxyCodeLine{575             \}}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577           \textcolor{comment}{/* Statistical noise added */}}
+\DoxyCodeLine{578           \textcolor{keywordflow}{if} (m\_NumberOfPrimaries != 0)}
+\DoxyCodeLine{579             \{}
+\DoxyCodeLine{580             \textcolor{keywordtype}{double} a = std::exp(-\/rayIntegral);}
+\DoxyCodeLine{581             \textcolor{keywordtype}{double} nprimE = m\_NumberOfPrimaries * (*m\_EnergyWeightList)[i];}
+\DoxyCodeLine{582             \textcolor{keywordtype}{double} n = ((nprimE)?G4Poisson(nprimE*a)/nprimE:0.);}
+\DoxyCodeLine{583             this-\/>Accumulate(threadId,}
+\DoxyCodeLine{584                              output,}
+\DoxyCodeLine{585                              n * (*m\_EnergyWeightList)[i] * (*m\_ResponseDetector)(m\_EnergyList[i] ),}
+\DoxyCodeLine{586                              m\_EnergyList[i]);}
+\DoxyCodeLine{587             \}}
+\DoxyCodeLine{588           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{589             \{}
+\DoxyCodeLine{590             this-\/>Accumulate(threadId,}
+\DoxyCodeLine{591                              output,}
+\DoxyCodeLine{592                              std::exp(-\/rayIntegral) * (*m\_EnergyWeightList)[i],}
+\DoxyCodeLine{593                              m\_EnergyList[i]);}
+\DoxyCodeLine{594             \}}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596           \textcolor{comment}{/* Phase for Fresnel diffraction */}}
+\DoxyCodeLine{597           \textcolor{keywordflow}{if} (m\_MuToDeltaImageOffset != 0)}
+\DoxyCodeLine{598             \{}
+\DoxyCodeLine{599             \textcolor{keywordtype}{double} *q = m\_MaterialDelta-\/>GetPixelContainer()-\/>GetBufferPointer();}
+\DoxyCodeLine{600             \textcolor{keywordtype}{double} rayIntegral = 0.;}
+\DoxyCodeLine{601             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size(); j++)}
+\DoxyCodeLine{602               \{}
+\DoxyCodeLine{603               rayIntegral += m\_InterpolationWeights[threadId][j] * *q++;}
+\DoxyCodeLine{604               \}}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606             \textcolor{comment}{/* Matter wave : for photon, the formula is lambda = hc/E}}
+\DoxyCodeLine{607 \textcolor{comment}{             * https://fr.wikipedia.org/wiki/Hypoth\%C3\%A8se\_de\_De\_Broglie}}
+\DoxyCodeLine{608 \textcolor{comment}{             */}}
+\DoxyCodeLine{609             \textcolor{keywordtype}{double} wavelength = h\_Planck/(eV*s) * c\_light/(m/s) / (m\_EnergyList[i]/eV);}
+\DoxyCodeLine{610             wavelength = wavelength * (m/mm); \textcolor{comment}{// To use the same unit as Geant4}}
+\DoxyCodeLine{611             rayIntegral *= (-\/2*itk::Math::pi/wavelength);}
+\DoxyCodeLine{612             this-\/>AccumulatePhase(output,}
+\DoxyCodeLine{613                                   rayIntegral + std::log((*m\_EnergyWeightList)[i])/2.,}
+\DoxyCodeLine{614                                   m\_EnergyList[i]);}
+\DoxyCodeLine{615             \}}
+\DoxyCodeLine{616           \}}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{618         \textcolor{comment}{/* Reset weights for next ray in thread.*/}}
+\DoxyCodeLine{619         std::fill(m\_InterpolationWeights[threadId].begin(),}
+\DoxyCodeLine{620                   m\_InterpolationWeights[threadId].end(),}
+\DoxyCodeLine{621                   0.);}
+\DoxyCodeLine{622         \}}
+\DoxyCodeLine{623       \};}
+\DoxyCodeLine{624 }
+\DoxyCodeLine{625     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1ComptonValueAccumulation}{ComptonValueAccumulation}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}}}
+\DoxyCodeLine{626       \{}
+\DoxyCodeLine{627     \textcolor{keyword}{public}:}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1ComptonValueAccumulation}{ComptonValueAccumulation}}()}
+\DoxyCodeLine{630         \{}
+\DoxyCodeLine{631         \textcolor{comment}{/* G4 data */}}
+\DoxyCodeLine{632         G4VDataSetAlgorithm* scatterInterpolation = \textcolor{keyword}{new} G4LogLogInterpolation;}
+\DoxyCodeLine{633         G4String scatterFile = \textcolor{stringliteral}{"{}comp/ce-\/sf-\/"{}};}
+\DoxyCodeLine{634         m\_ScatterFunctionData = \textcolor{keyword}{new} G4CompositeEMDataSet(scatterInterpolation, 1., 1.);}
+\DoxyCodeLine{635         m\_ScatterFunctionData-\/>LoadData(scatterFile);}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637         m\_CrossSectionHandler = \textcolor{keyword}{new} G4CrossSectionHandler;}
+\DoxyCodeLine{638         G4String crossSectionFile = \textcolor{stringliteral}{"{}comp/ce-\/cs-\/"{}};}
+\DoxyCodeLine{639         m\_CrossSectionHandler-\/>LoadData(crossSectionFile);}
+\DoxyCodeLine{640         \}}
+\DoxyCodeLine{641       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1ComptonValueAccumulation}{\string~ComptonValueAccumulation}}()}
+\DoxyCodeLine{642         \{}
+\DoxyCodeLine{643         \textcolor{keyword}{delete} m\_ScatterFunctionData;}
+\DoxyCodeLine{644         \textcolor{keyword}{delete} m\_CrossSectionHandler;}
+\DoxyCodeLine{645         \}}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{648                              \textcolor{keyword}{const} \textcolor{keywordtype}{float} \&itkNotUsed(input),}
+\DoxyCodeLine{649                              \textcolor{keywordtype}{float} \&output,}
+\DoxyCodeLine{650                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&itkNotUsed(rayCastValue),}
+\DoxyCodeLine{651                              \textcolor{keyword}{const} VectorType \&stepInMM,}
+\DoxyCodeLine{652                              \textcolor{keyword}{const} VectorType \&itkNotUsed(source),}
+\DoxyCodeLine{653                              \textcolor{keyword}{const} VectorType \&sourceToPixel,}
+\DoxyCodeLine{654                              \textcolor{keyword}{const} VectorType \&nearestPoint,}
+\DoxyCodeLine{655                              \textcolor{keyword}{const} VectorType \&farthestPoint)}
+\DoxyCodeLine{656         \{}
+\DoxyCodeLine{657         \textcolor{comment}{/* Compute ray length in world material}}
+\DoxyCodeLine{658 \textcolor{comment}{         This is used to compute the length in world as well as the direction}}
+\DoxyCodeLine{659 \textcolor{comment}{         of the ray in mm. */}}
+\DoxyCodeLine{660         VectorType worldVector = sourceToPixel + nearestPoint -\/ farthestPoint;}
+\DoxyCodeLine{661         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{662           \{}
+\DoxyCodeLine{663           worldVector[i] *= m\_VolumeSpacing[i];}
+\DoxyCodeLine{664           \}}
+\DoxyCodeLine{665         \textcolor{keyword}{const} \textcolor{keywordtype}{double} worldVectorNorm = worldVector.GetNorm();}
+\DoxyCodeLine{666 }
+\DoxyCodeLine{667         \textcolor{comment}{/* This is taken from G4LivermoreComptonModel.cc */}}
+\DoxyCodeLine{668         \textcolor{keywordtype}{double} cosT = worldVector * m\_Direction / worldVectorNorm;}
+\DoxyCodeLine{669         \textcolor{keywordtype}{double} x = std::sqrt(1. -\/ cosT) * m\_InvWlPhoton; \textcolor{comment}{/* 1-\/cosT=2*sin(T/2)\string^2 */}}
+\DoxyCodeLine{670         \textcolor{keywordtype}{double} scatteringFunction = m\_ScatterFunctionData-\/>FindValue(x, m\_Z -\/ 1);}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672         \textcolor{comment}{/* This is taken from GateDiffCrossSectionActor.cc and simplified */}}
+\DoxyCodeLine{673         \textcolor{keywordtype}{double} Eratio = 1. / (1. + m\_E0m * (1. -\/ cosT));}
+\DoxyCodeLine{674         \textcolor{keywordtype}{double} DCSKleinNishina = m\_eRadiusOverCrossSectionTerm}
+\DoxyCodeLine{675                                  * Eratio}
+\DoxyCodeLine{676                                  * (1. + Eratio * (Eratio -\/ 1. + cosT * cosT));}
+\DoxyCodeLine{677         \textcolor{keywordtype}{double} DCScompton = DCSKleinNishina * scatteringFunction;}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679         \textcolor{comment}{/* Multiply interpolation weights by step norm in MM to convert voxel}}
+\DoxyCodeLine{680 \textcolor{comment}{         intersection length to MM. */}}
+\DoxyCodeLine{681         \textcolor{keyword}{const} \textcolor{keywordtype}{double} stepInMMNorm = stepInMM.GetNorm();}
+\DoxyCodeLine{682         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size() -\/ 1; j++)}
+\DoxyCodeLine{683           \{}
+\DoxyCodeLine{684           m\_InterpolationWeights[threadId][j] *= stepInMMNorm;}
+\DoxyCodeLine{685           \}}
+\DoxyCodeLine{686 }
+\DoxyCodeLine{687         \textcolor{comment}{/* The last material is the world material. One must fill the weight with}}
+\DoxyCodeLine{688 \textcolor{comment}{         the length from farthest point to pixel point. */}}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{690         \textcolor{keywordflow}{if} (!m\_generatePhotons)}
+\DoxyCodeLine{691           \{}
+\DoxyCodeLine{692           m\_InterpolationWeights[threadId].back() = worldVectorNorm;}
+\DoxyCodeLine{693           \}}
+\DoxyCodeLine{694         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{695           \{}
+\DoxyCodeLine{696           m\_InterpolationWeights[threadId].back() = worldVectorNorm;}
+\DoxyCodeLine{697           \}}
+\DoxyCodeLine{698         \textcolor{keyword}{const} \textcolor{keywordtype}{double} energy = Eratio * m\_Energy;}
+\DoxyCodeLine{699         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} e = itk::Math::Round<double, double>(energy / m\_MaterialMu-\/>GetSpacing()[1]);}
+\DoxyCodeLine{700         \textcolor{keywordtype}{double} *p = m\_MaterialMu-\/>GetPixelContainer()-\/>GetBufferPointer()}
+\DoxyCodeLine{701                     + e * m\_MaterialMu-\/>GetLargestPossibleRegion().GetSize()[0];}
+\DoxyCodeLine{702 }
+\DoxyCodeLine{703         \textcolor{comment}{/* Ray integral */}}
+\DoxyCodeLine{704         \textcolor{keywordtype}{double} rayIntegral = 0.;}
+\DoxyCodeLine{705         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size(); j++)}
+\DoxyCodeLine{706           \{}
+\DoxyCodeLine{707           rayIntegral += m\_InterpolationWeights[threadId][j] * *p++;}
+\DoxyCodeLine{708           \}}
+\DoxyCodeLine{709 }
+\DoxyCodeLine{710         \textcolor{comment}{/* Final computation */}}
+\DoxyCodeLine{711         \textcolor{comment}{// double weight = std::exp(-\/rayIntegral) * DCScompton * GetSolidAngle(sourceToPixel) * (*m\_ResponseDetector)(energy);}}
+\DoxyCodeLine{712         \textcolor{keywordtype}{double} weight = std::exp(-\/rayIntegral) * DCScompton * GetSolidAngle(sourceToPixel);}
+\DoxyCodeLine{713         \textcolor{keywordflow}{if} (m\_generatePhotons)}
+\DoxyCodeLine{714           \{}
+\DoxyCodeLine{715           \textcolor{comment}{//Accumulate(threadId, output, weight, m\_Energy);}}
+\DoxyCodeLine{716           VectorType photonDirection;}
+\DoxyCodeLine{717           VectorType photonPosition;}
+\DoxyCodeLine{718           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{719             \{}
+\DoxyCodeLine{720             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{721             photonPosition[i] = farthestPoint[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{722             \}}
+\DoxyCodeLine{723           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, energy);}
+\DoxyCodeLine{724           \}}
+\DoxyCodeLine{725         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_ARF)}
+\DoxyCodeLine{726           \{}
+\DoxyCodeLine{727           VectorType photonDirection;}
+\DoxyCodeLine{728           VectorType photonPosition;}
+\DoxyCodeLine{729           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{730             \{}
+\DoxyCodeLine{731             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{732             photonPosition[i] = sourceToPixel[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{733             \}}
+\DoxyCodeLine{734           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, energy);}
+\DoxyCodeLine{735           \}}
+\DoxyCodeLine{736         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{737           \{}
+\DoxyCodeLine{738           Accumulate(threadId, output, weight * (*m\_ResponseDetector)(energy), energy);}
+\DoxyCodeLine{739           \}}
+\DoxyCodeLine{740 }
+\DoxyCodeLine{741         \textcolor{comment}{/* Reset weights for next ray in thread. */}}
+\DoxyCodeLine{742         std::fill(m\_InterpolationWeights[threadId].begin(),}
+\DoxyCodeLine{743                   m\_InterpolationWeights[threadId].end(),}
+\DoxyCodeLine{744                   0.);}
+\DoxyCodeLine{745         \}}
+\DoxyCodeLine{746 }
+\DoxyCodeLine{747       \textcolor{keywordtype}{void} SetDirection(\textcolor{keyword}{const} VectorType \&\_arg)}
+\DoxyCodeLine{748         \{}
+\DoxyCodeLine{749         m\_Direction = \_arg;}
+\DoxyCodeLine{750         \}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752       \textcolor{keywordtype}{void} SetEnergyZAndWeight(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \&energy, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&Z, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&weight)}
+\DoxyCodeLine{753         \{}
+\DoxyCodeLine{754         m\_Energy = energy;}
+\DoxyCodeLine{755         m\_Weight = weight;}
+\DoxyCodeLine{756         m\_E0m = m\_Energy / electron\_mass\_c2;}
+\DoxyCodeLine{757         m\_InvWlPhoton = std::sqrt(0.5) * cm * m\_Energy / (h\_Planck * c\_light); \textcolor{comment}{/* sqrt(0.5) for trigo reasons, see comment when used */}}
+\DoxyCodeLine{758 }
+\DoxyCodeLine{759         G4double crossSection = m\_CrossSectionHandler-\/>FindValue(Z, energy);}
+\DoxyCodeLine{760         m\_Z = Z;}
+\DoxyCodeLine{761         m\_eRadiusOverCrossSectionTerm = weight * (classic\_electr\_radius * classic\_electr\_radius)}
+\DoxyCodeLine{762                                         / (2. * crossSection);}
+\DoxyCodeLine{763         \}}
+\DoxyCodeLine{764 }
+\DoxyCodeLine{765     \textcolor{keyword}{private}:}
+\DoxyCodeLine{766       VectorType m\_Direction;}
+\DoxyCodeLine{767       \textcolor{keywordtype}{double} m\_Energy;}
+\DoxyCodeLine{768       \textcolor{keywordtype}{double} m\_E0m;}
+\DoxyCodeLine{769       \textcolor{keywordtype}{double} m\_Weight;}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771       \textcolor{keywordtype}{double} m\_InvWlPhoton;}
+\DoxyCodeLine{772       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Z;}
+\DoxyCodeLine{773       \textcolor{keywordtype}{double} m\_eRadiusOverCrossSectionTerm;}
+\DoxyCodeLine{774       \textcolor{comment}{/* Compton data */}}
+\DoxyCodeLine{775       G4VEMDataSet* m\_ScatterFunctionData;}
+\DoxyCodeLine{776       G4VCrossSectionHandler* m\_CrossSectionHandler;}
+\DoxyCodeLine{777       \};}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1RayleighValueAccumulation}{RayleighValueAccumulation}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}}}
+\DoxyCodeLine{780       \{}
+\DoxyCodeLine{781     \textcolor{keyword}{public}:}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1RayleighValueAccumulation}{RayleighValueAccumulation}}()}
+\DoxyCodeLine{784         \{}
+\DoxyCodeLine{785         \textcolor{comment}{/* G4 data */}}
+\DoxyCodeLine{786         G4VDataSetAlgorithm* ffInterpolation = \textcolor{keyword}{new} G4LogLogInterpolation;}
+\DoxyCodeLine{787         G4String formFactorFile = \textcolor{stringliteral}{"{}rayl/re-\/ff-\/"{}};}
+\DoxyCodeLine{788         m\_FormFactorData = \textcolor{keyword}{new} G4CompositeEMDataSet(ffInterpolation, 1., 1.);}
+\DoxyCodeLine{789         m\_FormFactorData-\/>LoadData(formFactorFile);}
+\DoxyCodeLine{790         m\_CrossSectionHandler = \textcolor{keyword}{new} G4CrossSectionHandler;}
+\DoxyCodeLine{791         G4String crossSectionFile = \textcolor{stringliteral}{"{}rayl/re-\/cs-\/"{}};}
+\DoxyCodeLine{792         m\_CrossSectionHandler-\/>LoadData(crossSectionFile);}
+\DoxyCodeLine{793         \}}
+\DoxyCodeLine{794       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1RayleighValueAccumulation}{\string~RayleighValueAccumulation}}()}
+\DoxyCodeLine{795         \{}
+\DoxyCodeLine{796         \textcolor{keyword}{delete} m\_FormFactorData;}
+\DoxyCodeLine{797         \textcolor{keyword}{delete} m\_CrossSectionHandler;}
+\DoxyCodeLine{798         \}}
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{801                              \textcolor{keyword}{const} \textcolor{keywordtype}{float} \& itkNotUsed(input),}
+\DoxyCodeLine{802                              \textcolor{keywordtype}{float} \& output,}
+\DoxyCodeLine{803                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& itkNotUsed(rayCastValue),}
+\DoxyCodeLine{804                              \textcolor{keyword}{const} VectorType \& stepInMM,}
+\DoxyCodeLine{805                              \textcolor{keyword}{const} VectorType \& itkNotUsed(source),}
+\DoxyCodeLine{806                              \textcolor{keyword}{const} VectorType \& sourceToPixel,}
+\DoxyCodeLine{807                              \textcolor{keyword}{const} VectorType \& nearestPoint,}
+\DoxyCodeLine{808                              \textcolor{keyword}{const} VectorType \& farthestPoint)}
+\DoxyCodeLine{809         \{}
+\DoxyCodeLine{810         \textcolor{comment}{/* Compute ray length in world material. This is used to compute the length in world as well as the direction of the ray in mm. */}}
+\DoxyCodeLine{811         VectorType worldVector = sourceToPixel + nearestPoint -\/ farthestPoint;}
+\DoxyCodeLine{812         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{813           \{}
+\DoxyCodeLine{814           worldVector[i] *= m\_VolumeSpacing[i];}
+\DoxyCodeLine{815 }
+\DoxyCodeLine{816           \}}
+\DoxyCodeLine{817 }
+\DoxyCodeLine{818         \textcolor{keyword}{const} \textcolor{keywordtype}{double} worldVectorNorm = worldVector.GetNorm();}
+\DoxyCodeLine{819 }
+\DoxyCodeLine{820         \textcolor{comment}{/* This is taken from GateDiffCrossSectionActor.cc and simplified */}}
+\DoxyCodeLine{821         \textcolor{keywordtype}{double} cosT = worldVector * m\_Direction / worldVectorNorm;}
+\DoxyCodeLine{822         \textcolor{keywordtype}{double} DCSThomsonTerm1 = (1 + cosT * cosT);}
+\DoxyCodeLine{823         \textcolor{keywordtype}{double} DCSThomson = m\_eRadiusOverCrossSectionTerm * DCSThomsonTerm1;}
+\DoxyCodeLine{824         \textcolor{keywordtype}{double} x = std::sqrt(1. -\/ cosT) * m\_InvWlPhoton; \textcolor{comment}{/* 1-\/cosT=2*sin(T/2)\string^2 */}}
+\DoxyCodeLine{825         \textcolor{keywordtype}{double} formFactor = m\_FormFactorData-\/>FindValue(x, m\_Z -\/ 1);}
+\DoxyCodeLine{826         \textcolor{keywordtype}{double} DCSrayleigh = DCSThomson * formFactor * formFactor;}
+\DoxyCodeLine{827 }
+\DoxyCodeLine{828         \textcolor{comment}{/* Multiply interpolation weights by step norm in MM to convert voxel}}
+\DoxyCodeLine{829 \textcolor{comment}{         intersection length to MM. */}}
+\DoxyCodeLine{830         \textcolor{keyword}{const} \textcolor{keywordtype}{double} stepInMMNorm = stepInMM.GetNorm();}
+\DoxyCodeLine{831         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size() -\/ 1; j++)}
+\DoxyCodeLine{832           \{}
+\DoxyCodeLine{833           m\_InterpolationWeights[threadId][j] *= stepInMMNorm;}
+\DoxyCodeLine{834           \}}
+\DoxyCodeLine{835 }
+\DoxyCodeLine{836         \textcolor{comment}{/* The last material is the world material. One must fill the weight with}}
+\DoxyCodeLine{837 \textcolor{comment}{         the length from farthest point to pixel point. */}}
+\DoxyCodeLine{838         m\_InterpolationWeights[threadId].back() = worldVectorNorm;}
+\DoxyCodeLine{839 }
+\DoxyCodeLine{840         \textcolor{comment}{/* Ray integral */}}
+\DoxyCodeLine{841         \textcolor{keywordtype}{double} rayIntegral = 0.;}
+\DoxyCodeLine{842         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size(); j++)}
+\DoxyCodeLine{843           \{}
+\DoxyCodeLine{844           rayIntegral += m\_InterpolationWeights[threadId][j] * *(m\_MaterialMuPointer + j);}
+\DoxyCodeLine{845           \}}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847         \textcolor{comment}{/* Final computation */}}
+\DoxyCodeLine{848         \textcolor{keywordtype}{double} weight = std::exp(-\/rayIntegral) * DCSrayleigh * GetSolidAngle(sourceToPixel);}
+\DoxyCodeLine{849         \textcolor{keywordflow}{if} (m\_generatePhotons)}
+\DoxyCodeLine{850           \{}
+\DoxyCodeLine{851           VectorType photonDirection;}
+\DoxyCodeLine{852           VectorType photonPosition;}
+\DoxyCodeLine{853           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{854             \{}
+\DoxyCodeLine{855             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{856             photonPosition[i] = farthestPoint[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{857             \}}
+\DoxyCodeLine{858           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, m\_Energy);}
+\DoxyCodeLine{859           \}}
+\DoxyCodeLine{860         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_ARF)}
+\DoxyCodeLine{861           \{}
+\DoxyCodeLine{862           VectorType photonDirection;}
+\DoxyCodeLine{863           VectorType photonPosition;}
+\DoxyCodeLine{864           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{865             \{}
+\DoxyCodeLine{866             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{867             photonPosition[i] = sourceToPixel[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{868             \}}
+\DoxyCodeLine{869           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, m\_Energy);}
+\DoxyCodeLine{870           \}}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{873           \{}
+\DoxyCodeLine{874           Accumulate(threadId, output, weight, m\_Energy);}
+\DoxyCodeLine{875           \}}
+\DoxyCodeLine{876 }
+\DoxyCodeLine{877         \textcolor{comment}{/* Reset weights for next ray in thread. */}}
+\DoxyCodeLine{878         std::fill(m\_InterpolationWeights[threadId].begin(),}
+\DoxyCodeLine{879                   m\_InterpolationWeights[threadId].end(),}
+\DoxyCodeLine{880                   0.);}
+\DoxyCodeLine{881         \}}
+\DoxyCodeLine{882 }
+\DoxyCodeLine{883       \textcolor{keywordtype}{void} SetDirection(\textcolor{keyword}{const} VectorType \&\_arg)}
+\DoxyCodeLine{884         \{}
+\DoxyCodeLine{885         m\_Direction = \_arg;}
+\DoxyCodeLine{886         \}}
+\DoxyCodeLine{887       \textcolor{keywordtype}{void} SetEnergyZAndWeight(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& energy, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& Z, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& weight)}
+\DoxyCodeLine{888         \{}
+\DoxyCodeLine{889         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} e = itk::Math::Round<double, double>(energy / m\_MaterialMu-\/>GetSpacing()[1]);}
+\DoxyCodeLine{890         m\_InvWlPhoton = std::sqrt(0.5) * cm * energy / (h\_Planck * c\_light); \textcolor{comment}{// sqrt(0.5) for trigo reasons, see comment when used}}
+\DoxyCodeLine{891         m\_Energy = energy;}
+\DoxyCodeLine{892         m\_Weight = weight;}
+\DoxyCodeLine{893         m\_MaterialMuPointer = m\_MaterialMu-\/>GetPixelContainer()-\/>GetBufferPointer();}
+\DoxyCodeLine{894         m\_MaterialMuPointer += e * m\_MaterialMu-\/>GetLargestPossibleRegion().GetSize()[0];}
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896         G4double crossSection = m\_CrossSectionHandler-\/>FindValue(Z, energy);}
+\DoxyCodeLine{897         m\_Z = Z;}
+\DoxyCodeLine{898         m\_eRadiusOverCrossSectionTerm = weight * (classic\_electr\_radius * classic\_electr\_radius)}
+\DoxyCodeLine{899                                         / (2. * crossSection);}
+\DoxyCodeLine{900         \}}
+\DoxyCodeLine{901 }
+\DoxyCodeLine{902     \textcolor{keyword}{private}:}
+\DoxyCodeLine{903       VectorType m\_Direction;}
+\DoxyCodeLine{904       \textcolor{keywordtype}{double} *m\_MaterialMuPointer;}
+\DoxyCodeLine{905       \textcolor{keywordtype}{double} m\_InvWlPhoton;}
+\DoxyCodeLine{906       \textcolor{keywordtype}{double} m\_Weight;}
+\DoxyCodeLine{907       \textcolor{keywordtype}{double} m\_Energy;}
+\DoxyCodeLine{908       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Z;}
+\DoxyCodeLine{909       \textcolor{keywordtype}{double} m\_eRadiusOverCrossSectionTerm;}
+\DoxyCodeLine{910 }
+\DoxyCodeLine{911       \textcolor{comment}{/* G4 data */}}
+\DoxyCodeLine{912       G4VEMDataSet* m\_FormFactorData;}
+\DoxyCodeLine{913       G4VCrossSectionHandler* m\_CrossSectionHandler;}
+\DoxyCodeLine{914       \};}
+\DoxyCodeLine{915 }
+\DoxyCodeLine{916     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1FluorescenceValueAccumulation}{FluorescenceValueAccumulation}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}}}
+\DoxyCodeLine{917       \{}
+\DoxyCodeLine{918     \textcolor{keyword}{public}:}
+\DoxyCodeLine{919 }
+\DoxyCodeLine{920       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1FluorescenceValueAccumulation}{FluorescenceValueAccumulation}}()}
+\DoxyCodeLine{921         \{}
+\DoxyCodeLine{922         \}}
+\DoxyCodeLine{923       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1FluorescenceValueAccumulation}{\string~FluorescenceValueAccumulation}}()}
+\DoxyCodeLine{924         \{}
+\DoxyCodeLine{925         \}}
+\DoxyCodeLine{926 }
+\DoxyCodeLine{927       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{928                              \textcolor{keyword}{const} \textcolor{keywordtype}{float} \& itkNotUsed(input),}
+\DoxyCodeLine{929                              \textcolor{keywordtype}{float} \& output,}
+\DoxyCodeLine{930                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&itkNotUsed(rayCastValue),}
+\DoxyCodeLine{931                              \textcolor{keyword}{const} VectorType \& stepInMM,}
+\DoxyCodeLine{932                              \textcolor{keyword}{const} VectorType \& itkNotUsed(source),}
+\DoxyCodeLine{933                              \textcolor{keyword}{const} VectorType \& sourceToPixel,}
+\DoxyCodeLine{934                              \textcolor{keyword}{const} VectorType \& nearestPoint,}
+\DoxyCodeLine{935                              \textcolor{keyword}{const} VectorType \& farthestPoint)}
+\DoxyCodeLine{936         \{}
+\DoxyCodeLine{937         \textcolor{comment}{/* Compute ray length in world material}}
+\DoxyCodeLine{938 \textcolor{comment}{         This is used to compute the length in world as well as the direction}}
+\DoxyCodeLine{939 \textcolor{comment}{         of the ray in mm. */}}
+\DoxyCodeLine{940         VectorType worldVector = sourceToPixel + nearestPoint -\/ farthestPoint;}
+\DoxyCodeLine{941         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{942           \{}
+\DoxyCodeLine{943           worldVector[i] *= m\_VolumeSpacing[i];}
+\DoxyCodeLine{944           \}}
+\DoxyCodeLine{945         \textcolor{keyword}{const} \textcolor{keywordtype}{double} worldVectorNorm = worldVector.GetNorm();}
+\DoxyCodeLine{946 }
+\DoxyCodeLine{947         \textcolor{comment}{/* Multiply interpolation weights by step norm in MM to convert voxel}}
+\DoxyCodeLine{948 \textcolor{comment}{         intersection length to MM. */}}
+\DoxyCodeLine{949         \textcolor{keyword}{const} \textcolor{keywordtype}{double} stepInMMNorm = stepInMM.GetNorm();}
+\DoxyCodeLine{950         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size() -\/ 1; j++)}
+\DoxyCodeLine{951           \{}
+\DoxyCodeLine{952           m\_InterpolationWeights[threadId][j] *= stepInMMNorm;}
+\DoxyCodeLine{953           \}}
+\DoxyCodeLine{954 }
+\DoxyCodeLine{955         \textcolor{comment}{/* The last material is the world material. One must fill the weight with}}
+\DoxyCodeLine{956 \textcolor{comment}{         the length from farthest point to pixel point. */}}
+\DoxyCodeLine{957         m\_InterpolationWeights[threadId].back() = worldVectorNorm;}
+\DoxyCodeLine{958 }
+\DoxyCodeLine{959         \textcolor{comment}{/* Ray integral */}}
+\DoxyCodeLine{960         \textcolor{keywordtype}{double} rayIntegral = 0.;}
+\DoxyCodeLine{961         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size(); j++)}
+\DoxyCodeLine{962           \{}
+\DoxyCodeLine{963           rayIntegral += m\_InterpolationWeights[threadId][j] * *(m\_MaterialMuPointer + j);}
+\DoxyCodeLine{964           \}}
+\DoxyCodeLine{965 }
+\DoxyCodeLine{966         \textcolor{comment}{/* Final computation */}}
+\DoxyCodeLine{967         \textcolor{keywordtype}{double} weight = m\_Weight * std::exp(-\/rayIntegral)*GetSolidAngle(sourceToPixel)/(4*itk::Math::pi);}
+\DoxyCodeLine{968         \textcolor{keywordflow}{if} (m\_generatePhotons)}
+\DoxyCodeLine{969           \{}
+\DoxyCodeLine{970           VectorType photonDirection;}
+\DoxyCodeLine{971           VectorType photonPosition;}
+\DoxyCodeLine{972           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{973             \{}
+\DoxyCodeLine{974             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{975             photonPosition[i] = farthestPoint[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{976             \}}
+\DoxyCodeLine{977           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, m\_Energy);}
+\DoxyCodeLine{978           \}}
+\DoxyCodeLine{979         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_ARF)}
+\DoxyCodeLine{980           \{}
+\DoxyCodeLine{981           VectorType photonDirection;}
+\DoxyCodeLine{982           VectorType photonPosition;}
+\DoxyCodeLine{983           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{984             \{}
+\DoxyCodeLine{985             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{986             photonPosition[i] = sourceToPixel[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{987             \}}
+\DoxyCodeLine{988           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, m\_Energy);}
+\DoxyCodeLine{989           \}}
+\DoxyCodeLine{990 }
+\DoxyCodeLine{991         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{992           \{}
+\DoxyCodeLine{993           Accumulate(threadId, output, weight, m\_Energy);}
+\DoxyCodeLine{994           \}}
+\DoxyCodeLine{995         \textcolor{comment}{/* Reset weights for next ray in thread. */}}
+\DoxyCodeLine{996         std::fill(m\_InterpolationWeights[threadId].begin(),}
+\DoxyCodeLine{997                   m\_InterpolationWeights[threadId].end(),}
+\DoxyCodeLine{998                   0.);}
+\DoxyCodeLine{999 }
+\DoxyCodeLine{1000         \}}
+\DoxyCodeLine{1001 }
+\DoxyCodeLine{1002       \textcolor{keywordtype}{void} SetDirection(\textcolor{keyword}{const} VectorType \&itkNotUsed(\_arg))}
+\DoxyCodeLine{1003         \{}
+\DoxyCodeLine{1004         \}}
+\DoxyCodeLine{1005       \textcolor{keywordtype}{void} SetEnergyZAndWeight(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \&energy,}
+\DoxyCodeLine{1006                                \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&itkNotUsed(Z),}
+\DoxyCodeLine{1007                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&weight)}
+\DoxyCodeLine{1008         \{}
+\DoxyCodeLine{1009         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} e = itk::Math::Round<double, double>(energy / m\_MaterialMu-\/>GetSpacing()[1]);}
+\DoxyCodeLine{1010         m\_Weight = weight;}
+\DoxyCodeLine{1011         m\_Energy = energy;}
+\DoxyCodeLine{1012         m\_MaterialMuPointer = m\_MaterialMu-\/>GetPixelContainer()-\/>GetBufferPointer();}
+\DoxyCodeLine{1013         m\_MaterialMuPointer += e * m\_MaterialMu-\/>GetLargestPossibleRegion().GetSize()[0];}
+\DoxyCodeLine{1014         \}}
+\DoxyCodeLine{1015 }
+\DoxyCodeLine{1016     \textcolor{keyword}{private}:}
+\DoxyCodeLine{1017       \textcolor{keywordtype}{double} *m\_MaterialMuPointer;}
+\DoxyCodeLine{1018       \textcolor{keywordtype}{double} m\_Weight;}
+\DoxyCodeLine{1019       \textcolor{keywordtype}{double} m\_Energy;}
+\DoxyCodeLine{1020       \};}
+\DoxyCodeLine{1021 }
+\DoxyCodeLine{1022     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1IsotropicPrimaryValueAccumulation}{IsotropicPrimaryValueAccumulation}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1VAccumulation}{VAccumulation}}}
+\DoxyCodeLine{1023       \{}
+\DoxyCodeLine{1024     \textcolor{keyword}{public}:}
+\DoxyCodeLine{1025 }
+\DoxyCodeLine{1026       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1IsotropicPrimaryValueAccumulation}{IsotropicPrimaryValueAccumulation}}()}
+\DoxyCodeLine{1027         \{}
+\DoxyCodeLine{1028         \}}
+\DoxyCodeLine{1029       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1IsotropicPrimaryValueAccumulation}{\string~IsotropicPrimaryValueAccumulation}}()}
+\DoxyCodeLine{1030         \{}
+\DoxyCodeLine{1031         \}}
+\DoxyCodeLine{1032 }
+\DoxyCodeLine{1033       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} rtk::ThreadIdType threadId,}
+\DoxyCodeLine{1034                              \textcolor{keyword}{const} \textcolor{keywordtype}{float} \& itkNotUsed(input),}
+\DoxyCodeLine{1035                              \textcolor{keywordtype}{float} \& output,}
+\DoxyCodeLine{1036                              \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& itkNotUsed(rayCastValue),}
+\DoxyCodeLine{1037                              \textcolor{keyword}{const} VectorType \& stepInMM,}
+\DoxyCodeLine{1038                              \textcolor{keyword}{const} VectorType \& itkNotUsed(source),}
+\DoxyCodeLine{1039                              \textcolor{keyword}{const} VectorType \& sourceToPixel,}
+\DoxyCodeLine{1040                              \textcolor{keyword}{const} VectorType \& nearestPoint,}
+\DoxyCodeLine{1041                              \textcolor{keyword}{const} VectorType \& farthestPoint)}
+\DoxyCodeLine{1042         \{}
+\DoxyCodeLine{1043         \textcolor{comment}{/* Compute ray length in world material}}
+\DoxyCodeLine{1044 \textcolor{comment}{         This is used to compute the length in world as well as the direction}}
+\DoxyCodeLine{1045 \textcolor{comment}{         of the ray in mm. */}}
+\DoxyCodeLine{1046         VectorType worldVector = sourceToPixel + nearestPoint -\/ farthestPoint;}
+\DoxyCodeLine{1047         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{1048           \{}
+\DoxyCodeLine{1049           worldVector[i] *= m\_VolumeSpacing[i];}
+\DoxyCodeLine{1050           \}}
+\DoxyCodeLine{1051         \textcolor{keyword}{const} \textcolor{keywordtype}{double} worldVectorNorm = worldVector.GetNorm();}
+\DoxyCodeLine{1052 }
+\DoxyCodeLine{1053         \textcolor{comment}{/* Multiply interpolation weights by step norm in MM to convert voxel}}
+\DoxyCodeLine{1054 \textcolor{comment}{         intersection length to MM. */}}
+\DoxyCodeLine{1055         \textcolor{keyword}{const} \textcolor{keywordtype}{double} stepInMMNorm = stepInMM.GetNorm();}
+\DoxyCodeLine{1056         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size() -\/ 1; j++)}
+\DoxyCodeLine{1057           \{}
+\DoxyCodeLine{1058           m\_InterpolationWeights[threadId][j] *= stepInMMNorm;}
+\DoxyCodeLine{1059           \}}
+\DoxyCodeLine{1060 }
+\DoxyCodeLine{1061         \textcolor{comment}{/* The last material is the world material. One must fill the weight with}}
+\DoxyCodeLine{1062 \textcolor{comment}{         the length from farthest point to pixel point. */}}
+\DoxyCodeLine{1063 }
+\DoxyCodeLine{1064         \textcolor{keywordflow}{if} (!m\_generatePhotons)}
+\DoxyCodeLine{1065           \{}
+\DoxyCodeLine{1066           m\_InterpolationWeights[threadId].back() = worldVectorNorm;}
+\DoxyCodeLine{1067           \}}
+\DoxyCodeLine{1068         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1069           \{}
+\DoxyCodeLine{1070           m\_InterpolationWeights[threadId].back() = 0;}
+\DoxyCodeLine{1071           \}}
+\DoxyCodeLine{1072         \textcolor{comment}{/* Ray integral */}}
+\DoxyCodeLine{1073         \textcolor{keywordtype}{double} rayIntegral = 0.;}
+\DoxyCodeLine{1074         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < m\_InterpolationWeights[threadId].size(); j++)}
+\DoxyCodeLine{1075           \{}
+\DoxyCodeLine{1076           rayIntegral += m\_InterpolationWeights[threadId][j] * *(m\_MaterialMuPointer + j);}
+\DoxyCodeLine{1077           \}}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1079         \textcolor{comment}{/* Final computation */}}
+\DoxyCodeLine{1080         \textcolor{keywordtype}{double} weight = m\_Weight * std::exp(-\/rayIntegral)*GetSolidAngle(sourceToPixel)/(4*itk::Math::pi);}
+\DoxyCodeLine{1081         \textcolor{keywordflow}{if} (m\_generatePhotons)}
+\DoxyCodeLine{1082           \{}
+\DoxyCodeLine{1083           VectorType photonDirection;}
+\DoxyCodeLine{1084           VectorType photonPosition;}
+\DoxyCodeLine{1085           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{1086             \{}
+\DoxyCodeLine{1087             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{1088             photonPosition[i] = farthestPoint[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{1089             \}}
+\DoxyCodeLine{1090           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, m\_Energy);}
+\DoxyCodeLine{1091           \}}
+\DoxyCodeLine{1092         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m\_ARF)}
+\DoxyCodeLine{1093           \{}
+\DoxyCodeLine{1094           VectorType photonDirection;}
+\DoxyCodeLine{1095           VectorType photonPosition;}
+\DoxyCodeLine{1096           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{1097             \{}
+\DoxyCodeLine{1098             photonDirection[i] = worldVector[i] / worldVectorNorm;}
+\DoxyCodeLine{1099             photonPosition[i] = sourceToPixel[i] * m\_VolumeSpacing[i];}
+\DoxyCodeLine{1100             \}}
+\DoxyCodeLine{1101           SavePhotonsparameters(threadId, photonPosition, photonDirection, weight, m\_Energy);}
+\DoxyCodeLine{1102           \}}
+\DoxyCodeLine{1103 }
+\DoxyCodeLine{1104         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1105           \{}
+\DoxyCodeLine{1106           Accumulate(threadId, output, weight, m\_Energy);}
+\DoxyCodeLine{1107           \}}
+\DoxyCodeLine{1108 }
+\DoxyCodeLine{1109         \textcolor{comment}{/* Reset weights for next ray in thread. */}}
+\DoxyCodeLine{1110         std::fill(m\_InterpolationWeights[threadId].begin(),}
+\DoxyCodeLine{1111                   m\_InterpolationWeights[threadId].end(),}
+\DoxyCodeLine{1112                   0.);}
+\DoxyCodeLine{1113         \}}
+\DoxyCodeLine{1114 }
+\DoxyCodeLine{1115       \textcolor{keywordtype}{void} SetDirection(\textcolor{keyword}{const} VectorType \&itkNotUsed(\_arg))}
+\DoxyCodeLine{1116         \{}
+\DoxyCodeLine{1117         \}}
+\DoxyCodeLine{1118       \textcolor{keywordtype}{void} SetEnergyZAndWeight(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& energy,}
+\DoxyCodeLine{1119                                \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&itkNotUsed(Z),}
+\DoxyCodeLine{1120                                \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& weight)}
+\DoxyCodeLine{1121         \{}
+\DoxyCodeLine{1122         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} e = itk::Math::Round<double, double>(energy / m\_MaterialMu-\/>GetSpacing()[1]);}
+\DoxyCodeLine{1123         m\_Weight = weight;}
+\DoxyCodeLine{1124         m\_Energy = energy;}
+\DoxyCodeLine{1125         m\_MaterialMuPointer = m\_MaterialMu-\/>GetPixelContainer()-\/>GetBufferPointer();}
+\DoxyCodeLine{1126         m\_MaterialMuPointer += e * m\_MaterialMu-\/>GetLargestPossibleRegion().GetSize()[0];}
+\DoxyCodeLine{1127         \}}
+\DoxyCodeLine{1128 }
+\DoxyCodeLine{1129     \textcolor{keyword}{private}:}
+\DoxyCodeLine{1130       \textcolor{keywordtype}{double} *m\_MaterialMuPointer;}
+\DoxyCodeLine{1131       \textcolor{keywordtype}{double} m\_Weight;}
+\DoxyCodeLine{1132       \textcolor{keywordtype}{double} m\_Energy;}
+\DoxyCodeLine{1133       \};}
+\DoxyCodeLine{1134 }
+\DoxyCodeLine{1135     \textcolor{keyword}{template}<\textcolor{keyword}{class} TInput1, \textcolor{keyword}{class} TInput2 = TInput1, \textcolor{keyword}{class} TOutput = TInput1>}
+\DoxyCodeLine{1136     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Attenuation}{Attenuation}}}
+\DoxyCodeLine{1137       \{}
+\DoxyCodeLine{1138     \textcolor{keyword}{public}:}
+\DoxyCodeLine{1139       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Attenuation}{Attenuation}}()}
+\DoxyCodeLine{1140         \{}
+\DoxyCodeLine{1141         \}}
+\DoxyCodeLine{1142       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Attenuation}{\string~Attenuation}}()}
+\DoxyCodeLine{1143         \{}
+\DoxyCodeLine{1144         \}}
+\DoxyCodeLine{1145       \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Attenuation}{Attenuation}} \&)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1146 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1147         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{1148         \}}
+\DoxyCodeLine{1149 }
+\DoxyCodeLine{1150       \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Attenuation}{Attenuation}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1151 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1152         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} != other);}
+\DoxyCodeLine{1153         \}}
+\DoxyCodeLine{1154 }
+\DoxyCodeLine{1155       \textcolor{keyword}{inline} TOutput operator()(\textcolor{keyword}{const} TInput1 A, \textcolor{keyword}{const} TInput2 B)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1156 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1157         \textcolor{comment}{/* Calculating attenuation image (-\/log(primaryImage/flatFieldImage)) */}}
+\DoxyCodeLine{1158         \textcolor{keywordflow}{return} (TOutput) (-\/log(A / B));}
+\DoxyCodeLine{1159         \}}
+\DoxyCodeLine{1160       \};}
+\DoxyCodeLine{1161 }
+\DoxyCodeLine{1162     \textcolor{keyword}{template}<\textcolor{keyword}{class} TInput1, \textcolor{keyword}{class} TInput2 = TInput1, \textcolor{keyword}{class} TOutput = TInput1>}
+\DoxyCodeLine{1163     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Chetty}{Chetty}}}
+\DoxyCodeLine{1164       \{}
+\DoxyCodeLine{1165     \textcolor{keyword}{public}:}
+\DoxyCodeLine{1166       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Chetty}{Chetty}}()}
+\DoxyCodeLine{1167         \{}
+\DoxyCodeLine{1168         \}}
+\DoxyCodeLine{1169       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Chetty}{\string~Chetty}}()}
+\DoxyCodeLine{1170         \{}
+\DoxyCodeLine{1171         \}}
+\DoxyCodeLine{1172       \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Chetty}{Chetty}} \&)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1173 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1174         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{1175         \}}
+\DoxyCodeLine{1176 }
+\DoxyCodeLine{1177       \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Chetty}{Chetty}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1178 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1179         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} != other);}
+\DoxyCodeLine{1180         \}}
+\DoxyCodeLine{1181 }
+\DoxyCodeLine{1182       \textcolor{keywordtype}{void} SetN(\textcolor{keywordtype}{double} N)}
+\DoxyCodeLine{1183         \{}
+\DoxyCodeLine{1184         m\_invN = 1 / N;}
+\DoxyCodeLine{1185         m\_invNm1 = 1 / (N -\/ 1);}
+\DoxyCodeLine{1186         \}}
+\DoxyCodeLine{1187 }
+\DoxyCodeLine{1188       \textcolor{keyword}{inline} TOutput operator()(\textcolor{keyword}{const} TInput1 sum, \textcolor{keyword}{const} TInput2 squaredSum)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1189 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1190         \textcolor{comment}{/* Chetty, IJROBP, 2006, p1250, eq 2 */}}
+\DoxyCodeLine{1191         \textcolor{keywordflow}{return} sqrt(m\_invNm1 * (squaredSum * m\_invN -\/ pow(sum * m\_invN, 2.))) / (sum * m\_invN);}
+\DoxyCodeLine{1192         \}}
+\DoxyCodeLine{1193     \textcolor{keyword}{private}:}
+\DoxyCodeLine{1194       \textcolor{keywordtype}{double} m\_invN;}
+\DoxyCodeLine{1195       \textcolor{keywordtype}{double} m\_invNm1;}
+\DoxyCodeLine{1196       \};}
+\DoxyCodeLine{1197 }
+\DoxyCodeLine{1198     \textcolor{keyword}{template}<\textcolor{keyword}{class} TInput1, \textcolor{keyword}{class} TInput2 = TInput1, \textcolor{keyword}{class} TOutput = std::complex<TInput1>>}
+\DoxyCodeLine{1199     \textcolor{keyword}{class }\mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Transmittance}{Transmittance}}}
+\DoxyCodeLine{1200       \{}
+\DoxyCodeLine{1201     \textcolor{keyword}{public}:}
+\DoxyCodeLine{1202       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Transmittance}{Transmittance}}()}
+\DoxyCodeLine{1203         \{}
+\DoxyCodeLine{1204         \}}
+\DoxyCodeLine{1205       \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Transmittance}{\string~Transmittance}}()}
+\DoxyCodeLine{1206         \{}
+\DoxyCodeLine{1207         \}}
+\DoxyCodeLine{1208       \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Transmittance}{Transmittance}} \&)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1209 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1210         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{1211         \}}
+\DoxyCodeLine{1212 }
+\DoxyCodeLine{1213       \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classGateFixedForcedDetectionFunctor_1_1Transmittance}{Transmittance}} \& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1214 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1215         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} != other);}
+\DoxyCodeLine{1216         \}}
+\DoxyCodeLine{1217 }
+\DoxyCodeLine{1218       \textcolor{keyword}{inline} TOutput operator()(\textcolor{keyword}{const} TInput1 A, \textcolor{keyword}{const} TInput2 B)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1219 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{1220         \textcolor{comment}{/* Calculate transmittance */}}
+\DoxyCodeLine{1221         std::complex<TInput1> amp = std::complex<TInput1>(std::sqrt(A), 0.);  \textcolor{comment}{// Amplitude}}
+\DoxyCodeLine{1222         std::complex<TInput1> pt = std::exp(std::complex<TInput1>(0., B));  \textcolor{comment}{// Phase Transition}}
+\DoxyCodeLine{1223         \textcolor{keywordflow}{return} (TOutput) (amp*pt);}
+\DoxyCodeLine{1224         \}}
+\DoxyCodeLine{1225       \};}
+\DoxyCodeLine{1226 }
+\DoxyCodeLine{1227   \}}
+\DoxyCodeLine{1228 }
+\DoxyCodeLine{1229 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GATEFIXEDFORCEDDETECTIONACTORFUNCTORS\_HH}}
+
+\end{DoxyCode}

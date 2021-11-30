@@ -1,0 +1,67 @@
+\hypertarget{GateEmittedGammaInformation_8hh_source}{}\doxysection{Gate\+Emitted\+Gamma\+Information.\+hh}
+\label{GateEmittedGammaInformation_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateEmittedGammaInformation.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateEmittedGammaInformation.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef GateEmittedGammaInformation\_hh}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define GateEmittedGammaInformation\_hh}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4VUserPrimaryParticleInformation.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEmittedGammaInformation}{GateEmittedGammaInformation}} : \textcolor{keyword}{public} G4VUserPrimaryParticleInformation}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20  \textcolor{keyword}{public}:}
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateEmittedGammaInformation_a91122904a281b2841f63600ab20b8523}{GateEmittedGammaInformation}}();}
+\DoxyCodeLine{22   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEmittedGammaInformation}{\string~GateEmittedGammaInformation}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{28   \textcolor{keyword}{enum} \mbox{\hyperlink{classGateEmittedGammaInformation_a6a6148427f4e1c5bde31d0f5f5a36448}{SourceKind}}}
+\DoxyCodeLine{29   \{}
+\DoxyCodeLine{30    NotDefined = 0, \textcolor{comment}{// by default}}
+\DoxyCodeLine{31    SingleGammaEmitter = 1, \textcolor{comment}{// just emitted single gamma with specfic energy ( by class GateGammaEmissionModel )}}
+\DoxyCodeLine{32    ParaPositronium = 2, \textcolor{comment}{// 2 gammas ( plus prompt if it is required ) from pPs decay ( by GatePositroniumDecayModel )}}
+\DoxyCodeLine{33    OrthoPositronium = 3 \textcolor{comment}{// 3 gammas ( plus prompt if it is required ) from oPs decay ( by GatePositroniumDecayModel )}}
+\DoxyCodeLine{34   \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{38   \textcolor{keyword}{enum} \mbox{\hyperlink{classGateEmittedGammaInformation_ae0fc8b6d7ec54d0f01f97cd4699aa9b9}{DecayModel}}}
+\DoxyCodeLine{39   \{}
+\DoxyCodeLine{40    None = 0, \textcolor{comment}{// Not specify -\/ for example when there is not decay ( e.g. class GateGammaEmissionModel )}}
+\DoxyCodeLine{41    Standard = 1, \textcolor{comment}{// Standard decay of source ( e.g. pPs -\/> 2 gamma )}}
+\DoxyCodeLine{42    Deexcitation = 2 \textcolor{comment}{// If only deexcitation is present or when is part of standard decay changel ( Na22* -\/> Na22 + prompt gamma, Na22 -\/> Ne22 + e+, pPs-\/> 2 gamma <==> pPs* -\/-\/> 2 gamma + prompt )}}
+\DoxyCodeLine{43   \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{47   \textcolor{keyword}{enum} \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{GammaKind}}}
+\DoxyCodeLine{48   \{}
+\DoxyCodeLine{49    Unknown = 0, \textcolor{comment}{// by default}}
+\DoxyCodeLine{50    Single = 1, \textcolor{comment}{// gamma is emitted alone ( by class GateGammaEmissionModel )}}
+\DoxyCodeLine{51    Annihilation = 2, \textcolor{comment}{// gamma is a product of annihilation}}
+\DoxyCodeLine{52    Prompt = 3 \textcolor{comment}{// gamma is emitted from deexcitation process}}
+\DoxyCodeLine{53   \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} SetSourceKind( \mbox{\hyperlink{classGateEmittedGammaInformation_a6a6148427f4e1c5bde31d0f5f5a36448}{SourceKind}} source\_kind );}
+\DoxyCodeLine{56   \mbox{\hyperlink{classGateEmittedGammaInformation_a6a6148427f4e1c5bde31d0f5f5a36448}{SourceKind}} GetSourceKind() \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} SetDecayModel( \mbox{\hyperlink{classGateEmittedGammaInformation_ae0fc8b6d7ec54d0f01f97cd4699aa9b9}{DecayModel}} decay\_model );}
+\DoxyCodeLine{59   \mbox{\hyperlink{classGateEmittedGammaInformation_ae0fc8b6d7ec54d0f01f97cd4699aa9b9}{DecayModel}} GetDecayModel() \textcolor{keyword}{const};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} SetGammaKind( \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{GammaKind}} gamma\_kind );}
+\DoxyCodeLine{62   \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{GammaKind}} GetGammaKind() \textcolor{keyword}{const};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEmittedGammaInformation_aa049d5f0d321d181d82e0467d3f31ef4}{SetInitialPolarization}}( \textcolor{keyword}{const} G4ThreeVector\& polarization );}
+\DoxyCodeLine{69   G4ThreeVector \mbox{\hyperlink{classGateEmittedGammaInformation_aa1e046b15d5ed4e67bd29b7a2c137f6b}{GetInitialPolarization}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEmittedGammaInformation_acac5d0c53b4fb6e332ff0427d4f41b4f}{SetTimeShift}}( \textcolor{keyword}{const} G4double\& time\_shift );}
+\DoxyCodeLine{75   G4double \mbox{\hyperlink{classGateEmittedGammaInformation_ae8464565dfdc32de5120a5901045f692}{GetTimeShift}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Print() \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{80   \mbox{\hyperlink{classGateEmittedGammaInformation_a6a6148427f4e1c5bde31d0f5f5a36448}{SourceKind}} fSourceKind = SourceKind::NotDefined;}
+\DoxyCodeLine{81   \mbox{\hyperlink{classGateEmittedGammaInformation_ae0fc8b6d7ec54d0f01f97cd4699aa9b9}{DecayModel}} fDecayModel = DecayModel::None;}
+\DoxyCodeLine{82   \mbox{\hyperlink{classGateEmittedGammaInformation_a43bc3aea8ea79b93287efad5b4fbd350}{GammaKind}} fGammaKind = GammaKind::Unknown;}
+\DoxyCodeLine{83   G4ThreeVector fInitialPolarization = G4ThreeVector( 0.0, 0.0, 0.0 );}
+\DoxyCodeLine{84   G4double fTimeShift = 0.0;\textcolor{comment}{//[ns]}}
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

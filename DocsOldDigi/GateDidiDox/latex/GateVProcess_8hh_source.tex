@@ -1,0 +1,291 @@
+\hypertarget{GateVProcess_8hh_source}{}\doxysection{Gate\+VProcess.\+hh}
+\label{GateVProcess_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVProcess.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateVProcess.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateVProcess}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{comment}{}\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef GATEVPROCESS\_HH}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define GATEVPROCESS\_HH}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4ios.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}G4VProcess.hh"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}G4ProcessManager.hh"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}G4ProcessVector.hh"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}G4HadronicProcess.hh"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}G4VEmProcess.hh"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}G4VEnergyLossProcess.hh"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}G4HadronicInteraction.hh"{}}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}GateGenericWrapperProcess.hh"{}}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}GateListOfHadronicModels.hh"{}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}GateHadronicModelHeaders.hh"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}GateHadronicDataSetHeaders.hh"{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}GateEmModelHeaders.hh"{}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}G4MscStepLimitType.hh"{}}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{//\#include "{}GatePhysicsList.hh"{} }}
+\DoxyCodeLine{56 \textcolor{comment}{//class GatePhysicsList;}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVProcessMessenger}{GateVProcessMessenger}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVProcess}{GateVProcess}}}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62 \textcolor{keyword}{public}:}
+\DoxyCodeLine{63   \mbox{\hyperlink{classGateVProcess}{GateVProcess}}(G4String name);}
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVProcess}{\string~GateVProcess}}();}
+\DoxyCodeLine{65   }
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} ConstructParticle()\{;\}}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} ConstructProcess();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ConstructProcess(G4ProcessManager * manager)=0;}
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} G4VProcess* CreateProcess(G4ParticleDefinition*)=0;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} kill()\{\}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   G4VProcess* GetProcess()\{\textcolor{keywordflow}{return} pFinalProcess;\}}
+\DoxyCodeLine{75   G4VProcess* GetUserModelProcess()\{\textcolor{keywordflow}{return} pProcess;\}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} IsApplicable(G4ParticleDefinition * particule)=0;}
+\DoxyCodeLine{78   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} IsModelApplicable(G4String model, G4ParticleDefinition * par)\{\textcolor{keywordflow}{if}(!par) model=\textcolor{stringliteral}{"{}"{}};\textcolor{keywordflow}{return} \textcolor{keyword}{true};\}}
+\DoxyCodeLine{79    \textcolor{comment}{//Do nothing and return true if it is not defined in the PB (ie for EM processes)}}
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} IsDatasetApplicable(G4String cs, G4ParticleDefinition * par)\{\textcolor{keywordflow}{if}(!par) cs=\textcolor{stringliteral}{"{}"{}};\textcolor{keywordflow}{return} \textcolor{keyword}{true};\}}
+\DoxyCodeLine{81    \textcolor{comment}{//Do nothing and return true if it is not defined in the PB (ie for EM processes)}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} AddDataSet(G4String csName);}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} AddModel(\mbox{\hyperlink{classGateListOfHadronicModels}{GateListOfHadronicModels}} *model);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddUserDataSet(G4String csName)\{\textcolor{keywordflow}{if}(csName) \textcolor{keywordflow}{return};\}}
+\DoxyCodeLine{87    \textcolor{comment}{//Do nothing if it is not defined in the PB (ie for EM processes)}}
+\DoxyCodeLine{88   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddUserModel(\mbox{\hyperlink{classGateListOfHadronicModels}{GateListOfHadronicModels}} *model)\{\textcolor{keywordflow}{if}(model) \textcolor{keywordflow}{return};\}}
+\DoxyCodeLine{89    \textcolor{comment}{//Do nothing if it is not defined in the PB (ie for EM processes)}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keywordtype}{void} SetDefaultParticle(G4String particleName)\{theListOfDefaultParticles.push\_back(particleName);\}}
+\DoxyCodeLine{92   \textcolor{keywordtype}{void} AddToModelList(G4String modelName)\{theListOfModels.push\_back(modelName);\}}
+\DoxyCodeLine{93   \textcolor{keywordtype}{void} AddToDataSetList(G4String csName)\{theListOfDataSets.push\_back(csName);\}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keywordtype}{void} SetProcessInfo(G4String processName) \{ProcessInfo = processName; \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} SetDataSet(G4String cs ,G4String particle = \textcolor{stringliteral}{"{}Default"{}});}
+\DoxyCodeLine{98   \textcolor{keywordtype}{void} UnSetDataSet(G4String cs ,G4String particle = \textcolor{stringliteral}{"{}Default"{}});}
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} DataSetList(G4String particle=\textcolor{stringliteral}{"{}Default"{}}, G4int level=1, G4String symbol = \textcolor{stringliteral}{"{}*"{}}, G4String symbol2 = \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} SetEnergyRange(G4HadronicInteraction * hadInteraction,\mbox{\hyperlink{classGateListOfHadronicModels}{GateListOfHadronicModels}} *model);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \textcolor{comment}{//void Verify(G4ParticleDefinition * particule); // *** Not really useful ***}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   \textcolor{keywordtype}{void} Register();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} PrintEnabledParticles(G4String particle = \textcolor{stringliteral}{"{}All"{}});}
+\DoxyCodeLine{108   \textcolor{keywordtype}{void} PrintEnabledParticlesToFile(G4String file);}
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} CreateEnabledParticle(G4String particle=\textcolor{stringliteral}{"{}Default"{}});}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} RemoveElementOfParticleList(G4String particle=\textcolor{stringliteral}{"{}Default"{}});}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{keywordtype}{void} SetModel(G4String model,G4String particle=\textcolor{stringliteral}{"{}Default"{}});}
+\DoxyCodeLine{113   \textcolor{keywordtype}{void} UnSetModel(G4String model,G4String particle=\textcolor{stringliteral}{"{}Default"{}});}
+\DoxyCodeLine{114   \textcolor{keywordtype}{void} ModelList(G4String particle=\textcolor{stringliteral}{"{}Default"{}}, G4int level=1, G4String symbol = \textcolor{stringliteral}{"{}*"{}}, G4String symbol2 = \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   std::vector<G4String> FindParticleName(G4String name);}
+\DoxyCodeLine{117   std::vector<G4ParticleDefinition*> GetParticles(G4String param);}
+\DoxyCodeLine{118   }
+\DoxyCodeLine{119   \textcolor{keywordtype}{void} SetModelEnergyMax(G4String model, G4double energy, G4String particle = \textcolor{stringliteral}{"{}All"{}},G4String Option=\textcolor{stringliteral}{"{}NoOption"{}});}
+\DoxyCodeLine{120   \textcolor{keywordtype}{void} SetModelEnergyMin(G4String model, G4double energy, G4String particle = \textcolor{stringliteral}{"{}All"{}},G4String Option=\textcolor{stringliteral}{"{}NoOption"{}});}
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} ClearModelEnergyRange(G4String model, G4String particle = \textcolor{stringliteral}{"{}All"{}});}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \textcolor{comment}{// void MessengerInitialization();}}
+\DoxyCodeLine{124  }
+\DoxyCodeLine{125   \textcolor{keywordtype}{bool} IsEnabled(G4ParticleDefinition * par);}
+\DoxyCodeLine{126   }
+\DoxyCodeLine{127   G4String GetG4ProcessName() \{\textcolor{keywordflow}{return} mG4ProcessName;\}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129   \textcolor{keywordtype}{int} GetNumberOfParticles() \{\textcolor{keywordflow}{return} theListOfDefaultParticles.size();\}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131   std::vector<G4String> GetTheListOfDefaultParticles() \{\textcolor{keywordflow}{return} theListOfDefaultParticles ;\}}
+\DoxyCodeLine{132   std::vector<G4String> GetTheListOfDataSets() \{\textcolor{keywordflow}{return} theListOfDataSets;\}}
+\DoxyCodeLine{133   std::vector<G4String> GetTheListOfModels() \{\textcolor{keywordflow}{return} theListOfModels  ;\}}
+\DoxyCodeLine{134   }
+\DoxyCodeLine{135   std::vector<G4ParticleDefinition*> GetTheListOfEnabledParticles() \{\textcolor{keywordflow}{return} theListOfEnabledParticles;\}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   G4String GetProcessInfo() \{\textcolor{keywordflow}{return} ProcessInfo;\}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141   \textcolor{keyword}{static} std::vector<GateVProcess*>* GetTheListOfProcesses() \{}
+\DoxyCodeLine{142     \textcolor{keyword}{static} std::vector<GateVProcess*> theListOfProcesses;}
+\DoxyCodeLine{143     \textcolor{keywordflow}{return} \&theListOfProcesses;}
+\DoxyCodeLine{144   \}}
+\DoxyCodeLine{145   }
+\DoxyCodeLine{146     }
+\DoxyCodeLine{147   \textcolor{keyword}{static} \textcolor{keywordtype}{void} Delete();}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150   G4bool GetIsWrapperActive()\{\textcolor{keywordflow}{return} mIsWrapperActive;\}}
+\DoxyCodeLine{151   \textcolor{keywordtype}{void}   SetIsWrapperActive(G4bool b)\{mIsWrapperActive = b;\}}
+\DoxyCodeLine{152   \textcolor{keywordtype}{void}   SetWrapperFactor(G4String part,G4double f);}
+\DoxyCodeLine{153   \textcolor{keywordtype}{void} SetWrapperCSEFactor(G4String part,G4double f);}
+\DoxyCodeLine{154   \textcolor{keywordtype}{void} SetKeepFilteredSec(G4bool b)\{mKeepSec=b;\}}
+\DoxyCodeLine{155   G4bool AddFilter(G4String, G4String);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   \textcolor{keywordtype}{void} SetStepFunction(G4String part, G4double ratio, G4double finalRange);}
+\DoxyCodeLine{158   \textcolor{keywordtype}{void} SetLinearlosslimit(G4String part,  G4double limit);}
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} SetMsclimitation(G4String part, G4String limit );}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{keyword}{protected}:  }
+\DoxyCodeLine{164   G4String mG4ProcessName;}
+\DoxyCodeLine{165   G4VProcess * pProcess;}
+\DoxyCodeLine{166   G4VProcess * pFinalProcess;}
+\DoxyCodeLine{167   \textcolor{comment}{//GenericWrapperProcess * wrapper; }}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169   G4bool mIsWrapperActive;}
+\DoxyCodeLine{170   G4bool mKeepSec;}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172   std::vector<G4String> theListOfDefaultParticles;}
+\DoxyCodeLine{173   G4String ProcessInfo;}
+\DoxyCodeLine{174   std::vector<G4String> theListOfDataSets;}
+\DoxyCodeLine{175   std::vector<G4String> theListOfModels;}
+\DoxyCodeLine{176   }
+\DoxyCodeLine{177   std::vector<G4ParticleDefinition*> theListOfEnabledParticles;}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179   std::vector<G4ParticleDefinition*> theListOfParticlesWithSelectedDS;}
+\DoxyCodeLine{180   std::vector<G4String> theListOfSelectedDataSets;}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182   std::vector<G4ParticleDefinition*> theListOfParticlesWithSelectedModels;}
+\DoxyCodeLine{183   std::vector<GateListOfHadronicModels *> theListOfSelectedModels;}
+\DoxyCodeLine{184   }
+\DoxyCodeLine{185   std::map<G4String,G4double> theListOfWrapperFactor;}
+\DoxyCodeLine{186   std::map<G4String,G4double> theListOfWrapperCSEFactor;}
+\DoxyCodeLine{187   std::map<G4String,GenericWrapperProcess*> theListOfWrapper;}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189   std::map<G4String,G4double> thelistOfRatioForStepFunction;}
+\DoxyCodeLine{190   std::map<G4String,G4double> thelistOfFinalRangeForStepFunction;}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192   std::map<G4String,G4double> thelistOfLinearLossLimit;}
+\DoxyCodeLine{193   }
+\DoxyCodeLine{194   std::map<G4String,G4MscStepLimitType> thelistOfMscLimitation;}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196   std::list<G4HadronicInteraction*> theListOfG4HadronicModels;}
+\DoxyCodeLine{197   G4ExcitationHandler* theHandler;}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199   \mbox{\hyperlink{classGateVProcessMessenger}{GateVProcessMessenger}} * pMessenger;}
+\DoxyCodeLine{200   \textcolor{comment}{//static std::vector<GateVProcess*> theListOfProcesses;}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202   std::list<G4VProcess*> theListOfG4Processes;}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{comment}{// Macro for headers of process with }}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define MAKE\_PROCESS\_AUTO\_CREATOR(name)         \(\backslash\)}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{class name:public GateVProcess \(\backslash\)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{  name(); \(\backslash\)}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{  virtual \string~name()\{\};            \(\backslash\)}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{public: \(\backslash\)}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{  virtual G4VProcess* CreateProcess(G4ParticleDefinition*); \(\backslash\)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{  virtual void ConstructProcess(G4ProcessManager * manager); \(\backslash\)}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{  virtual bool IsApplicable(G4ParticleDefinition * par); \(\backslash\)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{  static name *GetInstance() \(\backslash\)}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{  \{   \(\backslash\)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{    if (singleton\_\#\#name == 0) \(\backslash\)}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{    \{ \(\backslash\)}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{      singleton\_\#\#name = new name; \(\backslash\)}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{    \} \(\backslash\)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{    return singleton\_\#\#name; \(\backslash\)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{  \} \(\backslash\)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{  virtual void kill() \(\backslash\)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{  \{ \(\backslash\)}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{    if (NULL != singleton\_\#\#name) \(\backslash\)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{      \{ \(\backslash\)}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{        delete singleton\_\#\#name; \(\backslash\)}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{        singleton\_\#\#name = NULL; \(\backslash\)}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{      \} \(\backslash\)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{  \} \(\backslash\)}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{  static name * singleton\_\#\#name; \(\backslash\)}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\}; \(\backslash\)}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{  class name\#\#Creator \{         \(\backslash\)}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{  public:                   \(\backslash\)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{    name\#\#Creator() \{  name::GetInstance()-\/>Register();  \};  \}; \(\backslash\)}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{  static name\#\#Creator name\#\#Creator\_var;}}
+\DoxyCodeLine{241   }
+\DoxyCodeLine{242 \textcolor{comment}{// Macro for headers of process with customisable models}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#define MAKE\_PROCESS\_AUTO\_CREATOR\_WITH\_MODEL(name)          \(\backslash\)}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{class name:public GateVProcess \(\backslash\)}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\{ \(\backslash\)}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{  name(); \(\backslash\)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{  virtual \string~name()\{\};            \(\backslash\)}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{public: \(\backslash\)}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{  virtual G4VProcess* CreateProcess(G4ParticleDefinition*); \(\backslash\)}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{  virtual void ConstructProcess(G4ProcessManager * manager); \(\backslash\)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{  virtual bool IsApplicable(G4ParticleDefinition * par); \(\backslash\)}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{  virtual bool IsModelApplicable(G4String model, G4ParticleDefinition * par); \(\backslash\)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{  virtual bool IsDatasetApplicable(G4String cs, G4ParticleDefinition * par);  \(\backslash\)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{  virtual void AddUserDataSet(G4String csName);             \(\backslash\)}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{  virtual void AddUserModel(GateListOfHadronicModels *model);       \(\backslash\)}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{  static name *GetInstance() \(\backslash\)}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{  \{   \(\backslash\)}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{    if (singleton\_\#\#name == 0) \(\backslash\)}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{    \{ \(\backslash\)}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{      singleton\_\#\#name = new name; \(\backslash\)}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{    \} \(\backslash\)}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{    return singleton\_\#\#name; \(\backslash\)}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{  \} \(\backslash\)}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{  virtual void kill() \(\backslash\)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{  \{ \(\backslash\)}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{    if (NULL != singleton\_\#\#name) \(\backslash\)}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{      \{ \(\backslash\)}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{        delete singleton\_\#\#name; \(\backslash\)}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{        singleton\_\#\#name = NULL; \(\backslash\)}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{      \} \(\backslash\)}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{  \} \(\backslash\)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{private: \(\backslash\)}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{  static name * singleton\_\#\#name; \(\backslash\)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\}; \(\backslash\)}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{  class name\#\#Creator \{         \(\backslash\)}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{  public:                   \(\backslash\)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{    name\#\#Creator() \{  name::GetInstance()-\/>Register();  \}; \};  \(\backslash\)}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{  static name\#\#Creator name\#\#Creator\_var;}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define MAKE\_PROCESS\_AUTO\_CREATOR\_CC(name) name *name::singleton\_\#\#name = 0; }}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \textcolor{comment}{//    bool dummy\#\#name =  GatePhysicsList::GetInstance()-\/>Register(name::GetInstance());}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEVPROCESS\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

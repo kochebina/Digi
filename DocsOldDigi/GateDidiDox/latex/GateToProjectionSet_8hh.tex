@@ -1,0 +1,67 @@
+\hypertarget{GateToProjectionSet_8hh}{}\doxysection{/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/\+Gate\+To\+Projection\+Set.hh File Reference}
+\label{GateToProjectionSet_8hh}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToProjectionSet.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToProjectionSet.hh}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Gate\+VOutput\+Module.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+Projection\+Set.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+To\+Interfile.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gate\+To\+Optical\+Raw.\+hh\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGateToProjectionSet}{Gate\+To\+Projection\+Set}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyParagraph}{Log}
+\mbox{\hyperlink{GateToProjectionSet_8hh}{Gate\+To\+Projection\+Set.\+hh}},v 
+\end{DoxyParagraph}
+
+
+Revision v6.\+2 2012/07/09 by \href{mailto:vesna.cuplov@gmail.com}{\texttt{ vesna.\+cuplov@gmail.\+com}} Implemented functions that have a link with the \mbox{\hyperlink{classGateToOpticalRaw}{Gate\+To\+Optical\+Raw}} class for Optical photons which is used to write as an output file the result of the \mbox{\hyperlink{classGateToProjectionSet}{Gate\+To\+Projection\+Set}} module for Optical Photons.
+
+Revision 1.\+1.\+1.\+1.\+4.\+1 2011/03/10 16\+:32\+:35 henri Implemented multiple energy window interfile output
+
+Revision 1.\+1.\+1.\+1.\+4.\+1 2011/02/02 15\+:37\+:46 henri Added support for multiple energy windows
+
+Revision 1.\+4 2010/12/01 17\+:11\+:23 henri Various bug fixes
+
+Revision 1.\+3 2010/11/30 17\+:48\+:50 henri Comments
+
+Revision 1.\+3 2010/11/30 16\+:47\+:08 henri Class \mbox{\hyperlink{classGateToProjectionSet}{Gate\+To\+Projection\+Set}} Modifications in order to record more than 1 input channel, as energy window
+
+Interface Changes$\ast$$\ast$$\ast$ Attribute added\+:
+\begin{DoxyItemize}
+\item size\+\_\+t m\+\_\+energy\+Window\+Nb \+: the number of energy window to record
+\end{DoxyItemize}
+
+Attributes modified\+:
+\begin{DoxyItemize}
+\item G4\+String m\+\_\+input\+Data\+Channel -\/\texorpdfstring{$>$}{>} std\+::vector$<$\+G4\+String$>$ m\+\_\+input\+Data\+Channel\+List
+\item G4int m\+\_\+input\+Data\+Channel\+ID -\/\texorpdfstring{$>$}{>} std\+::vector$<$\+G4int$>$ m\+\_\+input\+Data\+Channel\+IDList
+\end{DoxyItemize}
+
+Getters and setters modified\+:
+\begin{DoxyItemize}
+\item const G4\+String\& Get\+Input\+Data\+Name() -\/\texorpdfstring{$>$}{>} const G4\+String\& Get\+Input\+Data\+Name(size\+\_\+t energy\+Window\+ID) const \+: get the input channel name by index
+\item void Set\+Output\+Data\+Name(const G4\+String\& a\+Name) -\/\texorpdfstring{$>$}{>} void Set\+Input\+Data\+Name(const G4\+String\& a\+Name) \+: changed the name
+\end{DoxyItemize}
+
+Getters and setters added\+:
+\begin{DoxyItemize}
+\item inline size\+\_\+t Get\+Energy\+Window\+Nb() const
+\item G4int Get\+Input\+Data\+ID(size\+\_\+t energy\+Window\+ID) const \+: Get the input channel ID by index
+\item void Add\+Input\+Data\+Name(const G4\+String\& a\+Name) \+: Add a input data channel name to the list
+\item std\+::vector$<$\+G4\+String$>$ Get\+Input\+Data\+Name\+List() const
+\item std\+::vector$<$\+G4int$>$ Get\+Input\+Data\+IDList() const
+
+Implementation Changes$\ast$$\ast$$\ast$ In \mbox{\hyperlink{GateToProjectionSet_8hh}{Gate\+To\+Projection\+Set.\+hh}}\+:
+\item Get\+Total\+Image\+Nb() now returns the number of images for all energy windows
+\end{DoxyItemize}
+
+In \mbox{\hyperlink{GateToProjectionSet_8cc}{Gate\+To\+Projection\+Set.\+cc}}\+:
+\begin{DoxyItemize}
+\item Slightly changed the constructor
+\item Record\+Begin\+Of\+Acquisition \+: Loop over the input data channel list to get the channel IDs and fill the m\+\_\+input\+Data\+Channel\+IDList vector Initialize the attribute m\+\_\+energy\+Window\+Nb with the size of the vector m\+\_\+input\+Data\+Channel\+List Updated \mbox{\hyperlink{classGateProjectionSet_a5d7c9a368c264366d316a88d9232ec70}{Gate\+Projection\+Set\+::\+Reset}}
+\item Record\+End\+Of\+Event \+: Changed some verbose text to show which digi chain is recorded (aka energy window) Loop over all energy windows in m\+\_\+input\+Data\+Channel\+List to store all the digis related to this event 
+\end{DoxyItemize}

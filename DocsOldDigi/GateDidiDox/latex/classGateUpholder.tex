@@ -1,0 +1,83 @@
+\hypertarget{classGateUpholder}{}\doxysection{Gate\+Upholder Class Reference}
+\label{classGateUpholder}\index{GateUpholder@{GateUpholder}}
+
+
+Pulse-\/processor modelling a simple uphold limit.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Upholder.\+hh$>$}
+
+Inheritance diagram for Gate\+Upholder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateUpholder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateUpholder_a84bb5ec565d7eb1d49017054ee482108}\label{classGateUpholder_a84bb5ec565d7eb1d49017054ee482108}} 
+{\bfseries Gate\+Upholder} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name, G4double its\+Uphold=0)
+\begin{DoxyCompactList}\small\item\em Constructs a new upholder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateUpholder_adb729d9a181f8984a5c42f8f25f7bd46}\label{classGateUpholder_adb729d9a181f8984a5c42f8f25f7bd46}} 
+virtual {\bfseries $\sim$\+Gate\+Upholder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateUpholder_a975d2aa23da8a4060c7cb04c006e2854}\label{classGateUpholder_a975d2aa23da8a4060c7cb04c006e2854}} 
+G4double {\bfseries Get\+Uphold} ()
+\begin{DoxyCompactList}\small\item\em Returns the uphold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateUpholder_ac3949811f807bb29589d9525e55d3270}\label{classGateUpholder_ac3949811f807bb29589d9525e55d3270}} 
+void {\bfseries Set\+Uphold} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the uphold. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateUpholder_a50f5bdb9b0e324eade6cbf2939ac392d}{Describe\+Myself}} (size\+\_\+t indent=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateUpholder_a29f6b81014a7a899c9103780b858404e}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor modelling a simple uphold limit. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateUpholder}{Gate\+Upholder}} -\/ by \href{mailto:Steven.Staelens@rug.ac.be}{\texttt{ Steven.\+Staelens@rug.\+ac.\+be}}
+\item The method Process\+One\+Pulse of this class models a simple uphold limit\+: any input pulse whose energy is below the energy limit is copied into the output pulse-\/list. On the contrary, any input pulse whose energy is above this limit is discarded.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateUpholder_a50f5bdb9b0e324eade6cbf2939ac392d}\label{classGateUpholder_a50f5bdb9b0e324eade6cbf2939ac392d}} 
+\index{GateUpholder@{GateUpholder}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateUpholder@{GateUpholder}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Upholder\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the upholder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateUpholder_a29f6b81014a7a899c9103780b858404e}\label{classGateUpholder_a29f6b81014a7a899c9103780b858404e}} 
+\index{GateUpholder@{GateUpholder}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateUpholder@{GateUpholder}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Upholder\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Upholder.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Upholder.\+cc\end{DoxyCompactItemize}

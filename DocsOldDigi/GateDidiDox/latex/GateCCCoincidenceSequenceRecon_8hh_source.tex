@@ -1,0 +1,72 @@
+\hypertarget{GateCCCoincidenceSequenceRecon_8hh_source}{}\doxysection{Gate\+CCCoincidence\+Sequence\+Recon.\+hh}
+\label{GateCCCoincidenceSequenceRecon_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidenceSequenceRecon.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCCCoincidenceSequenceRecon.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCCCoincidenceSequenceRecon\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCCCoincidenceSequenceRecon\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <algorithm>}    \textcolor{comment}{// std::shuffle}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <random>}       \textcolor{comment}{// std::default\_random\_engine}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <chrono>}       \textcolor{comment}{// std::chrono::system\_clock}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateObjectStore.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateVCoincidencePulseProcessor.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCCoincidenceSequenceReconMessenger}{GateCCCoincidenceSequenceReconMessenger}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{kSinglesTime,}
+\DoxyCodeLine{30               kLowestEnergyFirst,}
+\DoxyCodeLine{31               kRandomly,}
+\DoxyCodeLine{32               kSpatially,}
+\DoxyCodeLine{33               kRevanC\_CSR,}
+\DoxyCodeLine{34              \} sequence\_policy\_t;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCCCoincidenceSequenceRecon}{GateCCCoincidenceSequenceRecon}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{GateVCoincidencePulseProcessor}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCCCoincidenceSequenceRecon_a075c67184a526e6e56198d66e5e314c2}{\string~GateCCCoincidenceSequenceRecon}}() ;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \mbox{\hyperlink{classGateCCCoincidenceSequenceRecon_a212bb8776b0f63c765858798762f39d7}{GateCCCoincidenceSequenceRecon}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} SetSequencePolicy(\textcolor{keyword}{const} G4String\& policy);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCCCoincidenceSequenceRecon_ad101129992aa8b0640a8a69c9b3a5c2b}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* \mbox{\hyperlink{classGateCCCoincidenceSequenceRecon_a69d5dc635bf94ff7ee38d3da61d53d37}{ProcessPulse}}(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* inputPulse, G4int);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{private}:}
+\DoxyCodeLine{61     \textcolor{keyword}{const} \textcolor{keyword}{static} \textcolor{keywordtype}{int} INVALID\_Qf=100000;}
+\DoxyCodeLine{62     \textcolor{keywordtype}{double} computeGeomScatteringAngleError( \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}} coincP);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \mbox{\hyperlink{classGateCCCoincidenceSequenceReconMessenger}{GateCCCoincidenceSequenceReconMessenger}} *m\_messenger;    }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     sequence\_policy\_t m\_sequencePolicy;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{unsigned} seed;}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

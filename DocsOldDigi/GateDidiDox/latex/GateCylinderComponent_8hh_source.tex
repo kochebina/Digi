@@ -1,0 +1,51 @@
+\hypertarget{GateCylinderComponent_8hh_source}{}\doxysection{Gate\+Cylinder\+Component.\+hh}
+\label{GateCylinderComponent_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCylinderComponent.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateCylinderComponent.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCylinderComponent\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCylinderComponent\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateSystemComponent.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylinder}{GateCylinder}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCylinderComponent}{GateCylinderComponent}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \mbox{\hyperlink{classGateCylinderComponent_a934850ecdb0db5d9ccc3278bb1318901}{GateCylinderComponent}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{45                             \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* itsMotherComponent,}
+\DoxyCodeLine{46               \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* itsSystem);}
+\DoxyCodeLine{47               \textcolor{comment}{//:GateSystemComponent(itsName,itsMotherComponent,itsSystem)\{\}}}
+\DoxyCodeLine{49 \textcolor{comment}{}    \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCylinderComponent_a1e54372c5133c314d1974bfd5f7080b0}{\string~GateCylinderComponent}}();}
+\DoxyCodeLine{50     }
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateCylinderComponent_a40ba8844e3bc84be9437a546442a6719}{IsValidAttachmentRequest}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator) \textcolor{keyword}{const};}
+\DoxyCodeLine{56    }
+\DoxyCodeLine{58     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCylinder}{GateCylinder}}* \mbox{\hyperlink{classGateCylinderComponent_a2b5b8a9b0ee2372cb595fde3f0dd7c52}{GetCylinderCreator}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{59 \textcolor{keyword}{        }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateCylinderComponent_a2b5b8a9b0ee2372cb595fde3f0dd7c52}{GetCylinderCreator}}(\mbox{\hyperlink{classGateSystemComponent_abc9aa14eb5143d0f70fc959f62ee8f71}{GetCreator}}()); \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     G4double GetCylinderHeight() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{62     G4double GetCylinderRmin() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{63     G4double GetCylinderRmax() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{64     G4double GetCylinderSPhi() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{65     G4double GetCylinderDPhi() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCylinder}{GateCylinder}}* \mbox{\hyperlink{classGateCylinderComponent_a1d5fb02e79435674dde9153864102681}{GetCylinderCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator) }
+\DoxyCodeLine{69         \{ \textcolor{keywordflow}{return} anCreator ? \mbox{\hyperlink{classGateCylinderComponent_a424b514b783d655a48a4b8112d944c43}{CastToCylinderCreator}}( anCreator-\/>\mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}() ) : 0 ; \}}
+\DoxyCodeLine{70     }
+\DoxyCodeLine{72   \textcolor{keyword}{static} \mbox{\hyperlink{classGateCylinder}{GateCylinder}}* \mbox{\hyperlink{classGateCylinderComponent_a424b514b783d655a48a4b8112d944c43}{CastToCylinderCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* creator);}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+
+\end{DoxyCode}

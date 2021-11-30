@@ -1,0 +1,46 @@
+\hypertarget{GateTwistedTrapMessenger_8hh_source}{}\doxysection{Gate\+Twisted\+Trap\+Messenger.\+hh}
+\label{GateTwistedTrapMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedTrapMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTwistedTrapMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateTwistedTrapMessenger.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATETWISTEDTRAPMESSENGER\_HH\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATETWISTEDTRAPMESSENGER\_HH\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVolumeMessenger.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedTrap}{GateTwistedTrap}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTwistedTrapMessenger}{GateTwistedTrapMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateVolumeMessenger}{GateVolumeMessenger}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19   \mbox{\hyperlink{classGateTwistedTrapMessenger}{GateTwistedTrapMessenger}}(\mbox{\hyperlink{classGateTwistedTrap}{GateTwistedTrap}}* itsCreator);}
+\DoxyCodeLine{20   \mbox{\hyperlink{classGateTwistedTrapMessenger}{\string~GateTwistedTrapMessenger}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateTwistedTrap}{GateTwistedTrap}}* GetTwistedTrapCreator()}
+\DoxyCodeLine{24     \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateTwistedTrap}{GateTwistedTrap}}*)GetVolumeCreator(); \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27   G4UIcmdWithADoubleAndUnit* TwistedTrapYMinusLengthCmd;}
+\DoxyCodeLine{28   G4UIcmdWithADoubleAndUnit* TwistedTrapYPlusLengthCmd;}
+\DoxyCodeLine{29   G4UIcmdWithADoubleAndUnit* TwistedTrapX1MinusLengthCmd;}
+\DoxyCodeLine{30   G4UIcmdWithADoubleAndUnit* TwistedTrapX2MinusLengthCmd;}
+\DoxyCodeLine{31   G4UIcmdWithADoubleAndUnit* TwistedTrapX1PlusLengthCmd;}
+\DoxyCodeLine{32   G4UIcmdWithADoubleAndUnit* TwistedTrapX2PlusLengthCmd;}
+\DoxyCodeLine{33   G4UIcmdWithADoubleAndUnit* TwistedTrapZLengthCmd;}
+\DoxyCodeLine{34   G4UIcmdWithADoubleAndUnit* TwistedTrapTwistAngleCmd;}
+\DoxyCodeLine{35   G4UIcmdWithADoubleAndUnit* TwistedTrapPolarAngleCmd;}
+\DoxyCodeLine{36   G4UIcmdWithADoubleAndUnit* TwistedTrapAzimuthalAngleCmd;}
+\DoxyCodeLine{37   G4UIcmdWithADoubleAndUnit* TwistedTrapTiltAngleCmd;}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATETWISTEDTRAPMESSENGER\_HH\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+\hypertarget{GateDigitizerMessenger_8hh_source}{}\doxysection{Gate\+Digitizer\+Messenger.\+hh}
+\label{GateDigitizerMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDigitizerMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDigitizerMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDigitizerMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDigitizerMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateClockDependentMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateDigitizer.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDigitizerMessenger}{GateDigitizerMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{classGateDigitizerMessenger_ab3c3e50ba5b6d4ffd862d708a217fe32}{GateDigitizerMessenger}}(\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* itsDigitizer);  }
+\DoxyCodeLine{38     \mbox{\hyperlink{classGateDigitizerMessenger_a5cb71ef439f797d2d9b221714cd31c21}{\string~GateDigitizerMessenger}}();                            }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizerMessenger_aa7f3b3820da840165d2d37c1e8ecf649}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateDigitizerMessenger_aac6d2f35c463b3fa199bc0573055e4c2}{GetNewInsertionBaseName}}()}
+\DoxyCodeLine{45       \{ \textcolor{keywordflow}{return} m\_newInsertionBaseName; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizerMessenger_a1d8eeeda69647a8f78801817106ed0b7}{SetNewInsertionBaseName}}(\textcolor{keyword}{const} G4String\& val)}
+\DoxyCodeLine{49       \{ m\_newInsertionBaseName = val; \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateDigitizerMessenger_a82e5834bb5e5832c8bb73db958fdcf3f}{CheckNameConflict}}(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{57     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizerMessenger_a5f08ea3be5c9a762f5cfee3e4d3fc18d}{AvoidNameConflicts}}();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keyword}{private}:}
+\DoxyCodeLine{62     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& DumpMap();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListChoices()}
+\DoxyCodeLine{66       \{ G4cout << \textcolor{stringliteral}{"{}The available choices are: "{}} << DumpMap() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}}; \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DoInsertion(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* GetDigitizer()}
+\DoxyCodeLine{73       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keyword}{private}:}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     G4UIcmdWithAString*         DefineNameCmd;        }
+\DoxyCodeLine{78     G4UIcmdWithoutParameter*    ListChoicesCmd;       }
+\DoxyCodeLine{79     G4UIcmdWithoutParameter*    ListCmd;          }
+\DoxyCodeLine{80     G4UIcmdWithAString*         pInsertCmd;       }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \textcolor{keyword}{private}:}
+\DoxyCodeLine{83     G4String            m\_newInsertionBaseName;  }
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

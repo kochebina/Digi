@@ -1,0 +1,155 @@
+\hypertarget{classGateCone}{}\doxysection{Gate\+Cone Class Reference}
+\label{classGateCone}\index{GateCone@{GateCone}}
+
+
+The \mbox{\hyperlink{classGateCone}{Gate\+Cone}} creates a solid and a logical volume for a cone.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Cone.\+hh$>$}
+
+Inheritance diagram for Gate\+Cone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCone}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCone_a38f51896942f9713b1671986537021da}\label{classGateCone_a38f51896942f9713b1671986537021da}} 
+{\bfseries Gate\+Cone} (const G4\+String \&its\+Name, G4bool accepts\+Children=true, G4int depth=0)
+\item 
+\mbox{\Hypertarget{classGateCone_a40223259d0a9aa33f3f6f931f8db96b1}\label{classGateCone_a40223259d0a9aa33f3f6f931f8db96b1}} 
+{\bfseries Gate\+Cone} (const G4\+String \&its\+Name, const G4\+String \&its\+Material\+Name, G4double its\+Rmax1, G4double its\+Rmax2, G4double its\+Height, G4double its\+Rmin1=0., G4double its\+Rmin2=0., G4double its\+SPhi=0., G4double its\+DPhi=twopi, G4bool accepts\+Children=true, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a30c4cec7df365739c961043536774041}\label{classGateCone_a30c4cec7df365739c961043536774041}} 
+virtual {\bfseries $\sim$\+Gate\+Cone} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Implementations of pure virtual methods declared by the base-\/class}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateCone_add32c7a294de18f5a93b19bb8dec1bef}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$, G4bool)
+\item 
+virtual void \mbox{\hyperlink{classGateCone_a7c3e05dc7268ade696199b3b6bc943d3}{Destroy\+Own\+Solid\+And\+Logical\+Volume}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateCone_aaa5d2a05f0ac76683976691e036381dd}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateCone_aaa5d2a05f0ac76683976691e036381dd}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\item 
+G4double \mbox{\hyperlink{classGateCone_a370062232fb9c846c641a29a35b26872}{Get\+Half\+Dimension}} (size\+\_\+t axis)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCone_a3877c412f6cf577a74c73fbbbc8cfd94}\label{classGateCone_a3877c412f6cf577a74c73fbbbc8cfd94}} 
+G4double {\bfseries Get\+Cone\+Height} ()
+\begin{DoxyCompactList}\small\item\em Get the height. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a7753cbd69afdfefd61ca2bcade889102}\label{classGateCone_a7753cbd69afdfefd61ca2bcade889102}} 
+G4double {\bfseries Get\+Cone\+Half\+Height} ()
+\begin{DoxyCompactList}\small\item\em Get the half of the height. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_ab60db447d06909ce73bda71849651f17}\label{classGateCone_ab60db447d06909ce73bda71849651f17}} 
+G4double {\bfseries Get\+Cone\+Rmin1} ()
+\begin{DoxyCompactList}\small\item\em Get the internal diameter at end 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_aa57c0227345bab87324aa468725fcdd2}\label{classGateCone_aa57c0227345bab87324aa468725fcdd2}} 
+G4double {\bfseries Get\+Cone\+Rmax1} ()
+\begin{DoxyCompactList}\small\item\em Get the external diameter at end 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a07ce43d6c0cd93343b95744988ed602b}\label{classGateCone_a07ce43d6c0cd93343b95744988ed602b}} 
+G4double {\bfseries Get\+Cone\+Rmin2} ()
+\begin{DoxyCompactList}\small\item\em Get the internal diameter at end 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a876fca111ebce20152c56fad14aaf1e2}\label{classGateCone_a876fca111ebce20152c56fad14aaf1e2}} 
+G4double {\bfseries Get\+Cone\+Rmax2} ()
+\begin{DoxyCompactList}\small\item\em Get the external diameter at end 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a181b51ca84e347cfca9296504e33a988}\label{classGateCone_a181b51ca84e347cfca9296504e33a988}} 
+G4double {\bfseries Get\+Cone\+SPhi} ()
+\begin{DoxyCompactList}\small\item\em Get the start phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a69163d3409c63d9cbc8782f2ad9d4c47}\label{classGateCone_a69163d3409c63d9cbc8782f2ad9d4c47}} 
+G4double {\bfseries Get\+Cone\+DPhi} ()
+\begin{DoxyCompactList}\small\item\em Get the angular span for the phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a7e6bf6b7aefbc1b390129ffb3f07cf93}\label{classGateCone_a7e6bf6b7aefbc1b390129ffb3f07cf93}} 
+void {\bfseries Set\+Cone\+Height} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the height. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a9484735b430320edba3b39ecd3234954}\label{classGateCone_a9484735b430320edba3b39ecd3234954}} 
+void {\bfseries Set\+Cone\+Rmin1} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the internal diameter at end 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a7ddddf056b74206597dbb9931c41b338}\label{classGateCone_a7ddddf056b74206597dbb9931c41b338}} 
+void {\bfseries Set\+Cone\+Rmax1} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the external diameter at end 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_a9370873abb0301cfd126cd18a961e405}\label{classGateCone_a9370873abb0301cfd126cd18a961e405}} 
+void {\bfseries Set\+Cone\+Rmin2} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the internal diameter at end 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_ae156f9e8dd8479bddf1365754a7c0fee}\label{classGateCone_ae156f9e8dd8479bddf1365754a7c0fee}} 
+void {\bfseries Set\+Cone\+Rmax2} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the external diameter at end 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_aa48111d9cec94caad7eda22c2c641f31}\label{classGateCone_aa48111d9cec94caad7eda22c2c641f31}} 
+void {\bfseries Set\+Cone\+SPhi} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the start phi angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCone_ab96ba2771eaf81ea2d0802b21315a3a2}\label{classGateCone_ab96ba2771eaf81ea2d0802b21315a3a2}} 
+void {\bfseries Set\+Cone\+DPhi} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the angular span for the phi angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateCone}{Gate\+Cone}} creates a solid and a logical volume for a cone. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateCone}{Gate\+Cone}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCone_add32c7a294de18f5a93b19bb8dec1bef}\label{classGateCone_add32c7a294de18f5a93b19bb8dec1bef}} 
+\index{GateCone@{GateCone}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateCone@{GateCone}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily G4\+Logical\+Volume $\ast$ Gate\+Cone\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pure virtual method, will be defined in concrete classes \mbox{\hyperlink{classGateBox}{Gate\+Box}}, \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} ... 
+
+Implements \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateCone_aaa5d2a05f0ac76683976691e036381dd}\label{classGateCone_aaa5d2a05f0ac76683976691e036381dd}} 
+\index{GateCone@{GateCone}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateCone@{GateCone}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Cone\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateCone_aaa5d2a05f0ac76683976691e036381dd}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the creator
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGateCone_a7c3e05dc7268ade696199b3b6bc943d3}\label{classGateCone_a7c3e05dc7268ade696199b3b6bc943d3}} 
+\index{GateCone@{GateCone}!DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}}
+\index{DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}!GateCone@{GateCone}}
+\doxysubsubsection{\texorpdfstring{DestroyOwnSolidAndLogicalVolume()}{DestroyOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily void Gate\+Cone\+::\+Destroy\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method Destroy\+Own\+Solid\+And\+Volume() declared by the base-\/class. Destroy the solid and logical volume created by Construct\+Own\+Solid\+And\+Logical() 
+
+Implements \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateCone_a370062232fb9c846c641a29a35b26872}\label{classGateCone_a370062232fb9c846c641a29a35b26872}} 
+\index{GateCone@{GateCone}!GetHalfDimension@{GetHalfDimension}}
+\index{GetHalfDimension@{GetHalfDimension}!GateCone@{GateCone}}
+\doxysubsubsection{\texorpdfstring{GetHalfDimension()}{GetHalfDimension()}}
+{\footnotesize\ttfamily G4double Gate\+Cone\+::\+Get\+Half\+Dimension (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method \mbox{\hyperlink{classGateCone_a370062232fb9c846c641a29a35b26872}{Get\+Half\+Dimension()}} declared by the base-\/class Must return the half-\/size of the cone along an axis (X=0, Y=1, Z=2) Accurate only for full cones 
+
+Implements \mbox{\hyperlink{classGateVVolume_a6b5af3dbb80ec1b182ad571560aa762b}{Gate\+VVolume}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Cone.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Cone.\+cc\end{DoxyCompactItemize}

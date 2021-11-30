@@ -1,0 +1,82 @@
+\hypertarget{GateMHDImage_8hh_source}{}\doxysection{Gate\+MHDImage.\+hh}
+\label{GateMHDImage_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMHDImage.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMHDImage.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_GATEMHDIMAGE\_HH\_\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_GATEMHDIMAGE\_HH\_\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// g4}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// std}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// gate}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// itk (for mhd reader)}}
+\DoxyCodeLine{23 \textcolor{comment}{//\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}metaImage.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType> \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageT}{GateImageT}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 \textcolor{comment}{// Read an write MHD image file format. Use the metaImageIO from ITK.}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMHDImage}{GateMHDImage}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateMHDImage}{GateMHDImage}}();}
+\DoxyCodeLine{36   \mbox{\hyperlink{classGateMHDImage}{\string~GateMHDImage}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} ReadHeader(std::string \& filename);}
+\DoxyCodeLine{39   \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType>}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} ReadData(std::string filename, std::vector<PixelType> \& data);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType>}
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} WriteHeader(std::string filename,}
+\DoxyCodeLine{44                    \mbox{\hyperlink{classGateImageT}{GateImageT<PixelType>}} * image,}
+\DoxyCodeLine{45                    \textcolor{keywordtype}{bool} writeData = \textcolor{keyword}{false},}
+\DoxyCodeLine{46                    \textcolor{keywordtype}{bool} changeExtension = \textcolor{keyword}{false},}
+\DoxyCodeLine{47                    \textcolor{keywordtype}{bool} isARF = \textcolor{keyword}{false},}
+\DoxyCodeLine{48                    \textcolor{keywordtype}{int} numberOfARFFFDHeads = 1);}
+\DoxyCodeLine{49   \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType>}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} WriteData(std::string filename, \mbox{\hyperlink{classGateImageT}{GateImageT<PixelType>}} * image);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   std::vector<double> size;}
+\DoxyCodeLine{53   std::vector<double> spacing;}
+\DoxyCodeLine{54   std::vector<double> origin;}
+\DoxyCodeLine{55   std::vector<double> transform;}
+\DoxyCodeLine{56   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{57 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{58   std::vector<std::string> tags;}
+\DoxyCodeLine{59   std::vector<std::string> values;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} Print();}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} Read\_3\_values(std::string tag, \textcolor{keywordtype}{double} * v);}
+\DoxyCodeLine{63   \textcolor{keywordtype}{int} Read\_tag(std::string tag);}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} Check\_tag\_value(std::string tag, std::string value);}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} EraseWhiteSpaces(std::string \& s);}
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} GetRawFilename(std::string filename,}
+\DoxyCodeLine{67                       std::string \& f,}
+\DoxyCodeLine{68                       \textcolor{keywordtype}{bool} keepFolder,}
+\DoxyCodeLine{69                       \textcolor{keywordtype}{bool} changeExtension = \textcolor{keyword}{false});}
+\DoxyCodeLine{70   \textcolor{keywordtype}{double} round\_to\_digits(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include "{}GateMHDImage.icc"{}}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,139 @@
+\hypertarget{GateSETLEDoseActor_8hh_source}{}\doxysection{Gate\+SETLEDose\+Actor.\+hh}
+\label{GateSETLEDoseActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSETLEDoseActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateSETLEDoseActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef GATESETLEDOSEACTOR\_HH}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define GATESETLEDOSEACTOR\_HH}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateSETLEDoseActorMessenger.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateSETLEMultiplicityActor.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateMaterialMuHandler.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4SteppingManager.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSETLEDoseActor}{GateSETLEDoseActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33  \textcolor{keyword}{public}: }
+\DoxyCodeLine{34   }
+\DoxyCodeLine{35   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{36   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSETLEDoseActor_ac1b56a369b2a6d409466e3fbd80fc185}{\string~GateSETLEDoseActor}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateSETLEDoseActor}{GateSETLEDoseActor}})}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{42   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEDoseActor_a5c19f6896b6701e79f0f16513876e840}{Construct}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} EnableDoseImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseImageEnabled = b; \}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} EnableDoseUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} EnablePrimaryDoseImage(\textcolor{keywordtype}{bool} b) \{ mIsPrimaryDoseImageEnabled = b; \}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} EnablePrimaryDoseUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsPrimaryDoseUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} EnableSecondaryDoseImage(\textcolor{keywordtype}{bool} b) \{ mIsSecondaryDoseImageEnabled = b; \}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} EnableSecondaryDoseUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsSecondaryDoseUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} EnableHybridino(\textcolor{keywordtype}{bool} b) \{ mIsHybridinoEnabled = b; \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{55   }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEDoseActor_ac84f6556cb099085bd1985d956921899}{PreUserTrackingAction}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Track* t);}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEDoseActor_af03363b66fbc61d13e8e812986f3eea3}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{60   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} SetPrimaryMultiplicity(\textcolor{keywordtype}{int} m) \{ mPrimaryMultiplicity = m; \}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} SetSecondaryMultiplicity(\textcolor{keywordtype}{int} m) \{ mSecondaryMultiplicity = m; \}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} SetSecondaryMultiplicity(\textcolor{keywordtype}{double} t, \textcolor{keywordtype}{double} n) \{ mSecondaryMultiplicity = int( ((t / n) -\/ 26.6557E-\/4) / 1.26961E-\/4 ); \}}
+\DoxyCodeLine{66   }
+\DoxyCodeLine{67   \textcolor{keywordtype}{int} GetPrimaryMultiplicity() \{ \textcolor{keywordflow}{return} mPrimaryMultiplicity; \}}
+\DoxyCodeLine{68   \textcolor{keywordtype}{int} GetSecondaryMultiplicity() \{ \textcolor{keywordflow}{return} mSecondaryMultiplicity; \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} InitializeMaterialAndMuTable();}
+\DoxyCodeLine{71   \textcolor{keywordtype}{bool} IntersectionBox(G4ThreeVector, G4ThreeVector);}
+\DoxyCodeLine{72   \textcolor{keywordtype}{double} RayCast(\textcolor{keywordtype}{bool}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, G4ThreeVector, G4ThreeVector);}
+\DoxyCodeLine{74   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEDoseActor_a761dda14af319c31078d61b92ee175a8}{SaveData}}();}
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{79   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSETLEDoseActor_abb5f93234bdd274e993deed88fbd11eb}{clear}}()\{ResetData();\}}
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{82   }
+\DoxyCodeLine{83 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateSETLEDoseActor}{GateSETLEDoseActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{85   \mbox{\hyperlink{classGateSETLEDoseActorMessenger}{GateSETLEDoseActorMessenger}} *pMessenger;}
+\DoxyCodeLine{86   }
+\DoxyCodeLine{87   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseImage;}
+\DoxyCodeLine{88   \mbox{\hyperlink{classGateImage}{GateImage}} mLastHitEventImage;}
+\DoxyCodeLine{89   \textcolor{keywordtype}{bool} mIsLastHitEventImageEnabled;}
+\DoxyCodeLine{90   \textcolor{keywordtype}{bool} mIsDoseImageEnabled;}
+\DoxyCodeLine{91   \textcolor{keywordtype}{bool} mIsDoseUncertaintyImageEnabled;}
+\DoxyCodeLine{92   }
+\DoxyCodeLine{93   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mPrimaryDoseImage;}
+\DoxyCodeLine{94   \mbox{\hyperlink{classGateImage}{GateImage}} mPrimaryLastHitEventImage;}
+\DoxyCodeLine{95   \textcolor{keywordtype}{bool} mIsPrimaryLastHitEventImageEnabled;}
+\DoxyCodeLine{96   \textcolor{keywordtype}{bool} mIsPrimaryDoseImageEnabled;}
+\DoxyCodeLine{97   \textcolor{keywordtype}{bool} mIsPrimaryDoseUncertaintyImageEnabled;}
+\DoxyCodeLine{98   }
+\DoxyCodeLine{99   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mSecondaryDoseImage;}
+\DoxyCodeLine{100   \mbox{\hyperlink{classGateImage}{GateImage}} mSecondaryLastHitEventImage;}
+\DoxyCodeLine{101   \textcolor{keywordtype}{bool} mIsSecondaryLastHitEventImageEnabled;}
+\DoxyCodeLine{102   \textcolor{keywordtype}{bool} mIsSecondaryDoseImageEnabled;}
+\DoxyCodeLine{103   \textcolor{keywordtype}{bool} mIsSecondaryDoseUncertaintyImageEnabled;}
+\DoxyCodeLine{104   }
+\DoxyCodeLine{105   \mbox{\hyperlink{classGateMaterialMuHandler}{GateMaterialMuHandler}}* mMaterialHandler;}
+\DoxyCodeLine{106   G4String mDoseFilename;}
+\DoxyCodeLine{107   G4String mPrimaryDoseFilename;}
+\DoxyCodeLine{108   G4String mSecondaryDoseFilename;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   G4double ConversionFactor;}
+\DoxyCodeLine{111   G4double VoxelVolume;}
+\DoxyCodeLine{112   \textcolor{keyword}{const} G4MaterialCutsCouple *mWorldCouple;}
+\DoxyCodeLine{113   }
+\DoxyCodeLine{114   \mbox{\hyperlink{classGateSETLEMultiplicityActor}{GateSETLEMultiplicityActor}} *pSETLEMultiplicityActor;}
+\DoxyCodeLine{115   \textcolor{keywordtype}{int} mPrimaryMultiplicity;}
+\DoxyCodeLine{116   \textcolor{keywordtype}{int} mSecondaryMultiplicity;}
+\DoxyCodeLine{117   \textcolor{keywordtype}{bool} mIsHybridinoEnabled;}
+\DoxyCodeLine{118   std::vector<RaycastingStruct> *mListOfRaycasting;}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120   \textcolor{keywordtype}{bool} mIsMuTableInitialized;}
+\DoxyCodeLine{121   std::vector<GateMuTable *> mListOfMuTable;}
+\DoxyCodeLine{122   }
+\DoxyCodeLine{123   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{124   G4SteppingManager *mSteppingManager;}
+\DoxyCodeLine{125   G4RotationMatrix mRotationMatrix;}
+\DoxyCodeLine{126   G4AffineTransform worldToVolume;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \textcolor{comment}{// raycasting members}}
+\DoxyCodeLine{129   \textcolor{keywordtype}{double} mBoxMin[3];}
+\DoxyCodeLine{130   \textcolor{keywordtype}{double} mBoxMax[3];}
+\DoxyCodeLine{131   \textcolor{keywordtype}{double} mRayOrigin[3];}
+\DoxyCodeLine{132   \textcolor{keywordtype}{double} mRayDirection[3];}
+\DoxyCodeLine{133   \textcolor{keywordtype}{double} mNearestDistance;}
+\DoxyCodeLine{134   \textcolor{keywordtype}{double} mFarthestDistance;}
+\DoxyCodeLine{135   \textcolor{keywordtype}{double} mTotalLength;}
+\DoxyCodeLine{136   \textcolor{keywordtype}{int} mLineSize;}
+\DoxyCodeLine{137   \textcolor{keywordtype}{int} mPlaneSize;}
+\DoxyCodeLine{138 \};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 MAKE\_AUTO\_CREATOR\_ACTOR(SETLEDoseActor,\mbox{\hyperlink{classGateSETLEDoseActor}{GateSETLEDoseActor}})}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEHYBRIDDOSEACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

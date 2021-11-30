@@ -1,0 +1,66 @@
+\hypertarget{classGateTessellated}{}\doxysection{Gate\+Tessellated Class Reference}
+\label{classGateTessellated}\index{GateTessellated@{GateTessellated}}
+Inheritance diagram for Gate\+Tessellated\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateTessellated}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTessellated_a558d7eef67e6feea36931c9972968b4b}\label{classGateTessellated_a558d7eef67e6feea36931c9972968b4b}} 
+{\bfseries Gate\+Tessellated} (G4\+String const \&its\+Name, G4bool accepts\+Children=true, G4int depth=0)
+\item 
+\mbox{\Hypertarget{classGateTessellated_aea876347ef5a4df18b892f51cab7eed6}\label{classGateTessellated_aea876347ef5a4df18b892f51cab7eed6}} 
+{\bfseries Gate\+Tessellated} (G4\+String const \&its\+Name, G4\+String const \&its\+Material\+Name)
+\item 
+virtual G4\+Logical\+Volume $\ast$ \mbox{\hyperlink{classGateTessellated_a4e46913d98e6770a9b0560e84d46d45c}{Construct\+Own\+Solid\+And\+Logical\+Volume}} (G4\+Material $\ast$, G4bool)
+\item 
+virtual void \mbox{\hyperlink{classGateTessellated_ac75f55303a20722d9cd21ed873e00e7b}{Destroy\+Own\+Solid\+And\+Logical\+Volume}} ()
+\item 
+virtual G4double \mbox{\hyperlink{classGateTessellated_a793c67502a009f9ab7098907db5c1764}{Get\+Half\+Dimension}} (size\+\_\+t)
+\item 
+\mbox{\Hypertarget{classGateTessellated_acfa45105107a2f58aa9fe0788259a63c}\label{classGateTessellated_acfa45105107a2f58aa9fe0788259a63c}} 
+void {\bfseries Set\+Path\+To\+STLFile} (G4\+String)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateTessellated_a4e46913d98e6770a9b0560e84d46d45c}\label{classGateTessellated_a4e46913d98e6770a9b0560e84d46d45c}} 
+\index{GateTessellated@{GateTessellated}!ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}}
+\index{ConstructOwnSolidAndLogicalVolume@{ConstructOwnSolidAndLogicalVolume}!GateTessellated@{GateTessellated}}
+\doxysubsubsection{\texorpdfstring{ConstructOwnSolidAndLogicalVolume()}{ConstructOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily G4\+Logical\+Volume $\ast$ Gate\+Tessellated\+::\+Construct\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}\item[{G4\+Material $\ast$}]{,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pure virtual method, will be defined in concrete classes \mbox{\hyperlink{classGateBox}{Gate\+Box}}, \mbox{\hyperlink{classGateCylinder}{Gate\+Cylinder}} ... 
+
+Implements \mbox{\hyperlink{classGateVVolume_a9d254d1addeb0a18399e3bbcd6cb21f7}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateTessellated_ac75f55303a20722d9cd21ed873e00e7b}\label{classGateTessellated_ac75f55303a20722d9cd21ed873e00e7b}} 
+\index{GateTessellated@{GateTessellated}!DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}}
+\index{DestroyOwnSolidAndLogicalVolume@{DestroyOwnSolidAndLogicalVolume}!GateTessellated@{GateTessellated}}
+\doxysubsubsection{\texorpdfstring{DestroyOwnSolidAndLogicalVolume()}{DestroyOwnSolidAndLogicalVolume()}}
+{\footnotesize\ttfamily void Gate\+Tessellated\+::\+Destroy\+Own\+Solid\+And\+Logical\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}}.
+
+\mbox{\Hypertarget{classGateTessellated_a793c67502a009f9ab7098907db5c1764}\label{classGateTessellated_a793c67502a009f9ab7098907db5c1764}} 
+\index{GateTessellated@{GateTessellated}!GetHalfDimension@{GetHalfDimension}}
+\index{GetHalfDimension@{GetHalfDimension}!GateTessellated@{GateTessellated}}
+\doxysubsubsection{\texorpdfstring{GetHalfDimension()}{GetHalfDimension()}}
+{\footnotesize\ttfamily virtual G4double Gate\+Tessellated\+::\+Get\+Half\+Dimension (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Pure virtual method (to be implemented in sub-\/classes) Must return an value for the half-\/size of a volume along an axis (X=0, Y=1, Z=2) 
+
+Implements \mbox{\hyperlink{classGateVVolume_a6b5af3dbb80ec1b182ad571560aa762b}{Gate\+VVolume}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Tessellated.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Tessellated.\+cc\end{DoxyCompactItemize}

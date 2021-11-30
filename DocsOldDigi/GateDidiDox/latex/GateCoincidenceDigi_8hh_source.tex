@@ -1,0 +1,99 @@
+\hypertarget{GateCoincidenceDigi_8hh_source}{}\doxysection{Gate\+Coincidence\+Digi.\+hh}
+\label{GateCoincidenceDigi_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceDigi.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceDigi.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceDigi\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceDigi\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4VDigi.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4TDigiCollection.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4Allocator.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateCoincidencePulse.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}} : \textcolor{keyword}{public} G4VDigi}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}}();}
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}}(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* coincidencePulse);}
+\DoxyCodeLine{29   \mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}\& coincidencePulse);}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCoincidenceDigi}{\string~GateCoincidenceDigi}}() \{\}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* \textcolor{keyword}{operator} \textcolor{keyword}{new}(size\_t);}
+\DoxyCodeLine{33   \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  \textcolor{keyword}{operator} \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} Draw();}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} Print();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{comment}{//}}
+\DoxyCodeLine{39   \textcolor{comment}{//printing methods}}
+\DoxyCodeLine{40   \textcolor{comment}{//}}
+\DoxyCodeLine{41   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\&, \mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}}\&);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{friend} std::ofstream\& operator<<(std::ofstream\&, \mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}}*);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47       \textcolor{keyword}{inline} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& GetPulse(G4int i)                     \{ \textcolor{keywordflow}{return} pulseVector[i]; \}}
+\DoxyCodeLine{48       \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetPulse(G4int i, \textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& value)   \{ pulseVector[i] = value; \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52       \mbox{\hyperlink{classGatePulse}{GatePulse}} pulseVector[2];}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55   \textcolor{keyword}{static} \textcolor{keywordtype}{void} SetCoincidenceASCIIMask(G4bool);}
+\DoxyCodeLine{56   \textcolor{keyword}{static} \textcolor{keywordtype}{void} SetCoincidenceASCIIMask(std::vector<G4bool>);}
+\DoxyCodeLine{57   \textcolor{keyword}{static} std::vector<G4bool> GetCoincidenceASCIIMask();}
+\DoxyCodeLine{58   \textcolor{keyword}{static} G4bool GetCoincidenceASCIIMask(G4int index);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{61   \textcolor{keyword}{static} std::vector<G4bool> m\_coincidenceASCIIMask;}
+\DoxyCodeLine{62   \textcolor{keyword}{static} G4bool                m\_coincidenceASCIIMaskDefault;}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{typedef} G4TDigiCollection<GateCoincidenceDigi> GateCoincidenceDigiCollection;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{extern} G4Allocator<GateCoincidenceDigi> GateCoincidenceDigiAllocator;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* GateCoincidenceDigi::operator \textcolor{keyword}{new}(size\_t)}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void}* aDigi;}
+\DoxyCodeLine{80   aDigi = (\textcolor{keywordtype}{void}*) GateCoincidenceDigiAllocator.MallocSingle();}
+\DoxyCodeLine{81   \textcolor{keywordflow}{return} aDigi;}
+\DoxyCodeLine{82 \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} GateCoincidenceDigi::operator \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}* aDigi)}
+\DoxyCodeLine{89 \{}
+\DoxyCodeLine{90   GateCoincidenceDigiAllocator.FreeSingle((\mbox{\hyperlink{classGateCoincidenceDigi}{GateCoincidenceDigi}}*) aDigi);}
+\DoxyCodeLine{91 \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

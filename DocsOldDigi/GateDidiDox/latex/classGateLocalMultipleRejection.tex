@@ -1,0 +1,75 @@
+\hypertarget{classGateLocalMultipleRejection}{}\doxysection{Gate\+Local\+Multiple\+Rejection Class Reference}
+\label{classGateLocalMultipleRejection}\index{GateLocalMultipleRejection@{GateLocalMultipleRejection}}
+Inheritance diagram for Gate\+Local\+Multiple\+Rejection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateLocalMultipleRejection}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLocalMultipleRejection_a54c58d64e656d390a96ff6a5072c61fc}\label{classGateLocalMultipleRejection_a54c58d64e656d390a96ff6a5072c61fc}} 
+{\bfseries Gate\+Local\+Multiple\+Rejection} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new Multiple\+Rejection attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLocalMultipleRejection_a4840013a6ec3a2c3410a383c5bda56ab}\label{classGateLocalMultipleRejection_a4840013a6ec3a2c3410a383c5bda56ab}} 
+virtual {\bfseries $\sim$\+Gate\+Local\+Multiple\+Rejection} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLocalMultipleRejection_a49059ab4028cb267a2b4f9cdbcb8786f}\label{classGateLocalMultipleRejection_a49059ab4028cb267a2b4f9cdbcb8786f}} 
+G4int {\bfseries Choose\+Volume} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Adds volume to the hashmap and returns 1 if it exists. If it does not exist, returns 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateLocalMultipleRejection_a865db57ccb8187f5598c7b67a5810eaf}\label{classGateLocalMultipleRejection_a865db57ccb8187f5598c7b67a5810eaf}} 
+void {\bfseries Set\+Rejection\+Policy} (G4\+String name, G4bool val)
+\begin{DoxyCompactList}\small\item\em This function set a Multiple\+Rejection for a volume called \textquotesingle{}name\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateLocalMultipleRejection_a0da18e917b028713a5cdef09fd5d1bbb}\label{classGateLocalMultipleRejection_a0da18e917b028713a5cdef09fd5d1bbb}} 
+void {\bfseries Set\+Multiple\+Definition} (G4\+String name, G4\+String policy)
+\item 
+virtual void \mbox{\hyperlink{classGateLocalMultipleRejection_a577281e2f9dcb2e691e836d8295e949d}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateLocalMultipleRejection_aab5eb29a4413cf81549200b6327d7c0b}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\item 
+\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGateLocalMultipleRejection_af25c00f14ee11c67fe52f457ccaa9eac}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateLocalMultipleRejection_a577281e2f9dcb2e691e836d8295e949d}\label{classGateLocalMultipleRejection_a577281e2f9dcb2e691e836d8295e949d}} 
+\index{GateLocalMultipleRejection@{GateLocalMultipleRejection}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateLocalMultipleRejection@{GateLocalMultipleRejection}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Local\+Multiple\+Rejection\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the Multiple\+Rejection 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateLocalMultipleRejection_aab5eb29a4413cf81549200b6327d7c0b}\label{classGateLocalMultipleRejection_aab5eb29a4413cf81549200b6327d7c0b}} 
+\index{GateLocalMultipleRejection@{GateLocalMultipleRejection}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateLocalMultipleRejection@{GateLocalMultipleRejection}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Local\+Multiple\+Rejection\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateLocalMultipleRejection_af25c00f14ee11c67fe52f457ccaa9eac}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateLocalMultipleRejection_af25c00f14ee11c67fe52f457ccaa9eac}\label{classGateLocalMultipleRejection_af25c00f14ee11c67fe52f457ccaa9eac}} 
+\index{GateLocalMultipleRejection@{GateLocalMultipleRejection}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GateLocalMultipleRejection@{GateLocalMultipleRejection}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+Local\+Multiple\+Rejection\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default function for pulse-\/list processing This function reads an input pulse-\/list. It then calls sequantially the method \mbox{\hyperlink{classGateLocalMultipleRejection_aab5eb29a4413cf81549200b6327d7c0b}{Process\+One\+Pulse()}}, once for each of the input pulses. The method returns the output pulse-\/list resulting from this processing 
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Local\+Multiple\+Rejection.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Local\+Multiple\+Rejection.\+cc\end{DoxyCompactItemize}

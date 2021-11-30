@@ -1,0 +1,72 @@
+\hypertarget{classGatePulseAdderComptPhotIdealLocal}{}\doxysection{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local Class Reference}
+\label{classGatePulseAdderComptPhotIdealLocal}\index{GatePulseAdderComptPhotIdealLocal@{GatePulseAdderComptPhotIdealLocal}}
+Inheritance diagram for Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGatePulseAdderComptPhotIdealLocal}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePulseAdderComptPhotIdealLocal_a1c8c65f8b6abad3d6ef5bc490f2b15bb}\label{classGatePulseAdderComptPhotIdealLocal_a1c8c65f8b6abad3d6ef5bc490f2b15bb}} 
+{\bfseries Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new pulse-\/adder attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePulseAdderComptPhotIdealLocal_aefe54881364aac23d5c9bdb98e903cd6}\label{classGatePulseAdderComptPhotIdealLocal_aefe54881364aac23d5c9bdb98e903cd6}} 
+virtual {\bfseries $\sim$\+Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a1a37520df95b634a78459074001c0aee}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a1dd8ddbf3afb3f1f781d95dcebad9892}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\item 
+\mbox{\Hypertarget{classGatePulseAdderComptPhotIdealLocal_a3c72f3a5083f0f7e4eb674feebbb8447}\label{classGatePulseAdderComptPhotIdealLocal_a3c72f3a5083f0f7e4eb674feebbb8447}} 
+G4int {\bfseries Choose\+Volume} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Adds volume to the hashmap and returns 1 if it exists. If it does not exist, returns 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePulseAdderComptPhotIdealLocal_a08598164c6544e59c68b896f5d0061d3}\label{classGatePulseAdderComptPhotIdealLocal_a08598164c6544e59c68b896f5d0061d3}} 
+void {\bfseries Set\+Volume\+Name} (G4\+String name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a8a9784ef27cfc3c44dc3658a4ad6b1a4}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGatePulseAdderComptPhotIdealLocal_a1a37520df95b634a78459074001c0aee}\label{classGatePulseAdderComptPhotIdealLocal_a1a37520df95b634a78459074001c0aee}} 
+\index{GatePulseAdderComptPhotIdealLocal@{GatePulseAdderComptPhotIdealLocal}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GatePulseAdderComptPhotIdealLocal@{GatePulseAdderComptPhotIdealLocal}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the pulse adder 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGatePulseAdderComptPhotIdealLocal_a8a9784ef27cfc3c44dc3658a4ad6b1a4}\label{classGatePulseAdderComptPhotIdealLocal_a8a9784ef27cfc3c44dc3658a4ad6b1a4}} 
+\index{GatePulseAdderComptPhotIdealLocal@{GatePulseAdderComptPhotIdealLocal}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GatePulseAdderComptPhotIdealLocal@{GatePulseAdderComptPhotIdealLocal}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a1dd8ddbf3afb3f1f781d95dcebad9892}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGatePulseAdderComptPhotIdealLocal_a1dd8ddbf3afb3f1f781d95dcebad9892}\label{classGatePulseAdderComptPhotIdealLocal_a1dd8ddbf3afb3f1f781d95dcebad9892}} 
+\index{GatePulseAdderComptPhotIdealLocal@{GatePulseAdderComptPhotIdealLocal}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GatePulseAdderComptPhotIdealLocal@{GatePulseAdderComptPhotIdealLocal}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default function for pulse-\/list processing This function reads an input pulse-\/list. It then calls sequantially the method \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a8a9784ef27cfc3c44dc3658a4ad6b1a4}{Process\+One\+Pulse()}}, once for each of the input pulses. The method returns the output pulse-\/list resulting from this processing 
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local.\+cc\end{DoxyCompactItemize}

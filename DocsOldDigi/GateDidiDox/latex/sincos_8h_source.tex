@@ -1,0 +1,28 @@
+\hypertarget{sincos_8h_source}{}\doxysection{sincos.\+h}
+\label{sincos_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/sincos.h@{/biomaps/physique/appli/GateOlga/src/source/externals/ecat/src/sincos.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef sincos\_h}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define sincos\_h}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef M\_PI}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define M\_PI 3.14159265358979323846}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#if !defined(\_\_sun) || defined(\_\_SVR4)       }\textcolor{comment}{/* solaris 2.x*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{static} \textcolor{keywordtype}{void} sincos(theta, sintheta, costheta)}
+\DoxyCodeLine{13 \textcolor{keywordtype}{double} theta, *sintheta, *costheta;}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     *sintheta = sin(theta);}
+\DoxyCodeLine{16     *costheta = cos(theta);}
+\DoxyCodeLine{17 \}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* sun */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* sincos\_h */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+
+\end{DoxyCode}

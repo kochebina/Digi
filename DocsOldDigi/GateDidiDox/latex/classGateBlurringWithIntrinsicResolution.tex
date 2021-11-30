@@ -1,0 +1,92 @@
+\hypertarget{classGateBlurringWithIntrinsicResolution}{}\doxysection{Gate\+Blurring\+With\+Intrinsic\+Resolution Class Reference}
+\label{classGateBlurringWithIntrinsicResolution}\index{GateBlurringWithIntrinsicResolution@{GateBlurringWithIntrinsicResolution}}
+
+
+Pulse-\/processor for simulating a special and local \mbox{\hyperlink{classGaussian}{Gaussian}} blurring.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Blurring\+With\+Intrinsic\+Resolution.\+hh$>$}
+
+Inheritance diagram for Gate\+Blurring\+With\+Intrinsic\+Resolution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateBlurringWithIntrinsicResolution}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_a7faf07d50a7930ada5fda8538baefe06}\label{classGateBlurringWithIntrinsicResolution_a7faf07d50a7930ada5fda8538baefe06}} 
+{\bfseries Gate\+Blurring\+With\+Intrinsic\+Resolution} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Public Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_ade7a642ec39d71b56b08e7c1483dcedd}\label{classGateBlurringWithIntrinsicResolution_ade7a642ec39d71b56b08e7c1483dcedd}} 
+virtual {\bfseries $\sim$\+Gate\+Blurring\+With\+Intrinsic\+Resolution} ()
+\begin{DoxyCompactList}\small\item\em Public Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_a91aea4914db7c2096e74a82c416f9662}\label{classGateBlurringWithIntrinsicResolution_a91aea4914db7c2096e74a82c416f9662}} 
+G4int {\bfseries Choose\+Volume} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Adds volume to the hashmap and returns 1 if it exists. If it does not exist, returns 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{setters and getters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_a297f43e475fd298e0a90d91c71d1fa45}\label{classGateBlurringWithIntrinsicResolution_a297f43e475fd298e0a90d91c71d1fa45}} 
+void {\bfseries Set\+Intrinsic\+Resolution} (G4\+String name, G4double val)
+\begin{DoxyCompactList}\small\item\em Allows to set the intrinsic resolution @ an energy of reference for crystal called \textquotesingle{}name\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_a859329f016c3c6d9f810ebc840a52f67}\label{classGateBlurringWithIntrinsicResolution_a859329f016c3c6d9f810ebc840a52f67}} 
+void {\bfseries Set\+Ref\+Energy} (G4\+String name, G4double val)
+\item 
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_a821de4345c99462d45fa28a2ad0a3de5}\label{classGateBlurringWithIntrinsicResolution_a821de4345c99462d45fa28a2ad0a3de5}} 
+G4double {\bfseries Get\+Intrinsic\+Resolution} (G4\+String name)
+\begin{DoxyCompactList}\small\item\em Allows to get the intrinsic resolution @ an energy of reference for crystal called \textquotesingle{}name\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_a6f5a6309952410ebde5d852ec48f4a4c}\label{classGateBlurringWithIntrinsicResolution_a6f5a6309952410ebde5d852ec48f4a4c}} 
+G4double {\bfseries Get\+Ref\+Energy} (G4\+String name)
+\item 
+virtual void \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_ac8f4ef026ff1f203e15ff2c3fb6d5002}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_ad352aba18a9c801f90870098dfc05d2e}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating a special and local \mbox{\hyperlink{classGaussian}{Gaussian}} blurring. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution}{Gate\+Blurring\+With\+Intrinsic\+Resolution}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}} (mai 2003)
+\item Pulse-\/processor for simulating a \mbox{\hyperlink{classGaussian}{Gaussian}} local blurring on the energy spectrum (different for several cystals) based on model \+: \[R=\sqrt{\frac{1.1}{N_{ph}\cdot QE\cdot TE}\cdot 2.35^2+R_i^2}\] where $N_{ph}=LY\cdot E_{inputPulse}$. You have to give the intrinsic resolution (Ri) of each crystal. If you use also the modules for Light Yield, Transfert et Quantum Efficiencies (LY, TE and QE), this module takes these differents values, in other case they are equal to 1.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_ac8f4ef026ff1f203e15ff2c3fb6d5002}\label{classGateBlurringWithIntrinsicResolution_ac8f4ef026ff1f203e15ff2c3fb6d5002}} 
+\index{GateBlurringWithIntrinsicResolution@{GateBlurringWithIntrinsicResolution}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateBlurringWithIntrinsicResolution@{GateBlurringWithIntrinsicResolution}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Blurring\+With\+Intrinsic\+Resolution\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the blurring 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateBlurringWithIntrinsicResolution_ad352aba18a9c801f90870098dfc05d2e}\label{classGateBlurringWithIntrinsicResolution_ad352aba18a9c801f90870098dfc05d2e}} 
+\index{GateBlurringWithIntrinsicResolution@{GateBlurringWithIntrinsicResolution}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateBlurringWithIntrinsicResolution@{GateBlurringWithIntrinsicResolution}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Blurring\+With\+Intrinsic\+Resolution\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Blurring\+With\+Intrinsic\+Resolution.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Blurring\+With\+Intrinsic\+Resolution.\+cc\end{DoxyCompactItemize}

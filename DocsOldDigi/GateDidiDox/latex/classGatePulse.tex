@@ -1,0 +1,276 @@
+\hypertarget{classGatePulse}{}\doxysection{Gate\+Pulse Class Reference}
+\label{classGatePulse}\index{GatePulse@{GatePulse}}
+
+
+Class for storing a \textquotesingle{}pulse\textquotesingle{} (luminous or electronic) derived from one or more hits.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Pulse.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePulse_a6d54a7937ac23d2e82b97e8d86d9d737}\label{classGatePulse_a6d54a7937ac23d2e82b97e8d86d9d737}} 
+{\bfseries Gate\+Pulse} (const void $\ast$its\+Mother=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePulse_ad306b58285b036be874efe4a6ca61dc6}\label{classGatePulse_ad306b58285b036be874efe4a6ca61dc6}} 
+{\bfseries Gate\+Pulse} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$right)
+\begin{DoxyCompactList}\small\item\em Copy constructor \texorpdfstring{$<$}{<}-\/ not really, this is just a normal constructor that takes a pointer! \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePulse_a9f6c5e94a3cacfc5ef149a863927c2f9}\label{classGatePulse_a9f6c5e94a3cacfc5ef149a863927c2f9}} 
+virtual {\bfseries $\sim$\+Gate\+Pulse} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{getters and setters to acces the content of the pulse}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePulse_ad8afcd42d8c1fa3563ce510e3a05c10e}\label{classGatePulse_ad8afcd42d8c1fa3563ce510e3a05c10e}} 
+void {\bfseries Set\+Mother} (const void $\ast$mother)
+\item 
+\mbox{\Hypertarget{classGatePulse_a4b5bc5b2355d40c16193b95f34ed7557}\label{classGatePulse_a4b5bc5b2355d40c16193b95f34ed7557}} 
+const void $\ast$ {\bfseries Get\+Mother} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a79598bad345d6d9dd18de2f056b5c733}\label{classGatePulse_a79598bad345d6d9dd18de2f056b5c733}} 
+void {\bfseries Set\+Run\+ID} (G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_aa207cab4f116acef351e1c5847d88102}\label{classGatePulse_aa207cab4f116acef351e1c5847d88102}} 
+G4int {\bfseries Get\+Run\+ID} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a74cf3c616a81234c477e537c1c2791c4}\label{classGatePulse_a74cf3c616a81234c477e537c1c2791c4}} 
+void {\bfseries Set\+Event\+ID} (G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_a0880bf9bee6bf273f396e80fbc21e06a}\label{classGatePulse_a0880bf9bee6bf273f396e80fbc21e06a}} 
+G4int {\bfseries Get\+Event\+ID} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a66714ddf2a178a231eeb3d3956b44bc7}\label{classGatePulse_a66714ddf2a178a231eeb3d3956b44bc7}} 
+void {\bfseries Set\+Source\+ID} (G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_ae00591f038277580b7ac2e51436bc5fa}\label{classGatePulse_ae00591f038277580b7ac2e51436bc5fa}} 
+G4int {\bfseries Get\+Source\+ID} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_afd724a114f8e8298e692312fac6ba86b}\label{classGatePulse_afd724a114f8e8298e692312fac6ba86b}} 
+void {\bfseries Set\+Source\+Position} (const G4\+Three\+Vector \&xyz)
+\item 
+\mbox{\Hypertarget{classGatePulse_a034a7711bba264bc31420df39f6acad5}\label{classGatePulse_a034a7711bba264bc31420df39f6acad5}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Source\+Position} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a8509fe0acb0ffb1b5813f6e822e0b69a}\label{classGatePulse_a8509fe0acb0ffb1b5813f6e822e0b69a}} 
+G4double {\bfseries Get\+Time} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a6fbd11872a16ead302859a0eb78b7421}\label{classGatePulse_a6fbd11872a16ead302859a0eb78b7421}} 
+void {\bfseries Set\+Time} (G4double value)
+\item 
+\mbox{\Hypertarget{classGatePulse_a896413464b2f40f92ca1cbc598c33dea}\label{classGatePulse_a896413464b2f40f92ca1cbc598c33dea}} 
+G4double {\bfseries Get\+Energy} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_af482448ff888ce27bb49fe26c2c01792}\label{classGatePulse_af482448ff888ce27bb49fe26c2c01792}} 
+void {\bfseries Set\+Energy} (G4double value)
+\item 
+\mbox{\Hypertarget{classGatePulse_a433c7aef4e5c9f29b620bba2610e1c9d}\label{classGatePulse_a433c7aef4e5c9f29b620bba2610e1c9d}} 
+void {\bfseries Set\+PDGEncoding} (const G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_a5359478e57ff90dc6034ab604fb600ce}\label{classGatePulse_a5359478e57ff90dc6034ab604fb600ce}} 
+G4int {\bfseries Get\+PDGEncoding} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_aeb8165d3b4df5308c2266ca1ffe57199}\label{classGatePulse_aeb8165d3b4df5308c2266ca1ffe57199}} 
+void {\bfseries Set\+Local\+Pos} (const G4\+Three\+Vector \&xyz)
+\item 
+\mbox{\Hypertarget{classGatePulse_ad08e3ae4c439e35fb8a7c511e6590c2d}\label{classGatePulse_ad08e3ae4c439e35fb8a7c511e6590c2d}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Local\+Pos} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_abf7b8a4d2404d56e8885db729d57cd5b}\label{classGatePulse_abf7b8a4d2404d56e8885db729d57cd5b}} 
+void {\bfseries Set\+Global\+Pos} (const G4\+Three\+Vector \&xyz)
+\item 
+\mbox{\Hypertarget{classGatePulse_a6716eaed94c2dc9f4b22dc6c804dbcf4}\label{classGatePulse_a6716eaed94c2dc9f4b22dc6c804dbcf4}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Global\+Pos} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a2e2b8dcc30c0b91d406e4c3385eb1988}\label{classGatePulse_a2e2b8dcc30c0b91d406e4c3385eb1988}} 
+void {\bfseries Set\+NPhantom\+Compton} (G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_ac594898a8ea245d51b0a21babf5d7a47}\label{classGatePulse_ac594898a8ea245d51b0a21babf5d7a47}} 
+G4int {\bfseries Get\+NPhantom\+Compton} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a503c068b65032da29649b32baa9ba27a}\label{classGatePulse_a503c068b65032da29649b32baa9ba27a}} 
+void {\bfseries Set\+NCrystal\+Compton} (G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_a4823ddac0d3818dca542fc8a6b1538ae}\label{classGatePulse_a4823ddac0d3818dca542fc8a6b1538ae}} 
+G4int {\bfseries Get\+NCrystal\+Compton} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_acff24606555a76203e60ccf2c8d806e8}\label{classGatePulse_acff24606555a76203e60ccf2c8d806e8}} 
+void {\bfseries Set\+NPhantom\+Rayleigh} (G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_afcd2d69a290328cf7cc995d5d5600c4f}\label{classGatePulse_afcd2d69a290328cf7cc995d5d5600c4f}} 
+G4int {\bfseries Get\+NPhantom\+Rayleigh} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a8d6a54a78f71a8b7cd8782183ec562bf}\label{classGatePulse_a8d6a54a78f71a8b7cd8782183ec562bf}} 
+void {\bfseries Set\+NCrystal\+Rayleigh} (G4int j)
+\item 
+\mbox{\Hypertarget{classGatePulse_ae4b0f62ec6be2aac8351e4a7ea325c11}\label{classGatePulse_ae4b0f62ec6be2aac8351e4a7ea325c11}} 
+G4int {\bfseries Get\+NCrystal\+Rayleigh} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a72dea28c384c3c82fe1654f74d437119}\label{classGatePulse_a72dea28c384c3c82fe1654f74d437119}} 
+void {\bfseries Set\+Compton\+Volume\+Name} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGatePulse_a7cbf5d0940b55777fb5c6e5e82972366}\label{classGatePulse_a7cbf5d0940b55777fb5c6e5e82972366}} 
+G4\+String {\bfseries Get\+Compton\+Volume\+Name} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a27edb530088e2e5912a4a3715eda385e}\label{classGatePulse_a27edb530088e2e5912a4a3715eda385e}} 
+void {\bfseries Set\+Rayleigh\+Volume\+Name} (const G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGatePulse_aff7d29491e25bc820f03341edc3bee7a}\label{classGatePulse_aff7d29491e25bc820f03341edc3bee7a}} 
+G4\+String {\bfseries Get\+Rayleigh\+Volume\+Name} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_ad7517010daba29aa3ef879da905b6dfc}\label{classGatePulse_ad7517010daba29aa3ef879da905b6dfc}} 
+void {\bfseries Set\+Volume\+ID} (const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} \&volume\+ID)
+\item 
+\mbox{\Hypertarget{classGatePulse_a1b68cb74386e6d601b6b5f7a352e6bdd}\label{classGatePulse_a1b68cb74386e6d601b6b5f7a352e6bdd}} 
+const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} \& {\bfseries Get\+Volume\+ID} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_aa21104e50c3e595ac65901aa99963750}\label{classGatePulse_aa21104e50c3e595ac65901aa99963750}} 
+void {\bfseries Set\+Scanner\+Pos} (const G4\+Three\+Vector \&xyz)
+\item 
+\mbox{\Hypertarget{classGatePulse_af994763f1f12ad20cbe01fa7a6177d42}\label{classGatePulse_af994763f1f12ad20cbe01fa7a6177d42}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Scanner\+Pos} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a94479c4e0ddf5d7ad15a91a75aab184f}\label{classGatePulse_a94479c4e0ddf5d7ad15a91a75aab184f}} 
+void {\bfseries Set\+Scanner\+Rot\+Angle} (G4double angle)
+\item 
+\mbox{\Hypertarget{classGatePulse_a2e8b7f391fb657c5db8e7ac1542b95b4}\label{classGatePulse_a2e8b7f391fb657c5db8e7ac1542b95b4}} 
+G4double {\bfseries Get\+Scanner\+Rot\+Angle} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_aaed9788646132883bb2081d49e43c78a}\label{classGatePulse_aaed9788646132883bb2081d49e43c78a}} 
+void {\bfseries Set\+Output\+Volume\+ID} (const \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} \&output\+Volume\+ID)
+\item 
+\mbox{\Hypertarget{classGatePulse_a5d035252f77fbc317a1291c0cd6092df}\label{classGatePulse_a5d035252f77fbc317a1291c0cd6092df}} 
+const \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} \& {\bfseries Get\+Output\+Volume\+ID} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a704c4ff4be59c5dfc6c8ad050c816b3e}\label{classGatePulse_a704c4ff4be59c5dfc6c8ad050c816b3e}} 
+G4int {\bfseries Get\+Component\+ID} (size\+\_\+t depth) const
+\item 
+\mbox{\Hypertarget{classGatePulse_aaf5cd80c0eae62758d4925152db73403}\label{classGatePulse_aaf5cd80c0eae62758d4925152db73403}} 
+void {\bfseries Change\+Volume\+IDAnd\+Output\+Volume\+IDValue} (size\+\_\+t depth, G4int value)
+\begin{DoxyCompactList}\small\item\em S. Stute\+: Modify one value inside the Volume\+ID and output\+Volume\+ID vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePulse_a0eb2b23d29b60bc0134f16b6db47eac8}\label{classGatePulse_a0eb2b23d29b60bc0134f16b6db47eac8}} 
+void {\bfseries Reset\+Local\+Pos} ()
+\item 
+\mbox{\Hypertarget{classGatePulse_ae6362cfe2c2547707495686da89d1447}\label{classGatePulse_ae6362cfe2c2547707495686da89d1447}} 
+void {\bfseries Reset\+Global\+Pos} (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$system)
+\item 
+\mbox{\Hypertarget{classGatePulse_aa070bb81ffe69031c08947b259dfe0f5}\label{classGatePulse_aa070bb81ffe69031c08947b259dfe0f5}} 
+G4int {\bfseries Get\+NSeptal} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_abc2263a1fcf6f552f8923e95d8ecc4c9}\label{classGatePulse_abc2263a1fcf6f552f8923e95d8ecc4c9}} 
+void {\bfseries Set\+NSeptal} (G4int septal\+Nb)
+\item 
+\mbox{\Hypertarget{classGatePulse_a5c9cacdad8ea25e515a3d38319bc039f}\label{classGatePulse_a5c9cacdad8ea25e515a3d38319bc039f}} 
+void {\bfseries Set\+Post\+Step\+Process} (G4\+String proc)
+\item 
+\mbox{\Hypertarget{classGatePulse_a6a0f0fcf1c2f7def1872c1d535823cf9}\label{classGatePulse_a6a0f0fcf1c2f7def1872c1d535823cf9}} 
+G4\+String {\bfseries Get\+Post\+Step\+Process} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a108c81ebf93eab71b295fd37ba6ee3d2}\label{classGatePulse_a108c81ebf93eab71b295fd37ba6ee3d2}} 
+void {\bfseries Set\+Energy\+Ini\+Track} (G4double e\+Ini)
+\item 
+\mbox{\Hypertarget{classGatePulse_a6b16778317643775c0d4bfe7f705d908}\label{classGatePulse_a6b16778317643775c0d4bfe7f705d908}} 
+G4double {\bfseries Get\+Energy\+Ini\+Track} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a7f34f1e8081a9ed88669d3c705026c14}\label{classGatePulse_a7f34f1e8081a9ed88669d3c705026c14}} 
+void {\bfseries Set\+Energy\+Fin} (G4double e\+Fin)
+\item 
+\mbox{\Hypertarget{classGatePulse_a7932b84b9ec01f24d68883dd3d0aeb53}\label{classGatePulse_a7932b84b9ec01f24d68883dd3d0aeb53}} 
+G4double {\bfseries Get\+Energy\+Fin} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_ae4782818636b41508f2939b344c0cf7f}\label{classGatePulse_ae4782818636b41508f2939b344c0cf7f}} 
+void {\bfseries Set\+Source\+Energy} (G4double e\+Value)
+\item 
+\mbox{\Hypertarget{classGatePulse_a880d0b018433dd3c2f7180d58aeabf60}\label{classGatePulse_a880d0b018433dd3c2f7180d58aeabf60}} 
+G4double {\bfseries Get\+Source\+Energy} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a7059b75d5bad5d43c7bf6efa3e5570f4}\label{classGatePulse_a7059b75d5bad5d43c7bf6efa3e5570f4}} 
+void {\bfseries Set\+Source\+PDG} (G4int PDGEncoding)
+\item 
+\mbox{\Hypertarget{classGatePulse_a610595084699cad45641f2717549ac55}\label{classGatePulse_a610595084699cad45641f2717549ac55}} 
+G4int {\bfseries Get\+Source\+PDG} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a31372ae1c18688ca9dcc41b718847da0}\label{classGatePulse_a31372ae1c18688ca9dcc41b718847da0}} 
+void {\bfseries Set\+NCrystal\+Conv} (G4int n\+Conv)
+\item 
+\mbox{\Hypertarget{classGatePulse_ab00c13768e400ba47b8fe0b90839f7d1}\label{classGatePulse_ab00c13768e400ba47b8fe0b90839f7d1}} 
+G4int {\bfseries Get\+NCrystal\+Conv} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a64773ff84d780d411771e7bf748f36c9}\label{classGatePulse_a64773ff84d780d411771e7bf748f36c9}} 
+void {\bfseries Set\+Process\+Creator} (G4\+String proc)
+\item 
+\mbox{\Hypertarget{classGatePulse_ac483b649f51a764094fb491ffb6677c2}\label{classGatePulse_ac483b649f51a764094fb491ffb6677c2}} 
+G4\+String {\bfseries Get\+Process\+Creator} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a1b77e9cb99e4ebea3500917f0cf4a3b9}\label{classGatePulse_a1b77e9cb99e4ebea3500917f0cf4a3b9}} 
+void {\bfseries Set\+Track\+ID} (G4int trk\+ID)
+\item 
+\mbox{\Hypertarget{classGatePulse_a84e4c669008ff7d1fe618e7378470817}\label{classGatePulse_a84e4c669008ff7d1fe618e7378470817}} 
+G4int {\bfseries Get\+Track\+ID} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a24e2e86021ddfc50c2ccd26d20f9db64}\label{classGatePulse_a24e2e86021ddfc50c2ccd26d20f9db64}} 
+void {\bfseries Set\+Parent\+ID} (G4int parent\+ID)
+\item 
+\mbox{\Hypertarget{classGatePulse_a42e0209d3289ae8613592d08c0a8846f}\label{classGatePulse_a42e0209d3289ae8613592d08c0a8846f}} 
+G4int {\bfseries Get\+Parent\+ID} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a89c05f5899a6d9a1082234affa1abd15}\label{classGatePulse_a89c05f5899a6d9a1082234affa1abd15}} 
+G4double {\bfseries Get\+Energy\+Error} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a8aef45324527d83d2af63843aec845d1}\label{classGatePulse_a8aef45324527d83d2af63843aec845d1}} 
+void {\bfseries Set\+Energy\+Error} (G4double value)
+\item 
+\mbox{\Hypertarget{classGatePulse_a3c8d2f14ccf9327fea0162954af3ebed}\label{classGatePulse_a3c8d2f14ccf9327fea0162954af3ebed}} 
+void {\bfseries Set\+Local\+Pos\+Error} (const G4\+Three\+Vector \&xyz)
+\item 
+\mbox{\Hypertarget{classGatePulse_ab4c13eb9d5bd78dae1f602d1989761ea}\label{classGatePulse_ab4c13eb9d5bd78dae1f602d1989761ea}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Local\+Pos\+Error} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_a57d37a8bd41d98b6e83acfe3a86cbf47}\label{classGatePulse_a57d37a8bd41d98b6e83acfe3a86cbf47}} 
+void {\bfseries Set\+Global\+Pos\+Error} (const G4\+Three\+Vector \&xyz)
+\item 
+\mbox{\Hypertarget{classGatePulse_a189ffdfa674f8b3cdb84dd0cb0880b5f}\label{classGatePulse_a189ffdfa674f8b3cdb84dd0cb0880b5f}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Global\+Pos\+Error} () const
+\item 
+\mbox{\Hypertarget{classGatePulse_ab8005dd2b7dfa588176a8b8943d63b25}\label{classGatePulse_ab8005dd2b7dfa588176a8b8943d63b25}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \&rhs)
+\item 
+\mbox{\Hypertarget{classGatePulse_a2654468766918b65f67fd0a491c9901a}\label{classGatePulse_a2654468766918b65f67fd0a491c9901a}} 
+virtual const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \& {\bfseries Centroid\+Merge} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$secondary\+Pulse)
+\item 
+\mbox{\Hypertarget{classGatePulse_abf0ad604094b7c043d8eb0ead37bade1}\label{classGatePulse_abf0ad604094b7c043d8eb0ead37bade1}} 
+virtual const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \& {\bfseries Centroid\+Merge\+Compton} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$right)
+\item 
+\mbox{\Hypertarget{classGatePulse_ae803d388c150ec975c14d62c2453dfeb}\label{classGatePulse_ae803d388c150ec975c14d62c2453dfeb}} 
+virtual const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \& {\bfseries Centroid\+Merge\+Compt\+Phot\+Ideal} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$right)
+\item 
+\mbox{\Hypertarget{classGatePulse_a4c9e6b022fbe44818e47254a72e3c532}\label{classGatePulse_a4c9e6b022fbe44818e47254a72e3c532}} 
+virtual const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \& {\bfseries Merge\+Position\+Energy\+Win} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$right)
+\item 
+\mbox{\Hypertarget{classGatePulse_a678b22c7979fa2f12ea8d14a710a4574}\label{classGatePulse_a678b22c7979fa2f12ea8d14a710a4574}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \&)
+\begin{DoxyCompactList}\small\item\em printing methods \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for storing a \textquotesingle{}pulse\textquotesingle{} (luminous or electronic) derived from one or more hits. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item When hits are registered, theyr are converted into pulses by a \mbox{\hyperlink{classGateHitConvertor}{Gate\+Hit\+Convertor}}
+\item These pulses may then be processed by a series of pulse-\/processors. The output of this processing is a pulse-\/list, which is then converted into digis.
+\item S. Stute\+: june2014, add two methods used in the new \mbox{\hyperlink{classGateReadout}{Gate\+Readout}} implementation
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}}, \mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Pulse.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Pulse.\+cc\end{DoxyCompactItemize}

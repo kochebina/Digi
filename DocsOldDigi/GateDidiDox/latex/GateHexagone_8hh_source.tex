@@ -1,0 +1,78 @@
+\hypertarget{GateHexagone_8hh_source}{}\doxysection{Gate\+Hexagone.\+hh}
+\label{GateHexagone_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHexagone.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateHexagone.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateHexagone\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateHexagone\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePolyhedra}{GatePolyhedra}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHexagoneMessenger}{GateHexagoneMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHexagone}{GateHexagone}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{25      \mbox{\hyperlink{classGateHexagone}{GateHexagone}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{26           G4bool acceptsChildren=\textcolor{keyword}{true}, }
+\DoxyCodeLine{27           G4int depth=0); }
+\DoxyCodeLine{28  }
+\DoxyCodeLine{29      \mbox{\hyperlink{classGateHexagone}{GateHexagone}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{30                         G4double itsRadius,G4double itsHeight);}
+\DoxyCodeLine{31      \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateHexagone}{\string~GateHexagone}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33      FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateHexagone}{GateHexagone}})}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{public}:}
+\DoxyCodeLine{36      \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateHexagone_afae1d174507c08c807b2b29d4bc67330}{ConstructOwnSolidAndLogicalVolume}}(G4Material*, G4bool flagUpdateOnly);     }
+\DoxyCodeLine{37      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{38      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{39      }
+\DoxyCodeLine{40      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateHexagone_ad51c41313123a82fb3836b9b05a8f1bb}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) }
+\DoxyCodeLine{41      \{ \textcolor{keywordflow}{if} (axis==2)}
+\DoxyCodeLine{42           \textcolor{keywordflow}{return} m\_HexagoneHeight/2.;}
+\DoxyCodeLine{43        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{44           \textcolor{keywordflow}{return} m\_HexagoneRadius;}
+\DoxyCodeLine{45      \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{public}:}
+\DoxyCodeLine{48      \textcolor{keyword}{inline} G4double GetHexagoneHeight()                  \{\textcolor{keywordflow}{return} m\_HexagoneHeight;\}}
+\DoxyCodeLine{49      \textcolor{keyword}{inline} G4double GetHexagoneRadius()                  \{\textcolor{keywordflow}{return} m\_HexagoneRadius;\}}
+\DoxyCodeLine{50      }
+\DoxyCodeLine{51      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHexagoneRadius(G4double val)              \{ m\_HexagoneRadius = val; \textcolor{comment}{/*ComputeParameters();*/}\}}
+\DoxyCodeLine{52      \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetHexagoneHeight(G4double val)              \{ m\_HexagoneHeight = val; \textcolor{comment}{/*ComputeParameters();*/} \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{private}:}
+\DoxyCodeLine{55      G4double m\_HexagoneRadius;}
+\DoxyCodeLine{56      G4double m\_HexagoneHeight;}
+\DoxyCodeLine{57      }
+\DoxyCodeLine{58      G4double* m\_HexagoneZPlane;}
+\DoxyCodeLine{59      G4double* m\_HexagoneRInner;}
+\DoxyCodeLine{60      G4double* m\_HexagoneROuter;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63      \mbox{\hyperlink{classGatePolyhedra}{GatePolyhedra}}*       m\_Hexagone\_solid;}
+\DoxyCodeLine{64      G4LogicalVolume*     m\_Hexagone\_log;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{68      \mbox{\hyperlink{classGateHexagoneMessenger}{GateHexagoneMessenger}}* m\_Messenger; }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 MAKE\_AUTO\_CREATOR\_VOLUME(hexagone,\mbox{\hyperlink{classGateHexagone}{GateHexagone}})}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+
+\end{DoxyCode}

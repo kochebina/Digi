@@ -1,0 +1,79 @@
+\hypertarget{classGateRangeMaterialTable}{}\doxysection{Gate\+Range\+Material\+Table Class Reference}
+\label{classGateRangeMaterialTable}\index{GateRangeMaterialTable@{GateRangeMaterialTable}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGateRangeMaterialTable_1_1mMaterials}{m\+Materials}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a52fe775e86be82567f144d5770e3d832}\label{classGateRangeMaterialTable_a52fe775e86be82567f144d5770e3d832}} 
+typedef int {\bfseries Label\+Type}
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a25a7ed1e376891249ddc5ff93fe9883d}\label{classGateRangeMaterialTable_a25a7ed1e376891249ddc5ff93fe9883d}} 
+typedef std\+::map$<$ Label\+Type, G4\+String $>$ {\bfseries Label\+To\+Material\+Name\+Type}
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a2d0c5474b552b18af788644acce20ae0}\label{classGateRangeMaterialTable_a2d0c5474b552b18af788644acce20ae0}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{structGateRangeMaterialTable_1_1mMaterials}{m\+Materials}} $>$ {\bfseries Gate\+Materials\+Vector}
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_ae49cd19c0796bf7e528afb29ff4a72f0}\label{classGateRangeMaterialTable_ae49cd19c0796bf7e528afb29ff4a72f0}} 
+typedef Gate\+Materials\+Vector\+::iterator {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a247b403cee0644cac55eaa48a2ce9376}\label{classGateRangeMaterialTable_a247b403cee0644cac55eaa48a2ce9376}} 
+typedef Gate\+Materials\+Vector\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a3586b25176a6548ac79aa5e0b9edd82e}\label{classGateRangeMaterialTable_a3586b25176a6548ac79aa5e0b9edd82e}} 
+iterator {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_ab63f61f7d419d9a87fede50f09466f3e}\label{classGateRangeMaterialTable_ab63f61f7d419d9a87fede50f09466f3e}} 
+iterator {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a354bcef0fc6bdc7c34edfbffdc31f532}\label{classGateRangeMaterialTable_a354bcef0fc6bdc7c34edfbffdc31f532}} 
+void {\bfseries Add\+Material} (int R1, int R2, G4\+String name)
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a325974fc3ad39a561dd324f9f5c135bb}\label{classGateRangeMaterialTable_a325974fc3ad39a561dd324f9f5c135bb}} 
+void {\bfseries Write\+Material\+Database} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a128710da0c61b8804875739b1c5dd13a}\label{classGateRangeMaterialTable_a128710da0c61b8804875739b1c5dd13a}} 
+void {\bfseries Write\+Materialto\+Range\+Link} (G4\+String filename)
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a18310b94ff5c888ca57336b63f35e1c4}\label{classGateRangeMaterialTable_a18310b94ff5c888ca57336b63f35e1c4}} 
+void {\bfseries Write\+Material} (G4\+Material $\ast$m, std\+::ofstream \&os)
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a6bd8a4b5e9e1aa8557cc514ea57af847}\label{classGateRangeMaterialTable_a6bd8a4b5e9e1aa8557cc514ea57af847}} 
+int {\bfseries Get\+Number\+Of\+Materials} ()
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_a5eea6e4a0a1914e208d51015b45cddde}\label{classGateRangeMaterialTable_a5eea6e4a0a1914e208d51015b45cddde}} 
+void {\bfseries Reset} ()
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_ac4885e154573a671fcf431b6adaebbd8}\label{classGateRangeMaterialTable_ac4885e154573a671fcf431b6adaebbd8}} 
+void {\bfseries Map\+Label\+To\+Material} (Label\+To\+Material\+Name\+Type \&m)
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_adb3e51fe0474cb94396282cee1cc25c3}\label{classGateRangeMaterialTable_adb3e51fe0474cb94396282cee1cc25c3}} 
+double {\bfseries Get\+RMean\+From\+Label} (int l)
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_ab7931e8e6c01abe50d62867b82952bb9}\label{classGateRangeMaterialTable_ab7931e8e6c01abe50d62867b82952bb9}} 
+Label\+Type {\bfseries Get\+Label\+FromR} (int l)
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_ade2e6a29ca8d9aae69c24af7884eae82}\label{classGateRangeMaterialTable_ade2e6a29ca8d9aae69c24af7884eae82}} 
+Gate\+Materials\+Vector {\bfseries Get\+Materials} ()
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_aefab94b178cae875d0c284caf093cb8c}\label{classGateRangeMaterialTable_aefab94b178cae875d0c284caf093cb8c}} 
+\mbox{\hyperlink{structGateRangeMaterialTable_1_1mMaterials}{m\+Materials}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateRangeMaterialTable_aa543900a0efd1d5967b46f04d3f51d43}\label{classGateRangeMaterialTable_aa543900a0efd1d5967b46f04d3f51d43}} 
+Gate\+Materials\+Vector {\bfseries m\+Materials\+Vector}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/include/Gate\+Range\+Material\+Table.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/general/src/Gate\+Range\+Material\+Table.\+cc\end{DoxyCompactItemize}

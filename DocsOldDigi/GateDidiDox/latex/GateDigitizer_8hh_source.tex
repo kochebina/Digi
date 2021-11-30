@@ -1,0 +1,179 @@
+\hypertarget{GateDigitizer_8hh_source}{}\doxysection{Gate\+Digitizer.\+hh}
+\label{GateDigitizer_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDigitizer.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDigitizer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GateDigitizer\_h}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GateDigitizer\_h 1}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4VDigitizerModule.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GatePulseProcessorChain.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateCoincidencePulseProcessorChain.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateCoincidencePulse.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateCoincidenceSorter.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateVDigiMakerModule.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateCrystalSD.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDigitizerMessenger}{GateDigitizerMessenger}};}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateHitConvertor}{GateHitConvertor}};}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDigiMakerModule}{GateVDigiMakerModule}};}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalHit}{GateCrystalHit}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDigitizer}{GateDigitizer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}},\textcolor{keyword}{public} G4VDigitizerModule}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38   \textcolor{keyword}{static} \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}* GetInstance();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDigitizer}{\string~GateDigitizer}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} InsertChain(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* newChain);}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} InsertCoincidenceChain(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* newChain);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeChains(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeSorters(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ListElements(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* GetChain(\textcolor{keywordtype}{size\_t} i)}
+\DoxyCodeLine{53   \{\textcolor{keywordflow}{return} (i<\mbox{\hyperlink{classGateDigitizer_a5be6e0bc806bcf5d3268d8a8b9d0bc76}{m\_singleChainList}}.size()) ? \mbox{\hyperlink{classGateDigitizer_a5be6e0bc806bcf5d3268d8a8b9d0bc76}{m\_singleChainList}}[i] : 0; \}}
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} size()\textcolor{keyword}{ const}}
+\DoxyCodeLine{55 \textcolor{keyword}{  }\{\textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_a5be6e0bc806bcf5d3268d8a8b9d0bc76}{m\_singleChainList}}.size(); \}}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} GetChainNumber()\textcolor{keyword}{ const}}
+\DoxyCodeLine{57 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} size();\}}
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}* FindElement(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateNamedObject}{GateNamedObject}}* FindElementByBaseName(\textcolor{keyword}{const} G4String\& baseName)}
+\DoxyCodeLine{60   \{ \textcolor{keywordflow}{return} FindElement( MakeElementName(baseName) ) ; \}}
+\DoxyCodeLine{61   \textcolor{keyword}{inline} \textcolor{keyword}{const} G4String\&  GetElementTypeName()}
+\DoxyCodeLine{62   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_adcf0e65785411b0f005fdac23f4e74aa}{m\_elementTypeName}};\}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4String MakeElementName(\textcolor{keyword}{const} G4String\& newBaseName)}
+\DoxyCodeLine{65   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateNamedObject_a74cb2aaf869dcf59e7e22dd72cff6368}{GetObjectName}}() + \textcolor{stringliteral}{"{}/"{}} + newBaseName; \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* GetSystem() \textcolor{keyword}{const} \textcolor{comment}{//mhadi\_obso Obsolete because we use now a system list for the multi-\/system approach}}
+\DoxyCodeLine{68   \{ \textcolor{keywordflow}{return} m\_system;\}}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetSystem(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* aSystem);\textcolor{comment}{//mhadi\_obso Obsolete because we use now a system list for the multi-\/system approach}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   \textcolor{comment}{// Print-\/out a description of the object}}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a658a2a5d943a46115437315b377aa5ed}{Describe}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a2618debd53116ec2fb30d5f106d5ac74}{StorePulseList}}(\mbox{\hyperlink{classGatePulseList}{GatePulseList}}* newPulseList);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_ac4c14f2b3d9edba6431f45b175f79309}{StorePulseListAlias}}(\textcolor{keyword}{const} G4String\& aliasName,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}* aPulseList);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a71e4bb1dc7ad90452e98c206f82d1581}{StoreCoincidencePulseAlias}}(\textcolor{keyword}{const} G4String\& aliasName,\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* aPulse);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a2a794cacf9ce8f07fc23b4bee62996bb}{StoreCoincidencePulse}}(\mbox{\hyperlink{classGateCoincidencePulse}{GateCoincidencePulse}}* newCoincidencePulse);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_aa061008e0a6e05b4ed49f63f97b85306}{StoreCoincidenceChain}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* newCoincidenceChain);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{90   \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateDigitizer_a4f96b7bc353efbd5a77da8788ca16ce5}{FindPulseList}}(\textcolor{keyword}{const} G4String\& pulseListName);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93   std::vector<GateCoincidencePulse*> \mbox{\hyperlink{classGateDigitizer_a726f8c86104f6fe8d4c5b006dc099540}{FindCoincidencePulse}}(\textcolor{keyword}{const} G4String\& pulseName);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a4b19a585a64c19a3c7ca680ae2596622}{ErasePulseListVector}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a92d9244ed51745076cd8f67f6d82b817}{StoreNewPulseProcessorChain}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* processorChain);}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a197473587682e7ad3ac3147e88198e07}{StoreNewCoincidenceProcessorChain}}(\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* processorChain);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDigitizer_a7f41aa843d98a933bd0730988e9f9973}{StoreNewCoincidenceSorter}}(\mbox{\hyperlink{classGateCoincidenceSorter}{GateCoincidenceSorter}}* coincidenceSorter);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} MakeCoincidencePulse(G4int i)}
+\DoxyCodeLine{107   \{ \mbox{\hyperlink{classGateDigitizer_a2c6e8016a132fe057654f2a66c27a979}{m\_coincidenceSorterList}}[i]-\/>ProcessSinglePulseList();\}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Digitize();}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} Digitize(std::vector<GateCrystalHit*> vHitsCollection);}
+\DoxyCodeLine{111   \textcolor{keywordtype}{void} DigitizePulses();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateHitConvertor}{GateHitConvertor}}* \mbox{\hyperlink{classGateDigitizer_a26fe3dd992e2692c91e4afe46ca14d04}{GetHitConvertor}}()}
+\DoxyCodeLine{116   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_a7ec4dd1e11e46ad38ff4dabd7a70e463}{m\_hitConvertor}};\}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} StoreDigiCollection(G4VDigiCollection* aDC)}
+\DoxyCodeLine{119   \{ G4VDigitizerModule::StoreDigiCollection(aDC); \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} StoreCollectionName(\textcolor{keyword}{const} G4String\& aCollectionName)}
+\DoxyCodeLine{122   \{ collectionName.push\_back(aCollectionName.c\_str()); \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} InsertDigiMakerModule(\mbox{\hyperlink{classGateVDigiMakerModule}{GateVDigiMakerModule}}* newDigiMakerModule);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126   \textcolor{comment}{//mhadi\_add[}}
+\DoxyCodeLine{127   \textcolor{comment}{// Next methods were added for the multi-\/system approach}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129   \textcolor{keyword}{inline} GateSystemList* GetSystemList()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_systemList; \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131   \textcolor{comment}{// Add a system to the digitizer systems list}}
+\DoxyCodeLine{132   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} AddSystem(\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* aSystem);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::vector<GatePulseProcessorChain*> GetPulseProcessorChainList()}
+\DoxyCodeLine{135   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_a5be6e0bc806bcf5d3268d8a8b9d0bc76}{m\_singleChainList}};\}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::vector<GateCoincidencePulseProcessorChain*> GetCoinPulseProcessorChainList()}
+\DoxyCodeLine{138   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_a0ed880a6e92062fcb98ef7f867453c94}{m\_coincidenceChainList}};\}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::vector<GateCoincidenceSorter*> GetCoinSorterList()}
+\DoxyCodeLine{141   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_a2c6e8016a132fe057654f2a66c27a979}{m\_coincidenceSorterList}};\}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::vector<GateVDigiMakerModule*>  GetDigiMakerList()}
+\DoxyCodeLine{144   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_ad21be07e7b7e4b9dc8b73de3919012ab}{m\_digiMakerList}};\}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146   \textcolor{comment}{// To find a system from the digitizer systems list}}
+\DoxyCodeLine{147   \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* FindSystem(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* processorChain);}
+\DoxyCodeLine{148   \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* FindSystem(G4String\& systemName);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} GetmCoincChainListSize()}
+\DoxyCodeLine{151   \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateDigitizer_a0ed880a6e92062fcb98ef7f867453c94}{m\_coincidenceChainList}}.size(); \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{GateCoincidencePulseProcessorChain}}* GetCoincChain(\textcolor{keywordtype}{size\_t} i)}
+\DoxyCodeLine{154   \{\textcolor{keywordflow}{return} (i<\mbox{\hyperlink{classGateDigitizer_a0ed880a6e92062fcb98ef7f867453c94}{m\_coincidenceChainList}}.size()) ? \mbox{\hyperlink{classGateDigitizer_a0ed880a6e92062fcb98ef7f867453c94}{m\_coincidenceChainList}}[i] : 0; \}}
+\DoxyCodeLine{155   \textcolor{comment}{//mhadi\_add]}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{158   G4String                  \mbox{\hyperlink{classGateDigitizer_adcf0e65785411b0f005fdac23f4e74aa}{m\_elementTypeName}};  }
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160   \mbox{\hyperlink{classGateVSystem}{GateVSystem}}*                   m\_system;        \textcolor{comment}{//<! System to which the digitizer is attached //mhadi\_obso Obsolete}}
+\DoxyCodeLine{161   GateSystemList*                               m\_systemList;            }
+\DoxyCodeLine{162   \mbox{\hyperlink{classGateHitConvertor}{GateHitConvertor}}*                 \mbox{\hyperlink{classGateDigitizer_a7ec4dd1e11e46ad38ff4dabd7a70e463}{m\_hitConvertor}};            }
+\DoxyCodeLine{163   std::vector<GatePulseProcessorChain*>     \mbox{\hyperlink{classGateDigitizer_a5be6e0bc806bcf5d3268d8a8b9d0bc76}{m\_singleChainList}};  }
+\DoxyCodeLine{164   std::vector<GateCoincidencePulseProcessorChain*>   \mbox{\hyperlink{classGateDigitizer_a0ed880a6e92062fcb98ef7f867453c94}{m\_coincidenceChainList}};   }
+\DoxyCodeLine{165   std::vector<GateCoincidenceSorter*>       \mbox{\hyperlink{classGateDigitizer_a2c6e8016a132fe057654f2a66c27a979}{m\_coincidenceSorterList}}; }
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167   std::vector<GateVDigiMakerModule*>        \mbox{\hyperlink{classGateDigitizer_ad21be07e7b7e4b9dc8b73de3919012ab}{m\_digiMakerList}};          }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169   \mbox{\hyperlink{classGateDigitizerMessenger}{GateDigitizerMessenger}}*             m\_messenger;}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172   \textcolor{keyword}{typedef} std::pair<G4String,GatePulseList*>    GatePulseListAlias;}
+\DoxyCodeLine{173   \textcolor{keyword}{typedef} std::pair<G4String,GateCoincidencePulse*> GateCoincidencePulseListAlias;}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{keyword}{private}:}
+\DoxyCodeLine{178   std::vector<GatePulseList*>               m\_pulseListVector;}
+\DoxyCodeLine{179   std::vector<GateCoincidencePulse*>        m\_coincidencePulseVector;}
+\DoxyCodeLine{180   std::vector<GatePulseListAlias>           m\_pulseListAliasVector;}
+\DoxyCodeLine{181    std::vector<GateCoincidencePulseListAlias>    m\_coincidencePulseListAliasVector;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184   \textcolor{keyword}{static} \mbox{\hyperlink{classGateDigitizer}{GateDigitizer}}*                theDigitizer;}
+\DoxyCodeLine{185   \textcolor{comment}{//public:}}
+\DoxyCodeLine{186   \textcolor{comment}{//unsigned int GetPulseSingleListVectorSize();}}
+\DoxyCodeLine{187   \textcolor{comment}{//std::vector<GatePulseListAlias> searchSingles();}}
+\DoxyCodeLine{188 \};}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

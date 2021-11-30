@@ -1,0 +1,240 @@
+\hypertarget{classGateInputAsciiTreeFile}{}\doxysection{Gate\+Input\+Ascii\+Tree\+File Class Reference}
+\label{classGateInputAsciiTreeFile}\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+Inheritance diagram for Gate\+Input\+Ascii\+Tree\+File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateInputAsciiTreeFile}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_ae060c3e199c8c6ad26ff489bab98de2d}{open}} (const std\+::string \&s) override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_a9a3f29373b3a79d17e9d204451fed058}{close}} () override
+\item 
+bool \mbox{\hyperlink{classGateInputAsciiTreeFile_a5d2ae676abe7c480b6acaf4daac842c2}{is\+\_\+open}} () override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_a525a65ad48db11219621d433ed92a316}{read\+\_\+header}} () override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_a1dbdc8bd3cb3210dfbfd38c382936562}{read\+\_\+next\+\_\+entrie}} () override
+\item 
+bool \mbox{\hyperlink{classGateInputAsciiTreeFile_ab717d18e49ba3eab6f6a06463d5808dc}{data\+\_\+to\+\_\+read}} () override
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classGateInputAsciiTreeFile_aa25e175e092cd72366f32acca4c8eb75}{nb\+\_\+elements}} () override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_af34e996590ce648c087c35e5a05978aa}{read\+\_\+entrie}} (const uint64\+\_\+t \&i) override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_ac516260327014e24cb4be1f3e7520092}{read\+\_\+variable}} (const std\+::string \&name, void $\ast$p, std\+::type\+\_\+index t\+\_\+index) override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_a18edf1437ca7d46ec940e813fb1b6e4d}{read\+\_\+variable}} (const std\+::string \&name, std\+::string $\ast$p) override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_acc5b06b2c322a0ccdbf2e370c7375f24}{read\+\_\+variable}} (const std\+::string \&name, char $\ast$p) override
+\item 
+void \mbox{\hyperlink{classGateInputAsciiTreeFile_a5eb6ed15945dbec46d754d71f32ad4e6}{read\+\_\+variable}} (const std\+::string \&name, char $\ast$p, size\+\_\+t nb\+\_\+char) override
+\item 
+bool \mbox{\hyperlink{classGateInputAsciiTreeFile_a02379dccecf91dd2ffc5c85637ca6885}{has\+\_\+variable}} (const std\+::string \&name) override
+\item 
+std\+::type\+\_\+index \mbox{\hyperlink{classGateInputAsciiTreeFile_a6bc9d9bb927265aa07af269491d3963d}{get\+\_\+type\+\_\+of\+\_\+variable}} (const std\+::string \&name) override
+\item 
+virtual void \mbox{\hyperlink{classGateInputAsciiTreeFile_a804db9dcd50bc0521ec1613ac705a93a}{read\+\_\+variable}} (const std\+::string \&name, void $\ast$p, std\+::type\+\_\+index t\+\_\+index)=0
+\item 
+virtual void \mbox{\hyperlink{classGateInputAsciiTreeFile_a9366ca88231890e816c264b363dd326c}{read\+\_\+variable}} (const std\+::string \&name, char $\ast$p)
+\item 
+virtual void \mbox{\hyperlink{classGateInputAsciiTreeFile_a0b6c44d4d6a1f99c2203b37feba7fc1d}{read\+\_\+variable}} (const std\+::string \&name, char $\ast$p, size\+\_\+t nb\+\_\+char)
+\item 
+virtual void \mbox{\hyperlink{classGateInputAsciiTreeFile_a04f1202ba8f826dac97b6949ba574acc}{read\+\_\+variable}} (const std\+::string \&name, std\+::string $\ast$p)
+\item 
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a453b66a7a966d224d4c12a8df115918b}\label{classGateInputAsciiTreeFile_a453b66a7a966d224d4c12a8df115918b}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries read\+\_\+variable} (const std\+::string \&name, T $\ast$p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a9a3f29373b3a79d17e9d204451fed058}\label{classGateInputAsciiTreeFile_a9a3f29373b3a79d17e9d204451fed058}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!close@{close}}
+\index{close@{close}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateFile}{Gate\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_ab717d18e49ba3eab6f6a06463d5808dc}\label{classGateInputAsciiTreeFile_ab717d18e49ba3eab6f6a06463d5808dc}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!data\_to\_read@{data\_to\_read}}
+\index{data\_to\_read@{data\_to\_read}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{data\_to\_read()}{data\_to\_read()}}
+{\footnotesize\ttfamily bool Gate\+Input\+Ascii\+Tree\+File\+::data\+\_\+to\+\_\+read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a6bc9d9bb927265aa07af269491d3963d}\label{classGateInputAsciiTreeFile_a6bc9d9bb927265aa07af269491d3963d}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!get\_type\_of\_variable@{get\_type\_of\_variable}}
+\index{get\_type\_of\_variable@{get\_type\_of\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{get\_type\_of\_variable()}{get\_type\_of\_variable()}}
+{\footnotesize\ttfamily type\+\_\+index Gate\+Input\+Ascii\+Tree\+File\+::get\+\_\+type\+\_\+of\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a02379dccecf91dd2ffc5c85637ca6885}\label{classGateInputAsciiTreeFile_a02379dccecf91dd2ffc5c85637ca6885}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!has\_variable@{has\_variable}}
+\index{has\_variable@{has\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{has\_variable()}{has\_variable()}}
+{\footnotesize\ttfamily bool Gate\+Input\+Ascii\+Tree\+File\+::has\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a5d2ae676abe7c480b6acaf4daac842c2}\label{classGateInputAsciiTreeFile_a5d2ae676abe7c480b6acaf4daac842c2}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!is\_open@{is\_open}}
+\index{is\_open@{is\_open}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{is\_open()}{is\_open()}}
+{\footnotesize\ttfamily bool Gate\+Input\+Ascii\+Tree\+File\+::is\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateFile}{Gate\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_aa25e175e092cd72366f32acca4c8eb75}\label{classGateInputAsciiTreeFile_aa25e175e092cd72366f32acca4c8eb75}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!nb\_elements@{nb\_elements}}
+\index{nb\_elements@{nb\_elements}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{nb\_elements()}{nb\_elements()}}
+{\footnotesize\ttfamily uint64\+\_\+t Gate\+Input\+Ascii\+Tree\+File\+::nb\+\_\+elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_ae060c3e199c8c6ad26ff489bab98de2d}\label{classGateInputAsciiTreeFile_ae060c3e199c8c6ad26ff489bab98de2d}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!open@{open}}
+\index{open@{open}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_af34e996590ce648c087c35e5a05978aa}\label{classGateInputAsciiTreeFile_af34e996590ce648c087c35e5a05978aa}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_entrie@{read\_entrie}}
+\index{read\_entrie@{read\_entrie}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_entrie()}{read\_entrie()}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::read\+\_\+entrie (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a525a65ad48db11219621d433ed92a316}\label{classGateInputAsciiTreeFile_a525a65ad48db11219621d433ed92a316}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_header@{read\_header}}
+\index{read\_header@{read\_header}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_header()}{read\_header()}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::read\+\_\+header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a1dbdc8bd3cb3210dfbfd38c382936562}\label{classGateInputAsciiTreeFile_a1dbdc8bd3cb3210dfbfd38c382936562}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_next\_entrie@{read\_next\_entrie}}
+\index{read\_next\_entrie@{read\_next\_entrie}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_next\_entrie()}{read\_next\_entrie()}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::read\+\_\+next\+\_\+entrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a9366ca88231890e816c264b363dd326c}\label{classGateInputAsciiTreeFile_a9366ca88231890e816c264b363dd326c}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Gate\+Input\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{char $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_acc5b06b2c322a0ccdbf2e370c7375f24}\label{classGateInputAsciiTreeFile_acc5b06b2c322a0ccdbf2e370c7375f24}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{char $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a0b6c44d4d6a1f99c2203b37feba7fc1d}\label{classGateInputAsciiTreeFile_a0b6c44d4d6a1f99c2203b37feba7fc1d}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Gate\+Input\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{char $\ast$}]{p,  }\item[{size\+\_\+t}]{nb\+\_\+char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a5eb6ed15945dbec46d754d71f32ad4e6}\label{classGateInputAsciiTreeFile_a5eb6ed15945dbec46d754d71f32ad4e6}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{char $\ast$}]{p,  }\item[{size\+\_\+t}]{nb\+\_\+char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a04f1202ba8f826dac97b6949ba574acc}\label{classGateInputAsciiTreeFile_a04f1202ba8f826dac97b6949ba574acc}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Gate\+Input\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::string $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a18edf1437ca7d46ec940e813fb1b6e4d}\label{classGateInputAsciiTreeFile_a18edf1437ca7d46ec940e813fb1b6e4d}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::string $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_ac516260327014e24cb4be1f3e7520092}\label{classGateInputAsciiTreeFile_ac516260327014e24cb4be1f3e7520092}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Gate\+Input\+Ascii\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{void $\ast$}]{p,  }\item[{std\+::type\+\_\+index}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+\mbox{\Hypertarget{classGateInputAsciiTreeFile_a804db9dcd50bc0521ec1613ac705a93a}\label{classGateInputAsciiTreeFile_a804db9dcd50bc0521ec1613ac705a93a}} 
+\index{GateInputAsciiTreeFile@{GateInputAsciiTreeFile}!read\_variable@{read\_variable}}
+\index{read\_variable@{read\_variable}!GateInputAsciiTreeFile@{GateInputAsciiTreeFile}}
+\doxysubsubsection{\texorpdfstring{read\_variable()}{read\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily virtual void Gate\+Input\+Tree\+File\+::read\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{void $\ast$}]{p,  }\item[{std\+::type\+\_\+index}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateInputTreeFile}{Gate\+Input\+Tree\+File}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/io/include/Gate\+Ascii\+File.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/io/src/Gate\+Ascii\+File.\+cc\end{DoxyCompactItemize}

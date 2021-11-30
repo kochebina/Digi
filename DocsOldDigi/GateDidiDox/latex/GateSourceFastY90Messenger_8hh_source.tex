@@ -1,0 +1,36 @@
+\hypertarget{GateSourceFastY90Messenger_8hh_source}{}\doxysection{Gate\+Source\+Fast\+Y90\+Messenger.\+hh}
+\label{GateSourceFastY90Messenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceFastY90Messenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceFastY90Messenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GATESOURCEYFAST90\_MESSENGER\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GATESOURCEYFAST90\_MESSENGER\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}GateVSourceMessenger.hh"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}G4UIcmdWithoutParameter.hh"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}G4UIcmdWith3VectorAndUnit.hh"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceFastY90}{GateSourceFastY90}};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceFastY90Messenger}{GateSourceFastY90Messenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSourceMessenger}{GateVSourceMessenger}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16   \mbox{\hyperlink{classGateSourceFastY90Messenger}{GateSourceFastY90Messenger}}(\mbox{\hyperlink{classGateSourceFastY90}{GateSourceFastY90}} *source);}
+\DoxyCodeLine{17   \mbox{\hyperlink{classGateSourceFastY90Messenger}{\string~GateSourceFastY90Messenger}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand *, G4String);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{classGateSourceFastY90}{GateSourceFastY90}} *mSource;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   G4UIcmdWithADoubleAndUnit* setMinBremEnergyCmd;}
+\DoxyCodeLine{25   G4UIcmdWithADouble* setPosProbabilityCmd;}
+\DoxyCodeLine{26   G4UIcmdWithAString* loadVoxelizedPhantomCmd;}
+\DoxyCodeLine{27   G4UIcmdWith3VectorAndUnit* setPhantomPositionCmd;}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

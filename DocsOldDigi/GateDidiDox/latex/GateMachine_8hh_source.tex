@@ -1,0 +1,131 @@
+\hypertarget{GateMachine_8hh_source}{}\doxysection{Gate\+Machine.\+hh}
+\label{GateMachine_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMachine.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateMachine.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef \_\_GateMachine\_h\_\_}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define \_\_GateMachine\_h\_\_}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMachine}{GateMachine}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_a35c5a45d3bdb3f4c1d6b41bf10081ee9}{TestEndians}}();}
+\DoxyCodeLine{29   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateMachine_a56c0b02c870562cedecb69cd8f2c1c29}{IsIntel}} () \{ \textcolor{keywordflow}{return} m\_Intel ; \}}
+\DoxyCodeLine{31   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateMachine_a234e53ff02e6546a250d78a7620668cc}{IsLittleEndians}} () \{ \textcolor{keywordflow}{return} m\_Intel ; \}}
+\DoxyCodeLine{33   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateMachine_a2e95c3265261d13429284a00eeb3b259}{IsSun}} () \{ \textcolor{keywordflow}{return} !m\_Intel ; \}}
+\DoxyCodeLine{35   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateMachine_ad2e78b73863353989c654e6024151b05}{IsBigEndians}} () \{ \textcolor{keywordflow}{return} !m\_Intel ; \}}
+\DoxyCodeLine{37   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} ChangeEndians() \{ m\_Intel = ! m\_Intel; \}}
+\DoxyCodeLine{38   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} SimulateIntel() \{ m\_Intel = \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{39   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} SimulateSun() \{ m\_Intel = \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_a1785d10e55b0a77475802bb6a1de5dd6}{TestBusSize}}();}
+\DoxyCodeLine{44   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateMachine_a3e36dcbc327739abbffbe1bee1c0e837}{Is32bits}} () \{ \textcolor{keywordflow}{return} m\_32 ; \}}
+\DoxyCodeLine{46   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGateMachine_aa09996b5b7b4212461faaea04a96e1f4}{Is64bits}} () \{ \textcolor{keywordflow}{return} m\_64 ; \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{bool} \&) \{\}}
+\DoxyCodeLine{54   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{char} \&) \{\}}
+\DoxyCodeLine{56   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} \&) \{\}}
+\DoxyCodeLine{58   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \&) \{\}}
+\DoxyCodeLine{60   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} \&) ;}
+\DoxyCodeLine{62   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \&) ;}
+\DoxyCodeLine{64   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} \&) ;}
+\DoxyCodeLine{66   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&) ;}
+\DoxyCodeLine{68   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \&) ;}
+\DoxyCodeLine{70   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \& ) ;}
+\DoxyCodeLine{72   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{float} \&) ;}
+\DoxyCodeLine{74   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{double} \& ) ;}
+\DoxyCodeLine{76   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{bool} *, \textcolor{keywordtype}{long}) \{\}}
+\DoxyCodeLine{78   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{char} *, \textcolor{keywordtype}{long}) \{\}}
+\DoxyCodeLine{80   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{long}) \{\}}
+\DoxyCodeLine{82   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{long}) \{\}}
+\DoxyCodeLine{84   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{86   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{88   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{90   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{92   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{94   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{96   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{float} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{98   \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}} (\textcolor{keywordtype}{double} *, \textcolor{keywordtype}{long}) ;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{102   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} m\_Intel;}
+\DoxyCodeLine{103   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} m\_32;}
+\DoxyCodeLine{104   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} m\_64;}
+\DoxyCodeLine{105 \};}
+\DoxyCodeLine{106 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{107 \textcolor{comment}{// EO class Machine}}
+\DoxyCodeLine{108 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{112 \textcolor{comment}{// Inline methods implementation}}
+\DoxyCodeLine{113 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_a35c5a45d3bdb3f4c1d6b41bf10081ee9}{GateMachine::TestEndians}} () }
+\DoxyCodeLine{115 \{}
+\DoxyCodeLine{116   \textcolor{keywordtype}{int} n = 1 ;}
+\DoxyCodeLine{117   \textcolor{keywordtype}{char} * p = (\textcolor{keywordtype}{char} *) \& n ;}
+\DoxyCodeLine{118   m\_Intel = (*p == (char) 1) ;}
+\DoxyCodeLine{119 \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_a1785d10e55b0a77475802bb6a1de5dd6}{GateMachine::TestBusSize}} () }
+\DoxyCodeLine{122 \{}
+\DoxyCodeLine{123   \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void} *) == 4) }
+\DoxyCodeLine{124     \{}
+\DoxyCodeLine{125       m\_32 = true ;}
+\DoxyCodeLine{126       m\_64 = false ;}
+\DoxyCodeLine{127     \} }
+\DoxyCodeLine{128   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void} *) == 8) }
+\DoxyCodeLine{129     \{}
+\DoxyCodeLine{130       m\_32 = false ;}
+\DoxyCodeLine{131       m\_64 = true ;}
+\DoxyCodeLine{132     \} }
+\DoxyCodeLine{133   \textcolor{keywordflow}{else} }
+\DoxyCodeLine{134     std::cout << \textcolor{stringliteral}{"{}lgl::GateMachine::testBusSize : neither a 32 bits nor a 64 bits machine... Is it an extraterrestrial device ?\(\backslash\)n"{}} ;}
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define ENDIAN\_INVERT\_4BYTES(a) ((((unsigned int)a) >> 24) | ((a) << 24) | (((a) \& 0x00FF0000) >> 8) | (((a) \& 0x0000FF00) << 8))}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \& d) \{ d = (d >> 8) | (d << 8);\}}
+\DoxyCodeLine{141 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{short} \& d) \{ d = (((\textcolor{keywordtype}{unsigned} short)d) >> 8) | (d << 8); \}}
+\DoxyCodeLine{142 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \& d) \{  d = ENDIAN\_INVERT\_4BYTES(d); \}}
+\DoxyCodeLine{143 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{int} \& d) \{ d = ENDIAN\_INVERT\_4BYTES(d); \}}
+\DoxyCodeLine{144 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \& d) \{ \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*((\textcolor{keywordtype}{int}*)\&d)); \}}
+\DoxyCodeLine{145 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{long} \& d) \{  \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*((\textcolor{keywordtype}{int}*)\&d)); \}}
+\DoxyCodeLine{146 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{float} \& d) \{ \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*((\textcolor{keywordtype}{int}*)\&d)); \}}
+\DoxyCodeLine{147 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{double} \& d) \{}
+\DoxyCodeLine{148   \textcolor{keywordtype}{int} tmp = *((\textcolor{keywordtype}{int}*)\&d);}
+\DoxyCodeLine{149   *((\textcolor{keywordtype}{int}*)\&d) = ENDIAN\_INVERT\_4BYTES(*(((\textcolor{keywordtype}{int}*)\&d)+1));}
+\DoxyCodeLine{150   *(((\textcolor{keywordtype}{int}*)\&d)+1) = ENDIAN\_INVERT\_4BYTES(tmp);}
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{154 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{short}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{155 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{156 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{int}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{157 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{158 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{long}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{159 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{float}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{160 \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{GateMachine::SwapEndians}} (\textcolor{keywordtype}{double}* d, \textcolor{keywordtype}{long} n) \{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} i=0;i<n;i++,++d) \mbox{\hyperlink{classGateMachine_afef222128d169e74fd6690453c1b781f}{SwapEndians}}(*d); \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{166 \textcolor{comment}{// EOF}}
+\DoxyCodeLine{167 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

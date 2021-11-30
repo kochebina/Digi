@@ -1,0 +1,96 @@
+\hypertarget{GateDICOMImage_8hh_source}{}\doxysection{Gate\+DICOMImage.\+hh}
+\label{GateDICOMImage_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateDICOMImage.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateDICOMImage.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateDICOMImage}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author Thomas DESCHLER (thomas@deschler.fr)}}
+\DoxyCodeLine{12 \textcolor{comment}{  based on the work of}}
+\DoxyCodeLine{13 \textcolor{comment}{          Jérôme Suhard (jerome@suhard.fr)}}
+\DoxyCodeLine{14 \textcolor{comment}{          Albertine Dubois (adubois@imnc.in2p3.fr)}}
+\DoxyCodeLine{15 \textcolor{comment}{  \(\backslash\)date April 2016}}
+\DoxyCodeLine{16 \textcolor{comment}{*/}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef  GATE\_USE\_ITK}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef GATEDICOMIMAGE\_HH}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define GATEDICOMIMAGE\_HH}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}itkImage.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}itkGDCMImageIO.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}itkGDCMSeriesFileNames.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}itkImageSeriesReader.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}itkImageFileWriter.h"{}}}
+\DoxyCodeLine{28 \textcolor{comment}{//\#include <itkDCMTKImageIO.h>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <gdcmFilename.h>}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}GateMiscFunctions.hh"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType> \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageT}{GateImageT}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }GateDICOMImage}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40   \textcolor{comment}{//const unsigned int Dimension = 3;}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{public}:}
+\DoxyCodeLine{43     GateDICOMImage();}
+\DoxyCodeLine{44     \string~GateDICOMImage() \{\}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} Read(\textcolor{keyword}{const} std::string);}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} ReadSeries(\textcolor{keyword}{const} std::string, \textcolor{keyword}{const} std::string);}
+\DoxyCodeLine{48     std::vector<long unsigned int> GetResolution();}
+\DoxyCodeLine{49     std::vector<double> GetSpacing();}
+\DoxyCodeLine{50     std::vector<double> GetOrigin();}
+\DoxyCodeLine{51     std::vector<double> GetSize();}
+\DoxyCodeLine{52     G4RotationMatrix GetRotationMatrix();}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} SetResolution(std::vector<long unsigned int>);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} SetSpacing(std::vector<double>);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} SetOrigin(std::vector<double>);}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} dumpIO();}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} Write(\textcolor{keyword}{const} std::string);}
+\DoxyCodeLine{58     \textcolor{keywordtype}{double} round\_to\_digits(\textcolor{keywordtype}{double},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType>}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} GetPixels(std::vector<PixelType>\& data);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{template}<\textcolor{keyword}{class} PixelType>}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} SetPixels(std::vector<PixelType>\& data);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keyword}{private}:}
+\DoxyCodeLine{67     \textcolor{keyword}{typedef} itk::Image<signed short,3>          ImageType;}
+\DoxyCodeLine{68     \textcolor{keyword}{typedef} itk::ImageSeriesReader< ImageType > ReaderType;}
+\DoxyCodeLine{69     \textcolor{keyword}{typedef} itk::GDCMImageIO                    ImageIOType;}
+\DoxyCodeLine{70     \textcolor{keyword}{typedef} itk::GDCMSeriesFileNames            NamesGeneratorType;}
+\DoxyCodeLine{71     \textcolor{comment}{//typedef itk::DCMTKImageIO                   DCMTKIOType;}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     ImageType::Pointer image;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     ImageType::Pointer dicomIO;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pixelsCount;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     std::vector<long unsigned int> vResolution;}
+\DoxyCodeLine{80     std::vector<double> vSpacing;}
+\DoxyCodeLine{81     std::vector<double> vSize;}
+\DoxyCodeLine{82     std::vector<double> vOrigin;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     G4RotationMatrix rotationMatrix;}
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#include "{}GateDICOMImage.icc"{}}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

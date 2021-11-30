@@ -1,0 +1,236 @@
+\hypertarget{metaFEMObject_8h_source}{}\doxysection{meta\+FEMObject.\+h}
+\label{metaFEMObject_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaFEMObject.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaFEMObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*=========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{ *}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  Copyright Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ *  Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{ *  you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{7 \textcolor{comment}{ *  You may obtain a copy of the License at}}
+\DoxyCodeLine{8 \textcolor{comment}{ *}}
+\DoxyCodeLine{9 \textcolor{comment}{ *         http://www.apache.org/licenses/LICENSE-\/2.0.txt}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *  Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{12 \textcolor{comment}{ *  distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{13 \textcolor{comment}{ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{14 \textcolor{comment}{ *  See the License for the specific language governing permissions and}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  limitations under the License.}}
+\DoxyCodeLine{16 \textcolor{comment}{ *}}
+\DoxyCodeLine{17 \textcolor{comment}{ *=========================================================================*/}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAFEMOBJECT\_H}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define ITKMetaIO\_METAFEMOBJECT\_H}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{48 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{// helper classes to store the information read in for the FEM mesh}}
+\DoxyCodeLine{53 \textcolor{comment}{}\textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classFEMObjectNode}{FEMObjectNode}}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55 \textcolor{keyword}{public}:}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \mbox{\hyperlink{classFEMObjectNode}{FEMObjectNode}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{58   \mbox{\hyperlink{classFEMObjectNode}{\string~FEMObjectNode}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim; \textcolor{comment}{//Element Dimension}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{float}* m\_X;         \textcolor{comment}{// Node Coordinates}}
+\DoxyCodeLine{62   \textcolor{keywordtype}{int} m\_GN;               \textcolor{comment}{// global number used in FEM namespace}}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{74 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classFEMObjectElement}{FEMObjectElement}}}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76 \textcolor{keyword}{public}:}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \mbox{\hyperlink{classFEMObjectElement}{FEMObjectElement}}(\textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{79   \mbox{\hyperlink{classFEMObjectElement}{\string~FEMObjectElement}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{int} m\_GN;}
+\DoxyCodeLine{82   \textcolor{keywordtype}{char} m\_ElementName[256]; \textcolor{comment}{// class name}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{84   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_NumNodes;}
+\DoxyCodeLine{85   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_MaterialGN;}
+\DoxyCodeLine{86   \textcolor{keywordtype}{int}* m\_NodesId;}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{99 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classFEMObjectMaterial}{FEMObjectMaterial}}}
+\DoxyCodeLine{100 \{}
+\DoxyCodeLine{101 \textcolor{keyword}{public}:}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \mbox{\hyperlink{classFEMObjectMaterial}{FEMObjectMaterial}}()}
+\DoxyCodeLine{104     \{}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106   \mbox{\hyperlink{classFEMObjectMaterial}{\string~FEMObjectMaterial}}()}
+\DoxyCodeLine{107     \{}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keywordtype}{int} m\_GN;}
+\DoxyCodeLine{111   \textcolor{keywordtype}{char} m\_MaterialName[256]; \textcolor{comment}{// material name}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{double} E;}
+\DoxyCodeLine{113   \textcolor{keywordtype}{double} A;}
+\DoxyCodeLine{114   \textcolor{keywordtype}{double} I;}
+\DoxyCodeLine{115   \textcolor{keywordtype}{double} nu;}
+\DoxyCodeLine{116   \textcolor{keywordtype}{double} h;}
+\DoxyCodeLine{117   \textcolor{keywordtype}{double} RhoC;}
+\DoxyCodeLine{118 \};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{124 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classFEMObjectMFCTerm}{FEMObjectMFCTerm}}}
+\DoxyCodeLine{125 \{}
+\DoxyCodeLine{126 \textcolor{keyword}{public}:}
+\DoxyCodeLine{130   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classFEMObjectMFCTerm_a67a8b5542fe0b1f313939e83aa694d18}{m\_ElementGN}};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{135   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classFEMObjectMFCTerm_a670e5f0d14fe6fbb3ec4ac90ddb31ada}{m\_DOF}};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{140   \textcolor{keywordtype}{float} \mbox{\hyperlink{classFEMObjectMFCTerm_a8df413879ad94d1b0f29932d744662b6}{m\_Value}};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{145   \mbox{\hyperlink{classFEMObjectMFCTerm_a11831a5de6bb97b1b574c664393c55ca}{FEMObjectMFCTerm}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} element\_, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dof\_,}
+\DoxyCodeLine{146                    \textcolor{keywordtype}{float} value\_):m\_ElementGN(element\_), m\_DOF(dof\_), m\_Value(value\_) \{\}}
+\DoxyCodeLine{147 \};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{171 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classFEMObjectLoad}{FEMObjectLoad}}}
+\DoxyCodeLine{172 \{}
+\DoxyCodeLine{173 \textcolor{keyword}{public}:}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175   \mbox{\hyperlink{classFEMObjectLoad}{FEMObjectLoad}}();}
+\DoxyCodeLine{176   \mbox{\hyperlink{classFEMObjectLoad}{\string~FEMObjectLoad}}();}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178   \textcolor{keywordtype}{int} m\_GN;}
+\DoxyCodeLine{179   \textcolor{keywordtype}{char} m\_LoadName[256]; \textcolor{comment}{// load name}}
+\DoxyCodeLine{180   \textcolor{keywordtype}{int} m\_ElementGN;}
+\DoxyCodeLine{181   \textcolor{keywordtype}{int} m\_Dim;}
+\DoxyCodeLine{182   METAIO\_STL::vector<float> m\_ForceVector;}
+\DoxyCodeLine{183   \textcolor{keywordtype}{int} m\_DOF;}
+\DoxyCodeLine{184   \textcolor{keywordtype}{int} m\_NodeNumber;}
+\DoxyCodeLine{185   \textcolor{keywordtype}{int} m\_NumRHS;}
+\DoxyCodeLine{186   METAIO\_STL::vector<float> m\_RHS;}
+\DoxyCodeLine{187   \textcolor{keywordtype}{int} m\_NumLHS;}
+\DoxyCodeLine{188   METAIO\_STL::vector<FEMObjectMFCTerm*> m\_LHS;}
+\DoxyCodeLine{189   \textcolor{keywordtype}{int} m\_NumElements;}
+\DoxyCodeLine{190   METAIO\_STL::vector<int> m\_Elements;}
+\DoxyCodeLine{191   METAIO\_STL::vector< METAIO\_STL::vector<float> > m\_ForceMatrix;}
+\DoxyCodeLine{192   \textcolor{keywordtype}{int} m\_EdgeNumber;}
+\DoxyCodeLine{193   METAIO\_STL::vector<float> m\_Undeformed;}
+\DoxyCodeLine{194   METAIO\_STL::vector<float> m\_Deformed;}
+\DoxyCodeLine{195   \textcolor{keywordtype}{float} m\_Variance;}
+\DoxyCodeLine{196 \};}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{202 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaFEMObject}{MetaFEMObject}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{203 \{}
+\DoxyCodeLine{204 \textcolor{keyword}{public}:}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206   \mbox{\hyperlink{classMetaFEMObject}{MetaFEMObject}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208   \mbox{\hyperlink{classMetaFEMObject}{MetaFEMObject}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210   \mbox{\hyperlink{classMetaFEMObject}{MetaFEMObject}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaFEMObject}{MetaFEMObject}} *\_femobject);}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212   \mbox{\hyperlink{classMetaFEMObject}{MetaFEMObject}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214   \mbox{\hyperlink{classMetaFEMObject}{\string~MetaFEMObject}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216   \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218   \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{221   \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{224   \textcolor{keyword}{typedef} METAIO\_STL::list<std::string> \mbox{\hyperlink{classMetaFEMObject_a87ce7153af7dfde43a88a74431f3167a}{ClassNameListType}};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{227   \textcolor{keyword}{typedef} METAIO\_STL::list<FEMObjectNode*> \mbox{\hyperlink{classMetaFEMObject_a9d8ed379bdfe1274a526a50cbfc85958}{NodeListType}};}
+\DoxyCodeLine{228   \textcolor{keyword}{typedef} METAIO\_STL::list<FEMObjectElement*>  ElementListType;}
+\DoxyCodeLine{229   \textcolor{keyword}{typedef} METAIO\_STL::list<FEMObjectMaterial*>  MaterialListType;}
+\DoxyCodeLine{230   \textcolor{keyword}{typedef} METAIO\_STL::list<FEMObjectLoad*>  LoadListType;}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{233   \mbox{\hyperlink{classMetaFEMObject_a9d8ed379bdfe1274a526a50cbfc85958}{NodeListType}} \& \mbox{\hyperlink{classMetaFEMObject_a2606752a7edfd5994d585378a01bbe8e}{GetNodeList}}(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_NodeList;\}}
+\DoxyCodeLine{234   \textcolor{keyword}{const} NodeListType \& GetNodeList(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_NodeList;\}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236   ElementListType \& GetElementList(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_ElementList;\}}
+\DoxyCodeLine{237   \textcolor{keyword}{const} ElementListType \& GetElementList(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_ElementList;\}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239   MaterialListType \& GetMaterialList(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_MaterialList;\}}
+\DoxyCodeLine{240   \textcolor{keyword}{const} MaterialListType \& GetMaterialList(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_MaterialList;\}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242   LoadListType \& GetLoadList(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} m\_LoadList;\}}
+\DoxyCodeLine{243   \textcolor{keyword}{const} LoadListType \& GetLoadList(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} m\_LoadList;\}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247   \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249   \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251   \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253   \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255   \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{258   \textcolor{keywordtype}{bool}  M\_Read\_Node();}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260   \textcolor{keywordtype}{void} M\_Write\_Node(\mbox{\hyperlink{classFEMObjectNode}{FEMObjectNode}} *Node);}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262   \textcolor{keywordtype}{void} M\_Write\_Material(\mbox{\hyperlink{classFEMObjectMaterial}{FEMObjectMaterial}} *Material);}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264   \textcolor{keywordtype}{void} M\_Write\_Element(\mbox{\hyperlink{classFEMObjectElement}{FEMObjectElement}} *Element);}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266   \textcolor{keywordtype}{void} M\_Write\_Load(\mbox{\hyperlink{classFEMObjectLoad}{FEMObjectLoad}} *Load);}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{269   \textcolor{keywordtype}{bool}  M\_Read\_Element(std::string element\_name);}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{272   \textcolor{keywordtype}{bool}  M\_Read\_Material(std::string material\_name);}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{275   \textcolor{keywordtype}{bool}  M\_Read\_Load(std::string load\_name);}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{278   \textcolor{keywordtype}{bool} IsClassNamePresent(std::string c\_string);}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{281   \textcolor{keywordtype}{int} ReadGlobalNumber();}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283   \textcolor{keywordtype}{void}  SkipWhiteSpace();}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{286   \textcolor{keywordtype}{int}* GetElementDimensionAndNumberOfNodes(std::string c\_string, \textcolor{keywordtype}{int} info[2]);}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288   \textcolor{comment}{// variables}}
+\DoxyCodeLine{289   \textcolor{keyword}{static} \textcolor{keyword}{const} std::string whitespaces;}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291   ClassNameListType m\_ClassNameList;}
+\DoxyCodeLine{292   ElementListType m\_ElementList;}
+\DoxyCodeLine{293   NodeListType m\_NodeList;}
+\DoxyCodeLine{294   MaterialListType m\_MaterialList;}
+\DoxyCodeLine{295   LoadListType m\_LoadList;}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297   std::string  m\_ElementDataFileName;}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299   \textcolor{comment}{// to keep track of the type element created}}
+\DoxyCodeLine{300   \textcolor{keyword}{enum}}
+\DoxyCodeLine{301   \{}
+\DoxyCodeLine{302     NODE            = 0,}
+\DoxyCodeLine{303     MATERIAL        = 1,}
+\DoxyCodeLine{304     \mbox{\hyperlink{structDListElmt__}{ELEMENT}}         = 2,}
+\DoxyCodeLine{305     LOAD            = 3}
+\DoxyCodeLine{306   \};}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \};}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{311 \}}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

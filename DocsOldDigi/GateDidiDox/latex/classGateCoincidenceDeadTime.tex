@@ -1,0 +1,72 @@
+\hypertarget{classGateCoincidenceDeadTime}{}\doxysection{Gate\+Coincidence\+Dead\+Time Class Reference}
+\label{classGateCoincidenceDeadTime}\index{GateCoincidenceDeadTime@{GateCoincidenceDeadTime}}
+Inheritance diagram for Gate\+Coincidence\+Dead\+Time\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateCoincidenceDeadTime}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_aaefa29ea78750cab729f8c1987683faf}\label{classGateCoincidenceDeadTime_aaefa29ea78750cab729f8c1987683faf}} 
+virtual {\bfseries $\sim$\+Gate\+Coincidence\+Dead\+Time} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a3bed81973f33edbe7ff349fe999f528c}\label{classGateCoincidenceDeadTime_a3bed81973f33edbe7ff349fe999f528c}} 
+{\bfseries Gate\+Coincidence\+Dead\+Time} (\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{Gate\+Coincidence\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new dead time attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a9d5e985a3329f45bc76525787dc69293}\label{classGateCoincidenceDeadTime_a9d5e985a3329f45bc76525787dc69293}} 
+unsigned long long int {\bfseries Get\+Dead\+Time} ()
+\begin{DoxyCompactList}\small\item\em Returns the dead\+Time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a6355bbf1d1e67b28a64d69fa09ff827a}\label{classGateCoincidenceDeadTime_a6355bbf1d1e67b28a64d69fa09ff827a}} 
+void {\bfseries Set\+Dead\+Time} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the dead\+Time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a10e8e7a95485ac98621ee090e69e76bb}\label{classGateCoincidenceDeadTime_a10e8e7a95485ac98621ee090e69e76bb}} 
+void {\bfseries Set\+Dead\+Time\+Mode} (G4\+String val)
+\begin{DoxyCompactList}\small\item\em Set the dead\+Time mode ; candidates \+: paralysable nonparalysable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a40a1d0495b1316f8f5522331f545a177}\label{classGateCoincidenceDeadTime_a40a1d0495b1316f8f5522331f545a177}} 
+void {\bfseries Set\+Buffer\+Mode} (G4int val)
+\begin{DoxyCompactList}\small\item\em Set the buffer mode ;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a8a5d9e24ec945e95094403e264ad8b7e}\label{classGateCoincidenceDeadTime_a8a5d9e24ec945e95094403e264ad8b7e}} 
+void {\bfseries Set\+Buffer\+Size} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the buffer mode ;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a661e6fb872f56992b95b6d16bbb57510}\label{classGateCoincidenceDeadTime_a661e6fb872f56992b95b6d16bbb57510}} 
+void {\bfseries Set\+Conserve\+All\+Event} (G4bool val)
+\begin{DoxyCompactList}\small\item\em Set the way to treat events ;. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCoincidenceDeadTime_ae40c2fa5da1d5242133546b4d8f90f11}{Describe\+Myself}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ \mbox{\hyperlink{classGateCoincidenceDeadTime_a4c3a151a20b48abb9ffe7c4bcccea751}{Process\+Pulse}} (\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$input\+Pulse, G4int i\+Pulse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_ae40c2fa5da1d5242133546b4d8f90f11}\label{classGateCoincidenceDeadTime_ae40c2fa5da1d5242133546b4d8f90f11}} 
+\index{GateCoincidenceDeadTime@{GateCoincidenceDeadTime}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateCoincidenceDeadTime@{GateCoincidenceDeadTime}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Coincidence\+Dead\+Time\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the dead\+Time 
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateCoincidenceDeadTime_a4c3a151a20b48abb9ffe7c4bcccea751}\label{classGateCoincidenceDeadTime_a4c3a151a20b48abb9ffe7c4bcccea751}} 
+\index{GateCoincidenceDeadTime@{GateCoincidenceDeadTime}!ProcessPulse@{ProcessPulse}}
+\index{ProcessPulse@{ProcessPulse}!GateCoincidenceDeadTime@{GateCoincidenceDeadTime}}
+\doxysubsubsection{\texorpdfstring{ProcessPulse()}{ProcessPulse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ Gate\+Coincidence\+Dead\+Time\+::\+Process\+Pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{G4int}]{i\+Pulse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}} 
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Coincidence\+Dead\+Time.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Coincidence\+Dead\+Time.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\hypertarget{GateDiscretizer_8hh_source}{}\doxysection{Gate\+Discretizer.\+hh}
+\label{GateDiscretizer_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDiscretizer.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDiscretizer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDiscretizer\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDiscretizer\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDiscretizerMessenger}{GateDiscretizerMessenger}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDiscretizer}{GateDiscretizer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32   \textcolor{keyword}{public}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35     \mbox{\hyperlink{classGateDiscretizer_aa27c88c1bf98c25499d2eb6517dabd7b}{GateDiscretizer}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,\textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateDiscretizer_a6ac502a1e6ded9bb17f52c542b51f274}{\string~GateDiscretizer}}() ;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDiscretizer_a15dbaad56ff9c1e4107494b2762a5e03}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDiscretizer_af2302b8ab6d358caf1bb586e8df024c1}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{private}:}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \mbox{\hyperlink{classGateDiscretizerMessenger}{GateDiscretizerMessenger}} *m\_messenger;    }
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

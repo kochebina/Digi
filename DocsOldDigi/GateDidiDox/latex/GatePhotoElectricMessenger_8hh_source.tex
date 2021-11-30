@@ -1,0 +1,52 @@
+\hypertarget{GatePhotoElectricMessenger_8hh_source}{}\doxysection{Gate\+Photo\+Electric\+Messenger.\+hh}
+\label{GatePhotoElectricMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePhotoElectricMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePhotoElectricMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEPHOTOELECTRICPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEPHOTOELECTRICPROCESSMESSENGER\_HH}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateEMStandardProcessMessenger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVProcess.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhotoElectricMessenger}{GatePhotoElectricMessenger}}:\textcolor{keyword}{public} \mbox{\hyperlink{classGateEMStandardProcessMessenger}{GateEMStandardProcessMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGatePhotoElectricMessenger}{GatePhotoElectricMessenger}}(\mbox{\hyperlink{classGateVProcess}{GateVProcess}} *pb);}
+\DoxyCodeLine{25   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGatePhotoElectricMessenger}{\string~GatePhotoElectricMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{bool} GetIsAugerActivated()\{\textcolor{keywordflow}{return} mAuger; \}}
+\DoxyCodeLine{31   \textcolor{keywordtype}{double} GetLowEnergyElectronCut()\{\textcolor{keywordflow}{return} mLowEnergyElectron;\}}
+\DoxyCodeLine{32   \textcolor{keywordtype}{double} GetLowEnergyGammaCut()\{\textcolor{keywordflow}{return} mLowEnergyGamma;\}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{36   G4UIcmdWithABool * pActiveAugerCmd;}
+\DoxyCodeLine{37   G4UIcmdWithADoubleAndUnit *pSetLowEElectron;}
+\DoxyCodeLine{38   G4UIcmdWithADoubleAndUnit *pSetLowEGamma;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{bool} mAuger;}
+\DoxyCodeLine{41   \textcolor{keywordtype}{double} mLowEnergyElectron;}
+\DoxyCodeLine{42   \textcolor{keywordtype}{double} mLowEnergyGamma;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

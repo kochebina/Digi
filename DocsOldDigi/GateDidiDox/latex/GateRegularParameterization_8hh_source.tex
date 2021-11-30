@@ -1,0 +1,62 @@
+\hypertarget{GateRegularParameterization_8hh_source}{}\doxysection{Gate\+Regular\+Parameterization.\+hh}
+\label{GateRegularParameterization_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateRegularParameterization.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateRegularParameterization.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEREGULARPARAMETERIZATION\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEREGULARPARAMETERIZATION\_HH 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelReader.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4PhantomParameterisation.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRegularParameterization}{GateRegularParameterization}} : \textcolor{keyword}{public} G4PhantomParameterisation}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \mbox{\hyperlink{classGateRegularParameterization_a44e8ccbd40f2b211a829a5ceeb0a1fb7}{GateRegularParameterization}}(\mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}}* itsInserter,}
+\DoxyCodeLine{29                                    \textcolor{keyword}{const} G4ThreeVector\& voxN );}
+\DoxyCodeLine{30     \mbox{\hyperlink{classGateRegularParameterization_a44e8ccbd40f2b211a829a5ceeb0a1fb7}{GateRegularParameterization}}(\mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}* itsInserter,}
+\DoxyCodeLine{31                                    \textcolor{keyword}{const} G4ThreeVector\& voxN );}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34     \mbox{\hyperlink{classGateRegularParameterization_a3b0d065430c8d205a1eb30ba205add86}{\string~GateRegularParameterization}}()\{;\}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRegularParameterization_a482c345495cf722a323bc5445e408302}{BuildRegularParameterization}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateRegularParameterization_a0fe309bb3b72764a281920674436101e}{GetNbOfCopies}}()}
+\DoxyCodeLine{41       \{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(voxelNumber.x()*voxelNumber.y()*voxelNumber.z()); \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     G4Material* \mbox{\hyperlink{classGateRegularParameterization_ae8f5e1ba60d2fc1f9582ec1bf58b15a1}{ComputeMaterial}}(\textcolor{keyword}{const} G4int copyNo, G4VPhysicalVolume * aVolume, \textcolor{keyword}{const} G4VTouchable*);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \textcolor{keyword}{inline} G4VPhysicalVolume* \mbox{\hyperlink{classGateRegularParameterization_a8a7f823141b6e55ce3b3e421c33b89c5}{GetPhysicalContainer}}() \{\textcolor{keywordflow}{return} cont\_phys;\}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}}*            globalInserter;}
+\DoxyCodeLine{52   \mbox{\hyperlink{classGateFictitiousVoxelMapParameterized}{GateFictitiousVoxelMapParameterized}}* globalFictInserter;}
+\DoxyCodeLine{53   \mbox{\hyperlink{classGateVGeometryVoxelReader}{GateVGeometryVoxelReader}}*            voxelReader;}
+\DoxyCodeLine{54   \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{GateVGeometryVoxelTranslator}}*        translator;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{const} G4ThreeVector voxelSize;}
+\DoxyCodeLine{57   \textcolor{keyword}{const} G4ThreeVector voxelNumber;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   G4VPhysicalVolume * cont\_phys; }
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

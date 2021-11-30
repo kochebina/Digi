@@ -1,0 +1,195 @@
+\hypertarget{classGateQvalueActor}{}\doxysection{Gate\+Qvalue\+Actor Class Reference}
+\label{classGateQvalueActor}\index{GateQvalueActor@{GateQvalueActor}}
+Inheritance diagram for Gate\+Qvalue\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateQvalueActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_aec2d30d47caf66e1e68c1da667cccac9}\label{classGateQvalueActor_aec2d30d47caf66e1e68c1da667cccac9}} 
+virtual {\bfseries $\sim$\+Gate\+Qvalue\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_af18a2e4a12dfb8819c654e0c67596f54}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_abadd00f00030db7dd78bdcf4fb1cee7a}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_a9ecbf5922a54b71ccebd3cc57c08f1a6}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_a6e5dc0d5703dc41242d24b5d432f373c}{End\+Of\+Event\+Action}} (const G4\+Event $\ast$event)
+\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_a3063fc72bb22d10fe3d86c68c1abcb09}{User\+Stepping\+Action\+In\+Voxel}} (const int, const G4\+Step $\ast$)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_a3ba95e91a3170289eae097c733c587dd}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_a911083a722e58003263db7fda6eb6aa9}{User\+Post\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_af58cd473926f9e0e940ccaba8d61b748}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_abf2c9a3df64ad1d309fac41614bf6c5f}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_a9e2e529395e43754a79965b830bcdf22}{Initialize}} (G4\+HCof\+This\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateQvalueActor_a4fc446ef0c78bba6002871c773794bbb}{End\+Of\+Event}} (G4\+HCof\+This\+Event $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_acfccdcfc35951815df78fd58617942b8}\label{classGateQvalueActor_acfccdcfc35951815df78fd58617942b8}} 
+{\bfseries Gate\+Qvalue\+Actor} (G4\+String name, G4int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_a9453b79c0e2e9907f093e30e98a420d5}\label{classGateQvalueActor_a9453b79c0e2e9907f093e30e98a420d5}} 
+\mbox{\hyperlink{classGateImageActorMessenger}{Gate\+Image\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_aa7c8e6c8a8f8a225aff65c9648d96fb9}\label{classGateQvalueActor_aa7c8e6c8a8f8a225aff65c9648d96fb9}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_a7430acb3076ad177ab64819d55d817be}\label{classGateQvalueActor_a7430acb3076ad177ab64819d55d817be}} 
+G4\+String {\bfseries m\+Qvalue\+Filename}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_ab4de6425a599013e2a4fbaae07b999b1}\label{classGateQvalueActor_ab4de6425a599013e2a4fbaae07b999b1}} 
+\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} {\bfseries m\+Qvalue\+Image}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_a850443e71f348d8eeab4954f0b8e4aea}\label{classGateQvalueActor_a850443e71f348d8eeab4954f0b8e4aea}} 
+std\+::map$<$ G4\+String, G4double $>$ {\bfseries list\+Of\+Emiss}
+\item 
+\mbox{\Hypertarget{classGateQvalueActor_aabf8cbfa9c4b6b82f2413c8042af0845}\label{classGateQvalueActor_aabf8cbfa9c4b6b82f2413c8042af0845}} 
+int {\bfseries m\+NSec}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateQvalueActor_a9ecbf5922a54b71ccebd3cc57c08f1a6}\label{classGateQvalueActor_a9ecbf5922a54b71ccebd3cc57c08f1a6}} 
+\index{GateQvalueActor@{GateQvalueActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_abadd00f00030db7dd78bdcf4fb1cee7a}\label{classGateQvalueActor_abadd00f00030db7dd78bdcf4fb1cee7a}} 
+\index{GateQvalueActor@{GateQvalueActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_af18a2e4a12dfb8819c654e0c67596f54}\label{classGateQvalueActor_af18a2e4a12dfb8819c654e0c67596f54}} 
+\index{GateQvalueActor@{GateQvalueActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_a4fc446ef0c78bba6002871c773794bbb}\label{classGateQvalueActor_a4fc446ef0c78bba6002871c773794bbb}} 
+\index{GateQvalueActor@{GateQvalueActor}!EndOfEvent@{EndOfEvent}}
+\index{EndOfEvent@{EndOfEvent}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEvent()}{EndOfEvent()}}
+{\footnotesize\ttfamily virtual void Gate\+Qvalue\+Actor\+::\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_a6e5dc0d5703dc41242d24b5d432f373c}\label{classGateQvalueActor_a6e5dc0d5703dc41242d24b5d432f373c}} 
+\index{GateQvalueActor@{GateQvalueActor}!EndOfEventAction@{EndOfEventAction}}
+\index{EndOfEventAction@{EndOfEventAction}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{EndOfEventAction()}{EndOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+End\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_a9e2e529395e43754a79965b830bcdf22}\label{classGateQvalueActor_a9e2e529395e43754a79965b830bcdf22}} 
+\index{GateQvalueActor@{GateQvalueActor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Gate\+Qvalue\+Actor\+::\+Initialize (\begin{DoxyParamCaption}\item[{G4\+HCof\+This\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_abf2c9a3df64ad1d309fac41614bf6c5f}\label{classGateQvalueActor_abf2c9a3df64ad1d309fac41614bf6c5f}} 
+\index{GateQvalueActor@{GateQvalueActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_af58cd473926f9e0e940ccaba8d61b748}\label{classGateQvalueActor_af58cd473926f9e0e940ccaba8d61b748}} 
+\index{GateQvalueActor@{GateQvalueActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_a911083a722e58003263db7fda6eb6aa9}\label{classGateQvalueActor_a911083a722e58003263db7fda6eb6aa9}} 
+\index{GateQvalueActor@{GateQvalueActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_a3ba95e91a3170289eae097c733c587dd}\label{classGateQvalueActor_a3ba95e91a3170289eae097c733c587dd}} 
+\index{GateQvalueActor@{GateQvalueActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateQvalueActor_a3063fc72bb22d10fe3d86c68c1abcb09}\label{classGateQvalueActor_a3063fc72bb22d10fe3d86c68c1abcb09}} 
+\index{GateQvalueActor@{GateQvalueActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateQvalueActor@{GateQvalueActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Qvalue\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Qvalue\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Qvalue\+Actor.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,267 @@
+\hypertarget{classGateVImageActor}{}\doxysection{Gate\+VImage\+Actor Class Reference}
+\label{classGateVImageActor}\index{GateVImageActor@{GateVImageActor}}
+
+
+Base (virtual) class for sensor storing data in a 3D matrix (\mbox{\hyperlink{classGateImage}{Gate\+Image}})  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VImage\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+VImage\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateVImageActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_ac198c0bb67faa6ee1abd7cc93f178f40}\label{classGateVImageActor_ac198c0bb67faa6ee1abd7cc93f178f40}} 
+enum {\bfseries Step\+Hit\+Type} \{ \newline
+{\bfseries Pre\+Step\+Hit\+Type}
+, {\bfseries Post\+Step\+Hit\+Type}
+, {\bfseries Middle\+Step\+Hit\+Type}
+, {\bfseries Random\+Step\+Hit\+Type}
+, \newline
+{\bfseries Random\+Step\+Hit\+Type\+Cylindrical\+CS}
+, {\bfseries Post\+Step\+Hit\+Type\+Cylindrical\+CS}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateVImageActor_a14de8c5e94100ce075b73d932dae3338}{Gate\+VImage\+Actor}} (G4\+String name, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructs the class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageActor_a910c800a245f0fd965a3c3f3b70b1adc}\label{classGateVImageActor_a910c800a245f0fd965a3c3f3b70b1adc}} 
+virtual {\bfseries $\sim$\+Gate\+VImage\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Type name of the sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageActor_a16c50a6880471b9aed756e903ba5d604}\label{classGateVImageActor_a16c50a6880471b9aed756e903ba5d604}} 
+void {\bfseries Set\+Origin\+Transform\+And\+Flag\+To\+Image} (\mbox{\hyperlink{classGateImageWithStatistic}{Gate\+Image\+With\+Statistic}} \&image)
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a85890cfbc9960703cdc67bd414085016}\label{classGateVImageActor_a85890cfbc9960703cdc67bd414085016}} 
+void {\bfseries Set\+Origin\+Transform\+And\+Flag\+To\+Image} (\mbox{\hyperlink{classGateVImage}{Gate\+VImage}} \&image)
+\item 
+\mbox{\Hypertarget{classGateVImageActor_af0fbceb18881a72a5aedcc52edf655fb}\label{classGateVImageActor_af0fbceb18881a72a5aedcc52edf655fb}} 
+void {\bfseries Set\+Resolution} (G4\+Three\+Vector v)
+\begin{DoxyCompactList}\small\item\em Sets the resolution/voxelsize/halfsize/position of the image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageActor_aeb630fea5abd24a3ca4033f5a9903fbd}\label{classGateVImageActor_aeb630fea5abd24a3ca4033f5a9903fbd}} 
+void {\bfseries Set\+Voxel\+Size} (G4\+Three\+Vector v)
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a3cde0d79f1064d946f56f8303c06328c}\label{classGateVImageActor_a3cde0d79f1064d946f56f8303c06328c}} 
+void {\bfseries Set\+Half\+Size} (G4\+Three\+Vector v)
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a2f4915647647c30645ba20e9e336759f}\label{classGateVImageActor_a2f4915647647c30645ba20e9e336759f}} 
+void {\bfseries Set\+Size} (G4\+Three\+Vector v)
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a59abda1e052488843370cf512adc64c3}\label{classGateVImageActor_a59abda1e052488843370cf512adc64c3}} 
+void {\bfseries Set\+Position} (G4\+Three\+Vector v)
+\item 
+void \mbox{\hyperlink{classGateVImageActor_a20e85939e6f19dcf3d56642bd11ee710}{Set\+Step\+Hit\+Type}} (G4\+String t)
+\begin{DoxyCompactList}\small\item\em Sets the type of the hit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVImageActor_a47aef756959b6c49570751a1471d67b3}\label{classGateVImageActor_a47aef756959b6c49570751a1471d67b3}} 
+double {\bfseries Get\+Dosel\+Volume} ()
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a0aae1c8e0e05f44e7db65753c2184a01}\label{classGateVImageActor_a0aae1c8e0e05f44e7db65753c2184a01}} 
+G4\+Three\+Vector {\bfseries Get\+Voxel\+Size} ()
+\begin{DoxyCompactList}\small\item\em Gets the voxel size (vc) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVImageActor_aeae1614284240d030f53a4e38db63c80}{Pre\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$v, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateVImageActor_a7039d37426c31c984e8e7fd56e476655}{Post\+User\+Tracking\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$v, const G4\+Track $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classGateVImageActor_a2b837c3fcb9c415e0aeca03825525e05}{User\+Stepping\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$v, const G4\+Step $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{User\+Stepping\+Action\+In\+Voxel}} (const int index, const G4\+Step $\ast$step)=0
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVImageActor_a74ab0a1b34ed8858f850ceaacf135c7b}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$t)=0
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a2a2fa95a6fb0ed34d172c10bc5174dd7}\label{classGateVImageActor_a2a2fa95a6fb0ed34d172c10bc5174dd7}} 
+virtual void {\bfseries User\+Post\+Track\+Action\+In\+Voxel} (const int index, const G4\+Track $\ast$t)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVImageActor_a558f762b58a15180a7814f5e92cd533a}{Reset\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a55f1411ce1fe640fa4a50055c72562fd}\label{classGateVImageActor_a55f1411ce1fe640fa4a50055c72562fd}} 
+static int {\bfseries Get\+Index\+From\+Step\+Position2} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$step, const \mbox{\hyperlink{classGateImage}{Gate\+Image}} \&image, const bool m\+Position\+Is\+Set, const G4\+Three\+Vector m\+Position, const Step\+Hit\+Type m\+Step\+Hit\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a28c045142f9f7c99ddbfd96d8600382c}\label{classGateVImageActor_a28c045142f9f7c99ddbfd96d8600382c}} 
+int {\bfseries Get\+Index\+From\+Track\+Position} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Track $\ast$track)
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a268b5253b03b3bcfb9821cce92567b2b}\label{classGateVImageActor_a268b5253b03b3bcfb9821cce92567b2b}} 
+int {\bfseries Get\+Index\+From\+Step\+Position} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$step)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a0a249e3cacbd142017a31579b7ad0a4f}\label{classGateVImageActor_a0a249e3cacbd142017a31579b7ad0a4f}} 
+G4\+Three\+Vector {\bfseries m\+Voxel\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a56ff3a860cf7a2ce546491b4cd13d4a9}\label{classGateVImageActor_a56ff3a860cf7a2ce546491b4cd13d4a9}} 
+G4\+Three\+Vector {\bfseries m\+Resolution}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a5c4dec9dc0f0810b03aba6ce4ad77405}\label{classGateVImageActor_a5c4dec9dc0f0810b03aba6ce4ad77405}} 
+G4\+Three\+Vector {\bfseries m\+Half\+Size}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a59d853993f2ce64f4e2ae48e8e55bdeb}\label{classGateVImageActor_a59d853993f2ce64f4e2ae48e8e55bdeb}} 
+G4\+Three\+Vector {\bfseries m\+Position}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a5573fdd3bf94c7f64eed7a66c249ad3b}\label{classGateVImageActor_a5573fdd3bf94c7f64eed7a66c249ad3b}} 
+G4\+Three\+Vector {\bfseries m\+Origin}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_ade0efa0b90f2eac6a35b163b7c10e8d5}\label{classGateVImageActor_ade0efa0b90f2eac6a35b163b7c10e8d5}} 
+Step\+Hit\+Type {\bfseries m\+Step\+Hit\+Type}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a04c5e563aea451082455d3eb4ce159e1}\label{classGateVImageActor_a04c5e563aea451082455d3eb4ce159e1}} 
+G4\+String {\bfseries m\+Step\+Hit\+Type\+Name}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_a79fa0192bd3cbe54a8a30aec24fa1301}\label{classGateVImageActor_a79fa0192bd3cbe54a8a30aec24fa1301}} 
+\mbox{\hyperlink{classGateImage}{Gate\+Image}} {\bfseries m\+Image}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_ae4139bb873b5542b74928a3a1cdfc7ab}\label{classGateVImageActor_ae4139bb873b5542b74928a3a1cdfc7ab}} 
+bool {\bfseries m\+Voxel\+Size\+Is\+Set}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_aa5028ac6173c957e5f975e03db402cc0}\label{classGateVImageActor_aa5028ac6173c957e5f975e03db402cc0}} 
+bool {\bfseries m\+Resolution\+Is\+Set}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_aa379b00cbf913a80f8110641d21573ac}\label{classGateVImageActor_aa379b00cbf913a80f8110641d21573ac}} 
+bool {\bfseries m\+Half\+Size\+Is\+Set}
+\item 
+\mbox{\Hypertarget{classGateVImageActor_aa2a4218d992b98423c6562b09b46e977}\label{classGateVImageActor_aa2a4218d992b98423c6562b09b46e977}} 
+bool {\bfseries m\+Position\+Is\+Set}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base (virtual) class for sensor storing data in a 3D matrix (\mbox{\hyperlink{classGateImage}{Gate\+Image}}) 
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:thibault.frisson@creatis.insa-lyon.fr}{\texttt{ thibault.\+frisson@creatis.\+insa-\/lyon.\+fr}} \href{mailto:laurent.guigues@creatis.insa-lyon.fr}{\texttt{ laurent.\+guigues@creatis.\+insa-\/lyon.\+fr}} \href{mailto:david.sarrut@creatis.insa-lyon.fr}{\texttt{ david.\+sarrut@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateVImageActor_a14de8c5e94100ce075b73d932dae3338}\label{classGateVImageActor_a14de8c5e94100ce075b73d932dae3338}} 
+\index{GateVImageActor@{GateVImageActor}!GateVImageActor@{GateVImageActor}}
+\index{GateVImageActor@{GateVImageActor}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{GateVImageActor()}{GateVImageActor()}}
+{\footnotesize\ttfamily Gate\+VImage\+Actor\+::\+Gate\+VImage\+Actor (\begin{DoxyParamCaption}\item[{G4\+String}]{name,  }\item[{G4int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructs the class. 
+
+Constructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}\label{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}} 
+\index{GateVImageActor@{GateVImageActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Type name of the sensor. 
+
+Constructs the sensor.
+
+Constructs the sensor 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateCrossSectionProductionActor_ac8f07238d082e9ef4b7f3dd4ef949790}{Gate\+Cross\+Section\+Production\+Actor}}, \mbox{\hyperlink{classGateCylindricalEdepActor_af4a62332079498aa3c8aa20e7761cdbb}{Gate\+Cylindrical\+Edep\+Actor}}, \mbox{\hyperlink{classGateStoppingPowerActor_a5829a66ea25e848784266d2068b47213}{Gate\+Stopping\+Power\+Actor}}, \mbox{\hyperlink{classGateDoseActor_a2b856ceb1bde3f0605e0c28e61c243b2}{Gate\+Dose\+Actor}}, \mbox{\hyperlink{classGateDoseSourceActor_ae185f7b7f14caf758f4414174d147b98}{Gate\+Dose\+Source\+Actor}}, \mbox{\hyperlink{classGateFluenceActor_a6f567572a73e374231b93a0cbe65b5c2}{Gate\+Fluence\+Actor}}, \mbox{\hyperlink{classGateKermaActor_a716ad10c2b858ea17eeba71d7f912695}{Gate\+Kerma\+Actor}}, \mbox{\hyperlink{classGateLETActor_af1fa1d9e93e12fbc84de1158169b9f18}{Gate\+LETActor}}, \mbox{\hyperlink{classGateMultiMaterialThermalActor_a04ff56e4e40c308e15dd8e7de69c49ac}{Gate\+Multi\+Material\+Thermal\+Actor}}, \mbox{\hyperlink{classGateMuMapActor_a630abd514c1516ebc491ff7a71e25bae}{Gate\+Mu\+Map\+Actor}}, \mbox{\hyperlink{classGateNeutronKermaActor_a39d65fc18da5ff887f901eb9d08ae4c1}{Gate\+Neutron\+Kerma\+Actor}}, \mbox{\hyperlink{classGateNTLEDoseActor_afda430f477c77e8a97dc1ead42312a26}{Gate\+NTLEDose\+Actor}}, \mbox{\hyperlink{classGateParticleInVolumeActor_a7fac91cd83d912003b86d7b0353483ed}{Gate\+Particle\+In\+Volume\+Actor}}, \mbox{\hyperlink{classGateProductionActor_a93cf86cbdfd408c537534f02f4069417}{Gate\+Production\+Actor}}, \mbox{\hyperlink{classGateProductionAndStoppingActor_a6eb0d9683a3e5a93597f55bc18f3a038}{Gate\+Production\+And\+Stopping\+Actor}}, \mbox{\hyperlink{classGatePromptGammaAnalogActor_aedc24ba73e4146bb0c0db8a885e9fe8e}{Gate\+Prompt\+Gamma\+Analog\+Actor}}, \mbox{\hyperlink{classGatePromptGammaTLEActor_adfdc50b0f40802ed4eca7b3545db30a0}{Gate\+Prompt\+Gamma\+TLEActor}}, \mbox{\hyperlink{classGateQvalueActor_af18a2e4a12dfb8819c654e0c67596f54}{Gate\+Qvalue\+Actor}}, \mbox{\hyperlink{classGateSETLEDoseActor_a5c19f6896b6701e79f0f16513876e840}{Gate\+SETLEDose\+Actor}}, \mbox{\hyperlink{classGateThermalActor_a28026455dc36fe12b247e448fb8239e7}{Gate\+Thermal\+Actor}}, \mbox{\hyperlink{classGateTLEDoseActor_ae94ea88e100a26a2a800091865df5d9f}{Gate\+TLEDose\+Actor}}, and \mbox{\hyperlink{classGateTLFluenceActor_a844087f30557fb061424be8f0459ee33}{Gate\+TLFluence\+Actor}}.
+
+\mbox{\Hypertarget{classGateVImageActor_a7039d37426c31c984e8e7fd56e476655}\label{classGateVImageActor_a7039d37426c31c984e8e7fd56e476655}} 
+\index{GateVImageActor@{GateVImageActor}!PostUserTrackingAction@{PostUserTrackingAction}}
+\index{PostUserTrackingAction@{PostUserTrackingAction}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{PostUserTrackingAction()}{PostUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Actor\+::\+Post\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateVImageActor_aeae1614284240d030f53a4e38db63c80}\label{classGateVImageActor_aeae1614284240d030f53a4e38db63c80}} 
+\index{GateVImageActor@{GateVImageActor}!PreUserTrackingAction@{PreUserTrackingAction}}
+\index{PreUserTrackingAction@{PreUserTrackingAction}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{PreUserTrackingAction()}{PreUserTrackingAction()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Actor\+::\+Pre\+User\+Tracking\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Computes the voxel in which to store the data and invokes User\+Hit\+Action which is responsible for voxel data updating 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateCrossSectionProductionActor_afaf8373223b4919fe762f1e652cd2c8b}{Gate\+Cross\+Section\+Production\+Actor}}, and \mbox{\hyperlink{classGateSETLEDoseActor_ac84f6556cb099085bd1985d956921899}{Gate\+SETLEDose\+Actor}}.
+
+\mbox{\Hypertarget{classGateVImageActor_a558f762b58a15180a7814f5e92cd533a}\label{classGateVImageActor_a558f762b58a15180a7814f5e92cd533a}} 
+\index{GateVImageActor@{GateVImageActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateVImageActor_a20e85939e6f19dcf3d56642bd11ee710}\label{classGateVImageActor_a20e85939e6f19dcf3d56642bd11ee710}} 
+\index{GateVImageActor@{GateVImageActor}!SetStepHitType@{SetStepHitType}}
+\index{SetStepHitType@{SetStepHitType}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{SetStepHitType()}{SetStepHitType()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Actor\+::\+Set\+Step\+Hit\+Type (\begin{DoxyParamCaption}\item[{G4\+String}]{t }\end{DoxyParamCaption})}
+
+
+
+Sets the type of the hit. 
+
+Sets the type of the hit (pre / post / split) \mbox{\Hypertarget{classGateVImageActor_a74ab0a1b34ed8858f850ceaacf135c7b}\label{classGateVImageActor_a74ab0a1b34ed8858f850ceaacf135c7b}} 
+\index{GateVImageActor@{GateVImageActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateProductionActor_a22b26496b3a1c8843bc4af20e16d6d99}{Gate\+Production\+Actor}}.
+
+\mbox{\Hypertarget{classGateVImageActor_a2b837c3fcb9c415e0aeca03825525e05}\label{classGateVImageActor_a2b837c3fcb9c415e0aeca03825525e05}} 
+\index{GateVImageActor@{GateVImageActor}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}}
+{\footnotesize\ttfamily void Gate\+VImage\+Actor\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}\label{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}} 
+\index{GateVImageActor@{GateVImageActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateVImageActor@{GateVImageActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+VImage\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implemented in \mbox{\hyperlink{classGateCrossSectionProductionActor_a8a0944a0e3a350d0aa0da6def61fe323}{Gate\+Cross\+Section\+Production\+Actor}}, \mbox{\hyperlink{classGateCylindricalEdepActor_adfdb9ce464d11e9953c2ac25277b6c48}{Gate\+Cylindrical\+Edep\+Actor}}, \mbox{\hyperlink{classGateStoppingPowerActor_a09be37363a44c377dfc428bfe5c8ec0f}{Gate\+Stopping\+Power\+Actor}}, \mbox{\hyperlink{classGateDoseActor_aae370ef4e10214f753e1bb1835294f59}{Gate\+Dose\+Actor}}, \mbox{\hyperlink{classGateDoseSourceActor_a983172ef90d50f8245c69e6ea83ed50e}{Gate\+Dose\+Source\+Actor}}, \mbox{\hyperlink{classGateFluenceActor_a9652aad579d01455dc62e380a47db864}{Gate\+Fluence\+Actor}}, \mbox{\hyperlink{classGateKermaActor_acabfdf17dbeb4f357adb0a83b112115a}{Gate\+Kerma\+Actor}}, \mbox{\hyperlink{classGateLETActor_afd43e83afc2506da067e370f11b650a9}{Gate\+LETActor}}, \mbox{\hyperlink{classGateMultiMaterialThermalActor_a614198d2bf08421bbb1215e9ed72dcfe}{Gate\+Multi\+Material\+Thermal\+Actor}}, \mbox{\hyperlink{classGateParticleInVolumeActor_a1394601c440b1179c7366bb1639d7e6d}{Gate\+Particle\+In\+Volume\+Actor}}, \mbox{\hyperlink{classGateProductionAndStoppingActor_a066b33ee2af1b4b39a1c2954345c1cd2}{Gate\+Production\+And\+Stopping\+Actor}}, \mbox{\hyperlink{classGatePromptGammaAnalogActor_ad09e60e71c65fafad831852896d47e7c}{Gate\+Prompt\+Gamma\+Analog\+Actor}}, \mbox{\hyperlink{classGatePromptGammaTLEActor_af4f09ea83a1fba6ca8ee9a83e53d574f}{Gate\+Prompt\+Gamma\+TLEActor}}, \mbox{\hyperlink{classGateSETLEDoseActor_af03363b66fbc61d13e8e812986f3eea3}{Gate\+SETLEDose\+Actor}}, \mbox{\hyperlink{classGateThermalActor_a9a7c0f6e356b6789511c4311922363ab}{Gate\+Thermal\+Actor}}, \mbox{\hyperlink{classGateTLEDoseActor_a64cb29a2ad4cb536a6c74480939f8822}{Gate\+TLEDose\+Actor}}, \mbox{\hyperlink{classGateMuMapActor_a4c4ad9dd32418bc7760e12005440518f}{Gate\+Mu\+Map\+Actor}}, \mbox{\hyperlink{classGateNeutronKermaActor_a1f970a8c361f2bbe8f4374bd822f2e22}{Gate\+Neutron\+Kerma\+Actor}}, \mbox{\hyperlink{classGateNTLEDoseActor_a081e0fa01b3bf6f7668b63185cd4f631}{Gate\+NTLEDose\+Actor}}, \mbox{\hyperlink{classGateQvalueActor_a3063fc72bb22d10fe3d86c68c1abcb09}{Gate\+Qvalue\+Actor}}, \mbox{\hyperlink{classGateTLFluenceActor_a75b962c8a45fff7835ff8b9e0c240b81}{Gate\+TLFluence\+Actor}}, and \mbox{\hyperlink{classGateProductionActor_a29b0cc7bbb5752317d4501bde2135dc6}{Gate\+Production\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+VImage\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+VImage\+Actor.\+cc\end{DoxyCompactItemize}

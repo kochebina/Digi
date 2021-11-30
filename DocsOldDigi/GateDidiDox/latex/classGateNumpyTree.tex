@@ -1,0 +1,110 @@
+\hypertarget{classGateNumpyTree}{}\doxysection{Gate\+Numpy\+Tree Class Reference}
+\label{classGateNumpyTree}\index{GateNumpyTree@{GateNumpyTree}}
+Inheritance diagram for Gate\+Numpy\+Tree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateNumpyTree}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a615dd539204ab9329e935456b425f99a}\label{classGateNumpyTree_a615dd539204ab9329e935456b425f99a}} 
+uint64\+\_\+t {\bfseries nb\+\_\+elements} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a8d54701ef76a0eb6c32f3e480a0fbb69}\label{classGateNumpyTree_a8d54701ef76a0eb6c32f3e480a0fbb69}} 
+static std\+::string {\bfseries \+\_\+get\+\_\+factory\+\_\+name} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateNumpyTree_a27b4529eeb45995f6f1207e38b0522a5}{register\+\_\+variable}} (const std\+::string \&name, const void $\ast$p, std\+::type\+\_\+index t\+\_\+index) override
+\item 
+void \mbox{\hyperlink{classGateNumpyTree_af7b591a67a906dac830891f9e35399ab}{register\+\_\+variable}} (const std\+::string \&name, const char $\ast$p, size\+\_\+t nb\+\_\+char) override
+\item 
+void \mbox{\hyperlink{classGateNumpyTree_af20f023faf99204dadae5d25c371618e}{register\+\_\+variable}} (const std\+::string \&name, const std\+::string $\ast$p, size\+\_\+t nb\+\_\+char) override
+\item 
+void \mbox{\hyperlink{classGateNumpyTree_ab2b83bbd97571c556ec45e0bb675b13b}{register\+\_\+variable}} (const std\+::string \&name, const int $\ast$, size\+\_\+t n) override
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a0ef67fc0a4c9a88878a269aed869efbd}\label{classGateNumpyTree_a0ef67fc0a4c9a88878a269aed869efbd}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries register\+\_\+variable} (const std\+::string \&name, const T $\ast$p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a092d2a43c5f957d340b8654ab886489b}\label{classGateNumpyTree_a092d2a43c5f957d340b8654ab886489b}} 
+uint64\+\_\+t {\bfseries m\+\_\+nb\+\_\+elements}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a242bee4439f36c3163fd44ec5c2354c0}\label{classGateNumpyTree_a242bee4439f36c3163fd44ec5c2354c0}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateNumpyData}{Gate\+Numpy\+Data}} $>$ {\bfseries m\+\_\+vector\+\_\+of\+\_\+pointer\+\_\+to\+\_\+data}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a10774982d6f7a61fbc92a5277c1e8657}\label{classGateNumpyTree_a10774982d6f7a61fbc92a5277c1e8657}} 
+std\+::fstream {\bfseries m\+\_\+file}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a10d668bb186ce7960c1124ed26db7952}\label{classGateNumpyTree_a10d668bb186ce7960c1124ed26db7952}} 
+uint64\+\_\+t {\bfseries m\+\_\+position\+\_\+before\+\_\+shape}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a13cb6f2f24400cbba57c41527ea41886}\label{classGateNumpyTree_a13cb6f2f24400cbba57c41527ea41886}} 
+uint64\+\_\+t {\bfseries m\+\_\+position\+\_\+after\+\_\+shape}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a44468d9508e25372771c7b7050ba3f2a}\label{classGateNumpyTree_a44468d9508e25372771c7b7050ba3f2a}} 
+const std\+::string {\bfseries magic\+\_\+prefix} = \char`\"{}\textbackslash{}x93\+NUMPY\char`\"{}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_a5c3b4854dfd69fa1b930df227d681886}\label{classGateNumpyTree_a5c3b4854dfd69fa1b930df227d681886}} 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::string $>$ {\bfseries m\+\_\+tmap\+\_\+cpp\+To\+Numpy}
+\item 
+\mbox{\Hypertarget{classGateNumpyTree_ab1b94d3dd59a4024af5e3fcfaeb48e48}\label{classGateNumpyTree_ab1b94d3dd59a4024af5e3fcfaeb48e48}} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::type\+\_\+index $>$ {\bfseries m\+\_\+tmap\+\_\+numpy\+To\+Cpp}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateNumpyTree_af7b591a67a906dac830891f9e35399ab}\label{classGateNumpyTree_af7b591a67a906dac830891f9e35399ab}} 
+\index{GateNumpyTree@{GateNumpyTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateNumpyTree@{GateNumpyTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Gate\+Numpy\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const char $\ast$}]{p,  }\item[{size\+\_\+t}]{nb\+\_\+char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+\mbox{\Hypertarget{classGateNumpyTree_ab2b83bbd97571c556ec45e0bb675b13b}\label{classGateNumpyTree_ab2b83bbd97571c556ec45e0bb675b13b}} 
+\index{GateNumpyTree@{GateNumpyTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateNumpyTree@{GateNumpyTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Gate\+Numpy\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const int $\ast$}]{,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+\mbox{\Hypertarget{classGateNumpyTree_af20f023faf99204dadae5d25c371618e}\label{classGateNumpyTree_af20f023faf99204dadae5d25c371618e}} 
+\index{GateNumpyTree@{GateNumpyTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateNumpyTree@{GateNumpyTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Gate\+Numpy\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string $\ast$}]{p,  }\item[{size\+\_\+t}]{nb\+\_\+char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+\mbox{\Hypertarget{classGateNumpyTree_a27b4529eeb45995f6f1207e38b0522a5}\label{classGateNumpyTree_a27b4529eeb45995f6f1207e38b0522a5}} 
+\index{GateNumpyTree@{GateNumpyTree}!register\_variable@{register\_variable}}
+\index{register\_variable@{register\_variable}!GateNumpyTree@{GateNumpyTree}}
+\doxysubsubsection{\texorpdfstring{register\_variable()}{register\_variable()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Gate\+Numpy\+Tree\+::register\+\_\+variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const void $\ast$}]{p,  }\item[{std\+::type\+\_\+index}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateTree}{Gate\+Tree}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/io/include/Gate\+Numpy\+File.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/io/src/Gate\+Numpy\+File.\+cc\end{DoxyCompactItemize}

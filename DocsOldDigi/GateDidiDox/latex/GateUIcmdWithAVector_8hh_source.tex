@@ -1,0 +1,139 @@
+\hypertarget{GateUIcmdWithAVector_8hh_source}{}\doxysection{Gate\+UIcmd\+With\+AVector.\+hh}
+\label{GateUIcmdWithAVector_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateUIcmdWithAVector.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateUIcmdWithAVector.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateUIcmdWithAVector\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateUIcmdWithAVector\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4UIcommand.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateTokenizer.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//LF}}
+\DoxyCodeLine{19 \textcolor{comment}{//\#include <strstream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{21 \textcolor{comment}{//LF}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// Class description:}}
+\DoxyCodeLine{24 \textcolor{comment}{//  A concrete class of G4UIcommand. The command defined by this class}}
+\DoxyCodeLine{25 \textcolor{comment}{// takes a vector<> and a unit.}}
+\DoxyCodeLine{26 \textcolor{comment}{//  General information of G4UIcommand is given in G4UIcommand.hh.}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{template}<\textcolor{keyword}{typename} vContentType> \textcolor{keyword}{class }\mbox{\hyperlink{classGateUIcmdWithAVector}{GateUIcmdWithAVector}} : \textcolor{keyword}{public} G4UIcommand}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}: \textcolor{comment}{// with description}}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateUIcmdWithAVector}{GateUIcmdWithAVector}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theCommandPath, G4UImessenger * theMessenger);}
+\DoxyCodeLine{32   \textcolor{comment}{//  Constructor. The command string with full path directory}}
+\DoxyCodeLine{33   \textcolor{comment}{// and the pointer to the messenger must be given.}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{//    G4int DoIt(G4String parameterList) \{  }}
+\DoxyCodeLine{36 \textcolor{comment}{//      messenger-\/>SetNewValue( this, parameterList );}}
+\DoxyCodeLine{37 \textcolor{comment}{//      return 0;}}
+\DoxyCodeLine{38 \textcolor{comment}{//    \};}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   std::vector<vContentType> GetNewVectorValue(G4String paramString);}
+\DoxyCodeLine{41   \textcolor{comment}{//  Convert string the vector values and a unit to}}
+\DoxyCodeLine{42   \textcolor{comment}{//  the Vector}}
+\DoxyCodeLine{43   G4String ConvertToString(std::vector<vContentType> vec);}
+\DoxyCodeLine{44   \textcolor{comment}{//  Convert the Vector and the unit to a string which represents it}}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{template}<\textcolor{keyword}{typename} vContentType>}
+\DoxyCodeLine{48 \mbox{\hyperlink{classGateUIcmdWithAVector}{GateUIcmdWithAVector<vContentType>::GateUIcmdWithAVector}}}
+\DoxyCodeLine{49 (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * theCommandPath, G4UImessenger * theMessenger)}
+\DoxyCodeLine{50 :G4UIcommand(theCommandPath,theMessenger)}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52   \textcolor{comment}{//  G4UIparameter * intParam = new G4UIparameter('i');}}
+\DoxyCodeLine{53   G4UIparameter * intParam = \textcolor{keyword}{new} G4UIparameter(\textcolor{charliteral}{'s'});}
+\DoxyCodeLine{54   SetParameter(intParam);}
+\DoxyCodeLine{55 \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{template}<\textcolor{keyword}{typename} vContentType>}
+\DoxyCodeLine{58 std::vector<vContentType> \mbox{\hyperlink{classGateUIcmdWithAVector}{GateUIcmdWithAVector<vContentType>::GetNewVectorValue}}(G4String paramString)}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60 \textcolor{comment}{//    G4cout << "{}GateUIcmdWithAVector::GetNewVectorValue : paramString <"{} << paramString << "{}>\(\backslash\)n"{};}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{comment}{//const char* t = paramString;}}
+\DoxyCodeLine{63   \textcolor{comment}{//LF 21/12/2005}}
+\DoxyCodeLine{64   \textcolor{comment}{// std::istrstream is(paramString);}}
+\DoxyCodeLine{65   std::istringstream is(paramString);}
+\DoxyCodeLine{66   \textcolor{comment}{//LF}}
+\DoxyCodeLine{67   std::vector<vContentType> vec;}
+\DoxyCodeLine{68 \textcolor{comment}{//    G4int nElem;}}
+\DoxyCodeLine{69 \textcolor{comment}{//    is >> nElem;}}
+\DoxyCodeLine{70   \textcolor{comment}{//  G4cout << "{}GateUIcmdWithAVector::GetNewVectorValue : nElem "{}<< nElem << Gateendl;}}
+\DoxyCodeLine{71   vContentType value;}
+\DoxyCodeLine{72   \textcolor{comment}{// TEST  G4int value;}}
+\DoxyCodeLine{73 \textcolor{comment}{//    G4cout << "{}GateUIcmdWithAVector::GetNewVectorValue : "{};}}
+\DoxyCodeLine{74   G4String aToken;}
+\DoxyCodeLine{75   \mbox{\hyperlink{classGateTokenizer}{GateTokenizer}} parameterToken( paramString );}
+\DoxyCodeLine{76   \textcolor{comment}{//G4bool isGood = true;}}
+\DoxyCodeLine{77   std::vector<G4String> inputVec;}
+\DoxyCodeLine{78   G4int length = 0;}
+\DoxyCodeLine{79   \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{80     aToken = parameterToken();}
+\DoxyCodeLine{81     length = aToken.length();}
+\DoxyCodeLine{82     \textcolor{keywordflow}{if} (length>0) \{}
+\DoxyCodeLine{83       inputVec.push\_back(aToken);}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85   \} \textcolor{keywordflow}{while} (length>0);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{comment}{//  G4cout << "{}GateUIcmdWithAVector::GetNewVectorValue : inputVec.size() : "{} << inputVec.size() << Gateendl;}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} iw=0; iw<inputVec.size(); iw++) \{}
+\DoxyCodeLine{90     aToken = inputVec[iw] + G4String(\textcolor{stringliteral}{"{} dummy "{}}) ;}
+\DoxyCodeLine{91     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* charToken = aToken; }
+\DoxyCodeLine{92     \textcolor{comment}{//LF 21/12/2005}}
+\DoxyCodeLine{93     \textcolor{comment}{//std::istrstream istrToken(charToken); }}
+\DoxyCodeLine{94     std::istringstream istrToken(charToken); }
+\DoxyCodeLine{95     \textcolor{comment}{//LF}}
+\DoxyCodeLine{96     istrToken >> value;}
+\DoxyCodeLine{97 \textcolor{comment}{//      G4cout << "{}GateUIcmdWithAVector::GetNewVectorValue : aToken : "{} << aToken << "{} value : "{} << value << Gateendl;}}
+\DoxyCodeLine{98 \textcolor{comment}{//      G4cout << "{} is.eof() "{}         << istrToken.eof() }}
+\DoxyCodeLine{99 \textcolor{comment}{//         << "{} istrToken.fail() "{} << istrToken.fail() }}
+\DoxyCodeLine{100 \textcolor{comment}{//         << "{} istrToken.good() "{} << istrToken.good() }}
+\DoxyCodeLine{101 \textcolor{comment}{//         << "{} istrToken.bad() "{}  << istrToken.bad() << Gateendl;}}
+\DoxyCodeLine{102     \textcolor{keywordflow}{if} (istrToken.good() == 0) \{}
+\DoxyCodeLine{103       ;\textcolor{comment}{//isGood = false;}}
+\DoxyCodeLine{104     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{105       vec.push\_back(value);}
+\DoxyCodeLine{106 \textcolor{comment}{//        G4cout << value << "{}, "{};}}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108   \}}
+\DoxyCodeLine{109 \textcolor{comment}{//    G4cout << Gateendl;}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{//  G4cout << "{}GateUIcmdWithAVector::GetNewVectorValue : vec.size() "{} << vec.size() << Gateendl;}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{keywordflow}{return} vec;}
+\DoxyCodeLine{114 \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keyword}{template}<\textcolor{keyword}{typename} vContentType>}
+\DoxyCodeLine{117 G4String \mbox{\hyperlink{classGateUIcmdWithAVector}{GateUIcmdWithAVector<vContentType>::ConvertToString}}}
+\DoxyCodeLine{118 (std::vector<vContentType> vec)}
+\DoxyCodeLine{119 \{}
+\DoxyCodeLine{120   std::ostringstream os;}
+\DoxyCodeLine{121   \textcolor{keywordflow}{for} (G4int i=0; i<vec.size(); i++) os << vec[i] << \textcolor{stringliteral}{"{} "{}}; }
+\DoxyCodeLine{122   os << \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{123   G4String vl = os.str();}
+\DoxyCodeLine{124   G4cout << \textcolor{stringliteral}{"{}GateUIcmdWithAVector::ConvertToString : "{}} << vl << Gateendl;}
+\DoxyCodeLine{125   \textcolor{keywordflow}{return} vl;}
+\DoxyCodeLine{126 \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 }
+
+\end{DoxyCode}

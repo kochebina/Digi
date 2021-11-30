@@ -1,0 +1,75 @@
+\hypertarget{GateApplicationMgrMessenger_8hh_source}{}\doxysection{Gate\+Application\+Mgr\+Messenger.\+hh}
+\label{GateApplicationMgrMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateApplicationMgrMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateApplicationMgrMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateApplicationMgrMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateApplicationMgrMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateApplicationMgr}{GateApplicationMgr}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateApplicationMgrMessenger}{GateApplicationMgrMessenger}}: \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateApplicationMgrMessenger}{GateApplicationMgrMessenger}}();}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateApplicationMgrMessenger}{\string~GateApplicationMgrMessenger}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37   G4UIdirectory*           GateApplicationDir;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   G4UIcmdWithADoubleAndUnit* TimeSliceCmd;}
+\DoxyCodeLine{40   G4UIcmdWithADoubleAndUnit* TimeStartCmd;}
+\DoxyCodeLine{41   G4UIcmdWithADoubleAndUnit* TimeStopCmd;}
+\DoxyCodeLine{42   G4UIcmdWithADoubleAndUnit* AddSliceCmd;}
+\DoxyCodeLine{43   G4UIcmdWithoutParameter*   StartDAQCmd;}
+\DoxyCodeLine{44   G4UIcmdWithoutParameter*   StartCmd;}
+\DoxyCodeLine{45   G4UIcmdWith3VectorAndUnit* StartDAQCompleteCmd;}
+\DoxyCodeLine{46   \textcolor{comment}{//dk cluster}}
+\DoxyCodeLine{47   G4UIcmdWith3VectorAndUnit* StartDAQClusterCmd;}
+\DoxyCodeLine{48   \textcolor{comment}{//dk cluster end}}
+\DoxyCodeLine{49   G4UIcmdWithoutParameter*   StopDAQCmd;}
+\DoxyCodeLine{50   G4UIcmdWithoutParameter*   PauseDAQCmd;}
+\DoxyCodeLine{51   G4UIcmdWithAnInteger*      VerboseCmd;}
+\DoxyCodeLine{52 \textcolor{comment}{//  G4UIcmdWithABool*          ExitFlagCmd;}}
+\DoxyCodeLine{53   G4UIcmdWithoutParameter*   DescribeCmd;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   G4UIcmdWithoutParameter * NoOutputCmd;}
+\DoxyCodeLine{56   G4UIcmdWithAString * TimeStudyCmd;}
+\DoxyCodeLine{57   G4UIcmdWithAString * TimeStudyForStepsCmd;}
+\DoxyCodeLine{58   \textcolor{comment}{//G4UIcmdWithoutParameter * EnableSuccessiveSourceMode;}}
+\DoxyCodeLine{59   G4UIcmdWithAString *      ReadTimeSlicesInAFileCmd;}
+\DoxyCodeLine{60   G4UIcmdWithADouble *      SetTotalNumberOfPrimariesCmd;}
+\DoxyCodeLine{61   G4UIcmdWithADouble *      SetNumberOfPrimariesPerRunCmd;}
+\DoxyCodeLine{62   G4UIcmdWithADouble *      SetNumberOfPrimariesPerRunCmd2;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{//LSLS}}
+\DoxyCodeLine{65   G4UIcmdWithAString *      ReadNumberOfPrimariesInAFileCmd;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

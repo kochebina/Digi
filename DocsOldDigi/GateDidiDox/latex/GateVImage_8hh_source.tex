@@ -1,0 +1,172 @@
+\hypertarget{GateVImage_8hh_source}{}\doxysection{Gate\+VImage.\+hh}
+\label{GateVImage_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVImage.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateVImage.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef \_\_GATEVIMAGE\_HH\_\_}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define \_\_GATEVIMAGE\_HH\_\_}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <globals.hh>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <G4ThreeVector.hh>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <G4RotationMatrix.hh>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateAnalyzeHeader.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateInterfileHeader.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMessageManager_8hh}{GateMessageManager.hh}}"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }G4String;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVImage}{GateVImage}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \mbox{\hyperlink{classGateVImage}{GateVImage}}();}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVImage}{\string~GateVImage}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_a5aa8874f973bc99c23474970ae3c6b01}{SetResolutionAndHalfSize}}(G4ThreeVector r, G4ThreeVector h);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_a5aa8874f973bc99c23474970ae3c6b01}{SetResolutionAndHalfSize}}(G4ThreeVector r, G4ThreeVector h, G4ThreeVector position);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_a5c07236bf972ed5c157242a65c2c5d9e}{SetResolutionAndVoxelSize}}(G4ThreeVector r, G4ThreeVector v);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_a5c07236bf972ed5c157242a65c2c5d9e}{SetResolutionAndVoxelSize}}(G4ThreeVector r, G4ThreeVector v, G4ThreeVector position);}
+\DoxyCodeLine{49   }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_a6d1fd4fbc83efbb4c2d172aeb08e101a}{SetResolutionAndHalfSizeCylinder}}(G4ThreeVector r, G4ThreeVector h, G4ThreeVector position);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_a6d1fd4fbc83efbb4c2d172aeb08e101a}{SetResolutionAndHalfSizeCylinder}}(G4ThreeVector r, G4ThreeVector h);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_ac2b40a9c3f7bd0b5c030f44d00a4a82f}{Allocate}}() = 0;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58   \textcolor{keyword}{inline} G4ThreeVector \mbox{\hyperlink{classGateVImage_ac9a2ffb74097469b343e881df49759c7}{GetSize}}()\textcolor{keyword}{           const }\{ \textcolor{keywordflow}{return} size; \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61   \textcolor{keyword}{inline} G4ThreeVector \mbox{\hyperlink{classGateVImage_a65948ac4ab270a51de6a3568271ffd99}{GetHalfSize}}()\textcolor{keyword}{       const }\{ \textcolor{keywordflow}{return} halfSize; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64   \textcolor{keyword}{inline} G4ThreeVector \mbox{\hyperlink{classGateVImage_afd8c33a20bbd18f62e5f8ee2c5b2f378}{GetResolution}}()\textcolor{keyword}{     const }\{ \textcolor{keywordflow}{return} resolution; \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67   \textcolor{keyword}{inline} G4ThreeVector \mbox{\hyperlink{classGateVImage_aa436d982d6775e762bf648ddad0f10ac}{GetVoxelSize}}()\textcolor{keyword}{      const }\{ \textcolor{keywordflow}{return} voxelSize; \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70   \textcolor{keyword}{inline} G4double      \mbox{\hyperlink{classGateVImage_a051181d14b59b5cfb4e15224a7e33df7}{GetVoxelVolume}}()\textcolor{keyword}{    const }\{ \textcolor{keywordflow}{return} voxelVolume; \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73   \textcolor{keyword}{inline} \textcolor{keywordtype}{int}           \mbox{\hyperlink{classGateVImage_aabf2c611165eba1abc611c5b612bbbc9}{GetNumberOfValues}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} nbOfValues; \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{76   \textcolor{keyword}{inline} \textcolor{keywordtype}{int}           \mbox{\hyperlink{classGateVImage_af8aec410e74fb87153774e2e982683bc}{GetLineSize}}()\textcolor{keyword}{       const }\{ \textcolor{keywordflow}{return} lineSize; \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79   \textcolor{keyword}{inline} \textcolor{keywordtype}{int}           \mbox{\hyperlink{classGateVImage_a9ef34be4305a402b50e91a1b140dbc35}{GetPlaneSize}}()\textcolor{keyword}{      const }\{ \textcolor{keywordflow}{return} planeSize; \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82   \textcolor{keyword}{inline} G4ThreeVector \mbox{\hyperlink{classGateVImage_a5bd2785be70a4c87c5f337de10f0017e}{GetOrigin}}()\textcolor{keyword}{     const }\{ \textcolor{keywordflow}{return} origin; \}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} SetOrigin(G4ThreeVector o) \{ origin = o; \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keyword}{const} G4RotationMatrix \& GetTransformMatrix()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} transformMatrix; \}}
+\DoxyCodeLine{86   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetTransformMatrix(\textcolor{keyword}{const} G4RotationMatrix \&transMatrix) \{ transformMatrix = transMatrix; \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \textcolor{keywordtype}{bool} HasSameResolutionThan(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVImage}{GateVImage}} \& image) \textcolor{keyword}{const};}
+\DoxyCodeLine{89   \textcolor{keywordtype}{bool} HasSameResolutionThan(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVImage}{GateVImage}} * pImage) \textcolor{keyword}{const};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{comment}{// Transformations between systems of coordinates}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94   G4ThreeVector \mbox{\hyperlink{classGateVImage_a8bfeba4c947fdaa8b89c3c4b01a2d628}{GetCoordinatesFromIndex}}(\textcolor{keywordtype}{int} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{96   \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{classGateVImage_a8866a9a736124ce229e0dc37241e0a72}{GetIndexFromCoordinates}}(\textcolor{keyword}{const} G4ThreeVector \& coords)\textcolor{keyword}{ const}}
+\DoxyCodeLine{97 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})(coords.x()+coords.y()*lineSize+coords.z()*planeSize); \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101   G4ThreeVector \mbox{\hyperlink{classGateVImage_a3eb86c39af3c5da55f55b3cf7f8f8a08}{GetVoxelCenterFromCoordinates}}(G4ThreeVector coords) \textcolor{keyword}{const};}
+\DoxyCodeLine{103   G4ThreeVector \mbox{\hyperlink{classGateVImage_a8dbcf903958f44f8fc4703f937e1d823}{GetVoxelCenterFromIndex}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const}}
+\DoxyCodeLine{104 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVImage_a3eb86c39af3c5da55f55b3cf7f8f8a08}{GetVoxelCenterFromCoordinates}}(\mbox{\hyperlink{classGateVImage_a8bfeba4c947fdaa8b89c3c4b01a2d628}{GetCoordinatesFromIndex}}(index)); \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107   G4ThreeVector \mbox{\hyperlink{classGateVImage_a1274e4aee513f8d10f1be9a4eae1ee86}{GetVoxelCornerFromCoordinates}}(G4ThreeVector coords) \textcolor{keyword}{const};}
+\DoxyCodeLine{109   G4ThreeVector \mbox{\hyperlink{classGateVImage_a72d3ff121b5c5d290407d43676fb14c0}{GetVoxelCornerFromIndex}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const}}
+\DoxyCodeLine{110 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVImage_a1274e4aee513f8d10f1be9a4eae1ee86}{GetVoxelCornerFromCoordinates}}(\mbox{\hyperlink{classGateVImage_a8bfeba4c947fdaa8b89c3c4b01a2d628}{GetCoordinatesFromIndex}}(index)); \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{113   G4double \mbox{\hyperlink{classGateVImage_a1f7d72a17b02091102dd0f2f84831fe7}{GetXVoxelCornerFromXCoordinate}}(\textcolor{keywordtype}{int} i)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} i * voxelSize.x() -\/ halfSize.x(); \}}
+\DoxyCodeLine{115   G4double \mbox{\hyperlink{classGateVImage_a0555a59dcf4fb360c1326b25aae29f62}{GetYVoxelCornerFromYCoordinate}}(\textcolor{keywordtype}{int} j)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} j * voxelSize.y() -\/ halfSize.y(); \}}
+\DoxyCodeLine{117   G4double \mbox{\hyperlink{classGateVImage_a028d1c8bd1bfbdadcb6f55c92faf54c8}{GetZVoxelCornerFromZCoordinate}}(\textcolor{keywordtype}{int} k)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} k * voxelSize.z() -\/ halfSize.z(); \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119   G4int GetVoxelNx() \{ \textcolor{keywordflow}{return} m\_voxelNx; \};}
+\DoxyCodeLine{120   G4int GetVoxelNy() \{ \textcolor{keywordflow}{return} m\_voxelNy; \};}
+\DoxyCodeLine{121   G4int GetVoxelNz() \{ \textcolor{keywordflow}{return} m\_voxelNz; \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \textcolor{comment}{// Returns the index from the position : OK}}
+\DoxyCodeLine{124   \textcolor{keywordtype}{int} GetIndexFromPosition(\textcolor{keyword}{const} G4ThreeVector\& position) \textcolor{keyword}{const};}
+\DoxyCodeLine{125   \textcolor{keywordtype}{int} GetIndexFromPositionAndDirection(\textcolor{keyword}{const} G4ThreeVector\& position, \textcolor{keyword}{const} G4ThreeVector\& direction) \textcolor{keyword}{const};}
+\DoxyCodeLine{126   \textcolor{keywordtype}{int} GetIndexFromPostPositionAndDirection(\textcolor{keyword}{const} G4ThreeVector\& position, \textcolor{keyword}{const} G4ThreeVector\& direction) \textcolor{keyword}{const};}
+\DoxyCodeLine{127   \textcolor{keywordtype}{int} GetIndexFromPostPosition(\textcolor{keyword}{const} G4ThreeVector\& pre, \textcolor{keyword}{const} G4ThreeVector\& post) \textcolor{keyword}{const};}
+\DoxyCodeLine{128   \textcolor{keywordtype}{int} GetIndexFromPrePosition(\textcolor{keyword}{const} G4ThreeVector\& pre, \textcolor{keyword}{const} G4ThreeVector\& post) \textcolor{keyword}{const};}
+\DoxyCodeLine{129   \textcolor{keywordtype}{int} GetIndexFromPositionCylindricalCS(\textcolor{keyword}{const} G4ThreeVector\& position) \textcolor{keyword}{const}; }
+\DoxyCodeLine{130   }
+\DoxyCodeLine{131   \textcolor{keywordtype}{int} GetIndexFromPostPosition(\textcolor{keyword}{const} \textcolor{keywordtype}{double} t, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pret, \textcolor{keyword}{const} \textcolor{keywordtype}{double} postt, \textcolor{keyword}{const} \textcolor{keywordtype}{double} resolutiont) \textcolor{keyword}{const};}
+\DoxyCodeLine{132   \textcolor{keywordtype}{int} GetIndexFromPrePosition(\textcolor{keyword}{const} \textcolor{keywordtype}{double} t, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pret, \textcolor{keyword}{const} \textcolor{keywordtype}{double} postt, \textcolor{keyword}{const} \textcolor{keywordtype}{double} resolutiont) \textcolor{keyword}{const};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \textcolor{comment}{// Returns the (integer) coordinates of the voxel in which the point is : OK}}
+\DoxyCodeLine{135   G4ThreeVector GetCoordinatesFromPosition(\textcolor{keyword}{const} G4ThreeVector \& position);}
+\DoxyCodeLine{136   \textcolor{comment}{// Returns the (integer) coordinates of the voxel in which the point is : OK}}
+\DoxyCodeLine{137   \textcolor{keywordtype}{void} GetCoordinatesFromPosition(\textcolor{keyword}{const} G4ThreeVector \& position, \textcolor{keywordtype}{int}\& i, \textcolor{keywordtype}{int}\& j, \textcolor{keywordtype}{int}\& k);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139   G4ThreeVector GetNonIntegerCoordinatesFromPosition(G4ThreeVector position);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141   \textcolor{keyword}{enum} ESide \{kUndefined,kPX,kMX,kPY,kMY,kPZ,kMZ\};}
+\DoxyCodeLine{142   ESide GetSideFromPointAndCoordinate(\textcolor{keyword}{const} G4ThreeVector \& p, \textcolor{keyword}{const} G4ThreeVector \& c);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145   \textcolor{comment}{// IO}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{148   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_af62bfa8766718e09282ff0440a299192}{Write}}(G4String filename, \textcolor{keyword}{const} G4String \& comment = \textcolor{stringliteral}{"{}"{}}) = 0;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{151   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_aab825e7a0a33552a9a1514283a4b8f8b}{Read}}(G4String filename) = 0;}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVImage_a037887a44e3e3b049d82738daa498f37}{PrintInfo}}() = 0;}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{157 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{158   \textcolor{keywordtype}{int} nbOfValues;}
+\DoxyCodeLine{159   G4ThreeVector size;}
+\DoxyCodeLine{160   G4ThreeVector halfSize;}
+\DoxyCodeLine{161   G4ThreeVector resolution;}
+\DoxyCodeLine{162   G4ThreeVector voxelSize;}
+\DoxyCodeLine{163   G4ThreeVector origin;}
+\DoxyCodeLine{164   G4RotationMatrix transformMatrix;}
+\DoxyCodeLine{165   G4double      voxelVolume;}
+\DoxyCodeLine{166   G4double      kCarTolerance;}
+\DoxyCodeLine{167   G4ThreeVector halfSizeMinusVoxelCenter;}
+\DoxyCodeLine{168   \textcolor{keywordtype}{int} planeSize;}
+\DoxyCodeLine{169   \textcolor{keywordtype}{int} lineSize;}
+\DoxyCodeLine{170   G4ThreeVector  mPosition;}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172   G4int                          m\_voxelNx;}
+\DoxyCodeLine{173   G4int                          m\_voxelNy;}
+\DoxyCodeLine{174   G4int                          m\_voxelNz;}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176   \textcolor{keywordtype}{void} UpdateNumberOfValues();}
+\DoxyCodeLine{177   \textcolor{keywordtype}{void} UpdateSizesFromResolutionAndHalfSize();}
+\DoxyCodeLine{178   \textcolor{keywordtype}{void} UpdateSizesFromResolutionAndVoxelSize();}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180   \textcolor{keywordtype}{void} UpdateSizesFromResolutionAndHalfSizeCylinder();}
+\DoxyCodeLine{181   \textcolor{keywordtype}{void} UpdateSizesFromResolutionAndVoxelSizeCylinder();}
+\DoxyCodeLine{182   }
+\DoxyCodeLine{183   \textcolor{comment}{// data for root output}}
+\DoxyCodeLine{184   \textcolor{keywordtype}{void} UpdateDataForRootOutput();}
+\DoxyCodeLine{185   \textcolor{keywordtype}{int} mRootHistoDim;}
+\DoxyCodeLine{186   \textcolor{keywordtype}{int} mRootHistoBinxNb;}
+\DoxyCodeLine{187   \textcolor{keywordtype}{double} mRootHistoBinxLow;}
+\DoxyCodeLine{188   \textcolor{keywordtype}{double} mRootHistoBinxUp;}
+\DoxyCodeLine{189   \textcolor{keywordtype}{double} mRootHistoBinxSize;}
+\DoxyCodeLine{190   \textcolor{keywordtype}{int} mRootHistoBinyNb;}
+\DoxyCodeLine{191   \textcolor{keywordtype}{double} mRootHistoBinyLow;}
+\DoxyCodeLine{192   \textcolor{keywordtype}{double} mRootHistoBinyUp;}
+\DoxyCodeLine{193   \textcolor{keywordtype}{double} mRootHistoBinySize;}
+\DoxyCodeLine{194   \textcolor{keywordtype}{int} mRootHistoBinzNb;}
+\DoxyCodeLine{195   \textcolor{keywordtype}{double} mRootHistoBinzLow;}
+\DoxyCodeLine{196   \textcolor{keywordtype}{double} mRootHistoBinzUp;}
+\DoxyCodeLine{197   \textcolor{keywordtype}{double} mRootHistoBinzSize;}
+\DoxyCodeLine{198 \};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,91 @@
+\hypertarget{GateGenericTrap_8hh_source}{}\doxysection{Gate\+Generic\+Trap.\+hh}
+\label{GateGenericTrap_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGenericTrap.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGenericTrap.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GateGenericTrap.hh}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  Created on: 2014.06.11.}}
+\DoxyCodeLine{5 \textcolor{comment}{ *      Author: patayg}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATEGENERICTRAP\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATEGENERICTRAP\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4TwoVector.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4VisExtent.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4GenericTrap.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4GenericTrap;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGenericTrapMessenger}{GateGenericTrapMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGenericTrap}{GateGenericTrap}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classGateGenericTrap_a226aeba5e820297fec5dedf368e9aedb}{GateGenericTrap}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{27                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{28                  G4int depth=0);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateGenericTrap_a226aeba5e820297fec5dedf368e9aedb}{GateGenericTrap}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{31                  \textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{32                  std::vector<G4TwoVector> itsVertices,}
+\DoxyCodeLine{33                  G4double itsZLength,}
+\DoxyCodeLine{34                  G4bool acceptsChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{35                  G4int depth=0);}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGenericTrap_a31eae0f5e1f8c116f75fd598ee6b35f6}{\string~GateGenericTrap}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateGenericTrap}{GateGenericTrap}})}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateGenericTrap_acbdeab0dcf09a6cdfa8e894062880e75}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateGenericTrap_af8b41a0ed04888351cfaeebf80d8f9a9}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} level);}
+\DoxyCodeLine{51   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateGenericTrap_aa0803a9f847fb20ba5f3034b6af2259e}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} axis) \{}
+\DoxyCodeLine{52     G4VisExtent extent = m\_generictrap\_solid-\/>GetExtent();}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if} (axis==0) \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} (extent.GetXmax() -\/ extent.GetXmin())/2.0;}
+\DoxyCodeLine{55     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==1) \{}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} (extent.GetYmax() -\/ extent.GetYmin())/2.0;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis==2) \{}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} m\_zLength/2.0;}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{62   \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{66   G4double \mbox{\hyperlink{classGateGenericTrap_ab4209056c453d74997bc225b20b8ff1f}{ComputeMyOwnVolume}}()  \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70   \textcolor{keyword}{inline} std::vector<G4TwoVector> GetGenericTrapVertices()  \{ \textcolor{keywordflow}{return} m\_vertices; \}}
+\DoxyCodeLine{71   \textcolor{keyword}{inline} G4double GetGenericTrapZLength()   \{ \textcolor{keywordflow}{return} m\_zLength; \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetGenericTrapVertices(std::vector<G4TwoVector> val) \{ m\_vertices = val; \}}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} SetGenericTrapVertex(G4int index, G4TwoVector val)   \{ m\_vertices[index] = val; \}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} SetGenericTrapVertex(G4int index, G4ThreeVector val) \{ m\_vertices[index].set( val.x(), val.y() ); \}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetGenericTrapVertex(G4int index, G4double x, G4double y)    \{ m\_vertices[index].set(x, y); \}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} SetGenericTrapZLength(G4double val)  \{ m\_zLength = val; \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{private}:}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   G4GenericTrap*          m\_generictrap\_solid;              }
+\DoxyCodeLine{85   G4LogicalVolume*   m\_generictrap\_log;                 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   G4double m\_zLength;       }
+\DoxyCodeLine{91   std::vector<G4TwoVector> m\_vertices; }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95   \mbox{\hyperlink{classGateGenericTrapMessenger}{GateGenericTrapMessenger}}* m\_Messenger;}
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 MAKE\_AUTO\_CREATOR\_VOLUME(generictrapezoid,\mbox{\hyperlink{classGateGenericTrap}{GateGenericTrap}})}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GATEGENERICTRAP\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

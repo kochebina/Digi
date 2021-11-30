@@ -1,0 +1,113 @@
+\hypertarget{metaScene_8h_source}{}\doxysection{meta\+Scene.\+h}
+\label{metaScene_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaScene.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaScene.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METASCENE\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METASCENE\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaObject.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaScene}{MetaScene}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMetaObject}{MetaObject}}}
+\DoxyCodeLine{43   \{}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46   \textcolor{comment}{//}}
+\DoxyCodeLine{47   \textcolor{comment}{// PUBLIC}}
+\DoxyCodeLine{48   \textcolor{comment}{//}}
+\DoxyCodeLine{50 \textcolor{comment}{}  \textcolor{keyword}{public}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52    \textcolor{keyword}{typedef} METAIO\_STL::list<MetaObject*>    ObjectListType;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     \textcolor{comment}{//}}
+\DoxyCodeLine{56     \textcolor{comment}{// Constructors \& Destructor}}
+\DoxyCodeLine{57     \textcolor{comment}{//}}
+\DoxyCodeLine{59 \textcolor{comment}{}    \mbox{\hyperlink{classMetaScene}{MetaScene}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \mbox{\hyperlink{classMetaScene}{MetaScene}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaScene}{MetaScene}} *\_scene);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \mbox{\hyperlink{classMetaScene}{MetaScene}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dim);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \mbox{\hyperlink{classMetaScene}{\string~MetaScene}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaObject}{MetaObject}} * \_object);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} AddObject(\mbox{\hyperlink{classMetaObject}{MetaObject}}* \textcolor{keywordtype}{object});}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{//}}
+\DoxyCodeLine{74     \textcolor{comment}{//}}
+\DoxyCodeLine{75     \textcolor{comment}{//}}
+\DoxyCodeLine{76     \textcolor{comment}{// This function only reads registered tubes}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{bool} Read(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headerName=NULL);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} Write(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_headName=NULL);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{bool} Append(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* =NULL) \{METAIO\_STREAM::cout << \textcolor{stringliteral}{"{}Not Implemented !"{}} << METAIO\_STREAM::endl;\textcolor{keywordflow}{return} \textcolor{keyword}{true};\}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{//    NObjects(...)}}
+\DoxyCodeLine{87     \textcolor{comment}{//       Required Field}}
+\DoxyCodeLine{88     \textcolor{comment}{//       Number of points wich compose the tube}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void}  NObjects(\textcolor{keywordtype}{int} nobjects);}
+\DoxyCodeLine{90     \textcolor{keywordtype}{int}   NObjects(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     ObjectListType * GetObjectList(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} \& m\_ObjectList;\}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96   \textcolor{comment}{//}}
+\DoxyCodeLine{97   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{98   \textcolor{comment}{//}}
+\DoxyCodeLine{100 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keywordtype}{bool}  m\_ElementByteOrderMSB;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keywordtype}{void}  M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{keywordtype}{void}  M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keywordtype}{void}  M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{keywordtype}{bool}  M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{bool}  M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} m\_NObjects;      \textcolor{comment}{// "{}NObjects = "{}         0}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     ObjectListType    m\_ObjectList;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{121 \};}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

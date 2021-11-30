@@ -1,0 +1,148 @@
+\hypertarget{GateVSystem_8hh_source}{}\doxysection{Gate\+VSystem.\+hh}
+\label{GateVSystem_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVSystem.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVSystem.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVSystem\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVSystem\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateClockDependent.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateOutputVolumeID.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateArrayComponent.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateBoxComponent.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateCylinderComponent.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateWedgeComponent.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GatePulse.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVolumeID}{GateVolumeID}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{59 \textcolor{comment}{//    Last modification in 12/2011 by Abdul-\/Fattah.Mohamad-\/Hadi@subatech.in2p3.fr, for the multi-\/system approach.}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependent}{GateClockDependent}}}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63   \textcolor{keyword}{public}:}
+\DoxyCodeLine{69     \mbox{\hyperlink{classGateVSystem_a9f51ea13cead36a54583b15b23a91344}{GateVSystem}}(\textcolor{keyword}{const} G4String\& itsName,G4bool isWithGantry);}
+\DoxyCodeLine{70     \textcolor{comment}{//| Destructor}}
+\DoxyCodeLine{71     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateVSystem}{\string~GateVSystem}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keyword}{public}:}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78        \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVSystem_a169630f08ef35da59c1d077e3c6dfef0}{SetOutputIDName}}(\textcolor{keywordtype}{char} * anOutputIDName, \textcolor{keywordtype}{size\_t} depth);}
+\DoxyCodeLine{79     \textcolor{comment}{// For System Classes}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0); }
+\DoxyCodeLine{87     }
+\DoxyCodeLine{88            }
+\DoxyCodeLine{95     \textcolor{comment}{//virtual void PrintToStream(std::ostream\& aStream,G4bool doPrintNumbers) \{\}}}
+\DoxyCodeLine{96     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVSystem_a0f2ca5a41d87527ede0dd8d6183f93ef}{PrintToStream}}(std::ostream\& ,G4bool ) \{\}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{103     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateVSystem_ace226362d1d9a695c23a7b7df6c67c66}{GetTreeDepth}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106      }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{111     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateVSystem_aeb171d9410bca4a8b6f25da76a31014d}{GetBaseComponent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{112 \textcolor{keyword}{      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVSystem_adca7fc7ac144e81847b5a3a595c7377e}{m\_BaseComponent}}; \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateVSystem_a71e6cf4a44f7ab157ff5395b4e2d9b53}{SetBaseComponent}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* aBaseComponent)}
+\DoxyCodeLine{116       \{ \mbox{\hyperlink{classGateVSystem_adca7fc7ac144e81847b5a3a595c7377e}{m\_BaseComponent}} = aBaseComponent; \}}
+\DoxyCodeLine{117       }
+\DoxyCodeLine{119     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateVSystem_a862a832e1ecd964ed5259ef7c37b332b}{FindComponent}}(\textcolor{keyword}{const} G4String\& componentName,G4bool silent=\textcolor{keyword}{false}) \textcolor{keyword}{const}; }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{122     \textcolor{keyword}{template} <\textcolor{keyword}{class} C>}
+\DoxyCodeLine{123     C* \mbox{\hyperlink{classGateVSystem_a9c22b74d9e7a7fb94b856433b3a61499}{FindTypedComponent}}(\textcolor{keyword}{const} G4String\& aComponent) \textcolor{keyword}{const};}
+\DoxyCodeLine{124     }
+\DoxyCodeLine{126     \mbox{\hyperlink{classGateArrayComponent}{GateArrayComponent}}* \mbox{\hyperlink{classGateVSystem_a19ecadc3c282529cb8674a49ba467d2c}{FindArrayComponent}}(\textcolor{keyword}{const} G4String\& aComponent) \textcolor{keyword}{const};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129     \mbox{\hyperlink{classGateBoxComponent}{GateBoxComponent}}* \mbox{\hyperlink{classGateVSystem_a5e7a7729de4b72f637c926322eb215fc}{FindBoxCreatorComponent}}(\textcolor{keyword}{const} G4String\& aComponent) \textcolor{keyword}{const};}
+\DoxyCodeLine{130  }
+\DoxyCodeLine{132     \mbox{\hyperlink{classGateCylinderComponent}{GateCylinderComponent}}* \mbox{\hyperlink{classGateVSystem_ac887cef7b3fd35112dbe9dd1e4d53f49}{FindCylinderCreatorComponent}}(\textcolor{keyword}{const} G4String\& aComponent) \textcolor{keyword}{const};}
+\DoxyCodeLine{133    }
+\DoxyCodeLine{135     \mbox{\hyperlink{classGateWedgeComponent}{GateWedgeComponent}}* \mbox{\hyperlink{classGateVSystem_aa8a00b11a5f3d4e8898e07ce29003e38}{FindWedgeCreatorComponent}}(\textcolor{keyword}{const} G4String\& aComponent) \textcolor{keyword}{const};}
+\DoxyCodeLine{136  }
+\DoxyCodeLine{138     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* \mbox{\hyperlink{classGateVSystem_a5eedf8de0b2d4ab61719a3f28d2a2eda}{GetMainComponent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{139 \textcolor{keyword}{    }\{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVSystem_a4b1a45fc27cf8b2476edc00eff43635b}{m\_mainComponentDepth}} ? \mbox{\hyperlink{classGateVSystem_adca7fc7ac144e81847b5a3a595c7377e}{m\_BaseComponent}}-\/>\mbox{\hyperlink{classGateSystemComponent_acf49f022e70881968ee5ceb260c37051}{GetChildComponent}}(0) :  \mbox{\hyperlink{classGateVSystem_adca7fc7ac144e81847b5a3a595c7377e}{m\_BaseComponent}} ; \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{142     \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSystem_a65913ffd4757cb02f9757e463ec0d494}{GetMainComponentID}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& pulse)}
+\DoxyCodeLine{143     \{  \textcolor{keywordflow}{return} pulse.GetComponentID(\mbox{\hyperlink{classGateVSystem_a4b1a45fc27cf8b2476edc00eff43635b}{m\_mainComponentDepth}}) ; \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{146     \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateVSystem_ad75cdb30e48a879fb1124712f56e2122}{GetCoincidentSectorNumber}}()}
+\DoxyCodeLine{147     \{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVSystem_a5eedf8de0b2d4ab61719a3f28d2a2eda}{GetMainComponent}}()-\/>\mbox{\hyperlink{classGateSystemComponent_ac42a9296a59111b341516618c56ca859}{GetAngularRepeatNumber}}(); \}}
+\DoxyCodeLine{148     }
+\DoxyCodeLine{150     \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateVSystem_a47ca4be7cb0066abc926ce2633ecf46b}{GetCoincidentSectorNumberSphere}}()}
+\DoxyCodeLine{151     \{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVSystem_a5eedf8de0b2d4ab61719a3f28d2a2eda}{GetMainComponent}}()-\/>\mbox{\hyperlink{classGateSystemComponent_ab24d6504810860981eb0c5dca1eb3ccd}{GetSphereAzimuthalRepeatNumber}}(); \}}
+\DoxyCodeLine{152     }
+\DoxyCodeLine{154     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateArrayComponent}{GateArrayComponent}}* \mbox{\hyperlink{classGateVSystem_aa135c819e9da463cde5a8a484af86e88}{GetDetectorComponent}}()}
+\DoxyCodeLine{155     \{  \textcolor{keywordflow}{return} \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classGateArrayComponent}{GateArrayComponent}}*\textcolor{keyword}{>}(\mbox{\hyperlink{classGateVSystem_a5eedf8de0b2d4ab61719a3f28d2a2eda}{GetMainComponent}}()-\/>\mbox{\hyperlink{classGateSystemComponent_acf49f022e70881968ee5ceb260c37051}{GetChildComponent}}(0)) ; \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158     \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSystem_ac25b8b5de238c18951c1b747d6a5e1a1}{GetDetectorComponentID}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}\& pulse)}
+\DoxyCodeLine{159     \{  \textcolor{keywordflow}{return} pulse.GetComponentID(\mbox{\hyperlink{classGateVSystem_a4b1a45fc27cf8b2476edc00eff43635b}{m\_mainComponentDepth}}+1) ; \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{164     G4bool \mbox{\hyperlink{classGateVSystem_aacb9bc993e3ad2956f1e20c0d3404457}{CheckConnectionToCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator) \textcolor{keyword}{const};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{170     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}} \mbox{\hyperlink{classGateVSystem_af5395334a66d5a3447bb14c15d137e16}{ComputeOutputVolumeID}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& aVolumeID);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{173     G4int \mbox{\hyperlink{classGateVSystem_a5491393b044c8a3963532ce852bce558}{ComputeSubtreeID}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* component, \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& volumeID,}
+\DoxyCodeLine{174                   \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}}\& outputVolumeID,}
+\DoxyCodeLine{175               \textcolor{keywordtype}{size\_t} depth);}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{178     \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSystem_a0c6aed4fd2c499e3f87447518fb479ac}{ComputeComponentID}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* aComponent, \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& volumeID);}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{181     \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSystem_affd2332b85b8ca5c56281784dfe44170}{ComputeMainComponentID}}(\mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* aComponent, \textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}\& volumeID);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{184     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSystem_a81f22d1e7d2ee0fe79339a131ca256b5}{ComputeRingID}} (G4int componentID)}
+\DoxyCodeLine{185     \{  \textcolor{keywordflow}{return} componentID / \mbox{\hyperlink{classGateVSystem_ad75cdb30e48a879fb1124712f56e2122}{GetCoincidentSectorNumber}}() ; \}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{188     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSystem_a83b9fa2a59bad6a0e46e931ceb4886a9}{ComputeSectorID}}(G4int componentID)}
+\DoxyCodeLine{189     \{  \textcolor{keywordflow}{return} componentID \% \mbox{\hyperlink{classGateVSystem_ad75cdb30e48a879fb1124712f56e2122}{GetCoincidentSectorNumber}}() ; \}}
+\DoxyCodeLine{190      }
+\DoxyCodeLine{192     \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4int \mbox{\hyperlink{classGateVSystem_a5b3a4e1cedaaa9de478ef101715cf45b}{ComputeSectorIDSphere}}(G4int componentID)}
+\DoxyCodeLine{193     \{  \textcolor{keywordflow}{return} componentID \% \mbox{\hyperlink{classGateVSystem_a47ca4be7cb0066abc926ce2633ecf46b}{GetCoincidentSectorNumberSphere}}() ; \}}
+\DoxyCodeLine{194     }
+\DoxyCodeLine{196     \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateVSystem_a607530333d951e5fa1ac104af84f0750}{GetName}}()}
+\DoxyCodeLine{197     \{   \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateNamedObject_ac4588cc8590148a29ede7d7486ac23ac}{mName}} ; \}}
+\DoxyCodeLine{198     }
+\DoxyCodeLine{200     \textcolor{keyword}{inline} G4String \mbox{\hyperlink{classGateVSystem_ace8c839ad84a72a71ffcda4f978a5827}{GetOwnName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_itsOwnName; \}}
+\DoxyCodeLine{201     }
+\DoxyCodeLine{202     \textcolor{comment}{//Get the number of a system, this number is the order insertion number of a system and the systemID.}}
+\DoxyCodeLine{203     \textcolor{keyword}{inline} G4int GetItsNumber()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateVSystem_a7eb9ba04cdf278f85b551ab2338d9eba}{m\_itsNumber}}; \}}
+\DoxyCodeLine{204     }
+\DoxyCodeLine{205     \textcolor{keywordtype}{size\_t} ComputeNofElementsAtLevel(\textcolor{keywordtype}{size\_t} level) \textcolor{keyword}{const};}
+\DoxyCodeLine{206     \textcolor{keywordtype}{size\_t} ComputeNofSubCrystalsAtLevel(\textcolor{keywordtype}{size\_t} level, std::vector<G4bool>\& enableList) \textcolor{keyword}{const};}
+\DoxyCodeLine{207     \textcolor{keywordtype}{size\_t} ComputeIdFromVolID(\textcolor{keyword}{const} \mbox{\hyperlink{classGateOutputVolumeID}{GateOutputVolumeID}}\& volID,std::vector<G4bool>\& enableList) \textcolor{keyword}{const};}
+\DoxyCodeLine{208     \textcolor{comment}{//G4ThreeVector ComputeObjectCenter(const std::vector<G4int>\& numList) const;}}
+\DoxyCodeLine{209     G4ThreeVector ComputeObjectCenter(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}* volID) \textcolor{keyword}{const};}
+\DoxyCodeLine{210     \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}* MakeVolumeID(\textcolor{keyword}{const} std::vector<G4int>\& numList) \textcolor{keyword}{const};}
+\DoxyCodeLine{211   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{212     \textcolor{keyword}{typedef} std::vector< GateSystemComponent* > compList\_t;}
+\DoxyCodeLine{213     compList\_t* MakeComponentListAtLevel(G4int level) \textcolor{keyword}{const};}
+\DoxyCodeLine{214     \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}} * \mbox{\hyperlink{classGateVSystem_adca7fc7ac144e81847b5a3a595c7377e}{m\_BaseComponent}};        }
+\DoxyCodeLine{215     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateVSystem_a4b1a45fc27cf8b2476edc00eff43635b}{m\_mainComponentDepth}};        }
+\DoxyCodeLine{216     G4String m\_itsOwnName;                      }
+\DoxyCodeLine{217     G4int \mbox{\hyperlink{classGateVSystem_a7eb9ba04cdf278f85b551ab2338d9eba}{m\_itsNumber}};                          }
+\DoxyCodeLine{218     G4int \mbox{\hyperlink{classGateVSystem_a7e365f60468d08375e31cc5bc539f977}{m\_sysNumber}};}
+\DoxyCodeLine{219     G4int \textcolor{keyword}{static} m\_insertionOrder;              }
+\DoxyCodeLine{220 \};}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{224 }
+
+\end{DoxyCode}

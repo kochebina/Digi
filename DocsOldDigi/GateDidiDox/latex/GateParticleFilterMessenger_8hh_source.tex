@@ -1,0 +1,54 @@
+\hypertarget{GateParticleFilterMessenger_8hh_source}{}\doxysection{Gate\+Particle\+Filter\+Messenger.\+hh}
+\label{GateParticleFilterMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateParticleFilterMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateParticleFilterMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{4 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{5 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{6 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/*}}
+\DoxyCodeLine{9 \textcolor{comment}{  \(\backslash\)class  GateParticleFilterMessenger}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{11 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATEPARTFILTERMESSENGER\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATEPARTFILTERMESSENGER\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParticleFilter}{GateParticleFilter}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classGateParticleFilterMessenger}{GateParticleFilterMessenger}} : \textcolor{keyword}{public}  G4UImessenger}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateParticleFilterMessenger}{GateParticleFilterMessenger}}(\mbox{\hyperlink{classGateParticleFilter}{GateParticleFilter}}* partFilter);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateParticleFilterMessenger}{\string~GateParticleFilterMessenger}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{38   \mbox{\hyperlink{classGateParticleFilter}{GateParticleFilter}} * pParticleFilter;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   G4UIcmdWithAString* pAddParticleCmd;}
+\DoxyCodeLine{41   G4UIcmdWithAnInteger* pAddParticleZCmd;}
+\DoxyCodeLine{42   G4UIcmdWithAnInteger* pAddParticleACmd;}
+\DoxyCodeLine{43   G4UIcmdWithAnInteger* pAddParticlePDGCmd;}
+\DoxyCodeLine{44   G4UIcmdWithAString* pAddParentParticleCmd;}
+\DoxyCodeLine{45   G4UIcmdWithAString* pAddDirectParentParticleCmd;}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEPARTFILTERMESSENGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

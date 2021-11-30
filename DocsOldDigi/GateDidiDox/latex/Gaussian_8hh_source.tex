@@ -1,0 +1,43 @@
+\hypertarget{Gaussian_8hh_source}{}\doxysection{Gaussian.\+hh}
+\label{Gaussian_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/Gaussian.hh@{/biomaps/physique/appli/GateOlga/src/source/externals/lmf/lmf\_v3.0/includes/Gaussian.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GAUSSIAN\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GAUSSIAN\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/*********************************************}}
+\DoxyCodeLine{5 \textcolor{comment}{class Gaussian}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{The Gaussian distribution is defined by }}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{f(x) = (1 / (sigma * sqrt(2 *Pi))) * }}
+\DoxyCodeLine{10 \textcolor{comment}{       exp(-\/ (((x-\/m)**2) / (2 sigma**2)))}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{*********************************************/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGaussian}{Gaussian}} \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16   \textcolor{comment}{// Constructor}}
+\DoxyCodeLine{17   \mbox{\hyperlink{classGaussian}{Gaussian}}(\textcolor{keywordtype}{double} mean = 0, \textcolor{keywordtype}{double} sigma = 1);}
+\DoxyCodeLine{18   \textcolor{comment}{// Copy constructor}}
+\DoxyCodeLine{19   \mbox{\hyperlink{classGaussian}{Gaussian}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGaussian}{Gaussian}} \&right);}
+\DoxyCodeLine{20   \textcolor{comment}{// Destructor}}
+\DoxyCodeLine{21   \mbox{\hyperlink{classGaussian}{\string~Gaussian}}() \{\};}
+\DoxyCodeLine{22   \textcolor{comment}{// Retreive function value}}
+\DoxyCodeLine{23   \textcolor{comment}{// Get the mean of the Gaussian}}
+\DoxyCodeLine{24   \textcolor{keywordtype}{double} GetMean() \{ \textcolor{keywordflow}{return} \_mean; \}; }
+\DoxyCodeLine{25   \textcolor{comment}{// Get the sigma of the Gaussian}}
+\DoxyCodeLine{26   \textcolor{keywordtype}{double} GetSigma() \{ \textcolor{keywordflow}{return} \_sigma; \};}
+\DoxyCodeLine{27   \textcolor{comment}{// Retrieves the Gaussian value of x}}
+\DoxyCodeLine{28   \textcolor{keywordtype}{double} operator() (\textcolor{keywordtype}{double} x) \textcolor{keyword}{const};}
+\DoxyCodeLine{29   \textcolor{keyword}{static} \textcolor{keywordtype}{double} Shoot(\textcolor{keywordtype}{double} m = 0, \textcolor{keywordtype}{double} s = 1);\textcolor{comment}{/* normal random variate generator */}}
+\DoxyCodeLine{30                               \textcolor{comment}{/*  mean m, standard deviation s   */}}
+\DoxyCodeLine{31 \textcolor{keyword}{private}:}
+\DoxyCodeLine{32   \textcolor{comment}{// Mean}}
+\DoxyCodeLine{33   \textcolor{keywordtype}{double} \_mean;}
+\DoxyCodeLine{34   \textcolor{comment}{// Sigma}}
+\DoxyCodeLine{35   \textcolor{keywordtype}{double} \_sigma;}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

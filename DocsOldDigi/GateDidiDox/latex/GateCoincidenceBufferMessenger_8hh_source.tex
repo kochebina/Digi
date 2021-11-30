@@ -1,0 +1,45 @@
+\hypertarget{GateCoincidenceBufferMessenger_8hh_source}{}\doxysection{Gate\+Coincidence\+Buffer\+Messenger.\+hh}
+\label{GateCoincidenceBufferMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceBufferMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCoincidenceBufferMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCoincidenceBufferMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCoincidenceBufferMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GatePulseProcessorMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{17 \textcolor{comment}{//class G4UIcmdWithABool;}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceBuffer}{GateCoincidenceBuffer}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCoincidenceBufferMessenger}{GateCoincidenceBufferMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateCoincidenceBufferMessenger}{GateCoincidenceBufferMessenger}}(\mbox{\hyperlink{classGateCoincidenceBuffer}{GateCoincidenceBuffer}}* itsBuffer);}
+\DoxyCodeLine{25   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCoincidenceBufferMessenger}{\string~GateCoincidenceBufferMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetNewValue(G4UIcommand* aCommand, G4String aString);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateCoincidenceBuffer}{GateCoincidenceBuffer}}* GetBuffer()\{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateCoincidenceBuffer}{GateCoincidenceBuffer}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{private}:}
+\DoxyCodeLine{32   G4UIcmdWithADoubleAndUnit *m\_bufferSizeCmd; }
+\DoxyCodeLine{33   G4UIcmdWithADoubleAndUnit *m\_readFrequencyCmd;   }
+\DoxyCodeLine{34 \textcolor{comment}{//  G4UIcmdWithABool          *m\_modifyTimeCmd;   //!< does buffer modify the time of pulses}}
+\DoxyCodeLine{35   G4UIcmdWithAnInteger      *m\_setModeCmd;   }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

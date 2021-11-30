@@ -1,0 +1,140 @@
+\hypertarget{classGateProductionActor}{}\doxysection{Gate\+Production\+Actor Class Reference}
+\label{classGateProductionActor}\index{GateProductionActor@{GateProductionActor}}
+
+
+Actor displaying nb events/tracks/step.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Production\+Actor.\+hh$>$}
+
+Inheritance diagram for Gate\+Production\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateProductionActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProductionActor_a1adb4dfb9e8db80f2a2bb8fe78b47ef2}\label{classGateProductionActor_a1adb4dfb9e8db80f2a2bb8fe78b47ef2}} 
+virtual {\bfseries $\sim$\+Gate\+Production\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionActor_a93cf86cbdfd408c537534f02f4069417}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionActor_af794618f19a6aa1806194ac260b7ac08}{Save\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateProductionActor_af5e82516d8768987e1b32a661ec50833}{Reset\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{classGateProductionActor_a22b26496b3a1c8843bc4af20e16d6d99}{User\+Pre\+Track\+Action\+In\+Voxel}} (const int index, const G4\+Track $\ast$track)
+\begin{DoxyCompactList}\small\item\em Start of track callback. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionActor_a29b0cc7bbb5752317d4501bde2135dc6}{User\+Stepping\+Action\+In\+Voxel}} (int, const G4\+Step $\ast$)
+\begin{DoxyCompactList}\small\item\em Callbacks called when a hits should be add to the image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateProductionActor_a625d9ad3469d99f3cf56e0d39270dc47}{User\+Post\+Track\+Action\+In\+Voxel}} (int, const G4\+Track $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProductionActor_a6ae2d26e489672d9fd85edc4d24edc19}\label{classGateProductionActor_a6ae2d26e489672d9fd85edc4d24edc19}} 
+{\bfseries Gate\+Production\+Actor} (G4\+String name, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructors (Prototype) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateProductionActor_a8dde3a95dfdf95750d82a9b41b7ae495}\label{classGateProductionActor_a8dde3a95dfdf95750d82a9b41b7ae495}} 
+\mbox{\hyperlink{classGateProductionActorMessenger}{Gate\+Production\+Actor\+Messenger}} $\ast$ {\bfseries p\+Messenger}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Actor displaying nb events/tracks/step. 
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\href{mailto:pierre.gueth@creatis.insa-lyon.fr}{\texttt{ pierre.\+gueth@creatis.\+insa-\/lyon.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateProductionActor_a93cf86cbdfd408c537534f02f4069417}\label{classGateProductionActor_a93cf86cbdfd408c537534f02f4069417}} 
+\index{GateProductionActor@{GateProductionActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateProductionActor@{GateProductionActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Production\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor_a07b93c9fded936d69f85ac220ab7da43}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionActor_af5e82516d8768987e1b32a661ec50833}\label{classGateProductionActor_af5e82516d8768987e1b32a661ec50833}} 
+\index{GateProductionActor@{GateProductionActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateProductionActor@{GateProductionActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Production\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionActor_af794618f19a6aa1806194ac260b7ac08}\label{classGateProductionActor_af794618f19a6aa1806194ac260b7ac08}} 
+\index{GateProductionActor@{GateProductionActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateProductionActor@{GateProductionActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Production\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateProductionActor_a625d9ad3469d99f3cf56e0d39270dc47}\label{classGateProductionActor_a625d9ad3469d99f3cf56e0d39270dc47}} 
+\index{GateProductionActor@{GateProductionActor}!UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}}
+\index{UserPostTrackActionInVoxel@{UserPostTrackActionInVoxel}!GateProductionActor@{GateProductionActor}}
+\doxysubsubsection{\texorpdfstring{UserPostTrackActionInVoxel()}{UserPostTrackActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Production\+Actor\+::\+User\+Post\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{const G4\+Track $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionActor_a22b26496b3a1c8843bc4af20e16d6d99}\label{classGateProductionActor_a22b26496b3a1c8843bc4af20e16d6d99}} 
+\index{GateProductionActor@{GateProductionActor}!UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}}
+\index{UserPreTrackActionInVoxel@{UserPreTrackActionInVoxel}!GateProductionActor@{GateProductionActor}}
+\doxysubsubsection{\texorpdfstring{UserPreTrackActionInVoxel()}{UserPreTrackActionInVoxel()}}
+{\footnotesize\ttfamily void Gate\+Production\+Actor\+::\+User\+Pre\+Track\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{const G4\+Track $\ast$}]{track }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Start of track callback. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor}{Gate\+VImage\+Actor}}.
+
+\mbox{\Hypertarget{classGateProductionActor_a29b0cc7bbb5752317d4501bde2135dc6}\label{classGateProductionActor_a29b0cc7bbb5752317d4501bde2135dc6}} 
+\index{GateProductionActor@{GateProductionActor}!UserSteppingActionInVoxel@{UserSteppingActionInVoxel}}
+\index{UserSteppingActionInVoxel@{UserSteppingActionInVoxel}!GateProductionActor@{GateProductionActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingActionInVoxel()}{UserSteppingActionInVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+Production\+Actor\+::\+User\+Stepping\+Action\+In\+Voxel (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks called when a hits should be add to the image. 
+
+
+
+Implements \mbox{\hyperlink{classGateVImageActor_a3475465e6daab65d49bc860fb47ab94c}{Gate\+VImage\+Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Production\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Production\+Actor.\+cc\end{DoxyCompactItemize}

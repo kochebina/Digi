@@ -1,0 +1,78 @@
+\hypertarget{classGateNoise}{}\doxysection{Gate\+Noise Class Reference}
+\label{classGateNoise}\index{GateNoise@{GateNoise}}
+Inheritance diagram for Gate\+Noise\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateNoise}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateNoise_a193aec1c392db4aa1e282f4f8a9b6481}\label{classGateNoise_a193aec1c392db4aa1e282f4f8a9b6481}} 
+{\bfseries Gate\+Noise} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name=the\+Type\+Name)
+\item 
+\mbox{\Hypertarget{classGateNoise_acc47951e284aabcd3202883e3fe102b9}\label{classGateNoise_acc47951e284aabcd3202883e3fe102b9}} 
+virtual {\bfseries $\sim$\+Gate\+Noise} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateNoise_a9fbf7026538cfc4c183de10fd5477f60}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+\mbox{\Hypertarget{classGateNoise_a2b5af71b2867ae9407631cf8e0a7a6cf}\label{classGateNoise_a2b5af71b2867ae9407631cf8e0a7a6cf}} 
+void {\bfseries Set\+Energy\+Distribution} (\mbox{\hyperlink{classGateVDistribution}{Gate\+VDistribution}} $\ast$energy\+Distrib)
+\item 
+\mbox{\Hypertarget{classGateNoise_ac0a72de8c727d5d829e4a77c92094b41}\label{classGateNoise_ac0a72de8c727d5d829e4a77c92094b41}} 
+\mbox{\hyperlink{classGateVDistribution}{Gate\+VDistribution}} $\ast$ {\bfseries Get\+Energy\+Distribution} () const
+\item 
+\mbox{\Hypertarget{classGateNoise_afad687b06d76ba12222448553049e9d5}\label{classGateNoise_afad687b06d76ba12222448553049e9d5}} 
+void {\bfseries Set\+Delta\+TDistribution} (\mbox{\hyperlink{classGateVDistribution}{Gate\+VDistribution}} $\ast$delta\+TDistrib)
+\item 
+\mbox{\Hypertarget{classGateNoise_a2f7add65fcc4777f1198896e86fa282b}\label{classGateNoise_a2f7add65fcc4777f1198896e86fa282b}} 
+\mbox{\hyperlink{classGateVDistribution}{Gate\+VDistribution}} $\ast$ {\bfseries Get\+Delta\+TDistribution} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGateNoise_ae9e7166677f4b3797ac5d4e7a381613d}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\item 
+virtual void \mbox{\hyperlink{classGateNoise_a1d9f773f99e4a1fe1fe3aae56a4ace3d}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateNoise_a9fbf7026538cfc4c183de10fd5477f60}\label{classGateNoise_a9fbf7026538cfc4c183de10fd5477f60}} 
+\index{GateNoise@{GateNoise}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateNoise@{GateNoise}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Noise\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class Gate\+Digitizer\+Component print-\/out the attributes specific of the blurring 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateNoise_a1d9f773f99e4a1fe1fe3aae56a4ace3d}\label{classGateNoise_a1d9f773f99e4a1fe1fe3aae56a4ace3d}} 
+\index{GateNoise@{GateNoise}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateNoise@{GateNoise}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Noise\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Pure virtual function for processing one input-\/pulse This function is called by \mbox{\hyperlink{classGateNoise_ae9e7166677f4b3797ac5d4e7a381613d}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing must be incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateNoise_ae9e7166677f4b3797ac5d4e7a381613d}\label{classGateNoise_ae9e7166677f4b3797ac5d4e7a381613d}} 
+\index{GateNoise@{GateNoise}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GateNoise@{GateNoise}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+Noise\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateNoise_ae9e7166677f4b3797ac5d4e7a381613d}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Reimplemented from \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Gate\+VPulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Noise.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Noise.\+cc\end{DoxyCompactItemize}

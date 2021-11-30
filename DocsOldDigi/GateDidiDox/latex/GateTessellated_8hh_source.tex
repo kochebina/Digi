@@ -1,0 +1,65 @@
+\hypertarget{GateTessellated_8hh_source}{}\doxysection{Gate\+Tessellated.\+hh}
+\label{GateTessellated_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTessellated.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTessellated.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateTessellated\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateTessellated\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4TessellatedSolid;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTessellatedMessenger}{GateTessellatedMessenger}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTessellated}{GateTessellated}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateTessellated}{GateTessellated}}( G4String \textcolor{keyword}{const}\& itsName, G4bool acceptsChildren = \textcolor{keyword}{true}, G4int depth = 0 );}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateTessellated}{GateTessellated}}( G4String \textcolor{keyword}{const}\& itsName, G4String \textcolor{keyword}{const}\& itsMaterialName );}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTessellated}{\string~GateTessellated}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateTessellated}{GateTessellated}})}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateTessellated_a4e46913d98e6770a9b0560e84d46d45c}{ConstructOwnSolidAndLogicalVolume}}( G4Material*, G4bool );}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{comment}{// Declaration of pure virtual method}}
+\DoxyCodeLine{35   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} G4double \mbox{\hyperlink{classGateTessellated_a793c67502a009f9ab7098907db5c1764}{GetHalfDimension}}( \textcolor{keywordtype}{size\_t} ) \{ \textcolor{keywordflow}{return} 0.; \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} SetPathToSTLFile( G4String );}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} ReadSTL\_ASCII();}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} ReadSTL\_Binary();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} DescribeMyself(\textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{43   G4double ComputeMyOwnVolume() \textcolor{keyword}{const};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{private}:}
+\DoxyCodeLine{46   G4TessellatedSolid*     m\_tessellated\_solid;}
+\DoxyCodeLine{47   G4LogicalVolume*        m\_tessellated\_log;}
+\DoxyCodeLine{48   \textcolor{comment}{// G4VPhysicalVolume*      m\_tessellated\_phys; not used }}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51   G4String m\_PathToSTLFile;}
+\DoxyCodeLine{52   \mbox{\hyperlink{classGateTessellatedMessenger}{GateTessellatedMessenger}}* m\_Messenger;}
+\DoxyCodeLine{53   G4String FacetType;}
+\DoxyCodeLine{54   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} nbFacets;}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 MAKE\_AUTO\_CREATOR\_VOLUME(tessellated,\mbox{\hyperlink{classGateTessellated}{GateTessellated}})}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

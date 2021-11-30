@@ -1,0 +1,234 @@
+\hypertarget{classGateVGeometryVoxelStore}{}\doxysection{Gate\+VGeometry\+Voxel\+Store Class Reference}
+\label{classGateVGeometryVoxelStore}\index{GateVGeometryVoxelStore@{GateVGeometryVoxelStore}}
+
+
+This class can store the material info for a matrix of voxels (digital image)  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VGeometry\+Voxel\+Store.\+hh$>$}
+
+Inheritance diagram for Gate\+VGeometry\+Voxel\+Store\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.472868cm]{classGateVGeometryVoxelStore}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_ad180d7a02d32c97f0fa37581c0703406}\label{classGateVGeometryVoxelStore_ad180d7a02d32c97f0fa37581c0703406}} 
+{\bfseries Gate\+VGeometry\+Voxel\+Store} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$creator)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a6136648efa3f9ad2fa130401dd1bf285}\label{classGateVGeometryVoxelStore_a6136648efa3f9ad2fa130401dd1bf285}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries Get\+Creator} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a000cd5a14457938d69f87a2adb619a2f}\label{classGateVGeometryVoxelStore_a000cd5a14457938d69f87a2adb619a2f}} 
+G4\+String {\bfseries Get\+Name} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_ac59a5122f35b0af0fbe1c3f0870e7048}\label{classGateVGeometryVoxelStore_ac59a5122f35b0af0fbe1c3f0870e7048}} 
+virtual void {\bfseries Set\+Verbose\+Level} (G4int value)
+\item 
+virtual void \mbox{\hyperlink{classGateVGeometryVoxelStore_ac4fa447b36d2bc74a25a102c532e9ee8}{Empty\+Store}} ()=0
+\begin{DoxyCompactList}\small\item\em it deletes all the voxels in the stores, e.\+g. before reading a new file \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVGeometryVoxelStore_a3b367494c9faf9f0ad661e4234b9cadc}{Add\+Voxel}} (G4int ix, G4int iy, G4int iz, G4\+Material $\ast$material)=0
+\begin{DoxyCompactList}\small\item\em it adds an entry in the voxel store \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVGeometryVoxelStore_a0fb092c6487833ffda3f5c696cc2d01c}{Set\+Voxel\+Material}} (G4int ix, G4int iy, G4int iz, G4\+Material $\ast$material)=0
+\begin{DoxyCompactList}\small\item\em it sets the material of the voxel in the logical position (ix,iy,iz) \end{DoxyCompactList}\item 
+virtual G4\+Material $\ast$ \mbox{\hyperlink{classGateVGeometryVoxelStore_acaf5e6b32e105c5923ef1c1efdbc373f}{Get\+Voxel\+Material}} (G4int ix, G4int iy, G4int iz)=0
+\begin{DoxyCompactList}\small\item\em it gives the material of the voxel in the logical position (ix,iy,iz) \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ G4int $>$ \mbox{\hyperlink{classGateVGeometryVoxelStore_aeaf848e7a1adfbd31b9bacb2f75b9d2a}{Get\+Voxel}} (G4int index)=0
+\begin{DoxyCompactList}\small\item\em useful when the voxels have a non cubic distribution\+: in a loop, with this first you get the 3 indices, then with the 3 indices you ask the material \end{DoxyCompactList}\item 
+virtual G4int \mbox{\hyperlink{classGateVGeometryVoxelStore_aeb7926af989a3614767f8b4486906c32}{Get\+Number\+Of\+Voxels}} ()=0
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a08c3a97631054d21bc526871c709f1e2}\label{classGateVGeometryVoxelStore_a08c3a97631054d21bc526871c709f1e2}} 
+virtual G4int {\bfseries Get\+Voxel\+Nx} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_ad996372f2e1bb2f9e9d76ffa49b0b962}\label{classGateVGeometryVoxelStore_ad996372f2e1bb2f9e9d76ffa49b0b962}} 
+virtual void {\bfseries Set\+Voxel\+Nx} (G4int n)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a7407d98d8f7d3a55f4a8c493db8d7aae}\label{classGateVGeometryVoxelStore_a7407d98d8f7d3a55f4a8c493db8d7aae}} 
+virtual G4int {\bfseries Get\+Voxel\+Ny} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_aaf0edab3e53aa58cdcc56c0204f71995}\label{classGateVGeometryVoxelStore_aaf0edab3e53aa58cdcc56c0204f71995}} 
+virtual void {\bfseries Set\+Voxel\+Ny} (G4int n)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a264a30ed869763caad358b66bf534182}\label{classGateVGeometryVoxelStore_a264a30ed869763caad358b66bf534182}} 
+virtual G4int {\bfseries Get\+Voxel\+Nz} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a6e7db708e06d8da35725f0ff049c9dab}\label{classGateVGeometryVoxelStore_a6e7db708e06d8da35725f0ff049c9dab}} 
+virtual void {\bfseries Set\+Voxel\+Nz} (G4int n)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_ad1b5ebf70885e072f6fe191b5b52c0b0}\label{classGateVGeometryVoxelStore_ad1b5ebf70885e072f6fe191b5b52c0b0}} 
+virtual void {\bfseries Set\+Voxel\+Size} (G4\+Three\+Vector size)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a68f308694bfb1619e7990e3b82631911}\label{classGateVGeometryVoxelStore_a68f308694bfb1619e7990e3b82631911}} 
+virtual G4\+Three\+Vector {\bfseries Get\+Voxel\+Size} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_aa648f298df4817bead55fecd0f4d8abc}\label{classGateVGeometryVoxelStore_aa648f298df4817bead55fecd0f4d8abc}} 
+virtual void {\bfseries Set\+Position} (G4\+Three\+Vector pos)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a5a2a53a502334a5640b19adf411c0761}\label{classGateVGeometryVoxelStore_a5a2a53a502334a5640b19adf411c0761}} 
+virtual G4\+Three\+Vector {\bfseries Get\+Position} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a1eee9c0a224c1af320c822439c940e27}\label{classGateVGeometryVoxelStore_a1eee9c0a224c1af320c822439c940e27}} 
+virtual void {\bfseries Set\+Default\+Material} (G4\+Material $\ast$material)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a2cbeefff21319f88d9d7e82d77afd323}\label{classGateVGeometryVoxelStore_a2cbeefff21319f88d9d7e82d77afd323}} 
+virtual void {\bfseries Set\+Default\+Material} (G4\+String material\+Name)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a8283119b03a41b19f4038cce985dddf7}\label{classGateVGeometryVoxelStore_a8283119b03a41b19f4038cce985dddf7}} 
+virtual G4\+Material $\ast$ {\bfseries Get\+Default\+Material} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a257f17297cd1603076751c886648aa60}\label{classGateVGeometryVoxelStore_a257f17297cd1603076751c886648aa60}} 
+virtual void {\bfseries Dump} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_ad27871f1e41a9ee41ea97fb1cb9d189c}\label{classGateVGeometryVoxelStore_ad27871f1e41a9ee41ea97fb1cb9d189c}} 
+virtual void {\bfseries Describe} (G4int level)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a1565f8694e79a924691ca516a08d19b4}\label{classGateVGeometryVoxelStore_a1565f8694e79a924691ca516a08d19b4}} 
+G4int {\bfseries n\+Verbose\+Level}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a6ee805e6ab4991f75152ca597796f9bb}\label{classGateVGeometryVoxelStore_a6ee805e6ab4991f75152ca597796f9bb}} 
+G4\+String {\bfseries m\+\_\+name}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_ae4ce22e902ecd3d91c631b682b516b7f}\label{classGateVGeometryVoxelStore_ae4ce22e902ecd3d91c631b682b516b7f}} 
+\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$ {\bfseries m\+\_\+creator}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a6274e3b44fc3e657a94074cad8db7258}\label{classGateVGeometryVoxelStore_a6274e3b44fc3e657a94074cad8db7258}} 
+G4int {\bfseries m\+\_\+voxel\+Nx}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_aeba63dc00782567432b6bc8dba5022ee}\label{classGateVGeometryVoxelStore_aeba63dc00782567432b6bc8dba5022ee}} 
+G4int {\bfseries m\+\_\+voxel\+Ny}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a69df63c67cd8ca1e416d16cca49e3493}\label{classGateVGeometryVoxelStore_a69df63c67cd8ca1e416d16cca49e3493}} 
+G4int {\bfseries m\+\_\+voxel\+Nz}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_afdb03cbc09e236d78d4708f776f31bfb}\label{classGateVGeometryVoxelStore_afdb03cbc09e236d78d4708f776f31bfb}} 
+G4\+Three\+Vector {\bfseries m\+\_\+voxel\+Size}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a8c964256ec6679a99736372a3e60b918}\label{classGateVGeometryVoxelStore_a8c964256ec6679a99736372a3e60b918}} 
+G4\+Three\+Vector {\bfseries m\+\_\+position}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a1e1308fd944e491af733873c6d1b84f5}\label{classGateVGeometryVoxelStore_a1e1308fd944e491af733873c6d1b84f5}} 
+G4\+Material $\ast$ {\bfseries m\+\_\+default\+Material}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a1e2e4424df7c758987212da93eead79f}\label{classGateVGeometryVoxelStore_a1e2e4424df7c758987212da93eead79f}} 
+G4\+String {\bfseries m\+\_\+type}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class can store the material info for a matrix of voxels (digital image) 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} -\/ by \href{mailto:Giovanni.Santin@cern.ch}{\texttt{ Giovanni.\+Santin@cern.\+ch}}
+\item It stores the material information for the image voxels and allows to access the info through several methods, for random or sequential access.
+\item The material info can be filled in several ways, e.\+g. read by a file reader ~\newline
+
+\item The voxel material store is not concrete in this class, and can be of different types, e.\+g. a simple 3D matrix (3D array) or a generic map to allow a generic number of spread voxels, for example for non-\/cubic voxel material distribution (like voxels in a spheric envelope). (The power of the generic map is exploited only by a geometry that allows a voxel placement different from a complete 3D matrix.)
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVGeometryVoxelStoreMessenger}{Gate\+VGeometry\+Voxel\+Store\+Messenger}} 
+
+\mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelReader}{Gate\+VSource\+Voxel\+Reader}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a3b367494c9faf9f0ad661e4234b9cadc}\label{classGateVGeometryVoxelStore_a3b367494c9faf9f0ad661e4234b9cadc}} 
+\index{GateVGeometryVoxelStore@{GateVGeometryVoxelStore}!AddVoxel@{AddVoxel}}
+\index{AddVoxel@{AddVoxel}!GateVGeometryVoxelStore@{GateVGeometryVoxelStore}}
+\doxysubsubsection{\texorpdfstring{AddVoxel()}{AddVoxel()}}
+{\footnotesize\ttfamily virtual void Gate\+VGeometry\+Voxel\+Store\+::\+Add\+Voxel (\begin{DoxyParamCaption}\item[{G4int}]{ix,  }\item[{G4int}]{iy,  }\item[{G4int}]{iz,  }\item[{G4\+Material $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+it adds an entry in the voxel store 
+
+
+
+Implemented in \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ae62e06af88c5703a126590ca7aba08e5}{Gate\+Geometry\+Voxel\+Array\+Store}}.
+
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_ac4fa447b36d2bc74a25a102c532e9ee8}\label{classGateVGeometryVoxelStore_ac4fa447b36d2bc74a25a102c532e9ee8}} 
+\index{GateVGeometryVoxelStore@{GateVGeometryVoxelStore}!EmptyStore@{EmptyStore}}
+\index{EmptyStore@{EmptyStore}!GateVGeometryVoxelStore@{GateVGeometryVoxelStore}}
+\doxysubsubsection{\texorpdfstring{EmptyStore()}{EmptyStore()}}
+{\footnotesize\ttfamily virtual void Gate\+VGeometry\+Voxel\+Store\+::\+Empty\+Store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+it deletes all the voxels in the stores, e.\+g. before reading a new file 
+
+
+
+Implemented in \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a16c0fb44325695c6fe927185b9914869}{Gate\+Geometry\+Voxel\+Array\+Store}}.
+
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_aeb7926af989a3614767f8b4486906c32}\label{classGateVGeometryVoxelStore_aeb7926af989a3614767f8b4486906c32}} 
+\index{GateVGeometryVoxelStore@{GateVGeometryVoxelStore}!GetNumberOfVoxels@{GetNumberOfVoxels}}
+\index{GetNumberOfVoxels@{GetNumberOfVoxels}!GateVGeometryVoxelStore@{GateVGeometryVoxelStore}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfVoxels()}{GetNumberOfVoxels()}}
+{\footnotesize\ttfamily virtual G4int Gate\+VGeometry\+Voxel\+Store\+::\+Get\+Number\+Of\+Voxels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classGateGeometryVoxelArrayStore_acfae66795d204e19c784ac45c42549d2}{Gate\+Geometry\+Voxel\+Array\+Store}}.
+
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_aeaf848e7a1adfbd31b9bacb2f75b9d2a}\label{classGateVGeometryVoxelStore_aeaf848e7a1adfbd31b9bacb2f75b9d2a}} 
+\index{GateVGeometryVoxelStore@{GateVGeometryVoxelStore}!GetVoxel@{GetVoxel}}
+\index{GetVoxel@{GetVoxel}!GateVGeometryVoxelStore@{GateVGeometryVoxelStore}}
+\doxysubsubsection{\texorpdfstring{GetVoxel()}{GetVoxel()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ G4int $>$ Gate\+VGeometry\+Voxel\+Store\+::\+Get\+Voxel (\begin{DoxyParamCaption}\item[{G4int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+useful when the voxels have a non cubic distribution\+: in a loop, with this first you get the 3 indices, then with the 3 indices you ask the material 
+
+
+
+Implemented in \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a2dfeb02eadad7c0a8d9bdd6c10d50124}{Gate\+Geometry\+Voxel\+Array\+Store}}.
+
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_acaf5e6b32e105c5923ef1c1efdbc373f}\label{classGateVGeometryVoxelStore_acaf5e6b32e105c5923ef1c1efdbc373f}} 
+\index{GateVGeometryVoxelStore@{GateVGeometryVoxelStore}!GetVoxelMaterial@{GetVoxelMaterial}}
+\index{GetVoxelMaterial@{GetVoxelMaterial}!GateVGeometryVoxelStore@{GateVGeometryVoxelStore}}
+\doxysubsubsection{\texorpdfstring{GetVoxelMaterial()}{GetVoxelMaterial()}}
+{\footnotesize\ttfamily virtual G4\+Material $\ast$ Gate\+VGeometry\+Voxel\+Store\+::\+Get\+Voxel\+Material (\begin{DoxyParamCaption}\item[{G4int}]{ix,  }\item[{G4int}]{iy,  }\item[{G4int}]{iz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+it gives the material of the voxel in the logical position (ix,iy,iz) 
+
+
+
+Implemented in \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ad4649a45870c315ecbc5d62eee1912fa}{Gate\+Geometry\+Voxel\+Array\+Store}}, and \mbox{\hyperlink{classGateVGeometryVoxelReader_a05e5366c9792d187b7cc703762022743}{Gate\+VGeometry\+Voxel\+Reader}}.
+
+\mbox{\Hypertarget{classGateVGeometryVoxelStore_a0fb092c6487833ffda3f5c696cc2d01c}\label{classGateVGeometryVoxelStore_a0fb092c6487833ffda3f5c696cc2d01c}} 
+\index{GateVGeometryVoxelStore@{GateVGeometryVoxelStore}!SetVoxelMaterial@{SetVoxelMaterial}}
+\index{SetVoxelMaterial@{SetVoxelMaterial}!GateVGeometryVoxelStore@{GateVGeometryVoxelStore}}
+\doxysubsubsection{\texorpdfstring{SetVoxelMaterial()}{SetVoxelMaterial()}}
+{\footnotesize\ttfamily virtual void Gate\+VGeometry\+Voxel\+Store\+::\+Set\+Voxel\+Material (\begin{DoxyParamCaption}\item[{G4int}]{ix,  }\item[{G4int}]{iy,  }\item[{G4int}]{iz,  }\item[{G4\+Material $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+it sets the material of the voxel in the logical position (ix,iy,iz) 
+
+
+
+Implemented in \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a85e85e7e08156f5fb232430eddb979a7}{Gate\+Geometry\+Voxel\+Array\+Store}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+VGeometry\+Voxel\+Store.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+VGeometry\+Voxel\+Store.\+cc\end{DoxyCompactItemize}

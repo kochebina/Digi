@@ -1,0 +1,57 @@
+\hypertarget{GateIDFilter_8hh_source}{}\doxysection{Gate\+IDFilter.\+hh}
+\label{GateIDFilter_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIDFilter.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateIDFilter.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateIDFilter}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{          laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{      david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEIDFILTER\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEIDFILTER\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateVFilter.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateIDFilterMessenger.hh"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class  }\mbox{\hyperlink{classGateIDFilter}{GateIDFilter}} : }
+\DoxyCodeLine{27   \textcolor{keyword}{public} \mbox{\hyperlink{classGateVFilter}{GateVFilter}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{classGateIDFilter}{GateIDFilter}}(G4String name);}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateIDFilter}{\string~GateIDFilter}}()\{\textcolor{keyword}{delete} pIDMessenger;\}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   FCT\_FOR\_AUTO\_CREATOR\_FILTER(\mbox{\hyperlink{classGateIDFilter}{GateIDFilter}})}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} G4bool Accept(\textcolor{keyword}{const} G4Track*);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} addID(G4int \textcolor{keywordtype}{id});}
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} addParentID(G4int \textcolor{keywordtype}{id});}
+\DoxyCodeLine{39   \textcolor{comment}{// add the particle into accepatable particle list.}}
+\DoxyCodeLine{40   \textcolor{comment}{//}}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44   G4int mID;}
+\DoxyCodeLine{45   G4int mParentID;}
+\DoxyCodeLine{46   \mbox{\hyperlink{classGateIDFilterMessenger}{GateIDFilterMessenger}} * pIDMessenger;}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 MAKE\_AUTO\_CREATOR\_FILTER(IDFilter,\mbox{\hyperlink{classGateIDFilter}{GateIDFilter}})}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEIDFILTER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

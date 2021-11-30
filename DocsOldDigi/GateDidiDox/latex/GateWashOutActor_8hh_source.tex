@@ -1,0 +1,77 @@
+\hypertarget{GateWashOutActor_8hh_source}{}\doxysection{Gate\+Wash\+Out\+Actor.\+hh}
+\label{GateWashOutActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateWashOutActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateWashOutActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GATEWASHOUTACTOR\_HH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GATEWASHOUTACTOR\_HH}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateWashOutActorMessenger.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateSourceMgr.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateSourceVoxellized.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateVSourceVoxelReader.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWashOutActor}{GateWashOutActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31  \textcolor{keyword}{public}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateWashOutActor}{\string~GateWashOutActor}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateWashOutActor}{GateWashOutActor}})}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateWashOutActor_a9b6d3bf6989b7466b73e432d99330a05}{Construct}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run * r);}
+\DoxyCodeLine{40   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * \textcolor{comment}{/*v*/}, \textcolor{keyword}{const} G4Step* \textcolor{comment}{/*s*/})\{\};}
+\DoxyCodeLine{43   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * \textcolor{comment}{/*v*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\};}
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * \textcolor{comment}{/*v*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   G4double GetWashOutModelValue();}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ReadWashOutTable(G4String fileName);}
+\DoxyCodeLine{48   G4double ScaleValue(G4double value,G4String unit);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData() \{\};}
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData() \{\};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \mbox{\hyperlink{classGateWashOutActor}{GateWashOutActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{56   \mbox{\hyperlink{classGateWashOutActorMessenger}{GateWashOutActorMessenger}} * pWashOutActor;}
+\DoxyCodeLine{57   \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}} * pActor;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \mbox{\hyperlink{classGateVVolume}{GateVVolume}} * v;}
+\DoxyCodeLine{60   \mbox{\hyperlink{classGateVSource}{GateVSource}} * mSourceNow;}
+\DoxyCodeLine{61   \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}} * mSVReader;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   G4int mSourceID;}
+\DoxyCodeLine{64   G4int mSourceWashOutID;}
+\DoxyCodeLine{65   G4double mTimeNow;}
+\DoxyCodeLine{66   G4double mModel;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   std::vector<G4double> mGateWashOutActivityIni;}
+\DoxyCodeLine{69   std::vector< std::vector<G4double> > mGateWashOutParameters;}
+\DoxyCodeLine{70   std::vector<G4String> mGateWashOutSources;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 MAKE\_AUTO\_CREATOR\_ACTOR(WashOutActor,\mbox{\hyperlink{classGateWashOutActor}{GateWashOutActor}})}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEWASHOUTACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

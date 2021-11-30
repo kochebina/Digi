@@ -1,0 +1,160 @@
+\hypertarget{classGateVolumePlacement}{}\doxysection{Gate\+Volume\+Placement Class Reference}
+\label{classGateVolumePlacement}\index{GateVolumePlacement@{GateVolumePlacement}}
+
+
+The \mbox{\hyperlink{classGateVolumePlacement}{Gate\+Volume\+Placement}} models a static combination of a translation and of a rotation.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Volume\+Placement.\+hh$>$}
+
+Inheritance diagram for Gate\+Volume\+Placement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateVolumePlacement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateVolumePlacement_a624aec40800d07f087c3c919d7112aaa}{Gate\+Volume\+Placement}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name, const G4\+Three\+Vector \&its\+Translation=G4\+Three\+Vector(), const G4\+Three\+Vector its\+Rotation\+Axis=G4\+Three\+Vector(), G4double its\+Rotation\+Angle=0.)
+\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a94d8062a79308543eaf466379c1aec8d}\label{classGateVolumePlacement_a94d8062a79308543eaf466379c1aec8d}} 
+virtual {\bfseries $\sim$\+Gate\+Volume\+Placement} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVolumePlacement_a2add39f47364a4fecc22884f344d242e}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Implementation of the pure virtual method Push\+My\+Placement(), to compute. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVolumePlacement_a1627fbb7adeb6de1889ec523494915cf}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method \mbox{\hyperlink{classGateVolumePlacement_a1627fbb7adeb6de1889ec523494915cf}{Describe\+Myself()}}, to print-\/out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a68644dd51ee8e32e73cf29f833b1ea3b}\label{classGateVolumePlacement_a68644dd51ee8e32e73cf29f833b1ea3b}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Translation} ()
+\begin{DoxyCompactList}\small\item\em Get the translation vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a540a3eff93c2bf27ada71b0f34dd7ee3}\label{classGateVolumePlacement_a540a3eff93c2bf27ada71b0f34dd7ee3}} 
+const G4\+Three\+Vector \& {\bfseries Get\+Rotation\+Axis} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_acac02204358b044c734d822a38e09345}\label{classGateVolumePlacement_acac02204358b044c734d822a38e09345}} 
+double {\bfseries Get\+Rotation\+Angle} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a83904c3dbd6870bdd616bc0c9307d31f}\label{classGateVolumePlacement_a83904c3dbd6870bdd616bc0c9307d31f}} 
+void {\bfseries Set\+Translation} (const G4\+Three\+Vector \&val)
+\begin{DoxyCompactList}\small\item\em Set the translation vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a9e92d2b69599635b15014e8ea82acc9d}\label{classGateVolumePlacement_a9e92d2b69599635b15014e8ea82acc9d}} 
+void {\bfseries Set\+Rotation\+Axis} (const G4\+Three\+Vector \&val)
+\begin{DoxyCompactList}\small\item\em Set the rotation axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a71177c0ca096f3be0ccb7c7fa326a98b}\label{classGateVolumePlacement_a71177c0ca096f3be0ccb7c7fa326a98b}} 
+void {\bfseries Set\+Rotation\+Angle} (double val)
+\begin{DoxyCompactList}\small\item\em Set the rotation angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a3b33ecc74ea1655444c05be3d16d5aa7}\label{classGateVolumePlacement_a3b33ecc74ea1655444c05be3d16d5aa7}} 
+void {\bfseries Set\+Phi} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the phi of the translation vector while keeping mag and theta constant. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a07768e4b2c5637d0a1b60ccf9672fec3}\label{classGateVolumePlacement_a07768e4b2c5637d0a1b60ccf9672fec3}} 
+void {\bfseries Set\+Theta} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the theta of the translation vector while keeping mag and phi constant. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVolumePlacement_ad78ab57937bb3ced814e89d9ddd9b173}\label{classGateVolumePlacement_ad78ab57937bb3ced814e89d9ddd9b173}} 
+void {\bfseries Set\+Mag} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the mag of the translation vector while keeping theta and phi constant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ alignment methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVolumePlacement_a106177d393f4f4190b68b3199e999b13}\label{classGateVolumePlacement_a106177d393f4f4190b68b3199e999b13}} 
+void {\bfseries Align\+ToZ} ()
+\begin{DoxyCompactList}\small\item\em Reset the rotation angle so that the object reverts to its default orientation (aligned along Z) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateVolumePlacement_ab11d8a311d9058a7d5a1b7a376e0e52a}{Align\+ToY}} ()
+\item 
+void \mbox{\hyperlink{classGateVolumePlacement_ad44b69c3611a839f7961113277f03468}{Align\+ToX}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateVolumePlacement}{Gate\+Volume\+Placement}} models a static combination of a translation and of a rotation. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVolumePlacement}{Gate\+Volume\+Placement}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The \mbox{\hyperlink{classGateVolumePlacement}{Gate\+Volume\+Placement}} defines both a static translation (object position) and a static rotation matrix (object orientation) 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateVolumePlacement_a624aec40800d07f087c3c919d7112aaa}\label{classGateVolumePlacement_a624aec40800d07f087c3c919d7112aaa}} 
+\index{GateVolumePlacement@{GateVolumePlacement}!GateVolumePlacement@{GateVolumePlacement}}
+\index{GateVolumePlacement@{GateVolumePlacement}!GateVolumePlacement@{GateVolumePlacement}}
+\doxysubsubsection{\texorpdfstring{GateVolumePlacement()}{GateVolumePlacement()}}
+{\footnotesize\ttfamily Gate\+Volume\+Placement\+::\+Gate\+Volume\+Placement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{its\+Object\+Inserter,  }\item[{const G4\+String \&}]{its\+Name,  }\item[{const G4\+Three\+Vector \&}]{its\+Translation = {\ttfamily G4ThreeVector()},  }\item[{const G4\+Three\+Vector}]{its\+Rotation\+Axis = {\ttfamily G4ThreeVector()},  }\item[{G4double}]{its\+Rotation\+Angle = {\ttfamily 0.} }\end{DoxyParamCaption})}
+
+Constructor The default movement parameters are chosen so that, by default, the volume is at the origin and the rotation is null (default orientation) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVolumePlacement_ad44b69c3611a839f7961113277f03468}\label{classGateVolumePlacement_ad44b69c3611a839f7961113277f03468}} 
+\index{GateVolumePlacement@{GateVolumePlacement}!AlignToX@{AlignToX}}
+\index{AlignToX@{AlignToX}!GateVolumePlacement@{GateVolumePlacement}}
+\doxysubsubsection{\texorpdfstring{AlignToX()}{AlignToX()}}
+{\footnotesize\ttfamily void Gate\+Volume\+Placement\+::\+Align\+ToX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the rotation axis and angle so that the object becomes aligned along YX (works only if the object was aligned with Z by default) \mbox{\Hypertarget{classGateVolumePlacement_ab11d8a311d9058a7d5a1b7a376e0e52a}\label{classGateVolumePlacement_ab11d8a311d9058a7d5a1b7a376e0e52a}} 
+\index{GateVolumePlacement@{GateVolumePlacement}!AlignToY@{AlignToY}}
+\index{AlignToY@{AlignToY}!GateVolumePlacement@{GateVolumePlacement}}
+\doxysubsubsection{\texorpdfstring{AlignToY()}{AlignToY()}}
+{\footnotesize\ttfamily void Gate\+Volume\+Placement\+::\+Align\+ToY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the rotation axis and angle so that the object becomes aligned along Y (works only if the object was aligned with Z by default) \mbox{\Hypertarget{classGateVolumePlacement_a1627fbb7adeb6de1889ec523494915cf}\label{classGateVolumePlacement_a1627fbb7adeb6de1889ec523494915cf}} 
+\index{GateVolumePlacement@{GateVolumePlacement}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateVolumePlacement@{GateVolumePlacement}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Volume\+Placement\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the virtual method \mbox{\hyperlink{classGateVolumePlacement_a1627fbb7adeb6de1889ec523494915cf}{Describe\+Myself()}}, to print-\/out. 
+
+a description of the movement
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateVolumePlacement_a2add39f47364a4fecc22884f344d242e}\label{classGateVolumePlacement_a2add39f47364a4fecc22884f344d242e}} 
+\index{GateVolumePlacement@{GateVolumePlacement}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateVolumePlacement@{GateVolumePlacement}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Volume\+Placement\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation of the pure virtual method Push\+My\+Placement(), to compute. 
+
+a volume position and orientation as a function of time
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object Gate\+Placement combining the new position and the new orientation of the volume computed by the movement equation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Volume\+Placement.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Volume\+Placement.\+cc\end{DoxyCompactItemize}

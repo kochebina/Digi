@@ -1,0 +1,54 @@
+\hypertarget{GateToImageCTMessenger_8hh_source}{}\doxysection{Gate\+To\+Image\+CTMessenger.\+hh}
+\label{GateToImageCTMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToImageCTMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToImageCTMessenger.hh}}
+\mbox{\hyperlink{GateToImageCTMessenger_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{   Didier Benoit <benoit@cppm.in2p3.fr>}}
+\DoxyCodeLine{5 \textcolor{comment}{   Franca Cassol Brunner <cassol@cppm.in2p3.fr>}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{   Copyright (C) 2009 imXgam/CNRS, CPPM Marseille}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{   This software is distributed under the terms}}
+\DoxyCodeLine{10 \textcolor{comment}{   of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{11 \textcolor{comment}{   See LICENSE.md for further details}}
+\DoxyCodeLine{12 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef GATETOIMAGECTMESSENGER\_HH}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define GATETOIMAGECTMESSENGER\_HH}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToImageCT}{GateToImageCT}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToImageCTMessenger}{GateToImageCTMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keyword}{public}:}
+\DoxyCodeLine{32         \mbox{\hyperlink{classGateToImageCTMessenger}{GateToImageCTMessenger}}( \mbox{\hyperlink{classGateToImageCT}{GateToImageCT}}* );}
+\DoxyCodeLine{33         \mbox{\hyperlink{classGateToImageCTMessenger}{\string~GateToImageCTMessenger}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} SetNewValue( G4UIcommand*, G4String );}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{private}:}
+\DoxyCodeLine{38         \mbox{\hyperlink{classGateToImageCT}{GateToImageCT}}* m\_gateToImageCT;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         G4UIcmdWithAString* setFileNameCmd;}
+\DoxyCodeLine{41 \textcolor{comment}{//      G4UIcmdWithABool* rawOutputCmd;}}
+\DoxyCodeLine{42         G4UIcmdWithAnInteger* setStartSeedCmd;}
+\DoxyCodeLine{43         G4UIcmdWithAnInteger* vrtFactorCmd;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{comment}{//fast simulation}}
+\DoxyCodeLine{46         G4UIcmdWithAnInteger* numFastPixelXCmd;}
+\DoxyCodeLine{47         G4UIcmdWithAnInteger* numFastPixelYCmd;}
+\DoxyCodeLine{48         G4UIcmdWithAnInteger* numFastPixelZCmd;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{comment}{//fast source simulation}}
+\DoxyCodeLine{51         G4UIcmdWithADoubleAndUnit* detectorInXCmd;}
+\DoxyCodeLine{52         G4UIcmdWithADoubleAndUnit* detectorInYCmd;}
+\DoxyCodeLine{53         G4UIcmdWithADoubleAndUnit* sourceDetectorCmd;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

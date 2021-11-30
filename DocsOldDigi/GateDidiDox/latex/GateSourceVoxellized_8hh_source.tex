@@ -1,0 +1,68 @@
+\hypertarget{GateSourceVoxellized_8hh_source}{}\doxysection{Gate\+Source\+Voxellized.\+hh}
+\label{GateSourceVoxellized_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceVoxellized.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceVoxellized.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATESOURCEVOXELLIZED\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATESOURCEVOXELLIZED\_H 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceVoxellizedMessenger}{GateSourceVoxellizedMessenger}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceVoxellized}{GateSourceVoxellized}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateSourceVoxellized}{GateSourceVoxellized}}(G4String name);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSourceVoxellized}{\string~GateSourceVoxellized}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} G4double GetNextTime(G4double timeNow);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Dump(G4int level);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Update(G4double time);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} G4int GeneratePrimaries(G4Event* event);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} ReaderInsert(G4String readerType);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} ReaderRemove();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}* GetReader() \{ \textcolor{keywordflow}{return} m\_voxelReader; \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void}          SetPosition(G4ThreeVector pos) \{ m\_sourcePosition = pos; \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   G4ThreeVector GetPosition()                  \{ \textcolor{keywordflow}{return} m\_sourcePosition; \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{void}          SetIsoCenterPosition(G4ThreeVector pos);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \mbox{\hyperlink{classGateSourceVoxellizedMessenger}{GateSourceVoxellizedMessenger}}* m\_sourceVoxellizedMessenger;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{comment}{// Even if for a standard source the position is controlled by its GPS,}}
+\DoxyCodeLine{53   \textcolor{comment}{// for Voxel sources (and maybe in the future for all sources) a position and a}}
+\DoxyCodeLine{54   \textcolor{comment}{// rotation are needed to align them to a Geometry Voxel Matrix}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   G4ThreeVector                  m\_sourcePosition;}
+\DoxyCodeLine{57   G4RotationMatrix               m\_sourceRotation;}
+\DoxyCodeLine{58   \mbox{\hyperlink{classGateVSourceVoxelReader}{GateVSourceVoxelReader}}*        m\_voxelReader;}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

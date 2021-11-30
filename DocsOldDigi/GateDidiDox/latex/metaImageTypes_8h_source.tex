@@ -1,0 +1,44 @@
+\hypertarget{metaImageTypes_8h_source}{}\doxysection{meta\+Image\+Types.\+h}
+\label{metaImageTypes_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaImageTypes.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaImageTypes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAIMAGETYPES\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAIMAGETYPES\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{ MET\_MOD\_CT, MET\_MOD\_MR, MET\_MOD\_NM, MET\_MOD\_US, MET\_MOD\_OTHER,}
+\DoxyCodeLine{22        MET\_MOD\_UNKNOWN \} MET\_ImageModalityEnumType;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define MET\_NUM\_IMAGE\_MODALITY\_TYPES 6}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{const} \textcolor{keywordtype}{char} MET\_ImageModalityTypeName[MET\_NUM\_IMAGE\_MODALITY\_TYPES][17] = \{}
+\DoxyCodeLine{27    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{28    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{29    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{30    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{31    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '},\textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{32    \{\textcolor{charliteral}{'M'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'\_'},\textcolor{charliteral}{'U'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'K'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'O'},\textcolor{charliteral}{'W'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'\(\backslash\)0'},\textcolor{charliteral}{' '}\}\};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

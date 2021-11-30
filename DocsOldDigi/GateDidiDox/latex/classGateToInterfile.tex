@@ -1,0 +1,191 @@
+\hypertarget{classGateToInterfile}{}\doxysection{Gate\+To\+Interfile Class Reference}
+\label{classGateToInterfile}\index{GateToInterfile@{GateToInterfile}}
+Inheritance diagram for Gate\+To\+Interfile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateToInterfile}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateToInterfile_a858d1f6a0d45edb10efae19a325b7ea8}\label{classGateToInterfile_a858d1f6a0d45edb10efae19a325b7ea8}} 
+{\bfseries Gate\+To\+Interfile} (const G4\+String \&name, \mbox{\hyperlink{classGateOutputMgr}{Gate\+Output\+Mgr}} $\ast$output\+Mgr, \mbox{\hyperlink{classGateSPECTHeadSystem}{Gate\+SPECTHead\+System}} $\ast$its\+System, Digi\+Mode digi\+Mode)
+\item 
+const G4\+String \& \mbox{\hyperlink{classGateToInterfile_ad03c17c7a741c17cb7ecc61203bb6eb3}{Give\+Name\+Of\+File}} ()
+\item 
+void \mbox{\hyperlink{classGateToInterfile_a77005d1e0d281a2f5c34d76a99e51e67}{Record\+Begin\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em It opens the Interfile files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToInterfile_a6ef4676af82fec11557619ee15300be9}{Record\+End\+Of\+Acquisition}} ()
+\begin{DoxyCompactList}\small\item\em It closes the Interfile files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToInterfile_acd13ef15ee82228d6281a459d22360a5}{Record\+Begin\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em SReset the data array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToInterfile_aa01d1199a179e6f41f47ca5a1902045d}{Record\+End\+Of\+Run}} (const G4\+Run $\ast$)
+\begin{DoxyCompactList}\small\item\em Saves the latest results. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToInterfile_a6fbcaa05cec3a79d6b73a52843aa1e76}{Record\+Begin\+Of\+Event}} (const G4\+Event $\ast$)
+\item 
+void \mbox{\hyperlink{classGateToInterfile_a03ac8cc86aa3d3f00e2b113b7f2f82e5}{Record\+End\+Of\+Event}} (const G4\+Event $\ast$)
+\item 
+void \mbox{\hyperlink{classGateToInterfile_a76cb3437c54d63f6a305454ddba02626}{Record\+Step\+With\+Volume}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+void \mbox{\hyperlink{classGateToInterfile_aafc4dc2ae44fa943fef238f753be8cd1}{Record\+Voxels}} (\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$)
+\begin{DoxyCompactList}\small\item\em saves the geometry voxel information \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToInterfile_a8bbc9aa3b15108a70a19fa2d946a2aee}\label{classGateToInterfile_a8bbc9aa3b15108a70a19fa2d946a2aee}} 
+const G4\+String \& {\bfseries Get\+File\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the output file name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToInterfile_a5f57da63cabe0e3599d84358c382a8f5}\label{classGateToInterfile_a5f57da63cabe0e3599d84358c382a8f5}} 
+void {\bfseries Set\+File\+Name} (const G4\+String \&a\+Name)
+\begin{DoxyCompactList}\small\item\em Set the output file name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateToInterfile_a9f0ff01306a2c42313f077f3cb31b91d}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToInterfile_a553cc7008cc08dc93b702d52c4eab393}\label{classGateToInterfile_a553cc7008cc08dc93b702d52c4eab393}} 
+void {\bfseries Write\+General\+Info} ()
+\begin{DoxyCompactList}\small\item\em Write the general INTERFILE information into the header. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToInterfile_ab78447dac31e174352aa6686317c8da3}\label{classGateToInterfile_ab78447dac31e174352aa6686317c8da3}} 
+void {\bfseries Write\+Gate\+Scanner\+Info} ()
+\begin{DoxyCompactList}\small\item\em Write the GATE specific scanner information into the header. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToInterfile_a44e4c74dd53ddbfed35819768d560442}\label{classGateToInterfile_a44e4c74dd53ddbfed35819768d560442}} 
+void {\bfseries Write\+Gate\+Run\+Info} (G4int run\+Nb)
+\begin{DoxyCompactList}\small\item\em Write the GATE specific run information into the header. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateToInterfile_ac4e9ef3ad9a9cd55ff767231af3c07c9}\label{classGateToInterfile_ac4e9ef3ad9a9cd55ff767231af3c07c9}} 
+void {\bfseries Write\+Gate\+Em\+Events\+Info} (G4int run\+Nb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateToInterfile_a9f0ff01306a2c42313f077f3cb31b91d}\label{classGateToInterfile_a9f0ff01306a2c42313f077f3cb31b91d}} 
+\index{GateToInterfile@{GateToInterfile}!Describe@{Describe}}
+\index{Describe@{Describe}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overload of the base-\/class\textquotesingle{} virtual method to print-\/out a description of the module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateVOutputModule_a25454175b4097bfe2bc4b477a8a082ea}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_ad03c17c7a741c17cb7ecc61203bb6eb3}\label{classGateToInterfile_ad03c17c7a741c17cb7ecc61203bb6eb3}} 
+\index{GateToInterfile@{GateToInterfile}!GiveNameOfFile@{GiveNameOfFile}}
+\index{GiveNameOfFile@{GiveNameOfFile}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{GiveNameOfFile()}{GiveNameOfFile()}}
+{\footnotesize\ttfamily const G4\+String \& Gate\+To\+Interfile\+::\+Give\+Name\+Of\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_a77005d1e0d281a2f5c34d76a99e51e67}\label{classGateToInterfile_a77005d1e0d281a2f5c34d76a99e51e67}} 
+\index{GateToInterfile@{GateToInterfile}!RecordBeginOfAcquisition@{RecordBeginOfAcquisition}}
+\index{RecordBeginOfAcquisition@{RecordBeginOfAcquisition}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfAcquisition()}{RecordBeginOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+Begin\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+It opens the Interfile files. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_a6fbcaa05cec3a79d6b73a52843aa1e76}\label{classGateToInterfile_a6fbcaa05cec3a79d6b73a52843aa1e76}} 
+\index{GateToInterfile@{GateToInterfile}!RecordBeginOfEvent@{RecordBeginOfEvent}}
+\index{RecordBeginOfEvent@{RecordBeginOfEvent}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfEvent()}{RecordBeginOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+Begin\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_acd13ef15ee82228d6281a459d22360a5}\label{classGateToInterfile_acd13ef15ee82228d6281a459d22360a5}} 
+\index{GateToInterfile@{GateToInterfile}!RecordBeginOfRun@{RecordBeginOfRun}}
+\index{RecordBeginOfRun@{RecordBeginOfRun}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordBeginOfRun()}{RecordBeginOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+Begin\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+SReset the data array. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_a6ef4676af82fec11557619ee15300be9}\label{classGateToInterfile_a6ef4676af82fec11557619ee15300be9}} 
+\index{GateToInterfile@{GateToInterfile}!RecordEndOfAcquisition@{RecordEndOfAcquisition}}
+\index{RecordEndOfAcquisition@{RecordEndOfAcquisition}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfAcquisition()}{RecordEndOfAcquisition()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+End\+Of\+Acquisition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+It closes the Interfile files. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_a03ac8cc86aa3d3f00e2b113b7f2f82e5}\label{classGateToInterfile_a03ac8cc86aa3d3f00e2b113b7f2f82e5}} 
+\index{GateToInterfile@{GateToInterfile}!RecordEndOfEvent@{RecordEndOfEvent}}
+\index{RecordEndOfEvent@{RecordEndOfEvent}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfEvent()}{RecordEndOfEvent()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+End\+Of\+Event (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_aa01d1199a179e6f41f47ca5a1902045d}\label{classGateToInterfile_aa01d1199a179e6f41f47ca5a1902045d}} 
+\index{GateToInterfile@{GateToInterfile}!RecordEndOfRun@{RecordEndOfRun}}
+\index{RecordEndOfRun@{RecordEndOfRun}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordEndOfRun()}{RecordEndOfRun()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+End\+Of\+Run (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the latest results. 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_a76cb3437c54d63f6a305454ddba02626}\label{classGateToInterfile_a76cb3437c54d63f6a305454ddba02626}} 
+\index{GateToInterfile@{GateToInterfile}!RecordStepWithVolume@{RecordStepWithVolume}}
+\index{RecordStepWithVolume@{RecordStepWithVolume}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordStepWithVolume()}{RecordStepWithVolume()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+Step\+With\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+\mbox{\Hypertarget{classGateToInterfile_aafc4dc2ae44fa943fef238f753be8cd1}\label{classGateToInterfile_aafc4dc2ae44fa943fef238f753be8cd1}} 
+\index{GateToInterfile@{GateToInterfile}!RecordVoxels@{RecordVoxels}}
+\index{RecordVoxels@{RecordVoxels}!GateToInterfile@{GateToInterfile}}
+\doxysubsubsection{\texorpdfstring{RecordVoxels()}{RecordVoxels()}}
+{\footnotesize\ttfamily void Gate\+To\+Interfile\+::\+Record\+Voxels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVGeometryVoxelStore}{Gate\+VGeometry\+Voxel\+Store}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+saves the geometry voxel information 
+
+
+
+Implements \mbox{\hyperlink{classGateVOutputModule}{Gate\+VOutput\+Module}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+To\+Interfile.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/\mbox{\hyperlink{GateToInterfile_8cc}{Gate\+To\+Interfile.\+cc}}\end{DoxyCompactItemize}

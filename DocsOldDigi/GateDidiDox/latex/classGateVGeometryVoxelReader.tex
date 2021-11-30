@@ -1,0 +1,113 @@
+\hypertarget{classGateVGeometryVoxelReader}{}\doxysection{Gate\+VGeometry\+Voxel\+Reader Class Reference}
+\label{classGateVGeometryVoxelReader}\index{GateVGeometryVoxelReader@{GateVGeometryVoxelReader}}
+
+
+This class can read a file with the material info for a matrix of voxels (digital image)  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VGeometry\+Voxel\+Reader.\+hh$>$}
+
+Inheritance diagram for Gate\+VGeometry\+Voxel\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.472868cm]{classGateVGeometryVoxelReader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_ab19c3bcb0f43f3732b294931e01c6870}\label{classGateVGeometryVoxelReader_ab19c3bcb0f43f3732b294931e01c6870}} 
+{\bfseries Gate\+VGeometry\+Voxel\+Reader} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$inserter)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a07a8cfb2b7e2cf8ee1bc7e029ed87839}\label{classGateVGeometryVoxelReader_a07a8cfb2b7e2cf8ee1bc7e029ed87839}} 
+virtual void {\bfseries Insert\+Translator} (G4\+String translator\+Type)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a3e4f49dc37ae71ec108c1f50d5ee4509}\label{classGateVGeometryVoxelReader_a3e4f49dc37ae71ec108c1f50d5ee4509}} 
+virtual void {\bfseries Remove\+Translator} ()
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a2b98dd8ce62dfa661e5c7cfa20e5c5a5}\label{classGateVGeometryVoxelReader_a2b98dd8ce62dfa661e5c7cfa20e5c5a5}} 
+virtual void {\bfseries Read\+File} (G4\+String file\+Name)=0
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a752688b3b9fa3797953a5f51350d4769}\label{classGateVGeometryVoxelReader_a752688b3b9fa3797953a5f51350d4769}} 
+virtual void {\bfseries Read\+RTFile} (G4\+String header\+\_\+file\+Name, G4\+String file\+Name)=0
+\item 
+virtual void \mbox{\hyperlink{classGateVGeometryVoxelReader_a5e25f352b3f4f63fc240f2d584dc5c1b}{Describe}} (G4int level)
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_ada6d9f59b893e308c51cdb45df37844b}\label{classGateVGeometryVoxelReader_ada6d9f59b893e308c51cdb45df37844b}} 
+virtual \mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}} $\ast$ {\bfseries Get\+Voxel\+Translator} ()
+\item 
+virtual G4\+Material $\ast$ \mbox{\hyperlink{classGateVGeometryVoxelReader_a05e5366c9792d187b7cc703762022743}{Get\+Voxel\+Material}} (G4int ix, G4int iy, G4int iz)
+\begin{DoxyCompactList}\small\item\em it gives the material of the voxel in the logical position (ix,iy,iz) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a9bb72893abc13e1a847580137858af34}\label{classGateVGeometryVoxelReader_a9bb72893abc13e1a847580137858af34}} 
+virtual G4\+Material $\ast$ {\bfseries Get\+Voxel\+Material} (G4int copy\+No)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a2c73fcea44973dc7e16efdc432afca90}\label{classGateVGeometryVoxelReader_a2c73fcea44973dc7e16efdc432afca90}} 
+\mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}} $\ast$ {\bfseries m\+\_\+voxel\+Translator}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a4bd15da15be0d623ebc42d7d963795d8}\label{classGateVGeometryVoxelReader_a4bd15da15be0d623ebc42d7d963795d8}} 
+G4\+String {\bfseries m\+\_\+file\+Name}
+\item 
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_af5b31fb2612a1a058ecfacbad747a9f2}\label{classGateVGeometryVoxelReader_af5b31fb2612a1a058ecfacbad747a9f2}} 
+\mbox{\hyperlink{classGateMaterialDatabase}{Gate\+Material\+Database}} {\bfseries m\+Material\+Database}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class can read a file with the material info for a matrix of voxels (digital image) 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVGeometryVoxelReader}{Gate\+VGeometry\+Voxel\+Reader}} -\/ by \href{mailto:Giovanni.Santin@cern.ch}{\texttt{ Giovanni.\+Santin@cern.\+ch}}
+\item It reads the image file, asks the translator to convert the digital info into material info, and stores the material information. This material info is used by the Gate\+Voxel\+Replica\+Matrix\+Inserter at the moment of the matrix construction
+\item The translator has to be inserted befor reading the image file
+\item The material information is a generic map to allow for non cubic voxel material distribution (like voxels in a spheric envelope)
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVGeometryVoxelReaderMessenger}{Gate\+VGeometry\+Voxel\+Reader\+Messenger}} 
+
+\mbox{\hyperlink{classGateVGeometryVoxelTranslator}{Gate\+VGeometry\+Voxel\+Translator}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelReader}{Gate\+VSource\+Voxel\+Reader}} 
+
+\mbox{\hyperlink{classGateVSourceVoxelTranslator}{Gate\+VSource\+Voxel\+Translator}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a5e25f352b3f4f63fc240f2d584dc5c1b}\label{classGateVGeometryVoxelReader_a5e25f352b3f4f63fc240f2d584dc5c1b}} 
+\index{GateVGeometryVoxelReader@{GateVGeometryVoxelReader}!Describe@{Describe}}
+\index{Describe@{Describe}!GateVGeometryVoxelReader@{GateVGeometryVoxelReader}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+VGeometry\+Voxel\+Reader\+::\+Describe (\begin{DoxyParamCaption}\item[{G4int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateGeometryVoxelArrayStore}{Gate\+Geometry\+Voxel\+Array\+Store}}.
+
+\mbox{\Hypertarget{classGateVGeometryVoxelReader_a05e5366c9792d187b7cc703762022743}\label{classGateVGeometryVoxelReader_a05e5366c9792d187b7cc703762022743}} 
+\index{GateVGeometryVoxelReader@{GateVGeometryVoxelReader}!GetVoxelMaterial@{GetVoxelMaterial}}
+\index{GetVoxelMaterial@{GetVoxelMaterial}!GateVGeometryVoxelReader@{GateVGeometryVoxelReader}}
+\doxysubsubsection{\texorpdfstring{GetVoxelMaterial()}{GetVoxelMaterial()}}
+{\footnotesize\ttfamily virtual G4\+Material $\ast$ Gate\+VGeometry\+Voxel\+Reader\+::\+Get\+Voxel\+Material (\begin{DoxyParamCaption}\item[{G4int}]{ix,  }\item[{G4int}]{iy,  }\item[{G4int}]{iz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+it gives the material of the voxel in the logical position (ix,iy,iz) 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ad4649a45870c315ecbc5d62eee1912fa}{Gate\+Geometry\+Voxel\+Array\+Store}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+VGeometry\+Voxel\+Reader.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+VGeometry\+Voxel\+Reader.\+cc\end{DoxyCompactItemize}

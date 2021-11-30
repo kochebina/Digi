@@ -1,0 +1,23 @@
+\hypertarget{classGateScintillation}{}\doxysection{Gate\+Scintillation Class Reference}
+\label{classGateScintillation}\index{GateScintillation@{GateScintillation}}
+
+
+{\ttfamily \#include $<$Gate\+Scintillation.\+hh$>$}
+
+Inheritance diagram for Gate\+Scintillation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateScintillation}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+With this class, Gate is able to use Finite\+Rise\+Time for scintillation process. Before call to G4\+Scintillation\+::\+Post\+Step\+Do\+It, \mbox{\hyperlink{classGateScintillation}{Gate\+Scintillation}} class check existence of FASTSCINTILLATIONRISETIME or SLOWSCINTILLATIONRISETIME in Material\+Properties\+Table for the current G4\+Material and set the Finite\+Rise\+Time flag of G4\+Scintillation consequently.
+
+2020/10/21\+: Implementation of Is\+Applicable has been changed between geant4 10.\+05 and geant4 10.\+06 which made Scintillation not applicable for gamma. Because gamma has a PDGCharge of 0.\+0. Here we go back to previous implementation until we find another solution. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+Scintillation.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+Scintillation.\+cc\end{DoxyCompactItemize}

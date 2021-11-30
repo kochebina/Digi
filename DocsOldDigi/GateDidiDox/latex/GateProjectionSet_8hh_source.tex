@@ -1,0 +1,273 @@
+\hypertarget{GateProjectionSet_8hh_source}{}\doxysection{Gate\+Projection\+Set.\+hh}
+\label{GateProjectionSet_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProjectionSet.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateProjectionSet.hh}}
+\mbox{\hyperlink{GateProjectionSet_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateProjectionSet\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateProjectionSet\_H}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateDetectorConstruction.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{80 \textcolor{comment}{/* Modified by HDS on 25/11/2010 <henri.dersarkissian@gmail.com>}}
+\DoxyCodeLine{81 \textcolor{comment}{   Adding multiple energy window support for SPECT}}
+\DoxyCodeLine{82 \textcolor{comment}{   ProjectionSet now record more than 1 energy window, and still multiple heads}}
+\DoxyCodeLine{83 \textcolor{comment}{*/}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{class }\mbox{\hyperlink{classGateProjectionSet}{GateProjectionSet}}}
+\DoxyCodeLine{86 \{}
+\DoxyCodeLine{87 \textcolor{keyword}{public}:}
+\DoxyCodeLine{88   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ProjectionDataType;}
+\DoxyCodeLine{89   \textcolor{keyword}{typedef} G4double ARFProjectionDataType;}
+\DoxyCodeLine{90 \textcolor{keyword}{public}:}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateProjectionSet_ae3c396ec41638eb7ebfdb90b7d7fcad7}{GateProjectionSet}}();                            }
+\DoxyCodeLine{93   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateProjectionSet_aba45a2c167bf367c0fe948a0244e59bf}{\string~GateProjectionSet}}()}
+\DoxyCodeLine{94   \{}
+\DoxyCodeLine{95     \mbox{\hyperlink{classGateProjectionSet_a5d7c9a368c264366d316a88d9232ec70}{Reset}}();}
+\DoxyCodeLine{96   \}       }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99   \textcolor{comment}{// Modified by HDS : Added size\_t energyWindowNb=0 parameter}}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a5d7c9a368c264366d316a88d9232ec70}{Reset}}(\textcolor{keywordtype}{size\_t} energyWindowNumber = 0, \textcolor{keywordtype}{size\_t} headNumber = 0, \textcolor{keywordtype}{size\_t} projectionNumber = 0);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{103   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_abdacb5132053484c0b1545fd3e60a375}{ClearData}}(\textcolor{keywordtype}{size\_t} projectionID);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a0635cc875e069e8a4bbeb8c00ed63edb}{Fill}}(G4int energyWindowID, G4int headID, G4double x, G4double y);}
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} FillARF(G4int, G4double, G4double, G4double, \textcolor{keywordtype}{bool} addEmToArfCount = \textcolor{keyword}{false}); \textcolor{comment}{/*PY Descourt 08/09/2009*/}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_a6e7b60ec26140b0e3a8756331bc4accc}{GetEnergyWindowNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{113 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{114     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a4d921ffb4295479adce4e22aa56b8e93}{m\_energyWindowNb}};}
+\DoxyCodeLine{115   \}}
+\DoxyCodeLine{117   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a1d64e37024d31333d0419e678111fe86}{SetEnergyWindowNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{118   \{}
+\DoxyCodeLine{119     \mbox{\hyperlink{classGateProjectionSet_a4d921ffb4295479adce4e22aa56b8e93}{m\_energyWindowNb}} = aNb;}
+\DoxyCodeLine{120   \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{123   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_ae31a54b5c52f0843eaf84d5ba3d9a24e}{GetHeadNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{124 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{125     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_aa0a50243a3a12c59f17bcd89fe0aa664}{m\_headNb}};}
+\DoxyCodeLine{126   \}}
+\DoxyCodeLine{128   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_aba916fe248333ad1f69ec719ac42941a}{SetHeadNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{129   \{}
+\DoxyCodeLine{130     \mbox{\hyperlink{classGateProjectionSet_aa0a50243a3a12c59f17bcd89fe0aa664}{m\_headNb}} = aNb;}
+\DoxyCodeLine{131   \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{134   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_a4acae2e9ca1b63a8e8b40d96ab596fee}{GetProjectionNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{135 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{136     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_abbea66d462da82b827b40e300078ea9f}{m\_projectionNb}};}
+\DoxyCodeLine{137   \}}
+\DoxyCodeLine{139   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_ac3027d84fc359bc391be8856f18c80a7}{SetProjectionNb}}(\textcolor{keywordtype}{size\_t} aNb)}
+\DoxyCodeLine{140   \{}
+\DoxyCodeLine{141     \mbox{\hyperlink{classGateProjectionSet_abbea66d462da82b827b40e300078ea9f}{m\_projectionNb}} = aNb;}
+\DoxyCodeLine{142   \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_a5b697cafbbdeba0ceaad50ed92fd6d6a}{GetPixelNbX}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{146 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{147     \textcolor{keywordflow}{return} m\_pixelNbX;}
+\DoxyCodeLine{148   \}}
+\DoxyCodeLine{150   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a2a9017c484cfa8df5def3ce7d2f2542a}{SetPixelNbX}}(G4int aNb)}
+\DoxyCodeLine{151   \{}
+\DoxyCodeLine{152     m\_pixelNbX = aNb;}
+\DoxyCodeLine{153     \mbox{\hyperlink{classGateProjectionSet_aeaf8a698d069b8dec1a73f34f4978eb0}{ComputeLowEdges}}();}
+\DoxyCodeLine{154   \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{157   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_a05408ae8c87cc7c3ebc82ea67f84dbf7}{GetPixelNbY}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{158 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{159     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a48fe5751a08e3eb55662ae3d47de78f6}{m\_pixelNbY}};}
+\DoxyCodeLine{160   \}}
+\DoxyCodeLine{162   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a3e625126160482d27e60543f126348fa}{SetPixelNbY}}(G4int aNb)}
+\DoxyCodeLine{163   \{}
+\DoxyCodeLine{164     \mbox{\hyperlink{classGateProjectionSet_a48fe5751a08e3eb55662ae3d47de78f6}{m\_pixelNbY}} = aNb;}
+\DoxyCodeLine{165     \mbox{\hyperlink{classGateProjectionSet_aeaf8a698d069b8dec1a73f34f4978eb0}{ComputeLowEdges}}();}
+\DoxyCodeLine{166   \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{169   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateProjectionSet_af237de4c4044f92f32dae01e1033d193}{GetPixelSizeX}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{170 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{171     \textcolor{keywordflow}{return} m\_pixelSizeX;}
+\DoxyCodeLine{172   \}}
+\DoxyCodeLine{174   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a60bf7569c53d038de99ee7869b332337}{SetPixelSizeX}}(G4double aSize)}
+\DoxyCodeLine{175   \{}
+\DoxyCodeLine{176     m\_pixelSizeX = aSize;}
+\DoxyCodeLine{177     \mbox{\hyperlink{classGateProjectionSet_aeaf8a698d069b8dec1a73f34f4978eb0}{ComputeLowEdges}}();}
+\DoxyCodeLine{178   \}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{181   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateProjectionSet_a211d2262578c2cc985f926b966523bc2}{GetPixelSizeY}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{182 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{183     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_ace9b723f51888544538ee8cff93424f8}{m\_pixelSizeY}};}
+\DoxyCodeLine{184   \}}
+\DoxyCodeLine{186   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a7de71f3ae80b0f944ec34c82b34b0e86}{SetPixelSizeY}}(G4double aSize)}
+\DoxyCodeLine{187   \{}
+\DoxyCodeLine{188     \mbox{\hyperlink{classGateProjectionSet_ace9b723f51888544538ee8cff93424f8}{m\_pixelSizeY}} = aSize;}
+\DoxyCodeLine{189     \mbox{\hyperlink{classGateProjectionSet_aeaf8a698d069b8dec1a73f34f4978eb0}{ComputeLowEdges}}();}
+\DoxyCodeLine{190   \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{193   \textcolor{keyword}{inline} ProjectionDataType*** \mbox{\hyperlink{classGateProjectionSet_af33c9a9a691da4a2f135ebf20ac797f1}{GetData}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{194 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{195     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a226addae387302db5de5b7e30afccbb8}{m\_data}};}
+\DoxyCodeLine{196   \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{199   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a6482219814f5cdbaa466c2914c31ef1d}{SetVerboseLevel}}(G4int val)}
+\DoxyCodeLine{200   \{}
+\DoxyCodeLine{201     m\_verboseLevel = val;}
+\DoxyCodeLine{202   \}}
+\DoxyCodeLine{203   ;}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{206   \textcolor{comment}{// Modified by HDS : need to specify the energy window ID for multiple energy windows}}
+\DoxyCodeLine{207   \textcolor{keyword}{inline} ProjectionDataType* \mbox{\hyperlink{classGateProjectionSet_a73a3f0447e07fa1d5f7836de3c969cc3}{GetProjection}}(\textcolor{keywordtype}{size\_t} energyWindowID, \textcolor{keywordtype}{size\_t} headID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{208 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{209     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a226addae387302db5de5b7e30afccbb8}{m\_data}}[energyWindowID][headID];}
+\DoxyCodeLine{210   \}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{213   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_a9e42be2f4ee90e93ae55e826a65ba6b3}{PixelsPerProjection}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{214 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{215     \textcolor{keywordflow}{return} m\_pixelNbX * \mbox{\hyperlink{classGateProjectionSet_a48fe5751a08e3eb55662ae3d47de78f6}{m\_pixelNbY}};}
+\DoxyCodeLine{216   \}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{219   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_ad70e1de2ed6645fd717cf28a8c897cea}{BytesPerProjection}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{220 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{221     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a9e42be2f4ee90e93ae55e826a65ba6b3}{PixelsPerProjection}}() * \mbox{\hyperlink{classGateProjectionSet_ab293b4067d6487424c8a8fa6601548e3}{BytesPerPixel}}();}
+\DoxyCodeLine{222   \}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{225   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_a7fc8af9d82a63762ddae96c168884f49}{BytesPerHead}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{226 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{227     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_ad70e1de2ed6645fd717cf28a8c897cea}{BytesPerProjection}}() * \mbox{\hyperlink{classGateProjectionSet_abbea66d462da82b827b40e300078ea9f}{m\_projectionNb}};}
+\DoxyCodeLine{228   \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{231   \textcolor{comment}{// Added by HDS : multiple energy windows}}
+\DoxyCodeLine{232   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_a6055dc76989fdc4ecc162151135f0844}{BytesPerEnergyWindow}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{233 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{234     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a7fc8af9d82a63762ddae96c168884f49}{BytesPerHead}}() * \mbox{\hyperlink{classGateProjectionSet_aa0a50243a3a12c59f17bcd89fe0aa664}{m\_headNb}};}
+\DoxyCodeLine{235   \}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{238   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_ab293b4067d6487424c8a8fa6601548e3}{BytesPerPixel}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{239 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{240     \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(ProjectionDataType);}
+\DoxyCodeLine{241   \}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243   \textcolor{comment}{// Modified by HDS : For multple energy window support. This function only works for ARF data,}}
+\DoxyCodeLine{244   \textcolor{comment}{// otherwise one must use the overloaded function : GetMaxCounts(energyWindowID, headID)}}
+\DoxyCodeLine{246 \textcolor{comment}{}  \textcolor{keyword}{inline} ProjectionDataType \mbox{\hyperlink{classGateProjectionSet_ab5873daa5734642c848e784ffe0214f3}{GetMaxCounts}}(\textcolor{keywordtype}{size\_t} headID) \textcolor{keyword}{const} \textcolor{comment}{/*PY Descourt 08/09/2009*/}}
+\DoxyCodeLine{247   \{}
+\DoxyCodeLine{248     \textcolor{keywordflow}{if} (m\_ARFdataMax != 0)}
+\DoxyCodeLine{249       \textcolor{keywordflow}{return} ((ProjectionDataType) m\_ARFdataMax[headID]);}
+\DoxyCodeLine{250     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{251   \}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253   \textcolor{comment}{// Added by HDS for multiple energy windows support}}
+\DoxyCodeLine{255 \textcolor{comment}{}  \textcolor{keyword}{inline} ProjectionDataType \mbox{\hyperlink{classGateProjectionSet_a28d1edaa4f6c77f41172b26006923945}{GetMaxCounts}}(\textcolor{keywordtype}{size\_t} energyWindowID, \textcolor{keywordtype}{size\_t} headID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{256 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{257     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classGateProjectionSet_a8fbc96ecab578d30adc5943e319caf88}{m\_dataMax}} != 0)}
+\DoxyCodeLine{258       \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a8fbc96ecab578d30adc5943e319caf88}{m\_dataMax}}[energyWindowID][headID];}
+\DoxyCodeLine{259     \textcolor{keywordflow}{if} (m\_ARFdataMax != 0)}
+\DoxyCodeLine{260       \textcolor{keywordflow}{return} ((ProjectionDataType) m\_ARFdataMax[headID]);}
+\DoxyCodeLine{261     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{262   \}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{265   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_a6420cd9eeb91f39ed9e7821b18fe6af5}{GetCurrentProjectionID}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{266 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{267     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a4134b879d697515fa5f6ce0b2066fa02}{m\_currentProjectionID}};}
+\DoxyCodeLine{268   \}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270   \textcolor{comment}{/*PY Descourt 08/09/2009*/}}
+\DoxyCodeLine{272   \textcolor{keyword}{inline} ARFProjectionDataType** \mbox{\hyperlink{classGateProjectionSet_aa0869892cd892d7a94c1a366121a0794}{GetARFData}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{273 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{274     \textcolor{keywordflow}{return} m\_ARFdata;}
+\DoxyCodeLine{275   \}}
+\DoxyCodeLine{277   \textcolor{keyword}{inline} ARFProjectionDataType* \mbox{\hyperlink{classGateProjectionSet_afcc2e6e8da366827e496db45db8dc4fe}{GetARFProjection}}(\textcolor{keywordtype}{size\_t} headID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{278 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{279     \textcolor{keywordflow}{return} m\_ARFdata[headID];}
+\DoxyCodeLine{280   \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{283   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_a5967d0ed287dcddb86cd690338634826}{ARFBytesPerProjection}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{284 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{285     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a9e42be2f4ee90e93ae55e826a65ba6b3}{PixelsPerProjection}}() * \mbox{\hyperlink{classGateProjectionSet_a3c14b9c42d4963336ac0c653ad39aee4}{ARFBytesPerPixel}}();}
+\DoxyCodeLine{286   \}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{289   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_a22f46e2aae84cd8ccd7ff6de20d7309a}{ARFBytesPerHead}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{290 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{291     \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateProjectionSet_a5967d0ed287dcddb86cd690338634826}{ARFBytesPerProjection}}() * \mbox{\hyperlink{classGateProjectionSet_abbea66d462da82b827b40e300078ea9f}{m\_projectionNb}};}
+\DoxyCodeLine{292   \}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{295   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_a3c14b9c42d4963336ac0c653ad39aee4}{ARFBytesPerPixel}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{296 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{297     \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(ARFProjectionDataType);}
+\DoxyCodeLine{298   \}}
+\DoxyCodeLine{299   \textcolor{comment}{/*PY Descourt 08/09/2009*/}}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_aeaf8a698d069b8dec1a73f34f4978eb0}{ComputeLowEdges}}()}
+\DoxyCodeLine{304   \{}
+\DoxyCodeLine{305     m\_matrixLowEdgeX = -\/0.5 * m\_pixelNbX * m\_pixelSizeX;}
+\DoxyCodeLine{306     \mbox{\hyperlink{classGateProjectionSet_ab6fd22ffe334c2b0b834ad8d3f415bfa}{m\_matrixLowEdgeY}} = -\/0.5 * \mbox{\hyperlink{classGateProjectionSet_a48fe5751a08e3eb55662ae3d47de78f6}{m\_pixelNbY}} * \mbox{\hyperlink{classGateProjectionSet_ace9b723f51888544538ee8cff93424f8}{m\_pixelSizeY}};}
+\DoxyCodeLine{307   \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{310   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateProjectionSet_aa869cf1094172d722cfe154b89bb8436}{GetNumberOfEmEvents}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{311 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{312     \textcolor{keywordflow}{return} m\_numberOfEmEvents;}
+\DoxyCodeLine{313   \}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} GetNumberOfARFFFDHeads()\textcolor{keyword}{ const}}
+\DoxyCodeLine{316 \textcolor{keyword}{  }\{}
+\DoxyCodeLine{317     \textcolor{keywordflow}{return} m\_numberOfARFFFDHeads;}
+\DoxyCodeLine{318   \}}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 }
+\DoxyCodeLine{329   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateProjectionSet_a219ff5c208b157d96c14013f097c25e3}{StreamOut}}(std::ofstream\& dest, \textcolor{keywordtype}{size\_t} energyWindowID, \textcolor{keywordtype}{size\_t} headID);}
+\DoxyCodeLine{330   \textcolor{keywordtype}{void} StreamOutARFProjection(std::ofstream\&, \textcolor{keywordtype}{size\_t});\textcolor{comment}{/*PY Descourt 08/09/2009*/}}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_a4d921ffb4295479adce4e22aa56b8e93}{m\_energyWindowNb}};                  }
+\DoxyCodeLine{335   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_aa0a50243a3a12c59f17bcd89fe0aa664}{m\_headNb}};                      }
+\DoxyCodeLine{336   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateProjectionSet_abbea66d462da82b827b40e300078ea9f}{m\_projectionNb}};                      }
+\DoxyCodeLine{337   G4int m\_pixelNbX, \mbox{\hyperlink{classGateProjectionSet_a48fe5751a08e3eb55662ae3d47de78f6}{m\_pixelNbY}};           }
+\DoxyCodeLine{338   G4double m\_pixelSizeX, \mbox{\hyperlink{classGateProjectionSet_ace9b723f51888544538ee8cff93424f8}{m\_pixelSizeY}};          }
+\DoxyCodeLine{339   G4double m\_matrixLowEdgeX, \mbox{\hyperlink{classGateProjectionSet_ab6fd22ffe334c2b0b834ad8d3f415bfa}{m\_matrixLowEdgeY}};    }
+\DoxyCodeLine{340   ProjectionDataType ***\mbox{\hyperlink{classGateProjectionSet_a226addae387302db5de5b7e30afccbb8}{m\_data}};                           }
+\DoxyCodeLine{341   ProjectionDataType **\mbox{\hyperlink{classGateProjectionSet_a8fbc96ecab578d30adc5943e319caf88}{m\_dataMax}};                          }
+\DoxyCodeLine{342   G4int \mbox{\hyperlink{classGateProjectionSet_a4134b879d697515fa5f6ce0b2066fa02}{m\_currentProjectionID}};         }
+\DoxyCodeLine{343   G4int m\_verboseLevel;}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345   ARFProjectionDataType **m\_ARFdata;\textcolor{comment}{/*PY Descourt 08/09/2009*/}}
+\DoxyCodeLine{346   ARFProjectionDataType *m\_ARFdataMax;\textcolor{comment}{/*PY Descourt 08/09/2009*/}}
+\DoxyCodeLine{347   G4int m\_numberOfEmEvents;}
+\DoxyCodeLine{348   \textcolor{keywordtype}{size\_t} m\_numberOfARFFFDHeads;}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \};}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{comment}{// Public constructor}}
+\DoxyCodeLine{354 \textcolor{keyword}{inline} \mbox{\hyperlink{classGateProjectionSet_ae3c396ec41638eb7ebfdb90b7d7fcad7}{GateProjectionSet::GateProjectionSet}}() :}
+\DoxyCodeLine{355   m\_energyWindowNb(0),}
+\DoxyCodeLine{356   m\_headNb(0),}
+\DoxyCodeLine{357   m\_projectionNb(0),}
+\DoxyCodeLine{358   m\_pixelNbX(0),}
+\DoxyCodeLine{359   m\_pixelNbY(0),}
+\DoxyCodeLine{360   m\_pixelSizeX(0.),}
+\DoxyCodeLine{361   m\_pixelSizeY(0.),}
+\DoxyCodeLine{362   m\_matrixLowEdgeX(0.),}
+\DoxyCodeLine{363   m\_matrixLowEdgeY(0.),}
+\DoxyCodeLine{364   m\_data(0),}
+\DoxyCodeLine{365   m\_dataMax(0),}
+\DoxyCodeLine{366   m\_currentProjectionID(-\/1),}
+\DoxyCodeLine{367   m\_verboseLevel(0),}
+\DoxyCodeLine{368   m\_numberOfEmEvents(0),}
+\DoxyCodeLine{369   m\_numberOfARFFFDHeads(1)}
+\DoxyCodeLine{370 \{}
+\DoxyCodeLine{371   m\_ARFdata = 0;}
+\DoxyCodeLine{372   m\_ARFdataMax = 0;}
+\DoxyCodeLine{373 \}}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

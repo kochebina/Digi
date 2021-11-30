@@ -1,0 +1,54 @@
+\hypertarget{GateSystemListMessenger_8hh_source}{}\doxysection{Gate\+System\+List\+Messenger.\+hh}
+\label{GateSystemListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSystemListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSystemListManagerMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSystemListManagerMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateListMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{46 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSystemListMessenger}{GateSystemListMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateListMessenger}{GateListMessenger}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48   \textcolor{keyword}{public}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateSystemListMessenger_af6c5383cea87597385605fee01b1c10d}{GateSystemListMessenger}}(\mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}}* itsListManager);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSystemListMessenger_a266f4752397612332a82d00b09360f1a}{\string~GateSystemListMessenger}}();  }
+\DoxyCodeLine{53     }
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemListMessenger_a8753ad627299f4be05fbf32080268982}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58     \textcolor{keyword}{virtual} \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateSystemListMessenger_a5af4aff1bf8f20983224569a8d71db20}{DumpMap}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSystemListMessenger_a644dd1ee3928b96ed016cb7c2b135b84}{DoInsertion}}(\textcolor{keyword}{const} G4String\& typeName);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}}* \mbox{\hyperlink{classGateSystemListMessenger_a120edf5e4c87d3dfdb410d4161feb96e}{GetSystemListManager}}() }
+\DoxyCodeLine{65       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateSystemListManager}{GateSystemListManager}}*) \mbox{\hyperlink{classGateListMessenger_a713e02f23d2981ab05cbcd4efa58af8b}{GetListManager}}(); \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67   \textcolor{keyword}{private}:}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+
+\end{DoxyCode}

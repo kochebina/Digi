@@ -1,0 +1,156 @@
+\hypertarget{GateCrossSectionsTable_8hh_source}{}\doxysection{Gate\+Cross\+Sections\+Table.\+hh}
+\label{GateCrossSectionsTable_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateCrossSectionsTable.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateCrossSectionsTable.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateCrossSectionsTable\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateCrossSectionsTable\_hh 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{17 \textcolor{comment}{//\#include "{}G4PhysicsTable.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4PhysicsTable.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4Material.hh"{}}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4ParticleDefinition;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4EmCalculator;}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4Gamma.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateMaterialTableToProductionCutsTable.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4VDiscreteProcess.hh"{}}}
+\DoxyCodeLine{29 \textcolor{keyword}{class }G4MaterialCutsCouple;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}}: \textcolor{keyword}{public} G4PhysicsTable}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33     \textcolor{keyword}{public}:}
+\DoxyCodeLine{34         \mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}} ( G4double minEnergy, G4double maxEnergy, G4int physicsVectorBinNumber, \textcolor{keyword}{const} G4ParticleDefinition* pdef, G4VDiscreteProcess\& process );}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}} ( G4double minEnergy, G4double maxEnergy, G4int physicsVectorBinNumber, \textcolor{keyword}{const} G4ParticleDefinition* pdef, \textcolor{keyword}{const} std::vector<G4VDiscreteProcess*>\& processes );}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \mbox{\hyperlink{classGateCrossSectionsTable}{GateCrossSectionsTable}} ( std::ifstream\& fin,\textcolor{keywordtype}{bool} ascii, \textcolor{keyword}{const} std::vector<G4VDiscreteProcess*>\& processes );}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \mbox{\hyperlink{classGateCrossSectionsTable}{\string~GateCrossSectionsTable}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keywordtype}{size\_t} SetAndBuildProductionMaterialTable(); \textcolor{comment}{// returns index of last material}}
+\DoxyCodeLine{44         \textcolor{keywordtype}{bool} CheckInternalProductionMaterialTable() \textcolor{keyword}{const}; \textcolor{comment}{// should return true if internal tables correctly initialized}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{bool} BuildMaxCrossSection ( \textcolor{keyword}{const} std::vector<G4Material*>\& ); \textcolor{comment}{// turns this table into a fictitious table}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keyword}{const} G4Material* GetMaterial ( \textcolor{keywordtype}{size\_t} index ) \textcolor{keyword}{const};}
+\DoxyCodeLine{49         G4int GetIndex ( \textcolor{keyword}{const} G4Material* ) \textcolor{keyword}{const};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keyword}{inline} G4double GetMinEnergy() \textcolor{keyword}{const};}
+\DoxyCodeLine{52         \textcolor{keyword}{inline} G4double GetMaxEnergy() \textcolor{keyword}{const};}
+\DoxyCodeLine{53         \textcolor{keyword}{inline} \textcolor{keywordtype}{int} GetVerbose() \textcolor{keyword}{const};}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} SetVerbose(\textcolor{keywordtype}{int} v);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         G4double GetEnergyLimitForGivenMaxCrossSection(G4double crossSection) \textcolor{keyword}{const};}
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} StoreTable ( std::ofstream\& out, \textcolor{keywordtype}{bool} ascii ) \textcolor{keyword}{const};}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} RetrieveTable ( std::ifstream\& in, \textcolor{keywordtype}{bool} ascii );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keyword}{inline} G4double GetCrossSection ( \textcolor{keyword}{const} G4Material*, G4double energy ) \textcolor{keyword}{const};}
+\DoxyCodeLine{61         \textcolor{keyword}{inline} G4double GetCrossSection ( \textcolor{keyword}{const} G4Material*, G4double energy, G4double density ) \textcolor{keyword}{const};}
+\DoxyCodeLine{62         \textcolor{keyword}{inline} G4double GetCrossSection ( \textcolor{keywordtype}{size\_t} materialIndex, G4double energy ) \textcolor{keyword}{const};}
+\DoxyCodeLine{63         \textcolor{keyword}{inline} G4double GetCrossSection ( \textcolor{keywordtype}{size\_t} materialIndex, G4double energy, G4double density ) \textcolor{keyword}{const};  \textcolor{comment}{//assuming that cross section linear in density (not yet implemented)}}
+\DoxyCodeLine{64         \textcolor{keyword}{inline} G4double GetMaxCrossSection ( G4double energy ) \textcolor{keyword}{const};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{67         \textcolor{keywordtype}{size\_t} AddMaterial ( \textcolor{keyword}{const} G4MaterialCutsCouple* ); \textcolor{comment}{// returns index for that material}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         G4double m\_nMinEnergy, m\_nMaxEnergy; \textcolor{comment}{// of G4PhysicsVectors}}
+\DoxyCodeLine{73         G4int m\_nPhysicsVectorBinNumber;}
+\DoxyCodeLine{74         \textcolor{keyword}{const} G4Material* pReplacementMaterial;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         std::vector<G4double> m\_oInvDensity;}
+\DoxyCodeLine{77         std::vector<const G4Material*> m\_oMaterialVec;}
+\DoxyCodeLine{78         \textcolor{keyword}{const} std::vector<G4VDiscreteProcess*> m\_oProcessVec;\textcolor{comment}{// several if cross section should be total}}
+\DoxyCodeLine{79         G4PhysicsVector* m\_pMaxCrossSection;}
+\DoxyCodeLine{80         \textcolor{keywordtype}{int} m\_nVerbose;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{keyword}{const} G4ParticleDefinition* pParticleDefinition;}
+\DoxyCodeLine{83         \textcolor{keyword}{static} G4int PARTICLE\_NAME\_LENGTH; \textcolor{comment}{// for ParticleName and Retrieve and Store Table if writing/reading in binary}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{keywordtype}{void} Store ( std::ofstream\&, \textcolor{keywordtype}{bool} ascii, \textcolor{keywordtype}{size\_t} num ) \textcolor{keyword}{const};}
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} Retrieve ( std::ifstream\&, \textcolor{keywordtype}{bool} ascii, \textcolor{keywordtype}{size\_t} num );}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keyword}{static} G4EmCalculator m\_sEmCalculator;}
+\DoxyCodeLine{89         \textcolor{comment}{//const std::vector<const G4String*> m\_oProcessNameVec; // several if cross section should be total}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \mbox{\hyperlink{classGateMaterialTableToProductionCutsTable}{GateMaterialTableToProductionCutsTable}}* pMaterialTableToProductionCutsTable;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 \textcolor{keyword}{inline} G4double GateCrossSectionsTable::GetMinEnergy()\textcolor{keyword}{ const}}
+\DoxyCodeLine{96 \textcolor{keyword}{}\{}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} m\_nMinEnergy;}
+\DoxyCodeLine{98 \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{keyword}{inline} G4double GateCrossSectionsTable::GetMaxEnergy()\textcolor{keyword}{ const}}
+\DoxyCodeLine{101 \textcolor{keyword}{}\{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} m\_nMaxEnergy;}
+\DoxyCodeLine{103 \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keyword}{inline} \textcolor{keywordtype}{int} GateCrossSectionsTable::GetVerbose()\textcolor{keyword}{ const}}
+\DoxyCodeLine{106 \textcolor{keyword}{}\{}
+\DoxyCodeLine{107     \textcolor{keywordflow}{return} m\_nVerbose;}
+\DoxyCodeLine{108 \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keyword}{inline} G4double GateCrossSectionsTable::GetMaxCrossSection ( G4double energy )\textcolor{keyword}{ const}}
+\DoxyCodeLine{111 \textcolor{keyword}{}\{}
+\DoxyCodeLine{112     \textcolor{keywordtype}{bool} NotUsedAnyMoreIsOutOfRange;}
+\DoxyCodeLine{113     \textcolor{keywordflow}{return} m\_pMaxCrossSection-\/>GetValue ( energy,NotUsedAnyMoreIsOutOfRange );}
+\DoxyCodeLine{114 \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keyword}{inline} G4double GateCrossSectionsTable::GetCrossSection ( \textcolor{keywordtype}{size\_t} materialIndex, G4double energy)\textcolor{keyword}{ const}}
+\DoxyCodeLine{117 \textcolor{keyword}{}\{}
+\DoxyCodeLine{118     \textcolor{keywordtype}{bool} NotUsedAnyMoreIsOutOfRange;}
+\DoxyCodeLine{119     assert ( size() >materialIndex );}
+\DoxyCodeLine{120     assert ( energy>=m\_nMinEnergy );}
+\DoxyCodeLine{121     assert ( energy<m\_nMaxEnergy );}
+\DoxyCodeLine{122     \textcolor{comment}{//G4cout << "{}material no "{} << materialIndex << "{} energy "{}<< energy << Gateendl;}}
+\DoxyCodeLine{123     \textcolor{keywordflow}{return} operator() ( materialIndex )-\/>GetValue ( energy,NotUsedAnyMoreIsOutOfRange );}
+\DoxyCodeLine{124 \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keyword}{inline} G4double GateCrossSectionsTable::GetCrossSection ( \textcolor{keywordtype}{size\_t} materialIndex, G4double energy, G4double density)\textcolor{keyword}{ const}}
+\DoxyCodeLine{127 \textcolor{keyword}{}\{}
+\DoxyCodeLine{128     \textcolor{keywordtype}{bool} NotUsedAnyMoreIsOutOfRange;}
+\DoxyCodeLine{129     assert ( size() >materialIndex );}
+\DoxyCodeLine{130     assert ( energy>=m\_nMinEnergy );}
+\DoxyCodeLine{131     assert ( energy<m\_nMaxEnergy );}
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} operator() ( materialIndex )-\/>GetValue ( energy,NotUsedAnyMoreIsOutOfRange )*m\_oInvDensity[materialIndex]*density;}
+\DoxyCodeLine{133        \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135        \textcolor{keyword}{inline} G4double GateCrossSectionsTable::GetCrossSection ( \textcolor{keyword}{const} G4Material* mat, G4double energy)\textcolor{keyword}{ const}}
+\DoxyCodeLine{136 \textcolor{keyword}{}\{}
+\DoxyCodeLine{137     \textcolor{comment}{//return GetCrossSection ( pMaterialTableToProductionCutsTable-\/>M2P ( mat-\/>GetIndex()),energy);}}
+\DoxyCodeLine{138     \textcolor{keywordflow}{return} GetCrossSection ( pMaterialTableToProductionCutsTable-\/>M2P ( mat-\/>GetIndex()),energy);}
+\DoxyCodeLine{139 \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{keyword}{inline} G4double GateCrossSectionsTable::GetCrossSection ( \textcolor{keyword}{const} G4Material* mat, G4double energy,G4double density)\textcolor{keyword}{ const}}
+\DoxyCodeLine{142 \textcolor{keyword}{}\{}
+\DoxyCodeLine{143     \textcolor{comment}{//return GetCrossSection ( pMaterialTableToProductionCutsTable-\/>M2P ( mat-\/>GetIndex()),energy,density);}}
+\DoxyCodeLine{144     \textcolor{keywordflow}{return} GetCrossSection ( pMaterialTableToProductionCutsTable-\/>M2P ( mat-\/>GetIndex()),energy,density);}
+\DoxyCodeLine{145 \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keyword}{inline}  \textcolor{keyword}{const} G4Material* GateCrossSectionsTable::GetMaterial ( \textcolor{keywordtype}{size\_t} index )\textcolor{keyword}{ const}}
+\DoxyCodeLine{148 \textcolor{keyword}{}\{}
+\DoxyCodeLine{149     assert ( index<m\_oMaterialVec.size() );}
+\DoxyCodeLine{150     \textcolor{keywordflow}{return} m\_oMaterialVec[index];}
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

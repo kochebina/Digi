@@ -1,0 +1,67 @@
+\hypertarget{GateCrystalBlurring_8hh_source}{}\doxysection{Gate\+Crystal\+Blurring.\+hh}
+\label{GateCrystalBlurring_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrystalBlurring.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateCrystalBlurring.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateCrystalBlurring\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateCrystalBlurring\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalBlurringMessenger}{GateCrystalBlurringMessenger}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateCrystalBlurring}{GateCrystalBlurring}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23   \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateCrystalBlurring}{GateCrystalBlurring}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{26          \textcolor{keyword}{const} G4String\& itsName=theTypeName,}
+\DoxyCodeLine{27          G4double itsCrystalblurringmin=0,}
+\DoxyCodeLine{28          G4double itsCrystalblurringmax=0,}
+\DoxyCodeLine{29          G4double itsCrystalQE=1,}
+\DoxyCodeLine{30          G4double itsCrystalEnergyRef=-\/1) ;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateCrystalBlurring_a2dc61d107627d0be280699889038d816}{\string~GateCrystalBlurring}}() ;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} SetCrystalResolutionMin(G4double val)   \{ m\_crystalresolutionmin = val;  \}}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} SetCrystalResolutionMax(G4double val)   \{ m\_crystalresolutionmax = val;  \}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} SetCrystalQE(G4double val)              \{ m\_crystalQE = val;  \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} SetCrystalRefEnergy(G4double eval)   \{ m\_crystaleref = eval; \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrystalBlurring_ab4f272d053e9d40a1c1cb5029cdd76c5}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateCrystalBlurring_add2f241b1a2ba975b1fafdc1fd98d919}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{private}:}
+\DoxyCodeLine{54     G4double m\_crystalresolution;         }
+\DoxyCodeLine{55     G4double m\_crystalresolutionmin;      }
+\DoxyCodeLine{56     G4double m\_crystalresolutionmax;      }
+\DoxyCodeLine{57     G4double m\_crystalQE;                 }
+\DoxyCodeLine{58     G4double m\_crystaleref;                      }
+\DoxyCodeLine{59     G4double m\_crystalcoeff;                     }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \mbox{\hyperlink{classGateCrystalBlurringMessenger}{GateCrystalBlurringMessenger}} *m\_messenger;   }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{static} \textcolor{keyword}{const} G4String\& theTypeName;   }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

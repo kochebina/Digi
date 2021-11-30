@@ -1,0 +1,68 @@
+\hypertarget{GateLocalBlurring_8hh_source}{}\doxysection{Gate\+Local\+Blurring.\+hh}
+\label{GateLocalBlurring_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalBlurring.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalBlurring.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateLocalBlurring\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateLocalBlurring\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalBlurringMessenger}{GateLocalBlurringMessenger}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalBlurring}{GateLocalBlurring}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42     \mbox{\hyperlink{classGateLocalBlurring_a0213fdc51a9dafcf550a8c84f3f94ae5}{GateLocalBlurring}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{43                    \textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalBlurring_a3a6fe3470a7c6fd42490027a599519cd}{\string~GateLocalBlurring}}() ;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     G4int \mbox{\hyperlink{classGateLocalBlurring_a6e8c781c659374b5f065e8274896639c}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalBlurring_a5366e12329758daa6a06ae7be8a97a01}{SetResolution}}(G4String name, G4double val)   \{ m\_table[name].resolution = val;  \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} SetRefEnergy(G4String name, G4double val)   \{m\_table[name].eref = val; \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{67     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalBlurring_a0e522e46aa51dd45dc14ba71e7896afc}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalBlurring_a7e4595537f6082dde02acf5af1d8a6cb}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{private}:}
+\DoxyCodeLine{80     \textcolor{keyword}{struct }param \{}
+\DoxyCodeLine{81       G4double resolution;}
+\DoxyCodeLine{82       G4double eref;}
+\DoxyCodeLine{83     \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     param m\_param;                                 }
+\DoxyCodeLine{86     G4String m\_name;                               }
+\DoxyCodeLine{87     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} m\_table ;  }
+\DoxyCodeLine{88     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} ::iterator im;  }
+\DoxyCodeLine{89     \mbox{\hyperlink{classGateLocalBlurringMessenger}{GateLocalBlurringMessenger}} *m\_messenger;       }
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,99 @@
+\hypertarget{itk__zlib__mangle_8h_source}{}\doxysection{itk\+\_\+zlib\+\_\+mangle.\+h}
+\label{itk__zlib__mangle_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/itk\_zlib\_mangle.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/itk\_zlib\_mangle.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef itk\_zlib\_mangle\_h}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define itk\_zlib\_mangle\_h}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/*}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{This header file mangles all symbols exported from the zlib library.}}
+\DoxyCodeLine{7 \textcolor{comment}{It is included in all files while building the zlib library.  Due to}}
+\DoxyCodeLine{8 \textcolor{comment}{namespace pollution, no zlib headers should be included in .h files in}}
+\DoxyCodeLine{9 \textcolor{comment}{VTK.}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{The following command was used to obtain the symbol list:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{nm libitkzlib.so |grep "{} [TRD] "{}}}
+\DoxyCodeLine{14 \textcolor{comment}{}}
+\DoxyCodeLine{15 \textcolor{comment}{This is the way to recreate the whole list:}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{nm libitkzlib.so |grep "{} [TRD] "{} | awk '\{ print "{}\#define "{}\$3"{} itk\_zlib\_"{}\$3 \}'}}
+\DoxyCodeLine{18 \textcolor{comment}{}}
+\DoxyCodeLine{19 \textcolor{comment}{REMOVE the "{}\_init"{} and "{}\_fini"{} entries.}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{*/}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define adler32 itk\_zlib\_adler32}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define adler32\_combine itk\_zlib\_adler32\_combine}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define compress itk\_zlib\_compress}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define compress2 itk\_zlib\_compress2}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define compressBound itk\_zlib\_compressBound}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define crc32 itk\_zlib\_crc32}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define crc32\_combine itk\_zlib\_crc32\_combine}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define get\_crc\_table itk\_zlib\_get\_crc\_table}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define deflate itk\_zlib\_deflate}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define deflateBound itk\_zlib\_deflateBound}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define deflateCopy itk\_zlib\_deflateCopy}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define deflateEnd itk\_zlib\_deflateEnd}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define deflateInit2\_ itk\_zlib\_deflateInit2\_}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define deflateInit\_ itk\_zlib\_deflateInit\_}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define deflateParams itk\_zlib\_deflateParams}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define deflatePrime itk\_zlib\_deflatePrime}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define deflateReset itk\_zlib\_deflateReset}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define deflateSetDictionary itk\_zlib\_deflateSetDictionary}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define deflateSetHeader itk\_zlib\_deflateSetHeader}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define deflateTune itk\_zlib\_deflateTune}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define deflate\_copyright itk\_zlib\_deflate\_copyright}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define gzclearerr itk\_zlib\_gzclearerr}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define gzclose itk\_zlib\_gzclose}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define gzdirect itk\_zlib\_gzdirect}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define gzdopen itk\_zlib\_gzdopen}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define gzeof itk\_zlib\_gzeof}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define gzerror itk\_zlib\_gzerror}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define gzflush itk\_zlib\_gzflush}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define gzgetc itk\_zlib\_gzgetc}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define gzgets itk\_zlib\_gzgets}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define gzopen itk\_zlib\_gzopen}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define gzprintf itk\_zlib\_gzprintf}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define gzputc itk\_zlib\_gzputc}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define gzputs itk\_zlib\_gzputs}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define gzread itk\_zlib\_gzread}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define gzrewind itk\_zlib\_gzrewind}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define gzseek itk\_zlib\_gzseek}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define gzsetparams itk\_zlib\_gzsetparams}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define gztell itk\_zlib\_gztell}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define gzungetc itk\_zlib\_gzungetc}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define gzwrite itk\_zlib\_gzwrite}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define inflate\_fast itk\_zlib\_inflate\_fast}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define inflate itk\_zlib\_inflate}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define inflateCopy itk\_zlib\_inflateCopy}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define inflateEnd itk\_zlib\_inflateEnd}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define inflateGetHeader itk\_zlib\_inflateGetHeader}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define inflateInit2\_ itk\_zlib\_inflateInit2\_}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define inflateInit\_ itk\_zlib\_inflateInit\_}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define inflatePrime itk\_zlib\_inflatePrime}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define inflateReset itk\_zlib\_inflateReset}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define inflateSetDictionary itk\_zlib\_inflateSetDictionary}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define inflateSync itk\_zlib\_inflateSync}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define inflateSyncPoint itk\_zlib\_inflateSyncPoint}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define inflate\_copyright itk\_zlib\_inflate\_copyright}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define inflate\_table itk\_zlib\_inflate\_table}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define \_dist\_code itk\_zlib\_\_dist\_code}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define \_length\_code itk\_zlib\_\_length\_code}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define \_tr\_align itk\_zlib\_\_tr\_align}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define \_tr\_flush\_block itk\_zlib\_\_tr\_flush\_block}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define \_tr\_init itk\_zlib\_\_tr\_init}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define \_tr\_stored\_block itk\_zlib\_\_tr\_stored\_block}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define \_tr\_tally itk\_zlib\_\_tr\_tally}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define uncompress itk\_zlib\_uncompress}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define zError itk\_zlib\_zError}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define z\_errmsg itk\_zlib\_z\_errmsg}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define zcalloc itk\_zlib\_zcalloc}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define zcfree itk\_zlib\_zcfree}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define zlibCompileFlags itk\_zlib\_zlibCompileFlags}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define zlibVersion itk\_zlib\_zlibVersion}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

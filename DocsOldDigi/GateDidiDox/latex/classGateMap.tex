@@ -1,0 +1,93 @@
+\hypertarget{classGateMap}{}\doxysection{Gate\+Map\texorpdfstring{$<$}{<} Tkey, Tvalue \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classGateMap}\index{GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}}
+
+
+A general templates for enhanced maps (i.\+e. maps with a few added functions)  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Maps.\+hh$>$}
+
+Inheritance diagram for Gate\+Map\texorpdfstring{$<$}{<} Tkey, Tvalue \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateMap}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMap_af60e3939969942a11123e25e6646960b}\label{classGateMap_af60e3939969942a11123e25e6646960b}} 
+typedef std\+::pair$<$ Tkey, Tvalue $>$ {\bfseries Map\+Pair}
+\item 
+\mbox{\Hypertarget{classGateMap_ab48005a1a5958a7d11e8a60c4560f256}\label{classGateMap_ab48005a1a5958a7d11e8a60c4560f256}} 
+typedef std\+::map$<$ Tkey, Tvalue $>$\+::iterator {\bfseries iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateMap_ae96abb54892c0142e65a91c3c435351e}\label{classGateMap_ae96abb54892c0142e65a91c3c435351e}} 
+{\bfseries Gate\+Map} ()
+\begin{DoxyCompactList}\small\item\em Defaut constructor -\/\texorpdfstring{$>$}{>} empty \mbox{\hyperlink{classGateMap}{Gate\+Map}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateMap_a0f470bfcd69fe19d1c1a1e14387267e1}\label{classGateMap_a0f470bfcd69fe19d1c1a1e14387267e1}} 
+{\bfseries Gate\+Map} (\mbox{\hyperlink{classMapPair}{Map\+Pair}} $\ast$first)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classGateMap}{Gate\+Map}} with one item. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGateMap_ae694a93c0556ec33e159d5c0e092409f}{Gate\+Map}} (\mbox{\hyperlink{classMapPair}{Map\+Pair}} $\ast$first, \mbox{\hyperlink{classMapPair}{Map\+Pair}} $\ast$last)
+\item 
+\mbox{\hyperlink{classGateMap_a92e8dcb292fb3d0cc3e64e43c6d307b5}{Gate\+Map}} (size\+\_\+t n, \mbox{\hyperlink{classMapPair}{Map\+Pair}} $\ast$first)
+\item 
+\mbox{\hyperlink{classGateMap_a23fb391ecda07378814d222019b7ee8d}{Gate\+Map}} (size\+\_\+t n, \mbox{\hyperlink{classGateMap}{Gate\+Map}}$<$ Tkey, Tvalue $>$ $\ast$map\+Array\mbox{[}$\,$\mbox{]})
+\item 
+virtual G4\+String \mbox{\hyperlink{classGateMap_affe62fdd9191c8d5f6fd178ee6ae57bb}{Dump\+Map}} (G4bool flag\+With\+Quotes=false, G4\+String suffix=\char`\"{}\char`\"{}, G4\+String separator=\char`\"{} \char`\"{}, G4\+String prefix=\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Tkey, typename Tvalue$>$\newline
+class Gate\+Map$<$ Tkey, Tvalue $>$}
+A general templates for enhanced maps (i.\+e. maps with a few added functions) 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateMap}{Gate\+Map}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item Gate\+Maps are standard STL maps with some added functionalities for easier construction and printout 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateMap_ae694a93c0556ec33e159d5c0e092409f}\label{classGateMap_ae694a93c0556ec33e159d5c0e092409f}} 
+\index{GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}!GateMap@{GateMap}}
+\index{GateMap@{GateMap}!GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}}
+\doxysubsubsection{\texorpdfstring{GateMap()}{GateMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Tkey , typename Tvalue $>$ \\
+\mbox{\hyperlink{classGateMap}{Gate\+Map}}$<$ Tkey, Tvalue $>$\+::\mbox{\hyperlink{classGateMap}{Gate\+Map}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMapPair}{Map\+Pair}} $\ast$}]{first,  }\item[{\mbox{\hyperlink{classMapPair}{Map\+Pair}} $\ast$}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a \mbox{\hyperlink{classGateMap}{Gate\+Map}} from an array of Map\+Pairs In agremment with the STL map template, the arguments are the start and the end of the array Remember that the end is one step AFTER the last element of the array For instance, for an array \textquotesingle{}array\textquotesingle{} with 3 elements, call \+: \mbox{\hyperlink{classGateMap}{Gate\+Map}}(array,array+3) \mbox{\Hypertarget{classGateMap_a92e8dcb292fb3d0cc3e64e43c6d307b5}\label{classGateMap_a92e8dcb292fb3d0cc3e64e43c6d307b5}} 
+\index{GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}!GateMap@{GateMap}}
+\index{GateMap@{GateMap}!GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}}
+\doxysubsubsection{\texorpdfstring{GateMap()}{GateMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Tkey , typename Tvalue $>$ \\
+\mbox{\hyperlink{classGateMap}{Gate\+Map}}$<$ Tkey, Tvalue $>$\+::\mbox{\hyperlink{classGateMap}{Gate\+Map}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n,  }\item[{\mbox{\hyperlink{classMapPair}{Map\+Pair}} $\ast$}]{first }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a \mbox{\hyperlink{classGateMap}{Gate\+Map}} from an array of Map\+Pairs Pass the size of the array a pointer to and its first element \mbox{\Hypertarget{classGateMap_a23fb391ecda07378814d222019b7ee8d}\label{classGateMap_a23fb391ecda07378814d222019b7ee8d}} 
+\index{GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}!GateMap@{GateMap}}
+\index{GateMap@{GateMap}!GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}}
+\doxysubsubsection{\texorpdfstring{GateMap()}{GateMap()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Tkey , typename Tvalue $>$ \\
+\mbox{\hyperlink{classGateMap}{Gate\+Map}}$<$ Tkey, Tvalue $>$\+::\mbox{\hyperlink{classGateMap}{Gate\+Map}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n,  }\item[{\mbox{\hyperlink{classGateMap}{Gate\+Map}}$<$ Tkey, Tvalue $>$ $\ast$}]{map\+Array\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new \mbox{\hyperlink{classGateMap}{Gate\+Map}} by combining several Gate\+Maps Pass the number of Gate\+Maps and an array of \mbox{\hyperlink{classGateMap}{Gate\+Map}} pointers 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateMap_affe62fdd9191c8d5f6fd178ee6ae57bb}\label{classGateMap_affe62fdd9191c8d5f6fd178ee6ae57bb}} 
+\index{GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}!DumpMap@{DumpMap}}
+\index{DumpMap@{DumpMap}!GateMap$<$ Tkey, Tvalue $>$@{GateMap$<$ Tkey, Tvalue $>$}}
+\doxysubsubsection{\texorpdfstring{DumpMap()}{DumpMap()}}
+{\footnotesize\ttfamily template$<$typename Tkey , typename Tvalue $>$ \\
+G4\+String \mbox{\hyperlink{classGateMap}{Gate\+Map}}$<$ Tkey, Tvalue $>$\+::Dump\+Map (\begin{DoxyParamCaption}\item[{G4bool}]{flag\+With\+Quotes = {\ttfamily false},  }\item[{G4\+String}]{suffix = {\ttfamily \char`\"{}\char`\"{}},  }\item[{G4\+String}]{separator = {\ttfamily \char`\"{}~\char`\"{}},  }\item[{G4\+String}]{prefix = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Dump a map into a printable string This function concatenates all the map keys into one printable string Each key can be preceded by a prefix and followed by a suffix. It can be printed within quotes. Also, each key can be separated from the next one by a separator-\/string. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Maps.\+hh\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\hypertarget{GateGeometryVoxelArrayStore_8hh_source}{}\doxysection{Gate\+Geometry\+Voxel\+Array\+Store.\+hh}
+\label{GateGeometryVoxelArrayStore_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelArrayStore.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeometryVoxelArrayStore.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateGeometryVoxelArrayStore\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateGeometryVoxelArrayStore\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVGeometryVoxelStore.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVoxelCompressor.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeometryVoxelArrayStore}{GateGeometryVoxelArrayStore}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classGateVoxelCompressor}{GateVoxelCompressor}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateGeometryVoxelArrayStore}{GateGeometryVoxelArrayStore}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* inserter);}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGeometryVoxelArrayStore}{\string~GateGeometryVoxelArrayStore}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ae62e06af88c5703a126590ca7aba08e5}{AddVoxel}}(G4int ix, G4int iy, G4int iz, G4Material* material);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a85e85e7e08156f5fb232430eddb979a7}{SetVoxelMaterial}}(G4int ix, G4int iy, G4int iz, G4Material* material);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51   \textcolor{keyword}{virtual} G4Material*      \mbox{\hyperlink{classGateGeometryVoxelArrayStore_ad4649a45870c315ecbc5d62eee1912fa}{GetVoxelMaterial}}(G4int ix, G4int iy, G4int iz);}
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4Material*      \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a588ae2fec31c38dca8bec0aabae402c0}{GetVoxelMaterial\_noCheck}}(G4int ix, G4int iy, G4int iz) \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} std::vector<G4int> \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a2dfeb02eadad7c0a8d9bdd6c10d50124}{GetVoxel}}(G4int index);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} G4int            \mbox{\hyperlink{classGateGeometryVoxelArrayStore_acfae66795d204e19c784ac45c42549d2}{GetNumberOfVoxels}}()               \{ \textcolor{keywordflow}{return} m\_voxelNx * m\_voxelNy * m\_voxelNz; \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVoxelNx(G4int n);}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVoxelNy(G4int n);}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             SetVoxelNz(G4int n);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             Describe(G4int level);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} CreateCompressor();}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} Compress();}
+\DoxyCodeLine{70   \textcolor{keyword}{const} \mbox{\hyperlink{classGateVoxelCompressor}{GateVoxelCompressor}}\& GetCompressor()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} *m\_compressor;\}}
+\DoxyCodeLine{71   \mbox{\hyperlink{classGateVoxelCompressor}{GateVoxelCompressor}}* GetCompressorPtr() \{ \textcolor{keywordflow}{return} m\_compressor;\};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{typedef} G4Material**     GateVoxelMaterialArray;}
+\DoxyCodeLine{77   GateVoxelMaterialArray   m\_geometryVoxelMaterials;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \mbox{\hyperlink{classGateVoxelCompressor}{GateVoxelCompressor}}*     m\_compressor;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keyword}{inline} G4int             RealArrayIndex(G4int ix, G4int iy, G4int iz, G4int nx, G4int ny, G4int nz) }
+\DoxyCodeLine{84   \{ }
+\DoxyCodeLine{85     G4int rai =  ix + iy*nx + iz*nx*ny; }
+\DoxyCodeLine{86     \textcolor{comment}{//    G4cout << "{} "{} << rai;}}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if} (rai<0 || rai>=nx*ny*nz) G4cout << \textcolor{stringliteral}{"{}RealArrayIndex: ERROR: index out of range!!!!\(\backslash\)n"{}};}
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} rai;}
+\DoxyCodeLine{89   \};}
+\DoxyCodeLine{90   \textcolor{keyword}{inline} G4int             RealArrayIndex\_noCheck(G4int ix, G4int iy, G4int iz) \textcolor{keyword}{const};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateGeometryVoxelArrayStore_accdd6d2bc2699609ff75bc7d668e4106}{UpdateParameters}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a16c0fb44325695c6fe927185b9914869}{EmptyStore}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}             \mbox{\hyperlink{classGateGeometryVoxelArrayStore_afff982f55bafd63d5994ef46cefd644d}{InitStore}}(GateVoxelMaterialArray store, G4int nx, G4int ny, G4int nz);}
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{inline} G4int             GateGeometryVoxelArrayStore::RealArrayIndex\_noCheck(G4int ix, G4int iy, G4int iz)\textcolor{keyword}{ const}}
+\DoxyCodeLine{103 \textcolor{keyword}{}\{}
+\DoxyCodeLine{104     \textcolor{keywordflow}{return} ix + iy*m\_voxelNx + iz*m\_voxelNx*m\_voxelNy;}
+\DoxyCodeLine{105 \}}
+\DoxyCodeLine{106 \textcolor{keyword}{inline} G4Material* \mbox{\hyperlink{classGateGeometryVoxelArrayStore_a588ae2fec31c38dca8bec0aabae402c0}{GateGeometryVoxelArrayStore::GetVoxelMaterial\_noCheck}}(G4int ix, G4int iy, G4int iz)\textcolor{keyword}{ const}}
+\DoxyCodeLine{107 \textcolor{keyword}{}\{}
+\DoxyCodeLine{108     \textcolor{keywordflow}{return}   m\_geometryVoxelMaterials[RealArrayIndex\_noCheck(ix,iy,iz)];}
+\DoxyCodeLine{109 \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

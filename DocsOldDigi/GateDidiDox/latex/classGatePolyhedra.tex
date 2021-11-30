@@ -1,0 +1,44 @@
+\hypertarget{classGatePolyhedra}{}\doxysection{Gate\+Polyhedra Class Reference}
+\label{classGatePolyhedra}\index{GatePolyhedra@{GatePolyhedra}}
+
+
+Class derived from G4\+Polyhedra as a quick-\/fix to the hexagon-\/trapping bug.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Polyhedra.\+hh$>$}
+
+Inheritance diagram for Gate\+Polyhedra\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGatePolyhedra}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGatePolyhedra_a357eb0298b4d270bce83b40f73c51e9c}\label{classGatePolyhedra_a357eb0298b4d270bce83b40f73c51e9c}} 
+{\bfseries Gate\+Polyhedra} (const G4\+String \&name, G4double phi\+Start, G4double phi\+Total, G4int num\+Side, G4int num\+ZPlanes, const G4double z\+Plane\mbox{[}$\,$\mbox{]}, const G4double r\+Inner\mbox{[}$\,$\mbox{]}, const G4double r\+Outer\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constructor\+: calls the G4\+Polyhedra\textquotesingle{}s constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePolyhedra_ab0029c8a93dfcf94d7ead818bc323de2}\label{classGatePolyhedra_ab0029c8a93dfcf94d7ead818bc323de2}} 
+{\bfseries Gate\+Polyhedra} (const G4\+String \&name, G4double phi\+Start, G4double phi\+Total, G4int num\+Side, G4int num\+RZ, const G4double r\mbox{[}$\,$\mbox{]}, const G4double z\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constructor\+: calls the G4\+Polyhedra\textquotesingle{}s constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGatePolyhedra_a591a558bcfd71d6c2d4afbfc480028f8}\label{classGatePolyhedra_a591a558bcfd71d6c2d4afbfc480028f8}} 
+virtual G4double {\bfseries Distance\+To\+Out} (const G4\+Three\+Vector \&p, const G4\+Three\+Vector \&v, const G4bool calc\+Norm=false, G4bool $\ast$valid\+Norm=0, G4\+Three\+Vector $\ast$n=0) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class derived from G4\+Polyhedra as a quick-\/fix to the hexagon-\/trapping bug. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGatePolyhedra}{Gate\+Polyhedra}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item This class overloads G4\+VCSGfaceted\+::\+Distance\+To\+Out() to fix the problem caused by particules trapped in hexagons 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Polyhedra.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Polyhedra.\+cc\end{DoxyCompactItemize}

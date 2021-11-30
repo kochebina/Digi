@@ -1,0 +1,74 @@
+\hypertarget{GateFixedForcedDetectionActorMessenger_8hh_source}{}\doxysection{Gate\+Fixed\+Forced\+Detection\+Actor\+Messenger.\+hh}
+\label{GateFixedForcedDetectionActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateFixedForcedDetectionActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ GATE version name: gate\_v6}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{ Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{ This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{ of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{ See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifdef GATE\_USE\_RTK}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATEFIXEDFORCEDDECTECTIONACTORMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATEFIXEDFORCEDDECTECTIONACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UIcmdWith3Vector.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWith3VectorAndUnit.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateFixedForcedDetectionActor.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateUIcmdWith2Vector.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }GateFixedForcedDetectionActor;}
+\DoxyCodeLine{28 \textcolor{keyword}{class }GateFixedForcedDetectionActorMessenger: \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{29   \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31   GateFixedForcedDetectionActorMessenger(GateFixedForcedDetectionActor* sensor);}
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \string~GateFixedForcedDetectionActorMessenger();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{38   GateFixedForcedDetectionActor * pActor;}
+\DoxyCodeLine{39   G4UIcmdWithAString * pSetDetectorCmd;}
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateUIcmdWith2Vector}{GateUIcmdWith2Vector}} * pSetDetectorResolCmd;}
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateUIcmdWith2Vector}{GateUIcmdWith2Vector}} * pSetBinningFactorCmd;}
+\DoxyCodeLine{42   G4UIcmdWithAString * pSetGeometryFilenameCmd;}
+\DoxyCodeLine{43   G4UIcmdWithAString * pSetPrimaryFilenameCmd;}
+\DoxyCodeLine{44   G4UIcmdWithAString * pSetMaterialMuFilenameCmd;}
+\DoxyCodeLine{45   G4UIcmdWithAString * pSetAttenuationFilenameCmd;}
+\DoxyCodeLine{46   G4UIcmdWithAString * pSetMaterialDeltaFilenameCmd;}
+\DoxyCodeLine{47   G4UIcmdWithAString * pSetFresnelFilenameCmd;}
+\DoxyCodeLine{48   G4UIcmdWithAString * pSetResponseDetectorFilenameCmd;}
+\DoxyCodeLine{49   G4UIcmdWithAString * pSetFlatFieldFilenameCmd;}
+\DoxyCodeLine{50   G4UIcmdWithAString * pSetComptonFilenameCmd;}
+\DoxyCodeLine{51   G4UIcmdWithAString * pSetRayleighFilenameCmd;}
+\DoxyCodeLine{52   G4UIcmdWithAString * pSetFluorescenceFilenameCmd;}
+\DoxyCodeLine{53   G4UIcmdWithAString * pSetIsotropicPrimaryFilenameCmd;}
+\DoxyCodeLine{54   G4UIcmdWithAString * pSetSourceTypeCmd;}
+\DoxyCodeLine{55   G4UIcmdWithAString * pSetGeneratePhotonsCmd;}
+\DoxyCodeLine{56   G4UIcmdWithAString * pSetARFCmd;}
+\DoxyCodeLine{57   G4UIcmdWithAString * pSetSecondaryFilenameCmd;}
+\DoxyCodeLine{58   G4UIcmdWithABool * pEnableSecondarySquaredCmd;}
+\DoxyCodeLine{59   G4UIcmdWithABool * pEnableSecondaryUncertaintyCmd;}
+\DoxyCodeLine{60   G4UIcmdWithAString * pSetTotalFilenameCmd;}
+\DoxyCodeLine{61   G4UIcmdWithAString * pSetPhaseSpaceFilenameCmd;}
+\DoxyCodeLine{62   G4UIcmdWithAString * pSetInputRTKGeometryFilenameCmd;}
+\DoxyCodeLine{63   G4UIcmdWithAnInteger * pSetNoisePrimaryCmd;}
+\DoxyCodeLine{64   G4UIcmdWithADoubleAndUnit * pEnergyResolvedBinSizeCmd;}
+\DoxyCodeLine{65   \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEFIXEDFORCEDDECTECTIONACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GATE\_USE\_RTK}}
+
+\end{DoxyCode}

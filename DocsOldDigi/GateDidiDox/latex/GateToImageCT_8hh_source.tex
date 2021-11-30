@@ -1,0 +1,158 @@
+\hypertarget{GateToImageCT_8hh_source}{}\doxysection{Gate\+To\+Image\+CT.\+hh}
+\label{GateToImageCT_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToImageCT.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToImageCT.hh}}
+\mbox{\hyperlink{GateToImageCT_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Didier Benoit <benoit@cppm.in2p3.fr>}}
+\DoxyCodeLine{5 \textcolor{comment}{  Franca Cassol Brunner <cassol@cppm.in2p3.fr>}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{  Copyright (C) 2009 imXgam/CNRS, CPPM Marseille}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{10 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{11 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{12 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef GATETOIMAGECT\_HH}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define GATETOIMAGECT\_HH}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}GateApplicationMgr.hh"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageCT}{GateImageCT}};}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToImageCTMessenger}{GateToImageCTMessenger}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToImageCT}{GateToImageCT}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39   \mbox{\hyperlink{classGateToImageCT_a052161fddc799a58af615d4ceb846992}{GateToImageCT}}( \textcolor{keyword}{const} G4String\&, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}*,}
+\DoxyCodeLine{40                  \mbox{\hyperlink{classGateVSystem}{GateVSystem}}*, DigiMode );}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateToImageCT_a547c486c1d1476ee7319197b416adbf4}{\string~GateToImageCT}}();}
+\DoxyCodeLine{43   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} RecordBeginOfAcquisition();}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} RecordEndOfAcquisition();}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} RecordBeginOfRun( \textcolor{keyword}{const} G4Run* );}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} RecordEndOfRun( \textcolor{keyword}{const} G4Run* );}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} RecordBeginOfEvent( \textcolor{keyword}{const} G4Event* );}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} RecordEndOfEvent( \textcolor{keyword}{const} G4Event* );}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} RecordStepWithVolume( \textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}*, \textcolor{keyword}{const} G4Step* );}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} RecordVoxels( \mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}}* )\{\};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} ModuleGeometry();}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} PixelGeometry( \textcolor{keyword}{const} G4String[], \textcolor{keyword}{const} G4String[] );}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{public}:}
+\DoxyCodeLine{59   \textcolor{comment}{//Setters ans Getters}}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} SetFileName( G4String\& );}
+\DoxyCodeLine{61   \textcolor{keyword}{inline} G4String GetFileName()}
+\DoxyCodeLine{62   \{ \textcolor{keywordflow}{return} m\_fileName; \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} SetStartSeed( G4int );}
+\DoxyCodeLine{65   \textcolor{keyword}{inline} G4int GetStartSeed()}
+\DoxyCodeLine{66   \{ \textcolor{keywordflow}{return} m\_seed; \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} SetVRTFactor( G4int );}
+\DoxyCodeLine{69   \textcolor{keyword}{inline} G4int GetVRTFactor()}
+\DoxyCodeLine{70   \{ \textcolor{keywordflow}{return} m\_vrtFactor; \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} SetFastPixelXNb( G4int );}
+\DoxyCodeLine{73   \textcolor{keyword}{inline} G4int GetFastPixelXNb()}
+\DoxyCodeLine{74   \{ \textcolor{keywordflow}{return} m\_fastPixelXNb; \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetFastPixelYNb( G4int );}
+\DoxyCodeLine{77   \textcolor{keyword}{inline} G4int GetFastPixelYNb()}
+\DoxyCodeLine{78   \{ \textcolor{keywordflow}{return} m\_fastPixelYNb; \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} SetFastPixelZNb( G4int );}
+\DoxyCodeLine{81   \textcolor{keyword}{inline} G4int GetFastPixelZNb()}
+\DoxyCodeLine{82   \{ \textcolor{keywordflow}{return} m\_fastPixelZNb; \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} SetDetectorX( G4double );}
+\DoxyCodeLine{85   \textcolor{keyword}{inline} G4double GetDetectorX()}
+\DoxyCodeLine{86   \{ \textcolor{keywordflow}{return} m\_detectorInX; \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} SetDetectorY( G4double );}
+\DoxyCodeLine{89   \textcolor{keyword}{inline} G4double GetDetectorY()}
+\DoxyCodeLine{90   \{ \textcolor{keywordflow}{return} m\_detectorInY; \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92   \textcolor{keywordtype}{void} SetSourceDetector( G4double );}
+\DoxyCodeLine{93   \textcolor{keyword}{inline} G4double GetSourceDetector()}
+\DoxyCodeLine{94   \{ \textcolor{keywordflow}{return} m\_sourceDetector; \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetVerboseLevel( G4int verbose )}
+\DoxyCodeLine{97   \{}
+\DoxyCodeLine{98     GateVOutputModule::SetVerboseLevel( verbose );}
+\DoxyCodeLine{99   \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   \textcolor{keyword}{inline} G4double GetTimeStart()}
+\DoxyCodeLine{102   \{ \textcolor{keywordflow}{return} GateApplicationMgr::GetInstance()-\/>GetTimeStart(); \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   \textcolor{keyword}{inline} G4double GetTimeStop()}
+\DoxyCodeLine{105   \{ \textcolor{keywordflow}{return} GateApplicationMgr::GetInstance()-\/>GetTimeStop(); \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keyword}{inline} G4double GetFrameDuration()}
+\DoxyCodeLine{108   \{ \textcolor{keywordflow}{return} GateApplicationMgr::GetInstance()-\/>GetTimeSlice(); \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keyword}{inline} G4double GetTotalDuration()}
+\DoxyCodeLine{111   \{ \textcolor{keywordflow}{return} GetTimeStop() -\/ GetTimeStart();\}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   G4int GetFrameID()}
+\DoxyCodeLine{114   \{}
+\DoxyCodeLine{115     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}G4int\textcolor{keyword}{>}( rint(GetTimeStart() / GetFrameDuration()) );}
+\DoxyCodeLine{116   \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{comment}{//Transform the pixelID of GATE in Reconstruction and/or ImageJ}}
+\DoxyCodeLine{119   \textcolor{keywordtype}{size\_t} InverseMatrixPixel( \textcolor{keywordtype}{size\_t} );}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{comment}{//return the real value of pixelID}}
+\DoxyCodeLine{122   \textcolor{keywordtype}{size\_t} TransformPixel( \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{size\_t} );}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keyword}{private}:}
+\DoxyCodeLine{125   \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* m\_system;}
+\DoxyCodeLine{126   \mbox{\hyperlink{classGateImageCT}{GateImageCT}}* m\_gateImageCT;}
+\DoxyCodeLine{127   \mbox{\hyperlink{classGateToImageCTMessenger}{GateToImageCTMessenger}}* m\_messenger;}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{keyword}{private}:}
+\DoxyCodeLine{130   G4String m\_name;}
+\DoxyCodeLine{131   \textcolor{keywordtype}{size\_t} m\_pixelInRaw;}
+\DoxyCodeLine{132   \textcolor{keywordtype}{size\_t} m\_pixelInColumn;}
+\DoxyCodeLine{133   G4int n\_digit;}
+\DoxyCodeLine{134   G4String m\_fileName;}
+\DoxyCodeLine{135   G4int m\_seed;}
+\DoxyCodeLine{136   G4int m\_vrtFactor;}
+\DoxyCodeLine{137   G4String m\_inputDataChannel;}
+\DoxyCodeLine{138   G4int m\_fastPixelXNb;}
+\DoxyCodeLine{139   G4int m\_fastPixelYNb;}
+\DoxyCodeLine{140   G4int m\_fastPixelZNb;}
+\DoxyCodeLine{141   G4bool m\_selfDigi;}
+\DoxyCodeLine{142   G4double m\_detectorInX;}
+\DoxyCodeLine{143   G4double m\_detectorInY;}
+\DoxyCodeLine{144   G4double m\_sourceDetector;}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{keyword}{private}:}
+\DoxyCodeLine{147   \textcolor{comment}{//characteristics of the CT scanner}}
+\DoxyCodeLine{148   \textcolor{comment}{//Modules}}
+\DoxyCodeLine{149   std::vector<G4double> lenghtOfModuleByAxis;}
+\DoxyCodeLine{150   std::vector<size\_t> numberOfModuleByAxis;}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152   \textcolor{comment}{//Clusters}}
+\DoxyCodeLine{153   std::vector<size\_t> numberOfClusterByAxis;}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155   \textcolor{comment}{//Pixels}}
+\DoxyCodeLine{156   std::vector<G4double> lenghtOfPixelByAxis;}
+\DoxyCodeLine{157   std::vector<size\_t> numberOfPixelByAxis;}
+\DoxyCodeLine{158   std::vector<size\_t> numberOfPixelByCluster;}
+\DoxyCodeLine{159 \};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

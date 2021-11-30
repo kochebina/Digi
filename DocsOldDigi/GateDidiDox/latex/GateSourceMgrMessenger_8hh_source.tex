@@ -1,0 +1,58 @@
+\hypertarget{GateSourceMgrMessenger_8hh_source}{}\doxysection{Gate\+Source\+Mgr\+Messenger.\+hh}
+\label{GateSourceMgrMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceMgrMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceMgrMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSourceMgrMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSourceMgrMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateSourceMgr.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateClock}{GateClock}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAVector.hh"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceMgrMessenger}{GateSourceMgrMessenger}}: \textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateSourceMgrMessenger}{GateSourceMgrMessenger}}(\mbox{\hyperlink{classGateSourceMgr}{GateSourceMgr}}*);}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateSourceMgrMessenger}{\string~GateSourceMgrMessenger}}();}
+\DoxyCodeLine{36   }
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{38     }
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateSourceMgr}{GateSourceMgr}}*                     m\_sourceMgr;}
+\DoxyCodeLine{41     }
+\DoxyCodeLine{42   G4UIdirectory*                       GateSourceDir;}
+\DoxyCodeLine{43   G4UIcmdWithAString*                  SelectSourceCmd;}
+\DoxyCodeLine{44   \mbox{\hyperlink{classGateUIcmdWithAVector}{GateUIcmdWithAVector<G4String>}}*      AddSourceCmd;}
+\DoxyCodeLine{45   G4UIcmdWithAString*                  RemoveSourceCmd;}
+\DoxyCodeLine{46   G4UIcmdWithoutParameter*             ListSourcesCmd;}
+\DoxyCodeLine{47   G4UIcmdWithAnInteger*                VerboseCmd;}
+\DoxyCodeLine{48   \textcolor{comment}{//G4UIcmdWithAnInteger*                UseAutoWeightCmd;}}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+
+\end{DoxyCode}

@@ -1,0 +1,204 @@
+\hypertarget{metaForm_8h_source}{}\doxysection{meta\+Form.\+h}
+\label{metaForm_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaForm.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/src/metaForm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{  MetaIO}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright 2000-\/2010 Insight Software Consortium}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  Distributed under the OSI-\/approved BSD License (the "{}License"{});}}
+\DoxyCodeLine{6 \textcolor{comment}{  see accompanying file Copyright.txt for details.}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{  This software is distributed WITHOUT ANY WARRANTY; without even the}}
+\DoxyCodeLine{9 \textcolor{comment}{  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{10 \textcolor{comment}{  See the License for more information.}}
+\DoxyCodeLine{11 \textcolor{comment}{============================================================================*/}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}metaTypes.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ITKMetaIO\_METAFORM\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ITKMetaIO\_METAFORM\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}metaUtils.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}metaEvent.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#pragma warning ( disable: 4251 )}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{25 \textcolor{keyword}{namespace }METAIO\_NAMESPACE \{}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }METAIO\_EXPORT \mbox{\hyperlink{classMetaForm}{MetaForm}}}
+\DoxyCodeLine{29   \{}
+\DoxyCodeLine{30   \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \mbox{\hyperlink{classMetaForm}{MetaForm}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{33     \mbox{\hyperlink{classMetaForm}{MetaForm}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fileName);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \mbox{\hyperlink{classMetaForm}{\string~MetaForm}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  PrintInfo(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  CopyInfo(\textcolor{keyword}{const} \mbox{\hyperlink{classMetaForm}{MetaForm}} * \_form);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}  Clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void}          ClearFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{bool}  InitializeEssential();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{comment}{//}}
+\DoxyCodeLine{48     \textcolor{comment}{//}}
+\DoxyCodeLine{49     \textcolor{comment}{//}}
+\DoxyCodeLine{50     \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * FileName(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void}          FileName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_fileName);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{//    Comment(...)}}
+\DoxyCodeLine{55     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{56     \textcolor{comment}{//       Arbitrary string}}
+\DoxyCodeLine{57     \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * Comment(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void}          Comment(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_comment);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{//     FormTypeName()}}
+\DoxyCodeLine{61     \textcolor{comment}{//       The intended type: vector, co-\/vector, matrix....}}
+\DoxyCodeLine{62     \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * FormTypeName(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void}          FormTypeName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_formTypeName);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{//    Name(...)}}
+\DoxyCodeLine{66     \textcolor{comment}{//       Optional Field}}
+\DoxyCodeLine{67     \textcolor{comment}{//       Name of the current metaForm}}
+\DoxyCodeLine{68     \textcolor{keyword}{const} \textcolor{keywordtype}{char}  * Name(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void}          Name(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\_Name);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{//}}
+\DoxyCodeLine{72     \textcolor{comment}{//}}
+\DoxyCodeLine{73     \textcolor{comment}{//}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{bool}          BinaryData(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void}          BinaryData(\textcolor{keywordtype}{bool} \_binaryData);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{bool}          BinaryDataByteOrderMSB(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void}          BinaryDataByteOrderMSB(\textcolor{keywordtype}{bool} \_binaryDataByteOrderMSB);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{//}}
+\DoxyCodeLine{81     \textcolor{comment}{//}}
+\DoxyCodeLine{82     \textcolor{comment}{//}}
+\DoxyCodeLine{83     \textcolor{keywordtype}{bool}          CompressedData(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void}          CompressedData(\textcolor{keywordtype}{bool} \_compressedData);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{//}}
+\DoxyCodeLine{87     \textcolor{comment}{// Get/Set the double precision for writing}}
+\DoxyCodeLine{88     \textcolor{comment}{//}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  DoublePrecision() \textcolor{keyword}{const};}
+\DoxyCodeLine{90     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  GetDoublePrecision()\textcolor{keyword}{ const}}
+\DoxyCodeLine{91 \textcolor{keyword}{                     }\{ \textcolor{keywordflow}{return} this-\/>DoublePrecision(); \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void}          DoublePrecision(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_doublePrecision);}
+\DoxyCodeLine{94     \textcolor{keywordtype}{void}          SetDoublePrecision(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_doublePrecision)}
+\DoxyCodeLine{95                      \{ this-\/>DoublePrecision(\_doublePrecision); \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{//}}
+\DoxyCodeLine{98     \textcolor{comment}{//}}
+\DoxyCodeLine{99     \textcolor{comment}{//}}
+\DoxyCodeLine{100     \mbox{\hyperlink{classMetaEvent}{MetaEvent}} *   Event(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{101     \mbox{\hyperlink{classMetaEvent}{MetaEvent}} *   GetEvent(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{102                      \{ \textcolor{keywordflow}{return} Event(); \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keywordtype}{void}          Event(\mbox{\hyperlink{classMetaEvent}{MetaEvent}} * \_event);}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void}          SetEvent(\mbox{\hyperlink{classMetaEvent}{MetaEvent}} * \_event)}
+\DoxyCodeLine{106                      \{ Event(\_event); \}}
+\DoxyCodeLine{107     \textcolor{comment}{//}}
+\DoxyCodeLine{108     \textcolor{comment}{//}}
+\DoxyCodeLine{109     \textcolor{comment}{//}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void}   ClearUserFields();}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{void} * GetUserField(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_name);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keyword}{template} <\textcolor{keyword}{class} TType>}
+\DoxyCodeLine{115     \textcolor{keywordtype}{bool}   AddUserField(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_fieldName,}
+\DoxyCodeLine{116                         MET\_ValueEnumType \_type,}
+\DoxyCodeLine{117                         \textcolor{keywordtype}{int} \_length,}
+\DoxyCodeLine{118                         TType *\_v,}
+\DoxyCodeLine{119                         \textcolor{keywordtype}{bool} \_required=\textcolor{keyword}{true},}
+\DoxyCodeLine{120                         \textcolor{keywordtype}{int} \_dependsOn=-\/1 )}
+\DoxyCodeLine{121             \{}
+\DoxyCodeLine{122             \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}} * mFw = \textcolor{keyword}{new} \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}};}
+\DoxyCodeLine{123             MET\_InitWriteField(mFw, \_fieldName, \_type, \_length, \_v);}
+\DoxyCodeLine{124             m\_UserDefinedWriteFields.push\_back(mFw);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126             \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}} * mFr = \textcolor{keyword}{new} \mbox{\hyperlink{structMET__FieldRecordType}{MET\_FieldRecordType}};}
+\DoxyCodeLine{127             MET\_InitReadField(mFr, \_fieldName, \_type, \_required,}
+\DoxyCodeLine{128                               \_dependsOn, \_length);}
+\DoxyCodeLine{129             m\_UserDefinedReadFields.push\_back(mFr);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{132             \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{comment}{//}}
+\DoxyCodeLine{135     \textcolor{comment}{//}}
+\DoxyCodeLine{136     \textcolor{comment}{//}}
+\DoxyCodeLine{137     \textcolor{keywordtype}{bool}  CanRead(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fileName=NULL) \textcolor{keyword}{const};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keywordtype}{bool}  Read(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fileName=NULL);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keywordtype}{bool}  CanReadStream(METAIO\_STREAM::ifstream * \_stream) \textcolor{keyword}{const};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keywordtype}{bool}  ReadStream(METAIO\_STREAM::ifstream * \_stream);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keywordtype}{bool}  Write(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_fileName=NULL);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordtype}{bool}  WriteStream(METAIO\_STREAM::ofstream * \_stream);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150   \textcolor{comment}{//}}
+\DoxyCodeLine{151   \textcolor{comment}{// PROTECTED}}
+\DoxyCodeLine{152   \textcolor{comment}{//}}
+\DoxyCodeLine{154 \textcolor{comment}{}  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{keyword}{typedef} METAIO\_STL::vector<MET\_FieldRecordType *> FieldsContainerType;}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     METAIO\_STREAM::ifstream *  m\_ReadStream;}
+\DoxyCodeLine{159     METAIO\_STREAM::ofstream *  m\_WriteStream;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keywordtype}{char}  m\_FileName[255];}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \textcolor{keywordtype}{char}  m\_Comment[255];}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{keywordtype}{char}  m\_FormTypeName[255];}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{keywordtype}{char}  m\_Name[255];}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{keywordtype}{bool}  m\_BinaryData;}
+\DoxyCodeLine{170     \textcolor{keywordtype}{bool}  m\_BinaryDataByteOrderMSB;}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{keywordtype}{bool}  m\_CompressedData;}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  m\_DoublePrecision;}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \mbox{\hyperlink{classMetaEvent}{MetaEvent}}   * m\_Event;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     FieldsContainerType m\_Fields;}
+\DoxyCodeLine{179     FieldsContainerType m\_UserDefinedWriteFields;}
+\DoxyCodeLine{180     FieldsContainerType m\_UserDefinedReadFields;}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{comment}{// protected functions}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} M\_Destroy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} M\_SetupReadFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} M\_SetupWriteFields(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} M\_Read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} M\_Write(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194   \};}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#if (METAIO\_USE\_NAMESPACE)}}
+\DoxyCodeLine{197 \};}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,98 @@
+\hypertarget{classGateSpblurring}{}\doxysection{Gate\+Spblurring Class Reference}
+\label{classGateSpblurring}\index{GateSpblurring@{GateSpblurring}}
+
+
+Pulse-\/processor for simulating a \mbox{\hyperlink{classGaussian}{Gaussian}} blurring on the position.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Spblurring.\+hh$>$}
+
+Inheritance diagram for Gate\+Spblurring\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateSpblurring}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ constructors and destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSpblurring_a01887a68631508bc09ee2dd5f6858d63}\label{classGateSpblurring_a01887a68631508bc09ee2dd5f6858d63}} 
+{\bfseries Gate\+Spblurring} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name, G4double its\+Spblurring=0)
+\begin{DoxyCompactList}\small\item\em Constructs a new spblurring attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSpblurring_a1c571e09ae1013c60483876f5a0e6353}\label{classGateSpblurring_a1c571e09ae1013c60483876f5a0e6353}} 
+virtual {\bfseries $\sim$\+Gate\+Spblurring} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{getters and setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSpblurring_a712dcdb337210f4097d4a004267b93b2}\label{classGateSpblurring_a712dcdb337210f4097d4a004267b93b2}} 
+G4double {\bfseries Get\+Spresolution} ()
+\begin{DoxyCompactList}\small\item\em This function returns the resolution in use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateSpblurring_a26570f39378158a7178e91b05d601879}{Set\+Spresolution}} (G4double val)
+\begin{DoxyCompactList}\small\item\em This function sets the spresolution of a gaussian spblurring. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateSpblurring_a0aba03968d81524fed0d88947e7882c5}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateSpblurring_ae534899da5b0625be57acd6747aa41b2}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating a \mbox{\hyperlink{classGaussian}{Gaussian}} blurring on the position. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGatePulseAdder}{Gate\+Pulse\+Adder}} -\/ by By \href{mailto:Steven.Staelens@rug.ac.be}{\texttt{ Steven.\+Staelens@rug.\+ac.\+be}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSpblurring_a0aba03968d81524fed0d88947e7882c5}\label{classGateSpblurring_a0aba03968d81524fed0d88947e7882c5}} 
+\index{GateSpblurring@{GateSpblurring}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateSpblurring@{GateSpblurring}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Spblurring\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the blurring 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateSpblurring_ae534899da5b0625be57acd6747aa41b2}\label{classGateSpblurring_ae534899da5b0625be57acd6747aa41b2}} 
+\index{GateSpblurring@{GateSpblurring}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateSpblurring@{GateSpblurring}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Spblurring\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateSpblurring_a26570f39378158a7178e91b05d601879}\label{classGateSpblurring_a26570f39378158a7178e91b05d601879}} 
+\index{GateSpblurring@{GateSpblurring}!SetSpresolution@{SetSpresolution}}
+\index{SetSpresolution@{SetSpresolution}!GateSpblurring@{GateSpblurring}}
+\doxysubsubsection{\texorpdfstring{SetSpresolution()}{SetSpresolution()}}
+{\footnotesize\ttfamily void Gate\+Spblurring\+::\+Set\+Spresolution (\begin{DoxyParamCaption}\item[{G4double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function sets the spresolution of a gaussian spblurring. 
+
+If you want a resolution of 10\%, Set\+Spresolution(0.\+1) 
+\begin{DoxyParams}{Parameters}
+{\em val} & is a real number \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Spblurring.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Spblurring.\+cc\end{DoxyCompactItemize}

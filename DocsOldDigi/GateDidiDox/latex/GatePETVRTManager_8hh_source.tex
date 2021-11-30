@@ -1,0 +1,41 @@
+\hypertarget{GatePETVRTManager_8hh_source}{}\doxysection{Gate\+PETVRTManager.\+hh}
+\label{GatePETVRTManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GatePETVRTManager.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GatePETVRTManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GatePETVRTManager\_hh}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GatePETVRTManager\_hh}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateMaterialTableToProductionCutsTable.hh"{}}}
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePETVRTSettings}{GatePETVRTSettings}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{// This implementation is NOT thread-\/safe!}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePETVRTManager}{GatePETVRTManager}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keyword}{public}:}
+\DoxyCodeLine{21         \textcolor{keyword}{static} \mbox{\hyperlink{classGatePETVRTManager}{GatePETVRTManager}}* GetInstance();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \mbox{\hyperlink{classGateMaterialTableToProductionCutsTable}{GateMaterialTableToProductionCutsTable}}* GetMaterialTableToProductionCutsTable();}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} RegisterPETVRTSettings ( \mbox{\hyperlink{classGatePETVRTSettings}{GatePETVRTSettings}}*, \textcolor{keywordtype}{bool} deleteWithManager );}
+\DoxyCodeLine{25         \mbox{\hyperlink{classGatePETVRTSettings}{GatePETVRTSettings}}* GetOrCreatePETVRTSettings();}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} DeletePETVRTSettings();}
+\DoxyCodeLine{27     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{28         \mbox{\hyperlink{classGatePETVRTManager}{GatePETVRTManager}}();}
+\DoxyCodeLine{29         \mbox{\hyperlink{classGatePETVRTManager}{\string~GatePETVRTManager}}();}
+\DoxyCodeLine{30     \textcolor{keyword}{private}:}
+\DoxyCodeLine{31         \mbox{\hyperlink{classGateMaterialTableToProductionCutsTable}{GateMaterialTableToProductionCutsTable}} m\_oMPTable;}
+\DoxyCodeLine{32         \textcolor{keyword}{static} \mbox{\hyperlink{classGatePETVRTManager}{GatePETVRTManager}}* m\_sInstance;}
+\DoxyCodeLine{33         \mbox{\hyperlink{classGatePETVRTSettings}{GatePETVRTSettings}}* pGatePETVRTSettings;}
+\DoxyCodeLine{34         \textcolor{keywordtype}{bool} m\_nDeletePETVRTSettings;}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

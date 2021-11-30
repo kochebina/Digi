@@ -1,0 +1,65 @@
+\hypertarget{GateVisAttributesMessenger_8hh_source}{}\doxysection{Gate\+Vis\+Attributes\+Messenger.\+hh}
+\label{GateVisAttributesMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVisAttributesMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateVisAttributesMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateVisAttributesMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateVisAttributesMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4VisAttributes.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVisAttributesMessenger}{GateVisAttributesMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateMessenger}{GateMessenger}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateVisAttributesMessenger}{GateVisAttributesMessenger}}(G4VisAttributes* itsVisAttributes,}
+\DoxyCodeLine{22                  \textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{23   \mbox{\hyperlink{classGateVisAttributesMessenger}{\string~GateVisAttributesMessenger}}();}
+\DoxyCodeLine{24     }
+\DoxyCodeLine{25   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4VisAttributes* GetVisAttributes() \{ \textcolor{keywordflow}{return} pVisAttributes; \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetColor(\textcolor{keyword}{const} G4String\& colorName);}
+\DoxyCodeLine{30   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetLineStyle(\textcolor{keyword}{const} G4String\& lineStyleName);}
+\DoxyCodeLine{31   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} TelVisManagerToUpdate();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{private}:}
+\DoxyCodeLine{34   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4Colour>}} \mbox{\hyperlink{classGateMap}{GateColorMap}} ;}
+\DoxyCodeLine{35   \textcolor{keyword}{typedef} GateColorMap::MapPair GateColorPair ;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keyword}{static} GateColorPair theColorTable[];}
+\DoxyCodeLine{38   \textcolor{keyword}{static} \mbox{\hyperlink{classGateMap}{GateColorMap}} theColorMap;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{typedef} \mbox{\hyperlink{classGateMap}{GateMap<G4String,G4VisAttributes::LineStyle>}} \mbox{\hyperlink{classGateMap}{GateLineStyleMap}} ;}
+\DoxyCodeLine{41   \textcolor{keyword}{typedef} GateLineStyleMap::MapPair GateLineStylePair ;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{static} GateLineStylePair theLineStyleTable[];}
+\DoxyCodeLine{44   \textcolor{keyword}{static} \mbox{\hyperlink{classGateMap}{GateLineStyleMap}} theLineStyleMap;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{private}:}
+\DoxyCodeLine{47   G4VisAttributes*       pVisAttributes;}
+\DoxyCodeLine{48   G4UIcmdWithAString*    pSetColorCmd;}
+\DoxyCodeLine{49   G4UIcmdWithABool*      pSetVisibilityCmd;}
+\DoxyCodeLine{50   G4UIcmdWithABool*      pSetDaughtersInvisibleCmd;}
+\DoxyCodeLine{51   G4UIcmdWithAString*    pSetLineStyleCmd;}
+\DoxyCodeLine{52   G4UIcmdWithADouble*    pSetLineWidthCmd;}
+\DoxyCodeLine{53   G4UIcmdWithABool*      pForceSolidCmd;}
+\DoxyCodeLine{54   G4UIcmdWithABool*      pForceWireframeCmd;}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+
+\end{DoxyCode}

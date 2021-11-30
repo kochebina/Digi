@@ -1,0 +1,109 @@
+\hypertarget{classGateGenericMove}{}\doxysection{Gate\+Generic\+Move Class Reference}
+\label{classGateGenericMove}\index{GateGenericMove@{GateGenericMove}}
+
+
+The \mbox{\hyperlink{classGateGenericMove}{Gate\+Generic\+Move}} models a motion described with several rotations.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Generic\+Move.\+hh$>$}
+
+Inheritance diagram for Gate\+Generic\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateGenericMove}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericMove_a49bb3a70b4a0f49ef97a93dcd2aa65b0}\label{classGateGenericMove_a49bb3a70b4a0f49ef97a93dcd2aa65b0}} 
+{\bfseries Gate\+Generic\+Move} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$its\+Object\+Inserter, const G4\+String \&its\+Name)
+\item 
+virtual void \mbox{\hyperlink{classGateGenericMove_a9456dd56ed16a07da541265affa0fae9}{Push\+My\+Placements}} (const G4\+Rotation\+Matrix \&current\+Rotation\+Matrix, const G4\+Three\+Vector \&current\+Position, G4double a\+Time)
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateGenericMove_ae8e02bf388f27ca79380c3b5ba85cc25}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Pure virtual method (to be implemented in sub-\/classes) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateGenericMove_af8b2209468f3c74083d6e3d1cb935148}\label{classGateGenericMove_af8b2209468f3c74083d6e3d1cb935148}} 
+void {\bfseries Set\+Filename} (G4\+String filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateGenericMove_aa3a143bd3a2970cb07ed568e0795ee01}\label{classGateGenericMove_aa3a143bd3a2970cb07ed568e0795ee01}} 
+\mbox{\hyperlink{classGateGenericMoveMessenger}{Gate\+Generic\+Move\+Messenger}} $\ast$ {\bfseries m\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateGenericMove_a16c032a5f9ad13a348af186f4f1a3ac1}\label{classGateGenericMove_a16c032a5f9ad13a348af186f4f1a3ac1}} 
+std\+::vector$<$ Gate\+Placement $>$ {\bfseries m\+Placements\+List}
+\item 
+\mbox{\Hypertarget{classGateGenericMove_af215afefc930ec55180ae9af344f11d1}\label{classGateGenericMove_af215afefc930ec55180ae9af344f11d1}} 
+std\+::vector$<$ double $>$ {\bfseries m\+Time\+List}
+\item 
+\mbox{\Hypertarget{classGateGenericMove_a3f5fd38c79a69319a2b265d4fa43dbb2}\label{classGateGenericMove_a3f5fd38c79a69319a2b265d4fa43dbb2}} 
+bool {\bfseries m\+Use\+Rotation}
+\item 
+\mbox{\Hypertarget{classGateGenericMove_acfac5c6af6c44edcd8364b586f224223}\label{classGateGenericMove_acfac5c6af6c44edcd8364b586f224223}} 
+bool {\bfseries m\+Use\+Translation}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGateGenericMove}{Gate\+Generic\+Move}} models a motion described with several rotations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateGenericMove_ae8e02bf388f27ca79380c3b5ba85cc25}\label{classGateGenericMove_ae8e02bf388f27ca79380c3b5ba85cc25}} 
+\index{GateGenericMove@{GateGenericMove}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateGenericMove@{GateGenericMove}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Move\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must print-\/out a short description of the repeater
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_a0e8c9af31eb5d57d6fa92d2fe2f86a4b}{Gate\+VGlobal\+Placement}}.
+
+\mbox{\Hypertarget{classGateGenericMove_a9456dd56ed16a07da541265affa0fae9}\label{classGateGenericMove_a9456dd56ed16a07da541265affa0fae9}} 
+\index{GateGenericMove@{GateGenericMove}!PushMyPlacements@{PushMyPlacements}}
+\index{PushMyPlacements@{PushMyPlacements}!GateGenericMove@{GateGenericMove}}
+\doxysubsubsection{\texorpdfstring{PushMyPlacements()}{PushMyPlacements()}}
+{\footnotesize\ttfamily void Gate\+Generic\+Move\+::\+Push\+My\+Placements (\begin{DoxyParamCaption}\item[{const G4\+Rotation\+Matrix \&}]{current\+Rotation\+Matrix,  }\item[{const G4\+Three\+Vector \&}]{current\+Position,  }\item[{G4double}]{a\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method (to be implemented in sub-\/classes) 
+
+Must compute a series of placements (position+orientation) for a series of copies of the
+
+orignal volume. These placements must be stored in the placement queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Rotation\+Matrix} & the rotation matrix that defines the current orientation of the volume \\
+\hline
+{\em current\+Position} & the vector that defines the current position of the volume \\
+\hline
+{\em a\+Time} & the current time \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGateVGlobalPlacement_afd66e610bd702eb6ad6e7374f8c16b0e}{Gate\+VGlobal\+Placement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+Generic\+Move.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+Generic\+Move.\+cc\end{DoxyCompactItemize}

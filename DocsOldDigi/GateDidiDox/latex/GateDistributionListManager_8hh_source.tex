@@ -1,0 +1,62 @@
+\hypertarget{GateDistributionListManager_8hh_source}{}\doxysection{Gate\+Distribution\+List\+Manager.\+hh}
+\label{GateDistributionListManager_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionListManager.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDistributionListManager.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateDistributionListManager\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateDistributionListManager\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateListManager.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionListMessenger}{GateDistributionListMessenger}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateListManager}{GateListManager}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22   \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \textcolor{keyword}{static} \mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}}* GetInstance();}
+\DoxyCodeLine{24     \textcolor{keyword}{static} \textcolor{keywordtype}{void} Init();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDistributionListManager_a4f36aad9da5d737f6b2735fc71c93009}{\string~GateDistributionListManager}}(); }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{private}:}
+\DoxyCodeLine{29     \mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}}();   }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDistributionListManager_a27203a5a3bb70f3b1cdc8344710c5054}{RegisterDistribution}}(\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* newDistribution);   }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* \mbox{\hyperlink{classGateDistributionListManager_a21bd4ea19d5f2d28cea7ecae9ce23278}{FindDistribution}}(\textcolor{keyword}{const} G4String\& name)}
+\DoxyCodeLine{43       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}*) FindElement(name); \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}* \mbox{\hyperlink{classGateDistributionListManager_ac6d13d9f393215b328af012b3c0f61b8}{GetDistribution}}(\textcolor{keywordtype}{size\_t} i)}
+\DoxyCodeLine{51       \{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVDistribution}{GateVDistribution}}*) GetElement(i);\}              }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{56     \mbox{\hyperlink{classGateDistributionListMessenger}{GateDistributionListMessenger}}* \mbox{\hyperlink{classGateDistributionListManager_ae6306105aff53c4772034f0b59dd3c94}{m\_messenger}};    }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{private}:}
+\DoxyCodeLine{60     \textcolor{keyword}{static} \mbox{\hyperlink{classGateDistributionListManager}{GateDistributionListManager}}* theGateDistributionListManager;}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

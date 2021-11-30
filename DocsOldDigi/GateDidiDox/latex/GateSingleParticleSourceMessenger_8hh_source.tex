@@ -1,0 +1,292 @@
+\hypertarget{GateSingleParticleSourceMessenger_8hh_source}{}\doxysection{Gate\+Single\+Particle\+Source\+Messenger.\+hh}
+\label{GateSingleParticleSourceMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSingleParticleSourceMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSingleParticleSourceMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ * }}
+\DoxyCodeLine{10 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{11 \textcolor{comment}{ *  GateSingleParticleSourceMessenger remplace  GateGeneralParticleSourceM-\/*}}
+\DoxyCodeLine{12 \textcolor{comment}{ *  essenger                                                               *}}
+\DoxyCodeLine{13 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{14 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ *}}
+\DoxyCodeLine{17 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{18 \textcolor{comment}{ *  \(\backslash\)file GateGeneralParticleSourceMessenger.hh                            *}}
+\DoxyCodeLine{19 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{20 \textcolor{comment}{ *  Revision 1.5 2014/08/1 Yann PERROT and Simon NICOLAS                   *}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  Add command: "{}setUserSpectrumCmd"{}                                      *}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  This command allows to load files describing energies and probabilities*}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  from a user spectrum.                                                     *                                                                                                        }}
+\DoxyCodeLine{24 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  \$Log: GateGeneralParticleSourceMessenger.hh,v \$                        *}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  Revision 1.4  2008/03    dbenoit and fcassol                           * }}
+\DoxyCodeLine{27 \textcolor{comment}{ *  Update the GateSingleParticleSourceMessenger                           *}}
+\DoxyCodeLine{28 \textcolor{comment}{ *                                                                         * }}
+\DoxyCodeLine{29 \textcolor{comment}{ *  Revision 1.3  2002/10/11 14:52:38  lsimon                              *}}
+\DoxyCodeLine{30 \textcolor{comment}{ *  Bug fix: the destruction of the UI directory is not left to the        *}}
+\DoxyCodeLine{31 \textcolor{comment}{ *  base-\/class GateMessenger, to avoid a double-\/attempt of destruction     *}}
+\DoxyCodeLine{32 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  Revision 1.2  2002/08/11 15:33:24  dstrul                              *}}
+\DoxyCodeLine{34 \textcolor{comment}{ *  Cosmetic cleanup: standardized file comments for cleaner doxygen output*}}
+\DoxyCodeLine{35 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{36 \textcolor{comment}{ *  \(\backslash\)brief Class GateGeneralParticleSourceMessenger                        *}}
+\DoxyCodeLine{37 \textcolor{comment}{ *  \(\backslash\)brief By Giovanni.Santin@cern.ch                                      *}}
+\DoxyCodeLine{38 \textcolor{comment}{ *  \(\backslash\)brief \$Id: GateGeneralParticleSourceMessenger.hh,v 1.3 2002/10/11     * }}
+\DoxyCodeLine{39 \textcolor{comment}{ *  14:52:38 lsimon Exp \$                                                  *}}
+\DoxyCodeLine{40 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{41 \textcolor{comment}{ *  \(\backslash\)brief Class GateSingleParticleSourceMessenger                         *}}
+\DoxyCodeLine{42 \textcolor{comment}{ *  \(\backslash\)brief By benoit@cppm.in2p3.fr and cassol@cppm.in2p3.fr                *}}
+\DoxyCodeLine{43 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{44 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{45  }
+\DoxyCodeLine{46 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ *}}
+\DoxyCodeLine{47 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{48 \textcolor{comment}{ *  A large part of the code below is a direct copy of the content of the  *}}
+\DoxyCodeLine{49 \textcolor{comment}{ *  G4Tokenizer class from Geant4.4.0. It is thus the intellectual property*}}
+\DoxyCodeLine{50 \textcolor{comment}{ *  of the Geant4 collaboration and is submitted to their disclaimer       *}}
+\DoxyCodeLine{51 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{52 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{53  }
+\DoxyCodeLine{54 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ *}}
+\DoxyCodeLine{55 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{56 \textcolor{comment}{ *  Class Description :                                                    *}}
+\DoxyCodeLine{57 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{58 \textcolor{comment}{ *  The function of the GateSingleParticleSourceMessenger is to allow the  *}}
+\DoxyCodeLine{59 \textcolor{comment}{ *  user to enter commands either in interactive command line mode or      *}}
+\DoxyCodeLine{60 \textcolor{comment}{ *  through macros to control the G4SingleParticleSource. the              *}}
+\DoxyCodeLine{61 \textcolor{comment}{ *  GateGeneralParticleSourceMessenger class is based on                   *}}
+\DoxyCodeLine{62 \textcolor{comment}{ *  G4ParticleGunMessenger.                                                *}}
+\DoxyCodeLine{63 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{64 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ *}}
+\DoxyCodeLine{67 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{68 \textcolor{comment}{ *  MEMBER FUNCTIONS :                                                     *}}
+\DoxyCodeLine{69 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{70 \textcolor{comment}{ *  GateSingleParticleSourceMessenger(GateSingleParticleSource* fPtclGun)  *}}
+\DoxyCodeLine{71 \textcolor{comment}{ *    Constructor:  Sets up commands.                                      *}}
+\DoxyCodeLine{72 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{73 \textcolor{comment}{ *  \string~GateGeneralParticleSourceMessenger()                                  *}}
+\DoxyCodeLine{74 \textcolor{comment}{ *    Destructor:  Deletes commands.                                       *}}
+\DoxyCodeLine{75 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{76 \textcolor{comment}{ *  void SetNewValue(G4UIcommand *command, G4String newValues)             *}}
+\DoxyCodeLine{77 \textcolor{comment}{ *    Uses the appropriate methods in the G4SingleParticleSource to carry  *}}
+\DoxyCodeLine{78 \textcolor{comment}{ *    out the user commands.                                               *}}
+\DoxyCodeLine{79 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{80 \textcolor{comment}{ *  G4String GetCurrentValue(G4UIcommand *command)                         *}}
+\DoxyCodeLine{81 \textcolor{comment}{ *    Allows the user to retrieve the current values of parameters.        *}}
+\DoxyCodeLine{82 \textcolor{comment}{ *    Not implemented yet.                                                 *}}
+\DoxyCodeLine{83 \textcolor{comment}{ *                                                                         *}}
+\DoxyCodeLine{84 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#ifndef GATESINGLEPARTICLESOURCEMESSENGER\_H}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define GATESINGLEPARTICLESOURCEMESSENGER\_H 1}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#include "{}GateMessenger.hh"{}}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keyword}{class }G4ParticleTable;}
+\DoxyCodeLine{95 \textcolor{keyword}{class }G4UIcommand;}
+\DoxyCodeLine{96 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{97 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{98 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{99 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{100 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{101 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{102 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{103 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{104 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{105 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{106 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSource}{GateVSource}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{109 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSingleParticleSourceMessenger}{GateSingleParticleSourceMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateMessenger}{GateMessenger}}}
+\DoxyCodeLine{110 \{}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112  \textcolor{keyword}{public}:}
+\DoxyCodeLine{113   }
+\DoxyCodeLine{114   \mbox{\hyperlink{classGateSingleParticleSourceMessenger}{GateSingleParticleSourceMessenger}}( \mbox{\hyperlink{classGateVSource}{GateVSource}}* fPtclGun ) ;}
+\DoxyCodeLine{115   \mbox{\hyperlink{classGateSingleParticleSourceMessenger}{\string~GateSingleParticleSourceMessenger}}() ;}
+\DoxyCodeLine{116     }
+\DoxyCodeLine{117   \textcolor{keywordtype}{void} SetNewValue( G4UIcommand* command, G4String newValues ) ;}
+\DoxyCodeLine{118       \textcolor{comment}{/*Identifies the command which has been invoked by the user, extracts }}
+\DoxyCodeLine{119 \textcolor{comment}{        the parameters associated with that command (held in newValues), and }}
+\DoxyCodeLine{120 \textcolor{comment}{    uses these values with the appropriate member function of }}
+\DoxyCodeLine{121 \textcolor{comment}{    G4SingleParticleSource.*/}}
+\DoxyCodeLine{122   }
+\DoxyCodeLine{123   G4String GetCurrentValue( G4UIcommand* command ) ;}
+\DoxyCodeLine{124   \textcolor{keyword}{inline} G4bool GetIonShooting()\textcolor{keyword}{ const                 }\{ \textcolor{keywordflow}{return} fShootIon; \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126  \textcolor{keyword}{private}:}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} IonCommand( G4String newValues ) ;}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130  \textcolor{keyword}{private}:}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132   \textcolor{comment}{//G4ParticleTable* particleTable ;}}
+\DoxyCodeLine{133   G4String histtype ;}
+\DoxyCodeLine{134   G4int    fNArbEHistPoints;}
+\DoxyCodeLine{135   G4bool   fArbInterModeSet;}
+\DoxyCodeLine{136   \mbox{\hyperlink{classGateVSource}{GateVSource}}* fParticleGun ;}
+\DoxyCodeLine{137      }
+\DoxyCodeLine{138  \textcolor{keyword}{private}: \textcolor{comment}{//commands}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140    \textcolor{comment}{// positional commands}}
+\DoxyCodeLine{141   G4UIdirectory              *positionDirectory;}
+\DoxyCodeLine{142   G4UIcmdWithAString         *typeCmd1;}
+\DoxyCodeLine{143   G4UIcmdWithAString         *shapeCmd1;}
+\DoxyCodeLine{144   G4UIcmdWith3VectorAndUnit  *centreCmd1;}
+\DoxyCodeLine{145   G4UIcmdWith3Vector         *posrot1Cmd1;}
+\DoxyCodeLine{146   G4UIcmdWith3Vector         *posrot2Cmd1;}
+\DoxyCodeLine{147   G4UIcmdWithADoubleAndUnit  *halfxCmd1;}
+\DoxyCodeLine{148   G4UIcmdWithADoubleAndUnit  *halfyCmd1;}
+\DoxyCodeLine{149   G4UIcmdWithADoubleAndUnit  *halfzCmd1;}
+\DoxyCodeLine{150   G4UIcmdWithADoubleAndUnit  *radiusCmd1;}
+\DoxyCodeLine{151   G4UIcmdWithADoubleAndUnit  *radius0Cmd1;}
+\DoxyCodeLine{152   G4UIcmdWithADoubleAndUnit  *possigmarCmd1;}
+\DoxyCodeLine{153   G4UIcmdWithADoubleAndUnit  *possigmaxCmd1;}
+\DoxyCodeLine{154   G4UIcmdWithADoubleAndUnit  *possigmayCmd1;}
+\DoxyCodeLine{155   G4UIcmdWithADoubleAndUnit  *paralpCmd1;}
+\DoxyCodeLine{156   G4UIcmdWithADoubleAndUnit  *partheCmd1;}
+\DoxyCodeLine{157   G4UIcmdWithADoubleAndUnit  *parphiCmd1;  }
+\DoxyCodeLine{158   G4UIcmdWithAString         *confineCmd1;  }
+\DoxyCodeLine{159   }
+\DoxyCodeLine{160   G4UIcmdWithAString*         relativePlacementCmd;}
+\DoxyCodeLine{161   G4UIcmdWithAString*         typeCmd ;}
+\DoxyCodeLine{162   G4UIcmdWithAString*         shapeCmd ;}
+\DoxyCodeLine{163   G4UIcmdWith3VectorAndUnit*  centreCmd ;}
+\DoxyCodeLine{164   G4UIcmdWithAString*         positronRangeCmd ;}
+\DoxyCodeLine{165   G4UIcmdWith3Vector*         posrot1Cmd ;}
+\DoxyCodeLine{166   G4UIcmdWith3Vector*         posrot2Cmd ;}
+\DoxyCodeLine{167   G4UIcmdWithADoubleAndUnit*  halfxCmd ;}
+\DoxyCodeLine{168   G4UIcmdWithADoubleAndUnit*  halfyCmd ;}
+\DoxyCodeLine{169   G4UIcmdWithADoubleAndUnit*  halfzCmd ;}
+\DoxyCodeLine{170   G4UIcmdWithADoubleAndUnit*  radiusCmd ;}
+\DoxyCodeLine{171   G4UIcmdWithADoubleAndUnit*  radius0Cmd ; }
+\DoxyCodeLine{172   G4UIcmdWithADoubleAndUnit*  possigmarCmd ;}
+\DoxyCodeLine{173   G4UIcmdWithADoubleAndUnit*  possigmaxCmd ;}
+\DoxyCodeLine{174   G4UIcmdWithADoubleAndUnit*  possigmayCmd ;}
+\DoxyCodeLine{175   G4UIcmdWithADoubleAndUnit*  paralpCmd ;}
+\DoxyCodeLine{176   G4UIcmdWithADoubleAndUnit*  partheCmd ;}
+\DoxyCodeLine{177   G4UIcmdWithADoubleAndUnit*  parphiCmd ;  }
+\DoxyCodeLine{178   G4UIcmdWithAString*         confineCmd ;         }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180   }
+\DoxyCodeLine{181   G4UIcmdWithAString         *angtypeCmd1;}
+\DoxyCodeLine{182   G4UIcmdWithADoubleAndUnit  *angradiusCmd1;}
+\DoxyCodeLine{183   G4UIcmdWith3VectorAndUnit  *angcentreCmd1;}
+\DoxyCodeLine{184   G4UIcmdWith3Vector         *angrot1Cmd1;}
+\DoxyCodeLine{185   G4UIcmdWith3Vector         *angrot2Cmd1;}
+\DoxyCodeLine{186   G4UIcmdWithADoubleAndUnit  *minthetaCmd1;}
+\DoxyCodeLine{187   G4UIcmdWithADoubleAndUnit  *maxthetaCmd1;}
+\DoxyCodeLine{188   G4UIcmdWithADoubleAndUnit  *minphiCmd1;}
+\DoxyCodeLine{189   G4UIcmdWithADoubleAndUnit  *maxphiCmd1;}
+\DoxyCodeLine{190   G4UIcmdWithADoubleAndUnit  *angsigmarCmd1;}
+\DoxyCodeLine{191   G4UIcmdWithADoubleAndUnit  *angsigmaxCmd1;}
+\DoxyCodeLine{192   G4UIcmdWithADoubleAndUnit  *angsigmayCmd1;}
+\DoxyCodeLine{193   G4UIcmdWith3VectorAndUnit  *angfocusCmd;}
+\DoxyCodeLine{194   G4UIcmdWithABool           *useuserangaxisCmd1;}
+\DoxyCodeLine{195   G4UIcmdWithABool           *surfnormCmd1;}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198   G4UIcmdWithAString*         angtypeCmd ;}
+\DoxyCodeLine{199   G4UIcmdWith3Vector*         angrot1Cmd ;}
+\DoxyCodeLine{200   G4UIcmdWith3Vector*         angrot2Cmd ;}
+\DoxyCodeLine{201   G4UIcmdWithADoubleAndUnit*  minthetaCmd ;}
+\DoxyCodeLine{202   G4UIcmdWithADoubleAndUnit*  maxthetaCmd ;}
+\DoxyCodeLine{203   G4UIcmdWithADoubleAndUnit*  minphiCmd ;}
+\DoxyCodeLine{204   G4UIcmdWithADoubleAndUnit*  maxphiCmd ;}
+\DoxyCodeLine{205   G4UIcmdWithADoubleAndUnit*  angsigmarCmd ;}
+\DoxyCodeLine{206   G4UIcmdWithADoubleAndUnit*  angsigmaxCmd ;}
+\DoxyCodeLine{207   G4UIcmdWithADoubleAndUnit*  angsigmayCmd ;}
+\DoxyCodeLine{208   G4UIcmdWithABool*           useuserangaxisCmd ;}
+\DoxyCodeLine{209   G4UIcmdWithABool*           surfnormCmd ;}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211   G4UIdirectory              *energyDirectory;}
+\DoxyCodeLine{212   G4UIcmdWithAString         *energytypeCmd1;}
+\DoxyCodeLine{213   G4UIcmdWithADoubleAndUnit  *eminCmd1;}
+\DoxyCodeLine{214   G4UIcmdWithADoubleAndUnit  *emaxCmd1;}
+\DoxyCodeLine{215   G4UIcmdWithADoubleAndUnit  *monoenergyCmd1;}
+\DoxyCodeLine{216   G4UIcmdWithADoubleAndUnit  *engsigmaCmd1;}
+\DoxyCodeLine{217   G4UIcmdWithADouble         *alphaCmd1;}
+\DoxyCodeLine{218   G4UIcmdWithADouble         *tempCmd1;}
+\DoxyCodeLine{219   G4UIcmdWithADouble         *ezeroCmd1;}
+\DoxyCodeLine{220   G4UIcmdWithADouble         *gradientCmd1;}
+\DoxyCodeLine{221   G4UIcmdWithADouble         *interceptCmd1;}
+\DoxyCodeLine{222   G4UIcmdWithoutParameter    *calculateCmd1;}
+\DoxyCodeLine{223   G4UIcmdWithABool           *energyspecCmd1;}
+\DoxyCodeLine{224   G4UIcmdWithABool           *diffspecCmd1;}
+\DoxyCodeLine{225  }
+\DoxyCodeLine{226   }
+\DoxyCodeLine{227   G4UIcmdWithAString*         energytypeCmd ;}
+\DoxyCodeLine{228   }
+\DoxyCodeLine{229   G4UIcmdWithADoubleAndUnit*  eminCmd ;}
+\DoxyCodeLine{230   G4UIcmdWithADoubleAndUnit*  emaxCmd ;}
+\DoxyCodeLine{231   G4UIcmdWithADoubleAndUnit*  monoenergyCmd ;}
+\DoxyCodeLine{232   G4UIcmdWithADoubleAndUnit*  engsigmaCmd ;}
+\DoxyCodeLine{233   G4UIcmdWithADouble*         alphaCmd ;}
+\DoxyCodeLine{234   G4UIcmdWithADouble*         tempCmd ;}
+\DoxyCodeLine{235   G4UIcmdWithADouble*         ezeroCmd ;}
+\DoxyCodeLine{236   G4UIcmdWithADouble*         gradientCmd ;}
+\DoxyCodeLine{237   G4UIcmdWithADouble*         interceptCmd ;}
+\DoxyCodeLine{238   G4UIcmdWithoutParameter*    calculateCmd ;}
+\DoxyCodeLine{239   G4UIcmdWithABool*           energyspecCmd ;}
+\DoxyCodeLine{240   G4UIcmdWithABool*           diffspecCmd ;}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242   G4UIcmdWith3Vector*         histpointCmd1;}
+\DoxyCodeLine{243   G4UIcmdWithAString*         histtypeCmd;}
+\DoxyCodeLine{244   G4UIcmdWithAString*         arbintCmd1;}
+\DoxyCodeLine{245   G4UIcmdWithAString*         resethistCmd1;}
+\DoxyCodeLine{246   }
+\DoxyCodeLine{247   }
+\DoxyCodeLine{248   G4UIcmdWith3Vector*         histpointCmd ;}
+\DoxyCodeLine{249   G4UIcmdWithAString*         histnameCmd ;}
+\DoxyCodeLine{250   G4UIcmdWithAString*         arbintCmd ;}
+\DoxyCodeLine{251   G4UIcmdWithAString*         resethistCmd ;}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253   G4UIcmdWithAnInteger*       verbosityCmd ;}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255   \textcolor{comment}{// below are commands from G4ParticleGun}}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257   G4UIcommand*                ionCmd ;}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259   G4UIcmdWithAString*         particleCmd ;}
+\DoxyCodeLine{260   G4UIcmdWithADoubleAndUnit*  timeCmd ;}
+\DoxyCodeLine{261   G4UIcmdWith3Vector*         polCmd ;}
+\DoxyCodeLine{262   G4UIcmdWithAnInteger*       numberCmd ;}
+\DoxyCodeLine{263   }
+\DoxyCodeLine{264   G4UIcmdWith3VectorAndUnit*  positionCmd ;}
+\DoxyCodeLine{265   G4UIcmdWith3Vector*         directionCmd ;}
+\DoxyCodeLine{266   G4UIcmdWithADoubleAndUnit*  energyCmd ;}
+\DoxyCodeLine{267   G4UIcmdWithoutParameter*    listCmd ;}
+\DoxyCodeLine{268   }
+\DoxyCodeLine{269   G4UIcmdWithAString*         ForbidCmd;}
+\DoxyCodeLine{270   G4UIcmdWithAString*         setImageCmd1;}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273   G4UIcmdWithAString*         setUserSpectrumCmd;      }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275   }
+\DoxyCodeLine{276  \textcolor{keyword}{private}: \textcolor{comment}{// for ion shooting}}
+\DoxyCodeLine{277   }
+\DoxyCodeLine{278   G4bool   fShootIon ; }
+\DoxyCodeLine{279   G4int    fAtomicNumber ;}
+\DoxyCodeLine{280   G4int    fAtomicMass ;}
+\DoxyCodeLine{281   G4int    fIonCharge ;}
+\DoxyCodeLine{282   G4double fIonExciteEnergy ;}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \};}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,119 @@
+\hypertarget{GateKermaActor_8hh_source}{}\doxysection{Gate\+Kerma\+Actor.\+hh}
+\label{GateKermaActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateKermaActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateKermaActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef GATEKERMAACTOR\_HH}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GATEKERMAACTOR\_HH}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <G4NistManager.hh>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateKermaActorMessenger.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}GateVoxelizedMass.hh"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }G4EmCalculator;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateKermaActor}{GateKermaActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32  \textcolor{keyword}{public}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{36   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateKermaActor_a9a53de3956fca30a06c4ade65129d83a}{\string~GateKermaActor}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateKermaActor}{GateKermaActor}})}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateKermaActor_a716ad10c2b858ea17eeba71d7f912695}{Construct}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordtype}{void} EnableEdepImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepImageEnabled = b; \}}
+\DoxyCodeLine{45   \textcolor{keywordtype}{void} EnableEdepSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepSquaredImageEnabled = b; \}}
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} EnableEdepUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} EnableDoseImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseImageEnabled = b; \}}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} EnableDoseSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseSquaredImageEnabled = b; \}}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} EnableDoseUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} EnableDoseToWaterImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToWaterImageEnabled = b; \}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} EnableDoseToWaterSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToWaterSquaredImageEnabled = b; \}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} EnableDoseToWaterUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToWaterUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} EnableNumberOfHitsImage(\textcolor{keywordtype}{bool} b) \{ mIsNumberOfHitsImageEnabled = b; \}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} EnableDoseNormalisation(\textcolor{keywordtype}{bool} b) \{ mIsDoseNormalisationEnabled = b; mDoseImage.SetScaleFactor(1.0); \}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} EnableDoseToWaterNormalisation(\textcolor{keywordtype}{bool} b) \{ mIsDoseToWaterNormalisationEnabled = b; mDoseToWaterImage.SetScaleFactor(1.0); \}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} SetDoseAlgorithmType(G4String b) \{ mDoseAlgorithmType = b; \}}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} ImportMassImage(G4String b)      \{ mImportMassImage = b; \}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} ExportMassImage(G4String b)      \{ mExportMassImage = b; \}}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} VolumeFilter(G4String b)         \{ mVolumeFilter = b; \}}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} MaterialFilter(G4String b)       \{ mMaterialFilter = b; \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateKermaActor_acabfdf17dbeb4f357adb0a83b112115a}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{66   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{67   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateKermaActor_ac94c745e0a146e437fff238c6b4794d5}{SaveData}}();}
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{75   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateKermaActor_a71c7ba430e8251c65543d4b0acf440c5}{Initialize}}(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{79   \mbox{\hyperlink{classGateKermaActor}{GateKermaActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{80   \mbox{\hyperlink{classGateKermaActorMessenger}{GateKermaActorMessenger}} * pMessenger;}
+\DoxyCodeLine{81   \mbox{\hyperlink{classGateVoxelizedMass}{GateVoxelizedMass}} mVoxelizedMass;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keywordtype}{bool} mIsLastHitEventImageEnabled;}
+\DoxyCodeLine{86   \textcolor{keywordtype}{bool} mIsEdepImageEnabled;}
+\DoxyCodeLine{87   \textcolor{keywordtype}{bool} mIsEdepSquaredImageEnabled;}
+\DoxyCodeLine{88   \textcolor{keywordtype}{bool} mIsEdepUncertaintyImageEnabled;}
+\DoxyCodeLine{89   \textcolor{keywordtype}{bool} mIsDoseImageEnabled;}
+\DoxyCodeLine{90   \textcolor{keywordtype}{bool} mIsDoseSquaredImageEnabled;}
+\DoxyCodeLine{91   \textcolor{keywordtype}{bool} mIsDoseUncertaintyImageEnabled;}
+\DoxyCodeLine{92   \textcolor{keywordtype}{bool} mIsDoseToWaterImageEnabled;}
+\DoxyCodeLine{93   \textcolor{keywordtype}{bool} mIsDoseToWaterSquaredImageEnabled;}
+\DoxyCodeLine{94   \textcolor{keywordtype}{bool} mIsDoseToWaterUncertaintyImageEnabled;}
+\DoxyCodeLine{95   \textcolor{keywordtype}{bool} mIsNumberOfHitsImageEnabled;}
+\DoxyCodeLine{96   \textcolor{keywordtype}{bool} mIsDoseNormalisationEnabled;}
+\DoxyCodeLine{97   \textcolor{keywordtype}{bool} mIsDoseToWaterNormalisationEnabled;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mEdepImage;}
+\DoxyCodeLine{100   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseImage;}
+\DoxyCodeLine{101   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseToWaterImage;}
+\DoxyCodeLine{102   \mbox{\hyperlink{classGateImage}{GateImage}} mNumberOfHitsImage;}
+\DoxyCodeLine{103   \mbox{\hyperlink{classGateImage}{GateImage}} mLastHitEventImage;}
+\DoxyCodeLine{104   \mbox{\hyperlink{classGateImageT}{GateImageDouble}} mMassImage;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   G4String mEdepFilename;}
+\DoxyCodeLine{107   G4String mDoseFilename;}
+\DoxyCodeLine{108   G4String mDoseToWaterFilename;}
+\DoxyCodeLine{109   G4String mNbOfHitsFilename;}
+\DoxyCodeLine{110   G4String mDoseAlgorithmType;}
+\DoxyCodeLine{111   G4String mImportMassImage;}
+\DoxyCodeLine{112   G4String mExportMassImage;}
+\DoxyCodeLine{113   G4String mVolumeFilter;}
+\DoxyCodeLine{114   G4String mMaterialFilter;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   G4EmCalculator * emcalc;}
+\DoxyCodeLine{117 \};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 MAKE\_AUTO\_CREATOR\_ACTOR(KermaActor,\mbox{\hyperlink{classGateKermaActor}{GateKermaActor}})}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESIMULATIONSTATISTICACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

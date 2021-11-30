@@ -1,0 +1,47 @@
+\hypertarget{GateRegularParam_8hh_source}{}\doxysection{Gate\+Regular\+Param.\+hh}
+\label{GateRegularParam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateRegularParam.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateRegularParam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEREGULARPARAMINSERTER\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEREGULARPARAMINSERTER\_HH 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateBox.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateRegularParameterization.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4PVParameterised;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRegularParam}{GateRegularParam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateBox}{GateBox}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26     \mbox{\hyperlink{classGateRegularParam_ac9f03ffb26b87dccb8d639a8e6f72ac2}{GateRegularParam}}(\textcolor{keyword}{const} G4String\& itsName, \mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}}* rpi);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateRegularParam_ad229648a8c2d0435fc0d4594d8589b37}{\string~GateRegularParam}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRegularParam_a755b02804ae5ddeaccd2fa39e4e15ea8}{ConstructOwnPhysicalVolume}}(G4bool flagUpdate);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} DestroyGeometry();}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{36     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateRegularParameterization}{GateRegularParameterization}}* \mbox{\hyperlink{classGateRegularParam_a6dfa16b9a42ec7f242621691625b4670}{GetParameterization}}() \{\textcolor{keywordflow}{return} m\_parameterization;\}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{private}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateRegularParameterized}{GateRegularParameterized}}*          itsInserter;}
+\DoxyCodeLine{41     \mbox{\hyperlink{classGateRegularParameterization}{GateRegularParameterization}}*       m\_parameterization;}
+\DoxyCodeLine{42     G4PVParameterised*                 m\_pvParameterized;}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

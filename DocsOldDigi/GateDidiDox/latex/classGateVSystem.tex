@@ -1,0 +1,261 @@
+\hypertarget{classGateVSystem}{}\doxysection{Gate\+VSystem Class Reference}
+\label{classGateVSystem}\index{GateVSystem@{GateVSystem}}
+
+
+A \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} is an integrated interface to a GATE geometry.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VSystem.\+hh$>$}
+
+Inheritance diagram for Gate\+VSystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateVSystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateVSystem_a9f51ea13cead36a54583b15b23a91344}{Gate\+VSystem}} (const G4\+String \&its\+Name, G4bool is\+With\+Gantry)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Description/print-\/out methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVSystem_a169630f08ef35da59c1d077e3c6dfef0}\label{classGateVSystem_a169630f08ef35da59c1d077e3c6dfef0}} 
+void {\bfseries Set\+Output\+IDName} (char $\ast$an\+Output\+IDName, size\+\_\+t depth)
+\begin{DoxyCompactList}\small\item\em Set the output\+ID name for a depth of the tree. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Describe}} (size\+\_\+t indent=0)
+\begin{DoxyCompactList}\small\item\em Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Describe()}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateVSystem_a0f2ca5a41d87527ede0dd8d6183f93ef}{Print\+To\+Stream}} (std\+::ostream \&, G4bool)
+\begin{DoxyCompactList}\small\item\em Virtual method to print a description of the system to a stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVSystem_ace226362d1d9a695c23a7b7df6c67c66}\label{classGateVSystem_ace226362d1d9a695c23a7b7df6c67c66}} 
+size\+\_\+t {\bfseries Get\+Tree\+Depth} () const
+\begin{DoxyCompactList}\small\item\em Compute the depth of the component tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Component access methods}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVSystem_aded365f3254846abc3fa9d2acc5d2d79}\label{classGateVSystem_aded365f3254846abc3fa9d2acc5d2d79}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ $>$ {\bfseries comp\+List\+\_\+t}
+\item 
+\mbox{\Hypertarget{classGateVSystem_adca7fc7ac144e81847b5a3a595c7377e}\label{classGateVSystem_adca7fc7ac144e81847b5a3a595c7377e}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries m\+\_\+\+Base\+Component}
+\begin{DoxyCompactList}\small\item\em The base component of the system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a4b1a45fc27cf8b2476edc00eff43635b}\label{classGateVSystem_a4b1a45fc27cf8b2476edc00eff43635b}} 
+size\+\_\+t {\bfseries m\+\_\+main\+Component\+Depth}
+\begin{DoxyCompactList}\small\item\em depth of the main component (0 or 1) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a9abf86db6213e377cb7d09ce008a17b6}\label{classGateVSystem_a9abf86db6213e377cb7d09ce008a17b6}} 
+G4\+String {\bfseries m\+\_\+its\+Own\+Name}
+\item 
+\mbox{\Hypertarget{classGateVSystem_a7eb9ba04cdf278f85b551ab2338d9eba}\label{classGateVSystem_a7eb9ba04cdf278f85b551ab2338d9eba}} 
+G4int {\bfseries m\+\_\+its\+Number}
+\begin{DoxyCompactList}\small\item\em a name of a system, may be any name (multi-\/system approach) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a7e365f60468d08375e31cc5bc539f977}\label{classGateVSystem_a7e365f60468d08375e31cc5bc539f977}} 
+G4int {\bfseries m\+\_\+sys\+Number}
+\begin{DoxyCompactList}\small\item\em the insertion order of a system, it is too the system\+ID ((multi-\/system approach) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_aeeef32be2f384049e8c53d33f375b5bf}\label{classGateVSystem_aeeef32be2f384049e8c53d33f375b5bf}} 
+static G4int {\bfseries m\+\_\+insertion\+Order} =-\/1
+\item 
+\mbox{\Hypertarget{classGateVSystem_aeb171d9410bca4a8b6f25da76a31014d}\label{classGateVSystem_aeb171d9410bca4a8b6f25da76a31014d}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Get\+Base\+Component} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the base of the component-\/tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a71e6cf4a44f7ab157ff5395b4e2d9b53}\label{classGateVSystem_a71e6cf4a44f7ab157ff5395b4e2d9b53}} 
+void {\bfseries Set\+Base\+Component} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$a\+Base\+Component)
+\begin{DoxyCompactList}\small\item\em Define the base of the component tres. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a862a832e1ecd964ed5259ef7c37b332b}\label{classGateVSystem_a862a832e1ecd964ed5259ef7c37b332b}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Find\+Component} (const G4\+String \&component\+Name, G4bool silent=false) const
+\begin{DoxyCompactList}\small\item\em Finds a component from its name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a9c22b74d9e7a7fb94b856433b3a61499}\label{classGateVSystem_a9c22b74d9e7a7fb94b856433b3a61499}} 
+{\footnotesize template$<$class C $>$ }\\C $\ast$ {\bfseries Find\+Typed\+Component} (const G4\+String \&a\+Component) const
+\begin{DoxyCompactList}\small\item\em template to find components of a specific type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a19ecadc3c282529cb8674a49ba467d2c}\label{classGateVSystem_a19ecadc3c282529cb8674a49ba467d2c}} 
+\mbox{\hyperlink{classGateArrayComponent}{Gate\+Array\+Component}} $\ast$ {\bfseries Find\+Array\+Component} (const G4\+String \&a\+Component) const
+\begin{DoxyCompactList}\small\item\em Finds an array-\/component from its name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a5e7a7729de4b72f637c926322eb215fc}\label{classGateVSystem_a5e7a7729de4b72f637c926322eb215fc}} 
+\mbox{\hyperlink{classGateBoxComponent}{Gate\+Box\+Component}} $\ast$ {\bfseries Find\+Box\+Creator\+Component} (const G4\+String \&a\+Component) const
+\begin{DoxyCompactList}\small\item\em Finds a boxcreator-\/component from its name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_ac887cef7b3fd35112dbe9dd1e4d53f49}\label{classGateVSystem_ac887cef7b3fd35112dbe9dd1e4d53f49}} 
+\mbox{\hyperlink{classGateCylinderComponent}{Gate\+Cylinder\+Component}} $\ast$ {\bfseries Find\+Cylinder\+Creator\+Component} (const G4\+String \&a\+Component) const
+\begin{DoxyCompactList}\small\item\em Finds a creatorcreator-\/component from its name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_aa8a00b11a5f3d4e8898e07ce29003e38}\label{classGateVSystem_aa8a00b11a5f3d4e8898e07ce29003e38}} 
+\mbox{\hyperlink{classGateWedgeComponent}{Gate\+Wedge\+Component}} $\ast$ {\bfseries Find\+Wedge\+Creator\+Component} (const G4\+String \&a\+Component) const
+\begin{DoxyCompactList}\small\item\em Finds a wedgecreator-\/component from its name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a5eedf8de0b2d4ab61719a3f28d2a2eda}\label{classGateVSystem_a5eedf8de0b2d4ab61719a3f28d2a2eda}} 
+virtual \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Get\+Main\+Component} () const
+\begin{DoxyCompactList}\small\item\em Returns the main-\/component of the system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a65913ffd4757cb02f9757e463ec0d494}\label{classGateVSystem_a65913ffd4757cb02f9757e463ec0d494}} 
+virtual G4int {\bfseries Get\+Main\+Component\+ID} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \&pulse)
+\begin{DoxyCompactList}\small\item\em Extract the ID of the main-\/component from a pulse. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_ad75cdb30e48a879fb1124712f56e2122}\label{classGateVSystem_ad75cdb30e48a879fb1124712f56e2122}} 
+virtual size\+\_\+t {\bfseries Get\+Coincident\+Sector\+Number} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of coincident-\/sector of the system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a47ca4be7cb0066abc926ce2633ecf46b}\label{classGateVSystem_a47ca4be7cb0066abc926ce2633ecf46b}} 
+virtual size\+\_\+t {\bfseries Get\+Coincident\+Sector\+Number\+Sphere} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of coincident-\/sector of the system (for the spherical system Ecat Accel) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_aa135c819e9da463cde5a8a484af86e88}\label{classGateVSystem_aa135c819e9da463cde5a8a484af86e88}} 
+virtual \mbox{\hyperlink{classGateArrayComponent}{Gate\+Array\+Component}} $\ast$ {\bfseries Get\+Detector\+Component} ()
+\begin{DoxyCompactList}\small\item\em Returns the detector-\/component (crystal, pixel...) of the system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_ac25b8b5de238c18951c1b747d6a5e1a1}\label{classGateVSystem_ac25b8b5de238c18951c1b747d6a5e1a1}} 
+virtual G4int {\bfseries Get\+Detector\+Component\+ID} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} \&pulse)
+\begin{DoxyCompactList}\small\item\em Extract the ID of the detector-\/component from a pulse. \end{DoxyCompactList}\item 
+G4bool \mbox{\hyperlink{classGateVSystem_aacb9bc993e3ad2956f1e20c0d3404457}{Check\+Connection\+To\+Creator}} (\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$an\+Creator) const
+\item 
+\mbox{\Hypertarget{classGateVSystem_af5395334a66d5a3447bb14c15d137e16}\label{classGateVSystem_af5395334a66d5a3447bb14c15d137e16}} 
+virtual \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} {\bfseries Compute\+Output\+Volume\+ID} (const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} \&a\+Volume\+ID)
+\begin{DoxyCompactList}\small\item\em Generate the output-\/volume\+ID based on the information stored in the volume\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a5491393b044c8a3963532ce852bce558}\label{classGateVSystem_a5491393b044c8a3963532ce852bce558}} 
+G4int {\bfseries Compute\+Subtree\+ID} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$component, const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} \&volume\+ID, \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} \&output\+Volume\+ID, size\+\_\+t depth)
+\begin{DoxyCompactList}\small\item\em Compute a subsection of an output-\/volume\+ID for the subtree starting from a component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a0c6aed4fd2c499e3f87447518fb479ac}\label{classGateVSystem_a0c6aed4fd2c499e3f87447518fb479ac}} 
+virtual G4int {\bfseries Compute\+Component\+ID} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$a\+Component, const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} \&volume\+ID)
+\begin{DoxyCompactList}\small\item\em Compute a single bin of an output ID for a component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_affd2332b85b8ca5c56281784dfe44170}\label{classGateVSystem_affd2332b85b8ca5c56281784dfe44170}} 
+virtual G4int {\bfseries Compute\+Main\+Component\+ID} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$a\+Component, const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} \&volume\+ID)
+\begin{DoxyCompactList}\small\item\em Compute a single bin of an output ID for a coincident component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a81f22d1e7d2ee0fe79339a131ca256b5}\label{classGateVSystem_a81f22d1e7d2ee0fe79339a131ca256b5}} 
+virtual G4int {\bfseries Compute\+Ring\+ID} (G4int component\+ID)
+\begin{DoxyCompactList}\small\item\em Compute a ring-\/\+ID from a coincident component ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a83b9fa2a59bad6a0e46e931ceb4886a9}\label{classGateVSystem_a83b9fa2a59bad6a0e46e931ceb4886a9}} 
+virtual G4int {\bfseries Compute\+Sector\+ID} (G4int component\+ID)
+\begin{DoxyCompactList}\small\item\em Compute a sector-\/\+ID from coincident component ID (for Ecat, Cylindrical\+PET, CPET) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a5b3a4e1cedaaa9de478ef101715cf45b}\label{classGateVSystem_a5b3a4e1cedaaa9de478ef101715cf45b}} 
+virtual G4int {\bfseries Compute\+Sector\+IDSphere} (G4int component\+ID)
+\begin{DoxyCompactList}\small\item\em Compute a sector-\/\+ID from coincident component ID (for spherical Ecat Accel system) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_a607530333d951e5fa1ac104af84f0750}\label{classGateVSystem_a607530333d951e5fa1ac104af84f0750}} 
+G4\+String {\bfseries Get\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_ace8c839ad84a72a71ffcda4f978a5827}\label{classGateVSystem_ace8c839ad84a72a71ffcda4f978a5827}} 
+G4\+String {\bfseries Get\+Own\+Name} () const
+\begin{DoxyCompactList}\small\item\em Get the own name of a system, note thate this name may be any name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVSystem_ada5dd19b051b2b5f2f35e08ba797dc80}\label{classGateVSystem_ada5dd19b051b2b5f2f35e08ba797dc80}} 
+G4int {\bfseries Get\+Its\+Number} () const
+\item 
+\mbox{\Hypertarget{classGateVSystem_adfd8b87fc3d81281d778762baa1abf93}\label{classGateVSystem_adfd8b87fc3d81281d778762baa1abf93}} 
+size\+\_\+t {\bfseries Compute\+Nof\+Elements\+At\+Level} (size\+\_\+t level) const
+\item 
+\mbox{\Hypertarget{classGateVSystem_a4e5d808a1342be750252fa7c3255a0f2}\label{classGateVSystem_a4e5d808a1342be750252fa7c3255a0f2}} 
+size\+\_\+t {\bfseries Compute\+Nof\+Sub\+Crystals\+At\+Level} (size\+\_\+t level, std\+::vector$<$ G4bool $>$ \&enable\+List) const
+\item 
+\mbox{\Hypertarget{classGateVSystem_a0f6eaa438a3994060f7f22be5f27c474}\label{classGateVSystem_a0f6eaa438a3994060f7f22be5f27c474}} 
+size\+\_\+t {\bfseries Compute\+Id\+From\+Vol\+ID} (const \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} \&vol\+ID, std\+::vector$<$ G4bool $>$ \&enable\+List) const
+\item 
+\mbox{\Hypertarget{classGateVSystem_a48b99ddd50d521e1ed5605c342bda01d}\label{classGateVSystem_a48b99ddd50d521e1ed5605c342bda01d}} 
+G4\+Three\+Vector {\bfseries Compute\+Object\+Center} (const \mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} $\ast$vol\+ID) const
+\item 
+\mbox{\Hypertarget{classGateVSystem_a82b41750d8e3733f2841102ac8c3ca64}\label{classGateVSystem_a82b41750d8e3733f2841102ac8c3ca64}} 
+\mbox{\hyperlink{classGateVolumeID}{Gate\+Volume\+ID}} $\ast$ {\bfseries Make\+Volume\+ID} (const std\+::vector$<$ G4int $>$ \&num\+List) const
+\item 
+\mbox{\Hypertarget{classGateVSystem_a4a008d4f13d9d3050352e48e3260d7fc}\label{classGateVSystem_a4a008d4f13d9d3050352e48e3260d7fc}} 
+comp\+List\+\_\+t $\ast$ {\bfseries Make\+Component\+List\+At\+Level} (G4int level) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} is an integrated interface to a GATE geometry. 
+
+It can read and return information on the geometry according to a predefined set-\/up
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}} (2002)
+\item A system provides a pre-\/defined model of a geometry, such as a scanner or a source. This model is built as a tree of system-\/components (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}), starting from the \textquotesingle{}tree-\/base\textquotesingle{} (m\+\_\+base\+Component). In this model, each component has a specific role (detector head, crystal matrix, collimator...)
+\item System components are activated when they are connected to an inserter of the geometry. Once a component is thus connected, it can read the inserter properties, such as its dimensions, position, movement parameters, number of copies...
+\item For example, a typical PET scanner would incorporate a component for the detector blocks (\textquotesingle{}rsector\textquotesingle{}, \textquotesingle{}block\textquotesingle{}, \textquotesingle{}bucket\textquotesingle{}...). This component would then be connected to the one geometry inserter that models this detector block. Once this connection is done, one can read the scanner properties that are related to the blocks\+: number of rings, number of blocks per ring, internal diameter...
+\item A system is also responsible for computing output volume IDs (\mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}}), which are used for data analysis and image reconstruction. This task is actually delegated to the component tree.
+\item To see a concrete application of this mechanism, check the class \mbox{\hyperlink{classGateCylindricalPETSystem}{Gate\+Cylindrical\+PETSystem}}
+\item Note\+: from July to Oct. 2002, a system was a vector of system-\/levels. It was redesigned as a tree of system-\/components in Oct 2002.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateCylindricalPETSystem}{Gate\+Cylindrical\+PETSystem}}, \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}}, \mbox{\hyperlink{classGateOutputVolumeID}{Gate\+Output\+Volume\+ID}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGateVSystem_a9f51ea13cead36a54583b15b23a91344}\label{classGateVSystem_a9f51ea13cead36a54583b15b23a91344}} 
+\index{GateVSystem@{GateVSystem}!GateVSystem@{GateVSystem}}
+\index{GateVSystem@{GateVSystem}!GateVSystem@{GateVSystem}}
+\doxysubsubsection{\texorpdfstring{GateVSystem()}{GateVSystem()}}
+{\footnotesize\ttfamily Gate\+VSystem\+::\+Gate\+VSystem (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{its\+Name,  }\item[{G4bool}]{is\+With\+Gantry }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em its\+Name} & the name chosen for this system \\
+\hline
+{\em is\+With\+Gantry} & tells whether there is a gantry (PET) or not (SPECT) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVSystem_aacb9bc993e3ad2956f1e20c0d3404457}\label{classGateVSystem_aacb9bc993e3ad2956f1e20c0d3404457}} 
+\index{GateVSystem@{GateVSystem}!CheckConnectionToCreator@{CheckConnectionToCreator}}
+\index{CheckConnectionToCreator@{CheckConnectionToCreator}!GateVSystem@{GateVSystem}}
+\doxysubsubsection{\texorpdfstring{CheckConnectionToCreator()}{CheckConnectionToCreator()}}
+{\footnotesize\ttfamily G4bool Gate\+VSystem\+::\+Check\+Connection\+To\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{an\+Creator }\end{DoxyParamCaption}) const}
+
+Check whether an inserter is connected to the system (directly or through one of its ancestors). Returns true if the inserter belongs (directly or inderectly) to the system \mbox{\Hypertarget{classGateVSystem_a2be63a28c82639e696035e5633130ef2}\label{classGateVSystem_a2be63a28c82639e696035e5633130ef2}} 
+\index{GateVSystem@{GateVSystem}!Describe@{Describe}}
+\index{Describe@{Describe}!GateVSystem@{GateVSystem}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+VSystem\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method overloading the base-\/class virtual method \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Describe()}}. 
+
+This methods prints-\/out a description of the system
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & the print-\/out indentation (cosmetic parameter) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGateCPETSystem_a89f32b426b9c40a6999789b81540af51}{Gate\+CPETSystem}}, \mbox{\hyperlink{classGateCylindricalPETSystem_a15aa989d80915a4807972c19b6e2fb6f}{Gate\+Cylindrical\+PETSystem}}, \mbox{\hyperlink{classGateEcatAccelSystem_aed232a07e3ba697c692761000663dfe1}{Gate\+Ecat\+Accel\+System}}, \mbox{\hyperlink{classGateEcatSystem_a11818725a8dba26fcc84a4eab7482c66}{Gate\+Ecat\+System}}, and \mbox{\hyperlink{classGateOPETSystem_a977538a4a4d9012b1919cc2aa7aeb11f}{Gate\+OPETSystem}}.
+
+\mbox{\Hypertarget{classGateVSystem_a0f2ca5a41d87527ede0dd8d6183f93ef}\label{classGateVSystem_a0f2ca5a41d87527ede0dd8d6183f93ef}} 
+\index{GateVSystem@{GateVSystem}!PrintToStream@{PrintToStream}}
+\index{PrintToStream@{PrintToStream}!GateVSystem@{GateVSystem}}
+\doxysubsubsection{\texorpdfstring{PrintToStream()}{PrintToStream()}}
+{\footnotesize\ttfamily virtual void Gate\+VSystem\+::\+Print\+To\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{G4bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual method to print a description of the system to a stream. 
+
+It is essentially meant to be used by the class Gate\+To\+LMF, but it may also be used by \mbox{\hyperlink{classGateVSystem_a2be63a28c82639e696035e5633130ef2}{Describe()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Stream} & the output stream \\
+\hline
+{\em do\+Print\+Numbers} & tells whether we print-\/out the volume numbers in addition to their dimensions \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classGateCylindricalPETSystem_a161957525535aba442ae54ed7f93f78c}{Gate\+Cylindrical\+PETSystem}}, \mbox{\hyperlink{classGateEcatAccelSystem_a28975b166e800ac89d7f9ce701a2881f}{Gate\+Ecat\+Accel\+System}}, \mbox{\hyperlink{classGateEcatSystem_a389f43cc9cbb875882d5f2c0de7ddf15}{Gate\+Ecat\+System}}, \mbox{\hyperlink{classGateOPETSystem_ac6ee1ef69d2a44f4d7871381f21c6f71}{Gate\+OPETSystem}}, and \mbox{\hyperlink{classGateCPETSystem_a01d09865b47be00469ff9bd9a5cb5510}{Gate\+CPETSystem}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+VSystem.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+VSystem.\+cc\end{DoxyCompactItemize}

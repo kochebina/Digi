@@ -1,0 +1,93 @@
+\hypertarget{classGateBlurring}{}\doxysection{Gate\+Blurring Class Reference}
+\label{classGateBlurring}\index{GateBlurring@{GateBlurring}}
+
+
+Pulse-\/processor for simulating a \mbox{\hyperlink{classGaussian}{Gaussian}} blurring on the energy spectrum.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Blurring.\+hh$>$}
+
+Inheritance diagram for Gate\+Blurring\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateBlurring}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ constructors and destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateBlurring_a065f3de5896f2b52d8345d3f060470f4}\label{classGateBlurring_a065f3de5896f2b52d8345d3f060470f4}} 
+{\bfseries Gate\+Blurring} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new blurring attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateBlurring_a216f6c783c9dedbc91a790c948c4dc6a}\label{classGateBlurring_a216f6c783c9dedbc91a790c948c4dc6a}} 
+virtual {\bfseries $\sim$\+Gate\+Blurring} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{getters and setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateBlurring_ab174bc53b047cae13ca1127cddb4cee7}\label{classGateBlurring_ab174bc53b047cae13ca1127cddb4cee7}} 
+\mbox{\hyperlink{classGateVBlurringLaw}{Gate\+VBlurring\+Law}} $\ast$ {\bfseries Get\+Blurring\+Law} ()
+\begin{DoxyCompactList}\small\item\em This function returns the blurring law in use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGateBlurring_a59d2e3ba371333da7cd55b63b03c04cb}{Set\+Blurring\+Law}} (\mbox{\hyperlink{classGateVBlurringLaw}{Gate\+VBlurring\+Law}} $\ast$law)
+\begin{DoxyCompactList}\small\item\em This function sets the blurring law for the resolution. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateBlurring_ac645fe66ce6fd0f463d054800001edef}{Describe\+Myself}} (size\+\_\+t indent)
+\item 
+void \mbox{\hyperlink{classGateBlurring_a5d6173adcb20f376f4fe401afccf82b0}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pulse-\/processor for simulating a \mbox{\hyperlink{classGaussian}{Gaussian}} blurring on the energy spectrum. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateBlurring}{Gate\+Blurring}} -\/ by \href{mailto:Martin.Rey@epfl.ch}{\texttt{ Martin.\+Rey@epfl.\+ch}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateBlurring_ac645fe66ce6fd0f463d054800001edef}\label{classGateBlurring_ac645fe66ce6fd0f463d054800001edef}} 
+\index{GateBlurring@{GateBlurring}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateBlurring@{GateBlurring}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Blurring\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out the attributes specific of the blurring 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateBlurring_a5d6173adcb20f376f4fe401afccf82b0}\label{classGateBlurring_a5d6173adcb20f376f4fe401afccf82b0}} 
+\index{GateBlurring@{GateBlurring}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateBlurring@{GateBlurring}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily void Gate\+Blurring\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} This methods processes one input-\/pulse It is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing is incorporated into the output pulse-\/list 
+
+Implements \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Gate\+VPulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateBlurring_a59d2e3ba371333da7cd55b63b03c04cb}\label{classGateBlurring_a59d2e3ba371333da7cd55b63b03c04cb}} 
+\index{GateBlurring@{GateBlurring}!SetBlurringLaw@{SetBlurringLaw}}
+\index{SetBlurringLaw@{SetBlurringLaw}!GateBlurring@{GateBlurring}}
+\doxysubsubsection{\texorpdfstring{SetBlurringLaw()}{SetBlurringLaw()}}
+{\footnotesize\ttfamily void Gate\+Blurring\+::\+Set\+Blurring\+Law (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateVBlurringLaw}{Gate\+VBlurring\+Law}} $\ast$}]{law }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function sets the blurring law for the resolution. 
+
+Choose between \char`\"{}linear\char`\"{} and \char`\"{}inverse\+Square\char`\"{} blurring law 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Blurring.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Blurring.\+cc\end{DoxyCompactItemize}

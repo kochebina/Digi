@@ -1,0 +1,59 @@
+\hypertarget{GateEnergyThresholder_8hh_source}{}\doxysection{Gate\+Energy\+Thresholder.\+hh}
+\label{GateEnergyThresholder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergyThresholder.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateEnergyThresholder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef GateEnergyThresholder\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GateEnergyThresholder\_h 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVEffectiveEnergyLaw.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateDepositedEnergyLaw.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateSolidAngleWeightedEnergyLaw.hh"{}}}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEnergyThresholderMessenger}{GateEnergyThresholderMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateEnergyThresholder}{GateEnergyThresholder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22   \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateEnergyThresholder_aecccdf91d60c5bbd0ceb0dbb5eaefd33}{GateEnergyThresholder}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{26                    \textcolor{keyword}{const} G4String\& itsName, G4double itsThreshold=0) ;}
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateEnergyThresholder_a915a861484218b37faf19b038b6ec73f}{\string~GateEnergyThresholder}}() ;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31         G4double \mbox{\hyperlink{classGateEnergyThresholder_a5b0686e1c43eafb83273211d03c17938}{GetThreshold}}()           \{ \textcolor{keywordflow}{return} m\_threshold; \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEnergyThresholder_ac03dc26c8f6f78e4be428a2ea2a0fbe4}{SetThreshold}}(G4double val)   \{ m\_threshold = val;  \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37         \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}}* \mbox{\hyperlink{classGateEnergyThresholder_a6960a38bc896c542c049f59a4a8d10b9}{GetEffectiveEnergyLaw}}()           \{ \textcolor{keywordflow}{return} m\_effectiveEnergyLaw; \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{43         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEnergyThresholder_a10af2d0c9e0d47ff5744d15cc85ab413}{SetEffectiveEnergyLaw}}(\mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}}* law)   \{ m\_effectiveEnergyLaw = law; \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEnergyThresholder_aa5fdc804654603e1a466b8c28985cd09}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateEnergyThresholder_afcb65bbfb3b0f594093389fcc390e397}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\&  outputPulseList);}
+\DoxyCodeLine{55     \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateEnergyThresholder_acbc7a6537432f9b6931238e6977c6045}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{56   \textcolor{keyword}{private}:}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{bool} flgTriggerAW;}
+\DoxyCodeLine{59     std::vector<GateVolumeID> vID;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}}* m\_effectiveEnergyLaw;}
+\DoxyCodeLine{62     G4double m\_threshold;                     }
+\DoxyCodeLine{63     \mbox{\hyperlink{classGateEnergyThresholderMessenger}{GateEnergyThresholderMessenger}} *m\_messenger;    }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

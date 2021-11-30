@@ -1,0 +1,67 @@
+\hypertarget{classGateSystemComponentMessenger}{}\doxysection{Gate\+System\+Component\+Messenger Class Reference}
+\label{classGateSystemComponentMessenger}\index{GateSystemComponentMessenger@{GateSystemComponentMessenger}}
+
+
+Base class for \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} messengers.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+System\+Component\+Messenger.\+hh$>$}
+
+Inheritance diagram for Gate\+System\+Component\+Messenger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classGateSystemComponentMessenger}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSystemComponentMessenger_aebc135d3fce7e0591038aa9a112a028d}\label{classGateSystemComponentMessenger_aebc135d3fce7e0591038aa9a112a028d}} 
+{\bfseries Gate\+System\+Component\+Messenger} (\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$its\+System\+Component)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponentMessenger_a94a09ded12f2f51f421476cc0ceb8164}\label{classGateSystemComponentMessenger_a94a09ded12f2f51f421476cc0ceb8164}} 
+{\bfseries $\sim$\+Gate\+System\+Component\+Messenger} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponentMessenger_a3f0a1c5616ee6ba9bdc734541b092ae4}\label{classGateSystemComponentMessenger_a3f0a1c5616ee6ba9bdc734541b092ae4}} 
+void {\bfseries Set\+New\+Value} (G4\+UIcommand $\ast$, G4\+String)
+\begin{DoxyCompactList}\small\item\em UI command interpreter method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateSystemComponentMessenger_ab90dfb32089a1afc2d858e7bfd9ee4a9}\label{classGateSystemComponentMessenger_ab90dfb32089a1afc2d858e7bfd9ee4a9}} 
+\mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$ {\bfseries Get\+System\+Component} ()
+\begin{DoxyCompactList}\small\item\em Get the system component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGateSystemComponentMessenger_a31a5148e413dfdd5b46cbad01fa499b9}{Add\+Creator}} (const G4\+String \&creator\+Name)
+\item 
+\mbox{\Hypertarget{classGateSystemComponentMessenger_a53e7107283c1bd7be0535420167eb0dd}\label{classGateSystemComponentMessenger_a53e7107283c1bd7be0535420167eb0dd}} 
+G4\+String {\bfseries Fabricate\+Dir\+Name} (const \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} $\ast$component)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for \mbox{\hyperlink{classGateSystemComponent}{Gate\+System\+Component}} messengers. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateSystemComponentMessenger}{Gate\+System\+Component\+Messenger}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The \mbox{\hyperlink{classGateSystemComponentMessenger}{Gate\+System\+Component\+Messenger}} inherits from the abilities/responsabilities of the \mbox{\hyperlink{classGateClockDependentMessenger}{Gate\+Clock\+Dependent\+Messenger}} base-\/class, i.\+e. the creation and management of a Gate UI directory for a Gate object
+\item In addition, it proposes and manages UI commands that are specific to system components\+: \textquotesingle{}attach\textquotesingle{}, and \textquotesingle{}describe\textquotesingle{}
+\item Note\+: from July to Oct. 2002, a system was a vector of system-\/levels, each level managing a vector of components. On Oct. 2002, the whole system (which was too complex) was redesigned, and the current mechanism (tree of system-\/components) replaced the previous one (vector of system-\/levels). The system-\/component messengers are now connected to these new system-\/components rather than to the old ones. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSystemComponentMessenger_a31a5148e413dfdd5b46cbad01fa499b9}\label{classGateSystemComponentMessenger_a31a5148e413dfdd5b46cbad01fa499b9}} 
+\index{GateSystemComponentMessenger@{GateSystemComponentMessenger}!AddCreator@{AddCreator}}
+\index{AddCreator@{AddCreator}!GateSystemComponentMessenger@{GateSystemComponentMessenger}}
+\doxysubsubsection{\texorpdfstring{AddCreator()}{AddCreator()}}
+{\footnotesize\ttfamily void Gate\+System\+Component\+Messenger\+::\+Add\+Creator (\begin{DoxyParamCaption}\item[{const G4\+String \&}]{creator\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Method to apply the UI command \textquotesingle{}attach\textquotesingle{} Finds an creator from its name and attaches this creator to the system component 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/include/Gate\+System\+Component\+Messenger.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/geometry/src/Gate\+System\+Component\+Messenger.\+cc\end{DoxyCompactItemize}

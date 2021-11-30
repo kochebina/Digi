@@ -1,0 +1,61 @@
+\hypertarget{GateDoIBlurrNegExpLaw_8hh_source}{}\doxysection{Gate\+Do\+IBlurr\+Neg\+Exp\+Law.\+hh}
+\label{GateDoIBlurrNegExpLaw_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoIBlurrNegExpLaw.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoIBlurrNegExpLaw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef GateDoIBlurrNegExpLaw\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GateDoIBlurrNegExpLaw\_h 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GateVDoILaw.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GateDoIBlurrNegExpLawMessenger.hh"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}GateTools.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}G4UnitsTable.hh"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4VoxelLimits.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4Transform3D.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4VSolid.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoIBlurrNegExpLaw}{GateDoIBlurrNegExpLaw}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVDoILaw}{GateVDoILaw}} \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 public :}
+\DoxyCodeLine{21     \mbox{\hyperlink{classGateDoIBlurrNegExpLaw}{GateDoIBlurrNegExpLaw}}(\textcolor{keyword}{const} G4String\& itsName);}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDoIBlurrNegExpLaw}{\string~GateDoIBlurrNegExpLaw}}() \{\textcolor{keyword}{delete} m\_messenger;\}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ComputeDoI(\mbox{\hyperlink{classGatePulse}{GatePulse}} *plse, G4ThreeVector axis);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself (\textcolor{keywordtype}{size\_t} ident=0) \textcolor{keyword}{const};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{inline} G4double GetExpInvDecayConst()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_mu; \}}
+\DoxyCodeLine{29     \textcolor{keyword}{inline} G4double GetEntranceFWHM()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_entFWHM; \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetExpInvDecayConst(G4double mu) \{ m\_mu = mu; \}}
+\DoxyCodeLine{33     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEntranceFWHM(G4double entFWHM) \{ m\_entFWHM = entFWHM; \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 private :}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     G4double m\_mu;}
+\DoxyCodeLine{39     G4double m\_entFWHM;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \mbox{\hyperlink{classGateDoIBlurrNegExpLawMessenger}{GateDoIBlurrNegExpLawMessenger}}* m\_messenger;}
+\DoxyCodeLine{42     G4VoxelLimits limits;}
+\DoxyCodeLine{43     G4double DoImin, DoImax;}
+\DoxyCodeLine{44     G4AffineTransform at;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     G4ThreeVector xAxis;}
+\DoxyCodeLine{49     G4ThreeVector yAxis;}
+\DoxyCodeLine{50     G4ThreeVector zAxis;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,134 @@
+\hypertarget{GateAngularRepeater_8hh_source}{}\doxysection{Gate\+Angular\+Repeater.\+hh}
+\label{GateAngularRepeater_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateAngularRepeater.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateAngularRepeater.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateAngularRepeater\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateAngularRepeater\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4Point3D.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define ModuloMax 8}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAngularRepeaterMessenger}{GateAngularRepeaterMessenger}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{57 \textcolor{keyword}{class }\mbox{\hyperlink{classGateAngularRepeater}{GateAngularRepeater}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62   \mbox{\hyperlink{classGateAngularRepeater_a45f512755c35f848b12d0be152a8eef3}{GateAngularRepeater}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{63                       \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}ringmodulo"{}},}
+\DoxyCodeLine{64                       G4int itsRepeatNumber=1,}
+\DoxyCodeLine{65                       \textcolor{keyword}{const} G4Point3D\& itsPoint1=G4Point3D(),}
+\DoxyCodeLine{66                       \textcolor{keyword}{const} G4Point3D\& itsPoint2=G4Point3D(0.,0.,1.),}
+\DoxyCodeLine{67                       G4bool itsFlagAutoRotation=\textcolor{keyword}{true},}
+\DoxyCodeLine{68                       G4double itsFirstAngle=0.,}
+\DoxyCodeLine{69                       G4double itsAngularSpan=360. * deg,}
+\DoxyCodeLine{70                       G4int itsModuloNumber=1,}
+\DoxyCodeLine{71                       G4double itsZShift1=0. * mm,}
+\DoxyCodeLine{72                       G4double itsZShift2=0. * mm,}
+\DoxyCodeLine{73                       G4double itsZShift3=0. * mm,}
+\DoxyCodeLine{74                       G4double itsZShift4=0. * mm,}
+\DoxyCodeLine{75                       G4double itsZShift5=0. * mm,}
+\DoxyCodeLine{76                       G4double itsZShift6=0. * mm,}
+\DoxyCodeLine{77                       G4double itsZShift7=0. * mm,}
+\DoxyCodeLine{78                       G4double itsZShift8=0. * mm);}
+\DoxyCodeLine{80   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateAngularRepeater_a5980f35804bc474d78f428c201b47d0c}{\string~GateAngularRepeater}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{public}:}
+\DoxyCodeLine{92   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_ab520956730009bcfaed16c00cf9b333c}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{93                                 \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{94                                 G4double aTime);}
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a93fa5784dd681fae25ab73f2296886cc}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{public}:}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107   G4int \mbox{\hyperlink{classGateAngularRepeater_ad5a0c2a15c0ad8ca6ed34581bf1545b1}{GetRepeatNumber}}()\textcolor{keyword}{ const            }\{ \textcolor{keywordflow}{return} m\_repeatNumber;\}}
+\DoxyCodeLine{109   \textcolor{keyword}{const} G4Point3D\& \mbox{\hyperlink{classGateAngularRepeater_a7439c22bd0cb8c4d9709e514156bd30a}{GetPoint1}}()\textcolor{keyword}{ const     }\{ \textcolor{keywordflow}{return} m\_point1 ;\}}
+\DoxyCodeLine{111   \textcolor{keyword}{const} G4Point3D\& \mbox{\hyperlink{classGateAngularRepeater_a518734ebcc5f84c2b0f7c7aa95893a64}{GetPoint2}}()\textcolor{keyword}{ const     }\{ \textcolor{keywordflow}{return} m\_point2 ;\}}
+\DoxyCodeLine{113   G4bool \mbox{\hyperlink{classGateAngularRepeater_a48cc96c2f30b40ff6cb1ec724b1403f6}{GetAutoRotation}}()\textcolor{keyword}{ const           }\{ \textcolor{keywordflow}{return} m\_flagAutoRotation;\}}
+\DoxyCodeLine{115   G4double \mbox{\hyperlink{classGateAngularRepeater_a5ce70f784b30cb873faa67283c7095c9}{GetFirstAngle}}()\textcolor{keyword}{ const           }\{ \textcolor{keywordflow}{return} m\_firstAngle;\}}
+\DoxyCodeLine{117   G4double \mbox{\hyperlink{classGateAngularRepeater_a166b81c6ba53d70295ba308395afbecb}{GetAngularSpan}}()\textcolor{keyword}{ const          }\{ \textcolor{keywordflow}{return} m\_angularSpan;\}}
+\DoxyCodeLine{119   G4double  \mbox{\hyperlink{classGateAngularRepeater_ae7ceb3cee2549b7e9d5e3e49d690153b}{GetAngularPitch\_1}}()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_angularSpan/m\_repeatNumber;\}}
+\DoxyCodeLine{120   G4double  GetAngularPitch\_2()\textcolor{keyword}{ const        }\{ \textcolor{keywordflow}{return} m\_angularSpan/(m\_repeatNumber-\/1);\}}
+\DoxyCodeLine{122   G4int \mbox{\hyperlink{classGateAngularRepeater_a30975cc85b07af28b3f674e6546c1477}{GetAngularModuloNumber}}()\textcolor{keyword}{ const  }\{ \textcolor{keywordflow}{return} m\_moduloNumber;\}}
+\DoxyCodeLine{124   G4double \mbox{\hyperlink{classGateAngularRepeater_a4d7cf43feb0207da4a7a3f7a7054336c}{GetZShift1}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift1;\}}
+\DoxyCodeLine{125   G4double GetZShift2()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift2;\}}
+\DoxyCodeLine{126   G4double GetZShift3()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift3;\}}
+\DoxyCodeLine{127   G4double GetZShift4()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift4;\}}
+\DoxyCodeLine{128   G4double GetZShift5()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift5;\}}
+\DoxyCodeLine{129   G4double GetZShift6()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift6;\}}
+\DoxyCodeLine{130   G4double GetZShift7()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift7;\}}
+\DoxyCodeLine{131   G4double GetZShift8()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_zShift8;\}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{134   \textcolor{comment}{//  G4double GetZShiftPitch() const \{ return m\_zShiftSpan/((m\_moduloNumber<2) ? 1; m\_moduloNumber-\/1);\} /* take 1 if<2 */}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a94fe583fc9a8e43a3fbd9116b313ed9a}{SetRepeatNumber}}(G4int val)}
+\DoxyCodeLine{138   \{ m\_repeatNumber = val;  \}}
+\DoxyCodeLine{140   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a816ebb95c8435a7fe78453ab5a2f4463}{SetPoint1}}(\textcolor{keyword}{const} G4Point3D\& val)}
+\DoxyCodeLine{141   \{ m\_point1 = val;  \}}
+\DoxyCodeLine{143   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a7b788e969ba7f5e08dce600d361bf5ed}{SetPoint2}}(\textcolor{keyword}{const} G4Point3D\& val)}
+\DoxyCodeLine{144   \{ m\_point2 = val;  \}}
+\DoxyCodeLine{146   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a0bcbd3157a2058170e2aac174a63e74f}{SetAutoRotation}}(G4bool val)}
+\DoxyCodeLine{147   \{ m\_flagAutoRotation = val;  \}}
+\DoxyCodeLine{149   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a0d3a2ad2ebd32bf4630e8726ba7e11e2}{SetFirstAngle}}(G4double val)}
+\DoxyCodeLine{150   \{ m\_firstAngle = val;  \}}
+\DoxyCodeLine{152   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a5903f662c9a41d59cc932d02f7c8b212}{SetAngularSpan}}(G4double val)}
+\DoxyCodeLine{153   \{ m\_angularSpan = val;   \}}
+\DoxyCodeLine{155   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a9692eb631cc35aed45f6a61ca4f4b89d}{SetModuloNumber}}(G4int val)}
+\DoxyCodeLine{156   \{ m\_moduloNumber = val;\}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a03a04266f1083ffd81944c71a54a79a5}{SetCombineWithRotationFirstFlag}}(G4bool b) \{ m\_flagCombineWithRotationFirst = b; \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{162   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateAngularRepeater_a19d743bc9bad160670669d20b5bfbde5}{SetZShift1}}(G4double val)  \{ m\_zShift1 = val;\}}
+\DoxyCodeLine{163   \textcolor{keywordtype}{void} SetZShift2(G4double val)  \{ m\_zShift2 = val;\}}
+\DoxyCodeLine{164   \textcolor{keywordtype}{void} SetZShift3(G4double val)  \{ m\_zShift3 = val;\}}
+\DoxyCodeLine{165   \textcolor{keywordtype}{void} SetZShift4(G4double val)  \{ m\_zShift4 = val;\}}
+\DoxyCodeLine{166   \textcolor{keywordtype}{void} SetZShift5(G4double val)  \{ m\_zShift5 = val;\}}
+\DoxyCodeLine{167   \textcolor{keywordtype}{void} SetZShift6(G4double val)  \{ m\_zShift6 = val;\}}
+\DoxyCodeLine{168   \textcolor{keywordtype}{void} SetZShift7(G4double val)  \{ m\_zShift7 = val;\}}
+\DoxyCodeLine{169   \textcolor{keywordtype}{void} SetZShift8(G4double val)  \{ m\_zShift8 = val;\}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{keyword}{private}:}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176   G4int         m\_repeatNumber;         }
+\DoxyCodeLine{177   G4Point3D       m\_point1;               }
+\DoxyCodeLine{178   G4Point3D       m\_point2;               }
+\DoxyCodeLine{179   G4bool        m\_flagAutoRotation;     }
+\DoxyCodeLine{180   G4double        m\_firstAngle;         }
+\DoxyCodeLine{181   G4double        m\_angularSpan;        }
+\DoxyCodeLine{182   G4int         m\_moduloNumber;       }
+\DoxyCodeLine{183   G4double      m\_zShift1;            }
+\DoxyCodeLine{184   G4double      m\_zShift2;            }
+\DoxyCodeLine{185   G4double      m\_zShift3;            }
+\DoxyCodeLine{186   G4double      m\_zShift4;            }
+\DoxyCodeLine{187   G4double      m\_zShift5;            }
+\DoxyCodeLine{188   G4double      m\_zShift6;            }
+\DoxyCodeLine{189   G4double      m\_zShift7;            }
+\DoxyCodeLine{190   G4double      m\_zShift8;            }
+\DoxyCodeLine{191   G4bool        m\_flagCombineWithRotationFirst; }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{195   \mbox{\hyperlink{classGateAngularRepeaterMessenger}{GateAngularRepeaterMessenger}}* m\_Messenger;}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \};}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

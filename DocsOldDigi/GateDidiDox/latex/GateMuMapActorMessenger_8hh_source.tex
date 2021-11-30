@@ -1,0 +1,44 @@
+\hypertarget{GateMuMapActorMessenger_8hh_source}{}\doxysection{Gate\+Mu\+Map\+Actor\+Messenger.\+hh}
+\label{GateMuMapActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMuMapActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateMuMapActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateMuMapActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author gsizeg@gmail.com}}
+\DoxyCodeLine{12 \textcolor{comment}{*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATEMUMAPACTORMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATEMUMAPACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMuMapActor}{GateMuMapActor}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMuMapActorMessenger}{GateMuMapActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classGateMuMapActorMessenger}{GateMuMapActorMessenger}}(\mbox{\hyperlink{classGateMuMapActor}{GateMuMapActor}}* sensor);}
+\DoxyCodeLine{26   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateMuMapActorMessenger}{\string~GateMuMapActorMessenger}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateMuMapActorMessenger_aab3a87cc4fcde1e44a460fd94568aa57}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateMuMapActor}{GateMuMapActor}} * pMuMapActor;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   G4UIcmdWithADoubleAndUnit* pSetEnergyCmd;}
+\DoxyCodeLine{35   G4UIcmdWithADoubleAndUnit* pSetMuUnitCmd;}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEMUMAPACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

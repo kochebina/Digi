@@ -1,0 +1,54 @@
+\hypertarget{GateToBinaryMessenger_8hh_source}{}\doxysection{Gate\+To\+Binary\+Messenger.\+hh}
+\label{GateToBinaryMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToBinaryMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToBinaryMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GUARD\_GATETOBINARYMESSENGER\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_FILE}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{28 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }GateToBinary;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }GateToBinaryMessenger : \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     GateToBinaryMessenger( GateToBinary* gateToBinary );}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{56     \string~GateToBinaryMessenger();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} SetNewValue( G4UIcommand* command, G4String newValue );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} CreateNewOutputChannelCommand( GateToBinary::VOutputChannel*}
+\DoxyCodeLine{72         anOutputChannel );}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{80     G4bool IsAnOutputChannelCmd( G4UIcommand* command );}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} ExecuteOutputChannelCmd( G4UIcommand* command,}
+\DoxyCodeLine{89         G4String newValue );}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{92     GateToBinary* m\_gateToBinary; }
+\DoxyCodeLine{94     G4int m\_coincidenceMaskLength; }
+\DoxyCodeLine{95     G4int m\_singleMaskLength; }
+\DoxyCodeLine{97     G4UIcmdWithAString* m\_setFileNameCmd; }
+\DoxyCodeLine{98     G4UIcmdWithABool* m\_outFileHitsCmd; }
+\DoxyCodeLine{99   G4UIcmdWithABool* m\_outFileVoxelCmd; }
+\DoxyCodeLine{100     G4UIcommand* m\_coincidenceMaskCmd; }
+\DoxyCodeLine{101     G4UIcommand* m\_singleMaskCmd; }
+\DoxyCodeLine{102     G4UIcmdWithAnInteger* m\_setOutFileSizeLimitCmd; }
+\DoxyCodeLine{103     std::vector< G4UIcmdWithABool* > m\_outputChannelCmd; }
+\DoxyCodeLine{105     std::vector< GateToBinary::VOutputChannel* >  m\_outputChannelVector; }
+\DoxyCodeLine{106 \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

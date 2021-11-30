@@ -1,0 +1,43 @@
+\hypertarget{GateToProjectionSetMessenger_8hh_source}{}\doxysection{Gate\+To\+Projection\+Set\+Messenger.\+hh}
+\label{GateToProjectionSetMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToProjectionSetMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToProjectionSetMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateToProjectionSetMessenger\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateToProjectionSetMessenger\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateOutputModuleMessenger.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToProjectionSetMessenger}{GateToProjectionSetMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateOutputModuleMessenger}{GateOutputModuleMessenger}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18   \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{classGateToProjectionSetMessenger}{GateToProjectionSetMessenger}}(\mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}}* gateToProjectionSet);}
+\DoxyCodeLine{20    \mbox{\hyperlink{classGateToProjectionSetMessenger}{\string~GateToProjectionSetMessenger}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}}*     m\_gateToProjectionSet;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     G4UIcmdWithAString*         SetFileNameCmd;}
+\DoxyCodeLine{28     G4UIcmdWithADoubleAndUnit*  PixelSizeXCmd;}
+\DoxyCodeLine{29     G4UIcmdWithADoubleAndUnit*  PixelSizeYCmd;}
+\DoxyCodeLine{30     G4UIcmdWithAnInteger*       PixelNumberXCmd;}
+\DoxyCodeLine{31     G4UIcmdWithAnInteger*       PixelNumberYCmd;}
+\DoxyCodeLine{32     G4UIcmdWithAString*         projectionPlaneCmd;}
+\DoxyCodeLine{33     G4UIcmdWithAString*         \mbox{\hyperlink{classGateToProjectionSetMessenger_aa613dc46b1318479b7496e021dd78aa7}{SetInputDataCmd}}; }
+\DoxyCodeLine{34     G4UIcmdWithAString*         \mbox{\hyperlink{classGateToProjectionSetMessenger_a79434ea849e4e5fa4446cdb437185acb}{AddInputDataCmd}}; }
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

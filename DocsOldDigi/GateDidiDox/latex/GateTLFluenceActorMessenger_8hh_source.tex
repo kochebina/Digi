@@ -1,0 +1,47 @@
+\hypertarget{GateTLFluenceActorMessenger_8hh_source}{}\doxysection{Gate\+TLFluence\+Actor\+Messenger.\+hh}
+\label{GateTLFluenceActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLFluenceActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLFluenceActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateTLFluenceActorMessenger}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author anders.garpebring@umu.se}}
+\DoxyCodeLine{12 \textcolor{comment}{*/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATETLFLUENCEACTORMESSENGER\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATETLFLUENCEACTORMESSENGER\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateImageActorMessenger.hh"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTLFluenceActor}{GateTLFluenceActor}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTLFluenceActorMessenger}{GateTLFluenceActorMessenger}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateImageActorMessenger}{GateImageActorMessenger}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{classGateTLFluenceActorMessenger}{GateTLFluenceActorMessenger}}(\mbox{\hyperlink{classGateTLFluenceActor}{GateTLFluenceActor}}* sensor);}
+\DoxyCodeLine{25   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTLFluenceActorMessenger}{\string~GateTLFluenceActorMessenger}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{28   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateTLFluenceActorMessenger_a711bff24f56c88ec6cd545594baeacae}{SetNewValue}}(G4UIcommand*, G4String);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{31   \mbox{\hyperlink{classGateTLFluenceActor}{GateTLFluenceActor}} * pFluenceActor;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   G4UIcmdWithABool * pEnableFluenceCmd;}
+\DoxyCodeLine{34   G4UIcmdWithABool * pEnableEnergyFluenceCmd;}
+\DoxyCodeLine{35   G4UIcmdWithABool * pEnableFluenceUncertaintyCmd;}
+\DoxyCodeLine{36   G4UIcmdWithABool * pEnableFluenceSquaredCmd;}
+\DoxyCodeLine{37   G4UIcmdWithABool * pEnableEnergyFluenceSquaredCmd;}
+\DoxyCodeLine{38   G4UIcmdWithABool * pEnableEnergyFluenceUncertaintyCmd;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATETLFLUENCEACTORMESSENGER\_HH*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

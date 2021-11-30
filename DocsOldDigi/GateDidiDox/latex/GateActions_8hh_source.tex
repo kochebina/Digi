@@ -1,0 +1,195 @@
+\hypertarget{GateActions_8hh_source}{}\doxysection{Gate\+Actions.\+hh}
+\label{GateActions_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateActions.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateActions.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{  \(\backslash\)class  GateRunAction, GateEventAction, GateTrackingAction, GateSteppingAction}}
+\DoxyCodeLine{11 \textcolor{comment}{  \(\backslash\)author thibault.frisson@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{12 \textcolor{comment}{  laurent.guigues@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{13 \textcolor{comment}{  david.sarrut@creatis.insa-\/lyon.fr}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef GATEACTION\_HH}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GATEACTION\_HH}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UserRunAction.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UserEventAction.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UserTrackingAction.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}G4UserSteppingAction.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}G4UserStackingAction.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateApplicationMgr.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}G4TrackStatus.hh"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTrack}{GateTrack}};}
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVVolume}{GateVVolume}};}
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classGateUserActions}{GateUserActions}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{enum class} TrackingMode \{}
+\DoxyCodeLine{35   kUnknown, kBoth,  kTracker,}
+\DoxyCodeLine{36   kDetector}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateRunAction}{GateRunAction}} :  \textcolor{keyword}{public} G4UserRunAction}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43 public :}
+\DoxyCodeLine{44   \mbox{\hyperlink{classGateRunAction}{GateRunAction}}(\mbox{\hyperlink{classGateUserActions}{GateUserActions}} * cbm);}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateRunAction}{\string~GateRunAction}}()\{\}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{48   \textcolor{comment}{// Action classes Callbacks}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run* aRun);}
+\DoxyCodeLine{51   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} EndOfRunAction(\textcolor{keyword}{const} G4Run* aRun);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{inline} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetFlagBasicOutput( G4bool val ) \{ flagBasicOutput = val;\};}
+\DoxyCodeLine{54   \textcolor{keyword}{inline} G4bool GetFlagBasicOutput () \{ \textcolor{keywordflow}{return} flagBasicOutput; \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetRunAction ( \mbox{\hyperlink{classGateRunAction}{GateRunAction}}* val ) \{ prunAction = val; \};}
+\DoxyCodeLine{57   \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateRunAction}{GateRunAction}}* GetRunAction() \{ \textcolor{keywordflow}{return} prunAction; \};}
+\DoxyCodeLine{58   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{private}:}
+\DoxyCodeLine{61   \mbox{\hyperlink{classGateRunAction}{GateRunAction}}() \{\}}
+\DoxyCodeLine{62   \mbox{\hyperlink{classGateUserActions}{GateUserActions}}* pCallbackMan;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   G4int runIDcounter;}
+\DoxyCodeLine{65   G4bool flagBasicOutput;}
+\DoxyCodeLine{66   \textcolor{keyword}{static} \mbox{\hyperlink{classGateRunAction}{GateRunAction}}* prunAction;}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{73 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateEventAction}{GateEventAction}} :  \textcolor{keyword}{public} G4UserEventAction}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75 public :}
+\DoxyCodeLine{76   \mbox{\hyperlink{classGateEventAction}{GateEventAction}}(\mbox{\hyperlink{classGateUserActions}{GateUserActions}} * cbm);}
+\DoxyCodeLine{77   \mbox{\hyperlink{classGateEventAction}{\string~GateEventAction}}()}
+\DoxyCodeLine{78   \{\}}
+\DoxyCodeLine{79   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{80   \textcolor{comment}{// Action classes Callbacks}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82   \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event* anEvent);}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} EndOfEventAction(\textcolor{keyword}{const} G4Event* anEvent);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetFlagBasicOutput( G4bool val ) \{ flagBasicOutput = val; \};}
+\DoxyCodeLine{86   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} G4bool GetFlagBasicOutput () \{ \textcolor{keywordflow}{return} flagBasicOutput; \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEventAction ( \mbox{\hyperlink{classGateEventAction}{GateEventAction}}* val ) \{ peventAction = val; \};}
+\DoxyCodeLine{89   \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateEventAction}{GateEventAction}}* GetEventAction() \{ \textcolor{keywordflow}{return} peventAction; \};}
+\DoxyCodeLine{90   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{91 \textcolor{keyword}{private}:}
+\DoxyCodeLine{92   \mbox{\hyperlink{classGateEventAction}{GateEventAction}}() \{\}}
+\DoxyCodeLine{93   \mbox{\hyperlink{classGateUserActions}{GateUserActions}}* pCallbackMan;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   G4bool flagBasicOutput;}
+\DoxyCodeLine{96   \textcolor{keyword}{static} \mbox{\hyperlink{classGateEventAction}{GateEventAction}}* peventAction;}
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{102 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateTrackingAction}{GateTrackingAction}} :  \textcolor{keyword}{public} G4UserTrackingAction}
+\DoxyCodeLine{103 \{}
+\DoxyCodeLine{104 public :}
+\DoxyCodeLine{105   \mbox{\hyperlink{classGateTrackingAction}{GateTrackingAction}}(\mbox{\hyperlink{classGateUserActions}{GateUserActions}} * cbm);}
+\DoxyCodeLine{106   \textcolor{comment}{//    : pCallbackMan(cbm)\{\}}}
+\DoxyCodeLine{107   \mbox{\hyperlink{classGateTrackingAction}{\string~GateTrackingAction}}() \{\}}
+\DoxyCodeLine{108   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{109   \textcolor{comment}{// Action classes Callbacks}}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} PreUserTrackingAction(\textcolor{keyword}{const} G4Track* a) ;}
+\DoxyCodeLine{111   \textcolor{keywordtype}{void} PostUserTrackingAction(\textcolor{keyword}{const} G4Track* a);}
+\DoxyCodeLine{112   \textcolor{keywordtype}{void} ShowG4TrackInfos( G4String,G4Track* );}
+\DoxyCodeLine{113   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{114 \textcolor{keyword}{private}:}
+\DoxyCodeLine{115   \mbox{\hyperlink{classGateTrackingAction}{GateTrackingAction}}() \{\}}
+\DoxyCodeLine{116   \mbox{\hyperlink{classGateUserActions}{GateUserActions}}* pCallbackMan;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{119   std::vector<G4Track*> dummy\_track\_vector;}
+\DoxyCodeLine{120   std::vector<G4Step*> dummy\_step\_vector;}
+\DoxyCodeLine{121   \textcolor{comment}{/* PY Descourt 08/09/2009 */}}
+\DoxyCodeLine{122 \};}
+\DoxyCodeLine{123 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{124 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSteppingActionMessenger}{GateSteppingActionMessenger}};}
+\DoxyCodeLine{125 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{127 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}} :  \textcolor{keyword}{public} G4UserSteppingAction}
+\DoxyCodeLine{128 \{}
+\DoxyCodeLine{129 public :}
+\DoxyCodeLine{130   \mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}}(\mbox{\hyperlink{classGateUserActions}{GateUserActions}} * cbm);}
+\DoxyCodeLine{131   \mbox{\hyperlink{classGateSteppingAction}{\string~GateSteppingAction}}() ;}
+\DoxyCodeLine{132   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{133   \textcolor{comment}{// Action classes Callbacks}}
+\DoxyCodeLine{134   \textcolor{comment}{//Modif Seb 24/02/2009 // Remis par Tibo et David (02-\/06-\/2009), non mais !}}
+\DoxyCodeLine{135   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSteppingAction_ac9454917af7d367871bda2bf5bff77de}{UserSteppingAction}}(\textcolor{keyword}{const} G4Step* a);}
+\DoxyCodeLine{136   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSteppingAction_ac9454917af7d367871bda2bf5bff77de}{UserSteppingAction}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{137   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetDrawTrajectoryLevel(G4int value) \{ m\_drawTrjLevel = value; \};}
+\DoxyCodeLine{138   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetVerboseLevel(G4int value)        \{ m\_verboseLevel = value; \};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140   \textcolor{keyword}{inline}  std::vector<GateTrack*> *GetPPTrackVector() \{ \textcolor{keywordflow}{return} PPTrackVector;\};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142   \textcolor{keywordtype}{void} StopOnBoundary(G4int aI);}
+\DoxyCodeLine{143   \textcolor{keywordtype}{void} StopAndKill(G4String aString);}
+\DoxyCodeLine{144   \textcolor{keywordtype}{void} SetMode( TrackingMode aMode);}
+\DoxyCodeLine{145   TrackingMode GetMode();}
+\DoxyCodeLine{146   \textcolor{keywordtype}{void} SetTxtOut(G4String aString);}
+\DoxyCodeLine{147   G4int GetTxtOn() \{ \textcolor{keywordflow}{return} TxtOn;\};}
+\DoxyCodeLine{148   \textcolor{keywordtype}{void} SetEnergyThreshold(G4double);}
+\DoxyCodeLine{149   \textcolor{keywordtype}{void} SetFiles(G4int aN ) \{ m\_Nfiles = aN; \};}
+\DoxyCodeLine{150   G4int GetNfiles() \{ \textcolor{keywordflow}{return} m\_Nfiles;\};}
+\DoxyCodeLine{151   G4int GetcurrentN() \{ \textcolor{keywordflow}{return} m\_currentN; \};}
+\DoxyCodeLine{152   G4int SeekNewFile( G4bool increase );}
+\DoxyCodeLine{153   \textcolor{keywordtype}{void} SetRSFiles(G4int aN ) \{ m\_NfilesRS = aN; \};}
+\DoxyCodeLine{154   G4int GetNRSfiles() \{ \textcolor{keywordflow}{return} m\_NfilesRS;\};}
+\DoxyCodeLine{155   G4int GetcurrentNRS() \{ \textcolor{keywordflow}{return} m\_currentNRS; \};}
+\DoxyCodeLine{156   G4int SeekNewRecStepFile( G4bool increase );}
+\DoxyCodeLine{157   G4int NoMoreRecStepData() \{ \textcolor{keywordflow}{return} ( m\_currentNRS == m\_NfilesRS -\/ 1 ); \};}
+\DoxyCodeLine{158   G4int NoMoreTracksData()  \{ \textcolor{keywordflow}{return} ( m\_currentN == m\_Nfiles -\/ 1 ); \};}
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} ShowG4TrackInfos( G4String  outF, G4Track* aTrack);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{162 \textcolor{keyword}{private}:}
+\DoxyCodeLine{163   \mbox{\hyperlink{classGateSteppingAction}{GateSteppingAction}}() \{\}}
+\DoxyCodeLine{164   \mbox{\hyperlink{classGateUserActions}{GateUserActions}}* pCallbackMan;}
+\DoxyCodeLine{165   G4int m\_drawTrjLevel;}
+\DoxyCodeLine{166   G4int m\_verboseLevel;}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 protected :}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{171   \textcolor{comment}{//}}
+\DoxyCodeLine{172   \mbox{\hyperlink{classGateSteppingActionMessenger}{GateSteppingActionMessenger}}* m\_steppingMessenger;}
+\DoxyCodeLine{173   std::vector<GateTrack*> *PPTrackVector;}
+\DoxyCodeLine{174   TrackingMode m\_trackingMode;}
+\DoxyCodeLine{175   G4int Boundary; \textcolor{comment}{// if set to 1 stop track on Phantom Boundary}}
+\DoxyCodeLine{176   G4int fKeepOnlyP;}
+\DoxyCodeLine{177   G4int fKeepOnlyPhotons;}
+\DoxyCodeLine{178   G4int fKeepOnlyElectrons;}
+\DoxyCodeLine{179   G4TrackStatus fStpAKill;}
+\DoxyCodeLine{180   G4int TxtOn;}
+\DoxyCodeLine{181   G4int m\_Nfiles; \textcolor{comment}{// in detector mode sets the number of Tracks Root Files}}
+\DoxyCodeLine{182   G4int m\_currentN; \textcolor{comment}{// current file opened}}
+\DoxyCodeLine{183   G4int m\_NfilesRS; \textcolor{comment}{// in detector mode sets the number of phantom hits  Root Files}}
+\DoxyCodeLine{184   G4int m\_currentNRS; \textcolor{comment}{// current phantom hits file opened}}
+\DoxyCodeLine{185   G4String m\_StartingVolName; \textcolor{comment}{// In TRACKER MODE ONLY : this is the volume where the particle is created}}
+\DoxyCodeLine{186   G4bool fKillNextIsSet;                      \textcolor{comment}{//  In TRACKER MODE ONLY : a flag to be sure to kill the particle JUST after the boundary ( Boundary == 0 case )}}
+\DoxyCodeLine{187   G4bool fStartVolumeIsPhantomSD; \textcolor{comment}{// is the outgoing particle was created in a Phantom Type Sensitive Detector ?}}
+\DoxyCodeLine{188   G4double m\_energyThreshold;}
+\DoxyCodeLine{189   \textcolor{comment}{//}}
+\DoxyCodeLine{191 \textcolor{comment}{}\};}
+\DoxyCodeLine{192 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,357 @@
+\hypertarget{zconf_8h_source}{}\doxysection{zconf.\+h}
+\label{zconf_8h_source}\index{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/zconf.h@{/biomaps/physique/appli/GateOlga/src/source/externals/itk-\/mhd/itkzlib/zconf.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* zconf.h -\/-\/ configuration of the zlib compression library}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 1995-\/2005 Jean-\/loup Gailly.}}
+\DoxyCodeLine{3 \textcolor{comment}{ * For conditions of distribution and use, see copyright notice in zlib.h}}
+\DoxyCodeLine{4 \textcolor{comment}{ */}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{/* @(\#) Id */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef ZCONF\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define ZCONF\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* KITWARE\_ZLIB\_CHANGE -\/ Added to mangle function names */}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}itk\_zlib\_mangle.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/* KITWARE\_ZLIB\_CHANGE -\/ Added to get the correct definition of ZLIB\_DLL */}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}itkzlib/zlibDllConfig.h"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{/*}}
+\DoxyCodeLine{18 \textcolor{comment}{ * If you *really* need a unique prefix for all types and library functions,}}
+\DoxyCodeLine{19 \textcolor{comment}{ * compile with -\/DZ\_PREFIX. The "{}standard"{} zlib should be compiled without it.}}
+\DoxyCodeLine{20 \textcolor{comment}{ */}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifdef Z\_PREFIX}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#  define deflateInit\_          z\_deflateInit\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#  define deflate               z\_deflate}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#  define deflateEnd            z\_deflateEnd}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#  define inflateInit\_          z\_inflateInit\_}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#  define inflate               z\_inflate}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#  define inflateEnd            z\_inflateEnd}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#  define deflateInit2\_         z\_deflateInit2\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#  define deflateSetDictionary  z\_deflateSetDictionary}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#  define deflateCopy           z\_deflateCopy}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#  define deflateReset          z\_deflateReset}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#  define deflateParams         z\_deflateParams}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#  define deflateBound          z\_deflateBound}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#  define deflatePrime          z\_deflatePrime}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#  define inflateInit2\_         z\_inflateInit2\_}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#  define inflateSetDictionary  z\_inflateSetDictionary}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#  define inflateSync           z\_inflateSync}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#  define inflateSyncPoint      z\_inflateSyncPoint}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#  define inflateCopy           z\_inflateCopy}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#  define inflateReset          z\_inflateReset}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#  define inflateBack           z\_inflateBack}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#  define inflateBackEnd        z\_inflateBackEnd}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#  define compress              z\_compress}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#  define compress2             z\_compress2}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#  define compressBound         z\_compressBound}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#  define uncompress            z\_uncompress}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#  define adler32               z\_adler32}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#  define crc32                 z\_crc32}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#  define get\_crc\_table         z\_get\_crc\_table}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#  define zError                z\_zError}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#  define alloc\_func            z\_alloc\_func}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#  define free\_func             z\_free\_func}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#  define in\_func               z\_in\_func}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#  define out\_func              z\_out\_func}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#  define Byte                  z\_Byte}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#  define uInt                  z\_uInt}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#  define uLong                 z\_uLong}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#  define Bytef                 z\_Bytef}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#  define charf                 z\_charf}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#  define intf                  z\_intf}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#  define uIntf                 z\_uIntf}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#  define uLongf                z\_uLongf}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#  define voidpf                z\_voidpf}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#  define voidp                 z\_voidp}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#if defined(\_\_MSDOS\_\_) \&\& !defined(MSDOS)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#  define MSDOS}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#if (defined(OS\_2) || defined(\_\_OS2\_\_)) \&\& !defined(OS2)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#  define OS2}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#if defined(\_WINDOWS) \&\& !defined(WINDOWS)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#  define WINDOWS}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#if defined(\_WIN32) || defined(\_WIN32\_WCE) || defined(\_\_WIN32\_\_)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#  ifndef WIN32}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#    define WIN32}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#if (defined(MSDOS) || defined(OS2) || defined(WINDOWS)) \&\& !defined(WIN32)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#  if !defined(\_\_GNUC\_\_) \&\& !defined(\_\_FLAT\_\_) \&\& !defined(\_\_386\_\_)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#    ifndef SYS16BIT}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#      define SYS16BIT}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{/*}}
+\DoxyCodeLine{91 \textcolor{comment}{ * Compile with -\/DMAXSEG\_64K if the alloc function cannot allocate more}}
+\DoxyCodeLine{92 \textcolor{comment}{ * than 64k bytes at a time (needed on systems with 16-\/bit int).}}
+\DoxyCodeLine{93 \textcolor{comment}{ */}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#ifdef SYS16BIT}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#  define MAXSEG\_64K}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#ifdef MSDOS}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#  define UNALIGNED\_OK}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#ifdef \_\_STDC\_VERSION\_\_}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#  ifndef STDC}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#    define STDC}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#  if \_\_STDC\_VERSION\_\_ >= 199901L}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#    ifndef STDC99}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#      define STDC99}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#if !defined(STDC) \&\& (defined(\_\_STDC\_\_) || defined(\_\_cplusplus))}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#  define STDC}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#if !defined(STDC) \&\& (defined(\_\_GNUC\_\_) || defined(\_\_BORLANDC\_\_))}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#  define STDC}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#if !defined(STDC) \&\& (defined(MSDOS) || defined(WINDOWS) || defined(WIN32))}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#  define STDC}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#if !defined(STDC) \&\& (defined(OS2) || defined(\_\_HOS\_AIX\_\_))}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#  define STDC}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#if defined(\_\_OS400\_\_) \&\& !defined(STDC)    }\textcolor{comment}{/* iSeries (formerly AS/400). */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#  define STDC}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#ifndef STDC}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#  ifndef const }\textcolor{comment}{/* cannot use !defined(STDC) \&\& !defined(const) on Mac */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#    define const       }\textcolor{comment}{/* note: need a more gentle solution here */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{comment}{/* Some Mac compilers merge all .h files incorrectly: */}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#if defined(\_\_MWERKS\_\_)||defined(applec)||defined(THINK\_C)||defined(\_\_SC\_\_)}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#  define NO\_DUMMY\_DECL}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{/* Maximum value for memLevel in deflateInit2 */}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifndef MAX\_MEM\_LEVEL}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#  ifdef MAXSEG\_64K}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#    define MAX\_MEM\_LEVEL 8}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#    define MAX\_MEM\_LEVEL 9}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{/* Maximum value for windowBits in deflateInit2 and inflateInit2.}}
+\DoxyCodeLine{149 \textcolor{comment}{ * WARNING: reducing MAX\_WBITS makes minigzip unable to extract .gz files}}
+\DoxyCodeLine{150 \textcolor{comment}{ * created by gzip. (Files created by minigzip can still be extracted by}}
+\DoxyCodeLine{151 \textcolor{comment}{ * gzip.)}}
+\DoxyCodeLine{152 \textcolor{comment}{ */}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#ifndef MAX\_WBITS}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#  define MAX\_WBITS   15 }\textcolor{comment}{/* 32K LZ77 window */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{comment}{/* The memory requirements for deflate are (in bytes):}}
+\DoxyCodeLine{158 \textcolor{comment}{            (1 << (windowBits+2)) +  (1 << (memLevel+9))}}
+\DoxyCodeLine{159 \textcolor{comment}{ that is: 128K for windowBits=15  +  128K for memLevel = 8  (default values)}}
+\DoxyCodeLine{160 \textcolor{comment}{ plus a few kilobytes for small objects. For example, if you want to reduce}}
+\DoxyCodeLine{161 \textcolor{comment}{ the default memory requirements from 256K to 128K, compile with}}
+\DoxyCodeLine{162 \textcolor{comment}{     make CFLAGS="{}-\/O -\/DMAX\_WBITS=14 -\/DMAX\_MEM\_LEVEL=7"{}}}
+\DoxyCodeLine{163 \textcolor{comment}{ Of course this will generally degrade compression (there's no free lunch).}}
+\DoxyCodeLine{164 \textcolor{comment}{}}
+\DoxyCodeLine{165 \textcolor{comment}{   The memory requirements for inflate are (in bytes) 1 << windowBits}}
+\DoxyCodeLine{166 \textcolor{comment}{ that is, 32K for windowBits=15 (default value) plus a few kilobytes}}
+\DoxyCodeLine{167 \textcolor{comment}{ for small objects.}}
+\DoxyCodeLine{168 \textcolor{comment}{*/}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170                         \textcolor{comment}{/* Type declarations */}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#ifndef OF }\textcolor{comment}{/* function prototypes */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#  ifdef STDC}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#    define OF(args)  args}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#    define OF(args)  ()}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{comment}{/* The following definitions for FAR are needed only for MSDOS mixed}}
+\DoxyCodeLine{181 \textcolor{comment}{ * model programming (small or medium model with some far allocations).}}
+\DoxyCodeLine{182 \textcolor{comment}{ * This was tested only with MSC; for other MSDOS compilers you may have}}
+\DoxyCodeLine{183 \textcolor{comment}{ * to define NO\_MEMCPY in zutil.h.  If you don't need the mixed model,}}
+\DoxyCodeLine{184 \textcolor{comment}{ * just define FAR to be empty.}}
+\DoxyCodeLine{185 \textcolor{comment}{ */}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#ifdef SYS16BIT}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#  if defined(M\_I86SM) || defined(M\_I86MM)}}
+\DoxyCodeLine{188      \textcolor{comment}{/* MSC small or medium model */}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#    define SMALL\_MEDIUM}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#    ifdef \_MSC\_VER}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#      define FAR \_far}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#    else}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#      define FAR far}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#  if (defined(\_\_SMALL\_\_) || defined(\_\_MEDIUM\_\_))}}
+\DoxyCodeLine{197      \textcolor{comment}{/* Turbo C small or medium model */}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#    define SMALL\_MEDIUM}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#    ifdef \_\_BORLANDC\_\_}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#      define FAR \_far}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#    else}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#      define FAR far}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#if defined(WINDOWS) || defined(WIN32)}}
+\DoxyCodeLine{208    \textcolor{comment}{/* If building or using zlib as a DLL, define ZLIB\_DLL.}}
+\DoxyCodeLine{209 \textcolor{comment}{    * This is not mandatory, but it offers a little performance increase.}}
+\DoxyCodeLine{210 \textcolor{comment}{    */}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#  ifdef ZLIB\_DLL}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#    if defined(WIN32) \&\& (!defined(\_\_BORLANDC\_\_) || (\_\_BORLANDC\_\_ >= 0x500))}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#      ifdef ZLIB\_INTERNAL}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#        define ZEXTERN extern \_\_declspec(dllexport)}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#      else}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#        define ZEXTERN extern \_\_declspec(dllimport)}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#      endif}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#  endif  }\textcolor{comment}{/* ZLIB\_DLL */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{220    \textcolor{comment}{/* If building or using zlib with the WINAPI/WINAPIV calling convention,}}
+\DoxyCodeLine{221 \textcolor{comment}{    * define ZLIB\_WINAPI.}}
+\DoxyCodeLine{222 \textcolor{comment}{    * Caution: the standard ZLIB1.DLL is NOT compiled using ZLIB\_WINAPI.}}
+\DoxyCodeLine{223 \textcolor{comment}{    */}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#  ifdef ZLIB\_WINAPI}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#    ifdef FAR}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#      undef FAR}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#    include <windows.h>}}
+\DoxyCodeLine{229      \textcolor{comment}{/* No need for \_export, use ZLIB.DEF instead. */}}
+\DoxyCodeLine{230      \textcolor{comment}{/* For complete Windows compatibility, use WINAPI, not \_\_stdcall. */}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#    define ZEXPORT WINAPI}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#    ifdef WIN32}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#      define ZEXPORTVA WINAPIV}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#    else}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#      define ZEXPORTVA FAR CDECL}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#if defined (\_\_BEOS\_\_)}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#  ifdef ZLIB\_DLL}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#    ifdef ZLIB\_INTERNAL}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#      define ZEXPORT   \_\_declspec(dllexport)}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#      define ZEXPORTVA \_\_declspec(dllexport)}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#    else}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#      define ZEXPORT   \_\_declspec(dllimport)}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#      define ZEXPORTVA \_\_declspec(dllimport)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#    endif}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#ifndef ZEXTERN}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#  define ZEXTERN extern}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#ifndef ZEXPORT}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#  define ZEXPORT}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\#ifndef ZEXPORTVA}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#  define ZEXPORTVA}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#ifndef FAR}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#  define FAR}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#if !defined(\_\_MACTYPES\_\_)}}
+\DoxyCodeLine{267 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}  Byte;  \textcolor{comment}{/* 8 bits */}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{269 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   uInt;  \textcolor{comment}{/* 16 bits or more */}}
+\DoxyCodeLine{270 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}  uLong; \textcolor{comment}{/* 32 bits or more */}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#ifdef SMALL\_MEDIUM}}
+\DoxyCodeLine{273    \textcolor{comment}{/* Borland C/C++ and some old MSC versions ignore FAR inside typedef */}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#  define Bytef Byte FAR}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{276    \textcolor{keyword}{typedef} Byte  FAR Bytef;}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{278 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char}  FAR charf;}
+\DoxyCodeLine{279 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int}   FAR intf;}
+\DoxyCodeLine{280 \textcolor{keyword}{typedef} uInt  FAR uIntf;}
+\DoxyCodeLine{281 \textcolor{keyword}{typedef} uLong FAR uLongf;}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#ifdef STDC}}
+\DoxyCodeLine{284    \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} \textcolor{keyword}{const} *voidpc;}
+\DoxyCodeLine{285    \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} FAR   *voidpf;}
+\DoxyCodeLine{286    \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}       *voidp;}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{288    \textcolor{keyword}{typedef} Byte \textcolor{keyword}{const} *voidpc;}
+\DoxyCodeLine{289    \textcolor{keyword}{typedef} Byte FAR   *voidpf;}
+\DoxyCodeLine{290    \textcolor{keyword}{typedef} Byte       *voidp;}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 \textcolor{comment}{/* KITWARE\_ZLIB\_CHANGE -\/ Since VTK/ITK use CMake, not ./configure, we can go ahead and test HAVE\_UNISTD\_H */}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#ifdef HAVE\_UNISTD\_H}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#  include <sys/types.h>} \textcolor{comment}{/* for off\_t */}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#  include <unistd.h>}    \textcolor{comment}{/* for SEEK\_* and off\_t */}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#  ifdef VMS}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#    include <unixio.h>}   \textcolor{comment}{/* for off\_t */}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#  define z\_off\_t off\_t}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#ifndef SEEK\_SET}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#  define SEEK\_SET        0       }\textcolor{comment}{/* Seek from beginning of file.  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#  define SEEK\_CUR        1       }\textcolor{comment}{/* Seek from current position.  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#  define SEEK\_END        2       }\textcolor{comment}{/* Set file pointer to EOF plus "{}offset"{} */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#ifndef z\_off\_t}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#  define z\_off\_t long}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#if defined(\_\_OS400\_\_)}}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#  define NO\_vsnprintf}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#if defined(\_\_MVS\_\_)}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#  define NO\_vsnprintf}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#  ifdef FAR}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#    undef FAR}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \textcolor{comment}{/* MVS linker does not support external names larger than 8 bytes */}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#if defined(\_\_MVS\_\_)}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#   pragma map(deflateInit\_,"{}DEIN"{}})}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#   pragma map(deflateInit2\_,"{}DEIN2"{}})}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#   pragma map(deflateEnd,"{}DEEND"{}})}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#   pragma map(deflateBound,"{}DEBND"{}})}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#   pragma map(inflateInit\_,"{}ININ"{}})}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#   pragma map(inflateInit2\_,"{}ININ2"{}})}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#   pragma map(inflateEnd,"{}INEND"{}})}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#   pragma map(inflateSync,"{}INSY"{}})}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#   pragma map(inflateSetDictionary,"{}INSEDI"{}})}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#   pragma map(compressBound,"{}CMBND"{}})}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#   pragma map(inflate\_table,"{}INTABL"{}})}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#   pragma map(inflate\_fast,"{}INFA"{}})}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#   pragma map(inflate\_copyright,"{}INCOPY"{}})}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{comment}{/* KITWARE\_ZLIB\_CHANGE -\/ Added to suppress complier warnings */}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#if defined(\_MSC\_VER)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#pragma warning ( disable : 4127 ) }\textcolor{comment}{/* cond expr is constant */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#pragma warning ( disable : 4131 ) }\textcolor{comment}{/* old style declaration */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#pragma warning ( disable : 4244 ) }\textcolor{comment}{/* conversion loss of data */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#if defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#pragma warn -\/8004 }\textcolor{comment}{/* assigned a value that is never used */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#pragma warn -\/8008 }\textcolor{comment}{/* condition is always true */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#pragma warn -\/8066 }\textcolor{comment}{/* unreachable code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ZCONF\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

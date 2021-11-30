@@ -1,0 +1,103 @@
+\hypertarget{classGateTriCoincidenceSorter}{}\doxysection{Gate\+Tri\+Coincidence\+Sorter Class Reference}
+\label{classGateTriCoincidenceSorter}\index{GateTriCoincidenceSorter@{GateTriCoincidenceSorter}}
+Inheritance diagram for Gate\+Tri\+Coincidence\+Sorter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGateTriCoincidenceSorter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_ac5ccf810e3f3859c78c392943f82dc19}\label{classGateTriCoincidenceSorter_ac5ccf810e3f3859c78c392943f82dc19}} 
+{\bfseries Gate\+Tri\+Coincidence\+Sorter} (\mbox{\hyperlink{classGateCoincidencePulseProcessorChain}{Gate\+Coincidence\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a71f03c09c4e242f7d303811af04ec5bd}\label{classGateTriCoincidenceSorter_a71f03c09c4e242f7d303811af04ec5bd}} 
+\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ {\bfseries Find\+Singles\+Pulse\+List} (const G4\+String \&pulse\+List\+Name)
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a5600491553f3a4203147ce17b72a97d1}\label{classGateTriCoincidenceSorter_a5600491553f3a4203147ce17b72a97d1}} 
+void {\bfseries Set\+Singles\+Pulse\+List\+Name} (G4\+String \&name)
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_aad0e211a09379fe384699a4dbfdb819a}\label{classGateTriCoincidenceSorter_aad0e211a09379fe384699a4dbfdb819a}} 
+G4double {\bfseries Get\+Tri\+Coinc\+Window} ()
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a7c2724ccd6d3b8810c549b07e95ec7bb}\label{classGateTriCoincidenceSorter_a7c2724ccd6d3b8810c549b07e95ec7bb}} 
+void {\bfseries Set\+Tri\+Coinc\+Window} (G4double window)
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a862e1aff0c324615354c3f264509074b}\label{classGateTriCoincidenceSorter_a862e1aff0c324615354c3f264509074b}} 
+void {\bfseries Set\+WSPulse\+List\+Size} (G4int size)
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a268dd6397bd2bc36559d91664afa04e4}\label{classGateTriCoincidenceSorter_a268dd6397bd2bc36559d91664afa04e4}} 
+G4int {\bfseries Get\+WSPulse\+List\+Size} () const
+\item 
+bool \mbox{\hyperlink{classGateTriCoincidenceSorter_ac6937444d5bf73e0d6cc8fb70496842f}{Is\+Tri\+Coinc\+Processor}} () const
+\item 
+virtual void \mbox{\hyperlink{classGateTriCoincidenceSorter_aa28bfb995ea742c5f8c53ed69117f06d}{Describe\+Myself}} (size\+\_\+t indent)
+\begin{DoxyCompactList}\small\item\em Pure virtual method Decribe\+Myself() \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a38b25efb8502dc2a84f21c1d7b0d9a29}\label{classGateTriCoincidenceSorter_a38b25efb8502dc2a84f21c1d7b0d9a29}} 
+virtual void {\bfseries Register\+TCSingles} (\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&s\+Pulse\+List)
+\item 
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a48cbd20463d7da377a3b19baa7e517c4}\label{classGateTriCoincidenceSorter_a48cbd20463d7da377a3b19baa7e517c4}} 
+virtual G4\+String {\bfseries Set\+Singles\+Tree\+Name} (const G4\+String \&name)
+\item 
+virtual void \mbox{\hyperlink{classGateTriCoincidenceSorter_ab8903305c766928b809b556fe0be4f04}{Collect\+Singles}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ \mbox{\hyperlink{classGateTriCoincidenceSorter_a99696be06f2a503670e2e98f4cf5db3f}{Process\+Pulse}} (\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$input\+Pulse, G4int i\+Pulse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_ab8903305c766928b809b556fe0be4f04}\label{classGateTriCoincidenceSorter_ab8903305c766928b809b556fe0be4f04}} 
+\index{GateTriCoincidenceSorter@{GateTriCoincidenceSorter}!CollectSingles@{CollectSingles}}
+\index{CollectSingles@{CollectSingles}!GateTriCoincidenceSorter@{GateTriCoincidenceSorter}}
+\doxysubsubsection{\texorpdfstring{CollectSingles()}{CollectSingles()}}
+{\footnotesize\ttfamily void Gate\+Tri\+Coincidence\+Sorter\+::\+Collect\+Singles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_aa28bfb995ea742c5f8c53ed69117f06d}\label{classGateTriCoincidenceSorter_aa28bfb995ea742c5f8c53ed69117f06d}} 
+\index{GateTriCoincidenceSorter@{GateTriCoincidenceSorter}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateTriCoincidenceSorter@{GateTriCoincidenceSorter}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily void Gate\+Tri\+Coincidence\+Sorter\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pure virtual method Decribe\+Myself() 
+
+
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor_ada4b8a14aa8336a1845beb5f5299e5db}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_ac6937444d5bf73e0d6cc8fb70496842f}\label{classGateTriCoincidenceSorter_ac6937444d5bf73e0d6cc8fb70496842f}} 
+\index{GateTriCoincidenceSorter@{GateTriCoincidenceSorter}!IsTriCoincProcessor@{IsTriCoincProcessor}}
+\index{IsTriCoincProcessor@{IsTriCoincProcessor}!GateTriCoincidenceSorter@{GateTriCoincidenceSorter}}
+\doxysubsubsection{\texorpdfstring{IsTriCoincProcessor()}{IsTriCoincProcessor()}}
+{\footnotesize\ttfamily bool Gate\+Tri\+Coincidence\+Sorter\+::\+Is\+Tri\+Coinc\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+\mbox{\Hypertarget{classGateTriCoincidenceSorter_a99696be06f2a503670e2e98f4cf5db3f}\label{classGateTriCoincidenceSorter_a99696be06f2a503670e2e98f4cf5db3f}} 
+\index{GateTriCoincidenceSorter@{GateTriCoincidenceSorter}!ProcessPulse@{ProcessPulse}}
+\index{ProcessPulse@{ProcessPulse}!GateTriCoincidenceSorter@{GateTriCoincidenceSorter}}
+\doxysubsubsection{\texorpdfstring{ProcessPulse()}{ProcessPulse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$ Gate\+Tri\+Coincidence\+Sorter\+::\+Process\+Pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGateCoincidencePulse}{Gate\+Coincidence\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{G4int}]{i\+Pulse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by the base class \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}} 
+
+Implements \mbox{\hyperlink{classGateVCoincidencePulseProcessor}{Gate\+VCoincidence\+Pulse\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Tri\+Coincidence\+Sorter.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Tri\+Coincidence\+Sorter.\+cc\end{DoxyCompactItemize}

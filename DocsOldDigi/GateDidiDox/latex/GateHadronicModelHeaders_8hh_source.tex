@@ -1,0 +1,100 @@
+\hypertarget{GateHadronicModelHeaders_8hh_source}{}\doxysection{Gate\+Hadronic\+Model\+Headers.\+hh}
+\label{GateHadronicModelHeaders_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateHadronicModelHeaders.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateHadronicModelHeaders.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// Elastic}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#if (G4VERSION\_MAJOR == 9)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}G4LElastic.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ElasticHadrNucleusHE.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4LEpp.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4LEnp.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4HadronElastic.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// Nucleus-\/nucleus}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4BinaryLightIonReaction.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#if (G4VERSION\_MAJOR == 9)}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}G4LEDeuteronInelastic.hh"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}G4LETritonInelastic.hh"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4LEAlphaInelastic.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}G4WilsonAbrasionModel.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}G4EMDissociation.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}G4QMDReaction.hh"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{comment}{// Low energy parameterized}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#if (G4VERSION\_MAJOR == 9)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}G4LEProtonInelastic.hh"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}G4LEPionPlusInelastic.hh"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}G4LEPionMinusInelastic.hh"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}G4LEKaonPlusInelastic.hh"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}G4LEKaonMinusInelastic.hh"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}G4LEKaonZeroLInelastic.hh"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}G4LEKaonZeroSInelastic.hh"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}G4LENeutronInelastic.hh"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}G4LELambdaInelastic.hh"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}G4LESigmaPlusInelastic.hh"{}}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}G4LESigmaMinusInelastic.hh"{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}G4LEXiMinusInelastic.hh"{}}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include "{}G4LEXiZeroInelastic.hh"{}}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include "{}G4LEOmegaMinusInelastic.hh"{}}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include "{}G4LEAntiProtonInelastic.hh"{}}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include "{}G4LEAntiNeutronInelastic.hh"{}}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}G4LEAntiLambdaInelastic.hh"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include "{}G4LEAntiSigmaPlusInelastic.hh"{}}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include "{}G4LEAntiSigmaMinusInelastic.hh"{}}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include "{}G4LEAntiXiMinusInelastic.hh"{}}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include "{}G4LEAntiXiZeroInelastic.hh"{}}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include "{}G4LEAntiOmegaMinusInelastic.hh"{}}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{// Leading Particle Bias}}
+\DoxyCodeLine{61 \textcolor{comment}{// Seb Modifs -\/ 05/11/2010 -\/ Geant4 9.4 validations}}
+\DoxyCodeLine{62 \textcolor{comment}{//\#include "{}G4Mars5GeV.hh"{}}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{// Precompound}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include "{}G4ExcitationHandler.hh"{}}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#include "{}G4PreCompoundModel.hh"{}}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{// Cascade}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#include "{}G4CascadeInterface.hh"{}}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include "{}G4BinaryCascade.hh"{}}}
+\DoxyCodeLine{71 \textcolor{comment}{//\#include "{}GateBinaryCascade.hh"{}}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{// Gamma-\/ and Lepto-\/Nuclear}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#if (G4VERSION\_MAJOR == 9)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#include "{}G4ElectroNuclearReaction.hh"{}}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#include "{}G4GammaNuclearReaction.hh"{}}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{// Neutron (for high precision models, user must first download high precision neutron data files from Geant4 web page)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#if (G4VERSION\_MAJOR == 9)}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#include "{}G4LCapture.hh"{}}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#include "{}G4NeutronHPorLCapture.hh"{}}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#include "{}G4NeutronHPorLElastic.hh"{}}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#include "{}G4NeutronHPorLEInelastic.hh"{}}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#include "{}G4NeutronHPorLFission.hh"{}}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#include "{}G4NeutronRadCapture.hh"{}}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#include "{}G4LFission.hh"{}}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#include "{}G4NeutronHPCapture.hh"{}}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#include "{}G4NeutronHPElastic.hh"{}}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#include "{}G4NeutronHPInelastic.hh"{}}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#include "{}G4NeutronHPFission.hh"{}}}
+
+\end{DoxyCode}

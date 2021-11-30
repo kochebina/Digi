@@ -1,0 +1,181 @@
+\hypertarget{GateDoseActor_8hh_source}{}\doxysection{Gate\+Dose\+Actor.\+hh}
+\label{GateDoseActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateDoseActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef GATEDOSEACTOR\_HH}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define GATEDOSEACTOR\_HH}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <G4NistManager.hh>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <G4UnitsTable.hh>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}GateVImageActor.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}GateActorManager.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}GateDoseActorMessenger.hh"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}GateImageWithStatistic.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}GateVoxelizedMass.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}GateRegionDoseStat.hh"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }G4EmCalculator;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classGateDoseActor}{GateDoseActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVImageActor}{GateVImageActor}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41   \textcolor{comment}{// Actor name}}
+\DoxyCodeLine{42   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateDoseActor_a31486aee3a9f6b797a7b239d3b38725c}{\string~GateDoseActor}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateDoseActor}{GateDoseActor}})}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{47   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseActor_a2b856ceb1bde3f0605e0c28e61c243b2}{Construct}}();}
+\DoxyCodeLine{49   \textcolor{comment}{//Edep}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} EnableEdepImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepImageEnabled = b; \}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} EnableEdepSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepSquaredImageEnabled = b; \}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} EnableEdepUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsEdepUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{53   \textcolor{comment}{//Dose}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} EnableDoseImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseImageEnabled = b; \}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} EnableDoseSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseSquaredImageEnabled = b; \}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} EnableDoseUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} EnableDoseNormalisationToMax(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} EnableDoseNormalisationToIntegral(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} SetEfficiencyFile(G4String b);}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} SetEfficiencyFileByZ(G4String b);}
+\DoxyCodeLine{61   \textcolor{comment}{//DoseToWater}}
+\DoxyCodeLine{62   \textcolor{keywordtype}{void} EnableDoseToWaterImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToWaterImageEnabled = b; \}}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} EnableDoseToWaterSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToWaterSquaredImageEnabled = b; \}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} EnableDoseToWaterUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToWaterUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} EnableDoseToWaterNormalisationToMax(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} EnableDoseToWaterNormalisationToIntegral(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{67   \textcolor{comment}{//DoseToOtherMaterial}}
+\DoxyCodeLine{68   \textcolor{keywordtype}{void} EnableDoseToOtherMaterialImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToOtherMaterialImageEnabled = b; \}}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} EnableDoseToOtherMaterialSquaredImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToOtherMaterialSquaredImageEnabled = b; \}}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} EnableDoseToOtherMaterialUncertaintyImage(\textcolor{keywordtype}{bool} b) \{ mIsDoseToOtherMaterialUncertaintyImageEnabled = b; \}}
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} EnableDoseToOtherMaterialNormalisationToMax(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} EnableDoseToOtherMaterialNormalisationToIntegral(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetOtherMaterial(G4String b) \{ mOtherMaterial = b; \}}
+\DoxyCodeLine{74   \textcolor{comment}{//Others}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} EnableNumberOfHitsImage(\textcolor{keywordtype}{bool} b) \{ mIsNumberOfHitsImageEnabled = b; \}}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} SetDoseAlgorithmType(G4String b) \{ mDoseAlgorithmType = b; \}}
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} ImportMassImage(G4String b) \{ mImportMassImage = b; \}}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} ExportMassImage(G4String b) \{ mExportMassImage = b; \}}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} VolumeFilter(G4String b) \{ mVolumeFilter = b; \}}
+\DoxyCodeLine{80   \textcolor{keywordtype}{void} MaterialFilter(G4String b) \{ mMaterialFilter = b; \}}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} setTestFlag(\textcolor{keywordtype}{bool} b) \{ mTestFlag = b; \}}
+\DoxyCodeLine{82   \textcolor{comment}{//Regions}}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} SetDoseByRegionsInputFilename(std::string f);}
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} SetDoseByRegionsOutputFilename(std::string f);}
+\DoxyCodeLine{85   \textcolor{keywordtype}{void} AddRegion(std::string str);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{88   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfEventAction(\textcolor{keyword}{const} G4Event * event);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseActor_aae370ef4e10214f753e1bb1835294f59}{UserSteppingActionInVoxel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keyword}{const} G4Step* step);}
+\DoxyCodeLine{91   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPreTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* track);}
+\DoxyCodeLine{92   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserPostTrackActionInVoxel(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \textcolor{comment}{/*index*/}, \textcolor{keyword}{const} G4Track* \textcolor{comment}{/*t*/}) \{\}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \textcolor{comment}{//  Saves the data collected to the file}}
+\DoxyCodeLine{95   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateDoseActor_ab104cf6101a544299e84f47471fa945f}{SaveData}}();}
+\DoxyCodeLine{96   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   \textcolor{comment}{// Scorer related}}
+\DoxyCodeLine{99   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{100   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{103   \mbox{\hyperlink{classGateDoseActor}{GateDoseActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{104   \mbox{\hyperlink{classGateDoseActorMessenger}{GateDoseActorMessenger}}* pMessenger;}
+\DoxyCodeLine{105   \mbox{\hyperlink{classGateVoxelizedMass}{GateVoxelizedMass}} mVoxelizedMass;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{int} mCurrentEvent;}
+\DoxyCodeLine{108   StepHitType mUserStepHitType;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \textcolor{keywordtype}{bool} mIsLastHitEventImageEnabled;}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{comment}{//Edep}}
+\DoxyCodeLine{113   \textcolor{keywordtype}{bool} mIsEdepImageEnabled;}
+\DoxyCodeLine{114   \textcolor{keywordtype}{bool} mIsEdepSquaredImageEnabled;}
+\DoxyCodeLine{115   \textcolor{keywordtype}{bool} mIsEdepUncertaintyImageEnabled;}
+\DoxyCodeLine{116   \textcolor{comment}{//Dose}}
+\DoxyCodeLine{117   \textcolor{keywordtype}{bool} mIsDoseImageEnabled;}
+\DoxyCodeLine{118   \textcolor{keywordtype}{bool} mIsDoseSquaredImageEnabled;}
+\DoxyCodeLine{119   \textcolor{keywordtype}{bool} mIsDoseUncertaintyImageEnabled;}
+\DoxyCodeLine{120   \textcolor{keywordtype}{bool} mIsDoseNormalisationEnabled;}
+\DoxyCodeLine{121   \textcolor{keywordtype}{bool} mIsDoseEfficiencyEnabled;}
+\DoxyCodeLine{122   \textcolor{keywordtype}{bool} mIsDoseEfficiencyByZEnabled;}
+\DoxyCodeLine{123   \textcolor{comment}{//DoseToWater}}
+\DoxyCodeLine{124   \textcolor{keywordtype}{bool} mIsDoseToWaterImageEnabled;}
+\DoxyCodeLine{125   \textcolor{keywordtype}{bool} mIsDoseToWaterSquaredImageEnabled;}
+\DoxyCodeLine{126   \textcolor{keywordtype}{bool} mIsDoseToWaterUncertaintyImageEnabled;}
+\DoxyCodeLine{127   \textcolor{keywordtype}{bool} mIsDoseToWaterNormalisationEnabled;}
+\DoxyCodeLine{128   \textcolor{keywordtype}{bool} mDose2WaterWarningFlag;}
+\DoxyCodeLine{129   \textcolor{comment}{//DoseToOtherMaterial}}
+\DoxyCodeLine{130   \textcolor{keywordtype}{bool} mIsDoseToOtherMaterialImageEnabled;}
+\DoxyCodeLine{131   \textcolor{keywordtype}{bool} mIsDoseToOtherMaterialSquaredImageEnabled;}
+\DoxyCodeLine{132   \textcolor{keywordtype}{bool} mIsDoseToOtherMaterialUncertaintyImageEnabled;}
+\DoxyCodeLine{133   \textcolor{keywordtype}{bool} mIsDoseToOtherMaterialNormalisationEnabled;}
+\DoxyCodeLine{134   \textcolor{comment}{//Others}}
+\DoxyCodeLine{135   \textcolor{keywordtype}{bool} mIsNumberOfHitsImageEnabled;}
+\DoxyCodeLine{136   \textcolor{keywordtype}{bool} mTestFlag;}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138   \textcolor{comment}{//Edep}}
+\DoxyCodeLine{139   G4String mEdepFilename;}
+\DoxyCodeLine{140   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mEdepImage;}
+\DoxyCodeLine{141   \textcolor{comment}{//Dose}}
+\DoxyCodeLine{142   G4String mDoseFilename;}
+\DoxyCodeLine{143   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseImage;}
+\DoxyCodeLine{144     \textcolor{comment}{//Efficiency option}}
+\DoxyCodeLine{145   G4String mDoseEfficiencyFile;}
+\DoxyCodeLine{146   std::vector<double> mDoseEnergy;}
+\DoxyCodeLine{147   std::vector<double> mDoseEfficiency;}
+\DoxyCodeLine{148     \textcolor{comment}{//Efficiency option by Z (by ion atomic number)}}
+\DoxyCodeLine{149   std::vector<G4String> mDoseEfficiencyFileByZ;}
+\DoxyCodeLine{150   std::vector<G4int> mDoseZByZ;}
+\DoxyCodeLine{151   std::vector<std::vector<double>> mDoseEnergyByZ;}
+\DoxyCodeLine{152   std::vector<std::vector<double>> mDoseEfficiencyByZ;}
+\DoxyCodeLine{153   \textcolor{comment}{//DoseToWater}}
+\DoxyCodeLine{154   G4String mDoseToWaterFilename;}
+\DoxyCodeLine{155   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseToWaterImage;}
+\DoxyCodeLine{156   \textcolor{comment}{//DoseToOtherMaterial}}
+\DoxyCodeLine{157   G4String mDoseToOtherMaterialFilename;}
+\DoxyCodeLine{158   \mbox{\hyperlink{classGateImageWithStatistic}{GateImageWithStatistic}} mDoseToOtherMaterialImage;}
+\DoxyCodeLine{159   G4String mOtherMaterial;}
+\DoxyCodeLine{160   \textcolor{comment}{//Hits}}
+\DoxyCodeLine{161   G4String mNbOfHitsFilename;}
+\DoxyCodeLine{162   \mbox{\hyperlink{classGateImageT}{GateImageInt}} mNumberOfHitsImage;}
+\DoxyCodeLine{163   \mbox{\hyperlink{classGateImageT}{GateImageInt}} mLastHitEventImage;}
+\DoxyCodeLine{164   \textcolor{comment}{//Others}}
+\DoxyCodeLine{165   \mbox{\hyperlink{classGateImageT}{GateImageDouble}} mMassImage;}
+\DoxyCodeLine{166   \textcolor{comment}{//Regions}}
+\DoxyCodeLine{167   \textcolor{keywordtype}{bool} mDoseByRegionsFlag;}
+\DoxyCodeLine{168   \mbox{\hyperlink{classGateImageT}{GateImageFloat}} mDoseByRegionsLabelImage;}
+\DoxyCodeLine{169   GateRegionDoseStat::IdToSingleRegionMapType mMapIdToSingleRegion;}
+\DoxyCodeLine{170   GateRegionDoseStat::LabelToSeveralRegionsMapType mMapLabelToSeveralRegions;}
+\DoxyCodeLine{171   GateRegionDoseStat::IdToLabelsMapType mMapIdToLabels;}
+\DoxyCodeLine{172   G4String mDoseByRegionsInputFilename;}
+\DoxyCodeLine{173   G4String mDoseByRegionsOutputFilename;}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175   G4String mDoseAlgorithmType;}
+\DoxyCodeLine{176   G4String mImportMassImage;}
+\DoxyCodeLine{177   G4String mExportMassImage;}
+\DoxyCodeLine{178   G4String mVolumeFilter;}
+\DoxyCodeLine{179   G4String mMaterialFilter;}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181   G4EmCalculator* emcalc;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 MAKE\_AUTO\_CREATOR\_ACTOR(DoseActor,\mbox{\hyperlink{classGateDoseActor}{GateDoseActor}})}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATESIMULATIONSTATISTICACTOR\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

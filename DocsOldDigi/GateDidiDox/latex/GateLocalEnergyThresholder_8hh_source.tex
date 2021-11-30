@@ -1,0 +1,85 @@
+\hypertarget{GateLocalEnergyThresholder_8hh_source}{}\doxysection{Gate\+Local\+Energy\+Thresholder.\+hh}
+\label{GateLocalEnergyThresholder_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEnergyThresholder.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateLocalEnergyThresholder.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef GateLocalEnergyThresholder\_h}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define GateLocalEnergyThresholder\_h 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateObjectStore.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVEffectiveEnergyLaw.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}GateDepositedEnergyLaw.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateSolidAngleWeightedEnergyLaw.hh"{}}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEnergyThresholderMessenger}{GateLocalEnergyThresholderMessenger}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateLocalEnergyThresholder}{GateLocalEnergyThresholder}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25   \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \mbox{\hyperlink{classGateLocalEnergyThresholder_aa52a1f74f28df3e5911109b1d990078d}{GateLocalEnergyThresholder}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{29                    \textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateLocalEnergyThresholder_a86bda51695393159956efdb3d8229aa2}{\string~GateLocalEnergyThresholder}}() ;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34    G4int \mbox{\hyperlink{classGateLocalEnergyThresholder_a7b2bd0899cf177fa5dc6476f88ce2dc2}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36    \textcolor{keywordtype}{void} SetThreshold(G4String name, G4double val) \{  m\_table[name].m\_threshold = val;  \};}
+\DoxyCodeLine{37    \textcolor{keywordtype}{void} SetEffectiveEnergyLaw(G4String name, \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}}* law) \{}
+\DoxyCodeLine{38        G4cout<<\textcolor{stringliteral}{"{}"{}}<<law-\/>\mbox{\hyperlink{classGateNamedObject_a74cb2aaf869dcf59e7e22dd72cff6368}{GetObjectName}}()<<G4endl;}
+\DoxyCodeLine{39        m\_table[name].m\_effectiveEnergyLaw=law;}
+\DoxyCodeLine{40       G4cout<<m\_table[name].m\_effectiveEnergyLaw-\/>GetObjectName()<<G4endl;\};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{//    //! Returns the threshold}}
+\DoxyCodeLine{43 \textcolor{comment}{//        G4double GetThreshold()             \{ return m\_threshold; \}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{//    //! This function returns the effective energy law in use.}}
+\DoxyCodeLine{47 \textcolor{comment}{//        inline GateVEffectiveEnergyLaw* GetEffectiveEnergyLaw()           \{ return m\_effectiveEnergyLaw; \}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalEnergyThresholder_a13ee32804c9db9e51cb794d94e9e5b86}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{57   }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateLocalEnergyThresholder_aea3b6bf8c662aebc699e32b06ca73209}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\&  outputPulseList);}
+\DoxyCodeLine{59     \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* \mbox{\hyperlink{classGateLocalEnergyThresholder_a4eb3ed8d9ac74cb9d25f192ab17f10d8}{ProcessPulseList}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulseList}{GatePulseList}}* inputPulseList);}
+\DoxyCodeLine{60   \textcolor{keyword}{private}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{bool} flgTriggerAW;}
+\DoxyCodeLine{63   std::vector<GateVolumeID> vID;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \mbox{\hyperlink{classGateLocalEnergyThresholderMessenger}{GateLocalEnergyThresholderMessenger}} *m\_messenger;    }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keyword}{struct }param \{}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         G4double m\_threshold;}
+\DoxyCodeLine{71         \mbox{\hyperlink{classGateVEffectiveEnergyLaw}{GateVEffectiveEnergyLaw}}* m\_effectiveEnergyLaw;}
+\DoxyCodeLine{72     \};}
+\DoxyCodeLine{73        param m\_param;}
+\DoxyCodeLine{74         G4String m\_name;                               }
+\DoxyCodeLine{75       \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} m\_table ;  }
+\DoxyCodeLine{76       \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} ::iterator im;  }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78       \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/test for multiples close to each other}}
+\DoxyCodeLine{79       \textcolor{comment}{// std::map<G4String, std::vector<int>> PulsesIndexBelowSolidAngleTHR;}}
+\DoxyCodeLine{80       \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

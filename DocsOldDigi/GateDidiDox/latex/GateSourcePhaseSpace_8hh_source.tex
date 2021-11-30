@@ -1,0 +1,298 @@
+\hypertarget{GateSourcePhaseSpace_8hh_source}{}\doxysection{Gate\+Source\+Phase\+Space.\+hh}
+\label{GateSourcePhaseSpace_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourcePhaseSpace.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourcePhaseSpace.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GATEPHASESPACESOURCE\_HH}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GATEPHASESPACESOURCE\_HH}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifdef GATE\_USE\_TORCH}}
+\DoxyCodeLine{16 \textcolor{comment}{// Need to be *before* include GateIAEAHeader because it define macros}}
+\DoxyCodeLine{17 \textcolor{comment}{// that mess with torch}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma GCC diagnostic push}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wunused-\/parameter"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wpedantic"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <torch/script.h>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#pragma GCC diagnostic pop}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}G4Event.hh"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}G4VPrimaryGenerator.hh"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}G4PrimaryVertex.hh"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}G4ParticleMomentum.hh"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}GateSourcePhaseSpaceMessenger.hh"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}GateUserActions.hh"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}GateTreeFileManager.hh"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include <typeindex>}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}json.hpp"{}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{struct }\mbox{\hyperlink{structiaea__record__type}{iaea\_record\_type}};}
+\DoxyCodeLine{46 \textcolor{keyword}{struct }\mbox{\hyperlink{structiaea__header__type}{iaea\_header\_type}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourcePhaseSpace}{GateSourcePhaseSpace}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}} \{}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{classGateSourcePhaseSpace}{GateSourcePhaseSpace}}(G4String name);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \mbox{\hyperlink{classGateSourcePhaseSpace}{\string~GateSourcePhaseSpace}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} Initialize();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} GenerateROOTVertex(G4Event *);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} GenerateROOTVertexSingle();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} GenerateROOTVertexPairs();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} GenerateIAEAVertex(G4Event *);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} GeneratePyTorchVertex(G4Event *);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} GeneratePyTorchVertexSingle(G4Event *);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} GeneratePyTorchVertexPairs(G4Event *);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} GenerateBatchSamplesFromPyTorchSingle();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} GenerateBatchSamplesFromPyTorchPairs();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     G4int OpenIAEAFile(G4String file);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     G4int GeneratePrimaries(G4Event *event);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} GeneratePrimariesSingle(G4Event *event);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} GeneratePrimariesPairs(G4Event *event);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} GenerateVertex(G4Event *event, G4ThreeVector \&position,}
+\DoxyCodeLine{83                         G4ThreeVector \&momentum, \textcolor{keywordtype}{double} time, \textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} UpdatePositionAndMomentum(G4ThreeVector \&position, G4ThreeVector \&momentum);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} AddFile(G4String file);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} InitializeTransformation();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     G4ThreeVector SetReferencePosition(G4ThreeVector coordLocal);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     G4ThreeVector SetReferenceMomentum(G4ThreeVector coordLocal);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} SetRelativeTimeFlag(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} SetIgnoreTimeFlag(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keywordtype}{bool} GetPositionInWorldFrame()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mPositionInWorldFrame; \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} SetPositionInWorldFrame(\textcolor{keywordtype}{bool} t) \{ mPositionInWorldFrame = t; \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordtype}{void} SetUseRegularSymmetry() \{}
+\DoxyCodeLine{104         \textcolor{keywordflow}{if} (mUseRandomSymmetry)}
+\DoxyCodeLine{105             GateError(\textcolor{stringliteral}{"{}You cannot use random and regular symmetry for phase space source"{}});}
+\DoxyCodeLine{106         mUseRegularSymmetry = \textcolor{keyword}{true};}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{keywordtype}{bool} GetUseRegularSymmetry()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mUseRegularSymmetry; \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keywordtype}{void} SetUseRandomSymmetry() \{}
+\DoxyCodeLine{112         \textcolor{keywordflow}{if} (mUseRegularSymmetry)}
+\DoxyCodeLine{113             GateError(\textcolor{stringliteral}{"{}You cannot use random and regular symmetry for phase space source"{}});}
+\DoxyCodeLine{114         mUseRandomSymmetry = \textcolor{keyword}{true};}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{keywordtype}{bool} GetUseRandomSymmetry()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} mUseRandomSymmetry; \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} SetParticleType(G4String \&name) \{ mParticleTypeNameGivenByUser = name; \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{keywordtype}{void} SetUseNbOfParticleAsIntensity(\textcolor{keywordtype}{bool} b) \{ mUseNbOfParticleAsIntensity = b; \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} SetStartingParticleId(\textcolor{keywordtype}{long} \textcolor{keywordtype}{id}) \{ mStartingParticleId = id; \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} SetIgnoreWeight(\textcolor{keywordtype}{bool} b) \{ mIgnoreWeight = b; \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{keywordtype}{void} SetPytorchBatchSize(\textcolor{keywordtype}{int} b) \{ mPTBatchSize = b; \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordtype}{void} InitializeIAEA();}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \textcolor{keywordtype}{void} InitializeROOT();}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{keywordtype}{void} InitializeROOTSingle();}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} InitializeROOTPairs();}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordtype}{void} InitializePyTorch();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keywordtype}{void} InitializePyTorchPairs();}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keywordtype}{void} InitializePyTorchSingle();}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} SetPytorchParams(G4String \&name) \{ mPTJsonFilename = name; \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{146     std::vector<unsigned int> pListOfSelectedEvents;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     G4long mCurrentParticleNumber;}
+\DoxyCodeLine{149     G4long mCurrentParticleNumberInFile;}
+\DoxyCodeLine{150     G4long mStartingParticleId;}
+\DoxyCodeLine{151     G4long mNumberOfParticlesInFile;}
+\DoxyCodeLine{152     G4long mTotalNumberOfParticles;}
+\DoxyCodeLine{153     G4int mCurrentRunNumber;}
+\DoxyCodeLine{154     \textcolor{keywordtype}{double} mTotalSimuTime;}
+\DoxyCodeLine{155     \textcolor{keywordtype}{double} mRequestedNumberOfParticlesPerRun;}
+\DoxyCodeLine{156     G4long mLoop;}
+\DoxyCodeLine{157     G4long mLoopFile;}
+\DoxyCodeLine{158     G4long mCurrentUse;}
+\DoxyCodeLine{159     G4long mResidu;}
+\DoxyCodeLine{160     \textcolor{keywordtype}{double} mResiduRun;}
+\DoxyCodeLine{161     G4long mLastPartIndex;}
+\DoxyCodeLine{162     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mCurrentParticleInIAEAFiles;}
+\DoxyCodeLine{163     G4long mCurrentUsedParticleInIAEAFiles;}
+\DoxyCodeLine{164     \textcolor{keywordtype}{bool} mInitialized;}
+\DoxyCodeLine{165     G4String mFileType;}
+\DoxyCodeLine{166     \textcolor{keywordtype}{bool} mRelativeTimeFlag;}
+\DoxyCodeLine{167     \textcolor{keywordtype}{bool} mTimeIsUsed;}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{keywordtype}{float} energy;}
+\DoxyCodeLine{170     \textcolor{keywordtype}{float} x, y, z;}
+\DoxyCodeLine{171     \textcolor{keywordtype}{float} dx, dy, dz;}
+\DoxyCodeLine{172     \textcolor{keywordtype}{float} ftime;}
+\DoxyCodeLine{173     \textcolor{keywordtype}{double} dtime;}
+\DoxyCodeLine{174     std::type\_index time\_type = \textcolor{keyword}{typeid}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{175     \textcolor{keywordtype}{float} weight;}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177     \textcolor{comment}{// below variables for pairs of events}}
+\DoxyCodeLine{178     \textcolor{comment}{// FIXME float or double ?}}
+\DoxyCodeLine{179     \textcolor{keywordtype}{bool} mIsPair;}
+\DoxyCodeLine{180     \textcolor{keywordtype}{float} E1;}
+\DoxyCodeLine{181     \textcolor{keywordtype}{float} E2;}
+\DoxyCodeLine{182     \textcolor{keywordtype}{float} X1;}
+\DoxyCodeLine{183     \textcolor{keywordtype}{float} Y1;}
+\DoxyCodeLine{184     \textcolor{keywordtype}{float} Z1;}
+\DoxyCodeLine{185     \textcolor{keywordtype}{float} X2;}
+\DoxyCodeLine{186     \textcolor{keywordtype}{float} Y2;}
+\DoxyCodeLine{187     \textcolor{keywordtype}{float} Z2;}
+\DoxyCodeLine{188     \textcolor{keywordtype}{float} dX1;}
+\DoxyCodeLine{189     \textcolor{keywordtype}{float} dY1;}
+\DoxyCodeLine{190     \textcolor{keywordtype}{float} dZ1;}
+\DoxyCodeLine{191     \textcolor{keywordtype}{float} dX2;}
+\DoxyCodeLine{192     \textcolor{keywordtype}{float} dY2;}
+\DoxyCodeLine{193     \textcolor{keywordtype}{float} dZ2;}
+\DoxyCodeLine{194     \textcolor{keywordtype}{float} t1;}
+\DoxyCodeLine{195     \textcolor{keywordtype}{float} t2;}
+\DoxyCodeLine{196     \textcolor{keywordtype}{float} w1;}
+\DoxyCodeLine{197     \textcolor{keywordtype}{float} w2;}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{keywordtype}{char} particleName[64];}
+\DoxyCodeLine{200     G4String mParticleTypeNameGivenByUser;}
+\DoxyCodeLine{201     \textcolor{keywordtype}{double} mParticleTime;}
+\DoxyCodeLine{202     G4double mMomentum;}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     \textcolor{keywordtype}{bool} mAlreadyLoad;}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{keywordtype}{double} px;}
+\DoxyCodeLine{207     \textcolor{keywordtype}{double} py;}
+\DoxyCodeLine{208     \textcolor{keywordtype}{double} pz;}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     std::vector<G4String> listOfPhaseSpaceFile;}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212     \textcolor{keywordtype}{bool} mPositionInWorldFrame;}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     FILE *pIAEAFile;}
+\DoxyCodeLine{215     \mbox{\hyperlink{structiaea__record__type}{iaea\_record\_type}} *pIAEARecordType;}
+\DoxyCodeLine{216     \mbox{\hyperlink{structiaea__header__type}{iaea\_header\_type}} *pIAEAheader;}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218     G4ParticleDefinition *pParticleDefinition;}
+\DoxyCodeLine{219     G4PrimaryParticle *pParticle;}
+\DoxyCodeLine{220     G4PrimaryVertex *pVertex;}
+\DoxyCodeLine{221     G4ThreeVector mParticlePosition;}
+\DoxyCodeLine{222     G4ThreeVector mParticleMomentum;}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     G4ThreeVector mParticlePositionPair1;}
+\DoxyCodeLine{225     G4ThreeVector mParticlePositionPair2;}
+\DoxyCodeLine{226     G4ThreeVector mParticleMomentumPair1;}
+\DoxyCodeLine{227     G4ThreeVector mParticleMomentumPair2;}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229     std::vector<const G4RotationMatrix *> mListOfRotation;}
+\DoxyCodeLine{230     std::vector<G4ThreeVector> mListOfTranslation;}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232     \textcolor{keywordtype}{bool} mUseRegularSymmetry;}
+\DoxyCodeLine{233     \textcolor{keywordtype}{bool} mUseRandomSymmetry;}
+\DoxyCodeLine{234     \textcolor{keywordtype}{double} mAngle;}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     \textcolor{keywordtype}{bool} mUseNbOfParticleAsIntensity;}
+\DoxyCodeLine{237     \mbox{\hyperlink{classGateInputTreeFileChain}{GateInputTreeFileChain}} mChain;}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{keywordtype}{bool} mIgnoreWeight;}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241     \textcolor{keywordtype}{int} mPTCurrentIndex;}
+\DoxyCodeLine{242     \textcolor{comment}{// requested batch size}}
+\DoxyCodeLine{243     \textcolor{keywordtype}{int} mPTBatchSize;}
+\DoxyCodeLine{244     \textcolor{comment}{// real umber of generated particle in the batch (can be inferior to mPTBatchSize)}}
+\DoxyCodeLine{245     \textcolor{keywordtype}{int} mPTCurrentBatchSize;}
+\DoxyCodeLine{246     \textcolor{keywordtype}{double} mPTmass;}
+\DoxyCodeLine{247     std::vector<G4ThreeVector> mPTPosition;}
+\DoxyCodeLine{248     std::vector<double> mPTDX;}
+\DoxyCodeLine{249     std::vector<double> mPTDY;}
+\DoxyCodeLine{250     std::vector<double> mPTDZ;}
+\DoxyCodeLine{251     std::vector<double> mPTEnergy;}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     \mbox{\hyperlink{classnlohmann_1_1basic__json}{nlohmann::json}} mPTParam;}
+\DoxyCodeLine{254     std::string mPTJsonFilename;}
+\DoxyCodeLine{255     \textcolor{keywordtype}{bool} mPTnormalize;}
+\DoxyCodeLine{256     std::vector<double> mPT\_x\_mean;}
+\DoxyCodeLine{257     std::vector<double> mPT\_x\_std;}
+\DoxyCodeLine{258     std::vector<std::string> mPT\_keys;}
+\DoxyCodeLine{259     \textcolor{keywordtype}{int} mPTz\_dim;}
+\DoxyCodeLine{260     std::map<std::string, double> mDefaultKeyValues;}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262     \textcolor{keywordtype}{int} get\_key\_index(std::string key);}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264     \textcolor{keywordtype}{double} get\_key\_value(\textcolor{keyword}{const} \textcolor{keywordtype}{float} *v, \textcolor{keywordtype}{int} i, \textcolor{keywordtype}{double} def);}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \textcolor{keywordtype}{int} mPTEnergyIndex;}
+\DoxyCodeLine{267     \textcolor{keywordtype}{int} mPTPositionXIndex;}
+\DoxyCodeLine{268     \textcolor{keywordtype}{int} mPTPositionYIndex;}
+\DoxyCodeLine{269     \textcolor{keywordtype}{int} mPTPositionZIndex;}
+\DoxyCodeLine{270     \textcolor{keywordtype}{int} mPTDirectionXIndex;}
+\DoxyCodeLine{271     \textcolor{keywordtype}{int} mPTDirectionYIndex;}
+\DoxyCodeLine{272     \textcolor{keywordtype}{int} mPTDirectionZIndex;}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \textcolor{keywordtype}{int} mPTPositionIndex[2][3];}
+\DoxyCodeLine{275     \textcolor{keywordtype}{int} mPTDirectionIndex[2][3];}
+\DoxyCodeLine{276     \textcolor{keywordtype}{int} mPTEnergiesIndex[2];}
+\DoxyCodeLine{277     \textcolor{keywordtype}{int} mPTTimeIndex[2];}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279     std::vector<G4ThreeVector> mPTPositions[2];}
+\DoxyCodeLine{280     std::vector<G4ThreeVector> mPTDirections[2];}
+\DoxyCodeLine{281     std::vector<double> mPTEnergies[2];}
+\DoxyCodeLine{282     std::vector<double> mPTTimes[2];}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#ifdef GATE\_USE\_TORCH}}
+\DoxyCodeLine{285     torch::jit::script::Module mPTmodule;}
+\DoxyCodeLine{286     torch::Tensor mPTzer;}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \};}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{292 }
+
+\end{DoxyCode}

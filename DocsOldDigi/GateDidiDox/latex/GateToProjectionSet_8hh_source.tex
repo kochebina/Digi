@@ -1,0 +1,167 @@
+\hypertarget{GateToProjectionSet_8hh_source}{}\doxysection{Gate\+To\+Projection\+Set.\+hh}
+\label{GateToProjectionSet_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToProjectionSet.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateToProjectionSet.hh}}
+\mbox{\hyperlink{GateToProjectionSet_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#ifndef GateToProjectionSet\_H}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define GateToProjectionSet\_H}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#include "{}GateVOutputModule.hh"{}}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateProjectionSet_8hh}{GateProjectionSet.hh}}"{}}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#include "{}GateToInterfile.hh"{}}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateToOpticalRaw_8hh}{GateToOpticalRaw.hh}}"{}} \textcolor{comment}{// v. cuplov -\/-\/ GateToOpticalRaw for optical photons}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVSystem}{GateVSystem}};}
+\DoxyCodeLine{86 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToProjectionSetMessenger}{GateToProjectionSetMessenger}};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keyword}{class }\mbox{\hyperlink{classGateToProjectionSet}{GateToProjectionSet}} :  \textcolor{keyword}{public} \mbox{\hyperlink{classGateVOutputModule}{GateVOutputModule}}}
+\DoxyCodeLine{89 \{}
+\DoxyCodeLine{90 \textcolor{keyword}{public}:}
+\DoxyCodeLine{92   \mbox{\hyperlink{classGateToProjectionSet_a65e0913c2eed9dcc9cde6a321bf9c910}{GateToProjectionSet}}(\textcolor{keyword}{const} G4String\& name, \mbox{\hyperlink{classGateOutputMgr}{GateOutputMgr}}* outputMgr,\mbox{\hyperlink{classGateVSystem}{GateVSystem}}* itsSystem,DigiMode digiMode);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateToProjectionSet}{\string~GateToProjectionSet}}();}
+\DoxyCodeLine{95   \textcolor{keyword}{const} G4String\& GiveNameOfFile();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{comment}{// Functions for messenger commands that have a link with the GateToInterfile class}}
+\DoxyCodeLine{98   \textcolor{keywordtype}{void} SetVerboseToProjectionSetAndInterfile(G4int aVerbosity);}
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} SendDescribeToProjectionSetAndInterfile();}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} SetEnableToProjectionSetAndInterfile();}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} SetDisableToProjectionSetAndInterfile();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a1ef91b4eb159255544745791f7553623}{RecordBeginOfAcquisition}}();}
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_ad6f380c68ec49313ada669d0d31edc09}{RecordEndOfAcquisition}}();}
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a88bdb091de20780aa98943fbe9b21668}{RecordBeginOfRun}}(\textcolor{keyword}{const} G4Run *);}
+\DoxyCodeLine{111   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_abe281d4da37ed50315f737fa0cd04c36}{RecordEndOfRun}}(\textcolor{keyword}{const} G4Run *) \{\}}
+\DoxyCodeLine{113   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a3270bef05a22a8ff633217773685c1e3}{RecordBeginOfEvent}}(\textcolor{keyword}{const} G4Event *) \{\}}
+\DoxyCodeLine{115   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a53ea31146205bfed1505d6fc572f5633}{RecordEndOfEvent}}(\textcolor{keyword}{const} G4Event *);}
+\DoxyCodeLine{117   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a6b0f2e450cd1f0a417b6aaa967725f93}{RecordStepWithVolume}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step *) \{\}}
+\DoxyCodeLine{119   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a8c079bbf468a38282394546aeb48da2b}{RecordVoxels}}(\mbox{\hyperlink{classGateVGeometryVoxelStore}{GateVGeometryVoxelStore}} *) \{\};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{125   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_ae13b3b2ddbeb63ceb850d26d8c951985}{Describe}}(\textcolor{keywordtype}{size\_t} indent=0);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{129   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_ade4215c6c7cf15481194ff638fa04cfe}{StreamOut}}(std::ofstream\& dest);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 }
+\DoxyCodeLine{135   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a9c162eb771c0e557fc58626e578d1b77}{SetVerboseLevel}}(G4int val)}
+\DoxyCodeLine{136   \{ GateVOutputModule::SetVerboseLevel(val); \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a6482219814f5cdbaa466c2914c31ef1d}{SetVerboseLevel}}(val); \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{139   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToProjectionSet_a6744efa448dcb7c42c2adb0fe8548ef0}{GetAngularSpan}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{140 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_ac87c30d6bd4b2db232bf304413fc772b}{m\_orbitingStep}} * \mbox{\hyperlink{classGateToProjectionSet_aa07d808295282ae6b575c35d7b195239}{m\_projNb}};\}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{143   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToProjectionSet_a12eaf8c6015fdbdaeef27eec0f33ef4f}{GetTimePerProjection}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{144 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_aac0501948c6aec80d496ec386c91f1fb}{m\_studyDuration}} / \mbox{\hyperlink{classGateToProjectionSet_aa07d808295282ae6b575c35d7b195239}{m\_projNb}};\}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{147   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToProjectionSet_a279203b945b177a40773dc0ea15314ea}{GetHeadAngularPitch}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{148 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a38220822bada8e895d01361db62c22c9}{m\_headAngularPitch}};\}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 }
+\DoxyCodeLine{152   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToProjectionSet_a4df47b96422dd7475b54bb11aa7ea1a4}{GetStudyDuration}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{153 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_aac0501948c6aec80d496ec386c91f1fb}{m\_studyDuration}};\}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{156   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a9c577c3fd888bfc3e4c0303298b4e74f}{SetProjectionPlane}}(\textcolor{keyword}{const} G4String\& planeName);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{159   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateToProjectionSet_a16e7fc36bd7e9f6fdd0d27bb3936b88c}{GetProjectionNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{160 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_aa07d808295282ae6b575c35d7b195239}{m\_projNb}};\}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{163   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateToProjectionSet_acdb12fd90618481633bb6a0acd7816a7}{GetHeadNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{164 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_ae1521b7fd52d599fc7cb5effb4e13b81}{m\_headNb}};\}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateToProjectionSet_ac3acfc383f41c8a4d335c4f465dacc6d}{GetEnergyWindowNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{168 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_afdef83649313f1ca32259b3e7f1634e1}{m\_energyWindowNb}};\}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{171   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateToProjectionSet_a72dba475979ac314cca29d157098b89b}{GetTotalImageNb}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{172 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a16e7fc36bd7e9f6fdd0d27bb3936b88c}{GetProjectionNb}}() * \mbox{\hyperlink{classGateToProjectionSet_acdb12fd90618481633bb6a0acd7816a7}{GetHeadNb}}() * \mbox{\hyperlink{classGateToProjectionSet_ac3acfc383f41c8a4d335c4f465dacc6d}{GetEnergyWindowNb}}();\}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{176   \textcolor{keyword}{const} G4String\& \mbox{\hyperlink{classGateToProjectionSet_af048d34fc07ef7cc3cfd6fd8c40177ca}{GetInputDataName}}(\textcolor{keywordtype}{size\_t} energyWindowID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{177 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_af4949855b35977568047e30d19750557}{m\_inputDataChannelList}}.at(energyWindowID);       \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{180   G4int \mbox{\hyperlink{classGateToProjectionSet_ad74324fbcd9b0cc3817270019176a1e5}{GetInputDataID}}(\textcolor{keywordtype}{size\_t} energyWindowID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{181 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} m\_inputDataChannelIDList.at(energyWindowID);       \};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{184   \textcolor{keywordtype}{void}   \mbox{\hyperlink{classGateToProjectionSet_a436178ba20c3281d8060a77d9d8c6174}{AddInputDataName}}(\textcolor{keyword}{const} G4String\& aName)}
+\DoxyCodeLine{185   \{ \mbox{\hyperlink{classGateToProjectionSet_af4949855b35977568047e30d19750557}{m\_inputDataChannelList}}.push\_back(aName);      \};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{188   std::vector<G4String> \mbox{\hyperlink{classGateToProjectionSet_abbf0f665a2d9858aa97e3e483068858a}{GetInputDataNameList}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{189 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_af4949855b35977568047e30d19750557}{m\_inputDataChannelList}};       \};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{192   std::vector<G4int> \mbox{\hyperlink{classGateToProjectionSet_a2f21e7997a22ca082ca7eaa686c3c094}{GetInputDataIDList}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{193 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} m\_inputDataChannelIDList;       \};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{196   \textcolor{keywordtype}{void}  \mbox{\hyperlink{classGateToProjectionSet_a1b3e604ad2fa9f8a8bfc43ab37d3d915}{SetInputDataName}}(\textcolor{keyword}{const} G4String\& aName)}
+\DoxyCodeLine{197   \{ \mbox{\hyperlink{classGateToProjectionSet_af4949855b35977568047e30d19750557}{m\_inputDataChannelList}}.clear();}
+\DoxyCodeLine{198     \mbox{\hyperlink{classGateToProjectionSet_a436178ba20c3281d8060a77d9d8c6174}{AddInputDataName}}(aName);        \};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{201   \textcolor{keywordtype}{void}   \mbox{\hyperlink{classGateToProjectionSet_a89f88563fa6e28da488fc7c92073b6f4}{SetOutputFileName}}(\textcolor{keyword}{const} G4String\& aName);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{204 }
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 }
+\DoxyCodeLine{209   \textcolor{keyword}{inline} \mbox{\hyperlink{classGateProjectionSet}{GateProjectionSet}}* \mbox{\hyperlink{classGateToProjectionSet_a4bc499e55f058e5fb65fbfddc859c2dd}{GetProjectionSet}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{210 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}};\}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{213   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateToProjectionSet_a5818818cbf0c03a751e6206a217ecb61}{GetPixelNbX}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{214 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a5b697cafbbdeba0ceaad50ed92fd6d6a}{GetPixelNbX}}();\}}
+\DoxyCodeLine{216   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a9993a534d7062c8a9a4652c3d86418c3}{SetPixelNbX}}(G4int aNb)}
+\DoxyCodeLine{217   \{ \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a2a9017c484cfa8df5def3ce7d2f2542a}{SetPixelNbX}}(aNb);\}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{220   \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateToProjectionSet_a1f623f8ec7e593f76b3ad81b055c075a}{GetPixelNbY}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{221 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a05408ae8c87cc7c3ebc82ea67f84dbf7}{GetPixelNbY}}();\}}
+\DoxyCodeLine{223   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a656bfb578a9eeeaa007a32a16612c9af}{SetPixelNbY}}(G4int aNb)}
+\DoxyCodeLine{224   \{ \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a3e625126160482d27e60543f126348fa}{SetPixelNbY}}(aNb);\}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{227   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToProjectionSet_a7cf68939559f3de99f6d50da5fda6787}{GetPixelSizeX}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{228 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_af237de4c4044f92f32dae01e1033d193}{GetPixelSizeX}}();\}}
+\DoxyCodeLine{230   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a4dffe3e33f2ac38ace356c0e9894ba05}{SetPixelSizeX}}(G4double aSize)}
+\DoxyCodeLine{231   \{ \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a60bf7569c53d038de99ee7869b332337}{SetPixelSizeX}}(aSize);\}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{234   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateToProjectionSet_a29a226b5782fa692e8d1f02a92dca29c}{GetPixelSizeY}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{235 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a211d2262578c2cc985f926b966523bc2}{GetPixelSizeY}}();\}}
+\DoxyCodeLine{237   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateToProjectionSet_a2999db5ac39c07bb7c754815a94bc89a}{SetPixelSizeY}}(G4double aSize)}
+\DoxyCodeLine{238   \{ \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_a7de71f3ae80b0f944ec34c82b34b0e86}{SetPixelSizeY}}(aSize);\}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{241   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classGateToProjectionSet_a8d26150919d8d72290e14e360fda0c52}{BytesPerPixel}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{242 \textcolor{keyword}{  }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}}-\/>\mbox{\hyperlink{classGateProjectionSet_ab293b4067d6487424c8a8fa6601548e3}{BytesPerPixel}}();\}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{247   \mbox{\hyperlink{classGateProjectionSet}{GateProjectionSet}}*  \mbox{\hyperlink{classGateToProjectionSet_a3f59028c340bdd271686147bde11f0c3}{m\_projectionSet}};            }
+\DoxyCodeLine{248   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToProjectionSet_afdef83649313f1ca32259b3e7f1634e1}{m\_energyWindowNb}};         }
+\DoxyCodeLine{249   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToProjectionSet_aa07d808295282ae6b575c35d7b195239}{m\_projNb}};               }
+\DoxyCodeLine{250   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToProjectionSet_ae1521b7fd52d599fc7cb5effb4e13b81}{m\_headNb}};                   }
+\DoxyCodeLine{251   G4double            \mbox{\hyperlink{classGateToProjectionSet_ac87c30d6bd4b2db232bf304413fc772b}{m\_orbitingStep}};       }
+\DoxyCodeLine{252   G4double            \mbox{\hyperlink{classGateToProjectionSet_a38220822bada8e895d01361db62c22c9}{m\_headAngularPitch}};       }
+\DoxyCodeLine{253   G4String            \mbox{\hyperlink{classGateToProjectionSet_a85f302fe9ac87bb012086c343ee0fd45}{m\_projectionPlane}};     }
+\DoxyCodeLine{254   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToProjectionSet_afc82e2fd2f3d2c54c56b09e03f45763a}{m\_coordX}};               }
+\DoxyCodeLine{255   \textcolor{keywordtype}{size\_t}              \mbox{\hyperlink{classGateToProjectionSet_a52dae6dc3b83fe5f8361bff9c8079d13}{m\_coordY}};               }
+\DoxyCodeLine{256   G4double            \mbox{\hyperlink{classGateToProjectionSet_aac0501948c6aec80d496ec386c91f1fb}{m\_studyDuration}};             }
+\DoxyCodeLine{257 }
+\DoxyCodeLine{259   \mbox{\hyperlink{classGateVSystem}{GateVSystem}} *\mbox{\hyperlink{classGateToProjectionSet_a5bbec9d1ac6b885fa6fa7dff433d49e7}{m\_system}};}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261   \mbox{\hyperlink{classGateToProjectionSetMessenger}{GateToProjectionSetMessenger}} *m\_messenger;}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263   std::vector<G4String>       \mbox{\hyperlink{classGateToProjectionSet_af4949855b35977568047e30d19750557}{m\_inputDataChannelList}};   }
+\DoxyCodeLine{264   std::vector<G4int>          m\_inputDataChannelIDList;}
+\DoxyCodeLine{265   G4String            m\_noFileName;}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267   \mbox{\hyperlink{classGateToInterfile}{GateToInterfile}}*    m\_gateToInterfile;}
+\DoxyCodeLine{268   \mbox{\hyperlink{classGateToOpticalRaw}{GateToOpticalRaw}}*   m\_gateToOpticalRaw; \textcolor{comment}{// v. cuplov -\/-\/ GateToOpticalRaw for optical photons}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

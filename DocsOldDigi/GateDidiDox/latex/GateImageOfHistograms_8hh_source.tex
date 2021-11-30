@@ -1,0 +1,115 @@
+\hypertarget{GateImageOfHistograms_8hh_source}{}\doxysection{Gate\+Image\+Of\+Histograms.\+hh}
+\label{GateImageOfHistograms_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateImageOfHistograms.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateImageOfHistograms.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  GATE version name: gate\_v7}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifndef GATEIMATEOFHISTOGRAMS\_HH}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define GATEIMATEOFHISTOGRAMS\_HH}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateImage.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <TH1D.h>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*}}
+\DoxyCodeLine{20 \textcolor{comment}{  This class GateImageOfHistograms manages an image with a 1D}}
+\DoxyCodeLine{21 \textcolor{comment}{  histogram in each pixel. The histogram properties must be the same}}
+\DoxyCodeLine{22 \textcolor{comment}{  in each pixel (same min/max number of bins). The class inherit from}}
+\DoxyCodeLine{23 \textcolor{comment}{  GateImage (for size, spacing etc), but do not use the data member}}
+\DoxyCodeLine{24 \textcolor{comment}{  because it is float. Data are stored in dataDouble member as a raw}}
+\DoxyCodeLine{25 \textcolor{comment}{  vector. In memory, the data are ordered as H X Y Z, with H for}}
+\DoxyCodeLine{26 \textcolor{comment}{  histogram, in order to access all histogram value in a pixel in a}}
+\DoxyCodeLine{27 \textcolor{comment}{  consecutive way. However on disk (mhd file format), data are}}
+\DoxyCodeLine{28 \textcolor{comment}{  re-\/ordered according to X Y Z H like in conventional 4D image.}}
+\DoxyCodeLine{29 \textcolor{comment}{}}
+\DoxyCodeLine{30 \textcolor{comment}{  WARNING : all function inherited from GateImage that access the}}
+\DoxyCodeLine{31 \textcolor{comment}{  initial 'data' member will result in a seg fault. Use}}
+\DoxyCodeLine{32 \textcolor{comment}{  GetDataDoublePointer.}}
+\DoxyCodeLine{33 \textcolor{comment}{}}
+\DoxyCodeLine{34 \textcolor{comment}{  FIXME:}}
+\DoxyCodeLine{35 \textcolor{comment}{  -\/ manage a sparse version (not an histo at every pixel)}}
+\DoxyCodeLine{36 \textcolor{comment}{}}
+\DoxyCodeLine{37 \textcolor{comment}{*/}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}}:\textcolor{keyword}{public} \mbox{\hyperlink{classGateImage}{GateImage}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \mbox{\hyperlink{classGateImageOfHistograms}{GateImageOfHistograms}}(std::string dataTypeName);}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateImageOfHistograms}{\string~GateImageOfHistograms}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} SetHistoInfo(\textcolor{keywordtype}{int} n, \textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max);}
+\DoxyCodeLine{48   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Allocate();}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} Reset();}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} AddValueFloat(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \& index, TH1D * h, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scale);}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} AddValueDouble(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \& index, TH1D * h, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scale);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} AddValueDouble(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \& index, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&bin, \textcolor{keyword}{const} \textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} SetValueDouble(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \& index, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&bin, \textcolor{keyword}{const} \textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{54   \textcolor{keywordtype}{double} GetValueDouble(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \& index, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&bin);}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} AddValueInt(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \& index, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&bin, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Write(G4String filename, \textcolor{keyword}{const} G4String \& comment = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{57   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Read(G4String filename);}
+\DoxyCodeLine{58   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetNbOfBins() \{ \textcolor{keywordflow}{return} nbOfBins; \}}
+\DoxyCodeLine{59   \textcolor{keywordtype}{double} GetMaxValue() \{ \textcolor{keywordflow}{return} maxValue; \}}
+\DoxyCodeLine{60   \textcolor{keywordtype}{double} GetMinValue() \{ \textcolor{keywordflow}{return} minValue; \}}
+\DoxyCodeLine{61   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} GetDoubleSize() \{ \textcolor{keywordflow}{return} dataDouble.size(); \}}
+\DoxyCodeLine{62   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} GetFloatSize() \{ \textcolor{keywordflow}{return} dataFloat.size(); \}}
+\DoxyCodeLine{63   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} GetIntSize() \{ \textcolor{keywordflow}{return} dataInt.size(); \}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{double} * GetDataDoublePointer() \{ \textcolor{keywordflow}{return} \&dataDouble[0]; \}}
+\DoxyCodeLine{65   \textcolor{keywordtype}{float} * GetDataFloatPointer() \{ \textcolor{keywordflow}{return} \&dataFloat[0]; \}}
+\DoxyCodeLine{66   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} * GetDataIntPointer() \{ \textcolor{keywordflow}{return} \&dataInt[0]; \}}
+\DoxyCodeLine{67   \textcolor{keywordtype}{long} GetIndexFromPixelIndex(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j, \textcolor{keywordtype}{int} k);}
+\DoxyCodeLine{68   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UpdateSizesFromResolutionAndHalfSize();}
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UpdateSizesFromResolutionAndVoxelSize();}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} Scale(\textcolor{keywordtype}{double} f);}
+\DoxyCodeLine{71   \textcolor{keywordtype}{double} ComputeSum();}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} Deallocate();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{comment}{// Compute and image (data only) of the sum of histo by pixel (in order HXYZ)}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} ComputeTotalOfCountsImageDataFloat(std::vector<float> \& output);}
+\DoxyCodeLine{76   \textcolor{keywordtype}{void} ComputeTotalOfCountsImageDataDouble(std::vector<double> \& output);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{79   \textcolor{keywordtype}{double} minValue;}
+\DoxyCodeLine{80   \textcolor{keywordtype}{double} maxValue;}
+\DoxyCodeLine{81   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbOfBins;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{comment}{// Data can be stored in double or float. Data always write/read in}}
+\DoxyCodeLine{84   \textcolor{comment}{// float.}}
+\DoxyCodeLine{85   std::string mDataTypeName;}
+\DoxyCodeLine{86   std::vector<double> dataDouble;}
+\DoxyCodeLine{87   std::vector<float> dataFloat;}
+\DoxyCodeLine{88   std::vector<unsigned int> dataInt;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{comment}{// Store a copy of G4ThreeVector resolution in int for integer}}
+\DoxyCodeLine{91   \textcolor{comment}{// computation of index}}
+\DoxyCodeLine{92   \textcolor{keywordtype}{long} sizeX;}
+\DoxyCodeLine{93   \textcolor{keywordtype}{long} sizeY;}
+\DoxyCodeLine{94   \textcolor{keywordtype}{long} sizeZ;}
+\DoxyCodeLine{95   \textcolor{keywordtype}{long} sizePlane;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{comment}{// Data pixel order}}
+\DoxyCodeLine{98   \textcolor{keyword}{template}<\textcolor{keyword}{class} PT>}
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} ConvertPixelOrderToXYZH(std::vector<PT> \& input, std::vector<PT> \& output);}
+\DoxyCodeLine{100   \textcolor{keyword}{template}<\textcolor{keyword}{class} PT>}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} ConvertPixelOrderToHXYZ(std::vector<PT> \& input, std::vector<PT> \& output);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{comment}{// For templated functions}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#include "{}GateImageOfHistograms.icc"{}}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GATEIMAGEOFHISTOGRAMS}}
+
+\end{DoxyCode}

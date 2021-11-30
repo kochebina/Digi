@@ -1,0 +1,62 @@
+\hypertarget{GateTetMeshReader_8hh_source}{}\doxysection{Gate\+Tet\+Mesh\+Reader.\+hh}
+\label{GateTetMeshReader_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTetMeshReader.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateTetMeshReader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GATE\_TET\_MESH\_READER}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GATE\_TET\_MESH\_READER}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <G4String.hh>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <G4Types.hh>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <G4SystemOfUnits.hh>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <G4ThreeVector.hh>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <G4Tet.hh>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{struct }\mbox{\hyperlink{structGateMeshTet}{GateMeshTet}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22   G4Tet* solid;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{comment}{// ELE file associate an integer attribute to each tetrahedron}}
+\DoxyCodeLine{25   \textcolor{comment}{// to define to which region, i.e. "{}meta-\/shape"{}, it belongs.}}
+\DoxyCodeLine{26   G4int regionID;}
+\DoxyCodeLine{27   \textcolor{keyword}{static} \textcolor{keyword}{constexpr} G4int DEFAULT\_REGION\_ID = -\/666;}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateTetMeshReader}{GateTetMeshReader}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \textcolor{keyword}{explicit} \mbox{\hyperlink{classGateTetMeshReader}{GateTetMeshReader}}(G4double unitOfLength = mm);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{comment}{// Reads a tetrahedral mesh from a file. }}
+\DoxyCodeLine{37     \textcolor{comment}{// ELE (TetGen) is the only supported file type so far.}}
+\DoxyCodeLine{38     std::vector<GateMeshTet> Read(\textcolor{keyword}{const} G4String\& filePath);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} SetUnitOfLength(G4double unitOfLength) \{ fUnitOfLength = unitOfLength; \}}
+\DoxyCodeLine{41     G4double GetUnitOfLength() \{ \textcolor{keywordflow}{return} fUnitOfLength; \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     \textcolor{comment}{// implementation specifics}}
+\DoxyCodeLine{45     std::vector<GateMeshTet> ReadELE(\textcolor{keyword}{const} G4String\& filePath);}
+\DoxyCodeLine{46     std::vector<G4ThreeVector> ReadNODE(\textcolor{keyword}{const} G4String\& filePath);}
+\DoxyCodeLine{47     \textcolor{comment}{// possible extensions, e.g.:}}
+\DoxyCodeLine{48     \textcolor{comment}{// std::vecor<GateMeshTet> ReadVTKLegacy(const G4String\& filePath);}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{private}:}
+\DoxyCodeLine{51     \textcolor{comment}{// Geant4 internal unit, used to interpret the length scale of the meshes.}}
+\DoxyCodeLine{52     G4double fUnitOfLength;}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// GATE\_TET\_MESH\_READER}}
+
+\end{DoxyCode}

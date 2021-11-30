@@ -1,0 +1,60 @@
+\hypertarget{GateMaterialDatabase_8hh_source}{}\doxysection{Gate\+Material\+Database.\+hh}
+\label{GateMaterialDatabase_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMaterialDatabase.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateMaterialDatabase.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GateMaterialDatabase\_hh}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GateMaterialDatabase\_hh}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{GateMDBCreators_8hh}{GateMDBCreators.hh}}"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMDBFile}{GateMDBFile}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }G4Isotope;}
+\DoxyCodeLine{26 \textcolor{keyword}{class }G4Element;}
+\DoxyCodeLine{27 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{//\#define DEFAULT\_GATESURFACEMATDB "{}Materials.xml"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGateMaterialDatabase}{GateMaterialDatabase}}();}
+\DoxyCodeLine{35   \mbox{\hyperlink{classGateMaterialDatabase}{\string~GateMaterialDatabase}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} AddMDBFile(\textcolor{keyword}{const} G4String\& filename);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   G4Isotope*  GetIsotope(\textcolor{keyword}{const} G4String\& isotopeName);}
+\DoxyCodeLine{40   G4Element*  GetElement(\textcolor{keyword}{const} G4String\& name);}
+\DoxyCodeLine{41   G4Material* GetMaterial(\textcolor{keyword}{const} G4String\& materialName);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{45   G4Isotope*  ReadIsotopeFromDBFile(\textcolor{keyword}{const} G4String\& isotopeName)  ;}
+\DoxyCodeLine{46   G4Element*  ReadElementFromDBFile(\textcolor{keyword}{const} G4String\& elementName)  ;}
+\DoxyCodeLine{47   G4Material* ReadMaterialFromDBFile(\textcolor{keyword}{const} G4String\& materialName);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{comment}{//'false' to avoid warning messages!}}
+\DoxyCodeLine{50   \textcolor{keyword}{inline} G4Isotope*  LookForIsotopeInTable(\textcolor{keyword}{const} G4String\& isotopeName)   \{ \textcolor{keywordflow}{return} G4Isotope::GetIsotope(isotopeName,\textcolor{keyword}{false}); \}}
+\DoxyCodeLine{51   \textcolor{keyword}{inline} G4Element*  LookForElementInTable(\textcolor{keyword}{const} G4String\& elementName)   \{ \textcolor{keywordflow}{return} G4Element::GetElement(elementName,\textcolor{keyword}{false}); \}}
+\DoxyCodeLine{52   \textcolor{keyword}{inline} G4Material* LookForMaterialInTable(\textcolor{keyword}{const} G4String\& materialName) \{ \textcolor{keywordflow}{return} G4Material::GetMaterial(materialName, \textcolor{keyword}{false}); \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55   std::vector<GateMDBFile*> mMDBFile;}
+\DoxyCodeLine{56   G4MaterialPropertiesTable * water\_MPT;}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

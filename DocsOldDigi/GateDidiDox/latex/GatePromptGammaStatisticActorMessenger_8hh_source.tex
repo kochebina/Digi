@@ -1,0 +1,52 @@
+\hypertarget{GatePromptGammaStatisticActorMessenger_8hh_source}{}\doxysection{Gate\+Prompt\+Gamma\+Statistic\+Actor\+Messenger.\+hh}
+\label{GatePromptGammaStatisticActorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePromptGammaStatisticActorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GatePromptGammaStatisticActorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  GATE version name: gate\_v7}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{7 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{8 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{9 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GATEPROMPTGAMMASPECTRUMDISTRIBUTIONACTORMESSENGER\_HH}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GATEPROMPTGAMMASPECTRUMDISTRIBUTIONACTORMESSENGER\_HH}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateActorMessenger.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <G4UIcmdWithAnInteger.hh>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <G4UIcmdWithADoubleAndUnit.hh>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePromptGammaStatisticActor}{GatePromptGammaStatisticActor}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePromptGammaStatisticActorMessenger}{GatePromptGammaStatisticActorMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateActorMessenger}{GateActorMessenger}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \mbox{\hyperlink{classGatePromptGammaStatisticActorMessenger}{GatePromptGammaStatisticActorMessenger}}(\mbox{\hyperlink{classGatePromptGammaStatisticActor}{GatePromptGammaStatisticActor}}*);}
+\DoxyCodeLine{28   \mbox{\hyperlink{classGatePromptGammaStatisticActorMessenger}{\string~GatePromptGammaStatisticActorMessenger}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{34   \mbox{\hyperlink{classGatePromptGammaStatisticActor}{GatePromptGammaStatisticActor}}* pActor;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   G4UIcmdWithADoubleAndUnit * pProtonEMinCmd;}
+\DoxyCodeLine{37   G4UIcmdWithADoubleAndUnit * pProtonEMaxCmd;}
+\DoxyCodeLine{38   G4UIcmdWithADoubleAndUnit * pGammaEMinCmd;}
+\DoxyCodeLine{39   G4UIcmdWithADoubleAndUnit * pGammaEMaxCmd;}
+\DoxyCodeLine{40   G4UIcmdWithAnInteger * pProtonNbBinsCmd;}
+\DoxyCodeLine{41   G4UIcmdWithAnInteger * pGammaNbBinsCmd;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,118 @@
+\hypertarget{GateARFTableMgr_8hh_source}{}\doxysection{Gate\+ARFTable\+Mgr.\+hh}
+\label{GateARFTableMgr_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/arf/include/GateARFTableMgr.hh@{/biomaps/physique/appli/GateOlga/src/source/arf/include/GateARFTableMgr.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{ This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{ of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{ See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GateARFTableMgr\_h}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GateARFTableMgr\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include<map>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{13 \textcolor{keyword}{class }GateARFSD;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }GateARFTable;}
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateARFTableMgrMessenger}{GateARFTableMgrMessenger}};}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGateARFTableMgr}{GateARFTableMgr}}}
+\DoxyCodeLine{17   \{}
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19   std::map<G4int, GateARFTable*> mArfTableMap;}
+\DoxyCodeLine{20   \mbox{\hyperlink{classGateARFTableMgrMessenger}{GateARFTableMgrMessenger}}* mMessenger;}
+\DoxyCodeLine{21   G4int mCurrentIndex;}
+\DoxyCodeLine{22   G4int mVerboseLevel;}
+\DoxyCodeLine{23   G4String mTableName;}
+\DoxyCodeLine{24   G4double mEnergyVector[40];}
+\DoxyCodeLine{25   GateARFSD* mArfSD;}
+\DoxyCodeLine{26   G4String mArfDataFileTxt;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   G4double mEnergyThreshHold;}
+\DoxyCodeLine{29   G4double mEnergyUpHold;}
+\DoxyCodeLine{30   G4double mEnergyOfReference;}
+\DoxyCodeLine{31   G4double mEnergyResolution;}
+\DoxyCodeLine{32   G4double mDistance;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   G4int mSaveArfTables;}
+\DoxyCodeLine{35   G4int mLoadArfTables;}
+\DoxyCodeLine{36   G4String mBinaryFilename;}
+\DoxyCodeLine{37   G4int mNumberOfBins;}
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39   \mbox{\hyperlink{classGateARFTableMgr}{GateARFTableMgr}}(\textcolor{keyword}{const} G4String \& aName, GateARFSD* arfSD);}
+\DoxyCodeLine{40   \mbox{\hyperlink{classGateARFTableMgr}{\string~GateARFTableMgr}}();}
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} SaveARFToBinaryFile();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} SetBinaryFile(\textcolor{keyword}{const} G4String \& binaryFilename)}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44     mSaveArfTables = 1;}
+\DoxyCodeLine{45     mBinaryFilename = binaryFilename;}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47   ;}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} LoadARFFromBinaryFile(\textcolor{keyword}{const} G4String \& binaryFilename);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetNBins(\textcolor{keyword}{const} G4int \& N);}
+\DoxyCodeLine{50   G4int GetNBins()}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} mNumberOfBins;}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54   ;}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} SetEThreshHold(\textcolor{keyword}{const} G4double \& aET)}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57     mEnergyThreshHold = aET;}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59   ;}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} SetEUpHold(\textcolor{keyword}{const} G4double \& aEU)}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62     mEnergyUpHold = aEU;}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64   ;}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} SetEReso(\textcolor{keyword}{const} G4double \& energyResolution);}
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} SetERef(\textcolor{keyword}{const} G4double \& energyOfReference);}
+\DoxyCodeLine{67   G4int GetCurrentIndex()}
+\DoxyCodeLine{68     \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{return} mCurrentIndex;}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71   ;}
+\DoxyCodeLine{72   \textcolor{keywordtype}{void} AddaTable(GateARFTable* aTable);}
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetVerboseLevel(\textcolor{keyword}{const} G4int \& aL)}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75     mVerboseLevel = aL;}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77   ;}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} ComputeARFTablesFromEW(\textcolor{keyword}{const} G4String \& filename);}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} ListTables();}
+\DoxyCodeLine{80   G4String GetName()}
+\DoxyCodeLine{81     \{}
+\DoxyCodeLine{82     \textcolor{keywordflow}{return} mTableName;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84   ;}
+\DoxyCodeLine{85   \textcolor{keywordtype}{void} SetName(\textcolor{keyword}{const} G4String \& aName)}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87     mTableName = aName;}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89   ;}
+\DoxyCodeLine{90   GateARFSD* GetARFSD()}
+\DoxyCodeLine{91     \{}
+\DoxyCodeLine{92     \textcolor{keywordflow}{return} mArfSD;}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94   ;}
+\DoxyCodeLine{95   G4int InitializeTables();}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} FillDRFTable(\textcolor{keyword}{const} G4int \& iT,}
+\DoxyCodeLine{97                     \textcolor{keyword}{const} G4double \& depositedEnergy,}
+\DoxyCodeLine{98                     \textcolor{keyword}{const} G4double \& projectedX,}
+\DoxyCodeLine{99                     \textcolor{keyword}{const} G4double \& projectedY);}
+\DoxyCodeLine{100   \textcolor{keywordtype}{void} SetNSimuPhotons(G4double*);}
+\DoxyCodeLine{101   \textcolor{keywordtype}{void} convertDRF2ARF();}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} CloseARFTablesRootFile();}
+\DoxyCodeLine{103   G4double ScanTables(\textcolor{keyword}{const} G4double \& x, \textcolor{keyword}{const} G4double \& y, \textcolor{keyword}{const} G4double \& energy);}
+\DoxyCodeLine{104   \textcolor{keywordtype}{void} SetDistanceFromSourceToDetector(\textcolor{keyword}{const} G4double \& aD)}
+\DoxyCodeLine{105     \{}
+\DoxyCodeLine{106     mDistance = aD;}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108   ;}
+\DoxyCodeLine{109   \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{112 }
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\hypertarget{GatePulseProcessorMessenger_8hh_source}{}\doxysection{Gate\+Pulse\+Processor\+Messenger.\+hh}
+\label{GatePulseProcessorMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePulseProcessorMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePulseProcessorMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GatePulseProcessorMessenger\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GatePulseProcessorMessenger\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateClockDependentMessenger.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }G4UIdirectory;}
+\DoxyCodeLine{16 \textcolor{keyword}{class }G4UIcmdWithoutParameter;}
+\DoxyCodeLine{17 \textcolor{keyword}{class }G4UIcmdWithAString;}
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4UIcmdWithABool;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4UIcmdWithAnInteger;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4UIcmdWithADouble;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }G4UIcmdWithADoubleAndUnit;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }G4UIcmdWith3Vector;}
+\DoxyCodeLine{23 \textcolor{keyword}{class }G4UIcmdWith3VectorAndUnit;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}: \textcolor{keyword}{public} \mbox{\hyperlink{classGateClockDependentMessenger}{GateClockDependentMessenger}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31   \textcolor{keyword}{public}:}
+\DoxyCodeLine{32     \mbox{\hyperlink{classGatePulseProcessorMessenger}{GatePulseProcessorMessenger}}(\mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}* itsPulseProcessor);}
+\DoxyCodeLine{33    \mbox{\hyperlink{classGatePulseProcessorMessenger}{\string~GatePulseProcessorMessenger}}();}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}* GetPulseProcessor() }
+\DoxyCodeLine{38       \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}*) \mbox{\hyperlink{classGateClockDependentMessenger_a0bf3ccd07210dccb67f47ae7576bd8bf}{GetClockDependent}}(); \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keyword}{private}:}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+
+\end{DoxyCode}

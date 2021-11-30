@@ -1,0 +1,90 @@
+\hypertarget{GateGeneralTrpd_8hh_source}{}\doxysection{Gate\+General\+Trpd.\+hh}
+\label{GateGeneralTrpd_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeneralTrpd.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateGeneralTrpd.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATEGENERALTRPD\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATEGENERALTRPD\_H 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateVVolume.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}GateVolumeManager.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateObjectChildList.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4Trap.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }G4LogicalVolume;}
+\DoxyCodeLine{19 \textcolor{keyword}{class }G4VPhysicalVolume;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }G4Material;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeneralTrpdMessenger}{GateGeneralTrpdMessenger}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVVolume}{GateVVolume}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}}(\textcolor{keyword}{const} G4String\& itsName, G4bool acceptsChildren=\textcolor{keyword}{true}, G4int depth=0); }
+\DoxyCodeLine{28   \mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}}(\textcolor{keyword}{const} G4String\& itsName,\textcolor{keyword}{const} G4String\& itsMaterialName,}
+\DoxyCodeLine{29                   G4double itsX1Length, G4double itsY1Length,}
+\DoxyCodeLine{30                   G4double itsX2Length, G4double itsY2Length,}
+\DoxyCodeLine{31                   G4double itsX3Length, G4double itsX4Length,}
+\DoxyCodeLine{32                   G4double itsZLength,}
+\DoxyCodeLine{33                   G4double itsTheta,    G4double itsPhi,}
+\DoxyCodeLine{34                   G4double itsAlp1,     G4double itsAlp2,}
+\DoxyCodeLine{35                   G4bool itsFlagAcceptChildren=\textcolor{keyword}{true},}
+\DoxyCodeLine{36                   G4int depth=0);}
+\DoxyCodeLine{37   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateGeneralTrpd}{\string~GateGeneralTrpd}}();}
+\DoxyCodeLine{38    }
+\DoxyCodeLine{39   FCT\_FOR\_AUTO\_CREATOR\_VOLUME(\mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}})}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DestroyOwnVolume();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} DestroyOwnSolidAndLogicalVolume();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} G4LogicalVolume* \mbox{\hyperlink{classGateGeneralTrpd_a7ec509d7ae9dad8e9a139d31421e3d13}{ConstructOwnSolidAndLogicalVolume}}(G4Material* mater, G4bool flagUpdateOnly); }
+\DoxyCodeLine{45   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DescribeMyself(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{46   \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateGeneralTrpd_abd001ca81d5077512fea5667b2426950}{GetHalfDimension}}(\textcolor{keywordtype}{size\_t} \textcolor{comment}{/*axis*/})   \{\textcolor{keywordflow}{return} 0.; \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} SetTrpdX1Length(G4double val)    \{m\_X1=val;\}}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} SetTrpdX2Length(G4double val)    \{m\_X2=val;\}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} SetTrpdX3Length(G4double val)    \{m\_X3=val;\}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} SetTrpdX4Length(G4double val)    \{m\_X4=val;\}}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} SetTrpdY1Length(G4double val)    \{m\_Y1=val;\}}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} SetTrpdY2Length(G4double val)    \{m\_Y2=val;\}}
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} SetTrpdZLength(G4double val) \{m\_Z=val;\}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} SetTrpdTheta(G4double val)   \{m\_Theta=val;\}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} SetTrpdPhi(G4double val)     \{m\_Phi=val;\}}
+\DoxyCodeLine{57   \textcolor{keywordtype}{void} SetTrpdAlp1(G4double val)    \{m\_Alp1=val;\}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} SetTrpdAlp2(G4double val)    \{m\_Alp2=val;\}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keyword}{inline} G4double GetTrpdX1Length() \{\textcolor{keywordflow}{return} m\_X1;\}}
+\DoxyCodeLine{61   \textcolor{keyword}{inline} G4double GetTrpdX2Length() \{\textcolor{keywordflow}{return} m\_X2;\}}
+\DoxyCodeLine{62   \textcolor{keyword}{inline} G4double GetTrpdX3Length() \{\textcolor{keywordflow}{return} m\_X3;\}}
+\DoxyCodeLine{63   \textcolor{keyword}{inline} G4double GetTrpdX4Length() \{\textcolor{keywordflow}{return} m\_X4;\}}
+\DoxyCodeLine{64   \textcolor{keyword}{inline} G4double GetTrpdY1Length() \{\textcolor{keywordflow}{return} m\_Y1;\}}
+\DoxyCodeLine{65   \textcolor{keyword}{inline} G4double GetTrpdY2Length() \{\textcolor{keywordflow}{return} m\_Y2;\}}
+\DoxyCodeLine{66   \textcolor{keyword}{inline} G4double GetTrpdZLength()  \{\textcolor{keywordflow}{return} m\_Z;\}}
+\DoxyCodeLine{67   \textcolor{keyword}{inline} G4double GetTrpdTheta()    \{\textcolor{keywordflow}{return} m\_Theta;\}}
+\DoxyCodeLine{68   \textcolor{keyword}{inline} G4double GetTrpdPhi()      \{\textcolor{keywordflow}{return} m\_Phi;\}}
+\DoxyCodeLine{69   \textcolor{keyword}{inline} G4double GetTrpdAlp1()     \{\textcolor{keywordflow}{return} m\_Alp1;\}}
+\DoxyCodeLine{70   \textcolor{keyword}{inline} G4double GetTrpdAlp2()     \{\textcolor{keywordflow}{return} m\_Alp2;\}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{73   G4Trap*             \mbox{\hyperlink{classGateGeneralTrpd_a533a1368b70b382bc7b7cc588d63fedd}{m\_general\_trpd\_solid}};  }
+\DoxyCodeLine{74   G4LogicalVolume*    \mbox{\hyperlink{classGateGeneralTrpd_a13f8531212d23b69b1147b1040ac5104}{m\_general\_trpd\_log}};    }
+\DoxyCodeLine{75   G4VPhysicalVolume*  pGeneralTrpdPhys;}
+\DoxyCodeLine{76   G4double m\_X1,m\_X2,m\_X3,m\_X4,m\_Y1,m\_Y2,m\_Z,m\_Theta,m\_Phi,m\_Alp1,m\_Alp2;}
+\DoxyCodeLine{78   \mbox{\hyperlink{classGateGeneralTrpdMessenger}{GateGeneralTrpdMessenger}}* \mbox{\hyperlink{classGateGeneralTrpd_a203d007801ec12b468f027e760ff68e6}{m\_Messenger}}; }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 MAKE\_AUTO\_CREATOR\_VOLUME(general\_trpd, \mbox{\hyperlink{classGateGeneralTrpd}{GateGeneralTrpd}})}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

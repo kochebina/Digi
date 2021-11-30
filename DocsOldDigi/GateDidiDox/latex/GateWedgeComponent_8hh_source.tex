@@ -1,0 +1,45 @@
+\hypertarget{GateWedgeComponent_8hh_source}{}\doxysection{Gate\+Wedge\+Component.\+hh}
+\label{GateWedgeComponent_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateWedgeComponent.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateWedgeComponent.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateWedgeComponent\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateWedgeComponent\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}GateSystemComponent.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWedge}{GateWedge}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classGateWedgeComponent}{GateWedgeComponent}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{43     \mbox{\hyperlink{classGateWedgeComponent_ab4d3ec569be5e1f8a923177fc33c66b5}{GateWedgeComponent}}(\textcolor{keyword}{const} G4String\& itsName,}
+\DoxyCodeLine{44                             \mbox{\hyperlink{classGateSystemComponent}{GateSystemComponent}}* itsMotherComponent,}
+\DoxyCodeLine{45                             \mbox{\hyperlink{classGateVSystem}{GateVSystem}}* itsSystem);}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateWedgeComponent_a0c45a3b1594734e07fa638ca0c3fb72e}{\string~GateWedgeComponent}}();}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} G4bool \mbox{\hyperlink{classGateWedgeComponent_a3fa25b1a54cdfce9bb6b58ebb0e80a9c}{IsValidAttachmentRequest}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator) \textcolor{keyword}{const};}
+\DoxyCodeLine{54    }
+\DoxyCodeLine{56     \textcolor{keyword}{inline} \mbox{\hyperlink{classGateWedge}{GateWedge}}* \mbox{\hyperlink{classGateWedgeComponent_aac69958680104367e251acf259809299}{GetWedgeCreator}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{57 \textcolor{keyword}{        }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateWedgeComponent_aac69958680104367e251acf259809299}{GetWedgeCreator}}(\mbox{\hyperlink{classGateSystemComponent_abc9aa14eb5143d0f70fc959f62ee8f71}{GetCreator}}()); \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     G4double \mbox{\hyperlink{classGateWedgeComponent_abb71e443877bd2fdbb4679ea58ba0690}{GetWedgeLength}}(\textcolor{keywordtype}{size\_t} axis) \textcolor{keyword}{const};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63     \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{classGateWedge}{GateWedge}}* \mbox{\hyperlink{classGateWedgeComponent_ab94481d69f7814bc4473bf7ce9e1692c}{GetWedgeCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* anCreator) }
+\DoxyCodeLine{64         \{ \textcolor{keywordflow}{return} anCreator ? \mbox{\hyperlink{classGateWedgeComponent_a1d7449ff82bfe624904a229307d182f0}{CastToWedgeCreator}}( anCreator-\/>\mbox{\hyperlink{classGateVVolume_a562dcb8f08905a1b93650591538952d5}{GetCreator}}() ) : 0 ; \}}
+\DoxyCodeLine{65     }
+\DoxyCodeLine{67     \textcolor{keyword}{static} \mbox{\hyperlink{classGateWedge}{GateWedge}}* \mbox{\hyperlink{classGateWedgeComponent_a1d7449ff82bfe624904a229307d182f0}{CastToWedgeCreator}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* creator);}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+
+\end{DoxyCode}

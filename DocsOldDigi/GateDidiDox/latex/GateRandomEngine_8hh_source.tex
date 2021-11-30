@@ -1,0 +1,55 @@
+\hypertarget{GateRandomEngine_8hh_source}{}\doxysection{Gate\+Random\+Engine.\+hh}
+\label{GateRandomEngine_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRandomEngine.hh@{/biomaps/physique/appli/GateOlga/src/source/general/include/GateRandomEngine.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GateRandomEngine\_h}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GateRandomEngine\_h 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}GateRandomEngineMessenger.hh"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}CLHEP/Random/RandomEngine.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRandomEngineMessenger}{GateRandomEngineMessenger}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21   \mbox{\hyperlink{classGateRandomEngine_afef3facc7ee83a41709348f22942b9ce}{\string~GateRandomEngine}}();}
+\DoxyCodeLine{23   \textcolor{keyword}{static} \mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}}* \mbox{\hyperlink{classGateRandomEngine_a02d95aa6b20d4870cea38c563c5efcdb}{GetInstance}}() \{}
+\DoxyCodeLine{24     \textcolor{keywordflow}{if} (instance == 0)}
+\DoxyCodeLine{25       instance = \textcolor{keyword}{new} \mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}}();}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{27   \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \textcolor{keyword}{inline} CLHEP::HepRandomEngine* GetRandomEngine() \{\textcolor{keywordflow}{return} theRandomEngine;\}}
+\DoxyCodeLine{31   \textcolor{keyword}{inline} G4int GetVerbosity() \{\textcolor{keywordflow}{return} theVerbosity;\}}
+\DoxyCodeLine{32   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetVerbosity(G4int aVerbosity) \{theVerbosity=aVerbosity;\}}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRandomEngine_afe780b4eaa443d9c3dc1913c1a5c10cc}{SetRandomEngine}}(\textcolor{keyword}{const} G4String\& aName);}
+\DoxyCodeLine{34   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRandomEngine_a1cdfd0c5fec7f201671092684bfcf520}{SetEngineSeed}}(\textcolor{keyword}{const} G4String\& value);}
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRandomEngine_a378175a9952fdd4e5644381421bb846f}{resetEngineFrom}}(\textcolor{keyword}{const} G4String\& file); \textcolor{comment}{//TC}}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRandomEngine_a60a4d45d10f0c3e063b82f17ac9d2877}{ShowStatus}}();}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateRandomEngine_ae00ff5baecf4864c464a6379f89c407d}{Initialize}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{40   \textcolor{comment}{// Private constructor because the class is a singleton}}
+\DoxyCodeLine{41   \mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}}();}
+\DoxyCodeLine{42   \textcolor{keyword}{static} \mbox{\hyperlink{classGateRandomEngine}{GateRandomEngine}}* instance;}
+\DoxyCodeLine{43   CLHEP::HepRandomEngine* theRandomEngine;}
+\DoxyCodeLine{44   G4int theVerbosity;}
+\DoxyCodeLine{45   \mbox{\hyperlink{classGateRandomEngineMessenger}{GateRandomEngineMessenger}}* theMessenger;}
+\DoxyCodeLine{46   G4String theSeed;}
+\DoxyCodeLine{47   G4String theSeedFile; \textcolor{comment}{//TC}}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

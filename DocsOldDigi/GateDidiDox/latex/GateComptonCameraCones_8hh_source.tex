@@ -1,0 +1,56 @@
+\hypertarget{GateComptonCameraCones_8hh_source}{}\doxysection{Gate\+Compton\+Camera\+Cones.\+hh}
+\label{GateComptonCameraCones_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateComptonCameraCones.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateComptonCameraCones.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GATECOMPTONCAMERACONES\_HH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GATECOMPTONCAMERACONES\_HH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{classGateComptonCameraCones}{GateComptonCameraCones}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     \mbox{\hyperlink{classGateComptonCameraCones}{GateComptonCameraCones}}();}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergy1(G4double de)          \{ m\_E1 = de; \}}
+\DoxyCodeLine{11     \textcolor{keyword}{inline} G4double GetEnergy1()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_E1; \}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergy2(G4double de)          \{ m\_E2 = de; \}}
+\DoxyCodeLine{14     \textcolor{keyword}{inline} G4double GetEnergy2()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_E2; \}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetEnergyR(G4double de)          \{ m\_ER = de; \}}
+\DoxyCodeLine{17     \textcolor{keyword}{inline} G4double GetEnergyR()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_ER; \}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetPosition1(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_Pos1 = xyz; \}}
+\DoxyCodeLine{21     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetPosition1()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_Pos1; \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetPosition2(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_Pos2 = xyz; \}}
+\DoxyCodeLine{25     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetPosition2()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_Pos2; \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetPosition3(\textcolor{keyword}{const} G4ThreeVector\& xyz)     \{ m\_Pos3 = xyz; \}}
+\DoxyCodeLine{29     \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& GetPosition3()\textcolor{keyword}{ const             }\{ \textcolor{keywordflow}{return} m\_Pos3; \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetTrueFlag(\textcolor{keyword}{const} G4bool\& flag)     \{ m\_IsTrueCoind = flag; \}}
+\DoxyCodeLine{33      \textcolor{keyword}{inline} G4bool GetTrueFlag()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_IsTrueCoind; \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35      \textcolor{keyword}{inline} \textcolor{keywordtype}{void}  SetNumSingles(\textcolor{keyword}{const} G4int\& num)     \{ m\_nSingles = num; \}}
+\DoxyCodeLine{36       \textcolor{keyword}{inline} G4bool GetNumSingles()\textcolor{keyword}{ const                }\{ \textcolor{keywordflow}{return} m\_nSingles; \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{private}:}
+\DoxyCodeLine{39   G4double m\_E1;            \textcolor{comment}{// energy deposition of the first interaction}}
+\DoxyCodeLine{40   G4double m\_E2;            \textcolor{comment}{// energy deposition of the second interaction}}
+\DoxyCodeLine{41   G4double m\_ER;            \textcolor{comment}{// Total energy deposition except E1}}
+\DoxyCodeLine{42   G4ThreeVector m\_Pos1;  \textcolor{comment}{//}}
+\DoxyCodeLine{43   G4ThreeVector  m\_Pos2;\textcolor{comment}{//  Second interaction}}
+\DoxyCodeLine{44   G4ThreeVector  m\_Pos3;\textcolor{comment}{//  third interaction}}
+\DoxyCodeLine{45   G4bool m\_IsTrueCoind;}
+\DoxyCodeLine{46   G4int m\_nSingles;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GATECOMPTONCAMERACONES\_HH}}
+
+\end{DoxyCode}

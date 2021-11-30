@@ -1,0 +1,82 @@
+\hypertarget{GateBlurringWithIntrinsicResolution_8hh_source}{}\doxysection{Gate\+Blurring\+With\+Intrinsic\+Resolution.\+hh}
+\label{GateBlurringWithIntrinsicResolution_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBlurringWithIntrinsicResolution.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateBlurringWithIntrinsicResolution.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateBlurringWithIntrinsicResolution\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateBlurringWithIntrinsicResolution\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateVPulseProcessor.hh"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}GateMaps.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBlurringWithIntrinsicResolutionMessenger}{GateBlurringWithIntrinsicResolutionMessenger}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classGateBlurringWithIntrinsicResolution}{GateBlurringWithIntrinsicResolution}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVPulseProcessor}{GateVPulseProcessor}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_a7faf07d50a7930ada5fda8538baefe06}{GateBlurringWithIntrinsicResolution}}(\mbox{\hyperlink{classGatePulseProcessorChain}{GatePulseProcessorChain}}* itsChain,}
+\DoxyCodeLine{45                    \textcolor{keyword}{const} G4String\& itsName) ;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_ade7a642ec39d71b56b08e7c1483dcedd}{\string~GateBlurringWithIntrinsicResolution}}() ;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keyword}{public}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     G4int \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_a91aea4914db7c2096e74a82c416f9662}{ChooseVolume}}(G4String val);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_a297f43e475fd298e0a90d91c71d1fa45}{SetIntrinsicResolution}}(G4String name, G4double val)   \{ m\_table[name].resolution = val; \};}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} SetRefEnergy(G4String name, G4double val)   \{m\_table[name].eref = val; \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     G4double \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_a821de4345c99462d45fa28a2ad0a3de5}{GetIntrinsicResolution}}(G4String name)   \{ \textcolor{keywordflow}{return} m\_table[name].resolution; \};}
+\DoxyCodeLine{67     G4double GetRefEnergy(G4String name)   \{\textcolor{keywordflow}{return} m\_table[name].eref; \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{74     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_ac8f4ef026ff1f203e15ff2c3fb6d5002}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_ad352aba18a9c801f90870098dfc05d2e}{ProcessOnePulse}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGatePulse}{GatePulse}}* inputPulse,\mbox{\hyperlink{classGatePulseList}{GatePulseList}}\& outputPulseList);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keyword}{private}:}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} FindInputPulseParams(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVolumeID}{GateVolumeID}}* aVolumeID);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keyword}{struct }param \{}
+\DoxyCodeLine{91       G4double resolution;}
+\DoxyCodeLine{92       G4double eref;}
+\DoxyCodeLine{93     \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keyword}{private}:}
+\DoxyCodeLine{96     param m\_param;                                 }
+\DoxyCodeLine{97     G4String m\_name;                               }
+\DoxyCodeLine{98     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} m\_table ;  }
+\DoxyCodeLine{99     \mbox{\hyperlink{classGateMap}{GateMap<G4String,param>}} ::iterator im;  }
+\DoxyCodeLine{100     G4String m\_volumeName;  }
+\DoxyCodeLine{101     G4int m\_volumeIDNo;     }
+\DoxyCodeLine{102     G4int m\_i, m\_j, m\_k;    }
+\DoxyCodeLine{103     \textcolor{keywordtype}{size\_t} m\_depth;         }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \mbox{\hyperlink{classGateBlurringWithIntrinsicResolutionMessenger}{GateBlurringWithIntrinsicResolutionMessenger}} *m\_messenger;   }
+\DoxyCodeLine{106 \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

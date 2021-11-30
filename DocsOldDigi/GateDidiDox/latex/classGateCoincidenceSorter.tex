@@ -1,0 +1,206 @@
+\hypertarget{classGateCoincidenceSorter}{}\doxysection{Gate\+Coincidence\+Sorter Class Reference}
+\label{classGateCoincidenceSorter}\index{GateCoincidenceSorter@{GateCoincidenceSorter}}
+
+
+Coincidence sorter for a PET scanner.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Coincidence\+Sorter.\+hh$>$}
+
+Inheritance diagram for Gate\+Coincidence\+Sorter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateCoincidenceSorter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a5cb463e28bac3b87da30ac683a909664}\label{classGateCoincidenceSorter_a5cb463e28bac3b87da30ac683a909664}} 
+{\bfseries Gate\+Coincidence\+Sorter} (\mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}} $\ast$its\+Digitizer, const G4\+String \&its\+Name, G4double its\+Window, const G4\+String \&its\+Input\+Name=\char`\"{}Singles\char`\"{}, const bool \&Is\+CCSorter=false)
+\begin{DoxyCompactList}\small\item\em Constructs a new coincidence sorter, attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}} amd to a system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a758ca556952dc62e3464eb27b8047892}\label{classGateCoincidenceSorter_a758ca556952dc62e3464eb27b8047892}} 
+virtual {\bfseries $\sim$\+Gate\+Coincidence\+Sorter} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateCoincidenceSorter_a45cd549043b39a3a5676b71ecdd8b5aa}{Describe}} (size\+\_\+t indent)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ getters and setters}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a84197ccde2edab6b6767c00ac5cffb6a}\label{classGateCoincidenceSorter_a84197ccde2edab6b6767c00ac5cffb6a}} 
+virtual G4double {\bfseries Get\+Window} () const
+\begin{DoxyCompactList}\small\item\em Get the coincidence time-\/window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_af0e4777c45cd64492e51f8288ad839b6}\label{classGateCoincidenceSorter_af0e4777c45cd64492e51f8288ad839b6}} 
+virtual void {\bfseries Set\+Window} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the coincidence time-\/window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a72c4d4331fc5b6a61e963354ba0b5477}\label{classGateCoincidenceSorter_a72c4d4331fc5b6a61e963354ba0b5477}} 
+virtual void {\bfseries Set\+Window\+Jitter} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the coincidence time-\/window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a251d3982b22c34a70a3e83362b8c3dc4}\label{classGateCoincidenceSorter_a251d3982b22c34a70a3e83362b8c3dc4}} 
+void {\bfseries Set\+Offset} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the coincidence offset window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a50e7c4ec896fe8671d8a76ca8ac2126c}\label{classGateCoincidenceSorter_a50e7c4ec896fe8671d8a76ca8ac2126c}} 
+void {\bfseries Set\+Offset\+Jitter} (G4double val)
+\begin{DoxyCompactList}\small\item\em Set the coincidence offset window jitter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_acb3d54b09137b48e249dd833732ca8db}\label{classGateCoincidenceSorter_acb3d54b09137b48e249dd833732ca8db}} 
+G4int {\bfseries Get\+Min\+Sector\+Difference} () const
+\begin{DoxyCompactList}\small\item\em Get the minimum sector difference for valid coincidences. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_ac4fb4959abed520703c5572ff1aa4952}\label{classGateCoincidenceSorter_ac4fb4959abed520703c5572ff1aa4952}} 
+void {\bfseries Set\+Min\+Sector\+Difference} (G4int diff)
+\begin{DoxyCompactList}\small\item\em Set the minimum sector difference for valid coincidences. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a9bded94fcaee90d8736e6712c91dd1e0}\label{classGateCoincidenceSorter_a9bded94fcaee90d8736e6712c91dd1e0}} 
+G4int {\bfseries Get\+Depth} () const
+\begin{DoxyCompactList}\small\item\em Get the depth of the system-\/level for coincidences. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_ab72dac42cd0e122dbfa39b9c7c9a72f5}\label{classGateCoincidenceSorter_ab72dac42cd0e122dbfa39b9c7c9a72f5}} 
+void {\bfseries Set\+Depth} (G4int depth)
+\begin{DoxyCompactList}\small\item\em Set the depth of the system-\/level for coincidences. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_aeff682965a2b075f53a2513f0a39473f}\label{classGateCoincidenceSorter_aeff682965a2b075f53a2513f0a39473f}} 
+G4bool {\bfseries Get\+All\+Pulse\+Open\+Coinc\+Gate} () const
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a0b4c923565f103947bf0416a23371680}\label{classGateCoincidenceSorter_a0b4c923565f103947bf0416a23371680}} 
+void {\bfseries Set\+All\+Pulse\+Open\+Coinc\+Gate} (G4bool b)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_ab338577bf49c258ae90264f81dc0ce3f}\label{classGateCoincidenceSorter_ab338577bf49c258ae90264f81dc0ce3f}} 
+G4bool {\bfseries Get\+If\+Trigger\+Only\+By\+Absorber} () const
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a1634aa6e0a6536573bdd109f87fcac21}\label{classGateCoincidenceSorter_a1634aa6e0a6536573bdd109f87fcac21}} 
+void {\bfseries Set\+If\+Trigger\+Only\+By\+Absorber} (G4bool b)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_aee30448dae97c570c2e13a5b203f07af}\label{classGateCoincidenceSorter_aee30448dae97c570c2e13a5b203f07af}} 
+G4bool {\bfseries Get\+If\+Event\+IDCoinc} () const
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a4d9b25937b9657268cd509301b9ba146}\label{classGateCoincidenceSorter_a4d9b25937b9657268cd509301b9ba146}} 
+void {\bfseries Set\+If\+Event\+IDCoinc} (G4bool b)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_aff9a1c5ce35a924ea698c5312068eeec}\label{classGateCoincidenceSorter_aff9a1c5ce35a924ea698c5312068eeec}} 
+const G4\+String \& {\bfseries Get\+Input\+Name} () const
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a70f03d4788a26ab78111bb5b19f6f6a5}\label{classGateCoincidenceSorter_a70f03d4788a26ab78111bb5b19f6f6a5}} 
+void {\bfseries Set\+Input\+Name} (const G4\+String \&an\+Input\+Name)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a252e75fe80cdded32a739103a93c03e0}\label{classGateCoincidenceSorter_a252e75fe80cdded32a739103a93c03e0}} 
+const G4\+String \& {\bfseries Get\+Output\+Name} () const
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a7b55f3dfac3ee0dc97e092d26d5e7806}\label{classGateCoincidenceSorter_a7b55f3dfac3ee0dc97e092d26d5e7806}} 
+void {\bfseries Set\+Presort\+Buffer\+Size} (G4int size)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a7245ada216ac24fabccb0d0d1b82ad30}\label{classGateCoincidenceSorter_a7245ada216ac24fabccb0d0d1b82ad30}} 
+void {\bfseries Set\+Absorber\+SDVol} (G4\+String val)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Methods for coincidence sorting}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classGateCoincidenceSorter_a8a93ce8ddb949fcc72bf874067130237}{Process\+Single\+Pulse\+List}} (\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$inp=0)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a56318465cb436a7db1e34de4056cb005}\label{classGateCoincidenceSorter_a56318465cb436a7db1e34de4056cb005}} 
+virtual \mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries Get\+System} () const
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a72fde1b1310adae23e1ec3c270ac5bc1}\label{classGateCoincidenceSorter_a72fde1b1310adae23e1ec3c270ac5bc1}} 
+virtual void {\bfseries Set\+System} (\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$a\+System)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_afbb00a99d1a2c498d1a6dbc18a5c1d42}\label{classGateCoincidenceSorter_afbb00a99d1a2c498d1a6dbc18a5c1d42}} 
+void {\bfseries Set\+System} (G4\+String \&input\+Name)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_ac65712db92fac23b4d0a87c79dfb6987}\label{classGateCoincidenceSorter_ac65712db92fac23b4d0a87c79dfb6987}} 
+void {\bfseries Set\+Multiples\+Policy} (const G4\+String \&policy)
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a33f95d1d014e69f99a2c8fd9282d19d1}\label{classGateCoincidenceSorter_a33f95d1d014e69f99a2c8fd9282d19d1}} 
+void {\bfseries Set\+Acceptance\+Policy4\+CC} (const G4\+String \&policy)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{Indent}\textbf{ Parameters of the sorter}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a3db82cd97464efa59be168a6e312232e}\label{classGateCoincidenceSorter_a3db82cd97464efa59be168a6e312232e}} 
+\mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}} $\ast$ {\bfseries m\+\_\+digitizer}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_acf795364c371eaeb765f7de46fccf96d}\label{classGateCoincidenceSorter_acf795364c371eaeb765f7de46fccf96d}} 
+\mbox{\hyperlink{classGateVSystem}{Gate\+VSystem}} $\ast$ {\bfseries m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em System to which the sorter is attached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a70779ab629cd5c248fcf190182fb4c75}\label{classGateCoincidenceSorter_a70779ab629cd5c248fcf190182fb4c75}} 
+G4\+String {\bfseries m\+\_\+output\+Name}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_afbf415668afabfacd71f5c503612e48b}\label{classGateCoincidenceSorter_afbf415668afabfacd71f5c503612e48b}} 
+G4\+String {\bfseries m\+\_\+input\+Name}
+\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a40f25e681b75d2a9ae7a3fcaefc85006}\label{classGateCoincidenceSorter_a40f25e681b75d2a9ae7a3fcaefc85006}} 
+G4double {\bfseries m\+\_\+coincidence\+Window}
+\begin{DoxyCompactList}\small\item\em Coincidence time window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_aaca5d09adb14fbc14384122c3beb311a}\label{classGateCoincidenceSorter_aaca5d09adb14fbc14384122c3beb311a}} 
+G4double {\bfseries m\+\_\+coincidence\+Window\+Jitter}
+\begin{DoxyCompactList}\small\item\em Coincidence time window jitter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a7c7699ca8858e6a75b905aff18e9ec36}\label{classGateCoincidenceSorter_a7c7699ca8858e6a75b905aff18e9ec36}} 
+G4double {\bfseries m\+\_\+offset}
+\begin{DoxyCompactList}\small\item\em Offset window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a38f49bb6848837005b55430086efd6c9}\label{classGateCoincidenceSorter_a38f49bb6848837005b55430086efd6c9}} 
+G4double {\bfseries m\+\_\+offset\+Jitter}
+\begin{DoxyCompactList}\small\item\em Offset window jitter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a90ff2eef948cf051b514466209950150}\label{classGateCoincidenceSorter_a90ff2eef948cf051b514466209950150}} 
+G4int {\bfseries m\+\_\+min\+Sector\+Difference}
+\begin{DoxyCompactList}\small\item\em Minimum sector difference for valid coincidences. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a205b4911cc1fbd95e3125e1c38a888b2}\label{classGateCoincidenceSorter_a205b4911cc1fbd95e3125e1c38a888b2}} 
+multiple\+\_\+policy\+\_\+t {\bfseries m\+\_\+multiples\+Policy}
+\begin{DoxyCompactList}\small\item\em Do what if multiples? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_a4b473da34aaf8a42ae4f0e7617203d1d}\label{classGateCoincidenceSorter_a4b473da34aaf8a42ae4f0e7617203d1d}} 
+acceptance\+\_\+policy\+\_\+4\+CC\+\_\+t {\bfseries m\+\_\+acceptance\+\_\+policy\+\_\+4\+CC}
+\item 
+G4bool \mbox{\hyperlink{classGateCoincidenceSorter_a00ec27ca0fc8d8bc16fca111c5c96f46}{m\+\_\+all\+Pulse\+Open\+Coinc\+Gate}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<}Which is the criteria to accept coincidences in CC sys \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_afe1610debe1ba6ce90a2934bb8aa86ee}\label{classGateCoincidenceSorter_afe1610debe1ba6ce90a2934bb8aa86ee}} 
+G4int {\bfseries m\+\_\+depth}
+\begin{DoxyCompactList}\small\item\em Depth of system-\/level for coincidences. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateCoincidenceSorter_acc5d67618cb967957baaa3e207ac309d}\label{classGateCoincidenceSorter_acc5d67618cb967957baaa3e207ac309d}} 
+G4int {\bfseries coinc\+ID\+\_\+\+CC}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Coincidence sorter for a PET scanner. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateCoincidenceSorter}{Gate\+Coincidence\+Sorter}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item The sorter processes a series of pulses, and stores them into a queue When pulses get obsolete, it tries to create coincident pulse pairs It does not rejects multiple coincidences. When successful, it returns a coincident pulse 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateCoincidenceSorter_a45cd549043b39a3a5676b71ecdd8b5aa}\label{classGateCoincidenceSorter_a45cd549043b39a3a5676b71ecdd8b5aa}} 
+\index{GateCoincidenceSorter@{GateCoincidenceSorter}!Describe@{Describe}}
+\index{Describe@{Describe}!GateCoincidenceSorter@{GateCoincidenceSorter}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+Coincidence\+Sorter\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Overload of the virtual method declared by the base class \mbox{\hyperlink{classGateClockDependent}{Gate\+Clock\+Dependent}} print-\/out a description of the sorter 
+
+Reimplemented from \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent}}.
+
+\mbox{\Hypertarget{classGateCoincidenceSorter_a8a93ce8ddb949fcc72bf874067130237}\label{classGateCoincidenceSorter_a8a93ce8ddb949fcc72bf874067130237}} 
+\index{GateCoincidenceSorter@{GateCoincidenceSorter}!ProcessSinglePulseList@{ProcessSinglePulseList}}
+\index{ProcessSinglePulseList@{ProcessSinglePulseList}!GateCoincidenceSorter@{GateCoincidenceSorter}}
+\doxysubsubsection{\texorpdfstring{ProcessSinglePulseList()}{ProcessSinglePulseList()}}
+{\footnotesize\ttfamily void Gate\+Coincidence\+Sorter\+::\+Process\+Single\+Pulse\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{inp = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of the pure virtual method declared by our base class Processes a list of pulses and tries to compute a coincidence pulse 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGateCoincidenceSorter_a00ec27ca0fc8d8bc16fca111c5c96f46}\label{classGateCoincidenceSorter_a00ec27ca0fc8d8bc16fca111c5c96f46}} 
+\index{GateCoincidenceSorter@{GateCoincidenceSorter}!m\_allPulseOpenCoincGate@{m\_allPulseOpenCoincGate}}
+\index{m\_allPulseOpenCoincGate@{m\_allPulseOpenCoincGate}!GateCoincidenceSorter@{GateCoincidenceSorter}}
+\doxysubsubsection{\texorpdfstring{m\_allPulseOpenCoincGate}{m\_allPulseOpenCoincGate}}
+{\footnotesize\ttfamily G4bool Gate\+Coincidence\+Sorter\+::m\+\_\+all\+Pulse\+Open\+Coinc\+Gate\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\texorpdfstring{$<$}{<}Which is the criteria to accept coincidences in CC sys 
+
+can a pulse be part of two coincs? 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Coincidence\+Sorter.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Coincidence\+Sorter.\+cc\end{DoxyCompactItemize}

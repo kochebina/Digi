@@ -1,0 +1,129 @@
+\hypertarget{classGateVPulseProcessor}{}\doxysection{Gate\+VPulse\+Processor Class Reference}
+\label{classGateVPulseProcessor}\index{GateVPulseProcessor@{GateVPulseProcessor}}
+
+
+Abstract base-\/class for pulse-\/processor components of the digitizer.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+VPulse\+Processor.\+hh$>$}
+
+Inheritance diagram for Gate\+VPulse\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classGateVPulseProcessor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ constructors and destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVPulseProcessor_aa225b6bcdd324867adcfd2c0505a53a3}\label{classGateVPulseProcessor_aa225b6bcdd324867adcfd2c0505a53a3}} 
+{\bfseries Gate\+VPulse\+Processor} (\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$its\+Chain, const G4\+String \&its\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a new pulse-\/processor attached to a \mbox{\hyperlink{classGateDigitizer}{Gate\+Digitizer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGateVPulseProcessor_ab8a8afe3a6fad5859d2cca04cd8fab49}\label{classGateVPulseProcessor_ab8a8afe3a6fad5859d2cca04cd8fab49}} 
+virtual {\bfseries $\sim$\+Gate\+VPulse\+Processor} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ pulse-\/processing functions}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List}} (const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$input\+Pulse\+List)
+\item 
+virtual void \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Process\+One\+Pulse}} (const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$input\+Pulse, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&output\+Pulse\+List)=0
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{getters and setters}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateVPulseProcessor_ab331a15b8431c24c959133f9aabb7aaa}\label{classGateVPulseProcessor_ab331a15b8431c24c959133f9aabb7aaa}} 
+\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$ {\bfseries m\+\_\+chain}
+\item 
+\mbox{\Hypertarget{classGateVPulseProcessor_afa3687779d3c1bc6d65c302c3c3e8730}\label{classGateVPulseProcessor_afa3687779d3c1bc6d65c302c3c3e8730}} 
+\mbox{\hyperlink{classGatePulseProcessorChain}{Gate\+Pulse\+Processor\+Chain}} $\ast$ {\bfseries Get\+Chain} ()
+\item 
+virtual void \mbox{\hyperlink{classGateVPulseProcessor_ab45af3d01123ea7966b4ef931c082ec6}{Describe}} (size\+\_\+t indent=0)
+\item 
+virtual void \mbox{\hyperlink{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}{Describe\+Myself}} (size\+\_\+t indent=0)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method Decribe\+Myself() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base-\/class for pulse-\/processor components of the digitizer. 
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} -\/ by \href{mailto:Daniel.Strul@iphe.unil.ch}{\texttt{ Daniel.\+Strul@iphe.\+unil.\+ch}}
+\item \mbox{\hyperlink{classGateVPulseProcessor}{Gate\+VPulse\+Processor}} is the abstract base-\/class for all pulse-\/processors. The pulse-\/processors are pluggable modules that can be inserted into the digitizer module\textquotesingle{}s list.
+\item Their role is to process a list of pulses (coming from the hit-\/convertor or from another pulse-\/processor) and to return a new, processed list of pulses, which can be fed to another pulse-\/processor or to the coincidence sorter for example.
+\item When developping a new pulse-\/processor, one should\+:
+\begin{DoxyItemize}
+\item develop the pulse-\/processing functions (see below);
+\item develop a messenger for this pulse-\/processor;
+\item add the new pulse-\/processor to the list of choices available in \mbox{\hyperlink{classGatePulseProcessorChainMessenger}{Gate\+Pulse\+Processor\+Chain\+Messenger}}.
+\end{DoxyItemize}
+\item To develop the pulse-\/processing functions, the developper has two options\+:
+\begin{DoxyItemize}
+\item The easiest option is to re-\/use the pre-\/defined method \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}}. This method processes an input pulse-\/list by repeatedly calling the method \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Process\+One\+Pulse()}} once for each input-\/pulse. The responsability of the developper then is to implement the pure virtual method \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Process\+One\+Pulse()}} so as to perform the required processing.
+\item The other option is to overload the method \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} (if the pulse-\/processing sequential mechanism provided by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} is not appropriate. In that case, one should provide some dummy implementation (such as \{;\}) for \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Process\+One\+Pulse()}}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classGatePulseProcessorChainMessenger}{Gate\+Pulse\+Processor\+Chain\+Messenger}}, \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}}, \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateVPulseProcessor_ab45af3d01123ea7966b4ef931c082ec6}\label{classGateVPulseProcessor_ab45af3d01123ea7966b4ef931c082ec6}} 
+\index{GateVPulseProcessor@{GateVPulseProcessor}!Describe@{Describe}}
+\index{Describe@{Describe}!GateVPulseProcessor@{GateVPulseProcessor}}
+\doxysubsubsection{\texorpdfstring{Describe()}{Describe()}}
+{\footnotesize\ttfamily void Gate\+VPulse\+Processor\+::\+Describe (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method overloading \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent\+::\+Describe()}} Print-\/out a description of the component Calls the pure virtual method Decribe\+Myself() 
+
+Reimplemented from \mbox{\hyperlink{classGateClockDependent_a61d5fd59b79a05176ec528efd930c207}{Gate\+Clock\+Dependent}}.
+
+\mbox{\Hypertarget{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}\label{classGateVPulseProcessor_ac93366f6efe86b5425466798e7731005}} 
+\index{GateVPulseProcessor@{GateVPulseProcessor}!DescribeMyself@{DescribeMyself}}
+\index{DescribeMyself@{DescribeMyself}!GateVPulseProcessor@{GateVPulseProcessor}}
+\doxysubsubsection{\texorpdfstring{DescribeMyself()}{DescribeMyself()}}
+{\footnotesize\ttfamily virtual void Gate\+VPulse\+Processor\+::\+Describe\+Myself (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method Decribe\+Myself() 
+
+
+
+Implemented in \mbox{\hyperlink{classGateBlurring_ac645fe66ce6fd0f463d054800001edef}{Gate\+Blurring}}, \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_ac8f4ef026ff1f203e15ff2c3fb6d5002}{Gate\+Blurring\+With\+Intrinsic\+Resolution}}, \mbox{\hyperlink{classGateBuffer_a87f0dd293a5abef8ee155e2e4134aac5}{Gate\+Buffer}}, \mbox{\hyperlink{classGateCalibration_ad9dae6b10f05e43aa388c471cfb158fe}{Gate\+Calibration}}, \mbox{\hyperlink{classGateCC3DlocalSpblurring_abae927d80e8a6ce886b97bb313e6bf10}{Gate\+CC3\+Dlocal\+Spblurring}}, \mbox{\hyperlink{classGateClustering_af1641d5810f9aee28914605c052f9d5d}{Gate\+Clustering}}, \mbox{\hyperlink{classGateCrosstalk_ae2392bd23542d0ad5c328c1d5bce5b01}{Gate\+Crosstalk}}, \mbox{\hyperlink{classGateCrystalBlurring_ab4f272d053e9d40a1c1cb5029cdd76c5}{Gate\+Crystal\+Blurring}}, \mbox{\hyperlink{classGateDeadTime_ac669987f4d3615ad751aa2a0ccecc5ad}{Gate\+Dead\+Time}}, \mbox{\hyperlink{classGateDiscretizer_a15dbaad56ff9c1e4107494b2762a5e03}{Gate\+Discretizer}}, \mbox{\hyperlink{classGateDoIModels_ab618506ea3b9c4545bbb30020b9db2a7}{Gate\+Do\+IModels}}, \mbox{\hyperlink{classGateEnergyEfficiency_a441c15c4afd7a7629a307d2d8aa992bb}{Gate\+Energy\+Efficiency}}, \mbox{\hyperlink{classGateEnergyThresholder_aa5fdc804654603e1a466b8c28985cd09}{Gate\+Energy\+Thresholder}}, \mbox{\hyperlink{classGateGridDiscretization_abafd960660e42aa89fe5fe0abfc3b776}{Gate\+Grid\+Discretization}}, \mbox{\hyperlink{classGateLightYield_a2c447d35ca421409ea984c46952813c0}{Gate\+Light\+Yield}}, \mbox{\hyperlink{classGateLocalBlurring_a0e522e46aa51dd45dc14ba71e7896afc}{Gate\+Local\+Blurring}}, \mbox{\hyperlink{classGateLocalClustering_a2a8eb113e7e7d40a2f4721fc9163bc52}{Gate\+Local\+Clustering}}, \mbox{\hyperlink{classGateLocalEfficiency_a5483fc61c2c24268e3349bb55afaf915}{Gate\+Local\+Efficiency}}, \mbox{\hyperlink{classGateLocalEnergyThresholder_a13ee32804c9db9e51cb794d94e9e5b86}{Gate\+Local\+Energy\+Thresholder}}, \mbox{\hyperlink{classGateLocalMultipleRejection_a577281e2f9dcb2e691e836d8295e949d}{Gate\+Local\+Multiple\+Rejection}}, \mbox{\hyperlink{classGateLocalTimeDelay_aba583186ff77cf320c07faae39f8ec11}{Gate\+Local\+Time\+Delay}}, \mbox{\hyperlink{classGateLocalTimeResolution_a6586556f10add0026447665dd2f11345}{Gate\+Local\+Time\+Resolution}}, \mbox{\hyperlink{classGateNoise_a9fbf7026538cfc4c183de10fd5477f60}{Gate\+Noise}}, \mbox{\hyperlink{classGatePileup_a418eb4ad2ac2f47633c992f78b6d6b06}{Gate\+Pileup}}, \mbox{\hyperlink{classGatePulseAdder_afbf3a22e4bea82b9f89b5a2269b3342d}{Gate\+Pulse\+Adder}}, \mbox{\hyperlink{classGatePulseAdderCompton_abd41cc2210c309b63a1a55887e684f18}{Gate\+Pulse\+Adder\+Compton}}, \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_a683e351feb238b5f36eba15dcc0fac04}{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal}}, \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a1a37520df95b634a78459074001c0aee}{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local}}, \mbox{\hyperlink{classGateQuantumEfficiency_a1b52452eadaa0744ab50336c99d5ab8e}{Gate\+Quantum\+Efficiency}}, \mbox{\hyperlink{classGateReadout_a10df66505e3d40c154ab58e0592ef9db}{Gate\+Readout}}, \mbox{\hyperlink{classGateSigmoidalThresholder_a13a9df2cb0d977119bbedec76c745ae4}{Gate\+Sigmoidal\+Thresholder}}, \mbox{\hyperlink{classGateSpblurring_a0aba03968d81524fed0d88947e7882c5}{Gate\+Spblurring}}, \mbox{\hyperlink{classGateSystemFilter_af0b5986172449b4b1d4c45dd2777c12c}{Gate\+System\+Filter}}, \mbox{\hyperlink{classGateTemporalResolution_a29ca2b4e351630293c113444e27e74e0}{Gate\+Temporal\+Resolution}}, \mbox{\hyperlink{classGateThresholder_ac4f88aecd0e738bb898728e64d605fdf}{Gate\+Thresholder}}, \mbox{\hyperlink{classGateTransferEfficiency_ae953d910a56d734cab91300ca5b27c66}{Gate\+Transfer\+Efficiency}}, and \mbox{\hyperlink{classGateUpholder_a50f5bdb9b0e324eade6cbf2939ac392d}{Gate\+Upholder}}.
+
+\mbox{\Hypertarget{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}\label{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}} 
+\index{GateVPulseProcessor@{GateVPulseProcessor}!ProcessOnePulse@{ProcessOnePulse}}
+\index{ProcessOnePulse@{ProcessOnePulse}!GateVPulseProcessor@{GateVPulseProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessOnePulse()}{ProcessOnePulse()}}
+{\footnotesize\ttfamily virtual void Gate\+VPulse\+Processor\+::\+Process\+One\+Pulse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulse}{Gate\+Pulse}} $\ast$}]{input\+Pulse,  }\item[{\mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} \&}]{output\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pure virtual function for processing one input-\/pulse This function is called by \mbox{\hyperlink{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}{Process\+Pulse\+List()}} for each of the input pulses The result of the pulse-\/processing must be incorporated into the output pulse-\/list 
+
+Implemented in \mbox{\hyperlink{classGateBlurring_a5d6173adcb20f376f4fe401afccf82b0}{Gate\+Blurring}}, \mbox{\hyperlink{classGateBlurringWithIntrinsicResolution_ad352aba18a9c801f90870098dfc05d2e}{Gate\+Blurring\+With\+Intrinsic\+Resolution}}, \mbox{\hyperlink{classGateBuffer_acd3d62cbe456134fc9e7cbbd09cd91ed}{Gate\+Buffer}}, \mbox{\hyperlink{classGateCalibration_acec34dd493f5a1c8e6943ce3ba58bceb}{Gate\+Calibration}}, \mbox{\hyperlink{classGateCC3DlocalSpblurring_ad5a6791007cdf0cd52cb042a4273bc4a}{Gate\+CC3\+Dlocal\+Spblurring}}, \mbox{\hyperlink{classGateClustering_ae105e61c888e18c3de24d6e6927bac2a}{Gate\+Clustering}}, \mbox{\hyperlink{classGateCrosstalk_a716d0fa7b49ee01667076aca8ced9cb3}{Gate\+Crosstalk}}, \mbox{\hyperlink{classGateCrystalBlurring_add2f241b1a2ba975b1fafdc1fd98d919}{Gate\+Crystal\+Blurring}}, \mbox{\hyperlink{classGateDeadTime_a8aed3cb562c9cf9cef0c1c360e8dca76}{Gate\+Dead\+Time}}, \mbox{\hyperlink{classGateDiscretizer_af2302b8ab6d358caf1bb586e8df024c1}{Gate\+Discretizer}}, \mbox{\hyperlink{classGateDoIModels_a4ffc0d976ba01a767a6b4d906bc2c2ca}{Gate\+Do\+IModels}}, \mbox{\hyperlink{classGateEnergyEfficiency_a58682116184dc5ef79e66736a25da6c5}{Gate\+Energy\+Efficiency}}, \mbox{\hyperlink{classGateEnergyThresholder_afcb65bbfb3b0f594093389fcc390e397}{Gate\+Energy\+Thresholder}}, \mbox{\hyperlink{classGateGridDiscretization_ad016200f4cf9e8bb0fecb2ffca931b02}{Gate\+Grid\+Discretization}}, \mbox{\hyperlink{classGateLightYield_a3bd35678d1160e043740c2e3e9fea083}{Gate\+Light\+Yield}}, \mbox{\hyperlink{classGateLocalBlurring_a7e4595537f6082dde02acf5af1d8a6cb}{Gate\+Local\+Blurring}}, \mbox{\hyperlink{classGateLocalClustering_a548c5691c1fc0bb4475c0c7e694206c2}{Gate\+Local\+Clustering}}, \mbox{\hyperlink{classGateLocalEfficiency_aa1fefc8990e5bd39e5ec85db9bbd395d}{Gate\+Local\+Efficiency}}, \mbox{\hyperlink{classGateLocalEnergyThresholder_aea3b6bf8c662aebc699e32b06ca73209}{Gate\+Local\+Energy\+Thresholder}}, \mbox{\hyperlink{classGateLocalMultipleRejection_aab5eb29a4413cf81549200b6327d7c0b}{Gate\+Local\+Multiple\+Rejection}}, \mbox{\hyperlink{classGateLocalTimeDelay_a55d244dcda4d8b9791f683fc63e4a508}{Gate\+Local\+Time\+Delay}}, \mbox{\hyperlink{classGateLocalTimeResolution_adad26c60d34ba10e6148cad033e9f974}{Gate\+Local\+Time\+Resolution}}, \mbox{\hyperlink{classGateNoise_a1d9f773f99e4a1fe1fe3aae56a4ace3d}{Gate\+Noise}}, \mbox{\hyperlink{classGatePileup_a55eb46fee95e02dd0b96ee3fb8a8a7cb}{Gate\+Pileup}}, \mbox{\hyperlink{classGatePulseAdder_af82e2fb400a7b5fafb70ed3c7f22cbe7}{Gate\+Pulse\+Adder}}, \mbox{\hyperlink{classGatePulseAdderCompton_a2090fa24a5f6c7acdf418bbc76f1ec8c}{Gate\+Pulse\+Adder\+Compton}}, \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_a9a4e6a3e4d2f4290fb7609c99a26fced}{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal}}, \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a8a9784ef27cfc3c44dc3658a4ad6b1a4}{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local}}, \mbox{\hyperlink{classGateQuantumEfficiency_a153a605953adbc35c951165b7b030279}{Gate\+Quantum\+Efficiency}}, \mbox{\hyperlink{classGateReadout_a093d3d204131b20c6fbfb3d62dc305d7}{Gate\+Readout}}, \mbox{\hyperlink{classGateSigmoidalThresholder_a6ec850ca90afca57297dc5bdf8ceae10}{Gate\+Sigmoidal\+Thresholder}}, \mbox{\hyperlink{classGateSpblurring_ae534899da5b0625be57acd6747aa41b2}{Gate\+Spblurring}}, \mbox{\hyperlink{classGateSystemFilter_a55b3fff50e747994fe41f14d16ce5ad1}{Gate\+System\+Filter}}, \mbox{\hyperlink{classGateTemporalResolution_a3692b376cb98e4ac8696438cb484ec0a}{Gate\+Temporal\+Resolution}}, \mbox{\hyperlink{classGateThresholder_ade00bf96b9c58986de656ef46065cbf1}{Gate\+Thresholder}}, \mbox{\hyperlink{classGateTransferEfficiency_a762ab36463f1d925c120d8c7e874abe8}{Gate\+Transfer\+Efficiency}}, and \mbox{\hyperlink{classGateUpholder_a29f6b81014a7a899c9103780b858404e}{Gate\+Upholder}}.
+
+\mbox{\Hypertarget{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}\label{classGateVPulseProcessor_adaa414f484d8b3f67f2297ddbc2f6cf7}} 
+\index{GateVPulseProcessor@{GateVPulseProcessor}!ProcessPulseList@{ProcessPulseList}}
+\index{ProcessPulseList@{ProcessPulseList}!GateVPulseProcessor@{GateVPulseProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessPulseList()}{ProcessPulseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$ Gate\+VPulse\+Processor\+::\+Process\+Pulse\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGatePulseList}{Gate\+Pulse\+List}} $\ast$}]{input\+Pulse\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default function for pulse-\/list processing This function reads an input pulse-\/list. It then calls sequantially the method \mbox{\hyperlink{classGateVPulseProcessor_a228e213fe778039eac929cb83479fc72}{Process\+One\+Pulse()}}, once for each of the input pulses. The method returns the output pulse-\/list resulting from this processing 
+
+Reimplemented in \mbox{\hyperlink{classGateClustering_a3cff8969564191e06738d868ab090a1f}{Gate\+Clustering}}, \mbox{\hyperlink{classGateEnergyThresholder_acbc7a6537432f9b6931238e6977c6045}{Gate\+Energy\+Thresholder}}, \mbox{\hyperlink{classGateGridDiscretization_aa7f5ba2d0b4ebbf07fb50bbb76f22791}{Gate\+Grid\+Discretization}}, \mbox{\hyperlink{classGateLocalClustering_adbcb18f3bc2bb275d0b1862d35208606}{Gate\+Local\+Clustering}}, \mbox{\hyperlink{classGateLocalEnergyThresholder_a4eb3ed8d9ac74cb9d25f192ab17f10d8}{Gate\+Local\+Energy\+Thresholder}}, \mbox{\hyperlink{classGateLocalMultipleRejection_af25c00f14ee11c67fe52f457ccaa9eac}{Gate\+Local\+Multiple\+Rejection}}, \mbox{\hyperlink{classGateNoise_ae9e7166677f4b3797ac5d4e7a381613d}{Gate\+Noise}}, \mbox{\hyperlink{classGatePileup_af93d01442f9dd0c843fd2d2e1f056d45}{Gate\+Pileup}}, \mbox{\hyperlink{classGatePulseAdderComptPhotIdeal_a525890d3ea3f37b17115116c076e3f49}{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal}}, \mbox{\hyperlink{classGatePulseAdderComptPhotIdealLocal_a1dd8ddbf3afb3f1f781d95dcebad9892}{Gate\+Pulse\+Adder\+Compt\+Phot\+Ideal\+Local}}, \mbox{\hyperlink{classGateReadout_a36dfb3de4a8b33bfe1a53a0c253f5693}{Gate\+Readout}}, and \mbox{\hyperlink{classGateSystemFilter_a486b84f6a472a35599cb038706b3fb6c}{Gate\+System\+Filter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/include/Gate\+VPulse\+Processor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/physics/src/Gate\+VPulse\+Processor.\+cc\end{DoxyCompactItemize}

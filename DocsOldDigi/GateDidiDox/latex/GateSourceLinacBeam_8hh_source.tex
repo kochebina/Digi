@@ -1,0 +1,82 @@
+\hypertarget{GateSourceLinacBeam_8hh_source}{}\doxysection{Gate\+Source\+Linac\+Beam.\+hh}
+\label{GateSourceLinacBeam_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceLinacBeam.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GateSourceLinacBeam.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GATESOURCELINACBEAM\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GATESOURCELINACBEAM\_H 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iomanip>}   }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4VPrimaryGenerator.hh"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}G4ThreeVector.hh"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4ParticleDefinition.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4PrimaryVertex.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4ParticleMomentum.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}TH1D.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}TMath.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}TKey.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateVSource.hh"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceLinacBeamMessenger}{GateSourceLinacBeamMessenger}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSourceLinacBeam}{GateSourceLinacBeam}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVSource}{GateVSource}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGateSourceLinacBeam}{GateSourceLinacBeam}}(G4String name);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSourceLinacBeam}{\string~GateSourceLinacBeam}}();}
+\DoxyCodeLine{34   }
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} GeneratePrimaryVertex(G4Event* evt);}
+\DoxyCodeLine{36   \textcolor{comment}{// virtual void Update();}}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} SetSourceFromPhaseSpaceFilename(G4String f);}
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} SetRmaxFilename(G4String f);}
+\DoxyCodeLine{39   \textcolor{keywordtype}{void} SetReferencePosition(G4ThreeVector p);}
+\DoxyCodeLine{40   }
+\DoxyCodeLine{41 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateSourceLinacBeamMessenger}{GateSourceLinacBeamMessenger}}* mMessenger;}
+\DoxyCodeLine{43   G4String mSourceFromPhaseSpaceFilename;}
+\DoxyCodeLine{44   G4String mRmaxFilename;}
+\DoxyCodeLine{45   TFile * mPhaseSpaceFile;}
+\DoxyCodeLine{46   G4ThreeVector mReferencePosition;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   G4int mNumberOfVolume;}
+\DoxyCodeLine{49   G4int mNbOfRadiusBins;}
+\DoxyCodeLine{50   G4int mNbOfRadiusBinsForAngle;}
+\DoxyCodeLine{51   G4int mNbOfEnergyBinsForAngle;}
+\DoxyCodeLine{52   std::vector<G4String> mVolumeNames;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keyword}{typedef} std::vector<TH1D*> HistoVector1DType;}
+\DoxyCodeLine{55   \textcolor{keyword}{typedef} std::vector<HistoVector1DType> HistoVector2DType;}
+\DoxyCodeLine{56   \textcolor{keyword}{typedef} std::vector<HistoVector2DType> HistoVector3DType;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   TH1D *            mHistoVolume;  \textcolor{comment}{// Histo with the probability the the particle come from one volume}}
+\DoxyCodeLine{59   HistoVector1DType mHistoRadius;           \textcolor{comment}{// [i] i=volume}}
+\DoxyCodeLine{60   HistoVector2DType mHistoEnergy;           \textcolor{comment}{// [i][j] i=vol j=radius -\/> energy histo}}
+\DoxyCodeLine{61   HistoVector3DType mHistoThetaDirection;   \textcolor{comment}{// [i][j] i=vol j=radius k=energy -\/> angle histo}}
+\DoxyCodeLine{62   HistoVector3DType mHistoPhiDirection;     \textcolor{comment}{// [i][j] i=vol j=radisu k=energy -\/> angle histo}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keywordtype}{double} GetRmaxFromTime(\textcolor{keywordtype}{double} time);}
+\DoxyCodeLine{65   \textcolor{keywordtype}{int} GetIndexFromTime(\textcolor{keywordtype}{double} time);}
+\DoxyCodeLine{66   std::vector<double> mTimeList;}
+\DoxyCodeLine{67   std::vector<double> mRmaxList;}
+\DoxyCodeLine{68   }
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} PrintHistoInfo(TH1D * h) \{}
+\DoxyCodeLine{70     DD(h-\/>GetName());}
+\DoxyCodeLine{71     DD(h-\/>GetBinWidth(0));}
+\DoxyCodeLine{72     DD(h-\/>GetNbinsX());}
+\DoxyCodeLine{73   \}}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

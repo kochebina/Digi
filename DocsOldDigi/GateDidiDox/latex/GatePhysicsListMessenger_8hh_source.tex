@@ -1,0 +1,108 @@
+\hypertarget{GatePhysicsListMessenger_8hh_source}{}\doxysection{Gate\+Physics\+List\+Messenger.\+hh}
+\label{GatePhysicsListMessenger_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePhysicsListMessenger.hh@{/biomaps/physique/appli/GateOlga/src/source/physics/include/GatePhysicsListMessenger.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{  Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{  This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{  of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{  See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GATEPHYSICSLISTMESSENGER\_HH}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GATEPHYSICSLISTMESSENGER\_HH}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}G4UImessenger.hh"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}G4UIcmdWithoutParameter.hh"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAString.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4UIcmdWithAnInteger.hh"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}G4UIcmdWithABool.hh"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADoubleAndUnit.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}G4UIcmdWithADouble.hh"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}GateUIcmdWithAStringAndAnInteger.hh"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}GateUIcmdWith2String.hh"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}GateMaterialMuHandler.hh"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{classGatePhysicsListMessenger}{GatePhysicsListMessenger}}:\textcolor{keyword}{public} G4UImessenger}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32   \mbox{\hyperlink{classGatePhysicsListMessenger}{GatePhysicsListMessenger}}(\mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}} * pl);}
+\DoxyCodeLine{33   \mbox{\hyperlink{classGatePhysicsListMessenger}{\string~GatePhysicsListMessenger}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} BuildCommands(G4String base);}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} SetNewValue(G4UIcommand*, G4String);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   G4double ScaleValue(G4double value,G4String unit);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41   \mbox{\hyperlink{classGatePhysicsList}{GatePhysicsList}} * pPhylist;}
+\DoxyCodeLine{42   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} * pRemove;}
+\DoxyCodeLine{43   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} * pAdd;}
+\DoxyCodeLine{44   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} * pAddProcessMixed;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46   \mbox{\hyperlink{classGateUIcmdWith2String}{GateUIcmdWith2String}} * pList;}
+\DoxyCodeLine{47   G4UIcmdWithoutParameter * pInit;}
+\DoxyCodeLine{48   G4UIcmdWithAString * pPrint;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   G4UIcmdWithAString * gammaCutCmd;}
+\DoxyCodeLine{51   G4UIcmdWithAString * electronCutCmd;}
+\DoxyCodeLine{52   G4UIcmdWithAString * positronCutCmd;}
+\DoxyCodeLine{53   G4UIcmdWithAString * protonCutCmd;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   G4UIcmdWithoutParameter * electronRemoveDefaultCutCmd;}
+\DoxyCodeLine{56   G4UIcmdWithoutParameter * gammaRemoveDefaultCutCmd;}
+\DoxyCodeLine{57   G4UIcmdWithoutParameter * protonRemoveDefaultCutCmd;}
+\DoxyCodeLine{58   G4UIcmdWithoutParameter * positronRemoveDefaultCutCmd;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   G4UIcmdWithAString * pMaxStepSizeCmd;}
+\DoxyCodeLine{61   G4UIcmdWithAString * pMaxTrackLengthCmd;}
+\DoxyCodeLine{62   G4UIcmdWithAString * pMaxToFCmd;}
+\DoxyCodeLine{63   G4UIcmdWithAString * pMinKineticEnergyCmd;}
+\DoxyCodeLine{64   G4UIcmdWithAString * pMinRemainingRangeCmd;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   G4UIcmdWithAString * pActivateStepLimiterCmd;}
+\DoxyCodeLine{67   G4UIcmdWithAString * pActivateSpecialCutsCmd;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   G4UIcmdWithoutParameter * pCutInMaterial;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71   G4UIcmdWithAnInteger * pSetDEDXBinning;}
+\DoxyCodeLine{72   G4UIcmdWithAnInteger * pSetLambdaBinning;}
+\DoxyCodeLine{73   G4UIcmdWithADoubleAndUnit * pSetEMin;}
+\DoxyCodeLine{74   G4UIcmdWithADoubleAndUnit * pSetEMax;}
+\DoxyCodeLine{75   G4UIcmdWithABool * pSetSplineFlag;}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#if G4VERSION\_MAJOR >= 10 \&\& G4VERSION\_MINOR >= 5}}
+\DoxyCodeLine{77   G4UIcmdWithABool * pSetUseICRU90DataFlag;}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{comment}{// Mu Handler tools}}
+\DoxyCodeLine{81   G4UIcmdWithAString * pMuHandlerSetDatabase;}
+\DoxyCodeLine{82   G4UIcmdWithADoubleAndUnit * pMuHandlerSetEMin;}
+\DoxyCodeLine{83   G4UIcmdWithADoubleAndUnit * pMuHandlerSetEMax;}
+\DoxyCodeLine{84   G4UIcmdWithAnInteger * pMuHandlerSetENumber;}
+\DoxyCodeLine{85   G4UIcmdWithADoubleAndUnit * pMuHandlerSetAtomicShellEMin;}
+\DoxyCodeLine{86   G4UIcmdWithADoubleAndUnit * pMuHandlerSetAtomicShellTolerance;}
+\DoxyCodeLine{87   G4UIcmdWithADouble * pMuHandlerSetPrecision;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89   G4UIcommand * pAddAtomDeexcitation;}
+\DoxyCodeLine{90   G4UIcmdWithAString * pAddPhysicsList;}
+\DoxyCodeLine{91   G4UIcmdWithAString * pAddPhysicsListMixed;}
+\DoxyCodeLine{92   G4UIcmdWithABool * pConstructProcessMixed;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   G4UIcmdWithADoubleAndUnit * pEnergyRangeMinLimitCmd;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{keyword}{private}:}
+\DoxyCodeLine{97   \textcolor{keywordtype}{int} nInit;}
+\DoxyCodeLine{98   \textcolor{keywordtype}{int} nEMStdOpt;}
+\DoxyCodeLine{99   \mbox{\hyperlink{classGateMaterialMuHandler}{GateMaterialMuHandler}} *nMuHandler;}
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATEPHYSICSLISTMESSENGER\_HH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

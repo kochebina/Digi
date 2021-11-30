@@ -1,0 +1,170 @@
+\hypertarget{classGateSteppingAction}{}\doxysection{Gate\+Stepping\+Action Class Reference}
+\label{classGateSteppingAction}\index{GateSteppingAction@{GateSteppingAction}}
+
+
+G4\+User\+Stepping\+Action which redirects its callbacks to \mbox{\hyperlink{classGateUserActions}{Gate\+User\+Actions}}.  
+
+
+
+
+{\ttfamily \#include $<$Gate\+Actions.\+hh$>$}
+
+Inheritance diagram for Gate\+Stepping\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGateSteppingAction}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a8c40baa99ae5bf6bed0212fa5e5a8f11}\label{classGateSteppingAction_a8c40baa99ae5bf6bed0212fa5e5a8f11}} 
+{\bfseries Gate\+Stepping\+Action} (\mbox{\hyperlink{classGateUserActions}{Gate\+User\+Actions}} $\ast$cbm)
+\item 
+void \mbox{\hyperlink{classGateSteppingAction_ac9454917af7d367871bda2bf5bff77de}{User\+Stepping\+Action}} (const G4\+Step $\ast$a)
+\item 
+void \mbox{\hyperlink{classGateSteppingAction_a827c19fb6759ab4d5a62bd69d8bac5b2}{User\+Stepping\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a9acf920d67a127f711253fc41a2cce3b}\label{classGateSteppingAction_a9acf920d67a127f711253fc41a2cce3b}} 
+virtual void {\bfseries Set\+Draw\+Trajectory\+Level} (G4int value)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a2b880070d976f2af0d5244eabacac55a}\label{classGateSteppingAction_a2b880070d976f2af0d5244eabacac55a}} 
+virtual void {\bfseries Set\+Verbose\+Level} (G4int value)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a84288db8d2d0ece819653043856f220c}\label{classGateSteppingAction_a84288db8d2d0ece819653043856f220c}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateTrack}{Gate\+Track}} $\ast$ $>$ $\ast$ {\bfseries Get\+PPTrack\+Vector} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a5ad7bd4fdb4473c8ace437723bd6c3b4}\label{classGateSteppingAction_a5ad7bd4fdb4473c8ace437723bd6c3b4}} 
+void {\bfseries Stop\+On\+Boundary} (G4int aI)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a71b12d54094515b0d03beff9c8c00c2f}\label{classGateSteppingAction_a71b12d54094515b0d03beff9c8c00c2f}} 
+void {\bfseries Stop\+And\+Kill} (G4\+String a\+String)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_aded88e5635a6214282da12e710762117}\label{classGateSteppingAction_aded88e5635a6214282da12e710762117}} 
+void {\bfseries Set\+Mode} (Tracking\+Mode a\+Mode)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a18aa24fc0c16b0d13500774fcc3491d9}\label{classGateSteppingAction_a18aa24fc0c16b0d13500774fcc3491d9}} 
+Tracking\+Mode {\bfseries Get\+Mode} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_ab79ec5adc773f26bcf9e8bba7cc566cd}\label{classGateSteppingAction_ab79ec5adc773f26bcf9e8bba7cc566cd}} 
+void {\bfseries Set\+Txt\+Out} (G4\+String a\+String)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_af22115c6ba6e3af9205d3e2a32a9b66c}\label{classGateSteppingAction_af22115c6ba6e3af9205d3e2a32a9b66c}} 
+G4int {\bfseries Get\+Txt\+On} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a9c422afa89243083070706abba231c1a}\label{classGateSteppingAction_a9c422afa89243083070706abba231c1a}} 
+void {\bfseries Set\+Energy\+Threshold} (G4double)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_ae7ff19d208e914497368b5f8856f6cdc}\label{classGateSteppingAction_ae7ff19d208e914497368b5f8856f6cdc}} 
+void {\bfseries Set\+Files} (G4int aN)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a34dc2f8a5de1d6a50a2a9551687e6225}\label{classGateSteppingAction_a34dc2f8a5de1d6a50a2a9551687e6225}} 
+G4int {\bfseries Get\+Nfiles} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a4072796c832d2ea546741d4afb1da44a}\label{classGateSteppingAction_a4072796c832d2ea546741d4afb1da44a}} 
+G4int {\bfseries GetcurrentN} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a7bd59fdf1e3a13f765cb83cd54ec795b}\label{classGateSteppingAction_a7bd59fdf1e3a13f765cb83cd54ec795b}} 
+G4int {\bfseries Seek\+New\+File} (G4bool increase)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a27be9cec3c6139f90ca3ee6dc52d4de7}\label{classGateSteppingAction_a27be9cec3c6139f90ca3ee6dc52d4de7}} 
+void {\bfseries Set\+RSFiles} (G4int aN)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a0f73ad5a44bcd64896c1ed9a5440db1a}\label{classGateSteppingAction_a0f73ad5a44bcd64896c1ed9a5440db1a}} 
+G4int {\bfseries Get\+NRSfiles} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a9c341447bf9d4459a2f2cf4685a2ccfb}\label{classGateSteppingAction_a9c341447bf9d4459a2f2cf4685a2ccfb}} 
+G4int {\bfseries Getcurrent\+NRS} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a94a103f3ba2611c512f7fdfd0c39cd4f}\label{classGateSteppingAction_a94a103f3ba2611c512f7fdfd0c39cd4f}} 
+G4int {\bfseries Seek\+New\+Rec\+Step\+File} (G4bool increase)
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a5d9a8c8b922d31985f4f94ecf96cb11b}\label{classGateSteppingAction_a5d9a8c8b922d31985f4f94ecf96cb11b}} 
+G4int {\bfseries No\+More\+Rec\+Step\+Data} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a6e9bdb9f8b99fd2846ff9ba02c15b124}\label{classGateSteppingAction_a6e9bdb9f8b99fd2846ff9ba02c15b124}} 
+G4int {\bfseries No\+More\+Tracks\+Data} ()
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a1c6dcd3f717204d5716841f59ad28641}\label{classGateSteppingAction_a1c6dcd3f717204d5716841f59ad28641}} 
+void {\bfseries Show\+G4\+Track\+Infos} (G4\+String outF, G4\+Track $\ast$a\+Track)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a1579d30c9148811ca63c5c94720a3354}\label{classGateSteppingAction_a1579d30c9148811ca63c5c94720a3354}} 
+\mbox{\hyperlink{classGateSteppingActionMessenger}{Gate\+Stepping\+Action\+Messenger}} $\ast$ {\bfseries m\+\_\+stepping\+Messenger}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_acba6b824ad8d9e7f6f021a34888af1a2}\label{classGateSteppingAction_acba6b824ad8d9e7f6f021a34888af1a2}} 
+std\+::vector$<$ \mbox{\hyperlink{classGateTrack}{Gate\+Track}} $\ast$ $>$ $\ast$ {\bfseries PPTrack\+Vector}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_ad6918ff4291f5fe96e19c075e6d98bc1}\label{classGateSteppingAction_ad6918ff4291f5fe96e19c075e6d98bc1}} 
+Tracking\+Mode {\bfseries m\+\_\+tracking\+Mode}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a99c519190d9d58546ce9bf816b8b7d7f}\label{classGateSteppingAction_a99c519190d9d58546ce9bf816b8b7d7f}} 
+G4int {\bfseries Boundary}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a096e1be7af6f8c3560075a05fe5b85e7}\label{classGateSteppingAction_a096e1be7af6f8c3560075a05fe5b85e7}} 
+G4int {\bfseries f\+Keep\+OnlyP}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a32171a2f2e9633b15003dd2e0b5888f9}\label{classGateSteppingAction_a32171a2f2e9633b15003dd2e0b5888f9}} 
+G4int {\bfseries f\+Keep\+Only\+Photons}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_ae880058e6332322b569d27c985d78aba}\label{classGateSteppingAction_ae880058e6332322b569d27c985d78aba}} 
+G4int {\bfseries f\+Keep\+Only\+Electrons}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a6db1ad1372b95e339b1694474c3e9ba6}\label{classGateSteppingAction_a6db1ad1372b95e339b1694474c3e9ba6}} 
+G4\+Track\+Status {\bfseries f\+Stp\+AKill}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a2178e9ab01d33a12438e521ffeeff08e}\label{classGateSteppingAction_a2178e9ab01d33a12438e521ffeeff08e}} 
+G4int {\bfseries Txt\+On}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_ab87f2716a4083af3c6568d2465c8d1a0}\label{classGateSteppingAction_ab87f2716a4083af3c6568d2465c8d1a0}} 
+G4int {\bfseries m\+\_\+\+Nfiles}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a23c1e196741a8879b8ff8fc826af6525}\label{classGateSteppingAction_a23c1e196741a8879b8ff8fc826af6525}} 
+G4int {\bfseries m\+\_\+currentN}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a1acc7409f79e429ad38f30780423a6ea}\label{classGateSteppingAction_a1acc7409f79e429ad38f30780423a6ea}} 
+G4int {\bfseries m\+\_\+\+Nfiles\+RS}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_adfe8c849f5b669b2941249065f1eb30e}\label{classGateSteppingAction_adfe8c849f5b669b2941249065f1eb30e}} 
+G4int {\bfseries m\+\_\+current\+NRS}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_aa1eb56fcff0eb7ef765a6daa67d623ba}\label{classGateSteppingAction_aa1eb56fcff0eb7ef765a6daa67d623ba}} 
+G4\+String {\bfseries m\+\_\+\+Starting\+Vol\+Name}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a62466400f519f6f70c217e6e0e98062d}\label{classGateSteppingAction_a62466400f519f6f70c217e6e0e98062d}} 
+G4bool {\bfseries f\+Kill\+Next\+Is\+Set}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a773718a8751bf888db82172f4da86f7a}\label{classGateSteppingAction_a773718a8751bf888db82172f4da86f7a}} 
+G4bool {\bfseries f\+Start\+Volume\+Is\+Phantom\+SD}
+\item 
+\mbox{\Hypertarget{classGateSteppingAction_a18ab26d0877357fc1880a52717f10f86}\label{classGateSteppingAction_a18ab26d0877357fc1880a52717f10f86}} 
+G4double {\bfseries m\+\_\+energy\+Threshold}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+G4\+User\+Stepping\+Action which redirects its callbacks to \mbox{\hyperlink{classGateUserActions}{Gate\+User\+Actions}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateSteppingAction_ac9454917af7d367871bda2bf5bff77de}\label{classGateSteppingAction_ac9454917af7d367871bda2bf5bff77de}} 
+\index{GateSteppingAction@{GateSteppingAction}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GateSteppingAction@{GateSteppingAction}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gate\+Stepping\+Action\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const G4\+Step $\ast$}]{a }\end{DoxyParamCaption})}
+
+the primary particle was killed during stepping inside the phantom !\mbox{\Hypertarget{classGateSteppingAction_a827c19fb6759ab4d5a62bd69d8bac5b2}\label{classGateSteppingAction_a827c19fb6759ab4d5a62bd69d8bac5b2}} 
+\index{GateSteppingAction@{GateSteppingAction}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GateSteppingAction@{GateSteppingAction}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gate\+Stepping\+Action\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{v,  }\item[{const G4\+Step $\ast$}]{the\+Step }\end{DoxyParamCaption})}
+
+visualization
+
+the primary particle was killed during stepping inside the phantom !
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Actions.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Actions.\+cc\end{DoxyCompactItemize}

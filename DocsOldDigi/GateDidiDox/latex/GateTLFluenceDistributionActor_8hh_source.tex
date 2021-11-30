@@ -1,0 +1,116 @@
+\hypertarget{GateTLFluenceDistributionActor_8hh_source}{}\doxysection{Gate\+TLFluence\+Distribution\+Actor.\+hh}
+\label{GateTLFluenceDistributionActor_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLFluenceDistributionActor.hh@{/biomaps/physique/appli/GateOlga/src/source/digits\_hits/include/GateTLFluenceDistributionActor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See GATE/LICENSE.txt for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef GATETLFLUENCEDISTRIBUTIONACTOR\_HH}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GATETLFLUENCEDISTRIBUTIONACTOR\_HH}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}GateConfiguration.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifdef G4ANALYSIS\_USE\_ROOT}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}GateVActor.hh"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}GateTLFluenceDistributionActorMessenger.hh"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}TROOT.h"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}TFile.h"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}TH1.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}TH2.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}TH3.h"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{classGateTLFluenceDistributionActor}{GateTLFluenceDistributionActor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVActor}{GateVActor}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37  \textcolor{keyword}{public}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateTLFluenceDistributionActor}{\string~GateTLFluenceDistributionActor}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{42   \textcolor{comment}{// This macro initialize the CreatePrototype and CreateInstance}}
+\DoxyCodeLine{43   FCT\_FOR\_AUTO\_CREATOR\_ACTOR(\mbox{\hyperlink{classGateTLFluenceDistributionActor}{GateTLFluenceDistributionActor}})}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{46   \textcolor{comment}{// Constructs the sensor}}
+\DoxyCodeLine{47   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Construct();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{50   \textcolor{comment}{// Callbacks}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} BeginOfRunAction(\textcolor{keyword}{const} G4Run*r);}
+\DoxyCodeLine{53   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} UserSteppingAction(\textcolor{keyword}{const} \mbox{\hyperlink{classGateVVolume}{GateVVolume}} *, \textcolor{keyword}{const} G4Step*);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{58 \textcolor{comment}{}  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SaveData();}
+\DoxyCodeLine{59   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} ResetData();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   \textcolor{comment}{//virtual G4bool ProcessHits(G4Step *, G4TouchableHistory*);}}
+\DoxyCodeLine{62   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{63   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} EndOfEvent(G4HCofThisEvent*)\{\}}
+\DoxyCodeLine{64   }
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} enableEnergy(\textcolor{keywordtype}{bool} e)\{mEnergyEnabled = e;\}}
+\DoxyCodeLine{66   \textcolor{keywordtype}{void} enableTheta(\textcolor{keywordtype}{bool} e)\{mThetaEnabled = e;\}}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} enablePhi(\textcolor{keywordtype}{bool} e)\{mPhiEnabled = e;\}}
+\DoxyCodeLine{68   }
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} SetEnergyMin(\textcolor{keywordtype}{double} v) \{mEnergyMin = v;\}}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} SetEnergyMax(\textcolor{keywordtype}{double} v) \{mEnergyMax = v;\}}
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} SetNEnergyBins(\textcolor{keywordtype}{int} v) \{mEnergyBins = v;\}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{void} SetThetaMin(\textcolor{keywordtype}{double} v) \{mThetaMin = v;\}}
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} SetThetaMax(\textcolor{keywordtype}{double} v) \{mThetaMax = v;\}}
+\DoxyCodeLine{75   \textcolor{keywordtype}{void} SetNThetaBins(\textcolor{keywordtype}{int} v) \{mThetaBins = v;\}}
+\DoxyCodeLine{76   }
+\DoxyCodeLine{77   \textcolor{keywordtype}{void} SetPhiMin(\textcolor{keywordtype}{double} v) \{mPhiMin = v;\}}
+\DoxyCodeLine{78   \textcolor{keywordtype}{void} SetPhiMax(\textcolor{keywordtype}{double} v) \{mPhiMax = v;\}}
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} SetNPhiBins(\textcolor{keywordtype}{int} v) \{mPhiBins = v;\}}
+\DoxyCodeLine{80   }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} SetAsciiFile(G4String str) \{mAsciiFileEnabled = \textcolor{keyword}{true}; mAsciiFileName = str;\}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{84   \mbox{\hyperlink{classGateTLFluenceDistributionActor}{GateTLFluenceDistributionActor}}(G4String name, G4int depth=0);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   TFile * pTfile;}
+\DoxyCodeLine{87   std::ofstream mAsciiFile;}
+\DoxyCodeLine{88   }
+\DoxyCodeLine{89   G4String mHistName;}
+\DoxyCodeLine{90   G4String mAsciiFileName;}
+\DoxyCodeLine{91   }
+\DoxyCodeLine{92   \textcolor{keywordtype}{bool} mEnergyEnabled;}
+\DoxyCodeLine{93   \textcolor{keywordtype}{bool} mThetaEnabled;}
+\DoxyCodeLine{94   \textcolor{keywordtype}{bool} mPhiEnabled;}
+\DoxyCodeLine{95   \textcolor{keywordtype}{bool} mAsciiFileEnabled;}
+\DoxyCodeLine{96   }
+\DoxyCodeLine{97   G4double mEnergyMax, mEnergyMin, mThetaMin, mThetaMax, mPhiMin, mPhiMax;}
+\DoxyCodeLine{98   }
+\DoxyCodeLine{99   \textcolor{keywordtype}{int} mEnergyBins, mThetaBins, mPhiBins;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   TH1D *pHistEnergy, *pHistTheta, *pHistPhi;}
+\DoxyCodeLine{102   TH2D *pHistEnergyTheta, *pHistEnergyPhi, *pHistThetaPhi;}
+\DoxyCodeLine{103   }
+\DoxyCodeLine{104   G4double detectorVolume;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   GateTLFluenceDistributionActorMessenger * pMessenger;}
+\DoxyCodeLine{107   }
+\DoxyCodeLine{108   \textcolor{comment}{// Helper functions}}
+\DoxyCodeLine{109   G4ThreeVector GetLocalDirection(\textcolor{keyword}{const} G4Step *step);}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} storeStepInHistograms(G4double energy, G4double theta, G4double phi, G4double dF);}
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 MAKE\_AUTO\_CREATOR\_ACTOR(TLFluenceDistributionActor,\mbox{\hyperlink{classGateTLFluenceDistributionActor}{GateTLFluenceDistributionActor}})}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* end \#define GATETLFLUENCEDISTRIBUTIONACTOR\_HH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

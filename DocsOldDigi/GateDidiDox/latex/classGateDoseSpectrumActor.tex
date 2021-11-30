@@ -1,0 +1,139 @@
+\hypertarget{classGateDoseSpectrumActor}{}\doxysection{Gate\+Dose\+Spectrum\+Actor Class Reference}
+\label{classGateDoseSpectrumActor}\index{GateDoseSpectrumActor@{GateDoseSpectrumActor}}
+Inheritance diagram for Gate\+Dose\+Spectrum\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGateDoseSpectrumActor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a716b031a234dae710627166121b64c30}\label{classGateDoseSpectrumActor_a716b031a234dae710627166121b64c30}} 
+virtual {\bfseries $\sim$\+Gate\+Dose\+Spectrum\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateDoseSpectrumActor_a8ceb8f9a3b82f807259994a19ae5c29a}{Construct}} ()
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateDoseSpectrumActor_a809bb0e6aad9d5842408af632fd542ee}{Begin\+Of\+Run\+Action}} (const G4\+Run $\ast$r)
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSpectrumActor_a9c2ac5a0f86e074af12de0ebf487c196}{Begin\+Of\+Event\+Action}} (const G4\+Event $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSpectrumActor_a4c4a8f2a2991d0d6f13818332dc9f79a}{User\+Stepping\+Action}} (const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$, const G4\+Step $\ast$step)
+\item 
+virtual void \mbox{\hyperlink{classGateDoseSpectrumActor_a1d79da1e1a9abe71c61a82e7a5f5da7e}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Saves the data collected to the file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGateDoseSpectrumActor_a14935f1b780490bf70da2efea7b84052}{Reset\+Data}} ()
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_aa468ab9a2d9cafacf76bd9798eeb27d9}\label{classGateDoseSpectrumActor_aa468ab9a2d9cafacf76bd9798eeb27d9}} 
+void {\bfseries Dose\+Primary\+Only} (bool b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_ae993806bad96e3f33abaaafabf22eb6b}\label{classGateDoseSpectrumActor_ae993806bad96e3f33abaaafabf22eb6b}} 
+{\bfseries Gate\+Dose\+Spectrum\+Actor} (G4\+String name, G4int depth=0)
+\begin{DoxyCompactList}\small\item\em Constructors (Prototype) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_aa0f053a4d66194a9ab71541dee5b8b8a}\label{classGateDoseSpectrumActor_aa0f053a4d66194a9ab71541dee5b8b8a}} 
+bool {\bfseries m\+Dose\+Primary\+Only}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_add5e92988757a37e24627a5b137ba4b7}\label{classGateDoseSpectrumActor_add5e92988757a37e24627a5b137ba4b7}} 
+int {\bfseries m\+Current\+Event}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_aa8397946279e4b260384485bb53c983d}\label{classGateDoseSpectrumActor_aa8397946279e4b260384485bb53c983d}} 
+G4double {\bfseries m\+Event\+Energy}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a51de646cf036423bf2fb8252fa421a7f}\label{classGateDoseSpectrumActor_a51de646cf036423bf2fb8252fa421a7f}} 
+G4double {\bfseries m\+Total\+Event\+Energy\+Dep}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a919d25498cbd9bf8a98e37c0499298ba}\label{classGateDoseSpectrumActor_a919d25498cbd9bf8a98e37c0499298ba}} 
+std\+::map$<$ G4double, G4int $>$ {\bfseries m\+Num\+Partic\+Per\+Energy}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_ab8f5786433f71f9b2d762af98d0819aa}\label{classGateDoseSpectrumActor_ab8f5786433f71f9b2d762af98d0819aa}} 
+std\+::map$<$ G4double, G4double $>$ {\bfseries m\+Energy}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a56666e312ab4f91fb91d53a17da508c3}\label{classGateDoseSpectrumActor_a56666e312ab4f91fb91d53a17da508c3}} 
+std\+::map$<$ G4double, G4double $>$ {\bfseries m\+Energy\+Square}
+\item 
+\mbox{\Hypertarget{classGateDoseSpectrumActor_ab7d3970c28be33dddadee0bf519ec25f}\label{classGateDoseSpectrumActor_ab7d3970c28be33dddadee0bf519ec25f}} 
+Gate\+Dose\+Spectrum\+Actor\+Messenger $\ast$ {\bfseries p\+Messenger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a9c2ac5a0f86e074af12de0ebf487c196}\label{classGateDoseSpectrumActor_a9c2ac5a0f86e074af12de0ebf487c196}} 
+\index{GateDoseSpectrumActor@{GateDoseSpectrumActor}!BeginOfEventAction@{BeginOfEventAction}}
+\index{BeginOfEventAction@{BeginOfEventAction}!GateDoseSpectrumActor@{GateDoseSpectrumActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfEventAction()}{BeginOfEventAction()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Spectrum\+Actor\+::\+Begin\+Of\+Event\+Action (\begin{DoxyParamCaption}\item[{const G4\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a809bb0e6aad9d5842408af632fd542ee}\label{classGateDoseSpectrumActor_a809bb0e6aad9d5842408af632fd542ee}} 
+\index{GateDoseSpectrumActor@{GateDoseSpectrumActor}!BeginOfRunAction@{BeginOfRunAction}}
+\index{BeginOfRunAction@{BeginOfRunAction}!GateDoseSpectrumActor@{GateDoseSpectrumActor}}
+\doxysubsubsection{\texorpdfstring{BeginOfRunAction()}{BeginOfRunAction()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Spectrum\+Actor\+::\+Begin\+Of\+Run\+Action (\begin{DoxyParamCaption}\item[{const G4\+Run $\ast$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a8ceb8f9a3b82f807259994a19ae5c29a}\label{classGateDoseSpectrumActor_a8ceb8f9a3b82f807259994a19ae5c29a}} 
+\index{GateDoseSpectrumActor@{GateDoseSpectrumActor}!Construct@{Construct}}
+\index{Construct@{Construct}!GateDoseSpectrumActor@{GateDoseSpectrumActor}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Spectrum\+Actor\+::\+Construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor_a04d30c5486e65aee6bf918fbf6c1d835}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a14935f1b780490bf70da2efea7b84052}\label{classGateDoseSpectrumActor_a14935f1b780490bf70da2efea7b84052}} 
+\index{GateDoseSpectrumActor@{GateDoseSpectrumActor}!ResetData@{ResetData}}
+\index{ResetData@{ResetData}!GateDoseSpectrumActor@{GateDoseSpectrumActor}}
+\doxysubsubsection{\texorpdfstring{ResetData()}{ResetData()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Spectrum\+Actor\+::\+Reset\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a1d79da1e1a9abe71c61a82e7a5f5da7e}\label{classGateDoseSpectrumActor_a1d79da1e1a9abe71c61a82e7a5f5da7e}} 
+\index{GateDoseSpectrumActor@{GateDoseSpectrumActor}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!GateDoseSpectrumActor@{GateDoseSpectrumActor}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Spectrum\+Actor\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Saves the data collected to the file. 
+
+Save data. 
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+\mbox{\Hypertarget{classGateDoseSpectrumActor_a4c4a8f2a2991d0d6f13818332dc9f79a}\label{classGateDoseSpectrumActor_a4c4a8f2a2991d0d6f13818332dc9f79a}} 
+\index{GateDoseSpectrumActor@{GateDoseSpectrumActor}!UserSteppingAction@{UserSteppingAction}}
+\index{UserSteppingAction@{UserSteppingAction}!GateDoseSpectrumActor@{GateDoseSpectrumActor}}
+\doxysubsubsection{\texorpdfstring{UserSteppingAction()}{UserSteppingAction()}}
+{\footnotesize\ttfamily void Gate\+Dose\+Spectrum\+Actor\+::\+User\+Stepping\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGateVVolume}{Gate\+VVolume}} $\ast$}]{,  }\item[{const G4\+Step $\ast$}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classGateVActor}{Gate\+VActor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/include/Gate\+Dose\+Spectrum\+Actor.\+hh\item 
+/biomaps/physique/appli/\+Gate\+Olga/src/source/digits\+\_\+hits/src/Gate\+Dose\+Spectrum\+Actor.\+cc\end{DoxyCompactItemize}

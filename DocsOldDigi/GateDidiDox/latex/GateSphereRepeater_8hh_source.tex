@@ -1,0 +1,97 @@
+\hypertarget{GateSphereRepeater_8hh_source}{}\doxysection{Gate\+Sphere\+Repeater.\+hh}
+\label{GateSphereRepeater_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSphereRepeater.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateSphereRepeater.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateSphereRepeater\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateSphereRepeater\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}G4PhysicalConstants.hh"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSphereRepeaterMessenger}{GateSphereRepeaterMessenger}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateSphereRepeater}{GateSphereRepeater}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateSphereRepeater_af983baa98df80850efa7ee9bb02c6e37}{GateSphereRepeater}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{41                        \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}sphere"{}},}
+\DoxyCodeLine{42                        G4int itsRepeatNumberWithPhi=1,}
+\DoxyCodeLine{43                G4int itsRepeatNumberWithThete=1,}
+\DoxyCodeLine{44                        G4double itsThetaAngle=0. * deg,}
+\DoxyCodeLine{45                G4double itsPhiAngle=0. * deg,}
+\DoxyCodeLine{46                G4double itsRadius=10. * mm,}
+\DoxyCodeLine{47                G4bool itsFlagAutoCenter=\textcolor{keyword}{true},}
+\DoxyCodeLine{48                G4bool itsFlagAutoRotation=\textcolor{keyword}{true} );}
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateSphereRepeater_ad443dd79ae03fbda9c0929ad9c592900}{\string~GateSphereRepeater}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{public}:}
+\DoxyCodeLine{62      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_ad6365ef17559235a78c26584e07ff3e2}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{63                            \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{64                        G4double aTime);}
+\DoxyCodeLine{70      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_a738964d13db270608f0921dcac2284cd}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{71      }
+\DoxyCodeLine{72   \textcolor{keyword}{public}:}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateSphereRepeater_ac7c144e4fd2a2c470526844b746f4eee}{GetRepeatNumberWithPhi}}() }
+\DoxyCodeLine{77           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_a2a23db38a63b612d5fe8f59ebfce4757}{m\_repeatNumberWithPhi}};\}}
+\DoxyCodeLine{79      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateSphereRepeater_aed5300ccdb3b2db24609c9829a36afdc}{GetRepeatNumberWithTheta}}() }
+\DoxyCodeLine{80           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_ad72c036e2ef4cb584177dca068c1a699}{m\_repeatNumberWithTheta}};\}}
+\DoxyCodeLine{82      \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateSphereRepeater_a2a90877db127ae232cc8c01a44bdc26b}{GetAutoCenterFlag}}() }
+\DoxyCodeLine{83           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_a5f1cb6e92700748ccdb8613ceb90b956}{m\_flagAutoCenter}};\}}
+\DoxyCodeLine{85      \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateSphereRepeater_ac45fe6c2e58acb35498927f1043941f4}{GetAutoRotation}}()\textcolor{keyword}{ const         }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_a6299ef6945c80d2afeb2e9ae31d9653f}{m\_flagAutoRotation}};\}}
+\DoxyCodeLine{87      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphereRepeater_aaea92f92d6ba2c6e9ded95026d4a2988}{GetThetaAngle}}()\textcolor{keyword}{ const      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_ac769720908b630bd32ced2b55cddd89d}{m\_thetaAngle}};\}}
+\DoxyCodeLine{89      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphereRepeater_a7948169e265e889fb755b198762c89c5}{GetPhiAngle}}()\textcolor{keyword}{ const      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_a0d9cb30959935a0afb69645aec80279a}{m\_phiAngle}};\}}
+\DoxyCodeLine{91      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphereRepeater_a20ffecd4f2e59ef91163e9eb482db18d}{GetRadius}}()\textcolor{keyword}{ const      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_af4493b01334147abd86a460c1ae7edc0}{m\_radius}};\}}
+\DoxyCodeLine{93      \textcolor{keyword}{inline} G4double \mbox{\hyperlink{classGateSphereRepeater_a6c3c7df95fa2a0b6248906f8410f6301}{GetAxialPitch}}()\textcolor{keyword}{ const      }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateSphereRepeater_af4493b01334147abd86a460c1ae7edc0}{m\_radius}} * sin(\mbox{\hyperlink{classGateSphereRepeater_a0d9cb30959935a0afb69645aec80279a}{m\_phiAngle}});\}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96      }
+\DoxyCodeLine{98      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_a6b88e7e8110336acba67e5381231b4d0}{SetRepeatNumberWithPhi}}(G4int val) }
+\DoxyCodeLine{99           \{ \mbox{\hyperlink{classGateSphereRepeater_a2a23db38a63b612d5fe8f59ebfce4757}{m\_repeatNumberWithPhi}} = val; \}}
+\DoxyCodeLine{101      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_a706bb51d662411aea782fe9bc0026c3d}{SetRepeatNumberWithTheta}}(G4int val) }
+\DoxyCodeLine{102           \{ \mbox{\hyperlink{classGateSphereRepeater_ad72c036e2ef4cb584177dca068c1a699}{m\_repeatNumberWithTheta}} = val; \}}
+\DoxyCodeLine{104      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_ac7ff6df6cc1aa74cdcbd7169ba3b9013}{SetAutoCenterFlag}}(G4bool val)}
+\DoxyCodeLine{105           \{ \mbox{\hyperlink{classGateSphereRepeater_a5f1cb6e92700748ccdb8613ceb90b956}{m\_flagAutoCenter}} = val; \}}
+\DoxyCodeLine{107      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_a5ba83e6b04988567c11432c6765df543}{SetAutoRotation}}(G4bool val)}
+\DoxyCodeLine{108           \{ \mbox{\hyperlink{classGateSphereRepeater_a6299ef6945c80d2afeb2e9ae31d9653f}{m\_flagAutoRotation}} = val;  \}}
+\DoxyCodeLine{110      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_ae1e020a9fd650dc70b640acae3311632}{SetThetaAngle}}(G4double val) }
+\DoxyCodeLine{111           \{ \mbox{\hyperlink{classGateSphereRepeater_ac769720908b630bd32ced2b55cddd89d}{m\_thetaAngle}} = val; \}}
+\DoxyCodeLine{113      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_a56d5fefb55cad86b1078fb0a564a755b}{SetPhiAngle}}(G4double val) }
+\DoxyCodeLine{114           \{ \mbox{\hyperlink{classGateSphereRepeater_a0d9cb30959935a0afb69645aec80279a}{m\_phiAngle}} = val; \}}
+\DoxyCodeLine{116      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateSphereRepeater_abe82f1dd3b85be7428cd7ddec0b4574f}{SetRadius}}(G4double val) }
+\DoxyCodeLine{117           \{ \mbox{\hyperlink{classGateSphereRepeater_af4493b01334147abd86a460c1ae7edc0}{m\_radius}} = val; \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     G4int         \mbox{\hyperlink{classGateSphereRepeater_a2a23db38a63b612d5fe8f59ebfce4757}{m\_repeatNumberWithPhi}};       }
+\DoxyCodeLine{125     G4int         \mbox{\hyperlink{classGateSphereRepeater_ad72c036e2ef4cb584177dca068c1a699}{m\_repeatNumberWithTheta}};      }
+\DoxyCodeLine{126     G4double      \mbox{\hyperlink{classGateSphereRepeater_ac769720908b630bd32ced2b55cddd89d}{m\_thetaAngle}};                 }
+\DoxyCodeLine{127     G4double      \mbox{\hyperlink{classGateSphereRepeater_a0d9cb30959935a0afb69645aec80279a}{m\_phiAngle}} ;                  }
+\DoxyCodeLine{128     G4double      \mbox{\hyperlink{classGateSphereRepeater_af4493b01334147abd86a460c1ae7edc0}{m\_radius}}    ;                 }
+\DoxyCodeLine{129     G4bool        \mbox{\hyperlink{classGateSphereRepeater_a5f1cb6e92700748ccdb8613ceb90b956}{m\_flagAutoCenter}};             }
+\DoxyCodeLine{130     G4bool        \mbox{\hyperlink{classGateSphereRepeater_a6299ef6945c80d2afeb2e9ae31d9653f}{m\_flagAutoRotation}};             }
+\DoxyCodeLine{132     }
+\DoxyCodeLine{134     \mbox{\hyperlink{classGateSphereRepeaterMessenger}{GateSphereRepeaterMessenger}}* \mbox{\hyperlink{classGateSphereRepeater_a76911086bcfdad381107635130fa67c3}{m\_Messenger}}; }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{139 }
+
+\end{DoxyCode}

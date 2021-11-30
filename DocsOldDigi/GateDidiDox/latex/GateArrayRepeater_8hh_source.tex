@@ -1,0 +1,82 @@
+\hypertarget{GateArrayRepeater_8hh_source}{}\doxysection{Gate\+Array\+Repeater.\+hh}
+\label{GateArrayRepeater_8hh_source}\index{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateArrayRepeater.hh@{/biomaps/physique/appli/GateOlga/src/source/geometry/include/GateArrayRepeater.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{   Copyright (C): OpenGATE Collaboration}}
+\DoxyCodeLine{3 \textcolor{comment}{}}
+\DoxyCodeLine{4 \textcolor{comment}{This software is distributed under the terms}}
+\DoxyCodeLine{5 \textcolor{comment}{of the GNU Lesser General  Public Licence (LGPL)}}
+\DoxyCodeLine{6 \textcolor{comment}{See LICENSE.md for further details}}
+\DoxyCodeLine{7 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef GateArrayRepeater\_h}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define GateArrayRepeater\_h 1}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}globals.hh"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}GateVGlobalPlacement.hh"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGateArrayRepeaterMessenger}{GateArrayRepeaterMessenger}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classGateArrayRepeater}{GateArrayRepeater}}  : \textcolor{keyword}{public} \mbox{\hyperlink{classGateVGlobalPlacement}{GateVGlobalPlacement}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \mbox{\hyperlink{classGateArrayRepeater_a9ac0dc60acac503c94bb44c4223b2d85}{GateArrayRepeater}}(\mbox{\hyperlink{classGateVVolume}{GateVVolume}}* itsObjectInserter,}
+\DoxyCodeLine{41                        \textcolor{keyword}{const} G4String\& itsName=\textcolor{stringliteral}{"{}cubicArray"{}},}
+\DoxyCodeLine{42                        G4int itsRepeatNumberX=1,G4int itsRepeatNumberY=1,G4int itsRepeatNumberZ=1,}
+\DoxyCodeLine{43                        \textcolor{keyword}{const} G4ThreeVector\& itsRepeatVector=G4ThreeVector(),}
+\DoxyCodeLine{44                G4bool itsFlagAutoCenter=\textcolor{keyword}{true});}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \mbox{\hyperlink{classGateArrayRepeater_a98353a0be1231e11da9267ba06336de4}{\string~GateArrayRepeater}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{public}:}
+\DoxyCodeLine{58      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_ae61ac33d6f521348a98c04b7f378b68e}{PushMyPlacements}}(\textcolor{keyword}{const} G4RotationMatrix\& currentRotationMatrix,}
+\DoxyCodeLine{59                            \textcolor{keyword}{const} G4ThreeVector\& currentPosition,}
+\DoxyCodeLine{60                        G4double aTime);}
+\DoxyCodeLine{66      \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_a00948407612c87f994d2b69554b36244}{DescribeMyself}}(\textcolor{keywordtype}{size\_t} indent);}
+\DoxyCodeLine{67      }
+\DoxyCodeLine{68   \textcolor{keyword}{public}:}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72      \textcolor{keyword}{inline} \textcolor{keyword}{const} G4ThreeVector\& \mbox{\hyperlink{classGateArrayRepeater_afa7360f1be052dded3755d084fb87ff4}{GetRepeatVector}}() }
+\DoxyCodeLine{73           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateArrayRepeater_a2ba76e5db6674100a283952768dc4625}{m\_repeatVector}};\}}
+\DoxyCodeLine{75      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateArrayRepeater_ac52797b842832d9ed44fec3b0f92d7bd}{GetRepeatNumber}}(\textcolor{keywordtype}{size\_t} axis) }
+\DoxyCodeLine{76           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateArrayRepeater_ae2c33be3d1036a147fbb29ec201d6b6d}{m\_repeatNumber}}[axis];\}}
+\DoxyCodeLine{78      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateArrayRepeater_acfc0ba9de0d0285716bc09a11cf76af4}{GetRepeatNumberX}}() }
+\DoxyCodeLine{79           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateArrayRepeater_ac52797b842832d9ed44fec3b0f92d7bd}{GetRepeatNumber}}(0);\}}
+\DoxyCodeLine{81      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateArrayRepeater_a93a62c6bc7778991701c44855905ea87}{GetRepeatNumberY}}() }
+\DoxyCodeLine{82           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateArrayRepeater_ac52797b842832d9ed44fec3b0f92d7bd}{GetRepeatNumber}}(1);\}}
+\DoxyCodeLine{84      \textcolor{keyword}{inline} G4int \mbox{\hyperlink{classGateArrayRepeater_abb3f684b207cd4ea4d8684519ec03050}{GetRepeatNumberZ}}() }
+\DoxyCodeLine{85           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateArrayRepeater_ac52797b842832d9ed44fec3b0f92d7bd}{GetRepeatNumber}}(2);\}}
+\DoxyCodeLine{87      \textcolor{keyword}{inline} G4bool \mbox{\hyperlink{classGateArrayRepeater_a68b8ff55974721cfd46f4fbaffbf8fc6}{GetAutoCenterFlag}}() }
+\DoxyCodeLine{88           \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classGateArrayRepeater_a6c24cb5d245ef377d628bfb2c74088b2}{m\_flagAutoCenter}};\}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{91      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_aa699a2dcdb88cc1eecc22b9a1ebe8957}{SetRepeatVector}}(\textcolor{keyword}{const} G4ThreeVector\& val) }
+\DoxyCodeLine{92           \{ \mbox{\hyperlink{classGateArrayRepeater_a2ba76e5db6674100a283952768dc4625}{m\_repeatVector}} = val; \}}
+\DoxyCodeLine{94      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_a1ffb2071b70d464a6a37f669b27bd6b4}{SetRepeatNumber}}(\textcolor{keywordtype}{size\_t} axis, G4int number) }
+\DoxyCodeLine{95           \{ \mbox{\hyperlink{classGateArrayRepeater_ae2c33be3d1036a147fbb29ec201d6b6d}{m\_repeatNumber}}[axis] = number; \}}
+\DoxyCodeLine{97      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_a67c5194daab496e46014901560a8d2d4}{SetRepeatNumberX}}(G4int number) }
+\DoxyCodeLine{98           \{ \mbox{\hyperlink{classGateArrayRepeater_a1ffb2071b70d464a6a37f669b27bd6b4}{SetRepeatNumber}}(0,number); \}}
+\DoxyCodeLine{100      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_aa114365e7fd2f8cdd193d41f0aa657b1}{SetRepeatNumberY}}(G4int number) }
+\DoxyCodeLine{101           \{ \mbox{\hyperlink{classGateArrayRepeater_a1ffb2071b70d464a6a37f669b27bd6b4}{SetRepeatNumber}}(1,number); \}}
+\DoxyCodeLine{103      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_af38052824fbe5b3ffaeafd466d75cedf}{SetRepeatNumberZ}}(G4int number) }
+\DoxyCodeLine{104           \{ \mbox{\hyperlink{classGateArrayRepeater_a1ffb2071b70d464a6a37f669b27bd6b4}{SetRepeatNumber}}(2,number); \}}
+\DoxyCodeLine{106      \textcolor{keywordtype}{void} \mbox{\hyperlink{classGateArrayRepeater_a1977fd24a5e524ba79d28f2b4ed37085}{SetAutoCenterFlag}}(G4bool val)}
+\DoxyCodeLine{107           \{ \mbox{\hyperlink{classGateArrayRepeater_a6c24cb5d245ef377d628bfb2c74088b2}{m\_flagAutoCenter}} = val; \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     G4ThreeVector \mbox{\hyperlink{classGateArrayRepeater_a2ba76e5db6674100a283952768dc4625}{m\_repeatVector}};                 }
+\DoxyCodeLine{115     G4int         \mbox{\hyperlink{classGateArrayRepeater_ae2c33be3d1036a147fbb29ec201d6b6d}{m\_repeatNumber}}[3];      }
+\DoxyCodeLine{116     G4bool        \mbox{\hyperlink{classGateArrayRepeater_a6c24cb5d245ef377d628bfb2c74088b2}{m\_flagAutoCenter}};             }
+\DoxyCodeLine{118     }
+\DoxyCodeLine{120     \mbox{\hyperlink{classGateArrayRepeaterMessenger}{GateArrayRepeaterMessenger}}* \mbox{\hyperlink{classGateArrayRepeater_a478623317e2961f4e679ed218007db6e}{m\_Messenger}}; }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+
+\end{DoxyCode}
