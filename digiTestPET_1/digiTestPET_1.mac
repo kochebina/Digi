@@ -23,7 +23,7 @@
 #=====================================================
 
 # 
-/control/execute                         ./macros/Phantom_cylinder.mac
+#/control/execute                         ./macros/Phantom_cylinder.mac
 
 
 #=====================================================
@@ -60,11 +60,14 @@
 #=====================================================
 
 /gate/output/root/enable
-/gate/output/root/setFileName             output/test
+/gate/output/root/setFileName             output/test_Adder
 
 /gate/output/root/setRootHitFlag         1
 /gate/output/root/setRootSinglesFlag      1
-/gate/output/root/setRootCoincidencesFlag 1
+/gate/output/root/setRootCoincidencesFlag 0
+#/gate/output/root/verbose 3
+
+
 
 #=====================================================
 #  R U N Parameters 
@@ -73,7 +76,7 @@
 /gate/random/setEngineSeed 123456789
 /gate/random/verbose 1
 
-/gate/application/setTimeSlice   0.01 s # 2s
+/gate/application/setTimeSlice   0.05 s # 2s
 /gate/application/setTimeStart   0. s
-/gate/application/setTimeStop    0.01 s
+/gate/application/setTimeStop    0.05 s
 /gate/application/startDAQ
