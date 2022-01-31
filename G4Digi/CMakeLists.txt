@@ -9,11 +9,12 @@ include(${Geant4_USE_FILE})
 find_package(ROOT REQUIRED)
 
 
-include_directories(${Geant4_INCLUDE_DIR}
+include_directories(${PROJECT_SOURCE_DIR}/include
+                    ${Geant4_INCLUDE_DIR}
                     ${ROOT_INCLUDE_DIRS})
 
-file(GLOB sources ${PROJECT_SOURCE_DIR}/*.cc)
-file(GLOB headres ${PROJECT_SOURCE_DIR}/*.hh)
+file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
+file(GLOB headres ${PROJECT_SOURCE_DIR}/include/*.hh)
 
 file(GLOB MACRO_FILES
   "*.mac"

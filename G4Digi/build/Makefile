@@ -136,221 +136,329 @@ test/fast:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-action.o: action.cc.o
+src/action.o: src/action.cc.o
 
-.PHONY : action.o
-
-# target to build an object file
-action.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/action.cc.o
-.PHONY : action.cc.o
-
-action.i: action.cc.i
-
-.PHONY : action.i
-
-# target to preprocess a source file
-action.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/action.cc.i
-.PHONY : action.cc.i
-
-action.s: action.cc.s
-
-.PHONY : action.s
-
-# target to generate assembly for a file
-action.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/action.cc.s
-.PHONY : action.cc.s
-
-contruction.o: contruction.cc.o
-
-.PHONY : contruction.o
+.PHONY : src/action.o
 
 # target to build an object file
-contruction.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/contruction.cc.o
-.PHONY : contruction.cc.o
+src/action.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/action.cc.o
+.PHONY : src/action.cc.o
 
-contruction.i: contruction.cc.i
+src/action.i: src/action.cc.i
 
-.PHONY : contruction.i
+.PHONY : src/action.i
 
 # target to preprocess a source file
-contruction.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/contruction.cc.i
-.PHONY : contruction.cc.i
+src/action.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/action.cc.i
+.PHONY : src/action.cc.i
 
-contruction.s: contruction.cc.s
+src/action.s: src/action.cc.s
 
-.PHONY : contruction.s
+.PHONY : src/action.s
 
 # target to generate assembly for a file
-contruction.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/contruction.cc.s
-.PHONY : contruction.cc.s
+src/action.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/action.cc.s
+.PHONY : src/action.cc.s
 
-detector.o: detector.cc.o
+src/adder.o: src/adder.cc.o
 
-.PHONY : detector.o
+.PHONY : src/adder.o
 
 # target to build an object file
-detector.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/detector.cc.o
-.PHONY : detector.cc.o
+src/adder.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/adder.cc.o
+.PHONY : src/adder.cc.o
 
-detector.i: detector.cc.i
+src/adder.i: src/adder.cc.i
 
-.PHONY : detector.i
+.PHONY : src/adder.i
 
 # target to preprocess a source file
-detector.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/detector.cc.i
-.PHONY : detector.cc.i
+src/adder.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/adder.cc.i
+.PHONY : src/adder.cc.i
 
-detector.s: detector.cc.s
+src/adder.s: src/adder.cc.s
 
-.PHONY : detector.s
+.PHONY : src/adder.s
 
 # target to generate assembly for a file
-detector.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/detector.cc.s
-.PHONY : detector.cc.s
+src/adder.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/adder.cc.s
+.PHONY : src/adder.cc.s
 
-event.o: event.cc.o
+src/contruction.o: src/contruction.cc.o
 
-.PHONY : event.o
+.PHONY : src/contruction.o
 
 # target to build an object file
-event.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/event.cc.o
-.PHONY : event.cc.o
+src/contruction.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/contruction.cc.o
+.PHONY : src/contruction.cc.o
 
-event.i: event.cc.i
+src/contruction.i: src/contruction.cc.i
 
-.PHONY : event.i
+.PHONY : src/contruction.i
 
 # target to preprocess a source file
-event.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/event.cc.i
-.PHONY : event.cc.i
+src/contruction.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/contruction.cc.i
+.PHONY : src/contruction.cc.i
 
-event.s: event.cc.s
+src/contruction.s: src/contruction.cc.s
 
-.PHONY : event.s
+.PHONY : src/contruction.s
 
 # target to generate assembly for a file
-event.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/event.cc.s
-.PHONY : event.cc.s
+src/contruction.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/contruction.cc.s
+.PHONY : src/contruction.cc.s
 
-generator.o: generator.cc.o
+src/detectorSD.o: src/detectorSD.cc.o
 
-.PHONY : generator.o
+.PHONY : src/detectorSD.o
 
 # target to build an object file
-generator.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/generator.cc.o
-.PHONY : generator.cc.o
+src/detectorSD.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/detectorSD.cc.o
+.PHONY : src/detectorSD.cc.o
 
-generator.i: generator.cc.i
+src/detectorSD.i: src/detectorSD.cc.i
 
-.PHONY : generator.i
+.PHONY : src/detectorSD.i
 
 # target to preprocess a source file
-generator.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/generator.cc.i
-.PHONY : generator.cc.i
+src/detectorSD.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/detectorSD.cc.i
+.PHONY : src/detectorSD.cc.i
 
-generator.s: generator.cc.s
+src/detectorSD.s: src/detectorSD.cc.s
 
-.PHONY : generator.s
+.PHONY : src/detectorSD.s
 
 # target to generate assembly for a file
-generator.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/generator.cc.s
-.PHONY : generator.cc.s
+src/detectorSD.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/detectorSD.cc.s
+.PHONY : src/detectorSD.cc.s
 
-hit.o: hit.cc.o
+src/digi.o: src/digi.cc.o
 
-.PHONY : hit.o
+.PHONY : src/digi.o
 
 # target to build an object file
-hit.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/hit.cc.o
-.PHONY : hit.cc.o
+src/digi.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digi.cc.o
+.PHONY : src/digi.cc.o
 
-hit.i: hit.cc.i
+src/digi.i: src/digi.cc.i
 
-.PHONY : hit.i
+.PHONY : src/digi.i
 
 # target to preprocess a source file
-hit.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/hit.cc.i
-.PHONY : hit.cc.i
+src/digi.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digi.cc.i
+.PHONY : src/digi.cc.i
 
-hit.s: hit.cc.s
+src/digi.s: src/digi.cc.s
 
-.PHONY : hit.s
+.PHONY : src/digi.s
 
 # target to generate assembly for a file
-hit.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/hit.cc.s
-.PHONY : hit.cc.s
+src/digi.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digi.cc.s
+.PHONY : src/digi.cc.s
 
-physics.o: physics.cc.o
+src/digitizer.o: src/digitizer.cc.o
 
-.PHONY : physics.o
+.PHONY : src/digitizer.o
 
 # target to build an object file
-physics.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/physics.cc.o
-.PHONY : physics.cc.o
+src/digitizer.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizer.cc.o
+.PHONY : src/digitizer.cc.o
 
-physics.i: physics.cc.i
+src/digitizer.i: src/digitizer.cc.i
 
-.PHONY : physics.i
+.PHONY : src/digitizer.i
 
 # target to preprocess a source file
-physics.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/physics.cc.i
-.PHONY : physics.cc.i
+src/digitizer.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizer.cc.i
+.PHONY : src/digitizer.cc.i
 
-physics.s: physics.cc.s
+src/digitizer.s: src/digitizer.cc.s
 
-.PHONY : physics.s
+.PHONY : src/digitizer.s
 
 # target to generate assembly for a file
-physics.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/physics.cc.s
-.PHONY : physics.cc.s
+src/digitizer.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizer.cc.s
+.PHONY : src/digitizer.cc.s
 
-run.o: run.cc.o
+src/digitizerMessenger.o: src/digitizerMessenger.cc.o
 
-.PHONY : run.o
+.PHONY : src/digitizerMessenger.o
 
 # target to build an object file
-run.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/run.cc.o
-.PHONY : run.cc.o
+src/digitizerMessenger.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizerMessenger.cc.o
+.PHONY : src/digitizerMessenger.cc.o
 
-run.i: run.cc.i
+src/digitizerMessenger.i: src/digitizerMessenger.cc.i
 
-.PHONY : run.i
+.PHONY : src/digitizerMessenger.i
 
 # target to preprocess a source file
-run.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/run.cc.i
-.PHONY : run.cc.i
+src/digitizerMessenger.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizerMessenger.cc.i
+.PHONY : src/digitizerMessenger.cc.i
 
-run.s: run.cc.s
+src/digitizerMessenger.s: src/digitizerMessenger.cc.s
 
-.PHONY : run.s
+.PHONY : src/digitizerMessenger.s
 
 # target to generate assembly for a file
-run.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/run.cc.s
-.PHONY : run.cc.s
+src/digitizerMessenger.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizerMessenger.cc.s
+.PHONY : src/digitizerMessenger.cc.s
+
+src/event.o: src/event.cc.o
+
+.PHONY : src/event.o
+
+# target to build an object file
+src/event.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/event.cc.o
+.PHONY : src/event.cc.o
+
+src/event.i: src/event.cc.i
+
+.PHONY : src/event.i
+
+# target to preprocess a source file
+src/event.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/event.cc.i
+.PHONY : src/event.cc.i
+
+src/event.s: src/event.cc.s
+
+.PHONY : src/event.s
+
+# target to generate assembly for a file
+src/event.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/event.cc.s
+.PHONY : src/event.cc.s
+
+src/generator.o: src/generator.cc.o
+
+.PHONY : src/generator.o
+
+# target to build an object file
+src/generator.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cc.o
+.PHONY : src/generator.cc.o
+
+src/generator.i: src/generator.cc.i
+
+.PHONY : src/generator.i
+
+# target to preprocess a source file
+src/generator.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cc.i
+.PHONY : src/generator.cc.i
+
+src/generator.s: src/generator.cc.s
+
+.PHONY : src/generator.s
+
+# target to generate assembly for a file
+src/generator.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cc.s
+.PHONY : src/generator.cc.s
+
+src/hit.o: src/hit.cc.o
+
+.PHONY : src/hit.o
+
+# target to build an object file
+src/hit.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/hit.cc.o
+.PHONY : src/hit.cc.o
+
+src/hit.i: src/hit.cc.i
+
+.PHONY : src/hit.i
+
+# target to preprocess a source file
+src/hit.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/hit.cc.i
+.PHONY : src/hit.cc.i
+
+src/hit.s: src/hit.cc.s
+
+.PHONY : src/hit.s
+
+# target to generate assembly for a file
+src/hit.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/hit.cc.s
+.PHONY : src/hit.cc.s
+
+src/physics.o: src/physics.cc.o
+
+.PHONY : src/physics.o
+
+# target to build an object file
+src/physics.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/physics.cc.o
+.PHONY : src/physics.cc.o
+
+src/physics.i: src/physics.cc.i
+
+.PHONY : src/physics.i
+
+# target to preprocess a source file
+src/physics.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/physics.cc.i
+.PHONY : src/physics.cc.i
+
+src/physics.s: src/physics.cc.s
+
+.PHONY : src/physics.s
+
+# target to generate assembly for a file
+src/physics.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/physics.cc.s
+.PHONY : src/physics.cc.s
+
+src/run.o: src/run.cc.o
+
+.PHONY : src/run.o
+
+# target to build an object file
+src/run.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/run.cc.o
+.PHONY : src/run.cc.o
+
+src/run.i: src/run.cc.i
+
+.PHONY : src/run.i
+
+# target to preprocess a source file
+src/run.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/run.cc.i
+.PHONY : src/run.cc.i
+
+src/run.s: src/run.cc.s
+
+.PHONY : src/run.s
+
+# target to generate assembly for a file
+src/run.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/run.cc.s
+.PHONY : src/run.cc.s
 
 test.o: test.cc.o
 
@@ -389,30 +497,42 @@ help:
 	@echo "... Simulation"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... action.o"
-	@echo "... action.i"
-	@echo "... action.s"
-	@echo "... contruction.o"
-	@echo "... contruction.i"
-	@echo "... contruction.s"
-	@echo "... detector.o"
-	@echo "... detector.i"
-	@echo "... detector.s"
-	@echo "... event.o"
-	@echo "... event.i"
-	@echo "... event.s"
-	@echo "... generator.o"
-	@echo "... generator.i"
-	@echo "... generator.s"
-	@echo "... hit.o"
-	@echo "... hit.i"
-	@echo "... hit.s"
-	@echo "... physics.o"
-	@echo "... physics.i"
-	@echo "... physics.s"
-	@echo "... run.o"
-	@echo "... run.i"
-	@echo "... run.s"
+	@echo "... src/action.o"
+	@echo "... src/action.i"
+	@echo "... src/action.s"
+	@echo "... src/adder.o"
+	@echo "... src/adder.i"
+	@echo "... src/adder.s"
+	@echo "... src/contruction.o"
+	@echo "... src/contruction.i"
+	@echo "... src/contruction.s"
+	@echo "... src/detectorSD.o"
+	@echo "... src/detectorSD.i"
+	@echo "... src/detectorSD.s"
+	@echo "... src/digi.o"
+	@echo "... src/digi.i"
+	@echo "... src/digi.s"
+	@echo "... src/digitizer.o"
+	@echo "... src/digitizer.i"
+	@echo "... src/digitizer.s"
+	@echo "... src/digitizerMessenger.o"
+	@echo "... src/digitizerMessenger.i"
+	@echo "... src/digitizerMessenger.s"
+	@echo "... src/event.o"
+	@echo "... src/event.i"
+	@echo "... src/event.s"
+	@echo "... src/generator.o"
+	@echo "... src/generator.i"
+	@echo "... src/generator.s"
+	@echo "... src/hit.o"
+	@echo "... src/hit.i"
+	@echo "... src/hit.s"
+	@echo "... src/physics.o"
+	@echo "... src/physics.i"
+	@echo "... src/physics.s"
+	@echo "... src/run.o"
+	@echo "... src/run.i"
+	@echo "... src/run.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

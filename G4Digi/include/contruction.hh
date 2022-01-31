@@ -11,7 +11,7 @@
 #include "G4PVPlacement.hh"
 #include "G4SDManager.hh"
 
-#include "detector.hh"
+#include "detectorSD.hh"
 
 class TestDetectorConstruction : public G4VUserDetectorConstruction
 {
