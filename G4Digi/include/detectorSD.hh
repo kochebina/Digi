@@ -7,7 +7,7 @@
 
 #include "g4root.hh"
 
-#include "hit.hh"
+#include "TestHit.hh"
 
 
 

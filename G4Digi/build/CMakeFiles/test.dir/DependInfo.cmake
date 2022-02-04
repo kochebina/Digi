@@ -4,16 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestAdder.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestAdder.cc.o"
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestDigi.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestDigi.cc.o"
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizer.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestDigitizer.cc.o"
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerInitializationModule.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o"
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerMessenger.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o"
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestHit.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestHit.cc.o"
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestReadout.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestReadout.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/action.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/action.cc.o"
-  "/home/kochebina/InProgress/Digi/G4Digi/src/adder.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/adder.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/contruction.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/contruction.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/detectorSD.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/detectorSD.cc.o"
-  "/home/kochebina/InProgress/Digi/G4Digi/src/digi.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/digi.cc.o"
-  "/home/kochebina/InProgress/Digi/G4Digi/src/digitizer.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/digitizer.cc.o"
-  "/home/kochebina/InProgress/Digi/G4Digi/src/digitizerMessenger.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/digitizerMessenger.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/event.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/event.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/generator.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/generator.cc.o"
-  "/home/kochebina/InProgress/Digi/G4Digi/src/hit.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/hit.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/physics.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/physics.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/run.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/run.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/test.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/test.cc.o"

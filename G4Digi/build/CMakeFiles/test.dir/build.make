@@ -70,9 +70,100 @@ CMakeFiles/test.dir/test.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/test.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/test.cc -o CMakeFiles/test.dir/test.cc.s
 
+CMakeFiles/test.dir/src/TestAdder.cc.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/TestAdder.cc.o: ../src/TestAdder.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/TestAdder.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/TestAdder.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/TestAdder.cc
+
+CMakeFiles/test.dir/src/TestAdder.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/TestAdder.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/TestAdder.cc > CMakeFiles/test.dir/src/TestAdder.cc.i
+
+CMakeFiles/test.dir/src/TestAdder.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/TestAdder.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/TestAdder.cc -o CMakeFiles/test.dir/src/TestAdder.cc.s
+
+CMakeFiles/test.dir/src/TestDigi.cc.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/TestDigi.cc.o: ../src/TestDigi.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/TestDigi.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/TestDigi.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/TestDigi.cc
+
+CMakeFiles/test.dir/src/TestDigi.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/TestDigi.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/TestDigi.cc > CMakeFiles/test.dir/src/TestDigi.cc.i
+
+CMakeFiles/test.dir/src/TestDigi.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/TestDigi.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/TestDigi.cc -o CMakeFiles/test.dir/src/TestDigi.cc.s
+
+CMakeFiles/test.dir/src/TestDigitizer.cc.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/TestDigitizer.cc.o: ../src/TestDigitizer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/TestDigitizer.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/TestDigitizer.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizer.cc
+
+CMakeFiles/test.dir/src/TestDigitizer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/TestDigitizer.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizer.cc > CMakeFiles/test.dir/src/TestDigitizer.cc.i
+
+CMakeFiles/test.dir/src/TestDigitizer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/TestDigitizer.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizer.cc -o CMakeFiles/test.dir/src/TestDigitizer.cc.s
+
+CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o: ../src/TestDigitizerInitializationModule.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerInitializationModule.cc
+
+CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerInitializationModule.cc > CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.i
+
+CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerInitializationModule.cc -o CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.s
+
+CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o: ../src/TestDigitizerMessenger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerMessenger.cc
+
+CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerMessenger.cc > CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.i
+
+CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/TestDigitizerMessenger.cc -o CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.s
+
+CMakeFiles/test.dir/src/TestHit.cc.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/TestHit.cc.o: ../src/TestHit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/TestHit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/TestHit.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/TestHit.cc
+
+CMakeFiles/test.dir/src/TestHit.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/TestHit.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/TestHit.cc > CMakeFiles/test.dir/src/TestHit.cc.i
+
+CMakeFiles/test.dir/src/TestHit.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/TestHit.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/TestHit.cc -o CMakeFiles/test.dir/src/TestHit.cc.s
+
+CMakeFiles/test.dir/src/TestReadout.cc.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/TestReadout.cc.o: ../src/TestReadout.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/TestReadout.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/TestReadout.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/TestReadout.cc
+
+CMakeFiles/test.dir/src/TestReadout.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/TestReadout.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/TestReadout.cc > CMakeFiles/test.dir/src/TestReadout.cc.i
+
+CMakeFiles/test.dir/src/TestReadout.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/TestReadout.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/TestReadout.cc -o CMakeFiles/test.dir/src/TestReadout.cc.s
+
 CMakeFiles/test.dir/src/action.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/action.cc.o: ../src/action.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/action.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/action.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/action.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/action.cc
 
 CMakeFiles/test.dir/src/action.cc.i: cmake_force
@@ -83,22 +174,9 @@ CMakeFiles/test.dir/src/action.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/action.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/action.cc -o CMakeFiles/test.dir/src/action.cc.s
 
-CMakeFiles/test.dir/src/adder.cc.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/adder.cc.o: ../src/adder.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/adder.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/adder.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/adder.cc
-
-CMakeFiles/test.dir/src/adder.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/adder.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/adder.cc > CMakeFiles/test.dir/src/adder.cc.i
-
-CMakeFiles/test.dir/src/adder.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/adder.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/adder.cc -o CMakeFiles/test.dir/src/adder.cc.s
-
 CMakeFiles/test.dir/src/contruction.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/contruction.cc.o: ../src/contruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/contruction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/contruction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/contruction.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/contruction.cc
 
 CMakeFiles/test.dir/src/contruction.cc.i: cmake_force
@@ -111,7 +189,7 @@ CMakeFiles/test.dir/src/contruction.cc.s: cmake_force
 
 CMakeFiles/test.dir/src/detectorSD.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/detectorSD.cc.o: ../src/detectorSD.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/detectorSD.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/detectorSD.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/detectorSD.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/detectorSD.cc
 
 CMakeFiles/test.dir/src/detectorSD.cc.i: cmake_force
@@ -122,48 +200,9 @@ CMakeFiles/test.dir/src/detectorSD.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/detectorSD.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/detectorSD.cc -o CMakeFiles/test.dir/src/detectorSD.cc.s
 
-CMakeFiles/test.dir/src/digi.cc.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/digi.cc.o: ../src/digi.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/digi.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/digi.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/digi.cc
-
-CMakeFiles/test.dir/src/digi.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/digi.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/digi.cc > CMakeFiles/test.dir/src/digi.cc.i
-
-CMakeFiles/test.dir/src/digi.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/digi.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/digi.cc -o CMakeFiles/test.dir/src/digi.cc.s
-
-CMakeFiles/test.dir/src/digitizer.cc.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/digitizer.cc.o: ../src/digitizer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/digitizer.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/digitizer.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/digitizer.cc
-
-CMakeFiles/test.dir/src/digitizer.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/digitizer.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/digitizer.cc > CMakeFiles/test.dir/src/digitizer.cc.i
-
-CMakeFiles/test.dir/src/digitizer.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/digitizer.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/digitizer.cc -o CMakeFiles/test.dir/src/digitizer.cc.s
-
-CMakeFiles/test.dir/src/digitizerMessenger.cc.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/digitizerMessenger.cc.o: ../src/digitizerMessenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/digitizerMessenger.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/digitizerMessenger.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/digitizerMessenger.cc
-
-CMakeFiles/test.dir/src/digitizerMessenger.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/digitizerMessenger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/digitizerMessenger.cc > CMakeFiles/test.dir/src/digitizerMessenger.cc.i
-
-CMakeFiles/test.dir/src/digitizerMessenger.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/digitizerMessenger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/digitizerMessenger.cc -o CMakeFiles/test.dir/src/digitizerMessenger.cc.s
-
 CMakeFiles/test.dir/src/event.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/event.cc.o: ../src/event.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/event.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/event.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/event.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/event.cc
 
 CMakeFiles/test.dir/src/event.cc.i: cmake_force
@@ -176,7 +215,7 @@ CMakeFiles/test.dir/src/event.cc.s: cmake_force
 
 CMakeFiles/test.dir/src/generator.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/generator.cc.o: ../src/generator.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/generator.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/generator.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/generator.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/generator.cc
 
 CMakeFiles/test.dir/src/generator.cc.i: cmake_force
@@ -187,22 +226,9 @@ CMakeFiles/test.dir/src/generator.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/generator.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/generator.cc -o CMakeFiles/test.dir/src/generator.cc.s
 
-CMakeFiles/test.dir/src/hit.cc.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/hit.cc.o: ../src/hit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/hit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/hit.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/hit.cc
-
-CMakeFiles/test.dir/src/hit.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/hit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kochebina/InProgress/Digi/G4Digi/src/hit.cc > CMakeFiles/test.dir/src/hit.cc.i
-
-CMakeFiles/test.dir/src/hit.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/hit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kochebina/InProgress/Digi/G4Digi/src/hit.cc -o CMakeFiles/test.dir/src/hit.cc.s
-
 CMakeFiles/test.dir/src/physics.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/physics.cc.o: ../src/physics.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/physics.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/physics.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/physics.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/physics.cc
 
 CMakeFiles/test.dir/src/physics.cc.i: cmake_force
@@ -215,7 +241,7 @@ CMakeFiles/test.dir/src/physics.cc.s: cmake_force
 
 CMakeFiles/test.dir/src/run.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/run.cc.o: ../src/run.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/run.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/run.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/run.cc.o -c /home/kochebina/InProgress/Digi/G4Digi/src/run.cc
 
 CMakeFiles/test.dir/src/run.cc.i: cmake_force
@@ -229,16 +255,18 @@ CMakeFiles/test.dir/src/run.cc.s: cmake_force
 # Object files for target test
 test_OBJECTS = \
 "CMakeFiles/test.dir/test.cc.o" \
+"CMakeFiles/test.dir/src/TestAdder.cc.o" \
+"CMakeFiles/test.dir/src/TestDigi.cc.o" \
+"CMakeFiles/test.dir/src/TestDigitizer.cc.o" \
+"CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o" \
+"CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o" \
+"CMakeFiles/test.dir/src/TestHit.cc.o" \
+"CMakeFiles/test.dir/src/TestReadout.cc.o" \
 "CMakeFiles/test.dir/src/action.cc.o" \
-"CMakeFiles/test.dir/src/adder.cc.o" \
 "CMakeFiles/test.dir/src/contruction.cc.o" \
 "CMakeFiles/test.dir/src/detectorSD.cc.o" \
-"CMakeFiles/test.dir/src/digi.cc.o" \
-"CMakeFiles/test.dir/src/digitizer.cc.o" \
-"CMakeFiles/test.dir/src/digitizerMessenger.cc.o" \
 "CMakeFiles/test.dir/src/event.cc.o" \
 "CMakeFiles/test.dir/src/generator.cc.o" \
-"CMakeFiles/test.dir/src/hit.cc.o" \
 "CMakeFiles/test.dir/src/physics.cc.o" \
 "CMakeFiles/test.dir/src/run.cc.o"
 
@@ -246,16 +274,18 @@ test_OBJECTS = \
 test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/test.cc.o
+test: CMakeFiles/test.dir/src/TestAdder.cc.o
+test: CMakeFiles/test.dir/src/TestDigi.cc.o
+test: CMakeFiles/test.dir/src/TestDigitizer.cc.o
+test: CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o
+test: CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o
+test: CMakeFiles/test.dir/src/TestHit.cc.o
+test: CMakeFiles/test.dir/src/TestReadout.cc.o
 test: CMakeFiles/test.dir/src/action.cc.o
-test: CMakeFiles/test.dir/src/adder.cc.o
 test: CMakeFiles/test.dir/src/contruction.cc.o
 test: CMakeFiles/test.dir/src/detectorSD.cc.o
-test: CMakeFiles/test.dir/src/digi.cc.o
-test: CMakeFiles/test.dir/src/digitizer.cc.o
-test: CMakeFiles/test.dir/src/digitizerMessenger.cc.o
 test: CMakeFiles/test.dir/src/event.cc.o
 test: CMakeFiles/test.dir/src/generator.cc.o
-test: CMakeFiles/test.dir/src/hit.cc.o
 test: CMakeFiles/test.dir/src/physics.cc.o
 test: CMakeFiles/test.dir/src/run.cc.o
 test: CMakeFiles/test.dir/build.make
@@ -324,7 +354,7 @@ test: /home/kochebina/Applications/Geant4/geant4.10.07.p02/build/BuildProducts/l
 test: /home/kochebina/Applications/Geant4/geant4.10.07.p02/build/BuildProducts/lib/libG4clhep.so
 test: /home/kochebina/Applications/Geant4/geant4.10.07.p02/build/BuildProducts/lib/libG4ptl.so.0.0.2
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

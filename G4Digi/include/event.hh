@@ -8,7 +8,7 @@
 #include "g4root.hh"
 
 #include "run.hh"
-
+#include "TestDigitizer.hh"
 
 class TestEventAction : public G4UserEventAction
 {
@@ -24,6 +24,7 @@ public:
 private:
   
   G4int HitsCollectionID;
+  TestDigitizer *digitizer;
 
 };
 

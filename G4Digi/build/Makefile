@@ -136,6 +136,195 @@ test/fast:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+src/TestAdder.o: src/TestAdder.cc.o
+
+.PHONY : src/TestAdder.o
+
+# target to build an object file
+src/TestAdder.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestAdder.cc.o
+.PHONY : src/TestAdder.cc.o
+
+src/TestAdder.i: src/TestAdder.cc.i
+
+.PHONY : src/TestAdder.i
+
+# target to preprocess a source file
+src/TestAdder.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestAdder.cc.i
+.PHONY : src/TestAdder.cc.i
+
+src/TestAdder.s: src/TestAdder.cc.s
+
+.PHONY : src/TestAdder.s
+
+# target to generate assembly for a file
+src/TestAdder.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestAdder.cc.s
+.PHONY : src/TestAdder.cc.s
+
+src/TestDigi.o: src/TestDigi.cc.o
+
+.PHONY : src/TestDigi.o
+
+# target to build an object file
+src/TestDigi.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigi.cc.o
+.PHONY : src/TestDigi.cc.o
+
+src/TestDigi.i: src/TestDigi.cc.i
+
+.PHONY : src/TestDigi.i
+
+# target to preprocess a source file
+src/TestDigi.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigi.cc.i
+.PHONY : src/TestDigi.cc.i
+
+src/TestDigi.s: src/TestDigi.cc.s
+
+.PHONY : src/TestDigi.s
+
+# target to generate assembly for a file
+src/TestDigi.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigi.cc.s
+.PHONY : src/TestDigi.cc.s
+
+src/TestDigitizer.o: src/TestDigitizer.cc.o
+
+.PHONY : src/TestDigitizer.o
+
+# target to build an object file
+src/TestDigitizer.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizer.cc.o
+.PHONY : src/TestDigitizer.cc.o
+
+src/TestDigitizer.i: src/TestDigitizer.cc.i
+
+.PHONY : src/TestDigitizer.i
+
+# target to preprocess a source file
+src/TestDigitizer.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizer.cc.i
+.PHONY : src/TestDigitizer.cc.i
+
+src/TestDigitizer.s: src/TestDigitizer.cc.s
+
+.PHONY : src/TestDigitizer.s
+
+# target to generate assembly for a file
+src/TestDigitizer.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizer.cc.s
+.PHONY : src/TestDigitizer.cc.s
+
+src/TestDigitizerInitializationModule.o: src/TestDigitizerInitializationModule.cc.o
+
+.PHONY : src/TestDigitizerInitializationModule.o
+
+# target to build an object file
+src/TestDigitizerInitializationModule.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.o
+.PHONY : src/TestDigitizerInitializationModule.cc.o
+
+src/TestDigitizerInitializationModule.i: src/TestDigitizerInitializationModule.cc.i
+
+.PHONY : src/TestDigitizerInitializationModule.i
+
+# target to preprocess a source file
+src/TestDigitizerInitializationModule.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.i
+.PHONY : src/TestDigitizerInitializationModule.cc.i
+
+src/TestDigitizerInitializationModule.s: src/TestDigitizerInitializationModule.cc.s
+
+.PHONY : src/TestDigitizerInitializationModule.s
+
+# target to generate assembly for a file
+src/TestDigitizerInitializationModule.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizerInitializationModule.cc.s
+.PHONY : src/TestDigitizerInitializationModule.cc.s
+
+src/TestDigitizerMessenger.o: src/TestDigitizerMessenger.cc.o
+
+.PHONY : src/TestDigitizerMessenger.o
+
+# target to build an object file
+src/TestDigitizerMessenger.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.o
+.PHONY : src/TestDigitizerMessenger.cc.o
+
+src/TestDigitizerMessenger.i: src/TestDigitizerMessenger.cc.i
+
+.PHONY : src/TestDigitizerMessenger.i
+
+# target to preprocess a source file
+src/TestDigitizerMessenger.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.i
+.PHONY : src/TestDigitizerMessenger.cc.i
+
+src/TestDigitizerMessenger.s: src/TestDigitizerMessenger.cc.s
+
+.PHONY : src/TestDigitizerMessenger.s
+
+# target to generate assembly for a file
+src/TestDigitizerMessenger.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestDigitizerMessenger.cc.s
+.PHONY : src/TestDigitizerMessenger.cc.s
+
+src/TestHit.o: src/TestHit.cc.o
+
+.PHONY : src/TestHit.o
+
+# target to build an object file
+src/TestHit.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHit.cc.o
+.PHONY : src/TestHit.cc.o
+
+src/TestHit.i: src/TestHit.cc.i
+
+.PHONY : src/TestHit.i
+
+# target to preprocess a source file
+src/TestHit.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHit.cc.i
+.PHONY : src/TestHit.cc.i
+
+src/TestHit.s: src/TestHit.cc.s
+
+.PHONY : src/TestHit.s
+
+# target to generate assembly for a file
+src/TestHit.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHit.cc.s
+.PHONY : src/TestHit.cc.s
+
+src/TestReadout.o: src/TestReadout.cc.o
+
+.PHONY : src/TestReadout.o
+
+# target to build an object file
+src/TestReadout.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestReadout.cc.o
+.PHONY : src/TestReadout.cc.o
+
+src/TestReadout.i: src/TestReadout.cc.i
+
+.PHONY : src/TestReadout.i
+
+# target to preprocess a source file
+src/TestReadout.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestReadout.cc.i
+.PHONY : src/TestReadout.cc.i
+
+src/TestReadout.s: src/TestReadout.cc.s
+
+.PHONY : src/TestReadout.s
+
+# target to generate assembly for a file
+src/TestReadout.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestReadout.cc.s
+.PHONY : src/TestReadout.cc.s
+
 src/action.o: src/action.cc.o
 
 .PHONY : src/action.o
@@ -162,33 +351,6 @@ src/action.s: src/action.cc.s
 src/action.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/action.cc.s
 .PHONY : src/action.cc.s
-
-src/adder.o: src/adder.cc.o
-
-.PHONY : src/adder.o
-
-# target to build an object file
-src/adder.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/adder.cc.o
-.PHONY : src/adder.cc.o
-
-src/adder.i: src/adder.cc.i
-
-.PHONY : src/adder.i
-
-# target to preprocess a source file
-src/adder.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/adder.cc.i
-.PHONY : src/adder.cc.i
-
-src/adder.s: src/adder.cc.s
-
-.PHONY : src/adder.s
-
-# target to generate assembly for a file
-src/adder.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/adder.cc.s
-.PHONY : src/adder.cc.s
 
 src/contruction.o: src/contruction.cc.o
 
@@ -244,87 +406,6 @@ src/detectorSD.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/detectorSD.cc.s
 .PHONY : src/detectorSD.cc.s
 
-src/digi.o: src/digi.cc.o
-
-.PHONY : src/digi.o
-
-# target to build an object file
-src/digi.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digi.cc.o
-.PHONY : src/digi.cc.o
-
-src/digi.i: src/digi.cc.i
-
-.PHONY : src/digi.i
-
-# target to preprocess a source file
-src/digi.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digi.cc.i
-.PHONY : src/digi.cc.i
-
-src/digi.s: src/digi.cc.s
-
-.PHONY : src/digi.s
-
-# target to generate assembly for a file
-src/digi.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digi.cc.s
-.PHONY : src/digi.cc.s
-
-src/digitizer.o: src/digitizer.cc.o
-
-.PHONY : src/digitizer.o
-
-# target to build an object file
-src/digitizer.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizer.cc.o
-.PHONY : src/digitizer.cc.o
-
-src/digitizer.i: src/digitizer.cc.i
-
-.PHONY : src/digitizer.i
-
-# target to preprocess a source file
-src/digitizer.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizer.cc.i
-.PHONY : src/digitizer.cc.i
-
-src/digitizer.s: src/digitizer.cc.s
-
-.PHONY : src/digitizer.s
-
-# target to generate assembly for a file
-src/digitizer.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizer.cc.s
-.PHONY : src/digitizer.cc.s
-
-src/digitizerMessenger.o: src/digitizerMessenger.cc.o
-
-.PHONY : src/digitizerMessenger.o
-
-# target to build an object file
-src/digitizerMessenger.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizerMessenger.cc.o
-.PHONY : src/digitizerMessenger.cc.o
-
-src/digitizerMessenger.i: src/digitizerMessenger.cc.i
-
-.PHONY : src/digitizerMessenger.i
-
-# target to preprocess a source file
-src/digitizerMessenger.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizerMessenger.cc.i
-.PHONY : src/digitizerMessenger.cc.i
-
-src/digitizerMessenger.s: src/digitizerMessenger.cc.s
-
-.PHONY : src/digitizerMessenger.s
-
-# target to generate assembly for a file
-src/digitizerMessenger.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/digitizerMessenger.cc.s
-.PHONY : src/digitizerMessenger.cc.s
-
 src/event.o: src/event.cc.o
 
 .PHONY : src/event.o
@@ -378,33 +459,6 @@ src/generator.s: src/generator.cc.s
 src/generator.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cc.s
 .PHONY : src/generator.cc.s
-
-src/hit.o: src/hit.cc.o
-
-.PHONY : src/hit.o
-
-# target to build an object file
-src/hit.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/hit.cc.o
-.PHONY : src/hit.cc.o
-
-src/hit.i: src/hit.cc.i
-
-.PHONY : src/hit.i
-
-# target to preprocess a source file
-src/hit.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/hit.cc.i
-.PHONY : src/hit.cc.i
-
-src/hit.s: src/hit.cc.s
-
-.PHONY : src/hit.s
-
-# target to generate assembly for a file
-src/hit.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/hit.cc.s
-.PHONY : src/hit.cc.s
 
 src/physics.o: src/physics.cc.o
 
@@ -497,36 +551,42 @@ help:
 	@echo "... Simulation"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... src/TestAdder.o"
+	@echo "... src/TestAdder.i"
+	@echo "... src/TestAdder.s"
+	@echo "... src/TestDigi.o"
+	@echo "... src/TestDigi.i"
+	@echo "... src/TestDigi.s"
+	@echo "... src/TestDigitizer.o"
+	@echo "... src/TestDigitizer.i"
+	@echo "... src/TestDigitizer.s"
+	@echo "... src/TestDigitizerInitializationModule.o"
+	@echo "... src/TestDigitizerInitializationModule.i"
+	@echo "... src/TestDigitizerInitializationModule.s"
+	@echo "... src/TestDigitizerMessenger.o"
+	@echo "... src/TestDigitizerMessenger.i"
+	@echo "... src/TestDigitizerMessenger.s"
+	@echo "... src/TestHit.o"
+	@echo "... src/TestHit.i"
+	@echo "... src/TestHit.s"
+	@echo "... src/TestReadout.o"
+	@echo "... src/TestReadout.i"
+	@echo "... src/TestReadout.s"
 	@echo "... src/action.o"
 	@echo "... src/action.i"
 	@echo "... src/action.s"
-	@echo "... src/adder.o"
-	@echo "... src/adder.i"
-	@echo "... src/adder.s"
 	@echo "... src/contruction.o"
 	@echo "... src/contruction.i"
 	@echo "... src/contruction.s"
 	@echo "... src/detectorSD.o"
 	@echo "... src/detectorSD.i"
 	@echo "... src/detectorSD.s"
-	@echo "... src/digi.o"
-	@echo "... src/digi.i"
-	@echo "... src/digi.s"
-	@echo "... src/digitizer.o"
-	@echo "... src/digitizer.i"
-	@echo "... src/digitizer.s"
-	@echo "... src/digitizerMessenger.o"
-	@echo "... src/digitizerMessenger.i"
-	@echo "... src/digitizerMessenger.s"
 	@echo "... src/event.o"
 	@echo "... src/event.i"
 	@echo "... src/event.s"
 	@echo "... src/generator.o"
 	@echo "... src/generator.i"
 	@echo "... src/generator.s"
-	@echo "... src/hit.o"
-	@echo "... src/hit.i"
-	@echo "... src/hit.s"
 	@echo "... src/physics.o"
 	@echo "... src/physics.i"
 	@echo "... src/physics.s"
