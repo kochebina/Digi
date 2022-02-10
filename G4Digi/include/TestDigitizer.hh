@@ -24,64 +24,69 @@
 // ********************************************************************
 //
 //
-//
-// 
 // ------------------------------------------------------------
 //      GEANT 4 class header file
 //      CERN Geneva Switzerland
 //
 //
-//      ------------ TestDigitizerMessenger  ------
-//           by F.Longo, G.Santin & R.Giannitrapani (29 nov 2001) 
+//      ------------ TestDigitizer ------
+//
+//           by F.Longo, R.Giannitrapani & G.Santin (24 oct 2001)
 //
 // ************************************************************
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+#ifndef TestDigitizer_h
+#define TestDigitizer_h 1
 
-#ifndef TestDigitizerMessenger_h
-#define TestDigitizerMessenger_h 1
-
-#include "G4UImessenger.hh"
-//#include "G4UIcmdWithAString.hh"
+#include "G4VDigitizerModule.hh"
+#include "TestDigi.hh"
 #include "globals.hh"
 
-//#include "TestDigitizer.hh"
+//#include "G4UImessenger.hh"
+//#include "g4std/vector"
 
-
-class TestDigitizer;
-class G4UIdirectory;
-class G4UIcmdWithAString;
-//class G4UIcmdWithADoubleAndUnit;
-//class G4UIcmdWithAString;
+class TestDigitizerMessenger;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-class TestDigitizerMessenger: public G4UImessenger
+class TestDigitizer
 {
 public:
-  TestDigitizerMessenger(TestDigitizer*);
-  ~TestDigitizerMessenger();
+	static TestDigitizer* GetInstance();
+
+public:
   
-  void SetNewValue(G4UIcommand*, G4String);
+	TestDigitizer();
+  ~TestDigitizer();
   
-  //G4bool CheckNameConflict(const G4String& name); //??
+  void Initilize();
+  void RunDigitizer();
 
-  private:
+  void SetNewModuleName(G4String name){m_moduleName=name;}
 
+ // void Digitize();
 
+  
+  void AddNewDigitizerModule(G4String name);
 
 
 private:
-  TestDigitizer* m_digitizer;
 
-  G4UIdirectory           *Dir;
+  G4String m_moduleName;
 
-  G4UIcmdWithAString*         SetModuleNameCmd;
+  TestDigitizerMessenger *fMessenger;
+  
+  static TestDigitizer*  theDigitizer;
 
 
 };
 
 #endif
+
+
+
+
+
+
 
 

@@ -84,8 +84,7 @@ void TestAdder::Digitize()
 
   G4DigiManager* DigiMan = G4DigiManager::GetDMpointer();
 
- // G4DigiManager* DigiMan1 = (G4DigiManager*)(DigiMan->GetDMpointer());
-  
+
 
   G4int HCID; // HitCollection
 
@@ -114,14 +113,7 @@ void TestAdder::Digitize()
 
   
   StoreDigiCollection(DigitsCollection);
-/*
-  G4int DCID = -1;
-  if(DCID<0)
-    { 
-      //	  DigiMan->List();
-      DCID = DigiMan->GetDigiCollectionID("TestAdder/DigitsCollection");
-    }
-  */
+
 
 }
 

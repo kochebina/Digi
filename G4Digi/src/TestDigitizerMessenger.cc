@@ -49,18 +49,10 @@
 
 TestDigitizerMessenger::TestDigitizerMessenger (TestDigitizer* digitizer): m_digitizer(digitizer)
 { 
+
+	G4cout<<"TestDigitizerMessenger::constructor"<<G4endl;
 	Dir = new G4UIdirectory("/digitizer/");
 	Dir->SetGuidance("Digitizer directory");
-
-	/* pInsertCmd->SetCandidates(DumpMap());
-
-	  G4String cmdName;
-
-	  cmdName = GetDirectoryName()+"setInputName";
-	  SetInputNameCmd = new G4UIcmdWithAString(cmdName,this);
-	  SetInputNameCmd->SetGuidance("Set the name of the input pulse channel");
-	  SetInputNameCmd->SetParameterName("Name",false);
-*/
 
 	SetModuleNameCmd = new G4UIcmdWithAString("/digitizer/insert",this);
 	SetModuleNameCmd->SetGuidance("Module to insert");
@@ -68,8 +60,6 @@ TestDigitizerMessenger::TestDigitizerMessenger (TestDigitizer* digitizer): m_dig
 	SetModuleNameCmd->AvailableForStates(G4State_PreInit);
 	G4cout<<"TestDigitizerMessenger::TestDigitizerMessenger"<<G4endl;
 
-  //DefineModuleNameCmd->SetDefaultValue("adder");
-  //dDefineModuleNameCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
@@ -98,27 +88,7 @@ void TestDigitizerMessenger::SetNewValue(G4UIcommand * command,G4String newValue
 	    }
 
 }
-/*
-{
-	GateVPulseProcessor* newProcessor=0;
 
-	  G4String newInsertionName = GetProcessorChain()->MakeElementName(GetNewInsertionBaseName());
-
-	  if (childTypeName=="readout")
-	    newProcessor = new GateReadout(GetProcessorChain(),newInsertionName);
-	  else if (childTypeName=="pileup")
-	    newProcessor = new GatePileup(GetProcessorChain(),newInsertionName);
-
-	if( command ==  )
-    { 
-	  G4V * myDM = new TestDigitizerInitializationModule( "TestDigitizerInitializationModule" );
-	  G4DigiManager::GetDMpointer()->AddNewModule(myDM);
-    }
-
-
-
-}
-*/
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 

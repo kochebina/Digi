@@ -1,4 +1,6 @@
 #include "run.hh"
+#include "contruction.hh"
+#include "TestDigitizer.hh"
 
 TestRunAction::TestRunAction()
 {
@@ -43,6 +45,9 @@ void TestRunAction::BeginOfRunAction(const G4Run* aRun)
 
 	man->FinishNtuple(2);
 */
+
+
+
 
 }
 void TestRunAction::EndOfRunAction(const G4Run* aRun)

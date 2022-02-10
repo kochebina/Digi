@@ -24,64 +24,57 @@
 // ********************************************************************
 //
 //
-//
-// 
 // ------------------------------------------------------------
 //      GEANT 4 class header file
 //      CERN Geneva Switzerland
 //
 //
-//      ------------ TestDigitizerMessenger  ------
-//           by F.Longo, G.Santin & R.Giannitrapani (29 nov 2001) 
+//      ------------ TestReadout ------
+//
+//           by F.Longo, R.Giannitrapani & G.Santin (24 oct 2001)
 //
 // ************************************************************
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+#ifndef Readout_h
+#define Readout_h 1
 
-#ifndef TestDigitizerMessenger_h
-#define TestDigitizerMessenger_h 1
-
-#include "G4UImessenger.hh"
-//#include "G4UIcmdWithAString.hh"
+#include "G4VDigitizerModule.hh"
+#include "TestDigi.hh"
 #include "globals.hh"
+//#include "g4std/vector"
 
-//#include "TestDigitizer.hh"
-
-
-class TestDigitizer;
-class G4UIdirectory;
-class G4UIcmdWithAString;
-//class G4UIcmdWithADoubleAndUnit;
-//class G4UIcmdWithAString;
+//class TestReadoutMessenger;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-class TestDigitizerMessenger: public G4UImessenger
+class TestReadout : public G4VDigitizerModule
 {
 public:
-  TestDigitizerMessenger(TestDigitizer*);
-  ~TestDigitizerMessenger();
   
-  void SetNewValue(G4UIcommand*, G4String);
+  TestReadout(G4String name);
+  ~TestReadout();
   
-  //G4bool CheckNameConflict(const G4String& name); //??
-
-  private:
-
-
-
-
+  void Digitize();
+ // void SetThreshold(G4double val) { Energy_Threshold = val;}
+  
 private:
-  TestDigitizer* m_digitizer;
+  
+  TestDigitsCollection*  DigitsCollection;
+  G4double Energy;
 
-  G4UIdirectory           *Dir;
-
-  G4UIcmdWithAString*         SetModuleNameCmd;
-
+  //G4double Energy_Threshold; // for TKR digi
+  //G4double TotalEnergy; // for CAL analysis
+  //G4double ACDThreshold; // for ACD analysis
+  //TestReadoutMessenger* digiMessenger;
 
 };
 
 #endif
+
+
+
+
+
+
 
 

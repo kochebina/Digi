@@ -11,10 +11,10 @@
 TestEventAction::TestEventAction(TestRunAction*) : HitsCollectionID(-1)
 {
 
-
+G4cout<<"TestEventAction:: constr"<<G4endl;
 	//digitizer=new TestDigitizer();
 
-	//digitizer = new TestDigitizer();
+	digitizer = new TestDigitizer();
 	digitizer->Initilize();
 
 

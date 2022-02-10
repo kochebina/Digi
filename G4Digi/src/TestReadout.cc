@@ -24,64 +24,112 @@
 // ********************************************************************
 //
 //
-//
-// 
 // ------------------------------------------------------------
-//      GEANT 4 class header file
+//      GEANT 4 class implementation file
 //      CERN Geneva Switzerland
 //
 //
-//      ------------ TestDigitizerMessenger  ------
-//           by F.Longo, G.Santin & R.Giannitrapani (29 nov 2001) 
+//      ------------ TestReadout  ------
+//           by   F.Longo, R.Giannitrapani & G.Santin (13 nov 2000)
 //
 // ************************************************************
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+#include <vector>
 
-#ifndef TestDigitizerMessenger_h
-#define TestDigitizerMessenger_h 1
-
-#include "G4UImessenger.hh"
-//#include "G4UIcmdWithAString.hh"
-#include "globals.hh"
-
-//#include "TestDigitizer.hh"
+#include "TestReadout.hh"
+#include "TestDigi.hh"
+//#include "ReadoutMessenger.hh"
 
 
-class TestDigitizer;
-class G4UIdirectory;
-class G4UIcmdWithAString;
-//class G4UIcmdWithADoubleAndUnit;
-//class G4UIcmdWithAString;
+#include "G4SystemOfUnits.hh"
+#include "G4EventManager.hh"
+#include "G4Event.hh"
+#include "G4SDManager.hh"
+#include "G4DigiManager.hh"
+#include "G4ios.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-class TestDigitizerMessenger: public G4UImessenger
+TestReadout::TestReadout(G4String name)
+  :G4VDigitizerModule(name)
 {
-public:
-  TestDigitizerMessenger(TestDigitizer*);
-  ~TestDigitizerMessenger();
+
+
+  G4String colName = "DigitsCollection";
+  collectionName.push_back(colName);
+  Energy = 0;
+
+//create a messenger for this class
+  //digiMessenger = new TestReadoutMessenger(this);
+
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+TestReadout::~TestReadout()
+{
+ // delete digiMessenger;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+void TestReadout::Digitize()
+{
+
+	G4cout<<"Readout::Digitize()"<<G4endl;
+  DigitsCollection = new TestDigitsCollection("TestReadout","DigitsCollection"); // to create the Digi Collection
   
-  void SetNewValue(G4UIcommand*, G4String);
+  G4DigiManager* DigiMan = G4DigiManager::GetDMpointer();
+  /*TestDigiManager* DigiMan = 0;
+
+   DigiMan = (TestDigiManager*)(DigiMan->GetDMpointer());
+*/
+
+  DigiMan->List();
+
+  G4int HCID; // HitCollection
+
+ // G4cout<<"From HitsCollection"<<G4endl;
+//  HCID = DigiMan->GetHitsCollectionID("testHitCollection");
+  HCID = DigiMan->GetDigiCollectionID("TestReadout/DigitsCollection");
+  G4cout<<HCID<<G4endl;
+
+  TestDigitsCollection* THC = 0;
+  THC = (TestDigitsCollection*) (DigiMan->GetDigiCollection(HCID-1));
+
+  G4cout<<THC->entries()<<G4endl;
+
+	TestDigi* Digi = new TestDigi();
+
+  if (THC)
+     {
+	  G4int n_hit = THC->entries();
+	  for (G4int i=0;i<n_hit;i++)
+	  {
+
+
+		  Energy=(*THC)[i]->m_edep*10;
+	  }
+	  Digi->SetEdep(Energy);
+
+	  DigitsCollection->insert(Digi);
+     }
+
   
-  //G4bool CheckNameConflict(const G4String& name); //??
+  StoreDigiCollection(DigitsCollection);
 
-  private:
-
-
+}
 
 
-private:
-  TestDigitizer* m_digitizer;
 
-  G4UIdirectory           *Dir;
-
-  G4UIcmdWithAString*         SetModuleNameCmd;
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 
-};
 
-#endif
+
+
+
+
+
 
 

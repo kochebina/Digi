@@ -5,6 +5,8 @@
 #include "G4UserRunAction.hh"
 #include "g4root.hh"
 
+class TestDetectorConstruction;
+class TestDigitizer;
 
 class TestRunAction : public G4UserRunAction
 {

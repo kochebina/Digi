@@ -1,31 +1,59 @@
 #include "contruction.hh"
+#include "constructionMessenger.hh"
 
-TestDetectorConstruction::TestDetectorConstruction()
+#include "G4VisAttributes.hh"
+
+TestDetectorConstruction::TestDetectorConstruction(): G4VUserDetectorConstruction(),
+fCheckOverlaps(true)
 {
+G4cout<<"TestDetectorConstruction:: constructor"<<G4endl;
+	fDetectorMessenger = new TestDetectorConstructionMessenger(this);
+	//fDetectorMessenger->
+		//Initialize variables. The following variables can be changed via the run.mac file.
+	sMaterial= "LYSO";
 }
 
 TestDetectorConstruction::~TestDetectorConstruction()
 {
+	delete fDetectorMessenger;
 }
 
 G4VPhysicalVolume *TestDetectorConstruction::Construct()
 {
  G4NistManager *nist = G4NistManager::Instance();
 
-  G4Material *LYSO = new G4Material("LYSO", 7.36*g/cm3,4);
-  LYSO->AddElement(nist->FindOrBuildElement("Lu"), 71.4467891*perCent);
-  LYSO->AddElement(nist->FindOrBuildElement("Y"), 4.033805*perCent);
-  LYSO->AddElement(nist->FindOrBuildElement("Si"), 6.3714272*perCent);
-  LYSO->AddElement(nist->FindOrBuildElement("O"), 18.1479788*perCent );
+
+ G4double energy[2] = {1.239841939*eV/0.2, 1.239841939*eV/0.9};
+ G4double rindexLYSO[2] = {1.8, 1.8};
+ G4double rindexWorld[2] = {1., 1.};
+ if(sMaterial == "LYSO")
+ 	 {
+	 DetectionMaterial = new G4Material("LYSO", 7.36*g/cm3,4);
+	 DetectionMaterial->AddElement(nist->FindOrBuildElement("Lu"), 71.4467891*perCent);
+	 DetectionMaterial->AddElement(nist->FindOrBuildElement("Y"), 4.033805*perCent);
+	 DetectionMaterial->AddElement(nist->FindOrBuildElement("Si"), 6.3714272*perCent);
+	 DetectionMaterial->AddElement(nist->FindOrBuildElement("O"), 18.1479788*perCent );
 
 
-  G4double energy[2] = {1.239841939*eV/0.2, 1.239841939*eV/0.9};
-  G4double rindexLYSO[2] = {1.8, 1.8};
-  G4double rindexWorld[2] = {1., 1.};
 
-  G4MaterialPropertiesTable *mptLYSO = new G4MaterialPropertiesTable();
-  mptLYSO->AddProperty("RINDEX", energy, rindexLYSO, 2);
-  LYSO->SetMaterialPropertiesTable(mptLYSO);
+	  G4MaterialPropertiesTable *mptLYSO = new G4MaterialPropertiesTable();
+	  mptLYSO->AddProperty("RINDEX", energy, rindexLYSO, 2);
+	  DetectionMaterial->SetMaterialPropertiesTable(mptLYSO);
+ 	 }
+ else if (sMaterial == "WATER")
+ 	 {
+	 DetectionMaterial = new G4Material("WATER", 1*g/cm3,2);
+	 DetectionMaterial->AddElement(nist->FindOrBuildElement("H"), 2);
+	 DetectionMaterial->AddElement(nist->FindOrBuildElement("O"), 1);
+ 	 }
+ else
+ 	 {
+	 DetectionMaterial=nist->FindOrBuildMaterial("G4_AIR");
+ 	 }
+
+
+ //G4cout<<"-------------------------------------------Detector Material "<<DetectionMaterial <<G4endl;
+
 
   G4Material *worldMat = nist->FindOrBuildMaterial("G4_AIR");
   G4MaterialPropertiesTable *mptWorld = new G4MaterialPropertiesTable();
@@ -36,13 +64,14 @@ G4VPhysicalVolume *TestDetectorConstruction::Construct()
   G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
   G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true);
 
-  G4Box *solidLYSO = new G4Box("solidLYSO", 0.4*m, 0.4*m, 0.1*m);
-  logicLYSO = new G4LogicalVolume(solidLYSO, LYSO, "logicRadiator");
-  G4VPhysicalVolume *physLYSO = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicLYSO, "physLYSO", logicWorld, false, 0, true);
+  G4Box *solidDetector = new G4Box("solidDetector", 0.4*m, 0.4*m, 0.1*m);
+  logicDetector = new G4LogicalVolume(solidDetector, DetectionMaterial, "logicRadiator");
+  G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicDetector, "physDetector", logicWorld, false, 0, true);
 
+  logicDetector->SetVisAttributes(new G4VisAttributes (G4Colour::Green()));
   /*
   G4Box *solidRadiator = new G4Box("solidRadiator", 0.4*m, 0.4*m, 0.1*m);
-  logicRadiator = new G4LogicalVolume(solidRadiator, LYSO, "logicRadiator");
+  logicRadiator = new G4LogicalVolume(solidRadiator, Detector, "logicRadiator");
   G4VPhysicalVolume *physRadiator = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicRadiator, "physRadiator", logicWorld, false, 0, true);
   */
 // fScoringVolume = logicRadiator;
@@ -73,8 +102,12 @@ void TestDetectorConstruction::ConstructSDandField()
 	G4SDManager *SDMan=G4SDManager::GetSDMpointer();
 	SDMan->AddNewDetector(sensDet);
 
-	logicLYSO->SetSensitiveDetector(sensDet);
+	logicDetector->SetSensitiveDetector(sensDet);
 
 }
 
+void TestDetectorConstruction::ChangeMaterial(G4String NewMaterial)
+{
+	sMaterial = NewMaterial;
+}
 

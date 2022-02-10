@@ -5,10 +5,13 @@
 #include "G4VisManager.hh"
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
+#include "G4SystemOfUnits.hh"
 
 #include "contruction.hh"
 #include "physics.hh"
 #include "action.hh"
+
+#include "TestDigitizer.hh"
 
 int main(int argc, char** argv)
 {
@@ -17,6 +20,7 @@ int main(int argc, char** argv)
   runManager->SetUserInitialization(new TestDetectorConstruction());
   runManager->SetUserInitialization(new TestPhysicsList());
   runManager->SetUserInitialization(new TestActionInit());
+  //runManager->SetUserInitialization(new TestDigitizer());
    runManager->Initialize();
   
    G4UIExecutive *ui = 0;// new G4UIExecutive(argc,argv);
@@ -58,7 +62,7 @@ int main(int argc, char** argv)
   UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
    */
 
-
+   TestDigitizer* digitizer = TestDigitizer::GetInstance();
 
  
   delete visManager;

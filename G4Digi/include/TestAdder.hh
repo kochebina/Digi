@@ -41,9 +41,7 @@
 #include "G4VDigitizerModule.hh"
 #include "TestDigi.hh"
 #include "globals.hh"
-//#include "g4std/vector"
 
-//class TestAdderMessenger;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -55,19 +53,12 @@ public:
   ~TestAdder();
   
   void Digitize();
- // void SetThreshold(G4double val) { Energy_Threshold = val;}
-  //void SetInputDigiCollecion(G4String name) { m_inputCollectionName=name;};
+
   
 private:
-  
- // G4String  m_inputCollectionName;
-  TestDigitsCollection*  DigitsCollection;
-  G4double Energy;
+    TestDigitsCollection*  DigitsCollection;
+    G4double Energy;
 
-  //G4double Energy_Threshold; // for TKR digi
-  //G4double TotalEnergy; // for CAL analysis
-  //G4double ACDThreshold; // for ACD analysis
-  //TestAdderMessenger* digiMessenger;
 
 };
 
