@@ -6,6 +6,7 @@
 #include "G4UImessenger.hh"
 //#include "G4UIcmdWithAString.hh"
 #include "globals.hh"
+#include "G4UIdirectory.hh"
 
 //#include "TestDetectorConstruction.hh"
 
@@ -24,7 +25,7 @@ public:
   TestDetectorConstructionMessenger(TestDetectorConstruction*);
   ~TestDetectorConstructionMessenger();
   
-  void SetNewValue(G4UIcommand*, G4String);
+  inline void SetNewValue(G4UIcommand*, G4String);
   
   //G4bool CheckNameConflict(const G4String& name); //??
 

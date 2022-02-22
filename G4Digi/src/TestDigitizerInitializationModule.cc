@@ -89,7 +89,7 @@ void TestDigitizerInitializationModule::Digitize()
 */
   G4int HCID;
   
-  HCID = DigiMan->GetHitsCollectionID("testHitCollection");
+  HCID = DigiMan->GetHitsCollectionID("SensitiveDetector");
   G4cout<<HCID<<G4endl;
   TestHitsCollection* THC = 0;
   THC = (TestHitsCollection*) (DigiMan->GetHitsCollection(HCID));

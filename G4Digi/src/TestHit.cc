@@ -18,8 +18,10 @@ TestHit::TestHit()
 {
 }
 
+
 TestHit::~TestHit()
 {
+
 }
 
 void TestHit::Draw()

@@ -8,21 +8,33 @@
 #include "G4UIdirectory.hh"
 
 
+
+
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 TestDetectorConstructionMessenger::TestDetectorConstructionMessenger (TestDetectorConstruction* det): Detector(det)
 { 
 
-	G4cout<<"TestDetectorConstructionMessenger::constructor"<<G4endl;
+	//G4cout<<"TestDetectorConstructionMessenger::constructor"<<G4endl;
 
 	Dir = new G4UIdirectory("/DetectorConstruction/");
 	Dir->SetGuidance("DetectorConstruction directory");
-
-	SetMaterialCmd = new G4UIcmdWithAString("/DetectorConstruction/insert",this);
+	/*SetMaterialCmd = new G4UIcmdWithAString("/DetectorConstruction/insert",this);
 	SetMaterialCmd->SetGuidance("Module to insert");
 	SetMaterialCmd->SetParameterName("choice",false);
 	SetMaterialCmd->AvailableForStates(G4State_PreInit);
-	G4cout<<"TestDetectorConstructionMessenger::TestDetectorConstructionMessenger"<<G4endl;
+	G4cout<< SetMaterialCmd->GetCommandPath ()<<G4endl;
+*/
+
+	G4String cmdName;
+
+	cmdName = Dir->GetCommandPath () + "insert";
+	//G4cout<< cmdName<<G4endl;
+	SetMaterialCmd = new G4UIcmdWithAString(cmdName,this);
+
+
+
 
 }
 
@@ -40,7 +52,7 @@ void TestDetectorConstructionMessenger::SetNewValue(G4UIcommand * command,G4Stri
 { 
 
 	//G4VDetectorConstructionModule* myDM=0;
-
+ //G4cout<<"!!!!!!!!!!!!!!!!! TestDetectorConstructionMessenger::SetNewValue"<<G4endl;
 	if( command == SetMaterialCmd )
 	    {
 		Detector->ChangeMaterial(newValue);
@@ -48,7 +60,7 @@ void TestDetectorConstructionMessenger::SetNewValue(G4UIcommand * command,G4Stri
 		//	  G4DigiManager::GetDMpointer()->AddNewModule(myDM);
 			//  m_DetectorConstruction->SetThreshold(DefineModuleNameCmd->GetNewStringValue(newValue));
 
-		G4cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! "<<newValue<<G4endl;
+	//	G4cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! "<<newValue<<G4endl;
 	    }
 
 }

@@ -35,14 +35,14 @@
 //
 // ************************************************************
 
-#ifndef Adder_h
-#define Adder_h 1
+#ifndef TestAdder_h
+#define TestAdder_h 1
 
 #include "G4VDigitizerModule.hh"
 #include "TestDigi.hh"
 #include "globals.hh"
 
-
+#include "TestAdderMessenger.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 class TestAdder : public G4VDigitizerModule
@@ -54,9 +54,16 @@ public:
   
   void Digitize();
 
+  void SetPolitics(G4String name){m_politics=name;}
   
 private:
-    TestDigitsCollection*  DigitsCollection;
+  G4String m_politics;
+
+  TestAdderMessenger *fMessenger;
+
+   //static TestDigitizer*  theDigitizer;
+
+   TestDigitsCollection*  DigitsCollection;
     G4double Energy;
 
 

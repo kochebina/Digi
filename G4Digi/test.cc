@@ -11,7 +11,8 @@
 #include "physics.hh"
 #include "action.hh"
 
-#include "TestDigitizer.hh"
+//#include "TestDigitizer.hh"
+//#include "TestHitAttribute.hh"
 
 int main(int argc, char** argv)
 {
@@ -22,7 +23,9 @@ int main(int argc, char** argv)
   runManager->SetUserInitialization(new TestActionInit());
   //runManager->SetUserInitialization(new TestDigitizer());
    runManager->Initialize();
-  
+
+
+
    G4UIExecutive *ui = 0;// new G4UIExecutive(argc,argv);
 
    if(argc == 1)
@@ -51,7 +54,7 @@ int main(int argc, char** argv)
        ui->SessionStart();
        
        delete ui;
-       
+       delete visManager;
      }
 
    /*
@@ -62,10 +65,11 @@ int main(int argc, char** argv)
   UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
    */
 
-   TestDigitizer* digitizer = TestDigitizer::GetInstance();
-
+  // TestDigitizer* digitizer = TestDigitizer::GetInstance();
+   //TestDigitizer* digitizer = TestDigitizer::GetInstance();
+  // digitizer->Initilize();
  
-  delete visManager;
+  
   delete runManager;
   
   return 0;

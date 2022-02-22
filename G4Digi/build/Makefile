@@ -163,6 +163,33 @@ src/TestAdder.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestAdder.cc.s
 .PHONY : src/TestAdder.cc.s
 
+src/TestAdderMessenger.o: src/TestAdderMessenger.cc.o
+
+.PHONY : src/TestAdderMessenger.o
+
+# target to build an object file
+src/TestAdderMessenger.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestAdderMessenger.cc.o
+.PHONY : src/TestAdderMessenger.cc.o
+
+src/TestAdderMessenger.i: src/TestAdderMessenger.cc.i
+
+.PHONY : src/TestAdderMessenger.i
+
+# target to preprocess a source file
+src/TestAdderMessenger.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestAdderMessenger.cc.i
+.PHONY : src/TestAdderMessenger.cc.i
+
+src/TestAdderMessenger.s: src/TestAdderMessenger.cc.s
+
+.PHONY : src/TestAdderMessenger.s
+
+# target to generate assembly for a file
+src/TestAdderMessenger.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestAdderMessenger.cc.s
+.PHONY : src/TestAdderMessenger.cc.s
+
 src/TestDigi.o: src/TestDigi.cc.o
 
 .PHONY : src/TestDigi.o
@@ -297,6 +324,60 @@ src/TestHit.s: src/TestHit.cc.s
 src/TestHit.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHit.cc.s
 .PHONY : src/TestHit.cc.s
+
+src/TestHitAttribute.o: src/TestHitAttribute.cc.o
+
+.PHONY : src/TestHitAttribute.o
+
+# target to build an object file
+src/TestHitAttribute.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHitAttribute.cc.o
+.PHONY : src/TestHitAttribute.cc.o
+
+src/TestHitAttribute.i: src/TestHitAttribute.cc.i
+
+.PHONY : src/TestHitAttribute.i
+
+# target to preprocess a source file
+src/TestHitAttribute.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHitAttribute.cc.i
+.PHONY : src/TestHitAttribute.cc.i
+
+src/TestHitAttribute.s: src/TestHitAttribute.cc.s
+
+.PHONY : src/TestHitAttribute.s
+
+# target to generate assembly for a file
+src/TestHitAttribute.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHitAttribute.cc.s
+.PHONY : src/TestHitAttribute.cc.s
+
+src/TestHitAttributeMessenger.o: src/TestHitAttributeMessenger.cc.o
+
+.PHONY : src/TestHitAttributeMessenger.o
+
+# target to build an object file
+src/TestHitAttributeMessenger.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHitAttributeMessenger.cc.o
+.PHONY : src/TestHitAttributeMessenger.cc.o
+
+src/TestHitAttributeMessenger.i: src/TestHitAttributeMessenger.cc.i
+
+.PHONY : src/TestHitAttributeMessenger.i
+
+# target to preprocess a source file
+src/TestHitAttributeMessenger.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHitAttributeMessenger.cc.i
+.PHONY : src/TestHitAttributeMessenger.cc.i
+
+src/TestHitAttributeMessenger.s: src/TestHitAttributeMessenger.cc.s
+
+.PHONY : src/TestHitAttributeMessenger.s
+
+# target to generate assembly for a file
+src/TestHitAttributeMessenger.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestHitAttributeMessenger.cc.s
+.PHONY : src/TestHitAttributeMessenger.cc.s
 
 src/TestReadout.o: src/TestReadout.cc.o
 
@@ -541,6 +622,33 @@ src/run.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/run.cc.s
 .PHONY : src/run.cc.s
 
+src/stepping.o: src/stepping.cc.o
+
+.PHONY : src/stepping.o
+
+# target to build an object file
+src/stepping.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/stepping.cc.o
+.PHONY : src/stepping.cc.o
+
+src/stepping.i: src/stepping.cc.i
+
+.PHONY : src/stepping.i
+
+# target to preprocess a source file
+src/stepping.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/stepping.cc.i
+.PHONY : src/stepping.cc.i
+
+src/stepping.s: src/stepping.cc.s
+
+.PHONY : src/stepping.s
+
+# target to generate assembly for a file
+src/stepping.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/stepping.cc.s
+.PHONY : src/stepping.cc.s
+
 test.o: test.cc.o
 
 .PHONY : test.o
@@ -581,6 +689,9 @@ help:
 	@echo "... src/TestAdder.o"
 	@echo "... src/TestAdder.i"
 	@echo "... src/TestAdder.s"
+	@echo "... src/TestAdderMessenger.o"
+	@echo "... src/TestAdderMessenger.i"
+	@echo "... src/TestAdderMessenger.s"
 	@echo "... src/TestDigi.o"
 	@echo "... src/TestDigi.i"
 	@echo "... src/TestDigi.s"
@@ -596,6 +707,12 @@ help:
 	@echo "... src/TestHit.o"
 	@echo "... src/TestHit.i"
 	@echo "... src/TestHit.s"
+	@echo "... src/TestHitAttribute.o"
+	@echo "... src/TestHitAttribute.i"
+	@echo "... src/TestHitAttribute.s"
+	@echo "... src/TestHitAttributeMessenger.o"
+	@echo "... src/TestHitAttributeMessenger.i"
+	@echo "... src/TestHitAttributeMessenger.s"
 	@echo "... src/TestReadout.o"
 	@echo "... src/TestReadout.i"
 	@echo "... src/TestReadout.s"
@@ -623,6 +740,9 @@ help:
 	@echo "... src/run.o"
 	@echo "... src/run.i"
 	@echo "... src/run.s"
+	@echo "... src/stepping.o"
+	@echo "... src/stepping.i"
+	@echo "... src/stepping.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

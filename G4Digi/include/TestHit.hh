@@ -5,6 +5,7 @@
 #include "G4THitsCollection.hh"
 #include "G4ThreeVector.hh"
 
+
 class TestHit : public G4VHit
 {
 public:
@@ -16,7 +17,6 @@ public:
 
     void Draw();
     void Print();
-
 
 
 public:
@@ -233,9 +233,9 @@ public:
      // virtual const TestHit& MergePositionEnergyWin(const TestHit* right);
 
 
-/*
-private:
-	G4double fEdep;
+
+
+/*	G4double fEdep;
 	G4double fTime;
 
 
@@ -253,6 +253,8 @@ public:
 	void SetTime(G4double time) {fTime = time;} ;
 	G4double GetTime() const {return fTime;};
 */
+
+
 
 };
 

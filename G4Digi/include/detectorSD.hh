@@ -24,7 +24,9 @@ public:
 
 private:
   TestHitsCollection*  fHitsCollection;
+  TestHitsCollection*  fHitsCollection2;
   G4int collectionID;
+  G4int collectionID2;
   
 };
 

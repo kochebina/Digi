@@ -25,104 +25,46 @@
 //
 //
 // ------------------------------------------------------------
-//      GEANT 4 class implementation file
+//      GEANT 4 class header file
 //      CERN Geneva Switzerland
 //
 //
-//      ------------ TestAdder  ------
-//           by   F.Longo, R.Giannitrapani & G.Santin (13 nov 2000)
+//      ------------ TestAdderMessenger ------
+//
+//           by F.Longo, R.Giannitrapani & G.Santin (24 oct 2001)
 //
 // ************************************************************
 
-#include <vector>
+#ifndef TestAdderMessenger_h
+#define TestAdderMessenger_h 1
 
-#include "TestAdder.hh"
-//#include "digi.hh"
-#include "TestAdderMessenger.hh"
+#include "G4UImessenger.hh"
+//#include "TestDigi.hh"
+#include "globals.hh"
 
-//#include "hit.hh"
-
-
-#include "G4SystemOfUnits.hh"
-#include "G4EventManager.hh"
-#include "G4Event.hh"
-#include "G4SDManager.hh"
-#include "G4DigiManager.hh"
-#include "G4ios.hh"
-
+class TestAdder;
+class G4UIcmdWithAString;
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-TestAdder::TestAdder(G4String name)
-  :G4VDigitizerModule(name)
+class TestAdderMessenger : public G4UImessenger
 {
-
-
-  G4String colName = "DigitsCollection";
-  collectionName.push_back(colName);
-  Energy = 0;
-
-  fMessenger = new TestAdderMessenger(this);
-
-//create a messenger for this class
-  //digiMessenger = new TestAdderMessenger(this);
-
-}
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
-
-TestAdder::~TestAdder()
-{
-  delete fMessenger;
-}
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
-
-void TestAdder::Digitize()
-{
-
-	G4cout<<"Adder::Digitize() "<< m_politics <<G4endl;
+public:
   
-	DigitsCollection = new TestDigitsCollection("TestAdder","DigitsCollection"); // to create the Digi Collection
-
-  G4DigiManager* DigiMan = G4DigiManager::GetDMpointer();
-
-
-
-  G4int HCID; // HitCollection
-
-  //HCID = DigiMan->GetDigiCollectionID("TestDigitizerInitializationModule/DigitsCollection");
-  HCID = DigiMan->GetDigiCollectionID("TestAdder/DigitsCollection");
-  G4cout<<HCID<<G4endl;
-  TestDigitsCollection* THC = 0;
-  THC = (TestDigitsCollection*) (DigiMan->GetDigiCollection(HCID-1)); //get previous collection for sequential digitizer
-
-  TestDigi* Digi = new TestDigi();
-
-  if (THC)
-     {
-	  G4int n_hit = THC->entries();
-	  Energy=0;
-	  for (G4int i=0;i<n_hit;i++)
-	  {
-
-
-		  Energy+=(*THC)[i]->m_edep;
-	  }
-	  Digi->SetEdep(Energy);
-
-	  DigitsCollection->insert(Digi);
-     }
+  TestAdderMessenger(TestAdder*);
+  ~TestAdderMessenger();
+  
+  void SetNewValue(G4UIcommand*, G4String);
 
   
-  StoreDigiCollection(DigitsCollection);
+private:
+  TestAdder* m_Adder;
+  G4UIdirectory           *Dir;
+  G4UIcmdWithAString*         SetPoliticsCmd;
 
 
-}
+};
 
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
-
-
+#endif
 
 
 

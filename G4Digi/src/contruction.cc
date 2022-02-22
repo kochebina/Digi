@@ -6,7 +6,8 @@
 TestDetectorConstruction::TestDetectorConstruction(): G4VUserDetectorConstruction(),
 fCheckOverlaps(true)
 {
-G4cout<<"TestDetectorConstruction:: constructor"<<G4endl;
+	//G4cout<<"TestDetectorConstruction:: constructor"<<G4endl;
+
 	fDetectorMessenger = new TestDetectorConstructionMessenger(this);
 	//fDetectorMessenger->
 		//Initialize variables. The following variables can be changed via the run.mac file.
@@ -64,11 +65,17 @@ G4VPhysicalVolume *TestDetectorConstruction::Construct()
   G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
   G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true);
 
-  G4Box *solidDetector = new G4Box("solidDetector", 0.4*m, 0.4*m, 0.1*m);
+  G4Box *solidDetector = new G4Box("solidDetector", 0.4*m, 0.4*m, 0.05*m);
   logicDetector = new G4LogicalVolume(solidDetector, DetectionMaterial, "logicRadiator");
   G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicDetector, "physDetector", logicWorld, false, 0, true);
 
   logicDetector->SetVisAttributes(new G4VisAttributes (G4Colour::Green()));
+
+  G4Box *solidDetector2 = new G4Box("solidDetector2", 0.4*m, 0.4*m, 0.05*m);
+  logicDetector2 = new G4LogicalVolume(solidDetector2, DetectionMaterial, "logicRadiator2");
+  G4VPhysicalVolume *physDetector2 = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.35*m), logicDetector2, "physDetector2", logicWorld, false, 0, true);
+
+
   /*
   G4Box *solidRadiator = new G4Box("solidRadiator", 0.4*m, 0.4*m, 0.1*m);
   logicRadiator = new G4LogicalVolume(solidRadiator, Detector, "logicRadiator");
@@ -98,11 +105,17 @@ G4VPhysicalVolume *TestDetectorConstruction::Construct()
 void TestDetectorConstruction::ConstructSDandField()
 {
 	TestSensitiveDetector *sensDet = new TestSensitiveDetector("SensitiveDetector");
+	TestSensitiveDetector *sensDet2 = new TestSensitiveDetector("SensitiveDetector2");
 
 	G4SDManager *SDMan=G4SDManager::GetSDMpointer();
 	SDMan->AddNewDetector(sensDet);
+	SDMan->AddNewDetector(sensDet2);
 
 	logicDetector->SetSensitiveDetector(sensDet);
+	logicDetector2->SetSensitiveDetector(sensDet2);
+
+
+
 
 }
 

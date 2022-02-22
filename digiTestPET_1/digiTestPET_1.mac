@@ -1,3 +1,4 @@
+
 #=====================================================
 # VISUALISATION
 #=====================================================
@@ -39,6 +40,11 @@
 #=====================================================
 
 
+/gate/actor/addActor SimulationStatisticActor     MyActor
+/gate/actor/MyActor/attachTo                 Detector
+/gate/actor/MyActor/save                          MyOutput.txt
+
+
 /gate/run/initialize
 
 
@@ -63,11 +69,12 @@
 /gate/output/root/setFileName             output/test_Adder
 
 /gate/output/root/setRootHitFlag         1
+/gate/output/root/setRootOpticalFlag         1
 /gate/output/root/setRootSinglesFlag      1
 /gate/output/root/setRootCoincidencesFlag 0
 #/gate/output/root/verbose 3
 
-
+#/gate/output/tree/optical/enable
 
 #=====================================================
 #  R U N Parameters 

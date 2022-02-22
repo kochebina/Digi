@@ -8,14 +8,15 @@
 //#include "TestAdder.hh"
 //#include "TestReadout.hh"
 
-TestEventAction::TestEventAction(TestRunAction*) : HitsCollectionID(-1)
+TestEventAction::TestEventAction(TestRunAction*) :
+HitsCollectionID(-1), HitsCollectionID2(-1)
 {
 
-G4cout<<"TestEventAction:: constr"<<G4endl;
+	G4cout<<"TestEventAction:: constr"<<G4endl;
 	//digitizer=new TestDigitizer();
 
-	digitizer = new TestDigitizer();
-	digitizer->Initilize();
+	//digitizer = new TestDigitizer();
+	//digitizer->Initilize();
 
 
 	/*TestDigitizerInitializationModule * myDM = new TestDigitizerInitializationModule( "TestDigitizerInitializationModule" );
@@ -32,23 +33,124 @@ G4cout<<"TestEventAction:: constr"<<G4endl;
 
 TestEventAction::~TestEventAction()
 {
-	delete digitizer;
+	//delete digitizer;
 }
 
 
 void TestEventAction::BeginOfEventAction(const G4Event* evt)
 {
-  G4SDManager * SDman = G4SDManager::GetSDMpointer();
+
+
+	G4cout<<"Begin of Event "<<evt->GetEventID () <<G4endl;
+	G4SDManager * SDman = G4SDManager::GetSDMpointer();
+
+	for (int i=0;i< SDman->GetHCtable () ->entries();i++)
+		{
+		G4cout<<"Entries "<< SDman->GetHCtable () ->GetHCname(i)<<G4endl;
+		}
 
   if ( HitsCollectionID ==-1) {
-    HitsCollectionID = SDman->GetCollectionID("testHitCollection"); //defined in constructor of SD
+    HitsCollectionID = SDman->GetCollectionID("SensitiveDetector"); //defined in constructor of SD
+
   }
+  if ( HitsCollectionID2 ==-1) {
+      HitsCollectionID2 = SDman->GetCollectionID("SensitiveDetector2"); //defined in constructor of SD
+
+    }
+
+
   
 }
 void TestEventAction::EndOfEventAction(const G4Event* evt)
 {
+	G4cout<<"End of Event "<<evt->GetEventID () <<G4endl;
 
-	digitizer->RunDigitizer();
+
+	G4cout<<"Hits Collection: "<< HitsCollectionID<< G4endl;
+	G4cout<<"Hits Collection: "<< HitsCollectionID2<< G4endl;
+
+	/*G4DigiManager* DigiMan = G4DigiManager::GetDMpointer();
+
+	G4int HCID;
+
+	HCID = DigiMan->GetHitsCollectionID("SensitiveDetector");
+	G4cout<<HCID<<G4endl;
+	TestHitsCollection* THC = 0;
+	THC = (TestHitsCollection*) (DigiMan->GetHitsCollection(HCID));
+
+	 if (THC)
+	    {
+	      G4int n_hit = THC->entries();
+
+	      for (G4int i=0;i<n_hit;i++)
+		{
+
+	    	  if((*THC)[i]->GetEdep() !=0 )
+	    	  {
+	    		 // G4cout<<"in Digitizer "<< (*THC)[i]->GetEdep()<<G4endl;
+	    		  TestDigi* Digi = new TestDigi();
+	    		  Digi->SetPDGEncoding( (*THC)[i]->GetPDGEncoding() );
+	    		  Digi->SetEdep( (*THC)[i]->m_edep );
+	    		  Digi->SetStepLength( (*THC)[i]->m_stepLength );
+	    		  Digi->SetTime( (*THC)[i]->m_time );
+	    		  Digi->SetGlobalPos( (*THC)[i]->m_pos );
+	    		  //Digi->SetLocalPos( localPosition );
+	    		  Digi->SetProcess( (*THC)[i]->m_process );
+	    		  Digi->SetTrackID( (*THC)[i]->m_trackID );
+	    		  // Seb Modif 5/4/2016
+	    		  Digi->SetTrackLength( (*THC)[i]->m_trackLength );
+	    		  Digi->SetTrackLocalTime( (*THC)[i]->m_trackLocalTime );
+	    		  Digi->SetMomentumDir( (*THC)[i]->m_momDir );
+	    		  Digi->SetParentID( (*THC)[i]->m_parentID );
+	    		  DigitsCollection->insert(Digi);
+
+	    	  }
+
+
+
+			}
+	   }
+*/
+
+
+
+
+
+
+
+	TestDigitizer* testD=TestDigitizer::GetInstance();
+	testD->RunDigitizer();
+
+
+
+
+
+/*
+
+	G4cout<<"Hits Collection: "<< HitsCollectionID<< G4endl;
+	G4cout<<"Hits Collection: "<< HitsCollectionID2<< G4endl;
+
+
+	G4HCofThisEvent* HCE = evt->GetHCofThisEvent();
+	G4cout<<HCE->GetCapacity ()<< G4endl;
+	//G4cout<<"Hits Collection: "<< HCE->GetHC(0)->GetName()<< G4endl;
+	//G4cout<<"Hits Collection: "<< HCE->GetHC(1)->GetName()<< G4endl;
+
+	TestHitsCollection* THC = static_cast<TestHitsCollection*>(HCE->GetHC(HitsCollectionID));
+
+
+
+
+	G4cout<<"Hits Collection: "<< THC->GetName ()<< G4endl;
+
+	TestHitsCollection* THC2 = static_cast<TestHitsCollection*>(HCE->GetHC(HitsCollectionID2));
+	G4cout<<"Hits Collection2: "<< THC2->GetName ()<< G4endl;
+
+/*digitizer->RunDigitizer();
+
+	TestDigitizer* testD=TestDigitizer::GetInstance();
+	testD->RunDigitizer();
+*/
 
   //	G4cout<<" TestEventAction::EndOfEventAction"<<G4endl;
 /*
@@ -62,39 +164,7 @@ void TestEventAction::EndOfEventAction(const G4Event* evt)
 
 
 
-	 G4cout<<"Hits Collection: "<< HCE->GetHC(HitsCollectionID)->GetName()<< G4endl;
-
-	 TestHitsCollection* THC = 0;//(TestHitsCollection*)(HCE->GetHC(HitsCollectionID));;
-
-
-	 if (HCE)
-	 {
-		 THC = (TestHitsCollection*)(HCE->GetHC(HitsCollectionID));
-		 //G4cout<<"entries "<< THC->entries ()<< G4endl;
-
-		 if (THC)
-		 {
-		G4cout<<"Hits "<< THC->entries ()<< G4endl;
-		   int n_hit = THC->entries();
-			 G4double Edep=0;
-			 G4double TotEdep=0;
-
-			 // This is a cycle on all the hits of this event
-
-			 for (int i=0;i<n_hit;i++)
-			 {
-				 G4cout<<(*THC)[i]->GetEdep()<< G4endl;
-				 Edep = (*THC)[i]->GetEdep();
-				// TotEdep += Edep;
-			 }
-
-			/* G4AnalysisManager *man = G4AnalysisManager::Instance();
-			 man ->FillNtupleIColumn(1,0,event_id);
-			 man ->FillNtupleDColumn(1,1,TotEdep);
-
-			 man->AddNtupleRow(1);
-			 */
-/*		 }
+	 G4cout<<"Hits Collection: "<< HCE
 */ //}
 
 	 ////////////////////////////

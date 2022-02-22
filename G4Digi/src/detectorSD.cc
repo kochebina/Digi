@@ -3,11 +3,22 @@
 
 TestSensitiveDetector::TestSensitiveDetector(G4String name) : G4VSensitiveDetector(name)
 {
-	collectionName.insert("testHitCollection");
+	collectionName.insert(name);
+	//collectionName.insert("testHitCollection2");
 	collectionID = -1;
-
+	collectionID2 = -1;
 
 }
+
+/*TestSensitiveDetector::TestSensitiveDetector(G4String name, G4int ID)
+{
+	collectionName.insert(name);
+	//collectionName.insert("testHitCollection2");
+	collectionID = -1;
+	collectionID2 = -1;
+
+}
+*/
 
 TestSensitiveDetector::~TestSensitiveDetector()
 {
@@ -22,8 +33,22 @@ TestSensitiveDetector::~TestSensitiveDetector()
 
 void TestSensitiveDetector::Initialize(G4HCofThisEvent* HCE)
 {
-  
-	fHitsCollection = new TestHitsCollection(SensitiveDetectorName,collectionName[0]);
+
+	G4SDManager *SDMan=G4SDManager::GetSDMpointer();
+
+	//G4cout<<"SD init"<<SDMan->FindSensitiveDetector ("", G4bool warning=true)  <<G4endl;
+
+	//G4cout<<"TestSensitiveDetector collectionName size "<<collectionName.size() <<G4endl;
+
+	if(collectionID==-1)
+	{
+		fHitsCollection = new TestHitsCollection("SensitiveDetector",collectionName[0]);
+	}
+
+	if(collectionID2==-1)
+		{
+			fHitsCollection2 = new TestHitsCollection("SensitiveDetector2",collectionName[0]);
+		}
 
 	if (collectionID > 0)
 	{
@@ -32,18 +57,29 @@ void TestSensitiveDetector::Initialize(G4HCofThisEvent* HCE)
 
 	HCE->AddHitsCollection(collectionID, fHitsCollection);
 
-	
+	//G4cout<<collectionName[0]<<" "<<collectionName[1]<<G4endl;
+
+	//fHitsCollection2 = new TestHitsCollection("SensitiveDetector2",collectionName[1]);
+
+		if (collectionID2 > 0)
+		{
+			collectionID2 = G4SDManager::GetSDMpointer()->GetCollectionID(fHitsCollection2);
+		}
+
+	HCE->AddHitsCollection(collectionID2, fHitsCollection2);
+
+	//G4cout<<"SD init fin"<<G4endl;
+
+
 }
+
+
+
 
 G4bool TestSensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROHits)
 {
 
-	//G4cout<<"Lets process hits !!!!!!!!!!!!!!!!!!!!! "<<G4endl;
-
-	//G4double edep = aStep->GetTotalEnergyDeposit();
-	
-
-//	if (edep == 0.) return false;
+	G4cout<<"SD Process Hits"<<G4endl;
 
 	G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
 	G4StepPoint *postStepPoint = aStep->GetPostStepPoint();
@@ -147,7 +183,6 @@ G4bool TestSensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROH
 	  // deposit energy in the current step
 	  G4double edep = aStep->GetTotalEnergyDeposit();
 
-	 //  G4double E;
 
 	  // stepLength of the current step
 	  G4double stepLength = aStep->GetStepLength();
@@ -189,7 +224,12 @@ G4bool TestSensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROH
 
 	  // Insert the new hit into the hit collection
 	  fHitsCollection->insert( aHit );
-	///do something with hit here
+
+
+
+
+
+	  ///do something with hit here
 
 	/*TestHit* aHit = new TestHit();
 	aHit->SetEdep(edep);
@@ -208,7 +248,7 @@ G4bool TestSensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROH
 	man->FillNtupleDColumn(0, 2, time);
 
 	man->AddNtupleRow(0);
-*/
+
 
 
    /* G4Track *track = aStep->GetTrack();
@@ -258,7 +298,10 @@ void TestSensitiveDetector::EndOfEvent(G4HCofThisEvent* HCE)
 	    }
 	  HCE->AddHitsCollection(HCID,fHitsCollection); //to use later in EndEventAction
 
-	
+	  //G4SDManager *SDMan=G4SDManager::GetSDMpointer();
+	  //G4cout<<"!!!!!!!!!!!!!!! "<<SDMan->GetCollectionCapacity () <<G4endl;
+	 // SDMan->ListTree ();
+
 
 }
 

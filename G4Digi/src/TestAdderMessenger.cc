@@ -29,100 +29,86 @@
 //      CERN Geneva Switzerland
 //
 //
-//      ------------ TestReadout  ------
+//      ------------ TestAdder  ------
 //           by   F.Longo, R.Giannitrapani & G.Santin (13 nov 2000)
 //
 // ************************************************************
 
-#include <vector>
-
-#include "TestReadout.hh"
-#include "TestDigi.hh"
-//#include "ReadoutMessenger.hh"
+#include "TestAdderMessenger.hh"
+#include "TestAdder.hh"
 
 
 #include "G4SystemOfUnits.hh"
-#include "G4EventManager.hh"
-#include "G4Event.hh"
-#include "G4SDManager.hh"
-#include "G4DigiManager.hh"
-#include "G4ios.hh"
+#include "G4UIcmdWithAString.hh"
+#include "G4UIdirectory.hh"
+
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-TestReadout::TestReadout(G4String name)
-  :G4VDigitizerModule(name)
+TestAdderMessenger::TestAdderMessenger (TestAdder* adder): m_Adder(adder)
 {
 
+	G4cout<<"TestAdderMessenger::constructor"<<G4endl;
+	Dir = new G4UIdirectory("/digitizer/adder/");
+	Dir->SetGuidance("Digitizer directory");
 
-  G4String colName = "DigitsCollection";
-  collectionName.push_back(colName);
-  Energy = 0;
+	/*SetModuleNameCmd = new G4UIcmdWithAString("/digitizer/insert",this);
+	SetModuleNameCmd->SetGuidance("Module to insert");
+	SetModuleNameCmd->SetParameterName("choice",false);
+	SetModuleNameCmd->AvailableForStates(G4State_PreInit);
+	G4cout<<"TestAdderMessenger::TestAdderMessenger"<<G4endl;
+	*/
+	G4String cmdName;
 
-//create a messenger for this class
-  //digiMessenger = new TestReadoutMessenger(this);
+	cmdName = Dir->GetCommandPath () + "politics";
+	SetPoliticsCmd = new G4UIcmdWithAString(cmdName,this);
+
+
 
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-TestReadout::~TestReadout()
+TestAdderMessenger::~TestAdderMessenger()
 {
- // delete digiMessenger;
+	delete Dir;
+	delete SetPoliticsCmd;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
-void TestReadout::Digitize()
+void TestAdderMessenger::SetNewValue(G4UIcommand * command,G4String newValue)
 {
+G4cout<<"TestAdderMessenger::SetNewValue"<<G4endl;
+	//G4VDigitizerModule* myDM=0;
+	//G4DigiManager * fDM = G4DigiManager::GetDMpointer();
 
-	G4cout<<"Readout::Digitize()"<<G4endl;
-  DigitsCollection = new TestDigitsCollection("TestReadout","DigitsCollection"); // to create the Digi Collection
-  
-  G4DigiManager* DigiMan = G4DigiManager::GetDMpointer();
-  /*TestDigiManager* DigiMan = 0;
+	if( command == SetPoliticsCmd )
+	    {
+		m_Adder->SetPolitics(newValue);
+		/*if(newValue=="adder")
+			{
+			TestAdder * myAdder = new TestAdder( "TestAdder" );
+			G4DigiManager::GetDMpointer()->AddNewModule(myAdder);
 
-   DigiMan = (TestDigiManager*)(DigiMan->GetDMpointer());
+
+			}
+		//
+		else if (newValue=="readout")
+			{
+			TestReadout * myReadout = new TestReadout( "TestReadout" );
+			G4DigiManager::GetDMpointer()->AddNewModule(myReadout);
+
+			}
 */
-
-  //DigiMan->List();
-
-  G4int HCID; // HitCollection
-
- // G4cout<<"From HitsCollection"<<G4endl;
-//  HCID = DigiMan->GetHitsCollectionID("testHitCollection");
-  HCID = DigiMan->GetDigiCollectionID("TestReadout/DigitsCollection");
-  G4cout<<HCID<<G4endl;
-
-  TestDigitsCollection* THC = 0;
-  THC = (TestDigitsCollection*) (DigiMan->GetDigiCollection(HCID-1));
-
-  G4cout<<THC->entries()<<G4endl;
-
-	TestDigi* Digi = new TestDigi();
-
-  if (THC)
-     {
-	  G4int n_hit = THC->entries();
-	  for (G4int i=0;i<n_hit;i++)
-	  {
-
-
-		  Energy=(*THC)[i]->m_edep*10;
-	  }
-	  Digi->SetEdep(Energy);
-
-	  DigitsCollection->insert(Digi);
-     }
-
-  
-  StoreDigiCollection(DigitsCollection);
+	    }
+//	fDM->List();
 
 }
 
-
-
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+
 
 
 

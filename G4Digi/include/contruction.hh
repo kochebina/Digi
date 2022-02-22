@@ -23,7 +23,8 @@ public:
   TestDetectorConstruction();
   virtual ~TestDetectorConstruction();
 
- // G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;}
+  G4LogicalVolume *GetSDVolume() const {return logicDetector;}
+  G4LogicalVolume *GetSDVolume2() const {return logicDetector2;}
 
   virtual G4VPhysicalVolume *Construct();
   void ChangeMaterial(G4String choice);
@@ -36,6 +37,7 @@ private:
 	G4String sMaterial;
 
   G4LogicalVolume *logicDetector;
+  G4LogicalVolume *logicDetector2;
   virtual void ConstructSDandField();
 
   //G4LogicalVolume *fScoringVolume;

@@ -39,12 +39,14 @@
 
 #include "TestDigitizerMessenger.hh"
 #include "TestDigitizer.hh"
+#include "TestAdder.hh"
+#include "TestReadout.hh"
 
 #include "G4SystemOfUnits.hh"
 #include "G4UIcmdWithAString.hh"
 #include "G4UIdirectory.hh"
 
-
+#include "G4DigiManager.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
 TestDigitizerMessenger::TestDigitizerMessenger (TestDigitizer* digitizer): m_digitizer(digitizer)
@@ -54,11 +56,18 @@ TestDigitizerMessenger::TestDigitizerMessenger (TestDigitizer* digitizer): m_dig
 	Dir = new G4UIdirectory("/digitizer/");
 	Dir->SetGuidance("Digitizer directory");
 
-	SetModuleNameCmd = new G4UIcmdWithAString("/digitizer/insert",this);
+	/*SetModuleNameCmd = new G4UIcmdWithAString("/digitizer/insert",this);
 	SetModuleNameCmd->SetGuidance("Module to insert");
 	SetModuleNameCmd->SetParameterName("choice",false);
 	SetModuleNameCmd->AvailableForStates(G4State_PreInit);
 	G4cout<<"TestDigitizerMessenger::TestDigitizerMessenger"<<G4endl;
+	*/
+	G4String cmdName;
+
+	cmdName = Dir->GetCommandPath () + "insert";
+	SetModuleNameCmd = new G4UIcmdWithAString(cmdName,this);
+
+
 
 }
 
@@ -74,18 +83,29 @@ TestDigitizerMessenger::~TestDigitizerMessenger()
 
 void TestDigitizerMessenger::SetNewValue(G4UIcommand * command,G4String newValue)
 { 
-
+G4cout<<"TestDigitizerMessenger::SetNewValue"<<G4endl;
 	//G4VDigitizerModule* myDM=0;
+	G4DigiManager * fDM = G4DigiManager::GetDMpointer();
 
 	if( command == SetModuleNameCmd )
 	    {
+		if(newValue=="adder")
+			{
+			TestAdder * myAdder = new TestAdder( "TestAdder" );
+			G4DigiManager::GetDMpointer()->AddNewModule(myAdder);
 
-		//myDM = new TestDigitizerInitializationModule( "TestDigitizerInitializationModule" );
-		//	  G4DigiManager::GetDMpointer()->AddNewModule(myDM);
-			//  m_digitizer->SetThreshold(DefineModuleNameCmd->GetNewStringValue(newValue));
 
-		G4cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! "<<newValue<<G4endl;
+			}
+		//
+		else if (newValue=="readout")
+			{
+			TestReadout * myReadout = new TestReadout( "TestReadout" );
+			G4DigiManager::GetDMpointer()->AddNewModule(myReadout);
+
+			}
+
 	    }
+	fDM->List();
 
 }
 
