@@ -28,12 +28,12 @@ void TestSteppingAction::UserSteppingAction(const G4Step* step)
 	//fEventAction-> ..
 	G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
 
-		G4AnalysisManager *man = G4AnalysisManager::Instance();
+	/*	G4AnalysisManager *man = G4AnalysisManager::Instance();
 		man->FillNtupleIColumn(0, 0, evt);
 		man->FillNtupleDColumn(0, 1, edep);
 		man->FillNtupleDColumn(0, 2, time);
 
 		man->AddNtupleRow(0);
-
+*/
 
 }

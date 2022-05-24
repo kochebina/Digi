@@ -1,12 +1,19 @@
 #include "detectorSD.hh"
+#include "contruction.hh"
 
+#include <typeinfo>
+
+#include "G4AttDefStore.hh"
+
+const G4String TestSensitiveDetector::theCrystalCollectionName = "CrystalSD";
 
 TestSensitiveDetector::TestSensitiveDetector(G4String name) : G4VSensitiveDetector(name)
 {
 	collectionName.insert(name);
 	//collectionName.insert("testHitCollection2");
 	collectionID = -1;
-	collectionID2 = -1;
+	//collectionID2 = -1;
+	fHitAttribute= new TestHitAttribute();
 
 }
 
@@ -22,7 +29,7 @@ TestSensitiveDetector::TestSensitiveDetector(G4String name) : G4VSensitiveDetect
 
 TestSensitiveDetector::~TestSensitiveDetector()
 {
-
+	delete fHitAttribute;
 }
 
 /*void TestSensitiveDetector::TestSensitiveDetector(const G4String& name, const G4String& hitsCollectionName) : G4VSensitiveDetector(name), fHitsCollection(0)
@@ -34,7 +41,7 @@ TestSensitiveDetector::~TestSensitiveDetector()
 void TestSensitiveDetector::Initialize(G4HCofThisEvent* HCE)
 {
 
-	G4SDManager *SDMan=G4SDManager::GetSDMpointer();
+	G4SDManager *SDMan=G4SDManager::GetSDMpointer();//comment?
 
 	//G4cout<<"SD init"<<SDMan->FindSensitiveDetector ("", G4bool warning=true)  <<G4endl;
 
@@ -42,14 +49,15 @@ void TestSensitiveDetector::Initialize(G4HCofThisEvent* HCE)
 
 	if(collectionID==-1)
 	{
-		fHitsCollection = new TestHitsCollection("SensitiveDetector",collectionName[0]);
+		fHitsCollection = new TestHitsCollection(theCrystalCollectionName,collectionName[0]);
 	}
+	//G4cout<<"TestSensitiveDetector collectionName[0] "<<collectionName[0]<<" "<< collectionID<<G4endl;
 
-	if(collectionID2==-1)
+	/*if(collectionID2==-1)
 		{
 			fHitsCollection2 = new TestHitsCollection("SensitiveDetector2",collectionName[0]);
 		}
-
+*/
 	if (collectionID > 0)
 	{
 		collectionID = G4SDManager::GetSDMpointer()->GetCollectionID(fHitsCollection);
@@ -61,16 +69,16 @@ void TestSensitiveDetector::Initialize(G4HCofThisEvent* HCE)
 
 	//fHitsCollection2 = new TestHitsCollection("SensitiveDetector2",collectionName[1]);
 
-		if (collectionID2 > 0)
+	/*	if (collectionID2 > 0)
 		{
 			collectionID2 = G4SDManager::GetSDMpointer()->GetCollectionID(fHitsCollection2);
 		}
 
 	HCE->AddHitsCollection(collectionID2, fHitsCollection2);
-
+	 */
 	//G4cout<<"SD init fin"<<G4endl;
 
-
+	//fHitAttribute->IntilizeAllAttributesMaps();
 }
 
 
@@ -223,10 +231,109 @@ G4bool TestSensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROH
 	 // aHit->SetOutputVolumeID(outputVolumeIDGND);
 
 	  // Insert the new hit into the hit collection
-	  fHitsCollection->insert( aHit );
+
+
+	  G4LogicalVolume *volume = aStep->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
+
+	  const TestDetectorConstruction *detectorConstruction = static_cast<const TestDetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
+
+	  G4LogicalVolume *fLogVolume= detectorConstruction->GetSDVolume();
+
+	  G4LogicalVolume *fLogVolume2= detectorConstruction->GetSDVolume2();
+
+	  G4AnalysisManager *man = G4AnalysisManager::Instance();
+
+
+	  if(volume->GetName()  == fLogVolume->GetName() )
+	  {
+		  fHitsCollection->insert( aHit );
+		  //fill SDname
+		  man->FillNtupleSColumn(0, 0, fHitsCollection->GetSDname ());
+		  // G4cout<<fHitsCollection->GetSDname ()<<G4endl;
+	  }
+	  G4cout<<"HC "<<fHitsCollection->entries()<<G4endl;
+
+
+	  if(volume->GetName()  == fLogVolume2->GetName() )
+	  {
+		  fHitsCollection2->insert( aHit );
+		  //fill SDname
+		  man->FillNtupleSColumn(0, 0, fHitsCollection2->GetSDname ());
+		  //G4cout<<fHitsCollection2->GetSDname ()<<G4endl;
+	  }
+
+	  G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+	  //evt->GetPrimaryVertex(0)->GetT0();
+
+	  man->FillNtupleIColumn(0, 1, evt);
+
+	  	  TestHitAttribute* testHA=TestHitAttribute::GetInstance();
+
+	  //	if (m1.contains(key)) {
+
+	  	 //G4cout<<testHA->fHitAttributeVector.size() <<G4endl;
+
+	  	 /* std::cout << "mymap contains:\n";
+	  	  for (it=mymap.begin(); it!=mymap.end(); ++it)
+	  	    std::cout << it->first << " => " << it->second << '\n';
+*/
+	  	 G4int k=2;
+	  	G4cout<<"Hits energy and time " <<aHit->GetEdep()<<" "<<aHit->GetTime()<<G4endl;
+	  	// G4cout<< testHA->fHitAttributeVector.size()<<" "<<testHA->mapHitAttributesD.size()<<G4endl;
+
+
+	  	for(unsigned int i=0;i< testHA->fHitAttributeVector.size() ;i++)
+	  	{
+
+	  		for(unsigned int j=0;j< testHA->mapHitAttributesD.size() ;j++)
+	  		  		  		  	{
+
+	  			if (testHA->mapHitAttributesD[j].first == testHA->fHitAttributeVector[i].first)
+	  			{
+	  				//	G4cout<<testHA->mapHitAttributesD[j].first<< " "<< *(testHA->mapHitAttributesD[j].second)<<" "<<i<<" "<<j <<G4endl;
+
+	  				man->FillNtupleDColumn(0, k, *(testHA->mapHitAttributesD[j].second));
+	  				k++;
+	  			}
+	  		  }
+/*
+	  		G4String attName=att->fHitAttributeVector[i].first;
+	  		char attType=att->fHitAttributeVector[i].second;
+
+	  		G4cout<<attName<<" "<< attType<<G4endl;
+
+	  		if (attType=='I')
+	  			man->CreateNtupleIColumn(attName);
+	  		if (attType=='D')
+	  			man->CreateNtupleDColumn(attName);
+	  		if (attType=='S')
+	  			man->CreateNtupleSColumn(attName);
+
+*/
+	  	}
+
+	 //man->FillNtupleDColumn(0, 2, aTime);
+	  //loop over attributes
+	  //PRINTER(aHit->GetEdep());
+	  //std::cout <<" "<< aHit->GetEdep()<<" "<<typeid(aHit->GetEdep()).name() << '\n';
+
+	 // man->FillNtuple(name,value);
+
+
+	  man->AddNtupleRow(0);
 
 
 
+
+	//  G4String SDName=fHitsCollection->GetSDname ();
+	 // G4cout<< SDName<<G4endl;
+
+
+
+	//  man->FillNtupleIColumn(0, 0, evt);
+
+
+	  //fRoot->FillNTuple();
 
 
 	  ///do something with hit here
@@ -282,6 +389,7 @@ G4bool TestSensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROH
 	man->FillNtupleDColumn(0, 2,posDetector[1]);
 	man->FillNtupleDColumn(0, 3,posDetector[2]);
 */
+    testHA->mapHitAttributesD.clear();
 
 	return true; //added by me
 }
@@ -289,14 +397,27 @@ G4bool TestSensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROH
 void TestSensitiveDetector::EndOfEvent(G4HCofThisEvent* HCE)
 {
 
-	//G4cout<<" TestSensitiveDetector::EndOfEvent"<<G4endl;
+	G4cout<<" TestSensitiveDetector::EndOfEvent"<<G4endl;
 
-	static G4int HCID = -1;
-	  if(HCID<0)
+	static G4int HCID1 = -1;
+	  if(HCID1<0)
 	    {
-	      HCID = G4SDManager::GetSDMpointer()->GetCollectionID(collectionName[0]);
+	      HCID1 = G4SDManager::GetSDMpointer()->GetCollectionID(theCrystalCollectionName);
 	    }
-	  HCE->AddHitsCollection(HCID,fHitsCollection); //to use later in EndEventAction
+
+	/*  static G4int HCID2 = -1;
+	  	  if(HCID2<0)
+	  	    {
+	  	      HCID2 = G4SDManager::GetSDMpointer()->GetCollectionID("SensitiveDetector2");
+	  	    }
+*/
+
+
+	  G4cout<<"HCID1 "<< HCID1<<G4endl;
+	  HCE->AddHitsCollection(HCID1,fHitsCollection); //to use later in EndEventAction
+
+	 // G4cout<<"HCID2 "<< HCID2<<G4endl;
+	 // HCE->AddHitsCollection(HCID2,fHitsCollection2); //to use later in EndEventAction
 
 	  //G4SDManager *SDMan=G4SDManager::GetSDMpointer();
 	  //G4cout<<"!!!!!!!!!!!!!!! "<<SDMan->GetCollectionCapacity () <<G4endl;

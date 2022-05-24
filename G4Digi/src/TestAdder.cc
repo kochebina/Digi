@@ -92,7 +92,7 @@ void TestAdder::Digitize()
 
   //HCID = DigiMan->GetDigiCollectionID("TestDigitizerInitializationModule/DigitsCollection");
   HCID = DigiMan->GetDigiCollectionID("TestAdder/DigitsCollection");
-  G4cout<<HCID<<G4endl;
+ // G4cout<<HCID<<G4endl;
   TestDigitsCollection* THC = 0;
   THC = (TestDigitsCollection*) (DigiMan->GetDigiCollection(HCID-1)); //get previous collection for sequential digitizer
 
@@ -101,20 +101,32 @@ void TestAdder::Digitize()
   if (THC)
      {
 	  G4int n_hit = THC->entries();
+	  G4cout<<"Adder ** "<<n_hit<<G4endl;
 	  Energy=0;
 	  for (G4int i=0;i<n_hit;i++)
 	  {
-
-
 		  Energy+=(*THC)[i]->m_edep;
-	  }
-	  Digi->SetEdep(Energy);
+		  G4cout<<"* "<<(*THC)[i]->m_edep<<G4endl;
 
+	  }
+	  G4cout<<Energy<<G4endl;
+	  Digi->SetEdep(Energy);
+	  G4cout<<"Energy = "<< Digi->GetEdep()<<G4endl;
 	  DigitsCollection->insert(Digi);
      }
 
-  
+  G4cout<<"Adder size "<<  DigitsCollection->GetName()<<" "<< DigitsCollection->entries()<<G4endl;
   StoreDigiCollection(DigitsCollection);
+
+
+
+  G4int DCID = -1;
+  if(DCID<0)
+    {
+      //	  DigiMan->List();
+      DCID = DigiMan->GetDigiCollectionID("TestAdder/DigitsCollection");
+    }
+  G4cout<<"TestAdder "<< DCID<<G4endl;
 
 
 }

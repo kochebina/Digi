@@ -286,7 +286,7 @@ void runAnalysis(){
 	     float winnerZ[v_uniqueblockID.size()];
 
 	     //float winnerXi[v_uniqueblockID.size()];
-	     //float winnerYi[v_uniqueblockID.size()];
+ema	     //float winnerYi[v_uniqueblockID.size()];
 	     //float winnerZi[v_uniqueblockID.size()];
 	     
 	     for (int k=0; k<v_uniqueblockID.size();k++)
@@ -346,13 +346,13 @@ void runAnalysis(){
 			 winnerZ[k]=winnerZ[k]/totEdep[k]; 
 			 */
 		    
-		       }
+		       } //if
 		     //cout<<"Winner "<< v_blockID[k]<<" "<< totEdep[k]<<" "<<winnerX[k] <<" "<<winnerY[k]<<" "<< winnerZ[k]<<endl;
 
 		     
-		   }
+		   } //for k
 		 
-	       }
+	       }// for j
 		 
 	     for (int k=0; k<v_uniqueblockID.size();k++)
 	       {

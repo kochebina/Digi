@@ -1,6 +1,8 @@
 #include "G4DigiManager.hh"
 #include "G4SDManager.hh"
 
+#include "detectorSD.hh"
+
 #include "event.hh"
 #include "TestHit.hh"
 #include "TestDigi.hh"
@@ -44,13 +46,14 @@ void TestEventAction::BeginOfEventAction(const G4Event* evt)
 	G4cout<<"Begin of Event "<<evt->GetEventID () <<G4endl;
 	G4SDManager * SDman = G4SDManager::GetSDMpointer();
 
-	for (int i=0;i< SDman->GetHCtable () ->entries();i++)
+	/*for (int i=0;i< SDman->GetHCtable () ->entries();i++)
 		{
 		G4cout<<"Entries "<< SDman->GetHCtable () ->GetHCname(i)<<G4endl;
 		}
-
+*/
   if ( HitsCollectionID ==-1) {
-    HitsCollectionID = SDman->GetCollectionID("SensitiveDetector"); //defined in constructor of SD
+
+    HitsCollectionID = SDman->GetCollectionID(TestSensitiveDetector::GetCrystalCollectionName());// "SensitiveDetector"); //defined in constructor of SD
 
   }
   if ( HitsCollectionID2 ==-1) {
@@ -58,16 +61,19 @@ void TestEventAction::BeginOfEventAction(const G4Event* evt)
 
     }
 
+  G4cout<<"HitsCollectionID = "<<HitsCollectionID<<G4endl;
 
-  
+
 }
 void TestEventAction::EndOfEventAction(const G4Event* evt)
 {
 	G4cout<<"End of Event "<<evt->GetEventID () <<G4endl;
 
+	  //G4AnalysisManager *man = G4AnalysisManager::Instance();
+	  //man->FillNtupleIColumn(0, 1, evt->GetEventID ());
 
-	G4cout<<"Hits Collection: "<< HitsCollectionID<< G4endl;
-	G4cout<<"Hits Collection: "<< HitsCollectionID2<< G4endl;
+	//G4cout<<"Hits Collection: "<< HitsCollectionID<< G4endl;
+	//G4cout<<"Hits Collection: "<< HitsCollectionID2<< G4endl;
 
 	/*G4DigiManager* DigiMan = G4DigiManager::GetDMpointer();
 

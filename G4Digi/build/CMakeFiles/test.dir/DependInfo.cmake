@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kochebina/InProgress/Digi/G4Digi/src/TestHitAttribute.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestHitAttribute.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/TestHitAttributeMessenger.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestHitAttributeMessenger.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/TestReadout.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestReadout.cc.o"
+  "/home/kochebina/InProgress/Digi/G4Digi/src/TestRoot.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/TestRoot.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/action.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/action.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/constructionMessenger.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/constructionMessenger.cc.o"
   "/home/kochebina/InProgress/Digi/G4Digi/src/contruction.cc" "/home/kochebina/InProgress/Digi/G4Digi/build/CMakeFiles/test.dir/src/contruction.cc.o"
@@ -30,13 +31,11 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "G4INTY_USE_QT"
-  "G4INTY_USE_XT"
   "G4LIB_BUILD_DLL"
   "G4UI_USE_QT"
   "G4UI_USE_TCSH"
   "G4VIS_USE_OPENGL"
   "G4VIS_USE_OPENGLQT"
-  "G4VIS_USE_OPENGLX"
   "QT_CORE_LIB"
   "QT_GUI_LIB"
   "QT_NO_DEBUG"

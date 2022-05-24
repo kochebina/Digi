@@ -38,6 +38,7 @@
 
 #include "TestDigitizerInitializationModule.hh"
 #include "TestDigi.hh"
+#include "detectorSD.hh"
 //#include "digitizerMessenger.hh"
 
 #include "TestHit.hh"
@@ -89,7 +90,9 @@ void TestDigitizerInitializationModule::Digitize()
 */
   G4int HCID;
   
-  HCID = DigiMan->GetHitsCollectionID("SensitiveDetector");
+  //"SensitiveDetector"
+
+  HCID = DigiMan->GetHitsCollectionID("CrystalSD");
   G4cout<<HCID<<G4endl;
   TestHitsCollection* THC = 0;
   THC = (TestHitsCollection*) (DigiMan->GetHitsCollection(HCID));
@@ -99,6 +102,7 @@ void TestDigitizerInitializationModule::Digitize()
   if (THC)
     {
       G4int n_hit = THC->entries();
+	  G4cout<<"Init ** "<<n_hit<<G4endl;
 
       for (G4int i=0;i<n_hit;i++)
 	{
@@ -131,14 +135,13 @@ void TestDigitizerInitializationModule::Digitize()
 
   StoreDigiCollection(DigitsCollection);
   
-  /*G4int DCID = -1;
+  G4int DCID = -1;
   if(DCID<0)
     { 
       //	  DigiMan->List();
       DCID = DigiMan->GetDigiCollectionID("TestDigitizerInitializationModule/DigitsCollection");
     }
-  */
-  
+  G4cout<<"TestDigitizerInitializationModule "<< DCID<<G4endl;
 }
 
 

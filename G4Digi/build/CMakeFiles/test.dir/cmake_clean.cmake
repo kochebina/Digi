@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/TestHitAttribute.cc.o"
   "CMakeFiles/test.dir/src/TestHitAttributeMessenger.cc.o"
   "CMakeFiles/test.dir/src/TestReadout.cc.o"
+  "CMakeFiles/test.dir/src/TestRoot.cc.o"
   "CMakeFiles/test.dir/src/action.cc.o"
   "CMakeFiles/test.dir/src/constructionMessenger.cc.o"
   "CMakeFiles/test.dir/src/contruction.cc.o"

@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/kochebina/Applications/Geant4/geant4.10.07.p02-install/lib/Geant4-10.7.2/G4EXPATShim.cmake"
-  "/home/kochebina/Applications/Geant4/geant4.10.07.p02-install/lib/Geant4-10.7.2/G4X11Shim.cmake"
   "/home/kochebina/Applications/Geant4/geant4.10.07.p02-install/lib/Geant4-10.7.2/Geant4Config.cmake"
   "/home/kochebina/Applications/Geant4/geant4.10.07.p02-install/lib/Geant4-10.7.2/Geant4ConfigVersion.cmake"
   "/home/kochebina/Applications/Geant4/geant4.10.07.p02-install/lib/Geant4-10.7.2/Geant4LibraryDepends-release.cmake"
@@ -83,7 +82,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake"
-  "/usr/share/cmake-3.16/Modules/CheckFunctionExists.cmake"
   "/usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake"
   "/usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake"
   "/usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
@@ -91,21 +89,17 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.16/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake-3.16/Modules/FindEXPAT.cmake"
-  "/usr/share/cmake-3.16/Modules/FindFontconfig.cmake"
-  "/usr/share/cmake-3.16/Modules/FindFreetype.cmake"
   "/usr/share/cmake-3.16/Modules/FindOpenGL.cmake"
   "/usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.16/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.16/Modules/FindPkgConfig.cmake"
   "/usr/share/cmake-3.16/Modules/FindThreads.cmake"
-  "/usr/share/cmake-3.16/Modules/FindX11.cmake"
   "/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake"
-  "/usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake"
   )
 
 # The corresponding makefile is:

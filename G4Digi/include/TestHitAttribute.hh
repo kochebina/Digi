@@ -8,26 +8,39 @@ class TestHitAttributeMessenger;
 
 class TestHitAttribute
 {
-//public:
-//	static TestHitAttribute* GetInstance();
-
 public:
+	static TestHitAttribute* GetInstance();
+
+//protected:
 	TestHitAttribute();
+public:
 	~TestHitAttribute();
 
     void SetInputAttributeFile(G4String name){fInputAttributeFile=name;};
 
     void ReadFile();
 
+    void IntilizeAllAttributesMaps();
+
+    std::vector<std::pair<G4String,char>> GetHitAttributeVector(){ return fHitAttributeVector;};
+
+    void AddToMapI(G4String, G4int*);
+    void AddToMapD(G4String, G4double*);
+    void AddToMapS(G4String, G4String*);
+
 
 private:
 
      G4String fInputAttributeFile;
      TestHitAttributeMessenger *fMessenger;
+     static TestHitAttribute*  theHitAttribute;
 public:
-     std::vector<G4String> fHitAttributeVector;
-
-
+     std::vector<std::pair<G4String,char>> fHitAttributeVector;
+     //std::vector<std::pair<G4String,char>> fHitALLAttributeVector;
+public:
+     std::vector<std::pair<G4String,G4int*>> mapHitAttributesI;
+     std::vector< std::pair<G4String,G4double*>> mapHitAttributesD;
+     std::vector<std::pair<G4String,G4String*>> mapHitAttributesS;
 
 
 };

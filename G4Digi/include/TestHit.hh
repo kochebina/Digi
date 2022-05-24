@@ -5,6 +5,12 @@
 #include "G4THitsCollection.hh"
 #include "G4ThreeVector.hh"
 
+#include <map>
+
+#include "TestHitAttribute.hh"
+
+
+
 
 class TestHit : public G4VHit
 {
@@ -18,8 +24,14 @@ public:
     void Draw();
     void Print();
 
+   // std::map<G4String,>
+
+   // virtual const std::map<G4String,G4AttDef>* GetAttDefs() const;
+    //virtual std::vector<G4AttValue>* CreateAttValues() const;
 
 public:
+    TestHitAttribute* testHA;
+
   G4double m_edep;            // energy deposit for the current hit
   G4double m_max_edep;          	  //!< max energy for the current pulse
   G4double m_stepLength;      // length of the step for the current hit
@@ -75,7 +87,7 @@ public:
   G4int m_gammaType = 0;//0 means 'by default not known'; gammaType says what type of gamma is emitted: annihilation, prompt, other
 
   public:
-      inline void SetEdep(G4double de)          { m_edep = de; }
+      inline void SetEdep(G4double de)          { m_edep = de;testHA->AddToMapD("edep",&m_edep);}
       inline void AddEdep(G4double de)          { m_edep += de; }
       inline G4double GetEdep() const                { return m_edep; }
 
@@ -83,7 +95,7 @@ public:
       inline void SetMaxEnergy(G4double value)           	      { m_max_edep = value; }
 
 
-      inline void SetStepLength(G4double value) { m_stepLength = value; }
+      inline void SetStepLength(G4double value) { m_stepLength = value; testHA->AddToMapD("stepLength",&m_stepLength);}
       inline G4double GetStepLength() const          { return m_stepLength; }
 
       inline void SetTrackLength(G4double value) { m_trackLength = value; }
@@ -92,7 +104,7 @@ public:
       inline void     SetTrackLocalTime(G4double aTime)    { m_trackLocalTime = aTime; }
       inline G4double GetTrackLocalTime() const                { return m_trackLocalTime; }
 
-      inline void     SetTime(G4double aTime)    { m_time = aTime; }
+      inline void     SetTime(G4double aTime)    { m_time = aTime; testHA->AddToMapD("time",&m_time); }
       inline G4double GetTime() const                { return m_time; }
 
       inline void  SetGlobalPos(const G4ThreeVector& xyz)    { m_pos = xyz; }
@@ -254,8 +266,13 @@ public:
 	G4double GetTime() const {return fTime;};
 */
 
-
-
+/*  public:
+     std::map<G4String,G4int> mapHitAttributesI;
+     std::map<G4String,G4double> mapHitAttributesD;
+     std::map<G4String,G4String> mapHitAttributesS;
+*/
+public:
+      TestHitAttribute * fHitAttribute;
 };
 
 

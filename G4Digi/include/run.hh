@@ -9,6 +9,7 @@
 class TestDetectorConstruction;
 class TestDigitizer;
 class TestHitAttribute;
+class TestRoot;
 
 class TestRunAction : public G4UserRunAction
 {
@@ -23,6 +24,7 @@ public:
 protected:
   TestDigitizer *digitizer;
   TestHitAttribute *fHitAttribute;
+  TestRoot* fRoot;
 //  G4AnalysisManager *man;
 //  G4AnalysisManager *man2;
 

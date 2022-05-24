@@ -43,6 +43,9 @@ private:
   //G4LogicalVolume *fScoringVolume;
   G4Material *DetectionMaterial;
 
+public:
+  G4String m_SDName;
+
 
 };
 

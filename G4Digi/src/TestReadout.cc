@@ -76,7 +76,7 @@ TestReadout::~TestReadout()
 void TestReadout::Digitize()
 {
 
-	G4cout<<"Readout::Digitize()"<<G4endl;
+	//G4cout<<"Readout::Digitize()"<<G4endl;
   DigitsCollection = new TestDigitsCollection("TestReadout","DigitsCollection"); // to create the Digi Collection
   
   G4DigiManager* DigiMan = G4DigiManager::GetDMpointer();
@@ -92,12 +92,12 @@ void TestReadout::Digitize()
  // G4cout<<"From HitsCollection"<<G4endl;
 //  HCID = DigiMan->GetHitsCollectionID("testHitCollection");
   HCID = DigiMan->GetDigiCollectionID("TestReadout/DigitsCollection");
-  G4cout<<HCID<<G4endl;
+ // G4cout<<HCID<<G4endl;
 
   TestDigitsCollection* THC = 0;
   THC = (TestDigitsCollection*) (DigiMan->GetDigiCollection(HCID-1));
 
-  G4cout<<THC->entries()<<G4endl;
+ // G4cout<<THC->entries()<<G4endl;
 
 	TestDigi* Digi = new TestDigi();
 

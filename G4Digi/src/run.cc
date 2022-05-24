@@ -2,14 +2,18 @@
 #include "contruction.hh"
 #include "TestDigitizer.hh"
 #include "TestHitAttribute.hh"
+#include "TestRoot.hh"
 
 TestRunAction::TestRunAction()
 {
 	G4cout<<"TestRunAction: constructor"<<G4endl;
 
-	fHitAttribute= new TestHitAttribute();
+	//fHitAttribute= new TestHitAttribute();
+	fHitAttribute=TestHitAttribute::GetInstance();
 	digitizer = new TestDigitizer();
 	digitizer->Initilize();
+	fRoot=new TestRoot();
+
 
 }
 
@@ -17,27 +21,34 @@ TestRunAction::~TestRunAction()
 {
 	delete digitizer;
 	delete fHitAttribute;
+	delete fRoot;
 }
 
 
 void TestRunAction::BeginOfRunAction(const G4Run* aRun)
 {
-
+	G4cout<<"Begin of run"<<G4endl;
 	fHitAttribute->ReadFile();
 
-G4cout<<"Begin of run"<<G4endl;
-  G4AnalysisManager *man = G4AnalysisManager::Instance();
+
+	fRoot->CreateNtuple("Hits",fHitAttribute);
+
+
+ /* G4AnalysisManager *man = G4AnalysisManager::Instance();
   man->OpenFile("output.root");
   
   man->CreateNtuple("Hits","Hits");
+*/
 
-  for(G4int i=0;i<fHitAttribute->fHitAttributeVector.size();i++)
+	/*
+
+  for(G4int i=0;i<fHitAttribute->HitAttributeVector.size();i++)
   	  {
 	  	  G4cout<<"something"<<G4endl;
 
 
   	  }
-  man->CreateNtupleIColumn("EventID");
+  /*man->CreateNtupleIColumn("EventID");
   man->CreateNtupleDColumn("edep");
   man->CreateNtupleDColumn("time");
   
@@ -52,7 +63,7 @@ G4cout<<"Begin of run"<<G4endl;
 
 	man->FinishNtuple(0);
 	*/
-	man->CreateNtuple("Singles","Singles");
+/*	man->CreateNtuple("Singles","Singles");
 	man->CreateNtupleIColumn("EventID");
 	man->CreateNtupleDColumn("energy");
 
@@ -73,10 +84,10 @@ G4cout<<"Begin of run"<<G4endl;
 }
 void TestRunAction::EndOfRunAction(const G4Run* aRun)
 {
-	G4AnalysisManager *man = G4AnalysisManager::Instance();
-	man->Write();
-	man->CloseFile();
+
+	fRoot->WriteAndClose();
 	
+
 	/*G4AnalysisManager *man2 = G4AnalysisManager::Instance();
 	man2->Write();
 		man2->CloseFile();

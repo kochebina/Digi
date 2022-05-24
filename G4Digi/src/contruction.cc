@@ -52,6 +52,9 @@ G4VPhysicalVolume *TestDetectorConstruction::Construct()
 	 DetectionMaterial=nist->FindOrBuildMaterial("G4_AIR");
  	 }
 
+ G4Material* water = new G4Material("WATER", 1*g/cm3,2);
+ water->AddElement(nist->FindOrBuildElement("H"), 2);
+ water->AddElement(nist->FindOrBuildElement("O"), 1);
 
  //G4cout<<"-------------------------------------------Detector Material "<<DetectionMaterial <<G4endl;
 
@@ -66,7 +69,7 @@ G4VPhysicalVolume *TestDetectorConstruction::Construct()
   G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true);
 
   G4Box *solidDetector = new G4Box("solidDetector", 0.4*m, 0.4*m, 0.05*m);
-  logicDetector = new G4LogicalVolume(solidDetector, DetectionMaterial, "logicRadiator");
+  logicDetector = new G4LogicalVolume(solidDetector, water, "logicRadiator");
   G4VPhysicalVolume *physDetector = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicDetector, "physDetector", logicWorld, false, 0, true);
 
   logicDetector->SetVisAttributes(new G4VisAttributes (G4Colour::Green()));
@@ -104,15 +107,17 @@ G4VPhysicalVolume *TestDetectorConstruction::Construct()
 
 void TestDetectorConstruction::ConstructSDandField()
 {
-	TestSensitiveDetector *sensDet = new TestSensitiveDetector("SensitiveDetector");
-	TestSensitiveDetector *sensDet2 = new TestSensitiveDetector("SensitiveDetector2");
+
+	m_SDName= TestSensitiveDetector::GetCrystalCollectionName();
+	TestSensitiveDetector *sensDet = new TestSensitiveDetector(m_SDName);
+	//TestSensitiveDetector *sensDet2 = new TestSensitiveDetector("SensitiveDetector2");
 
 	G4SDManager *SDMan=G4SDManager::GetSDMpointer();
 	SDMan->AddNewDetector(sensDet);
-	SDMan->AddNewDetector(sensDet2);
+	//SDMan->AddNewDetector(sensDet2);
 
 	logicDetector->SetSensitiveDetector(sensDet);
-	logicDetector2->SetSensitiveDetector(sensDet2);
+	//logicDetector2->SetSensitiveDetector(sensDet2);
 
 
 

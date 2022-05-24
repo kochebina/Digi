@@ -406,6 +406,33 @@ src/TestReadout.cc.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestReadout.cc.s
 .PHONY : src/TestReadout.cc.s
 
+src/TestRoot.o: src/TestRoot.cc.o
+
+.PHONY : src/TestRoot.o
+
+# target to build an object file
+src/TestRoot.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestRoot.cc.o
+.PHONY : src/TestRoot.cc.o
+
+src/TestRoot.i: src/TestRoot.cc.i
+
+.PHONY : src/TestRoot.i
+
+# target to preprocess a source file
+src/TestRoot.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestRoot.cc.i
+.PHONY : src/TestRoot.cc.i
+
+src/TestRoot.s: src/TestRoot.cc.s
+
+.PHONY : src/TestRoot.s
+
+# target to generate assembly for a file
+src/TestRoot.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/TestRoot.cc.s
+.PHONY : src/TestRoot.cc.s
+
 src/action.o: src/action.cc.o
 
 .PHONY : src/action.o
@@ -716,6 +743,9 @@ help:
 	@echo "... src/TestReadout.o"
 	@echo "... src/TestReadout.i"
 	@echo "... src/TestReadout.s"
+	@echo "... src/TestRoot.o"
+	@echo "... src/TestRoot.i"
+	@echo "... src/TestRoot.s"
 	@echo "... src/action.o"
 	@echo "... src/action.i"
 	@echo "... src/action.s"

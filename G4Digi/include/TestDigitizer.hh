@@ -26,6 +26,8 @@ public:
 
   void RunDigitizer();
 
+  void SaveDigits();
+
   void SetNewModuleName(G4String name){m_moduleName=name;}
 
 
